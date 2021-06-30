@@ -43,7 +43,7 @@ pub fn parse_activate_key_signing_key_error(
         },
         "InvalidKMSArn" => crate::error::ActivateKeySigningKeyError {
             meta: generic,
-            kind: crate::error::ActivateKeySigningKeyErrorKind::InvalidKMSArn({
+            kind: crate::error::ActivateKeySigningKeyErrorKind::InvalidKmsArn({
                 #[allow(unused_mut)]
                 let mut output = crate::error::invalid_kms_arn::Builder::default();
                 let _ = response;
@@ -111,7 +111,7 @@ pub fn parse_activate_key_signing_key_response(
 pub fn parse_associate_vpc_with_hosted_zone_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::AssociateVPCWithHostedZoneOutput,
+    crate::output::AssociateVpcWithHostedZoneOutput,
     crate::error::AssociateVPCWithHostedZoneError,
 > {
     let generic = crate::xml_deser::parse_generic_error(&response)
@@ -155,7 +155,7 @@ pub fn parse_associate_vpc_with_hosted_zone_error(
         },
         "InvalidVPCId" => crate::error::AssociateVPCWithHostedZoneError {
             meta: generic,
-            kind: crate::error::AssociateVPCWithHostedZoneErrorKind::InvalidVPCId({
+            kind: crate::error::AssociateVPCWithHostedZoneErrorKind::InvalidVpcId({
                 #[allow(unused_mut)]
                 let mut output = crate::error::invalid_vpc_id::Builder::default();
                 let _ = response;
@@ -197,11 +197,11 @@ pub fn parse_associate_vpc_with_hosted_zone_error(
         },
         "NotAuthorizedException" => crate::error::AssociateVPCWithHostedZoneError {
             meta: generic,
-            kind: crate::error::AssociateVPCWithHostedZoneErrorKind::NotAuthorizedError({
+            kind: crate::error::AssociateVPCWithHostedZoneErrorKind::NotAuthorizedException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::not_authorized_error::Builder::default();
+                let mut output = crate::error::not_authorized_exception::Builder::default();
                 let _ = response;
-                output = crate::xml_deser::deser_structure_not_authorized_error_xml_err(
+                output = crate::xml_deser::deser_structure_not_authorized_exception_xml_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -225,7 +225,7 @@ pub fn parse_associate_vpc_with_hosted_zone_error(
         },
         "PublicZoneVPCAssociation" => crate::error::AssociateVPCWithHostedZoneError {
             meta: generic,
-            kind: crate::error::AssociateVPCWithHostedZoneErrorKind::PublicZoneVPCAssociation({
+            kind: crate::error::AssociateVPCWithHostedZoneErrorKind::PublicZoneVpcAssociation({
                 #[allow(unused_mut)]
                 let mut output = crate::error::public_zone_vpc_association::Builder::default();
                 let _ = response;
@@ -245,7 +245,7 @@ pub fn parse_associate_vpc_with_hosted_zone_error(
 pub fn parse_associate_vpc_with_hosted_zone_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::AssociateVPCWithHostedZoneOutput,
+    crate::output::AssociateVpcWithHostedZoneOutput,
     crate::error::AssociateVPCWithHostedZoneError,
 > {
     Ok({
@@ -445,11 +445,11 @@ pub fn parse_change_tags_for_resource_error(
         },
         "ThrottlingException" => crate::error::ChangeTagsForResourceError {
             meta: generic,
-            kind: crate::error::ChangeTagsForResourceErrorKind::ThrottlingError({
+            kind: crate::error::ChangeTagsForResourceErrorKind::ThrottlingException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::throttling_error::Builder::default();
+                let mut output = crate::error::throttling_exception::Builder::default();
                 let _ = response;
-                output = crate::xml_deser::deser_structure_throttling_error_xml_err(
+                output = crate::xml_deser::deser_structure_throttling_exception_xml_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -547,12 +547,8 @@ pub fn parse_create_health_check_response(
             crate::xml_deser::deser_operation_create_health_check(response.body().as_ref(), output)
                 .map_err(crate::error::CreateHealthCheckError::unhandled)?;
         output = output.set_location(
-            crate::http_serde::deser_header_create_health_check_location(response.headers())
-                .map_err(|_| {
-                    crate::error::CreateHealthCheckError::unhandled(
-                        "Failed to parse Location from header `Location",
-                    )
-                })?,
+            crate::http_serde::deser_header_create_health_check_create_health_check_output_location(response.headers())
+                                        .map_err(|_|crate::error::CreateHealthCheckError::unhandled("Failed to parse Location from header `Location"))?
         );
         output.build()
     })
@@ -656,7 +652,7 @@ pub fn parse_create_hosted_zone_error(
         },
         "InvalidVPCId" => crate::error::CreateHostedZoneError {
             meta: generic,
-            kind: crate::error::CreateHostedZoneErrorKind::InvalidVPCId({
+            kind: crate::error::CreateHostedZoneErrorKind::InvalidVpcId({
                 #[allow(unused_mut)]
                 let mut output = crate::error::invalid_vpc_id::Builder::default();
                 let _ = response;
@@ -713,12 +709,14 @@ pub fn parse_create_hosted_zone_response(
             crate::xml_deser::deser_operation_create_hosted_zone(response.body().as_ref(), output)
                 .map_err(crate::error::CreateHostedZoneError::unhandled)?;
         output = output.set_location(
-            crate::http_serde::deser_header_create_hosted_zone_location(response.headers())
-                .map_err(|_| {
-                    crate::error::CreateHostedZoneError::unhandled(
-                        "Failed to parse Location from header `Location",
-                    )
-                })?,
+            crate::http_serde::deser_header_create_hosted_zone_create_hosted_zone_output_location(
+                response.headers(),
+            )
+            .map_err(|_| {
+                crate::error::CreateHostedZoneError::unhandled(
+                    "Failed to parse Location from header `Location",
+                )
+            })?,
         );
         output.build()
     })
@@ -810,7 +808,7 @@ pub fn parse_create_key_signing_key_error(
         },
         "InvalidKMSArn" => crate::error::CreateKeySigningKeyError {
             meta: generic,
-            kind: crate::error::CreateKeySigningKeyErrorKind::InvalidKMSArn({
+            kind: crate::error::CreateKeySigningKeyErrorKind::InvalidKmsArn({
                 #[allow(unused_mut)]
                 let mut output = crate::error::invalid_kms_arn::Builder::default();
                 let _ = response;
@@ -899,12 +897,8 @@ pub fn parse_create_key_signing_key_response(
         )
         .map_err(crate::error::CreateKeySigningKeyError::unhandled)?;
         output = output.set_location(
-            crate::http_serde::deser_header_create_key_signing_key_location(response.headers())
-                .map_err(|_| {
-                    crate::error::CreateKeySigningKeyError::unhandled(
-                        "Failed to parse Location from header `Location",
-                    )
-                })?,
+            crate::http_serde::deser_header_create_key_signing_key_create_key_signing_key_output_location(response.headers())
+                                        .map_err(|_|crate::error::CreateKeySigningKeyError::unhandled("Failed to parse Location from header `Location"))?
         );
         output.build()
     })
@@ -985,14 +979,8 @@ pub fn parse_create_query_logging_config_response(
         )
         .map_err(crate::error::CreateQueryLoggingConfigError::unhandled)?;
         output = output.set_location(
-            crate::http_serde::deser_header_create_query_logging_config_location(
-                response.headers(),
-            )
-            .map_err(|_| {
-                crate::error::CreateQueryLoggingConfigError::unhandled(
-                    "Failed to parse Location from header `Location",
-                )
-            })?,
+            crate::http_serde::deser_header_create_query_logging_config_create_query_logging_config_output_location(response.headers())
+                                        .map_err(|_|crate::error::CreateQueryLoggingConfigError::unhandled("Failed to parse Location from header `Location"))?
         );
         output.build()
     })
@@ -1139,14 +1127,8 @@ pub fn parse_create_reusable_delegation_set_response(
         )
         .map_err(crate::error::CreateReusableDelegationSetError::unhandled)?;
         output = output.set_location(
-            crate::http_serde::deser_header_create_reusable_delegation_set_location(
-                response.headers(),
-            )
-            .map_err(|_| {
-                crate::error::CreateReusableDelegationSetError::unhandled(
-                    "Failed to parse Location from header `Location",
-                )
-            })?,
+            crate::http_serde::deser_header_create_reusable_delegation_set_create_reusable_delegation_set_output_location(response.headers())
+                                        .map_err(|_|crate::error::CreateReusableDelegationSetError::unhandled("Failed to parse Location from header `Location"))?
         );
         output.build()
     })
@@ -1243,12 +1225,8 @@ pub fn parse_create_traffic_policy_response(
         )
         .map_err(crate::error::CreateTrafficPolicyError::unhandled)?;
         output = output.set_location(
-            crate::http_serde::deser_header_create_traffic_policy_location(response.headers())
-                .map_err(|_| {
-                    crate::error::CreateTrafficPolicyError::unhandled(
-                        "Failed to parse Location from header `Location",
-                    )
-                })?,
+            crate::http_serde::deser_header_create_traffic_policy_create_traffic_policy_output_location(response.headers())
+                                        .map_err(|_|crate::error::CreateTrafficPolicyError::unhandled("Failed to parse Location from header `Location"))?
         );
         output.build()
     })
@@ -1323,14 +1301,8 @@ pub fn parse_create_traffic_policy_instance_response(
         )
         .map_err(crate::error::CreateTrafficPolicyInstanceError::unhandled)?;
         output = output.set_location(
-            crate::http_serde::deser_header_create_traffic_policy_instance_location(
-                response.headers(),
-            )
-            .map_err(|_| {
-                crate::error::CreateTrafficPolicyInstanceError::unhandled(
-                    "Failed to parse Location from header `Location",
-                )
-            })?,
+            crate::http_serde::deser_header_create_traffic_policy_instance_create_traffic_policy_instance_output_location(response.headers())
+                                        .map_err(|_|crate::error::CreateTrafficPolicyInstanceError::unhandled("Failed to parse Location from header `Location"))?
         );
         output.build()
     })
@@ -1405,14 +1377,8 @@ pub fn parse_create_traffic_policy_version_response(
         )
         .map_err(crate::error::CreateTrafficPolicyVersionError::unhandled)?;
         output = output.set_location(
-            crate::http_serde::deser_header_create_traffic_policy_version_location(
-                response.headers(),
-            )
-            .map_err(|_| {
-                crate::error::CreateTrafficPolicyVersionError::unhandled(
-                    "Failed to parse Location from header `Location",
-                )
-            })?,
+            crate::http_serde::deser_header_create_traffic_policy_version_create_traffic_policy_version_output_location(response.headers())
+                                        .map_err(|_|crate::error::CreateTrafficPolicyVersionError::unhandled("Failed to parse Location from header `Location"))?
         );
         output.build()
     })
@@ -1422,7 +1388,7 @@ pub fn parse_create_traffic_policy_version_response(
 pub fn parse_create_vpc_association_authorization_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::CreateVPCAssociationAuthorizationOutput,
+    crate::output::CreateVpcAssociationAuthorizationOutput,
     crate::error::CreateVPCAssociationAuthorizationError,
 > {
     let generic = crate::xml_deser::parse_generic_error(&response)
@@ -1446,7 +1412,7 @@ pub fn parse_create_vpc_association_authorization_error(
             output = crate::xml_deser::deser_structure_invalid_input_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateVPCAssociationAuthorizationError::unhandled)?;
             output.build()
         })},
-        "InvalidVPCId" => crate::error::CreateVPCAssociationAuthorizationError { meta: generic, kind: crate::error::CreateVPCAssociationAuthorizationErrorKind::InvalidVPCId({
+        "InvalidVPCId" => crate::error::CreateVPCAssociationAuthorizationError { meta: generic, kind: crate::error::CreateVPCAssociationAuthorizationErrorKind::InvalidVpcId({
             #[allow(unused_mut)]let mut output = crate::error::invalid_vpc_id::Builder::default();
             let _ = response;
             output = crate::xml_deser::deser_structure_invalid_vpc_id_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateVPCAssociationAuthorizationError::unhandled)?;
@@ -1458,7 +1424,7 @@ pub fn parse_create_vpc_association_authorization_error(
             output = crate::xml_deser::deser_structure_no_such_hosted_zone_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateVPCAssociationAuthorizationError::unhandled)?;
             output.build()
         })},
-        "TooManyVPCAssociationAuthorizations" => crate::error::CreateVPCAssociationAuthorizationError { meta: generic, kind: crate::error::CreateVPCAssociationAuthorizationErrorKind::TooManyVPCAssociationAuthorizations({
+        "TooManyVPCAssociationAuthorizations" => crate::error::CreateVPCAssociationAuthorizationError { meta: generic, kind: crate::error::CreateVPCAssociationAuthorizationErrorKind::TooManyVpcAssociationAuthorizations({
             #[allow(unused_mut)]let mut output = crate::error::too_many_vpc_association_authorizations::Builder::default();
             let _ = response;
             output = crate::xml_deser::deser_structure_too_many_vpc_association_authorizations_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateVPCAssociationAuthorizationError::unhandled)?;
@@ -1472,7 +1438,7 @@ pub fn parse_create_vpc_association_authorization_error(
 pub fn parse_create_vpc_association_authorization_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::CreateVPCAssociationAuthorizationOutput,
+    crate::output::CreateVpcAssociationAuthorizationOutput,
     crate::error::CreateVPCAssociationAuthorizationError,
 > {
     Ok({
@@ -1552,7 +1518,7 @@ pub fn parse_deactivate_key_signing_key_error(
         "KeySigningKeyInParentDSRecord" => {
             crate::error::DeactivateKeySigningKeyError {
                 meta: generic,
-                kind: crate::error::DeactivateKeySigningKeyErrorKind::KeySigningKeyInParentDSRecord(
+                kind: crate::error::DeactivateKeySigningKeyErrorKind::KeySigningKeyInParentDsRecord(
                     {
                         #[allow(unused_mut)]
                         let mut output =
@@ -1833,7 +1799,7 @@ pub fn parse_delete_key_signing_key_error(
         },
         "InvalidKMSArn" => crate::error::DeleteKeySigningKeyError {
             meta: generic,
-            kind: crate::error::DeleteKeySigningKeyErrorKind::InvalidKMSArn({
+            kind: crate::error::DeleteKeySigningKeyErrorKind::InvalidKmsArn({
                 #[allow(unused_mut)]
                 let mut output = crate::error::invalid_kms_arn::Builder::default();
                 let _ = response;
@@ -2243,7 +2209,7 @@ pub fn parse_delete_traffic_policy_instance_response(
 pub fn parse_delete_vpc_association_authorization_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::DeleteVPCAssociationAuthorizationOutput,
+    crate::output::DeleteVpcAssociationAuthorizationOutput,
     crate::error::DeleteVPCAssociationAuthorizationError,
 > {
     let generic = crate::xml_deser::parse_generic_error(&response)
@@ -2267,7 +2233,7 @@ pub fn parse_delete_vpc_association_authorization_error(
             output = crate::xml_deser::deser_structure_invalid_input_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteVPCAssociationAuthorizationError::unhandled)?;
             output.build()
         })},
-        "InvalidVPCId" => crate::error::DeleteVPCAssociationAuthorizationError { meta: generic, kind: crate::error::DeleteVPCAssociationAuthorizationErrorKind::InvalidVPCId({
+        "InvalidVPCId" => crate::error::DeleteVPCAssociationAuthorizationError { meta: generic, kind: crate::error::DeleteVPCAssociationAuthorizationErrorKind::InvalidVpcId({
             #[allow(unused_mut)]let mut output = crate::error::invalid_vpc_id::Builder::default();
             let _ = response;
             output = crate::xml_deser::deser_structure_invalid_vpc_id_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteVPCAssociationAuthorizationError::unhandled)?;
@@ -2279,7 +2245,7 @@ pub fn parse_delete_vpc_association_authorization_error(
             output = crate::xml_deser::deser_structure_no_such_hosted_zone_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteVPCAssociationAuthorizationError::unhandled)?;
             output.build()
         })},
-        "VPCAssociationAuthorizationNotFound" => crate::error::DeleteVPCAssociationAuthorizationError { meta: generic, kind: crate::error::DeleteVPCAssociationAuthorizationErrorKind::VPCAssociationAuthorizationNotFound({
+        "VPCAssociationAuthorizationNotFound" => crate::error::DeleteVPCAssociationAuthorizationError { meta: generic, kind: crate::error::DeleteVPCAssociationAuthorizationErrorKind::VpcAssociationAuthorizationNotFound({
             #[allow(unused_mut)]let mut output = crate::error::vpc_association_authorization_not_found::Builder::default();
             let _ = response;
             output = crate::xml_deser::deser_structure_vpc_association_authorization_not_found_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteVPCAssociationAuthorizationError::unhandled)?;
@@ -2293,7 +2259,7 @@ pub fn parse_delete_vpc_association_authorization_error(
 pub fn parse_delete_vpc_association_authorization_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::DeleteVPCAssociationAuthorizationOutput,
+    crate::output::DeleteVpcAssociationAuthorizationOutput,
     crate::error::DeleteVPCAssociationAuthorizationError,
 > {
     Ok({
@@ -2309,7 +2275,7 @@ pub fn parse_delete_vpc_association_authorization_response(
 pub fn parse_disable_hosted_zone_dnssec_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::DisableHostedZoneDNSSECOutput,
+    crate::output::DisableHostedZoneDnssecOutput,
     crate::error::DisableHostedZoneDNSSECError,
 > {
     let generic = crate::xml_deser::parse_generic_error(&response)
@@ -2339,7 +2305,7 @@ pub fn parse_disable_hosted_zone_dnssec_error(
         },
         "DNSSECNotFound" => crate::error::DisableHostedZoneDNSSECError {
             meta: generic,
-            kind: crate::error::DisableHostedZoneDNSSECErrorKind::DNSSECNotFound({
+            kind: crate::error::DisableHostedZoneDNSSECErrorKind::DnssecNotFound({
                 #[allow(unused_mut)]
                 let mut output = crate::error::dnssec_not_found::Builder::default();
                 let _ = response;
@@ -2381,7 +2347,7 @@ pub fn parse_disable_hosted_zone_dnssec_error(
         },
         "InvalidKMSArn" => crate::error::DisableHostedZoneDNSSECError {
             meta: generic,
-            kind: crate::error::DisableHostedZoneDNSSECErrorKind::InvalidKMSArn({
+            kind: crate::error::DisableHostedZoneDNSSECErrorKind::InvalidKmsArn({
                 #[allow(unused_mut)]
                 let mut output = crate::error::invalid_kms_arn::Builder::default();
                 let _ = response;
@@ -2396,7 +2362,7 @@ pub fn parse_disable_hosted_zone_dnssec_error(
         "KeySigningKeyInParentDSRecord" => {
             crate::error::DisableHostedZoneDNSSECError {
                 meta: generic,
-                kind: crate::error::DisableHostedZoneDNSSECErrorKind::KeySigningKeyInParentDSRecord(
+                kind: crate::error::DisableHostedZoneDNSSECErrorKind::KeySigningKeyInParentDsRecord(
                     {
                         #[allow(unused_mut)]
                         let mut output =
@@ -2430,7 +2396,7 @@ pub fn parse_disable_hosted_zone_dnssec_error(
 pub fn parse_disable_hosted_zone_dnssec_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::DisableHostedZoneDNSSECOutput,
+    crate::output::DisableHostedZoneDnssecOutput,
     crate::error::DisableHostedZoneDNSSECError,
 > {
     Ok({
@@ -2450,7 +2416,7 @@ pub fn parse_disable_hosted_zone_dnssec_response(
 pub fn parse_disassociate_vpc_from_hosted_zone_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::DisassociateVPCFromHostedZoneOutput,
+    crate::output::DisassociateVpcFromHostedZoneOutput,
     crate::error::DisassociateVPCFromHostedZoneError,
 > {
     let generic = crate::xml_deser::parse_generic_error(&response)
@@ -2480,7 +2446,7 @@ pub fn parse_disassociate_vpc_from_hosted_zone_error(
         },
         "InvalidVPCId" => crate::error::DisassociateVPCFromHostedZoneError {
             meta: generic,
-            kind: crate::error::DisassociateVPCFromHostedZoneErrorKind::InvalidVPCId({
+            kind: crate::error::DisassociateVPCFromHostedZoneErrorKind::InvalidVpcId({
                 #[allow(unused_mut)]
                 let mut output = crate::error::invalid_vpc_id::Builder::default();
                 let _ = response;
@@ -2494,7 +2460,7 @@ pub fn parse_disassociate_vpc_from_hosted_zone_error(
         },
         "LastVPCAssociation" => crate::error::DisassociateVPCFromHostedZoneError {
             meta: generic,
-            kind: crate::error::DisassociateVPCFromHostedZoneErrorKind::LastVPCAssociation({
+            kind: crate::error::DisassociateVPCFromHostedZoneErrorKind::LastVpcAssociation({
                 #[allow(unused_mut)]
                 let mut output = crate::error::last_vpc_association::Builder::default();
                 let _ = response;
@@ -2522,7 +2488,7 @@ pub fn parse_disassociate_vpc_from_hosted_zone_error(
         },
         "VPCAssociationNotFound" => crate::error::DisassociateVPCFromHostedZoneError {
             meta: generic,
-            kind: crate::error::DisassociateVPCFromHostedZoneErrorKind::VPCAssociationNotFound({
+            kind: crate::error::DisassociateVPCFromHostedZoneErrorKind::VpcAssociationNotFound({
                 #[allow(unused_mut)]
                 let mut output = crate::error::vpc_association_not_found::Builder::default();
                 let _ = response;
@@ -2542,7 +2508,7 @@ pub fn parse_disassociate_vpc_from_hosted_zone_error(
 pub fn parse_disassociate_vpc_from_hosted_zone_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::DisassociateVPCFromHostedZoneOutput,
+    crate::output::DisassociateVpcFromHostedZoneOutput,
     crate::error::DisassociateVPCFromHostedZoneError,
 > {
     Ok({
@@ -2563,7 +2529,7 @@ pub fn parse_disassociate_vpc_from_hosted_zone_response(
 pub fn parse_enable_hosted_zone_dnssec_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::EnableHostedZoneDNSSECOutput,
+    crate::output::EnableHostedZoneDnssecOutput,
     crate::error::EnableHostedZoneDNSSECError,
 > {
     let generic = crate::xml_deser::parse_generic_error(&response)
@@ -2593,7 +2559,7 @@ pub fn parse_enable_hosted_zone_dnssec_error(
         },
         "DNSSECNotFound" => crate::error::EnableHostedZoneDNSSECError {
             meta: generic,
-            kind: crate::error::EnableHostedZoneDNSSECErrorKind::DNSSECNotFound({
+            kind: crate::error::EnableHostedZoneDNSSECErrorKind::DnssecNotFound({
                 #[allow(unused_mut)]
                 let mut output = crate::error::dnssec_not_found::Builder::default();
                 let _ = response;
@@ -2649,7 +2615,7 @@ pub fn parse_enable_hosted_zone_dnssec_error(
         },
         "InvalidKMSArn" => crate::error::EnableHostedZoneDNSSECError {
             meta: generic,
-            kind: crate::error::EnableHostedZoneDNSSECErrorKind::InvalidKMSArn({
+            kind: crate::error::EnableHostedZoneDNSSECErrorKind::InvalidKmsArn({
                 #[allow(unused_mut)]
                 let mut output = crate::error::invalid_kms_arn::Builder::default();
                 let _ = response;
@@ -2695,7 +2661,7 @@ pub fn parse_enable_hosted_zone_dnssec_error(
 pub fn parse_enable_hosted_zone_dnssec_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::EnableHostedZoneDNSSECOutput,
+    crate::output::EnableHostedZoneDnssecOutput,
     crate::error::EnableHostedZoneDNSSECError,
 > {
     Ok({
@@ -2847,7 +2813,7 @@ pub fn parse_get_checker_ip_ranges_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_dnssec_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::GetDNSSECOutput, crate::error::GetDNSSECError> {
+) -> std::result::Result<crate::output::GetDnssecOutput, crate::error::GetDNSSECError> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::GetDNSSECError::unhandled)?;
     let error_code = match generic.code() {
@@ -2890,7 +2856,7 @@ pub fn parse_get_dnssec_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_dnssec_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::GetDNSSECOutput, crate::error::GetDNSSECError> {
+) -> std::result::Result<crate::output::GetDnssecOutput, crate::error::GetDNSSECError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::get_dnssec_output::Builder::default();
@@ -4020,7 +3986,7 @@ pub fn parse_list_hosted_zones_by_name_response(
 pub fn parse_list_hosted_zones_by_vpc_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::ListHostedZonesByVPCOutput,
+    crate::output::ListHostedZonesByVpcOutput,
     crate::error::ListHostedZonesByVPCError,
 > {
     let generic = crate::xml_deser::parse_generic_error(&response)
@@ -4066,7 +4032,7 @@ pub fn parse_list_hosted_zones_by_vpc_error(
 pub fn parse_list_hosted_zones_by_vpc_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::ListHostedZonesByVPCOutput,
+    crate::output::ListHostedZonesByVpcOutput,
     crate::error::ListHostedZonesByVPCError,
 > {
     Ok({
@@ -4364,11 +4330,11 @@ pub fn parse_list_tags_for_resource_error(
         },
         "ThrottlingException" => crate::error::ListTagsForResourceError {
             meta: generic,
-            kind: crate::error::ListTagsForResourceErrorKind::ThrottlingError({
+            kind: crate::error::ListTagsForResourceErrorKind::ThrottlingException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::throttling_error::Builder::default();
+                let mut output = crate::error::throttling_exception::Builder::default();
                 let _ = response;
-                output = crate::xml_deser::deser_structure_throttling_error_xml_err(
+                output = crate::xml_deser::deser_structure_throttling_exception_xml_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -4472,11 +4438,11 @@ pub fn parse_list_tags_for_resources_error(
         },
         "ThrottlingException" => crate::error::ListTagsForResourcesError {
             meta: generic,
-            kind: crate::error::ListTagsForResourcesErrorKind::ThrottlingError({
+            kind: crate::error::ListTagsForResourcesErrorKind::ThrottlingException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::throttling_error::Builder::default();
+                let mut output = crate::error::throttling_exception::Builder::default();
                 let _ = response;
-                output = crate::xml_deser::deser_structure_throttling_error_xml_err(
+                output = crate::xml_deser::deser_structure_throttling_exception_xml_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -4824,7 +4790,7 @@ pub fn parse_list_traffic_policy_versions_response(
 pub fn parse_list_vpc_association_authorizations_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::ListVPCAssociationAuthorizationsOutput,
+    crate::output::ListVpcAssociationAuthorizationsOutput,
     crate::error::ListVPCAssociationAuthorizationsError,
 > {
     let generic = crate::xml_deser::parse_generic_error(&response)
@@ -4888,7 +4854,7 @@ pub fn parse_list_vpc_association_authorizations_error(
 pub fn parse_list_vpc_association_authorizations_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::ListVPCAssociationAuthorizationsOutput,
+    crate::output::ListVpcAssociationAuthorizationsOutput,
     crate::error::ListVPCAssociationAuthorizationsError,
 > {
     Ok({
@@ -4908,7 +4874,7 @@ pub fn parse_list_vpc_association_authorizations_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_test_dns_answer_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::TestDNSAnswerOutput, crate::error::TestDNSAnswerError> {
+) -> std::result::Result<crate::output::TestDnsAnswerOutput, crate::error::TestDNSAnswerError> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::TestDNSAnswerError::unhandled)?;
     let error_code = match generic.code() {
@@ -4951,7 +4917,7 @@ pub fn parse_test_dns_answer_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_test_dns_answer_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::TestDNSAnswerOutput, crate::error::TestDNSAnswerError> {
+) -> std::result::Result<crate::output::TestDnsAnswerOutput, crate::error::TestDNSAnswerError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::test_dns_answer_output::Builder::default();

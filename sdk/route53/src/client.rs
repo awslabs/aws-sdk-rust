@@ -331,7 +331,7 @@ pub mod fluent_builders {
         pub async fn send(
             self,
         ) -> std::result::Result<
-            crate::output::AssociateVPCWithHostedZoneOutput,
+            crate::output::AssociateVpcWithHostedZoneOutput,
             smithy_http::result::SdkError<crate::error::AssociateVPCWithHostedZoneError>,
         >
         where
@@ -360,11 +360,11 @@ pub mod fluent_builders {
             self
         }
         /// <p>A complex type that contains information about the VPC that you want to associate with a private hosted zone.</p>
-        pub fn vpc(mut self, input: crate::model::VPC) -> Self {
+        pub fn vpc(mut self, input: crate::model::Vpc) -> Self {
             self.inner = self.inner.vpc(input);
             self
         }
-        pub fn set_vpc(mut self, input: std::option::Option<crate::model::VPC>) -> Self {
+        pub fn set_vpc(mut self, input: std::option::Option<crate::model::Vpc>) -> Self {
             self.inner = self.inner.set_vpc(input);
             self
         }
@@ -648,11 +648,11 @@ pub mod fluent_builders {
         /// <p>You can specify only one Amazon VPC when you create a private hosted zone. To associate additional Amazon VPCs with the hosted zone,
         /// use <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_AssociateVPCWithHostedZone.html">AssociateVPCWithHostedZone</a>
         /// after you create a hosted zone.</p>
-        pub fn vpc(mut self, input: crate::model::VPC) -> Self {
+        pub fn vpc(mut self, input: crate::model::Vpc) -> Self {
             self.inner = self.inner.vpc(input);
             self
         }
-        pub fn set_vpc(mut self, input: std::option::Option<crate::model::VPC>) -> Self {
+        pub fn set_vpc(mut self, input: std::option::Option<crate::model::Vpc>) -> Self {
             self.inner = self.inner.set_vpc(input);
             self
         }
@@ -1186,7 +1186,7 @@ pub mod fluent_builders {
         pub async fn send(
             self,
         ) -> std::result::Result<
-            crate::output::CreateVPCAssociationAuthorizationOutput,
+            crate::output::CreateVpcAssociationAuthorizationOutput,
             smithy_http::result::SdkError<crate::error::CreateVPCAssociationAuthorizationError>,
         >
         where
@@ -1215,11 +1215,11 @@ pub mod fluent_builders {
         }
         /// <p>A complex type that contains the VPC ID and region for the VPC that you want to authorize associating
         /// with your hosted zone.</p>
-        pub fn vpc(mut self, input: crate::model::VPC) -> Self {
+        pub fn vpc(mut self, input: crate::model::Vpc) -> Self {
             self.inner = self.inner.vpc(input);
             self
         }
-        pub fn set_vpc(mut self, input: std::option::Option<crate::model::VPC>) -> Self {
+        pub fn set_vpc(mut self, input: std::option::Option<crate::model::Vpc>) -> Self {
             self.inner = self.inner.set_vpc(input);
             self
         }
@@ -1608,7 +1608,7 @@ pub mod fluent_builders {
         pub async fn send(
             self,
         ) -> std::result::Result<
-            crate::output::DeleteVPCAssociationAuthorizationOutput,
+            crate::output::DeleteVpcAssociationAuthorizationOutput,
             smithy_http::result::SdkError<crate::error::DeleteVPCAssociationAuthorizationError>,
         >
         where
@@ -1638,11 +1638,11 @@ pub mod fluent_builders {
         }
         /// <p>When removing authorization to associate a VPC that was created by one AWS account with a hosted zone
         /// that was created with a different AWS account, a complex type that includes the ID and region of the VPC.</p>
-        pub fn vpc(mut self, input: crate::model::VPC) -> Self {
+        pub fn vpc(mut self, input: crate::model::Vpc) -> Self {
             self.inner = self.inner.vpc(input);
             self
         }
-        pub fn set_vpc(mut self, input: std::option::Option<crate::model::VPC>) -> Self {
+        pub fn set_vpc(mut self, input: std::option::Option<crate::model::Vpc>) -> Self {
             self.inner = self.inner.set_vpc(input);
             self
         }
@@ -1663,7 +1663,7 @@ pub mod fluent_builders {
         pub async fn send(
             self,
         ) -> std::result::Result<
-            crate::output::DisableHostedZoneDNSSECOutput,
+            crate::output::DisableHostedZoneDnssecOutput,
             smithy_http::result::SdkError<crate::error::DisableHostedZoneDNSSECError>,
         >
         where
@@ -1707,7 +1707,7 @@ pub mod fluent_builders {
         pub async fn send(
             self,
         ) -> std::result::Result<
-            crate::output::DisassociateVPCFromHostedZoneOutput,
+            crate::output::DisassociateVpcFromHostedZoneOutput,
             smithy_http::result::SdkError<crate::error::DisassociateVPCFromHostedZoneError>,
         >
         where
@@ -1736,11 +1736,11 @@ pub mod fluent_builders {
         }
         /// <p>A complex type that contains information about the VPC that you're disassociating
         /// from the specified hosted zone.</p>
-        pub fn vpc(mut self, input: crate::model::VPC) -> Self {
+        pub fn vpc(mut self, input: crate::model::Vpc) -> Self {
             self.inner = self.inner.vpc(input);
             self
         }
-        pub fn set_vpc(mut self, input: std::option::Option<crate::model::VPC>) -> Self {
+        pub fn set_vpc(mut self, input: std::option::Option<crate::model::Vpc>) -> Self {
             self.inner = self.inner.set_vpc(input);
             self
         }
@@ -1771,7 +1771,7 @@ pub mod fluent_builders {
         pub async fn send(
             self,
         ) -> std::result::Result<
-            crate::output::EnableHostedZoneDNSSECOutput,
+            crate::output::EnableHostedZoneDnssecOutput,
             smithy_http::result::SdkError<crate::error::EnableHostedZoneDNSSECError>,
         >
         where
@@ -1961,7 +1961,7 @@ pub mod fluent_builders {
         pub async fn send(
             self,
         ) -> std::result::Result<
-            crate::output::GetDNSSECOutput,
+            crate::output::GetDnssecOutput,
             smithy_http::result::SdkError<crate::error::GetDNSSECError>,
         >
         where
@@ -2962,7 +2962,7 @@ pub mod fluent_builders {
         pub async fn send(
             self,
         ) -> std::result::Result<
-            crate::output::ListHostedZonesByVPCOutput,
+            crate::output::ListHostedZonesByVpcOutput,
             smithy_http::result::SdkError<crate::error::ListHostedZonesByVPCError>,
         >
         where
@@ -3865,7 +3865,7 @@ pub mod fluent_builders {
         pub async fn send(
             self,
         ) -> std::result::Result<
-            crate::output::ListVPCAssociationAuthorizationsOutput,
+            crate::output::ListVpcAssociationAuthorizationsOutput,
             smithy_http::result::SdkError<crate::error::ListVPCAssociationAuthorizationsError>,
         >
         where
@@ -3933,7 +3933,7 @@ pub mod fluent_builders {
         pub async fn send(
             self,
         ) -> std::result::Result<
-            crate::output::TestDNSAnswerOutput,
+            crate::output::TestDnsAnswerOutput,
             smithy_http::result::SdkError<crate::error::TestDNSAnswerError>,
         >
         where

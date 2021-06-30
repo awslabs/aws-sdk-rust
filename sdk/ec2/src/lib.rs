@@ -3,6 +3,7 @@
 #![allow(clippy::large_enum_variant)]
 #![allow(clippy::wrong_self_convention)]
 #![allow(clippy::should_implement_trait)]
+#![allow(clippy::blacklisted_name)]
 //! <fullname>Amazon Elastic Compute Cloud</fullname>
 //! <p>Amazon Elastic Compute Cloud (Amazon EC2) provides secure and resizable computing capacity in the AWS Cloud.
 //! Using Amazon EC2 eliminates the need to invest in hardware up front, so you can develop and deploy applications

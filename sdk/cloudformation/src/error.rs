@@ -8,14 +8,14 @@ pub struct CancelUpdateStackError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CancelUpdateStackErrorKind {
-    TokenAlreadyExistsError(crate::error::TokenAlreadyExistsError),
+    TokenAlreadyExistsException(crate::error::TokenAlreadyExistsException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CancelUpdateStackError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            CancelUpdateStackErrorKind::TokenAlreadyExistsError(_inner) => _inner.fmt(f),
+            CancelUpdateStackErrorKind::TokenAlreadyExistsException(_inner) => _inner.fmt(f),
             CancelUpdateStackErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -64,17 +64,17 @@ impl CancelUpdateStackError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_token_already_exists_error(&self) -> bool {
+    pub fn is_token_already_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
-            CancelUpdateStackErrorKind::TokenAlreadyExistsError(_)
+            CancelUpdateStackErrorKind::TokenAlreadyExistsException(_)
         )
     }
 }
 impl std::error::Error for CancelUpdateStackError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            CancelUpdateStackErrorKind::TokenAlreadyExistsError(_inner) => Some(_inner),
+            CancelUpdateStackErrorKind::TokenAlreadyExistsException(_inner) => Some(_inner),
             CancelUpdateStackErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -89,14 +89,14 @@ pub struct ContinueUpdateRollbackError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ContinueUpdateRollbackErrorKind {
-    TokenAlreadyExistsError(crate::error::TokenAlreadyExistsError),
+    TokenAlreadyExistsException(crate::error::TokenAlreadyExistsException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ContinueUpdateRollbackError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ContinueUpdateRollbackErrorKind::TokenAlreadyExistsError(_inner) => _inner.fmt(f),
+            ContinueUpdateRollbackErrorKind::TokenAlreadyExistsException(_inner) => _inner.fmt(f),
             ContinueUpdateRollbackErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -145,17 +145,17 @@ impl ContinueUpdateRollbackError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_token_already_exists_error(&self) -> bool {
+    pub fn is_token_already_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
-            ContinueUpdateRollbackErrorKind::TokenAlreadyExistsError(_)
+            ContinueUpdateRollbackErrorKind::TokenAlreadyExistsException(_)
         )
     }
 }
 impl std::error::Error for ContinueUpdateRollbackError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ContinueUpdateRollbackErrorKind::TokenAlreadyExistsError(_inner) => Some(_inner),
+            ContinueUpdateRollbackErrorKind::TokenAlreadyExistsException(_inner) => Some(_inner),
             ContinueUpdateRollbackErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -170,18 +170,18 @@ pub struct CreateChangeSetError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateChangeSetErrorKind {
-    AlreadyExistsError(crate::error::AlreadyExistsError),
-    InsufficientCapabilitiesError(crate::error::InsufficientCapabilitiesError),
-    LimitExceededError(crate::error::LimitExceededError),
+    AlreadyExistsException(crate::error::AlreadyExistsException),
+    InsufficientCapabilitiesException(crate::error::InsufficientCapabilitiesException),
+    LimitExceededException(crate::error::LimitExceededException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateChangeSetError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            CreateChangeSetErrorKind::AlreadyExistsError(_inner) => _inner.fmt(f),
-            CreateChangeSetErrorKind::InsufficientCapabilitiesError(_inner) => _inner.fmt(f),
-            CreateChangeSetErrorKind::LimitExceededError(_inner) => _inner.fmt(f),
+            CreateChangeSetErrorKind::AlreadyExistsException(_inner) => _inner.fmt(f),
+            CreateChangeSetErrorKind::InsufficientCapabilitiesException(_inner) => _inner.fmt(f),
+            CreateChangeSetErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
             CreateChangeSetErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -230,25 +230,31 @@ impl CreateChangeSetError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_already_exists_error(&self) -> bool {
-        matches!(&self.kind, CreateChangeSetErrorKind::AlreadyExistsError(_))
-    }
-    pub fn is_insufficient_capabilities_error(&self) -> bool {
+    pub fn is_already_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
-            CreateChangeSetErrorKind::InsufficientCapabilitiesError(_)
+            CreateChangeSetErrorKind::AlreadyExistsException(_)
         )
     }
-    pub fn is_limit_exceeded_error(&self) -> bool {
-        matches!(&self.kind, CreateChangeSetErrorKind::LimitExceededError(_))
+    pub fn is_insufficient_capabilities_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateChangeSetErrorKind::InsufficientCapabilitiesException(_)
+        )
+    }
+    pub fn is_limit_exceeded_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateChangeSetErrorKind::LimitExceededException(_)
+        )
     }
 }
 impl std::error::Error for CreateChangeSetError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            CreateChangeSetErrorKind::AlreadyExistsError(_inner) => Some(_inner),
-            CreateChangeSetErrorKind::InsufficientCapabilitiesError(_inner) => Some(_inner),
-            CreateChangeSetErrorKind::LimitExceededError(_inner) => Some(_inner),
+            CreateChangeSetErrorKind::AlreadyExistsException(_inner) => Some(_inner),
+            CreateChangeSetErrorKind::InsufficientCapabilitiesException(_inner) => Some(_inner),
+            CreateChangeSetErrorKind::LimitExceededException(_inner) => Some(_inner),
             CreateChangeSetErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -263,20 +269,20 @@ pub struct CreateStackError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateStackErrorKind {
-    AlreadyExistsError(crate::error::AlreadyExistsError),
-    InsufficientCapabilitiesError(crate::error::InsufficientCapabilitiesError),
-    LimitExceededError(crate::error::LimitExceededError),
-    TokenAlreadyExistsError(crate::error::TokenAlreadyExistsError),
+    AlreadyExistsException(crate::error::AlreadyExistsException),
+    InsufficientCapabilitiesException(crate::error::InsufficientCapabilitiesException),
+    LimitExceededException(crate::error::LimitExceededException),
+    TokenAlreadyExistsException(crate::error::TokenAlreadyExistsException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateStackError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            CreateStackErrorKind::AlreadyExistsError(_inner) => _inner.fmt(f),
-            CreateStackErrorKind::InsufficientCapabilitiesError(_inner) => _inner.fmt(f),
-            CreateStackErrorKind::LimitExceededError(_inner) => _inner.fmt(f),
-            CreateStackErrorKind::TokenAlreadyExistsError(_inner) => _inner.fmt(f),
+            CreateStackErrorKind::AlreadyExistsException(_inner) => _inner.fmt(f),
+            CreateStackErrorKind::InsufficientCapabilitiesException(_inner) => _inner.fmt(f),
+            CreateStackErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
+            CreateStackErrorKind::TokenAlreadyExistsException(_inner) => _inner.fmt(f),
             CreateStackErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -325,29 +331,32 @@ impl CreateStackError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_already_exists_error(&self) -> bool {
-        matches!(&self.kind, CreateStackErrorKind::AlreadyExistsError(_))
+    pub fn is_already_exists_exception(&self) -> bool {
+        matches!(&self.kind, CreateStackErrorKind::AlreadyExistsException(_))
     }
-    pub fn is_insufficient_capabilities_error(&self) -> bool {
+    pub fn is_insufficient_capabilities_exception(&self) -> bool {
         matches!(
             &self.kind,
-            CreateStackErrorKind::InsufficientCapabilitiesError(_)
+            CreateStackErrorKind::InsufficientCapabilitiesException(_)
         )
     }
-    pub fn is_limit_exceeded_error(&self) -> bool {
-        matches!(&self.kind, CreateStackErrorKind::LimitExceededError(_))
+    pub fn is_limit_exceeded_exception(&self) -> bool {
+        matches!(&self.kind, CreateStackErrorKind::LimitExceededException(_))
     }
-    pub fn is_token_already_exists_error(&self) -> bool {
-        matches!(&self.kind, CreateStackErrorKind::TokenAlreadyExistsError(_))
+    pub fn is_token_already_exists_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateStackErrorKind::TokenAlreadyExistsException(_)
+        )
     }
 }
 impl std::error::Error for CreateStackError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            CreateStackErrorKind::AlreadyExistsError(_inner) => Some(_inner),
-            CreateStackErrorKind::InsufficientCapabilitiesError(_inner) => Some(_inner),
-            CreateStackErrorKind::LimitExceededError(_inner) => Some(_inner),
-            CreateStackErrorKind::TokenAlreadyExistsError(_inner) => Some(_inner),
+            CreateStackErrorKind::AlreadyExistsException(_inner) => Some(_inner),
+            CreateStackErrorKind::InsufficientCapabilitiesException(_inner) => Some(_inner),
+            CreateStackErrorKind::LimitExceededException(_inner) => Some(_inner),
+            CreateStackErrorKind::TokenAlreadyExistsException(_inner) => Some(_inner),
             CreateStackErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -362,24 +371,26 @@ pub struct CreateStackInstancesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateStackInstancesErrorKind {
-    InvalidOperationError(crate::error::InvalidOperationError),
-    LimitExceededError(crate::error::LimitExceededError),
-    OperationIdAlreadyExistsError(crate::error::OperationIdAlreadyExistsError),
-    OperationInProgressError(crate::error::OperationInProgressError),
-    StackSetNotFoundError(crate::error::StackSetNotFoundError),
-    StaleRequestError(crate::error::StaleRequestError),
+    InvalidOperationException(crate::error::InvalidOperationException),
+    LimitExceededException(crate::error::LimitExceededException),
+    OperationIdAlreadyExistsException(crate::error::OperationIdAlreadyExistsException),
+    OperationInProgressException(crate::error::OperationInProgressException),
+    StackSetNotFoundException(crate::error::StackSetNotFoundException),
+    StaleRequestException(crate::error::StaleRequestException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateStackInstancesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            CreateStackInstancesErrorKind::InvalidOperationError(_inner) => _inner.fmt(f),
-            CreateStackInstancesErrorKind::LimitExceededError(_inner) => _inner.fmt(f),
-            CreateStackInstancesErrorKind::OperationIdAlreadyExistsError(_inner) => _inner.fmt(f),
-            CreateStackInstancesErrorKind::OperationInProgressError(_inner) => _inner.fmt(f),
-            CreateStackInstancesErrorKind::StackSetNotFoundError(_inner) => _inner.fmt(f),
-            CreateStackInstancesErrorKind::StaleRequestError(_inner) => _inner.fmt(f),
+            CreateStackInstancesErrorKind::InvalidOperationException(_inner) => _inner.fmt(f),
+            CreateStackInstancesErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
+            CreateStackInstancesErrorKind::OperationIdAlreadyExistsException(_inner) => {
+                _inner.fmt(f)
+            }
+            CreateStackInstancesErrorKind::OperationInProgressException(_inner) => _inner.fmt(f),
+            CreateStackInstancesErrorKind::StackSetNotFoundException(_inner) => _inner.fmt(f),
+            CreateStackInstancesErrorKind::StaleRequestException(_inner) => _inner.fmt(f),
             CreateStackInstancesErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -428,52 +439,54 @@ impl CreateStackInstancesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_invalid_operation_error(&self) -> bool {
+    pub fn is_invalid_operation_exception(&self) -> bool {
         matches!(
             &self.kind,
-            CreateStackInstancesErrorKind::InvalidOperationError(_)
+            CreateStackInstancesErrorKind::InvalidOperationException(_)
         )
     }
-    pub fn is_limit_exceeded_error(&self) -> bool {
+    pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
-            CreateStackInstancesErrorKind::LimitExceededError(_)
+            CreateStackInstancesErrorKind::LimitExceededException(_)
         )
     }
-    pub fn is_operation_id_already_exists_error(&self) -> bool {
+    pub fn is_operation_id_already_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
-            CreateStackInstancesErrorKind::OperationIdAlreadyExistsError(_)
+            CreateStackInstancesErrorKind::OperationIdAlreadyExistsException(_)
         )
     }
-    pub fn is_operation_in_progress_error(&self) -> bool {
+    pub fn is_operation_in_progress_exception(&self) -> bool {
         matches!(
             &self.kind,
-            CreateStackInstancesErrorKind::OperationInProgressError(_)
+            CreateStackInstancesErrorKind::OperationInProgressException(_)
         )
     }
-    pub fn is_stack_set_not_found_error(&self) -> bool {
+    pub fn is_stack_set_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
-            CreateStackInstancesErrorKind::StackSetNotFoundError(_)
+            CreateStackInstancesErrorKind::StackSetNotFoundException(_)
         )
     }
-    pub fn is_stale_request_error(&self) -> bool {
+    pub fn is_stale_request_exception(&self) -> bool {
         matches!(
             &self.kind,
-            CreateStackInstancesErrorKind::StaleRequestError(_)
+            CreateStackInstancesErrorKind::StaleRequestException(_)
         )
     }
 }
 impl std::error::Error for CreateStackInstancesError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            CreateStackInstancesErrorKind::InvalidOperationError(_inner) => Some(_inner),
-            CreateStackInstancesErrorKind::LimitExceededError(_inner) => Some(_inner),
-            CreateStackInstancesErrorKind::OperationIdAlreadyExistsError(_inner) => Some(_inner),
-            CreateStackInstancesErrorKind::OperationInProgressError(_inner) => Some(_inner),
-            CreateStackInstancesErrorKind::StackSetNotFoundError(_inner) => Some(_inner),
-            CreateStackInstancesErrorKind::StaleRequestError(_inner) => Some(_inner),
+            CreateStackInstancesErrorKind::InvalidOperationException(_inner) => Some(_inner),
+            CreateStackInstancesErrorKind::LimitExceededException(_inner) => Some(_inner),
+            CreateStackInstancesErrorKind::OperationIdAlreadyExistsException(_inner) => {
+                Some(_inner)
+            }
+            CreateStackInstancesErrorKind::OperationInProgressException(_inner) => Some(_inner),
+            CreateStackInstancesErrorKind::StackSetNotFoundException(_inner) => Some(_inner),
+            CreateStackInstancesErrorKind::StaleRequestException(_inner) => Some(_inner),
             CreateStackInstancesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -488,18 +501,18 @@ pub struct CreateStackSetError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateStackSetErrorKind {
-    CreatedButModifiedError(crate::error::CreatedButModifiedError),
-    LimitExceededError(crate::error::LimitExceededError),
-    NameAlreadyExistsError(crate::error::NameAlreadyExistsError),
+    CreatedButModifiedException(crate::error::CreatedButModifiedException),
+    LimitExceededException(crate::error::LimitExceededException),
+    NameAlreadyExistsException(crate::error::NameAlreadyExistsException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateStackSetError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            CreateStackSetErrorKind::CreatedButModifiedError(_inner) => _inner.fmt(f),
-            CreateStackSetErrorKind::LimitExceededError(_inner) => _inner.fmt(f),
-            CreateStackSetErrorKind::NameAlreadyExistsError(_inner) => _inner.fmt(f),
+            CreateStackSetErrorKind::CreatedButModifiedException(_inner) => _inner.fmt(f),
+            CreateStackSetErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
+            CreateStackSetErrorKind::NameAlreadyExistsException(_inner) => _inner.fmt(f),
             CreateStackSetErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -548,28 +561,31 @@ impl CreateStackSetError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_created_but_modified_error(&self) -> bool {
+    pub fn is_created_but_modified_exception(&self) -> bool {
         matches!(
             &self.kind,
-            CreateStackSetErrorKind::CreatedButModifiedError(_)
+            CreateStackSetErrorKind::CreatedButModifiedException(_)
         )
     }
-    pub fn is_limit_exceeded_error(&self) -> bool {
-        matches!(&self.kind, CreateStackSetErrorKind::LimitExceededError(_))
-    }
-    pub fn is_name_already_exists_error(&self) -> bool {
+    pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
-            CreateStackSetErrorKind::NameAlreadyExistsError(_)
+            CreateStackSetErrorKind::LimitExceededException(_)
+        )
+    }
+    pub fn is_name_already_exists_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateStackSetErrorKind::NameAlreadyExistsException(_)
         )
     }
 }
 impl std::error::Error for CreateStackSetError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            CreateStackSetErrorKind::CreatedButModifiedError(_inner) => Some(_inner),
-            CreateStackSetErrorKind::LimitExceededError(_inner) => Some(_inner),
-            CreateStackSetErrorKind::NameAlreadyExistsError(_inner) => Some(_inner),
+            CreateStackSetErrorKind::CreatedButModifiedException(_inner) => Some(_inner),
+            CreateStackSetErrorKind::LimitExceededException(_inner) => Some(_inner),
+            CreateStackSetErrorKind::NameAlreadyExistsException(_inner) => Some(_inner),
             CreateStackSetErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -584,14 +600,14 @@ pub struct DeleteChangeSetError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteChangeSetErrorKind {
-    InvalidChangeSetStatusError(crate::error::InvalidChangeSetStatusError),
+    InvalidChangeSetStatusException(crate::error::InvalidChangeSetStatusException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteChangeSetError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DeleteChangeSetErrorKind::InvalidChangeSetStatusError(_inner) => _inner.fmt(f),
+            DeleteChangeSetErrorKind::InvalidChangeSetStatusException(_inner) => _inner.fmt(f),
             DeleteChangeSetErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -640,17 +656,17 @@ impl DeleteChangeSetError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_invalid_change_set_status_error(&self) -> bool {
+    pub fn is_invalid_change_set_status_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DeleteChangeSetErrorKind::InvalidChangeSetStatusError(_)
+            DeleteChangeSetErrorKind::InvalidChangeSetStatusException(_)
         )
     }
 }
 impl std::error::Error for DeleteChangeSetError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DeleteChangeSetErrorKind::InvalidChangeSetStatusError(_inner) => Some(_inner),
+            DeleteChangeSetErrorKind::InvalidChangeSetStatusException(_inner) => Some(_inner),
             DeleteChangeSetErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -665,14 +681,14 @@ pub struct DeleteStackError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteStackErrorKind {
-    TokenAlreadyExistsError(crate::error::TokenAlreadyExistsError),
+    TokenAlreadyExistsException(crate::error::TokenAlreadyExistsException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteStackError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DeleteStackErrorKind::TokenAlreadyExistsError(_inner) => _inner.fmt(f),
+            DeleteStackErrorKind::TokenAlreadyExistsException(_inner) => _inner.fmt(f),
             DeleteStackErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -721,14 +737,17 @@ impl DeleteStackError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_token_already_exists_error(&self) -> bool {
-        matches!(&self.kind, DeleteStackErrorKind::TokenAlreadyExistsError(_))
+    pub fn is_token_already_exists_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteStackErrorKind::TokenAlreadyExistsException(_)
+        )
     }
 }
 impl std::error::Error for DeleteStackError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DeleteStackErrorKind::TokenAlreadyExistsError(_inner) => Some(_inner),
+            DeleteStackErrorKind::TokenAlreadyExistsException(_inner) => Some(_inner),
             DeleteStackErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -743,22 +762,24 @@ pub struct DeleteStackInstancesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteStackInstancesErrorKind {
-    InvalidOperationError(crate::error::InvalidOperationError),
-    OperationIdAlreadyExistsError(crate::error::OperationIdAlreadyExistsError),
-    OperationInProgressError(crate::error::OperationInProgressError),
-    StackSetNotFoundError(crate::error::StackSetNotFoundError),
-    StaleRequestError(crate::error::StaleRequestError),
+    InvalidOperationException(crate::error::InvalidOperationException),
+    OperationIdAlreadyExistsException(crate::error::OperationIdAlreadyExistsException),
+    OperationInProgressException(crate::error::OperationInProgressException),
+    StackSetNotFoundException(crate::error::StackSetNotFoundException),
+    StaleRequestException(crate::error::StaleRequestException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteStackInstancesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DeleteStackInstancesErrorKind::InvalidOperationError(_inner) => _inner.fmt(f),
-            DeleteStackInstancesErrorKind::OperationIdAlreadyExistsError(_inner) => _inner.fmt(f),
-            DeleteStackInstancesErrorKind::OperationInProgressError(_inner) => _inner.fmt(f),
-            DeleteStackInstancesErrorKind::StackSetNotFoundError(_inner) => _inner.fmt(f),
-            DeleteStackInstancesErrorKind::StaleRequestError(_inner) => _inner.fmt(f),
+            DeleteStackInstancesErrorKind::InvalidOperationException(_inner) => _inner.fmt(f),
+            DeleteStackInstancesErrorKind::OperationIdAlreadyExistsException(_inner) => {
+                _inner.fmt(f)
+            }
+            DeleteStackInstancesErrorKind::OperationInProgressException(_inner) => _inner.fmt(f),
+            DeleteStackInstancesErrorKind::StackSetNotFoundException(_inner) => _inner.fmt(f),
+            DeleteStackInstancesErrorKind::StaleRequestException(_inner) => _inner.fmt(f),
             DeleteStackInstancesErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -807,45 +828,47 @@ impl DeleteStackInstancesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_invalid_operation_error(&self) -> bool {
+    pub fn is_invalid_operation_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DeleteStackInstancesErrorKind::InvalidOperationError(_)
+            DeleteStackInstancesErrorKind::InvalidOperationException(_)
         )
     }
-    pub fn is_operation_id_already_exists_error(&self) -> bool {
+    pub fn is_operation_id_already_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DeleteStackInstancesErrorKind::OperationIdAlreadyExistsError(_)
+            DeleteStackInstancesErrorKind::OperationIdAlreadyExistsException(_)
         )
     }
-    pub fn is_operation_in_progress_error(&self) -> bool {
+    pub fn is_operation_in_progress_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DeleteStackInstancesErrorKind::OperationInProgressError(_)
+            DeleteStackInstancesErrorKind::OperationInProgressException(_)
         )
     }
-    pub fn is_stack_set_not_found_error(&self) -> bool {
+    pub fn is_stack_set_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DeleteStackInstancesErrorKind::StackSetNotFoundError(_)
+            DeleteStackInstancesErrorKind::StackSetNotFoundException(_)
         )
     }
-    pub fn is_stale_request_error(&self) -> bool {
+    pub fn is_stale_request_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DeleteStackInstancesErrorKind::StaleRequestError(_)
+            DeleteStackInstancesErrorKind::StaleRequestException(_)
         )
     }
 }
 impl std::error::Error for DeleteStackInstancesError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DeleteStackInstancesErrorKind::InvalidOperationError(_inner) => Some(_inner),
-            DeleteStackInstancesErrorKind::OperationIdAlreadyExistsError(_inner) => Some(_inner),
-            DeleteStackInstancesErrorKind::OperationInProgressError(_inner) => Some(_inner),
-            DeleteStackInstancesErrorKind::StackSetNotFoundError(_inner) => Some(_inner),
-            DeleteStackInstancesErrorKind::StaleRequestError(_inner) => Some(_inner),
+            DeleteStackInstancesErrorKind::InvalidOperationException(_inner) => Some(_inner),
+            DeleteStackInstancesErrorKind::OperationIdAlreadyExistsException(_inner) => {
+                Some(_inner)
+            }
+            DeleteStackInstancesErrorKind::OperationInProgressException(_inner) => Some(_inner),
+            DeleteStackInstancesErrorKind::StackSetNotFoundException(_inner) => Some(_inner),
+            DeleteStackInstancesErrorKind::StaleRequestException(_inner) => Some(_inner),
             DeleteStackInstancesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -860,16 +883,16 @@ pub struct DeleteStackSetError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteStackSetErrorKind {
-    OperationInProgressError(crate::error::OperationInProgressError),
-    StackSetNotEmptyError(crate::error::StackSetNotEmptyError),
+    OperationInProgressException(crate::error::OperationInProgressException),
+    StackSetNotEmptyException(crate::error::StackSetNotEmptyException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteStackSetError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DeleteStackSetErrorKind::OperationInProgressError(_inner) => _inner.fmt(f),
-            DeleteStackSetErrorKind::StackSetNotEmptyError(_inner) => _inner.fmt(f),
+            DeleteStackSetErrorKind::OperationInProgressException(_inner) => _inner.fmt(f),
+            DeleteStackSetErrorKind::StackSetNotEmptyException(_inner) => _inner.fmt(f),
             DeleteStackSetErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -918,24 +941,24 @@ impl DeleteStackSetError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_operation_in_progress_error(&self) -> bool {
+    pub fn is_operation_in_progress_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DeleteStackSetErrorKind::OperationInProgressError(_)
+            DeleteStackSetErrorKind::OperationInProgressException(_)
         )
     }
-    pub fn is_stack_set_not_empty_error(&self) -> bool {
+    pub fn is_stack_set_not_empty_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DeleteStackSetErrorKind::StackSetNotEmptyError(_)
+            DeleteStackSetErrorKind::StackSetNotEmptyException(_)
         )
     }
 }
 impl std::error::Error for DeleteStackSetError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DeleteStackSetErrorKind::OperationInProgressError(_inner) => Some(_inner),
-            DeleteStackSetErrorKind::StackSetNotEmptyError(_inner) => Some(_inner),
+            DeleteStackSetErrorKind::OperationInProgressException(_inner) => Some(_inner),
+            DeleteStackSetErrorKind::StackSetNotEmptyException(_inner) => Some(_inner),
             DeleteStackSetErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -950,16 +973,16 @@ pub struct DeregisterTypeError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeregisterTypeErrorKind {
-    CFNRegistryError(crate::error::CFNRegistryError),
-    TypeNotFoundError(crate::error::TypeNotFoundError),
+    CfnRegistryException(crate::error::CfnRegistryException),
+    TypeNotFoundException(crate::error::TypeNotFoundException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeregisterTypeError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DeregisterTypeErrorKind::CFNRegistryError(_inner) => _inner.fmt(f),
-            DeregisterTypeErrorKind::TypeNotFoundError(_inner) => _inner.fmt(f),
+            DeregisterTypeErrorKind::CfnRegistryException(_inner) => _inner.fmt(f),
+            DeregisterTypeErrorKind::TypeNotFoundException(_inner) => _inner.fmt(f),
             DeregisterTypeErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -1008,18 +1031,21 @@ impl DeregisterTypeError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_cfn_registry_error(&self) -> bool {
-        matches!(&self.kind, DeregisterTypeErrorKind::CFNRegistryError(_))
+    pub fn is_cfn_registry_exception(&self) -> bool {
+        matches!(&self.kind, DeregisterTypeErrorKind::CfnRegistryException(_))
     }
-    pub fn is_type_not_found_error(&self) -> bool {
-        matches!(&self.kind, DeregisterTypeErrorKind::TypeNotFoundError(_))
+    pub fn is_type_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeregisterTypeErrorKind::TypeNotFoundException(_)
+        )
     }
 }
 impl std::error::Error for DeregisterTypeError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DeregisterTypeErrorKind::CFNRegistryError(_inner) => Some(_inner),
-            DeregisterTypeErrorKind::TypeNotFoundError(_inner) => Some(_inner),
+            DeregisterTypeErrorKind::CfnRegistryException(_inner) => Some(_inner),
+            DeregisterTypeErrorKind::TypeNotFoundException(_inner) => Some(_inner),
             DeregisterTypeErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -1106,14 +1132,14 @@ pub struct DescribeChangeSetError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeChangeSetErrorKind {
-    ChangeSetNotFoundError(crate::error::ChangeSetNotFoundError),
+    ChangeSetNotFoundException(crate::error::ChangeSetNotFoundException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeChangeSetError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DescribeChangeSetErrorKind::ChangeSetNotFoundError(_inner) => _inner.fmt(f),
+            DescribeChangeSetErrorKind::ChangeSetNotFoundException(_inner) => _inner.fmt(f),
             DescribeChangeSetErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -1162,17 +1188,17 @@ impl DescribeChangeSetError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_change_set_not_found_error(&self) -> bool {
+    pub fn is_change_set_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DescribeChangeSetErrorKind::ChangeSetNotFoundError(_)
+            DescribeChangeSetErrorKind::ChangeSetNotFoundException(_)
         )
     }
 }
 impl std::error::Error for DescribeChangeSetError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DescribeChangeSetErrorKind::ChangeSetNotFoundError(_inner) => Some(_inner),
+            DescribeChangeSetErrorKind::ChangeSetNotFoundException(_inner) => Some(_inner),
             DescribeChangeSetErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -1334,16 +1360,16 @@ pub struct DescribeStackInstanceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeStackInstanceErrorKind {
-    StackInstanceNotFoundError(crate::error::StackInstanceNotFoundError),
-    StackSetNotFoundError(crate::error::StackSetNotFoundError),
+    StackInstanceNotFoundException(crate::error::StackInstanceNotFoundException),
+    StackSetNotFoundException(crate::error::StackSetNotFoundException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeStackInstanceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DescribeStackInstanceErrorKind::StackInstanceNotFoundError(_inner) => _inner.fmt(f),
-            DescribeStackInstanceErrorKind::StackSetNotFoundError(_inner) => _inner.fmt(f),
+            DescribeStackInstanceErrorKind::StackInstanceNotFoundException(_inner) => _inner.fmt(f),
+            DescribeStackInstanceErrorKind::StackSetNotFoundException(_inner) => _inner.fmt(f),
             DescribeStackInstanceErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -1392,24 +1418,24 @@ impl DescribeStackInstanceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_stack_instance_not_found_error(&self) -> bool {
+    pub fn is_stack_instance_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DescribeStackInstanceErrorKind::StackInstanceNotFoundError(_)
+            DescribeStackInstanceErrorKind::StackInstanceNotFoundException(_)
         )
     }
-    pub fn is_stack_set_not_found_error(&self) -> bool {
+    pub fn is_stack_set_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DescribeStackInstanceErrorKind::StackSetNotFoundError(_)
+            DescribeStackInstanceErrorKind::StackSetNotFoundException(_)
         )
     }
 }
 impl std::error::Error for DescribeStackInstanceError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DescribeStackInstanceErrorKind::StackInstanceNotFoundError(_inner) => Some(_inner),
-            DescribeStackInstanceErrorKind::StackSetNotFoundError(_inner) => Some(_inner),
+            DescribeStackInstanceErrorKind::StackInstanceNotFoundException(_inner) => Some(_inner),
+            DescribeStackInstanceErrorKind::StackSetNotFoundException(_inner) => Some(_inner),
             DescribeStackInstanceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -1712,14 +1738,14 @@ pub struct DescribeStackSetError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeStackSetErrorKind {
-    StackSetNotFoundError(crate::error::StackSetNotFoundError),
+    StackSetNotFoundException(crate::error::StackSetNotFoundException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeStackSetError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DescribeStackSetErrorKind::StackSetNotFoundError(_inner) => _inner.fmt(f),
+            DescribeStackSetErrorKind::StackSetNotFoundException(_inner) => _inner.fmt(f),
             DescribeStackSetErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -1768,17 +1794,17 @@ impl DescribeStackSetError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_stack_set_not_found_error(&self) -> bool {
+    pub fn is_stack_set_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DescribeStackSetErrorKind::StackSetNotFoundError(_)
+            DescribeStackSetErrorKind::StackSetNotFoundException(_)
         )
     }
 }
 impl std::error::Error for DescribeStackSetError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DescribeStackSetErrorKind::StackSetNotFoundError(_inner) => Some(_inner),
+            DescribeStackSetErrorKind::StackSetNotFoundException(_inner) => Some(_inner),
             DescribeStackSetErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -1793,16 +1819,16 @@ pub struct DescribeStackSetOperationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeStackSetOperationErrorKind {
-    OperationNotFoundError(crate::error::OperationNotFoundError),
-    StackSetNotFoundError(crate::error::StackSetNotFoundError),
+    OperationNotFoundException(crate::error::OperationNotFoundException),
+    StackSetNotFoundException(crate::error::StackSetNotFoundException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeStackSetOperationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DescribeStackSetOperationErrorKind::OperationNotFoundError(_inner) => _inner.fmt(f),
-            DescribeStackSetOperationErrorKind::StackSetNotFoundError(_inner) => _inner.fmt(f),
+            DescribeStackSetOperationErrorKind::OperationNotFoundException(_inner) => _inner.fmt(f),
+            DescribeStackSetOperationErrorKind::StackSetNotFoundException(_inner) => _inner.fmt(f),
             DescribeStackSetOperationErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -1851,24 +1877,24 @@ impl DescribeStackSetOperationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_operation_not_found_error(&self) -> bool {
+    pub fn is_operation_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DescribeStackSetOperationErrorKind::OperationNotFoundError(_)
+            DescribeStackSetOperationErrorKind::OperationNotFoundException(_)
         )
     }
-    pub fn is_stack_set_not_found_error(&self) -> bool {
+    pub fn is_stack_set_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DescribeStackSetOperationErrorKind::StackSetNotFoundError(_)
+            DescribeStackSetOperationErrorKind::StackSetNotFoundException(_)
         )
     }
 }
 impl std::error::Error for DescribeStackSetOperationError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DescribeStackSetOperationErrorKind::OperationNotFoundError(_inner) => Some(_inner),
-            DescribeStackSetOperationErrorKind::StackSetNotFoundError(_inner) => Some(_inner),
+            DescribeStackSetOperationErrorKind::OperationNotFoundException(_inner) => Some(_inner),
+            DescribeStackSetOperationErrorKind::StackSetNotFoundException(_inner) => Some(_inner),
             DescribeStackSetOperationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -1883,16 +1909,16 @@ pub struct DescribeTypeError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeTypeErrorKind {
-    CFNRegistryError(crate::error::CFNRegistryError),
-    TypeNotFoundError(crate::error::TypeNotFoundError),
+    CfnRegistryException(crate::error::CfnRegistryException),
+    TypeNotFoundException(crate::error::TypeNotFoundException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeTypeError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DescribeTypeErrorKind::CFNRegistryError(_inner) => _inner.fmt(f),
-            DescribeTypeErrorKind::TypeNotFoundError(_inner) => _inner.fmt(f),
+            DescribeTypeErrorKind::CfnRegistryException(_inner) => _inner.fmt(f),
+            DescribeTypeErrorKind::TypeNotFoundException(_inner) => _inner.fmt(f),
             DescribeTypeErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -1941,18 +1967,18 @@ impl DescribeTypeError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_cfn_registry_error(&self) -> bool {
-        matches!(&self.kind, DescribeTypeErrorKind::CFNRegistryError(_))
+    pub fn is_cfn_registry_exception(&self) -> bool {
+        matches!(&self.kind, DescribeTypeErrorKind::CfnRegistryException(_))
     }
-    pub fn is_type_not_found_error(&self) -> bool {
-        matches!(&self.kind, DescribeTypeErrorKind::TypeNotFoundError(_))
+    pub fn is_type_not_found_exception(&self) -> bool {
+        matches!(&self.kind, DescribeTypeErrorKind::TypeNotFoundException(_))
     }
 }
 impl std::error::Error for DescribeTypeError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DescribeTypeErrorKind::CFNRegistryError(_inner) => Some(_inner),
-            DescribeTypeErrorKind::TypeNotFoundError(_inner) => Some(_inner),
+            DescribeTypeErrorKind::CfnRegistryException(_inner) => Some(_inner),
+            DescribeTypeErrorKind::TypeNotFoundException(_inner) => Some(_inner),
             DescribeTypeErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -1967,14 +1993,14 @@ pub struct DescribeTypeRegistrationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeTypeRegistrationErrorKind {
-    CFNRegistryError(crate::error::CFNRegistryError),
+    CfnRegistryException(crate::error::CfnRegistryException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeTypeRegistrationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DescribeTypeRegistrationErrorKind::CFNRegistryError(_inner) => _inner.fmt(f),
+            DescribeTypeRegistrationErrorKind::CfnRegistryException(_inner) => _inner.fmt(f),
             DescribeTypeRegistrationErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -2023,17 +2049,17 @@ impl DescribeTypeRegistrationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_cfn_registry_error(&self) -> bool {
+    pub fn is_cfn_registry_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DescribeTypeRegistrationErrorKind::CFNRegistryError(_)
+            DescribeTypeRegistrationErrorKind::CfnRegistryException(_)
         )
     }
 }
 impl std::error::Error for DescribeTypeRegistrationError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DescribeTypeRegistrationErrorKind::CFNRegistryError(_inner) => Some(_inner),
+            DescribeTypeRegistrationErrorKind::CfnRegistryException(_inner) => Some(_inner),
             DescribeTypeRegistrationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -2192,18 +2218,18 @@ pub struct DetectStackSetDriftError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DetectStackSetDriftErrorKind {
-    InvalidOperationError(crate::error::InvalidOperationError),
-    OperationInProgressError(crate::error::OperationInProgressError),
-    StackSetNotFoundError(crate::error::StackSetNotFoundError),
+    InvalidOperationException(crate::error::InvalidOperationException),
+    OperationInProgressException(crate::error::OperationInProgressException),
+    StackSetNotFoundException(crate::error::StackSetNotFoundException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DetectStackSetDriftError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DetectStackSetDriftErrorKind::InvalidOperationError(_inner) => _inner.fmt(f),
-            DetectStackSetDriftErrorKind::OperationInProgressError(_inner) => _inner.fmt(f),
-            DetectStackSetDriftErrorKind::StackSetNotFoundError(_inner) => _inner.fmt(f),
+            DetectStackSetDriftErrorKind::InvalidOperationException(_inner) => _inner.fmt(f),
+            DetectStackSetDriftErrorKind::OperationInProgressException(_inner) => _inner.fmt(f),
+            DetectStackSetDriftErrorKind::StackSetNotFoundException(_inner) => _inner.fmt(f),
             DetectStackSetDriftErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -2252,31 +2278,31 @@ impl DetectStackSetDriftError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_invalid_operation_error(&self) -> bool {
+    pub fn is_invalid_operation_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DetectStackSetDriftErrorKind::InvalidOperationError(_)
+            DetectStackSetDriftErrorKind::InvalidOperationException(_)
         )
     }
-    pub fn is_operation_in_progress_error(&self) -> bool {
+    pub fn is_operation_in_progress_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DetectStackSetDriftErrorKind::OperationInProgressError(_)
+            DetectStackSetDriftErrorKind::OperationInProgressException(_)
         )
     }
-    pub fn is_stack_set_not_found_error(&self) -> bool {
+    pub fn is_stack_set_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DetectStackSetDriftErrorKind::StackSetNotFoundError(_)
+            DetectStackSetDriftErrorKind::StackSetNotFoundException(_)
         )
     }
 }
 impl std::error::Error for DetectStackSetDriftError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DetectStackSetDriftErrorKind::InvalidOperationError(_inner) => Some(_inner),
-            DetectStackSetDriftErrorKind::OperationInProgressError(_inner) => Some(_inner),
-            DetectStackSetDriftErrorKind::StackSetNotFoundError(_inner) => Some(_inner),
+            DetectStackSetDriftErrorKind::InvalidOperationException(_inner) => Some(_inner),
+            DetectStackSetDriftErrorKind::OperationInProgressException(_inner) => Some(_inner),
+            DetectStackSetDriftErrorKind::StackSetNotFoundException(_inner) => Some(_inner),
             DetectStackSetDriftErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -2363,20 +2389,20 @@ pub struct ExecuteChangeSetError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ExecuteChangeSetErrorKind {
-    ChangeSetNotFoundError(crate::error::ChangeSetNotFoundError),
-    InsufficientCapabilitiesError(crate::error::InsufficientCapabilitiesError),
-    InvalidChangeSetStatusError(crate::error::InvalidChangeSetStatusError),
-    TokenAlreadyExistsError(crate::error::TokenAlreadyExistsError),
+    ChangeSetNotFoundException(crate::error::ChangeSetNotFoundException),
+    InsufficientCapabilitiesException(crate::error::InsufficientCapabilitiesException),
+    InvalidChangeSetStatusException(crate::error::InvalidChangeSetStatusException),
+    TokenAlreadyExistsException(crate::error::TokenAlreadyExistsException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ExecuteChangeSetError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ExecuteChangeSetErrorKind::ChangeSetNotFoundError(_inner) => _inner.fmt(f),
-            ExecuteChangeSetErrorKind::InsufficientCapabilitiesError(_inner) => _inner.fmt(f),
-            ExecuteChangeSetErrorKind::InvalidChangeSetStatusError(_inner) => _inner.fmt(f),
-            ExecuteChangeSetErrorKind::TokenAlreadyExistsError(_inner) => _inner.fmt(f),
+            ExecuteChangeSetErrorKind::ChangeSetNotFoundException(_inner) => _inner.fmt(f),
+            ExecuteChangeSetErrorKind::InsufficientCapabilitiesException(_inner) => _inner.fmt(f),
+            ExecuteChangeSetErrorKind::InvalidChangeSetStatusException(_inner) => _inner.fmt(f),
+            ExecuteChangeSetErrorKind::TokenAlreadyExistsException(_inner) => _inner.fmt(f),
             ExecuteChangeSetErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -2425,38 +2451,38 @@ impl ExecuteChangeSetError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_change_set_not_found_error(&self) -> bool {
+    pub fn is_change_set_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
-            ExecuteChangeSetErrorKind::ChangeSetNotFoundError(_)
+            ExecuteChangeSetErrorKind::ChangeSetNotFoundException(_)
         )
     }
-    pub fn is_insufficient_capabilities_error(&self) -> bool {
+    pub fn is_insufficient_capabilities_exception(&self) -> bool {
         matches!(
             &self.kind,
-            ExecuteChangeSetErrorKind::InsufficientCapabilitiesError(_)
+            ExecuteChangeSetErrorKind::InsufficientCapabilitiesException(_)
         )
     }
-    pub fn is_invalid_change_set_status_error(&self) -> bool {
+    pub fn is_invalid_change_set_status_exception(&self) -> bool {
         matches!(
             &self.kind,
-            ExecuteChangeSetErrorKind::InvalidChangeSetStatusError(_)
+            ExecuteChangeSetErrorKind::InvalidChangeSetStatusException(_)
         )
     }
-    pub fn is_token_already_exists_error(&self) -> bool {
+    pub fn is_token_already_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
-            ExecuteChangeSetErrorKind::TokenAlreadyExistsError(_)
+            ExecuteChangeSetErrorKind::TokenAlreadyExistsException(_)
         )
     }
 }
 impl std::error::Error for ExecuteChangeSetError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ExecuteChangeSetErrorKind::ChangeSetNotFoundError(_inner) => Some(_inner),
-            ExecuteChangeSetErrorKind::InsufficientCapabilitiesError(_inner) => Some(_inner),
-            ExecuteChangeSetErrorKind::InvalidChangeSetStatusError(_inner) => Some(_inner),
-            ExecuteChangeSetErrorKind::TokenAlreadyExistsError(_inner) => Some(_inner),
+            ExecuteChangeSetErrorKind::ChangeSetNotFoundException(_inner) => Some(_inner),
+            ExecuteChangeSetErrorKind::InsufficientCapabilitiesException(_inner) => Some(_inner),
+            ExecuteChangeSetErrorKind::InvalidChangeSetStatusException(_inner) => Some(_inner),
+            ExecuteChangeSetErrorKind::TokenAlreadyExistsException(_inner) => Some(_inner),
             ExecuteChangeSetErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -2543,14 +2569,14 @@ pub struct GetTemplateError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetTemplateErrorKind {
-    ChangeSetNotFoundError(crate::error::ChangeSetNotFoundError),
+    ChangeSetNotFoundException(crate::error::ChangeSetNotFoundException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetTemplateError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            GetTemplateErrorKind::ChangeSetNotFoundError(_inner) => _inner.fmt(f),
+            GetTemplateErrorKind::ChangeSetNotFoundException(_inner) => _inner.fmt(f),
             GetTemplateErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -2599,14 +2625,17 @@ impl GetTemplateError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_change_set_not_found_error(&self) -> bool {
-        matches!(&self.kind, GetTemplateErrorKind::ChangeSetNotFoundError(_))
+    pub fn is_change_set_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetTemplateErrorKind::ChangeSetNotFoundException(_)
+        )
     }
 }
 impl std::error::Error for GetTemplateError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            GetTemplateErrorKind::ChangeSetNotFoundError(_inner) => Some(_inner),
+            GetTemplateErrorKind::ChangeSetNotFoundException(_inner) => Some(_inner),
             GetTemplateErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -2621,14 +2650,14 @@ pub struct GetTemplateSummaryError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetTemplateSummaryErrorKind {
-    StackSetNotFoundError(crate::error::StackSetNotFoundError),
+    StackSetNotFoundException(crate::error::StackSetNotFoundException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetTemplateSummaryError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            GetTemplateSummaryErrorKind::StackSetNotFoundError(_inner) => _inner.fmt(f),
+            GetTemplateSummaryErrorKind::StackSetNotFoundException(_inner) => _inner.fmt(f),
             GetTemplateSummaryErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -2677,17 +2706,17 @@ impl GetTemplateSummaryError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_stack_set_not_found_error(&self) -> bool {
+    pub fn is_stack_set_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
-            GetTemplateSummaryErrorKind::StackSetNotFoundError(_)
+            GetTemplateSummaryErrorKind::StackSetNotFoundException(_)
         )
     }
 }
 impl std::error::Error for GetTemplateSummaryError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            GetTemplateSummaryErrorKind::StackSetNotFoundError(_inner) => Some(_inner),
+            GetTemplateSummaryErrorKind::StackSetNotFoundException(_inner) => Some(_inner),
             GetTemplateSummaryErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -2918,14 +2947,14 @@ pub struct ListStackInstancesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListStackInstancesErrorKind {
-    StackSetNotFoundError(crate::error::StackSetNotFoundError),
+    StackSetNotFoundException(crate::error::StackSetNotFoundException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListStackInstancesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ListStackInstancesErrorKind::StackSetNotFoundError(_inner) => _inner.fmt(f),
+            ListStackInstancesErrorKind::StackSetNotFoundException(_inner) => _inner.fmt(f),
             ListStackInstancesErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -2974,17 +3003,17 @@ impl ListStackInstancesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_stack_set_not_found_error(&self) -> bool {
+    pub fn is_stack_set_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
-            ListStackInstancesErrorKind::StackSetNotFoundError(_)
+            ListStackInstancesErrorKind::StackSetNotFoundException(_)
         )
     }
 }
 impl std::error::Error for ListStackInstancesError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ListStackInstancesErrorKind::StackSetNotFoundError(_inner) => Some(_inner),
+            ListStackInstancesErrorKind::StackSetNotFoundException(_inner) => Some(_inner),
             ListStackInstancesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -3143,16 +3172,20 @@ pub struct ListStackSetOperationResultsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListStackSetOperationResultsErrorKind {
-    OperationNotFoundError(crate::error::OperationNotFoundError),
-    StackSetNotFoundError(crate::error::StackSetNotFoundError),
+    OperationNotFoundException(crate::error::OperationNotFoundException),
+    StackSetNotFoundException(crate::error::StackSetNotFoundException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListStackSetOperationResultsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ListStackSetOperationResultsErrorKind::OperationNotFoundError(_inner) => _inner.fmt(f),
-            ListStackSetOperationResultsErrorKind::StackSetNotFoundError(_inner) => _inner.fmt(f),
+            ListStackSetOperationResultsErrorKind::OperationNotFoundException(_inner) => {
+                _inner.fmt(f)
+            }
+            ListStackSetOperationResultsErrorKind::StackSetNotFoundException(_inner) => {
+                _inner.fmt(f)
+            }
             ListStackSetOperationResultsErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -3201,24 +3234,28 @@ impl ListStackSetOperationResultsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_operation_not_found_error(&self) -> bool {
+    pub fn is_operation_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
-            ListStackSetOperationResultsErrorKind::OperationNotFoundError(_)
+            ListStackSetOperationResultsErrorKind::OperationNotFoundException(_)
         )
     }
-    pub fn is_stack_set_not_found_error(&self) -> bool {
+    pub fn is_stack_set_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
-            ListStackSetOperationResultsErrorKind::StackSetNotFoundError(_)
+            ListStackSetOperationResultsErrorKind::StackSetNotFoundException(_)
         )
     }
 }
 impl std::error::Error for ListStackSetOperationResultsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ListStackSetOperationResultsErrorKind::OperationNotFoundError(_inner) => Some(_inner),
-            ListStackSetOperationResultsErrorKind::StackSetNotFoundError(_inner) => Some(_inner),
+            ListStackSetOperationResultsErrorKind::OperationNotFoundException(_inner) => {
+                Some(_inner)
+            }
+            ListStackSetOperationResultsErrorKind::StackSetNotFoundException(_inner) => {
+                Some(_inner)
+            }
             ListStackSetOperationResultsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -3233,14 +3270,14 @@ pub struct ListStackSetOperationsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListStackSetOperationsErrorKind {
-    StackSetNotFoundError(crate::error::StackSetNotFoundError),
+    StackSetNotFoundException(crate::error::StackSetNotFoundException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListStackSetOperationsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ListStackSetOperationsErrorKind::StackSetNotFoundError(_inner) => _inner.fmt(f),
+            ListStackSetOperationsErrorKind::StackSetNotFoundException(_inner) => _inner.fmt(f),
             ListStackSetOperationsErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -3289,17 +3326,17 @@ impl ListStackSetOperationsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_stack_set_not_found_error(&self) -> bool {
+    pub fn is_stack_set_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
-            ListStackSetOperationsErrorKind::StackSetNotFoundError(_)
+            ListStackSetOperationsErrorKind::StackSetNotFoundException(_)
         )
     }
 }
 impl std::error::Error for ListStackSetOperationsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ListStackSetOperationsErrorKind::StackSetNotFoundError(_inner) => Some(_inner),
+            ListStackSetOperationsErrorKind::StackSetNotFoundException(_inner) => Some(_inner),
             ListStackSetOperationsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -3386,14 +3423,14 @@ pub struct ListTypeRegistrationsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListTypeRegistrationsErrorKind {
-    CFNRegistryError(crate::error::CFNRegistryError),
+    CfnRegistryException(crate::error::CfnRegistryException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListTypeRegistrationsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ListTypeRegistrationsErrorKind::CFNRegistryError(_inner) => _inner.fmt(f),
+            ListTypeRegistrationsErrorKind::CfnRegistryException(_inner) => _inner.fmt(f),
             ListTypeRegistrationsErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -3442,17 +3479,17 @@ impl ListTypeRegistrationsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_cfn_registry_error(&self) -> bool {
+    pub fn is_cfn_registry_exception(&self) -> bool {
         matches!(
             &self.kind,
-            ListTypeRegistrationsErrorKind::CFNRegistryError(_)
+            ListTypeRegistrationsErrorKind::CfnRegistryException(_)
         )
     }
 }
 impl std::error::Error for ListTypeRegistrationsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ListTypeRegistrationsErrorKind::CFNRegistryError(_inner) => Some(_inner),
+            ListTypeRegistrationsErrorKind::CfnRegistryException(_inner) => Some(_inner),
             ListTypeRegistrationsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -3467,14 +3504,14 @@ pub struct ListTypesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListTypesErrorKind {
-    CFNRegistryError(crate::error::CFNRegistryError),
+    CfnRegistryException(crate::error::CfnRegistryException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListTypesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ListTypesErrorKind::CFNRegistryError(_inner) => _inner.fmt(f),
+            ListTypesErrorKind::CfnRegistryException(_inner) => _inner.fmt(f),
             ListTypesErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -3523,14 +3560,14 @@ impl ListTypesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_cfn_registry_error(&self) -> bool {
-        matches!(&self.kind, ListTypesErrorKind::CFNRegistryError(_))
+    pub fn is_cfn_registry_exception(&self) -> bool {
+        matches!(&self.kind, ListTypesErrorKind::CfnRegistryException(_))
     }
 }
 impl std::error::Error for ListTypesError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ListTypesErrorKind::CFNRegistryError(_inner) => Some(_inner),
+            ListTypesErrorKind::CfnRegistryException(_inner) => Some(_inner),
             ListTypesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -3545,14 +3582,14 @@ pub struct ListTypeVersionsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListTypeVersionsErrorKind {
-    CFNRegistryError(crate::error::CFNRegistryError),
+    CfnRegistryException(crate::error::CfnRegistryException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListTypeVersionsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ListTypeVersionsErrorKind::CFNRegistryError(_inner) => _inner.fmt(f),
+            ListTypeVersionsErrorKind::CfnRegistryException(_inner) => _inner.fmt(f),
             ListTypeVersionsErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -3601,14 +3638,17 @@ impl ListTypeVersionsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_cfn_registry_error(&self) -> bool {
-        matches!(&self.kind, ListTypeVersionsErrorKind::CFNRegistryError(_))
+    pub fn is_cfn_registry_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListTypeVersionsErrorKind::CfnRegistryException(_)
+        )
     }
 }
 impl std::error::Error for ListTypeVersionsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ListTypeVersionsErrorKind::CFNRegistryError(_inner) => Some(_inner),
+            ListTypeVersionsErrorKind::CfnRegistryException(_inner) => Some(_inner),
             ListTypeVersionsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -3623,16 +3663,18 @@ pub struct RecordHandlerProgressError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum RecordHandlerProgressErrorKind {
-    InvalidStateTransitionError(crate::error::InvalidStateTransitionError),
-    OperationStatusCheckFailedError(crate::error::OperationStatusCheckFailedError),
+    InvalidStateTransitionException(crate::error::InvalidStateTransitionException),
+    OperationStatusCheckFailedException(crate::error::OperationStatusCheckFailedException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for RecordHandlerProgressError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            RecordHandlerProgressErrorKind::InvalidStateTransitionError(_inner) => _inner.fmt(f),
-            RecordHandlerProgressErrorKind::OperationStatusCheckFailedError(_inner) => {
+            RecordHandlerProgressErrorKind::InvalidStateTransitionException(_inner) => {
+                _inner.fmt(f)
+            }
+            RecordHandlerProgressErrorKind::OperationStatusCheckFailedException(_inner) => {
                 _inner.fmt(f)
             }
             RecordHandlerProgressErrorKind::Unhandled(_inner) => _inner.fmt(f),
@@ -3683,24 +3725,26 @@ impl RecordHandlerProgressError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_invalid_state_transition_error(&self) -> bool {
+    pub fn is_invalid_state_transition_exception(&self) -> bool {
         matches!(
             &self.kind,
-            RecordHandlerProgressErrorKind::InvalidStateTransitionError(_)
+            RecordHandlerProgressErrorKind::InvalidStateTransitionException(_)
         )
     }
-    pub fn is_operation_status_check_failed_error(&self) -> bool {
+    pub fn is_operation_status_check_failed_exception(&self) -> bool {
         matches!(
             &self.kind,
-            RecordHandlerProgressErrorKind::OperationStatusCheckFailedError(_)
+            RecordHandlerProgressErrorKind::OperationStatusCheckFailedException(_)
         )
     }
 }
 impl std::error::Error for RecordHandlerProgressError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            RecordHandlerProgressErrorKind::InvalidStateTransitionError(_inner) => Some(_inner),
-            RecordHandlerProgressErrorKind::OperationStatusCheckFailedError(_inner) => Some(_inner),
+            RecordHandlerProgressErrorKind::InvalidStateTransitionException(_inner) => Some(_inner),
+            RecordHandlerProgressErrorKind::OperationStatusCheckFailedException(_inner) => {
+                Some(_inner)
+            }
             RecordHandlerProgressErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -3715,14 +3759,14 @@ pub struct RegisterTypeError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum RegisterTypeErrorKind {
-    CFNRegistryError(crate::error::CFNRegistryError),
+    CfnRegistryException(crate::error::CfnRegistryException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for RegisterTypeError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            RegisterTypeErrorKind::CFNRegistryError(_inner) => _inner.fmt(f),
+            RegisterTypeErrorKind::CfnRegistryException(_inner) => _inner.fmt(f),
             RegisterTypeErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -3771,14 +3815,14 @@ impl RegisterTypeError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_cfn_registry_error(&self) -> bool {
-        matches!(&self.kind, RegisterTypeErrorKind::CFNRegistryError(_))
+    pub fn is_cfn_registry_exception(&self) -> bool {
+        matches!(&self.kind, RegisterTypeErrorKind::CfnRegistryException(_))
     }
 }
 impl std::error::Error for RegisterTypeError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            RegisterTypeErrorKind::CFNRegistryError(_inner) => Some(_inner),
+            RegisterTypeErrorKind::CfnRegistryException(_inner) => Some(_inner),
             RegisterTypeErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -3865,16 +3909,16 @@ pub struct SetTypeDefaultVersionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum SetTypeDefaultVersionErrorKind {
-    CFNRegistryError(crate::error::CFNRegistryError),
-    TypeNotFoundError(crate::error::TypeNotFoundError),
+    CfnRegistryException(crate::error::CfnRegistryException),
+    TypeNotFoundException(crate::error::TypeNotFoundException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for SetTypeDefaultVersionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            SetTypeDefaultVersionErrorKind::CFNRegistryError(_inner) => _inner.fmt(f),
-            SetTypeDefaultVersionErrorKind::TypeNotFoundError(_inner) => _inner.fmt(f),
+            SetTypeDefaultVersionErrorKind::CfnRegistryException(_inner) => _inner.fmt(f),
+            SetTypeDefaultVersionErrorKind::TypeNotFoundException(_inner) => _inner.fmt(f),
             SetTypeDefaultVersionErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -3923,24 +3967,24 @@ impl SetTypeDefaultVersionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_cfn_registry_error(&self) -> bool {
+    pub fn is_cfn_registry_exception(&self) -> bool {
         matches!(
             &self.kind,
-            SetTypeDefaultVersionErrorKind::CFNRegistryError(_)
+            SetTypeDefaultVersionErrorKind::CfnRegistryException(_)
         )
     }
-    pub fn is_type_not_found_error(&self) -> bool {
+    pub fn is_type_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
-            SetTypeDefaultVersionErrorKind::TypeNotFoundError(_)
+            SetTypeDefaultVersionErrorKind::TypeNotFoundException(_)
         )
     }
 }
 impl std::error::Error for SetTypeDefaultVersionError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            SetTypeDefaultVersionErrorKind::CFNRegistryError(_inner) => Some(_inner),
-            SetTypeDefaultVersionErrorKind::TypeNotFoundError(_inner) => Some(_inner),
+            SetTypeDefaultVersionErrorKind::CfnRegistryException(_inner) => Some(_inner),
+            SetTypeDefaultVersionErrorKind::TypeNotFoundException(_inner) => Some(_inner),
             SetTypeDefaultVersionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -4027,18 +4071,18 @@ pub struct StopStackSetOperationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum StopStackSetOperationErrorKind {
-    InvalidOperationError(crate::error::InvalidOperationError),
-    OperationNotFoundError(crate::error::OperationNotFoundError),
-    StackSetNotFoundError(crate::error::StackSetNotFoundError),
+    InvalidOperationException(crate::error::InvalidOperationException),
+    OperationNotFoundException(crate::error::OperationNotFoundException),
+    StackSetNotFoundException(crate::error::StackSetNotFoundException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for StopStackSetOperationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            StopStackSetOperationErrorKind::InvalidOperationError(_inner) => _inner.fmt(f),
-            StopStackSetOperationErrorKind::OperationNotFoundError(_inner) => _inner.fmt(f),
-            StopStackSetOperationErrorKind::StackSetNotFoundError(_inner) => _inner.fmt(f),
+            StopStackSetOperationErrorKind::InvalidOperationException(_inner) => _inner.fmt(f),
+            StopStackSetOperationErrorKind::OperationNotFoundException(_inner) => _inner.fmt(f),
+            StopStackSetOperationErrorKind::StackSetNotFoundException(_inner) => _inner.fmt(f),
             StopStackSetOperationErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -4087,31 +4131,31 @@ impl StopStackSetOperationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_invalid_operation_error(&self) -> bool {
+    pub fn is_invalid_operation_exception(&self) -> bool {
         matches!(
             &self.kind,
-            StopStackSetOperationErrorKind::InvalidOperationError(_)
+            StopStackSetOperationErrorKind::InvalidOperationException(_)
         )
     }
-    pub fn is_operation_not_found_error(&self) -> bool {
+    pub fn is_operation_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
-            StopStackSetOperationErrorKind::OperationNotFoundError(_)
+            StopStackSetOperationErrorKind::OperationNotFoundException(_)
         )
     }
-    pub fn is_stack_set_not_found_error(&self) -> bool {
+    pub fn is_stack_set_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
-            StopStackSetOperationErrorKind::StackSetNotFoundError(_)
+            StopStackSetOperationErrorKind::StackSetNotFoundException(_)
         )
     }
 }
 impl std::error::Error for StopStackSetOperationError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            StopStackSetOperationErrorKind::InvalidOperationError(_inner) => Some(_inner),
-            StopStackSetOperationErrorKind::OperationNotFoundError(_inner) => Some(_inner),
-            StopStackSetOperationErrorKind::StackSetNotFoundError(_inner) => Some(_inner),
+            StopStackSetOperationErrorKind::InvalidOperationException(_inner) => Some(_inner),
+            StopStackSetOperationErrorKind::OperationNotFoundException(_inner) => Some(_inner),
+            StopStackSetOperationErrorKind::StackSetNotFoundException(_inner) => Some(_inner),
             StopStackSetOperationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -4126,16 +4170,16 @@ pub struct UpdateStackError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateStackErrorKind {
-    InsufficientCapabilitiesError(crate::error::InsufficientCapabilitiesError),
-    TokenAlreadyExistsError(crate::error::TokenAlreadyExistsError),
+    InsufficientCapabilitiesException(crate::error::InsufficientCapabilitiesException),
+    TokenAlreadyExistsException(crate::error::TokenAlreadyExistsException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateStackError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            UpdateStackErrorKind::InsufficientCapabilitiesError(_inner) => _inner.fmt(f),
-            UpdateStackErrorKind::TokenAlreadyExistsError(_inner) => _inner.fmt(f),
+            UpdateStackErrorKind::InsufficientCapabilitiesException(_inner) => _inner.fmt(f),
+            UpdateStackErrorKind::TokenAlreadyExistsException(_inner) => _inner.fmt(f),
             UpdateStackErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -4184,21 +4228,24 @@ impl UpdateStackError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_insufficient_capabilities_error(&self) -> bool {
+    pub fn is_insufficient_capabilities_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UpdateStackErrorKind::InsufficientCapabilitiesError(_)
+            UpdateStackErrorKind::InsufficientCapabilitiesException(_)
         )
     }
-    pub fn is_token_already_exists_error(&self) -> bool {
-        matches!(&self.kind, UpdateStackErrorKind::TokenAlreadyExistsError(_))
+    pub fn is_token_already_exists_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateStackErrorKind::TokenAlreadyExistsException(_)
+        )
     }
 }
 impl std::error::Error for UpdateStackError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            UpdateStackErrorKind::InsufficientCapabilitiesError(_inner) => Some(_inner),
-            UpdateStackErrorKind::TokenAlreadyExistsError(_inner) => Some(_inner),
+            UpdateStackErrorKind::InsufficientCapabilitiesException(_inner) => Some(_inner),
+            UpdateStackErrorKind::TokenAlreadyExistsException(_inner) => Some(_inner),
             UpdateStackErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -4213,24 +4260,26 @@ pub struct UpdateStackInstancesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateStackInstancesErrorKind {
-    InvalidOperationError(crate::error::InvalidOperationError),
-    OperationIdAlreadyExistsError(crate::error::OperationIdAlreadyExistsError),
-    OperationInProgressError(crate::error::OperationInProgressError),
-    StackInstanceNotFoundError(crate::error::StackInstanceNotFoundError),
-    StackSetNotFoundError(crate::error::StackSetNotFoundError),
-    StaleRequestError(crate::error::StaleRequestError),
+    InvalidOperationException(crate::error::InvalidOperationException),
+    OperationIdAlreadyExistsException(crate::error::OperationIdAlreadyExistsException),
+    OperationInProgressException(crate::error::OperationInProgressException),
+    StackInstanceNotFoundException(crate::error::StackInstanceNotFoundException),
+    StackSetNotFoundException(crate::error::StackSetNotFoundException),
+    StaleRequestException(crate::error::StaleRequestException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateStackInstancesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            UpdateStackInstancesErrorKind::InvalidOperationError(_inner) => _inner.fmt(f),
-            UpdateStackInstancesErrorKind::OperationIdAlreadyExistsError(_inner) => _inner.fmt(f),
-            UpdateStackInstancesErrorKind::OperationInProgressError(_inner) => _inner.fmt(f),
-            UpdateStackInstancesErrorKind::StackInstanceNotFoundError(_inner) => _inner.fmt(f),
-            UpdateStackInstancesErrorKind::StackSetNotFoundError(_inner) => _inner.fmt(f),
-            UpdateStackInstancesErrorKind::StaleRequestError(_inner) => _inner.fmt(f),
+            UpdateStackInstancesErrorKind::InvalidOperationException(_inner) => _inner.fmt(f),
+            UpdateStackInstancesErrorKind::OperationIdAlreadyExistsException(_inner) => {
+                _inner.fmt(f)
+            }
+            UpdateStackInstancesErrorKind::OperationInProgressException(_inner) => _inner.fmt(f),
+            UpdateStackInstancesErrorKind::StackInstanceNotFoundException(_inner) => _inner.fmt(f),
+            UpdateStackInstancesErrorKind::StackSetNotFoundException(_inner) => _inner.fmt(f),
+            UpdateStackInstancesErrorKind::StaleRequestException(_inner) => _inner.fmt(f),
             UpdateStackInstancesErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -4279,52 +4328,54 @@ impl UpdateStackInstancesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_invalid_operation_error(&self) -> bool {
+    pub fn is_invalid_operation_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UpdateStackInstancesErrorKind::InvalidOperationError(_)
+            UpdateStackInstancesErrorKind::InvalidOperationException(_)
         )
     }
-    pub fn is_operation_id_already_exists_error(&self) -> bool {
+    pub fn is_operation_id_already_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UpdateStackInstancesErrorKind::OperationIdAlreadyExistsError(_)
+            UpdateStackInstancesErrorKind::OperationIdAlreadyExistsException(_)
         )
     }
-    pub fn is_operation_in_progress_error(&self) -> bool {
+    pub fn is_operation_in_progress_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UpdateStackInstancesErrorKind::OperationInProgressError(_)
+            UpdateStackInstancesErrorKind::OperationInProgressException(_)
         )
     }
-    pub fn is_stack_instance_not_found_error(&self) -> bool {
+    pub fn is_stack_instance_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UpdateStackInstancesErrorKind::StackInstanceNotFoundError(_)
+            UpdateStackInstancesErrorKind::StackInstanceNotFoundException(_)
         )
     }
-    pub fn is_stack_set_not_found_error(&self) -> bool {
+    pub fn is_stack_set_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UpdateStackInstancesErrorKind::StackSetNotFoundError(_)
+            UpdateStackInstancesErrorKind::StackSetNotFoundException(_)
         )
     }
-    pub fn is_stale_request_error(&self) -> bool {
+    pub fn is_stale_request_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UpdateStackInstancesErrorKind::StaleRequestError(_)
+            UpdateStackInstancesErrorKind::StaleRequestException(_)
         )
     }
 }
 impl std::error::Error for UpdateStackInstancesError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            UpdateStackInstancesErrorKind::InvalidOperationError(_inner) => Some(_inner),
-            UpdateStackInstancesErrorKind::OperationIdAlreadyExistsError(_inner) => Some(_inner),
-            UpdateStackInstancesErrorKind::OperationInProgressError(_inner) => Some(_inner),
-            UpdateStackInstancesErrorKind::StackInstanceNotFoundError(_inner) => Some(_inner),
-            UpdateStackInstancesErrorKind::StackSetNotFoundError(_inner) => Some(_inner),
-            UpdateStackInstancesErrorKind::StaleRequestError(_inner) => Some(_inner),
+            UpdateStackInstancesErrorKind::InvalidOperationException(_inner) => Some(_inner),
+            UpdateStackInstancesErrorKind::OperationIdAlreadyExistsException(_inner) => {
+                Some(_inner)
+            }
+            UpdateStackInstancesErrorKind::OperationInProgressException(_inner) => Some(_inner),
+            UpdateStackInstancesErrorKind::StackInstanceNotFoundException(_inner) => Some(_inner),
+            UpdateStackInstancesErrorKind::StackSetNotFoundException(_inner) => Some(_inner),
+            UpdateStackInstancesErrorKind::StaleRequestException(_inner) => Some(_inner),
             UpdateStackInstancesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -4339,24 +4390,24 @@ pub struct UpdateStackSetError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateStackSetErrorKind {
-    InvalidOperationError(crate::error::InvalidOperationError),
-    OperationIdAlreadyExistsError(crate::error::OperationIdAlreadyExistsError),
-    OperationInProgressError(crate::error::OperationInProgressError),
-    StackInstanceNotFoundError(crate::error::StackInstanceNotFoundError),
-    StackSetNotFoundError(crate::error::StackSetNotFoundError),
-    StaleRequestError(crate::error::StaleRequestError),
+    InvalidOperationException(crate::error::InvalidOperationException),
+    OperationIdAlreadyExistsException(crate::error::OperationIdAlreadyExistsException),
+    OperationInProgressException(crate::error::OperationInProgressException),
+    StackInstanceNotFoundException(crate::error::StackInstanceNotFoundException),
+    StackSetNotFoundException(crate::error::StackSetNotFoundException),
+    StaleRequestException(crate::error::StaleRequestException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateStackSetError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            UpdateStackSetErrorKind::InvalidOperationError(_inner) => _inner.fmt(f),
-            UpdateStackSetErrorKind::OperationIdAlreadyExistsError(_inner) => _inner.fmt(f),
-            UpdateStackSetErrorKind::OperationInProgressError(_inner) => _inner.fmt(f),
-            UpdateStackSetErrorKind::StackInstanceNotFoundError(_inner) => _inner.fmt(f),
-            UpdateStackSetErrorKind::StackSetNotFoundError(_inner) => _inner.fmt(f),
-            UpdateStackSetErrorKind::StaleRequestError(_inner) => _inner.fmt(f),
+            UpdateStackSetErrorKind::InvalidOperationException(_inner) => _inner.fmt(f),
+            UpdateStackSetErrorKind::OperationIdAlreadyExistsException(_inner) => _inner.fmt(f),
+            UpdateStackSetErrorKind::OperationInProgressException(_inner) => _inner.fmt(f),
+            UpdateStackSetErrorKind::StackInstanceNotFoundException(_inner) => _inner.fmt(f),
+            UpdateStackSetErrorKind::StackSetNotFoundException(_inner) => _inner.fmt(f),
+            UpdateStackSetErrorKind::StaleRequestException(_inner) => _inner.fmt(f),
             UpdateStackSetErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -4405,49 +4456,52 @@ impl UpdateStackSetError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_invalid_operation_error(&self) -> bool {
+    pub fn is_invalid_operation_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UpdateStackSetErrorKind::InvalidOperationError(_)
+            UpdateStackSetErrorKind::InvalidOperationException(_)
         )
     }
-    pub fn is_operation_id_already_exists_error(&self) -> bool {
+    pub fn is_operation_id_already_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UpdateStackSetErrorKind::OperationIdAlreadyExistsError(_)
+            UpdateStackSetErrorKind::OperationIdAlreadyExistsException(_)
         )
     }
-    pub fn is_operation_in_progress_error(&self) -> bool {
+    pub fn is_operation_in_progress_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UpdateStackSetErrorKind::OperationInProgressError(_)
+            UpdateStackSetErrorKind::OperationInProgressException(_)
         )
     }
-    pub fn is_stack_instance_not_found_error(&self) -> bool {
+    pub fn is_stack_instance_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UpdateStackSetErrorKind::StackInstanceNotFoundError(_)
+            UpdateStackSetErrorKind::StackInstanceNotFoundException(_)
         )
     }
-    pub fn is_stack_set_not_found_error(&self) -> bool {
+    pub fn is_stack_set_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UpdateStackSetErrorKind::StackSetNotFoundError(_)
+            UpdateStackSetErrorKind::StackSetNotFoundException(_)
         )
     }
-    pub fn is_stale_request_error(&self) -> bool {
-        matches!(&self.kind, UpdateStackSetErrorKind::StaleRequestError(_))
+    pub fn is_stale_request_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateStackSetErrorKind::StaleRequestException(_)
+        )
     }
 }
 impl std::error::Error for UpdateStackSetError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            UpdateStackSetErrorKind::InvalidOperationError(_inner) => Some(_inner),
-            UpdateStackSetErrorKind::OperationIdAlreadyExistsError(_inner) => Some(_inner),
-            UpdateStackSetErrorKind::OperationInProgressError(_inner) => Some(_inner),
-            UpdateStackSetErrorKind::StackInstanceNotFoundError(_inner) => Some(_inner),
-            UpdateStackSetErrorKind::StackSetNotFoundError(_inner) => Some(_inner),
-            UpdateStackSetErrorKind::StaleRequestError(_inner) => Some(_inner),
+            UpdateStackSetErrorKind::InvalidOperationException(_inner) => Some(_inner),
+            UpdateStackSetErrorKind::OperationIdAlreadyExistsException(_inner) => Some(_inner),
+            UpdateStackSetErrorKind::OperationInProgressException(_inner) => Some(_inner),
+            UpdateStackSetErrorKind::StackInstanceNotFoundException(_inner) => Some(_inner),
+            UpdateStackSetErrorKind::StackSetNotFoundException(_inner) => Some(_inner),
+            UpdateStackSetErrorKind::StaleRequestException(_inner) => Some(_inner),
             UpdateStackSetErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -4601,34 +4655,34 @@ impl std::error::Error for ValidateTemplateError {
 /// was performed. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct StaleRequestError {
+pub struct StaleRequestException {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for StaleRequestError {
+impl std::fmt::Debug for StaleRequestException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StaleRequestError");
+        let mut formatter = f.debug_struct("StaleRequestException");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl StaleRequestError {
+impl StaleRequestException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for StaleRequestError {
+impl std::fmt::Display for StaleRequestException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "StaleRequestError [StaleRequestException]")?;
+        write!(f, "StaleRequestException")?;
         if let Some(inner_1) = &self.message {
             write!(f, ": {}", inner_1)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for StaleRequestError {}
-/// See [`StaleRequestError`](crate::error::StaleRequestError)
-pub mod stale_request_error {
-    /// A builder for [`StaleRequestError`](crate::error::StaleRequestError)
+impl std::error::Error for StaleRequestException {}
+/// See [`StaleRequestException`](crate::error::StaleRequestException)
+pub mod stale_request_exception {
+    /// A builder for [`StaleRequestException`](crate::error::StaleRequestException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -4643,52 +4697,52 @@ pub mod stale_request_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`StaleRequestError`](crate::error::StaleRequestError)
-        pub fn build(self) -> crate::error::StaleRequestError {
-            crate::error::StaleRequestError {
+        /// Consumes the builder and constructs a [`StaleRequestException`](crate::error::StaleRequestException)
+        pub fn build(self) -> crate::error::StaleRequestException {
+            crate::error::StaleRequestException {
                 message: self.message,
             }
         }
     }
 }
-impl StaleRequestError {
-    /// Creates a new builder-style object to manufacture [`StaleRequestError`](crate::error::StaleRequestError)
-    pub fn builder() -> crate::error::stale_request_error::Builder {
-        crate::error::stale_request_error::Builder::default()
+impl StaleRequestException {
+    /// Creates a new builder-style object to manufacture [`StaleRequestException`](crate::error::StaleRequestException)
+    pub fn builder() -> crate::error::stale_request_exception::Builder {
+        crate::error::stale_request_exception::Builder::default()
     }
 }
 
 /// <p>The specified stack set doesn't exist.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct StackSetNotFoundError {
+pub struct StackSetNotFoundException {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for StackSetNotFoundError {
+impl std::fmt::Debug for StackSetNotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StackSetNotFoundError");
+        let mut formatter = f.debug_struct("StackSetNotFoundException");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl StackSetNotFoundError {
+impl StackSetNotFoundException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for StackSetNotFoundError {
+impl std::fmt::Display for StackSetNotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "StackSetNotFoundError [StackSetNotFoundException]")?;
+        write!(f, "StackSetNotFoundException")?;
         if let Some(inner_2) = &self.message {
             write!(f, ": {}", inner_2)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for StackSetNotFoundError {}
-/// See [`StackSetNotFoundError`](crate::error::StackSetNotFoundError)
-pub mod stack_set_not_found_error {
-    /// A builder for [`StackSetNotFoundError`](crate::error::StackSetNotFoundError)
+impl std::error::Error for StackSetNotFoundException {}
+/// See [`StackSetNotFoundException`](crate::error::StackSetNotFoundException)
+pub mod stack_set_not_found_exception {
+    /// A builder for [`StackSetNotFoundException`](crate::error::StackSetNotFoundException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -4703,55 +4757,52 @@ pub mod stack_set_not_found_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`StackSetNotFoundError`](crate::error::StackSetNotFoundError)
-        pub fn build(self) -> crate::error::StackSetNotFoundError {
-            crate::error::StackSetNotFoundError {
+        /// Consumes the builder and constructs a [`StackSetNotFoundException`](crate::error::StackSetNotFoundException)
+        pub fn build(self) -> crate::error::StackSetNotFoundException {
+            crate::error::StackSetNotFoundException {
                 message: self.message,
             }
         }
     }
 }
-impl StackSetNotFoundError {
-    /// Creates a new builder-style object to manufacture [`StackSetNotFoundError`](crate::error::StackSetNotFoundError)
-    pub fn builder() -> crate::error::stack_set_not_found_error::Builder {
-        crate::error::stack_set_not_found_error::Builder::default()
+impl StackSetNotFoundException {
+    /// Creates a new builder-style object to manufacture [`StackSetNotFoundException`](crate::error::StackSetNotFoundException)
+    pub fn builder() -> crate::error::stack_set_not_found_exception::Builder {
+        crate::error::stack_set_not_found_exception::Builder::default()
     }
 }
 
 /// <p>The specified stack instance doesn't exist.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct StackInstanceNotFoundError {
+pub struct StackInstanceNotFoundException {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for StackInstanceNotFoundError {
+impl std::fmt::Debug for StackInstanceNotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StackInstanceNotFoundError");
+        let mut formatter = f.debug_struct("StackInstanceNotFoundException");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl StackInstanceNotFoundError {
+impl StackInstanceNotFoundException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for StackInstanceNotFoundError {
+impl std::fmt::Display for StackInstanceNotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(
-            f,
-            "StackInstanceNotFoundError [StackInstanceNotFoundException]"
-        )?;
+        write!(f, "StackInstanceNotFoundException")?;
         if let Some(inner_3) = &self.message {
             write!(f, ": {}", inner_3)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for StackInstanceNotFoundError {}
-/// See [`StackInstanceNotFoundError`](crate::error::StackInstanceNotFoundError)
-pub mod stack_instance_not_found_error {
-    /// A builder for [`StackInstanceNotFoundError`](crate::error::StackInstanceNotFoundError)
+impl std::error::Error for StackInstanceNotFoundException {}
+/// See [`StackInstanceNotFoundException`](crate::error::StackInstanceNotFoundException)
+pub mod stack_instance_not_found_exception {
+    /// A builder for [`StackInstanceNotFoundException`](crate::error::StackInstanceNotFoundException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -4766,18 +4817,18 @@ pub mod stack_instance_not_found_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`StackInstanceNotFoundError`](crate::error::StackInstanceNotFoundError)
-        pub fn build(self) -> crate::error::StackInstanceNotFoundError {
-            crate::error::StackInstanceNotFoundError {
+        /// Consumes the builder and constructs a [`StackInstanceNotFoundException`](crate::error::StackInstanceNotFoundException)
+        pub fn build(self) -> crate::error::StackInstanceNotFoundException {
+            crate::error::StackInstanceNotFoundException {
                 message: self.message,
             }
         }
     }
 }
-impl StackInstanceNotFoundError {
-    /// Creates a new builder-style object to manufacture [`StackInstanceNotFoundError`](crate::error::StackInstanceNotFoundError)
-    pub fn builder() -> crate::error::stack_instance_not_found_error::Builder {
-        crate::error::stack_instance_not_found_error::Builder::default()
+impl StackInstanceNotFoundException {
+    /// Creates a new builder-style object to manufacture [`StackInstanceNotFoundException`](crate::error::StackInstanceNotFoundException)
+    pub fn builder() -> crate::error::stack_instance_not_found_exception::Builder {
+        crate::error::stack_instance_not_found_exception::Builder::default()
     }
 }
 
@@ -4785,34 +4836,34 @@ impl StackInstanceNotFoundError {
 /// be performed for a stack set at a given time.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct OperationInProgressError {
+pub struct OperationInProgressException {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for OperationInProgressError {
+impl std::fmt::Debug for OperationInProgressException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OperationInProgressError");
+        let mut formatter = f.debug_struct("OperationInProgressException");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl OperationInProgressError {
+impl OperationInProgressException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for OperationInProgressError {
+impl std::fmt::Display for OperationInProgressException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "OperationInProgressError [OperationInProgressException]")?;
+        write!(f, "OperationInProgressException")?;
         if let Some(inner_4) = &self.message {
             write!(f, ": {}", inner_4)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for OperationInProgressError {}
-/// See [`OperationInProgressError`](crate::error::OperationInProgressError)
-pub mod operation_in_progress_error {
-    /// A builder for [`OperationInProgressError`](crate::error::OperationInProgressError)
+impl std::error::Error for OperationInProgressException {}
+/// See [`OperationInProgressException`](crate::error::OperationInProgressException)
+pub mod operation_in_progress_exception {
+    /// A builder for [`OperationInProgressException`](crate::error::OperationInProgressException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -4827,55 +4878,52 @@ pub mod operation_in_progress_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`OperationInProgressError`](crate::error::OperationInProgressError)
-        pub fn build(self) -> crate::error::OperationInProgressError {
-            crate::error::OperationInProgressError {
+        /// Consumes the builder and constructs a [`OperationInProgressException`](crate::error::OperationInProgressException)
+        pub fn build(self) -> crate::error::OperationInProgressException {
+            crate::error::OperationInProgressException {
                 message: self.message,
             }
         }
     }
 }
-impl OperationInProgressError {
-    /// Creates a new builder-style object to manufacture [`OperationInProgressError`](crate::error::OperationInProgressError)
-    pub fn builder() -> crate::error::operation_in_progress_error::Builder {
-        crate::error::operation_in_progress_error::Builder::default()
+impl OperationInProgressException {
+    /// Creates a new builder-style object to manufacture [`OperationInProgressException`](crate::error::OperationInProgressException)
+    pub fn builder() -> crate::error::operation_in_progress_exception::Builder {
+        crate::error::operation_in_progress_exception::Builder::default()
     }
 }
 
 /// <p>The specified operation ID already exists.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct OperationIdAlreadyExistsError {
+pub struct OperationIdAlreadyExistsException {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for OperationIdAlreadyExistsError {
+impl std::fmt::Debug for OperationIdAlreadyExistsException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OperationIdAlreadyExistsError");
+        let mut formatter = f.debug_struct("OperationIdAlreadyExistsException");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl OperationIdAlreadyExistsError {
+impl OperationIdAlreadyExistsException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for OperationIdAlreadyExistsError {
+impl std::fmt::Display for OperationIdAlreadyExistsException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(
-            f,
-            "OperationIdAlreadyExistsError [OperationIdAlreadyExistsException]"
-        )?;
+        write!(f, "OperationIdAlreadyExistsException")?;
         if let Some(inner_5) = &self.message {
             write!(f, ": {}", inner_5)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for OperationIdAlreadyExistsError {}
-/// See [`OperationIdAlreadyExistsError`](crate::error::OperationIdAlreadyExistsError)
-pub mod operation_id_already_exists_error {
-    /// A builder for [`OperationIdAlreadyExistsError`](crate::error::OperationIdAlreadyExistsError)
+impl std::error::Error for OperationIdAlreadyExistsException {}
+/// See [`OperationIdAlreadyExistsException`](crate::error::OperationIdAlreadyExistsException)
+pub mod operation_id_already_exists_exception {
+    /// A builder for [`OperationIdAlreadyExistsException`](crate::error::OperationIdAlreadyExistsException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -4890,52 +4938,52 @@ pub mod operation_id_already_exists_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`OperationIdAlreadyExistsError`](crate::error::OperationIdAlreadyExistsError)
-        pub fn build(self) -> crate::error::OperationIdAlreadyExistsError {
-            crate::error::OperationIdAlreadyExistsError {
+        /// Consumes the builder and constructs a [`OperationIdAlreadyExistsException`](crate::error::OperationIdAlreadyExistsException)
+        pub fn build(self) -> crate::error::OperationIdAlreadyExistsException {
+            crate::error::OperationIdAlreadyExistsException {
                 message: self.message,
             }
         }
     }
 }
-impl OperationIdAlreadyExistsError {
-    /// Creates a new builder-style object to manufacture [`OperationIdAlreadyExistsError`](crate::error::OperationIdAlreadyExistsError)
-    pub fn builder() -> crate::error::operation_id_already_exists_error::Builder {
-        crate::error::operation_id_already_exists_error::Builder::default()
+impl OperationIdAlreadyExistsException {
+    /// Creates a new builder-style object to manufacture [`OperationIdAlreadyExistsException`](crate::error::OperationIdAlreadyExistsException)
+    pub fn builder() -> crate::error::operation_id_already_exists_exception::Builder {
+        crate::error::operation_id_already_exists_exception::Builder::default()
     }
 }
 
 /// <p>The specified operation isn't valid.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct InvalidOperationError {
+pub struct InvalidOperationException {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for InvalidOperationError {
+impl std::fmt::Debug for InvalidOperationException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidOperationError");
+        let mut formatter = f.debug_struct("InvalidOperationException");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl InvalidOperationError {
+impl InvalidOperationException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for InvalidOperationError {
+impl std::fmt::Display for InvalidOperationException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "InvalidOperationError [InvalidOperationException]")?;
+        write!(f, "InvalidOperationException")?;
         if let Some(inner_6) = &self.message {
             write!(f, ": {}", inner_6)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for InvalidOperationError {}
-/// See [`InvalidOperationError`](crate::error::InvalidOperationError)
-pub mod invalid_operation_error {
-    /// A builder for [`InvalidOperationError`](crate::error::InvalidOperationError)
+impl std::error::Error for InvalidOperationException {}
+/// See [`InvalidOperationException`](crate::error::InvalidOperationException)
+pub mod invalid_operation_exception {
+    /// A builder for [`InvalidOperationException`](crate::error::InvalidOperationException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -4950,52 +4998,52 @@ pub mod invalid_operation_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`InvalidOperationError`](crate::error::InvalidOperationError)
-        pub fn build(self) -> crate::error::InvalidOperationError {
-            crate::error::InvalidOperationError {
+        /// Consumes the builder and constructs a [`InvalidOperationException`](crate::error::InvalidOperationException)
+        pub fn build(self) -> crate::error::InvalidOperationException {
+            crate::error::InvalidOperationException {
                 message: self.message,
             }
         }
     }
 }
-impl InvalidOperationError {
-    /// Creates a new builder-style object to manufacture [`InvalidOperationError`](crate::error::InvalidOperationError)
-    pub fn builder() -> crate::error::invalid_operation_error::Builder {
-        crate::error::invalid_operation_error::Builder::default()
+impl InvalidOperationException {
+    /// Creates a new builder-style object to manufacture [`InvalidOperationException`](crate::error::InvalidOperationException)
+    pub fn builder() -> crate::error::invalid_operation_exception::Builder {
+        crate::error::invalid_operation_exception::Builder::default()
     }
 }
 
 /// <p>A client request token already exists.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct TokenAlreadyExistsError {
+pub struct TokenAlreadyExistsException {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for TokenAlreadyExistsError {
+impl std::fmt::Debug for TokenAlreadyExistsException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TokenAlreadyExistsError");
+        let mut formatter = f.debug_struct("TokenAlreadyExistsException");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl TokenAlreadyExistsError {
+impl TokenAlreadyExistsException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for TokenAlreadyExistsError {
+impl std::fmt::Display for TokenAlreadyExistsException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "TokenAlreadyExistsError [TokenAlreadyExistsException]")?;
+        write!(f, "TokenAlreadyExistsException")?;
         if let Some(inner_7) = &self.message {
             write!(f, ": {}", inner_7)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for TokenAlreadyExistsError {}
-/// See [`TokenAlreadyExistsError`](crate::error::TokenAlreadyExistsError)
-pub mod token_already_exists_error {
-    /// A builder for [`TokenAlreadyExistsError`](crate::error::TokenAlreadyExistsError)
+impl std::error::Error for TokenAlreadyExistsException {}
+/// See [`TokenAlreadyExistsException`](crate::error::TokenAlreadyExistsException)
+pub mod token_already_exists_exception {
+    /// A builder for [`TokenAlreadyExistsException`](crate::error::TokenAlreadyExistsException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -5010,18 +5058,18 @@ pub mod token_already_exists_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`TokenAlreadyExistsError`](crate::error::TokenAlreadyExistsError)
-        pub fn build(self) -> crate::error::TokenAlreadyExistsError {
-            crate::error::TokenAlreadyExistsError {
+        /// Consumes the builder and constructs a [`TokenAlreadyExistsException`](crate::error::TokenAlreadyExistsException)
+        pub fn build(self) -> crate::error::TokenAlreadyExistsException {
+            crate::error::TokenAlreadyExistsException {
                 message: self.message,
             }
         }
     }
 }
-impl TokenAlreadyExistsError {
-    /// Creates a new builder-style object to manufacture [`TokenAlreadyExistsError`](crate::error::TokenAlreadyExistsError)
-    pub fn builder() -> crate::error::token_already_exists_error::Builder {
-        crate::error::token_already_exists_error::Builder::default()
+impl TokenAlreadyExistsException {
+    /// Creates a new builder-style object to manufacture [`TokenAlreadyExistsException`](crate::error::TokenAlreadyExistsException)
+    pub fn builder() -> crate::error::token_already_exists_exception::Builder {
+        crate::error::token_already_exists_exception::Builder::default()
     }
 }
 
@@ -5029,37 +5077,34 @@ impl TokenAlreadyExistsError {
 /// Capabilities parameter.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct InsufficientCapabilitiesError {
+pub struct InsufficientCapabilitiesException {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for InsufficientCapabilitiesError {
+impl std::fmt::Debug for InsufficientCapabilitiesException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InsufficientCapabilitiesError");
+        let mut formatter = f.debug_struct("InsufficientCapabilitiesException");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl InsufficientCapabilitiesError {
+impl InsufficientCapabilitiesException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for InsufficientCapabilitiesError {
+impl std::fmt::Display for InsufficientCapabilitiesException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(
-            f,
-            "InsufficientCapabilitiesError [InsufficientCapabilitiesException]"
-        )?;
+        write!(f, "InsufficientCapabilitiesException")?;
         if let Some(inner_8) = &self.message {
             write!(f, ": {}", inner_8)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for InsufficientCapabilitiesError {}
-/// See [`InsufficientCapabilitiesError`](crate::error::InsufficientCapabilitiesError)
-pub mod insufficient_capabilities_error {
-    /// A builder for [`InsufficientCapabilitiesError`](crate::error::InsufficientCapabilitiesError)
+impl std::error::Error for InsufficientCapabilitiesException {}
+/// See [`InsufficientCapabilitiesException`](crate::error::InsufficientCapabilitiesException)
+pub mod insufficient_capabilities_exception {
+    /// A builder for [`InsufficientCapabilitiesException`](crate::error::InsufficientCapabilitiesException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -5074,52 +5119,52 @@ pub mod insufficient_capabilities_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`InsufficientCapabilitiesError`](crate::error::InsufficientCapabilitiesError)
-        pub fn build(self) -> crate::error::InsufficientCapabilitiesError {
-            crate::error::InsufficientCapabilitiesError {
+        /// Consumes the builder and constructs a [`InsufficientCapabilitiesException`](crate::error::InsufficientCapabilitiesException)
+        pub fn build(self) -> crate::error::InsufficientCapabilitiesException {
+            crate::error::InsufficientCapabilitiesException {
                 message: self.message,
             }
         }
     }
 }
-impl InsufficientCapabilitiesError {
-    /// Creates a new builder-style object to manufacture [`InsufficientCapabilitiesError`](crate::error::InsufficientCapabilitiesError)
-    pub fn builder() -> crate::error::insufficient_capabilities_error::Builder {
-        crate::error::insufficient_capabilities_error::Builder::default()
+impl InsufficientCapabilitiesException {
+    /// Creates a new builder-style object to manufacture [`InsufficientCapabilitiesException`](crate::error::InsufficientCapabilitiesException)
+    pub fn builder() -> crate::error::insufficient_capabilities_exception::Builder {
+        crate::error::insufficient_capabilities_exception::Builder::default()
     }
 }
 
 /// <p>The specified ID refers to an operation that doesn't exist.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct OperationNotFoundError {
+pub struct OperationNotFoundException {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for OperationNotFoundError {
+impl std::fmt::Debug for OperationNotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OperationNotFoundError");
+        let mut formatter = f.debug_struct("OperationNotFoundException");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl OperationNotFoundError {
+impl OperationNotFoundException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for OperationNotFoundError {
+impl std::fmt::Display for OperationNotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "OperationNotFoundError [OperationNotFoundException]")?;
+        write!(f, "OperationNotFoundException")?;
         if let Some(inner_9) = &self.message {
             write!(f, ": {}", inner_9)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for OperationNotFoundError {}
-/// See [`OperationNotFoundError`](crate::error::OperationNotFoundError)
-pub mod operation_not_found_error {
-    /// A builder for [`OperationNotFoundError`](crate::error::OperationNotFoundError)
+impl std::error::Error for OperationNotFoundException {}
+/// See [`OperationNotFoundException`](crate::error::OperationNotFoundException)
+pub mod operation_not_found_exception {
+    /// A builder for [`OperationNotFoundException`](crate::error::OperationNotFoundException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -5134,52 +5179,52 @@ pub mod operation_not_found_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`OperationNotFoundError`](crate::error::OperationNotFoundError)
-        pub fn build(self) -> crate::error::OperationNotFoundError {
-            crate::error::OperationNotFoundError {
+        /// Consumes the builder and constructs a [`OperationNotFoundException`](crate::error::OperationNotFoundException)
+        pub fn build(self) -> crate::error::OperationNotFoundException {
+            crate::error::OperationNotFoundException {
                 message: self.message,
             }
         }
     }
 }
-impl OperationNotFoundError {
-    /// Creates a new builder-style object to manufacture [`OperationNotFoundError`](crate::error::OperationNotFoundError)
-    pub fn builder() -> crate::error::operation_not_found_error::Builder {
-        crate::error::operation_not_found_error::Builder::default()
+impl OperationNotFoundException {
+    /// Creates a new builder-style object to manufacture [`OperationNotFoundException`](crate::error::OperationNotFoundException)
+    pub fn builder() -> crate::error::operation_not_found_exception::Builder {
+        crate::error::operation_not_found_exception::Builder::default()
     }
 }
 
 /// <p>The specified type does not exist in the CloudFormation registry.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct TypeNotFoundError {
+pub struct TypeNotFoundException {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for TypeNotFoundError {
+impl std::fmt::Debug for TypeNotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TypeNotFoundError");
+        let mut formatter = f.debug_struct("TypeNotFoundException");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl TypeNotFoundError {
+impl TypeNotFoundException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for TypeNotFoundError {
+impl std::fmt::Display for TypeNotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "TypeNotFoundError [TypeNotFoundException]")?;
+        write!(f, "TypeNotFoundException")?;
         if let Some(inner_10) = &self.message {
             write!(f, ": {}", inner_10)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for TypeNotFoundError {}
-/// See [`TypeNotFoundError`](crate::error::TypeNotFoundError)
-pub mod type_not_found_error {
-    /// A builder for [`TypeNotFoundError`](crate::error::TypeNotFoundError)
+impl std::error::Error for TypeNotFoundException {}
+/// See [`TypeNotFoundException`](crate::error::TypeNotFoundException)
+pub mod type_not_found_exception {
+    /// A builder for [`TypeNotFoundException`](crate::error::TypeNotFoundException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -5194,52 +5239,52 @@ pub mod type_not_found_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`TypeNotFoundError`](crate::error::TypeNotFoundError)
-        pub fn build(self) -> crate::error::TypeNotFoundError {
-            crate::error::TypeNotFoundError {
+        /// Consumes the builder and constructs a [`TypeNotFoundException`](crate::error::TypeNotFoundException)
+        pub fn build(self) -> crate::error::TypeNotFoundException {
+            crate::error::TypeNotFoundException {
                 message: self.message,
             }
         }
     }
 }
-impl TypeNotFoundError {
-    /// Creates a new builder-style object to manufacture [`TypeNotFoundError`](crate::error::TypeNotFoundError)
-    pub fn builder() -> crate::error::type_not_found_error::Builder {
-        crate::error::type_not_found_error::Builder::default()
+impl TypeNotFoundException {
+    /// Creates a new builder-style object to manufacture [`TypeNotFoundException`](crate::error::TypeNotFoundException)
+    pub fn builder() -> crate::error::type_not_found_exception::Builder {
+        crate::error::type_not_found_exception::Builder::default()
     }
 }
 
 /// <p>An error occurred during a CloudFormation registry operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct CFNRegistryError {
+pub struct CfnRegistryException {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for CFNRegistryError {
+impl std::fmt::Debug for CfnRegistryException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CFNRegistryError");
+        let mut formatter = f.debug_struct("CfnRegistryException");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl CFNRegistryError {
+impl CfnRegistryException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for CFNRegistryError {
+impl std::fmt::Display for CfnRegistryException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "CFNRegistryError [CFNRegistryException]")?;
+        write!(f, "CfnRegistryException [CFNRegistryException]")?;
         if let Some(inner_11) = &self.message {
             write!(f, ": {}", inner_11)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for CFNRegistryError {}
-/// See [`CFNRegistryError`](crate::error::CFNRegistryError)
-pub mod cfn_registry_error {
-    /// A builder for [`CFNRegistryError`](crate::error::CFNRegistryError)
+impl std::error::Error for CfnRegistryException {}
+/// See [`CfnRegistryException`](crate::error::CfnRegistryException)
+pub mod cfn_registry_exception {
+    /// A builder for [`CfnRegistryException`](crate::error::CfnRegistryException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -5254,55 +5299,52 @@ pub mod cfn_registry_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`CFNRegistryError`](crate::error::CFNRegistryError)
-        pub fn build(self) -> crate::error::CFNRegistryError {
-            crate::error::CFNRegistryError {
+        /// Consumes the builder and constructs a [`CfnRegistryException`](crate::error::CfnRegistryException)
+        pub fn build(self) -> crate::error::CfnRegistryException {
+            crate::error::CfnRegistryException {
                 message: self.message,
             }
         }
     }
 }
-impl CFNRegistryError {
-    /// Creates a new builder-style object to manufacture [`CFNRegistryError`](crate::error::CFNRegistryError)
-    pub fn builder() -> crate::error::cfn_registry_error::Builder {
-        crate::error::cfn_registry_error::Builder::default()
+impl CfnRegistryException {
+    /// Creates a new builder-style object to manufacture [`CfnRegistryException`](crate::error::CfnRegistryException)
+    pub fn builder() -> crate::error::cfn_registry_exception::Builder {
+        crate::error::cfn_registry_exception::Builder::default()
     }
 }
 
 /// <p>Error reserved for use by the <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/what-is-cloudformation-cli.html">CloudFormation CLI</a>. CloudFormation does not return this error to users.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct OperationStatusCheckFailedError {
+pub struct OperationStatusCheckFailedException {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for OperationStatusCheckFailedError {
+impl std::fmt::Debug for OperationStatusCheckFailedException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OperationStatusCheckFailedError");
+        let mut formatter = f.debug_struct("OperationStatusCheckFailedException");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl OperationStatusCheckFailedError {
+impl OperationStatusCheckFailedException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for OperationStatusCheckFailedError {
+impl std::fmt::Display for OperationStatusCheckFailedException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(
-            f,
-            "OperationStatusCheckFailedError [OperationStatusCheckFailedException]"
-        )?;
+        write!(f, "OperationStatusCheckFailedException")?;
         if let Some(inner_12) = &self.message {
             write!(f, ": {}", inner_12)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for OperationStatusCheckFailedError {}
-/// See [`OperationStatusCheckFailedError`](crate::error::OperationStatusCheckFailedError)
-pub mod operation_status_check_failed_error {
-    /// A builder for [`OperationStatusCheckFailedError`](crate::error::OperationStatusCheckFailedError)
+impl std::error::Error for OperationStatusCheckFailedException {}
+/// See [`OperationStatusCheckFailedException`](crate::error::OperationStatusCheckFailedException)
+pub mod operation_status_check_failed_exception {
+    /// A builder for [`OperationStatusCheckFailedException`](crate::error::OperationStatusCheckFailedException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -5317,55 +5359,52 @@ pub mod operation_status_check_failed_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`OperationStatusCheckFailedError`](crate::error::OperationStatusCheckFailedError)
-        pub fn build(self) -> crate::error::OperationStatusCheckFailedError {
-            crate::error::OperationStatusCheckFailedError {
+        /// Consumes the builder and constructs a [`OperationStatusCheckFailedException`](crate::error::OperationStatusCheckFailedException)
+        pub fn build(self) -> crate::error::OperationStatusCheckFailedException {
+            crate::error::OperationStatusCheckFailedException {
                 message: self.message,
             }
         }
     }
 }
-impl OperationStatusCheckFailedError {
-    /// Creates a new builder-style object to manufacture [`OperationStatusCheckFailedError`](crate::error::OperationStatusCheckFailedError)
-    pub fn builder() -> crate::error::operation_status_check_failed_error::Builder {
-        crate::error::operation_status_check_failed_error::Builder::default()
+impl OperationStatusCheckFailedException {
+    /// Creates a new builder-style object to manufacture [`OperationStatusCheckFailedException`](crate::error::OperationStatusCheckFailedException)
+    pub fn builder() -> crate::error::operation_status_check_failed_exception::Builder {
+        crate::error::operation_status_check_failed_exception::Builder::default()
     }
 }
 
 /// <p>Error reserved for use by the <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/what-is-cloudformation-cli.html">CloudFormation CLI</a>. CloudFormation does not return this error to users.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct InvalidStateTransitionError {
+pub struct InvalidStateTransitionException {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for InvalidStateTransitionError {
+impl std::fmt::Debug for InvalidStateTransitionException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidStateTransitionError");
+        let mut formatter = f.debug_struct("InvalidStateTransitionException");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl InvalidStateTransitionError {
+impl InvalidStateTransitionException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for InvalidStateTransitionError {
+impl std::fmt::Display for InvalidStateTransitionException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(
-            f,
-            "InvalidStateTransitionError [InvalidStateTransitionException]"
-        )?;
+        write!(f, "InvalidStateTransitionException")?;
         if let Some(inner_13) = &self.message {
             write!(f, ": {}", inner_13)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for InvalidStateTransitionError {}
-/// See [`InvalidStateTransitionError`](crate::error::InvalidStateTransitionError)
-pub mod invalid_state_transition_error {
-    /// A builder for [`InvalidStateTransitionError`](crate::error::InvalidStateTransitionError)
+impl std::error::Error for InvalidStateTransitionException {}
+/// See [`InvalidStateTransitionException`](crate::error::InvalidStateTransitionException)
+pub mod invalid_state_transition_exception {
+    /// A builder for [`InvalidStateTransitionException`](crate::error::InvalidStateTransitionException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -5380,18 +5419,18 @@ pub mod invalid_state_transition_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`InvalidStateTransitionError`](crate::error::InvalidStateTransitionError)
-        pub fn build(self) -> crate::error::InvalidStateTransitionError {
-            crate::error::InvalidStateTransitionError {
+        /// Consumes the builder and constructs a [`InvalidStateTransitionException`](crate::error::InvalidStateTransitionException)
+        pub fn build(self) -> crate::error::InvalidStateTransitionException {
+            crate::error::InvalidStateTransitionException {
                 message: self.message,
             }
         }
     }
 }
-impl InvalidStateTransitionError {
-    /// Creates a new builder-style object to manufacture [`InvalidStateTransitionError`](crate::error::InvalidStateTransitionError)
-    pub fn builder() -> crate::error::invalid_state_transition_error::Builder {
-        crate::error::invalid_state_transition_error::Builder::default()
+impl InvalidStateTransitionException {
+    /// Creates a new builder-style object to manufacture [`InvalidStateTransitionException`](crate::error::InvalidStateTransitionException)
+    pub fn builder() -> crate::error::invalid_state_transition_exception::Builder {
+        crate::error::invalid_state_transition_exception::Builder::default()
     }
 }
 
@@ -5399,34 +5438,34 @@ impl InvalidStateTransitionError {
 /// stack, use the <code>ListChangeSets</code> action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct ChangeSetNotFoundError {
+pub struct ChangeSetNotFoundException {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for ChangeSetNotFoundError {
+impl std::fmt::Debug for ChangeSetNotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ChangeSetNotFoundError");
+        let mut formatter = f.debug_struct("ChangeSetNotFoundException");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl ChangeSetNotFoundError {
+impl ChangeSetNotFoundException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for ChangeSetNotFoundError {
+impl std::fmt::Display for ChangeSetNotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "ChangeSetNotFoundError [ChangeSetNotFoundException]")?;
+        write!(f, "ChangeSetNotFoundException")?;
         if let Some(inner_14) = &self.message {
             write!(f, ": {}", inner_14)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for ChangeSetNotFoundError {}
-/// See [`ChangeSetNotFoundError`](crate::error::ChangeSetNotFoundError)
-pub mod change_set_not_found_error {
-    /// A builder for [`ChangeSetNotFoundError`](crate::error::ChangeSetNotFoundError)
+impl std::error::Error for ChangeSetNotFoundException {}
+/// See [`ChangeSetNotFoundException`](crate::error::ChangeSetNotFoundException)
+pub mod change_set_not_found_exception {
+    /// A builder for [`ChangeSetNotFoundException`](crate::error::ChangeSetNotFoundException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -5441,18 +5480,18 @@ pub mod change_set_not_found_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`ChangeSetNotFoundError`](crate::error::ChangeSetNotFoundError)
-        pub fn build(self) -> crate::error::ChangeSetNotFoundError {
-            crate::error::ChangeSetNotFoundError {
+        /// Consumes the builder and constructs a [`ChangeSetNotFoundException`](crate::error::ChangeSetNotFoundException)
+        pub fn build(self) -> crate::error::ChangeSetNotFoundException {
+            crate::error::ChangeSetNotFoundException {
                 message: self.message,
             }
         }
     }
 }
-impl ChangeSetNotFoundError {
-    /// Creates a new builder-style object to manufacture [`ChangeSetNotFoundError`](crate::error::ChangeSetNotFoundError)
-    pub fn builder() -> crate::error::change_set_not_found_error::Builder {
-        crate::error::change_set_not_found_error::Builder::default()
+impl ChangeSetNotFoundException {
+    /// Creates a new builder-style object to manufacture [`ChangeSetNotFoundException`](crate::error::ChangeSetNotFoundException)
+    pub fn builder() -> crate::error::change_set_not_found_exception::Builder {
+        crate::error::change_set_not_found_exception::Builder::default()
     }
 }
 
@@ -5461,37 +5500,34 @@ impl ChangeSetNotFoundError {
 /// <code>UPDATE_IN_PROGRESS</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct InvalidChangeSetStatusError {
+pub struct InvalidChangeSetStatusException {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for InvalidChangeSetStatusError {
+impl std::fmt::Debug for InvalidChangeSetStatusException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidChangeSetStatusError");
+        let mut formatter = f.debug_struct("InvalidChangeSetStatusException");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl InvalidChangeSetStatusError {
+impl InvalidChangeSetStatusException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for InvalidChangeSetStatusError {
+impl std::fmt::Display for InvalidChangeSetStatusException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(
-            f,
-            "InvalidChangeSetStatusError [InvalidChangeSetStatusException]"
-        )?;
+        write!(f, "InvalidChangeSetStatusException")?;
         if let Some(inner_15) = &self.message {
             write!(f, ": {}", inner_15)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for InvalidChangeSetStatusError {}
-/// See [`InvalidChangeSetStatusError`](crate::error::InvalidChangeSetStatusError)
-pub mod invalid_change_set_status_error {
-    /// A builder for [`InvalidChangeSetStatusError`](crate::error::InvalidChangeSetStatusError)
+impl std::error::Error for InvalidChangeSetStatusException {}
+/// See [`InvalidChangeSetStatusException`](crate::error::InvalidChangeSetStatusException)
+pub mod invalid_change_set_status_exception {
+    /// A builder for [`InvalidChangeSetStatusException`](crate::error::InvalidChangeSetStatusException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -5506,18 +5542,18 @@ pub mod invalid_change_set_status_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`InvalidChangeSetStatusError`](crate::error::InvalidChangeSetStatusError)
-        pub fn build(self) -> crate::error::InvalidChangeSetStatusError {
-            crate::error::InvalidChangeSetStatusError {
+        /// Consumes the builder and constructs a [`InvalidChangeSetStatusException`](crate::error::InvalidChangeSetStatusException)
+        pub fn build(self) -> crate::error::InvalidChangeSetStatusException {
+            crate::error::InvalidChangeSetStatusException {
                 message: self.message,
             }
         }
     }
 }
-impl InvalidChangeSetStatusError {
-    /// Creates a new builder-style object to manufacture [`InvalidChangeSetStatusError`](crate::error::InvalidChangeSetStatusError)
-    pub fn builder() -> crate::error::invalid_change_set_status_error::Builder {
-        crate::error::invalid_change_set_status_error::Builder::default()
+impl InvalidChangeSetStatusException {
+    /// Creates a new builder-style object to manufacture [`InvalidChangeSetStatusException`](crate::error::InvalidChangeSetStatusException)
+    pub fn builder() -> crate::error::invalid_change_set_status_exception::Builder {
+        crate::error::invalid_change_set_status_exception::Builder::default()
     }
 }
 
@@ -5526,34 +5562,34 @@ impl InvalidChangeSetStatusError {
 /// set.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct StackSetNotEmptyError {
+pub struct StackSetNotEmptyException {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for StackSetNotEmptyError {
+impl std::fmt::Debug for StackSetNotEmptyException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StackSetNotEmptyError");
+        let mut formatter = f.debug_struct("StackSetNotEmptyException");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl StackSetNotEmptyError {
+impl StackSetNotEmptyException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for StackSetNotEmptyError {
+impl std::fmt::Display for StackSetNotEmptyException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "StackSetNotEmptyError [StackSetNotEmptyException]")?;
+        write!(f, "StackSetNotEmptyException")?;
         if let Some(inner_16) = &self.message {
             write!(f, ": {}", inner_16)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for StackSetNotEmptyError {}
-/// See [`StackSetNotEmptyError`](crate::error::StackSetNotEmptyError)
-pub mod stack_set_not_empty_error {
-    /// A builder for [`StackSetNotEmptyError`](crate::error::StackSetNotEmptyError)
+impl std::error::Error for StackSetNotEmptyException {}
+/// See [`StackSetNotEmptyException`](crate::error::StackSetNotEmptyException)
+pub mod stack_set_not_empty_exception {
+    /// A builder for [`StackSetNotEmptyException`](crate::error::StackSetNotEmptyException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -5568,52 +5604,52 @@ pub mod stack_set_not_empty_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`StackSetNotEmptyError`](crate::error::StackSetNotEmptyError)
-        pub fn build(self) -> crate::error::StackSetNotEmptyError {
-            crate::error::StackSetNotEmptyError {
+        /// Consumes the builder and constructs a [`StackSetNotEmptyException`](crate::error::StackSetNotEmptyException)
+        pub fn build(self) -> crate::error::StackSetNotEmptyException {
+            crate::error::StackSetNotEmptyException {
                 message: self.message,
             }
         }
     }
 }
-impl StackSetNotEmptyError {
-    /// Creates a new builder-style object to manufacture [`StackSetNotEmptyError`](crate::error::StackSetNotEmptyError)
-    pub fn builder() -> crate::error::stack_set_not_empty_error::Builder {
-        crate::error::stack_set_not_empty_error::Builder::default()
+impl StackSetNotEmptyException {
+    /// Creates a new builder-style object to manufacture [`StackSetNotEmptyException`](crate::error::StackSetNotEmptyException)
+    pub fn builder() -> crate::error::stack_set_not_empty_exception::Builder {
+        crate::error::stack_set_not_empty_exception::Builder::default()
     }
 }
 
 /// <p>The specified name is already in use.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct NameAlreadyExistsError {
+pub struct NameAlreadyExistsException {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for NameAlreadyExistsError {
+impl std::fmt::Debug for NameAlreadyExistsException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NameAlreadyExistsError");
+        let mut formatter = f.debug_struct("NameAlreadyExistsException");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl NameAlreadyExistsError {
+impl NameAlreadyExistsException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for NameAlreadyExistsError {
+impl std::fmt::Display for NameAlreadyExistsException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "NameAlreadyExistsError [NameAlreadyExistsException]")?;
+        write!(f, "NameAlreadyExistsException")?;
         if let Some(inner_17) = &self.message {
             write!(f, ": {}", inner_17)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for NameAlreadyExistsError {}
-/// See [`NameAlreadyExistsError`](crate::error::NameAlreadyExistsError)
-pub mod name_already_exists_error {
-    /// A builder for [`NameAlreadyExistsError`](crate::error::NameAlreadyExistsError)
+impl std::error::Error for NameAlreadyExistsException {}
+/// See [`NameAlreadyExistsException`](crate::error::NameAlreadyExistsException)
+pub mod name_already_exists_exception {
+    /// A builder for [`NameAlreadyExistsException`](crate::error::NameAlreadyExistsException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -5628,18 +5664,18 @@ pub mod name_already_exists_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`NameAlreadyExistsError`](crate::error::NameAlreadyExistsError)
-        pub fn build(self) -> crate::error::NameAlreadyExistsError {
-            crate::error::NameAlreadyExistsError {
+        /// Consumes the builder and constructs a [`NameAlreadyExistsException`](crate::error::NameAlreadyExistsException)
+        pub fn build(self) -> crate::error::NameAlreadyExistsException {
+            crate::error::NameAlreadyExistsException {
                 message: self.message,
             }
         }
     }
 }
-impl NameAlreadyExistsError {
-    /// Creates a new builder-style object to manufacture [`NameAlreadyExistsError`](crate::error::NameAlreadyExistsError)
-    pub fn builder() -> crate::error::name_already_exists_error::Builder {
-        crate::error::name_already_exists_error::Builder::default()
+impl NameAlreadyExistsException {
+    /// Creates a new builder-style object to manufacture [`NameAlreadyExistsException`](crate::error::NameAlreadyExistsException)
+    pub fn builder() -> crate::error::name_already_exists_exception::Builder {
+        crate::error::name_already_exists_exception::Builder::default()
     }
 }
 
@@ -5648,34 +5684,34 @@ impl NameAlreadyExistsError {
 /// the <i>AWS CloudFormation User Guide</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct LimitExceededError {
+pub struct LimitExceededException {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for LimitExceededError {
+impl std::fmt::Debug for LimitExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LimitExceededError");
+        let mut formatter = f.debug_struct("LimitExceededException");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl LimitExceededError {
+impl LimitExceededException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for LimitExceededError {
+impl std::fmt::Display for LimitExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "LimitExceededError [LimitExceededException]")?;
+        write!(f, "LimitExceededException")?;
         if let Some(inner_18) = &self.message {
             write!(f, ": {}", inner_18)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for LimitExceededError {}
-/// See [`LimitExceededError`](crate::error::LimitExceededError)
-pub mod limit_exceeded_error {
-    /// A builder for [`LimitExceededError`](crate::error::LimitExceededError)
+impl std::error::Error for LimitExceededException {}
+/// See [`LimitExceededException`](crate::error::LimitExceededException)
+pub mod limit_exceeded_exception {
+    /// A builder for [`LimitExceededException`](crate::error::LimitExceededException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -5690,52 +5726,52 @@ pub mod limit_exceeded_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`LimitExceededError`](crate::error::LimitExceededError)
-        pub fn build(self) -> crate::error::LimitExceededError {
-            crate::error::LimitExceededError {
+        /// Consumes the builder and constructs a [`LimitExceededException`](crate::error::LimitExceededException)
+        pub fn build(self) -> crate::error::LimitExceededException {
+            crate::error::LimitExceededException {
                 message: self.message,
             }
         }
     }
 }
-impl LimitExceededError {
-    /// Creates a new builder-style object to manufacture [`LimitExceededError`](crate::error::LimitExceededError)
-    pub fn builder() -> crate::error::limit_exceeded_error::Builder {
-        crate::error::limit_exceeded_error::Builder::default()
+impl LimitExceededException {
+    /// Creates a new builder-style object to manufacture [`LimitExceededException`](crate::error::LimitExceededException)
+    pub fn builder() -> crate::error::limit_exceeded_exception::Builder {
+        crate::error::limit_exceeded_exception::Builder::default()
     }
 }
 
 /// <p>The specified resource exists, but has been changed.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct CreatedButModifiedError {
+pub struct CreatedButModifiedException {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for CreatedButModifiedError {
+impl std::fmt::Debug for CreatedButModifiedException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreatedButModifiedError");
+        let mut formatter = f.debug_struct("CreatedButModifiedException");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl CreatedButModifiedError {
+impl CreatedButModifiedException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for CreatedButModifiedError {
+impl std::fmt::Display for CreatedButModifiedException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "CreatedButModifiedError [CreatedButModifiedException]")?;
+        write!(f, "CreatedButModifiedException")?;
         if let Some(inner_19) = &self.message {
             write!(f, ": {}", inner_19)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for CreatedButModifiedError {}
-/// See [`CreatedButModifiedError`](crate::error::CreatedButModifiedError)
-pub mod created_but_modified_error {
-    /// A builder for [`CreatedButModifiedError`](crate::error::CreatedButModifiedError)
+impl std::error::Error for CreatedButModifiedException {}
+/// See [`CreatedButModifiedException`](crate::error::CreatedButModifiedException)
+pub mod created_but_modified_exception {
+    /// A builder for [`CreatedButModifiedException`](crate::error::CreatedButModifiedException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -5750,52 +5786,52 @@ pub mod created_but_modified_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`CreatedButModifiedError`](crate::error::CreatedButModifiedError)
-        pub fn build(self) -> crate::error::CreatedButModifiedError {
-            crate::error::CreatedButModifiedError {
+        /// Consumes the builder and constructs a [`CreatedButModifiedException`](crate::error::CreatedButModifiedException)
+        pub fn build(self) -> crate::error::CreatedButModifiedException {
+            crate::error::CreatedButModifiedException {
                 message: self.message,
             }
         }
     }
 }
-impl CreatedButModifiedError {
-    /// Creates a new builder-style object to manufacture [`CreatedButModifiedError`](crate::error::CreatedButModifiedError)
-    pub fn builder() -> crate::error::created_but_modified_error::Builder {
-        crate::error::created_but_modified_error::Builder::default()
+impl CreatedButModifiedException {
+    /// Creates a new builder-style object to manufacture [`CreatedButModifiedException`](crate::error::CreatedButModifiedException)
+    pub fn builder() -> crate::error::created_but_modified_exception::Builder {
+        crate::error::created_but_modified_exception::Builder::default()
     }
 }
 
 /// <p>The resource with the name requested already exists.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct AlreadyExistsError {
+pub struct AlreadyExistsException {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for AlreadyExistsError {
+impl std::fmt::Debug for AlreadyExistsException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AlreadyExistsError");
+        let mut formatter = f.debug_struct("AlreadyExistsException");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl AlreadyExistsError {
+impl AlreadyExistsException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for AlreadyExistsError {
+impl std::fmt::Display for AlreadyExistsException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "AlreadyExistsError [AlreadyExistsException]")?;
+        write!(f, "AlreadyExistsException")?;
         if let Some(inner_20) = &self.message {
             write!(f, ": {}", inner_20)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for AlreadyExistsError {}
-/// See [`AlreadyExistsError`](crate::error::AlreadyExistsError)
-pub mod already_exists_error {
-    /// A builder for [`AlreadyExistsError`](crate::error::AlreadyExistsError)
+impl std::error::Error for AlreadyExistsException {}
+/// See [`AlreadyExistsException`](crate::error::AlreadyExistsException)
+pub mod already_exists_exception {
+    /// A builder for [`AlreadyExistsException`](crate::error::AlreadyExistsException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -5810,17 +5846,17 @@ pub mod already_exists_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`AlreadyExistsError`](crate::error::AlreadyExistsError)
-        pub fn build(self) -> crate::error::AlreadyExistsError {
-            crate::error::AlreadyExistsError {
+        /// Consumes the builder and constructs a [`AlreadyExistsException`](crate::error::AlreadyExistsException)
+        pub fn build(self) -> crate::error::AlreadyExistsException {
+            crate::error::AlreadyExistsException {
                 message: self.message,
             }
         }
     }
 }
-impl AlreadyExistsError {
-    /// Creates a new builder-style object to manufacture [`AlreadyExistsError`](crate::error::AlreadyExistsError)
-    pub fn builder() -> crate::error::already_exists_error::Builder {
-        crate::error::already_exists_error::Builder::default()
+impl AlreadyExistsException {
+    /// Creates a new builder-style object to manufacture [`AlreadyExistsException`](crate::error::AlreadyExistsException)
+    pub fn builder() -> crate::error::already_exists_exception::Builder {
+        crate::error::already_exists_exception::Builder::default()
     }
 }

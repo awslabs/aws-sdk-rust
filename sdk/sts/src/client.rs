@@ -372,7 +372,7 @@ pub mod fluent_builders {
         pub async fn send(
             self,
         ) -> std::result::Result<
-            crate::output::AssumeRoleWithSAMLOutput,
+            crate::output::AssumeRoleWithSamlOutput,
             smithy_http::result::SdkError<crate::error::AssumeRoleWithSAMLError>,
         >
         where

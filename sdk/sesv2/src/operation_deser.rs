@@ -19,34 +19,11 @@ pub fn parse_create_configuration_set_error(
     Err(match error_code {
         "AlreadyExistsException" => crate::error::CreateConfigurationSetError {
             meta: generic,
-            kind: crate::error::CreateConfigurationSetErrorKind::AlreadyExistsError({
+            kind: crate::error::CreateConfigurationSetErrorKind::AlreadyExistsException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::already_exists_error::Builder::default();
+                let mut output = crate::error::already_exists_exception::Builder::default();
                 let _ = response;
-                output =
-                    crate::json_deser::already_exists_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::CreateConfigurationSetError::unhandled)?;
-                output.build()
-            }),
-        },
-        "BadRequestException" => crate::error::CreateConfigurationSetError {
-            meta: generic,
-            kind: crate::error::CreateConfigurationSetErrorKind::BadRequestError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::bad_request_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::CreateConfigurationSetError::unhandled)?;
-                output.build()
-            }),
-        },
-        "ConcurrentModificationException" => crate::error::CreateConfigurationSetError {
-            meta: generic,
-            kind: crate::error::CreateConfigurationSetErrorKind::ConcurrentModificationError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::concurrent_modification_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::concurrent_modification_exception(
+                output = crate::json_deser::deser_structure_already_exists_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -54,36 +31,71 @@ pub fn parse_create_configuration_set_error(
                 output.build()
             }),
         },
+        "BadRequestException" => crate::error::CreateConfigurationSetError {
+            meta: generic,
+            kind: crate::error::CreateConfigurationSetErrorKind::BadRequestException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::bad_request_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_bad_request_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::CreateConfigurationSetError::unhandled)?;
+                output.build()
+            }),
+        },
+        "ConcurrentModificationException" => {
+            crate::error::CreateConfigurationSetError {
+                meta: generic,
+                kind:
+                    crate::error::CreateConfigurationSetErrorKind::ConcurrentModificationException(
+                        {
+                            #[allow(unused_mut)]
+                            let mut output =
+                                crate::error::concurrent_modification_exception::Builder::default();
+                            let _ = response;
+                            output = crate::json_deser::deser_structure_concurrent_modification_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateConfigurationSetError::unhandled)?;
+                            output.build()
+                        },
+                    ),
+            }
+        }
         "LimitExceededException" => crate::error::CreateConfigurationSetError {
             meta: generic,
-            kind: crate::error::CreateConfigurationSetErrorKind::LimitExceededError({
+            kind: crate::error::CreateConfigurationSetErrorKind::LimitExceededException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::limit_exceeded_error::Builder::default();
+                let mut output = crate::error::limit_exceeded_exception::Builder::default();
                 let _ = response;
-                output =
-                    crate::json_deser::limit_exceeded_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::CreateConfigurationSetError::unhandled)?;
+                output = crate::json_deser::deser_structure_limit_exceeded_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::CreateConfigurationSetError::unhandled)?;
                 output.build()
             }),
         },
         "NotFoundException" => crate::error::CreateConfigurationSetError {
             meta: generic,
-            kind: crate::error::CreateConfigurationSetErrorKind::NotFoundError({
+            kind: crate::error::CreateConfigurationSetErrorKind::NotFoundException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::not_found_error::Builder::default();
+                let mut output = crate::error::not_found_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::not_found_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::CreateConfigurationSetError::unhandled)?;
+                output = crate::json_deser::deser_structure_not_found_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::CreateConfigurationSetError::unhandled)?;
                 output.build()
             }),
         },
         "TooManyRequestsException" => crate::error::CreateConfigurationSetError {
             meta: generic,
-            kind: crate::error::CreateConfigurationSetErrorKind::TooManyRequestsError({
+            kind: crate::error::CreateConfigurationSetErrorKind::TooManyRequestsException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::too_many_requests_error::Builder::default();
+                let mut output = crate::error::too_many_requests_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::too_many_requests_exception(
+                output = crate::json_deser::deser_structure_too_many_requests_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -128,88 +140,37 @@ pub fn parse_create_configuration_set_event_destination_error(
         }
     };
     Err(match error_code {
-        "AlreadyExistsException" => crate::error::CreateConfigurationSetEventDestinationError {
-            meta: generic,
-            kind: crate::error::CreateConfigurationSetEventDestinationErrorKind::AlreadyExistsError(
-                {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::already_exists_error::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::already_exists_exception(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(
-                        crate::error::CreateConfigurationSetEventDestinationError::unhandled,
-                    )?;
-                    output.build()
-                },
-            ),
-        },
-        "BadRequestException" => crate::error::CreateConfigurationSetEventDestinationError {
-            meta: generic,
-            kind: crate::error::CreateConfigurationSetEventDestinationErrorKind::BadRequestError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::bad_request_exception(response.body().as_ref(), output)
-                    .map_err(
-                        crate::error::CreateConfigurationSetEventDestinationError::unhandled,
-                    )?;
-                output.build()
-            }),
-        },
-        "LimitExceededException" => crate::error::CreateConfigurationSetEventDestinationError {
-            meta: generic,
-            kind: crate::error::CreateConfigurationSetEventDestinationErrorKind::LimitExceededError(
-                {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::limit_exceeded_error::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::limit_exceeded_exception(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(
-                        crate::error::CreateConfigurationSetEventDestinationError::unhandled,
-                    )?;
-                    output.build()
-                },
-            ),
-        },
-        "NotFoundException" => crate::error::CreateConfigurationSetEventDestinationError {
-            meta: generic,
-            kind: crate::error::CreateConfigurationSetEventDestinationErrorKind::NotFoundError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::not_found_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::not_found_exception(response.body().as_ref(), output)
-                    .map_err(
-                    crate::error::CreateConfigurationSetEventDestinationError::unhandled,
-                )?;
-                output.build()
-            }),
-        },
-        "TooManyRequestsException" => crate::error::CreateConfigurationSetEventDestinationError {
-            meta: generic,
-            kind:
-                crate::error::CreateConfigurationSetEventDestinationErrorKind::TooManyRequestsError(
-                    {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::too_many_requests_error::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::too_many_requests_exception(
-                            response.body().as_ref(),
-                            output,
-                        )
-                        .map_err(
-                            crate::error::CreateConfigurationSetEventDestinationError::unhandled,
-                        )?;
-                        output.build()
-                    },
-                ),
-        },
-        _ => crate::error::CreateConfigurationSetEventDestinationError::generic(generic),
+        "AlreadyExistsException" => crate::error::CreateConfigurationSetEventDestinationError { meta: generic, kind: crate::error::CreateConfigurationSetEventDestinationErrorKind::AlreadyExistsException({
+            #[allow(unused_mut)]let mut output = crate::error::already_exists_exception::Builder::default();
+            let _ = response;
+            output = crate::json_deser::deser_structure_already_exists_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateConfigurationSetEventDestinationError::unhandled)?;
+            output.build()
+        })},
+        "BadRequestException" => crate::error::CreateConfigurationSetEventDestinationError { meta: generic, kind: crate::error::CreateConfigurationSetEventDestinationErrorKind::BadRequestException({
+            #[allow(unused_mut)]let mut output = crate::error::bad_request_exception::Builder::default();
+            let _ = response;
+            output = crate::json_deser::deser_structure_bad_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateConfigurationSetEventDestinationError::unhandled)?;
+            output.build()
+        })},
+        "LimitExceededException" => crate::error::CreateConfigurationSetEventDestinationError { meta: generic, kind: crate::error::CreateConfigurationSetEventDestinationErrorKind::LimitExceededException({
+            #[allow(unused_mut)]let mut output = crate::error::limit_exceeded_exception::Builder::default();
+            let _ = response;
+            output = crate::json_deser::deser_structure_limit_exceeded_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateConfigurationSetEventDestinationError::unhandled)?;
+            output.build()
+        })},
+        "NotFoundException" => crate::error::CreateConfigurationSetEventDestinationError { meta: generic, kind: crate::error::CreateConfigurationSetEventDestinationErrorKind::NotFoundException({
+            #[allow(unused_mut)]let mut output = crate::error::not_found_exception::Builder::default();
+            let _ = response;
+            output = crate::json_deser::deser_structure_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateConfigurationSetEventDestinationError::unhandled)?;
+            output.build()
+        })},
+        "TooManyRequestsException" => crate::error::CreateConfigurationSetEventDestinationError { meta: generic, kind: crate::error::CreateConfigurationSetEventDestinationErrorKind::TooManyRequestsException({
+            #[allow(unused_mut)]let mut output = crate::error::too_many_requests_exception::Builder::default();
+            let _ = response;
+            output = crate::json_deser::deser_structure_too_many_requests_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateConfigurationSetEventDestinationError::unhandled)?;
+            output.build()
+        })},
+        _ => crate::error::CreateConfigurationSetEventDestinationError::generic(generic)
     })
 }
 
@@ -242,45 +203,53 @@ pub fn parse_create_contact_error(
     Err(match error_code {
         "AlreadyExistsException" => crate::error::CreateContactError {
             meta: generic,
-            kind: crate::error::CreateContactErrorKind::AlreadyExistsError({
+            kind: crate::error::CreateContactErrorKind::AlreadyExistsException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::already_exists_error::Builder::default();
+                let mut output = crate::error::already_exists_exception::Builder::default();
                 let _ = response;
-                output =
-                    crate::json_deser::already_exists_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::CreateContactError::unhandled)?;
+                output = crate::json_deser::deser_structure_already_exists_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::CreateContactError::unhandled)?;
                 output.build()
             }),
         },
         "BadRequestException" => crate::error::CreateContactError {
             meta: generic,
-            kind: crate::error::CreateContactErrorKind::BadRequestError({
+            kind: crate::error::CreateContactErrorKind::BadRequestException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_error::Builder::default();
+                let mut output = crate::error::bad_request_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::bad_request_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::CreateContactError::unhandled)?;
+                output = crate::json_deser::deser_structure_bad_request_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::CreateContactError::unhandled)?;
                 output.build()
             }),
         },
         "NotFoundException" => crate::error::CreateContactError {
             meta: generic,
-            kind: crate::error::CreateContactErrorKind::NotFoundError({
+            kind: crate::error::CreateContactErrorKind::NotFoundException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::not_found_error::Builder::default();
+                let mut output = crate::error::not_found_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::not_found_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::CreateContactError::unhandled)?;
+                output = crate::json_deser::deser_structure_not_found_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::CreateContactError::unhandled)?;
                 output.build()
             }),
         },
         "TooManyRequestsException" => crate::error::CreateContactError {
             meta: generic,
-            kind: crate::error::CreateContactErrorKind::TooManyRequestsError({
+            kind: crate::error::CreateContactErrorKind::TooManyRequestsException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::too_many_requests_error::Builder::default();
+                let mut output = crate::error::too_many_requests_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::too_many_requests_exception(
+                output = crate::json_deser::deser_structure_too_many_requests_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -318,46 +287,53 @@ pub fn parse_create_contact_list_error(
     Err(match error_code {
         "AlreadyExistsException" => crate::error::CreateContactListError {
             meta: generic,
-            kind: crate::error::CreateContactListErrorKind::AlreadyExistsError({
+            kind: crate::error::CreateContactListErrorKind::AlreadyExistsException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::already_exists_error::Builder::default();
+                let mut output = crate::error::already_exists_exception::Builder::default();
                 let _ = response;
-                output =
-                    crate::json_deser::already_exists_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::CreateContactListError::unhandled)?;
+                output = crate::json_deser::deser_structure_already_exists_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::CreateContactListError::unhandled)?;
                 output.build()
             }),
         },
         "BadRequestException" => crate::error::CreateContactListError {
             meta: generic,
-            kind: crate::error::CreateContactListErrorKind::BadRequestError({
+            kind: crate::error::CreateContactListErrorKind::BadRequestException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_error::Builder::default();
+                let mut output = crate::error::bad_request_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::bad_request_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::CreateContactListError::unhandled)?;
+                output = crate::json_deser::deser_structure_bad_request_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::CreateContactListError::unhandled)?;
                 output.build()
             }),
         },
         "LimitExceededException" => crate::error::CreateContactListError {
             meta: generic,
-            kind: crate::error::CreateContactListErrorKind::LimitExceededError({
+            kind: crate::error::CreateContactListErrorKind::LimitExceededException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::limit_exceeded_error::Builder::default();
+                let mut output = crate::error::limit_exceeded_exception::Builder::default();
                 let _ = response;
-                output =
-                    crate::json_deser::limit_exceeded_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::CreateContactListError::unhandled)?;
+                output = crate::json_deser::deser_structure_limit_exceeded_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::CreateContactListError::unhandled)?;
                 output.build()
             }),
         },
         "TooManyRequestsException" => crate::error::CreateContactListError {
             meta: generic,
-            kind: crate::error::CreateContactListErrorKind::TooManyRequestsError({
+            kind: crate::error::CreateContactListErrorKind::TooManyRequestsException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::too_many_requests_error::Builder::default();
+                let mut output = crate::error::too_many_requests_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::too_many_requests_exception(
+                output = crate::json_deser::deser_structure_too_many_requests_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -400,82 +376,37 @@ pub fn parse_create_custom_verification_email_template_error(
         }
     };
     Err(match error_code {
-        "AlreadyExistsException" => crate::error::CreateCustomVerificationEmailTemplateError {
-            meta: generic,
-            kind: crate::error::CreateCustomVerificationEmailTemplateErrorKind::AlreadyExistsError(
-                {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::already_exists_error::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::already_exists_exception(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::CreateCustomVerificationEmailTemplateError::unhandled)?;
-                    output.build()
-                },
-            ),
-        },
-        "BadRequestException" => crate::error::CreateCustomVerificationEmailTemplateError {
-            meta: generic,
-            kind: crate::error::CreateCustomVerificationEmailTemplateErrorKind::BadRequestError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::bad_request_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::CreateCustomVerificationEmailTemplateError::unhandled)?;
-                output.build()
-            }),
-        },
-        "LimitExceededException" => crate::error::CreateCustomVerificationEmailTemplateError {
-            meta: generic,
-            kind: crate::error::CreateCustomVerificationEmailTemplateErrorKind::LimitExceededError(
-                {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::limit_exceeded_error::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::limit_exceeded_exception(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::CreateCustomVerificationEmailTemplateError::unhandled)?;
-                    output.build()
-                },
-            ),
-        },
-        "NotFoundException" => crate::error::CreateCustomVerificationEmailTemplateError {
-            meta: generic,
-            kind: crate::error::CreateCustomVerificationEmailTemplateErrorKind::NotFoundError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::not_found_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::not_found_exception(response.body().as_ref(), output)
-                    .map_err(
-                    crate::error::CreateCustomVerificationEmailTemplateError::unhandled,
-                )?;
-                output.build()
-            }),
-        },
-        "TooManyRequestsException" => crate::error::CreateCustomVerificationEmailTemplateError {
-            meta: generic,
-            kind:
-                crate::error::CreateCustomVerificationEmailTemplateErrorKind::TooManyRequestsError(
-                    {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::too_many_requests_error::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::too_many_requests_exception(
-                            response.body().as_ref(),
-                            output,
-                        )
-                        .map_err(
-                            crate::error::CreateCustomVerificationEmailTemplateError::unhandled,
-                        )?;
-                        output.build()
-                    },
-                ),
-        },
-        _ => crate::error::CreateCustomVerificationEmailTemplateError::generic(generic),
+        "AlreadyExistsException" => crate::error::CreateCustomVerificationEmailTemplateError { meta: generic, kind: crate::error::CreateCustomVerificationEmailTemplateErrorKind::AlreadyExistsException({
+            #[allow(unused_mut)]let mut output = crate::error::already_exists_exception::Builder::default();
+            let _ = response;
+            output = crate::json_deser::deser_structure_already_exists_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateCustomVerificationEmailTemplateError::unhandled)?;
+            output.build()
+        })},
+        "BadRequestException" => crate::error::CreateCustomVerificationEmailTemplateError { meta: generic, kind: crate::error::CreateCustomVerificationEmailTemplateErrorKind::BadRequestException({
+            #[allow(unused_mut)]let mut output = crate::error::bad_request_exception::Builder::default();
+            let _ = response;
+            output = crate::json_deser::deser_structure_bad_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateCustomVerificationEmailTemplateError::unhandled)?;
+            output.build()
+        })},
+        "LimitExceededException" => crate::error::CreateCustomVerificationEmailTemplateError { meta: generic, kind: crate::error::CreateCustomVerificationEmailTemplateErrorKind::LimitExceededException({
+            #[allow(unused_mut)]let mut output = crate::error::limit_exceeded_exception::Builder::default();
+            let _ = response;
+            output = crate::json_deser::deser_structure_limit_exceeded_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateCustomVerificationEmailTemplateError::unhandled)?;
+            output.build()
+        })},
+        "NotFoundException" => crate::error::CreateCustomVerificationEmailTemplateError { meta: generic, kind: crate::error::CreateCustomVerificationEmailTemplateErrorKind::NotFoundException({
+            #[allow(unused_mut)]let mut output = crate::error::not_found_exception::Builder::default();
+            let _ = response;
+            output = crate::json_deser::deser_structure_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateCustomVerificationEmailTemplateError::unhandled)?;
+            output.build()
+        })},
+        "TooManyRequestsException" => crate::error::CreateCustomVerificationEmailTemplateError { meta: generic, kind: crate::error::CreateCustomVerificationEmailTemplateErrorKind::TooManyRequestsException({
+            #[allow(unused_mut)]let mut output = crate::error::too_many_requests_exception::Builder::default();
+            let _ = response;
+            output = crate::json_deser::deser_structure_too_many_requests_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateCustomVerificationEmailTemplateError::unhandled)?;
+            output.build()
+        })},
+        _ => crate::error::CreateCustomVerificationEmailTemplateError::generic(generic)
     })
 }
 
@@ -511,34 +442,11 @@ pub fn parse_create_dedicated_ip_pool_error(
     Err(match error_code {
         "AlreadyExistsException" => crate::error::CreateDedicatedIpPoolError {
             meta: generic,
-            kind: crate::error::CreateDedicatedIpPoolErrorKind::AlreadyExistsError({
+            kind: crate::error::CreateDedicatedIpPoolErrorKind::AlreadyExistsException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::already_exists_error::Builder::default();
+                let mut output = crate::error::already_exists_exception::Builder::default();
                 let _ = response;
-                output =
-                    crate::json_deser::already_exists_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::CreateDedicatedIpPoolError::unhandled)?;
-                output.build()
-            }),
-        },
-        "BadRequestException" => crate::error::CreateDedicatedIpPoolError {
-            meta: generic,
-            kind: crate::error::CreateDedicatedIpPoolErrorKind::BadRequestError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::bad_request_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::CreateDedicatedIpPoolError::unhandled)?;
-                output.build()
-            }),
-        },
-        "ConcurrentModificationException" => crate::error::CreateDedicatedIpPoolError {
-            meta: generic,
-            kind: crate::error::CreateDedicatedIpPoolErrorKind::ConcurrentModificationError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::concurrent_modification_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::concurrent_modification_exception(
+                output = crate::json_deser::deser_structure_already_exists_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -546,25 +454,56 @@ pub fn parse_create_dedicated_ip_pool_error(
                 output.build()
             }),
         },
+        "BadRequestException" => crate::error::CreateDedicatedIpPoolError {
+            meta: generic,
+            kind: crate::error::CreateDedicatedIpPoolErrorKind::BadRequestException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::bad_request_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_bad_request_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::CreateDedicatedIpPoolError::unhandled)?;
+                output.build()
+            }),
+        },
+        "ConcurrentModificationException" => {
+            crate::error::CreateDedicatedIpPoolError {
+                meta: generic,
+                kind: crate::error::CreateDedicatedIpPoolErrorKind::ConcurrentModificationException(
+                    {
+                        #[allow(unused_mut)]
+                        let mut output =
+                            crate::error::concurrent_modification_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_concurrent_modification_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateDedicatedIpPoolError::unhandled)?;
+                        output.build()
+                    },
+                ),
+            }
+        }
         "LimitExceededException" => crate::error::CreateDedicatedIpPoolError {
             meta: generic,
-            kind: crate::error::CreateDedicatedIpPoolErrorKind::LimitExceededError({
+            kind: crate::error::CreateDedicatedIpPoolErrorKind::LimitExceededException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::limit_exceeded_error::Builder::default();
+                let mut output = crate::error::limit_exceeded_exception::Builder::default();
                 let _ = response;
-                output =
-                    crate::json_deser::limit_exceeded_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::CreateDedicatedIpPoolError::unhandled)?;
+                output = crate::json_deser::deser_structure_limit_exceeded_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::CreateDedicatedIpPoolError::unhandled)?;
                 output.build()
             }),
         },
         "TooManyRequestsException" => crate::error::CreateDedicatedIpPoolError {
             meta: generic,
-            kind: crate::error::CreateDedicatedIpPoolErrorKind::TooManyRequestsError({
+            kind: crate::error::CreateDedicatedIpPoolErrorKind::TooManyRequestsException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::too_many_requests_error::Builder::default();
+                let mut output = crate::error::too_many_requests_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::too_many_requests_exception(
+                output = crate::json_deser::deser_structure_too_many_requests_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -605,58 +544,58 @@ pub fn parse_create_deliverability_test_report_error(
         None => return Err(crate::error::CreateDeliverabilityTestReportError::unhandled(generic)),
     };
     Err(match error_code {
-        "AccountSuspendedException" => crate::error::CreateDeliverabilityTestReportError { meta: generic, kind: crate::error::CreateDeliverabilityTestReportErrorKind::AccountSuspendedError({
-            #[allow(unused_mut)]let mut output = crate::error::account_suspended_error::Builder::default();
+        "AccountSuspendedException" => crate::error::CreateDeliverabilityTestReportError { meta: generic, kind: crate::error::CreateDeliverabilityTestReportErrorKind::AccountSuspendedException({
+            #[allow(unused_mut)]let mut output = crate::error::account_suspended_exception::Builder::default();
             let _ = response;
-            output = crate::json_deser::account_suspended_exception(response.body().as_ref(), output).map_err(crate::error::CreateDeliverabilityTestReportError::unhandled)?;
+            output = crate::json_deser::deser_structure_account_suspended_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateDeliverabilityTestReportError::unhandled)?;
             output.build()
         })},
-        "BadRequestException" => crate::error::CreateDeliverabilityTestReportError { meta: generic, kind: crate::error::CreateDeliverabilityTestReportErrorKind::BadRequestError({
-            #[allow(unused_mut)]let mut output = crate::error::bad_request_error::Builder::default();
+        "BadRequestException" => crate::error::CreateDeliverabilityTestReportError { meta: generic, kind: crate::error::CreateDeliverabilityTestReportErrorKind::BadRequestException({
+            #[allow(unused_mut)]let mut output = crate::error::bad_request_exception::Builder::default();
             let _ = response;
-            output = crate::json_deser::bad_request_exception(response.body().as_ref(), output).map_err(crate::error::CreateDeliverabilityTestReportError::unhandled)?;
+            output = crate::json_deser::deser_structure_bad_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateDeliverabilityTestReportError::unhandled)?;
             output.build()
         })},
-        "ConcurrentModificationException" => crate::error::CreateDeliverabilityTestReportError { meta: generic, kind: crate::error::CreateDeliverabilityTestReportErrorKind::ConcurrentModificationError({
-            #[allow(unused_mut)]let mut output = crate::error::concurrent_modification_error::Builder::default();
+        "ConcurrentModificationException" => crate::error::CreateDeliverabilityTestReportError { meta: generic, kind: crate::error::CreateDeliverabilityTestReportErrorKind::ConcurrentModificationException({
+            #[allow(unused_mut)]let mut output = crate::error::concurrent_modification_exception::Builder::default();
             let _ = response;
-            output = crate::json_deser::concurrent_modification_exception(response.body().as_ref(), output).map_err(crate::error::CreateDeliverabilityTestReportError::unhandled)?;
+            output = crate::json_deser::deser_structure_concurrent_modification_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateDeliverabilityTestReportError::unhandled)?;
             output.build()
         })},
-        "LimitExceededException" => crate::error::CreateDeliverabilityTestReportError { meta: generic, kind: crate::error::CreateDeliverabilityTestReportErrorKind::LimitExceededError({
-            #[allow(unused_mut)]let mut output = crate::error::limit_exceeded_error::Builder::default();
+        "LimitExceededException" => crate::error::CreateDeliverabilityTestReportError { meta: generic, kind: crate::error::CreateDeliverabilityTestReportErrorKind::LimitExceededException({
+            #[allow(unused_mut)]let mut output = crate::error::limit_exceeded_exception::Builder::default();
             let _ = response;
-            output = crate::json_deser::limit_exceeded_exception(response.body().as_ref(), output).map_err(crate::error::CreateDeliverabilityTestReportError::unhandled)?;
+            output = crate::json_deser::deser_structure_limit_exceeded_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateDeliverabilityTestReportError::unhandled)?;
             output.build()
         })},
-        "MailFromDomainNotVerifiedException" => crate::error::CreateDeliverabilityTestReportError { meta: generic, kind: crate::error::CreateDeliverabilityTestReportErrorKind::MailFromDomainNotVerifiedError({
-            #[allow(unused_mut)]let mut output = crate::error::mail_from_domain_not_verified_error::Builder::default();
+        "MailFromDomainNotVerifiedException" => crate::error::CreateDeliverabilityTestReportError { meta: generic, kind: crate::error::CreateDeliverabilityTestReportErrorKind::MailFromDomainNotVerifiedException({
+            #[allow(unused_mut)]let mut output = crate::error::mail_from_domain_not_verified_exception::Builder::default();
             let _ = response;
-            output = crate::json_deser::mail_from_domain_not_verified_exception(response.body().as_ref(), output).map_err(crate::error::CreateDeliverabilityTestReportError::unhandled)?;
+            output = crate::json_deser::deser_structure_mail_from_domain_not_verified_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateDeliverabilityTestReportError::unhandled)?;
             output.build()
         })},
         "MessageRejected" => crate::error::CreateDeliverabilityTestReportError { meta: generic, kind: crate::error::CreateDeliverabilityTestReportErrorKind::MessageRejected({
             #[allow(unused_mut)]let mut output = crate::error::message_rejected::Builder::default();
             let _ = response;
-            output = crate::json_deser::message_rejected(response.body().as_ref(), output).map_err(crate::error::CreateDeliverabilityTestReportError::unhandled)?;
+            output = crate::json_deser::deser_structure_message_rejectedjson_err(response.body().as_ref(), output).map_err(crate::error::CreateDeliverabilityTestReportError::unhandled)?;
             output.build()
         })},
-        "NotFoundException" => crate::error::CreateDeliverabilityTestReportError { meta: generic, kind: crate::error::CreateDeliverabilityTestReportErrorKind::NotFoundError({
-            #[allow(unused_mut)]let mut output = crate::error::not_found_error::Builder::default();
+        "NotFoundException" => crate::error::CreateDeliverabilityTestReportError { meta: generic, kind: crate::error::CreateDeliverabilityTestReportErrorKind::NotFoundException({
+            #[allow(unused_mut)]let mut output = crate::error::not_found_exception::Builder::default();
             let _ = response;
-            output = crate::json_deser::not_found_exception(response.body().as_ref(), output).map_err(crate::error::CreateDeliverabilityTestReportError::unhandled)?;
+            output = crate::json_deser::deser_structure_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateDeliverabilityTestReportError::unhandled)?;
             output.build()
         })},
-        "SendingPausedException" => crate::error::CreateDeliverabilityTestReportError { meta: generic, kind: crate::error::CreateDeliverabilityTestReportErrorKind::SendingPausedError({
-            #[allow(unused_mut)]let mut output = crate::error::sending_paused_error::Builder::default();
+        "SendingPausedException" => crate::error::CreateDeliverabilityTestReportError { meta: generic, kind: crate::error::CreateDeliverabilityTestReportErrorKind::SendingPausedException({
+            #[allow(unused_mut)]let mut output = crate::error::sending_paused_exception::Builder::default();
             let _ = response;
-            output = crate::json_deser::sending_paused_exception(response.body().as_ref(), output).map_err(crate::error::CreateDeliverabilityTestReportError::unhandled)?;
+            output = crate::json_deser::deser_structure_sending_paused_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateDeliverabilityTestReportError::unhandled)?;
             output.build()
         })},
-        "TooManyRequestsException" => crate::error::CreateDeliverabilityTestReportError { meta: generic, kind: crate::error::CreateDeliverabilityTestReportErrorKind::TooManyRequestsError({
-            #[allow(unused_mut)]let mut output = crate::error::too_many_requests_error::Builder::default();
+        "TooManyRequestsException" => crate::error::CreateDeliverabilityTestReportError { meta: generic, kind: crate::error::CreateDeliverabilityTestReportErrorKind::TooManyRequestsException({
+            #[allow(unused_mut)]let mut output = crate::error::too_many_requests_exception::Builder::default();
             let _ = response;
-            output = crate::json_deser::too_many_requests_exception(response.body().as_ref(), output).map_err(crate::error::CreateDeliverabilityTestReportError::unhandled)?;
+            output = crate::json_deser::deser_structure_too_many_requests_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateDeliverabilityTestReportError::unhandled)?;
             output.build()
         })},
         _ => crate::error::CreateDeliverabilityTestReportError::generic(generic)
@@ -675,7 +614,7 @@ pub fn parse_create_deliverability_test_report_response(
         let mut output =
             crate::output::create_deliverability_test_report_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::create_deliverability_test_report_deser_operation(
+        output = crate::json_deser::deser_operation_create_deliverability_test_report(
             response.body().as_ref(),
             output,
         )
@@ -700,34 +639,11 @@ pub fn parse_create_email_identity_error(
     Err(match error_code {
         "AlreadyExistsException" => crate::error::CreateEmailIdentityError {
             meta: generic,
-            kind: crate::error::CreateEmailIdentityErrorKind::AlreadyExistsError({
+            kind: crate::error::CreateEmailIdentityErrorKind::AlreadyExistsException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::already_exists_error::Builder::default();
+                let mut output = crate::error::already_exists_exception::Builder::default();
                 let _ = response;
-                output =
-                    crate::json_deser::already_exists_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::CreateEmailIdentityError::unhandled)?;
-                output.build()
-            }),
-        },
-        "BadRequestException" => crate::error::CreateEmailIdentityError {
-            meta: generic,
-            kind: crate::error::CreateEmailIdentityErrorKind::BadRequestError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::bad_request_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::CreateEmailIdentityError::unhandled)?;
-                output.build()
-            }),
-        },
-        "ConcurrentModificationException" => crate::error::CreateEmailIdentityError {
-            meta: generic,
-            kind: crate::error::CreateEmailIdentityErrorKind::ConcurrentModificationError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::concurrent_modification_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::concurrent_modification_exception(
+                output = crate::json_deser::deser_structure_already_exists_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -735,36 +651,70 @@ pub fn parse_create_email_identity_error(
                 output.build()
             }),
         },
+        "BadRequestException" => crate::error::CreateEmailIdentityError {
+            meta: generic,
+            kind: crate::error::CreateEmailIdentityErrorKind::BadRequestException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::bad_request_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_bad_request_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::CreateEmailIdentityError::unhandled)?;
+                output.build()
+            }),
+        },
+        "ConcurrentModificationException" => {
+            crate::error::CreateEmailIdentityError {
+                meta: generic,
+                kind: crate::error::CreateEmailIdentityErrorKind::ConcurrentModificationException(
+                    {
+                        #[allow(unused_mut)]
+                        let mut output =
+                            crate::error::concurrent_modification_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_concurrent_modification_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateEmailIdentityError::unhandled)?;
+                        output.build()
+                    },
+                ),
+            }
+        }
         "LimitExceededException" => crate::error::CreateEmailIdentityError {
             meta: generic,
-            kind: crate::error::CreateEmailIdentityErrorKind::LimitExceededError({
+            kind: crate::error::CreateEmailIdentityErrorKind::LimitExceededException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::limit_exceeded_error::Builder::default();
+                let mut output = crate::error::limit_exceeded_exception::Builder::default();
                 let _ = response;
-                output =
-                    crate::json_deser::limit_exceeded_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::CreateEmailIdentityError::unhandled)?;
+                output = crate::json_deser::deser_structure_limit_exceeded_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::CreateEmailIdentityError::unhandled)?;
                 output.build()
             }),
         },
         "NotFoundException" => crate::error::CreateEmailIdentityError {
             meta: generic,
-            kind: crate::error::CreateEmailIdentityErrorKind::NotFoundError({
+            kind: crate::error::CreateEmailIdentityErrorKind::NotFoundException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::not_found_error::Builder::default();
+                let mut output = crate::error::not_found_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::not_found_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::CreateEmailIdentityError::unhandled)?;
+                output = crate::json_deser::deser_structure_not_found_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::CreateEmailIdentityError::unhandled)?;
                 output.build()
             }),
         },
         "TooManyRequestsException" => crate::error::CreateEmailIdentityError {
             meta: generic,
-            kind: crate::error::CreateEmailIdentityErrorKind::TooManyRequestsError({
+            kind: crate::error::CreateEmailIdentityErrorKind::TooManyRequestsException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::too_many_requests_error::Builder::default();
+                let mut output = crate::error::too_many_requests_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::too_many_requests_exception(
+                output = crate::json_deser::deser_structure_too_many_requests_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -787,7 +737,7 @@ pub fn parse_create_email_identity_response(
         #[allow(unused_mut)]
         let mut output = crate::output::create_email_identity_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::create_email_identity_deser_operation(
+        output = crate::json_deser::deser_operation_create_email_identity(
             response.body().as_ref(),
             output,
         )
@@ -816,57 +766,67 @@ pub fn parse_create_email_identity_policy_error(
     Err(match error_code {
         "AlreadyExistsException" => crate::error::CreateEmailIdentityPolicyError {
             meta: generic,
-            kind: crate::error::CreateEmailIdentityPolicyErrorKind::AlreadyExistsError({
+            kind: crate::error::CreateEmailIdentityPolicyErrorKind::AlreadyExistsException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::already_exists_error::Builder::default();
+                let mut output = crate::error::already_exists_exception::Builder::default();
                 let _ = response;
-                output =
-                    crate::json_deser::already_exists_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::CreateEmailIdentityPolicyError::unhandled)?;
+                output = crate::json_deser::deser_structure_already_exists_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::CreateEmailIdentityPolicyError::unhandled)?;
                 output.build()
             }),
         },
         "BadRequestException" => crate::error::CreateEmailIdentityPolicyError {
             meta: generic,
-            kind: crate::error::CreateEmailIdentityPolicyErrorKind::BadRequestError({
+            kind: crate::error::CreateEmailIdentityPolicyErrorKind::BadRequestException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_error::Builder::default();
+                let mut output = crate::error::bad_request_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::bad_request_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::CreateEmailIdentityPolicyError::unhandled)?;
+                output = crate::json_deser::deser_structure_bad_request_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::CreateEmailIdentityPolicyError::unhandled)?;
                 output.build()
             }),
         },
         "LimitExceededException" => crate::error::CreateEmailIdentityPolicyError {
             meta: generic,
-            kind: crate::error::CreateEmailIdentityPolicyErrorKind::LimitExceededError({
+            kind: crate::error::CreateEmailIdentityPolicyErrorKind::LimitExceededException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::limit_exceeded_error::Builder::default();
+                let mut output = crate::error::limit_exceeded_exception::Builder::default();
                 let _ = response;
-                output =
-                    crate::json_deser::limit_exceeded_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::CreateEmailIdentityPolicyError::unhandled)?;
+                output = crate::json_deser::deser_structure_limit_exceeded_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::CreateEmailIdentityPolicyError::unhandled)?;
                 output.build()
             }),
         },
         "NotFoundException" => crate::error::CreateEmailIdentityPolicyError {
             meta: generic,
-            kind: crate::error::CreateEmailIdentityPolicyErrorKind::NotFoundError({
+            kind: crate::error::CreateEmailIdentityPolicyErrorKind::NotFoundException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::not_found_error::Builder::default();
+                let mut output = crate::error::not_found_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::not_found_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::CreateEmailIdentityPolicyError::unhandled)?;
+                output = crate::json_deser::deser_structure_not_found_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::CreateEmailIdentityPolicyError::unhandled)?;
                 output.build()
             }),
         },
         "TooManyRequestsException" => crate::error::CreateEmailIdentityPolicyError {
             meta: generic,
-            kind: crate::error::CreateEmailIdentityPolicyErrorKind::TooManyRequestsError({
+            kind: crate::error::CreateEmailIdentityPolicyErrorKind::TooManyRequestsException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::too_many_requests_error::Builder::default();
+                let mut output = crate::error::too_many_requests_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::too_many_requests_exception(
+                output = crate::json_deser::deser_structure_too_many_requests_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -909,46 +869,53 @@ pub fn parse_create_email_template_error(
     Err(match error_code {
         "AlreadyExistsException" => crate::error::CreateEmailTemplateError {
             meta: generic,
-            kind: crate::error::CreateEmailTemplateErrorKind::AlreadyExistsError({
+            kind: crate::error::CreateEmailTemplateErrorKind::AlreadyExistsException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::already_exists_error::Builder::default();
+                let mut output = crate::error::already_exists_exception::Builder::default();
                 let _ = response;
-                output =
-                    crate::json_deser::already_exists_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::CreateEmailTemplateError::unhandled)?;
+                output = crate::json_deser::deser_structure_already_exists_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::CreateEmailTemplateError::unhandled)?;
                 output.build()
             }),
         },
         "BadRequestException" => crate::error::CreateEmailTemplateError {
             meta: generic,
-            kind: crate::error::CreateEmailTemplateErrorKind::BadRequestError({
+            kind: crate::error::CreateEmailTemplateErrorKind::BadRequestException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_error::Builder::default();
+                let mut output = crate::error::bad_request_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::bad_request_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::CreateEmailTemplateError::unhandled)?;
+                output = crate::json_deser::deser_structure_bad_request_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::CreateEmailTemplateError::unhandled)?;
                 output.build()
             }),
         },
         "LimitExceededException" => crate::error::CreateEmailTemplateError {
             meta: generic,
-            kind: crate::error::CreateEmailTemplateErrorKind::LimitExceededError({
+            kind: crate::error::CreateEmailTemplateErrorKind::LimitExceededException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::limit_exceeded_error::Builder::default();
+                let mut output = crate::error::limit_exceeded_exception::Builder::default();
                 let _ = response;
-                output =
-                    crate::json_deser::limit_exceeded_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::CreateEmailTemplateError::unhandled)?;
+                output = crate::json_deser::deser_structure_limit_exceeded_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::CreateEmailTemplateError::unhandled)?;
                 output.build()
             }),
         },
         "TooManyRequestsException" => crate::error::CreateEmailTemplateError {
             meta: generic,
-            kind: crate::error::CreateEmailTemplateErrorKind::TooManyRequestsError({
+            kind: crate::error::CreateEmailTemplateErrorKind::TooManyRequestsException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::too_many_requests_error::Builder::default();
+                let mut output = crate::error::too_many_requests_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::too_many_requests_exception(
+                output = crate::json_deser::deser_structure_too_many_requests_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -988,34 +955,39 @@ pub fn parse_create_import_job_error(
     Err(match error_code {
         "BadRequestException" => crate::error::CreateImportJobError {
             meta: generic,
-            kind: crate::error::CreateImportJobErrorKind::BadRequestError({
+            kind: crate::error::CreateImportJobErrorKind::BadRequestException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_error::Builder::default();
+                let mut output = crate::error::bad_request_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::bad_request_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::CreateImportJobError::unhandled)?;
+                output = crate::json_deser::deser_structure_bad_request_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::CreateImportJobError::unhandled)?;
                 output.build()
             }),
         },
         "LimitExceededException" => crate::error::CreateImportJobError {
             meta: generic,
-            kind: crate::error::CreateImportJobErrorKind::LimitExceededError({
+            kind: crate::error::CreateImportJobErrorKind::LimitExceededException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::limit_exceeded_error::Builder::default();
+                let mut output = crate::error::limit_exceeded_exception::Builder::default();
                 let _ = response;
-                output =
-                    crate::json_deser::limit_exceeded_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::CreateImportJobError::unhandled)?;
+                output = crate::json_deser::deser_structure_limit_exceeded_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::CreateImportJobError::unhandled)?;
                 output.build()
             }),
         },
         "TooManyRequestsException" => crate::error::CreateImportJobError {
             meta: generic,
-            kind: crate::error::CreateImportJobErrorKind::TooManyRequestsError({
+            kind: crate::error::CreateImportJobErrorKind::TooManyRequestsException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::too_many_requests_error::Builder::default();
+                let mut output = crate::error::too_many_requests_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::too_many_requests_exception(
+                output = crate::json_deser::deser_structure_too_many_requests_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -1036,7 +1008,7 @@ pub fn parse_create_import_job_response(
         let mut output = crate::output::create_import_job_output::Builder::default();
         let _ = response;
         output =
-            crate::json_deser::create_import_job_deser_operation(response.body().as_ref(), output)
+            crate::json_deser::deser_operation_create_import_job(response.body().as_ref(), output)
                 .map_err(crate::error::CreateImportJobError::unhandled)?;
         output.build()
     })
@@ -1062,22 +1034,11 @@ pub fn parse_delete_configuration_set_error(
     Err(match error_code {
         "BadRequestException" => crate::error::DeleteConfigurationSetError {
             meta: generic,
-            kind: crate::error::DeleteConfigurationSetErrorKind::BadRequestError({
+            kind: crate::error::DeleteConfigurationSetErrorKind::BadRequestException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_error::Builder::default();
+                let mut output = crate::error::bad_request_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::bad_request_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::DeleteConfigurationSetError::unhandled)?;
-                output.build()
-            }),
-        },
-        "ConcurrentModificationException" => crate::error::DeleteConfigurationSetError {
-            meta: generic,
-            kind: crate::error::DeleteConfigurationSetErrorKind::ConcurrentModificationError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::concurrent_modification_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::concurrent_modification_exception(
+                output = crate::json_deser::deser_structure_bad_request_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -1085,24 +1046,43 @@ pub fn parse_delete_configuration_set_error(
                 output.build()
             }),
         },
+        "ConcurrentModificationException" => {
+            crate::error::DeleteConfigurationSetError {
+                meta: generic,
+                kind:
+                    crate::error::DeleteConfigurationSetErrorKind::ConcurrentModificationException(
+                        {
+                            #[allow(unused_mut)]
+                            let mut output =
+                                crate::error::concurrent_modification_exception::Builder::default();
+                            let _ = response;
+                            output = crate::json_deser::deser_structure_concurrent_modification_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteConfigurationSetError::unhandled)?;
+                            output.build()
+                        },
+                    ),
+            }
+        }
         "NotFoundException" => crate::error::DeleteConfigurationSetError {
             meta: generic,
-            kind: crate::error::DeleteConfigurationSetErrorKind::NotFoundError({
+            kind: crate::error::DeleteConfigurationSetErrorKind::NotFoundException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::not_found_error::Builder::default();
+                let mut output = crate::error::not_found_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::not_found_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::DeleteConfigurationSetError::unhandled)?;
+                output = crate::json_deser::deser_structure_not_found_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::DeleteConfigurationSetError::unhandled)?;
                 output.build()
             }),
         },
         "TooManyRequestsException" => crate::error::DeleteConfigurationSetError {
             meta: generic,
-            kind: crate::error::DeleteConfigurationSetErrorKind::TooManyRequestsError({
+            kind: crate::error::DeleteConfigurationSetErrorKind::TooManyRequestsException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::too_many_requests_error::Builder::default();
+                let mut output = crate::error::too_many_requests_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::too_many_requests_exception(
+                output = crate::json_deser::deser_structure_too_many_requests_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -1147,52 +1127,25 @@ pub fn parse_delete_configuration_set_event_destination_error(
         }
     };
     Err(match error_code {
-        "BadRequestException" => crate::error::DeleteConfigurationSetEventDestinationError {
-            meta: generic,
-            kind: crate::error::DeleteConfigurationSetEventDestinationErrorKind::BadRequestError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::bad_request_exception(response.body().as_ref(), output)
-                    .map_err(
-                        crate::error::DeleteConfigurationSetEventDestinationError::unhandled,
-                    )?;
-                output.build()
-            }),
-        },
-        "NotFoundException" => crate::error::DeleteConfigurationSetEventDestinationError {
-            meta: generic,
-            kind: crate::error::DeleteConfigurationSetEventDestinationErrorKind::NotFoundError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::not_found_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::not_found_exception(response.body().as_ref(), output)
-                    .map_err(
-                    crate::error::DeleteConfigurationSetEventDestinationError::unhandled,
-                )?;
-                output.build()
-            }),
-        },
-        "TooManyRequestsException" => crate::error::DeleteConfigurationSetEventDestinationError {
-            meta: generic,
-            kind:
-                crate::error::DeleteConfigurationSetEventDestinationErrorKind::TooManyRequestsError(
-                    {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::too_many_requests_error::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::too_many_requests_exception(
-                            response.body().as_ref(),
-                            output,
-                        )
-                        .map_err(
-                            crate::error::DeleteConfigurationSetEventDestinationError::unhandled,
-                        )?;
-                        output.build()
-                    },
-                ),
-        },
-        _ => crate::error::DeleteConfigurationSetEventDestinationError::generic(generic),
+        "BadRequestException" => crate::error::DeleteConfigurationSetEventDestinationError { meta: generic, kind: crate::error::DeleteConfigurationSetEventDestinationErrorKind::BadRequestException({
+            #[allow(unused_mut)]let mut output = crate::error::bad_request_exception::Builder::default();
+            let _ = response;
+            output = crate::json_deser::deser_structure_bad_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteConfigurationSetEventDestinationError::unhandled)?;
+            output.build()
+        })},
+        "NotFoundException" => crate::error::DeleteConfigurationSetEventDestinationError { meta: generic, kind: crate::error::DeleteConfigurationSetEventDestinationErrorKind::NotFoundException({
+            #[allow(unused_mut)]let mut output = crate::error::not_found_exception::Builder::default();
+            let _ = response;
+            output = crate::json_deser::deser_structure_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteConfigurationSetEventDestinationError::unhandled)?;
+            output.build()
+        })},
+        "TooManyRequestsException" => crate::error::DeleteConfigurationSetEventDestinationError { meta: generic, kind: crate::error::DeleteConfigurationSetEventDestinationErrorKind::TooManyRequestsException({
+            #[allow(unused_mut)]let mut output = crate::error::too_many_requests_exception::Builder::default();
+            let _ = response;
+            output = crate::json_deser::deser_structure_too_many_requests_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteConfigurationSetEventDestinationError::unhandled)?;
+            output.build()
+        })},
+        _ => crate::error::DeleteConfigurationSetEventDestinationError::generic(generic)
     })
 }
 
@@ -1225,33 +1178,39 @@ pub fn parse_delete_contact_error(
     Err(match error_code {
         "BadRequestException" => crate::error::DeleteContactError {
             meta: generic,
-            kind: crate::error::DeleteContactErrorKind::BadRequestError({
+            kind: crate::error::DeleteContactErrorKind::BadRequestException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_error::Builder::default();
+                let mut output = crate::error::bad_request_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::bad_request_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::DeleteContactError::unhandled)?;
+                output = crate::json_deser::deser_structure_bad_request_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::DeleteContactError::unhandled)?;
                 output.build()
             }),
         },
         "NotFoundException" => crate::error::DeleteContactError {
             meta: generic,
-            kind: crate::error::DeleteContactErrorKind::NotFoundError({
+            kind: crate::error::DeleteContactErrorKind::NotFoundException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::not_found_error::Builder::default();
+                let mut output = crate::error::not_found_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::not_found_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::DeleteContactError::unhandled)?;
+                output = crate::json_deser::deser_structure_not_found_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::DeleteContactError::unhandled)?;
                 output.build()
             }),
         },
         "TooManyRequestsException" => crate::error::DeleteContactError {
             meta: generic,
-            kind: crate::error::DeleteContactErrorKind::TooManyRequestsError({
+            kind: crate::error::DeleteContactErrorKind::TooManyRequestsException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::too_many_requests_error::Builder::default();
+                let mut output = crate::error::too_many_requests_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::too_many_requests_exception(
+                output = crate::json_deser::deser_structure_too_many_requests_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -1289,22 +1248,11 @@ pub fn parse_delete_contact_list_error(
     Err(match error_code {
         "BadRequestException" => crate::error::DeleteContactListError {
             meta: generic,
-            kind: crate::error::DeleteContactListErrorKind::BadRequestError({
+            kind: crate::error::DeleteContactListErrorKind::BadRequestException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_error::Builder::default();
+                let mut output = crate::error::bad_request_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::bad_request_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::DeleteContactListError::unhandled)?;
-                output.build()
-            }),
-        },
-        "ConcurrentModificationException" => crate::error::DeleteContactListError {
-            meta: generic,
-            kind: crate::error::DeleteContactListErrorKind::ConcurrentModificationError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::concurrent_modification_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::concurrent_modification_exception(
+                output = crate::json_deser::deser_structure_bad_request_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -1312,24 +1260,40 @@ pub fn parse_delete_contact_list_error(
                 output.build()
             }),
         },
+        "ConcurrentModificationException" => {
+            crate::error::DeleteContactListError {
+                meta: generic,
+                kind: crate::error::DeleteContactListErrorKind::ConcurrentModificationException({
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::concurrent_modification_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_concurrent_modification_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteContactListError::unhandled)?;
+                    output.build()
+                }),
+            }
+        }
         "NotFoundException" => crate::error::DeleteContactListError {
             meta: generic,
-            kind: crate::error::DeleteContactListErrorKind::NotFoundError({
+            kind: crate::error::DeleteContactListErrorKind::NotFoundException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::not_found_error::Builder::default();
+                let mut output = crate::error::not_found_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::not_found_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::DeleteContactListError::unhandled)?;
+                output = crate::json_deser::deser_structure_not_found_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::DeleteContactListError::unhandled)?;
                 output.build()
             }),
         },
         "TooManyRequestsException" => crate::error::DeleteContactListError {
             meta: generic,
-            kind: crate::error::DeleteContactListErrorKind::TooManyRequestsError({
+            kind: crate::error::DeleteContactListErrorKind::TooManyRequestsException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::too_many_requests_error::Builder::default();
+                let mut output = crate::error::too_many_requests_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::too_many_requests_exception(
+                output = crate::json_deser::deser_structure_too_many_requests_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -1372,50 +1336,25 @@ pub fn parse_delete_custom_verification_email_template_error(
         }
     };
     Err(match error_code {
-        "BadRequestException" => crate::error::DeleteCustomVerificationEmailTemplateError {
-            meta: generic,
-            kind: crate::error::DeleteCustomVerificationEmailTemplateErrorKind::BadRequestError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::bad_request_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::DeleteCustomVerificationEmailTemplateError::unhandled)?;
-                output.build()
-            }),
-        },
-        "NotFoundException" => crate::error::DeleteCustomVerificationEmailTemplateError {
-            meta: generic,
-            kind: crate::error::DeleteCustomVerificationEmailTemplateErrorKind::NotFoundError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::not_found_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::not_found_exception(response.body().as_ref(), output)
-                    .map_err(
-                    crate::error::DeleteCustomVerificationEmailTemplateError::unhandled,
-                )?;
-                output.build()
-            }),
-        },
-        "TooManyRequestsException" => crate::error::DeleteCustomVerificationEmailTemplateError {
-            meta: generic,
-            kind:
-                crate::error::DeleteCustomVerificationEmailTemplateErrorKind::TooManyRequestsError(
-                    {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::too_many_requests_error::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::too_many_requests_exception(
-                            response.body().as_ref(),
-                            output,
-                        )
-                        .map_err(
-                            crate::error::DeleteCustomVerificationEmailTemplateError::unhandled,
-                        )?;
-                        output.build()
-                    },
-                ),
-        },
-        _ => crate::error::DeleteCustomVerificationEmailTemplateError::generic(generic),
+        "BadRequestException" => crate::error::DeleteCustomVerificationEmailTemplateError { meta: generic, kind: crate::error::DeleteCustomVerificationEmailTemplateErrorKind::BadRequestException({
+            #[allow(unused_mut)]let mut output = crate::error::bad_request_exception::Builder::default();
+            let _ = response;
+            output = crate::json_deser::deser_structure_bad_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteCustomVerificationEmailTemplateError::unhandled)?;
+            output.build()
+        })},
+        "NotFoundException" => crate::error::DeleteCustomVerificationEmailTemplateError { meta: generic, kind: crate::error::DeleteCustomVerificationEmailTemplateErrorKind::NotFoundException({
+            #[allow(unused_mut)]let mut output = crate::error::not_found_exception::Builder::default();
+            let _ = response;
+            output = crate::json_deser::deser_structure_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteCustomVerificationEmailTemplateError::unhandled)?;
+            output.build()
+        })},
+        "TooManyRequestsException" => crate::error::DeleteCustomVerificationEmailTemplateError { meta: generic, kind: crate::error::DeleteCustomVerificationEmailTemplateErrorKind::TooManyRequestsException({
+            #[allow(unused_mut)]let mut output = crate::error::too_many_requests_exception::Builder::default();
+            let _ = response;
+            output = crate::json_deser::deser_structure_too_many_requests_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteCustomVerificationEmailTemplateError::unhandled)?;
+            output.build()
+        })},
+        _ => crate::error::DeleteCustomVerificationEmailTemplateError::generic(generic)
     })
 }
 
@@ -1451,22 +1390,11 @@ pub fn parse_delete_dedicated_ip_pool_error(
     Err(match error_code {
         "BadRequestException" => crate::error::DeleteDedicatedIpPoolError {
             meta: generic,
-            kind: crate::error::DeleteDedicatedIpPoolErrorKind::BadRequestError({
+            kind: crate::error::DeleteDedicatedIpPoolErrorKind::BadRequestException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_error::Builder::default();
+                let mut output = crate::error::bad_request_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::bad_request_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::DeleteDedicatedIpPoolError::unhandled)?;
-                output.build()
-            }),
-        },
-        "ConcurrentModificationException" => crate::error::DeleteDedicatedIpPoolError {
-            meta: generic,
-            kind: crate::error::DeleteDedicatedIpPoolErrorKind::ConcurrentModificationError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::concurrent_modification_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::concurrent_modification_exception(
+                output = crate::json_deser::deser_structure_bad_request_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -1474,24 +1402,42 @@ pub fn parse_delete_dedicated_ip_pool_error(
                 output.build()
             }),
         },
+        "ConcurrentModificationException" => {
+            crate::error::DeleteDedicatedIpPoolError {
+                meta: generic,
+                kind: crate::error::DeleteDedicatedIpPoolErrorKind::ConcurrentModificationException(
+                    {
+                        #[allow(unused_mut)]
+                        let mut output =
+                            crate::error::concurrent_modification_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_concurrent_modification_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteDedicatedIpPoolError::unhandled)?;
+                        output.build()
+                    },
+                ),
+            }
+        }
         "NotFoundException" => crate::error::DeleteDedicatedIpPoolError {
             meta: generic,
-            kind: crate::error::DeleteDedicatedIpPoolErrorKind::NotFoundError({
+            kind: crate::error::DeleteDedicatedIpPoolErrorKind::NotFoundException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::not_found_error::Builder::default();
+                let mut output = crate::error::not_found_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::not_found_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::DeleteDedicatedIpPoolError::unhandled)?;
+                output = crate::json_deser::deser_structure_not_found_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::DeleteDedicatedIpPoolError::unhandled)?;
                 output.build()
             }),
         },
         "TooManyRequestsException" => crate::error::DeleteDedicatedIpPoolError {
             meta: generic,
-            kind: crate::error::DeleteDedicatedIpPoolErrorKind::TooManyRequestsError({
+            kind: crate::error::DeleteDedicatedIpPoolErrorKind::TooManyRequestsException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::too_many_requests_error::Builder::default();
+                let mut output = crate::error::too_many_requests_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::too_many_requests_exception(
+                output = crate::json_deser::deser_structure_too_many_requests_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -1534,22 +1480,11 @@ pub fn parse_delete_email_identity_error(
     Err(match error_code {
         "BadRequestException" => crate::error::DeleteEmailIdentityError {
             meta: generic,
-            kind: crate::error::DeleteEmailIdentityErrorKind::BadRequestError({
+            kind: crate::error::DeleteEmailIdentityErrorKind::BadRequestException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_error::Builder::default();
+                let mut output = crate::error::bad_request_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::bad_request_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::DeleteEmailIdentityError::unhandled)?;
-                output.build()
-            }),
-        },
-        "ConcurrentModificationException" => crate::error::DeleteEmailIdentityError {
-            meta: generic,
-            kind: crate::error::DeleteEmailIdentityErrorKind::ConcurrentModificationError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::concurrent_modification_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::concurrent_modification_exception(
+                output = crate::json_deser::deser_structure_bad_request_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -1557,24 +1492,42 @@ pub fn parse_delete_email_identity_error(
                 output.build()
             }),
         },
+        "ConcurrentModificationException" => {
+            crate::error::DeleteEmailIdentityError {
+                meta: generic,
+                kind: crate::error::DeleteEmailIdentityErrorKind::ConcurrentModificationException(
+                    {
+                        #[allow(unused_mut)]
+                        let mut output =
+                            crate::error::concurrent_modification_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_concurrent_modification_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteEmailIdentityError::unhandled)?;
+                        output.build()
+                    },
+                ),
+            }
+        }
         "NotFoundException" => crate::error::DeleteEmailIdentityError {
             meta: generic,
-            kind: crate::error::DeleteEmailIdentityErrorKind::NotFoundError({
+            kind: crate::error::DeleteEmailIdentityErrorKind::NotFoundException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::not_found_error::Builder::default();
+                let mut output = crate::error::not_found_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::not_found_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::DeleteEmailIdentityError::unhandled)?;
+                output = crate::json_deser::deser_structure_not_found_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::DeleteEmailIdentityError::unhandled)?;
                 output.build()
             }),
         },
         "TooManyRequestsException" => crate::error::DeleteEmailIdentityError {
             meta: generic,
-            kind: crate::error::DeleteEmailIdentityErrorKind::TooManyRequestsError({
+            kind: crate::error::DeleteEmailIdentityErrorKind::TooManyRequestsException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::too_many_requests_error::Builder::default();
+                let mut output = crate::error::too_many_requests_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::too_many_requests_exception(
+                output = crate::json_deser::deser_structure_too_many_requests_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -1621,33 +1574,39 @@ pub fn parse_delete_email_identity_policy_error(
     Err(match error_code {
         "BadRequestException" => crate::error::DeleteEmailIdentityPolicyError {
             meta: generic,
-            kind: crate::error::DeleteEmailIdentityPolicyErrorKind::BadRequestError({
+            kind: crate::error::DeleteEmailIdentityPolicyErrorKind::BadRequestException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_error::Builder::default();
+                let mut output = crate::error::bad_request_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::bad_request_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::DeleteEmailIdentityPolicyError::unhandled)?;
+                output = crate::json_deser::deser_structure_bad_request_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::DeleteEmailIdentityPolicyError::unhandled)?;
                 output.build()
             }),
         },
         "NotFoundException" => crate::error::DeleteEmailIdentityPolicyError {
             meta: generic,
-            kind: crate::error::DeleteEmailIdentityPolicyErrorKind::NotFoundError({
+            kind: crate::error::DeleteEmailIdentityPolicyErrorKind::NotFoundException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::not_found_error::Builder::default();
+                let mut output = crate::error::not_found_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::not_found_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::DeleteEmailIdentityPolicyError::unhandled)?;
+                output = crate::json_deser::deser_structure_not_found_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::DeleteEmailIdentityPolicyError::unhandled)?;
                 output.build()
             }),
         },
         "TooManyRequestsException" => crate::error::DeleteEmailIdentityPolicyError {
             meta: generic,
-            kind: crate::error::DeleteEmailIdentityPolicyErrorKind::TooManyRequestsError({
+            kind: crate::error::DeleteEmailIdentityPolicyErrorKind::TooManyRequestsException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::too_many_requests_error::Builder::default();
+                let mut output = crate::error::too_many_requests_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::too_many_requests_exception(
+                output = crate::json_deser::deser_structure_too_many_requests_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -1690,33 +1649,39 @@ pub fn parse_delete_email_template_error(
     Err(match error_code {
         "BadRequestException" => crate::error::DeleteEmailTemplateError {
             meta: generic,
-            kind: crate::error::DeleteEmailTemplateErrorKind::BadRequestError({
+            kind: crate::error::DeleteEmailTemplateErrorKind::BadRequestException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_error::Builder::default();
+                let mut output = crate::error::bad_request_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::bad_request_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::DeleteEmailTemplateError::unhandled)?;
+                output = crate::json_deser::deser_structure_bad_request_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::DeleteEmailTemplateError::unhandled)?;
                 output.build()
             }),
         },
         "NotFoundException" => crate::error::DeleteEmailTemplateError {
             meta: generic,
-            kind: crate::error::DeleteEmailTemplateErrorKind::NotFoundError({
+            kind: crate::error::DeleteEmailTemplateErrorKind::NotFoundException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::not_found_error::Builder::default();
+                let mut output = crate::error::not_found_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::not_found_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::DeleteEmailTemplateError::unhandled)?;
+                output = crate::json_deser::deser_structure_not_found_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::DeleteEmailTemplateError::unhandled)?;
                 output.build()
             }),
         },
         "TooManyRequestsException" => crate::error::DeleteEmailTemplateError {
             meta: generic,
-            kind: crate::error::DeleteEmailTemplateErrorKind::TooManyRequestsError({
+            kind: crate::error::DeleteEmailTemplateErrorKind::TooManyRequestsException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::too_many_requests_error::Builder::default();
+                let mut output = crate::error::too_many_requests_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::too_many_requests_exception(
+                output = crate::json_deser::deser_structure_too_many_requests_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -1763,33 +1728,39 @@ pub fn parse_delete_suppressed_destination_error(
     Err(match error_code {
         "BadRequestException" => crate::error::DeleteSuppressedDestinationError {
             meta: generic,
-            kind: crate::error::DeleteSuppressedDestinationErrorKind::BadRequestError({
+            kind: crate::error::DeleteSuppressedDestinationErrorKind::BadRequestException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_error::Builder::default();
+                let mut output = crate::error::bad_request_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::bad_request_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::DeleteSuppressedDestinationError::unhandled)?;
+                output = crate::json_deser::deser_structure_bad_request_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::DeleteSuppressedDestinationError::unhandled)?;
                 output.build()
             }),
         },
         "NotFoundException" => crate::error::DeleteSuppressedDestinationError {
             meta: generic,
-            kind: crate::error::DeleteSuppressedDestinationErrorKind::NotFoundError({
+            kind: crate::error::DeleteSuppressedDestinationErrorKind::NotFoundException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::not_found_error::Builder::default();
+                let mut output = crate::error::not_found_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::not_found_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::DeleteSuppressedDestinationError::unhandled)?;
+                output = crate::json_deser::deser_structure_not_found_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::DeleteSuppressedDestinationError::unhandled)?;
                 output.build()
             }),
         },
         "TooManyRequestsException" => crate::error::DeleteSuppressedDestinationError {
             meta: generic,
-            kind: crate::error::DeleteSuppressedDestinationErrorKind::TooManyRequestsError({
+            kind: crate::error::DeleteSuppressedDestinationErrorKind::TooManyRequestsException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::too_many_requests_error::Builder::default();
+                let mut output = crate::error::too_many_requests_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::too_many_requests_exception(
+                output = crate::json_deser::deser_structure_too_many_requests_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -1829,22 +1800,25 @@ pub fn parse_get_account_error(
     Err(match error_code {
         "BadRequestException" => crate::error::GetAccountError {
             meta: generic,
-            kind: crate::error::GetAccountErrorKind::BadRequestError({
+            kind: crate::error::GetAccountErrorKind::BadRequestException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_error::Builder::default();
+                let mut output = crate::error::bad_request_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::bad_request_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::GetAccountError::unhandled)?;
+                output = crate::json_deser::deser_structure_bad_request_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::GetAccountError::unhandled)?;
                 output.build()
             }),
         },
         "TooManyRequestsException" => crate::error::GetAccountError {
             meta: generic,
-            kind: crate::error::GetAccountErrorKind::TooManyRequestsError({
+            kind: crate::error::GetAccountErrorKind::TooManyRequestsException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::too_many_requests_error::Builder::default();
+                let mut output = crate::error::too_many_requests_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::too_many_requests_exception(
+                output = crate::json_deser::deser_structure_too_many_requests_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -1864,7 +1838,7 @@ pub fn parse_get_account_response(
         #[allow(unused_mut)]
         let mut output = crate::output::get_account_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::get_account_deser_operation(response.body().as_ref(), output)
+        output = crate::json_deser::deser_operation_get_account(response.body().as_ref(), output)
             .map_err(crate::error::GetAccountError::unhandled)?;
         output.build()
     })
@@ -1886,33 +1860,39 @@ pub fn parse_get_blacklist_reports_error(
     Err(match error_code {
         "BadRequestException" => crate::error::GetBlacklistReportsError {
             meta: generic,
-            kind: crate::error::GetBlacklistReportsErrorKind::BadRequestError({
+            kind: crate::error::GetBlacklistReportsErrorKind::BadRequestException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_error::Builder::default();
+                let mut output = crate::error::bad_request_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::bad_request_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::GetBlacklistReportsError::unhandled)?;
+                output = crate::json_deser::deser_structure_bad_request_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::GetBlacklistReportsError::unhandled)?;
                 output.build()
             }),
         },
         "NotFoundException" => crate::error::GetBlacklistReportsError {
             meta: generic,
-            kind: crate::error::GetBlacklistReportsErrorKind::NotFoundError({
+            kind: crate::error::GetBlacklistReportsErrorKind::NotFoundException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::not_found_error::Builder::default();
+                let mut output = crate::error::not_found_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::not_found_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::GetBlacklistReportsError::unhandled)?;
+                output = crate::json_deser::deser_structure_not_found_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::GetBlacklistReportsError::unhandled)?;
                 output.build()
             }),
         },
         "TooManyRequestsException" => crate::error::GetBlacklistReportsError {
             meta: generic,
-            kind: crate::error::GetBlacklistReportsErrorKind::TooManyRequestsError({
+            kind: crate::error::GetBlacklistReportsErrorKind::TooManyRequestsException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::too_many_requests_error::Builder::default();
+                let mut output = crate::error::too_many_requests_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::too_many_requests_exception(
+                output = crate::json_deser::deser_structure_too_many_requests_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -1935,7 +1915,7 @@ pub fn parse_get_blacklist_reports_response(
         #[allow(unused_mut)]
         let mut output = crate::output::get_blacklist_reports_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::get_blacklist_reports_deser_operation(
+        output = crate::json_deser::deser_operation_get_blacklist_reports(
             response.body().as_ref(),
             output,
         )
@@ -1960,33 +1940,39 @@ pub fn parse_get_configuration_set_error(
     Err(match error_code {
         "BadRequestException" => crate::error::GetConfigurationSetError {
             meta: generic,
-            kind: crate::error::GetConfigurationSetErrorKind::BadRequestError({
+            kind: crate::error::GetConfigurationSetErrorKind::BadRequestException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_error::Builder::default();
+                let mut output = crate::error::bad_request_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::bad_request_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::GetConfigurationSetError::unhandled)?;
+                output = crate::json_deser::deser_structure_bad_request_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::GetConfigurationSetError::unhandled)?;
                 output.build()
             }),
         },
         "NotFoundException" => crate::error::GetConfigurationSetError {
             meta: generic,
-            kind: crate::error::GetConfigurationSetErrorKind::NotFoundError({
+            kind: crate::error::GetConfigurationSetErrorKind::NotFoundException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::not_found_error::Builder::default();
+                let mut output = crate::error::not_found_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::not_found_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::GetConfigurationSetError::unhandled)?;
+                output = crate::json_deser::deser_structure_not_found_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::GetConfigurationSetError::unhandled)?;
                 output.build()
             }),
         },
         "TooManyRequestsException" => crate::error::GetConfigurationSetError {
             meta: generic,
-            kind: crate::error::GetConfigurationSetErrorKind::TooManyRequestsError({
+            kind: crate::error::GetConfigurationSetErrorKind::TooManyRequestsException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::too_many_requests_error::Builder::default();
+                let mut output = crate::error::too_many_requests_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::too_many_requests_exception(
+                output = crate::json_deser::deser_structure_too_many_requests_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -2009,7 +1995,7 @@ pub fn parse_get_configuration_set_response(
         #[allow(unused_mut)]
         let mut output = crate::output::get_configuration_set_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::get_configuration_set_deser_operation(
+        output = crate::json_deser::deser_operation_get_configuration_set(
             response.body().as_ref(),
             output,
         )
@@ -2034,47 +2020,25 @@ pub fn parse_get_configuration_set_event_destinations_error(
         }
     };
     Err(match error_code {
-        "BadRequestException" => crate::error::GetConfigurationSetEventDestinationsError {
-            meta: generic,
-            kind: crate::error::GetConfigurationSetEventDestinationsErrorKind::BadRequestError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::bad_request_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::GetConfigurationSetEventDestinationsError::unhandled)?;
-                output.build()
-            }),
-        },
-        "NotFoundException" => crate::error::GetConfigurationSetEventDestinationsError {
-            meta: generic,
-            kind: crate::error::GetConfigurationSetEventDestinationsErrorKind::NotFoundError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::not_found_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::not_found_exception(response.body().as_ref(), output)
-                    .map_err(
-                    crate::error::GetConfigurationSetEventDestinationsError::unhandled,
-                )?;
-                output.build()
-            }),
-        },
-        "TooManyRequestsException" => crate::error::GetConfigurationSetEventDestinationsError {
-            meta: generic,
-            kind: crate::error::GetConfigurationSetEventDestinationsErrorKind::TooManyRequestsError(
-                {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::too_many_requests_error::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::too_many_requests_exception(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::GetConfigurationSetEventDestinationsError::unhandled)?;
-                    output.build()
-                },
-            ),
-        },
-        _ => crate::error::GetConfigurationSetEventDestinationsError::generic(generic),
+        "BadRequestException" => crate::error::GetConfigurationSetEventDestinationsError { meta: generic, kind: crate::error::GetConfigurationSetEventDestinationsErrorKind::BadRequestException({
+            #[allow(unused_mut)]let mut output = crate::error::bad_request_exception::Builder::default();
+            let _ = response;
+            output = crate::json_deser::deser_structure_bad_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetConfigurationSetEventDestinationsError::unhandled)?;
+            output.build()
+        })},
+        "NotFoundException" => crate::error::GetConfigurationSetEventDestinationsError { meta: generic, kind: crate::error::GetConfigurationSetEventDestinationsErrorKind::NotFoundException({
+            #[allow(unused_mut)]let mut output = crate::error::not_found_exception::Builder::default();
+            let _ = response;
+            output = crate::json_deser::deser_structure_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetConfigurationSetEventDestinationsError::unhandled)?;
+            output.build()
+        })},
+        "TooManyRequestsException" => crate::error::GetConfigurationSetEventDestinationsError { meta: generic, kind: crate::error::GetConfigurationSetEventDestinationsErrorKind::TooManyRequestsException({
+            #[allow(unused_mut)]let mut output = crate::error::too_many_requests_exception::Builder::default();
+            let _ = response;
+            output = crate::json_deser::deser_structure_too_many_requests_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetConfigurationSetEventDestinationsError::unhandled)?;
+            output.build()
+        })},
+        _ => crate::error::GetConfigurationSetEventDestinationsError::generic(generic)
     })
 }
 
@@ -2090,7 +2054,7 @@ pub fn parse_get_configuration_set_event_destinations_response(
         let mut output =
             crate::output::get_configuration_set_event_destinations_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::get_configuration_set_event_destinations_deser_operation(
+        output = crate::json_deser::deser_operation_get_configuration_set_event_destinations(
             response.body().as_ref(),
             output,
         )
@@ -2112,33 +2076,39 @@ pub fn parse_get_contact_error(
     Err(match error_code {
         "BadRequestException" => crate::error::GetContactError {
             meta: generic,
-            kind: crate::error::GetContactErrorKind::BadRequestError({
+            kind: crate::error::GetContactErrorKind::BadRequestException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_error::Builder::default();
+                let mut output = crate::error::bad_request_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::bad_request_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::GetContactError::unhandled)?;
+                output = crate::json_deser::deser_structure_bad_request_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::GetContactError::unhandled)?;
                 output.build()
             }),
         },
         "NotFoundException" => crate::error::GetContactError {
             meta: generic,
-            kind: crate::error::GetContactErrorKind::NotFoundError({
+            kind: crate::error::GetContactErrorKind::NotFoundException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::not_found_error::Builder::default();
+                let mut output = crate::error::not_found_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::not_found_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::GetContactError::unhandled)?;
+                output = crate::json_deser::deser_structure_not_found_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::GetContactError::unhandled)?;
                 output.build()
             }),
         },
         "TooManyRequestsException" => crate::error::GetContactError {
             meta: generic,
-            kind: crate::error::GetContactErrorKind::TooManyRequestsError({
+            kind: crate::error::GetContactErrorKind::TooManyRequestsException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::too_many_requests_error::Builder::default();
+                let mut output = crate::error::too_many_requests_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::too_many_requests_exception(
+                output = crate::json_deser::deser_structure_too_many_requests_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -2158,7 +2128,7 @@ pub fn parse_get_contact_response(
         #[allow(unused_mut)]
         let mut output = crate::output::get_contact_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::get_contact_deser_operation(response.body().as_ref(), output)
+        output = crate::json_deser::deser_operation_get_contact(response.body().as_ref(), output)
             .map_err(crate::error::GetContactError::unhandled)?;
         output.build()
     })
@@ -2177,33 +2147,39 @@ pub fn parse_get_contact_list_error(
     Err(match error_code {
         "BadRequestException" => crate::error::GetContactListError {
             meta: generic,
-            kind: crate::error::GetContactListErrorKind::BadRequestError({
+            kind: crate::error::GetContactListErrorKind::BadRequestException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_error::Builder::default();
+                let mut output = crate::error::bad_request_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::bad_request_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::GetContactListError::unhandled)?;
+                output = crate::json_deser::deser_structure_bad_request_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::GetContactListError::unhandled)?;
                 output.build()
             }),
         },
         "NotFoundException" => crate::error::GetContactListError {
             meta: generic,
-            kind: crate::error::GetContactListErrorKind::NotFoundError({
+            kind: crate::error::GetContactListErrorKind::NotFoundException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::not_found_error::Builder::default();
+                let mut output = crate::error::not_found_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::not_found_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::GetContactListError::unhandled)?;
+                output = crate::json_deser::deser_structure_not_found_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::GetContactListError::unhandled)?;
                 output.build()
             }),
         },
         "TooManyRequestsException" => crate::error::GetContactListError {
             meta: generic,
-            kind: crate::error::GetContactListErrorKind::TooManyRequestsError({
+            kind: crate::error::GetContactListErrorKind::TooManyRequestsException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::too_many_requests_error::Builder::default();
+                let mut output = crate::error::too_many_requests_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::too_many_requests_exception(
+                output = crate::json_deser::deser_structure_too_many_requests_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -2224,7 +2200,7 @@ pub fn parse_get_contact_list_response(
         let mut output = crate::output::get_contact_list_output::Builder::default();
         let _ = response;
         output =
-            crate::json_deser::get_contact_list_deser_operation(response.body().as_ref(), output)
+            crate::json_deser::deser_operation_get_contact_list(response.body().as_ref(), output)
                 .map_err(crate::error::GetContactListError::unhandled)?;
         output.build()
     })
@@ -2248,43 +2224,52 @@ pub fn parse_get_custom_verification_email_template_error(
     Err(match error_code {
         "BadRequestException" => crate::error::GetCustomVerificationEmailTemplateError {
             meta: generic,
-            kind: crate::error::GetCustomVerificationEmailTemplateErrorKind::BadRequestError({
+            kind: crate::error::GetCustomVerificationEmailTemplateErrorKind::BadRequestException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_error::Builder::default();
+                let mut output = crate::error::bad_request_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::bad_request_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::GetCustomVerificationEmailTemplateError::unhandled)?;
+                output = crate::json_deser::deser_structure_bad_request_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::GetCustomVerificationEmailTemplateError::unhandled)?;
                 output.build()
             }),
         },
         "NotFoundException" => crate::error::GetCustomVerificationEmailTemplateError {
             meta: generic,
-            kind: crate::error::GetCustomVerificationEmailTemplateErrorKind::NotFoundError({
+            kind: crate::error::GetCustomVerificationEmailTemplateErrorKind::NotFoundException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::not_found_error::Builder::default();
+                let mut output = crate::error::not_found_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::not_found_exception(response.body().as_ref(), output)
-                    .map_err(
-                    crate::error::GetCustomVerificationEmailTemplateError::unhandled,
-                )?;
+                output = crate::json_deser::deser_structure_not_found_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::GetCustomVerificationEmailTemplateError::unhandled)?;
                 output.build()
             }),
         },
         "TooManyRequestsException" => crate::error::GetCustomVerificationEmailTemplateError {
             meta: generic,
-            kind: crate::error::GetCustomVerificationEmailTemplateErrorKind::TooManyRequestsError(
-                {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::too_many_requests_error::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::too_many_requests_exception(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::GetCustomVerificationEmailTemplateError::unhandled)?;
-                    output.build()
-                },
-            ),
+            kind:
+                crate::error::GetCustomVerificationEmailTemplateErrorKind::TooManyRequestsException(
+                    {
+                        #[allow(unused_mut)]
+                        let mut output =
+                            crate::error::too_many_requests_exception::Builder::default();
+                        let _ = response;
+                        output =
+                            crate::json_deser::deser_structure_too_many_requests_exceptionjson_err(
+                                response.body().as_ref(),
+                                output,
+                            )
+                            .map_err(
+                                crate::error::GetCustomVerificationEmailTemplateError::unhandled,
+                            )?;
+                        output.build()
+                    },
+                ),
         },
         _ => crate::error::GetCustomVerificationEmailTemplateError::generic(generic),
     })
@@ -2302,7 +2287,7 @@ pub fn parse_get_custom_verification_email_template_response(
         let mut output =
             crate::output::get_custom_verification_email_template_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::get_custom_verification_email_template_deser_operation(
+        output = crate::json_deser::deser_operation_get_custom_verification_email_template(
             response.body().as_ref(),
             output,
         )
@@ -2324,33 +2309,39 @@ pub fn parse_get_dedicated_ip_error(
     Err(match error_code {
         "BadRequestException" => crate::error::GetDedicatedIpError {
             meta: generic,
-            kind: crate::error::GetDedicatedIpErrorKind::BadRequestError({
+            kind: crate::error::GetDedicatedIpErrorKind::BadRequestException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_error::Builder::default();
+                let mut output = crate::error::bad_request_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::bad_request_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::GetDedicatedIpError::unhandled)?;
+                output = crate::json_deser::deser_structure_bad_request_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::GetDedicatedIpError::unhandled)?;
                 output.build()
             }),
         },
         "NotFoundException" => crate::error::GetDedicatedIpError {
             meta: generic,
-            kind: crate::error::GetDedicatedIpErrorKind::NotFoundError({
+            kind: crate::error::GetDedicatedIpErrorKind::NotFoundException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::not_found_error::Builder::default();
+                let mut output = crate::error::not_found_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::not_found_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::GetDedicatedIpError::unhandled)?;
+                output = crate::json_deser::deser_structure_not_found_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::GetDedicatedIpError::unhandled)?;
                 output.build()
             }),
         },
         "TooManyRequestsException" => crate::error::GetDedicatedIpError {
             meta: generic,
-            kind: crate::error::GetDedicatedIpErrorKind::TooManyRequestsError({
+            kind: crate::error::GetDedicatedIpErrorKind::TooManyRequestsException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::too_many_requests_error::Builder::default();
+                let mut output = crate::error::too_many_requests_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::too_many_requests_exception(
+                output = crate::json_deser::deser_structure_too_many_requests_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -2371,7 +2362,7 @@ pub fn parse_get_dedicated_ip_response(
         let mut output = crate::output::get_dedicated_ip_output::Builder::default();
         let _ = response;
         output =
-            crate::json_deser::get_dedicated_ip_deser_operation(response.body().as_ref(), output)
+            crate::json_deser::deser_operation_get_dedicated_ip(response.body().as_ref(), output)
                 .map_err(crate::error::GetDedicatedIpError::unhandled)?;
         output.build()
     })
@@ -2390,33 +2381,39 @@ pub fn parse_get_dedicated_ips_error(
     Err(match error_code {
         "BadRequestException" => crate::error::GetDedicatedIpsError {
             meta: generic,
-            kind: crate::error::GetDedicatedIpsErrorKind::BadRequestError({
+            kind: crate::error::GetDedicatedIpsErrorKind::BadRequestException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_error::Builder::default();
+                let mut output = crate::error::bad_request_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::bad_request_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::GetDedicatedIpsError::unhandled)?;
+                output = crate::json_deser::deser_structure_bad_request_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::GetDedicatedIpsError::unhandled)?;
                 output.build()
             }),
         },
         "NotFoundException" => crate::error::GetDedicatedIpsError {
             meta: generic,
-            kind: crate::error::GetDedicatedIpsErrorKind::NotFoundError({
+            kind: crate::error::GetDedicatedIpsErrorKind::NotFoundException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::not_found_error::Builder::default();
+                let mut output = crate::error::not_found_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::not_found_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::GetDedicatedIpsError::unhandled)?;
+                output = crate::json_deser::deser_structure_not_found_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::GetDedicatedIpsError::unhandled)?;
                 output.build()
             }),
         },
         "TooManyRequestsException" => crate::error::GetDedicatedIpsError {
             meta: generic,
-            kind: crate::error::GetDedicatedIpsErrorKind::TooManyRequestsError({
+            kind: crate::error::GetDedicatedIpsErrorKind::TooManyRequestsException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::too_many_requests_error::Builder::default();
+                let mut output = crate::error::too_many_requests_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::too_many_requests_exception(
+                output = crate::json_deser::deser_structure_too_many_requests_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -2437,7 +2434,7 @@ pub fn parse_get_dedicated_ips_response(
         let mut output = crate::output::get_dedicated_ips_output::Builder::default();
         let _ = response;
         output =
-            crate::json_deser::get_dedicated_ips_deser_operation(response.body().as_ref(), output)
+            crate::json_deser::deser_operation_get_dedicated_ips(response.body().as_ref(), output)
                 .map_err(crate::error::GetDedicatedIpsError::unhandled)?;
         output.build()
     })
@@ -2461,40 +2458,54 @@ pub fn parse_get_deliverability_dashboard_options_error(
     Err(match error_code {
         "BadRequestException" => crate::error::GetDeliverabilityDashboardOptionsError {
             meta: generic,
-            kind: crate::error::GetDeliverabilityDashboardOptionsErrorKind::BadRequestError({
+            kind: crate::error::GetDeliverabilityDashboardOptionsErrorKind::BadRequestException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_error::Builder::default();
+                let mut output = crate::error::bad_request_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::bad_request_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::GetDeliverabilityDashboardOptionsError::unhandled)?;
-                output.build()
-            }),
-        },
-        "LimitExceededException" => crate::error::GetDeliverabilityDashboardOptionsError {
-            meta: generic,
-            kind: crate::error::GetDeliverabilityDashboardOptionsErrorKind::LimitExceededError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::limit_exceeded_error::Builder::default();
-                let _ = response;
-                output =
-                    crate::json_deser::limit_exceeded_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::GetDeliverabilityDashboardOptionsError::unhandled)?;
-                output.build()
-            }),
-        },
-        "TooManyRequestsException" => crate::error::GetDeliverabilityDashboardOptionsError {
-            meta: generic,
-            kind: crate::error::GetDeliverabilityDashboardOptionsErrorKind::TooManyRequestsError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::too_many_requests_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::too_many_requests_exception(
+                output = crate::json_deser::deser_structure_bad_request_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
                 .map_err(crate::error::GetDeliverabilityDashboardOptionsError::unhandled)?;
                 output.build()
             }),
+        },
+        "LimitExceededException" => {
+            crate::error::GetDeliverabilityDashboardOptionsError {
+                meta: generic,
+                kind:
+                    crate::error::GetDeliverabilityDashboardOptionsErrorKind::LimitExceededException(
+                        {
+                            #[allow(unused_mut)]
+                            let mut output =
+                                crate::error::limit_exceeded_exception::Builder::default();
+                            let _ = response;
+                            output = crate::json_deser::deser_structure_limit_exceeded_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetDeliverabilityDashboardOptionsError::unhandled)?;
+                            output.build()
+                        },
+                    ),
+            }
+        }
+        "TooManyRequestsException" => crate::error::GetDeliverabilityDashboardOptionsError {
+            meta: generic,
+            kind:
+                crate::error::GetDeliverabilityDashboardOptionsErrorKind::TooManyRequestsException(
+                    {
+                        #[allow(unused_mut)]
+                        let mut output =
+                            crate::error::too_many_requests_exception::Builder::default();
+                        let _ = response;
+                        output =
+                            crate::json_deser::deser_structure_too_many_requests_exceptionjson_err(
+                                response.body().as_ref(),
+                                output,
+                            )
+                            .map_err(
+                                crate::error::GetDeliverabilityDashboardOptionsError::unhandled,
+                            )?;
+                        output.build()
+                    },
+                ),
         },
         _ => crate::error::GetDeliverabilityDashboardOptionsError::generic(generic),
     })
@@ -2512,7 +2523,7 @@ pub fn parse_get_deliverability_dashboard_options_response(
         let mut output =
             crate::output::get_deliverability_dashboard_options_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::get_deliverability_dashboard_options_deser_operation(
+        output = crate::json_deser::deser_operation_get_deliverability_dashboard_options(
             response.body().as_ref(),
             output,
         )
@@ -2541,33 +2552,39 @@ pub fn parse_get_deliverability_test_report_error(
     Err(match error_code {
         "BadRequestException" => crate::error::GetDeliverabilityTestReportError {
             meta: generic,
-            kind: crate::error::GetDeliverabilityTestReportErrorKind::BadRequestError({
+            kind: crate::error::GetDeliverabilityTestReportErrorKind::BadRequestException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_error::Builder::default();
+                let mut output = crate::error::bad_request_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::bad_request_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::GetDeliverabilityTestReportError::unhandled)?;
+                output = crate::json_deser::deser_structure_bad_request_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::GetDeliverabilityTestReportError::unhandled)?;
                 output.build()
             }),
         },
         "NotFoundException" => crate::error::GetDeliverabilityTestReportError {
             meta: generic,
-            kind: crate::error::GetDeliverabilityTestReportErrorKind::NotFoundError({
+            kind: crate::error::GetDeliverabilityTestReportErrorKind::NotFoundException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::not_found_error::Builder::default();
+                let mut output = crate::error::not_found_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::not_found_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::GetDeliverabilityTestReportError::unhandled)?;
+                output = crate::json_deser::deser_structure_not_found_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::GetDeliverabilityTestReportError::unhandled)?;
                 output.build()
             }),
         },
         "TooManyRequestsException" => crate::error::GetDeliverabilityTestReportError {
             meta: generic,
-            kind: crate::error::GetDeliverabilityTestReportErrorKind::TooManyRequestsError({
+            kind: crate::error::GetDeliverabilityTestReportErrorKind::TooManyRequestsException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::too_many_requests_error::Builder::default();
+                let mut output = crate::error::too_many_requests_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::too_many_requests_exception(
+                output = crate::json_deser::deser_structure_too_many_requests_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -2590,7 +2607,7 @@ pub fn parse_get_deliverability_test_report_response(
         #[allow(unused_mut)]
         let mut output = crate::output::get_deliverability_test_report_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::get_deliverability_test_report_deser_operation(
+        output = crate::json_deser::deser_operation_get_deliverability_test_report(
             response.body().as_ref(),
             output,
         )
@@ -2615,33 +2632,11 @@ pub fn parse_get_domain_deliverability_campaign_error(
     Err(match error_code {
         "BadRequestException" => crate::error::GetDomainDeliverabilityCampaignError {
             meta: generic,
-            kind: crate::error::GetDomainDeliverabilityCampaignErrorKind::BadRequestError({
+            kind: crate::error::GetDomainDeliverabilityCampaignErrorKind::BadRequestException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_error::Builder::default();
+                let mut output = crate::error::bad_request_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::bad_request_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::GetDomainDeliverabilityCampaignError::unhandled)?;
-                output.build()
-            }),
-        },
-        "NotFoundException" => crate::error::GetDomainDeliverabilityCampaignError {
-            meta: generic,
-            kind: crate::error::GetDomainDeliverabilityCampaignErrorKind::NotFoundError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::not_found_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::not_found_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::GetDomainDeliverabilityCampaignError::unhandled)?;
-                output.build()
-            }),
-        },
-        "TooManyRequestsException" => crate::error::GetDomainDeliverabilityCampaignError {
-            meta: generic,
-            kind: crate::error::GetDomainDeliverabilityCampaignErrorKind::TooManyRequestsError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::too_many_requests_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::too_many_requests_exception(
+                output = crate::json_deser::deser_structure_bad_request_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -2649,6 +2644,36 @@ pub fn parse_get_domain_deliverability_campaign_error(
                 output.build()
             }),
         },
+        "NotFoundException" => crate::error::GetDomainDeliverabilityCampaignError {
+            meta: generic,
+            kind: crate::error::GetDomainDeliverabilityCampaignErrorKind::NotFoundException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::not_found_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_not_found_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::GetDomainDeliverabilityCampaignError::unhandled)?;
+                output.build()
+            }),
+        },
+        "TooManyRequestsException" => {
+            crate::error::GetDomainDeliverabilityCampaignError {
+                meta: generic,
+                kind:
+                    crate::error::GetDomainDeliverabilityCampaignErrorKind::TooManyRequestsException(
+                        {
+                            #[allow(unused_mut)]
+                            let mut output =
+                                crate::error::too_many_requests_exception::Builder::default();
+                            let _ = response;
+                            output = crate::json_deser::deser_structure_too_many_requests_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetDomainDeliverabilityCampaignError::unhandled)?;
+                            output.build()
+                        },
+                    ),
+            }
+        }
         _ => crate::error::GetDomainDeliverabilityCampaignError::generic(generic),
     })
 }
@@ -2665,7 +2690,7 @@ pub fn parse_get_domain_deliverability_campaign_response(
         let mut output =
             crate::output::get_domain_deliverability_campaign_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::get_domain_deliverability_campaign_deser_operation(
+        output = crate::json_deser::deser_operation_get_domain_deliverability_campaign(
             response.body().as_ref(),
             output,
         )
@@ -2694,33 +2719,39 @@ pub fn parse_get_domain_statistics_report_error(
     Err(match error_code {
         "BadRequestException" => crate::error::GetDomainStatisticsReportError {
             meta: generic,
-            kind: crate::error::GetDomainStatisticsReportErrorKind::BadRequestError({
+            kind: crate::error::GetDomainStatisticsReportErrorKind::BadRequestException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_error::Builder::default();
+                let mut output = crate::error::bad_request_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::bad_request_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::GetDomainStatisticsReportError::unhandled)?;
+                output = crate::json_deser::deser_structure_bad_request_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::GetDomainStatisticsReportError::unhandled)?;
                 output.build()
             }),
         },
         "NotFoundException" => crate::error::GetDomainStatisticsReportError {
             meta: generic,
-            kind: crate::error::GetDomainStatisticsReportErrorKind::NotFoundError({
+            kind: crate::error::GetDomainStatisticsReportErrorKind::NotFoundException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::not_found_error::Builder::default();
+                let mut output = crate::error::not_found_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::not_found_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::GetDomainStatisticsReportError::unhandled)?;
+                output = crate::json_deser::deser_structure_not_found_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::GetDomainStatisticsReportError::unhandled)?;
                 output.build()
             }),
         },
         "TooManyRequestsException" => crate::error::GetDomainStatisticsReportError {
             meta: generic,
-            kind: crate::error::GetDomainStatisticsReportErrorKind::TooManyRequestsError({
+            kind: crate::error::GetDomainStatisticsReportErrorKind::TooManyRequestsException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::too_many_requests_error::Builder::default();
+                let mut output = crate::error::too_many_requests_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::too_many_requests_exception(
+                output = crate::json_deser::deser_structure_too_many_requests_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -2743,7 +2774,7 @@ pub fn parse_get_domain_statistics_report_response(
         #[allow(unused_mut)]
         let mut output = crate::output::get_domain_statistics_report_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::get_domain_statistics_report_deser_operation(
+        output = crate::json_deser::deser_operation_get_domain_statistics_report(
             response.body().as_ref(),
             output,
         )
@@ -2766,33 +2797,39 @@ pub fn parse_get_email_identity_error(
     Err(match error_code {
         "BadRequestException" => crate::error::GetEmailIdentityError {
             meta: generic,
-            kind: crate::error::GetEmailIdentityErrorKind::BadRequestError({
+            kind: crate::error::GetEmailIdentityErrorKind::BadRequestException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_error::Builder::default();
+                let mut output = crate::error::bad_request_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::bad_request_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::GetEmailIdentityError::unhandled)?;
+                output = crate::json_deser::deser_structure_bad_request_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::GetEmailIdentityError::unhandled)?;
                 output.build()
             }),
         },
         "NotFoundException" => crate::error::GetEmailIdentityError {
             meta: generic,
-            kind: crate::error::GetEmailIdentityErrorKind::NotFoundError({
+            kind: crate::error::GetEmailIdentityErrorKind::NotFoundException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::not_found_error::Builder::default();
+                let mut output = crate::error::not_found_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::not_found_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::GetEmailIdentityError::unhandled)?;
+                output = crate::json_deser::deser_structure_not_found_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::GetEmailIdentityError::unhandled)?;
                 output.build()
             }),
         },
         "TooManyRequestsException" => crate::error::GetEmailIdentityError {
             meta: generic,
-            kind: crate::error::GetEmailIdentityErrorKind::TooManyRequestsError({
+            kind: crate::error::GetEmailIdentityErrorKind::TooManyRequestsException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::too_many_requests_error::Builder::default();
+                let mut output = crate::error::too_many_requests_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::too_many_requests_exception(
+                output = crate::json_deser::deser_structure_too_many_requests_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -2814,7 +2851,7 @@ pub fn parse_get_email_identity_response(
         let mut output = crate::output::get_email_identity_output::Builder::default();
         let _ = response;
         output =
-            crate::json_deser::get_email_identity_deser_operation(response.body().as_ref(), output)
+            crate::json_deser::deser_operation_get_email_identity(response.body().as_ref(), output)
                 .map_err(crate::error::GetEmailIdentityError::unhandled)?;
         output.build()
     })
@@ -2840,33 +2877,39 @@ pub fn parse_get_email_identity_policies_error(
     Err(match error_code {
         "BadRequestException" => crate::error::GetEmailIdentityPoliciesError {
             meta: generic,
-            kind: crate::error::GetEmailIdentityPoliciesErrorKind::BadRequestError({
+            kind: crate::error::GetEmailIdentityPoliciesErrorKind::BadRequestException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_error::Builder::default();
+                let mut output = crate::error::bad_request_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::bad_request_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::GetEmailIdentityPoliciesError::unhandled)?;
+                output = crate::json_deser::deser_structure_bad_request_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::GetEmailIdentityPoliciesError::unhandled)?;
                 output.build()
             }),
         },
         "NotFoundException" => crate::error::GetEmailIdentityPoliciesError {
             meta: generic,
-            kind: crate::error::GetEmailIdentityPoliciesErrorKind::NotFoundError({
+            kind: crate::error::GetEmailIdentityPoliciesErrorKind::NotFoundException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::not_found_error::Builder::default();
+                let mut output = crate::error::not_found_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::not_found_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::GetEmailIdentityPoliciesError::unhandled)?;
+                output = crate::json_deser::deser_structure_not_found_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::GetEmailIdentityPoliciesError::unhandled)?;
                 output.build()
             }),
         },
         "TooManyRequestsException" => crate::error::GetEmailIdentityPoliciesError {
             meta: generic,
-            kind: crate::error::GetEmailIdentityPoliciesErrorKind::TooManyRequestsError({
+            kind: crate::error::GetEmailIdentityPoliciesErrorKind::TooManyRequestsException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::too_many_requests_error::Builder::default();
+                let mut output = crate::error::too_many_requests_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::too_many_requests_exception(
+                output = crate::json_deser::deser_structure_too_many_requests_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -2889,7 +2932,7 @@ pub fn parse_get_email_identity_policies_response(
         #[allow(unused_mut)]
         let mut output = crate::output::get_email_identity_policies_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::get_email_identity_policies_deser_operation(
+        output = crate::json_deser::deser_operation_get_email_identity_policies(
             response.body().as_ref(),
             output,
         )
@@ -2912,33 +2955,39 @@ pub fn parse_get_email_template_error(
     Err(match error_code {
         "BadRequestException" => crate::error::GetEmailTemplateError {
             meta: generic,
-            kind: crate::error::GetEmailTemplateErrorKind::BadRequestError({
+            kind: crate::error::GetEmailTemplateErrorKind::BadRequestException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_error::Builder::default();
+                let mut output = crate::error::bad_request_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::bad_request_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::GetEmailTemplateError::unhandled)?;
+                output = crate::json_deser::deser_structure_bad_request_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::GetEmailTemplateError::unhandled)?;
                 output.build()
             }),
         },
         "NotFoundException" => crate::error::GetEmailTemplateError {
             meta: generic,
-            kind: crate::error::GetEmailTemplateErrorKind::NotFoundError({
+            kind: crate::error::GetEmailTemplateErrorKind::NotFoundException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::not_found_error::Builder::default();
+                let mut output = crate::error::not_found_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::not_found_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::GetEmailTemplateError::unhandled)?;
+                output = crate::json_deser::deser_structure_not_found_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::GetEmailTemplateError::unhandled)?;
                 output.build()
             }),
         },
         "TooManyRequestsException" => crate::error::GetEmailTemplateError {
             meta: generic,
-            kind: crate::error::GetEmailTemplateErrorKind::TooManyRequestsError({
+            kind: crate::error::GetEmailTemplateErrorKind::TooManyRequestsException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::too_many_requests_error::Builder::default();
+                let mut output = crate::error::too_many_requests_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::too_many_requests_exception(
+                output = crate::json_deser::deser_structure_too_many_requests_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -2960,7 +3009,7 @@ pub fn parse_get_email_template_response(
         let mut output = crate::output::get_email_template_output::Builder::default();
         let _ = response;
         output =
-            crate::json_deser::get_email_template_deser_operation(response.body().as_ref(), output)
+            crate::json_deser::deser_operation_get_email_template(response.body().as_ref(), output)
                 .map_err(crate::error::GetEmailTemplateError::unhandled)?;
         output.build()
     })
@@ -2979,33 +3028,39 @@ pub fn parse_get_import_job_error(
     Err(match error_code {
         "BadRequestException" => crate::error::GetImportJobError {
             meta: generic,
-            kind: crate::error::GetImportJobErrorKind::BadRequestError({
+            kind: crate::error::GetImportJobErrorKind::BadRequestException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_error::Builder::default();
+                let mut output = crate::error::bad_request_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::bad_request_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::GetImportJobError::unhandled)?;
+                output = crate::json_deser::deser_structure_bad_request_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::GetImportJobError::unhandled)?;
                 output.build()
             }),
         },
         "NotFoundException" => crate::error::GetImportJobError {
             meta: generic,
-            kind: crate::error::GetImportJobErrorKind::NotFoundError({
+            kind: crate::error::GetImportJobErrorKind::NotFoundException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::not_found_error::Builder::default();
+                let mut output = crate::error::not_found_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::not_found_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::GetImportJobError::unhandled)?;
+                output = crate::json_deser::deser_structure_not_found_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::GetImportJobError::unhandled)?;
                 output.build()
             }),
         },
         "TooManyRequestsException" => crate::error::GetImportJobError {
             meta: generic,
-            kind: crate::error::GetImportJobErrorKind::TooManyRequestsError({
+            kind: crate::error::GetImportJobErrorKind::TooManyRequestsException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::too_many_requests_error::Builder::default();
+                let mut output = crate::error::too_many_requests_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::too_many_requests_exception(
+                output = crate::json_deser::deser_structure_too_many_requests_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -3026,7 +3081,7 @@ pub fn parse_get_import_job_response(
         let mut output = crate::output::get_import_job_output::Builder::default();
         let _ = response;
         output =
-            crate::json_deser::get_import_job_deser_operation(response.body().as_ref(), output)
+            crate::json_deser::deser_operation_get_import_job(response.body().as_ref(), output)
                 .map_err(crate::error::GetImportJobError::unhandled)?;
         output.build()
     })
@@ -3052,33 +3107,39 @@ pub fn parse_get_suppressed_destination_error(
     Err(match error_code {
         "BadRequestException" => crate::error::GetSuppressedDestinationError {
             meta: generic,
-            kind: crate::error::GetSuppressedDestinationErrorKind::BadRequestError({
+            kind: crate::error::GetSuppressedDestinationErrorKind::BadRequestException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_error::Builder::default();
+                let mut output = crate::error::bad_request_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::bad_request_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::GetSuppressedDestinationError::unhandled)?;
+                output = crate::json_deser::deser_structure_bad_request_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::GetSuppressedDestinationError::unhandled)?;
                 output.build()
             }),
         },
         "NotFoundException" => crate::error::GetSuppressedDestinationError {
             meta: generic,
-            kind: crate::error::GetSuppressedDestinationErrorKind::NotFoundError({
+            kind: crate::error::GetSuppressedDestinationErrorKind::NotFoundException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::not_found_error::Builder::default();
+                let mut output = crate::error::not_found_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::not_found_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::GetSuppressedDestinationError::unhandled)?;
+                output = crate::json_deser::deser_structure_not_found_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::GetSuppressedDestinationError::unhandled)?;
                 output.build()
             }),
         },
         "TooManyRequestsException" => crate::error::GetSuppressedDestinationError {
             meta: generic,
-            kind: crate::error::GetSuppressedDestinationErrorKind::TooManyRequestsError({
+            kind: crate::error::GetSuppressedDestinationErrorKind::TooManyRequestsException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::too_many_requests_error::Builder::default();
+                let mut output = crate::error::too_many_requests_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::too_many_requests_exception(
+                output = crate::json_deser::deser_structure_too_many_requests_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -3101,7 +3162,7 @@ pub fn parse_get_suppressed_destination_response(
         #[allow(unused_mut)]
         let mut output = crate::output::get_suppressed_destination_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::get_suppressed_destination_deser_operation(
+        output = crate::json_deser::deser_operation_get_suppressed_destination(
             response.body().as_ref(),
             output,
         )
@@ -3126,22 +3187,25 @@ pub fn parse_list_configuration_sets_error(
     Err(match error_code {
         "BadRequestException" => crate::error::ListConfigurationSetsError {
             meta: generic,
-            kind: crate::error::ListConfigurationSetsErrorKind::BadRequestError({
+            kind: crate::error::ListConfigurationSetsErrorKind::BadRequestException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_error::Builder::default();
+                let mut output = crate::error::bad_request_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::bad_request_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::ListConfigurationSetsError::unhandled)?;
+                output = crate::json_deser::deser_structure_bad_request_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::ListConfigurationSetsError::unhandled)?;
                 output.build()
             }),
         },
         "TooManyRequestsException" => crate::error::ListConfigurationSetsError {
             meta: generic,
-            kind: crate::error::ListConfigurationSetsErrorKind::TooManyRequestsError({
+            kind: crate::error::ListConfigurationSetsErrorKind::TooManyRequestsException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::too_many_requests_error::Builder::default();
+                let mut output = crate::error::too_many_requests_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::too_many_requests_exception(
+                output = crate::json_deser::deser_structure_too_many_requests_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -3164,7 +3228,7 @@ pub fn parse_list_configuration_sets_response(
         #[allow(unused_mut)]
         let mut output = crate::output::list_configuration_sets_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::list_configuration_sets_deser_operation(
+        output = crate::json_deser::deser_operation_list_configuration_sets(
             response.body().as_ref(),
             output,
         )
@@ -3187,22 +3251,25 @@ pub fn parse_list_contact_lists_error(
     Err(match error_code {
         "BadRequestException" => crate::error::ListContactListsError {
             meta: generic,
-            kind: crate::error::ListContactListsErrorKind::BadRequestError({
+            kind: crate::error::ListContactListsErrorKind::BadRequestException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_error::Builder::default();
+                let mut output = crate::error::bad_request_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::bad_request_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::ListContactListsError::unhandled)?;
+                output = crate::json_deser::deser_structure_bad_request_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::ListContactListsError::unhandled)?;
                 output.build()
             }),
         },
         "TooManyRequestsException" => crate::error::ListContactListsError {
             meta: generic,
-            kind: crate::error::ListContactListsErrorKind::TooManyRequestsError({
+            kind: crate::error::ListContactListsErrorKind::TooManyRequestsException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::too_many_requests_error::Builder::default();
+                let mut output = crate::error::too_many_requests_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::too_many_requests_exception(
+                output = crate::json_deser::deser_structure_too_many_requests_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -3224,7 +3291,7 @@ pub fn parse_list_contact_lists_response(
         let mut output = crate::output::list_contact_lists_output::Builder::default();
         let _ = response;
         output =
-            crate::json_deser::list_contact_lists_deser_operation(response.body().as_ref(), output)
+            crate::json_deser::deser_operation_list_contact_lists(response.body().as_ref(), output)
                 .map_err(crate::error::ListContactListsError::unhandled)?;
         output.build()
     })
@@ -3243,33 +3310,39 @@ pub fn parse_list_contacts_error(
     Err(match error_code {
         "BadRequestException" => crate::error::ListContactsError {
             meta: generic,
-            kind: crate::error::ListContactsErrorKind::BadRequestError({
+            kind: crate::error::ListContactsErrorKind::BadRequestException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_error::Builder::default();
+                let mut output = crate::error::bad_request_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::bad_request_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::ListContactsError::unhandled)?;
+                output = crate::json_deser::deser_structure_bad_request_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::ListContactsError::unhandled)?;
                 output.build()
             }),
         },
         "NotFoundException" => crate::error::ListContactsError {
             meta: generic,
-            kind: crate::error::ListContactsErrorKind::NotFoundError({
+            kind: crate::error::ListContactsErrorKind::NotFoundException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::not_found_error::Builder::default();
+                let mut output = crate::error::not_found_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::not_found_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::ListContactsError::unhandled)?;
+                output = crate::json_deser::deser_structure_not_found_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::ListContactsError::unhandled)?;
                 output.build()
             }),
         },
         "TooManyRequestsException" => crate::error::ListContactsError {
             meta: generic,
-            kind: crate::error::ListContactsErrorKind::TooManyRequestsError({
+            kind: crate::error::ListContactsErrorKind::TooManyRequestsException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::too_many_requests_error::Builder::default();
+                let mut output = crate::error::too_many_requests_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::too_many_requests_exception(
+                output = crate::json_deser::deser_structure_too_many_requests_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -3289,7 +3362,7 @@ pub fn parse_list_contacts_response(
         #[allow(unused_mut)]
         let mut output = crate::output::list_contacts_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::list_contacts_deser_operation(response.body().as_ref(), output)
+        output = crate::json_deser::deser_operation_list_contacts(response.body().as_ref(), output)
             .map_err(crate::error::ListContactsError::unhandled)?;
         output.build()
     })
@@ -3311,34 +3384,19 @@ pub fn parse_list_custom_verification_email_templates_error(
         }
     };
     Err(match error_code {
-        "BadRequestException" => crate::error::ListCustomVerificationEmailTemplatesError {
-            meta: generic,
-            kind: crate::error::ListCustomVerificationEmailTemplatesErrorKind::BadRequestError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::bad_request_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::ListCustomVerificationEmailTemplatesError::unhandled)?;
-                output.build()
-            }),
-        },
-        "TooManyRequestsException" => crate::error::ListCustomVerificationEmailTemplatesError {
-            meta: generic,
-            kind: crate::error::ListCustomVerificationEmailTemplatesErrorKind::TooManyRequestsError(
-                {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::too_many_requests_error::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::too_many_requests_exception(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::ListCustomVerificationEmailTemplatesError::unhandled)?;
-                    output.build()
-                },
-            ),
-        },
-        _ => crate::error::ListCustomVerificationEmailTemplatesError::generic(generic),
+        "BadRequestException" => crate::error::ListCustomVerificationEmailTemplatesError { meta: generic, kind: crate::error::ListCustomVerificationEmailTemplatesErrorKind::BadRequestException({
+            #[allow(unused_mut)]let mut output = crate::error::bad_request_exception::Builder::default();
+            let _ = response;
+            output = crate::json_deser::deser_structure_bad_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListCustomVerificationEmailTemplatesError::unhandled)?;
+            output.build()
+        })},
+        "TooManyRequestsException" => crate::error::ListCustomVerificationEmailTemplatesError { meta: generic, kind: crate::error::ListCustomVerificationEmailTemplatesErrorKind::TooManyRequestsException({
+            #[allow(unused_mut)]let mut output = crate::error::too_many_requests_exception::Builder::default();
+            let _ = response;
+            output = crate::json_deser::deser_structure_too_many_requests_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListCustomVerificationEmailTemplatesError::unhandled)?;
+            output.build()
+        })},
+        _ => crate::error::ListCustomVerificationEmailTemplatesError::generic(generic)
     })
 }
 
@@ -3354,7 +3412,7 @@ pub fn parse_list_custom_verification_email_templates_response(
         let mut output =
             crate::output::list_custom_verification_email_templates_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::list_custom_verification_email_templates_deser_operation(
+        output = crate::json_deser::deser_operation_list_custom_verification_email_templates(
             response.body().as_ref(),
             output,
         )
@@ -3379,22 +3437,25 @@ pub fn parse_list_dedicated_ip_pools_error(
     Err(match error_code {
         "BadRequestException" => crate::error::ListDedicatedIpPoolsError {
             meta: generic,
-            kind: crate::error::ListDedicatedIpPoolsErrorKind::BadRequestError({
+            kind: crate::error::ListDedicatedIpPoolsErrorKind::BadRequestException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_error::Builder::default();
+                let mut output = crate::error::bad_request_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::bad_request_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::ListDedicatedIpPoolsError::unhandled)?;
+                output = crate::json_deser::deser_structure_bad_request_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::ListDedicatedIpPoolsError::unhandled)?;
                 output.build()
             }),
         },
         "TooManyRequestsException" => crate::error::ListDedicatedIpPoolsError {
             meta: generic,
-            kind: crate::error::ListDedicatedIpPoolsErrorKind::TooManyRequestsError({
+            kind: crate::error::ListDedicatedIpPoolsErrorKind::TooManyRequestsException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::too_many_requests_error::Builder::default();
+                let mut output = crate::error::too_many_requests_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::too_many_requests_exception(
+                output = crate::json_deser::deser_structure_too_many_requests_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -3417,7 +3478,7 @@ pub fn parse_list_dedicated_ip_pools_response(
         #[allow(unused_mut)]
         let mut output = crate::output::list_dedicated_ip_pools_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::list_dedicated_ip_pools_deser_operation(
+        output = crate::json_deser::deser_operation_list_dedicated_ip_pools(
             response.body().as_ref(),
             output,
         )
@@ -3446,33 +3507,39 @@ pub fn parse_list_deliverability_test_reports_error(
     Err(match error_code {
         "BadRequestException" => crate::error::ListDeliverabilityTestReportsError {
             meta: generic,
-            kind: crate::error::ListDeliverabilityTestReportsErrorKind::BadRequestError({
+            kind: crate::error::ListDeliverabilityTestReportsErrorKind::BadRequestException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_error::Builder::default();
+                let mut output = crate::error::bad_request_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::bad_request_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::ListDeliverabilityTestReportsError::unhandled)?;
+                output = crate::json_deser::deser_structure_bad_request_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::ListDeliverabilityTestReportsError::unhandled)?;
                 output.build()
             }),
         },
         "NotFoundException" => crate::error::ListDeliverabilityTestReportsError {
             meta: generic,
-            kind: crate::error::ListDeliverabilityTestReportsErrorKind::NotFoundError({
+            kind: crate::error::ListDeliverabilityTestReportsErrorKind::NotFoundException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::not_found_error::Builder::default();
+                let mut output = crate::error::not_found_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::not_found_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::ListDeliverabilityTestReportsError::unhandled)?;
+                output = crate::json_deser::deser_structure_not_found_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::ListDeliverabilityTestReportsError::unhandled)?;
                 output.build()
             }),
         },
         "TooManyRequestsException" => crate::error::ListDeliverabilityTestReportsError {
             meta: generic,
-            kind: crate::error::ListDeliverabilityTestReportsErrorKind::TooManyRequestsError({
+            kind: crate::error::ListDeliverabilityTestReportsErrorKind::TooManyRequestsException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::too_many_requests_error::Builder::default();
+                let mut output = crate::error::too_many_requests_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::too_many_requests_exception(
+                output = crate::json_deser::deser_structure_too_many_requests_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -3495,7 +3562,7 @@ pub fn parse_list_deliverability_test_reports_response(
         #[allow(unused_mut)]
         let mut output = crate::output::list_deliverability_test_reports_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::list_deliverability_test_reports_deser_operation(
+        output = crate::json_deser::deser_operation_list_deliverability_test_reports(
             response.body().as_ref(),
             output,
         )
@@ -3522,40 +3589,52 @@ pub fn parse_list_domain_deliverability_campaigns_error(
     Err(match error_code {
         "BadRequestException" => crate::error::ListDomainDeliverabilityCampaignsError {
             meta: generic,
-            kind: crate::error::ListDomainDeliverabilityCampaignsErrorKind::BadRequestError({
+            kind: crate::error::ListDomainDeliverabilityCampaignsErrorKind::BadRequestException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_error::Builder::default();
+                let mut output = crate::error::bad_request_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::bad_request_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::ListDomainDeliverabilityCampaignsError::unhandled)?;
-                output.build()
-            }),
-        },
-        "NotFoundException" => crate::error::ListDomainDeliverabilityCampaignsError {
-            meta: generic,
-            kind: crate::error::ListDomainDeliverabilityCampaignsErrorKind::NotFoundError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::not_found_error::Builder::default();
-                let _ = response;
-                output =
-                    crate::json_deser::not_found_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::ListDomainDeliverabilityCampaignsError::unhandled)?;
-                output.build()
-            }),
-        },
-        "TooManyRequestsException" => crate::error::ListDomainDeliverabilityCampaignsError {
-            meta: generic,
-            kind: crate::error::ListDomainDeliverabilityCampaignsErrorKind::TooManyRequestsError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::too_many_requests_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::too_many_requests_exception(
+                output = crate::json_deser::deser_structure_bad_request_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
                 .map_err(crate::error::ListDomainDeliverabilityCampaignsError::unhandled)?;
                 output.build()
             }),
+        },
+        "NotFoundException" => crate::error::ListDomainDeliverabilityCampaignsError {
+            meta: generic,
+            kind: crate::error::ListDomainDeliverabilityCampaignsErrorKind::NotFoundException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::not_found_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_not_found_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::ListDomainDeliverabilityCampaignsError::unhandled)?;
+                output.build()
+            }),
+        },
+        "TooManyRequestsException" => crate::error::ListDomainDeliverabilityCampaignsError {
+            meta: generic,
+            kind:
+                crate::error::ListDomainDeliverabilityCampaignsErrorKind::TooManyRequestsException(
+                    {
+                        #[allow(unused_mut)]
+                        let mut output =
+                            crate::error::too_many_requests_exception::Builder::default();
+                        let _ = response;
+                        output =
+                            crate::json_deser::deser_structure_too_many_requests_exceptionjson_err(
+                                response.body().as_ref(),
+                                output,
+                            )
+                            .map_err(
+                                crate::error::ListDomainDeliverabilityCampaignsError::unhandled,
+                            )?;
+                        output.build()
+                    },
+                ),
         },
         _ => crate::error::ListDomainDeliverabilityCampaignsError::generic(generic),
     })
@@ -3573,7 +3652,7 @@ pub fn parse_list_domain_deliverability_campaigns_response(
         let mut output =
             crate::output::list_domain_deliverability_campaigns_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::list_domain_deliverability_campaigns_deser_operation(
+        output = crate::json_deser::deser_operation_list_domain_deliverability_campaigns(
             response.body().as_ref(),
             output,
         )
@@ -3598,22 +3677,25 @@ pub fn parse_list_email_identities_error(
     Err(match error_code {
         "BadRequestException" => crate::error::ListEmailIdentitiesError {
             meta: generic,
-            kind: crate::error::ListEmailIdentitiesErrorKind::BadRequestError({
+            kind: crate::error::ListEmailIdentitiesErrorKind::BadRequestException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_error::Builder::default();
+                let mut output = crate::error::bad_request_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::bad_request_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::ListEmailIdentitiesError::unhandled)?;
+                output = crate::json_deser::deser_structure_bad_request_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::ListEmailIdentitiesError::unhandled)?;
                 output.build()
             }),
         },
         "TooManyRequestsException" => crate::error::ListEmailIdentitiesError {
             meta: generic,
-            kind: crate::error::ListEmailIdentitiesErrorKind::TooManyRequestsError({
+            kind: crate::error::ListEmailIdentitiesErrorKind::TooManyRequestsException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::too_many_requests_error::Builder::default();
+                let mut output = crate::error::too_many_requests_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::too_many_requests_exception(
+                output = crate::json_deser::deser_structure_too_many_requests_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -3636,7 +3718,7 @@ pub fn parse_list_email_identities_response(
         #[allow(unused_mut)]
         let mut output = crate::output::list_email_identities_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::list_email_identities_deser_operation(
+        output = crate::json_deser::deser_operation_list_email_identities(
             response.body().as_ref(),
             output,
         )
@@ -3661,22 +3743,25 @@ pub fn parse_list_email_templates_error(
     Err(match error_code {
         "BadRequestException" => crate::error::ListEmailTemplatesError {
             meta: generic,
-            kind: crate::error::ListEmailTemplatesErrorKind::BadRequestError({
+            kind: crate::error::ListEmailTemplatesErrorKind::BadRequestException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_error::Builder::default();
+                let mut output = crate::error::bad_request_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::bad_request_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::ListEmailTemplatesError::unhandled)?;
+                output = crate::json_deser::deser_structure_bad_request_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::ListEmailTemplatesError::unhandled)?;
                 output.build()
             }),
         },
         "TooManyRequestsException" => crate::error::ListEmailTemplatesError {
             meta: generic,
-            kind: crate::error::ListEmailTemplatesErrorKind::TooManyRequestsError({
+            kind: crate::error::ListEmailTemplatesErrorKind::TooManyRequestsException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::too_many_requests_error::Builder::default();
+                let mut output = crate::error::too_many_requests_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::too_many_requests_exception(
+                output = crate::json_deser::deser_structure_too_many_requests_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -3699,7 +3784,7 @@ pub fn parse_list_email_templates_response(
         #[allow(unused_mut)]
         let mut output = crate::output::list_email_templates_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::list_email_templates_deser_operation(
+        output = crate::json_deser::deser_operation_list_email_templates(
             response.body().as_ref(),
             output,
         )
@@ -3721,22 +3806,25 @@ pub fn parse_list_import_jobs_error(
     Err(match error_code {
         "BadRequestException" => crate::error::ListImportJobsError {
             meta: generic,
-            kind: crate::error::ListImportJobsErrorKind::BadRequestError({
+            kind: crate::error::ListImportJobsErrorKind::BadRequestException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_error::Builder::default();
+                let mut output = crate::error::bad_request_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::bad_request_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::ListImportJobsError::unhandled)?;
+                output = crate::json_deser::deser_structure_bad_request_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::ListImportJobsError::unhandled)?;
                 output.build()
             }),
         },
         "TooManyRequestsException" => crate::error::ListImportJobsError {
             meta: generic,
-            kind: crate::error::ListImportJobsErrorKind::TooManyRequestsError({
+            kind: crate::error::ListImportJobsErrorKind::TooManyRequestsException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::too_many_requests_error::Builder::default();
+                let mut output = crate::error::too_many_requests_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::too_many_requests_exception(
+                output = crate::json_deser::deser_structure_too_many_requests_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -3757,7 +3845,7 @@ pub fn parse_list_import_jobs_response(
         let mut output = crate::output::list_import_jobs_output::Builder::default();
         let _ = response;
         output =
-            crate::json_deser::list_import_jobs_deser_operation(response.body().as_ref(), output)
+            crate::json_deser::deser_operation_list_import_jobs(response.body().as_ref(), output)
                 .map_err(crate::error::ListImportJobsError::unhandled)?;
         output.build()
     })
@@ -3783,22 +3871,25 @@ pub fn parse_list_suppressed_destinations_error(
     Err(match error_code {
         "BadRequestException" => crate::error::ListSuppressedDestinationsError {
             meta: generic,
-            kind: crate::error::ListSuppressedDestinationsErrorKind::BadRequestError({
+            kind: crate::error::ListSuppressedDestinationsErrorKind::BadRequestException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_error::Builder::default();
+                let mut output = crate::error::bad_request_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::bad_request_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::ListSuppressedDestinationsError::unhandled)?;
+                output = crate::json_deser::deser_structure_bad_request_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::ListSuppressedDestinationsError::unhandled)?;
                 output.build()
             }),
         },
         "InvalidNextTokenException" => crate::error::ListSuppressedDestinationsError {
             meta: generic,
-            kind: crate::error::ListSuppressedDestinationsErrorKind::InvalidNextTokenError({
+            kind: crate::error::ListSuppressedDestinationsErrorKind::InvalidNextTokenException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::invalid_next_token_error::Builder::default();
+                let mut output = crate::error::invalid_next_token_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::invalid_next_token_exception(
+                output = crate::json_deser::deser_structure_invalid_next_token_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -3808,11 +3899,11 @@ pub fn parse_list_suppressed_destinations_error(
         },
         "TooManyRequestsException" => crate::error::ListSuppressedDestinationsError {
             meta: generic,
-            kind: crate::error::ListSuppressedDestinationsErrorKind::TooManyRequestsError({
+            kind: crate::error::ListSuppressedDestinationsErrorKind::TooManyRequestsException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::too_many_requests_error::Builder::default();
+                let mut output = crate::error::too_many_requests_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::too_many_requests_exception(
+                output = crate::json_deser::deser_structure_too_many_requests_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -3835,7 +3926,7 @@ pub fn parse_list_suppressed_destinations_response(
         #[allow(unused_mut)]
         let mut output = crate::output::list_suppressed_destinations_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::list_suppressed_destinations_deser_operation(
+        output = crate::json_deser::deser_operation_list_suppressed_destinations(
             response.body().as_ref(),
             output,
         )
@@ -3860,33 +3951,39 @@ pub fn parse_list_tags_for_resource_error(
     Err(match error_code {
         "BadRequestException" => crate::error::ListTagsForResourceError {
             meta: generic,
-            kind: crate::error::ListTagsForResourceErrorKind::BadRequestError({
+            kind: crate::error::ListTagsForResourceErrorKind::BadRequestException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_error::Builder::default();
+                let mut output = crate::error::bad_request_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::bad_request_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::ListTagsForResourceError::unhandled)?;
+                output = crate::json_deser::deser_structure_bad_request_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::ListTagsForResourceError::unhandled)?;
                 output.build()
             }),
         },
         "NotFoundException" => crate::error::ListTagsForResourceError {
             meta: generic,
-            kind: crate::error::ListTagsForResourceErrorKind::NotFoundError({
+            kind: crate::error::ListTagsForResourceErrorKind::NotFoundException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::not_found_error::Builder::default();
+                let mut output = crate::error::not_found_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::not_found_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::ListTagsForResourceError::unhandled)?;
+                output = crate::json_deser::deser_structure_not_found_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::ListTagsForResourceError::unhandled)?;
                 output.build()
             }),
         },
         "TooManyRequestsException" => crate::error::ListTagsForResourceError {
             meta: generic,
-            kind: crate::error::ListTagsForResourceErrorKind::TooManyRequestsError({
+            kind: crate::error::ListTagsForResourceErrorKind::TooManyRequestsException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::too_many_requests_error::Builder::default();
+                let mut output = crate::error::too_many_requests_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::too_many_requests_exception(
+                output = crate::json_deser::deser_structure_too_many_requests_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -3909,7 +4006,7 @@ pub fn parse_list_tags_for_resource_response(
         #[allow(unused_mut)]
         let mut output = crate::output::list_tags_for_resource_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::list_tags_for_resource_deser_operation(
+        output = crate::json_deser::deser_operation_list_tags_for_resource(
             response.body().as_ref(),
             output,
         )
@@ -3936,37 +4033,19 @@ pub fn parse_put_account_dedicated_ip_warmup_attributes_error(
         }
     };
     Err(match error_code {
-        "BadRequestException" => crate::error::PutAccountDedicatedIpWarmupAttributesError {
-            meta: generic,
-            kind: crate::error::PutAccountDedicatedIpWarmupAttributesErrorKind::BadRequestError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::bad_request_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::PutAccountDedicatedIpWarmupAttributesError::unhandled)?;
-                output.build()
-            }),
-        },
-        "TooManyRequestsException" => crate::error::PutAccountDedicatedIpWarmupAttributesError {
-            meta: generic,
-            kind:
-                crate::error::PutAccountDedicatedIpWarmupAttributesErrorKind::TooManyRequestsError(
-                    {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::too_many_requests_error::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::too_many_requests_exception(
-                            response.body().as_ref(),
-                            output,
-                        )
-                        .map_err(
-                            crate::error::PutAccountDedicatedIpWarmupAttributesError::unhandled,
-                        )?;
-                        output.build()
-                    },
-                ),
-        },
-        _ => crate::error::PutAccountDedicatedIpWarmupAttributesError::generic(generic),
+        "BadRequestException" => crate::error::PutAccountDedicatedIpWarmupAttributesError { meta: generic, kind: crate::error::PutAccountDedicatedIpWarmupAttributesErrorKind::BadRequestException({
+            #[allow(unused_mut)]let mut output = crate::error::bad_request_exception::Builder::default();
+            let _ = response;
+            output = crate::json_deser::deser_structure_bad_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::PutAccountDedicatedIpWarmupAttributesError::unhandled)?;
+            output.build()
+        })},
+        "TooManyRequestsException" => crate::error::PutAccountDedicatedIpWarmupAttributesError { meta: generic, kind: crate::error::PutAccountDedicatedIpWarmupAttributesErrorKind::TooManyRequestsException({
+            #[allow(unused_mut)]let mut output = crate::error::too_many_requests_exception::Builder::default();
+            let _ = response;
+            output = crate::json_deser::deser_structure_too_many_requests_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::PutAccountDedicatedIpWarmupAttributesError::unhandled)?;
+            output.build()
+        })},
+        _ => crate::error::PutAccountDedicatedIpWarmupAttributesError::generic(generic)
     })
 }
 
@@ -4000,33 +4079,39 @@ pub fn parse_put_account_details_error(
     Err(match error_code {
         "BadRequestException" => crate::error::PutAccountDetailsError {
             meta: generic,
-            kind: crate::error::PutAccountDetailsErrorKind::BadRequestError({
+            kind: crate::error::PutAccountDetailsErrorKind::BadRequestException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_error::Builder::default();
+                let mut output = crate::error::bad_request_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::bad_request_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::PutAccountDetailsError::unhandled)?;
+                output = crate::json_deser::deser_structure_bad_request_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::PutAccountDetailsError::unhandled)?;
                 output.build()
             }),
         },
         "ConflictException" => crate::error::PutAccountDetailsError {
             meta: generic,
-            kind: crate::error::PutAccountDetailsErrorKind::ConflictError({
+            kind: crate::error::PutAccountDetailsErrorKind::ConflictException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::conflict_error::Builder::default();
+                let mut output = crate::error::conflict_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::conflict_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::PutAccountDetailsError::unhandled)?;
+                output = crate::json_deser::deser_structure_conflict_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::PutAccountDetailsError::unhandled)?;
                 output.build()
             }),
         },
         "TooManyRequestsException" => crate::error::PutAccountDetailsError {
             meta: generic,
-            kind: crate::error::PutAccountDetailsErrorKind::TooManyRequestsError({
+            kind: crate::error::PutAccountDetailsErrorKind::TooManyRequestsException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::too_many_requests_error::Builder::default();
+                let mut output = crate::error::too_many_requests_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::too_many_requests_exception(
+                output = crate::json_deser::deser_structure_too_many_requests_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -4071,22 +4156,25 @@ pub fn parse_put_account_sending_attributes_error(
     Err(match error_code {
         "BadRequestException" => crate::error::PutAccountSendingAttributesError {
             meta: generic,
-            kind: crate::error::PutAccountSendingAttributesErrorKind::BadRequestError({
+            kind: crate::error::PutAccountSendingAttributesErrorKind::BadRequestException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_error::Builder::default();
+                let mut output = crate::error::bad_request_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::bad_request_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::PutAccountSendingAttributesError::unhandled)?;
+                output = crate::json_deser::deser_structure_bad_request_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::PutAccountSendingAttributesError::unhandled)?;
                 output.build()
             }),
         },
         "TooManyRequestsException" => crate::error::PutAccountSendingAttributesError {
             meta: generic,
-            kind: crate::error::PutAccountSendingAttributesErrorKind::TooManyRequestsError({
+            kind: crate::error::PutAccountSendingAttributesErrorKind::TooManyRequestsException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::too_many_requests_error::Builder::default();
+                let mut output = crate::error::too_many_requests_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::too_many_requests_exception(
+                output = crate::json_deser::deser_structure_too_many_requests_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -4129,22 +4217,11 @@ pub fn parse_put_account_suppression_attributes_error(
     Err(match error_code {
         "BadRequestException" => crate::error::PutAccountSuppressionAttributesError {
             meta: generic,
-            kind: crate::error::PutAccountSuppressionAttributesErrorKind::BadRequestError({
+            kind: crate::error::PutAccountSuppressionAttributesErrorKind::BadRequestException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_error::Builder::default();
+                let mut output = crate::error::bad_request_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::bad_request_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::PutAccountSuppressionAttributesError::unhandled)?;
-                output.build()
-            }),
-        },
-        "TooManyRequestsException" => crate::error::PutAccountSuppressionAttributesError {
-            meta: generic,
-            kind: crate::error::PutAccountSuppressionAttributesErrorKind::TooManyRequestsError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::too_many_requests_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::too_many_requests_exception(
+                output = crate::json_deser::deser_structure_bad_request_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -4152,6 +4229,22 @@ pub fn parse_put_account_suppression_attributes_error(
                 output.build()
             }),
         },
+        "TooManyRequestsException" => {
+            crate::error::PutAccountSuppressionAttributesError {
+                meta: generic,
+                kind:
+                    crate::error::PutAccountSuppressionAttributesErrorKind::TooManyRequestsException(
+                        {
+                            #[allow(unused_mut)]
+                            let mut output =
+                                crate::error::too_many_requests_exception::Builder::default();
+                            let _ = response;
+                            output = crate::json_deser::deser_structure_too_many_requests_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::PutAccountSuppressionAttributesError::unhandled)?;
+                            output.build()
+                        },
+                    ),
+            }
+        }
         _ => crate::error::PutAccountSuppressionAttributesError::generic(generic),
     })
 }
@@ -4190,43 +4283,52 @@ pub fn parse_put_configuration_set_delivery_options_error(
     Err(match error_code {
         "BadRequestException" => crate::error::PutConfigurationSetDeliveryOptionsError {
             meta: generic,
-            kind: crate::error::PutConfigurationSetDeliveryOptionsErrorKind::BadRequestError({
+            kind: crate::error::PutConfigurationSetDeliveryOptionsErrorKind::BadRequestException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_error::Builder::default();
+                let mut output = crate::error::bad_request_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::bad_request_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::PutConfigurationSetDeliveryOptionsError::unhandled)?;
+                output = crate::json_deser::deser_structure_bad_request_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::PutConfigurationSetDeliveryOptionsError::unhandled)?;
                 output.build()
             }),
         },
         "NotFoundException" => crate::error::PutConfigurationSetDeliveryOptionsError {
             meta: generic,
-            kind: crate::error::PutConfigurationSetDeliveryOptionsErrorKind::NotFoundError({
+            kind: crate::error::PutConfigurationSetDeliveryOptionsErrorKind::NotFoundException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::not_found_error::Builder::default();
+                let mut output = crate::error::not_found_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::not_found_exception(response.body().as_ref(), output)
-                    .map_err(
-                    crate::error::PutConfigurationSetDeliveryOptionsError::unhandled,
-                )?;
+                output = crate::json_deser::deser_structure_not_found_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::PutConfigurationSetDeliveryOptionsError::unhandled)?;
                 output.build()
             }),
         },
         "TooManyRequestsException" => crate::error::PutConfigurationSetDeliveryOptionsError {
             meta: generic,
-            kind: crate::error::PutConfigurationSetDeliveryOptionsErrorKind::TooManyRequestsError(
-                {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::too_many_requests_error::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::too_many_requests_exception(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::PutConfigurationSetDeliveryOptionsError::unhandled)?;
-                    output.build()
-                },
-            ),
+            kind:
+                crate::error::PutConfigurationSetDeliveryOptionsErrorKind::TooManyRequestsException(
+                    {
+                        #[allow(unused_mut)]
+                        let mut output =
+                            crate::error::too_many_requests_exception::Builder::default();
+                        let _ = response;
+                        output =
+                            crate::json_deser::deser_structure_too_many_requests_exceptionjson_err(
+                                response.body().as_ref(),
+                                output,
+                            )
+                            .map_err(
+                                crate::error::PutConfigurationSetDeliveryOptionsError::unhandled,
+                            )?;
+                        output.build()
+                    },
+                ),
         },
         _ => crate::error::PutConfigurationSetDeliveryOptionsError::generic(generic),
     })
@@ -4264,47 +4366,25 @@ pub fn parse_put_configuration_set_reputation_options_error(
         }
     };
     Err(match error_code {
-        "BadRequestException" => crate::error::PutConfigurationSetReputationOptionsError {
-            meta: generic,
-            kind: crate::error::PutConfigurationSetReputationOptionsErrorKind::BadRequestError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::bad_request_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::PutConfigurationSetReputationOptionsError::unhandled)?;
-                output.build()
-            }),
-        },
-        "NotFoundException" => crate::error::PutConfigurationSetReputationOptionsError {
-            meta: generic,
-            kind: crate::error::PutConfigurationSetReputationOptionsErrorKind::NotFoundError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::not_found_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::not_found_exception(response.body().as_ref(), output)
-                    .map_err(
-                    crate::error::PutConfigurationSetReputationOptionsError::unhandled,
-                )?;
-                output.build()
-            }),
-        },
-        "TooManyRequestsException" => crate::error::PutConfigurationSetReputationOptionsError {
-            meta: generic,
-            kind: crate::error::PutConfigurationSetReputationOptionsErrorKind::TooManyRequestsError(
-                {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::too_many_requests_error::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::too_many_requests_exception(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::PutConfigurationSetReputationOptionsError::unhandled)?;
-                    output.build()
-                },
-            ),
-        },
-        _ => crate::error::PutConfigurationSetReputationOptionsError::generic(generic),
+        "BadRequestException" => crate::error::PutConfigurationSetReputationOptionsError { meta: generic, kind: crate::error::PutConfigurationSetReputationOptionsErrorKind::BadRequestException({
+            #[allow(unused_mut)]let mut output = crate::error::bad_request_exception::Builder::default();
+            let _ = response;
+            output = crate::json_deser::deser_structure_bad_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::PutConfigurationSetReputationOptionsError::unhandled)?;
+            output.build()
+        })},
+        "NotFoundException" => crate::error::PutConfigurationSetReputationOptionsError { meta: generic, kind: crate::error::PutConfigurationSetReputationOptionsErrorKind::NotFoundException({
+            #[allow(unused_mut)]let mut output = crate::error::not_found_exception::Builder::default();
+            let _ = response;
+            output = crate::json_deser::deser_structure_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::PutConfigurationSetReputationOptionsError::unhandled)?;
+            output.build()
+        })},
+        "TooManyRequestsException" => crate::error::PutConfigurationSetReputationOptionsError { meta: generic, kind: crate::error::PutConfigurationSetReputationOptionsErrorKind::TooManyRequestsException({
+            #[allow(unused_mut)]let mut output = crate::error::too_many_requests_exception::Builder::default();
+            let _ = response;
+            output = crate::json_deser::deser_structure_too_many_requests_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::PutConfigurationSetReputationOptionsError::unhandled)?;
+            output.build()
+        })},
+        _ => crate::error::PutConfigurationSetReputationOptionsError::generic(generic)
     })
 }
 
@@ -4342,40 +4422,52 @@ pub fn parse_put_configuration_set_sending_options_error(
     Err(match error_code {
         "BadRequestException" => crate::error::PutConfigurationSetSendingOptionsError {
             meta: generic,
-            kind: crate::error::PutConfigurationSetSendingOptionsErrorKind::BadRequestError({
+            kind: crate::error::PutConfigurationSetSendingOptionsErrorKind::BadRequestException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_error::Builder::default();
+                let mut output = crate::error::bad_request_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::bad_request_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::PutConfigurationSetSendingOptionsError::unhandled)?;
-                output.build()
-            }),
-        },
-        "NotFoundException" => crate::error::PutConfigurationSetSendingOptionsError {
-            meta: generic,
-            kind: crate::error::PutConfigurationSetSendingOptionsErrorKind::NotFoundError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::not_found_error::Builder::default();
-                let _ = response;
-                output =
-                    crate::json_deser::not_found_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::PutConfigurationSetSendingOptionsError::unhandled)?;
-                output.build()
-            }),
-        },
-        "TooManyRequestsException" => crate::error::PutConfigurationSetSendingOptionsError {
-            meta: generic,
-            kind: crate::error::PutConfigurationSetSendingOptionsErrorKind::TooManyRequestsError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::too_many_requests_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::too_many_requests_exception(
+                output = crate::json_deser::deser_structure_bad_request_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
                 .map_err(crate::error::PutConfigurationSetSendingOptionsError::unhandled)?;
                 output.build()
             }),
+        },
+        "NotFoundException" => crate::error::PutConfigurationSetSendingOptionsError {
+            meta: generic,
+            kind: crate::error::PutConfigurationSetSendingOptionsErrorKind::NotFoundException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::not_found_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_not_found_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::PutConfigurationSetSendingOptionsError::unhandled)?;
+                output.build()
+            }),
+        },
+        "TooManyRequestsException" => crate::error::PutConfigurationSetSendingOptionsError {
+            meta: generic,
+            kind:
+                crate::error::PutConfigurationSetSendingOptionsErrorKind::TooManyRequestsException(
+                    {
+                        #[allow(unused_mut)]
+                        let mut output =
+                            crate::error::too_many_requests_exception::Builder::default();
+                        let _ = response;
+                        output =
+                            crate::json_deser::deser_structure_too_many_requests_exceptionjson_err(
+                                response.body().as_ref(),
+                                output,
+                            )
+                            .map_err(
+                                crate::error::PutConfigurationSetSendingOptionsError::unhandled,
+                            )?;
+                        output.build()
+                    },
+                ),
         },
         _ => crate::error::PutConfigurationSetSendingOptionsError::generic(generic),
     })
@@ -4415,50 +4507,25 @@ pub fn parse_put_configuration_set_suppression_options_error(
         }
     };
     Err(match error_code {
-        "BadRequestException" => crate::error::PutConfigurationSetSuppressionOptionsError {
-            meta: generic,
-            kind: crate::error::PutConfigurationSetSuppressionOptionsErrorKind::BadRequestError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::bad_request_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::PutConfigurationSetSuppressionOptionsError::unhandled)?;
-                output.build()
-            }),
-        },
-        "NotFoundException" => crate::error::PutConfigurationSetSuppressionOptionsError {
-            meta: generic,
-            kind: crate::error::PutConfigurationSetSuppressionOptionsErrorKind::NotFoundError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::not_found_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::not_found_exception(response.body().as_ref(), output)
-                    .map_err(
-                    crate::error::PutConfigurationSetSuppressionOptionsError::unhandled,
-                )?;
-                output.build()
-            }),
-        },
-        "TooManyRequestsException" => crate::error::PutConfigurationSetSuppressionOptionsError {
-            meta: generic,
-            kind:
-                crate::error::PutConfigurationSetSuppressionOptionsErrorKind::TooManyRequestsError(
-                    {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::too_many_requests_error::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::too_many_requests_exception(
-                            response.body().as_ref(),
-                            output,
-                        )
-                        .map_err(
-                            crate::error::PutConfigurationSetSuppressionOptionsError::unhandled,
-                        )?;
-                        output.build()
-                    },
-                ),
-        },
-        _ => crate::error::PutConfigurationSetSuppressionOptionsError::generic(generic),
+        "BadRequestException" => crate::error::PutConfigurationSetSuppressionOptionsError { meta: generic, kind: crate::error::PutConfigurationSetSuppressionOptionsErrorKind::BadRequestException({
+            #[allow(unused_mut)]let mut output = crate::error::bad_request_exception::Builder::default();
+            let _ = response;
+            output = crate::json_deser::deser_structure_bad_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::PutConfigurationSetSuppressionOptionsError::unhandled)?;
+            output.build()
+        })},
+        "NotFoundException" => crate::error::PutConfigurationSetSuppressionOptionsError { meta: generic, kind: crate::error::PutConfigurationSetSuppressionOptionsErrorKind::NotFoundException({
+            #[allow(unused_mut)]let mut output = crate::error::not_found_exception::Builder::default();
+            let _ = response;
+            output = crate::json_deser::deser_structure_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::PutConfigurationSetSuppressionOptionsError::unhandled)?;
+            output.build()
+        })},
+        "TooManyRequestsException" => crate::error::PutConfigurationSetSuppressionOptionsError { meta: generic, kind: crate::error::PutConfigurationSetSuppressionOptionsErrorKind::TooManyRequestsException({
+            #[allow(unused_mut)]let mut output = crate::error::too_many_requests_exception::Builder::default();
+            let _ = response;
+            output = crate::json_deser::deser_structure_too_many_requests_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::PutConfigurationSetSuppressionOptionsError::unhandled)?;
+            output.build()
+        })},
+        _ => crate::error::PutConfigurationSetSuppressionOptionsError::generic(generic)
     })
 }
 
@@ -4496,43 +4563,52 @@ pub fn parse_put_configuration_set_tracking_options_error(
     Err(match error_code {
         "BadRequestException" => crate::error::PutConfigurationSetTrackingOptionsError {
             meta: generic,
-            kind: crate::error::PutConfigurationSetTrackingOptionsErrorKind::BadRequestError({
+            kind: crate::error::PutConfigurationSetTrackingOptionsErrorKind::BadRequestException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_error::Builder::default();
+                let mut output = crate::error::bad_request_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::bad_request_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::PutConfigurationSetTrackingOptionsError::unhandled)?;
+                output = crate::json_deser::deser_structure_bad_request_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::PutConfigurationSetTrackingOptionsError::unhandled)?;
                 output.build()
             }),
         },
         "NotFoundException" => crate::error::PutConfigurationSetTrackingOptionsError {
             meta: generic,
-            kind: crate::error::PutConfigurationSetTrackingOptionsErrorKind::NotFoundError({
+            kind: crate::error::PutConfigurationSetTrackingOptionsErrorKind::NotFoundException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::not_found_error::Builder::default();
+                let mut output = crate::error::not_found_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::not_found_exception(response.body().as_ref(), output)
-                    .map_err(
-                    crate::error::PutConfigurationSetTrackingOptionsError::unhandled,
-                )?;
+                output = crate::json_deser::deser_structure_not_found_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::PutConfigurationSetTrackingOptionsError::unhandled)?;
                 output.build()
             }),
         },
         "TooManyRequestsException" => crate::error::PutConfigurationSetTrackingOptionsError {
             meta: generic,
-            kind: crate::error::PutConfigurationSetTrackingOptionsErrorKind::TooManyRequestsError(
-                {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::too_many_requests_error::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::too_many_requests_exception(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::PutConfigurationSetTrackingOptionsError::unhandled)?;
-                    output.build()
-                },
-            ),
+            kind:
+                crate::error::PutConfigurationSetTrackingOptionsErrorKind::TooManyRequestsException(
+                    {
+                        #[allow(unused_mut)]
+                        let mut output =
+                            crate::error::too_many_requests_exception::Builder::default();
+                        let _ = response;
+                        output =
+                            crate::json_deser::deser_structure_too_many_requests_exceptionjson_err(
+                                response.body().as_ref(),
+                                output,
+                            )
+                            .map_err(
+                                crate::error::PutConfigurationSetTrackingOptionsError::unhandled,
+                            )?;
+                        output.build()
+                    },
+                ),
         },
         _ => crate::error::PutConfigurationSetTrackingOptionsError::generic(generic),
     })
@@ -4570,33 +4646,39 @@ pub fn parse_put_dedicated_ip_in_pool_error(
     Err(match error_code {
         "BadRequestException" => crate::error::PutDedicatedIpInPoolError {
             meta: generic,
-            kind: crate::error::PutDedicatedIpInPoolErrorKind::BadRequestError({
+            kind: crate::error::PutDedicatedIpInPoolErrorKind::BadRequestException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_error::Builder::default();
+                let mut output = crate::error::bad_request_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::bad_request_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::PutDedicatedIpInPoolError::unhandled)?;
+                output = crate::json_deser::deser_structure_bad_request_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::PutDedicatedIpInPoolError::unhandled)?;
                 output.build()
             }),
         },
         "NotFoundException" => crate::error::PutDedicatedIpInPoolError {
             meta: generic,
-            kind: crate::error::PutDedicatedIpInPoolErrorKind::NotFoundError({
+            kind: crate::error::PutDedicatedIpInPoolErrorKind::NotFoundException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::not_found_error::Builder::default();
+                let mut output = crate::error::not_found_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::not_found_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::PutDedicatedIpInPoolError::unhandled)?;
+                output = crate::json_deser::deser_structure_not_found_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::PutDedicatedIpInPoolError::unhandled)?;
                 output.build()
             }),
         },
         "TooManyRequestsException" => crate::error::PutDedicatedIpInPoolError {
             meta: generic,
-            kind: crate::error::PutDedicatedIpInPoolErrorKind::TooManyRequestsError({
+            kind: crate::error::PutDedicatedIpInPoolErrorKind::TooManyRequestsException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::too_many_requests_error::Builder::default();
+                let mut output = crate::error::too_many_requests_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::too_many_requests_exception(
+                output = crate::json_deser::deser_structure_too_many_requests_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -4639,33 +4721,11 @@ pub fn parse_put_dedicated_ip_warmup_attributes_error(
     Err(match error_code {
         "BadRequestException" => crate::error::PutDedicatedIpWarmupAttributesError {
             meta: generic,
-            kind: crate::error::PutDedicatedIpWarmupAttributesErrorKind::BadRequestError({
+            kind: crate::error::PutDedicatedIpWarmupAttributesErrorKind::BadRequestException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_error::Builder::default();
+                let mut output = crate::error::bad_request_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::bad_request_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::PutDedicatedIpWarmupAttributesError::unhandled)?;
-                output.build()
-            }),
-        },
-        "NotFoundException" => crate::error::PutDedicatedIpWarmupAttributesError {
-            meta: generic,
-            kind: crate::error::PutDedicatedIpWarmupAttributesErrorKind::NotFoundError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::not_found_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::not_found_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::PutDedicatedIpWarmupAttributesError::unhandled)?;
-                output.build()
-            }),
-        },
-        "TooManyRequestsException" => crate::error::PutDedicatedIpWarmupAttributesError {
-            meta: generic,
-            kind: crate::error::PutDedicatedIpWarmupAttributesErrorKind::TooManyRequestsError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::too_many_requests_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::too_many_requests_exception(
+                output = crate::json_deser::deser_structure_bad_request_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -4673,6 +4733,36 @@ pub fn parse_put_dedicated_ip_warmup_attributes_error(
                 output.build()
             }),
         },
+        "NotFoundException" => crate::error::PutDedicatedIpWarmupAttributesError {
+            meta: generic,
+            kind: crate::error::PutDedicatedIpWarmupAttributesErrorKind::NotFoundException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::not_found_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_not_found_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::PutDedicatedIpWarmupAttributesError::unhandled)?;
+                output.build()
+            }),
+        },
+        "TooManyRequestsException" => {
+            crate::error::PutDedicatedIpWarmupAttributesError {
+                meta: generic,
+                kind:
+                    crate::error::PutDedicatedIpWarmupAttributesErrorKind::TooManyRequestsException(
+                        {
+                            #[allow(unused_mut)]
+                            let mut output =
+                                crate::error::too_many_requests_exception::Builder::default();
+                            let _ = response;
+                            output = crate::json_deser::deser_structure_too_many_requests_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::PutDedicatedIpWarmupAttributesError::unhandled)?;
+                            output.build()
+                        },
+                    ),
+            }
+        }
         _ => crate::error::PutDedicatedIpWarmupAttributesError::generic(generic),
     })
 }
@@ -4709,65 +4799,82 @@ pub fn parse_put_deliverability_dashboard_option_error(
         }
     };
     Err(match error_code {
-        "AlreadyExistsException" => crate::error::PutDeliverabilityDashboardOptionError {
-            meta: generic,
-            kind: crate::error::PutDeliverabilityDashboardOptionErrorKind::AlreadyExistsError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::already_exists_error::Builder::default();
-                let _ = response;
-                output =
-                    crate::json_deser::already_exists_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::PutDeliverabilityDashboardOptionError::unhandled)?;
-                output.build()
-            }),
-        },
+        "AlreadyExistsException" => {
+            crate::error::PutDeliverabilityDashboardOptionError {
+                meta: generic,
+                kind:
+                    crate::error::PutDeliverabilityDashboardOptionErrorKind::AlreadyExistsException(
+                        {
+                            #[allow(unused_mut)]
+                            let mut output =
+                                crate::error::already_exists_exception::Builder::default();
+                            let _ = response;
+                            output = crate::json_deser::deser_structure_already_exists_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::PutDeliverabilityDashboardOptionError::unhandled)?;
+                            output.build()
+                        },
+                    ),
+            }
+        }
         "BadRequestException" => crate::error::PutDeliverabilityDashboardOptionError {
             meta: generic,
-            kind: crate::error::PutDeliverabilityDashboardOptionErrorKind::BadRequestError({
+            kind: crate::error::PutDeliverabilityDashboardOptionErrorKind::BadRequestException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_error::Builder::default();
+                let mut output = crate::error::bad_request_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::bad_request_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::PutDeliverabilityDashboardOptionError::unhandled)?;
-                output.build()
-            }),
-        },
-        "LimitExceededException" => crate::error::PutDeliverabilityDashboardOptionError {
-            meta: generic,
-            kind: crate::error::PutDeliverabilityDashboardOptionErrorKind::LimitExceededError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::limit_exceeded_error::Builder::default();
-                let _ = response;
-                output =
-                    crate::json_deser::limit_exceeded_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::PutDeliverabilityDashboardOptionError::unhandled)?;
-                output.build()
-            }),
-        },
-        "NotFoundException" => crate::error::PutDeliverabilityDashboardOptionError {
-            meta: generic,
-            kind: crate::error::PutDeliverabilityDashboardOptionErrorKind::NotFoundError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::not_found_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::not_found_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::PutDeliverabilityDashboardOptionError::unhandled)?;
-                output.build()
-            }),
-        },
-        "TooManyRequestsException" => crate::error::PutDeliverabilityDashboardOptionError {
-            meta: generic,
-            kind: crate::error::PutDeliverabilityDashboardOptionErrorKind::TooManyRequestsError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::too_many_requests_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::too_many_requests_exception(
+                output = crate::json_deser::deser_structure_bad_request_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
                 .map_err(crate::error::PutDeliverabilityDashboardOptionError::unhandled)?;
                 output.build()
             }),
+        },
+        "LimitExceededException" => {
+            crate::error::PutDeliverabilityDashboardOptionError {
+                meta: generic,
+                kind:
+                    crate::error::PutDeliverabilityDashboardOptionErrorKind::LimitExceededException(
+                        {
+                            #[allow(unused_mut)]
+                            let mut output =
+                                crate::error::limit_exceeded_exception::Builder::default();
+                            let _ = response;
+                            output = crate::json_deser::deser_structure_limit_exceeded_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::PutDeliverabilityDashboardOptionError::unhandled)?;
+                            output.build()
+                        },
+                    ),
+            }
+        }
+        "NotFoundException" => crate::error::PutDeliverabilityDashboardOptionError {
+            meta: generic,
+            kind: crate::error::PutDeliverabilityDashboardOptionErrorKind::NotFoundException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::not_found_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_not_found_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::PutDeliverabilityDashboardOptionError::unhandled)?;
+                output.build()
+            }),
+        },
+        "TooManyRequestsException" => crate::error::PutDeliverabilityDashboardOptionError {
+            meta: generic,
+            kind: crate::error::PutDeliverabilityDashboardOptionErrorKind::TooManyRequestsException(
+                {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::too_many_requests_exception::Builder::default();
+                    let _ = response;
+                    output =
+                        crate::json_deser::deser_structure_too_many_requests_exceptionjson_err(
+                            response.body().as_ref(),
+                            output,
+                        )
+                        .map_err(crate::error::PutDeliverabilityDashboardOptionError::unhandled)?;
+                    output.build()
+                },
+            ),
         },
         _ => crate::error::PutDeliverabilityDashboardOptionError::generic(generic),
     })
@@ -4807,22 +4914,22 @@ pub fn parse_put_email_identity_configuration_set_attributes_error(
         }
     };
     Err(match error_code {
-        "BadRequestException" => crate::error::PutEmailIdentityConfigurationSetAttributesError { meta: generic, kind: crate::error::PutEmailIdentityConfigurationSetAttributesErrorKind::BadRequestError({
-            #[allow(unused_mut)]let mut output = crate::error::bad_request_error::Builder::default();
+        "BadRequestException" => crate::error::PutEmailIdentityConfigurationSetAttributesError { meta: generic, kind: crate::error::PutEmailIdentityConfigurationSetAttributesErrorKind::BadRequestException({
+            #[allow(unused_mut)]let mut output = crate::error::bad_request_exception::Builder::default();
             let _ = response;
-            output = crate::json_deser::bad_request_exception(response.body().as_ref(), output).map_err(crate::error::PutEmailIdentityConfigurationSetAttributesError::unhandled)?;
+            output = crate::json_deser::deser_structure_bad_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::PutEmailIdentityConfigurationSetAttributesError::unhandled)?;
             output.build()
         })},
-        "NotFoundException" => crate::error::PutEmailIdentityConfigurationSetAttributesError { meta: generic, kind: crate::error::PutEmailIdentityConfigurationSetAttributesErrorKind::NotFoundError({
-            #[allow(unused_mut)]let mut output = crate::error::not_found_error::Builder::default();
+        "NotFoundException" => crate::error::PutEmailIdentityConfigurationSetAttributesError { meta: generic, kind: crate::error::PutEmailIdentityConfigurationSetAttributesErrorKind::NotFoundException({
+            #[allow(unused_mut)]let mut output = crate::error::not_found_exception::Builder::default();
             let _ = response;
-            output = crate::json_deser::not_found_exception(response.body().as_ref(), output).map_err(crate::error::PutEmailIdentityConfigurationSetAttributesError::unhandled)?;
+            output = crate::json_deser::deser_structure_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::PutEmailIdentityConfigurationSetAttributesError::unhandled)?;
             output.build()
         })},
-        "TooManyRequestsException" => crate::error::PutEmailIdentityConfigurationSetAttributesError { meta: generic, kind: crate::error::PutEmailIdentityConfigurationSetAttributesErrorKind::TooManyRequestsError({
-            #[allow(unused_mut)]let mut output = crate::error::too_many_requests_error::Builder::default();
+        "TooManyRequestsException" => crate::error::PutEmailIdentityConfigurationSetAttributesError { meta: generic, kind: crate::error::PutEmailIdentityConfigurationSetAttributesErrorKind::TooManyRequestsException({
+            #[allow(unused_mut)]let mut output = crate::error::too_many_requests_exception::Builder::default();
             let _ = response;
-            output = crate::json_deser::too_many_requests_exception(response.body().as_ref(), output).map_err(crate::error::PutEmailIdentityConfigurationSetAttributesError::unhandled)?;
+            output = crate::json_deser::deser_structure_too_many_requests_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::PutEmailIdentityConfigurationSetAttributesError::unhandled)?;
             output.build()
         })},
         _ => crate::error::PutEmailIdentityConfigurationSetAttributesError::generic(generic)
@@ -4862,33 +4969,11 @@ pub fn parse_put_email_identity_dkim_attributes_error(
     Err(match error_code {
         "BadRequestException" => crate::error::PutEmailIdentityDkimAttributesError {
             meta: generic,
-            kind: crate::error::PutEmailIdentityDkimAttributesErrorKind::BadRequestError({
+            kind: crate::error::PutEmailIdentityDkimAttributesErrorKind::BadRequestException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_error::Builder::default();
+                let mut output = crate::error::bad_request_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::bad_request_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::PutEmailIdentityDkimAttributesError::unhandled)?;
-                output.build()
-            }),
-        },
-        "NotFoundException" => crate::error::PutEmailIdentityDkimAttributesError {
-            meta: generic,
-            kind: crate::error::PutEmailIdentityDkimAttributesErrorKind::NotFoundError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::not_found_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::not_found_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::PutEmailIdentityDkimAttributesError::unhandled)?;
-                output.build()
-            }),
-        },
-        "TooManyRequestsException" => crate::error::PutEmailIdentityDkimAttributesError {
-            meta: generic,
-            kind: crate::error::PutEmailIdentityDkimAttributesErrorKind::TooManyRequestsError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::too_many_requests_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::too_many_requests_exception(
+                output = crate::json_deser::deser_structure_bad_request_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -4896,6 +4981,36 @@ pub fn parse_put_email_identity_dkim_attributes_error(
                 output.build()
             }),
         },
+        "NotFoundException" => crate::error::PutEmailIdentityDkimAttributesError {
+            meta: generic,
+            kind: crate::error::PutEmailIdentityDkimAttributesErrorKind::NotFoundException({
+                #[allow(unused_mut)]
+                let mut output = crate::error::not_found_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_not_found_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::PutEmailIdentityDkimAttributesError::unhandled)?;
+                output.build()
+            }),
+        },
+        "TooManyRequestsException" => {
+            crate::error::PutEmailIdentityDkimAttributesError {
+                meta: generic,
+                kind:
+                    crate::error::PutEmailIdentityDkimAttributesErrorKind::TooManyRequestsException(
+                        {
+                            #[allow(unused_mut)]
+                            let mut output =
+                                crate::error::too_many_requests_exception::Builder::default();
+                            let _ = response;
+                            output = crate::json_deser::deser_structure_too_many_requests_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::PutEmailIdentityDkimAttributesError::unhandled)?;
+                            output.build()
+                        },
+                    ),
+            }
+        }
         _ => crate::error::PutEmailIdentityDkimAttributesError::generic(generic),
     })
 }
@@ -4934,50 +5049,25 @@ pub fn parse_put_email_identity_dkim_signing_attributes_error(
         }
     };
     Err(match error_code {
-        "BadRequestException" => crate::error::PutEmailIdentityDkimSigningAttributesError {
-            meta: generic,
-            kind: crate::error::PutEmailIdentityDkimSigningAttributesErrorKind::BadRequestError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::bad_request_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::PutEmailIdentityDkimSigningAttributesError::unhandled)?;
-                output.build()
-            }),
-        },
-        "NotFoundException" => crate::error::PutEmailIdentityDkimSigningAttributesError {
-            meta: generic,
-            kind: crate::error::PutEmailIdentityDkimSigningAttributesErrorKind::NotFoundError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::not_found_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::not_found_exception(response.body().as_ref(), output)
-                    .map_err(
-                    crate::error::PutEmailIdentityDkimSigningAttributesError::unhandled,
-                )?;
-                output.build()
-            }),
-        },
-        "TooManyRequestsException" => crate::error::PutEmailIdentityDkimSigningAttributesError {
-            meta: generic,
-            kind:
-                crate::error::PutEmailIdentityDkimSigningAttributesErrorKind::TooManyRequestsError(
-                    {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::too_many_requests_error::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::too_many_requests_exception(
-                            response.body().as_ref(),
-                            output,
-                        )
-                        .map_err(
-                            crate::error::PutEmailIdentityDkimSigningAttributesError::unhandled,
-                        )?;
-                        output.build()
-                    },
-                ),
-        },
-        _ => crate::error::PutEmailIdentityDkimSigningAttributesError::generic(generic),
+        "BadRequestException" => crate::error::PutEmailIdentityDkimSigningAttributesError { meta: generic, kind: crate::error::PutEmailIdentityDkimSigningAttributesErrorKind::BadRequestException({
+            #[allow(unused_mut)]let mut output = crate::error::bad_request_exception::Builder::default();
+            let _ = response;
+            output = crate::json_deser::deser_structure_bad_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::PutEmailIdentityDkimSigningAttributesError::unhandled)?;
+            output.build()
+        })},
+        "NotFoundException" => crate::error::PutEmailIdentityDkimSigningAttributesError { meta: generic, kind: crate::error::PutEmailIdentityDkimSigningAttributesErrorKind::NotFoundException({
+            #[allow(unused_mut)]let mut output = crate::error::not_found_exception::Builder::default();
+            let _ = response;
+            output = crate::json_deser::deser_structure_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::PutEmailIdentityDkimSigningAttributesError::unhandled)?;
+            output.build()
+        })},
+        "TooManyRequestsException" => crate::error::PutEmailIdentityDkimSigningAttributesError { meta: generic, kind: crate::error::PutEmailIdentityDkimSigningAttributesErrorKind::TooManyRequestsException({
+            #[allow(unused_mut)]let mut output = crate::error::too_many_requests_exception::Builder::default();
+            let _ = response;
+            output = crate::json_deser::deser_structure_too_many_requests_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::PutEmailIdentityDkimSigningAttributesError::unhandled)?;
+            output.build()
+        })},
+        _ => crate::error::PutEmailIdentityDkimSigningAttributesError::generic(generic)
     })
 }
 
@@ -4993,7 +5083,7 @@ pub fn parse_put_email_identity_dkim_signing_attributes_response(
         let mut output =
             crate::output::put_email_identity_dkim_signing_attributes_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::put_email_identity_dkim_signing_attributes_deser_operation(
+        output = crate::json_deser::deser_operation_put_email_identity_dkim_signing_attributes(
             response.body().as_ref(),
             output,
         )
@@ -5020,43 +5110,52 @@ pub fn parse_put_email_identity_feedback_attributes_error(
     Err(match error_code {
         "BadRequestException" => crate::error::PutEmailIdentityFeedbackAttributesError {
             meta: generic,
-            kind: crate::error::PutEmailIdentityFeedbackAttributesErrorKind::BadRequestError({
+            kind: crate::error::PutEmailIdentityFeedbackAttributesErrorKind::BadRequestException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_error::Builder::default();
+                let mut output = crate::error::bad_request_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::bad_request_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::PutEmailIdentityFeedbackAttributesError::unhandled)?;
+                output = crate::json_deser::deser_structure_bad_request_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::PutEmailIdentityFeedbackAttributesError::unhandled)?;
                 output.build()
             }),
         },
         "NotFoundException" => crate::error::PutEmailIdentityFeedbackAttributesError {
             meta: generic,
-            kind: crate::error::PutEmailIdentityFeedbackAttributesErrorKind::NotFoundError({
+            kind: crate::error::PutEmailIdentityFeedbackAttributesErrorKind::NotFoundException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::not_found_error::Builder::default();
+                let mut output = crate::error::not_found_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::not_found_exception(response.body().as_ref(), output)
-                    .map_err(
-                    crate::error::PutEmailIdentityFeedbackAttributesError::unhandled,
-                )?;
+                output = crate::json_deser::deser_structure_not_found_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::PutEmailIdentityFeedbackAttributesError::unhandled)?;
                 output.build()
             }),
         },
         "TooManyRequestsException" => crate::error::PutEmailIdentityFeedbackAttributesError {
             meta: generic,
-            kind: crate::error::PutEmailIdentityFeedbackAttributesErrorKind::TooManyRequestsError(
-                {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::too_many_requests_error::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::too_many_requests_exception(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::PutEmailIdentityFeedbackAttributesError::unhandled)?;
-                    output.build()
-                },
-            ),
+            kind:
+                crate::error::PutEmailIdentityFeedbackAttributesErrorKind::TooManyRequestsException(
+                    {
+                        #[allow(unused_mut)]
+                        let mut output =
+                            crate::error::too_many_requests_exception::Builder::default();
+                        let _ = response;
+                        output =
+                            crate::json_deser::deser_structure_too_many_requests_exceptionjson_err(
+                                response.body().as_ref(),
+                                output,
+                            )
+                            .map_err(
+                                crate::error::PutEmailIdentityFeedbackAttributesError::unhandled,
+                            )?;
+                        output.build()
+                    },
+                ),
         },
         _ => crate::error::PutEmailIdentityFeedbackAttributesError::generic(generic),
     })
@@ -5096,43 +5195,52 @@ pub fn parse_put_email_identity_mail_from_attributes_error(
     Err(match error_code {
         "BadRequestException" => crate::error::PutEmailIdentityMailFromAttributesError {
             meta: generic,
-            kind: crate::error::PutEmailIdentityMailFromAttributesErrorKind::BadRequestError({
+            kind: crate::error::PutEmailIdentityMailFromAttributesErrorKind::BadRequestException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_error::Builder::default();
+                let mut output = crate::error::bad_request_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::bad_request_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::PutEmailIdentityMailFromAttributesError::unhandled)?;
+                output = crate::json_deser::deser_structure_bad_request_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::PutEmailIdentityMailFromAttributesError::unhandled)?;
                 output.build()
             }),
         },
         "NotFoundException" => crate::error::PutEmailIdentityMailFromAttributesError {
             meta: generic,
-            kind: crate::error::PutEmailIdentityMailFromAttributesErrorKind::NotFoundError({
+            kind: crate::error::PutEmailIdentityMailFromAttributesErrorKind::NotFoundException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::not_found_error::Builder::default();
+                let mut output = crate::error::not_found_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::not_found_exception(response.body().as_ref(), output)
-                    .map_err(
-                    crate::error::PutEmailIdentityMailFromAttributesError::unhandled,
-                )?;
+                output = crate::json_deser::deser_structure_not_found_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::PutEmailIdentityMailFromAttributesError::unhandled)?;
                 output.build()
             }),
         },
         "TooManyRequestsException" => crate::error::PutEmailIdentityMailFromAttributesError {
             meta: generic,
-            kind: crate::error::PutEmailIdentityMailFromAttributesErrorKind::TooManyRequestsError(
-                {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::too_many_requests_error::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::too_many_requests_exception(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::PutEmailIdentityMailFromAttributesError::unhandled)?;
-                    output.build()
-                },
-            ),
+            kind:
+                crate::error::PutEmailIdentityMailFromAttributesErrorKind::TooManyRequestsException(
+                    {
+                        #[allow(unused_mut)]
+                        let mut output =
+                            crate::error::too_many_requests_exception::Builder::default();
+                        let _ = response;
+                        output =
+                            crate::json_deser::deser_structure_too_many_requests_exceptionjson_err(
+                                response.body().as_ref(),
+                                output,
+                            )
+                            .map_err(
+                                crate::error::PutEmailIdentityMailFromAttributesError::unhandled,
+                            )?;
+                        output.build()
+                    },
+                ),
         },
         _ => crate::error::PutEmailIdentityMailFromAttributesError::generic(generic),
     })
@@ -5174,22 +5282,25 @@ pub fn parse_put_suppressed_destination_error(
     Err(match error_code {
         "BadRequestException" => crate::error::PutSuppressedDestinationError {
             meta: generic,
-            kind: crate::error::PutSuppressedDestinationErrorKind::BadRequestError({
+            kind: crate::error::PutSuppressedDestinationErrorKind::BadRequestException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_error::Builder::default();
+                let mut output = crate::error::bad_request_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::bad_request_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::PutSuppressedDestinationError::unhandled)?;
+                output = crate::json_deser::deser_structure_bad_request_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::PutSuppressedDestinationError::unhandled)?;
                 output.build()
             }),
         },
         "TooManyRequestsException" => crate::error::PutSuppressedDestinationError {
             meta: generic,
-            kind: crate::error::PutSuppressedDestinationErrorKind::TooManyRequestsError({
+            kind: crate::error::PutSuppressedDestinationErrorKind::TooManyRequestsException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::too_many_requests_error::Builder::default();
+                let mut output = crate::error::too_many_requests_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::too_many_requests_exception(
+                output = crate::json_deser::deser_structure_too_many_requests_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -5229,11 +5340,11 @@ pub fn parse_send_bulk_email_error(
     Err(match error_code {
         "AccountSuspendedException" => crate::error::SendBulkEmailError {
             meta: generic,
-            kind: crate::error::SendBulkEmailErrorKind::AccountSuspendedError({
+            kind: crate::error::SendBulkEmailErrorKind::AccountSuspendedException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::account_suspended_error::Builder::default();
+                let mut output = crate::error::account_suspended_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::account_suspended_exception(
+                output = crate::json_deser::deser_structure_account_suspended_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -5243,39 +5354,40 @@ pub fn parse_send_bulk_email_error(
         },
         "BadRequestException" => crate::error::SendBulkEmailError {
             meta: generic,
-            kind: crate::error::SendBulkEmailErrorKind::BadRequestError({
+            kind: crate::error::SendBulkEmailErrorKind::BadRequestException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_error::Builder::default();
+                let mut output = crate::error::bad_request_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::bad_request_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::SendBulkEmailError::unhandled)?;
+                output = crate::json_deser::deser_structure_bad_request_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::SendBulkEmailError::unhandled)?;
                 output.build()
             }),
         },
         "LimitExceededException" => crate::error::SendBulkEmailError {
             meta: generic,
-            kind: crate::error::SendBulkEmailErrorKind::LimitExceededError({
+            kind: crate::error::SendBulkEmailErrorKind::LimitExceededException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::limit_exceeded_error::Builder::default();
+                let mut output = crate::error::limit_exceeded_exception::Builder::default();
                 let _ = response;
-                output =
-                    crate::json_deser::limit_exceeded_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::SendBulkEmailError::unhandled)?;
+                output = crate::json_deser::deser_structure_limit_exceeded_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::SendBulkEmailError::unhandled)?;
                 output.build()
             }),
         },
         "MailFromDomainNotVerifiedException" => crate::error::SendBulkEmailError {
             meta: generic,
-            kind: crate::error::SendBulkEmailErrorKind::MailFromDomainNotVerifiedError({
+            kind: crate::error::SendBulkEmailErrorKind::MailFromDomainNotVerifiedException({
                 #[allow(unused_mut)]
                 let mut output =
-                    crate::error::mail_from_domain_not_verified_error::Builder::default();
+                    crate::error::mail_from_domain_not_verified_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::mail_from_domain_not_verified_exception(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::SendBulkEmailError::unhandled)?;
+                output = crate::json_deser::deser_structure_mail_from_domain_not_verified_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::SendBulkEmailError::unhandled)?;
                 output.build()
             }),
         },
@@ -5285,41 +5397,49 @@ pub fn parse_send_bulk_email_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::message_rejected::Builder::default();
                 let _ = response;
-                output = crate::json_deser::message_rejected(response.body().as_ref(), output)
-                    .map_err(crate::error::SendBulkEmailError::unhandled)?;
+                output = crate::json_deser::deser_structure_message_rejectedjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::SendBulkEmailError::unhandled)?;
                 output.build()
             }),
         },
         "NotFoundException" => crate::error::SendBulkEmailError {
             meta: generic,
-            kind: crate::error::SendBulkEmailErrorKind::NotFoundError({
+            kind: crate::error::SendBulkEmailErrorKind::NotFoundException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::not_found_error::Builder::default();
+                let mut output = crate::error::not_found_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::not_found_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::SendBulkEmailError::unhandled)?;
+                output = crate::json_deser::deser_structure_not_found_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::SendBulkEmailError::unhandled)?;
                 output.build()
             }),
         },
         "SendingPausedException" => crate::error::SendBulkEmailError {
             meta: generic,
-            kind: crate::error::SendBulkEmailErrorKind::SendingPausedError({
+            kind: crate::error::SendBulkEmailErrorKind::SendingPausedException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::sending_paused_error::Builder::default();
+                let mut output = crate::error::sending_paused_exception::Builder::default();
                 let _ = response;
-                output =
-                    crate::json_deser::sending_paused_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::SendBulkEmailError::unhandled)?;
+                output = crate::json_deser::deser_structure_sending_paused_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::SendBulkEmailError::unhandled)?;
                 output.build()
             }),
         },
         "TooManyRequestsException" => crate::error::SendBulkEmailError {
             meta: generic,
-            kind: crate::error::SendBulkEmailErrorKind::TooManyRequestsError({
+            kind: crate::error::SendBulkEmailErrorKind::TooManyRequestsException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::too_many_requests_error::Builder::default();
+                let mut output = crate::error::too_many_requests_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::too_many_requests_exception(
+                output = crate::json_deser::deser_structure_too_many_requests_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -5340,7 +5460,7 @@ pub fn parse_send_bulk_email_response(
         let mut output = crate::output::send_bulk_email_output::Builder::default();
         let _ = response;
         output =
-            crate::json_deser::send_bulk_email_deser_operation(response.body().as_ref(), output)
+            crate::json_deser::deser_operation_send_bulk_email(response.body().as_ref(), output)
                 .map_err(crate::error::SendBulkEmailError::unhandled)?;
         output.build()
     })
@@ -5364,96 +5484,49 @@ pub fn parse_send_custom_verification_email_error(
         }
     };
     Err(match error_code {
-        "BadRequestException" => crate::error::SendCustomVerificationEmailError {
-            meta: generic,
-            kind: crate::error::SendCustomVerificationEmailErrorKind::BadRequestError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::bad_request_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::SendCustomVerificationEmailError::unhandled)?;
-                output.build()
-            }),
-        },
-        "LimitExceededException" => crate::error::SendCustomVerificationEmailError {
-            meta: generic,
-            kind: crate::error::SendCustomVerificationEmailErrorKind::LimitExceededError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::limit_exceeded_error::Builder::default();
-                let _ = response;
-                output =
-                    crate::json_deser::limit_exceeded_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::SendCustomVerificationEmailError::unhandled)?;
-                output.build()
-            }),
-        },
-        "MailFromDomainNotVerifiedException" => crate::error::SendCustomVerificationEmailError {
-            meta: generic,
-            kind:
-                crate::error::SendCustomVerificationEmailErrorKind::MailFromDomainNotVerifiedError(
-                    {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::mail_from_domain_not_verified_error::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::mail_from_domain_not_verified_exception(
-                            response.body().as_ref(),
-                            output,
-                        )
-                        .map_err(crate::error::SendCustomVerificationEmailError::unhandled)?;
-                        output.build()
-                    },
-                ),
-        },
-        "MessageRejected" => crate::error::SendCustomVerificationEmailError {
-            meta: generic,
-            kind: crate::error::SendCustomVerificationEmailErrorKind::MessageRejected({
-                #[allow(unused_mut)]
-                let mut output = crate::error::message_rejected::Builder::default();
-                let _ = response;
-                output = crate::json_deser::message_rejected(response.body().as_ref(), output)
-                    .map_err(crate::error::SendCustomVerificationEmailError::unhandled)?;
-                output.build()
-            }),
-        },
-        "NotFoundException" => crate::error::SendCustomVerificationEmailError {
-            meta: generic,
-            kind: crate::error::SendCustomVerificationEmailErrorKind::NotFoundError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::not_found_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::not_found_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::SendCustomVerificationEmailError::unhandled)?;
-                output.build()
-            }),
-        },
-        "SendingPausedException" => crate::error::SendCustomVerificationEmailError {
-            meta: generic,
-            kind: crate::error::SendCustomVerificationEmailErrorKind::SendingPausedError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::sending_paused_error::Builder::default();
-                let _ = response;
-                output =
-                    crate::json_deser::sending_paused_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::SendCustomVerificationEmailError::unhandled)?;
-                output.build()
-            }),
-        },
-        "TooManyRequestsException" => crate::error::SendCustomVerificationEmailError {
-            meta: generic,
-            kind: crate::error::SendCustomVerificationEmailErrorKind::TooManyRequestsError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::too_many_requests_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::too_many_requests_exception(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::SendCustomVerificationEmailError::unhandled)?;
-                output.build()
-            }),
-        },
-        _ => crate::error::SendCustomVerificationEmailError::generic(generic),
+        "BadRequestException" => crate::error::SendCustomVerificationEmailError { meta: generic, kind: crate::error::SendCustomVerificationEmailErrorKind::BadRequestException({
+            #[allow(unused_mut)]let mut output = crate::error::bad_request_exception::Builder::default();
+            let _ = response;
+            output = crate::json_deser::deser_structure_bad_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::SendCustomVerificationEmailError::unhandled)?;
+            output.build()
+        })},
+        "LimitExceededException" => crate::error::SendCustomVerificationEmailError { meta: generic, kind: crate::error::SendCustomVerificationEmailErrorKind::LimitExceededException({
+            #[allow(unused_mut)]let mut output = crate::error::limit_exceeded_exception::Builder::default();
+            let _ = response;
+            output = crate::json_deser::deser_structure_limit_exceeded_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::SendCustomVerificationEmailError::unhandled)?;
+            output.build()
+        })},
+        "MailFromDomainNotVerifiedException" => crate::error::SendCustomVerificationEmailError { meta: generic, kind: crate::error::SendCustomVerificationEmailErrorKind::MailFromDomainNotVerifiedException({
+            #[allow(unused_mut)]let mut output = crate::error::mail_from_domain_not_verified_exception::Builder::default();
+            let _ = response;
+            output = crate::json_deser::deser_structure_mail_from_domain_not_verified_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::SendCustomVerificationEmailError::unhandled)?;
+            output.build()
+        })},
+        "MessageRejected" => crate::error::SendCustomVerificationEmailError { meta: generic, kind: crate::error::SendCustomVerificationEmailErrorKind::MessageRejected({
+            #[allow(unused_mut)]let mut output = crate::error::message_rejected::Builder::default();
+            let _ = response;
+            output = crate::json_deser::deser_structure_message_rejectedjson_err(response.body().as_ref(), output).map_err(crate::error::SendCustomVerificationEmailError::unhandled)?;
+            output.build()
+        })},
+        "NotFoundException" => crate::error::SendCustomVerificationEmailError { meta: generic, kind: crate::error::SendCustomVerificationEmailErrorKind::NotFoundException({
+            #[allow(unused_mut)]let mut output = crate::error::not_found_exception::Builder::default();
+            let _ = response;
+            output = crate::json_deser::deser_structure_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::SendCustomVerificationEmailError::unhandled)?;
+            output.build()
+        })},
+        "SendingPausedException" => crate::error::SendCustomVerificationEmailError { meta: generic, kind: crate::error::SendCustomVerificationEmailErrorKind::SendingPausedException({
+            #[allow(unused_mut)]let mut output = crate::error::sending_paused_exception::Builder::default();
+            let _ = response;
+            output = crate::json_deser::deser_structure_sending_paused_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::SendCustomVerificationEmailError::unhandled)?;
+            output.build()
+        })},
+        "TooManyRequestsException" => crate::error::SendCustomVerificationEmailError { meta: generic, kind: crate::error::SendCustomVerificationEmailErrorKind::TooManyRequestsException({
+            #[allow(unused_mut)]let mut output = crate::error::too_many_requests_exception::Builder::default();
+            let _ = response;
+            output = crate::json_deser::deser_structure_too_many_requests_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::SendCustomVerificationEmailError::unhandled)?;
+            output.build()
+        })},
+        _ => crate::error::SendCustomVerificationEmailError::generic(generic)
     })
 }
 
@@ -5468,7 +5541,7 @@ pub fn parse_send_custom_verification_email_response(
         #[allow(unused_mut)]
         let mut output = crate::output::send_custom_verification_email_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::send_custom_verification_email_deser_operation(
+        output = crate::json_deser::deser_operation_send_custom_verification_email(
             response.body().as_ref(),
             output,
         )
@@ -5490,11 +5563,11 @@ pub fn parse_send_email_error(
     Err(match error_code {
         "AccountSuspendedException" => crate::error::SendEmailError {
             meta: generic,
-            kind: crate::error::SendEmailErrorKind::AccountSuspendedError({
+            kind: crate::error::SendEmailErrorKind::AccountSuspendedException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::account_suspended_error::Builder::default();
+                let mut output = crate::error::account_suspended_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::account_suspended_exception(
+                output = crate::json_deser::deser_structure_account_suspended_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -5504,39 +5577,40 @@ pub fn parse_send_email_error(
         },
         "BadRequestException" => crate::error::SendEmailError {
             meta: generic,
-            kind: crate::error::SendEmailErrorKind::BadRequestError({
+            kind: crate::error::SendEmailErrorKind::BadRequestException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_error::Builder::default();
+                let mut output = crate::error::bad_request_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::bad_request_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::SendEmailError::unhandled)?;
+                output = crate::json_deser::deser_structure_bad_request_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::SendEmailError::unhandled)?;
                 output.build()
             }),
         },
         "LimitExceededException" => crate::error::SendEmailError {
             meta: generic,
-            kind: crate::error::SendEmailErrorKind::LimitExceededError({
+            kind: crate::error::SendEmailErrorKind::LimitExceededException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::limit_exceeded_error::Builder::default();
+                let mut output = crate::error::limit_exceeded_exception::Builder::default();
                 let _ = response;
-                output =
-                    crate::json_deser::limit_exceeded_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::SendEmailError::unhandled)?;
+                output = crate::json_deser::deser_structure_limit_exceeded_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::SendEmailError::unhandled)?;
                 output.build()
             }),
         },
         "MailFromDomainNotVerifiedException" => crate::error::SendEmailError {
             meta: generic,
-            kind: crate::error::SendEmailErrorKind::MailFromDomainNotVerifiedError({
+            kind: crate::error::SendEmailErrorKind::MailFromDomainNotVerifiedException({
                 #[allow(unused_mut)]
                 let mut output =
-                    crate::error::mail_from_domain_not_verified_error::Builder::default();
+                    crate::error::mail_from_domain_not_verified_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::mail_from_domain_not_verified_exception(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::SendEmailError::unhandled)?;
+                output = crate::json_deser::deser_structure_mail_from_domain_not_verified_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::SendEmailError::unhandled)?;
                 output.build()
             }),
         },
@@ -5546,41 +5620,49 @@ pub fn parse_send_email_error(
                 #[allow(unused_mut)]
                 let mut output = crate::error::message_rejected::Builder::default();
                 let _ = response;
-                output = crate::json_deser::message_rejected(response.body().as_ref(), output)
-                    .map_err(crate::error::SendEmailError::unhandled)?;
+                output = crate::json_deser::deser_structure_message_rejectedjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::SendEmailError::unhandled)?;
                 output.build()
             }),
         },
         "NotFoundException" => crate::error::SendEmailError {
             meta: generic,
-            kind: crate::error::SendEmailErrorKind::NotFoundError({
+            kind: crate::error::SendEmailErrorKind::NotFoundException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::not_found_error::Builder::default();
+                let mut output = crate::error::not_found_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::not_found_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::SendEmailError::unhandled)?;
+                output = crate::json_deser::deser_structure_not_found_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::SendEmailError::unhandled)?;
                 output.build()
             }),
         },
         "SendingPausedException" => crate::error::SendEmailError {
             meta: generic,
-            kind: crate::error::SendEmailErrorKind::SendingPausedError({
+            kind: crate::error::SendEmailErrorKind::SendingPausedException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::sending_paused_error::Builder::default();
+                let mut output = crate::error::sending_paused_exception::Builder::default();
                 let _ = response;
-                output =
-                    crate::json_deser::sending_paused_exception(response.body().as_ref(), output)
-                        .map_err(crate::error::SendEmailError::unhandled)?;
+                output = crate::json_deser::deser_structure_sending_paused_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::SendEmailError::unhandled)?;
                 output.build()
             }),
         },
         "TooManyRequestsException" => crate::error::SendEmailError {
             meta: generic,
-            kind: crate::error::SendEmailErrorKind::TooManyRequestsError({
+            kind: crate::error::SendEmailErrorKind::TooManyRequestsException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::too_many_requests_error::Builder::default();
+                let mut output = crate::error::too_many_requests_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::too_many_requests_exception(
+                output = crate::json_deser::deser_structure_too_many_requests_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -5600,7 +5682,7 @@ pub fn parse_send_email_response(
         #[allow(unused_mut)]
         let mut output = crate::output::send_email_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::send_email_deser_operation(response.body().as_ref(), output)
+        output = crate::json_deser::deser_operation_send_email(response.body().as_ref(), output)
             .map_err(crate::error::SendEmailError::unhandled)?;
         output.build()
     })
@@ -5619,22 +5701,11 @@ pub fn parse_tag_resource_error(
     Err(match error_code {
         "BadRequestException" => crate::error::TagResourceError {
             meta: generic,
-            kind: crate::error::TagResourceErrorKind::BadRequestError({
+            kind: crate::error::TagResourceErrorKind::BadRequestException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_error::Builder::default();
+                let mut output = crate::error::bad_request_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::bad_request_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::TagResourceError::unhandled)?;
-                output.build()
-            }),
-        },
-        "ConcurrentModificationException" => crate::error::TagResourceError {
-            meta: generic,
-            kind: crate::error::TagResourceErrorKind::ConcurrentModificationError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::concurrent_modification_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::concurrent_modification_exception(
+                output = crate::json_deser::deser_structure_bad_request_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -5642,24 +5713,40 @@ pub fn parse_tag_resource_error(
                 output.build()
             }),
         },
+        "ConcurrentModificationException" => {
+            crate::error::TagResourceError {
+                meta: generic,
+                kind: crate::error::TagResourceErrorKind::ConcurrentModificationException({
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::concurrent_modification_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_concurrent_modification_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::TagResourceError::unhandled)?;
+                    output.build()
+                }),
+            }
+        }
         "NotFoundException" => crate::error::TagResourceError {
             meta: generic,
-            kind: crate::error::TagResourceErrorKind::NotFoundError({
+            kind: crate::error::TagResourceErrorKind::NotFoundException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::not_found_error::Builder::default();
+                let mut output = crate::error::not_found_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::not_found_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::TagResourceError::unhandled)?;
+                output = crate::json_deser::deser_structure_not_found_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::TagResourceError::unhandled)?;
                 output.build()
             }),
         },
         "TooManyRequestsException" => crate::error::TagResourceError {
             meta: generic,
-            kind: crate::error::TagResourceErrorKind::TooManyRequestsError({
+            kind: crate::error::TagResourceErrorKind::TooManyRequestsException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::too_many_requests_error::Builder::default();
+                let mut output = crate::error::too_many_requests_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::too_many_requests_exception(
+                output = crate::json_deser::deser_structure_too_many_requests_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -5703,33 +5790,39 @@ pub fn parse_test_render_email_template_error(
     Err(match error_code {
         "BadRequestException" => crate::error::TestRenderEmailTemplateError {
             meta: generic,
-            kind: crate::error::TestRenderEmailTemplateErrorKind::BadRequestError({
+            kind: crate::error::TestRenderEmailTemplateErrorKind::BadRequestException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_error::Builder::default();
+                let mut output = crate::error::bad_request_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::bad_request_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::TestRenderEmailTemplateError::unhandled)?;
+                output = crate::json_deser::deser_structure_bad_request_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::TestRenderEmailTemplateError::unhandled)?;
                 output.build()
             }),
         },
         "NotFoundException" => crate::error::TestRenderEmailTemplateError {
             meta: generic,
-            kind: crate::error::TestRenderEmailTemplateErrorKind::NotFoundError({
+            kind: crate::error::TestRenderEmailTemplateErrorKind::NotFoundException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::not_found_error::Builder::default();
+                let mut output = crate::error::not_found_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::not_found_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::TestRenderEmailTemplateError::unhandled)?;
+                output = crate::json_deser::deser_structure_not_found_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::TestRenderEmailTemplateError::unhandled)?;
                 output.build()
             }),
         },
         "TooManyRequestsException" => crate::error::TestRenderEmailTemplateError {
             meta: generic,
-            kind: crate::error::TestRenderEmailTemplateErrorKind::TooManyRequestsError({
+            kind: crate::error::TestRenderEmailTemplateErrorKind::TooManyRequestsException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::too_many_requests_error::Builder::default();
+                let mut output = crate::error::too_many_requests_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::too_many_requests_exception(
+                output = crate::json_deser::deser_structure_too_many_requests_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -5752,7 +5845,7 @@ pub fn parse_test_render_email_template_response(
         #[allow(unused_mut)]
         let mut output = crate::output::test_render_email_template_output::Builder::default();
         let _ = response;
-        output = crate::json_deser::test_render_email_template_deser_operation(
+        output = crate::json_deser::deser_operation_test_render_email_template(
             response.body().as_ref(),
             output,
         )
@@ -5774,22 +5867,11 @@ pub fn parse_untag_resource_error(
     Err(match error_code {
         "BadRequestException" => crate::error::UntagResourceError {
             meta: generic,
-            kind: crate::error::UntagResourceErrorKind::BadRequestError({
+            kind: crate::error::UntagResourceErrorKind::BadRequestException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_error::Builder::default();
+                let mut output = crate::error::bad_request_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::bad_request_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::UntagResourceError::unhandled)?;
-                output.build()
-            }),
-        },
-        "ConcurrentModificationException" => crate::error::UntagResourceError {
-            meta: generic,
-            kind: crate::error::UntagResourceErrorKind::ConcurrentModificationError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::concurrent_modification_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::concurrent_modification_exception(
+                output = crate::json_deser::deser_structure_bad_request_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -5797,24 +5879,40 @@ pub fn parse_untag_resource_error(
                 output.build()
             }),
         },
+        "ConcurrentModificationException" => {
+            crate::error::UntagResourceError {
+                meta: generic,
+                kind: crate::error::UntagResourceErrorKind::ConcurrentModificationException({
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::concurrent_modification_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_concurrent_modification_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UntagResourceError::unhandled)?;
+                    output.build()
+                }),
+            }
+        }
         "NotFoundException" => crate::error::UntagResourceError {
             meta: generic,
-            kind: crate::error::UntagResourceErrorKind::NotFoundError({
+            kind: crate::error::UntagResourceErrorKind::NotFoundException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::not_found_error::Builder::default();
+                let mut output = crate::error::not_found_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::not_found_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::UntagResourceError::unhandled)?;
+                output = crate::json_deser::deser_structure_not_found_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::UntagResourceError::unhandled)?;
                 output.build()
             }),
         },
         "TooManyRequestsException" => crate::error::UntagResourceError {
             meta: generic,
-            kind: crate::error::UntagResourceErrorKind::TooManyRequestsError({
+            kind: crate::error::UntagResourceErrorKind::TooManyRequestsException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::too_many_requests_error::Builder::default();
+                let mut output = crate::error::too_many_requests_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::too_many_requests_exception(
+                output = crate::json_deser::deser_structure_too_many_requests_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -5856,52 +5954,25 @@ pub fn parse_update_configuration_set_event_destination_error(
         }
     };
     Err(match error_code {
-        "BadRequestException" => crate::error::UpdateConfigurationSetEventDestinationError {
-            meta: generic,
-            kind: crate::error::UpdateConfigurationSetEventDestinationErrorKind::BadRequestError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::bad_request_exception(response.body().as_ref(), output)
-                    .map_err(
-                        crate::error::UpdateConfigurationSetEventDestinationError::unhandled,
-                    )?;
-                output.build()
-            }),
-        },
-        "NotFoundException" => crate::error::UpdateConfigurationSetEventDestinationError {
-            meta: generic,
-            kind: crate::error::UpdateConfigurationSetEventDestinationErrorKind::NotFoundError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::not_found_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::not_found_exception(response.body().as_ref(), output)
-                    .map_err(
-                    crate::error::UpdateConfigurationSetEventDestinationError::unhandled,
-                )?;
-                output.build()
-            }),
-        },
-        "TooManyRequestsException" => crate::error::UpdateConfigurationSetEventDestinationError {
-            meta: generic,
-            kind:
-                crate::error::UpdateConfigurationSetEventDestinationErrorKind::TooManyRequestsError(
-                    {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::too_many_requests_error::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::too_many_requests_exception(
-                            response.body().as_ref(),
-                            output,
-                        )
-                        .map_err(
-                            crate::error::UpdateConfigurationSetEventDestinationError::unhandled,
-                        )?;
-                        output.build()
-                    },
-                ),
-        },
-        _ => crate::error::UpdateConfigurationSetEventDestinationError::generic(generic),
+        "BadRequestException" => crate::error::UpdateConfigurationSetEventDestinationError { meta: generic, kind: crate::error::UpdateConfigurationSetEventDestinationErrorKind::BadRequestException({
+            #[allow(unused_mut)]let mut output = crate::error::bad_request_exception::Builder::default();
+            let _ = response;
+            output = crate::json_deser::deser_structure_bad_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateConfigurationSetEventDestinationError::unhandled)?;
+            output.build()
+        })},
+        "NotFoundException" => crate::error::UpdateConfigurationSetEventDestinationError { meta: generic, kind: crate::error::UpdateConfigurationSetEventDestinationErrorKind::NotFoundException({
+            #[allow(unused_mut)]let mut output = crate::error::not_found_exception::Builder::default();
+            let _ = response;
+            output = crate::json_deser::deser_structure_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateConfigurationSetEventDestinationError::unhandled)?;
+            output.build()
+        })},
+        "TooManyRequestsException" => crate::error::UpdateConfigurationSetEventDestinationError { meta: generic, kind: crate::error::UpdateConfigurationSetEventDestinationErrorKind::TooManyRequestsException({
+            #[allow(unused_mut)]let mut output = crate::error::too_many_requests_exception::Builder::default();
+            let _ = response;
+            output = crate::json_deser::deser_structure_too_many_requests_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateConfigurationSetEventDestinationError::unhandled)?;
+            output.build()
+        })},
+        _ => crate::error::UpdateConfigurationSetEventDestinationError::generic(generic)
     })
 }
 
@@ -5934,22 +6005,11 @@ pub fn parse_update_contact_error(
     Err(match error_code {
         "BadRequestException" => crate::error::UpdateContactError {
             meta: generic,
-            kind: crate::error::UpdateContactErrorKind::BadRequestError({
+            kind: crate::error::UpdateContactErrorKind::BadRequestException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_error::Builder::default();
+                let mut output = crate::error::bad_request_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::bad_request_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::UpdateContactError::unhandled)?;
-                output.build()
-            }),
-        },
-        "ConcurrentModificationException" => crate::error::UpdateContactError {
-            meta: generic,
-            kind: crate::error::UpdateContactErrorKind::ConcurrentModificationError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::concurrent_modification_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::concurrent_modification_exception(
+                output = crate::json_deser::deser_structure_bad_request_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -5957,24 +6017,40 @@ pub fn parse_update_contact_error(
                 output.build()
             }),
         },
+        "ConcurrentModificationException" => {
+            crate::error::UpdateContactError {
+                meta: generic,
+                kind: crate::error::UpdateContactErrorKind::ConcurrentModificationException({
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::concurrent_modification_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_concurrent_modification_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateContactError::unhandled)?;
+                    output.build()
+                }),
+            }
+        }
         "NotFoundException" => crate::error::UpdateContactError {
             meta: generic,
-            kind: crate::error::UpdateContactErrorKind::NotFoundError({
+            kind: crate::error::UpdateContactErrorKind::NotFoundException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::not_found_error::Builder::default();
+                let mut output = crate::error::not_found_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::not_found_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::UpdateContactError::unhandled)?;
+                output = crate::json_deser::deser_structure_not_found_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::UpdateContactError::unhandled)?;
                 output.build()
             }),
         },
         "TooManyRequestsException" => crate::error::UpdateContactError {
             meta: generic,
-            kind: crate::error::UpdateContactErrorKind::TooManyRequestsError({
+            kind: crate::error::UpdateContactErrorKind::TooManyRequestsException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::too_many_requests_error::Builder::default();
+                let mut output = crate::error::too_many_requests_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::too_many_requests_exception(
+                output = crate::json_deser::deser_structure_too_many_requests_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -6012,22 +6088,11 @@ pub fn parse_update_contact_list_error(
     Err(match error_code {
         "BadRequestException" => crate::error::UpdateContactListError {
             meta: generic,
-            kind: crate::error::UpdateContactListErrorKind::BadRequestError({
+            kind: crate::error::UpdateContactListErrorKind::BadRequestException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_error::Builder::default();
+                let mut output = crate::error::bad_request_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::bad_request_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::UpdateContactListError::unhandled)?;
-                output.build()
-            }),
-        },
-        "ConcurrentModificationException" => crate::error::UpdateContactListError {
-            meta: generic,
-            kind: crate::error::UpdateContactListErrorKind::ConcurrentModificationError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::concurrent_modification_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::concurrent_modification_exception(
+                output = crate::json_deser::deser_structure_bad_request_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -6035,24 +6100,40 @@ pub fn parse_update_contact_list_error(
                 output.build()
             }),
         },
+        "ConcurrentModificationException" => {
+            crate::error::UpdateContactListError {
+                meta: generic,
+                kind: crate::error::UpdateContactListErrorKind::ConcurrentModificationException({
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::concurrent_modification_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_concurrent_modification_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateContactListError::unhandled)?;
+                    output.build()
+                }),
+            }
+        }
         "NotFoundException" => crate::error::UpdateContactListError {
             meta: generic,
-            kind: crate::error::UpdateContactListErrorKind::NotFoundError({
+            kind: crate::error::UpdateContactListErrorKind::NotFoundException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::not_found_error::Builder::default();
+                let mut output = crate::error::not_found_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::not_found_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::UpdateContactListError::unhandled)?;
+                output = crate::json_deser::deser_structure_not_found_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::UpdateContactListError::unhandled)?;
                 output.build()
             }),
         },
         "TooManyRequestsException" => crate::error::UpdateContactListError {
             meta: generic,
-            kind: crate::error::UpdateContactListErrorKind::TooManyRequestsError({
+            kind: crate::error::UpdateContactListErrorKind::TooManyRequestsException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::too_many_requests_error::Builder::default();
+                let mut output = crate::error::too_many_requests_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::too_many_requests_exception(
+                output = crate::json_deser::deser_structure_too_many_requests_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -6095,50 +6176,25 @@ pub fn parse_update_custom_verification_email_template_error(
         }
     };
     Err(match error_code {
-        "BadRequestException" => crate::error::UpdateCustomVerificationEmailTemplateError {
-            meta: generic,
-            kind: crate::error::UpdateCustomVerificationEmailTemplateErrorKind::BadRequestError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::bad_request_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::UpdateCustomVerificationEmailTemplateError::unhandled)?;
-                output.build()
-            }),
-        },
-        "NotFoundException" => crate::error::UpdateCustomVerificationEmailTemplateError {
-            meta: generic,
-            kind: crate::error::UpdateCustomVerificationEmailTemplateErrorKind::NotFoundError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::not_found_error::Builder::default();
-                let _ = response;
-                output = crate::json_deser::not_found_exception(response.body().as_ref(), output)
-                    .map_err(
-                    crate::error::UpdateCustomVerificationEmailTemplateError::unhandled,
-                )?;
-                output.build()
-            }),
-        },
-        "TooManyRequestsException" => crate::error::UpdateCustomVerificationEmailTemplateError {
-            meta: generic,
-            kind:
-                crate::error::UpdateCustomVerificationEmailTemplateErrorKind::TooManyRequestsError(
-                    {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::too_many_requests_error::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::too_many_requests_exception(
-                            response.body().as_ref(),
-                            output,
-                        )
-                        .map_err(
-                            crate::error::UpdateCustomVerificationEmailTemplateError::unhandled,
-                        )?;
-                        output.build()
-                    },
-                ),
-        },
-        _ => crate::error::UpdateCustomVerificationEmailTemplateError::generic(generic),
+        "BadRequestException" => crate::error::UpdateCustomVerificationEmailTemplateError { meta: generic, kind: crate::error::UpdateCustomVerificationEmailTemplateErrorKind::BadRequestException({
+            #[allow(unused_mut)]let mut output = crate::error::bad_request_exception::Builder::default();
+            let _ = response;
+            output = crate::json_deser::deser_structure_bad_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateCustomVerificationEmailTemplateError::unhandled)?;
+            output.build()
+        })},
+        "NotFoundException" => crate::error::UpdateCustomVerificationEmailTemplateError { meta: generic, kind: crate::error::UpdateCustomVerificationEmailTemplateErrorKind::NotFoundException({
+            #[allow(unused_mut)]let mut output = crate::error::not_found_exception::Builder::default();
+            let _ = response;
+            output = crate::json_deser::deser_structure_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateCustomVerificationEmailTemplateError::unhandled)?;
+            output.build()
+        })},
+        "TooManyRequestsException" => crate::error::UpdateCustomVerificationEmailTemplateError { meta: generic, kind: crate::error::UpdateCustomVerificationEmailTemplateErrorKind::TooManyRequestsException({
+            #[allow(unused_mut)]let mut output = crate::error::too_many_requests_exception::Builder::default();
+            let _ = response;
+            output = crate::json_deser::deser_structure_too_many_requests_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateCustomVerificationEmailTemplateError::unhandled)?;
+            output.build()
+        })},
+        _ => crate::error::UpdateCustomVerificationEmailTemplateError::generic(generic)
     })
 }
 
@@ -6178,33 +6234,39 @@ pub fn parse_update_email_identity_policy_error(
     Err(match error_code {
         "BadRequestException" => crate::error::UpdateEmailIdentityPolicyError {
             meta: generic,
-            kind: crate::error::UpdateEmailIdentityPolicyErrorKind::BadRequestError({
+            kind: crate::error::UpdateEmailIdentityPolicyErrorKind::BadRequestException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_error::Builder::default();
+                let mut output = crate::error::bad_request_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::bad_request_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::UpdateEmailIdentityPolicyError::unhandled)?;
+                output = crate::json_deser::deser_structure_bad_request_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::UpdateEmailIdentityPolicyError::unhandled)?;
                 output.build()
             }),
         },
         "NotFoundException" => crate::error::UpdateEmailIdentityPolicyError {
             meta: generic,
-            kind: crate::error::UpdateEmailIdentityPolicyErrorKind::NotFoundError({
+            kind: crate::error::UpdateEmailIdentityPolicyErrorKind::NotFoundException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::not_found_error::Builder::default();
+                let mut output = crate::error::not_found_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::not_found_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::UpdateEmailIdentityPolicyError::unhandled)?;
+                output = crate::json_deser::deser_structure_not_found_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::UpdateEmailIdentityPolicyError::unhandled)?;
                 output.build()
             }),
         },
         "TooManyRequestsException" => crate::error::UpdateEmailIdentityPolicyError {
             meta: generic,
-            kind: crate::error::UpdateEmailIdentityPolicyErrorKind::TooManyRequestsError({
+            kind: crate::error::UpdateEmailIdentityPolicyErrorKind::TooManyRequestsException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::too_many_requests_error::Builder::default();
+                let mut output = crate::error::too_many_requests_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::too_many_requests_exception(
+                output = crate::json_deser::deser_structure_too_many_requests_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )
@@ -6247,33 +6309,39 @@ pub fn parse_update_email_template_error(
     Err(match error_code {
         "BadRequestException" => crate::error::UpdateEmailTemplateError {
             meta: generic,
-            kind: crate::error::UpdateEmailTemplateErrorKind::BadRequestError({
+            kind: crate::error::UpdateEmailTemplateErrorKind::BadRequestException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_error::Builder::default();
+                let mut output = crate::error::bad_request_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::bad_request_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::UpdateEmailTemplateError::unhandled)?;
+                output = crate::json_deser::deser_structure_bad_request_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::UpdateEmailTemplateError::unhandled)?;
                 output.build()
             }),
         },
         "NotFoundException" => crate::error::UpdateEmailTemplateError {
             meta: generic,
-            kind: crate::error::UpdateEmailTemplateErrorKind::NotFoundError({
+            kind: crate::error::UpdateEmailTemplateErrorKind::NotFoundException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::not_found_error::Builder::default();
+                let mut output = crate::error::not_found_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::not_found_exception(response.body().as_ref(), output)
-                    .map_err(crate::error::UpdateEmailTemplateError::unhandled)?;
+                output = crate::json_deser::deser_structure_not_found_exceptionjson_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::UpdateEmailTemplateError::unhandled)?;
                 output.build()
             }),
         },
         "TooManyRequestsException" => crate::error::UpdateEmailTemplateError {
             meta: generic,
-            kind: crate::error::UpdateEmailTemplateErrorKind::TooManyRequestsError({
+            kind: crate::error::UpdateEmailTemplateErrorKind::TooManyRequestsException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::too_many_requests_error::Builder::default();
+                let mut output = crate::error::too_many_requests_exception::Builder::default();
                 let _ = response;
-                output = crate::json_deser::too_many_requests_exception(
+                output = crate::json_deser::deser_structure_too_many_requests_exceptionjson_err(
                     response.body().as_ref(),
                     output,
                 )

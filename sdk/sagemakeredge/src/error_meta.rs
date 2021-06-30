@@ -2,13 +2,13 @@
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum Error {
-    InternalServiceError(crate::error::InternalServiceError),
+    InternalServiceException(crate::error::InternalServiceException),
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match self {
-            Error::InternalServiceError(inner) => inner.fmt(f),
+            Error::InternalServiceException(inner) => inner.fmt(f),
             Error::Unhandled(inner) => inner.fmt(f),
         }
     }
@@ -17,8 +17,8 @@ impl From<smithy_http::result::SdkError<crate::error::GetDeviceRegistrationError
     fn from(err: smithy_http::result::SdkError<crate::error::GetDeviceRegistrationError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::GetDeviceRegistrationErrorKind::InternalServiceError(inner) => {
-                    Error::InternalServiceError(inner)
+                crate::error::GetDeviceRegistrationErrorKind::InternalServiceException(inner) => {
+                    Error::InternalServiceException(inner)
                 }
                 crate::error::GetDeviceRegistrationErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
@@ -32,8 +32,8 @@ impl From<smithy_http::result::SdkError<crate::error::SendHeartbeatError>> for E
     fn from(err: smithy_http::result::SdkError<crate::error::SendHeartbeatError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::SendHeartbeatErrorKind::InternalServiceError(inner) => {
-                    Error::InternalServiceError(inner)
+                crate::error::SendHeartbeatErrorKind::InternalServiceException(inner) => {
+                    Error::InternalServiceException(inner)
                 }
                 crate::error::SendHeartbeatErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },

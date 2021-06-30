@@ -187,8 +187,9 @@ impl CreateConfigurationSetInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(output, "/v2/email/configuration-sets").expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        write!(output, "/v2/email/configuration-sets").expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -196,7 +197,7 @@ impl CreateConfigurationSetInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("POST").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -280,7 +281,7 @@ pub mod create_configuration_set_event_destination_input {
             smithy_http::operation::BuildError,
         > {
             Ok(crate::input::CreateConfigurationSetEventDestinationInput {
-                configuration_set_name: self.configuration_set_name.unwrap_or_default(),
+                configuration_set_name: self.configuration_set_name,
                 event_destination_name: self.event_destination_name,
                 event_destination: self.event_destination,
             })
@@ -351,14 +352,31 @@ impl CreateConfigurationSetEventDestinationInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let configuration_set_name = {
+            let input = &self.configuration_set_name;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "configuration_set_name",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "configuration_set_name",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
         write!(
             output,
             "/v2/email/configuration-sets/{ConfigurationSetName}/event-destinations",
-            ConfigurationSetName =
-                smithy_http::label::fmt_string(&self.configuration_set_name, false)
+            ConfigurationSetName = configuration_set_name
         )
-        .expect("formatting should succeed")
+        .expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -366,7 +384,7 @@ impl CreateConfigurationSetEventDestinationInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("POST").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -474,7 +492,7 @@ pub mod create_contact_input {
         ) -> std::result::Result<crate::input::CreateContactInput, smithy_http::operation::BuildError>
         {
             Ok(crate::input::CreateContactInput {
-                contact_list_name: self.contact_list_name.unwrap_or_default(),
+                contact_list_name: self.contact_list_name,
                 email_address: self.email_address,
                 topic_preferences: self.topic_preferences,
                 unsubscribe_all: self.unsubscribe_all.unwrap_or_default(),
@@ -546,13 +564,31 @@ impl CreateContactInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let contact_list_name = {
+            let input = &self.contact_list_name;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "contact_list_name",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "contact_list_name",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
         write!(
             output,
             "/v2/email/contact-lists/{ContactListName}/contacts",
-            ContactListName = smithy_http::label::fmt_string(&self.contact_list_name, false)
+            ContactListName = contact_list_name
         )
-        .expect("formatting should succeed")
+        .expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -560,7 +596,7 @@ impl CreateContactInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("POST").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -724,8 +760,9 @@ impl CreateContactListInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(output, "/v2/email/contact-lists").expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        write!(output, "/v2/email/contact-lists").expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -733,7 +770,7 @@ impl CreateContactListInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("POST").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -932,9 +969,10 @@ impl CreateCustomVerificationEmailTemplateInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
         write!(output, "/v2/email/custom-verification-email-templates")
-            .expect("formatting should succeed")
+            .expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -942,7 +980,7 @@ impl CreateCustomVerificationEmailTemplateInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("POST").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -1077,8 +1115,9 @@ impl CreateDedicatedIpPoolInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(output, "/v2/email/dedicated-ip-pools").expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        write!(output, "/v2/email/dedicated-ip-pools").expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -1086,7 +1125,7 @@ impl CreateDedicatedIpPoolInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("POST").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -1252,9 +1291,10 @@ impl CreateDeliverabilityTestReportInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
         write!(output, "/v2/email/deliverability-dashboard/test")
-            .expect("formatting should succeed")
+            .expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -1262,7 +1302,7 @@ impl CreateDeliverabilityTestReportInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("POST").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -1439,8 +1479,9 @@ impl CreateEmailIdentityInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(output, "/v2/email/identities").expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        write!(output, "/v2/email/identities").expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -1448,7 +1489,7 @@ impl CreateEmailIdentityInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("POST").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -1527,8 +1568,8 @@ pub mod create_email_identity_policy_input {
             smithy_http::operation::BuildError,
         > {
             Ok(crate::input::CreateEmailIdentityPolicyInput {
-                email_identity: self.email_identity.unwrap_or_default(),
-                policy_name: self.policy_name.unwrap_or_default(),
+                email_identity: self.email_identity,
+                policy_name: self.policy_name,
                 policy: self.policy,
             })
         }
@@ -1599,14 +1640,49 @@ impl CreateEmailIdentityPolicyInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let email_identity = {
+            let input = &self.email_identity;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "email_identity",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "email_identity",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        let policy_name = {
+            let input = &self.policy_name;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "policy_name",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "policy_name",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
         write!(
             output,
             "/v2/email/identities/{EmailIdentity}/policies/{PolicyName}",
-            EmailIdentity = smithy_http::label::fmt_string(&self.email_identity, false),
-            PolicyName = smithy_http::label::fmt_string(&self.policy_name, false)
+            EmailIdentity = email_identity,
+            PolicyName = policy_name
         )
-        .expect("formatting should succeed")
+        .expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -1614,7 +1690,7 @@ impl CreateEmailIdentityPolicyInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("POST").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -1752,8 +1828,9 @@ impl CreateEmailTemplateInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(output, "/v2/email/templates").expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        write!(output, "/v2/email/templates").expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -1761,7 +1838,7 @@ impl CreateEmailTemplateInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("POST").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -1897,8 +1974,9 @@ impl CreateImportJobInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(output, "/v2/email/import-jobs").expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        write!(output, "/v2/email/import-jobs").expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -1906,7 +1984,7 @@ impl CreateImportJobInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("POST").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -1961,7 +2039,7 @@ pub mod delete_configuration_set_input {
             smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DeleteConfigurationSetInput {
-                configuration_set_name: self.configuration_set_name.unwrap_or_default(),
+                configuration_set_name: self.configuration_set_name,
             })
         }
     }
@@ -2026,14 +2104,31 @@ impl DeleteConfigurationSetInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let configuration_set_name = {
+            let input = &self.configuration_set_name;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "configuration_set_name",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "configuration_set_name",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
         write!(
             output,
             "/v2/email/configuration-sets/{ConfigurationSetName}",
-            ConfigurationSetName =
-                smithy_http::label::fmt_string(&self.configuration_set_name, false)
+            ConfigurationSetName = configuration_set_name
         )
-        .expect("formatting should succeed")
+        .expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -2041,7 +2136,7 @@ impl DeleteConfigurationSetInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("DELETE").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -2110,8 +2205,8 @@ pub mod delete_configuration_set_event_destination_input {
             smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DeleteConfigurationSetEventDestinationInput {
-                configuration_set_name: self.configuration_set_name.unwrap_or_default(),
-                event_destination_name: self.event_destination_name.unwrap_or_default(),
+                configuration_set_name: self.configuration_set_name,
+                event_destination_name: self.event_destination_name,
             })
         }
     }
@@ -2178,8 +2273,43 @@ impl DeleteConfigurationSetEventDestinationInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(output, "/v2/email/configuration-sets/{ConfigurationSetName}/event-destinations/{EventDestinationName}", ConfigurationSetName = smithy_http::label::fmt_string(&self.configuration_set_name, false), EventDestinationName = smithy_http::label::fmt_string(&self.event_destination_name, false)).expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let configuration_set_name = {
+            let input = &self.configuration_set_name;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "configuration_set_name",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "configuration_set_name",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        let event_destination_name = {
+            let input = &self.event_destination_name;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "event_destination_name",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "event_destination_name",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        write!(output, "/v2/email/configuration-sets/{ConfigurationSetName}/event-destinations/{EventDestinationName}", ConfigurationSetName = configuration_set_name, EventDestinationName = event_destination_name).expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -2187,7 +2317,7 @@ impl DeleteConfigurationSetEventDestinationInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("DELETE").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -2253,8 +2383,8 @@ pub mod delete_contact_input {
         ) -> std::result::Result<crate::input::DeleteContactInput, smithy_http::operation::BuildError>
         {
             Ok(crate::input::DeleteContactInput {
-                contact_list_name: self.contact_list_name.unwrap_or_default(),
-                email_address: self.email_address.unwrap_or_default(),
+                contact_list_name: self.contact_list_name,
+                email_address: self.email_address,
             })
         }
     }
@@ -2319,14 +2449,49 @@ impl DeleteContactInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let contact_list_name = {
+            let input = &self.contact_list_name;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "contact_list_name",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "contact_list_name",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        let email_address = {
+            let input = &self.email_address;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "email_address",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "email_address",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
         write!(
             output,
             "/v2/email/contact-lists/{ContactListName}/contacts/{EmailAddress}",
-            ContactListName = smithy_http::label::fmt_string(&self.contact_list_name, false),
-            EmailAddress = smithy_http::label::fmt_string(&self.email_address, false)
+            ContactListName = contact_list_name,
+            EmailAddress = email_address
         )
-        .expect("formatting should succeed")
+        .expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -2334,7 +2499,7 @@ impl DeleteContactInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("DELETE").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -2389,7 +2554,7 @@ pub mod delete_contact_list_input {
             smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DeleteContactListInput {
-                contact_list_name: self.contact_list_name.unwrap_or_default(),
+                contact_list_name: self.contact_list_name,
             })
         }
     }
@@ -2454,13 +2619,31 @@ impl DeleteContactListInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let contact_list_name = {
+            let input = &self.contact_list_name;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "contact_list_name",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "contact_list_name",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
         write!(
             output,
             "/v2/email/contact-lists/{ContactListName}",
-            ContactListName = smithy_http::label::fmt_string(&self.contact_list_name, false)
+            ContactListName = contact_list_name
         )
-        .expect("formatting should succeed")
+        .expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -2468,7 +2651,7 @@ impl DeleteContactListInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("DELETE").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -2523,7 +2706,7 @@ pub mod delete_custom_verification_email_template_input {
             smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DeleteCustomVerificationEmailTemplateInput {
-                template_name: self.template_name.unwrap_or_default(),
+                template_name: self.template_name,
             })
         }
     }
@@ -2590,13 +2773,31 @@ impl DeleteCustomVerificationEmailTemplateInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let template_name = {
+            let input = &self.template_name;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "template_name",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "template_name",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
         write!(
             output,
             "/v2/email/custom-verification-email-templates/{TemplateName}",
-            TemplateName = smithy_http::label::fmt_string(&self.template_name, false)
+            TemplateName = template_name
         )
-        .expect("formatting should succeed")
+        .expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -2604,7 +2805,7 @@ impl DeleteCustomVerificationEmailTemplateInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("DELETE").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -2656,7 +2857,7 @@ pub mod delete_dedicated_ip_pool_input {
             smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DeleteDedicatedIpPoolInput {
-                pool_name: self.pool_name.unwrap_or_default(),
+                pool_name: self.pool_name,
             })
         }
     }
@@ -2721,13 +2922,31 @@ impl DeleteDedicatedIpPoolInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let pool_name = {
+            let input = &self.pool_name;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "pool_name",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "pool_name",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
         write!(
             output,
             "/v2/email/dedicated-ip-pools/{PoolName}",
-            PoolName = smithy_http::label::fmt_string(&self.pool_name, false)
+            PoolName = pool_name
         )
-        .expect("formatting should succeed")
+        .expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -2735,7 +2954,7 @@ impl DeleteDedicatedIpPoolInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("DELETE").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -2790,7 +3009,7 @@ pub mod delete_email_identity_input {
             smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DeleteEmailIdentityInput {
-                email_identity: self.email_identity.unwrap_or_default(),
+                email_identity: self.email_identity,
             })
         }
     }
@@ -2855,13 +3074,31 @@ impl DeleteEmailIdentityInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let email_identity = {
+            let input = &self.email_identity;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "email_identity",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "email_identity",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
         write!(
             output,
             "/v2/email/identities/{EmailIdentity}",
-            EmailIdentity = smithy_http::label::fmt_string(&self.email_identity, false)
+            EmailIdentity = email_identity
         )
-        .expect("formatting should succeed")
+        .expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -2869,7 +3106,7 @@ impl DeleteEmailIdentityInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("DELETE").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -2936,8 +3173,8 @@ pub mod delete_email_identity_policy_input {
             smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DeleteEmailIdentityPolicyInput {
-                email_identity: self.email_identity.unwrap_or_default(),
-                policy_name: self.policy_name.unwrap_or_default(),
+                email_identity: self.email_identity,
+                policy_name: self.policy_name,
             })
         }
     }
@@ -3003,14 +3240,49 @@ impl DeleteEmailIdentityPolicyInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let email_identity = {
+            let input = &self.email_identity;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "email_identity",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "email_identity",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        let policy_name = {
+            let input = &self.policy_name;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "policy_name",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "policy_name",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
         write!(
             output,
             "/v2/email/identities/{EmailIdentity}/policies/{PolicyName}",
-            EmailIdentity = smithy_http::label::fmt_string(&self.email_identity, false),
-            PolicyName = smithy_http::label::fmt_string(&self.policy_name, false)
+            EmailIdentity = email_identity,
+            PolicyName = policy_name
         )
-        .expect("formatting should succeed")
+        .expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -3018,7 +3290,7 @@ impl DeleteEmailIdentityPolicyInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("DELETE").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -3073,7 +3345,7 @@ pub mod delete_email_template_input {
             smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DeleteEmailTemplateInput {
-                template_name: self.template_name.unwrap_or_default(),
+                template_name: self.template_name,
             })
         }
     }
@@ -3138,13 +3410,31 @@ impl DeleteEmailTemplateInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let template_name = {
+            let input = &self.template_name;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "template_name",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "template_name",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
         write!(
             output,
             "/v2/email/templates/{TemplateName}",
-            TemplateName = smithy_http::label::fmt_string(&self.template_name, false)
+            TemplateName = template_name
         )
-        .expect("formatting should succeed")
+        .expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -3152,7 +3442,7 @@ impl DeleteEmailTemplateInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("DELETE").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -3207,7 +3497,7 @@ pub mod delete_suppressed_destination_input {
             smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DeleteSuppressedDestinationInput {
-                email_address: self.email_address.unwrap_or_default(),
+                email_address: self.email_address,
             })
         }
     }
@@ -3273,13 +3563,31 @@ impl DeleteSuppressedDestinationInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let email_address = {
+            let input = &self.email_address;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "email_address",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "email_address",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
         write!(
             output,
             "/v2/email/suppression/addresses/{EmailAddress}",
-            EmailAddress = smithy_http::label::fmt_string(&self.email_address, false)
+            EmailAddress = email_address
         )
-        .expect("formatting should succeed")
+        .expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -3287,7 +3595,7 @@ impl DeleteSuppressedDestinationInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("DELETE").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -3386,8 +3694,9 @@ impl GetAccountInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(output, "/v2/email/account").expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        write!(output, "/v2/email/account").expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -3395,7 +3704,7 @@ impl GetAccountInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("GET").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -3516,12 +3825,13 @@ impl GetBlacklistReportsInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
         write!(
             output,
             "/v2/email/deliverability-dashboard/blacklist-report"
         )
-        .expect("formatting should succeed")
+        .expect("formatting should succeed");
+        Ok(())
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
@@ -3540,7 +3850,7 @@ impl GetBlacklistReportsInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         self.uri_query(&mut uri);
         Ok(builder.method("GET").uri(uri))
     }
@@ -3597,7 +3907,7 @@ pub mod get_configuration_set_input {
             smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GetConfigurationSetInput {
-                configuration_set_name: self.configuration_set_name.unwrap_or_default(),
+                configuration_set_name: self.configuration_set_name,
             })
         }
     }
@@ -3662,14 +3972,31 @@ impl GetConfigurationSetInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let configuration_set_name = {
+            let input = &self.configuration_set_name;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "configuration_set_name",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "configuration_set_name",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
         write!(
             output,
             "/v2/email/configuration-sets/{ConfigurationSetName}",
-            ConfigurationSetName =
-                smithy_http::label::fmt_string(&self.configuration_set_name, false)
+            ConfigurationSetName = configuration_set_name
         )
-        .expect("formatting should succeed")
+        .expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -3677,7 +4004,7 @@ impl GetConfigurationSetInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("GET").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -3732,7 +4059,7 @@ pub mod get_configuration_set_event_destinations_input {
             smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GetConfigurationSetEventDestinationsInput {
-                configuration_set_name: self.configuration_set_name.unwrap_or_default(),
+                configuration_set_name: self.configuration_set_name,
             })
         }
     }
@@ -3799,14 +4126,31 @@ impl GetConfigurationSetEventDestinationsInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let configuration_set_name = {
+            let input = &self.configuration_set_name;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "configuration_set_name",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "configuration_set_name",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
         write!(
             output,
             "/v2/email/configuration-sets/{ConfigurationSetName}/event-destinations",
-            ConfigurationSetName =
-                smithy_http::label::fmt_string(&self.configuration_set_name, false)
+            ConfigurationSetName = configuration_set_name
         )
-        .expect("formatting should succeed")
+        .expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -3814,7 +4158,7 @@ impl GetConfigurationSetEventDestinationsInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("GET").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -3880,8 +4224,8 @@ pub mod get_contact_input {
         ) -> std::result::Result<crate::input::GetContactInput, smithy_http::operation::BuildError>
         {
             Ok(crate::input::GetContactInput {
-                contact_list_name: self.contact_list_name.unwrap_or_default(),
-                email_address: self.email_address.unwrap_or_default(),
+                contact_list_name: self.contact_list_name,
+                email_address: self.email_address,
             })
         }
     }
@@ -3943,14 +4287,49 @@ impl GetContactInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let contact_list_name = {
+            let input = &self.contact_list_name;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "contact_list_name",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "contact_list_name",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        let email_address = {
+            let input = &self.email_address;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "email_address",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "email_address",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
         write!(
             output,
             "/v2/email/contact-lists/{ContactListName}/contacts/{EmailAddress}",
-            ContactListName = smithy_http::label::fmt_string(&self.contact_list_name, false),
-            EmailAddress = smithy_http::label::fmt_string(&self.email_address, false)
+            ContactListName = contact_list_name,
+            EmailAddress = email_address
         )
-        .expect("formatting should succeed")
+        .expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -3958,7 +4337,7 @@ impl GetContactInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("GET").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -4013,7 +4392,7 @@ pub mod get_contact_list_input {
             smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GetContactListInput {
-                contact_list_name: self.contact_list_name.unwrap_or_default(),
+                contact_list_name: self.contact_list_name,
             })
         }
     }
@@ -4078,13 +4457,31 @@ impl GetContactListInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let contact_list_name = {
+            let input = &self.contact_list_name;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "contact_list_name",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "contact_list_name",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
         write!(
             output,
             "/v2/email/contact-lists/{ContactListName}",
-            ContactListName = smithy_http::label::fmt_string(&self.contact_list_name, false)
+            ContactListName = contact_list_name
         )
-        .expect("formatting should succeed")
+        .expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -4092,7 +4489,7 @@ impl GetContactListInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("GET").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -4147,7 +4544,7 @@ pub mod get_custom_verification_email_template_input {
             smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GetCustomVerificationEmailTemplateInput {
-                template_name: self.template_name.unwrap_or_default(),
+                template_name: self.template_name,
             })
         }
     }
@@ -4213,13 +4610,31 @@ impl GetCustomVerificationEmailTemplateInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let template_name = {
+            let input = &self.template_name;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "template_name",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "template_name",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
         write!(
             output,
             "/v2/email/custom-verification-email-templates/{TemplateName}",
-            TemplateName = smithy_http::label::fmt_string(&self.template_name, false)
+            TemplateName = template_name
         )
-        .expect("formatting should succeed")
+        .expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -4227,7 +4642,7 @@ impl GetCustomVerificationEmailTemplateInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("GET").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -4279,9 +4694,7 @@ pub mod get_dedicated_ip_input {
             crate::input::GetDedicatedIpInput,
             smithy_http::operation::BuildError,
         > {
-            Ok(crate::input::GetDedicatedIpInput {
-                ip: self.ip.unwrap_or_default(),
-            })
+            Ok(crate::input::GetDedicatedIpInput { ip: self.ip })
         }
     }
 }
@@ -4345,13 +4758,26 @@ impl GetDedicatedIpInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(
-            output,
-            "/v2/email/dedicated-ips/{Ip}",
-            Ip = smithy_http::label::fmt_string(&self.ip, false)
-        )
-        .expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let ip = {
+            let input = &self.ip;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "ip",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "ip",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        write!(output, "/v2/email/dedicated-ips/{Ip}", Ip = ip).expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -4359,7 +4785,7 @@ impl GetDedicatedIpInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("GET").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -4502,8 +4928,9 @@ impl GetDedicatedIpsInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(output, "/v2/email/dedicated-ips").expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        write!(output, "/v2/email/dedicated-ips").expect("formatting should succeed");
+        Ok(())
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
@@ -4523,7 +4950,7 @@ impl GetDedicatedIpsInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         self.uri_query(&mut uri);
         Ok(builder.method("GET").uri(uri))
     }
@@ -4629,8 +5056,9 @@ impl GetDeliverabilityDashboardOptionsInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(output, "/v2/email/deliverability-dashboard").expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        write!(output, "/v2/email/deliverability-dashboard").expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -4638,7 +5066,7 @@ impl GetDeliverabilityDashboardOptionsInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("GET").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -4690,7 +5118,7 @@ pub mod get_deliverability_test_report_input {
             smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GetDeliverabilityTestReportInput {
-                report_id: self.report_id.unwrap_or_default(),
+                report_id: self.report_id,
             })
         }
     }
@@ -4756,13 +5184,31 @@ impl GetDeliverabilityTestReportInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let report_id = {
+            let input = &self.report_id;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "report_id",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "report_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
         write!(
             output,
             "/v2/email/deliverability-dashboard/test-reports/{ReportId}",
-            ReportId = smithy_http::label::fmt_string(&self.report_id, false)
+            ReportId = report_id
         )
-        .expect("formatting should succeed")
+        .expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -4770,7 +5216,7 @@ impl GetDeliverabilityTestReportInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("GET").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -4823,7 +5269,7 @@ pub mod get_domain_deliverability_campaign_input {
             smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GetDomainDeliverabilityCampaignInput {
-                campaign_id: self.campaign_id.unwrap_or_default(),
+                campaign_id: self.campaign_id,
             })
         }
     }
@@ -4889,13 +5335,31 @@ impl GetDomainDeliverabilityCampaignInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let campaign_id = {
+            let input = &self.campaign_id;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "campaign_id",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "campaign_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
         write!(
             output,
             "/v2/email/deliverability-dashboard/campaigns/{CampaignId}",
-            CampaignId = smithy_http::label::fmt_string(&self.campaign_id, false)
+            CampaignId = campaign_id
         )
-        .expect("formatting should succeed")
+        .expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -4903,7 +5367,7 @@ impl GetDomainDeliverabilityCampaignInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("GET").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -4978,7 +5442,7 @@ pub mod get_domain_statistics_report_input {
             smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GetDomainStatisticsReportInput {
-                domain: self.domain.unwrap_or_default(),
+                domain: self.domain,
                 start_date: self.start_date,
                 end_date: self.end_date,
             })
@@ -5046,13 +5510,31 @@ impl GetDomainStatisticsReportInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let domain = {
+            let input = &self.domain;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "domain",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "domain",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
         write!(
             output,
             "/v2/email/deliverability-dashboard/statistics-report/{Domain}",
-            Domain = smithy_http::label::fmt_string(&self.domain, false)
+            Domain = domain
         )
-        .expect("formatting should succeed")
+        .expect("formatting should succeed");
+        Ok(())
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
@@ -5081,7 +5563,7 @@ impl GetDomainStatisticsReportInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         self.uri_query(&mut uri);
         Ok(builder.method("GET").uri(uri))
     }
@@ -5137,7 +5619,7 @@ pub mod get_email_identity_input {
             smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GetEmailIdentityInput {
-                email_identity: self.email_identity.unwrap_or_default(),
+                email_identity: self.email_identity,
             })
         }
     }
@@ -5202,13 +5684,31 @@ impl GetEmailIdentityInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let email_identity = {
+            let input = &self.email_identity;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "email_identity",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "email_identity",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
         write!(
             output,
             "/v2/email/identities/{EmailIdentity}",
-            EmailIdentity = smithy_http::label::fmt_string(&self.email_identity, false)
+            EmailIdentity = email_identity
         )
-        .expect("formatting should succeed")
+        .expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -5216,7 +5716,7 @@ impl GetEmailIdentityInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("GET").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -5271,7 +5771,7 @@ pub mod get_email_identity_policies_input {
             smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GetEmailIdentityPoliciesInput {
-                email_identity: self.email_identity.unwrap_or_default(),
+                email_identity: self.email_identity,
             })
         }
     }
@@ -5337,13 +5837,31 @@ impl GetEmailIdentityPoliciesInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let email_identity = {
+            let input = &self.email_identity;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "email_identity",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "email_identity",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
         write!(
             output,
             "/v2/email/identities/{EmailIdentity}/policies",
-            EmailIdentity = smithy_http::label::fmt_string(&self.email_identity, false)
+            EmailIdentity = email_identity
         )
-        .expect("formatting should succeed")
+        .expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -5351,7 +5869,7 @@ impl GetEmailIdentityPoliciesInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("GET").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -5406,7 +5924,7 @@ pub mod get_email_template_input {
             smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GetEmailTemplateInput {
-                template_name: self.template_name.unwrap_or_default(),
+                template_name: self.template_name,
             })
         }
     }
@@ -5471,13 +5989,31 @@ impl GetEmailTemplateInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let template_name = {
+            let input = &self.template_name;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "template_name",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "template_name",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
         write!(
             output,
             "/v2/email/templates/{TemplateName}",
-            TemplateName = smithy_http::label::fmt_string(&self.template_name, false)
+            TemplateName = template_name
         )
-        .expect("formatting should succeed")
+        .expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -5485,7 +6021,7 @@ impl GetEmailTemplateInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("GET").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -5535,7 +6071,7 @@ pub mod get_import_job_input {
         ) -> std::result::Result<crate::input::GetImportJobInput, smithy_http::operation::BuildError>
         {
             Ok(crate::input::GetImportJobInput {
-                job_id: self.job_id.unwrap_or_default(),
+                job_id: self.job_id,
             })
         }
     }
@@ -5600,13 +6136,27 @@ impl GetImportJobInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(
-            output,
-            "/v2/email/import-jobs/{JobId}",
-            JobId = smithy_http::label::fmt_string(&self.job_id, false)
-        )
-        .expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let job_id = {
+            let input = &self.job_id;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "job_id",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "job_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        write!(output, "/v2/email/import-jobs/{JobId}", JobId = job_id)
+            .expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -5614,7 +6164,7 @@ impl GetImportJobInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("GET").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -5669,7 +6219,7 @@ pub mod get_suppressed_destination_input {
             smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GetSuppressedDestinationInput {
-                email_address: self.email_address.unwrap_or_default(),
+                email_address: self.email_address,
             })
         }
     }
@@ -5735,13 +6285,31 @@ impl GetSuppressedDestinationInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let email_address = {
+            let input = &self.email_address;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "email_address",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "email_address",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
         write!(
             output,
             "/v2/email/suppression/addresses/{EmailAddress}",
-            EmailAddress = smithy_http::label::fmt_string(&self.email_address, false)
+            EmailAddress = email_address
         )
-        .expect("formatting should succeed")
+        .expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -5749,7 +6317,7 @@ impl GetSuppressedDestinationInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("GET").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -5881,8 +6449,9 @@ impl ListConfigurationSetsInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(output, "/v2/email/configuration-sets").expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        write!(output, "/v2/email/configuration-sets").expect("formatting should succeed");
+        Ok(())
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
@@ -5899,7 +6468,7 @@ impl ListConfigurationSetsInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         self.uri_query(&mut uri);
         Ok(builder.method("GET").uri(uri))
     }
@@ -6035,8 +6604,9 @@ impl ListContactListsInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(output, "/v2/email/contact-lists").expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        write!(output, "/v2/email/contact-lists").expect("formatting should succeed");
+        Ok(())
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
@@ -6053,7 +6623,7 @@ impl ListContactListsInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         self.uri_query(&mut uri);
         Ok(builder.method("GET").uri(uri))
     }
@@ -6147,7 +6717,7 @@ pub mod list_contacts_input {
         ) -> std::result::Result<crate::input::ListContactsInput, smithy_http::operation::BuildError>
         {
             Ok(crate::input::ListContactsInput {
-                contact_list_name: self.contact_list_name.unwrap_or_default(),
+                contact_list_name: self.contact_list_name,
                 filter: self.filter,
                 page_size: self.page_size,
                 next_token: self.next_token,
@@ -6218,13 +6788,31 @@ impl ListContactsInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let contact_list_name = {
+            let input = &self.contact_list_name;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "contact_list_name",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "contact_list_name",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
         write!(
             output,
             "/v2/email/contact-lists/{ContactListName}/contacts",
-            ContactListName = smithy_http::label::fmt_string(&self.contact_list_name, false)
+            ContactListName = contact_list_name
         )
-        .expect("formatting should succeed")
+        .expect("formatting should succeed");
+        Ok(())
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
@@ -6241,7 +6829,7 @@ impl ListContactsInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         self.uri_query(&mut uri);
         Ok(builder.method("GET").uri(uri))
     }
@@ -6379,9 +6967,10 @@ impl ListCustomVerificationEmailTemplatesInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
         write!(output, "/v2/email/custom-verification-email-templates")
-            .expect("formatting should succeed")
+            .expect("formatting should succeed");
+        Ok(())
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
@@ -6398,7 +6987,7 @@ impl ListCustomVerificationEmailTemplatesInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         self.uri_query(&mut uri);
         Ok(builder.method("GET").uri(uri))
     }
@@ -6531,8 +7120,9 @@ impl ListDedicatedIpPoolsInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(output, "/v2/email/dedicated-ip-pools").expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        write!(output, "/v2/email/dedicated-ip-pools").expect("formatting should succeed");
+        Ok(())
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
@@ -6549,7 +7139,7 @@ impl ListDedicatedIpPoolsInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         self.uri_query(&mut uri);
         Ok(builder.method("GET").uri(uri))
     }
@@ -6685,9 +7275,10 @@ impl ListDeliverabilityTestReportsInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
         write!(output, "/v2/email/deliverability-dashboard/test-reports")
-            .expect("formatting should succeed")
+            .expect("formatting should succeed");
+        Ok(())
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
@@ -6704,7 +7295,7 @@ impl ListDeliverabilityTestReportsInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         self.uri_query(&mut uri);
         Ok(builder.method("GET").uri(uri))
     }
@@ -6811,7 +7402,7 @@ pub mod list_domain_deliverability_campaigns_input {
             Ok(crate::input::ListDomainDeliverabilityCampaignsInput {
                 start_date: self.start_date,
                 end_date: self.end_date,
-                subscribed_domain: self.subscribed_domain.unwrap_or_default(),
+                subscribed_domain: self.subscribed_domain,
                 next_token: self.next_token,
                 page_size: self.page_size,
             })
@@ -6879,13 +7470,31 @@ impl ListDomainDeliverabilityCampaignsInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let subscribed_domain = {
+            let input = &self.subscribed_domain;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "subscribed_domain",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "subscribed_domain",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
         write!(
             output,
             "/v2/email/deliverability-dashboard/domains/{SubscribedDomain}/campaigns",
-            SubscribedDomain = smithy_http::label::fmt_string(&self.subscribed_domain, false)
+            SubscribedDomain = subscribed_domain
         )
-        .expect("formatting should succeed")
+        .expect("formatting should succeed");
+        Ok(())
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
@@ -6920,7 +7529,7 @@ impl ListDomainDeliverabilityCampaignsInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         self.uri_query(&mut uri);
         Ok(builder.method("GET").uri(uri))
     }
@@ -7054,8 +7663,9 @@ impl ListEmailIdentitiesInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(output, "/v2/email/identities").expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        write!(output, "/v2/email/identities").expect("formatting should succeed");
+        Ok(())
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
@@ -7072,7 +7682,7 @@ impl ListEmailIdentitiesInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         self.uri_query(&mut uri);
         Ok(builder.method("GET").uri(uri))
     }
@@ -7205,8 +7815,9 @@ impl ListEmailTemplatesInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(output, "/v2/email/templates").expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        write!(output, "/v2/email/templates").expect("formatting should succeed");
+        Ok(())
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
@@ -7223,7 +7834,7 @@ impl ListEmailTemplatesInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         self.uri_query(&mut uri);
         Ok(builder.method("GET").uri(uri))
     }
@@ -7379,8 +7990,9 @@ impl ListImportJobsInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(output, "/v2/email/import-jobs").expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        write!(output, "/v2/email/import-jobs").expect("formatting should succeed");
+        Ok(())
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
@@ -7397,7 +8009,7 @@ impl ListImportJobsInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         self.uri_query(&mut uri);
         Ok(builder.method("GET").uri(uri))
     }
@@ -7573,8 +8185,9 @@ impl ListSuppressedDestinationsInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(output, "/v2/email/suppression/addresses").expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        write!(output, "/v2/email/suppression/addresses").expect("formatting should succeed");
+        Ok(())
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
@@ -7614,7 +8227,7 @@ impl ListSuppressedDestinationsInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         self.uri_query(&mut uri);
         Ok(builder.method("GET").uri(uri))
     }
@@ -7733,8 +8346,9 @@ impl ListTagsForResourceInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(output, "/v2/email/tags").expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        write!(output, "/v2/email/tags").expect("formatting should succeed");
+        Ok(())
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
@@ -7748,7 +8362,7 @@ impl ListTagsForResourceInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         self.uri_query(&mut uri);
         Ok(builder.method("GET").uri(uri))
     }
@@ -7873,8 +8487,10 @@ impl PutAccountDedicatedIpWarmupAttributesInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(output, "/v2/email/account/dedicated-ips/warmup").expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        write!(output, "/v2/email/account/dedicated-ips/warmup")
+            .expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -7882,7 +8498,7 @@ impl PutAccountDedicatedIpWarmupAttributesInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("PUT").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -8081,8 +8697,9 @@ impl PutAccountDetailsInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(output, "/v2/email/account/details").expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        write!(output, "/v2/email/account/details").expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -8090,7 +8707,7 @@ impl PutAccountDetailsInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("POST").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -8217,8 +8834,9 @@ impl PutAccountSendingAttributesInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(output, "/v2/email/account/sending").expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        write!(output, "/v2/email/account/sending").expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -8226,7 +8844,7 @@ impl PutAccountSendingAttributesInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("PUT").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -8356,8 +8974,9 @@ impl PutAccountSuppressionAttributesInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(output, "/v2/email/account/suppression").expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        write!(output, "/v2/email/account/suppression").expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -8365,7 +8984,7 @@ impl PutAccountSuppressionAttributesInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("PUT").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -8451,7 +9070,7 @@ pub mod put_configuration_set_delivery_options_input {
             smithy_http::operation::BuildError,
         > {
             Ok(crate::input::PutConfigurationSetDeliveryOptionsInput {
-                configuration_set_name: self.configuration_set_name.unwrap_or_default(),
+                configuration_set_name: self.configuration_set_name,
                 tls_policy: self.tls_policy,
                 sending_pool_name: self.sending_pool_name,
             })
@@ -8525,14 +9144,31 @@ impl PutConfigurationSetDeliveryOptionsInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let configuration_set_name = {
+            let input = &self.configuration_set_name;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "configuration_set_name",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "configuration_set_name",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
         write!(
             output,
             "/v2/email/configuration-sets/{ConfigurationSetName}/delivery-options",
-            ConfigurationSetName =
-                smithy_http::label::fmt_string(&self.configuration_set_name, false)
+            ConfigurationSetName = configuration_set_name
         )
-        .expect("formatting should succeed")
+        .expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -8540,7 +9176,7 @@ impl PutConfigurationSetDeliveryOptionsInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("PUT").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -8608,7 +9244,7 @@ pub mod put_configuration_set_reputation_options_input {
             smithy_http::operation::BuildError,
         > {
             Ok(crate::input::PutConfigurationSetReputationOptionsInput {
-                configuration_set_name: self.configuration_set_name.unwrap_or_default(),
+                configuration_set_name: self.configuration_set_name,
                 reputation_metrics_enabled: self.reputation_metrics_enabled.unwrap_or_default(),
             })
         }
@@ -8682,14 +9318,31 @@ impl PutConfigurationSetReputationOptionsInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let configuration_set_name = {
+            let input = &self.configuration_set_name;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "configuration_set_name",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "configuration_set_name",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
         write!(
             output,
             "/v2/email/configuration-sets/{ConfigurationSetName}/reputation-options",
-            ConfigurationSetName =
-                smithy_http::label::fmt_string(&self.configuration_set_name, false)
+            ConfigurationSetName = configuration_set_name
         )
-        .expect("formatting should succeed")
+        .expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -8697,7 +9350,7 @@ impl PutConfigurationSetReputationOptionsInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("PUT").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -8764,7 +9417,7 @@ pub mod put_configuration_set_sending_options_input {
             smithy_http::operation::BuildError,
         > {
             Ok(crate::input::PutConfigurationSetSendingOptionsInput {
-                configuration_set_name: self.configuration_set_name.unwrap_or_default(),
+                configuration_set_name: self.configuration_set_name,
                 sending_enabled: self.sending_enabled.unwrap_or_default(),
             })
         }
@@ -8837,14 +9490,31 @@ impl PutConfigurationSetSendingOptionsInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let configuration_set_name = {
+            let input = &self.configuration_set_name;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "configuration_set_name",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "configuration_set_name",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
         write!(
             output,
             "/v2/email/configuration-sets/{ConfigurationSetName}/sending",
-            ConfigurationSetName =
-                smithy_http::label::fmt_string(&self.configuration_set_name, false)
+            ConfigurationSetName = configuration_set_name
         )
-        .expect("formatting should succeed")
+        .expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -8852,7 +9522,7 @@ impl PutConfigurationSetSendingOptionsInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("PUT").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -8926,7 +9596,7 @@ pub mod put_configuration_set_suppression_options_input {
             smithy_http::operation::BuildError,
         > {
             Ok(crate::input::PutConfigurationSetSuppressionOptionsInput {
-                configuration_set_name: self.configuration_set_name.unwrap_or_default(),
+                configuration_set_name: self.configuration_set_name,
                 suppressed_reasons: self.suppressed_reasons,
             })
         }
@@ -8996,14 +9666,31 @@ impl PutConfigurationSetSuppressionOptionsInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let configuration_set_name = {
+            let input = &self.configuration_set_name;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "configuration_set_name",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "configuration_set_name",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
         write!(
             output,
             "/v2/email/configuration-sets/{ConfigurationSetName}/suppression-options",
-            ConfigurationSetName =
-                smithy_http::label::fmt_string(&self.configuration_set_name, false)
+            ConfigurationSetName = configuration_set_name
         )
-        .expect("formatting should succeed")
+        .expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -9011,7 +9698,7 @@ impl PutConfigurationSetSuppressionOptionsInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("PUT").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -9080,7 +9767,7 @@ pub mod put_configuration_set_tracking_options_input {
             smithy_http::operation::BuildError,
         > {
             Ok(crate::input::PutConfigurationSetTrackingOptionsInput {
-                configuration_set_name: self.configuration_set_name.unwrap_or_default(),
+                configuration_set_name: self.configuration_set_name,
                 custom_redirect_domain: self.custom_redirect_domain,
             })
         }
@@ -9153,14 +9840,31 @@ impl PutConfigurationSetTrackingOptionsInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let configuration_set_name = {
+            let input = &self.configuration_set_name;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "configuration_set_name",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "configuration_set_name",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
         write!(
             output,
             "/v2/email/configuration-sets/{ConfigurationSetName}/tracking-options",
-            ConfigurationSetName =
-                smithy_http::label::fmt_string(&self.configuration_set_name, false)
+            ConfigurationSetName = configuration_set_name
         )
-        .expect("formatting should succeed")
+        .expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -9168,7 +9872,7 @@ impl PutConfigurationSetTrackingOptionsInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("PUT").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -9235,7 +9939,7 @@ pub mod put_dedicated_ip_in_pool_input {
             smithy_http::operation::BuildError,
         > {
             Ok(crate::input::PutDedicatedIpInPoolInput {
-                ip: self.ip.unwrap_or_default(),
+                ip: self.ip,
                 destination_pool_name: self.destination_pool_name,
             })
         }
@@ -9304,13 +10008,27 @@ impl PutDedicatedIpInPoolInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(
-            output,
-            "/v2/email/dedicated-ips/{Ip}/pool",
-            Ip = smithy_http::label::fmt_string(&self.ip, false)
-        )
-        .expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let ip = {
+            let input = &self.ip;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "ip",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "ip",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        write!(output, "/v2/email/dedicated-ips/{Ip}/pool", Ip = ip)
+            .expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -9318,7 +10036,7 @@ impl PutDedicatedIpInPoolInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("PUT").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -9381,7 +10099,7 @@ pub mod put_dedicated_ip_warmup_attributes_input {
             smithy_http::operation::BuildError,
         > {
             Ok(crate::input::PutDedicatedIpWarmupAttributesInput {
-                ip: self.ip.unwrap_or_default(),
+                ip: self.ip,
                 warmup_percentage: self.warmup_percentage,
             })
         }
@@ -9452,13 +10170,27 @@ impl PutDedicatedIpWarmupAttributesInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(
-            output,
-            "/v2/email/dedicated-ips/{Ip}/warmup",
-            Ip = smithy_http::label::fmt_string(&self.ip, false)
-        )
-        .expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let ip = {
+            let input = &self.ip;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "ip",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "ip",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        write!(output, "/v2/email/dedicated-ips/{Ip}/warmup", Ip = ip)
+            .expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -9466,7 +10198,7 @@ impl PutDedicatedIpWarmupAttributesInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("PUT").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -9612,8 +10344,9 @@ impl PutDeliverabilityDashboardOptionInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(output, "/v2/email/deliverability-dashboard").expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        write!(output, "/v2/email/deliverability-dashboard").expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -9621,7 +10354,7 @@ impl PutDeliverabilityDashboardOptionInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("PUT").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -9690,7 +10423,7 @@ pub mod put_email_identity_configuration_set_attributes_input {
         > {
             Ok(
                 crate::input::PutEmailIdentityConfigurationSetAttributesInput {
-                    email_identity: self.email_identity.unwrap_or_default(),
+                    email_identity: self.email_identity,
                     configuration_set_name: self.configuration_set_name,
                 },
             )
@@ -9761,13 +10494,31 @@ impl PutEmailIdentityConfigurationSetAttributesInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let email_identity = {
+            let input = &self.email_identity;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "email_identity",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "email_identity",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
         write!(
             output,
             "/v2/email/identities/{EmailIdentity}/configuration-set",
-            EmailIdentity = smithy_http::label::fmt_string(&self.email_identity, false)
+            EmailIdentity = email_identity
         )
-        .expect("formatting should succeed")
+        .expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -9775,7 +10526,7 @@ impl PutEmailIdentityConfigurationSetAttributesInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("PUT").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -9844,7 +10595,7 @@ pub mod put_email_identity_dkim_attributes_input {
             smithy_http::operation::BuildError,
         > {
             Ok(crate::input::PutEmailIdentityDkimAttributesInput {
-                email_identity: self.email_identity.unwrap_or_default(),
+                email_identity: self.email_identity,
                 signing_enabled: self.signing_enabled.unwrap_or_default(),
             })
         }
@@ -9915,13 +10666,31 @@ impl PutEmailIdentityDkimAttributesInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let email_identity = {
+            let input = &self.email_identity;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "email_identity",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "email_identity",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
         write!(
             output,
             "/v2/email/identities/{EmailIdentity}/dkim",
-            EmailIdentity = smithy_http::label::fmt_string(&self.email_identity, false)
+            EmailIdentity = email_identity
         )
-        .expect("formatting should succeed")
+        .expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -9929,7 +10698,7 @@ impl PutEmailIdentityDkimAttributesInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("PUT").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -10029,7 +10798,7 @@ pub mod put_email_identity_dkim_signing_attributes_input {
             smithy_http::operation::BuildError,
         > {
             Ok(crate::input::PutEmailIdentityDkimSigningAttributesInput {
-                email_identity: self.email_identity.unwrap_or_default(),
+                email_identity: self.email_identity,
                 signing_attributes_origin: self.signing_attributes_origin,
                 signing_attributes: self.signing_attributes,
             })
@@ -10100,13 +10869,31 @@ impl PutEmailIdentityDkimSigningAttributesInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let email_identity = {
+            let input = &self.email_identity;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "email_identity",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "email_identity",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
         write!(
             output,
             "/v1/email/identities/{EmailIdentity}/dkim/signing",
-            EmailIdentity = smithy_http::label::fmt_string(&self.email_identity, false)
+            EmailIdentity = email_identity
         )
-        .expect("formatting should succeed")
+        .expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -10114,7 +10901,7 @@ impl PutEmailIdentityDkimSigningAttributesInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("PUT").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -10187,7 +10974,7 @@ pub mod put_email_identity_feedback_attributes_input {
             smithy_http::operation::BuildError,
         > {
             Ok(crate::input::PutEmailIdentityFeedbackAttributesInput {
-                email_identity: self.email_identity.unwrap_or_default(),
+                email_identity: self.email_identity,
                 email_forwarding_enabled: self.email_forwarding_enabled.unwrap_or_default(),
             })
         }
@@ -10260,13 +11047,31 @@ impl PutEmailIdentityFeedbackAttributesInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let email_identity = {
+            let input = &self.email_identity;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "email_identity",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "email_identity",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
         write!(
             output,
             "/v2/email/identities/{EmailIdentity}/feedback",
-            EmailIdentity = smithy_http::label::fmt_string(&self.email_identity, false)
+            EmailIdentity = email_identity
         )
-        .expect("formatting should succeed")
+        .expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -10274,7 +11079,7 @@ impl PutEmailIdentityFeedbackAttributesInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("PUT").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -10377,7 +11182,7 @@ pub mod put_email_identity_mail_from_attributes_input {
             smithy_http::operation::BuildError,
         > {
             Ok(crate::input::PutEmailIdentityMailFromAttributesInput {
-                email_identity: self.email_identity.unwrap_or_default(),
+                email_identity: self.email_identity,
                 mail_from_domain: self.mail_from_domain,
                 behavior_on_mx_failure: self.behavior_on_mx_failure,
             })
@@ -10451,13 +11256,31 @@ impl PutEmailIdentityMailFromAttributesInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let email_identity = {
+            let input = &self.email_identity;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "email_identity",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "email_identity",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
         write!(
             output,
             "/v2/email/identities/{EmailIdentity}/mail-from",
-            EmailIdentity = smithy_http::label::fmt_string(&self.email_identity, false)
+            EmailIdentity = email_identity
         )
-        .expect("formatting should succeed")
+        .expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -10465,7 +11288,7 @@ impl PutEmailIdentityMailFromAttributesInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("PUT").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -10605,8 +11428,9 @@ impl PutSuppressedDestinationInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(output, "/v2/email/suppression/addresses").expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        write!(output, "/v2/email/suppression/addresses").expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -10614,7 +11438,7 @@ impl PutSuppressedDestinationInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("PUT").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -10887,8 +11711,9 @@ impl SendBulkEmailInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(output, "/v2/email/outbound-bulk-emails").expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        write!(output, "/v2/email/outbound-bulk-emails").expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -10896,7 +11721,7 @@ impl SendBulkEmailInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("POST").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -11050,9 +11875,10 @@ impl SendCustomVerificationEmailInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
         write!(output, "/v2/email/outbound-custom-verification-emails")
-            .expect("formatting should succeed")
+            .expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -11060,7 +11886,7 @@ impl SendCustomVerificationEmailInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("POST").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -11347,8 +12173,9 @@ impl SendEmailInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(output, "/v2/email/outbound-emails").expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        write!(output, "/v2/email/outbound-emails").expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -11356,7 +12183,7 @@ impl SendEmailInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("POST").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -11490,8 +12317,9 @@ impl TagResourceInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(output, "/v2/email/tags").expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        write!(output, "/v2/email/tags").expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -11499,7 +12327,7 @@ impl TagResourceInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("POST").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -11569,7 +12397,7 @@ pub mod test_render_email_template_input {
             smithy_http::operation::BuildError,
         > {
             Ok(crate::input::TestRenderEmailTemplateInput {
-                template_name: self.template_name.unwrap_or_default(),
+                template_name: self.template_name,
                 template_data: self.template_data,
             })
         }
@@ -11639,13 +12467,31 @@ impl TestRenderEmailTemplateInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let template_name = {
+            let input = &self.template_name;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "template_name",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "template_name",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
         write!(
             output,
             "/v2/email/templates/{TemplateName}/render",
-            TemplateName = smithy_http::label::fmt_string(&self.template_name, false)
+            TemplateName = template_name
         )
-        .expect("formatting should succeed")
+        .expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -11653,7 +12499,7 @@ impl TestRenderEmailTemplateInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("POST").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -11784,8 +12630,9 @@ impl UntagResourceInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(output, "/v2/email/tags").expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        write!(output, "/v2/email/tags").expect("formatting should succeed");
+        Ok(())
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
@@ -11804,7 +12651,7 @@ impl UntagResourceInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         self.uri_query(&mut uri);
         Ok(builder.method("DELETE").uri(uri))
     }
@@ -11890,8 +12737,8 @@ pub mod update_configuration_set_event_destination_input {
             smithy_http::operation::BuildError,
         > {
             Ok(crate::input::UpdateConfigurationSetEventDestinationInput {
-                configuration_set_name: self.configuration_set_name.unwrap_or_default(),
-                event_destination_name: self.event_destination_name.unwrap_or_default(),
+                configuration_set_name: self.configuration_set_name,
+                event_destination_name: self.event_destination_name,
                 event_destination: self.event_destination,
             })
         }
@@ -11961,8 +12808,43 @@ impl UpdateConfigurationSetEventDestinationInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(output, "/v2/email/configuration-sets/{ConfigurationSetName}/event-destinations/{EventDestinationName}", ConfigurationSetName = smithy_http::label::fmt_string(&self.configuration_set_name, false), EventDestinationName = smithy_http::label::fmt_string(&self.event_destination_name, false)).expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let configuration_set_name = {
+            let input = &self.configuration_set_name;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "configuration_set_name",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "configuration_set_name",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        let event_destination_name = {
+            let input = &self.event_destination_name;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "event_destination_name",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "event_destination_name",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        write!(output, "/v2/email/configuration-sets/{ConfigurationSetName}/event-destinations/{EventDestinationName}", ConfigurationSetName = configuration_set_name, EventDestinationName = event_destination_name).expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -11970,7 +12852,7 @@ impl UpdateConfigurationSetEventDestinationInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("PUT").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -12078,8 +12960,8 @@ pub mod update_contact_input {
         ) -> std::result::Result<crate::input::UpdateContactInput, smithy_http::operation::BuildError>
         {
             Ok(crate::input::UpdateContactInput {
-                contact_list_name: self.contact_list_name.unwrap_or_default(),
-                email_address: self.email_address.unwrap_or_default(),
+                contact_list_name: self.contact_list_name,
+                email_address: self.email_address,
                 topic_preferences: self.topic_preferences,
                 unsubscribe_all: self.unsubscribe_all.unwrap_or_default(),
                 attributes_data: self.attributes_data,
@@ -12150,14 +13032,49 @@ impl UpdateContactInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let contact_list_name = {
+            let input = &self.contact_list_name;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "contact_list_name",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "contact_list_name",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        let email_address = {
+            let input = &self.email_address;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "email_address",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "email_address",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
         write!(
             output,
             "/v2/email/contact-lists/{ContactListName}/contacts/{EmailAddress}",
-            ContactListName = smithy_http::label::fmt_string(&self.contact_list_name, false),
-            EmailAddress = smithy_http::label::fmt_string(&self.email_address, false)
+            ContactListName = contact_list_name,
+            EmailAddress = email_address
         )
-        .expect("formatting should succeed")
+        .expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -12165,7 +13082,7 @@ impl UpdateContactInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("PUT").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -12244,7 +13161,7 @@ pub mod update_contact_list_input {
             smithy_http::operation::BuildError,
         > {
             Ok(crate::input::UpdateContactListInput {
-                contact_list_name: self.contact_list_name.unwrap_or_default(),
+                contact_list_name: self.contact_list_name,
                 topics: self.topics,
                 description: self.description,
             })
@@ -12314,13 +13231,31 @@ impl UpdateContactListInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let contact_list_name = {
+            let input = &self.contact_list_name;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "contact_list_name",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "contact_list_name",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
         write!(
             output,
             "/v2/email/contact-lists/{ContactListName}",
-            ContactListName = smithy_http::label::fmt_string(&self.contact_list_name, false)
+            ContactListName = contact_list_name
         )
-        .expect("formatting should succeed")
+        .expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -12328,7 +13263,7 @@ impl UpdateContactListInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("PUT").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -12453,7 +13388,7 @@ pub mod update_custom_verification_email_template_input {
             smithy_http::operation::BuildError,
         > {
             Ok(crate::input::UpdateCustomVerificationEmailTemplateInput {
-                template_name: self.template_name.unwrap_or_default(),
+                template_name: self.template_name,
                 from_email_address: self.from_email_address,
                 template_subject: self.template_subject,
                 template_content: self.template_content,
@@ -12527,13 +13462,31 @@ impl UpdateCustomVerificationEmailTemplateInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let template_name = {
+            let input = &self.template_name;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "template_name",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "template_name",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
         write!(
             output,
             "/v2/email/custom-verification-email-templates/{TemplateName}",
-            TemplateName = smithy_http::label::fmt_string(&self.template_name, false)
+            TemplateName = template_name
         )
-        .expect("formatting should succeed")
+        .expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -12541,7 +13494,7 @@ impl UpdateCustomVerificationEmailTemplateInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("PUT").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -12620,8 +13573,8 @@ pub mod update_email_identity_policy_input {
             smithy_http::operation::BuildError,
         > {
             Ok(crate::input::UpdateEmailIdentityPolicyInput {
-                email_identity: self.email_identity.unwrap_or_default(),
-                policy_name: self.policy_name.unwrap_or_default(),
+                email_identity: self.email_identity,
+                policy_name: self.policy_name,
                 policy: self.policy,
             })
         }
@@ -12692,14 +13645,49 @@ impl UpdateEmailIdentityPolicyInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let email_identity = {
+            let input = &self.email_identity;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "email_identity",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "email_identity",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        let policy_name = {
+            let input = &self.policy_name;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "policy_name",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "policy_name",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
         write!(
             output,
             "/v2/email/identities/{EmailIdentity}/policies/{PolicyName}",
-            EmailIdentity = smithy_http::label::fmt_string(&self.email_identity, false),
-            PolicyName = smithy_http::label::fmt_string(&self.policy_name, false)
+            EmailIdentity = email_identity,
+            PolicyName = policy_name
         )
-        .expect("formatting should succeed")
+        .expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -12707,7 +13695,7 @@ impl UpdateEmailIdentityPolicyInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("PUT").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -12776,7 +13764,7 @@ pub mod update_email_template_input {
             smithy_http::operation::BuildError,
         > {
             Ok(crate::input::UpdateEmailTemplateInput {
-                template_name: self.template_name.unwrap_or_default(),
+                template_name: self.template_name,
                 template_content: self.template_content,
             })
         }
@@ -12845,13 +13833,31 @@ impl UpdateEmailTemplateInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let template_name = {
+            let input = &self.template_name;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "template_name",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "template_name",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
         write!(
             output,
             "/v2/email/templates/{TemplateName}",
-            TemplateName = smithy_http::label::fmt_string(&self.template_name, false)
+            TemplateName = template_name
         )
-        .expect("formatting should succeed")
+        .expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -12859,7 +13865,7 @@ impl UpdateEmailTemplateInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("PUT").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -12891,7 +13897,7 @@ impl UpdateEmailTemplateInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateEmailTemplateInput {
     /// <p>The name of the template you want to update.</p>
-    pub template_name: std::string::String,
+    pub template_name: std::option::Option<std::string::String>,
     /// <p>The content of the email template, composed of a subject line, an HTML part, and a
     /// text-only part.</p>
     pub template_content: std::option::Option<crate::model::EmailTemplateContent>,
@@ -12912,11 +13918,11 @@ impl std::fmt::Debug for UpdateEmailTemplateInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateEmailIdentityPolicyInput {
     /// <p>The email identity for which you want to update policy.</p>
-    pub email_identity: std::string::String,
+    pub email_identity: std::option::Option<std::string::String>,
     /// <p>The name of the policy.</p>
     /// <p>The policy name cannot exceed 64 characters and can only include alphanumeric
     /// characters, dashes, and underscores.</p>
-    pub policy_name: std::string::String,
+    pub policy_name: std::option::Option<std::string::String>,
     /// <p>The text of the policy in JSON format. The policy cannot exceed 4 KB.</p>
     /// <p> For information about the syntax of sending authorization policies, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-policies.html">Amazon SES Developer
     /// Guide</a>.</p>
@@ -12937,7 +13943,7 @@ impl std::fmt::Debug for UpdateEmailIdentityPolicyInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateCustomVerificationEmailTemplateInput {
     /// <p>The name of the custom verification email template that you want to update.</p>
-    pub template_name: std::string::String,
+    pub template_name: std::option::Option<std::string::String>,
     /// <p>The email address that the custom verification email is sent from.</p>
     pub from_email_address: std::option::Option<std::string::String>,
     /// <p>The subject line of the custom verification email.</p>
@@ -12971,7 +13977,7 @@ impl std::fmt::Debug for UpdateCustomVerificationEmailTemplateInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateContactListInput {
     /// <p>The name of the contact list.</p>
-    pub contact_list_name: std::string::String,
+    pub contact_list_name: std::option::Option<std::string::String>,
     /// <p>An interest group, theme, or label within a list. A contact list can have multiple
     /// topics.</p>
     pub topics: std::option::Option<std::vec::Vec<crate::model::Topic>>,
@@ -12992,9 +13998,9 @@ impl std::fmt::Debug for UpdateContactListInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateContactInput {
     /// <p>The name of the contact list.</p>
-    pub contact_list_name: std::string::String,
+    pub contact_list_name: std::option::Option<std::string::String>,
     /// <p>The contact's email addres.</p>
-    pub email_address: std::string::String,
+    pub email_address: std::option::Option<std::string::String>,
     /// <p>The contact's preference for being opted-in to or opted-out of a topic.</p>
     pub topic_preferences: std::option::Option<std::vec::Vec<crate::model::TopicPreference>>,
     /// <p>A boolean value status noting if the contact is unsubscribed from all contact list
@@ -13022,9 +14028,9 @@ impl std::fmt::Debug for UpdateContactInput {
 pub struct UpdateConfigurationSetEventDestinationInput {
     /// <p>The name of the configuration set that contains the event destination that you want to
     /// modify.</p>
-    pub configuration_set_name: std::string::String,
+    pub configuration_set_name: std::option::Option<std::string::String>,
     /// <p>The name of the event destination that you want to modify.</p>
-    pub event_destination_name: std::string::String,
+    pub event_destination_name: std::option::Option<std::string::String>,
     /// <p>An object that defines the event destination.</p>
     pub event_destination: std::option::Option<crate::model::EventDestinationDefinition>,
 }
@@ -13068,7 +14074,7 @@ impl std::fmt::Debug for UntagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TestRenderEmailTemplateInput {
     /// <p>The name of the template that you want to render.</p>
-    pub template_name: std::string::String,
+    pub template_name: std::option::Option<std::string::String>,
     /// <p>A list of replacement values to apply to the template. This parameter is a JSON
     /// object, typically consisting of key-value pairs in which the keys correspond to
     /// replacement tags in the email template.</p>
@@ -13313,7 +14319,7 @@ impl std::fmt::Debug for PutSuppressedDestinationInput {
 pub struct PutEmailIdentityMailFromAttributesInput {
     /// <p>The verified email identity that you want to set up the custom MAIL FROM domain
     /// for.</p>
-    pub email_identity: std::string::String,
+    pub email_identity: std::option::Option<std::string::String>,
     /// <p> The custom MAIL FROM domain that you want the verified identity to use. The MAIL FROM
     /// domain must meet the following criteria:</p>
     /// <ul>
@@ -13357,7 +14363,7 @@ impl std::fmt::Debug for PutEmailIdentityMailFromAttributesInput {
 pub struct PutEmailIdentityFeedbackAttributesInput {
     /// <p>The email identity that you want to configure bounce and complaint feedback forwarding
     /// for.</p>
-    pub email_identity: std::string::String,
+    pub email_identity: std::option::Option<std::string::String>,
     /// <p>Sets the feedback forwarding configuration for the identity.</p>
     /// <p>If the value is <code>true</code>, you receive email notifications when bounce or
     /// complaint events occur. These notifications are sent to the address that you specified
@@ -13382,7 +14388,7 @@ impl std::fmt::Debug for PutEmailIdentityFeedbackAttributesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutEmailIdentityDkimSigningAttributesInput {
     /// <p>The email identity that you want to configure DKIM for.</p>
-    pub email_identity: std::string::String,
+    pub email_identity: std::option::Option<std::string::String>,
     /// <p>The method that you want to use to configure DKIM for the identity. There are two
     /// possible values:</p>
     /// <ul>
@@ -13419,7 +14425,7 @@ impl std::fmt::Debug for PutEmailIdentityDkimSigningAttributesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutEmailIdentityDkimAttributesInput {
     /// <p>The email identity that you want to change the DKIM settings for.</p>
-    pub email_identity: std::string::String,
+    pub email_identity: std::option::Option<std::string::String>,
     /// <p>Sets the DKIM signing configuration for the identity.</p>
     /// <p>When you set this value <code>true</code>, then the messages that are sent from the
     /// identity are signed using DKIM. If you set this value to <code>false</code>, your
@@ -13440,7 +14446,7 @@ impl std::fmt::Debug for PutEmailIdentityDkimAttributesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutEmailIdentityConfigurationSetAttributesInput {
     /// <p>The email address or domain that you want to associate with a configuration set.</p>
-    pub email_identity: std::string::String,
+    pub email_identity: std::option::Option<std::string::String>,
     /// <p>The configuration set that you want to associate with an email identity.</p>
     pub configuration_set_name: std::option::Option<std::string::String>,
 }
@@ -13485,7 +14491,7 @@ impl std::fmt::Debug for PutDeliverabilityDashboardOptionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutDedicatedIpWarmupAttributesInput {
     /// <p>The dedicated IP address that you want to update the warm-up attributes for.</p>
-    pub ip: std::string::String,
+    pub ip: std::option::Option<std::string::String>,
     /// <p>The warm-up percentage that you want to associate with the dedicated IP
     /// address.</p>
     pub warmup_percentage: std::option::Option<i32>,
@@ -13505,7 +14511,7 @@ impl std::fmt::Debug for PutDedicatedIpWarmupAttributesInput {
 pub struct PutDedicatedIpInPoolInput {
     /// <p>The IP address that you want to move to the dedicated IP pool. The value you specify
     /// has to be a dedicated IP address that's associated with your AWS account.</p>
-    pub ip: std::string::String,
+    pub ip: std::option::Option<std::string::String>,
     /// <p>The name of the IP pool that you want to add the dedicated IP address to. You have to
     /// specify an IP pool that already exists.</p>
     pub destination_pool_name: std::option::Option<std::string::String>,
@@ -13526,7 +14532,7 @@ impl std::fmt::Debug for PutDedicatedIpInPoolInput {
 pub struct PutConfigurationSetTrackingOptionsInput {
     /// <p>The name of the configuration set that you want to add a custom tracking domain
     /// to.</p>
-    pub configuration_set_name: std::string::String,
+    pub configuration_set_name: std::option::Option<std::string::String>,
     /// <p>The domain that you want to use to track open and click events.</p>
     pub custom_redirect_domain: std::option::Option<std::string::String>,
 }
@@ -13546,7 +14552,7 @@ impl std::fmt::Debug for PutConfigurationSetTrackingOptionsInput {
 pub struct PutConfigurationSetSuppressionOptionsInput {
     /// <p>The name of the configuration set that you want to change the suppression list
     /// preferences for.</p>
-    pub configuration_set_name: std::string::String,
+    pub configuration_set_name: std::option::Option<std::string::String>,
     /// <p>A list that contains the reasons that email addresses are automatically added to the
     /// suppression list for your account. This list can contain any or all of the
     /// following:</p>
@@ -13582,7 +14588,7 @@ impl std::fmt::Debug for PutConfigurationSetSuppressionOptionsInput {
 pub struct PutConfigurationSetSendingOptionsInput {
     /// <p>The name of the configuration set that you want to enable or disable email sending
     /// for.</p>
-    pub configuration_set_name: std::string::String,
+    pub configuration_set_name: std::option::Option<std::string::String>,
     /// <p>If <code>true</code>, email sending is enabled for the configuration set. If
     /// <code>false</code>, email sending is disabled for the configuration set.</p>
     pub sending_enabled: bool,
@@ -13603,7 +14609,7 @@ impl std::fmt::Debug for PutConfigurationSetSendingOptionsInput {
 pub struct PutConfigurationSetReputationOptionsInput {
     /// <p>The name of the configuration set that you want to enable or disable reputation metric
     /// tracking for.</p>
-    pub configuration_set_name: std::string::String,
+    pub configuration_set_name: std::option::Option<std::string::String>,
     /// <p>If <code>true</code>, tracking of reputation metrics is enabled for the configuration
     /// set. If <code>false</code>, tracking of reputation metrics is disabled for the
     /// configuration set.</p>
@@ -13627,7 +14633,7 @@ impl std::fmt::Debug for PutConfigurationSetReputationOptionsInput {
 pub struct PutConfigurationSetDeliveryOptionsInput {
     /// <p>The name of the configuration set that you want to associate with a dedicated IP
     /// pool.</p>
-    pub configuration_set_name: std::string::String,
+    pub configuration_set_name: std::option::Option<std::string::String>,
     /// <p>Specifies whether messages that use the configuration set are required to use
     /// Transport Layer Security (TLS). If the value is <code>Require</code>, messages are only
     /// delivered if a TLS connection can be established. If the value is <code>Optional</code>,
@@ -13904,7 +14910,7 @@ pub struct ListDomainDeliverabilityCampaignsInput {
     /// <code>StartDate</code> parameter.</p>
     pub end_date: std::option::Option<smithy_types::Instant>,
     /// <p>The domain to obtain deliverability data for.</p>
-    pub subscribed_domain: std::string::String,
+    pub subscribed_domain: std::option::Option<std::string::String>,
     /// <p>A token that’s returned from a previous call to the
     /// <code>ListDomainDeliverabilityCampaigns</code> operation. This token indicates the
     /// position of a campaign in the list of campaigns.</p>
@@ -14004,7 +15010,7 @@ impl std::fmt::Debug for ListCustomVerificationEmailTemplatesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListContactsInput {
     /// <p>The name of the contact list.</p>
-    pub contact_list_name: std::string::String,
+    pub contact_list_name: std::option::Option<std::string::String>,
     /// <p>A filter that can be applied to a list of contacts.</p>
     pub filter: std::option::Option<crate::model::ListContactsFilter>,
     /// <p>The number of contacts that may be returned at once, which is dependent on if there
@@ -14083,7 +15089,7 @@ impl std::fmt::Debug for ListConfigurationSetsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetSuppressedDestinationInput {
     /// <p>The email address that's on the account suppression list.</p>
-    pub email_address: std::string::String,
+    pub email_address: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for GetSuppressedDestinationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -14099,7 +15105,7 @@ impl std::fmt::Debug for GetSuppressedDestinationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetImportJobInput {
     /// <p>The ID of the import job.</p>
-    pub job_id: std::string::String,
+    pub job_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for GetImportJobInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -14115,7 +15121,7 @@ impl std::fmt::Debug for GetImportJobInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetEmailTemplateInput {
     /// <p>The name of the template you want to retrieve.</p>
-    pub template_name: std::string::String,
+    pub template_name: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for GetEmailTemplateInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -14130,7 +15136,7 @@ impl std::fmt::Debug for GetEmailTemplateInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetEmailIdentityPoliciesInput {
     /// <p>The email identity that you want to retrieve policies for.</p>
-    pub email_identity: std::string::String,
+    pub email_identity: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for GetEmailIdentityPoliciesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -14145,7 +15151,7 @@ impl std::fmt::Debug for GetEmailIdentityPoliciesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetEmailIdentityInput {
     /// <p>The email identity that you want to retrieve details for.</p>
-    pub email_identity: std::string::String,
+    pub email_identity: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for GetEmailIdentityInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -14160,7 +15166,7 @@ impl std::fmt::Debug for GetEmailIdentityInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDomainStatisticsReportInput {
     /// <p>The domain that you want to obtain deliverability metrics for.</p>
-    pub domain: std::string::String,
+    pub domain: std::option::Option<std::string::String>,
     /// <p>The first day (in Unix time) that you want to obtain domain deliverability metrics
     /// for.</p>
     pub start_date: std::option::Option<smithy_types::Instant>,
@@ -14188,7 +15194,7 @@ impl std::fmt::Debug for GetDomainStatisticsReportInput {
 pub struct GetDomainDeliverabilityCampaignInput {
     /// <p>The unique identifier for the campaign. The Deliverability dashboard automatically generates
     /// and assigns this identifier to a campaign.</p>
-    pub campaign_id: std::string::String,
+    pub campaign_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for GetDomainDeliverabilityCampaignInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -14203,7 +15209,7 @@ impl std::fmt::Debug for GetDomainDeliverabilityCampaignInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDeliverabilityTestReportInput {
     /// <p>A unique string that identifies the predictive inbox placement test.</p>
-    pub report_id: std::string::String,
+    pub report_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for GetDeliverabilityTestReportInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -14260,7 +15266,7 @@ impl std::fmt::Debug for GetDedicatedIpsInput {
 pub struct GetDedicatedIpInput {
     /// <p>The IP address that you want to obtain more information about. The value you specify
     /// has to be a dedicated IP address that's assocaited with your AWS account.</p>
-    pub ip: std::string::String,
+    pub ip: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for GetDedicatedIpInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -14276,7 +15282,7 @@ impl std::fmt::Debug for GetDedicatedIpInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetCustomVerificationEmailTemplateInput {
     /// <p>The name of the custom verification email template that you want to retrieve.</p>
-    pub template_name: std::string::String,
+    pub template_name: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for GetCustomVerificationEmailTemplateInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -14290,7 +15296,7 @@ impl std::fmt::Debug for GetCustomVerificationEmailTemplateInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetContactListInput {
     /// <p>The name of the contact list.</p>
-    pub contact_list_name: std::string::String,
+    pub contact_list_name: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for GetContactListInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -14304,9 +15310,9 @@ impl std::fmt::Debug for GetContactListInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetContactInput {
     /// <p>The name of the contact list to which the contact belongs.</p>
-    pub contact_list_name: std::string::String,
+    pub contact_list_name: std::option::Option<std::string::String>,
     /// <p>The contact's email addres.</p>
-    pub email_address: std::string::String,
+    pub email_address: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for GetContactInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -14323,7 +15329,7 @@ impl std::fmt::Debug for GetContactInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetConfigurationSetEventDestinationsInput {
     /// <p>The name of the configuration set that contains the event destination.</p>
-    pub configuration_set_name: std::string::String,
+    pub configuration_set_name: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for GetConfigurationSetEventDestinationsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -14339,7 +15345,7 @@ impl std::fmt::Debug for GetConfigurationSetEventDestinationsInput {
 pub struct GetConfigurationSetInput {
     /// <p>The name of the configuration set that you want to obtain more information
     /// about.</p>
-    pub configuration_set_name: std::string::String,
+    pub configuration_set_name: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for GetConfigurationSetInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -14385,7 +15391,7 @@ impl std::fmt::Debug for GetAccountInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteSuppressedDestinationInput {
     /// <p>The suppressed email destination to remove from the account suppression list.</p>
-    pub email_address: std::string::String,
+    pub email_address: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DeleteSuppressedDestinationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -14401,7 +15407,7 @@ impl std::fmt::Debug for DeleteSuppressedDestinationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteEmailTemplateInput {
     /// <p>The name of the template to be deleted.</p>
-    pub template_name: std::string::String,
+    pub template_name: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DeleteEmailTemplateInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -14418,11 +15424,11 @@ impl std::fmt::Debug for DeleteEmailTemplateInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteEmailIdentityPolicyInput {
     /// <p>The email identity for which you want to delete a policy.</p>
-    pub email_identity: std::string::String,
+    pub email_identity: std::option::Option<std::string::String>,
     /// <p>The name of the policy.</p>
     /// <p>The policy name cannot exceed 64 characters and can only include alphanumeric
     /// characters, dashes, and underscores.</p>
-    pub policy_name: std::string::String,
+    pub policy_name: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DeleteEmailIdentityPolicyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -14440,7 +15446,7 @@ impl std::fmt::Debug for DeleteEmailIdentityPolicyInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteEmailIdentityInput {
     /// <p>The identity (that is, the email address or domain) that you want to delete.</p>
-    pub email_identity: std::string::String,
+    pub email_identity: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DeleteEmailIdentityInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -14455,7 +15461,7 @@ impl std::fmt::Debug for DeleteEmailIdentityInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteDedicatedIpPoolInput {
     /// <p>The name of the dedicated IP pool that you want to delete.</p>
-    pub pool_name: std::string::String,
+    pub pool_name: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DeleteDedicatedIpPoolInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -14470,7 +15476,7 @@ impl std::fmt::Debug for DeleteDedicatedIpPoolInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteCustomVerificationEmailTemplateInput {
     /// <p>The name of the custom verification email template that you want to delete.</p>
-    pub template_name: std::string::String,
+    pub template_name: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DeleteCustomVerificationEmailTemplateInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -14484,7 +15490,7 @@ impl std::fmt::Debug for DeleteCustomVerificationEmailTemplateInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteContactListInput {
     /// <p>The name of the contact list.</p>
-    pub contact_list_name: std::string::String,
+    pub contact_list_name: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DeleteContactListInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -14498,9 +15504,9 @@ impl std::fmt::Debug for DeleteContactListInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteContactInput {
     /// <p>The name of the contact list from which the contact should be removed.</p>
-    pub contact_list_name: std::string::String,
+    pub contact_list_name: std::option::Option<std::string::String>,
     /// <p>The contact's email address.</p>
-    pub email_address: std::string::String,
+    pub email_address: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DeleteContactInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -14517,9 +15523,9 @@ impl std::fmt::Debug for DeleteContactInput {
 pub struct DeleteConfigurationSetEventDestinationInput {
     /// <p>The name of the configuration set that contains the event destination that you want to
     /// delete.</p>
-    pub configuration_set_name: std::string::String,
+    pub configuration_set_name: std::option::Option<std::string::String>,
     /// <p>The name of the event destination that you want to delete.</p>
-    pub event_destination_name: std::string::String,
+    pub event_destination_name: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DeleteConfigurationSetEventDestinationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -14535,7 +15541,7 @@ impl std::fmt::Debug for DeleteConfigurationSetEventDestinationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteConfigurationSetInput {
     /// <p>The name of the configuration set that you want to delete.</p>
-    pub configuration_set_name: std::string::String,
+    pub configuration_set_name: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DeleteConfigurationSetInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -14591,11 +15597,11 @@ impl std::fmt::Debug for CreateEmailTemplateInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateEmailIdentityPolicyInput {
     /// <p>The email identity for which you want to create a policy.</p>
-    pub email_identity: std::string::String,
+    pub email_identity: std::option::Option<std::string::String>,
     /// <p>The name of the policy.</p>
     /// <p>The policy name cannot exceed 64 characters and can only include alphanumeric
     /// characters, dashes, and underscores.</p>
-    pub policy_name: std::string::String,
+    pub policy_name: std::option::Option<std::string::String>,
     /// <p>The text of the policy in JSON format. The policy cannot exceed 4 KB.</p>
     /// <p>For information about the syntax of sending authorization policies, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-policies.html">Amazon SES Developer
     /// Guide</a>.</p>
@@ -14758,7 +15764,7 @@ impl std::fmt::Debug for CreateContactListInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateContactInput {
     /// <p>The name of the contact list to which the contact should be added.</p>
-    pub contact_list_name: std::string::String,
+    pub contact_list_name: std::option::Option<std::string::String>,
     /// <p>The contact's email address.</p>
     pub email_address: std::option::Option<std::string::String>,
     /// <p>The contact's preferences for being opted-in to or opted-out of topics.</p>
@@ -14786,7 +15792,7 @@ impl std::fmt::Debug for CreateContactInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateConfigurationSetEventDestinationInput {
     /// <p>The name of the configuration set that you want to add an event destination to.</p>
-    pub configuration_set_name: std::string::String,
+    pub configuration_set_name: std::option::Option<std::string::String>,
     /// <p>A name that identifies the event destination within the configuration set.</p>
     pub event_destination_name: std::option::Option<std::string::String>,
     /// <p>An object that defines the event destination.</p>

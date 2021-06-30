@@ -67,7 +67,7 @@ impl std::convert::From<&str> for QueueAttributeName {
 impl std::str::FromStr for QueueAttributeName {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(QueueAttributeName::from(s))
     }
 }
@@ -105,15 +105,6 @@ impl QueueAttributeName {
 impl AsRef<str> for QueueAttributeName {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for QueueAttributeName {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -839,7 +830,7 @@ impl std::convert::From<&str> for MessageSystemAttributeNameForSends {
 impl std::str::FromStr for MessageSystemAttributeNameForSends {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(MessageSystemAttributeNameForSends::from(s))
     }
 }
@@ -854,15 +845,6 @@ impl MessageSystemAttributeNameForSends {
 impl AsRef<str> for MessageSystemAttributeNameForSends {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for MessageSystemAttributeNameForSends {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -1239,7 +1221,7 @@ impl std::convert::From<&str> for MessageSystemAttributeName {
 impl std::str::FromStr for MessageSystemAttributeName {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(MessageSystemAttributeName::from(s))
     }
 }
@@ -1263,15 +1245,6 @@ impl MessageSystemAttributeName {
 impl AsRef<str> for MessageSystemAttributeName {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for MessageSystemAttributeName {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 

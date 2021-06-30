@@ -27,7 +27,7 @@ impl std::convert::From<&str> for PermissionsMode {
 impl std::str::FromStr for PermissionsMode {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(PermissionsMode::from(s))
     }
 }
@@ -43,15 +43,6 @@ impl PermissionsMode {
 impl AsRef<str> for PermissionsMode {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for PermissionsMode {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -87,7 +78,7 @@ impl std::convert::From<&str> for LedgerState {
 impl std::str::FromStr for LedgerState {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(LedgerState::from(s))
     }
 }
@@ -107,24 +98,13 @@ impl AsRef<str> for LedgerState {
         self.as_str()
     }
 }
-impl<'de> serde::Deserialize<'de> for LedgerState {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
-    }
-}
 
 /// <p>The configuration settings of the Amazon Kinesis Data Streams destination for an Amazon QLDB journal
 /// stream.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct KinesisConfiguration {
     /// <p>The Amazon Resource Name (ARN) of the Kinesis Data Streams resource.</p>
-    #[serde(rename = "StreamArn")]
-    #[serde(default)]
     pub stream_arn: std::option::Option<std::string::String>,
     /// <p>Enables QLDB to publish multiple data records in a single Kinesis Data Streams record, increasing the
     /// number of records sent per API call.</p>
@@ -133,8 +113,6 @@ pub struct KinesisConfiguration {
     /// implications for processing records and requires de-aggregation in your stream consumer. To
     /// learn more, see <a href="https://docs.aws.amazon.com/streams/latest/dev/kinesis-kpl-concepts.html">KPL Key Concepts</a> and <a href="https://docs.aws.amazon.com/streams/latest/dev/kinesis-kpl-consumer-deaggregation.html">Consumer De-aggregation</a> in the <i>Amazon Kinesis Data Streams Developer
     /// Guide</i>.</p>
-    #[serde(rename = "AggregationEnabled")]
-    #[serde(default)]
     pub aggregation_enabled: std::option::Option<bool>,
 }
 impl std::fmt::Debug for KinesisConfiguration {
@@ -197,23 +175,14 @@ impl KinesisConfiguration {
 
 /// <p>Information about a ledger, including its name, state, and when it was created.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LedgerSummary {
     /// <p>The name of the ledger.</p>
-    #[serde(rename = "Name")]
-    #[serde(default)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The current status of the ledger.</p>
-    #[serde(rename = "State")]
-    #[serde(default)]
     pub state: std::option::Option<crate::model::LedgerState>,
     /// <p>The date and time, in epoch time format, when the ledger was created. (Epoch time format
     /// is the number of seconds elapsed since 12:00:00 AM January 1, 1970 UTC.)</p>
-    #[serde(rename = "CreationDateTime")]
-    #[serde(
-        deserialize_with = "crate::serde_util::stdoptionoptionsmithytypesinstant_epoch_seconds_deser"
-    )]
-    #[serde(default)]
     pub creation_date_time: std::option::Option<smithy_types::Instant>,
 }
 impl std::fmt::Debug for LedgerSummary {
@@ -287,48 +256,25 @@ impl LedgerSummary {
 /// <p>Information about a journal export job, including the ledger name, export ID, creation
 /// time, current status, and the parameters of the original export creation request.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct JournalS3ExportDescription {
     /// <p>The name of the ledger.</p>
-    #[serde(rename = "LedgerName")]
-    #[serde(default)]
     pub ledger_name: std::option::Option<std::string::String>,
     /// <p>The UUID (represented in Base62-encoded text) of the journal export job.</p>
-    #[serde(rename = "ExportId")]
-    #[serde(default)]
     pub export_id: std::option::Option<std::string::String>,
     /// <p>The date and time, in epoch time format, when the export job was created. (Epoch time
     /// format is the number of seconds elapsed since 12:00:00 AM January 1, 1970 UTC.)</p>
-    #[serde(rename = "ExportCreationTime")]
-    #[serde(
-        deserialize_with = "crate::serde_util::stdoptionoptionsmithytypesinstant_epoch_seconds_deser"
-    )]
-    #[serde(default)]
     pub export_creation_time: std::option::Option<smithy_types::Instant>,
     /// <p>The current state of the journal export job.</p>
-    #[serde(rename = "Status")]
-    #[serde(default)]
     pub status: std::option::Option<crate::model::ExportStatus>,
     /// <p>The inclusive start date and time for the range of journal contents that are specified
     /// in the original export request.</p>
-    #[serde(rename = "InclusiveStartTime")]
-    #[serde(
-        deserialize_with = "crate::serde_util::stdoptionoptionsmithytypesinstant_epoch_seconds_deser"
-    )]
-    #[serde(default)]
     pub inclusive_start_time: std::option::Option<smithy_types::Instant>,
     /// <p>The exclusive end date and time for the range of journal contents that are specified in
     /// the original export request.</p>
-    #[serde(rename = "ExclusiveEndTime")]
-    #[serde(
-        deserialize_with = "crate::serde_util::stdoptionoptionsmithytypesinstant_epoch_seconds_deser"
-    )]
-    #[serde(default)]
     pub exclusive_end_time: std::option::Option<smithy_types::Instant>,
     /// <p>The Amazon Simple Storage Service (Amazon S3) bucket location in which a journal export job writes the journal
     /// contents.</p>
-    #[serde(rename = "S3ExportConfiguration")]
-    #[serde(default)]
     pub s3_export_configuration: std::option::Option<crate::model::S3ExportConfiguration>,
     /// <p>The Amazon Resource Name (ARN) of the IAM role that grants QLDB permissions for a
     /// journal export job to do the following:</p>
@@ -341,8 +287,6 @@ pub struct JournalS3ExportDescription {
     /// KMS) for server-side encryption of your exported data.</p>
     /// </li>
     /// </ul>
-    #[serde(rename = "RoleArn")]
-    #[serde(default)]
     pub role_arn: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for JournalS3ExportDescription {
@@ -505,14 +449,12 @@ impl JournalS3ExportDescription {
 /// <p>The Amazon Simple Storage Service (Amazon S3) bucket location in which a journal export job writes the journal
 /// contents.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct S3ExportConfiguration {
     /// <p>The Amazon S3 bucket name in which a journal export job writes the journal contents.</p>
     /// <p>The bucket name must comply with the Amazon S3 bucket naming conventions. For more
     /// information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/BucketRestrictions.html">Bucket Restrictions and
     /// Limitations</a> in the <i>Amazon S3 Developer Guide</i>.</p>
-    #[serde(rename = "Bucket")]
-    #[serde(default)]
     pub bucket: std::option::Option<std::string::String>,
     /// <p>The prefix for the Amazon S3 bucket in which a journal export job writes the journal
     /// contents.</p>
@@ -537,13 +479,9 @@ pub struct S3ExportConfiguration {
     /// </p>
     /// </li>
     /// </ul>
-    #[serde(rename = "Prefix")]
-    #[serde(default)]
     pub prefix: std::option::Option<std::string::String>,
     /// <p>The encryption settings that are used by a journal export job to write data in an Amazon S3
     /// bucket.</p>
-    #[serde(rename = "EncryptionConfiguration")]
-    #[serde(default)]
     pub encryption_configuration: std::option::Option<crate::model::S3EncryptionConfiguration>,
 }
 impl std::fmt::Debug for S3ExportConfiguration {
@@ -646,14 +584,12 @@ impl S3ExportConfiguration {
 /// <p>The encryption settings that are used by a journal export job to write data in an
 /// Amazon Simple Storage Service (Amazon S3) bucket.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct S3EncryptionConfiguration {
     /// <p>The Amazon S3 object encryption type.</p>
     /// <p>To learn more about server-side encryption options in Amazon S3, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/serv-side-encryption.html">Protecting Data
     /// Using Server-Side Encryption</a> in the <i>Amazon S3 Developer
     /// Guide</i>.</p>
-    #[serde(rename = "ObjectEncryptionType")]
-    #[serde(default)]
     pub object_encryption_type: std::option::Option<crate::model::S3ObjectEncryptionType>,
     /// <p>The Amazon Resource Name (ARN) for a symmetric customer master key (CMK) in AWS Key
     /// Management Service (AWS KMS). Amazon S3 does not support asymmetric CMKs.</p>
@@ -662,8 +598,6 @@ pub struct S3EncryptionConfiguration {
     /// <p>
     /// <code>KmsKeyArn</code> is not required if you specify <code>SSE_S3</code> as the
     /// <code>ObjectEncryptionType</code>.</p>
-    #[serde(rename = "KmsKeyArn")]
-    #[serde(default)]
     pub kms_key_arn: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for S3EncryptionConfiguration {
@@ -764,7 +698,7 @@ impl std::convert::From<&str> for S3ObjectEncryptionType {
 impl std::str::FromStr for S3ObjectEncryptionType {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(S3ObjectEncryptionType::from(s))
     }
 }
@@ -781,15 +715,6 @@ impl S3ObjectEncryptionType {
 impl AsRef<str> for S3ObjectEncryptionType {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for S3ObjectEncryptionType {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -823,7 +748,7 @@ impl std::convert::From<&str> for ExportStatus {
 impl std::str::FromStr for ExportStatus {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(ExportStatus::from(s))
     }
 }
@@ -842,81 +767,41 @@ impl AsRef<str> for ExportStatus {
         self.as_str()
     }
 }
-impl<'de> serde::Deserialize<'de> for ExportStatus {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
-    }
-}
 
 /// <p>Information about an Amazon QLDB journal stream, including the Amazon Resource Name
 /// (ARN), stream name, creation time, current status, and the parameters of the original
 /// stream creation request.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct JournalKinesisStreamDescription {
     /// <p>The name of the ledger.</p>
-    #[serde(rename = "LedgerName")]
-    #[serde(default)]
     pub ledger_name: std::option::Option<std::string::String>,
     /// <p>The date and time, in epoch time format, when the QLDB journal stream was created.
     /// (Epoch time format is the number of seconds elapsed since 12:00:00 AM January 1, 1970
     /// UTC.)</p>
-    #[serde(rename = "CreationTime")]
-    #[serde(
-        deserialize_with = "crate::serde_util::stdoptionoptionsmithytypesinstant_epoch_seconds_deser"
-    )]
-    #[serde(default)]
     pub creation_time: std::option::Option<smithy_types::Instant>,
     /// <p>The inclusive start date and time from which to start streaming journal data.</p>
-    #[serde(rename = "InclusiveStartTime")]
-    #[serde(
-        deserialize_with = "crate::serde_util::stdoptionoptionsmithytypesinstant_epoch_seconds_deser"
-    )]
-    #[serde(default)]
     pub inclusive_start_time: std::option::Option<smithy_types::Instant>,
     /// <p>The exclusive date and time that specifies when the stream ends. If this parameter is
     /// blank, the stream runs indefinitely until you cancel it.</p>
-    #[serde(rename = "ExclusiveEndTime")]
-    #[serde(
-        deserialize_with = "crate::serde_util::stdoptionoptionsmithytypesinstant_epoch_seconds_deser"
-    )]
-    #[serde(default)]
     pub exclusive_end_time: std::option::Option<smithy_types::Instant>,
     /// <p>The Amazon Resource Name (ARN) of the IAM role that grants QLDB permissions for a
     /// journal stream to write data records to a Kinesis Data Streams resource.</p>
-    #[serde(rename = "RoleArn")]
-    #[serde(default)]
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>The UUID (represented in Base62-encoded text) of the QLDB journal stream.</p>
-    #[serde(rename = "StreamId")]
-    #[serde(default)]
     pub stream_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the QLDB journal stream.</p>
-    #[serde(rename = "Arn")]
-    #[serde(default)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The current state of the QLDB journal stream.</p>
-    #[serde(rename = "Status")]
-    #[serde(default)]
     pub status: std::option::Option<crate::model::StreamStatus>,
     /// <p>The configuration settings of the Amazon Kinesis Data Streams destination for a QLDB journal
     /// stream.</p>
-    #[serde(rename = "KinesisConfiguration")]
-    #[serde(default)]
     pub kinesis_configuration: std::option::Option<crate::model::KinesisConfiguration>,
     /// <p>The error message that describes the reason that a stream has a status of
     /// <code>IMPAIRED</code> or <code>FAILED</code>. This is not applicable to streams that
     /// have other status values.</p>
-    #[serde(rename = "ErrorCause")]
-    #[serde(default)]
     pub error_cause: std::option::Option<crate::model::ErrorCause>,
     /// <p>The user-defined name of the QLDB journal stream.</p>
-    #[serde(rename = "StreamName")]
-    #[serde(default)]
     pub stream_name: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for JournalKinesisStreamDescription {
@@ -1132,7 +1017,7 @@ impl std::convert::From<&str> for ErrorCause {
 impl std::str::FromStr for ErrorCause {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(ErrorCause::from(s))
     }
 }
@@ -1148,15 +1033,6 @@ impl ErrorCause {
 impl AsRef<str> for ErrorCause {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for ErrorCause {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -1194,7 +1070,7 @@ impl std::convert::From<&str> for StreamStatus {
 impl std::str::FromStr for StreamStatus {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(StreamStatus::from(s))
     }
 }
@@ -1215,23 +1091,12 @@ impl AsRef<str> for StreamStatus {
         self.as_str()
     }
 }
-impl<'de> serde::Deserialize<'de> for StreamStatus {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
-    }
-}
 
 /// <p>A structure that can contain a value in multiple encoding formats.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ValueHolder {
     /// <p>An Amazon Ion plaintext value contained in a <code>ValueHolder</code> structure.</p>
-    #[serde(rename = "IonText")]
-    #[serde(default)]
     pub ion_text: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ValueHolder {

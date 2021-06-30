@@ -108,8 +108,9 @@ impl GetDeviceRegistrationInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(output, "/GetDeviceRegistration").expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        write!(output, "/GetDeviceRegistration").expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -117,7 +118,7 @@ impl GetDeviceRegistrationInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("POST").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -293,8 +294,9 @@ impl SendHeartbeatInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(output, "/SendHeartbeat").expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        write!(output, "/SendHeartbeat").expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -302,7 +304,7 @@ impl SendHeartbeatInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("POST").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]

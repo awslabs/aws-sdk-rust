@@ -534,7 +534,7 @@ pub mod fluent_builders {
         pub async fn send(
             self,
         ) -> std::result::Result<
-            crate::output::CreateSMSSandboxPhoneNumberOutput,
+            crate::output::CreateSmsSandboxPhoneNumberOutput,
             smithy_http::result::SdkError<crate::error::CreateSMSSandboxPhoneNumberError>,
         >
         where
@@ -819,7 +819,7 @@ pub mod fluent_builders {
         pub async fn send(
             self,
         ) -> std::result::Result<
-            crate::output::DeleteSMSSandboxPhoneNumberOutput,
+            crate::output::DeleteSmsSandboxPhoneNumberOutput,
             smithy_http::result::SdkError<crate::error::DeleteSMSSandboxPhoneNumberError>,
         >
         where
@@ -986,7 +986,7 @@ pub mod fluent_builders {
         pub async fn send(
             self,
         ) -> std::result::Result<
-            crate::output::GetSMSAttributesOutput,
+            crate::output::GetSmsAttributesOutput,
             smithy_http::result::SdkError<crate::error::GetSMSAttributesError>,
         >
         where
@@ -1033,7 +1033,7 @@ pub mod fluent_builders {
         pub async fn send(
             self,
         ) -> std::result::Result<
-            crate::output::GetSMSSandboxAccountStatusOutput,
+            crate::output::GetSmsSandboxAccountStatusOutput,
             smithy_http::result::SdkError<crate::error::GetSMSSandboxAccountStatusError>,
         >
         where
@@ -1339,7 +1339,7 @@ pub mod fluent_builders {
         pub async fn send(
             self,
         ) -> std::result::Result<
-            crate::output::ListSMSSandboxPhoneNumbersOutput,
+            crate::output::ListSmsSandboxPhoneNumbersOutput,
             smithy_http::result::SdkError<crate::error::ListSMSSandboxPhoneNumbersError>,
         >
         where
@@ -2092,7 +2092,7 @@ pub mod fluent_builders {
         pub async fn send(
             self,
         ) -> std::result::Result<
-            crate::output::SetSMSAttributesOutput,
+            crate::output::SetSmsAttributesOutput,
             smithy_http::result::SdkError<crate::error::SetSMSAttributesError>,
         >
         where
@@ -2837,7 +2837,7 @@ pub mod fluent_builders {
         pub async fn send(
             self,
         ) -> std::result::Result<
-            crate::output::VerifySMSSandboxPhoneNumberOutput,
+            crate::output::VerifySmsSandboxPhoneNumberOutput,
             smithy_http::result::SdkError<crate::error::VerifySMSSandboxPhoneNumberError>,
         >
         where

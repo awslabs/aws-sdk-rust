@@ -3,6 +3,7 @@
 #![allow(clippy::large_enum_variant)]
 #![allow(clippy::wrong_self_convention)]
 #![allow(clippy::should_implement_trait)]
+#![allow(clippy::blacklisted_name)]
 //! <fullname>AWS Identity and Access Management</fullname>
 //! <p>AWS Identity and Access Management (IAM) is a web service for securely controlling
 //! access to AWS services. With IAM, you can centrally manage users, security credentials

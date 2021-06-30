@@ -341,10 +341,10 @@ pub fn deser_structure_no_such_hosted_zone_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_not_authorized_error_xml_err(
+pub fn deser_structure_not_authorized_exception_xml_err(
     inp: &[u8],
-    mut builder: crate::error::not_authorized_error::Builder,
-) -> Result<crate::error::not_authorized_error::Builder, smithy_xml::decode::XmlError> {
+    mut builder: crate::error::not_authorized_exception::Builder,
+) -> Result<crate::error::not_authorized_exception::Builder, smithy_xml::decode::XmlError> {
     use std::convert::TryFrom;
     let mut document = smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]
@@ -575,10 +575,10 @@ pub fn deser_operation_change_resource_record_sets(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_throttling_error_xml_err(
+pub fn deser_structure_throttling_exception_xml_err(
     inp: &[u8],
-    mut builder: crate::error::throttling_error::Builder,
-) -> Result<crate::error::throttling_error::Builder, smithy_xml::decode::XmlError> {
+    mut builder: crate::error::throttling_exception::Builder,
+) -> Result<crate::error::throttling_exception::Builder, smithy_xml::decode::XmlError> {
     use std::convert::TryFrom;
     let mut document = smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]
@@ -5272,9 +5272,9 @@ pub fn deser_structure_delegation_set(
 
 pub fn deser_structure_vpc(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::model::VPC, smithy_xml::decode::XmlError> {
+) -> Result<crate::model::Vpc, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
-    let mut builder = crate::model::VPC::builder();
+    let mut builder = crate::model::Vpc::builder();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("VPCRegion") /* VPCRegion com.amazonaws.route53#VPC$VPCRegion */ =>  {
@@ -5896,9 +5896,9 @@ pub fn deser_list_checker_ip_ranges(
 
 pub fn deser_structure_dnssec_status(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::model::DNSSECStatus, smithy_xml::decode::XmlError> {
+) -> Result<crate::model::DnssecStatus, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
-    let mut builder = crate::model::DNSSECStatus::builder();
+    let mut builder = crate::model::DnssecStatus::builder();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("ServeSignature") /* ServeSignature com.amazonaws.route53#DNSSECStatus$ServeSignature */ =>  {
@@ -6064,7 +6064,7 @@ pub fn deser_list_health_check_observations(
 
 pub fn deser_list_vp_cs(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
-) -> Result<std::vec::Vec<crate::model::VPC>, smithy_xml::decode::XmlError> {
+) -> Result<std::vec::Vec<crate::model::Vpc>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {

@@ -6,10 +6,10 @@ pub fn parse_generic_error(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_invalid_input_error_xml_err(
+pub fn deser_structure_invalid_input_exception_xml_err(
     inp: &[u8],
-    mut builder: crate::error::invalid_input_error::Builder,
-) -> Result<crate::error::invalid_input_error::Builder, smithy_xml::decode::XmlError> {
+    mut builder: crate::error::invalid_input_exception::Builder,
+) -> Result<crate::error::invalid_input_exception::Builder, smithy_xml::decode::XmlError> {
     use std::convert::TryFrom;
     let mut document = smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]
@@ -36,10 +36,10 @@ pub fn deser_structure_invalid_input_error_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_limit_exceeded_error_xml_err(
+pub fn deser_structure_limit_exceeded_exception_xml_err(
     inp: &[u8],
-    mut builder: crate::error::limit_exceeded_error::Builder,
-) -> Result<crate::error::limit_exceeded_error::Builder, smithy_xml::decode::XmlError> {
+    mut builder: crate::error::limit_exceeded_exception::Builder,
+) -> Result<crate::error::limit_exceeded_exception::Builder, smithy_xml::decode::XmlError> {
     use std::convert::TryFrom;
     let mut document = smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]
@@ -66,10 +66,10 @@ pub fn deser_structure_limit_exceeded_error_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_no_such_entity_error_xml_err(
+pub fn deser_structure_no_such_entity_exception_xml_err(
     inp: &[u8],
-    mut builder: crate::error::no_such_entity_error::Builder,
-) -> Result<crate::error::no_such_entity_error::Builder, smithy_xml::decode::XmlError> {
+    mut builder: crate::error::no_such_entity_exception::Builder,
+) -> Result<crate::error::no_such_entity_exception::Builder, smithy_xml::decode::XmlError> {
     use std::convert::TryFrom;
     let mut document = smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]
@@ -96,10 +96,10 @@ pub fn deser_structure_no_such_entity_error_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_service_failure_error_xml_err(
+pub fn deser_structure_service_failure_exception_xml_err(
     inp: &[u8],
-    mut builder: crate::error::service_failure_error::Builder,
-) -> Result<crate::error::service_failure_error::Builder, smithy_xml::decode::XmlError> {
+    mut builder: crate::error::service_failure_exception::Builder,
+) -> Result<crate::error::service_failure_exception::Builder, smithy_xml::decode::XmlError> {
     use std::convert::TryFrom;
     let mut document = smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]
@@ -126,10 +126,10 @@ pub fn deser_structure_service_failure_error_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_entity_already_exists_error_xml_err(
+pub fn deser_structure_entity_already_exists_exception_xml_err(
     inp: &[u8],
-    mut builder: crate::error::entity_already_exists_error::Builder,
-) -> Result<crate::error::entity_already_exists_error::Builder, smithy_xml::decode::XmlError> {
+    mut builder: crate::error::entity_already_exists_exception::Builder,
+) -> Result<crate::error::entity_already_exists_exception::Builder, smithy_xml::decode::XmlError> {
     use std::convert::TryFrom;
     let mut document = smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]
@@ -156,10 +156,10 @@ pub fn deser_structure_entity_already_exists_error_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_unmodifiable_entity_error_xml_err(
+pub fn deser_structure_unmodifiable_entity_exception_xml_err(
     inp: &[u8],
-    mut builder: crate::error::unmodifiable_entity_error::Builder,
-) -> Result<crate::error::unmodifiable_entity_error::Builder, smithy_xml::decode::XmlError> {
+    mut builder: crate::error::unmodifiable_entity_exception::Builder,
+) -> Result<crate::error::unmodifiable_entity_exception::Builder, smithy_xml::decode::XmlError> {
     use std::convert::TryFrom;
     let mut document = smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]
@@ -186,10 +186,10 @@ pub fn deser_structure_unmodifiable_entity_error_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_policy_not_attachable_error_xml_err(
+pub fn deser_structure_policy_not_attachable_exception_xml_err(
     inp: &[u8],
-    mut builder: crate::error::policy_not_attachable_error::Builder,
-) -> Result<crate::error::policy_not_attachable_error::Builder, smithy_xml::decode::XmlError> {
+    mut builder: crate::error::policy_not_attachable_exception::Builder,
+) -> Result<crate::error::policy_not_attachable_exception::Builder, smithy_xml::decode::XmlError> {
     use std::convert::TryFrom;
     let mut document = smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]
@@ -216,11 +216,11 @@ pub fn deser_structure_policy_not_attachable_error_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_entity_temporarily_unmodifiable_error_xml_err(
+pub fn deser_structure_entity_temporarily_unmodifiable_exception_xml_err(
     inp: &[u8],
-    mut builder: crate::error::entity_temporarily_unmodifiable_error::Builder,
+    mut builder: crate::error::entity_temporarily_unmodifiable_exception::Builder,
 ) -> Result<
-    crate::error::entity_temporarily_unmodifiable_error::Builder,
+    crate::error::entity_temporarily_unmodifiable_exception::Builder,
     smithy_xml::decode::XmlError,
 > {
     use std::convert::TryFrom;
@@ -249,10 +249,10 @@ pub fn deser_structure_entity_temporarily_unmodifiable_error_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_invalid_user_type_error_xml_err(
+pub fn deser_structure_invalid_user_type_exception_xml_err(
     inp: &[u8],
-    mut builder: crate::error::invalid_user_type_error::Builder,
-) -> Result<crate::error::invalid_user_type_error::Builder, smithy_xml::decode::XmlError> {
+    mut builder: crate::error::invalid_user_type_exception::Builder,
+) -> Result<crate::error::invalid_user_type_exception::Builder, smithy_xml::decode::XmlError> {
     use std::convert::TryFrom;
     let mut document = smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]
@@ -279,10 +279,11 @@ pub fn deser_structure_invalid_user_type_error_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_password_policy_violation_error_xml_err(
+pub fn deser_structure_password_policy_violation_exception_xml_err(
     inp: &[u8],
-    mut builder: crate::error::password_policy_violation_error::Builder,
-) -> Result<crate::error::password_policy_violation_error::Builder, smithy_xml::decode::XmlError> {
+    mut builder: crate::error::password_policy_violation_exception::Builder,
+) -> Result<crate::error::password_policy_violation_exception::Builder, smithy_xml::decode::XmlError>
+{
     use std::convert::TryFrom;
     let mut document = smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]
@@ -405,10 +406,11 @@ pub fn deser_operation_create_group(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_concurrent_modification_error_xml_err(
+pub fn deser_structure_concurrent_modification_exception_xml_err(
     inp: &[u8],
-    mut builder: crate::error::concurrent_modification_error::Builder,
-) -> Result<crate::error::concurrent_modification_error::Builder, smithy_xml::decode::XmlError> {
+    mut builder: crate::error::concurrent_modification_exception::Builder,
+) -> Result<crate::error::concurrent_modification_exception::Builder, smithy_xml::decode::XmlError>
+{
     use std::convert::TryFrom;
     let mut document = smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]
@@ -595,10 +597,11 @@ pub fn deser_operation_create_open_id_connect_provider(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_malformed_policy_document_error_xml_err(
+pub fn deser_structure_malformed_policy_document_exception_xml_err(
     inp: &[u8],
-    mut builder: crate::error::malformed_policy_document_error::Builder,
-) -> Result<crate::error::malformed_policy_document_error::Builder, smithy_xml::decode::XmlError> {
+    mut builder: crate::error::malformed_policy_document_exception::Builder,
+) -> Result<crate::error::malformed_policy_document_exception::Builder, smithy_xml::decode::XmlError>
+{
     use std::convert::TryFrom;
     let mut document = smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]
@@ -879,10 +882,10 @@ pub fn deser_operation_create_service_linked_role(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_service_not_supported_error_xml_err(
+pub fn deser_structure_service_not_supported_exception_xml_err(
     inp: &[u8],
-    mut builder: crate::error::service_not_supported_error::Builder,
-) -> Result<crate::error::service_not_supported_error::Builder, smithy_xml::decode::XmlError> {
+    mut builder: crate::error::service_not_supported_exception::Builder,
+) -> Result<crate::error::service_not_supported_exception::Builder, smithy_xml::decode::XmlError> {
     use std::convert::TryFrom;
     let mut document = smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]
@@ -1057,10 +1060,10 @@ pub fn deser_operation_create_virtual_mfa_device(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_delete_conflict_error_xml_err(
+pub fn deser_structure_delete_conflict_exception_xml_err(
     inp: &[u8],
-    mut builder: crate::error::delete_conflict_error::Builder,
-) -> Result<crate::error::delete_conflict_error::Builder, smithy_xml::decode::XmlError> {
+    mut builder: crate::error::delete_conflict_exception::Builder,
+) -> Result<crate::error::delete_conflict_exception::Builder, smithy_xml::decode::XmlError> {
     use std::convert::TryFrom;
     let mut document = smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]
@@ -1139,11 +1142,13 @@ pub fn deser_operation_delete_service_linked_role(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_invalid_authentication_code_error_xml_err(
+pub fn deser_structure_invalid_authentication_code_exception_xml_err(
     inp: &[u8],
-    mut builder: crate::error::invalid_authentication_code_error::Builder,
-) -> Result<crate::error::invalid_authentication_code_error::Builder, smithy_xml::decode::XmlError>
-{
+    mut builder: crate::error::invalid_authentication_code_exception::Builder,
+) -> Result<
+    crate::error::invalid_authentication_code_exception::Builder,
+    smithy_xml::decode::XmlError,
+> {
     use std::convert::TryFrom;
     let mut document = smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]
@@ -1236,11 +1241,11 @@ pub fn deser_operation_generate_credential_report(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_report_generation_limit_exceeded_error_xml_err(
+pub fn deser_structure_report_generation_limit_exceeded_exception_xml_err(
     inp: &[u8],
-    mut builder: crate::error::report_generation_limit_exceeded_error::Builder,
+    mut builder: crate::error::report_generation_limit_exceeded_exception::Builder,
 ) -> Result<
-    crate::error::report_generation_limit_exceeded_error::Builder,
+    crate::error::report_generation_limit_exceeded_exception::Builder,
     smithy_xml::decode::XmlError,
 > {
     use std::convert::TryFrom;
@@ -1747,10 +1752,11 @@ pub fn deser_operation_get_context_keys_for_principal_policy(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_credential_report_expired_error_xml_err(
+pub fn deser_structure_credential_report_expired_exception_xml_err(
     inp: &[u8],
-    mut builder: crate::error::credential_report_expired_error::Builder,
-) -> Result<crate::error::credential_report_expired_error::Builder, smithy_xml::decode::XmlError> {
+    mut builder: crate::error::credential_report_expired_exception::Builder,
+) -> Result<crate::error::credential_report_expired_exception::Builder, smithy_xml::decode::XmlError>
+{
     use std::convert::TryFrom;
     let mut document = smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]
@@ -1777,11 +1783,13 @@ pub fn deser_structure_credential_report_expired_error_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_credential_report_not_present_error_xml_err(
+pub fn deser_structure_credential_report_not_present_exception_xml_err(
     inp: &[u8],
-    mut builder: crate::error::credential_report_not_present_error::Builder,
-) -> Result<crate::error::credential_report_not_present_error::Builder, smithy_xml::decode::XmlError>
-{
+    mut builder: crate::error::credential_report_not_present_exception::Builder,
+) -> Result<
+    crate::error::credential_report_not_present_exception::Builder,
+    smithy_xml::decode::XmlError,
+> {
     use std::convert::TryFrom;
     let mut document = smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]
@@ -1808,11 +1816,13 @@ pub fn deser_structure_credential_report_not_present_error_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_credential_report_not_ready_error_xml_err(
+pub fn deser_structure_credential_report_not_ready_exception_xml_err(
     inp: &[u8],
-    mut builder: crate::error::credential_report_not_ready_error::Builder,
-) -> Result<crate::error::credential_report_not_ready_error::Builder, smithy_xml::decode::XmlError>
-{
+    mut builder: crate::error::credential_report_not_ready_exception::Builder,
+) -> Result<
+    crate::error::credential_report_not_ready_exception::Builder,
+    smithy_xml::decode::XmlError,
+> {
     use std::convert::TryFrom;
     let mut document = smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]
@@ -3139,11 +3149,11 @@ pub fn deser_operation_get_service_linked_role_deletion_status(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_unrecognized_public_key_encoding_error_xml_err(
+pub fn deser_structure_unrecognized_public_key_encoding_exception_xml_err(
     inp: &[u8],
-    mut builder: crate::error::unrecognized_public_key_encoding_error::Builder,
+    mut builder: crate::error::unrecognized_public_key_encoding_exception::Builder,
 ) -> Result<
-    crate::error::unrecognized_public_key_encoding_error::Builder,
+    crate::error::unrecognized_public_key_encoding_exception::Builder,
     smithy_xml::decode::XmlError,
 > {
     use std::convert::TryFrom;
@@ -5968,10 +5978,10 @@ pub fn deser_operation_reset_service_specific_credential(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_policy_evaluation_error_xml_err(
+pub fn deser_structure_policy_evaluation_exception_xml_err(
     inp: &[u8],
-    mut builder: crate::error::policy_evaluation_error::Builder,
-) -> Result<crate::error::policy_evaluation_error::Builder, smithy_xml::decode::XmlError> {
+    mut builder: crate::error::policy_evaluation_exception::Builder,
+) -> Result<crate::error::policy_evaluation_exception::Builder, smithy_xml::decode::XmlError> {
     use std::convert::TryFrom;
     let mut document = smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]
@@ -6252,10 +6262,10 @@ pub fn deser_operation_update_saml_provider(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_key_pair_mismatch_error_xml_err(
+pub fn deser_structure_key_pair_mismatch_exception_xml_err(
     inp: &[u8],
-    mut builder: crate::error::key_pair_mismatch_error::Builder,
-) -> Result<crate::error::key_pair_mismatch_error::Builder, smithy_xml::decode::XmlError> {
+    mut builder: crate::error::key_pair_mismatch_exception::Builder,
+) -> Result<crate::error::key_pair_mismatch_exception::Builder, smithy_xml::decode::XmlError> {
     use std::convert::TryFrom;
     let mut document = smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]
@@ -6282,10 +6292,10 @@ pub fn deser_structure_key_pair_mismatch_error_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_malformed_certificate_error_xml_err(
+pub fn deser_structure_malformed_certificate_exception_xml_err(
     inp: &[u8],
-    mut builder: crate::error::malformed_certificate_error::Builder,
-) -> Result<crate::error::malformed_certificate_error::Builder, smithy_xml::decode::XmlError> {
+    mut builder: crate::error::malformed_certificate_exception::Builder,
+) -> Result<crate::error::malformed_certificate_exception::Builder, smithy_xml::decode::XmlError> {
     use std::convert::TryFrom;
     let mut document = smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]
@@ -6371,10 +6381,10 @@ pub fn deser_operation_upload_server_certificate(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_duplicate_certificate_error_xml_err(
+pub fn deser_structure_duplicate_certificate_exception_xml_err(
     inp: &[u8],
-    mut builder: crate::error::duplicate_certificate_error::Builder,
-) -> Result<crate::error::duplicate_certificate_error::Builder, smithy_xml::decode::XmlError> {
+    mut builder: crate::error::duplicate_certificate_exception::Builder,
+) -> Result<crate::error::duplicate_certificate_exception::Builder, smithy_xml::decode::XmlError> {
     use std::convert::TryFrom;
     let mut document = smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]
@@ -6401,10 +6411,10 @@ pub fn deser_structure_duplicate_certificate_error_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_invalid_certificate_error_xml_err(
+pub fn deser_structure_invalid_certificate_exception_xml_err(
     inp: &[u8],
-    mut builder: crate::error::invalid_certificate_error::Builder,
-) -> Result<crate::error::invalid_certificate_error::Builder, smithy_xml::decode::XmlError> {
+    mut builder: crate::error::invalid_certificate_exception::Builder,
+) -> Result<crate::error::invalid_certificate_exception::Builder, smithy_xml::decode::XmlError> {
     use std::convert::TryFrom;
     let mut document = smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]
@@ -6480,10 +6490,11 @@ pub fn deser_operation_upload_signing_certificate(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_duplicate_ssh_public_key_error_xml_err(
+pub fn deser_structure_duplicate_ssh_public_key_exception_xml_err(
     inp: &[u8],
-    mut builder: crate::error::duplicate_ssh_public_key_error::Builder,
-) -> Result<crate::error::duplicate_ssh_public_key_error::Builder, smithy_xml::decode::XmlError> {
+    mut builder: crate::error::duplicate_ssh_public_key_exception::Builder,
+) -> Result<crate::error::duplicate_ssh_public_key_exception::Builder, smithy_xml::decode::XmlError>
+{
     use std::convert::TryFrom;
     let mut document = smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]
@@ -6510,10 +6521,10 @@ pub fn deser_structure_duplicate_ssh_public_key_error_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_invalid_public_key_error_xml_err(
+pub fn deser_structure_invalid_public_key_exception_xml_err(
     inp: &[u8],
-    mut builder: crate::error::invalid_public_key_error::Builder,
-) -> Result<crate::error::invalid_public_key_error::Builder, smithy_xml::decode::XmlError> {
+    mut builder: crate::error::invalid_public_key_exception::Builder,
+) -> Result<crate::error::invalid_public_key_exception::Builder, smithy_xml::decode::XmlError> {
     use std::convert::TryFrom;
     let mut document = smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]
@@ -7538,9 +7549,9 @@ pub fn deser_structure_user(
 
 pub fn deser_structure_virtual_mfa_device(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::model::VirtualMFADevice, smithy_xml::decode::XmlError> {
+) -> Result<crate::model::VirtualMfaDevice, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
-    let mut builder = crate::model::VirtualMFADevice::builder();
+    let mut builder = crate::model::VirtualMfaDevice::builder();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("SerialNumber") /* SerialNumber com.amazonaws.iam#VirtualMFADevice$SerialNumber */ =>  {
@@ -8220,9 +8231,9 @@ pub fn deser_structure_deletion_task_failure_reason_type(
 
 pub fn deser_structure_ssh_public_key(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::model::SSHPublicKey, smithy_xml::decode::XmlError> {
+) -> Result<crate::model::SshPublicKey, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
-    let mut builder = crate::model::SSHPublicKey::builder();
+    let mut builder = crate::model::SshPublicKey::builder();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("UserName") /* UserName com.amazonaws.iam#SSHPublicKey$UserName */ =>  {
@@ -8490,7 +8501,7 @@ pub fn deser_list_instance_profile_list_type(
 
 pub fn deser_list_mfa_device_list_type(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
-) -> Result<std::vec::Vec<crate::model::MFADevice>, smithy_xml::decode::XmlError> {
+) -> Result<std::vec::Vec<crate::model::MfaDevice>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
@@ -8509,7 +8520,7 @@ pub fn deser_list_mfa_device_list_type(
 
 pub fn deser_list_open_id_connect_provider_list_type(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
-) -> Result<std::vec::Vec<crate::model::OpenIDConnectProviderListEntry>, smithy_xml::decode::XmlError>
+) -> Result<std::vec::Vec<crate::model::OpenIdConnectProviderListEntry>, smithy_xml::decode::XmlError>
 {
     let mut out = std::vec::Vec::new();
     while let Some(mut tag) = decoder.next_tag() {
@@ -8608,7 +8619,7 @@ pub fn deser_list_role_list_type(
 
 pub fn deser_list_saml_provider_list_type(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
-) -> Result<std::vec::Vec<crate::model::SAMLProviderListEntry>, smithy_xml::decode::XmlError> {
+) -> Result<std::vec::Vec<crate::model::SamlProviderListEntry>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
@@ -8687,7 +8698,7 @@ pub fn deser_list_certificate_list_type(
 
 pub fn deser_list_ssh_public_key_list_type(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
-) -> Result<std::vec::Vec<crate::model::SSHPublicKeyMetadata>, smithy_xml::decode::XmlError> {
+) -> Result<std::vec::Vec<crate::model::SshPublicKeyMetadata>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
@@ -8706,7 +8717,7 @@ pub fn deser_list_ssh_public_key_list_type(
 
 pub fn deser_list_virtual_mfa_device_list_type(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
-) -> Result<std::vec::Vec<crate::model::VirtualMFADevice>, smithy_xml::decode::XmlError> {
+) -> Result<std::vec::Vec<crate::model::VirtualMfaDevice>, smithy_xml::decode::XmlError> {
     let mut out = std::vec::Vec::new();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
@@ -10113,9 +10124,9 @@ pub fn deser_structure_policy_role(
 
 pub fn deser_structure_mfa_device(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::model::MFADevice, smithy_xml::decode::XmlError> {
+) -> Result<crate::model::MfaDevice, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
-    let mut builder = crate::model::MFADevice::builder();
+    let mut builder = crate::model::MfaDevice::builder();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("UserName") /* UserName com.amazonaws.iam#MFADevice$UserName */ =>  {
@@ -10166,9 +10177,9 @@ pub fn deser_structure_mfa_device(
 
 pub fn deser_structure_open_id_connect_provider_list_entry(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::model::OpenIDConnectProviderListEntry, smithy_xml::decode::XmlError> {
+) -> Result<crate::model::OpenIdConnectProviderListEntry, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
-    let mut builder = crate::model::OpenIDConnectProviderListEntry::builder();
+    let mut builder = crate::model::OpenIdConnectProviderListEntry::builder();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Arn") /* Arn com.amazonaws.iam#OpenIDConnectProviderListEntry$Arn */ =>  {
@@ -10228,9 +10239,9 @@ pub fn deser_structure_list_policies_granting_service_access_entry(
 
 pub fn deser_structure_saml_provider_list_entry(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::model::SAMLProviderListEntry, smithy_xml::decode::XmlError> {
+) -> Result<crate::model::SamlProviderListEntry, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
-    let mut builder = crate::model::SAMLProviderListEntry::builder();
+    let mut builder = crate::model::SamlProviderListEntry::builder();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Arn") /* Arn com.amazonaws.iam#SAMLProviderListEntry$Arn */ =>  {
@@ -10375,9 +10386,9 @@ pub fn deser_structure_service_specific_credential_metadata(
 
 pub fn deser_structure_ssh_public_key_metadata(
     decoder: &mut smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::model::SSHPublicKeyMetadata, smithy_xml::decode::XmlError> {
+) -> Result<crate::model::SshPublicKeyMetadata, smithy_xml::decode::XmlError> {
     #[allow(unused_mut)]
-    let mut builder = crate::model::SSHPublicKeyMetadata::builder();
+    let mut builder = crate::model::SshPublicKeyMetadata::builder();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("UserName") /* UserName com.amazonaws.iam#SSHPublicKeyMetadata$UserName */ =>  {

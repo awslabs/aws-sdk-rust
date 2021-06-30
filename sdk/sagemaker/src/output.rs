@@ -1381,28 +1381,28 @@ impl StopCompilationJobOutput {
 
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct StopAutoMLJobOutput {}
-impl std::fmt::Debug for StopAutoMLJobOutput {
+pub struct StopAutoMlJobOutput {}
+impl std::fmt::Debug for StopAutoMlJobOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StopAutoMLJobOutput");
+        let mut formatter = f.debug_struct("StopAutoMlJobOutput");
         formatter.finish()
     }
 }
-/// See [`StopAutoMLJobOutput`](crate::output::StopAutoMLJobOutput)
+/// See [`StopAutoMlJobOutput`](crate::output::StopAutoMlJobOutput)
 pub mod stop_auto_ml_job_output {
-    /// A builder for [`StopAutoMLJobOutput`](crate::output::StopAutoMLJobOutput)
+    /// A builder for [`StopAutoMlJobOutput`](crate::output::StopAutoMlJobOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`StopAutoMLJobOutput`](crate::output::StopAutoMLJobOutput)
-        pub fn build(self) -> crate::output::StopAutoMLJobOutput {
-            crate::output::StopAutoMLJobOutput {}
+        /// Consumes the builder and constructs a [`StopAutoMlJobOutput`](crate::output::StopAutoMlJobOutput)
+        pub fn build(self) -> crate::output::StopAutoMlJobOutput {
+            crate::output::StopAutoMlJobOutput {}
         }
     }
 }
-impl StopAutoMLJobOutput {
-    /// Creates a new builder-style object to manufacture [`StopAutoMLJobOutput`](crate::output::StopAutoMLJobOutput)
+impl StopAutoMlJobOutput {
+    /// Creates a new builder-style object to manufacture [`StopAutoMlJobOutput`](crate::output::StopAutoMlJobOutput)
     pub fn builder() -> crate::output::stop_auto_ml_job_output::Builder {
         crate::output::stop_auto_ml_job_output::Builder::default()
     }
@@ -5023,32 +5023,32 @@ impl ListCodeRepositoriesOutput {
 
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct ListCandidatesForAutoMLJobOutput {
+pub struct ListCandidatesForAutoMlJobOutput {
     /// <p>Summaries about the <code>AutoMLCandidates</code>.</p>
-    pub candidates: std::option::Option<std::vec::Vec<crate::model::AutoMLCandidate>>,
+    pub candidates: std::option::Option<std::vec::Vec<crate::model::AutoMlCandidate>>,
     /// <p>If the previous response was truncated, you receive this token. Use it in your next
     /// request to receive the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for ListCandidatesForAutoMLJobOutput {
+impl std::fmt::Debug for ListCandidatesForAutoMlJobOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListCandidatesForAutoMLJobOutput");
+        let mut formatter = f.debug_struct("ListCandidatesForAutoMlJobOutput");
         formatter.field("candidates", &self.candidates);
         formatter.field("next_token", &self.next_token);
         formatter.finish()
     }
 }
-/// See [`ListCandidatesForAutoMLJobOutput`](crate::output::ListCandidatesForAutoMLJobOutput)
+/// See [`ListCandidatesForAutoMlJobOutput`](crate::output::ListCandidatesForAutoMlJobOutput)
 pub mod list_candidates_for_auto_ml_job_output {
-    /// A builder for [`ListCandidatesForAutoMLJobOutput`](crate::output::ListCandidatesForAutoMLJobOutput)
+    /// A builder for [`ListCandidatesForAutoMlJobOutput`](crate::output::ListCandidatesForAutoMlJobOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) candidates: std::option::Option<std::vec::Vec<crate::model::AutoMLCandidate>>,
+        pub(crate) candidates: std::option::Option<std::vec::Vec<crate::model::AutoMlCandidate>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn candidates(mut self, input: impl Into<crate::model::AutoMLCandidate>) -> Self {
+        pub fn candidates(mut self, input: impl Into<crate::model::AutoMlCandidate>) -> Self {
             let mut v = self.candidates.unwrap_or_default();
             v.push(input.into());
             self.candidates = Some(v);
@@ -5056,7 +5056,7 @@ pub mod list_candidates_for_auto_ml_job_output {
         }
         pub fn set_candidates(
             mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::AutoMLCandidate>>,
+            input: std::option::Option<std::vec::Vec<crate::model::AutoMlCandidate>>,
         ) -> Self {
             self.candidates = input;
             self
@@ -5071,17 +5071,17 @@ pub mod list_candidates_for_auto_ml_job_output {
             self.next_token = input;
             self
         }
-        /// Consumes the builder and constructs a [`ListCandidatesForAutoMLJobOutput`](crate::output::ListCandidatesForAutoMLJobOutput)
-        pub fn build(self) -> crate::output::ListCandidatesForAutoMLJobOutput {
-            crate::output::ListCandidatesForAutoMLJobOutput {
+        /// Consumes the builder and constructs a [`ListCandidatesForAutoMlJobOutput`](crate::output::ListCandidatesForAutoMlJobOutput)
+        pub fn build(self) -> crate::output::ListCandidatesForAutoMlJobOutput {
+            crate::output::ListCandidatesForAutoMlJobOutput {
                 candidates: self.candidates,
                 next_token: self.next_token,
             }
         }
     }
 }
-impl ListCandidatesForAutoMLJobOutput {
-    /// Creates a new builder-style object to manufacture [`ListCandidatesForAutoMLJobOutput`](crate::output::ListCandidatesForAutoMLJobOutput)
+impl ListCandidatesForAutoMlJobOutput {
+    /// Creates a new builder-style object to manufacture [`ListCandidatesForAutoMlJobOutput`](crate::output::ListCandidatesForAutoMlJobOutput)
     pub fn builder() -> crate::output::list_candidates_for_auto_ml_job_output::Builder {
         crate::output::list_candidates_for_auto_ml_job_output::Builder::default()
     }
@@ -5089,35 +5089,35 @@ impl ListCandidatesForAutoMLJobOutput {
 
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct ListAutoMLJobsOutput {
+pub struct ListAutoMlJobsOutput {
     /// <p>Returns a summary list of jobs.</p>
-    pub auto_ml_job_summaries: std::option::Option<std::vec::Vec<crate::model::AutoMLJobSummary>>,
+    pub auto_ml_job_summaries: std::option::Option<std::vec::Vec<crate::model::AutoMlJobSummary>>,
     /// <p>If the previous response was truncated, you receive this token. Use it in your next
     /// request to receive the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for ListAutoMLJobsOutput {
+impl std::fmt::Debug for ListAutoMlJobsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListAutoMLJobsOutput");
+        let mut formatter = f.debug_struct("ListAutoMlJobsOutput");
         formatter.field("auto_ml_job_summaries", &self.auto_ml_job_summaries);
         formatter.field("next_token", &self.next_token);
         formatter.finish()
     }
 }
-/// See [`ListAutoMLJobsOutput`](crate::output::ListAutoMLJobsOutput)
+/// See [`ListAutoMlJobsOutput`](crate::output::ListAutoMlJobsOutput)
 pub mod list_auto_ml_jobs_output {
-    /// A builder for [`ListAutoMLJobsOutput`](crate::output::ListAutoMLJobsOutput)
+    /// A builder for [`ListAutoMlJobsOutput`](crate::output::ListAutoMlJobsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) auto_ml_job_summaries:
-            std::option::Option<std::vec::Vec<crate::model::AutoMLJobSummary>>,
+            std::option::Option<std::vec::Vec<crate::model::AutoMlJobSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
         pub fn auto_ml_job_summaries(
             mut self,
-            input: impl Into<crate::model::AutoMLJobSummary>,
+            input: impl Into<crate::model::AutoMlJobSummary>,
         ) -> Self {
             let mut v = self.auto_ml_job_summaries.unwrap_or_default();
             v.push(input.into());
@@ -5126,7 +5126,7 @@ pub mod list_auto_ml_jobs_output {
         }
         pub fn set_auto_ml_job_summaries(
             mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::AutoMLJobSummary>>,
+            input: std::option::Option<std::vec::Vec<crate::model::AutoMlJobSummary>>,
         ) -> Self {
             self.auto_ml_job_summaries = input;
             self
@@ -5141,17 +5141,17 @@ pub mod list_auto_ml_jobs_output {
             self.next_token = input;
             self
         }
-        /// Consumes the builder and constructs a [`ListAutoMLJobsOutput`](crate::output::ListAutoMLJobsOutput)
-        pub fn build(self) -> crate::output::ListAutoMLJobsOutput {
-            crate::output::ListAutoMLJobsOutput {
+        /// Consumes the builder and constructs a [`ListAutoMlJobsOutput`](crate::output::ListAutoMlJobsOutput)
+        pub fn build(self) -> crate::output::ListAutoMlJobsOutput {
+            crate::output::ListAutoMlJobsOutput {
                 auto_ml_job_summaries: self.auto_ml_job_summaries,
                 next_token: self.next_token,
             }
         }
     }
 }
-impl ListAutoMLJobsOutput {
-    /// Creates a new builder-style object to manufacture [`ListAutoMLJobsOutput`](crate::output::ListAutoMLJobsOutput)
+impl ListAutoMlJobsOutput {
+    /// Creates a new builder-style object to manufacture [`ListAutoMlJobsOutput`](crate::output::ListAutoMlJobsOutput)
     pub fn builder() -> crate::output::list_auto_ml_jobs_output::Builder {
         crate::output::list_auto_ml_jobs_output::Builder::default()
     }
@@ -16484,24 +16484,24 @@ impl DescribeCodeRepositoryOutput {
 
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct DescribeAutoMLJobOutput {
+pub struct DescribeAutoMlJobOutput {
     /// <p>Returns the name of the AutoML job.</p>
     pub auto_ml_job_name: std::option::Option<std::string::String>,
     /// <p>Returns the ARN of the AutoML job.</p>
     pub auto_ml_job_arn: std::option::Option<std::string::String>,
     /// <p>Returns the input data configuration for the AutoML job..</p>
-    pub input_data_config: std::option::Option<std::vec::Vec<crate::model::AutoMLChannel>>,
+    pub input_data_config: std::option::Option<std::vec::Vec<crate::model::AutoMlChannel>>,
     /// <p>Returns the job's output data config.</p>
-    pub output_data_config: std::option::Option<crate::model::AutoMLOutputDataConfig>,
+    pub output_data_config: std::option::Option<crate::model::AutoMlOutputDataConfig>,
     /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that has read permission to
     /// the input data location and write permission to the output data location in Amazon S3.</p>
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>Returns the job's objective.</p>
-    pub auto_ml_job_objective: std::option::Option<crate::model::AutoMLJobObjective>,
+    pub auto_ml_job_objective: std::option::Option<crate::model::AutoMlJobObjective>,
     /// <p>Returns the job's problem type.</p>
     pub problem_type: std::option::Option<crate::model::ProblemType>,
     /// <p>Returns the configuration for the AutoML job.</p>
-    pub auto_ml_job_config: std::option::Option<crate::model::AutoMLJobConfig>,
+    pub auto_ml_job_config: std::option::Option<crate::model::AutoMlJobConfig>,
     /// <p>Returns the creation time of the AutoML job.</p>
     pub creation_time: std::option::Option<smithy_types::Instant>,
     /// <p>Returns the end time of the AutoML job.</p>
@@ -16512,9 +16512,9 @@ pub struct DescribeAutoMLJobOutput {
     pub failure_reason: std::option::Option<std::string::String>,
     /// <p>Returns a list of reasons for partial failures within an AutoML job.</p>
     pub partial_failure_reasons:
-        std::option::Option<std::vec::Vec<crate::model::AutoMLPartialFailureReason>>,
+        std::option::Option<std::vec::Vec<crate::model::AutoMlPartialFailureReason>>,
     /// <p>Returns the job's best <code>AutoMLCandidate</code>.</p>
-    pub best_candidate: std::option::Option<crate::model::AutoMLCandidate>,
+    pub best_candidate: std::option::Option<crate::model::AutoMlCandidate>,
     /// <p>Returns the status of the AutoML job.</p>
     pub auto_ml_job_status: std::option::Option<crate::model::AutoMlJobStatus>,
     /// <p>Returns the secondary status of the AutoML job.</p>
@@ -16524,7 +16524,7 @@ pub struct DescribeAutoMLJobOutput {
     pub generate_candidate_definitions_only: bool,
     /// <p>Returns information on the job's artifacts found in
     /// <code>AutoMLJobArtifacts</code>.</p>
-    pub auto_ml_job_artifacts: std::option::Option<crate::model::AutoMLJobArtifacts>,
+    pub auto_ml_job_artifacts: std::option::Option<crate::model::AutoMlJobArtifacts>,
     /// <p>This contains <code>ProblemType</code>, <code>AutoMLJobObjective</code> and
     /// <code>CompletionCriteria</code>. If you do not provide these values, they are
     /// auto-inferred. If you do provide them, the values used are the ones you provide.</p>
@@ -16535,9 +16535,9 @@ pub struct DescribeAutoMLJobOutput {
     /// <p>Provides information about endpoint for the model deployment.</p>
     pub model_deploy_result: std::option::Option<crate::model::ModelDeployResult>,
 }
-impl std::fmt::Debug for DescribeAutoMLJobOutput {
+impl std::fmt::Debug for DescribeAutoMlJobOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeAutoMLJobOutput");
+        let mut formatter = f.debug_struct("DescribeAutoMlJobOutput");
         formatter.field("auto_ml_job_name", &self.auto_ml_job_name);
         formatter.field("auto_ml_job_arn", &self.auto_ml_job_arn);
         formatter.field("input_data_config", &self.input_data_config);
@@ -16568,33 +16568,33 @@ impl std::fmt::Debug for DescribeAutoMLJobOutput {
         formatter.finish()
     }
 }
-/// See [`DescribeAutoMLJobOutput`](crate::output::DescribeAutoMLJobOutput)
+/// See [`DescribeAutoMlJobOutput`](crate::output::DescribeAutoMlJobOutput)
 pub mod describe_auto_ml_job_output {
-    /// A builder for [`DescribeAutoMLJobOutput`](crate::output::DescribeAutoMLJobOutput)
+    /// A builder for [`DescribeAutoMlJobOutput`](crate::output::DescribeAutoMlJobOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) auto_ml_job_name: std::option::Option<std::string::String>,
         pub(crate) auto_ml_job_arn: std::option::Option<std::string::String>,
         pub(crate) input_data_config:
-            std::option::Option<std::vec::Vec<crate::model::AutoMLChannel>>,
-        pub(crate) output_data_config: std::option::Option<crate::model::AutoMLOutputDataConfig>,
+            std::option::Option<std::vec::Vec<crate::model::AutoMlChannel>>,
+        pub(crate) output_data_config: std::option::Option<crate::model::AutoMlOutputDataConfig>,
         pub(crate) role_arn: std::option::Option<std::string::String>,
-        pub(crate) auto_ml_job_objective: std::option::Option<crate::model::AutoMLJobObjective>,
+        pub(crate) auto_ml_job_objective: std::option::Option<crate::model::AutoMlJobObjective>,
         pub(crate) problem_type: std::option::Option<crate::model::ProblemType>,
-        pub(crate) auto_ml_job_config: std::option::Option<crate::model::AutoMLJobConfig>,
+        pub(crate) auto_ml_job_config: std::option::Option<crate::model::AutoMlJobConfig>,
         pub(crate) creation_time: std::option::Option<smithy_types::Instant>,
         pub(crate) end_time: std::option::Option<smithy_types::Instant>,
         pub(crate) last_modified_time: std::option::Option<smithy_types::Instant>,
         pub(crate) failure_reason: std::option::Option<std::string::String>,
         pub(crate) partial_failure_reasons:
-            std::option::Option<std::vec::Vec<crate::model::AutoMLPartialFailureReason>>,
-        pub(crate) best_candidate: std::option::Option<crate::model::AutoMLCandidate>,
+            std::option::Option<std::vec::Vec<crate::model::AutoMlPartialFailureReason>>,
+        pub(crate) best_candidate: std::option::Option<crate::model::AutoMlCandidate>,
         pub(crate) auto_ml_job_status: std::option::Option<crate::model::AutoMlJobStatus>,
         pub(crate) auto_ml_job_secondary_status:
             std::option::Option<crate::model::AutoMlJobSecondaryStatus>,
         pub(crate) generate_candidate_definitions_only: std::option::Option<bool>,
-        pub(crate) auto_ml_job_artifacts: std::option::Option<crate::model::AutoMLJobArtifacts>,
+        pub(crate) auto_ml_job_artifacts: std::option::Option<crate::model::AutoMlJobArtifacts>,
         pub(crate) resolved_attributes: std::option::Option<crate::model::ResolvedAttributes>,
         pub(crate) model_deploy_config: std::option::Option<crate::model::ModelDeployConfig>,
         pub(crate) model_deploy_result: std::option::Option<crate::model::ModelDeployResult>,
@@ -16624,7 +16624,7 @@ pub mod describe_auto_ml_job_output {
             self.auto_ml_job_arn = input;
             self
         }
-        pub fn input_data_config(mut self, input: impl Into<crate::model::AutoMLChannel>) -> Self {
+        pub fn input_data_config(mut self, input: impl Into<crate::model::AutoMlChannel>) -> Self {
             let mut v = self.input_data_config.unwrap_or_default();
             v.push(input.into());
             self.input_data_config = Some(v);
@@ -16632,19 +16632,19 @@ pub mod describe_auto_ml_job_output {
         }
         pub fn set_input_data_config(
             mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::AutoMLChannel>>,
+            input: std::option::Option<std::vec::Vec<crate::model::AutoMlChannel>>,
         ) -> Self {
             self.input_data_config = input;
             self
         }
         /// <p>Returns the job's output data config.</p>
-        pub fn output_data_config(mut self, input: crate::model::AutoMLOutputDataConfig) -> Self {
+        pub fn output_data_config(mut self, input: crate::model::AutoMlOutputDataConfig) -> Self {
             self.output_data_config = Some(input);
             self
         }
         pub fn set_output_data_config(
             mut self,
-            input: std::option::Option<crate::model::AutoMLOutputDataConfig>,
+            input: std::option::Option<crate::model::AutoMlOutputDataConfig>,
         ) -> Self {
             self.output_data_config = input;
             self
@@ -16660,13 +16660,13 @@ pub mod describe_auto_ml_job_output {
             self
         }
         /// <p>Returns the job's objective.</p>
-        pub fn auto_ml_job_objective(mut self, input: crate::model::AutoMLJobObjective) -> Self {
+        pub fn auto_ml_job_objective(mut self, input: crate::model::AutoMlJobObjective) -> Self {
             self.auto_ml_job_objective = Some(input);
             self
         }
         pub fn set_auto_ml_job_objective(
             mut self,
-            input: std::option::Option<crate::model::AutoMLJobObjective>,
+            input: std::option::Option<crate::model::AutoMlJobObjective>,
         ) -> Self {
             self.auto_ml_job_objective = input;
             self
@@ -16684,13 +16684,13 @@ pub mod describe_auto_ml_job_output {
             self
         }
         /// <p>Returns the configuration for the AutoML job.</p>
-        pub fn auto_ml_job_config(mut self, input: crate::model::AutoMLJobConfig) -> Self {
+        pub fn auto_ml_job_config(mut self, input: crate::model::AutoMlJobConfig) -> Self {
             self.auto_ml_job_config = Some(input);
             self
         }
         pub fn set_auto_ml_job_config(
             mut self,
-            input: std::option::Option<crate::model::AutoMLJobConfig>,
+            input: std::option::Option<crate::model::AutoMlJobConfig>,
         ) -> Self {
             self.auto_ml_job_config = input;
             self
@@ -16742,7 +16742,7 @@ pub mod describe_auto_ml_job_output {
         }
         pub fn partial_failure_reasons(
             mut self,
-            input: impl Into<crate::model::AutoMLPartialFailureReason>,
+            input: impl Into<crate::model::AutoMlPartialFailureReason>,
         ) -> Self {
             let mut v = self.partial_failure_reasons.unwrap_or_default();
             v.push(input.into());
@@ -16751,19 +16751,19 @@ pub mod describe_auto_ml_job_output {
         }
         pub fn set_partial_failure_reasons(
             mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::AutoMLPartialFailureReason>>,
+            input: std::option::Option<std::vec::Vec<crate::model::AutoMlPartialFailureReason>>,
         ) -> Self {
             self.partial_failure_reasons = input;
             self
         }
         /// <p>Returns the job's best <code>AutoMLCandidate</code>.</p>
-        pub fn best_candidate(mut self, input: crate::model::AutoMLCandidate) -> Self {
+        pub fn best_candidate(mut self, input: crate::model::AutoMlCandidate) -> Self {
             self.best_candidate = Some(input);
             self
         }
         pub fn set_best_candidate(
             mut self,
-            input: std::option::Option<crate::model::AutoMLCandidate>,
+            input: std::option::Option<crate::model::AutoMlCandidate>,
         ) -> Self {
             self.best_candidate = input;
             self
@@ -16810,13 +16810,13 @@ pub mod describe_auto_ml_job_output {
         }
         /// <p>Returns information on the job's artifacts found in
         /// <code>AutoMLJobArtifacts</code>.</p>
-        pub fn auto_ml_job_artifacts(mut self, input: crate::model::AutoMLJobArtifacts) -> Self {
+        pub fn auto_ml_job_artifacts(mut self, input: crate::model::AutoMlJobArtifacts) -> Self {
             self.auto_ml_job_artifacts = Some(input);
             self
         }
         pub fn set_auto_ml_job_artifacts(
             mut self,
-            input: std::option::Option<crate::model::AutoMLJobArtifacts>,
+            input: std::option::Option<crate::model::AutoMlJobArtifacts>,
         ) -> Self {
             self.auto_ml_job_artifacts = input;
             self
@@ -16860,9 +16860,9 @@ pub mod describe_auto_ml_job_output {
             self.model_deploy_result = input;
             self
         }
-        /// Consumes the builder and constructs a [`DescribeAutoMLJobOutput`](crate::output::DescribeAutoMLJobOutput)
-        pub fn build(self) -> crate::output::DescribeAutoMLJobOutput {
-            crate::output::DescribeAutoMLJobOutput {
+        /// Consumes the builder and constructs a [`DescribeAutoMlJobOutput`](crate::output::DescribeAutoMlJobOutput)
+        pub fn build(self) -> crate::output::DescribeAutoMlJobOutput {
+            crate::output::DescribeAutoMlJobOutput {
                 auto_ml_job_name: self.auto_ml_job_name,
                 auto_ml_job_arn: self.auto_ml_job_arn,
                 input_data_config: self.input_data_config,
@@ -16890,8 +16890,8 @@ pub mod describe_auto_ml_job_output {
         }
     }
 }
-impl DescribeAutoMLJobOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeAutoMLJobOutput`](crate::output::DescribeAutoMLJobOutput)
+impl DescribeAutoMlJobOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeAutoMlJobOutput`](crate::output::DescribeAutoMlJobOutput)
     pub fn builder() -> crate::output::describe_auto_ml_job_output::Builder {
         crate::output::describe_auto_ml_job_output::Builder::default()
     }
@@ -21054,20 +21054,20 @@ impl CreateCodeRepositoryOutput {
 
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct CreateAutoMLJobOutput {
+pub struct CreateAutoMlJobOutput {
     /// <p>The unique ARN that is assigned to the AutoML job when it is created.</p>
     pub auto_ml_job_arn: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for CreateAutoMLJobOutput {
+impl std::fmt::Debug for CreateAutoMlJobOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateAutoMLJobOutput");
+        let mut formatter = f.debug_struct("CreateAutoMlJobOutput");
         formatter.field("auto_ml_job_arn", &self.auto_ml_job_arn);
         formatter.finish()
     }
 }
-/// See [`CreateAutoMLJobOutput`](crate::output::CreateAutoMLJobOutput)
+/// See [`CreateAutoMlJobOutput`](crate::output::CreateAutoMlJobOutput)
 pub mod create_auto_ml_job_output {
-    /// A builder for [`CreateAutoMLJobOutput`](crate::output::CreateAutoMLJobOutput)
+    /// A builder for [`CreateAutoMlJobOutput`](crate::output::CreateAutoMlJobOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -21086,16 +21086,16 @@ pub mod create_auto_ml_job_output {
             self.auto_ml_job_arn = input;
             self
         }
-        /// Consumes the builder and constructs a [`CreateAutoMLJobOutput`](crate::output::CreateAutoMLJobOutput)
-        pub fn build(self) -> crate::output::CreateAutoMLJobOutput {
-            crate::output::CreateAutoMLJobOutput {
+        /// Consumes the builder and constructs a [`CreateAutoMlJobOutput`](crate::output::CreateAutoMlJobOutput)
+        pub fn build(self) -> crate::output::CreateAutoMlJobOutput {
+            crate::output::CreateAutoMlJobOutput {
                 auto_ml_job_arn: self.auto_ml_job_arn,
             }
         }
     }
 }
-impl CreateAutoMLJobOutput {
-    /// Creates a new builder-style object to manufacture [`CreateAutoMLJobOutput`](crate::output::CreateAutoMLJobOutput)
+impl CreateAutoMlJobOutput {
+    /// Creates a new builder-style object to manufacture [`CreateAutoMlJobOutput`](crate::output::CreateAutoMlJobOutput)
     pub fn builder() -> crate::output::create_auto_ml_job_output::Builder {
         crate::output::create_auto_ml_job_output::Builder::default()
     }

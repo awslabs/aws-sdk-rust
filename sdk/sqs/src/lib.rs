@@ -3,6 +3,7 @@
 #![allow(clippy::large_enum_variant)]
 #![allow(clippy::wrong_self_convention)]
 #![allow(clippy::should_implement_trait)]
+#![allow(clippy::blacklisted_name)]
 //! <p>Welcome to the <i>Amazon Simple Queue Service API Reference</i>.</p>
 //! <p>Amazon Simple Queue Service (Amazon SQS) is a reliable, highly-scalable hosted queue for storing messages as they travel between applications or microservices. Amazon SQS moves data between distributed application components and helps you decouple these components.</p>
 //! <p>For information on the permissions you need to use this API, see

@@ -2,33 +2,33 @@
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum Error {
-    DataAlreadyAcceptedError(crate::error::DataAlreadyAcceptedError),
-    InvalidOperationError(crate::error::InvalidOperationError),
-    InvalidParameterError(crate::error::InvalidParameterError),
-    InvalidSequenceTokenError(crate::error::InvalidSequenceTokenError),
-    LimitExceededError(crate::error::LimitExceededError),
-    MalformedQueryError(crate::error::MalformedQueryError),
-    OperationAbortedError(crate::error::OperationAbortedError),
-    ResourceAlreadyExistsError(crate::error::ResourceAlreadyExistsError),
-    ResourceNotFoundError(crate::error::ResourceNotFoundError),
-    ServiceUnavailableError(crate::error::ServiceUnavailableError),
-    UnrecognizedClientError(crate::error::UnrecognizedClientError),
+    DataAlreadyAcceptedException(crate::error::DataAlreadyAcceptedException),
+    InvalidOperationException(crate::error::InvalidOperationException),
+    InvalidParameterException(crate::error::InvalidParameterException),
+    InvalidSequenceTokenException(crate::error::InvalidSequenceTokenException),
+    LimitExceededException(crate::error::LimitExceededException),
+    MalformedQueryException(crate::error::MalformedQueryException),
+    OperationAbortedException(crate::error::OperationAbortedException),
+    ResourceAlreadyExistsException(crate::error::ResourceAlreadyExistsException),
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    ServiceUnavailableException(crate::error::ServiceUnavailableException),
+    UnrecognizedClientException(crate::error::UnrecognizedClientException),
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match self {
-            Error::DataAlreadyAcceptedError(inner) => inner.fmt(f),
-            Error::InvalidOperationError(inner) => inner.fmt(f),
-            Error::InvalidParameterError(inner) => inner.fmt(f),
-            Error::InvalidSequenceTokenError(inner) => inner.fmt(f),
-            Error::LimitExceededError(inner) => inner.fmt(f),
-            Error::MalformedQueryError(inner) => inner.fmt(f),
-            Error::OperationAbortedError(inner) => inner.fmt(f),
-            Error::ResourceAlreadyExistsError(inner) => inner.fmt(f),
-            Error::ResourceNotFoundError(inner) => inner.fmt(f),
-            Error::ServiceUnavailableError(inner) => inner.fmt(f),
-            Error::UnrecognizedClientError(inner) => inner.fmt(f),
+            Error::DataAlreadyAcceptedException(inner) => inner.fmt(f),
+            Error::InvalidOperationException(inner) => inner.fmt(f),
+            Error::InvalidParameterException(inner) => inner.fmt(f),
+            Error::InvalidSequenceTokenException(inner) => inner.fmt(f),
+            Error::LimitExceededException(inner) => inner.fmt(f),
+            Error::MalformedQueryException(inner) => inner.fmt(f),
+            Error::OperationAbortedException(inner) => inner.fmt(f),
+            Error::ResourceAlreadyExistsException(inner) => inner.fmt(f),
+            Error::ResourceNotFoundException(inner) => inner.fmt(f),
+            Error::ServiceUnavailableException(inner) => inner.fmt(f),
+            Error::UnrecognizedClientException(inner) => inner.fmt(f),
             Error::Unhandled(inner) => inner.fmt(f),
         }
     }
@@ -37,17 +37,17 @@ impl From<smithy_http::result::SdkError<crate::error::AssociateKmsKeyError>> for
     fn from(err: smithy_http::result::SdkError<crate::error::AssociateKmsKeyError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::AssociateKmsKeyErrorKind::InvalidParameterError(inner) => {
-                    Error::InvalidParameterError(inner)
+                crate::error::AssociateKmsKeyErrorKind::InvalidParameterException(inner) => {
+                    Error::InvalidParameterException(inner)
                 }
-                crate::error::AssociateKmsKeyErrorKind::OperationAbortedError(inner) => {
-                    Error::OperationAbortedError(inner)
+                crate::error::AssociateKmsKeyErrorKind::OperationAbortedException(inner) => {
+                    Error::OperationAbortedException(inner)
                 }
-                crate::error::AssociateKmsKeyErrorKind::ResourceNotFoundError(inner) => {
-                    Error::ResourceNotFoundError(inner)
+                crate::error::AssociateKmsKeyErrorKind::ResourceNotFoundException(inner) => {
+                    Error::ResourceNotFoundException(inner)
                 }
-                crate::error::AssociateKmsKeyErrorKind::ServiceUnavailableError(inner) => {
-                    Error::ServiceUnavailableError(inner)
+                crate::error::AssociateKmsKeyErrorKind::ServiceUnavailableException(inner) => {
+                    Error::ServiceUnavailableException(inner)
                 }
                 crate::error::AssociateKmsKeyErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
@@ -59,17 +59,17 @@ impl From<smithy_http::result::SdkError<crate::error::CancelExportTaskError>> fo
     fn from(err: smithy_http::result::SdkError<crate::error::CancelExportTaskError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::CancelExportTaskErrorKind::InvalidOperationError(inner) => {
-                    Error::InvalidOperationError(inner)
+                crate::error::CancelExportTaskErrorKind::InvalidOperationException(inner) => {
+                    Error::InvalidOperationException(inner)
                 }
-                crate::error::CancelExportTaskErrorKind::InvalidParameterError(inner) => {
-                    Error::InvalidParameterError(inner)
+                crate::error::CancelExportTaskErrorKind::InvalidParameterException(inner) => {
+                    Error::InvalidParameterException(inner)
                 }
-                crate::error::CancelExportTaskErrorKind::ResourceNotFoundError(inner) => {
-                    Error::ResourceNotFoundError(inner)
+                crate::error::CancelExportTaskErrorKind::ResourceNotFoundException(inner) => {
+                    Error::ResourceNotFoundException(inner)
                 }
-                crate::error::CancelExportTaskErrorKind::ServiceUnavailableError(inner) => {
-                    Error::ServiceUnavailableError(inner)
+                crate::error::CancelExportTaskErrorKind::ServiceUnavailableException(inner) => {
+                    Error::ServiceUnavailableException(inner)
                 }
                 crate::error::CancelExportTaskErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
@@ -83,23 +83,23 @@ impl From<smithy_http::result::SdkError<crate::error::CreateExportTaskError>> fo
     fn from(err: smithy_http::result::SdkError<crate::error::CreateExportTaskError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::CreateExportTaskErrorKind::InvalidParameterError(inner) => {
-                    Error::InvalidParameterError(inner)
+                crate::error::CreateExportTaskErrorKind::InvalidParameterException(inner) => {
+                    Error::InvalidParameterException(inner)
                 }
-                crate::error::CreateExportTaskErrorKind::LimitExceededError(inner) => {
-                    Error::LimitExceededError(inner)
+                crate::error::CreateExportTaskErrorKind::LimitExceededException(inner) => {
+                    Error::LimitExceededException(inner)
                 }
-                crate::error::CreateExportTaskErrorKind::OperationAbortedError(inner) => {
-                    Error::OperationAbortedError(inner)
+                crate::error::CreateExportTaskErrorKind::OperationAbortedException(inner) => {
+                    Error::OperationAbortedException(inner)
                 }
-                crate::error::CreateExportTaskErrorKind::ResourceAlreadyExistsError(inner) => {
-                    Error::ResourceAlreadyExistsError(inner)
+                crate::error::CreateExportTaskErrorKind::ResourceAlreadyExistsException(inner) => {
+                    Error::ResourceAlreadyExistsException(inner)
                 }
-                crate::error::CreateExportTaskErrorKind::ResourceNotFoundError(inner) => {
-                    Error::ResourceNotFoundError(inner)
+                crate::error::CreateExportTaskErrorKind::ResourceNotFoundException(inner) => {
+                    Error::ResourceNotFoundException(inner)
                 }
-                crate::error::CreateExportTaskErrorKind::ServiceUnavailableError(inner) => {
-                    Error::ServiceUnavailableError(inner)
+                crate::error::CreateExportTaskErrorKind::ServiceUnavailableException(inner) => {
+                    Error::ServiceUnavailableException(inner)
                 }
                 crate::error::CreateExportTaskErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
@@ -113,20 +113,20 @@ impl From<smithy_http::result::SdkError<crate::error::CreateLogGroupError>> for 
     fn from(err: smithy_http::result::SdkError<crate::error::CreateLogGroupError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::CreateLogGroupErrorKind::InvalidParameterError(inner) => {
-                    Error::InvalidParameterError(inner)
+                crate::error::CreateLogGroupErrorKind::InvalidParameterException(inner) => {
+                    Error::InvalidParameterException(inner)
                 }
-                crate::error::CreateLogGroupErrorKind::LimitExceededError(inner) => {
-                    Error::LimitExceededError(inner)
+                crate::error::CreateLogGroupErrorKind::LimitExceededException(inner) => {
+                    Error::LimitExceededException(inner)
                 }
-                crate::error::CreateLogGroupErrorKind::OperationAbortedError(inner) => {
-                    Error::OperationAbortedError(inner)
+                crate::error::CreateLogGroupErrorKind::OperationAbortedException(inner) => {
+                    Error::OperationAbortedException(inner)
                 }
-                crate::error::CreateLogGroupErrorKind::ResourceAlreadyExistsError(inner) => {
-                    Error::ResourceAlreadyExistsError(inner)
+                crate::error::CreateLogGroupErrorKind::ResourceAlreadyExistsException(inner) => {
+                    Error::ResourceAlreadyExistsException(inner)
                 }
-                crate::error::CreateLogGroupErrorKind::ServiceUnavailableError(inner) => {
-                    Error::ServiceUnavailableError(inner)
+                crate::error::CreateLogGroupErrorKind::ServiceUnavailableException(inner) => {
+                    Error::ServiceUnavailableException(inner)
                 }
                 crate::error::CreateLogGroupErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
@@ -138,17 +138,17 @@ impl From<smithy_http::result::SdkError<crate::error::CreateLogStreamError>> for
     fn from(err: smithy_http::result::SdkError<crate::error::CreateLogStreamError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::CreateLogStreamErrorKind::InvalidParameterError(inner) => {
-                    Error::InvalidParameterError(inner)
+                crate::error::CreateLogStreamErrorKind::InvalidParameterException(inner) => {
+                    Error::InvalidParameterException(inner)
                 }
-                crate::error::CreateLogStreamErrorKind::ResourceAlreadyExistsError(inner) => {
-                    Error::ResourceAlreadyExistsError(inner)
+                crate::error::CreateLogStreamErrorKind::ResourceAlreadyExistsException(inner) => {
+                    Error::ResourceAlreadyExistsException(inner)
                 }
-                crate::error::CreateLogStreamErrorKind::ResourceNotFoundError(inner) => {
-                    Error::ResourceNotFoundError(inner)
+                crate::error::CreateLogStreamErrorKind::ResourceNotFoundException(inner) => {
+                    Error::ResourceNotFoundException(inner)
                 }
-                crate::error::CreateLogStreamErrorKind::ServiceUnavailableError(inner) => {
-                    Error::ServiceUnavailableError(inner)
+                crate::error::CreateLogStreamErrorKind::ServiceUnavailableException(inner) => {
+                    Error::ServiceUnavailableException(inner)
                 }
                 crate::error::CreateLogStreamErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
@@ -160,17 +160,17 @@ impl From<smithy_http::result::SdkError<crate::error::DeleteDestinationError>> f
     fn from(err: smithy_http::result::SdkError<crate::error::DeleteDestinationError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::DeleteDestinationErrorKind::InvalidParameterError(inner) => {
-                    Error::InvalidParameterError(inner)
+                crate::error::DeleteDestinationErrorKind::InvalidParameterException(inner) => {
+                    Error::InvalidParameterException(inner)
                 }
-                crate::error::DeleteDestinationErrorKind::OperationAbortedError(inner) => {
-                    Error::OperationAbortedError(inner)
+                crate::error::DeleteDestinationErrorKind::OperationAbortedException(inner) => {
+                    Error::OperationAbortedException(inner)
                 }
-                crate::error::DeleteDestinationErrorKind::ResourceNotFoundError(inner) => {
-                    Error::ResourceNotFoundError(inner)
+                crate::error::DeleteDestinationErrorKind::ResourceNotFoundException(inner) => {
+                    Error::ResourceNotFoundException(inner)
                 }
-                crate::error::DeleteDestinationErrorKind::ServiceUnavailableError(inner) => {
-                    Error::ServiceUnavailableError(inner)
+                crate::error::DeleteDestinationErrorKind::ServiceUnavailableException(inner) => {
+                    Error::ServiceUnavailableException(inner)
                 }
                 crate::error::DeleteDestinationErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
@@ -184,17 +184,17 @@ impl From<smithy_http::result::SdkError<crate::error::DeleteLogGroupError>> for 
     fn from(err: smithy_http::result::SdkError<crate::error::DeleteLogGroupError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::DeleteLogGroupErrorKind::InvalidParameterError(inner) => {
-                    Error::InvalidParameterError(inner)
+                crate::error::DeleteLogGroupErrorKind::InvalidParameterException(inner) => {
+                    Error::InvalidParameterException(inner)
                 }
-                crate::error::DeleteLogGroupErrorKind::OperationAbortedError(inner) => {
-                    Error::OperationAbortedError(inner)
+                crate::error::DeleteLogGroupErrorKind::OperationAbortedException(inner) => {
+                    Error::OperationAbortedException(inner)
                 }
-                crate::error::DeleteLogGroupErrorKind::ResourceNotFoundError(inner) => {
-                    Error::ResourceNotFoundError(inner)
+                crate::error::DeleteLogGroupErrorKind::ResourceNotFoundException(inner) => {
+                    Error::ResourceNotFoundException(inner)
                 }
-                crate::error::DeleteLogGroupErrorKind::ServiceUnavailableError(inner) => {
-                    Error::ServiceUnavailableError(inner)
+                crate::error::DeleteLogGroupErrorKind::ServiceUnavailableException(inner) => {
+                    Error::ServiceUnavailableException(inner)
                 }
                 crate::error::DeleteLogGroupErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
@@ -206,17 +206,17 @@ impl From<smithy_http::result::SdkError<crate::error::DeleteLogStreamError>> for
     fn from(err: smithy_http::result::SdkError<crate::error::DeleteLogStreamError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::DeleteLogStreamErrorKind::InvalidParameterError(inner) => {
-                    Error::InvalidParameterError(inner)
+                crate::error::DeleteLogStreamErrorKind::InvalidParameterException(inner) => {
+                    Error::InvalidParameterException(inner)
                 }
-                crate::error::DeleteLogStreamErrorKind::OperationAbortedError(inner) => {
-                    Error::OperationAbortedError(inner)
+                crate::error::DeleteLogStreamErrorKind::OperationAbortedException(inner) => {
+                    Error::OperationAbortedException(inner)
                 }
-                crate::error::DeleteLogStreamErrorKind::ResourceNotFoundError(inner) => {
-                    Error::ResourceNotFoundError(inner)
+                crate::error::DeleteLogStreamErrorKind::ResourceNotFoundException(inner) => {
+                    Error::ResourceNotFoundException(inner)
                 }
-                crate::error::DeleteLogStreamErrorKind::ServiceUnavailableError(inner) => {
-                    Error::ServiceUnavailableError(inner)
+                crate::error::DeleteLogStreamErrorKind::ServiceUnavailableException(inner) => {
+                    Error::ServiceUnavailableException(inner)
                 }
                 crate::error::DeleteLogStreamErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
@@ -228,17 +228,17 @@ impl From<smithy_http::result::SdkError<crate::error::DeleteMetricFilterError>> 
     fn from(err: smithy_http::result::SdkError<crate::error::DeleteMetricFilterError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::DeleteMetricFilterErrorKind::InvalidParameterError(inner) => {
-                    Error::InvalidParameterError(inner)
+                crate::error::DeleteMetricFilterErrorKind::InvalidParameterException(inner) => {
+                    Error::InvalidParameterException(inner)
                 }
-                crate::error::DeleteMetricFilterErrorKind::OperationAbortedError(inner) => {
-                    Error::OperationAbortedError(inner)
+                crate::error::DeleteMetricFilterErrorKind::OperationAbortedException(inner) => {
+                    Error::OperationAbortedException(inner)
                 }
-                crate::error::DeleteMetricFilterErrorKind::ResourceNotFoundError(inner) => {
-                    Error::ResourceNotFoundError(inner)
+                crate::error::DeleteMetricFilterErrorKind::ResourceNotFoundException(inner) => {
+                    Error::ResourceNotFoundException(inner)
                 }
-                crate::error::DeleteMetricFilterErrorKind::ServiceUnavailableError(inner) => {
-                    Error::ServiceUnavailableError(inner)
+                crate::error::DeleteMetricFilterErrorKind::ServiceUnavailableException(inner) => {
+                    Error::ServiceUnavailableException(inner)
                 }
                 crate::error::DeleteMetricFilterErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
@@ -252,15 +252,15 @@ impl From<smithy_http::result::SdkError<crate::error::DeleteQueryDefinitionError
     fn from(err: smithy_http::result::SdkError<crate::error::DeleteQueryDefinitionError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::DeleteQueryDefinitionErrorKind::InvalidParameterError(inner) => {
-                    Error::InvalidParameterError(inner)
+                crate::error::DeleteQueryDefinitionErrorKind::InvalidParameterException(inner) => {
+                    Error::InvalidParameterException(inner)
                 }
-                crate::error::DeleteQueryDefinitionErrorKind::ResourceNotFoundError(inner) => {
-                    Error::ResourceNotFoundError(inner)
+                crate::error::DeleteQueryDefinitionErrorKind::ResourceNotFoundException(inner) => {
+                    Error::ResourceNotFoundException(inner)
                 }
-                crate::error::DeleteQueryDefinitionErrorKind::ServiceUnavailableError(inner) => {
-                    Error::ServiceUnavailableError(inner)
-                }
+                crate::error::DeleteQueryDefinitionErrorKind::ServiceUnavailableException(
+                    inner,
+                ) => Error::ServiceUnavailableException(inner),
                 crate::error::DeleteQueryDefinitionErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
                 }
@@ -273,14 +273,14 @@ impl From<smithy_http::result::SdkError<crate::error::DeleteResourcePolicyError>
     fn from(err: smithy_http::result::SdkError<crate::error::DeleteResourcePolicyError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::DeleteResourcePolicyErrorKind::InvalidParameterError(inner) => {
-                    Error::InvalidParameterError(inner)
+                crate::error::DeleteResourcePolicyErrorKind::InvalidParameterException(inner) => {
+                    Error::InvalidParameterException(inner)
                 }
-                crate::error::DeleteResourcePolicyErrorKind::ResourceNotFoundError(inner) => {
-                    Error::ResourceNotFoundError(inner)
+                crate::error::DeleteResourcePolicyErrorKind::ResourceNotFoundException(inner) => {
+                    Error::ResourceNotFoundException(inner)
                 }
-                crate::error::DeleteResourcePolicyErrorKind::ServiceUnavailableError(inner) => {
-                    Error::ServiceUnavailableError(inner)
+                crate::error::DeleteResourcePolicyErrorKind::ServiceUnavailableException(inner) => {
+                    Error::ServiceUnavailableException(inner)
                 }
                 crate::error::DeleteResourcePolicyErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
@@ -294,18 +294,18 @@ impl From<smithy_http::result::SdkError<crate::error::DeleteRetentionPolicyError
     fn from(err: smithy_http::result::SdkError<crate::error::DeleteRetentionPolicyError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::DeleteRetentionPolicyErrorKind::InvalidParameterError(inner) => {
-                    Error::InvalidParameterError(inner)
+                crate::error::DeleteRetentionPolicyErrorKind::InvalidParameterException(inner) => {
+                    Error::InvalidParameterException(inner)
                 }
-                crate::error::DeleteRetentionPolicyErrorKind::OperationAbortedError(inner) => {
-                    Error::OperationAbortedError(inner)
+                crate::error::DeleteRetentionPolicyErrorKind::OperationAbortedException(inner) => {
+                    Error::OperationAbortedException(inner)
                 }
-                crate::error::DeleteRetentionPolicyErrorKind::ResourceNotFoundError(inner) => {
-                    Error::ResourceNotFoundError(inner)
+                crate::error::DeleteRetentionPolicyErrorKind::ResourceNotFoundException(inner) => {
+                    Error::ResourceNotFoundException(inner)
                 }
-                crate::error::DeleteRetentionPolicyErrorKind::ServiceUnavailableError(inner) => {
-                    Error::ServiceUnavailableError(inner)
-                }
+                crate::error::DeleteRetentionPolicyErrorKind::ServiceUnavailableException(
+                    inner,
+                ) => Error::ServiceUnavailableException(inner),
                 crate::error::DeleteRetentionPolicyErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
                 }
@@ -320,18 +320,18 @@ impl From<smithy_http::result::SdkError<crate::error::DeleteSubscriptionFilterEr
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::DeleteSubscriptionFilterErrorKind::InvalidParameterError(inner) => {
-                    Error::InvalidParameterError(inner)
-                }
-                crate::error::DeleteSubscriptionFilterErrorKind::OperationAbortedError(inner) => {
-                    Error::OperationAbortedError(inner)
-                }
-                crate::error::DeleteSubscriptionFilterErrorKind::ResourceNotFoundError(inner) => {
-                    Error::ResourceNotFoundError(inner)
-                }
-                crate::error::DeleteSubscriptionFilterErrorKind::ServiceUnavailableError(inner) => {
-                    Error::ServiceUnavailableError(inner)
-                }
+                crate::error::DeleteSubscriptionFilterErrorKind::InvalidParameterException(
+                    inner,
+                ) => Error::InvalidParameterException(inner),
+                crate::error::DeleteSubscriptionFilterErrorKind::OperationAbortedException(
+                    inner,
+                ) => Error::OperationAbortedException(inner),
+                crate::error::DeleteSubscriptionFilterErrorKind::ResourceNotFoundException(
+                    inner,
+                ) => Error::ResourceNotFoundException(inner),
+                crate::error::DeleteSubscriptionFilterErrorKind::ServiceUnavailableException(
+                    inner,
+                ) => Error::ServiceUnavailableException(inner),
                 crate::error::DeleteSubscriptionFilterErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
                 }
@@ -344,11 +344,11 @@ impl From<smithy_http::result::SdkError<crate::error::DescribeDestinationsError>
     fn from(err: smithy_http::result::SdkError<crate::error::DescribeDestinationsError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::DescribeDestinationsErrorKind::InvalidParameterError(inner) => {
-                    Error::InvalidParameterError(inner)
+                crate::error::DescribeDestinationsErrorKind::InvalidParameterException(inner) => {
+                    Error::InvalidParameterException(inner)
                 }
-                crate::error::DescribeDestinationsErrorKind::ServiceUnavailableError(inner) => {
-                    Error::ServiceUnavailableError(inner)
+                crate::error::DescribeDestinationsErrorKind::ServiceUnavailableException(inner) => {
+                    Error::ServiceUnavailableException(inner)
                 }
                 crate::error::DescribeDestinationsErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
@@ -362,11 +362,11 @@ impl From<smithy_http::result::SdkError<crate::error::DescribeExportTasksError>>
     fn from(err: smithy_http::result::SdkError<crate::error::DescribeExportTasksError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::DescribeExportTasksErrorKind::InvalidParameterError(inner) => {
-                    Error::InvalidParameterError(inner)
+                crate::error::DescribeExportTasksErrorKind::InvalidParameterException(inner) => {
+                    Error::InvalidParameterException(inner)
                 }
-                crate::error::DescribeExportTasksErrorKind::ServiceUnavailableError(inner) => {
-                    Error::ServiceUnavailableError(inner)
+                crate::error::DescribeExportTasksErrorKind::ServiceUnavailableException(inner) => {
+                    Error::ServiceUnavailableException(inner)
                 }
                 crate::error::DescribeExportTasksErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
@@ -380,11 +380,11 @@ impl From<smithy_http::result::SdkError<crate::error::DescribeLogGroupsError>> f
     fn from(err: smithy_http::result::SdkError<crate::error::DescribeLogGroupsError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::DescribeLogGroupsErrorKind::InvalidParameterError(inner) => {
-                    Error::InvalidParameterError(inner)
+                crate::error::DescribeLogGroupsErrorKind::InvalidParameterException(inner) => {
+                    Error::InvalidParameterException(inner)
                 }
-                crate::error::DescribeLogGroupsErrorKind::ServiceUnavailableError(inner) => {
-                    Error::ServiceUnavailableError(inner)
+                crate::error::DescribeLogGroupsErrorKind::ServiceUnavailableException(inner) => {
+                    Error::ServiceUnavailableException(inner)
                 }
                 crate::error::DescribeLogGroupsErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
@@ -398,14 +398,14 @@ impl From<smithy_http::result::SdkError<crate::error::DescribeLogStreamsError>> 
     fn from(err: smithy_http::result::SdkError<crate::error::DescribeLogStreamsError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::DescribeLogStreamsErrorKind::InvalidParameterError(inner) => {
-                    Error::InvalidParameterError(inner)
+                crate::error::DescribeLogStreamsErrorKind::InvalidParameterException(inner) => {
+                    Error::InvalidParameterException(inner)
                 }
-                crate::error::DescribeLogStreamsErrorKind::ResourceNotFoundError(inner) => {
-                    Error::ResourceNotFoundError(inner)
+                crate::error::DescribeLogStreamsErrorKind::ResourceNotFoundException(inner) => {
+                    Error::ResourceNotFoundException(inner)
                 }
-                crate::error::DescribeLogStreamsErrorKind::ServiceUnavailableError(inner) => {
-                    Error::ServiceUnavailableError(inner)
+                crate::error::DescribeLogStreamsErrorKind::ServiceUnavailableException(inner) => {
+                    Error::ServiceUnavailableException(inner)
                 }
                 crate::error::DescribeLogStreamsErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
@@ -419,15 +419,15 @@ impl From<smithy_http::result::SdkError<crate::error::DescribeMetricFiltersError
     fn from(err: smithy_http::result::SdkError<crate::error::DescribeMetricFiltersError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::DescribeMetricFiltersErrorKind::InvalidParameterError(inner) => {
-                    Error::InvalidParameterError(inner)
+                crate::error::DescribeMetricFiltersErrorKind::InvalidParameterException(inner) => {
+                    Error::InvalidParameterException(inner)
                 }
-                crate::error::DescribeMetricFiltersErrorKind::ResourceNotFoundError(inner) => {
-                    Error::ResourceNotFoundError(inner)
+                crate::error::DescribeMetricFiltersErrorKind::ResourceNotFoundException(inner) => {
+                    Error::ResourceNotFoundException(inner)
                 }
-                crate::error::DescribeMetricFiltersErrorKind::ServiceUnavailableError(inner) => {
-                    Error::ServiceUnavailableError(inner)
-                }
+                crate::error::DescribeMetricFiltersErrorKind::ServiceUnavailableException(
+                    inner,
+                ) => Error::ServiceUnavailableException(inner),
                 crate::error::DescribeMetricFiltersErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
                 }
@@ -440,14 +440,14 @@ impl From<smithy_http::result::SdkError<crate::error::DescribeQueriesError>> for
     fn from(err: smithy_http::result::SdkError<crate::error::DescribeQueriesError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::DescribeQueriesErrorKind::InvalidParameterError(inner) => {
-                    Error::InvalidParameterError(inner)
+                crate::error::DescribeQueriesErrorKind::InvalidParameterException(inner) => {
+                    Error::InvalidParameterException(inner)
                 }
-                crate::error::DescribeQueriesErrorKind::ResourceNotFoundError(inner) => {
-                    Error::ResourceNotFoundError(inner)
+                crate::error::DescribeQueriesErrorKind::ResourceNotFoundException(inner) => {
+                    Error::ResourceNotFoundException(inner)
                 }
-                crate::error::DescribeQueriesErrorKind::ServiceUnavailableError(inner) => {
-                    Error::ServiceUnavailableError(inner)
+                crate::error::DescribeQueriesErrorKind::ServiceUnavailableException(inner) => {
+                    Error::ServiceUnavailableException(inner)
                 }
                 crate::error::DescribeQueriesErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
@@ -461,12 +461,12 @@ impl From<smithy_http::result::SdkError<crate::error::DescribeQueryDefinitionsEr
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::DescribeQueryDefinitionsErrorKind::InvalidParameterError(inner) => {
-                    Error::InvalidParameterError(inner)
-                }
-                crate::error::DescribeQueryDefinitionsErrorKind::ServiceUnavailableError(inner) => {
-                    Error::ServiceUnavailableError(inner)
-                }
+                crate::error::DescribeQueryDefinitionsErrorKind::InvalidParameterException(
+                    inner,
+                ) => Error::InvalidParameterException(inner),
+                crate::error::DescribeQueryDefinitionsErrorKind::ServiceUnavailableException(
+                    inner,
+                ) => Error::ServiceUnavailableException(inner),
                 crate::error::DescribeQueryDefinitionsErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
                 }
@@ -481,12 +481,12 @@ impl From<smithy_http::result::SdkError<crate::error::DescribeResourcePoliciesEr
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::DescribeResourcePoliciesErrorKind::InvalidParameterError(inner) => {
-                    Error::InvalidParameterError(inner)
-                }
-                crate::error::DescribeResourcePoliciesErrorKind::ServiceUnavailableError(inner) => {
-                    Error::ServiceUnavailableError(inner)
-                }
+                crate::error::DescribeResourcePoliciesErrorKind::InvalidParameterException(
+                    inner,
+                ) => Error::InvalidParameterException(inner),
+                crate::error::DescribeResourcePoliciesErrorKind::ServiceUnavailableException(
+                    inner,
+                ) => Error::ServiceUnavailableException(inner),
                 crate::error::DescribeResourcePoliciesErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
                 }
@@ -501,15 +501,15 @@ impl From<smithy_http::result::SdkError<crate::error::DescribeSubscriptionFilter
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::DescribeSubscriptionFiltersErrorKind::InvalidParameterError(
+                crate::error::DescribeSubscriptionFiltersErrorKind::InvalidParameterException(
                     inner,
-                ) => Error::InvalidParameterError(inner),
-                crate::error::DescribeSubscriptionFiltersErrorKind::ResourceNotFoundError(
+                ) => Error::InvalidParameterException(inner),
+                crate::error::DescribeSubscriptionFiltersErrorKind::ResourceNotFoundException(
                     inner,
-                ) => Error::ResourceNotFoundError(inner),
-                crate::error::DescribeSubscriptionFiltersErrorKind::ServiceUnavailableError(
+                ) => Error::ResourceNotFoundException(inner),
+                crate::error::DescribeSubscriptionFiltersErrorKind::ServiceUnavailableException(
                     inner,
-                ) => Error::ServiceUnavailableError(inner),
+                ) => Error::ServiceUnavailableException(inner),
                 crate::error::DescribeSubscriptionFiltersErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
                 }
@@ -522,17 +522,17 @@ impl From<smithy_http::result::SdkError<crate::error::DisassociateKmsKeyError>> 
     fn from(err: smithy_http::result::SdkError<crate::error::DisassociateKmsKeyError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::DisassociateKmsKeyErrorKind::InvalidParameterError(inner) => {
-                    Error::InvalidParameterError(inner)
+                crate::error::DisassociateKmsKeyErrorKind::InvalidParameterException(inner) => {
+                    Error::InvalidParameterException(inner)
                 }
-                crate::error::DisassociateKmsKeyErrorKind::OperationAbortedError(inner) => {
-                    Error::OperationAbortedError(inner)
+                crate::error::DisassociateKmsKeyErrorKind::OperationAbortedException(inner) => {
+                    Error::OperationAbortedException(inner)
                 }
-                crate::error::DisassociateKmsKeyErrorKind::ResourceNotFoundError(inner) => {
-                    Error::ResourceNotFoundError(inner)
+                crate::error::DisassociateKmsKeyErrorKind::ResourceNotFoundException(inner) => {
+                    Error::ResourceNotFoundException(inner)
                 }
-                crate::error::DisassociateKmsKeyErrorKind::ServiceUnavailableError(inner) => {
-                    Error::ServiceUnavailableError(inner)
+                crate::error::DisassociateKmsKeyErrorKind::ServiceUnavailableException(inner) => {
+                    Error::ServiceUnavailableException(inner)
                 }
                 crate::error::DisassociateKmsKeyErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
@@ -546,14 +546,14 @@ impl From<smithy_http::result::SdkError<crate::error::FilterLogEventsError>> for
     fn from(err: smithy_http::result::SdkError<crate::error::FilterLogEventsError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::FilterLogEventsErrorKind::InvalidParameterError(inner) => {
-                    Error::InvalidParameterError(inner)
+                crate::error::FilterLogEventsErrorKind::InvalidParameterException(inner) => {
+                    Error::InvalidParameterException(inner)
                 }
-                crate::error::FilterLogEventsErrorKind::ResourceNotFoundError(inner) => {
-                    Error::ResourceNotFoundError(inner)
+                crate::error::FilterLogEventsErrorKind::ResourceNotFoundException(inner) => {
+                    Error::ResourceNotFoundException(inner)
                 }
-                crate::error::FilterLogEventsErrorKind::ServiceUnavailableError(inner) => {
-                    Error::ServiceUnavailableError(inner)
+                crate::error::FilterLogEventsErrorKind::ServiceUnavailableException(inner) => {
+                    Error::ServiceUnavailableException(inner)
                 }
                 crate::error::FilterLogEventsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
@@ -565,14 +565,14 @@ impl From<smithy_http::result::SdkError<crate::error::GetLogEventsError>> for Er
     fn from(err: smithy_http::result::SdkError<crate::error::GetLogEventsError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::GetLogEventsErrorKind::InvalidParameterError(inner) => {
-                    Error::InvalidParameterError(inner)
+                crate::error::GetLogEventsErrorKind::InvalidParameterException(inner) => {
+                    Error::InvalidParameterException(inner)
                 }
-                crate::error::GetLogEventsErrorKind::ResourceNotFoundError(inner) => {
-                    Error::ResourceNotFoundError(inner)
+                crate::error::GetLogEventsErrorKind::ResourceNotFoundException(inner) => {
+                    Error::ResourceNotFoundException(inner)
                 }
-                crate::error::GetLogEventsErrorKind::ServiceUnavailableError(inner) => {
-                    Error::ServiceUnavailableError(inner)
+                crate::error::GetLogEventsErrorKind::ServiceUnavailableException(inner) => {
+                    Error::ServiceUnavailableException(inner)
                 }
                 crate::error::GetLogEventsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
@@ -584,17 +584,17 @@ impl From<smithy_http::result::SdkError<crate::error::GetLogGroupFieldsError>> f
     fn from(err: smithy_http::result::SdkError<crate::error::GetLogGroupFieldsError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::GetLogGroupFieldsErrorKind::InvalidParameterError(inner) => {
-                    Error::InvalidParameterError(inner)
+                crate::error::GetLogGroupFieldsErrorKind::InvalidParameterException(inner) => {
+                    Error::InvalidParameterException(inner)
                 }
-                crate::error::GetLogGroupFieldsErrorKind::LimitExceededError(inner) => {
-                    Error::LimitExceededError(inner)
+                crate::error::GetLogGroupFieldsErrorKind::LimitExceededException(inner) => {
+                    Error::LimitExceededException(inner)
                 }
-                crate::error::GetLogGroupFieldsErrorKind::ResourceNotFoundError(inner) => {
-                    Error::ResourceNotFoundError(inner)
+                crate::error::GetLogGroupFieldsErrorKind::ResourceNotFoundException(inner) => {
+                    Error::ResourceNotFoundException(inner)
                 }
-                crate::error::GetLogGroupFieldsErrorKind::ServiceUnavailableError(inner) => {
-                    Error::ServiceUnavailableError(inner)
+                crate::error::GetLogGroupFieldsErrorKind::ServiceUnavailableException(inner) => {
+                    Error::ServiceUnavailableException(inner)
                 }
                 crate::error::GetLogGroupFieldsErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
@@ -608,17 +608,17 @@ impl From<smithy_http::result::SdkError<crate::error::GetLogRecordError>> for Er
     fn from(err: smithy_http::result::SdkError<crate::error::GetLogRecordError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::GetLogRecordErrorKind::InvalidParameterError(inner) => {
-                    Error::InvalidParameterError(inner)
+                crate::error::GetLogRecordErrorKind::InvalidParameterException(inner) => {
+                    Error::InvalidParameterException(inner)
                 }
-                crate::error::GetLogRecordErrorKind::LimitExceededError(inner) => {
-                    Error::LimitExceededError(inner)
+                crate::error::GetLogRecordErrorKind::LimitExceededException(inner) => {
+                    Error::LimitExceededException(inner)
                 }
-                crate::error::GetLogRecordErrorKind::ResourceNotFoundError(inner) => {
-                    Error::ResourceNotFoundError(inner)
+                crate::error::GetLogRecordErrorKind::ResourceNotFoundException(inner) => {
+                    Error::ResourceNotFoundException(inner)
                 }
-                crate::error::GetLogRecordErrorKind::ServiceUnavailableError(inner) => {
-                    Error::ServiceUnavailableError(inner)
+                crate::error::GetLogRecordErrorKind::ServiceUnavailableException(inner) => {
+                    Error::ServiceUnavailableException(inner)
                 }
                 crate::error::GetLogRecordErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
@@ -630,14 +630,14 @@ impl From<smithy_http::result::SdkError<crate::error::GetQueryResultsError>> for
     fn from(err: smithy_http::result::SdkError<crate::error::GetQueryResultsError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::GetQueryResultsErrorKind::InvalidParameterError(inner) => {
-                    Error::InvalidParameterError(inner)
+                crate::error::GetQueryResultsErrorKind::InvalidParameterException(inner) => {
+                    Error::InvalidParameterException(inner)
                 }
-                crate::error::GetQueryResultsErrorKind::ResourceNotFoundError(inner) => {
-                    Error::ResourceNotFoundError(inner)
+                crate::error::GetQueryResultsErrorKind::ResourceNotFoundException(inner) => {
+                    Error::ResourceNotFoundException(inner)
                 }
-                crate::error::GetQueryResultsErrorKind::ServiceUnavailableError(inner) => {
-                    Error::ServiceUnavailableError(inner)
+                crate::error::GetQueryResultsErrorKind::ServiceUnavailableException(inner) => {
+                    Error::ServiceUnavailableException(inner)
                 }
                 crate::error::GetQueryResultsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
@@ -649,11 +649,11 @@ impl From<smithy_http::result::SdkError<crate::error::ListTagsLogGroupError>> fo
     fn from(err: smithy_http::result::SdkError<crate::error::ListTagsLogGroupError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::ListTagsLogGroupErrorKind::ResourceNotFoundError(inner) => {
-                    Error::ResourceNotFoundError(inner)
+                crate::error::ListTagsLogGroupErrorKind::ResourceNotFoundException(inner) => {
+                    Error::ResourceNotFoundException(inner)
                 }
-                crate::error::ListTagsLogGroupErrorKind::ServiceUnavailableError(inner) => {
-                    Error::ServiceUnavailableError(inner)
+                crate::error::ListTagsLogGroupErrorKind::ServiceUnavailableException(inner) => {
+                    Error::ServiceUnavailableException(inner)
                 }
                 crate::error::ListTagsLogGroupErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
@@ -667,14 +667,14 @@ impl From<smithy_http::result::SdkError<crate::error::PutDestinationError>> for 
     fn from(err: smithy_http::result::SdkError<crate::error::PutDestinationError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::PutDestinationErrorKind::InvalidParameterError(inner) => {
-                    Error::InvalidParameterError(inner)
+                crate::error::PutDestinationErrorKind::InvalidParameterException(inner) => {
+                    Error::InvalidParameterException(inner)
                 }
-                crate::error::PutDestinationErrorKind::OperationAbortedError(inner) => {
-                    Error::OperationAbortedError(inner)
+                crate::error::PutDestinationErrorKind::OperationAbortedException(inner) => {
+                    Error::OperationAbortedException(inner)
                 }
-                crate::error::PutDestinationErrorKind::ServiceUnavailableError(inner) => {
-                    Error::ServiceUnavailableError(inner)
+                crate::error::PutDestinationErrorKind::ServiceUnavailableException(inner) => {
+                    Error::ServiceUnavailableException(inner)
                 }
                 crate::error::PutDestinationErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
@@ -686,14 +686,14 @@ impl From<smithy_http::result::SdkError<crate::error::PutDestinationPolicyError>
     fn from(err: smithy_http::result::SdkError<crate::error::PutDestinationPolicyError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::PutDestinationPolicyErrorKind::InvalidParameterError(inner) => {
-                    Error::InvalidParameterError(inner)
+                crate::error::PutDestinationPolicyErrorKind::InvalidParameterException(inner) => {
+                    Error::InvalidParameterException(inner)
                 }
-                crate::error::PutDestinationPolicyErrorKind::OperationAbortedError(inner) => {
-                    Error::OperationAbortedError(inner)
+                crate::error::PutDestinationPolicyErrorKind::OperationAbortedException(inner) => {
+                    Error::OperationAbortedException(inner)
                 }
-                crate::error::PutDestinationPolicyErrorKind::ServiceUnavailableError(inner) => {
-                    Error::ServiceUnavailableError(inner)
+                crate::error::PutDestinationPolicyErrorKind::ServiceUnavailableException(inner) => {
+                    Error::ServiceUnavailableException(inner)
                 }
                 crate::error::PutDestinationPolicyErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
@@ -707,23 +707,23 @@ impl From<smithy_http::result::SdkError<crate::error::PutLogEventsError>> for Er
     fn from(err: smithy_http::result::SdkError<crate::error::PutLogEventsError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::PutLogEventsErrorKind::DataAlreadyAcceptedError(inner) => {
-                    Error::DataAlreadyAcceptedError(inner)
+                crate::error::PutLogEventsErrorKind::DataAlreadyAcceptedException(inner) => {
+                    Error::DataAlreadyAcceptedException(inner)
                 }
-                crate::error::PutLogEventsErrorKind::InvalidParameterError(inner) => {
-                    Error::InvalidParameterError(inner)
+                crate::error::PutLogEventsErrorKind::InvalidParameterException(inner) => {
+                    Error::InvalidParameterException(inner)
                 }
-                crate::error::PutLogEventsErrorKind::InvalidSequenceTokenError(inner) => {
-                    Error::InvalidSequenceTokenError(inner)
+                crate::error::PutLogEventsErrorKind::InvalidSequenceTokenException(inner) => {
+                    Error::InvalidSequenceTokenException(inner)
                 }
-                crate::error::PutLogEventsErrorKind::ResourceNotFoundError(inner) => {
-                    Error::ResourceNotFoundError(inner)
+                crate::error::PutLogEventsErrorKind::ResourceNotFoundException(inner) => {
+                    Error::ResourceNotFoundException(inner)
                 }
-                crate::error::PutLogEventsErrorKind::ServiceUnavailableError(inner) => {
-                    Error::ServiceUnavailableError(inner)
+                crate::error::PutLogEventsErrorKind::ServiceUnavailableException(inner) => {
+                    Error::ServiceUnavailableException(inner)
                 }
-                crate::error::PutLogEventsErrorKind::UnrecognizedClientError(inner) => {
-                    Error::UnrecognizedClientError(inner)
+                crate::error::PutLogEventsErrorKind::UnrecognizedClientException(inner) => {
+                    Error::UnrecognizedClientException(inner)
                 }
                 crate::error::PutLogEventsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
@@ -735,20 +735,20 @@ impl From<smithy_http::result::SdkError<crate::error::PutMetricFilterError>> for
     fn from(err: smithy_http::result::SdkError<crate::error::PutMetricFilterError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::PutMetricFilterErrorKind::InvalidParameterError(inner) => {
-                    Error::InvalidParameterError(inner)
+                crate::error::PutMetricFilterErrorKind::InvalidParameterException(inner) => {
+                    Error::InvalidParameterException(inner)
                 }
-                crate::error::PutMetricFilterErrorKind::LimitExceededError(inner) => {
-                    Error::LimitExceededError(inner)
+                crate::error::PutMetricFilterErrorKind::LimitExceededException(inner) => {
+                    Error::LimitExceededException(inner)
                 }
-                crate::error::PutMetricFilterErrorKind::OperationAbortedError(inner) => {
-                    Error::OperationAbortedError(inner)
+                crate::error::PutMetricFilterErrorKind::OperationAbortedException(inner) => {
+                    Error::OperationAbortedException(inner)
                 }
-                crate::error::PutMetricFilterErrorKind::ResourceNotFoundError(inner) => {
-                    Error::ResourceNotFoundError(inner)
+                crate::error::PutMetricFilterErrorKind::ResourceNotFoundException(inner) => {
+                    Error::ResourceNotFoundException(inner)
                 }
-                crate::error::PutMetricFilterErrorKind::ServiceUnavailableError(inner) => {
-                    Error::ServiceUnavailableError(inner)
+                crate::error::PutMetricFilterErrorKind::ServiceUnavailableException(inner) => {
+                    Error::ServiceUnavailableException(inner)
                 }
                 crate::error::PutMetricFilterErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
@@ -760,14 +760,14 @@ impl From<smithy_http::result::SdkError<crate::error::PutQueryDefinitionError>> 
     fn from(err: smithy_http::result::SdkError<crate::error::PutQueryDefinitionError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::PutQueryDefinitionErrorKind::InvalidParameterError(inner) => {
-                    Error::InvalidParameterError(inner)
+                crate::error::PutQueryDefinitionErrorKind::InvalidParameterException(inner) => {
+                    Error::InvalidParameterException(inner)
                 }
-                crate::error::PutQueryDefinitionErrorKind::ResourceNotFoundError(inner) => {
-                    Error::ResourceNotFoundError(inner)
+                crate::error::PutQueryDefinitionErrorKind::ResourceNotFoundException(inner) => {
+                    Error::ResourceNotFoundException(inner)
                 }
-                crate::error::PutQueryDefinitionErrorKind::ServiceUnavailableError(inner) => {
-                    Error::ServiceUnavailableError(inner)
+                crate::error::PutQueryDefinitionErrorKind::ServiceUnavailableException(inner) => {
+                    Error::ServiceUnavailableException(inner)
                 }
                 crate::error::PutQueryDefinitionErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
@@ -781,14 +781,14 @@ impl From<smithy_http::result::SdkError<crate::error::PutResourcePolicyError>> f
     fn from(err: smithy_http::result::SdkError<crate::error::PutResourcePolicyError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::PutResourcePolicyErrorKind::InvalidParameterError(inner) => {
-                    Error::InvalidParameterError(inner)
+                crate::error::PutResourcePolicyErrorKind::InvalidParameterException(inner) => {
+                    Error::InvalidParameterException(inner)
                 }
-                crate::error::PutResourcePolicyErrorKind::LimitExceededError(inner) => {
-                    Error::LimitExceededError(inner)
+                crate::error::PutResourcePolicyErrorKind::LimitExceededException(inner) => {
+                    Error::LimitExceededException(inner)
                 }
-                crate::error::PutResourcePolicyErrorKind::ServiceUnavailableError(inner) => {
-                    Error::ServiceUnavailableError(inner)
+                crate::error::PutResourcePolicyErrorKind::ServiceUnavailableException(inner) => {
+                    Error::ServiceUnavailableException(inner)
                 }
                 crate::error::PutResourcePolicyErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
@@ -802,17 +802,17 @@ impl From<smithy_http::result::SdkError<crate::error::PutRetentionPolicyError>> 
     fn from(err: smithy_http::result::SdkError<crate::error::PutRetentionPolicyError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::PutRetentionPolicyErrorKind::InvalidParameterError(inner) => {
-                    Error::InvalidParameterError(inner)
+                crate::error::PutRetentionPolicyErrorKind::InvalidParameterException(inner) => {
+                    Error::InvalidParameterException(inner)
                 }
-                crate::error::PutRetentionPolicyErrorKind::OperationAbortedError(inner) => {
-                    Error::OperationAbortedError(inner)
+                crate::error::PutRetentionPolicyErrorKind::OperationAbortedException(inner) => {
+                    Error::OperationAbortedException(inner)
                 }
-                crate::error::PutRetentionPolicyErrorKind::ResourceNotFoundError(inner) => {
-                    Error::ResourceNotFoundError(inner)
+                crate::error::PutRetentionPolicyErrorKind::ResourceNotFoundException(inner) => {
+                    Error::ResourceNotFoundException(inner)
                 }
-                crate::error::PutRetentionPolicyErrorKind::ServiceUnavailableError(inner) => {
-                    Error::ServiceUnavailableError(inner)
+                crate::error::PutRetentionPolicyErrorKind::ServiceUnavailableException(inner) => {
+                    Error::ServiceUnavailableException(inner)
                 }
                 crate::error::PutRetentionPolicyErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
@@ -826,21 +826,21 @@ impl From<smithy_http::result::SdkError<crate::error::PutSubscriptionFilterError
     fn from(err: smithy_http::result::SdkError<crate::error::PutSubscriptionFilterError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::PutSubscriptionFilterErrorKind::InvalidParameterError(inner) => {
-                    Error::InvalidParameterError(inner)
+                crate::error::PutSubscriptionFilterErrorKind::InvalidParameterException(inner) => {
+                    Error::InvalidParameterException(inner)
                 }
-                crate::error::PutSubscriptionFilterErrorKind::LimitExceededError(inner) => {
-                    Error::LimitExceededError(inner)
+                crate::error::PutSubscriptionFilterErrorKind::LimitExceededException(inner) => {
+                    Error::LimitExceededException(inner)
                 }
-                crate::error::PutSubscriptionFilterErrorKind::OperationAbortedError(inner) => {
-                    Error::OperationAbortedError(inner)
+                crate::error::PutSubscriptionFilterErrorKind::OperationAbortedException(inner) => {
+                    Error::OperationAbortedException(inner)
                 }
-                crate::error::PutSubscriptionFilterErrorKind::ResourceNotFoundError(inner) => {
-                    Error::ResourceNotFoundError(inner)
+                crate::error::PutSubscriptionFilterErrorKind::ResourceNotFoundException(inner) => {
+                    Error::ResourceNotFoundException(inner)
                 }
-                crate::error::PutSubscriptionFilterErrorKind::ServiceUnavailableError(inner) => {
-                    Error::ServiceUnavailableError(inner)
-                }
+                crate::error::PutSubscriptionFilterErrorKind::ServiceUnavailableException(
+                    inner,
+                ) => Error::ServiceUnavailableException(inner),
                 crate::error::PutSubscriptionFilterErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
                 }
@@ -853,20 +853,20 @@ impl From<smithy_http::result::SdkError<crate::error::StartQueryError>> for Erro
     fn from(err: smithy_http::result::SdkError<crate::error::StartQueryError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::StartQueryErrorKind::InvalidParameterError(inner) => {
-                    Error::InvalidParameterError(inner)
+                crate::error::StartQueryErrorKind::InvalidParameterException(inner) => {
+                    Error::InvalidParameterException(inner)
                 }
-                crate::error::StartQueryErrorKind::LimitExceededError(inner) => {
-                    Error::LimitExceededError(inner)
+                crate::error::StartQueryErrorKind::LimitExceededException(inner) => {
+                    Error::LimitExceededException(inner)
                 }
-                crate::error::StartQueryErrorKind::MalformedQueryError(inner) => {
-                    Error::MalformedQueryError(inner)
+                crate::error::StartQueryErrorKind::MalformedQueryException(inner) => {
+                    Error::MalformedQueryException(inner)
                 }
-                crate::error::StartQueryErrorKind::ResourceNotFoundError(inner) => {
-                    Error::ResourceNotFoundError(inner)
+                crate::error::StartQueryErrorKind::ResourceNotFoundException(inner) => {
+                    Error::ResourceNotFoundException(inner)
                 }
-                crate::error::StartQueryErrorKind::ServiceUnavailableError(inner) => {
-                    Error::ServiceUnavailableError(inner)
+                crate::error::StartQueryErrorKind::ServiceUnavailableException(inner) => {
+                    Error::ServiceUnavailableException(inner)
                 }
                 crate::error::StartQueryErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
@@ -878,14 +878,14 @@ impl From<smithy_http::result::SdkError<crate::error::StopQueryError>> for Error
     fn from(err: smithy_http::result::SdkError<crate::error::StopQueryError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::StopQueryErrorKind::InvalidParameterError(inner) => {
-                    Error::InvalidParameterError(inner)
+                crate::error::StopQueryErrorKind::InvalidParameterException(inner) => {
+                    Error::InvalidParameterException(inner)
                 }
-                crate::error::StopQueryErrorKind::ResourceNotFoundError(inner) => {
-                    Error::ResourceNotFoundError(inner)
+                crate::error::StopQueryErrorKind::ResourceNotFoundException(inner) => {
+                    Error::ResourceNotFoundException(inner)
                 }
-                crate::error::StopQueryErrorKind::ServiceUnavailableError(inner) => {
-                    Error::ServiceUnavailableError(inner)
+                crate::error::StopQueryErrorKind::ServiceUnavailableException(inner) => {
+                    Error::ServiceUnavailableException(inner)
                 }
                 crate::error::StopQueryErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
@@ -897,11 +897,11 @@ impl From<smithy_http::result::SdkError<crate::error::TagLogGroupError>> for Err
     fn from(err: smithy_http::result::SdkError<crate::error::TagLogGroupError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::TagLogGroupErrorKind::InvalidParameterError(inner) => {
-                    Error::InvalidParameterError(inner)
+                crate::error::TagLogGroupErrorKind::InvalidParameterException(inner) => {
+                    Error::InvalidParameterException(inner)
                 }
-                crate::error::TagLogGroupErrorKind::ResourceNotFoundError(inner) => {
-                    Error::ResourceNotFoundError(inner)
+                crate::error::TagLogGroupErrorKind::ResourceNotFoundException(inner) => {
+                    Error::ResourceNotFoundException(inner)
                 }
                 crate::error::TagLogGroupErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
@@ -913,11 +913,11 @@ impl From<smithy_http::result::SdkError<crate::error::TestMetricFilterError>> fo
     fn from(err: smithy_http::result::SdkError<crate::error::TestMetricFilterError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::TestMetricFilterErrorKind::InvalidParameterError(inner) => {
-                    Error::InvalidParameterError(inner)
+                crate::error::TestMetricFilterErrorKind::InvalidParameterException(inner) => {
+                    Error::InvalidParameterException(inner)
                 }
-                crate::error::TestMetricFilterErrorKind::ServiceUnavailableError(inner) => {
-                    Error::ServiceUnavailableError(inner)
+                crate::error::TestMetricFilterErrorKind::ServiceUnavailableException(inner) => {
+                    Error::ServiceUnavailableException(inner)
                 }
                 crate::error::TestMetricFilterErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
@@ -931,8 +931,8 @@ impl From<smithy_http::result::SdkError<crate::error::UntagLogGroupError>> for E
     fn from(err: smithy_http::result::SdkError<crate::error::UntagLogGroupError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::UntagLogGroupErrorKind::ResourceNotFoundError(inner) => {
-                    Error::ResourceNotFoundError(inner)
+                crate::error::UntagLogGroupErrorKind::ResourceNotFoundException(inner) => {
+                    Error::ResourceNotFoundException(inner)
                 }
                 crate::error::UntagLogGroupErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },

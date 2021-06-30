@@ -207,7 +207,7 @@ impl UpdateHealthCheckOutput {
 /// <p>A complex type that contains the response to a <code>TestDNSAnswer</code> request. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct TestDNSAnswerOutput {
+pub struct TestDnsAnswerOutput {
     /// <p>The Amazon Route 53 name server used to respond to the request.</p>
     pub nameserver: std::option::Option<std::string::String>,
     /// <p>The name of the resource record set that you submitted a request for.</p>
@@ -224,9 +224,9 @@ pub struct TestDNSAnswerOutput {
     /// <p>The protocol that Amazon Route 53 used to respond to the request, either <code>UDP</code> or <code>TCP</code>. </p>
     pub protocol: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for TestDNSAnswerOutput {
+impl std::fmt::Debug for TestDnsAnswerOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TestDNSAnswerOutput");
+        let mut formatter = f.debug_struct("TestDnsAnswerOutput");
         formatter.field("nameserver", &self.nameserver);
         formatter.field("record_name", &self.record_name);
         formatter.field("record_type", &self.record_type);
@@ -236,9 +236,9 @@ impl std::fmt::Debug for TestDNSAnswerOutput {
         formatter.finish()
     }
 }
-/// See [`TestDNSAnswerOutput`](crate::output::TestDNSAnswerOutput)
+/// See [`TestDnsAnswerOutput`](crate::output::TestDnsAnswerOutput)
 pub mod test_dns_answer_output {
-    /// A builder for [`TestDNSAnswerOutput`](crate::output::TestDNSAnswerOutput)
+    /// A builder for [`TestDnsAnswerOutput`](crate::output::TestDnsAnswerOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -314,9 +314,9 @@ pub mod test_dns_answer_output {
             self.protocol = input;
             self
         }
-        /// Consumes the builder and constructs a [`TestDNSAnswerOutput`](crate::output::TestDNSAnswerOutput)
-        pub fn build(self) -> crate::output::TestDNSAnswerOutput {
-            crate::output::TestDNSAnswerOutput {
+        /// Consumes the builder and constructs a [`TestDnsAnswerOutput`](crate::output::TestDnsAnswerOutput)
+        pub fn build(self) -> crate::output::TestDnsAnswerOutput {
+            crate::output::TestDnsAnswerOutput {
                 nameserver: self.nameserver,
                 record_name: self.record_name,
                 record_type: self.record_type,
@@ -327,8 +327,8 @@ pub mod test_dns_answer_output {
         }
     }
 }
-impl TestDNSAnswerOutput {
-    /// Creates a new builder-style object to manufacture [`TestDNSAnswerOutput`](crate::output::TestDNSAnswerOutput)
+impl TestDnsAnswerOutput {
+    /// Creates a new builder-style object to manufacture [`TestDnsAnswerOutput`](crate::output::TestDnsAnswerOutput)
     pub fn builder() -> crate::output::test_dns_answer_output::Builder {
         crate::output::test_dns_answer_output::Builder::default()
     }
@@ -337,7 +337,7 @@ impl TestDNSAnswerOutput {
 /// <p>A complex type that contains the response information for the request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct ListVPCAssociationAuthorizationsOutput {
+pub struct ListVpcAssociationAuthorizationsOutput {
     /// <p>The ID of the hosted zone that you can associate the listed VPCs with.</p>
     pub hosted_zone_id: std::option::Option<std::string::String>,
     /// <p>When the response includes a <code>NextToken</code> element, there are more VPCs that can be associated
@@ -345,26 +345,26 @@ pub struct ListVPCAssociationAuthorizationsOutput {
     /// and include the value of the <code>NextToken</code> element from the response in the <code>nexttoken</code> request parameter.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The list of VPCs that are authorized to be associated with the specified hosted zone.</p>
-    pub vp_cs: std::option::Option<std::vec::Vec<crate::model::VPC>>,
+    pub vp_cs: std::option::Option<std::vec::Vec<crate::model::Vpc>>,
 }
-impl std::fmt::Debug for ListVPCAssociationAuthorizationsOutput {
+impl std::fmt::Debug for ListVpcAssociationAuthorizationsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListVPCAssociationAuthorizationsOutput");
+        let mut formatter = f.debug_struct("ListVpcAssociationAuthorizationsOutput");
         formatter.field("hosted_zone_id", &self.hosted_zone_id);
         formatter.field("next_token", &self.next_token);
         formatter.field("vp_cs", &self.vp_cs);
         formatter.finish()
     }
 }
-/// See [`ListVPCAssociationAuthorizationsOutput`](crate::output::ListVPCAssociationAuthorizationsOutput)
+/// See [`ListVpcAssociationAuthorizationsOutput`](crate::output::ListVpcAssociationAuthorizationsOutput)
 pub mod list_vpc_association_authorizations_output {
-    /// A builder for [`ListVPCAssociationAuthorizationsOutput`](crate::output::ListVPCAssociationAuthorizationsOutput)
+    /// A builder for [`ListVpcAssociationAuthorizationsOutput`](crate::output::ListVpcAssociationAuthorizationsOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) hosted_zone_id: std::option::Option<std::string::String>,
         pub(crate) next_token: std::option::Option<std::string::String>,
-        pub(crate) vp_cs: std::option::Option<std::vec::Vec<crate::model::VPC>>,
+        pub(crate) vp_cs: std::option::Option<std::vec::Vec<crate::model::Vpc>>,
     }
     impl Builder {
         /// <p>The ID of the hosted zone that you can associate the listed VPCs with.</p>
@@ -390,7 +390,7 @@ pub mod list_vpc_association_authorizations_output {
             self.next_token = input;
             self
         }
-        pub fn vp_cs(mut self, input: impl Into<crate::model::VPC>) -> Self {
+        pub fn vp_cs(mut self, input: impl Into<crate::model::Vpc>) -> Self {
             let mut v = self.vp_cs.unwrap_or_default();
             v.push(input.into());
             self.vp_cs = Some(v);
@@ -398,14 +398,14 @@ pub mod list_vpc_association_authorizations_output {
         }
         pub fn set_vp_cs(
             mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::VPC>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Vpc>>,
         ) -> Self {
             self.vp_cs = input;
             self
         }
-        /// Consumes the builder and constructs a [`ListVPCAssociationAuthorizationsOutput`](crate::output::ListVPCAssociationAuthorizationsOutput)
-        pub fn build(self) -> crate::output::ListVPCAssociationAuthorizationsOutput {
-            crate::output::ListVPCAssociationAuthorizationsOutput {
+        /// Consumes the builder and constructs a [`ListVpcAssociationAuthorizationsOutput`](crate::output::ListVpcAssociationAuthorizationsOutput)
+        pub fn build(self) -> crate::output::ListVpcAssociationAuthorizationsOutput {
+            crate::output::ListVpcAssociationAuthorizationsOutput {
                 hosted_zone_id: self.hosted_zone_id,
                 next_token: self.next_token,
                 vp_cs: self.vp_cs,
@@ -413,8 +413,8 @@ pub mod list_vpc_association_authorizations_output {
         }
     }
 }
-impl ListVPCAssociationAuthorizationsOutput {
-    /// Creates a new builder-style object to manufacture [`ListVPCAssociationAuthorizationsOutput`](crate::output::ListVPCAssociationAuthorizationsOutput)
+impl ListVpcAssociationAuthorizationsOutput {
+    /// Creates a new builder-style object to manufacture [`ListVpcAssociationAuthorizationsOutput`](crate::output::ListVpcAssociationAuthorizationsOutput)
     pub fn builder() -> crate::output::list_vpc_association_authorizations_output::Builder {
         crate::output::list_vpc_association_authorizations_output::Builder::default()
     }
@@ -1550,7 +1550,7 @@ impl ListQueryLoggingConfigsOutput {
 
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct ListHostedZonesByVPCOutput {
+pub struct ListHostedZonesByVpcOutput {
     /// <p>A list that contains one <code>HostedZoneSummary</code> element for each hosted zone that the specified Amazon VPC is associated with.
     /// Each <code>HostedZoneSummary</code> element contains the hosted zone name and ID, and information about who owns the hosted zone.</p>
     pub hosted_zone_summaries: std::option::Option<std::vec::Vec<crate::model::HostedZoneSummary>>,
@@ -1559,18 +1559,18 @@ pub struct ListHostedZonesByVPCOutput {
     /// <p>The value that you specified for <code>NextToken</code> in the most recent <code>ListHostedZonesByVPC</code> request.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for ListHostedZonesByVPCOutput {
+impl std::fmt::Debug for ListHostedZonesByVpcOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListHostedZonesByVPCOutput");
+        let mut formatter = f.debug_struct("ListHostedZonesByVpcOutput");
         formatter.field("hosted_zone_summaries", &self.hosted_zone_summaries);
         formatter.field("max_items", &self.max_items);
         formatter.field("next_token", &self.next_token);
         formatter.finish()
     }
 }
-/// See [`ListHostedZonesByVPCOutput`](crate::output::ListHostedZonesByVPCOutput)
+/// See [`ListHostedZonesByVpcOutput`](crate::output::ListHostedZonesByVpcOutput)
 pub mod list_hosted_zones_by_vpc_output {
-    /// A builder for [`ListHostedZonesByVPCOutput`](crate::output::ListHostedZonesByVPCOutput)
+    /// A builder for [`ListHostedZonesByVpcOutput`](crate::output::ListHostedZonesByVpcOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -1614,9 +1614,9 @@ pub mod list_hosted_zones_by_vpc_output {
             self.next_token = input;
             self
         }
-        /// Consumes the builder and constructs a [`ListHostedZonesByVPCOutput`](crate::output::ListHostedZonesByVPCOutput)
-        pub fn build(self) -> crate::output::ListHostedZonesByVPCOutput {
-            crate::output::ListHostedZonesByVPCOutput {
+        /// Consumes the builder and constructs a [`ListHostedZonesByVpcOutput`](crate::output::ListHostedZonesByVpcOutput)
+        pub fn build(self) -> crate::output::ListHostedZonesByVpcOutput {
+            crate::output::ListHostedZonesByVpcOutput {
                 hosted_zone_summaries: self.hosted_zone_summaries,
                 max_items: self.max_items,
                 next_token: self.next_token,
@@ -1624,8 +1624,8 @@ pub mod list_hosted_zones_by_vpc_output {
         }
     }
 }
-impl ListHostedZonesByVPCOutput {
-    /// Creates a new builder-style object to manufacture [`ListHostedZonesByVPCOutput`](crate::output::ListHostedZonesByVPCOutput)
+impl ListHostedZonesByVpcOutput {
+    /// Creates a new builder-style object to manufacture [`ListHostedZonesByVpcOutput`](crate::output::ListHostedZonesByVpcOutput)
     pub fn builder() -> crate::output::list_hosted_zones_by_vpc_output::Builder {
         crate::output::list_hosted_zones_by_vpc_output::Builder::default()
     }
@@ -2632,7 +2632,7 @@ pub struct GetHostedZoneOutput {
     /// <p>A complex type that lists the Amazon Route 53 name servers for the specified hosted zone.</p>
     pub delegation_set: std::option::Option<crate::model::DelegationSet>,
     /// <p>A complex type that contains information about the VPCs that are associated with the specified hosted zone.</p>
-    pub vp_cs: std::option::Option<std::vec::Vec<crate::model::VPC>>,
+    pub vp_cs: std::option::Option<std::vec::Vec<crate::model::Vpc>>,
 }
 impl std::fmt::Debug for GetHostedZoneOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2651,7 +2651,7 @@ pub mod get_hosted_zone_output {
     pub struct Builder {
         pub(crate) hosted_zone: std::option::Option<crate::model::HostedZone>,
         pub(crate) delegation_set: std::option::Option<crate::model::DelegationSet>,
-        pub(crate) vp_cs: std::option::Option<std::vec::Vec<crate::model::VPC>>,
+        pub(crate) vp_cs: std::option::Option<std::vec::Vec<crate::model::Vpc>>,
     }
     impl Builder {
         /// <p>A complex type that contains general information about the specified hosted zone.</p>
@@ -2678,7 +2678,7 @@ pub mod get_hosted_zone_output {
             self.delegation_set = input;
             self
         }
-        pub fn vp_cs(mut self, input: impl Into<crate::model::VPC>) -> Self {
+        pub fn vp_cs(mut self, input: impl Into<crate::model::Vpc>) -> Self {
             let mut v = self.vp_cs.unwrap_or_default();
             v.push(input.into());
             self.vp_cs = Some(v);
@@ -2686,7 +2686,7 @@ pub mod get_hosted_zone_output {
         }
         pub fn set_vp_cs(
             mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::VPC>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Vpc>>,
         ) -> Self {
             self.vp_cs = input;
             self
@@ -2973,39 +2973,39 @@ impl GetGeoLocationOutput {
 
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct GetDNSSECOutput {
+pub struct GetDnssecOutput {
     /// <p>A string repesenting the status of DNSSEC.</p>
-    pub status: std::option::Option<crate::model::DNSSECStatus>,
+    pub status: std::option::Option<crate::model::DnssecStatus>,
     /// <p>The key-signing keys (KSKs) in your account.</p>
     pub key_signing_keys: std::option::Option<std::vec::Vec<crate::model::KeySigningKey>>,
 }
-impl std::fmt::Debug for GetDNSSECOutput {
+impl std::fmt::Debug for GetDnssecOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetDNSSECOutput");
+        let mut formatter = f.debug_struct("GetDnssecOutput");
         formatter.field("status", &self.status);
         formatter.field("key_signing_keys", &self.key_signing_keys);
         formatter.finish()
     }
 }
-/// See [`GetDNSSECOutput`](crate::output::GetDNSSECOutput)
+/// See [`GetDnssecOutput`](crate::output::GetDnssecOutput)
 pub mod get_dnssec_output {
-    /// A builder for [`GetDNSSECOutput`](crate::output::GetDNSSECOutput)
+    /// A builder for [`GetDnssecOutput`](crate::output::GetDnssecOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) status: std::option::Option<crate::model::DNSSECStatus>,
+        pub(crate) status: std::option::Option<crate::model::DnssecStatus>,
         pub(crate) key_signing_keys:
             std::option::Option<std::vec::Vec<crate::model::KeySigningKey>>,
     }
     impl Builder {
         /// <p>A string repesenting the status of DNSSEC.</p>
-        pub fn status(mut self, input: crate::model::DNSSECStatus) -> Self {
+        pub fn status(mut self, input: crate::model::DnssecStatus) -> Self {
             self.status = Some(input);
             self
         }
         pub fn set_status(
             mut self,
-            input: std::option::Option<crate::model::DNSSECStatus>,
+            input: std::option::Option<crate::model::DnssecStatus>,
         ) -> Self {
             self.status = input;
             self
@@ -3023,17 +3023,17 @@ pub mod get_dnssec_output {
             self.key_signing_keys = input;
             self
         }
-        /// Consumes the builder and constructs a [`GetDNSSECOutput`](crate::output::GetDNSSECOutput)
-        pub fn build(self) -> crate::output::GetDNSSECOutput {
-            crate::output::GetDNSSECOutput {
+        /// Consumes the builder and constructs a [`GetDnssecOutput`](crate::output::GetDnssecOutput)
+        pub fn build(self) -> crate::output::GetDnssecOutput {
+            crate::output::GetDnssecOutput {
                 status: self.status,
                 key_signing_keys: self.key_signing_keys,
             }
         }
     }
 }
-impl GetDNSSECOutput {
-    /// Creates a new builder-style object to manufacture [`GetDNSSECOutput`](crate::output::GetDNSSECOutput)
+impl GetDnssecOutput {
+    /// Creates a new builder-style object to manufacture [`GetDnssecOutput`](crate::output::GetDnssecOutput)
     pub fn builder() -> crate::output::get_dnssec_output::Builder {
         crate::output::get_dnssec_output::Builder::default()
     }
@@ -3212,21 +3212,21 @@ impl GetAccountLimitOutput {
 
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct EnableHostedZoneDNSSECOutput {
+pub struct EnableHostedZoneDnssecOutput {
     /// <p>A complex type that describes change information about changes made to your hosted
     /// zone.</p>
     pub change_info: std::option::Option<crate::model::ChangeInfo>,
 }
-impl std::fmt::Debug for EnableHostedZoneDNSSECOutput {
+impl std::fmt::Debug for EnableHostedZoneDnssecOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EnableHostedZoneDNSSECOutput");
+        let mut formatter = f.debug_struct("EnableHostedZoneDnssecOutput");
         formatter.field("change_info", &self.change_info);
         formatter.finish()
     }
 }
-/// See [`EnableHostedZoneDNSSECOutput`](crate::output::EnableHostedZoneDNSSECOutput)
+/// See [`EnableHostedZoneDnssecOutput`](crate::output::EnableHostedZoneDnssecOutput)
 pub mod enable_hosted_zone_dnssec_output {
-    /// A builder for [`EnableHostedZoneDNSSECOutput`](crate::output::EnableHostedZoneDNSSECOutput)
+    /// A builder for [`EnableHostedZoneDnssecOutput`](crate::output::EnableHostedZoneDnssecOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -3246,16 +3246,16 @@ pub mod enable_hosted_zone_dnssec_output {
             self.change_info = input;
             self
         }
-        /// Consumes the builder and constructs a [`EnableHostedZoneDNSSECOutput`](crate::output::EnableHostedZoneDNSSECOutput)
-        pub fn build(self) -> crate::output::EnableHostedZoneDNSSECOutput {
-            crate::output::EnableHostedZoneDNSSECOutput {
+        /// Consumes the builder and constructs a [`EnableHostedZoneDnssecOutput`](crate::output::EnableHostedZoneDnssecOutput)
+        pub fn build(self) -> crate::output::EnableHostedZoneDnssecOutput {
+            crate::output::EnableHostedZoneDnssecOutput {
                 change_info: self.change_info,
             }
         }
     }
 }
-impl EnableHostedZoneDNSSECOutput {
-    /// Creates a new builder-style object to manufacture [`EnableHostedZoneDNSSECOutput`](crate::output::EnableHostedZoneDNSSECOutput)
+impl EnableHostedZoneDnssecOutput {
+    /// Creates a new builder-style object to manufacture [`EnableHostedZoneDnssecOutput`](crate::output::EnableHostedZoneDnssecOutput)
     pub fn builder() -> crate::output::enable_hosted_zone_dnssec_output::Builder {
         crate::output::enable_hosted_zone_dnssec_output::Builder::default()
     }
@@ -3264,20 +3264,20 @@ impl EnableHostedZoneDNSSECOutput {
 /// <p>A complex type that contains the response information for the disassociate request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct DisassociateVPCFromHostedZoneOutput {
+pub struct DisassociateVpcFromHostedZoneOutput {
     /// <p>A complex type that describes the changes made to the specified private hosted zone.</p>
     pub change_info: std::option::Option<crate::model::ChangeInfo>,
 }
-impl std::fmt::Debug for DisassociateVPCFromHostedZoneOutput {
+impl std::fmt::Debug for DisassociateVpcFromHostedZoneOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DisassociateVPCFromHostedZoneOutput");
+        let mut formatter = f.debug_struct("DisassociateVpcFromHostedZoneOutput");
         formatter.field("change_info", &self.change_info);
         formatter.finish()
     }
 }
-/// See [`DisassociateVPCFromHostedZoneOutput`](crate::output::DisassociateVPCFromHostedZoneOutput)
+/// See [`DisassociateVpcFromHostedZoneOutput`](crate::output::DisassociateVpcFromHostedZoneOutput)
 pub mod disassociate_vpc_from_hosted_zone_output {
-    /// A builder for [`DisassociateVPCFromHostedZoneOutput`](crate::output::DisassociateVPCFromHostedZoneOutput)
+    /// A builder for [`DisassociateVpcFromHostedZoneOutput`](crate::output::DisassociateVpcFromHostedZoneOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -3296,16 +3296,16 @@ pub mod disassociate_vpc_from_hosted_zone_output {
             self.change_info = input;
             self
         }
-        /// Consumes the builder and constructs a [`DisassociateVPCFromHostedZoneOutput`](crate::output::DisassociateVPCFromHostedZoneOutput)
-        pub fn build(self) -> crate::output::DisassociateVPCFromHostedZoneOutput {
-            crate::output::DisassociateVPCFromHostedZoneOutput {
+        /// Consumes the builder and constructs a [`DisassociateVpcFromHostedZoneOutput`](crate::output::DisassociateVpcFromHostedZoneOutput)
+        pub fn build(self) -> crate::output::DisassociateVpcFromHostedZoneOutput {
+            crate::output::DisassociateVpcFromHostedZoneOutput {
                 change_info: self.change_info,
             }
         }
     }
 }
-impl DisassociateVPCFromHostedZoneOutput {
-    /// Creates a new builder-style object to manufacture [`DisassociateVPCFromHostedZoneOutput`](crate::output::DisassociateVPCFromHostedZoneOutput)
+impl DisassociateVpcFromHostedZoneOutput {
+    /// Creates a new builder-style object to manufacture [`DisassociateVpcFromHostedZoneOutput`](crate::output::DisassociateVpcFromHostedZoneOutput)
     pub fn builder() -> crate::output::disassociate_vpc_from_hosted_zone_output::Builder {
         crate::output::disassociate_vpc_from_hosted_zone_output::Builder::default()
     }
@@ -3313,21 +3313,21 @@ impl DisassociateVPCFromHostedZoneOutput {
 
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct DisableHostedZoneDNSSECOutput {
+pub struct DisableHostedZoneDnssecOutput {
     /// <p>A complex type that describes change information about changes made to your hosted
     /// zone.</p>
     pub change_info: std::option::Option<crate::model::ChangeInfo>,
 }
-impl std::fmt::Debug for DisableHostedZoneDNSSECOutput {
+impl std::fmt::Debug for DisableHostedZoneDnssecOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DisableHostedZoneDNSSECOutput");
+        let mut formatter = f.debug_struct("DisableHostedZoneDnssecOutput");
         formatter.field("change_info", &self.change_info);
         formatter.finish()
     }
 }
-/// See [`DisableHostedZoneDNSSECOutput`](crate::output::DisableHostedZoneDNSSECOutput)
+/// See [`DisableHostedZoneDnssecOutput`](crate::output::DisableHostedZoneDnssecOutput)
 pub mod disable_hosted_zone_dnssec_output {
-    /// A builder for [`DisableHostedZoneDNSSECOutput`](crate::output::DisableHostedZoneDNSSECOutput)
+    /// A builder for [`DisableHostedZoneDnssecOutput`](crate::output::DisableHostedZoneDnssecOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -3347,16 +3347,16 @@ pub mod disable_hosted_zone_dnssec_output {
             self.change_info = input;
             self
         }
-        /// Consumes the builder and constructs a [`DisableHostedZoneDNSSECOutput`](crate::output::DisableHostedZoneDNSSECOutput)
-        pub fn build(self) -> crate::output::DisableHostedZoneDNSSECOutput {
-            crate::output::DisableHostedZoneDNSSECOutput {
+        /// Consumes the builder and constructs a [`DisableHostedZoneDnssecOutput`](crate::output::DisableHostedZoneDnssecOutput)
+        pub fn build(self) -> crate::output::DisableHostedZoneDnssecOutput {
+            crate::output::DisableHostedZoneDnssecOutput {
                 change_info: self.change_info,
             }
         }
     }
 }
-impl DisableHostedZoneDNSSECOutput {
-    /// Creates a new builder-style object to manufacture [`DisableHostedZoneDNSSECOutput`](crate::output::DisableHostedZoneDNSSECOutput)
+impl DisableHostedZoneDnssecOutput {
+    /// Creates a new builder-style object to manufacture [`DisableHostedZoneDnssecOutput`](crate::output::DisableHostedZoneDnssecOutput)
     pub fn builder() -> crate::output::disable_hosted_zone_dnssec_output::Builder {
         crate::output::disable_hosted_zone_dnssec_output::Builder::default()
     }
@@ -3365,28 +3365,28 @@ impl DisableHostedZoneDNSSECOutput {
 /// <p>Empty response for the request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct DeleteVPCAssociationAuthorizationOutput {}
-impl std::fmt::Debug for DeleteVPCAssociationAuthorizationOutput {
+pub struct DeleteVpcAssociationAuthorizationOutput {}
+impl std::fmt::Debug for DeleteVpcAssociationAuthorizationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteVPCAssociationAuthorizationOutput");
+        let mut formatter = f.debug_struct("DeleteVpcAssociationAuthorizationOutput");
         formatter.finish()
     }
 }
-/// See [`DeleteVPCAssociationAuthorizationOutput`](crate::output::DeleteVPCAssociationAuthorizationOutput)
+/// See [`DeleteVpcAssociationAuthorizationOutput`](crate::output::DeleteVpcAssociationAuthorizationOutput)
 pub mod delete_vpc_association_authorization_output {
-    /// A builder for [`DeleteVPCAssociationAuthorizationOutput`](crate::output::DeleteVPCAssociationAuthorizationOutput)
+    /// A builder for [`DeleteVpcAssociationAuthorizationOutput`](crate::output::DeleteVpcAssociationAuthorizationOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`DeleteVPCAssociationAuthorizationOutput`](crate::output::DeleteVPCAssociationAuthorizationOutput)
-        pub fn build(self) -> crate::output::DeleteVPCAssociationAuthorizationOutput {
-            crate::output::DeleteVPCAssociationAuthorizationOutput {}
+        /// Consumes the builder and constructs a [`DeleteVpcAssociationAuthorizationOutput`](crate::output::DeleteVpcAssociationAuthorizationOutput)
+        pub fn build(self) -> crate::output::DeleteVpcAssociationAuthorizationOutput {
+            crate::output::DeleteVpcAssociationAuthorizationOutput {}
         }
     }
 }
-impl DeleteVPCAssociationAuthorizationOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteVPCAssociationAuthorizationOutput`](crate::output::DeleteVPCAssociationAuthorizationOutput)
+impl DeleteVpcAssociationAuthorizationOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteVpcAssociationAuthorizationOutput`](crate::output::DeleteVpcAssociationAuthorizationOutput)
     pub fn builder() -> crate::output::delete_vpc_association_authorization_output::Builder {
         crate::output::delete_vpc_association_authorization_output::Builder::default()
     }
@@ -3696,28 +3696,28 @@ impl DeactivateKeySigningKeyOutput {
 /// <p>A complex type that contains the response information from a <code>CreateVPCAssociationAuthorization</code> request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct CreateVPCAssociationAuthorizationOutput {
+pub struct CreateVpcAssociationAuthorizationOutput {
     /// <p>The ID of the hosted zone that you authorized associating a VPC with.</p>
     pub hosted_zone_id: std::option::Option<std::string::String>,
     /// <p>The VPC that you authorized associating with a hosted zone.</p>
-    pub vpc: std::option::Option<crate::model::VPC>,
+    pub vpc: std::option::Option<crate::model::Vpc>,
 }
-impl std::fmt::Debug for CreateVPCAssociationAuthorizationOutput {
+impl std::fmt::Debug for CreateVpcAssociationAuthorizationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateVPCAssociationAuthorizationOutput");
+        let mut formatter = f.debug_struct("CreateVpcAssociationAuthorizationOutput");
         formatter.field("hosted_zone_id", &self.hosted_zone_id);
         formatter.field("vpc", &self.vpc);
         formatter.finish()
     }
 }
-/// See [`CreateVPCAssociationAuthorizationOutput`](crate::output::CreateVPCAssociationAuthorizationOutput)
+/// See [`CreateVpcAssociationAuthorizationOutput`](crate::output::CreateVpcAssociationAuthorizationOutput)
 pub mod create_vpc_association_authorization_output {
-    /// A builder for [`CreateVPCAssociationAuthorizationOutput`](crate::output::CreateVPCAssociationAuthorizationOutput)
+    /// A builder for [`CreateVpcAssociationAuthorizationOutput`](crate::output::CreateVpcAssociationAuthorizationOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) hosted_zone_id: std::option::Option<std::string::String>,
-        pub(crate) vpc: std::option::Option<crate::model::VPC>,
+        pub(crate) vpc: std::option::Option<crate::model::Vpc>,
     }
     impl Builder {
         /// <p>The ID of the hosted zone that you authorized associating a VPC with.</p>
@@ -3733,25 +3733,25 @@ pub mod create_vpc_association_authorization_output {
             self
         }
         /// <p>The VPC that you authorized associating with a hosted zone.</p>
-        pub fn vpc(mut self, input: crate::model::VPC) -> Self {
+        pub fn vpc(mut self, input: crate::model::Vpc) -> Self {
             self.vpc = Some(input);
             self
         }
-        pub fn set_vpc(mut self, input: std::option::Option<crate::model::VPC>) -> Self {
+        pub fn set_vpc(mut self, input: std::option::Option<crate::model::Vpc>) -> Self {
             self.vpc = input;
             self
         }
-        /// Consumes the builder and constructs a [`CreateVPCAssociationAuthorizationOutput`](crate::output::CreateVPCAssociationAuthorizationOutput)
-        pub fn build(self) -> crate::output::CreateVPCAssociationAuthorizationOutput {
-            crate::output::CreateVPCAssociationAuthorizationOutput {
+        /// Consumes the builder and constructs a [`CreateVpcAssociationAuthorizationOutput`](crate::output::CreateVpcAssociationAuthorizationOutput)
+        pub fn build(self) -> crate::output::CreateVpcAssociationAuthorizationOutput {
+            crate::output::CreateVpcAssociationAuthorizationOutput {
                 hosted_zone_id: self.hosted_zone_id,
                 vpc: self.vpc,
             }
         }
     }
 }
-impl CreateVPCAssociationAuthorizationOutput {
-    /// Creates a new builder-style object to manufacture [`CreateVPCAssociationAuthorizationOutput`](crate::output::CreateVPCAssociationAuthorizationOutput)
+impl CreateVpcAssociationAuthorizationOutput {
+    /// Creates a new builder-style object to manufacture [`CreateVpcAssociationAuthorizationOutput`](crate::output::CreateVpcAssociationAuthorizationOutput)
     pub fn builder() -> crate::output::create_vpc_association_authorization_output::Builder {
         crate::output::create_vpc_association_authorization_output::Builder::default()
     }
@@ -4174,7 +4174,7 @@ pub struct CreateHostedZoneOutput {
     /// <p>A complex type that describes the name servers for this hosted zone.</p>
     pub delegation_set: std::option::Option<crate::model::DelegationSet>,
     /// <p>A complex type that contains information about an Amazon VPC that you associated with this hosted zone.</p>
-    pub vpc: std::option::Option<crate::model::VPC>,
+    pub vpc: std::option::Option<crate::model::Vpc>,
     /// <p>The unique URL representing the new hosted zone.</p>
     pub location: std::option::Option<std::string::String>,
 }
@@ -4198,7 +4198,7 @@ pub mod create_hosted_zone_output {
         pub(crate) hosted_zone: std::option::Option<crate::model::HostedZone>,
         pub(crate) change_info: std::option::Option<crate::model::ChangeInfo>,
         pub(crate) delegation_set: std::option::Option<crate::model::DelegationSet>,
-        pub(crate) vpc: std::option::Option<crate::model::VPC>,
+        pub(crate) vpc: std::option::Option<crate::model::Vpc>,
         pub(crate) location: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -4239,11 +4239,11 @@ pub mod create_hosted_zone_output {
             self
         }
         /// <p>A complex type that contains information about an Amazon VPC that you associated with this hosted zone.</p>
-        pub fn vpc(mut self, input: crate::model::VPC) -> Self {
+        pub fn vpc(mut self, input: crate::model::Vpc) -> Self {
             self.vpc = Some(input);
             self
         }
-        pub fn set_vpc(mut self, input: std::option::Option<crate::model::VPC>) -> Self {
+        pub fn set_vpc(mut self, input: std::option::Option<crate::model::Vpc>) -> Self {
             self.vpc = input;
             self
         }
@@ -4428,20 +4428,20 @@ impl ChangeResourceRecordSetsOutput {
 /// <p>A complex type that contains the response information for the <code>AssociateVPCWithHostedZone</code> request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct AssociateVPCWithHostedZoneOutput {
+pub struct AssociateVpcWithHostedZoneOutput {
     /// <p>A complex type that describes the changes made to your hosted zone.</p>
     pub change_info: std::option::Option<crate::model::ChangeInfo>,
 }
-impl std::fmt::Debug for AssociateVPCWithHostedZoneOutput {
+impl std::fmt::Debug for AssociateVpcWithHostedZoneOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AssociateVPCWithHostedZoneOutput");
+        let mut formatter = f.debug_struct("AssociateVpcWithHostedZoneOutput");
         formatter.field("change_info", &self.change_info);
         formatter.finish()
     }
 }
-/// See [`AssociateVPCWithHostedZoneOutput`](crate::output::AssociateVPCWithHostedZoneOutput)
+/// See [`AssociateVpcWithHostedZoneOutput`](crate::output::AssociateVpcWithHostedZoneOutput)
 pub mod associate_vpc_with_hosted_zone_output {
-    /// A builder for [`AssociateVPCWithHostedZoneOutput`](crate::output::AssociateVPCWithHostedZoneOutput)
+    /// A builder for [`AssociateVpcWithHostedZoneOutput`](crate::output::AssociateVpcWithHostedZoneOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -4460,16 +4460,16 @@ pub mod associate_vpc_with_hosted_zone_output {
             self.change_info = input;
             self
         }
-        /// Consumes the builder and constructs a [`AssociateVPCWithHostedZoneOutput`](crate::output::AssociateVPCWithHostedZoneOutput)
-        pub fn build(self) -> crate::output::AssociateVPCWithHostedZoneOutput {
-            crate::output::AssociateVPCWithHostedZoneOutput {
+        /// Consumes the builder and constructs a [`AssociateVpcWithHostedZoneOutput`](crate::output::AssociateVpcWithHostedZoneOutput)
+        pub fn build(self) -> crate::output::AssociateVpcWithHostedZoneOutput {
+            crate::output::AssociateVpcWithHostedZoneOutput {
                 change_info: self.change_info,
             }
         }
     }
 }
-impl AssociateVPCWithHostedZoneOutput {
-    /// Creates a new builder-style object to manufacture [`AssociateVPCWithHostedZoneOutput`](crate::output::AssociateVPCWithHostedZoneOutput)
+impl AssociateVpcWithHostedZoneOutput {
+    /// Creates a new builder-style object to manufacture [`AssociateVpcWithHostedZoneOutput`](crate::output::AssociateVpcWithHostedZoneOutput)
     pub fn builder() -> crate::output::associate_vpc_with_hosted_zone_output::Builder {
         crate::output::associate_vpc_with_hosted_zone_output::Builder::default()
     }

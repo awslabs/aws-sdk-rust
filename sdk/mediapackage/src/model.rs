@@ -27,7 +27,7 @@ impl std::convert::From<&str> for Origination {
 impl std::str::FromStr for Origination {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(Origination::from(s))
     }
 }
@@ -45,35 +45,18 @@ impl AsRef<str> for Origination {
         self.as_str()
     }
 }
-impl<'de> serde::Deserialize<'de> for Origination {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
-    }
-}
 
 /// A Microsoft Smooth Streaming (MSS) packaging configuration.
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MssPackage {
     /// A Microsoft Smooth Streaming (MSS) encryption configuration.
-    #[serde(rename = "encryption")]
-    #[serde(default)]
     pub encryption: std::option::Option<crate::model::MssEncryption>,
     /// The time window (in seconds) contained in each manifest.
-    #[serde(rename = "manifestWindowSeconds")]
-    #[serde(default)]
     pub manifest_window_seconds: i32,
     /// The duration (in seconds) of each segment.
-    #[serde(rename = "segmentDurationSeconds")]
-    #[serde(default)]
     pub segment_duration_seconds: i32,
     /// A StreamSelection configuration.
-    #[serde(rename = "streamSelection")]
-    #[serde(default)]
     pub stream_selection: std::option::Option<crate::model::StreamSelection>,
 }
 impl std::fmt::Debug for MssPackage {
@@ -160,19 +143,13 @@ impl MssPackage {
 
 /// A StreamSelection configuration.
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StreamSelection {
     /// The maximum video bitrate (bps) to include in output.
-    #[serde(rename = "maxVideoBitsPerSecond")]
-    #[serde(default)]
     pub max_video_bits_per_second: i32,
     /// The minimum video bitrate (bps) to include in output.
-    #[serde(rename = "minVideoBitsPerSecond")]
-    #[serde(default)]
     pub min_video_bits_per_second: i32,
     /// A directive that determines the order of streams in the output.
-    #[serde(rename = "streamOrder")]
-    #[serde(default)]
     pub stream_order: std::option::Option<crate::model::StreamOrder>,
 }
 impl std::fmt::Debug for StreamSelection {
@@ -272,7 +249,7 @@ impl std::convert::From<&str> for StreamOrder {
 impl std::str::FromStr for StreamOrder {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(StreamOrder::from(s))
     }
 }
@@ -291,23 +268,12 @@ impl AsRef<str> for StreamOrder {
         self.as_str()
     }
 }
-impl<'de> serde::Deserialize<'de> for StreamOrder {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
-    }
-}
 
 /// A Microsoft Smooth Streaming (MSS) encryption configuration.
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MssEncryption {
     /// A configuration for accessing an external Secure Packager and Encoder Key Exchange (SPEKE) service that will provide encryption keys.
-    #[serde(rename = "spekeKeyProvider")]
-    #[serde(default)]
     pub speke_key_provider: std::option::Option<crate::model::SpekeKeyProvider>,
 }
 impl std::fmt::Debug for MssEncryption {
@@ -355,13 +321,11 @@ impl MssEncryption {
 
 /// A configuration for accessing an external Secure Packager and Encoder Key Exchange (SPEKE) service that will provide encryption keys.
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SpekeKeyProvider {
     /// An Amazon Resource Name (ARN) of a Certificate Manager certificate
     /// that MediaPackage will use for enforcing secure end-to-end data
     /// transfer with the key provider service.
-    #[serde(rename = "certificateArn")]
-    #[serde(default)]
     pub certificate_arn: std::option::Option<std::string::String>,
     /// Use encryptionContractConfiguration to configure one or more content encryption keys for your endpoints that use SPEKE 2.0.
     /// The encryption contract defines which content keys are used to encrypt the audio and video tracks in your stream.
@@ -369,26 +333,16 @@ pub struct SpekeKeyProvider {
     /// Note the following considerations when using encryptionContractConfiguration:
     /// encryptionContractConfiguration can be used for DASH endpoints that use SPEKE 2.0. SPEKE 2.0 relies on the CPIX 2.3 specification.
     /// You must disable key rotation for this endpoint by setting keyRotationIntervalSeconds to 0.
-    #[serde(rename = "encryptionContractConfiguration")]
-    #[serde(default)]
     pub encryption_contract_configuration:
         std::option::Option<crate::model::EncryptionContractConfiguration>,
     /// The resource ID to include in key requests.
-    #[serde(rename = "resourceId")]
-    #[serde(default)]
     pub resource_id: std::option::Option<std::string::String>,
     /// An Amazon Resource Name (ARN) of an IAM role that AWS Elemental
     /// MediaPackage will assume when accessing the key provider service.
-    #[serde(rename = "roleArn")]
-    #[serde(default)]
     pub role_arn: std::option::Option<std::string::String>,
     /// The system IDs to include in key requests.
-    #[serde(rename = "systemIds")]
-    #[serde(default)]
     pub system_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// The URL of the external key provider service.
-    #[serde(rename = "url")]
-    #[serde(default)]
     pub url: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for SpekeKeyProvider {
@@ -523,15 +477,11 @@ impl SpekeKeyProvider {
 /// encryptionContractConfiguration can be used for DASH endpoints that use SPEKE 2.0. SPEKE 2.0 relies on the CPIX 2.3 specification.
 /// You must disable key rotation for this endpoint by setting keyRotationIntervalSeconds to 0.
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EncryptionContractConfiguration {
     /// A collection of audio encryption presets.
-    #[serde(rename = "presetSpeke20Audio")]
-    #[serde(default)]
     pub preset_speke20_audio: std::option::Option<crate::model::PresetSpeke20Audio>,
     /// A collection of video encryption presets.
-    #[serde(rename = "presetSpeke20Video")]
-    #[serde(default)]
     pub preset_speke20_video: std::option::Option<crate::model::PresetSpeke20Video>,
 }
 impl std::fmt::Debug for EncryptionContractConfiguration {
@@ -618,7 +568,7 @@ impl std::convert::From<&str> for PresetSpeke20Video {
 impl std::str::FromStr for PresetSpeke20Video {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(PresetSpeke20Video::from(s))
     }
 }
@@ -633,15 +583,6 @@ impl PresetSpeke20Video {
 impl AsRef<str> for PresetSpeke20Video {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for PresetSpeke20Video {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -671,7 +612,7 @@ impl std::convert::From<&str> for PresetSpeke20Audio {
 impl std::str::FromStr for PresetSpeke20Audio {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(PresetSpeke20Audio::from(s))
     }
 }
@@ -688,19 +629,10 @@ impl AsRef<str> for PresetSpeke20Audio {
         self.as_str()
     }
 }
-impl<'de> serde::Deserialize<'de> for PresetSpeke20Audio {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
-    }
-}
 
 /// An HTTP Live Streaming (HLS) packaging configuration.
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct HlsPackage {
     /// This setting controls how ad markers are included in the packaged OriginEndpoint.
     /// "NONE" will omit all SCTE-35 ad markers from the output.
@@ -711,14 +643,10 @@ pub struct HlsPackage {
     /// "DATERANGE" inserts EXT-X-DATERANGE tags to signal ad and program transition events
     /// in HLS and CMAF manifests. For this option, you must set a programDateTimeIntervalSeconds value
     /// that is greater than 0.
-    #[serde(rename = "adMarkers")]
-    #[serde(default)]
     pub ad_markers: std::option::Option<crate::model::AdMarkers>,
     /// A list of SCTE-35 message types that are treated as ad markers in the output.  If empty, no
     /// ad markers are output.  Specify multiple items to create ad markers for all of the included
     /// message types.
-    #[serde(rename = "adTriggers")]
-    #[serde(default)]
     pub ad_triggers: std::option::Option<std::vec::Vec<crate::model::AdTriggersElement>>,
     /// This setting allows the delivery restriction flags on SCTE-35 segmentation descriptors to
     /// determine whether a message signals an ad.  Choosing "NONE" means no SCTE-35 messages become
@@ -728,26 +656,16 @@ pub struct HlsPackage {
     /// be treated as ads.  Choosing "BOTH" means all SCTE-35 messages of the types specified in
     /// AdTriggers will be treated as ads.  Note that Splice Insert messages do not have these flags
     /// and are always treated as ads if specified in AdTriggers.
-    #[serde(rename = "adsOnDeliveryRestrictions")]
-    #[serde(default)]
     pub ads_on_delivery_restrictions: std::option::Option<crate::model::AdsOnDeliveryRestrictions>,
     /// An HTTP Live Streaming (HLS) encryption configuration.
-    #[serde(rename = "encryption")]
-    #[serde(default)]
     pub encryption: std::option::Option<crate::model::HlsEncryption>,
     /// When enabled, an I-Frame only stream will be included in the output.
-    #[serde(rename = "includeIframeOnlyStream")]
-    #[serde(default)]
     pub include_iframe_only_stream: bool,
     /// The HTTP Live Streaming (HLS) playlist type.
     /// When either "EVENT" or "VOD" is specified, a corresponding EXT-X-PLAYLIST-TYPE
     /// entry will be included in the media playlist.
-    #[serde(rename = "playlistType")]
-    #[serde(default)]
     pub playlist_type: std::option::Option<crate::model::PlaylistType>,
     /// Time window (in seconds) contained in each parent manifest.
-    #[serde(rename = "playlistWindowSeconds")]
-    #[serde(default)]
     pub playlist_window_seconds: i32,
     /// The interval (in seconds) between each EXT-X-PROGRAM-DATE-TIME tag
     /// inserted into manifests. Additionally, when an interval is specified
@@ -758,21 +676,13 @@ pub struct HlsPackage {
     /// ID3Timed Metadata messages will be generated. Note that irrespective
     /// of this parameter, if any ID3 Timed Metadata is found in HTTP Live Streaming (HLS) input,
     /// it will be passed through to HLS output.
-    #[serde(rename = "programDateTimeIntervalSeconds")]
-    #[serde(default)]
     pub program_date_time_interval_seconds: i32,
     /// Duration (in seconds) of each fragment. Actual fragments will be
     /// rounded to the nearest multiple of the source fragment duration.
-    #[serde(rename = "segmentDurationSeconds")]
-    #[serde(default)]
     pub segment_duration_seconds: i32,
     /// A StreamSelection configuration.
-    #[serde(rename = "streamSelection")]
-    #[serde(default)]
     pub stream_selection: std::option::Option<crate::model::StreamSelection>,
     /// When enabled, audio streams will be placed in rendition groups in the output.
-    #[serde(rename = "useAudioRenditionGroup")]
-    #[serde(default)]
     pub use_audio_rendition_group: bool,
 }
 impl std::fmt::Debug for HlsPackage {
@@ -1028,7 +938,7 @@ impl std::convert::From<&str> for PlaylistType {
 impl std::str::FromStr for PlaylistType {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(PlaylistType::from(s))
     }
 }
@@ -1047,40 +957,21 @@ impl AsRef<str> for PlaylistType {
         self.as_str()
     }
 }
-impl<'de> serde::Deserialize<'de> for PlaylistType {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
-    }
-}
 
 /// An HTTP Live Streaming (HLS) encryption configuration.
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct HlsEncryption {
     /// A constant initialization vector for encryption (optional).
     /// When not specified the initialization vector will be periodically rotated.
-    #[serde(rename = "constantInitializationVector")]
-    #[serde(default)]
     pub constant_initialization_vector: std::option::Option<std::string::String>,
     /// The encryption method to use.
-    #[serde(rename = "encryptionMethod")]
-    #[serde(default)]
     pub encryption_method: std::option::Option<crate::model::EncryptionMethod>,
     /// Interval (in seconds) between each encryption key rotation.
-    #[serde(rename = "keyRotationIntervalSeconds")]
-    #[serde(default)]
     pub key_rotation_interval_seconds: i32,
     /// When enabled, the EXT-X-KEY tag will be repeated in output manifests.
-    #[serde(rename = "repeatExtXKey")]
-    #[serde(default)]
     pub repeat_ext_x_key: bool,
     /// A configuration for accessing an external Secure Packager and Encoder Key Exchange (SPEKE) service that will provide encryption keys.
-    #[serde(rename = "spekeKeyProvider")]
-    #[serde(default)]
     pub speke_key_provider: std::option::Option<crate::model::SpekeKeyProvider>,
 }
 impl std::fmt::Debug for HlsEncryption {
@@ -1223,7 +1114,7 @@ impl std::convert::From<&str> for EncryptionMethod {
 impl std::str::FromStr for EncryptionMethod {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(EncryptionMethod::from(s))
     }
 }
@@ -1239,15 +1130,6 @@ impl EncryptionMethod {
 impl AsRef<str> for EncryptionMethod {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for EncryptionMethod {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -1291,7 +1173,7 @@ impl std::convert::From<&str> for AdsOnDeliveryRestrictions {
 impl std::str::FromStr for AdsOnDeliveryRestrictions {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(AdsOnDeliveryRestrictions::from(s))
     }
 }
@@ -1309,15 +1191,6 @@ impl AdsOnDeliveryRestrictions {
 impl AsRef<str> for AdsOnDeliveryRestrictions {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for AdsOnDeliveryRestrictions {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -1367,7 +1240,7 @@ impl std::convert::From<&str> for AdTriggersElement {
 impl std::str::FromStr for AdTriggersElement {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(AdTriggersElement::from(s))
     }
 }
@@ -1395,15 +1268,6 @@ impl AdTriggersElement {
 impl AsRef<str> for AdTriggersElement {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for AdTriggersElement {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -1439,7 +1303,7 @@ impl std::convert::From<&str> for AdMarkers {
 impl std::str::FromStr for AdMarkers {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(AdMarkers::from(s))
     }
 }
@@ -1459,25 +1323,14 @@ impl AsRef<str> for AdMarkers {
         self.as_str()
     }
 }
-impl<'de> serde::Deserialize<'de> for AdMarkers {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
-    }
-}
 
 /// A Dynamic Adaptive Streaming over HTTP (DASH) packaging configuration.
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DashPackage {
     /// A list of SCTE-35 message types that are treated as ad markers in the output.  If empty, no
     /// ad markers are output.  Specify multiple items to create ad markers for all of the included
     /// message types.
-    #[serde(rename = "adTriggers")]
-    #[serde(default)]
     pub ad_triggers: std::option::Option<std::vec::Vec<crate::model::AdTriggersElement>>,
     /// This setting allows the delivery restriction flags on SCTE-35 segmentation descriptors to
     /// determine whether a message signals an ad.  Choosing "NONE" means no SCTE-35 messages become
@@ -1487,64 +1340,36 @@ pub struct DashPackage {
     /// be treated as ads.  Choosing "BOTH" means all SCTE-35 messages of the types specified in
     /// AdTriggers will be treated as ads.  Note that Splice Insert messages do not have these flags
     /// and are always treated as ads if specified in AdTriggers.
-    #[serde(rename = "adsOnDeliveryRestrictions")]
-    #[serde(default)]
     pub ads_on_delivery_restrictions: std::option::Option<crate::model::AdsOnDeliveryRestrictions>,
     /// A Dynamic Adaptive Streaming over HTTP (DASH) encryption configuration.
-    #[serde(rename = "encryption")]
-    #[serde(default)]
     pub encryption: std::option::Option<crate::model::DashEncryption>,
     /// Determines the position of some tags in the Media Presentation Description (MPD).  When set to FULL, elements like SegmentTemplate and ContentProtection are included in each Representation.  When set to COMPACT, duplicate elements are combined and presented at the AdaptationSet level.
-    #[serde(rename = "manifestLayout")]
-    #[serde(default)]
     pub manifest_layout: std::option::Option<crate::model::ManifestLayout>,
     /// Time window (in seconds) contained in each manifest.
-    #[serde(rename = "manifestWindowSeconds")]
-    #[serde(default)]
     pub manifest_window_seconds: i32,
     /// Minimum duration (in seconds) that a player will buffer media before starting the presentation.
-    #[serde(rename = "minBufferTimeSeconds")]
-    #[serde(default)]
     pub min_buffer_time_seconds: i32,
     /// Minimum duration (in seconds) between potential changes to the Dynamic Adaptive Streaming over HTTP (DASH) Media Presentation Description (MPD).
-    #[serde(rename = "minUpdatePeriodSeconds")]
-    #[serde(default)]
     pub min_update_period_seconds: i32,
     /// A list of triggers that controls when the outgoing Dynamic Adaptive Streaming over HTTP (DASH)
     /// Media Presentation Description (MPD) will be partitioned into multiple periods. If empty, the content will not
     /// be partitioned into more than one period. If the list contains "ADS", new periods will be created where
     /// the Channel source contains SCTE-35 ad markers.
-    #[serde(rename = "periodTriggers")]
-    #[serde(default)]
     pub period_triggers: std::option::Option<std::vec::Vec<crate::model::PeriodTriggersElement>>,
     /// The Dynamic Adaptive Streaming over HTTP (DASH) profile type.  When set to "HBBTV_1_5", HbbTV 1.5 compliant output is enabled.
-    #[serde(rename = "profile")]
-    #[serde(default)]
     pub profile: std::option::Option<crate::model::Profile>,
     /// Duration (in seconds) of each segment. Actual segments will be
     /// rounded to the nearest multiple of the source segment duration.
-    #[serde(rename = "segmentDurationSeconds")]
-    #[serde(default)]
     pub segment_duration_seconds: i32,
     /// Determines the type of SegmentTemplate included in the Media Presentation Description (MPD).  When set to NUMBER_WITH_TIMELINE, a full timeline is presented in each SegmentTemplate, with $Number$ media URLs.  When set to TIME_WITH_TIMELINE, a full timeline is presented in each SegmentTemplate, with $Time$ media URLs. When set to NUMBER_WITH_DURATION, only a duration is included in each SegmentTemplate, with $Number$ media URLs.
-    #[serde(rename = "segmentTemplateFormat")]
-    #[serde(default)]
     pub segment_template_format: std::option::Option<crate::model::SegmentTemplateFormat>,
     /// A StreamSelection configuration.
-    #[serde(rename = "streamSelection")]
-    #[serde(default)]
     pub stream_selection: std::option::Option<crate::model::StreamSelection>,
     /// Duration (in seconds) to delay live content before presentation.
-    #[serde(rename = "suggestedPresentationDelaySeconds")]
-    #[serde(default)]
     pub suggested_presentation_delay_seconds: i32,
     /// Determines the type of UTCTiming included in the Media Presentation Description (MPD)
-    #[serde(rename = "utcTiming")]
-    #[serde(default)]
     pub utc_timing: std::option::Option<crate::model::UtcTiming>,
     /// Specifies the value attribute of the UTCTiming field when utcTiming is set to HTTP-ISO or HTTP-HEAD
-    #[serde(rename = "utcTimingUri")]
-    #[serde(default)]
     pub utc_timing_uri: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DashPackage {
@@ -1845,7 +1670,7 @@ impl std::convert::From<&str> for UtcTiming {
 impl std::str::FromStr for UtcTiming {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(UtcTiming::from(s))
     }
 }
@@ -1862,15 +1687,6 @@ impl UtcTiming {
 impl AsRef<str> for UtcTiming {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for UtcTiming {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -1904,7 +1720,7 @@ impl std::convert::From<&str> for SegmentTemplateFormat {
 impl std::str::FromStr for SegmentTemplateFormat {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(SegmentTemplateFormat::from(s))
     }
 }
@@ -1921,15 +1737,6 @@ impl SegmentTemplateFormat {
 impl AsRef<str> for SegmentTemplateFormat {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for SegmentTemplateFormat {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -1961,7 +1768,7 @@ impl std::convert::From<&str> for Profile {
 impl std::str::FromStr for Profile {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(Profile::from(s))
     }
 }
@@ -1977,15 +1784,6 @@ impl Profile {
 impl AsRef<str> for Profile {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for Profile {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -2015,7 +1813,7 @@ impl std::convert::From<&str> for PeriodTriggersElement {
 impl std::str::FromStr for PeriodTriggersElement {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(PeriodTriggersElement::from(s))
     }
 }
@@ -2030,15 +1828,6 @@ impl PeriodTriggersElement {
 impl AsRef<str> for PeriodTriggersElement {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for PeriodTriggersElement {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -2070,7 +1859,7 @@ impl std::convert::From<&str> for ManifestLayout {
 impl std::str::FromStr for ManifestLayout {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(ManifestLayout::from(s))
     }
 }
@@ -2088,27 +1877,14 @@ impl AsRef<str> for ManifestLayout {
         self.as_str()
     }
 }
-impl<'de> serde::Deserialize<'de> for ManifestLayout {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
-    }
-}
 
 /// A Dynamic Adaptive Streaming over HTTP (DASH) encryption configuration.
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DashEncryption {
     /// Time (in seconds) between each encryption key rotation.
-    #[serde(rename = "keyRotationIntervalSeconds")]
-    #[serde(default)]
     pub key_rotation_interval_seconds: i32,
     /// A configuration for accessing an external Secure Packager and Encoder Key Exchange (SPEKE) service that will provide encryption keys.
-    #[serde(rename = "spekeKeyProvider")]
-    #[serde(default)]
     pub speke_key_provider: std::option::Option<crate::model::SpekeKeyProvider>,
 }
 impl std::fmt::Debug for DashEncryption {
@@ -2176,28 +1952,18 @@ impl DashEncryption {
 
 /// A Common Media Application Format (CMAF) packaging configuration.
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CmafPackage {
     /// A Common Media Application Format (CMAF) encryption configuration.
-    #[serde(rename = "encryption")]
-    #[serde(default)]
     pub encryption: std::option::Option<crate::model::CmafEncryption>,
     /// A list of HLS manifest configurations
-    #[serde(rename = "hlsManifests")]
-    #[serde(default)]
     pub hls_manifests: std::option::Option<std::vec::Vec<crate::model::HlsManifest>>,
     /// Duration (in seconds) of each segment. Actual segments will be
     /// rounded to the nearest multiple of the source segment duration.
-    #[serde(rename = "segmentDurationSeconds")]
-    #[serde(default)]
     pub segment_duration_seconds: i32,
     /// An optional custom string that is prepended to the name of each segment. If not specified, it defaults to the ChannelId.
-    #[serde(rename = "segmentPrefix")]
-    #[serde(default)]
     pub segment_prefix: std::option::Option<std::string::String>,
     /// A StreamSelection configuration.
-    #[serde(rename = "streamSelection")]
-    #[serde(default)]
     pub stream_selection: std::option::Option<crate::model::StreamSelection>,
 }
 impl std::fmt::Debug for CmafPackage {
@@ -2304,7 +2070,7 @@ impl CmafPackage {
 
 /// A HTTP Live Streaming (HLS) manifest configuration.
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct HlsManifest {
     /// This setting controls how ad markers are included in the packaged OriginEndpoint.
     /// "NONE" will omit all SCTE-35 ad markers from the output.
@@ -2315,30 +2081,18 @@ pub struct HlsManifest {
     /// "DATERANGE" inserts EXT-X-DATERANGE tags to signal ad and program transition events
     /// in HLS and CMAF manifests. For this option, you must set a programDateTimeIntervalSeconds value
     /// that is greater than 0.
-    #[serde(rename = "adMarkers")]
-    #[serde(default)]
     pub ad_markers: std::option::Option<crate::model::AdMarkers>,
     /// The ID of the manifest. The ID must be unique within the OriginEndpoint and it cannot be changed after it is created.
-    #[serde(rename = "id")]
-    #[serde(default)]
     pub id: std::option::Option<std::string::String>,
     /// When enabled, an I-Frame only stream will be included in the output.
-    #[serde(rename = "includeIframeOnlyStream")]
-    #[serde(default)]
     pub include_iframe_only_stream: bool,
     /// An optional short string appended to the end of the OriginEndpoint URL. If not specified, defaults to the manifestName for the OriginEndpoint.
-    #[serde(rename = "manifestName")]
-    #[serde(default)]
     pub manifest_name: std::option::Option<std::string::String>,
     /// The HTTP Live Streaming (HLS) playlist type.
     /// When either "EVENT" or "VOD" is specified, a corresponding EXT-X-PLAYLIST-TYPE
     /// entry will be included in the media playlist.
-    #[serde(rename = "playlistType")]
-    #[serde(default)]
     pub playlist_type: std::option::Option<crate::model::PlaylistType>,
     /// Time window (in seconds) contained in each parent manifest.
-    #[serde(rename = "playlistWindowSeconds")]
-    #[serde(default)]
     pub playlist_window_seconds: i32,
     /// The interval (in seconds) between each EXT-X-PROGRAM-DATE-TIME tag
     /// inserted into manifests. Additionally, when an interval is specified
@@ -2349,12 +2103,8 @@ pub struct HlsManifest {
     /// ID3Timed Metadata messages will be generated. Note that irrespective
     /// of this parameter, if any ID3 Timed Metadata is found in HTTP Live Streaming (HLS) input,
     /// it will be passed through to HLS output.
-    #[serde(rename = "programDateTimeIntervalSeconds")]
-    #[serde(default)]
     pub program_date_time_interval_seconds: i32,
     /// The URL of the packaged OriginEndpoint for consumption.
-    #[serde(rename = "url")]
-    #[serde(default)]
     pub url: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for HlsManifest {
@@ -2521,19 +2271,13 @@ impl HlsManifest {
 
 /// A Common Media Application Format (CMAF) encryption configuration.
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CmafEncryption {
     /// An optional 128-bit, 16-byte hex value represented by a 32-character string, used in conjunction with the key for encrypting blocks. If you don't specify a value, then MediaPackage creates the constant initialization vector (IV).
-    #[serde(rename = "constantInitializationVector")]
-    #[serde(default)]
     pub constant_initialization_vector: std::option::Option<std::string::String>,
     /// Time (in seconds) between each encryption key rotation.
-    #[serde(rename = "keyRotationIntervalSeconds")]
-    #[serde(default)]
     pub key_rotation_interval_seconds: i32,
     /// A configuration for accessing an external Secure Packager and Encoder Key Exchange (SPEKE) service that will provide encryption keys.
-    #[serde(rename = "spekeKeyProvider")]
-    #[serde(default)]
     pub speke_key_provider: std::option::Option<crate::model::SpekeKeyProvider>,
 }
 impl std::fmt::Debug for CmafEncryption {
@@ -2622,15 +2366,11 @@ impl CmafEncryption {
 
 /// CDN Authorization credentials
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Authorization {
     /// The Amazon Resource Name (ARN) for the secret in Secrets Manager that your Content Distribution Network (CDN) uses for authorization to access your endpoint.
-    #[serde(rename = "cdnIdentifierSecret")]
-    #[serde(default)]
     pub cdn_identifier_secret: std::option::Option<std::string::String>,
     /// The Amazon Resource Name (ARN) for the IAM role that allows MediaPackage to communicate with AWS Secrets Manager.
-    #[serde(rename = "secretsRoleArn")]
-    #[serde(default)]
     pub secrets_role_arn: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for Authorization {
@@ -2693,29 +2433,19 @@ impl Authorization {
 
 /// A Common Media Application Format (CMAF) packaging configuration.
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CmafPackageCreateOrUpdateParameters {
     /// A Common Media Application Format (CMAF) encryption configuration.
-    #[serde(rename = "encryption")]
-    #[serde(default)]
     pub encryption: std::option::Option<crate::model::CmafEncryption>,
     /// A list of HLS manifest configurations
-    #[serde(rename = "hlsManifests")]
-    #[serde(default)]
     pub hls_manifests:
         std::option::Option<std::vec::Vec<crate::model::HlsManifestCreateOrUpdateParameters>>,
     /// Duration (in seconds) of each segment. Actual segments will be
     /// rounded to the nearest multiple of the source segment duration.
-    #[serde(rename = "segmentDurationSeconds")]
-    #[serde(default)]
     pub segment_duration_seconds: i32,
     /// An optional custom string that is prepended to the name of each segment. If not specified, it defaults to the ChannelId.
-    #[serde(rename = "segmentPrefix")]
-    #[serde(default)]
     pub segment_prefix: std::option::Option<std::string::String>,
     /// A StreamSelection configuration.
-    #[serde(rename = "streamSelection")]
-    #[serde(default)]
     pub stream_selection: std::option::Option<crate::model::StreamSelection>,
 }
 impl std::fmt::Debug for CmafPackageCreateOrUpdateParameters {
@@ -2828,7 +2558,7 @@ impl CmafPackageCreateOrUpdateParameters {
 
 /// A HTTP Live Streaming (HLS) manifest configuration.
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct HlsManifestCreateOrUpdateParameters {
     /// This setting controls how ad markers are included in the packaged OriginEndpoint.
     /// "NONE" will omit all SCTE-35 ad markers from the output.
@@ -2839,14 +2569,10 @@ pub struct HlsManifestCreateOrUpdateParameters {
     /// "DATERANGE" inserts EXT-X-DATERANGE tags to signal ad and program transition events
     /// in HLS and CMAF manifests. For this option, you must set a programDateTimeIntervalSeconds value
     /// that is greater than 0.
-    #[serde(rename = "adMarkers")]
-    #[serde(default)]
     pub ad_markers: std::option::Option<crate::model::AdMarkers>,
     /// A list of SCTE-35 message types that are treated as ad markers in the output.  If empty, no
     /// ad markers are output.  Specify multiple items to create ad markers for all of the included
     /// message types.
-    #[serde(rename = "adTriggers")]
-    #[serde(default)]
     pub ad_triggers: std::option::Option<std::vec::Vec<crate::model::AdTriggersElement>>,
     /// This setting allows the delivery restriction flags on SCTE-35 segmentation descriptors to
     /// determine whether a message signals an ad.  Choosing "NONE" means no SCTE-35 messages become
@@ -2856,30 +2582,18 @@ pub struct HlsManifestCreateOrUpdateParameters {
     /// be treated as ads.  Choosing "BOTH" means all SCTE-35 messages of the types specified in
     /// AdTriggers will be treated as ads.  Note that Splice Insert messages do not have these flags
     /// and are always treated as ads if specified in AdTriggers.
-    #[serde(rename = "adsOnDeliveryRestrictions")]
-    #[serde(default)]
     pub ads_on_delivery_restrictions: std::option::Option<crate::model::AdsOnDeliveryRestrictions>,
     /// The ID of the manifest. The ID must be unique within the OriginEndpoint and it cannot be changed after it is created.
-    #[serde(rename = "id")]
-    #[serde(default)]
     pub id: std::option::Option<std::string::String>,
     /// When enabled, an I-Frame only stream will be included in the output.
-    #[serde(rename = "includeIframeOnlyStream")]
-    #[serde(default)]
     pub include_iframe_only_stream: bool,
     /// An optional short string appended to the end of the OriginEndpoint URL. If not specified, defaults to the manifestName for the OriginEndpoint.
-    #[serde(rename = "manifestName")]
-    #[serde(default)]
     pub manifest_name: std::option::Option<std::string::String>,
     /// The HTTP Live Streaming (HLS) playlist type.
     /// When either "EVENT" or "VOD" is specified, a corresponding EXT-X-PLAYLIST-TYPE
     /// entry will be included in the media playlist.
-    #[serde(rename = "playlistType")]
-    #[serde(default)]
     pub playlist_type: std::option::Option<crate::model::PlaylistType>,
     /// Time window (in seconds) contained in each parent manifest.
-    #[serde(rename = "playlistWindowSeconds")]
-    #[serde(default)]
     pub playlist_window_seconds: i32,
     /// The interval (in seconds) between each EXT-X-PROGRAM-DATE-TIME tag
     /// inserted into manifests. Additionally, when an interval is specified
@@ -2890,8 +2604,6 @@ pub struct HlsManifestCreateOrUpdateParameters {
     /// ID3Timed Metadata messages will be generated. Note that irrespective
     /// of this parameter, if any ID3 Timed Metadata is found in HTTP Live Streaming (HLS) input,
     /// it will be passed through to HLS output.
-    #[serde(rename = "programDateTimeIntervalSeconds")]
-    #[serde(default)]
     pub program_date_time_interval_seconds: i32,
 }
 impl std::fmt::Debug for HlsManifestCreateOrUpdateParameters {
@@ -3091,11 +2803,9 @@ impl HlsManifestCreateOrUpdateParameters {
 
 /// Configure ingress access logging.
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct IngressAccessLogs {
     /// Customize the log group name.
-    #[serde(rename = "logGroupName")]
-    #[serde(default)]
     pub log_group_name: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for IngressAccessLogs {
@@ -3143,11 +2853,9 @@ impl IngressAccessLogs {
 
 /// An HTTP Live Streaming (HLS) ingest resource configuration.
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct HlsIngest {
     /// A list of endpoints to which the source stream should be sent.
-    #[serde(rename = "ingestEndpoints")]
-    #[serde(default)]
     pub ingest_endpoints: std::option::Option<std::vec::Vec<crate::model::IngestEndpoint>>,
 }
 impl std::fmt::Debug for HlsIngest {
@@ -3197,23 +2905,15 @@ impl HlsIngest {
 
 /// An endpoint for ingesting source content for a Channel.
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct IngestEndpoint {
     /// The system generated unique identifier for the IngestEndpoint
-    #[serde(rename = "id")]
-    #[serde(default)]
     pub id: std::option::Option<std::string::String>,
     /// The system generated password for ingest authentication.
-    #[serde(rename = "password")]
-    #[serde(default)]
     pub password: std::option::Option<std::string::String>,
     /// The ingest URL to which the source stream should be sent.
-    #[serde(rename = "url")]
-    #[serde(default)]
     pub url: std::option::Option<std::string::String>,
     /// The system generated username for ingest authentication.
-    #[serde(rename = "username")]
-    #[serde(default)]
     pub username: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for IngestEndpoint {
@@ -3294,11 +2994,9 @@ impl IngestEndpoint {
 
 /// Configure egress access logging.
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EgressAccessLogs {
     /// Customize the log group name.
-    #[serde(rename = "logGroupName")]
-    #[serde(default)]
     pub log_group_name: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for EgressAccessLogs {
@@ -3346,76 +3044,44 @@ impl EgressAccessLogs {
 
 /// An OriginEndpoint resource configuration.
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OriginEndpoint {
     /// The Amazon Resource Name (ARN) assigned to the OriginEndpoint.
-    #[serde(rename = "arn")]
-    #[serde(default)]
     pub arn: std::option::Option<std::string::String>,
     /// CDN Authorization credentials
-    #[serde(rename = "authorization")]
-    #[serde(default)]
     pub authorization: std::option::Option<crate::model::Authorization>,
     /// The ID of the Channel the OriginEndpoint is associated with.
-    #[serde(rename = "channelId")]
-    #[serde(default)]
     pub channel_id: std::option::Option<std::string::String>,
     /// A Common Media Application Format (CMAF) packaging configuration.
-    #[serde(rename = "cmafPackage")]
-    #[serde(default)]
     pub cmaf_package: std::option::Option<crate::model::CmafPackage>,
     /// A Dynamic Adaptive Streaming over HTTP (DASH) packaging configuration.
-    #[serde(rename = "dashPackage")]
-    #[serde(default)]
     pub dash_package: std::option::Option<crate::model::DashPackage>,
     /// A short text description of the OriginEndpoint.
-    #[serde(rename = "description")]
-    #[serde(default)]
     pub description: std::option::Option<std::string::String>,
     /// An HTTP Live Streaming (HLS) packaging configuration.
-    #[serde(rename = "hlsPackage")]
-    #[serde(default)]
     pub hls_package: std::option::Option<crate::model::HlsPackage>,
     /// The ID of the OriginEndpoint.
-    #[serde(rename = "id")]
-    #[serde(default)]
     pub id: std::option::Option<std::string::String>,
     /// A short string appended to the end of the OriginEndpoint URL.
-    #[serde(rename = "manifestName")]
-    #[serde(default)]
     pub manifest_name: std::option::Option<std::string::String>,
     /// A Microsoft Smooth Streaming (MSS) packaging configuration.
-    #[serde(rename = "mssPackage")]
-    #[serde(default)]
     pub mss_package: std::option::Option<crate::model::MssPackage>,
     /// Control whether origination of video is allowed for this OriginEndpoint. If set to ALLOW, the OriginEndpoint
     /// may by requested, pursuant to any other form of access control. If set to DENY, the OriginEndpoint may not be
     /// requested. This can be helpful for Live to VOD harvesting, or for temporarily disabling origination
-    #[serde(rename = "origination")]
-    #[serde(default)]
     pub origination: std::option::Option<crate::model::Origination>,
     /// Maximum duration (seconds) of content to retain for startover playback.
     /// If not specified, startover playback will be disabled for the OriginEndpoint.
-    #[serde(rename = "startoverWindowSeconds")]
-    #[serde(default)]
     pub startover_window_seconds: i32,
     /// A collection of tags associated with a resource
-    #[serde(rename = "tags")]
-    #[serde(default)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// Amount of delay (seconds) to enforce on the playback of live content.
     /// If not specified, there will be no time delay in effect for the OriginEndpoint.
-    #[serde(rename = "timeDelaySeconds")]
-    #[serde(default)]
     pub time_delay_seconds: i32,
     /// The URL of the packaged OriginEndpoint for consumption.
-    #[serde(rename = "url")]
-    #[serde(default)]
     pub url: std::option::Option<std::string::String>,
     /// A list of source IP CIDR blocks that will be allowed to access the OriginEndpoint.
-    #[serde(rename = "whitelist")]
-    #[serde(default)]
     pub whitelist: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl std::fmt::Debug for OriginEndpoint {
@@ -3681,47 +3347,29 @@ impl OriginEndpoint {
 
 /// A HarvestJob resource configuration
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct HarvestJob {
     /// The Amazon Resource Name (ARN) assigned to the HarvestJob.
-    #[serde(rename = "arn")]
-    #[serde(default)]
     pub arn: std::option::Option<std::string::String>,
     /// The ID of the Channel that the HarvestJob will harvest from.
-    #[serde(rename = "channelId")]
-    #[serde(default)]
     pub channel_id: std::option::Option<std::string::String>,
     /// The time the HarvestJob was submitted
-    #[serde(rename = "createdAt")]
-    #[serde(default)]
     pub created_at: std::option::Option<std::string::String>,
     /// The end of the time-window which will be harvested.
-    #[serde(rename = "endTime")]
-    #[serde(default)]
     pub end_time: std::option::Option<std::string::String>,
     /// The ID of the HarvestJob. The ID must be unique within the region
     /// and it cannot be changed after the HarvestJob is submitted.
-    #[serde(rename = "id")]
-    #[serde(default)]
     pub id: std::option::Option<std::string::String>,
     /// The ID of the OriginEndpoint that the HarvestJob will harvest from.
     /// This cannot be changed after the HarvestJob is submitted.
-    #[serde(rename = "originEndpointId")]
-    #[serde(default)]
     pub origin_endpoint_id: std::option::Option<std::string::String>,
     /// Configuration parameters for where in an S3 bucket to place the harvested content
-    #[serde(rename = "s3Destination")]
-    #[serde(default)]
     pub s3_destination: std::option::Option<crate::model::S3Destination>,
     /// The start of the time-window which will be harvested.
-    #[serde(rename = "startTime")]
-    #[serde(default)]
     pub start_time: std::option::Option<std::string::String>,
     /// The current status of the HarvestJob. Consider setting up a CloudWatch Event to listen for
     /// HarvestJobs as they succeed or fail. In the event of failure, the CloudWatch Event will
     /// include an explanation of why the HarvestJob failed.
-    #[serde(rename = "status")]
-    #[serde(default)]
     pub status: std::option::Option<crate::model::Status>,
 }
 impl std::fmt::Debug for HarvestJob {
@@ -3900,7 +3548,7 @@ impl std::convert::From<&str> for Status {
 impl std::str::FromStr for Status {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(Status::from(s))
     }
 }
@@ -3919,31 +3567,16 @@ impl AsRef<str> for Status {
         self.as_str()
     }
 }
-impl<'de> serde::Deserialize<'de> for Status {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
-    }
-}
 
 /// Configuration parameters for where in an S3 bucket to place the harvested content
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct S3Destination {
     /// The name of an S3 bucket within which harvested content will be exported
-    #[serde(rename = "bucketName")]
-    #[serde(default)]
     pub bucket_name: std::option::Option<std::string::String>,
     /// The key in the specified S3 bucket where the harvested top-level manifest will be placed.
-    #[serde(rename = "manifestKey")]
-    #[serde(default)]
     pub manifest_key: std::option::Option<std::string::String>,
     /// The IAM role used to write to the specified S3 bucket
-    #[serde(rename = "roleArn")]
-    #[serde(default)]
     pub role_arn: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for S3Destination {
@@ -4012,35 +3645,21 @@ impl S3Destination {
 
 /// A Channel resource configuration.
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Channel {
     /// The Amazon Resource Name (ARN) assigned to the Channel.
-    #[serde(rename = "arn")]
-    #[serde(default)]
     pub arn: std::option::Option<std::string::String>,
     /// A short text description of the Channel.
-    #[serde(rename = "description")]
-    #[serde(default)]
     pub description: std::option::Option<std::string::String>,
     /// Configure egress access logging.
-    #[serde(rename = "egressAccessLogs")]
-    #[serde(default)]
     pub egress_access_logs: std::option::Option<crate::model::EgressAccessLogs>,
     /// An HTTP Live Streaming (HLS) ingest resource configuration.
-    #[serde(rename = "hlsIngest")]
-    #[serde(default)]
     pub hls_ingest: std::option::Option<crate::model::HlsIngest>,
     /// The ID of the Channel.
-    #[serde(rename = "id")]
-    #[serde(default)]
     pub id: std::option::Option<std::string::String>,
     /// Configure ingress access logging.
-    #[serde(rename = "ingressAccessLogs")]
-    #[serde(default)]
     pub ingress_access_logs: std::option::Option<crate::model::IngressAccessLogs>,
     /// A collection of tags associated with a resource
-    #[serde(rename = "tags")]
-    #[serde(default)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }

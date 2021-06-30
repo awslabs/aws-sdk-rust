@@ -43,14 +43,8 @@ pub fn parse_abort_multipart_upload_response(
         let mut output = crate::output::abort_multipart_upload_output::Builder::default();
         let _ = response;
         output = output.set_request_charged(
-            crate::http_serde::deser_header_abort_multipart_upload_request_charged(
-                response.headers(),
-            )
-            .map_err(|_| {
-                crate::error::AbortMultipartUploadError::unhandled(
-                    "Failed to parse RequestCharged from header `x-amz-request-charged",
-                )
-            })?,
+            crate::http_serde::deser_header_abort_multipart_upload_abort_multipart_upload_output_request_charged(response.headers())
+                                        .map_err(|_|crate::error::AbortMultipartUploadError::unhandled("Failed to parse RequestCharged from header `x-amz-request-charged"))?
         );
         output.build()
     })
@@ -85,46 +79,28 @@ pub fn parse_complete_multipart_upload_response(
         )
         .map_err(crate::error::CompleteMultipartUploadError::unhandled)?;
         output = output.set_bucket_key_enabled(
-            crate::http_serde::deser_header_complete_multipart_upload_bucket_key_enabled(response.headers())
+            crate::http_serde::deser_header_complete_multipart_upload_complete_multipart_upload_output_bucket_key_enabled(response.headers())
                                         .map_err(|_|crate::error::CompleteMultipartUploadError::unhandled("Failed to parse BucketKeyEnabled from header `x-amz-server-side-encryption-bucket-key-enabled"))?
         );
         output = output.set_expiration(
-            crate::http_serde::deser_header_complete_multipart_upload_expiration(
-                response.headers(),
-            )
-            .map_err(|_| {
-                crate::error::CompleteMultipartUploadError::unhandled(
-                    "Failed to parse Expiration from header `x-amz-expiration",
-                )
-            })?,
+            crate::http_serde::deser_header_complete_multipart_upload_complete_multipart_upload_output_expiration(response.headers())
+                                        .map_err(|_|crate::error::CompleteMultipartUploadError::unhandled("Failed to parse Expiration from header `x-amz-expiration"))?
         );
         output = output.set_request_charged(
-            crate::http_serde::deser_header_complete_multipart_upload_request_charged(
-                response.headers(),
-            )
-            .map_err(|_| {
-                crate::error::CompleteMultipartUploadError::unhandled(
-                    "Failed to parse RequestCharged from header `x-amz-request-charged",
-                )
-            })?,
+            crate::http_serde::deser_header_complete_multipart_upload_complete_multipart_upload_output_request_charged(response.headers())
+                                        .map_err(|_|crate::error::CompleteMultipartUploadError::unhandled("Failed to parse RequestCharged from header `x-amz-request-charged"))?
         );
         output = output.set_ssekms_key_id(
-            crate::http_serde::deser_header_complete_multipart_upload_ssekms_key_id(response.headers())
+            crate::http_serde::deser_header_complete_multipart_upload_complete_multipart_upload_output_ssekms_key_id(response.headers())
                                         .map_err(|_|crate::error::CompleteMultipartUploadError::unhandled("Failed to parse SSEKMSKeyId from header `x-amz-server-side-encryption-aws-kms-key-id"))?
         );
         output = output.set_server_side_encryption(
-            crate::http_serde::deser_header_complete_multipart_upload_server_side_encryption(response.headers())
+            crate::http_serde::deser_header_complete_multipart_upload_complete_multipart_upload_output_server_side_encryption(response.headers())
                                         .map_err(|_|crate::error::CompleteMultipartUploadError::unhandled("Failed to parse ServerSideEncryption from header `x-amz-server-side-encryption"))?
         );
         output = output.set_version_id(
-            crate::http_serde::deser_header_complete_multipart_upload_version_id(
-                response.headers(),
-            )
-            .map_err(|_| {
-                crate::error::CompleteMultipartUploadError::unhandled(
-                    "Failed to parse VersionId from header `x-amz-version-id",
-                )
-            })?,
+            crate::http_serde::deser_header_complete_multipart_upload_complete_multipart_upload_output_version_id(response.headers())
+                                        .map_err(|_|crate::error::CompleteMultipartUploadError::unhandled("Failed to parse VersionId from header `x-amz-version-id"))?
         );
         output.build()
     })
@@ -168,63 +144,73 @@ pub fn parse_copy_object_response(
         let mut output = crate::output::copy_object_output::Builder::default();
         let _ = response;
         output = output.set_bucket_key_enabled(
-            crate::http_serde::deser_header_copy_object_bucket_key_enabled(response.headers())
+            crate::http_serde::deser_header_copy_object_copy_object_output_bucket_key_enabled(response.headers())
                                         .map_err(|_|crate::error::CopyObjectError::unhandled("Failed to parse BucketKeyEnabled from header `x-amz-server-side-encryption-bucket-key-enabled"))?
         );
         output = output.set_copy_object_result(
-            crate::http_serde::deser_payload_copy_object_copy_object_result(
+            crate::http_serde::deser_payload_copy_object_copy_object_output_copy_object_result(
                 response.body().as_ref(),
             )?,
         );
         output = output.set_copy_source_version_id(
-            crate::http_serde::deser_header_copy_object_copy_source_version_id(response.headers())
-                                        .map_err(|_|crate::error::CopyObjectError::unhandled("Failed to parse CopySourceVersionId from header `x-amz-copy-source-version-id"))?
+            crate::http_serde::deser_header_copy_object_copy_object_output_copy_source_version_id(
+                response.headers(),
+            )
+            .map_err(|_| {
+                crate::error::CopyObjectError::unhandled(
+                    "Failed to parse CopySourceVersionId from header `x-amz-copy-source-version-id",
+                )
+            })?,
         );
         output = output.set_expiration(
-            crate::http_serde::deser_header_copy_object_expiration(response.headers()).map_err(
-                |_| {
-                    crate::error::CopyObjectError::unhandled(
-                        "Failed to parse Expiration from header `x-amz-expiration",
-                    )
-                },
-            )?,
+            crate::http_serde::deser_header_copy_object_copy_object_output_expiration(
+                response.headers(),
+            )
+            .map_err(|_| {
+                crate::error::CopyObjectError::unhandled(
+                    "Failed to parse Expiration from header `x-amz-expiration",
+                )
+            })?,
         );
         output = output.set_request_charged(
-            crate::http_serde::deser_header_copy_object_request_charged(response.headers())
-                .map_err(|_| {
-                    crate::error::CopyObjectError::unhandled(
-                        "Failed to parse RequestCharged from header `x-amz-request-charged",
-                    )
-                })?,
+            crate::http_serde::deser_header_copy_object_copy_object_output_request_charged(
+                response.headers(),
+            )
+            .map_err(|_| {
+                crate::error::CopyObjectError::unhandled(
+                    "Failed to parse RequestCharged from header `x-amz-request-charged",
+                )
+            })?,
         );
         output = output.set_sse_customer_algorithm(
-            crate::http_serde::deser_header_copy_object_sse_customer_algorithm(response.headers())
+            crate::http_serde::deser_header_copy_object_copy_object_output_sse_customer_algorithm(response.headers())
                                         .map_err(|_|crate::error::CopyObjectError::unhandled("Failed to parse SSECustomerAlgorithm from header `x-amz-server-side-encryption-customer-algorithm"))?
         );
         output = output.set_sse_customer_key_md5(
-            crate::http_serde::deser_header_copy_object_sse_customer_key_md5(response.headers())
+            crate::http_serde::deser_header_copy_object_copy_object_output_sse_customer_key_md5(response.headers())
                                         .map_err(|_|crate::error::CopyObjectError::unhandled("Failed to parse SSECustomerKeyMD5 from header `x-amz-server-side-encryption-customer-key-MD5"))?
         );
         output = output.set_ssekms_encryption_context(
-            crate::http_serde::deser_header_copy_object_ssekms_encryption_context(response.headers())
+            crate::http_serde::deser_header_copy_object_copy_object_output_ssekms_encryption_context(response.headers())
                                         .map_err(|_|crate::error::CopyObjectError::unhandled("Failed to parse SSEKMSEncryptionContext from header `x-amz-server-side-encryption-context"))?
         );
         output = output.set_ssekms_key_id(
-            crate::http_serde::deser_header_copy_object_ssekms_key_id(response.headers())
+            crate::http_serde::deser_header_copy_object_copy_object_output_ssekms_key_id(response.headers())
                                         .map_err(|_|crate::error::CopyObjectError::unhandled("Failed to parse SSEKMSKeyId from header `x-amz-server-side-encryption-aws-kms-key-id"))?
         );
         output = output.set_server_side_encryption(
-            crate::http_serde::deser_header_copy_object_server_side_encryption(response.headers())
+            crate::http_serde::deser_header_copy_object_copy_object_output_server_side_encryption(response.headers())
                                         .map_err(|_|crate::error::CopyObjectError::unhandled("Failed to parse ServerSideEncryption from header `x-amz-server-side-encryption"))?
         );
         output = output.set_version_id(
-            crate::http_serde::deser_header_copy_object_version_id(response.headers()).map_err(
-                |_| {
-                    crate::error::CopyObjectError::unhandled(
-                        "Failed to parse VersionId from header `x-amz-version-id",
-                    )
-                },
-            )?,
+            crate::http_serde::deser_header_copy_object_copy_object_output_version_id(
+                response.headers(),
+            )
+            .map_err(|_| {
+                crate::error::CopyObjectError::unhandled(
+                    "Failed to parse VersionId from header `x-amz-version-id",
+                )
+            })?,
         );
         output.build()
     })
@@ -282,13 +268,14 @@ pub fn parse_create_bucket_response(
         let mut output = crate::output::create_bucket_output::Builder::default();
         let _ = response;
         output = output.set_location(
-            crate::http_serde::deser_header_create_bucket_location(response.headers()).map_err(
-                |_| {
-                    crate::error::CreateBucketError::unhandled(
-                        "Failed to parse Location from header `Location",
-                    )
-                },
-            )?,
+            crate::http_serde::deser_header_create_bucket_create_bucket_output_location(
+                response.headers(),
+            )
+            .map_err(|_| {
+                crate::error::CreateBucketError::unhandled(
+                    "Failed to parse Location from header `Location",
+                )
+            })?,
         );
         output.build()
     })
@@ -323,55 +310,39 @@ pub fn parse_create_multipart_upload_response(
         )
         .map_err(crate::error::CreateMultipartUploadError::unhandled)?;
         output = output.set_abort_date(
-            crate::http_serde::deser_header_create_multipart_upload_abort_date(response.headers())
-                .map_err(|_| {
-                    crate::error::CreateMultipartUploadError::unhandled(
-                        "Failed to parse AbortDate from header `x-amz-abort-date",
-                    )
-                })?,
+            crate::http_serde::deser_header_create_multipart_upload_create_multipart_upload_output_abort_date(response.headers())
+                                        .map_err(|_|crate::error::CreateMultipartUploadError::unhandled("Failed to parse AbortDate from header `x-amz-abort-date"))?
         );
         output = output.set_abort_rule_id(
-            crate::http_serde::deser_header_create_multipart_upload_abort_rule_id(
-                response.headers(),
-            )
-            .map_err(|_| {
-                crate::error::CreateMultipartUploadError::unhandled(
-                    "Failed to parse AbortRuleId from header `x-amz-abort-rule-id",
-                )
-            })?,
+            crate::http_serde::deser_header_create_multipart_upload_create_multipart_upload_output_abort_rule_id(response.headers())
+                                        .map_err(|_|crate::error::CreateMultipartUploadError::unhandled("Failed to parse AbortRuleId from header `x-amz-abort-rule-id"))?
         );
         output = output.set_bucket_key_enabled(
-            crate::http_serde::deser_header_create_multipart_upload_bucket_key_enabled(response.headers())
+            crate::http_serde::deser_header_create_multipart_upload_create_multipart_upload_output_bucket_key_enabled(response.headers())
                                         .map_err(|_|crate::error::CreateMultipartUploadError::unhandled("Failed to parse BucketKeyEnabled from header `x-amz-server-side-encryption-bucket-key-enabled"))?
         );
         output = output.set_request_charged(
-            crate::http_serde::deser_header_create_multipart_upload_request_charged(
-                response.headers(),
-            )
-            .map_err(|_| {
-                crate::error::CreateMultipartUploadError::unhandled(
-                    "Failed to parse RequestCharged from header `x-amz-request-charged",
-                )
-            })?,
+            crate::http_serde::deser_header_create_multipart_upload_create_multipart_upload_output_request_charged(response.headers())
+                                        .map_err(|_|crate::error::CreateMultipartUploadError::unhandled("Failed to parse RequestCharged from header `x-amz-request-charged"))?
         );
         output = output.set_sse_customer_algorithm(
-            crate::http_serde::deser_header_create_multipart_upload_sse_customer_algorithm(response.headers())
+            crate::http_serde::deser_header_create_multipart_upload_create_multipart_upload_output_sse_customer_algorithm(response.headers())
                                         .map_err(|_|crate::error::CreateMultipartUploadError::unhandled("Failed to parse SSECustomerAlgorithm from header `x-amz-server-side-encryption-customer-algorithm"))?
         );
         output = output.set_sse_customer_key_md5(
-            crate::http_serde::deser_header_create_multipart_upload_sse_customer_key_md5(response.headers())
+            crate::http_serde::deser_header_create_multipart_upload_create_multipart_upload_output_sse_customer_key_md5(response.headers())
                                         .map_err(|_|crate::error::CreateMultipartUploadError::unhandled("Failed to parse SSECustomerKeyMD5 from header `x-amz-server-side-encryption-customer-key-MD5"))?
         );
         output = output.set_ssekms_encryption_context(
-            crate::http_serde::deser_header_create_multipart_upload_ssekms_encryption_context(response.headers())
+            crate::http_serde::deser_header_create_multipart_upload_create_multipart_upload_output_ssekms_encryption_context(response.headers())
                                         .map_err(|_|crate::error::CreateMultipartUploadError::unhandled("Failed to parse SSEKMSEncryptionContext from header `x-amz-server-side-encryption-context"))?
         );
         output = output.set_ssekms_key_id(
-            crate::http_serde::deser_header_create_multipart_upload_ssekms_key_id(response.headers())
+            crate::http_serde::deser_header_create_multipart_upload_create_multipart_upload_output_ssekms_key_id(response.headers())
                                         .map_err(|_|crate::error::CreateMultipartUploadError::unhandled("Failed to parse SSEKMSKeyId from header `x-amz-server-side-encryption-aws-kms-key-id"))?
         );
         output = output.set_server_side_encryption(
-            crate::http_serde::deser_header_create_multipart_upload_server_side_encryption(response.headers())
+            crate::http_serde::deser_header_create_multipart_upload_create_multipart_upload_output_server_side_encryption(response.headers())
                                         .map_err(|_|crate::error::CreateMultipartUploadError::unhandled("Failed to parse ServerSideEncryption from header `x-amz-server-side-encryption"))?
         );
         output.build()
@@ -744,29 +715,34 @@ pub fn parse_delete_object_response(
         let mut output = crate::output::delete_object_output::Builder::default();
         let _ = response;
         output = output.set_delete_marker(
-            crate::http_serde::deser_header_delete_object_delete_marker(response.headers())
-                .map_err(|_| {
-                    crate::error::DeleteObjectError::unhandled(
-                        "Failed to parse DeleteMarker from header `x-amz-delete-marker",
-                    )
-                })?,
+            crate::http_serde::deser_header_delete_object_delete_object_output_delete_marker(
+                response.headers(),
+            )
+            .map_err(|_| {
+                crate::error::DeleteObjectError::unhandled(
+                    "Failed to parse DeleteMarker from header `x-amz-delete-marker",
+                )
+            })?,
         );
         output = output.set_request_charged(
-            crate::http_serde::deser_header_delete_object_request_charged(response.headers())
-                .map_err(|_| {
-                    crate::error::DeleteObjectError::unhandled(
-                        "Failed to parse RequestCharged from header `x-amz-request-charged",
-                    )
-                })?,
+            crate::http_serde::deser_header_delete_object_delete_object_output_request_charged(
+                response.headers(),
+            )
+            .map_err(|_| {
+                crate::error::DeleteObjectError::unhandled(
+                    "Failed to parse RequestCharged from header `x-amz-request-charged",
+                )
+            })?,
         );
         output = output.set_version_id(
-            crate::http_serde::deser_header_delete_object_version_id(response.headers()).map_err(
-                |_| {
-                    crate::error::DeleteObjectError::unhandled(
-                        "Failed to parse VersionId from header `x-amz-version-id",
-                    )
-                },
-            )?,
+            crate::http_serde::deser_header_delete_object_delete_object_output_version_id(
+                response.headers(),
+            )
+            .map_err(|_| {
+                crate::error::DeleteObjectError::unhandled(
+                    "Failed to parse VersionId from header `x-amz-version-id",
+                )
+            })?,
         );
         output.build()
     })
@@ -792,12 +768,14 @@ pub fn parse_delete_objects_response(
         output = crate::xml_deser::deser_operation_delete_objects(response.body().as_ref(), output)
             .map_err(crate::error::DeleteObjectsError::unhandled)?;
         output = output.set_request_charged(
-            crate::http_serde::deser_header_delete_objects_request_charged(response.headers())
-                .map_err(|_| {
-                    crate::error::DeleteObjectsError::unhandled(
-                        "Failed to parse RequestCharged from header `x-amz-request-charged",
-                    )
-                })?,
+            crate::http_serde::deser_header_delete_objects_delete_objects_output_request_charged(
+                response.headers(),
+            )
+            .map_err(|_| {
+                crate::error::DeleteObjectsError::unhandled(
+                    "Failed to parse RequestCharged from header `x-amz-request-charged",
+                )
+            })?,
         );
         output.build()
     })
@@ -827,12 +805,8 @@ pub fn parse_delete_object_tagging_response(
         let mut output = crate::output::delete_object_tagging_output::Builder::default();
         let _ = response;
         output = output.set_version_id(
-            crate::http_serde::deser_header_delete_object_tagging_version_id(response.headers())
-                .map_err(|_| {
-                    crate::error::DeleteObjectTaggingError::unhandled(
-                        "Failed to parse VersionId from header `x-amz-version-id",
-                    )
-                })?,
+            crate::http_serde::deser_header_delete_object_tagging_delete_object_tagging_output_version_id(response.headers())
+                                        .map_err(|_|crate::error::DeleteObjectTaggingError::unhandled("Failed to parse VersionId from header `x-amz-version-id"))?
         );
         output.build()
     })
@@ -948,7 +922,7 @@ pub fn parse_get_bucket_analytics_configuration_response(
             crate::output::get_bucket_analytics_configuration_output::Builder::default();
         let _ = response;
         output = output.set_analytics_configuration(
-            crate::http_serde::deser_payload_get_bucket_analytics_configuration_analytics_configuration(response.body().as_ref())?
+            crate::http_serde::deser_payload_get_bucket_analytics_configuration_get_bucket_analytics_configuration_output_analytics_configuration(response.body().as_ref())?
         );
         output.build()
     })
@@ -1002,7 +976,7 @@ pub fn parse_get_bucket_encryption_response(
         let mut output = crate::output::get_bucket_encryption_output::Builder::default();
         let _ = response;
         output = output.set_server_side_encryption_configuration(
-            crate::http_serde::deser_payload_get_bucket_encryption_server_side_encryption_configuration(response.body().as_ref())?
+            crate::http_serde::deser_payload_get_bucket_encryption_get_bucket_encryption_output_server_side_encryption_configuration(response.body().as_ref())?
         );
         output.build()
     })
@@ -1033,7 +1007,7 @@ pub fn parse_get_bucket_intelligent_tiering_configuration_response(
             crate::output::get_bucket_intelligent_tiering_configuration_output::Builder::default();
         let _ = response;
         output = output.set_intelligent_tiering_configuration(
-            crate::http_serde::deser_payload_get_bucket_intelligent_tiering_configuration_intelligent_tiering_configuration(response.body().as_ref())?
+            crate::http_serde::deser_payload_get_bucket_intelligent_tiering_configuration_get_bucket_intelligent_tiering_configuration_output_intelligent_tiering_configuration(response.body().as_ref())?
         );
         output.build()
     })
@@ -1066,7 +1040,7 @@ pub fn parse_get_bucket_inventory_configuration_response(
             crate::output::get_bucket_inventory_configuration_output::Builder::default();
         let _ = response;
         output = output.set_inventory_configuration(
-            crate::http_serde::deser_payload_get_bucket_inventory_configuration_inventory_configuration(response.body().as_ref())?
+            crate::http_serde::deser_payload_get_bucket_inventory_configuration_get_bucket_inventory_configuration_output_inventory_configuration(response.body().as_ref())?
         );
         output.build()
     })
@@ -1185,7 +1159,7 @@ pub fn parse_get_bucket_metrics_configuration_response(
         let mut output = crate::output::get_bucket_metrics_configuration_output::Builder::default();
         let _ = response;
         output = output.set_metrics_configuration(
-            crate::http_serde::deser_payload_get_bucket_metrics_configuration_metrics_configuration(response.body().as_ref())?
+            crate::http_serde::deser_payload_get_bucket_metrics_configuration_get_bucket_metrics_configuration_output_metrics_configuration(response.body().as_ref())?
         );
         output.build()
     })
@@ -1250,9 +1224,7 @@ pub fn parse_get_bucket_ownership_controls_response(
         let mut output = crate::output::get_bucket_ownership_controls_output::Builder::default();
         let _ = response;
         output = output.set_ownership_controls(
-            crate::http_serde::deser_payload_get_bucket_ownership_controls_ownership_controls(
-                response.body().as_ref(),
-            )?,
+            crate::http_serde::deser_payload_get_bucket_ownership_controls_get_bucket_ownership_controls_output_ownership_controls(response.body().as_ref())?
         );
         output.build()
     })
@@ -1275,9 +1247,11 @@ pub fn parse_get_bucket_policy_response(
         #[allow(unused_mut)]
         let mut output = crate::output::get_bucket_policy_output::Builder::default();
         let _ = response;
-        output = output.set_policy(crate::http_serde::deser_payload_get_bucket_policy_policy(
-            response.body().as_ref(),
-        )?);
+        output = output.set_policy(
+            crate::http_serde::deser_payload_get_bucket_policy_get_bucket_policy_output_policy(
+                response.body().as_ref(),
+            )?,
+        );
         output.build()
     })
 }
@@ -1306,9 +1280,7 @@ pub fn parse_get_bucket_policy_status_response(
         let mut output = crate::output::get_bucket_policy_status_output::Builder::default();
         let _ = response;
         output = output.set_policy_status(
-            crate::http_serde::deser_payload_get_bucket_policy_status_policy_status(
-                response.body().as_ref(),
-            )?,
+            crate::http_serde::deser_payload_get_bucket_policy_status_get_bucket_policy_status_output_policy_status(response.body().as_ref())?
         );
         output.build()
     })
@@ -1338,9 +1310,7 @@ pub fn parse_get_bucket_replication_response(
         let mut output = crate::output::get_bucket_replication_output::Builder::default();
         let _ = response;
         output = output.set_replication_configuration(
-            crate::http_serde::deser_payload_get_bucket_replication_replication_configuration(
-                response.body().as_ref(),
-            )?,
+            crate::http_serde::deser_payload_get_bucket_replication_get_bucket_replication_output_replication_configuration(response.body().as_ref())?
         );
         output.build()
     })
@@ -1471,234 +1441,268 @@ pub fn parse_get_object(
         let mut output = crate::output::get_object_output::Builder::default();
         let _ = response;
         output = output.set_accept_ranges(
-            crate::http_serde::deser_header_get_object_accept_ranges(response.headers()).map_err(
-                |_| {
-                    crate::error::GetObjectError::unhandled(
-                        "Failed to parse AcceptRanges from header `accept-ranges",
-                    )
-                },
-            )?,
+            crate::http_serde::deser_header_get_object_get_object_output_accept_ranges(
+                response.headers(),
+            )
+            .map_err(|_| {
+                crate::error::GetObjectError::unhandled(
+                    "Failed to parse AcceptRanges from header `accept-ranges",
+                )
+            })?,
         );
-        output = output.set_body(Some(crate::http_serde::deser_payload_get_object_body(
-            response.body_mut(),
-        )?));
+        output = output.set_body(Some(
+            crate::http_serde::deser_payload_get_object_get_object_output_body(
+                response.body_mut(),
+            )?,
+        ));
         output = output.set_bucket_key_enabled(
-            crate::http_serde::deser_header_get_object_bucket_key_enabled(response.headers())
+            crate::http_serde::deser_header_get_object_get_object_output_bucket_key_enabled(response.headers())
                                         .map_err(|_|crate::error::GetObjectError::unhandled("Failed to parse BucketKeyEnabled from header `x-amz-server-side-encryption-bucket-key-enabled"))?
         );
         output = output.set_cache_control(
-            crate::http_serde::deser_header_get_object_cache_control(response.headers()).map_err(
-                |_| {
-                    crate::error::GetObjectError::unhandled(
-                        "Failed to parse CacheControl from header `Cache-Control",
-                    )
-                },
-            )?,
-        );
-        output = output.set_content_disposition(
-            crate::http_serde::deser_header_get_object_content_disposition(response.headers())
-                .map_err(|_| {
-                    crate::error::GetObjectError::unhandled(
-                        "Failed to parse ContentDisposition from header `Content-Disposition",
-                    )
-                })?,
-        );
-        output = output.set_content_encoding(
-            crate::http_serde::deser_header_get_object_content_encoding(response.headers())
-                .map_err(|_| {
-                    crate::error::GetObjectError::unhandled(
-                        "Failed to parse ContentEncoding from header `Content-Encoding",
-                    )
-                })?,
-        );
-        output = output.set_content_language(
-            crate::http_serde::deser_header_get_object_content_language(response.headers())
-                .map_err(|_| {
-                    crate::error::GetObjectError::unhandled(
-                        "Failed to parse ContentLanguage from header `Content-Language",
-                    )
-                })?,
-        );
-        output = output.set_content_length(
-            crate::http_serde::deser_header_get_object_content_length(response.headers()).map_err(
-                |_| {
-                    crate::error::GetObjectError::unhandled(
-                        "Failed to parse ContentLength from header `Content-Length",
-                    )
-                },
-            )?,
-        );
-        output = output.set_content_range(
-            crate::http_serde::deser_header_get_object_content_range(response.headers()).map_err(
-                |_| {
-                    crate::error::GetObjectError::unhandled(
-                        "Failed to parse ContentRange from header `Content-Range",
-                    )
-                },
-            )?,
-        );
-        output = output.set_content_type(
-            crate::http_serde::deser_header_get_object_content_type(response.headers()).map_err(
-                |_| {
-                    crate::error::GetObjectError::unhandled(
-                        "Failed to parse ContentType from header `Content-Type",
-                    )
-                },
-            )?,
-        );
-        output = output.set_delete_marker(
-            crate::http_serde::deser_header_get_object_delete_marker(response.headers()).map_err(
-                |_| {
-                    crate::error::GetObjectError::unhandled(
-                        "Failed to parse DeleteMarker from header `x-amz-delete-marker",
-                    )
-                },
-            )?,
-        );
-        output = output.set_e_tag(
-            crate::http_serde::deser_header_get_object_e_tag(response.headers()).map_err(|_| {
-                crate::error::GetObjectError::unhandled("Failed to parse ETag from header `ETag")
+            crate::http_serde::deser_header_get_object_get_object_output_cache_control(
+                response.headers(),
+            )
+            .map_err(|_| {
+                crate::error::GetObjectError::unhandled(
+                    "Failed to parse CacheControl from header `Cache-Control",
+                )
             })?,
         );
-        output = output.set_expiration(
-            crate::http_serde::deser_header_get_object_expiration(response.headers()).map_err(
-                |_| {
-                    crate::error::GetObjectError::unhandled(
-                        "Failed to parse Expiration from header `x-amz-expiration",
-                    )
-                },
-            )?,
+        output = output.set_content_disposition(
+            crate::http_serde::deser_header_get_object_get_object_output_content_disposition(
+                response.headers(),
+            )
+            .map_err(|_| {
+                crate::error::GetObjectError::unhandled(
+                    "Failed to parse ContentDisposition from header `Content-Disposition",
+                )
+            })?,
         );
-        output = output.set_expires(
-            crate::http_serde::deser_header_get_object_expires(response.headers()).map_err(
-                |_| {
-                    crate::error::GetObjectError::unhandled(
-                        "Failed to parse Expires from header `Expires",
-                    )
-                },
-            )?,
+        output = output.set_content_encoding(
+            crate::http_serde::deser_header_get_object_get_object_output_content_encoding(
+                response.headers(),
+            )
+            .map_err(|_| {
+                crate::error::GetObjectError::unhandled(
+                    "Failed to parse ContentEncoding from header `Content-Encoding",
+                )
+            })?,
         );
-        output = output.set_last_modified(
-            crate::http_serde::deser_header_get_object_last_modified(response.headers()).map_err(
-                |_| {
-                    crate::error::GetObjectError::unhandled(
-                        "Failed to parse LastModified from header `Last-Modified",
-                    )
-                },
-            )?,
+        output = output.set_content_language(
+            crate::http_serde::deser_header_get_object_get_object_output_content_language(
+                response.headers(),
+            )
+            .map_err(|_| {
+                crate::error::GetObjectError::unhandled(
+                    "Failed to parse ContentLanguage from header `Content-Language",
+                )
+            })?,
         );
-        output = output.set_metadata(
-            crate::http_serde::deser_prefix_header_get_object_metadata(response.headers())
+        output = output.set_content_length(
+            crate::http_serde::deser_header_get_object_get_object_output_content_length(
+                response.headers(),
+            )
+            .map_err(|_| {
+                crate::error::GetObjectError::unhandled(
+                    "Failed to parse ContentLength from header `Content-Length",
+                )
+            })?,
+        );
+        output = output.set_content_range(
+            crate::http_serde::deser_header_get_object_get_object_output_content_range(
+                response.headers(),
+            )
+            .map_err(|_| {
+                crate::error::GetObjectError::unhandled(
+                    "Failed to parse ContentRange from header `Content-Range",
+                )
+            })?,
+        );
+        output = output.set_content_type(
+            crate::http_serde::deser_header_get_object_get_object_output_content_type(
+                response.headers(),
+            )
+            .map_err(|_| {
+                crate::error::GetObjectError::unhandled(
+                    "Failed to parse ContentType from header `Content-Type",
+                )
+            })?,
+        );
+        output = output.set_delete_marker(
+            crate::http_serde::deser_header_get_object_get_object_output_delete_marker(
+                response.headers(),
+            )
+            .map_err(|_| {
+                crate::error::GetObjectError::unhandled(
+                    "Failed to parse DeleteMarker from header `x-amz-delete-marker",
+                )
+            })?,
+        );
+        output = output.set_e_tag(
+            crate::http_serde::deser_header_get_object_get_object_output_e_tag(response.headers())
                 .map_err(|_| {
                     crate::error::GetObjectError::unhandled(
-                        "Failed to parse Metadata from prefix header `x-amz-meta-",
+                        "Failed to parse ETag from header `ETag",
                     )
                 })?,
         );
+        output = output.set_expiration(
+            crate::http_serde::deser_header_get_object_get_object_output_expiration(
+                response.headers(),
+            )
+            .map_err(|_| {
+                crate::error::GetObjectError::unhandled(
+                    "Failed to parse Expiration from header `x-amz-expiration",
+                )
+            })?,
+        );
+        output = output.set_expires(
+            crate::http_serde::deser_header_get_object_get_object_output_expires(
+                response.headers(),
+            )
+            .map_err(|_| {
+                crate::error::GetObjectError::unhandled(
+                    "Failed to parse Expires from header `Expires",
+                )
+            })?,
+        );
+        output = output.set_last_modified(
+            crate::http_serde::deser_header_get_object_get_object_output_last_modified(
+                response.headers(),
+            )
+            .map_err(|_| {
+                crate::error::GetObjectError::unhandled(
+                    "Failed to parse LastModified from header `Last-Modified",
+                )
+            })?,
+        );
+        output = output.set_metadata(
+            crate::http_serde::deser_prefix_header_get_object_get_object_output_metadata(
+                response.headers(),
+            )
+            .map_err(|_| {
+                crate::error::GetObjectError::unhandled(
+                    "Failed to parse Metadata from prefix header `x-amz-meta-",
+                )
+            })?,
+        );
         output = output.set_missing_meta(
-            crate::http_serde::deser_header_get_object_missing_meta(response.headers()).map_err(
-                |_| {
-                    crate::error::GetObjectError::unhandled(
-                        "Failed to parse MissingMeta from header `x-amz-missing-meta",
-                    )
-                },
-            )?,
+            crate::http_serde::deser_header_get_object_get_object_output_missing_meta(
+                response.headers(),
+            )
+            .map_err(|_| {
+                crate::error::GetObjectError::unhandled(
+                    "Failed to parse MissingMeta from header `x-amz-missing-meta",
+                )
+            })?,
         );
         output = output.set_object_lock_legal_hold_status(
-            crate::http_serde::deser_header_get_object_object_lock_legal_hold_status(response.headers())
+            crate::http_serde::deser_header_get_object_get_object_output_object_lock_legal_hold_status(response.headers())
                                         .map_err(|_|crate::error::GetObjectError::unhandled("Failed to parse ObjectLockLegalHoldStatus from header `x-amz-object-lock-legal-hold"))?
         );
         output = output.set_object_lock_mode(
-            crate::http_serde::deser_header_get_object_object_lock_mode(response.headers())
-                .map_err(|_| {
-                    crate::error::GetObjectError::unhandled(
-                        "Failed to parse ObjectLockMode from header `x-amz-object-lock-mode",
-                    )
-                })?,
+            crate::http_serde::deser_header_get_object_get_object_output_object_lock_mode(
+                response.headers(),
+            )
+            .map_err(|_| {
+                crate::error::GetObjectError::unhandled(
+                    "Failed to parse ObjectLockMode from header `x-amz-object-lock-mode",
+                )
+            })?,
         );
         output = output.set_object_lock_retain_until_date(
-            crate::http_serde::deser_header_get_object_object_lock_retain_until_date(response.headers())
+            crate::http_serde::deser_header_get_object_get_object_output_object_lock_retain_until_date(response.headers())
                                         .map_err(|_|crate::error::GetObjectError::unhandled("Failed to parse ObjectLockRetainUntilDate from header `x-amz-object-lock-retain-until-date"))?
         );
         output = output.set_parts_count(
-            crate::http_serde::deser_header_get_object_parts_count(response.headers()).map_err(
-                |_| {
-                    crate::error::GetObjectError::unhandled(
-                        "Failed to parse PartsCount from header `x-amz-mp-parts-count",
-                    )
-                },
-            )?,
+            crate::http_serde::deser_header_get_object_get_object_output_parts_count(
+                response.headers(),
+            )
+            .map_err(|_| {
+                crate::error::GetObjectError::unhandled(
+                    "Failed to parse PartsCount from header `x-amz-mp-parts-count",
+                )
+            })?,
         );
         output = output.set_replication_status(
-            crate::http_serde::deser_header_get_object_replication_status(response.headers())
-                .map_err(|_| {
-                    crate::error::GetObjectError::unhandled(
-                        "Failed to parse ReplicationStatus from header `x-amz-replication-status",
-                    )
-                })?,
+            crate::http_serde::deser_header_get_object_get_object_output_replication_status(
+                response.headers(),
+            )
+            .map_err(|_| {
+                crate::error::GetObjectError::unhandled(
+                    "Failed to parse ReplicationStatus from header `x-amz-replication-status",
+                )
+            })?,
         );
         output = output.set_request_charged(
-            crate::http_serde::deser_header_get_object_request_charged(response.headers())
-                .map_err(|_| {
-                    crate::error::GetObjectError::unhandled(
-                        "Failed to parse RequestCharged from header `x-amz-request-charged",
-                    )
-                })?,
+            crate::http_serde::deser_header_get_object_get_object_output_request_charged(
+                response.headers(),
+            )
+            .map_err(|_| {
+                crate::error::GetObjectError::unhandled(
+                    "Failed to parse RequestCharged from header `x-amz-request-charged",
+                )
+            })?,
         );
         output = output.set_restore(
-            crate::http_serde::deser_header_get_object_restore(response.headers()).map_err(
-                |_| {
-                    crate::error::GetObjectError::unhandled(
-                        "Failed to parse Restore from header `x-amz-restore",
-                    )
-                },
-            )?,
+            crate::http_serde::deser_header_get_object_get_object_output_restore(
+                response.headers(),
+            )
+            .map_err(|_| {
+                crate::error::GetObjectError::unhandled(
+                    "Failed to parse Restore from header `x-amz-restore",
+                )
+            })?,
         );
         output = output.set_sse_customer_algorithm(
-            crate::http_serde::deser_header_get_object_sse_customer_algorithm(response.headers())
+            crate::http_serde::deser_header_get_object_get_object_output_sse_customer_algorithm(response.headers())
                                         .map_err(|_|crate::error::GetObjectError::unhandled("Failed to parse SSECustomerAlgorithm from header `x-amz-server-side-encryption-customer-algorithm"))?
         );
         output = output.set_sse_customer_key_md5(
-            crate::http_serde::deser_header_get_object_sse_customer_key_md5(response.headers())
+            crate::http_serde::deser_header_get_object_get_object_output_sse_customer_key_md5(response.headers())
                                         .map_err(|_|crate::error::GetObjectError::unhandled("Failed to parse SSECustomerKeyMD5 from header `x-amz-server-side-encryption-customer-key-MD5"))?
         );
         output = output.set_ssekms_key_id(
-            crate::http_serde::deser_header_get_object_ssekms_key_id(response.headers())
+            crate::http_serde::deser_header_get_object_get_object_output_ssekms_key_id(response.headers())
                                         .map_err(|_|crate::error::GetObjectError::unhandled("Failed to parse SSEKMSKeyId from header `x-amz-server-side-encryption-aws-kms-key-id"))?
         );
         output = output.set_server_side_encryption(
-            crate::http_serde::deser_header_get_object_server_side_encryption(response.headers())
+            crate::http_serde::deser_header_get_object_get_object_output_server_side_encryption(response.headers())
                                         .map_err(|_|crate::error::GetObjectError::unhandled("Failed to parse ServerSideEncryption from header `x-amz-server-side-encryption"))?
         );
         output = output.set_storage_class(
-            crate::http_serde::deser_header_get_object_storage_class(response.headers()).map_err(
-                |_| {
-                    crate::error::GetObjectError::unhandled(
-                        "Failed to parse StorageClass from header `x-amz-storage-class",
-                    )
-                },
-            )?,
+            crate::http_serde::deser_header_get_object_get_object_output_storage_class(
+                response.headers(),
+            )
+            .map_err(|_| {
+                crate::error::GetObjectError::unhandled(
+                    "Failed to parse StorageClass from header `x-amz-storage-class",
+                )
+            })?,
         );
         output = output.set_tag_count(
-            crate::http_serde::deser_header_get_object_tag_count(response.headers()).map_err(
-                |_| {
-                    crate::error::GetObjectError::unhandled(
-                        "Failed to parse TagCount from header `x-amz-tagging-count",
-                    )
-                },
-            )?,
+            crate::http_serde::deser_header_get_object_get_object_output_tag_count(
+                response.headers(),
+            )
+            .map_err(|_| {
+                crate::error::GetObjectError::unhandled(
+                    "Failed to parse TagCount from header `x-amz-tagging-count",
+                )
+            })?,
         );
         output = output.set_version_id(
-            crate::http_serde::deser_header_get_object_version_id(response.headers()).map_err(
-                |_| {
-                    crate::error::GetObjectError::unhandled(
-                        "Failed to parse VersionId from header `x-amz-version-id",
-                    )
-                },
-            )?,
+            crate::http_serde::deser_header_get_object_get_object_output_version_id(
+                response.headers(),
+            )
+            .map_err(|_| {
+                crate::error::GetObjectError::unhandled(
+                    "Failed to parse VersionId from header `x-amz-version-id",
+                )
+            })?,
         );
         output = output.set_website_redirect_location(
-            crate::http_serde::deser_header_get_object_website_redirect_location(response.headers())
+            crate::http_serde::deser_header_get_object_get_object_output_website_redirect_location(response.headers())
                                         .map_err(|_|crate::error::GetObjectError::unhandled("Failed to parse WebsiteRedirectLocation from header `x-amz-website-redirect-location"))?
         );
         output.build()
@@ -1788,12 +1792,14 @@ pub fn parse_get_object_acl_response(
         output = crate::xml_deser::deser_operation_get_object_acl(response.body().as_ref(), output)
             .map_err(crate::error::GetObjectAclError::unhandled)?;
         output = output.set_request_charged(
-            crate::http_serde::deser_header_get_object_acl_request_charged(response.headers())
-                .map_err(|_| {
-                    crate::error::GetObjectAclError::unhandled(
-                        "Failed to parse RequestCharged from header `x-amz-request-charged",
-                    )
-                })?,
+            crate::http_serde::deser_header_get_object_acl_get_object_acl_output_request_charged(
+                response.headers(),
+            )
+            .map_err(|_| {
+                crate::error::GetObjectAclError::unhandled(
+                    "Failed to parse RequestCharged from header `x-amz-request-charged",
+                )
+            })?,
         );
         output.build()
     })
@@ -1823,9 +1829,7 @@ pub fn parse_get_object_legal_hold_response(
         let mut output = crate::output::get_object_legal_hold_output::Builder::default();
         let _ = response;
         output = output.set_legal_hold(
-            crate::http_serde::deser_payload_get_object_legal_hold_legal_hold(
-                response.body().as_ref(),
-            )?,
+            crate::http_serde::deser_payload_get_object_legal_hold_get_object_legal_hold_output_legal_hold(response.body().as_ref())?
         );
         output.build()
     })
@@ -1857,7 +1861,7 @@ pub fn parse_get_object_lock_configuration_response(
         let mut output = crate::output::get_object_lock_configuration_output::Builder::default();
         let _ = response;
         output = output.set_object_lock_configuration(
-            crate::http_serde::deser_payload_get_object_lock_configuration_object_lock_configuration(response.body().as_ref())?
+            crate::http_serde::deser_payload_get_object_lock_configuration_get_object_lock_configuration_output_object_lock_configuration(response.body().as_ref())?
         );
         output.build()
     })
@@ -1887,9 +1891,7 @@ pub fn parse_get_object_retention_response(
         let mut output = crate::output::get_object_retention_output::Builder::default();
         let _ = response;
         output = output.set_retention(
-            crate::http_serde::deser_payload_get_object_retention_retention(
-                response.body().as_ref(),
-            )?,
+            crate::http_serde::deser_payload_get_object_retention_get_object_retention_output_retention(response.body().as_ref())?
         );
         output.build()
     })
@@ -1918,12 +1920,8 @@ pub fn parse_get_object_tagging_response(
             crate::xml_deser::deser_operation_get_object_tagging(response.body().as_ref(), output)
                 .map_err(crate::error::GetObjectTaggingError::unhandled)?;
         output = output.set_version_id(
-            crate::http_serde::deser_header_get_object_tagging_version_id(response.headers())
-                .map_err(|_| {
-                    crate::error::GetObjectTaggingError::unhandled(
-                        "Failed to parse VersionId from header `x-amz-version-id",
-                    )
-                })?,
+            crate::http_serde::deser_header_get_object_tagging_get_object_tagging_output_version_id(response.headers())
+                                        .map_err(|_|crate::error::GetObjectTaggingError::unhandled("Failed to parse VersionId from header `x-amz-version-id"))?
         );
         output.build()
     })
@@ -1939,15 +1937,13 @@ pub fn parse_get_object_torrent(
         let mut output = crate::output::get_object_torrent_output::Builder::default();
         let _ = response;
         output = output.set_body(Some(
-            crate::http_serde::deser_payload_get_object_torrent_body(response.body_mut())?,
+            crate::http_serde::deser_payload_get_object_torrent_get_object_torrent_output_body(
+                response.body_mut(),
+            )?,
         ));
         output = output.set_request_charged(
-            crate::http_serde::deser_header_get_object_torrent_request_charged(response.headers())
-                .map_err(|_| {
-                    crate::error::GetObjectTorrentError::unhandled(
-                        "Failed to parse RequestCharged from header `x-amz-request-charged",
-                    )
-                })?,
+            crate::http_serde::deser_header_get_object_torrent_get_object_torrent_output_request_charged(response.headers())
+                                        .map_err(|_|crate::error::GetObjectTorrentError::unhandled("Failed to parse RequestCharged from header `x-amz-request-charged"))?
         );
         output.build()
     })
@@ -1987,7 +1983,7 @@ pub fn parse_get_public_access_block_response(
         let mut output = crate::output::get_public_access_block_output::Builder::default();
         let _ = response;
         output = output.set_public_access_block_configuration(
-            crate::http_serde::deser_payload_get_public_access_block_public_access_block_configuration(response.body().as_ref())?
+            crate::http_serde::deser_payload_get_public_access_block_get_public_access_block_output_public_access_block_configuration(response.body().as_ref())?
         );
         output.build()
     })
@@ -2072,224 +2068,253 @@ pub fn parse_head_object_response(
         let mut output = crate::output::head_object_output::Builder::default();
         let _ = response;
         output = output.set_accept_ranges(
-            crate::http_serde::deser_header_head_object_accept_ranges(response.headers()).map_err(
-                |_| {
-                    crate::error::HeadObjectError::unhandled(
-                        "Failed to parse AcceptRanges from header `accept-ranges",
-                    )
-                },
-            )?,
+            crate::http_serde::deser_header_head_object_head_object_output_accept_ranges(
+                response.headers(),
+            )
+            .map_err(|_| {
+                crate::error::HeadObjectError::unhandled(
+                    "Failed to parse AcceptRanges from header `accept-ranges",
+                )
+            })?,
         );
         output = output.set_archive_status(
-            crate::http_serde::deser_header_head_object_archive_status(response.headers())
-                .map_err(|_| {
-                    crate::error::HeadObjectError::unhandled(
-                        "Failed to parse ArchiveStatus from header `x-amz-archive-status",
-                    )
-                })?,
+            crate::http_serde::deser_header_head_object_head_object_output_archive_status(
+                response.headers(),
+            )
+            .map_err(|_| {
+                crate::error::HeadObjectError::unhandled(
+                    "Failed to parse ArchiveStatus from header `x-amz-archive-status",
+                )
+            })?,
         );
         output = output.set_bucket_key_enabled(
-            crate::http_serde::deser_header_head_object_bucket_key_enabled(response.headers())
+            crate::http_serde::deser_header_head_object_head_object_output_bucket_key_enabled(response.headers())
                                         .map_err(|_|crate::error::HeadObjectError::unhandled("Failed to parse BucketKeyEnabled from header `x-amz-server-side-encryption-bucket-key-enabled"))?
         );
         output = output.set_cache_control(
-            crate::http_serde::deser_header_head_object_cache_control(response.headers()).map_err(
-                |_| {
-                    crate::error::HeadObjectError::unhandled(
-                        "Failed to parse CacheControl from header `Cache-Control",
-                    )
-                },
-            )?,
+            crate::http_serde::deser_header_head_object_head_object_output_cache_control(
+                response.headers(),
+            )
+            .map_err(|_| {
+                crate::error::HeadObjectError::unhandled(
+                    "Failed to parse CacheControl from header `Cache-Control",
+                )
+            })?,
         );
         output = output.set_content_disposition(
-            crate::http_serde::deser_header_head_object_content_disposition(response.headers())
-                .map_err(|_| {
-                    crate::error::HeadObjectError::unhandled(
-                        "Failed to parse ContentDisposition from header `Content-Disposition",
-                    )
-                })?,
+            crate::http_serde::deser_header_head_object_head_object_output_content_disposition(
+                response.headers(),
+            )
+            .map_err(|_| {
+                crate::error::HeadObjectError::unhandled(
+                    "Failed to parse ContentDisposition from header `Content-Disposition",
+                )
+            })?,
         );
         output = output.set_content_encoding(
-            crate::http_serde::deser_header_head_object_content_encoding(response.headers())
-                .map_err(|_| {
-                    crate::error::HeadObjectError::unhandled(
-                        "Failed to parse ContentEncoding from header `Content-Encoding",
-                    )
-                })?,
+            crate::http_serde::deser_header_head_object_head_object_output_content_encoding(
+                response.headers(),
+            )
+            .map_err(|_| {
+                crate::error::HeadObjectError::unhandled(
+                    "Failed to parse ContentEncoding from header `Content-Encoding",
+                )
+            })?,
         );
         output = output.set_content_language(
-            crate::http_serde::deser_header_head_object_content_language(response.headers())
-                .map_err(|_| {
-                    crate::error::HeadObjectError::unhandled(
-                        "Failed to parse ContentLanguage from header `Content-Language",
-                    )
-                })?,
+            crate::http_serde::deser_header_head_object_head_object_output_content_language(
+                response.headers(),
+            )
+            .map_err(|_| {
+                crate::error::HeadObjectError::unhandled(
+                    "Failed to parse ContentLanguage from header `Content-Language",
+                )
+            })?,
         );
         output = output.set_content_length(
-            crate::http_serde::deser_header_head_object_content_length(response.headers())
-                .map_err(|_| {
-                    crate::error::HeadObjectError::unhandled(
-                        "Failed to parse ContentLength from header `Content-Length",
-                    )
-                })?,
+            crate::http_serde::deser_header_head_object_head_object_output_content_length(
+                response.headers(),
+            )
+            .map_err(|_| {
+                crate::error::HeadObjectError::unhandled(
+                    "Failed to parse ContentLength from header `Content-Length",
+                )
+            })?,
         );
         output = output.set_content_type(
-            crate::http_serde::deser_header_head_object_content_type(response.headers()).map_err(
-                |_| {
-                    crate::error::HeadObjectError::unhandled(
-                        "Failed to parse ContentType from header `Content-Type",
-                    )
-                },
-            )?,
+            crate::http_serde::deser_header_head_object_head_object_output_content_type(
+                response.headers(),
+            )
+            .map_err(|_| {
+                crate::error::HeadObjectError::unhandled(
+                    "Failed to parse ContentType from header `Content-Type",
+                )
+            })?,
         );
         output = output.set_delete_marker(
-            crate::http_serde::deser_header_head_object_delete_marker(response.headers()).map_err(
-                |_| {
-                    crate::error::HeadObjectError::unhandled(
-                        "Failed to parse DeleteMarker from header `x-amz-delete-marker",
-                    )
-                },
-            )?,
+            crate::http_serde::deser_header_head_object_head_object_output_delete_marker(
+                response.headers(),
+            )
+            .map_err(|_| {
+                crate::error::HeadObjectError::unhandled(
+                    "Failed to parse DeleteMarker from header `x-amz-delete-marker",
+                )
+            })?,
         );
         output = output.set_e_tag(
-            crate::http_serde::deser_header_head_object_e_tag(response.headers()).map_err(
-                |_| {
-                    crate::error::HeadObjectError::unhandled(
-                        "Failed to parse ETag from header `ETag",
-                    )
-                },
-            )?,
+            crate::http_serde::deser_header_head_object_head_object_output_e_tag(
+                response.headers(),
+            )
+            .map_err(|_| {
+                crate::error::HeadObjectError::unhandled("Failed to parse ETag from header `ETag")
+            })?,
         );
         output = output.set_expiration(
-            crate::http_serde::deser_header_head_object_expiration(response.headers()).map_err(
-                |_| {
-                    crate::error::HeadObjectError::unhandled(
-                        "Failed to parse Expiration from header `x-amz-expiration",
-                    )
-                },
-            )?,
+            crate::http_serde::deser_header_head_object_head_object_output_expiration(
+                response.headers(),
+            )
+            .map_err(|_| {
+                crate::error::HeadObjectError::unhandled(
+                    "Failed to parse Expiration from header `x-amz-expiration",
+                )
+            })?,
         );
         output = output.set_expires(
-            crate::http_serde::deser_header_head_object_expires(response.headers()).map_err(
-                |_| {
-                    crate::error::HeadObjectError::unhandled(
-                        "Failed to parse Expires from header `Expires",
-                    )
-                },
-            )?,
+            crate::http_serde::deser_header_head_object_head_object_output_expires(
+                response.headers(),
+            )
+            .map_err(|_| {
+                crate::error::HeadObjectError::unhandled(
+                    "Failed to parse Expires from header `Expires",
+                )
+            })?,
         );
         output = output.set_last_modified(
-            crate::http_serde::deser_header_head_object_last_modified(response.headers()).map_err(
-                |_| {
-                    crate::error::HeadObjectError::unhandled(
-                        "Failed to parse LastModified from header `Last-Modified",
-                    )
-                },
-            )?,
+            crate::http_serde::deser_header_head_object_head_object_output_last_modified(
+                response.headers(),
+            )
+            .map_err(|_| {
+                crate::error::HeadObjectError::unhandled(
+                    "Failed to parse LastModified from header `Last-Modified",
+                )
+            })?,
         );
         output = output.set_metadata(
-            crate::http_serde::deser_prefix_header_head_object_metadata(response.headers())
-                .map_err(|_| {
-                    crate::error::HeadObjectError::unhandled(
-                        "Failed to parse Metadata from prefix header `x-amz-meta-",
-                    )
-                })?,
+            crate::http_serde::deser_prefix_header_head_object_head_object_output_metadata(
+                response.headers(),
+            )
+            .map_err(|_| {
+                crate::error::HeadObjectError::unhandled(
+                    "Failed to parse Metadata from prefix header `x-amz-meta-",
+                )
+            })?,
         );
         output = output.set_missing_meta(
-            crate::http_serde::deser_header_head_object_missing_meta(response.headers()).map_err(
-                |_| {
-                    crate::error::HeadObjectError::unhandled(
-                        "Failed to parse MissingMeta from header `x-amz-missing-meta",
-                    )
-                },
-            )?,
+            crate::http_serde::deser_header_head_object_head_object_output_missing_meta(
+                response.headers(),
+            )
+            .map_err(|_| {
+                crate::error::HeadObjectError::unhandled(
+                    "Failed to parse MissingMeta from header `x-amz-missing-meta",
+                )
+            })?,
         );
         output = output.set_object_lock_legal_hold_status(
-            crate::http_serde::deser_header_head_object_object_lock_legal_hold_status(response.headers())
+            crate::http_serde::deser_header_head_object_head_object_output_object_lock_legal_hold_status(response.headers())
                                         .map_err(|_|crate::error::HeadObjectError::unhandled("Failed to parse ObjectLockLegalHoldStatus from header `x-amz-object-lock-legal-hold"))?
         );
         output = output.set_object_lock_mode(
-            crate::http_serde::deser_header_head_object_object_lock_mode(response.headers())
-                .map_err(|_| {
-                    crate::error::HeadObjectError::unhandled(
-                        "Failed to parse ObjectLockMode from header `x-amz-object-lock-mode",
-                    )
-                })?,
+            crate::http_serde::deser_header_head_object_head_object_output_object_lock_mode(
+                response.headers(),
+            )
+            .map_err(|_| {
+                crate::error::HeadObjectError::unhandled(
+                    "Failed to parse ObjectLockMode from header `x-amz-object-lock-mode",
+                )
+            })?,
         );
         output = output.set_object_lock_retain_until_date(
-            crate::http_serde::deser_header_head_object_object_lock_retain_until_date(response.headers())
+            crate::http_serde::deser_header_head_object_head_object_output_object_lock_retain_until_date(response.headers())
                                         .map_err(|_|crate::error::HeadObjectError::unhandled("Failed to parse ObjectLockRetainUntilDate from header `x-amz-object-lock-retain-until-date"))?
         );
         output = output.set_parts_count(
-            crate::http_serde::deser_header_head_object_parts_count(response.headers()).map_err(
-                |_| {
-                    crate::error::HeadObjectError::unhandled(
-                        "Failed to parse PartsCount from header `x-amz-mp-parts-count",
-                    )
-                },
-            )?,
+            crate::http_serde::deser_header_head_object_head_object_output_parts_count(
+                response.headers(),
+            )
+            .map_err(|_| {
+                crate::error::HeadObjectError::unhandled(
+                    "Failed to parse PartsCount from header `x-amz-mp-parts-count",
+                )
+            })?,
         );
         output = output.set_replication_status(
-            crate::http_serde::deser_header_head_object_replication_status(response.headers())
-                .map_err(|_| {
-                    crate::error::HeadObjectError::unhandled(
-                        "Failed to parse ReplicationStatus from header `x-amz-replication-status",
-                    )
-                })?,
+            crate::http_serde::deser_header_head_object_head_object_output_replication_status(
+                response.headers(),
+            )
+            .map_err(|_| {
+                crate::error::HeadObjectError::unhandled(
+                    "Failed to parse ReplicationStatus from header `x-amz-replication-status",
+                )
+            })?,
         );
         output = output.set_request_charged(
-            crate::http_serde::deser_header_head_object_request_charged(response.headers())
-                .map_err(|_| {
-                    crate::error::HeadObjectError::unhandled(
-                        "Failed to parse RequestCharged from header `x-amz-request-charged",
-                    )
-                })?,
+            crate::http_serde::deser_header_head_object_head_object_output_request_charged(
+                response.headers(),
+            )
+            .map_err(|_| {
+                crate::error::HeadObjectError::unhandled(
+                    "Failed to parse RequestCharged from header `x-amz-request-charged",
+                )
+            })?,
         );
         output = output.set_restore(
-            crate::http_serde::deser_header_head_object_restore(response.headers()).map_err(
-                |_| {
-                    crate::error::HeadObjectError::unhandled(
-                        "Failed to parse Restore from header `x-amz-restore",
-                    )
-                },
-            )?,
+            crate::http_serde::deser_header_head_object_head_object_output_restore(
+                response.headers(),
+            )
+            .map_err(|_| {
+                crate::error::HeadObjectError::unhandled(
+                    "Failed to parse Restore from header `x-amz-restore",
+                )
+            })?,
         );
         output = output.set_sse_customer_algorithm(
-            crate::http_serde::deser_header_head_object_sse_customer_algorithm(response.headers())
+            crate::http_serde::deser_header_head_object_head_object_output_sse_customer_algorithm(response.headers())
                                         .map_err(|_|crate::error::HeadObjectError::unhandled("Failed to parse SSECustomerAlgorithm from header `x-amz-server-side-encryption-customer-algorithm"))?
         );
         output = output.set_sse_customer_key_md5(
-            crate::http_serde::deser_header_head_object_sse_customer_key_md5(response.headers())
+            crate::http_serde::deser_header_head_object_head_object_output_sse_customer_key_md5(response.headers())
                                         .map_err(|_|crate::error::HeadObjectError::unhandled("Failed to parse SSECustomerKeyMD5 from header `x-amz-server-side-encryption-customer-key-MD5"))?
         );
         output = output.set_ssekms_key_id(
-            crate::http_serde::deser_header_head_object_ssekms_key_id(response.headers())
+            crate::http_serde::deser_header_head_object_head_object_output_ssekms_key_id(response.headers())
                                         .map_err(|_|crate::error::HeadObjectError::unhandled("Failed to parse SSEKMSKeyId from header `x-amz-server-side-encryption-aws-kms-key-id"))?
         );
         output = output.set_server_side_encryption(
-            crate::http_serde::deser_header_head_object_server_side_encryption(response.headers())
+            crate::http_serde::deser_header_head_object_head_object_output_server_side_encryption(response.headers())
                                         .map_err(|_|crate::error::HeadObjectError::unhandled("Failed to parse ServerSideEncryption from header `x-amz-server-side-encryption"))?
         );
         output = output.set_storage_class(
-            crate::http_serde::deser_header_head_object_storage_class(response.headers()).map_err(
-                |_| {
-                    crate::error::HeadObjectError::unhandled(
-                        "Failed to parse StorageClass from header `x-amz-storage-class",
-                    )
-                },
-            )?,
+            crate::http_serde::deser_header_head_object_head_object_output_storage_class(
+                response.headers(),
+            )
+            .map_err(|_| {
+                crate::error::HeadObjectError::unhandled(
+                    "Failed to parse StorageClass from header `x-amz-storage-class",
+                )
+            })?,
         );
         output = output.set_version_id(
-            crate::http_serde::deser_header_head_object_version_id(response.headers()).map_err(
-                |_| {
-                    crate::error::HeadObjectError::unhandled(
-                        "Failed to parse VersionId from header `x-amz-version-id",
-                    )
-                },
-            )?,
+            crate::http_serde::deser_header_head_object_head_object_output_version_id(
+                response.headers(),
+            )
+            .map_err(|_| {
+                crate::error::HeadObjectError::unhandled(
+                    "Failed to parse VersionId from header `x-amz-version-id",
+                )
+            })?,
         );
         output = output.set_website_redirect_location(
-            crate::http_serde::deser_header_head_object_website_redirect_location(response.headers())
+            crate::http_serde::deser_header_head_object_head_object_output_website_redirect_location(response.headers())
                                         .map_err(|_|crate::error::HeadObjectError::unhandled("Failed to parse WebsiteRedirectLocation from header `x-amz-website-redirect-location"))?
         );
         output.build()
@@ -2625,30 +2650,34 @@ pub fn parse_list_parts_response(
         output = crate::xml_deser::deser_operation_list_parts(response.body().as_ref(), output)
             .map_err(crate::error::ListPartsError::unhandled)?;
         output = output.set_abort_date(
-            crate::http_serde::deser_header_list_parts_abort_date(response.headers()).map_err(
-                |_| {
-                    crate::error::ListPartsError::unhandled(
-                        "Failed to parse AbortDate from header `x-amz-abort-date",
-                    )
-                },
-            )?,
+            crate::http_serde::deser_header_list_parts_list_parts_output_abort_date(
+                response.headers(),
+            )
+            .map_err(|_| {
+                crate::error::ListPartsError::unhandled(
+                    "Failed to parse AbortDate from header `x-amz-abort-date",
+                )
+            })?,
         );
         output = output.set_abort_rule_id(
-            crate::http_serde::deser_header_list_parts_abort_rule_id(response.headers()).map_err(
-                |_| {
-                    crate::error::ListPartsError::unhandled(
-                        "Failed to parse AbortRuleId from header `x-amz-abort-rule-id",
-                    )
-                },
-            )?,
+            crate::http_serde::deser_header_list_parts_list_parts_output_abort_rule_id(
+                response.headers(),
+            )
+            .map_err(|_| {
+                crate::error::ListPartsError::unhandled(
+                    "Failed to parse AbortRuleId from header `x-amz-abort-rule-id",
+                )
+            })?,
         );
         output = output.set_request_charged(
-            crate::http_serde::deser_header_list_parts_request_charged(response.headers())
-                .map_err(|_| {
-                    crate::error::ListPartsError::unhandled(
-                        "Failed to parse RequestCharged from header `x-amz-request-charged",
-                    )
-                })?,
+            crate::http_serde::deser_header_list_parts_list_parts_output_request_charged(
+                response.headers(),
+            )
+            .map_err(|_| {
+                crate::error::ListPartsError::unhandled(
+                    "Failed to parse RequestCharged from header `x-amz-request-charged",
+                )
+            })?,
         );
         output.build()
     })
@@ -3144,59 +3173,66 @@ pub fn parse_put_object_response(
         let mut output = crate::output::put_object_output::Builder::default();
         let _ = response;
         output = output.set_bucket_key_enabled(
-            crate::http_serde::deser_header_put_object_bucket_key_enabled(response.headers())
+            crate::http_serde::deser_header_put_object_put_object_output_bucket_key_enabled(response.headers())
                                         .map_err(|_|crate::error::PutObjectError::unhandled("Failed to parse BucketKeyEnabled from header `x-amz-server-side-encryption-bucket-key-enabled"))?
         );
         output = output.set_e_tag(
-            crate::http_serde::deser_header_put_object_e_tag(response.headers()).map_err(|_| {
-                crate::error::PutObjectError::unhandled("Failed to parse ETag from header `ETag")
-            })?,
-        );
-        output = output.set_expiration(
-            crate::http_serde::deser_header_put_object_expiration(response.headers()).map_err(
-                |_| {
-                    crate::error::PutObjectError::unhandled(
-                        "Failed to parse Expiration from header `x-amz-expiration",
-                    )
-                },
-            )?,
-        );
-        output = output.set_request_charged(
-            crate::http_serde::deser_header_put_object_request_charged(response.headers())
+            crate::http_serde::deser_header_put_object_put_object_output_e_tag(response.headers())
                 .map_err(|_| {
                     crate::error::PutObjectError::unhandled(
-                        "Failed to parse RequestCharged from header `x-amz-request-charged",
+                        "Failed to parse ETag from header `ETag",
                     )
                 })?,
         );
+        output = output.set_expiration(
+            crate::http_serde::deser_header_put_object_put_object_output_expiration(
+                response.headers(),
+            )
+            .map_err(|_| {
+                crate::error::PutObjectError::unhandled(
+                    "Failed to parse Expiration from header `x-amz-expiration",
+                )
+            })?,
+        );
+        output = output.set_request_charged(
+            crate::http_serde::deser_header_put_object_put_object_output_request_charged(
+                response.headers(),
+            )
+            .map_err(|_| {
+                crate::error::PutObjectError::unhandled(
+                    "Failed to parse RequestCharged from header `x-amz-request-charged",
+                )
+            })?,
+        );
         output = output.set_sse_customer_algorithm(
-            crate::http_serde::deser_header_put_object_sse_customer_algorithm(response.headers())
+            crate::http_serde::deser_header_put_object_put_object_output_sse_customer_algorithm(response.headers())
                                         .map_err(|_|crate::error::PutObjectError::unhandled("Failed to parse SSECustomerAlgorithm from header `x-amz-server-side-encryption-customer-algorithm"))?
         );
         output = output.set_sse_customer_key_md5(
-            crate::http_serde::deser_header_put_object_sse_customer_key_md5(response.headers())
+            crate::http_serde::deser_header_put_object_put_object_output_sse_customer_key_md5(response.headers())
                                         .map_err(|_|crate::error::PutObjectError::unhandled("Failed to parse SSECustomerKeyMD5 from header `x-amz-server-side-encryption-customer-key-MD5"))?
         );
         output = output.set_ssekms_encryption_context(
-            crate::http_serde::deser_header_put_object_ssekms_encryption_context(response.headers())
+            crate::http_serde::deser_header_put_object_put_object_output_ssekms_encryption_context(response.headers())
                                         .map_err(|_|crate::error::PutObjectError::unhandled("Failed to parse SSEKMSEncryptionContext from header `x-amz-server-side-encryption-context"))?
         );
         output = output.set_ssekms_key_id(
-            crate::http_serde::deser_header_put_object_ssekms_key_id(response.headers())
+            crate::http_serde::deser_header_put_object_put_object_output_ssekms_key_id(response.headers())
                                         .map_err(|_|crate::error::PutObjectError::unhandled("Failed to parse SSEKMSKeyId from header `x-amz-server-side-encryption-aws-kms-key-id"))?
         );
         output = output.set_server_side_encryption(
-            crate::http_serde::deser_header_put_object_server_side_encryption(response.headers())
+            crate::http_serde::deser_header_put_object_put_object_output_server_side_encryption(response.headers())
                                         .map_err(|_|crate::error::PutObjectError::unhandled("Failed to parse ServerSideEncryption from header `x-amz-server-side-encryption"))?
         );
         output = output.set_version_id(
-            crate::http_serde::deser_header_put_object_version_id(response.headers()).map_err(
-                |_| {
-                    crate::error::PutObjectError::unhandled(
-                        "Failed to parse VersionId from header `x-amz-version-id",
-                    )
-                },
-            )?,
+            crate::http_serde::deser_header_put_object_put_object_output_version_id(
+                response.headers(),
+            )
+            .map_err(|_| {
+                crate::error::PutObjectError::unhandled(
+                    "Failed to parse VersionId from header `x-amz-version-id",
+                )
+            })?,
         );
         output.build()
     })
@@ -3240,12 +3276,14 @@ pub fn parse_put_object_acl_response(
         let mut output = crate::output::put_object_acl_output::Builder::default();
         let _ = response;
         output = output.set_request_charged(
-            crate::http_serde::deser_header_put_object_acl_request_charged(response.headers())
-                .map_err(|_| {
-                    crate::error::PutObjectAclError::unhandled(
-                        "Failed to parse RequestCharged from header `x-amz-request-charged",
-                    )
-                })?,
+            crate::http_serde::deser_header_put_object_acl_put_object_acl_output_request_charged(
+                response.headers(),
+            )
+            .map_err(|_| {
+                crate::error::PutObjectAclError::unhandled(
+                    "Failed to parse RequestCharged from header `x-amz-request-charged",
+                )
+            })?,
         );
         output.build()
     })
@@ -3275,14 +3313,8 @@ pub fn parse_put_object_legal_hold_response(
         let mut output = crate::output::put_object_legal_hold_output::Builder::default();
         let _ = response;
         output = output.set_request_charged(
-            crate::http_serde::deser_header_put_object_legal_hold_request_charged(
-                response.headers(),
-            )
-            .map_err(|_| {
-                crate::error::PutObjectLegalHoldError::unhandled(
-                    "Failed to parse RequestCharged from header `x-amz-request-charged",
-                )
-            })?,
+            crate::http_serde::deser_header_put_object_legal_hold_put_object_legal_hold_output_request_charged(response.headers())
+                                        .map_err(|_|crate::error::PutObjectLegalHoldError::unhandled("Failed to parse RequestCharged from header `x-amz-request-charged"))?
         );
         output.build()
     })
@@ -3314,14 +3346,8 @@ pub fn parse_put_object_lock_configuration_response(
         let mut output = crate::output::put_object_lock_configuration_output::Builder::default();
         let _ = response;
         output = output.set_request_charged(
-            crate::http_serde::deser_header_put_object_lock_configuration_request_charged(
-                response.headers(),
-            )
-            .map_err(|_| {
-                crate::error::PutObjectLockConfigurationError::unhandled(
-                    "Failed to parse RequestCharged from header `x-amz-request-charged",
-                )
-            })?,
+            crate::http_serde::deser_header_put_object_lock_configuration_put_object_lock_configuration_output_request_charged(response.headers())
+                                        .map_err(|_|crate::error::PutObjectLockConfigurationError::unhandled("Failed to parse RequestCharged from header `x-amz-request-charged"))?
         );
         output.build()
     })
@@ -3351,14 +3377,8 @@ pub fn parse_put_object_retention_response(
         let mut output = crate::output::put_object_retention_output::Builder::default();
         let _ = response;
         output = output.set_request_charged(
-            crate::http_serde::deser_header_put_object_retention_request_charged(
-                response.headers(),
-            )
-            .map_err(|_| {
-                crate::error::PutObjectRetentionError::unhandled(
-                    "Failed to parse RequestCharged from header `x-amz-request-charged",
-                )
-            })?,
+            crate::http_serde::deser_header_put_object_retention_put_object_retention_output_request_charged(response.headers())
+                                        .map_err(|_|crate::error::PutObjectRetentionError::unhandled("Failed to parse RequestCharged from header `x-amz-request-charged"))?
         );
         output.build()
     })
@@ -3384,12 +3404,8 @@ pub fn parse_put_object_tagging_response(
         let mut output = crate::output::put_object_tagging_output::Builder::default();
         let _ = response;
         output = output.set_version_id(
-            crate::http_serde::deser_header_put_object_tagging_version_id(response.headers())
-                .map_err(|_| {
-                    crate::error::PutObjectTaggingError::unhandled(
-                        "Failed to parse VersionId from header `x-amz-version-id",
-                    )
-                })?,
+            crate::http_serde::deser_header_put_object_tagging_put_object_tagging_output_version_id(response.headers())
+                                        .map_err(|_|crate::error::PutObjectTaggingError::unhandled("Failed to parse VersionId from header `x-amz-version-id"))?
         );
         output.build()
     })
@@ -3459,20 +3475,18 @@ pub fn parse_restore_object_response(
         let mut output = crate::output::restore_object_output::Builder::default();
         let _ = response;
         output = output.set_request_charged(
-            crate::http_serde::deser_header_restore_object_request_charged(response.headers())
-                .map_err(|_| {
-                    crate::error::RestoreObjectError::unhandled(
-                        "Failed to parse RequestCharged from header `x-amz-request-charged",
-                    )
-                })?,
+            crate::http_serde::deser_header_restore_object_restore_object_output_request_charged(
+                response.headers(),
+            )
+            .map_err(|_| {
+                crate::error::RestoreObjectError::unhandled(
+                    "Failed to parse RequestCharged from header `x-amz-request-charged",
+                )
+            })?,
         );
         output = output.set_restore_output_path(
-            crate::http_serde::deser_header_restore_object_restore_output_path(response.headers())
-                .map_err(|_| {
-                    crate::error::RestoreObjectError::unhandled(
-                        "Failed to parse RestoreOutputPath from header `x-amz-restore-output-path",
-                    )
-                })?,
+            crate::http_serde::deser_header_restore_object_restore_object_output_restore_output_path(response.headers())
+                                        .map_err(|_|crate::error::RestoreObjectError::unhandled("Failed to parse RestoreOutputPath from header `x-amz-restore-output-path"))?
         );
         output.build()
     })
@@ -3496,40 +3510,41 @@ pub fn parse_upload_part_response(
         let mut output = crate::output::upload_part_output::Builder::default();
         let _ = response;
         output = output.set_bucket_key_enabled(
-            crate::http_serde::deser_header_upload_part_bucket_key_enabled(response.headers())
+            crate::http_serde::deser_header_upload_part_upload_part_output_bucket_key_enabled(response.headers())
                                         .map_err(|_|crate::error::UploadPartError::unhandled("Failed to parse BucketKeyEnabled from header `x-amz-server-side-encryption-bucket-key-enabled"))?
         );
         output = output.set_e_tag(
-            crate::http_serde::deser_header_upload_part_e_tag(response.headers()).map_err(
-                |_| {
-                    crate::error::UploadPartError::unhandled(
-                        "Failed to parse ETag from header `ETag",
-                    )
-                },
-            )?,
+            crate::http_serde::deser_header_upload_part_upload_part_output_e_tag(
+                response.headers(),
+            )
+            .map_err(|_| {
+                crate::error::UploadPartError::unhandled("Failed to parse ETag from header `ETag")
+            })?,
         );
         output = output.set_request_charged(
-            crate::http_serde::deser_header_upload_part_request_charged(response.headers())
-                .map_err(|_| {
-                    crate::error::UploadPartError::unhandled(
-                        "Failed to parse RequestCharged from header `x-amz-request-charged",
-                    )
-                })?,
+            crate::http_serde::deser_header_upload_part_upload_part_output_request_charged(
+                response.headers(),
+            )
+            .map_err(|_| {
+                crate::error::UploadPartError::unhandled(
+                    "Failed to parse RequestCharged from header `x-amz-request-charged",
+                )
+            })?,
         );
         output = output.set_sse_customer_algorithm(
-            crate::http_serde::deser_header_upload_part_sse_customer_algorithm(response.headers())
+            crate::http_serde::deser_header_upload_part_upload_part_output_sse_customer_algorithm(response.headers())
                                         .map_err(|_|crate::error::UploadPartError::unhandled("Failed to parse SSECustomerAlgorithm from header `x-amz-server-side-encryption-customer-algorithm"))?
         );
         output = output.set_sse_customer_key_md5(
-            crate::http_serde::deser_header_upload_part_sse_customer_key_md5(response.headers())
+            crate::http_serde::deser_header_upload_part_upload_part_output_sse_customer_key_md5(response.headers())
                                         .map_err(|_|crate::error::UploadPartError::unhandled("Failed to parse SSECustomerKeyMD5 from header `x-amz-server-side-encryption-customer-key-MD5"))?
         );
         output = output.set_ssekms_key_id(
-            crate::http_serde::deser_header_upload_part_ssekms_key_id(response.headers())
+            crate::http_serde::deser_header_upload_part_upload_part_output_ssekms_key_id(response.headers())
                                         .map_err(|_|crate::error::UploadPartError::unhandled("Failed to parse SSEKMSKeyId from header `x-amz-server-side-encryption-aws-kms-key-id"))?
         );
         output = output.set_server_side_encryption(
-            crate::http_serde::deser_header_upload_part_server_side_encryption(response.headers())
+            crate::http_serde::deser_header_upload_part_upload_part_output_server_side_encryption(response.headers())
                                         .map_err(|_|crate::error::UploadPartError::unhandled("Failed to parse ServerSideEncryption from header `x-amz-server-side-encryption"))?
         );
         output.build()
@@ -3554,46 +3569,34 @@ pub fn parse_upload_part_copy_response(
         let mut output = crate::output::upload_part_copy_output::Builder::default();
         let _ = response;
         output = output.set_bucket_key_enabled(
-            crate::http_serde::deser_header_upload_part_copy_bucket_key_enabled(response.headers())
+            crate::http_serde::deser_header_upload_part_copy_upload_part_copy_output_bucket_key_enabled(response.headers())
                                         .map_err(|_|crate::error::UploadPartCopyError::unhandled("Failed to parse BucketKeyEnabled from header `x-amz-server-side-encryption-bucket-key-enabled"))?
         );
         output = output.set_copy_part_result(
-            crate::http_serde::deser_payload_upload_part_copy_copy_part_result(
-                response.body().as_ref(),
-            )?,
+            crate::http_serde::deser_payload_upload_part_copy_upload_part_copy_output_copy_part_result(response.body().as_ref())?
         );
         output = output.set_copy_source_version_id(
-            crate::http_serde::deser_header_upload_part_copy_copy_source_version_id(
-                response.headers(),
-            )
-            .map_err(|_| {
-                crate::error::UploadPartCopyError::unhandled(
-                    "Failed to parse CopySourceVersionId from header `x-amz-copy-source-version-id",
-                )
-            })?,
+            crate::http_serde::deser_header_upload_part_copy_upload_part_copy_output_copy_source_version_id(response.headers())
+                                        .map_err(|_|crate::error::UploadPartCopyError::unhandled("Failed to parse CopySourceVersionId from header `x-amz-copy-source-version-id"))?
         );
         output = output.set_request_charged(
-            crate::http_serde::deser_header_upload_part_copy_request_charged(response.headers())
-                .map_err(|_| {
-                    crate::error::UploadPartCopyError::unhandled(
-                        "Failed to parse RequestCharged from header `x-amz-request-charged",
-                    )
-                })?,
+            crate::http_serde::deser_header_upload_part_copy_upload_part_copy_output_request_charged(response.headers())
+                                        .map_err(|_|crate::error::UploadPartCopyError::unhandled("Failed to parse RequestCharged from header `x-amz-request-charged"))?
         );
         output = output.set_sse_customer_algorithm(
-            crate::http_serde::deser_header_upload_part_copy_sse_customer_algorithm(response.headers())
+            crate::http_serde::deser_header_upload_part_copy_upload_part_copy_output_sse_customer_algorithm(response.headers())
                                         .map_err(|_|crate::error::UploadPartCopyError::unhandled("Failed to parse SSECustomerAlgorithm from header `x-amz-server-side-encryption-customer-algorithm"))?
         );
         output = output.set_sse_customer_key_md5(
-            crate::http_serde::deser_header_upload_part_copy_sse_customer_key_md5(response.headers())
+            crate::http_serde::deser_header_upload_part_copy_upload_part_copy_output_sse_customer_key_md5(response.headers())
                                         .map_err(|_|crate::error::UploadPartCopyError::unhandled("Failed to parse SSECustomerKeyMD5 from header `x-amz-server-side-encryption-customer-key-MD5"))?
         );
         output = output.set_ssekms_key_id(
-            crate::http_serde::deser_header_upload_part_copy_ssekms_key_id(response.headers())
+            crate::http_serde::deser_header_upload_part_copy_upload_part_copy_output_ssekms_key_id(response.headers())
                                         .map_err(|_|crate::error::UploadPartCopyError::unhandled("Failed to parse SSEKMSKeyId from header `x-amz-server-side-encryption-aws-kms-key-id"))?
         );
         output = output.set_server_side_encryption(
-            crate::http_serde::deser_header_upload_part_copy_server_side_encryption(response.headers())
+            crate::http_serde::deser_header_upload_part_copy_upload_part_copy_output_server_side_encryption(response.headers())
                                         .map_err(|_|crate::error::UploadPartCopyError::unhandled("Failed to parse ServerSideEncryption from header `x-amz-server-side-encryption"))?
         );
         output.build()

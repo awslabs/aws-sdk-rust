@@ -6166,13 +6166,13 @@ pub mod fluent_builders {
         /// <p>Describes the cross-origin access configuration for objects in an Amazon S3 bucket. For more
         /// information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/cors.html">Enabling Cross-Origin Resource
         /// Sharing</a> in the <i>Amazon S3 User Guide</i>.</p>
-        pub fn cors_configuration(mut self, input: crate::model::CORSConfiguration) -> Self {
+        pub fn cors_configuration(mut self, input: crate::model::CorsConfiguration) -> Self {
             self.inner = self.inner.cors_configuration(input);
             self
         }
         pub fn set_cors_configuration(
             mut self,
-            input: std::option::Option<crate::model::CORSConfiguration>,
+            input: std::option::Option<crate::model::CorsConfiguration>,
         ) -> Self {
             self.inner = self.inner.set_cors_configuration(input);
             self

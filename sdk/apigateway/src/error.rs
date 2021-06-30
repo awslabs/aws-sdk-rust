@@ -8,24 +8,24 @@ pub struct CreateApiKeyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateApiKeyErrorKind {
-    BadRequestError(crate::error::BadRequestError),
-    ConflictError(crate::error::ConflictError),
-    LimitExceededError(crate::error::LimitExceededError),
-    NotFoundError(crate::error::NotFoundError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
-    UnauthorizedError(crate::error::UnauthorizedError),
+    BadRequestException(crate::error::BadRequestException),
+    ConflictException(crate::error::ConflictException),
+    LimitExceededException(crate::error::LimitExceededException),
+    NotFoundException(crate::error::NotFoundException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
+    UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateApiKeyError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            CreateApiKeyErrorKind::BadRequestError(_inner) => _inner.fmt(f),
-            CreateApiKeyErrorKind::ConflictError(_inner) => _inner.fmt(f),
-            CreateApiKeyErrorKind::LimitExceededError(_inner) => _inner.fmt(f),
-            CreateApiKeyErrorKind::NotFoundError(_inner) => _inner.fmt(f),
-            CreateApiKeyErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
-            CreateApiKeyErrorKind::UnauthorizedError(_inner) => _inner.fmt(f),
+            CreateApiKeyErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            CreateApiKeyErrorKind::ConflictException(_inner) => _inner.fmt(f),
+            CreateApiKeyErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
+            CreateApiKeyErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            CreateApiKeyErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
+            CreateApiKeyErrorKind::UnauthorizedException(_inner) => _inner.fmt(f),
             CreateApiKeyErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -74,34 +74,37 @@ impl CreateApiKeyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_bad_request_error(&self) -> bool {
-        matches!(&self.kind, CreateApiKeyErrorKind::BadRequestError(_))
+    pub fn is_bad_request_exception(&self) -> bool {
+        matches!(&self.kind, CreateApiKeyErrorKind::BadRequestException(_))
     }
-    pub fn is_conflict_error(&self) -> bool {
-        matches!(&self.kind, CreateApiKeyErrorKind::ConflictError(_))
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(&self.kind, CreateApiKeyErrorKind::ConflictException(_))
     }
-    pub fn is_limit_exceeded_error(&self) -> bool {
-        matches!(&self.kind, CreateApiKeyErrorKind::LimitExceededError(_))
+    pub fn is_limit_exceeded_exception(&self) -> bool {
+        matches!(&self.kind, CreateApiKeyErrorKind::LimitExceededException(_))
     }
-    pub fn is_not_found_error(&self) -> bool {
-        matches!(&self.kind, CreateApiKeyErrorKind::NotFoundError(_))
+    pub fn is_not_found_exception(&self) -> bool {
+        matches!(&self.kind, CreateApiKeyErrorKind::NotFoundException(_))
     }
-    pub fn is_too_many_requests_error(&self) -> bool {
-        matches!(&self.kind, CreateApiKeyErrorKind::TooManyRequestsError(_))
+    pub fn is_too_many_requests_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateApiKeyErrorKind::TooManyRequestsException(_)
+        )
     }
-    pub fn is_unauthorized_error(&self) -> bool {
-        matches!(&self.kind, CreateApiKeyErrorKind::UnauthorizedError(_))
+    pub fn is_unauthorized_exception(&self) -> bool {
+        matches!(&self.kind, CreateApiKeyErrorKind::UnauthorizedException(_))
     }
 }
 impl std::error::Error for CreateApiKeyError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            CreateApiKeyErrorKind::BadRequestError(_inner) => Some(_inner),
-            CreateApiKeyErrorKind::ConflictError(_inner) => Some(_inner),
-            CreateApiKeyErrorKind::LimitExceededError(_inner) => Some(_inner),
-            CreateApiKeyErrorKind::NotFoundError(_inner) => Some(_inner),
-            CreateApiKeyErrorKind::TooManyRequestsError(_inner) => Some(_inner),
-            CreateApiKeyErrorKind::UnauthorizedError(_inner) => Some(_inner),
+            CreateApiKeyErrorKind::BadRequestException(_inner) => Some(_inner),
+            CreateApiKeyErrorKind::ConflictException(_inner) => Some(_inner),
+            CreateApiKeyErrorKind::LimitExceededException(_inner) => Some(_inner),
+            CreateApiKeyErrorKind::NotFoundException(_inner) => Some(_inner),
+            CreateApiKeyErrorKind::TooManyRequestsException(_inner) => Some(_inner),
+            CreateApiKeyErrorKind::UnauthorizedException(_inner) => Some(_inner),
             CreateApiKeyErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -116,22 +119,22 @@ pub struct CreateAuthorizerError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateAuthorizerErrorKind {
-    BadRequestError(crate::error::BadRequestError),
-    LimitExceededError(crate::error::LimitExceededError),
-    NotFoundError(crate::error::NotFoundError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
-    UnauthorizedError(crate::error::UnauthorizedError),
+    BadRequestException(crate::error::BadRequestException),
+    LimitExceededException(crate::error::LimitExceededException),
+    NotFoundException(crate::error::NotFoundException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
+    UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateAuthorizerError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            CreateAuthorizerErrorKind::BadRequestError(_inner) => _inner.fmt(f),
-            CreateAuthorizerErrorKind::LimitExceededError(_inner) => _inner.fmt(f),
-            CreateAuthorizerErrorKind::NotFoundError(_inner) => _inner.fmt(f),
-            CreateAuthorizerErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
-            CreateAuthorizerErrorKind::UnauthorizedError(_inner) => _inner.fmt(f),
+            CreateAuthorizerErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            CreateAuthorizerErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
+            CreateAuthorizerErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            CreateAuthorizerErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
+            CreateAuthorizerErrorKind::UnauthorizedException(_inner) => _inner.fmt(f),
             CreateAuthorizerErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -180,33 +183,42 @@ impl CreateAuthorizerError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_bad_request_error(&self) -> bool {
-        matches!(&self.kind, CreateAuthorizerErrorKind::BadRequestError(_))
-    }
-    pub fn is_limit_exceeded_error(&self) -> bool {
-        matches!(&self.kind, CreateAuthorizerErrorKind::LimitExceededError(_))
-    }
-    pub fn is_not_found_error(&self) -> bool {
-        matches!(&self.kind, CreateAuthorizerErrorKind::NotFoundError(_))
-    }
-    pub fn is_too_many_requests_error(&self) -> bool {
+    pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
-            CreateAuthorizerErrorKind::TooManyRequestsError(_)
+            CreateAuthorizerErrorKind::BadRequestException(_)
         )
     }
-    pub fn is_unauthorized_error(&self) -> bool {
-        matches!(&self.kind, CreateAuthorizerErrorKind::UnauthorizedError(_))
+    pub fn is_limit_exceeded_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateAuthorizerErrorKind::LimitExceededException(_)
+        )
+    }
+    pub fn is_not_found_exception(&self) -> bool {
+        matches!(&self.kind, CreateAuthorizerErrorKind::NotFoundException(_))
+    }
+    pub fn is_too_many_requests_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateAuthorizerErrorKind::TooManyRequestsException(_)
+        )
+    }
+    pub fn is_unauthorized_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateAuthorizerErrorKind::UnauthorizedException(_)
+        )
     }
 }
 impl std::error::Error for CreateAuthorizerError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            CreateAuthorizerErrorKind::BadRequestError(_inner) => Some(_inner),
-            CreateAuthorizerErrorKind::LimitExceededError(_inner) => Some(_inner),
-            CreateAuthorizerErrorKind::NotFoundError(_inner) => Some(_inner),
-            CreateAuthorizerErrorKind::TooManyRequestsError(_inner) => Some(_inner),
-            CreateAuthorizerErrorKind::UnauthorizedError(_inner) => Some(_inner),
+            CreateAuthorizerErrorKind::BadRequestException(_inner) => Some(_inner),
+            CreateAuthorizerErrorKind::LimitExceededException(_inner) => Some(_inner),
+            CreateAuthorizerErrorKind::NotFoundException(_inner) => Some(_inner),
+            CreateAuthorizerErrorKind::TooManyRequestsException(_inner) => Some(_inner),
+            CreateAuthorizerErrorKind::UnauthorizedException(_inner) => Some(_inner),
             CreateAuthorizerErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -221,22 +233,22 @@ pub struct CreateBasePathMappingError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateBasePathMappingErrorKind {
-    BadRequestError(crate::error::BadRequestError),
-    ConflictError(crate::error::ConflictError),
-    NotFoundError(crate::error::NotFoundError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
-    UnauthorizedError(crate::error::UnauthorizedError),
+    BadRequestException(crate::error::BadRequestException),
+    ConflictException(crate::error::ConflictException),
+    NotFoundException(crate::error::NotFoundException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
+    UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateBasePathMappingError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            CreateBasePathMappingErrorKind::BadRequestError(_inner) => _inner.fmt(f),
-            CreateBasePathMappingErrorKind::ConflictError(_inner) => _inner.fmt(f),
-            CreateBasePathMappingErrorKind::NotFoundError(_inner) => _inner.fmt(f),
-            CreateBasePathMappingErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
-            CreateBasePathMappingErrorKind::UnauthorizedError(_inner) => _inner.fmt(f),
+            CreateBasePathMappingErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            CreateBasePathMappingErrorKind::ConflictException(_inner) => _inner.fmt(f),
+            CreateBasePathMappingErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            CreateBasePathMappingErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
+            CreateBasePathMappingErrorKind::UnauthorizedException(_inner) => _inner.fmt(f),
             CreateBasePathMappingErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -285,39 +297,45 @@ impl CreateBasePathMappingError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_bad_request_error(&self) -> bool {
+    pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
-            CreateBasePathMappingErrorKind::BadRequestError(_)
+            CreateBasePathMappingErrorKind::BadRequestException(_)
         )
     }
-    pub fn is_conflict_error(&self) -> bool {
-        matches!(&self.kind, CreateBasePathMappingErrorKind::ConflictError(_))
-    }
-    pub fn is_not_found_error(&self) -> bool {
-        matches!(&self.kind, CreateBasePathMappingErrorKind::NotFoundError(_))
-    }
-    pub fn is_too_many_requests_error(&self) -> bool {
+    pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
-            CreateBasePathMappingErrorKind::TooManyRequestsError(_)
+            CreateBasePathMappingErrorKind::ConflictException(_)
         )
     }
-    pub fn is_unauthorized_error(&self) -> bool {
+    pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
-            CreateBasePathMappingErrorKind::UnauthorizedError(_)
+            CreateBasePathMappingErrorKind::NotFoundException(_)
+        )
+    }
+    pub fn is_too_many_requests_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateBasePathMappingErrorKind::TooManyRequestsException(_)
+        )
+    }
+    pub fn is_unauthorized_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateBasePathMappingErrorKind::UnauthorizedException(_)
         )
     }
 }
 impl std::error::Error for CreateBasePathMappingError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            CreateBasePathMappingErrorKind::BadRequestError(_inner) => Some(_inner),
-            CreateBasePathMappingErrorKind::ConflictError(_inner) => Some(_inner),
-            CreateBasePathMappingErrorKind::NotFoundError(_inner) => Some(_inner),
-            CreateBasePathMappingErrorKind::TooManyRequestsError(_inner) => Some(_inner),
-            CreateBasePathMappingErrorKind::UnauthorizedError(_inner) => Some(_inner),
+            CreateBasePathMappingErrorKind::BadRequestException(_inner) => Some(_inner),
+            CreateBasePathMappingErrorKind::ConflictException(_inner) => Some(_inner),
+            CreateBasePathMappingErrorKind::NotFoundException(_inner) => Some(_inner),
+            CreateBasePathMappingErrorKind::TooManyRequestsException(_inner) => Some(_inner),
+            CreateBasePathMappingErrorKind::UnauthorizedException(_inner) => Some(_inner),
             CreateBasePathMappingErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -332,26 +350,26 @@ pub struct CreateDeploymentError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateDeploymentErrorKind {
-    BadRequestError(crate::error::BadRequestError),
-    ConflictError(crate::error::ConflictError),
-    LimitExceededError(crate::error::LimitExceededError),
-    NotFoundError(crate::error::NotFoundError),
-    ServiceUnavailableError(crate::error::ServiceUnavailableError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
-    UnauthorizedError(crate::error::UnauthorizedError),
+    BadRequestException(crate::error::BadRequestException),
+    ConflictException(crate::error::ConflictException),
+    LimitExceededException(crate::error::LimitExceededException),
+    NotFoundException(crate::error::NotFoundException),
+    ServiceUnavailableException(crate::error::ServiceUnavailableException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
+    UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateDeploymentError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            CreateDeploymentErrorKind::BadRequestError(_inner) => _inner.fmt(f),
-            CreateDeploymentErrorKind::ConflictError(_inner) => _inner.fmt(f),
-            CreateDeploymentErrorKind::LimitExceededError(_inner) => _inner.fmt(f),
-            CreateDeploymentErrorKind::NotFoundError(_inner) => _inner.fmt(f),
-            CreateDeploymentErrorKind::ServiceUnavailableError(_inner) => _inner.fmt(f),
-            CreateDeploymentErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
-            CreateDeploymentErrorKind::UnauthorizedError(_inner) => _inner.fmt(f),
+            CreateDeploymentErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            CreateDeploymentErrorKind::ConflictException(_inner) => _inner.fmt(f),
+            CreateDeploymentErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
+            CreateDeploymentErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            CreateDeploymentErrorKind::ServiceUnavailableException(_inner) => _inner.fmt(f),
+            CreateDeploymentErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
+            CreateDeploymentErrorKind::UnauthorizedException(_inner) => _inner.fmt(f),
             CreateDeploymentErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -400,44 +418,53 @@ impl CreateDeploymentError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_bad_request_error(&self) -> bool {
-        matches!(&self.kind, CreateDeploymentErrorKind::BadRequestError(_))
-    }
-    pub fn is_conflict_error(&self) -> bool {
-        matches!(&self.kind, CreateDeploymentErrorKind::ConflictError(_))
-    }
-    pub fn is_limit_exceeded_error(&self) -> bool {
-        matches!(&self.kind, CreateDeploymentErrorKind::LimitExceededError(_))
-    }
-    pub fn is_not_found_error(&self) -> bool {
-        matches!(&self.kind, CreateDeploymentErrorKind::NotFoundError(_))
-    }
-    pub fn is_service_unavailable_error(&self) -> bool {
+    pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
-            CreateDeploymentErrorKind::ServiceUnavailableError(_)
+            CreateDeploymentErrorKind::BadRequestException(_)
         )
     }
-    pub fn is_too_many_requests_error(&self) -> bool {
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(&self.kind, CreateDeploymentErrorKind::ConflictException(_))
+    }
+    pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
-            CreateDeploymentErrorKind::TooManyRequestsError(_)
+            CreateDeploymentErrorKind::LimitExceededException(_)
         )
     }
-    pub fn is_unauthorized_error(&self) -> bool {
-        matches!(&self.kind, CreateDeploymentErrorKind::UnauthorizedError(_))
+    pub fn is_not_found_exception(&self) -> bool {
+        matches!(&self.kind, CreateDeploymentErrorKind::NotFoundException(_))
+    }
+    pub fn is_service_unavailable_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateDeploymentErrorKind::ServiceUnavailableException(_)
+        )
+    }
+    pub fn is_too_many_requests_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateDeploymentErrorKind::TooManyRequestsException(_)
+        )
+    }
+    pub fn is_unauthorized_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateDeploymentErrorKind::UnauthorizedException(_)
+        )
     }
 }
 impl std::error::Error for CreateDeploymentError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            CreateDeploymentErrorKind::BadRequestError(_inner) => Some(_inner),
-            CreateDeploymentErrorKind::ConflictError(_inner) => Some(_inner),
-            CreateDeploymentErrorKind::LimitExceededError(_inner) => Some(_inner),
-            CreateDeploymentErrorKind::NotFoundError(_inner) => Some(_inner),
-            CreateDeploymentErrorKind::ServiceUnavailableError(_inner) => Some(_inner),
-            CreateDeploymentErrorKind::TooManyRequestsError(_inner) => Some(_inner),
-            CreateDeploymentErrorKind::UnauthorizedError(_inner) => Some(_inner),
+            CreateDeploymentErrorKind::BadRequestException(_inner) => Some(_inner),
+            CreateDeploymentErrorKind::ConflictException(_inner) => Some(_inner),
+            CreateDeploymentErrorKind::LimitExceededException(_inner) => Some(_inner),
+            CreateDeploymentErrorKind::NotFoundException(_inner) => Some(_inner),
+            CreateDeploymentErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
+            CreateDeploymentErrorKind::TooManyRequestsException(_inner) => Some(_inner),
+            CreateDeploymentErrorKind::UnauthorizedException(_inner) => Some(_inner),
             CreateDeploymentErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -452,24 +479,24 @@ pub struct CreateDocumentationPartError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateDocumentationPartErrorKind {
-    BadRequestError(crate::error::BadRequestError),
-    ConflictError(crate::error::ConflictError),
-    LimitExceededError(crate::error::LimitExceededError),
-    NotFoundError(crate::error::NotFoundError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
-    UnauthorizedError(crate::error::UnauthorizedError),
+    BadRequestException(crate::error::BadRequestException),
+    ConflictException(crate::error::ConflictException),
+    LimitExceededException(crate::error::LimitExceededException),
+    NotFoundException(crate::error::NotFoundException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
+    UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateDocumentationPartError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            CreateDocumentationPartErrorKind::BadRequestError(_inner) => _inner.fmt(f),
-            CreateDocumentationPartErrorKind::ConflictError(_inner) => _inner.fmt(f),
-            CreateDocumentationPartErrorKind::LimitExceededError(_inner) => _inner.fmt(f),
-            CreateDocumentationPartErrorKind::NotFoundError(_inner) => _inner.fmt(f),
-            CreateDocumentationPartErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
-            CreateDocumentationPartErrorKind::UnauthorizedError(_inner) => _inner.fmt(f),
+            CreateDocumentationPartErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            CreateDocumentationPartErrorKind::ConflictException(_inner) => _inner.fmt(f),
+            CreateDocumentationPartErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
+            CreateDocumentationPartErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            CreateDocumentationPartErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
+            CreateDocumentationPartErrorKind::UnauthorizedException(_inner) => _inner.fmt(f),
             CreateDocumentationPartErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -518,52 +545,52 @@ impl CreateDocumentationPartError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_bad_request_error(&self) -> bool {
+    pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
-            CreateDocumentationPartErrorKind::BadRequestError(_)
+            CreateDocumentationPartErrorKind::BadRequestException(_)
         )
     }
-    pub fn is_conflict_error(&self) -> bool {
+    pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
-            CreateDocumentationPartErrorKind::ConflictError(_)
+            CreateDocumentationPartErrorKind::ConflictException(_)
         )
     }
-    pub fn is_limit_exceeded_error(&self) -> bool {
+    pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
-            CreateDocumentationPartErrorKind::LimitExceededError(_)
+            CreateDocumentationPartErrorKind::LimitExceededException(_)
         )
     }
-    pub fn is_not_found_error(&self) -> bool {
+    pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
-            CreateDocumentationPartErrorKind::NotFoundError(_)
+            CreateDocumentationPartErrorKind::NotFoundException(_)
         )
     }
-    pub fn is_too_many_requests_error(&self) -> bool {
+    pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
-            CreateDocumentationPartErrorKind::TooManyRequestsError(_)
+            CreateDocumentationPartErrorKind::TooManyRequestsException(_)
         )
     }
-    pub fn is_unauthorized_error(&self) -> bool {
+    pub fn is_unauthorized_exception(&self) -> bool {
         matches!(
             &self.kind,
-            CreateDocumentationPartErrorKind::UnauthorizedError(_)
+            CreateDocumentationPartErrorKind::UnauthorizedException(_)
         )
     }
 }
 impl std::error::Error for CreateDocumentationPartError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            CreateDocumentationPartErrorKind::BadRequestError(_inner) => Some(_inner),
-            CreateDocumentationPartErrorKind::ConflictError(_inner) => Some(_inner),
-            CreateDocumentationPartErrorKind::LimitExceededError(_inner) => Some(_inner),
-            CreateDocumentationPartErrorKind::NotFoundError(_inner) => Some(_inner),
-            CreateDocumentationPartErrorKind::TooManyRequestsError(_inner) => Some(_inner),
-            CreateDocumentationPartErrorKind::UnauthorizedError(_inner) => Some(_inner),
+            CreateDocumentationPartErrorKind::BadRequestException(_inner) => Some(_inner),
+            CreateDocumentationPartErrorKind::ConflictException(_inner) => Some(_inner),
+            CreateDocumentationPartErrorKind::LimitExceededException(_inner) => Some(_inner),
+            CreateDocumentationPartErrorKind::NotFoundException(_inner) => Some(_inner),
+            CreateDocumentationPartErrorKind::TooManyRequestsException(_inner) => Some(_inner),
+            CreateDocumentationPartErrorKind::UnauthorizedException(_inner) => Some(_inner),
             CreateDocumentationPartErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -578,24 +605,24 @@ pub struct CreateDocumentationVersionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateDocumentationVersionErrorKind {
-    BadRequestError(crate::error::BadRequestError),
-    ConflictError(crate::error::ConflictError),
-    LimitExceededError(crate::error::LimitExceededError),
-    NotFoundError(crate::error::NotFoundError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
-    UnauthorizedError(crate::error::UnauthorizedError),
+    BadRequestException(crate::error::BadRequestException),
+    ConflictException(crate::error::ConflictException),
+    LimitExceededException(crate::error::LimitExceededException),
+    NotFoundException(crate::error::NotFoundException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
+    UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateDocumentationVersionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            CreateDocumentationVersionErrorKind::BadRequestError(_inner) => _inner.fmt(f),
-            CreateDocumentationVersionErrorKind::ConflictError(_inner) => _inner.fmt(f),
-            CreateDocumentationVersionErrorKind::LimitExceededError(_inner) => _inner.fmt(f),
-            CreateDocumentationVersionErrorKind::NotFoundError(_inner) => _inner.fmt(f),
-            CreateDocumentationVersionErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
-            CreateDocumentationVersionErrorKind::UnauthorizedError(_inner) => _inner.fmt(f),
+            CreateDocumentationVersionErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            CreateDocumentationVersionErrorKind::ConflictException(_inner) => _inner.fmt(f),
+            CreateDocumentationVersionErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
+            CreateDocumentationVersionErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            CreateDocumentationVersionErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
+            CreateDocumentationVersionErrorKind::UnauthorizedException(_inner) => _inner.fmt(f),
             CreateDocumentationVersionErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -644,52 +671,52 @@ impl CreateDocumentationVersionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_bad_request_error(&self) -> bool {
+    pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
-            CreateDocumentationVersionErrorKind::BadRequestError(_)
+            CreateDocumentationVersionErrorKind::BadRequestException(_)
         )
     }
-    pub fn is_conflict_error(&self) -> bool {
+    pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
-            CreateDocumentationVersionErrorKind::ConflictError(_)
+            CreateDocumentationVersionErrorKind::ConflictException(_)
         )
     }
-    pub fn is_limit_exceeded_error(&self) -> bool {
+    pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
-            CreateDocumentationVersionErrorKind::LimitExceededError(_)
+            CreateDocumentationVersionErrorKind::LimitExceededException(_)
         )
     }
-    pub fn is_not_found_error(&self) -> bool {
+    pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
-            CreateDocumentationVersionErrorKind::NotFoundError(_)
+            CreateDocumentationVersionErrorKind::NotFoundException(_)
         )
     }
-    pub fn is_too_many_requests_error(&self) -> bool {
+    pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
-            CreateDocumentationVersionErrorKind::TooManyRequestsError(_)
+            CreateDocumentationVersionErrorKind::TooManyRequestsException(_)
         )
     }
-    pub fn is_unauthorized_error(&self) -> bool {
+    pub fn is_unauthorized_exception(&self) -> bool {
         matches!(
             &self.kind,
-            CreateDocumentationVersionErrorKind::UnauthorizedError(_)
+            CreateDocumentationVersionErrorKind::UnauthorizedException(_)
         )
     }
 }
 impl std::error::Error for CreateDocumentationVersionError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            CreateDocumentationVersionErrorKind::BadRequestError(_inner) => Some(_inner),
-            CreateDocumentationVersionErrorKind::ConflictError(_inner) => Some(_inner),
-            CreateDocumentationVersionErrorKind::LimitExceededError(_inner) => Some(_inner),
-            CreateDocumentationVersionErrorKind::NotFoundError(_inner) => Some(_inner),
-            CreateDocumentationVersionErrorKind::TooManyRequestsError(_inner) => Some(_inner),
-            CreateDocumentationVersionErrorKind::UnauthorizedError(_inner) => Some(_inner),
+            CreateDocumentationVersionErrorKind::BadRequestException(_inner) => Some(_inner),
+            CreateDocumentationVersionErrorKind::ConflictException(_inner) => Some(_inner),
+            CreateDocumentationVersionErrorKind::LimitExceededException(_inner) => Some(_inner),
+            CreateDocumentationVersionErrorKind::NotFoundException(_inner) => Some(_inner),
+            CreateDocumentationVersionErrorKind::TooManyRequestsException(_inner) => Some(_inner),
+            CreateDocumentationVersionErrorKind::UnauthorizedException(_inner) => Some(_inner),
             CreateDocumentationVersionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -704,20 +731,20 @@ pub struct CreateDomainNameError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateDomainNameErrorKind {
-    BadRequestError(crate::error::BadRequestError),
-    ConflictError(crate::error::ConflictError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
-    UnauthorizedError(crate::error::UnauthorizedError),
+    BadRequestException(crate::error::BadRequestException),
+    ConflictException(crate::error::ConflictException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
+    UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateDomainNameError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            CreateDomainNameErrorKind::BadRequestError(_inner) => _inner.fmt(f),
-            CreateDomainNameErrorKind::ConflictError(_inner) => _inner.fmt(f),
-            CreateDomainNameErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
-            CreateDomainNameErrorKind::UnauthorizedError(_inner) => _inner.fmt(f),
+            CreateDomainNameErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            CreateDomainNameErrorKind::ConflictException(_inner) => _inner.fmt(f),
+            CreateDomainNameErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
+            CreateDomainNameErrorKind::UnauthorizedException(_inner) => _inner.fmt(f),
             CreateDomainNameErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -766,29 +793,35 @@ impl CreateDomainNameError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_bad_request_error(&self) -> bool {
-        matches!(&self.kind, CreateDomainNameErrorKind::BadRequestError(_))
-    }
-    pub fn is_conflict_error(&self) -> bool {
-        matches!(&self.kind, CreateDomainNameErrorKind::ConflictError(_))
-    }
-    pub fn is_too_many_requests_error(&self) -> bool {
+    pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
-            CreateDomainNameErrorKind::TooManyRequestsError(_)
+            CreateDomainNameErrorKind::BadRequestException(_)
         )
     }
-    pub fn is_unauthorized_error(&self) -> bool {
-        matches!(&self.kind, CreateDomainNameErrorKind::UnauthorizedError(_))
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(&self.kind, CreateDomainNameErrorKind::ConflictException(_))
+    }
+    pub fn is_too_many_requests_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateDomainNameErrorKind::TooManyRequestsException(_)
+        )
+    }
+    pub fn is_unauthorized_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateDomainNameErrorKind::UnauthorizedException(_)
+        )
     }
 }
 impl std::error::Error for CreateDomainNameError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            CreateDomainNameErrorKind::BadRequestError(_inner) => Some(_inner),
-            CreateDomainNameErrorKind::ConflictError(_inner) => Some(_inner),
-            CreateDomainNameErrorKind::TooManyRequestsError(_inner) => Some(_inner),
-            CreateDomainNameErrorKind::UnauthorizedError(_inner) => Some(_inner),
+            CreateDomainNameErrorKind::BadRequestException(_inner) => Some(_inner),
+            CreateDomainNameErrorKind::ConflictException(_inner) => Some(_inner),
+            CreateDomainNameErrorKind::TooManyRequestsException(_inner) => Some(_inner),
+            CreateDomainNameErrorKind::UnauthorizedException(_inner) => Some(_inner),
             CreateDomainNameErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -803,24 +836,24 @@ pub struct CreateModelError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateModelErrorKind {
-    BadRequestError(crate::error::BadRequestError),
-    ConflictError(crate::error::ConflictError),
-    LimitExceededError(crate::error::LimitExceededError),
-    NotFoundError(crate::error::NotFoundError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
-    UnauthorizedError(crate::error::UnauthorizedError),
+    BadRequestException(crate::error::BadRequestException),
+    ConflictException(crate::error::ConflictException),
+    LimitExceededException(crate::error::LimitExceededException),
+    NotFoundException(crate::error::NotFoundException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
+    UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateModelError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            CreateModelErrorKind::BadRequestError(_inner) => _inner.fmt(f),
-            CreateModelErrorKind::ConflictError(_inner) => _inner.fmt(f),
-            CreateModelErrorKind::LimitExceededError(_inner) => _inner.fmt(f),
-            CreateModelErrorKind::NotFoundError(_inner) => _inner.fmt(f),
-            CreateModelErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
-            CreateModelErrorKind::UnauthorizedError(_inner) => _inner.fmt(f),
+            CreateModelErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            CreateModelErrorKind::ConflictException(_inner) => _inner.fmt(f),
+            CreateModelErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
+            CreateModelErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            CreateModelErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
+            CreateModelErrorKind::UnauthorizedException(_inner) => _inner.fmt(f),
             CreateModelErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -869,34 +902,37 @@ impl CreateModelError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_bad_request_error(&self) -> bool {
-        matches!(&self.kind, CreateModelErrorKind::BadRequestError(_))
+    pub fn is_bad_request_exception(&self) -> bool {
+        matches!(&self.kind, CreateModelErrorKind::BadRequestException(_))
     }
-    pub fn is_conflict_error(&self) -> bool {
-        matches!(&self.kind, CreateModelErrorKind::ConflictError(_))
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(&self.kind, CreateModelErrorKind::ConflictException(_))
     }
-    pub fn is_limit_exceeded_error(&self) -> bool {
-        matches!(&self.kind, CreateModelErrorKind::LimitExceededError(_))
+    pub fn is_limit_exceeded_exception(&self) -> bool {
+        matches!(&self.kind, CreateModelErrorKind::LimitExceededException(_))
     }
-    pub fn is_not_found_error(&self) -> bool {
-        matches!(&self.kind, CreateModelErrorKind::NotFoundError(_))
+    pub fn is_not_found_exception(&self) -> bool {
+        matches!(&self.kind, CreateModelErrorKind::NotFoundException(_))
     }
-    pub fn is_too_many_requests_error(&self) -> bool {
-        matches!(&self.kind, CreateModelErrorKind::TooManyRequestsError(_))
+    pub fn is_too_many_requests_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateModelErrorKind::TooManyRequestsException(_)
+        )
     }
-    pub fn is_unauthorized_error(&self) -> bool {
-        matches!(&self.kind, CreateModelErrorKind::UnauthorizedError(_))
+    pub fn is_unauthorized_exception(&self) -> bool {
+        matches!(&self.kind, CreateModelErrorKind::UnauthorizedException(_))
     }
 }
 impl std::error::Error for CreateModelError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            CreateModelErrorKind::BadRequestError(_inner) => Some(_inner),
-            CreateModelErrorKind::ConflictError(_inner) => Some(_inner),
-            CreateModelErrorKind::LimitExceededError(_inner) => Some(_inner),
-            CreateModelErrorKind::NotFoundError(_inner) => Some(_inner),
-            CreateModelErrorKind::TooManyRequestsError(_inner) => Some(_inner),
-            CreateModelErrorKind::UnauthorizedError(_inner) => Some(_inner),
+            CreateModelErrorKind::BadRequestException(_inner) => Some(_inner),
+            CreateModelErrorKind::ConflictException(_inner) => Some(_inner),
+            CreateModelErrorKind::LimitExceededException(_inner) => Some(_inner),
+            CreateModelErrorKind::NotFoundException(_inner) => Some(_inner),
+            CreateModelErrorKind::TooManyRequestsException(_inner) => Some(_inner),
+            CreateModelErrorKind::UnauthorizedException(_inner) => Some(_inner),
             CreateModelErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -911,22 +947,22 @@ pub struct CreateRequestValidatorError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateRequestValidatorErrorKind {
-    BadRequestError(crate::error::BadRequestError),
-    LimitExceededError(crate::error::LimitExceededError),
-    NotFoundError(crate::error::NotFoundError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
-    UnauthorizedError(crate::error::UnauthorizedError),
+    BadRequestException(crate::error::BadRequestException),
+    LimitExceededException(crate::error::LimitExceededException),
+    NotFoundException(crate::error::NotFoundException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
+    UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateRequestValidatorError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            CreateRequestValidatorErrorKind::BadRequestError(_inner) => _inner.fmt(f),
-            CreateRequestValidatorErrorKind::LimitExceededError(_inner) => _inner.fmt(f),
-            CreateRequestValidatorErrorKind::NotFoundError(_inner) => _inner.fmt(f),
-            CreateRequestValidatorErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
-            CreateRequestValidatorErrorKind::UnauthorizedError(_inner) => _inner.fmt(f),
+            CreateRequestValidatorErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            CreateRequestValidatorErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
+            CreateRequestValidatorErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            CreateRequestValidatorErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
+            CreateRequestValidatorErrorKind::UnauthorizedException(_inner) => _inner.fmt(f),
             CreateRequestValidatorErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -975,45 +1011,45 @@ impl CreateRequestValidatorError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_bad_request_error(&self) -> bool {
+    pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
-            CreateRequestValidatorErrorKind::BadRequestError(_)
+            CreateRequestValidatorErrorKind::BadRequestException(_)
         )
     }
-    pub fn is_limit_exceeded_error(&self) -> bool {
+    pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
-            CreateRequestValidatorErrorKind::LimitExceededError(_)
+            CreateRequestValidatorErrorKind::LimitExceededException(_)
         )
     }
-    pub fn is_not_found_error(&self) -> bool {
+    pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
-            CreateRequestValidatorErrorKind::NotFoundError(_)
+            CreateRequestValidatorErrorKind::NotFoundException(_)
         )
     }
-    pub fn is_too_many_requests_error(&self) -> bool {
+    pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
-            CreateRequestValidatorErrorKind::TooManyRequestsError(_)
+            CreateRequestValidatorErrorKind::TooManyRequestsException(_)
         )
     }
-    pub fn is_unauthorized_error(&self) -> bool {
+    pub fn is_unauthorized_exception(&self) -> bool {
         matches!(
             &self.kind,
-            CreateRequestValidatorErrorKind::UnauthorizedError(_)
+            CreateRequestValidatorErrorKind::UnauthorizedException(_)
         )
     }
 }
 impl std::error::Error for CreateRequestValidatorError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            CreateRequestValidatorErrorKind::BadRequestError(_inner) => Some(_inner),
-            CreateRequestValidatorErrorKind::LimitExceededError(_inner) => Some(_inner),
-            CreateRequestValidatorErrorKind::NotFoundError(_inner) => Some(_inner),
-            CreateRequestValidatorErrorKind::TooManyRequestsError(_inner) => Some(_inner),
-            CreateRequestValidatorErrorKind::UnauthorizedError(_inner) => Some(_inner),
+            CreateRequestValidatorErrorKind::BadRequestException(_inner) => Some(_inner),
+            CreateRequestValidatorErrorKind::LimitExceededException(_inner) => Some(_inner),
+            CreateRequestValidatorErrorKind::NotFoundException(_inner) => Some(_inner),
+            CreateRequestValidatorErrorKind::TooManyRequestsException(_inner) => Some(_inner),
+            CreateRequestValidatorErrorKind::UnauthorizedException(_inner) => Some(_inner),
             CreateRequestValidatorErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -1028,24 +1064,24 @@ pub struct CreateResourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateResourceErrorKind {
-    BadRequestError(crate::error::BadRequestError),
-    ConflictError(crate::error::ConflictError),
-    LimitExceededError(crate::error::LimitExceededError),
-    NotFoundError(crate::error::NotFoundError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
-    UnauthorizedError(crate::error::UnauthorizedError),
+    BadRequestException(crate::error::BadRequestException),
+    ConflictException(crate::error::ConflictException),
+    LimitExceededException(crate::error::LimitExceededException),
+    NotFoundException(crate::error::NotFoundException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
+    UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            CreateResourceErrorKind::BadRequestError(_inner) => _inner.fmt(f),
-            CreateResourceErrorKind::ConflictError(_inner) => _inner.fmt(f),
-            CreateResourceErrorKind::LimitExceededError(_inner) => _inner.fmt(f),
-            CreateResourceErrorKind::NotFoundError(_inner) => _inner.fmt(f),
-            CreateResourceErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
-            CreateResourceErrorKind::UnauthorizedError(_inner) => _inner.fmt(f),
+            CreateResourceErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            CreateResourceErrorKind::ConflictException(_inner) => _inner.fmt(f),
+            CreateResourceErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
+            CreateResourceErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            CreateResourceErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
+            CreateResourceErrorKind::UnauthorizedException(_inner) => _inner.fmt(f),
             CreateResourceErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -1094,34 +1130,43 @@ impl CreateResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_bad_request_error(&self) -> bool {
-        matches!(&self.kind, CreateResourceErrorKind::BadRequestError(_))
+    pub fn is_bad_request_exception(&self) -> bool {
+        matches!(&self.kind, CreateResourceErrorKind::BadRequestException(_))
     }
-    pub fn is_conflict_error(&self) -> bool {
-        matches!(&self.kind, CreateResourceErrorKind::ConflictError(_))
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(&self.kind, CreateResourceErrorKind::ConflictException(_))
     }
-    pub fn is_limit_exceeded_error(&self) -> bool {
-        matches!(&self.kind, CreateResourceErrorKind::LimitExceededError(_))
+    pub fn is_limit_exceeded_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateResourceErrorKind::LimitExceededException(_)
+        )
     }
-    pub fn is_not_found_error(&self) -> bool {
-        matches!(&self.kind, CreateResourceErrorKind::NotFoundError(_))
+    pub fn is_not_found_exception(&self) -> bool {
+        matches!(&self.kind, CreateResourceErrorKind::NotFoundException(_))
     }
-    pub fn is_too_many_requests_error(&self) -> bool {
-        matches!(&self.kind, CreateResourceErrorKind::TooManyRequestsError(_))
+    pub fn is_too_many_requests_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateResourceErrorKind::TooManyRequestsException(_)
+        )
     }
-    pub fn is_unauthorized_error(&self) -> bool {
-        matches!(&self.kind, CreateResourceErrorKind::UnauthorizedError(_))
+    pub fn is_unauthorized_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateResourceErrorKind::UnauthorizedException(_)
+        )
     }
 }
 impl std::error::Error for CreateResourceError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            CreateResourceErrorKind::BadRequestError(_inner) => Some(_inner),
-            CreateResourceErrorKind::ConflictError(_inner) => Some(_inner),
-            CreateResourceErrorKind::LimitExceededError(_inner) => Some(_inner),
-            CreateResourceErrorKind::NotFoundError(_inner) => Some(_inner),
-            CreateResourceErrorKind::TooManyRequestsError(_inner) => Some(_inner),
-            CreateResourceErrorKind::UnauthorizedError(_inner) => Some(_inner),
+            CreateResourceErrorKind::BadRequestException(_inner) => Some(_inner),
+            CreateResourceErrorKind::ConflictException(_inner) => Some(_inner),
+            CreateResourceErrorKind::LimitExceededException(_inner) => Some(_inner),
+            CreateResourceErrorKind::NotFoundException(_inner) => Some(_inner),
+            CreateResourceErrorKind::TooManyRequestsException(_inner) => Some(_inner),
+            CreateResourceErrorKind::UnauthorizedException(_inner) => Some(_inner),
             CreateResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -1136,20 +1181,20 @@ pub struct CreateRestApiError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateRestApiErrorKind {
-    BadRequestError(crate::error::BadRequestError),
-    LimitExceededError(crate::error::LimitExceededError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
-    UnauthorizedError(crate::error::UnauthorizedError),
+    BadRequestException(crate::error::BadRequestException),
+    LimitExceededException(crate::error::LimitExceededException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
+    UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateRestApiError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            CreateRestApiErrorKind::BadRequestError(_inner) => _inner.fmt(f),
-            CreateRestApiErrorKind::LimitExceededError(_inner) => _inner.fmt(f),
-            CreateRestApiErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
-            CreateRestApiErrorKind::UnauthorizedError(_inner) => _inner.fmt(f),
+            CreateRestApiErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            CreateRestApiErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
+            CreateRestApiErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
+            CreateRestApiErrorKind::UnauthorizedException(_inner) => _inner.fmt(f),
             CreateRestApiErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -1198,26 +1243,32 @@ impl CreateRestApiError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_bad_request_error(&self) -> bool {
-        matches!(&self.kind, CreateRestApiErrorKind::BadRequestError(_))
+    pub fn is_bad_request_exception(&self) -> bool {
+        matches!(&self.kind, CreateRestApiErrorKind::BadRequestException(_))
     }
-    pub fn is_limit_exceeded_error(&self) -> bool {
-        matches!(&self.kind, CreateRestApiErrorKind::LimitExceededError(_))
+    pub fn is_limit_exceeded_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateRestApiErrorKind::LimitExceededException(_)
+        )
     }
-    pub fn is_too_many_requests_error(&self) -> bool {
-        matches!(&self.kind, CreateRestApiErrorKind::TooManyRequestsError(_))
+    pub fn is_too_many_requests_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateRestApiErrorKind::TooManyRequestsException(_)
+        )
     }
-    pub fn is_unauthorized_error(&self) -> bool {
-        matches!(&self.kind, CreateRestApiErrorKind::UnauthorizedError(_))
+    pub fn is_unauthorized_exception(&self) -> bool {
+        matches!(&self.kind, CreateRestApiErrorKind::UnauthorizedException(_))
     }
 }
 impl std::error::Error for CreateRestApiError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            CreateRestApiErrorKind::BadRequestError(_inner) => Some(_inner),
-            CreateRestApiErrorKind::LimitExceededError(_inner) => Some(_inner),
-            CreateRestApiErrorKind::TooManyRequestsError(_inner) => Some(_inner),
-            CreateRestApiErrorKind::UnauthorizedError(_inner) => Some(_inner),
+            CreateRestApiErrorKind::BadRequestException(_inner) => Some(_inner),
+            CreateRestApiErrorKind::LimitExceededException(_inner) => Some(_inner),
+            CreateRestApiErrorKind::TooManyRequestsException(_inner) => Some(_inner),
+            CreateRestApiErrorKind::UnauthorizedException(_inner) => Some(_inner),
             CreateRestApiErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -1232,24 +1283,24 @@ pub struct CreateStageError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateStageErrorKind {
-    BadRequestError(crate::error::BadRequestError),
-    ConflictError(crate::error::ConflictError),
-    LimitExceededError(crate::error::LimitExceededError),
-    NotFoundError(crate::error::NotFoundError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
-    UnauthorizedError(crate::error::UnauthorizedError),
+    BadRequestException(crate::error::BadRequestException),
+    ConflictException(crate::error::ConflictException),
+    LimitExceededException(crate::error::LimitExceededException),
+    NotFoundException(crate::error::NotFoundException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
+    UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateStageError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            CreateStageErrorKind::BadRequestError(_inner) => _inner.fmt(f),
-            CreateStageErrorKind::ConflictError(_inner) => _inner.fmt(f),
-            CreateStageErrorKind::LimitExceededError(_inner) => _inner.fmt(f),
-            CreateStageErrorKind::NotFoundError(_inner) => _inner.fmt(f),
-            CreateStageErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
-            CreateStageErrorKind::UnauthorizedError(_inner) => _inner.fmt(f),
+            CreateStageErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            CreateStageErrorKind::ConflictException(_inner) => _inner.fmt(f),
+            CreateStageErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
+            CreateStageErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            CreateStageErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
+            CreateStageErrorKind::UnauthorizedException(_inner) => _inner.fmt(f),
             CreateStageErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -1298,34 +1349,37 @@ impl CreateStageError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_bad_request_error(&self) -> bool {
-        matches!(&self.kind, CreateStageErrorKind::BadRequestError(_))
+    pub fn is_bad_request_exception(&self) -> bool {
+        matches!(&self.kind, CreateStageErrorKind::BadRequestException(_))
     }
-    pub fn is_conflict_error(&self) -> bool {
-        matches!(&self.kind, CreateStageErrorKind::ConflictError(_))
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(&self.kind, CreateStageErrorKind::ConflictException(_))
     }
-    pub fn is_limit_exceeded_error(&self) -> bool {
-        matches!(&self.kind, CreateStageErrorKind::LimitExceededError(_))
+    pub fn is_limit_exceeded_exception(&self) -> bool {
+        matches!(&self.kind, CreateStageErrorKind::LimitExceededException(_))
     }
-    pub fn is_not_found_error(&self) -> bool {
-        matches!(&self.kind, CreateStageErrorKind::NotFoundError(_))
+    pub fn is_not_found_exception(&self) -> bool {
+        matches!(&self.kind, CreateStageErrorKind::NotFoundException(_))
     }
-    pub fn is_too_many_requests_error(&self) -> bool {
-        matches!(&self.kind, CreateStageErrorKind::TooManyRequestsError(_))
+    pub fn is_too_many_requests_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateStageErrorKind::TooManyRequestsException(_)
+        )
     }
-    pub fn is_unauthorized_error(&self) -> bool {
-        matches!(&self.kind, CreateStageErrorKind::UnauthorizedError(_))
+    pub fn is_unauthorized_exception(&self) -> bool {
+        matches!(&self.kind, CreateStageErrorKind::UnauthorizedException(_))
     }
 }
 impl std::error::Error for CreateStageError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            CreateStageErrorKind::BadRequestError(_inner) => Some(_inner),
-            CreateStageErrorKind::ConflictError(_inner) => Some(_inner),
-            CreateStageErrorKind::LimitExceededError(_inner) => Some(_inner),
-            CreateStageErrorKind::NotFoundError(_inner) => Some(_inner),
-            CreateStageErrorKind::TooManyRequestsError(_inner) => Some(_inner),
-            CreateStageErrorKind::UnauthorizedError(_inner) => Some(_inner),
+            CreateStageErrorKind::BadRequestException(_inner) => Some(_inner),
+            CreateStageErrorKind::ConflictException(_inner) => Some(_inner),
+            CreateStageErrorKind::LimitExceededException(_inner) => Some(_inner),
+            CreateStageErrorKind::NotFoundException(_inner) => Some(_inner),
+            CreateStageErrorKind::TooManyRequestsException(_inner) => Some(_inner),
+            CreateStageErrorKind::UnauthorizedException(_inner) => Some(_inner),
             CreateStageErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -1340,24 +1394,24 @@ pub struct CreateUsagePlanError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateUsagePlanErrorKind {
-    BadRequestError(crate::error::BadRequestError),
-    ConflictError(crate::error::ConflictError),
-    LimitExceededError(crate::error::LimitExceededError),
-    NotFoundError(crate::error::NotFoundError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
-    UnauthorizedError(crate::error::UnauthorizedError),
+    BadRequestException(crate::error::BadRequestException),
+    ConflictException(crate::error::ConflictException),
+    LimitExceededException(crate::error::LimitExceededException),
+    NotFoundException(crate::error::NotFoundException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
+    UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateUsagePlanError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            CreateUsagePlanErrorKind::BadRequestError(_inner) => _inner.fmt(f),
-            CreateUsagePlanErrorKind::ConflictError(_inner) => _inner.fmt(f),
-            CreateUsagePlanErrorKind::LimitExceededError(_inner) => _inner.fmt(f),
-            CreateUsagePlanErrorKind::NotFoundError(_inner) => _inner.fmt(f),
-            CreateUsagePlanErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
-            CreateUsagePlanErrorKind::UnauthorizedError(_inner) => _inner.fmt(f),
+            CreateUsagePlanErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            CreateUsagePlanErrorKind::ConflictException(_inner) => _inner.fmt(f),
+            CreateUsagePlanErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
+            CreateUsagePlanErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            CreateUsagePlanErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
+            CreateUsagePlanErrorKind::UnauthorizedException(_inner) => _inner.fmt(f),
             CreateUsagePlanErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -1406,37 +1460,43 @@ impl CreateUsagePlanError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_bad_request_error(&self) -> bool {
-        matches!(&self.kind, CreateUsagePlanErrorKind::BadRequestError(_))
+    pub fn is_bad_request_exception(&self) -> bool {
+        matches!(&self.kind, CreateUsagePlanErrorKind::BadRequestException(_))
     }
-    pub fn is_conflict_error(&self) -> bool {
-        matches!(&self.kind, CreateUsagePlanErrorKind::ConflictError(_))
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(&self.kind, CreateUsagePlanErrorKind::ConflictException(_))
     }
-    pub fn is_limit_exceeded_error(&self) -> bool {
-        matches!(&self.kind, CreateUsagePlanErrorKind::LimitExceededError(_))
-    }
-    pub fn is_not_found_error(&self) -> bool {
-        matches!(&self.kind, CreateUsagePlanErrorKind::NotFoundError(_))
-    }
-    pub fn is_too_many_requests_error(&self) -> bool {
+    pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
-            CreateUsagePlanErrorKind::TooManyRequestsError(_)
+            CreateUsagePlanErrorKind::LimitExceededException(_)
         )
     }
-    pub fn is_unauthorized_error(&self) -> bool {
-        matches!(&self.kind, CreateUsagePlanErrorKind::UnauthorizedError(_))
+    pub fn is_not_found_exception(&self) -> bool {
+        matches!(&self.kind, CreateUsagePlanErrorKind::NotFoundException(_))
+    }
+    pub fn is_too_many_requests_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateUsagePlanErrorKind::TooManyRequestsException(_)
+        )
+    }
+    pub fn is_unauthorized_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateUsagePlanErrorKind::UnauthorizedException(_)
+        )
     }
 }
 impl std::error::Error for CreateUsagePlanError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            CreateUsagePlanErrorKind::BadRequestError(_inner) => Some(_inner),
-            CreateUsagePlanErrorKind::ConflictError(_inner) => Some(_inner),
-            CreateUsagePlanErrorKind::LimitExceededError(_inner) => Some(_inner),
-            CreateUsagePlanErrorKind::NotFoundError(_inner) => Some(_inner),
-            CreateUsagePlanErrorKind::TooManyRequestsError(_inner) => Some(_inner),
-            CreateUsagePlanErrorKind::UnauthorizedError(_inner) => Some(_inner),
+            CreateUsagePlanErrorKind::BadRequestException(_inner) => Some(_inner),
+            CreateUsagePlanErrorKind::ConflictException(_inner) => Some(_inner),
+            CreateUsagePlanErrorKind::LimitExceededException(_inner) => Some(_inner),
+            CreateUsagePlanErrorKind::NotFoundException(_inner) => Some(_inner),
+            CreateUsagePlanErrorKind::TooManyRequestsException(_inner) => Some(_inner),
+            CreateUsagePlanErrorKind::UnauthorizedException(_inner) => Some(_inner),
             CreateUsagePlanErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -1451,22 +1511,22 @@ pub struct CreateUsagePlanKeyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateUsagePlanKeyErrorKind {
-    BadRequestError(crate::error::BadRequestError),
-    ConflictError(crate::error::ConflictError),
-    NotFoundError(crate::error::NotFoundError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
-    UnauthorizedError(crate::error::UnauthorizedError),
+    BadRequestException(crate::error::BadRequestException),
+    ConflictException(crate::error::ConflictException),
+    NotFoundException(crate::error::NotFoundException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
+    UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateUsagePlanKeyError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            CreateUsagePlanKeyErrorKind::BadRequestError(_inner) => _inner.fmt(f),
-            CreateUsagePlanKeyErrorKind::ConflictError(_inner) => _inner.fmt(f),
-            CreateUsagePlanKeyErrorKind::NotFoundError(_inner) => _inner.fmt(f),
-            CreateUsagePlanKeyErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
-            CreateUsagePlanKeyErrorKind::UnauthorizedError(_inner) => _inner.fmt(f),
+            CreateUsagePlanKeyErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            CreateUsagePlanKeyErrorKind::ConflictException(_inner) => _inner.fmt(f),
+            CreateUsagePlanKeyErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            CreateUsagePlanKeyErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
+            CreateUsagePlanKeyErrorKind::UnauthorizedException(_inner) => _inner.fmt(f),
             CreateUsagePlanKeyErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -1515,36 +1575,45 @@ impl CreateUsagePlanKeyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_bad_request_error(&self) -> bool {
-        matches!(&self.kind, CreateUsagePlanKeyErrorKind::BadRequestError(_))
-    }
-    pub fn is_conflict_error(&self) -> bool {
-        matches!(&self.kind, CreateUsagePlanKeyErrorKind::ConflictError(_))
-    }
-    pub fn is_not_found_error(&self) -> bool {
-        matches!(&self.kind, CreateUsagePlanKeyErrorKind::NotFoundError(_))
-    }
-    pub fn is_too_many_requests_error(&self) -> bool {
+    pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
-            CreateUsagePlanKeyErrorKind::TooManyRequestsError(_)
+            CreateUsagePlanKeyErrorKind::BadRequestException(_)
         )
     }
-    pub fn is_unauthorized_error(&self) -> bool {
+    pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
-            CreateUsagePlanKeyErrorKind::UnauthorizedError(_)
+            CreateUsagePlanKeyErrorKind::ConflictException(_)
+        )
+    }
+    pub fn is_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateUsagePlanKeyErrorKind::NotFoundException(_)
+        )
+    }
+    pub fn is_too_many_requests_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateUsagePlanKeyErrorKind::TooManyRequestsException(_)
+        )
+    }
+    pub fn is_unauthorized_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateUsagePlanKeyErrorKind::UnauthorizedException(_)
         )
     }
 }
 impl std::error::Error for CreateUsagePlanKeyError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            CreateUsagePlanKeyErrorKind::BadRequestError(_inner) => Some(_inner),
-            CreateUsagePlanKeyErrorKind::ConflictError(_inner) => Some(_inner),
-            CreateUsagePlanKeyErrorKind::NotFoundError(_inner) => Some(_inner),
-            CreateUsagePlanKeyErrorKind::TooManyRequestsError(_inner) => Some(_inner),
-            CreateUsagePlanKeyErrorKind::UnauthorizedError(_inner) => Some(_inner),
+            CreateUsagePlanKeyErrorKind::BadRequestException(_inner) => Some(_inner),
+            CreateUsagePlanKeyErrorKind::ConflictException(_inner) => Some(_inner),
+            CreateUsagePlanKeyErrorKind::NotFoundException(_inner) => Some(_inner),
+            CreateUsagePlanKeyErrorKind::TooManyRequestsException(_inner) => Some(_inner),
+            CreateUsagePlanKeyErrorKind::UnauthorizedException(_inner) => Some(_inner),
             CreateUsagePlanKeyErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -1559,18 +1628,18 @@ pub struct CreateVpcLinkError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateVpcLinkErrorKind {
-    BadRequestError(crate::error::BadRequestError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
-    UnauthorizedError(crate::error::UnauthorizedError),
+    BadRequestException(crate::error::BadRequestException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
+    UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateVpcLinkError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            CreateVpcLinkErrorKind::BadRequestError(_inner) => _inner.fmt(f),
-            CreateVpcLinkErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
-            CreateVpcLinkErrorKind::UnauthorizedError(_inner) => _inner.fmt(f),
+            CreateVpcLinkErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            CreateVpcLinkErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
+            CreateVpcLinkErrorKind::UnauthorizedException(_inner) => _inner.fmt(f),
             CreateVpcLinkErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -1619,22 +1688,25 @@ impl CreateVpcLinkError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_bad_request_error(&self) -> bool {
-        matches!(&self.kind, CreateVpcLinkErrorKind::BadRequestError(_))
+    pub fn is_bad_request_exception(&self) -> bool {
+        matches!(&self.kind, CreateVpcLinkErrorKind::BadRequestException(_))
     }
-    pub fn is_too_many_requests_error(&self) -> bool {
-        matches!(&self.kind, CreateVpcLinkErrorKind::TooManyRequestsError(_))
+    pub fn is_too_many_requests_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateVpcLinkErrorKind::TooManyRequestsException(_)
+        )
     }
-    pub fn is_unauthorized_error(&self) -> bool {
-        matches!(&self.kind, CreateVpcLinkErrorKind::UnauthorizedError(_))
+    pub fn is_unauthorized_exception(&self) -> bool {
+        matches!(&self.kind, CreateVpcLinkErrorKind::UnauthorizedException(_))
     }
 }
 impl std::error::Error for CreateVpcLinkError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            CreateVpcLinkErrorKind::BadRequestError(_inner) => Some(_inner),
-            CreateVpcLinkErrorKind::TooManyRequestsError(_inner) => Some(_inner),
-            CreateVpcLinkErrorKind::UnauthorizedError(_inner) => Some(_inner),
+            CreateVpcLinkErrorKind::BadRequestException(_inner) => Some(_inner),
+            CreateVpcLinkErrorKind::TooManyRequestsException(_inner) => Some(_inner),
+            CreateVpcLinkErrorKind::UnauthorizedException(_inner) => Some(_inner),
             CreateVpcLinkErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -1649,18 +1721,18 @@ pub struct DeleteApiKeyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteApiKeyErrorKind {
-    NotFoundError(crate::error::NotFoundError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
-    UnauthorizedError(crate::error::UnauthorizedError),
+    NotFoundException(crate::error::NotFoundException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
+    UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteApiKeyError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DeleteApiKeyErrorKind::NotFoundError(_inner) => _inner.fmt(f),
-            DeleteApiKeyErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
-            DeleteApiKeyErrorKind::UnauthorizedError(_inner) => _inner.fmt(f),
+            DeleteApiKeyErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            DeleteApiKeyErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
+            DeleteApiKeyErrorKind::UnauthorizedException(_inner) => _inner.fmt(f),
             DeleteApiKeyErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -1709,22 +1781,25 @@ impl DeleteApiKeyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_not_found_error(&self) -> bool {
-        matches!(&self.kind, DeleteApiKeyErrorKind::NotFoundError(_))
+    pub fn is_not_found_exception(&self) -> bool {
+        matches!(&self.kind, DeleteApiKeyErrorKind::NotFoundException(_))
     }
-    pub fn is_too_many_requests_error(&self) -> bool {
-        matches!(&self.kind, DeleteApiKeyErrorKind::TooManyRequestsError(_))
+    pub fn is_too_many_requests_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteApiKeyErrorKind::TooManyRequestsException(_)
+        )
     }
-    pub fn is_unauthorized_error(&self) -> bool {
-        matches!(&self.kind, DeleteApiKeyErrorKind::UnauthorizedError(_))
+    pub fn is_unauthorized_exception(&self) -> bool {
+        matches!(&self.kind, DeleteApiKeyErrorKind::UnauthorizedException(_))
     }
 }
 impl std::error::Error for DeleteApiKeyError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DeleteApiKeyErrorKind::NotFoundError(_inner) => Some(_inner),
-            DeleteApiKeyErrorKind::TooManyRequestsError(_inner) => Some(_inner),
-            DeleteApiKeyErrorKind::UnauthorizedError(_inner) => Some(_inner),
+            DeleteApiKeyErrorKind::NotFoundException(_inner) => Some(_inner),
+            DeleteApiKeyErrorKind::TooManyRequestsException(_inner) => Some(_inner),
+            DeleteApiKeyErrorKind::UnauthorizedException(_inner) => Some(_inner),
             DeleteApiKeyErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -1739,22 +1814,22 @@ pub struct DeleteAuthorizerError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteAuthorizerErrorKind {
-    BadRequestError(crate::error::BadRequestError),
-    ConflictError(crate::error::ConflictError),
-    NotFoundError(crate::error::NotFoundError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
-    UnauthorizedError(crate::error::UnauthorizedError),
+    BadRequestException(crate::error::BadRequestException),
+    ConflictException(crate::error::ConflictException),
+    NotFoundException(crate::error::NotFoundException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
+    UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteAuthorizerError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DeleteAuthorizerErrorKind::BadRequestError(_inner) => _inner.fmt(f),
-            DeleteAuthorizerErrorKind::ConflictError(_inner) => _inner.fmt(f),
-            DeleteAuthorizerErrorKind::NotFoundError(_inner) => _inner.fmt(f),
-            DeleteAuthorizerErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
-            DeleteAuthorizerErrorKind::UnauthorizedError(_inner) => _inner.fmt(f),
+            DeleteAuthorizerErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            DeleteAuthorizerErrorKind::ConflictException(_inner) => _inner.fmt(f),
+            DeleteAuthorizerErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            DeleteAuthorizerErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
+            DeleteAuthorizerErrorKind::UnauthorizedException(_inner) => _inner.fmt(f),
             DeleteAuthorizerErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -1803,33 +1878,39 @@ impl DeleteAuthorizerError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_bad_request_error(&self) -> bool {
-        matches!(&self.kind, DeleteAuthorizerErrorKind::BadRequestError(_))
-    }
-    pub fn is_conflict_error(&self) -> bool {
-        matches!(&self.kind, DeleteAuthorizerErrorKind::ConflictError(_))
-    }
-    pub fn is_not_found_error(&self) -> bool {
-        matches!(&self.kind, DeleteAuthorizerErrorKind::NotFoundError(_))
-    }
-    pub fn is_too_many_requests_error(&self) -> bool {
+    pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DeleteAuthorizerErrorKind::TooManyRequestsError(_)
+            DeleteAuthorizerErrorKind::BadRequestException(_)
         )
     }
-    pub fn is_unauthorized_error(&self) -> bool {
-        matches!(&self.kind, DeleteAuthorizerErrorKind::UnauthorizedError(_))
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(&self.kind, DeleteAuthorizerErrorKind::ConflictException(_))
+    }
+    pub fn is_not_found_exception(&self) -> bool {
+        matches!(&self.kind, DeleteAuthorizerErrorKind::NotFoundException(_))
+    }
+    pub fn is_too_many_requests_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteAuthorizerErrorKind::TooManyRequestsException(_)
+        )
+    }
+    pub fn is_unauthorized_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteAuthorizerErrorKind::UnauthorizedException(_)
+        )
     }
 }
 impl std::error::Error for DeleteAuthorizerError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DeleteAuthorizerErrorKind::BadRequestError(_inner) => Some(_inner),
-            DeleteAuthorizerErrorKind::ConflictError(_inner) => Some(_inner),
-            DeleteAuthorizerErrorKind::NotFoundError(_inner) => Some(_inner),
-            DeleteAuthorizerErrorKind::TooManyRequestsError(_inner) => Some(_inner),
-            DeleteAuthorizerErrorKind::UnauthorizedError(_inner) => Some(_inner),
+            DeleteAuthorizerErrorKind::BadRequestException(_inner) => Some(_inner),
+            DeleteAuthorizerErrorKind::ConflictException(_inner) => Some(_inner),
+            DeleteAuthorizerErrorKind::NotFoundException(_inner) => Some(_inner),
+            DeleteAuthorizerErrorKind::TooManyRequestsException(_inner) => Some(_inner),
+            DeleteAuthorizerErrorKind::UnauthorizedException(_inner) => Some(_inner),
             DeleteAuthorizerErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -1844,22 +1925,22 @@ pub struct DeleteBasePathMappingError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteBasePathMappingErrorKind {
-    BadRequestError(crate::error::BadRequestError),
-    ConflictError(crate::error::ConflictError),
-    NotFoundError(crate::error::NotFoundError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
-    UnauthorizedError(crate::error::UnauthorizedError),
+    BadRequestException(crate::error::BadRequestException),
+    ConflictException(crate::error::ConflictException),
+    NotFoundException(crate::error::NotFoundException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
+    UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteBasePathMappingError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DeleteBasePathMappingErrorKind::BadRequestError(_inner) => _inner.fmt(f),
-            DeleteBasePathMappingErrorKind::ConflictError(_inner) => _inner.fmt(f),
-            DeleteBasePathMappingErrorKind::NotFoundError(_inner) => _inner.fmt(f),
-            DeleteBasePathMappingErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
-            DeleteBasePathMappingErrorKind::UnauthorizedError(_inner) => _inner.fmt(f),
+            DeleteBasePathMappingErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            DeleteBasePathMappingErrorKind::ConflictException(_inner) => _inner.fmt(f),
+            DeleteBasePathMappingErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            DeleteBasePathMappingErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
+            DeleteBasePathMappingErrorKind::UnauthorizedException(_inner) => _inner.fmt(f),
             DeleteBasePathMappingErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -1908,39 +1989,45 @@ impl DeleteBasePathMappingError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_bad_request_error(&self) -> bool {
+    pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DeleteBasePathMappingErrorKind::BadRequestError(_)
+            DeleteBasePathMappingErrorKind::BadRequestException(_)
         )
     }
-    pub fn is_conflict_error(&self) -> bool {
-        matches!(&self.kind, DeleteBasePathMappingErrorKind::ConflictError(_))
-    }
-    pub fn is_not_found_error(&self) -> bool {
-        matches!(&self.kind, DeleteBasePathMappingErrorKind::NotFoundError(_))
-    }
-    pub fn is_too_many_requests_error(&self) -> bool {
+    pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DeleteBasePathMappingErrorKind::TooManyRequestsError(_)
+            DeleteBasePathMappingErrorKind::ConflictException(_)
         )
     }
-    pub fn is_unauthorized_error(&self) -> bool {
+    pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DeleteBasePathMappingErrorKind::UnauthorizedError(_)
+            DeleteBasePathMappingErrorKind::NotFoundException(_)
+        )
+    }
+    pub fn is_too_many_requests_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteBasePathMappingErrorKind::TooManyRequestsException(_)
+        )
+    }
+    pub fn is_unauthorized_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteBasePathMappingErrorKind::UnauthorizedException(_)
         )
     }
 }
 impl std::error::Error for DeleteBasePathMappingError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DeleteBasePathMappingErrorKind::BadRequestError(_inner) => Some(_inner),
-            DeleteBasePathMappingErrorKind::ConflictError(_inner) => Some(_inner),
-            DeleteBasePathMappingErrorKind::NotFoundError(_inner) => Some(_inner),
-            DeleteBasePathMappingErrorKind::TooManyRequestsError(_inner) => Some(_inner),
-            DeleteBasePathMappingErrorKind::UnauthorizedError(_inner) => Some(_inner),
+            DeleteBasePathMappingErrorKind::BadRequestException(_inner) => Some(_inner),
+            DeleteBasePathMappingErrorKind::ConflictException(_inner) => Some(_inner),
+            DeleteBasePathMappingErrorKind::NotFoundException(_inner) => Some(_inner),
+            DeleteBasePathMappingErrorKind::TooManyRequestsException(_inner) => Some(_inner),
+            DeleteBasePathMappingErrorKind::UnauthorizedException(_inner) => Some(_inner),
             DeleteBasePathMappingErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -1955,20 +2042,20 @@ pub struct DeleteClientCertificateError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteClientCertificateErrorKind {
-    BadRequestError(crate::error::BadRequestError),
-    NotFoundError(crate::error::NotFoundError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
-    UnauthorizedError(crate::error::UnauthorizedError),
+    BadRequestException(crate::error::BadRequestException),
+    NotFoundException(crate::error::NotFoundException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
+    UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteClientCertificateError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DeleteClientCertificateErrorKind::BadRequestError(_inner) => _inner.fmt(f),
-            DeleteClientCertificateErrorKind::NotFoundError(_inner) => _inner.fmt(f),
-            DeleteClientCertificateErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
-            DeleteClientCertificateErrorKind::UnauthorizedError(_inner) => _inner.fmt(f),
+            DeleteClientCertificateErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            DeleteClientCertificateErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            DeleteClientCertificateErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
+            DeleteClientCertificateErrorKind::UnauthorizedException(_inner) => _inner.fmt(f),
             DeleteClientCertificateErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -2017,38 +2104,38 @@ impl DeleteClientCertificateError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_bad_request_error(&self) -> bool {
+    pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DeleteClientCertificateErrorKind::BadRequestError(_)
+            DeleteClientCertificateErrorKind::BadRequestException(_)
         )
     }
-    pub fn is_not_found_error(&self) -> bool {
+    pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DeleteClientCertificateErrorKind::NotFoundError(_)
+            DeleteClientCertificateErrorKind::NotFoundException(_)
         )
     }
-    pub fn is_too_many_requests_error(&self) -> bool {
+    pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DeleteClientCertificateErrorKind::TooManyRequestsError(_)
+            DeleteClientCertificateErrorKind::TooManyRequestsException(_)
         )
     }
-    pub fn is_unauthorized_error(&self) -> bool {
+    pub fn is_unauthorized_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DeleteClientCertificateErrorKind::UnauthorizedError(_)
+            DeleteClientCertificateErrorKind::UnauthorizedException(_)
         )
     }
 }
 impl std::error::Error for DeleteClientCertificateError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DeleteClientCertificateErrorKind::BadRequestError(_inner) => Some(_inner),
-            DeleteClientCertificateErrorKind::NotFoundError(_inner) => Some(_inner),
-            DeleteClientCertificateErrorKind::TooManyRequestsError(_inner) => Some(_inner),
-            DeleteClientCertificateErrorKind::UnauthorizedError(_inner) => Some(_inner),
+            DeleteClientCertificateErrorKind::BadRequestException(_inner) => Some(_inner),
+            DeleteClientCertificateErrorKind::NotFoundException(_inner) => Some(_inner),
+            DeleteClientCertificateErrorKind::TooManyRequestsException(_inner) => Some(_inner),
+            DeleteClientCertificateErrorKind::UnauthorizedException(_inner) => Some(_inner),
             DeleteClientCertificateErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -2063,20 +2150,20 @@ pub struct DeleteDeploymentError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteDeploymentErrorKind {
-    BadRequestError(crate::error::BadRequestError),
-    NotFoundError(crate::error::NotFoundError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
-    UnauthorizedError(crate::error::UnauthorizedError),
+    BadRequestException(crate::error::BadRequestException),
+    NotFoundException(crate::error::NotFoundException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
+    UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteDeploymentError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DeleteDeploymentErrorKind::BadRequestError(_inner) => _inner.fmt(f),
-            DeleteDeploymentErrorKind::NotFoundError(_inner) => _inner.fmt(f),
-            DeleteDeploymentErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
-            DeleteDeploymentErrorKind::UnauthorizedError(_inner) => _inner.fmt(f),
+            DeleteDeploymentErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            DeleteDeploymentErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            DeleteDeploymentErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
+            DeleteDeploymentErrorKind::UnauthorizedException(_inner) => _inner.fmt(f),
             DeleteDeploymentErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -2125,29 +2212,35 @@ impl DeleteDeploymentError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_bad_request_error(&self) -> bool {
-        matches!(&self.kind, DeleteDeploymentErrorKind::BadRequestError(_))
-    }
-    pub fn is_not_found_error(&self) -> bool {
-        matches!(&self.kind, DeleteDeploymentErrorKind::NotFoundError(_))
-    }
-    pub fn is_too_many_requests_error(&self) -> bool {
+    pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DeleteDeploymentErrorKind::TooManyRequestsError(_)
+            DeleteDeploymentErrorKind::BadRequestException(_)
         )
     }
-    pub fn is_unauthorized_error(&self) -> bool {
-        matches!(&self.kind, DeleteDeploymentErrorKind::UnauthorizedError(_))
+    pub fn is_not_found_exception(&self) -> bool {
+        matches!(&self.kind, DeleteDeploymentErrorKind::NotFoundException(_))
+    }
+    pub fn is_too_many_requests_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteDeploymentErrorKind::TooManyRequestsException(_)
+        )
+    }
+    pub fn is_unauthorized_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteDeploymentErrorKind::UnauthorizedException(_)
+        )
     }
 }
 impl std::error::Error for DeleteDeploymentError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DeleteDeploymentErrorKind::BadRequestError(_inner) => Some(_inner),
-            DeleteDeploymentErrorKind::NotFoundError(_inner) => Some(_inner),
-            DeleteDeploymentErrorKind::TooManyRequestsError(_inner) => Some(_inner),
-            DeleteDeploymentErrorKind::UnauthorizedError(_inner) => Some(_inner),
+            DeleteDeploymentErrorKind::BadRequestException(_inner) => Some(_inner),
+            DeleteDeploymentErrorKind::NotFoundException(_inner) => Some(_inner),
+            DeleteDeploymentErrorKind::TooManyRequestsException(_inner) => Some(_inner),
+            DeleteDeploymentErrorKind::UnauthorizedException(_inner) => Some(_inner),
             DeleteDeploymentErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -2162,22 +2255,22 @@ pub struct DeleteDocumentationPartError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteDocumentationPartErrorKind {
-    BadRequestError(crate::error::BadRequestError),
-    ConflictError(crate::error::ConflictError),
-    NotFoundError(crate::error::NotFoundError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
-    UnauthorizedError(crate::error::UnauthorizedError),
+    BadRequestException(crate::error::BadRequestException),
+    ConflictException(crate::error::ConflictException),
+    NotFoundException(crate::error::NotFoundException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
+    UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteDocumentationPartError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DeleteDocumentationPartErrorKind::BadRequestError(_inner) => _inner.fmt(f),
-            DeleteDocumentationPartErrorKind::ConflictError(_inner) => _inner.fmt(f),
-            DeleteDocumentationPartErrorKind::NotFoundError(_inner) => _inner.fmt(f),
-            DeleteDocumentationPartErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
-            DeleteDocumentationPartErrorKind::UnauthorizedError(_inner) => _inner.fmt(f),
+            DeleteDocumentationPartErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            DeleteDocumentationPartErrorKind::ConflictException(_inner) => _inner.fmt(f),
+            DeleteDocumentationPartErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            DeleteDocumentationPartErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
+            DeleteDocumentationPartErrorKind::UnauthorizedException(_inner) => _inner.fmt(f),
             DeleteDocumentationPartErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -2226,45 +2319,45 @@ impl DeleteDocumentationPartError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_bad_request_error(&self) -> bool {
+    pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DeleteDocumentationPartErrorKind::BadRequestError(_)
+            DeleteDocumentationPartErrorKind::BadRequestException(_)
         )
     }
-    pub fn is_conflict_error(&self) -> bool {
+    pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DeleteDocumentationPartErrorKind::ConflictError(_)
+            DeleteDocumentationPartErrorKind::ConflictException(_)
         )
     }
-    pub fn is_not_found_error(&self) -> bool {
+    pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DeleteDocumentationPartErrorKind::NotFoundError(_)
+            DeleteDocumentationPartErrorKind::NotFoundException(_)
         )
     }
-    pub fn is_too_many_requests_error(&self) -> bool {
+    pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DeleteDocumentationPartErrorKind::TooManyRequestsError(_)
+            DeleteDocumentationPartErrorKind::TooManyRequestsException(_)
         )
     }
-    pub fn is_unauthorized_error(&self) -> bool {
+    pub fn is_unauthorized_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DeleteDocumentationPartErrorKind::UnauthorizedError(_)
+            DeleteDocumentationPartErrorKind::UnauthorizedException(_)
         )
     }
 }
 impl std::error::Error for DeleteDocumentationPartError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DeleteDocumentationPartErrorKind::BadRequestError(_inner) => Some(_inner),
-            DeleteDocumentationPartErrorKind::ConflictError(_inner) => Some(_inner),
-            DeleteDocumentationPartErrorKind::NotFoundError(_inner) => Some(_inner),
-            DeleteDocumentationPartErrorKind::TooManyRequestsError(_inner) => Some(_inner),
-            DeleteDocumentationPartErrorKind::UnauthorizedError(_inner) => Some(_inner),
+            DeleteDocumentationPartErrorKind::BadRequestException(_inner) => Some(_inner),
+            DeleteDocumentationPartErrorKind::ConflictException(_inner) => Some(_inner),
+            DeleteDocumentationPartErrorKind::NotFoundException(_inner) => Some(_inner),
+            DeleteDocumentationPartErrorKind::TooManyRequestsException(_inner) => Some(_inner),
+            DeleteDocumentationPartErrorKind::UnauthorizedException(_inner) => Some(_inner),
             DeleteDocumentationPartErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -2279,22 +2372,22 @@ pub struct DeleteDocumentationVersionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteDocumentationVersionErrorKind {
-    BadRequestError(crate::error::BadRequestError),
-    ConflictError(crate::error::ConflictError),
-    NotFoundError(crate::error::NotFoundError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
-    UnauthorizedError(crate::error::UnauthorizedError),
+    BadRequestException(crate::error::BadRequestException),
+    ConflictException(crate::error::ConflictException),
+    NotFoundException(crate::error::NotFoundException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
+    UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteDocumentationVersionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DeleteDocumentationVersionErrorKind::BadRequestError(_inner) => _inner.fmt(f),
-            DeleteDocumentationVersionErrorKind::ConflictError(_inner) => _inner.fmt(f),
-            DeleteDocumentationVersionErrorKind::NotFoundError(_inner) => _inner.fmt(f),
-            DeleteDocumentationVersionErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
-            DeleteDocumentationVersionErrorKind::UnauthorizedError(_inner) => _inner.fmt(f),
+            DeleteDocumentationVersionErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            DeleteDocumentationVersionErrorKind::ConflictException(_inner) => _inner.fmt(f),
+            DeleteDocumentationVersionErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            DeleteDocumentationVersionErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
+            DeleteDocumentationVersionErrorKind::UnauthorizedException(_inner) => _inner.fmt(f),
             DeleteDocumentationVersionErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -2343,45 +2436,45 @@ impl DeleteDocumentationVersionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_bad_request_error(&self) -> bool {
+    pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DeleteDocumentationVersionErrorKind::BadRequestError(_)
+            DeleteDocumentationVersionErrorKind::BadRequestException(_)
         )
     }
-    pub fn is_conflict_error(&self) -> bool {
+    pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DeleteDocumentationVersionErrorKind::ConflictError(_)
+            DeleteDocumentationVersionErrorKind::ConflictException(_)
         )
     }
-    pub fn is_not_found_error(&self) -> bool {
+    pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DeleteDocumentationVersionErrorKind::NotFoundError(_)
+            DeleteDocumentationVersionErrorKind::NotFoundException(_)
         )
     }
-    pub fn is_too_many_requests_error(&self) -> bool {
+    pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DeleteDocumentationVersionErrorKind::TooManyRequestsError(_)
+            DeleteDocumentationVersionErrorKind::TooManyRequestsException(_)
         )
     }
-    pub fn is_unauthorized_error(&self) -> bool {
+    pub fn is_unauthorized_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DeleteDocumentationVersionErrorKind::UnauthorizedError(_)
+            DeleteDocumentationVersionErrorKind::UnauthorizedException(_)
         )
     }
 }
 impl std::error::Error for DeleteDocumentationVersionError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DeleteDocumentationVersionErrorKind::BadRequestError(_inner) => Some(_inner),
-            DeleteDocumentationVersionErrorKind::ConflictError(_inner) => Some(_inner),
-            DeleteDocumentationVersionErrorKind::NotFoundError(_inner) => Some(_inner),
-            DeleteDocumentationVersionErrorKind::TooManyRequestsError(_inner) => Some(_inner),
-            DeleteDocumentationVersionErrorKind::UnauthorizedError(_inner) => Some(_inner),
+            DeleteDocumentationVersionErrorKind::BadRequestException(_inner) => Some(_inner),
+            DeleteDocumentationVersionErrorKind::ConflictException(_inner) => Some(_inner),
+            DeleteDocumentationVersionErrorKind::NotFoundException(_inner) => Some(_inner),
+            DeleteDocumentationVersionErrorKind::TooManyRequestsException(_inner) => Some(_inner),
+            DeleteDocumentationVersionErrorKind::UnauthorizedException(_inner) => Some(_inner),
             DeleteDocumentationVersionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -2396,20 +2489,20 @@ pub struct DeleteDomainNameError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteDomainNameErrorKind {
-    BadRequestError(crate::error::BadRequestError),
-    NotFoundError(crate::error::NotFoundError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
-    UnauthorizedError(crate::error::UnauthorizedError),
+    BadRequestException(crate::error::BadRequestException),
+    NotFoundException(crate::error::NotFoundException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
+    UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteDomainNameError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DeleteDomainNameErrorKind::BadRequestError(_inner) => _inner.fmt(f),
-            DeleteDomainNameErrorKind::NotFoundError(_inner) => _inner.fmt(f),
-            DeleteDomainNameErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
-            DeleteDomainNameErrorKind::UnauthorizedError(_inner) => _inner.fmt(f),
+            DeleteDomainNameErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            DeleteDomainNameErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            DeleteDomainNameErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
+            DeleteDomainNameErrorKind::UnauthorizedException(_inner) => _inner.fmt(f),
             DeleteDomainNameErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -2458,29 +2551,35 @@ impl DeleteDomainNameError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_bad_request_error(&self) -> bool {
-        matches!(&self.kind, DeleteDomainNameErrorKind::BadRequestError(_))
-    }
-    pub fn is_not_found_error(&self) -> bool {
-        matches!(&self.kind, DeleteDomainNameErrorKind::NotFoundError(_))
-    }
-    pub fn is_too_many_requests_error(&self) -> bool {
+    pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DeleteDomainNameErrorKind::TooManyRequestsError(_)
+            DeleteDomainNameErrorKind::BadRequestException(_)
         )
     }
-    pub fn is_unauthorized_error(&self) -> bool {
-        matches!(&self.kind, DeleteDomainNameErrorKind::UnauthorizedError(_))
+    pub fn is_not_found_exception(&self) -> bool {
+        matches!(&self.kind, DeleteDomainNameErrorKind::NotFoundException(_))
+    }
+    pub fn is_too_many_requests_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteDomainNameErrorKind::TooManyRequestsException(_)
+        )
+    }
+    pub fn is_unauthorized_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteDomainNameErrorKind::UnauthorizedException(_)
+        )
     }
 }
 impl std::error::Error for DeleteDomainNameError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DeleteDomainNameErrorKind::BadRequestError(_inner) => Some(_inner),
-            DeleteDomainNameErrorKind::NotFoundError(_inner) => Some(_inner),
-            DeleteDomainNameErrorKind::TooManyRequestsError(_inner) => Some(_inner),
-            DeleteDomainNameErrorKind::UnauthorizedError(_inner) => Some(_inner),
+            DeleteDomainNameErrorKind::BadRequestException(_inner) => Some(_inner),
+            DeleteDomainNameErrorKind::NotFoundException(_inner) => Some(_inner),
+            DeleteDomainNameErrorKind::TooManyRequestsException(_inner) => Some(_inner),
+            DeleteDomainNameErrorKind::UnauthorizedException(_inner) => Some(_inner),
             DeleteDomainNameErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -2495,22 +2594,22 @@ pub struct DeleteGatewayResponseError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteGatewayResponseErrorKind {
-    BadRequestError(crate::error::BadRequestError),
-    ConflictError(crate::error::ConflictError),
-    NotFoundError(crate::error::NotFoundError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
-    UnauthorizedError(crate::error::UnauthorizedError),
+    BadRequestException(crate::error::BadRequestException),
+    ConflictException(crate::error::ConflictException),
+    NotFoundException(crate::error::NotFoundException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
+    UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteGatewayResponseError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DeleteGatewayResponseErrorKind::BadRequestError(_inner) => _inner.fmt(f),
-            DeleteGatewayResponseErrorKind::ConflictError(_inner) => _inner.fmt(f),
-            DeleteGatewayResponseErrorKind::NotFoundError(_inner) => _inner.fmt(f),
-            DeleteGatewayResponseErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
-            DeleteGatewayResponseErrorKind::UnauthorizedError(_inner) => _inner.fmt(f),
+            DeleteGatewayResponseErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            DeleteGatewayResponseErrorKind::ConflictException(_inner) => _inner.fmt(f),
+            DeleteGatewayResponseErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            DeleteGatewayResponseErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
+            DeleteGatewayResponseErrorKind::UnauthorizedException(_inner) => _inner.fmt(f),
             DeleteGatewayResponseErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -2559,39 +2658,45 @@ impl DeleteGatewayResponseError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_bad_request_error(&self) -> bool {
+    pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DeleteGatewayResponseErrorKind::BadRequestError(_)
+            DeleteGatewayResponseErrorKind::BadRequestException(_)
         )
     }
-    pub fn is_conflict_error(&self) -> bool {
-        matches!(&self.kind, DeleteGatewayResponseErrorKind::ConflictError(_))
-    }
-    pub fn is_not_found_error(&self) -> bool {
-        matches!(&self.kind, DeleteGatewayResponseErrorKind::NotFoundError(_))
-    }
-    pub fn is_too_many_requests_error(&self) -> bool {
+    pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DeleteGatewayResponseErrorKind::TooManyRequestsError(_)
+            DeleteGatewayResponseErrorKind::ConflictException(_)
         )
     }
-    pub fn is_unauthorized_error(&self) -> bool {
+    pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DeleteGatewayResponseErrorKind::UnauthorizedError(_)
+            DeleteGatewayResponseErrorKind::NotFoundException(_)
+        )
+    }
+    pub fn is_too_many_requests_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteGatewayResponseErrorKind::TooManyRequestsException(_)
+        )
+    }
+    pub fn is_unauthorized_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteGatewayResponseErrorKind::UnauthorizedException(_)
         )
     }
 }
 impl std::error::Error for DeleteGatewayResponseError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DeleteGatewayResponseErrorKind::BadRequestError(_inner) => Some(_inner),
-            DeleteGatewayResponseErrorKind::ConflictError(_inner) => Some(_inner),
-            DeleteGatewayResponseErrorKind::NotFoundError(_inner) => Some(_inner),
-            DeleteGatewayResponseErrorKind::TooManyRequestsError(_inner) => Some(_inner),
-            DeleteGatewayResponseErrorKind::UnauthorizedError(_inner) => Some(_inner),
+            DeleteGatewayResponseErrorKind::BadRequestException(_inner) => Some(_inner),
+            DeleteGatewayResponseErrorKind::ConflictException(_inner) => Some(_inner),
+            DeleteGatewayResponseErrorKind::NotFoundException(_inner) => Some(_inner),
+            DeleteGatewayResponseErrorKind::TooManyRequestsException(_inner) => Some(_inner),
+            DeleteGatewayResponseErrorKind::UnauthorizedException(_inner) => Some(_inner),
             DeleteGatewayResponseErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -2606,20 +2711,20 @@ pub struct DeleteIntegrationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteIntegrationErrorKind {
-    ConflictError(crate::error::ConflictError),
-    NotFoundError(crate::error::NotFoundError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
-    UnauthorizedError(crate::error::UnauthorizedError),
+    ConflictException(crate::error::ConflictException),
+    NotFoundException(crate::error::NotFoundException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
+    UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteIntegrationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DeleteIntegrationErrorKind::ConflictError(_inner) => _inner.fmt(f),
-            DeleteIntegrationErrorKind::NotFoundError(_inner) => _inner.fmt(f),
-            DeleteIntegrationErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
-            DeleteIntegrationErrorKind::UnauthorizedError(_inner) => _inner.fmt(f),
+            DeleteIntegrationErrorKind::ConflictException(_inner) => _inner.fmt(f),
+            DeleteIntegrationErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            DeleteIntegrationErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
+            DeleteIntegrationErrorKind::UnauthorizedException(_inner) => _inner.fmt(f),
             DeleteIntegrationErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -2668,29 +2773,32 @@ impl DeleteIntegrationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_conflict_error(&self) -> bool {
-        matches!(&self.kind, DeleteIntegrationErrorKind::ConflictError(_))
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(&self.kind, DeleteIntegrationErrorKind::ConflictException(_))
     }
-    pub fn is_not_found_error(&self) -> bool {
-        matches!(&self.kind, DeleteIntegrationErrorKind::NotFoundError(_))
+    pub fn is_not_found_exception(&self) -> bool {
+        matches!(&self.kind, DeleteIntegrationErrorKind::NotFoundException(_))
     }
-    pub fn is_too_many_requests_error(&self) -> bool {
+    pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DeleteIntegrationErrorKind::TooManyRequestsError(_)
+            DeleteIntegrationErrorKind::TooManyRequestsException(_)
         )
     }
-    pub fn is_unauthorized_error(&self) -> bool {
-        matches!(&self.kind, DeleteIntegrationErrorKind::UnauthorizedError(_))
+    pub fn is_unauthorized_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteIntegrationErrorKind::UnauthorizedException(_)
+        )
     }
 }
 impl std::error::Error for DeleteIntegrationError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DeleteIntegrationErrorKind::ConflictError(_inner) => Some(_inner),
-            DeleteIntegrationErrorKind::NotFoundError(_inner) => Some(_inner),
-            DeleteIntegrationErrorKind::TooManyRequestsError(_inner) => Some(_inner),
-            DeleteIntegrationErrorKind::UnauthorizedError(_inner) => Some(_inner),
+            DeleteIntegrationErrorKind::ConflictException(_inner) => Some(_inner),
+            DeleteIntegrationErrorKind::NotFoundException(_inner) => Some(_inner),
+            DeleteIntegrationErrorKind::TooManyRequestsException(_inner) => Some(_inner),
+            DeleteIntegrationErrorKind::UnauthorizedException(_inner) => Some(_inner),
             DeleteIntegrationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -2705,22 +2813,22 @@ pub struct DeleteIntegrationResponseError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteIntegrationResponseErrorKind {
-    BadRequestError(crate::error::BadRequestError),
-    ConflictError(crate::error::ConflictError),
-    NotFoundError(crate::error::NotFoundError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
-    UnauthorizedError(crate::error::UnauthorizedError),
+    BadRequestException(crate::error::BadRequestException),
+    ConflictException(crate::error::ConflictException),
+    NotFoundException(crate::error::NotFoundException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
+    UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteIntegrationResponseError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DeleteIntegrationResponseErrorKind::BadRequestError(_inner) => _inner.fmt(f),
-            DeleteIntegrationResponseErrorKind::ConflictError(_inner) => _inner.fmt(f),
-            DeleteIntegrationResponseErrorKind::NotFoundError(_inner) => _inner.fmt(f),
-            DeleteIntegrationResponseErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
-            DeleteIntegrationResponseErrorKind::UnauthorizedError(_inner) => _inner.fmt(f),
+            DeleteIntegrationResponseErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            DeleteIntegrationResponseErrorKind::ConflictException(_inner) => _inner.fmt(f),
+            DeleteIntegrationResponseErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            DeleteIntegrationResponseErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
+            DeleteIntegrationResponseErrorKind::UnauthorizedException(_inner) => _inner.fmt(f),
             DeleteIntegrationResponseErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -2769,45 +2877,45 @@ impl DeleteIntegrationResponseError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_bad_request_error(&self) -> bool {
+    pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DeleteIntegrationResponseErrorKind::BadRequestError(_)
+            DeleteIntegrationResponseErrorKind::BadRequestException(_)
         )
     }
-    pub fn is_conflict_error(&self) -> bool {
+    pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DeleteIntegrationResponseErrorKind::ConflictError(_)
+            DeleteIntegrationResponseErrorKind::ConflictException(_)
         )
     }
-    pub fn is_not_found_error(&self) -> bool {
+    pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DeleteIntegrationResponseErrorKind::NotFoundError(_)
+            DeleteIntegrationResponseErrorKind::NotFoundException(_)
         )
     }
-    pub fn is_too_many_requests_error(&self) -> bool {
+    pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DeleteIntegrationResponseErrorKind::TooManyRequestsError(_)
+            DeleteIntegrationResponseErrorKind::TooManyRequestsException(_)
         )
     }
-    pub fn is_unauthorized_error(&self) -> bool {
+    pub fn is_unauthorized_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DeleteIntegrationResponseErrorKind::UnauthorizedError(_)
+            DeleteIntegrationResponseErrorKind::UnauthorizedException(_)
         )
     }
 }
 impl std::error::Error for DeleteIntegrationResponseError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DeleteIntegrationResponseErrorKind::BadRequestError(_inner) => Some(_inner),
-            DeleteIntegrationResponseErrorKind::ConflictError(_inner) => Some(_inner),
-            DeleteIntegrationResponseErrorKind::NotFoundError(_inner) => Some(_inner),
-            DeleteIntegrationResponseErrorKind::TooManyRequestsError(_inner) => Some(_inner),
-            DeleteIntegrationResponseErrorKind::UnauthorizedError(_inner) => Some(_inner),
+            DeleteIntegrationResponseErrorKind::BadRequestException(_inner) => Some(_inner),
+            DeleteIntegrationResponseErrorKind::ConflictException(_inner) => Some(_inner),
+            DeleteIntegrationResponseErrorKind::NotFoundException(_inner) => Some(_inner),
+            DeleteIntegrationResponseErrorKind::TooManyRequestsException(_inner) => Some(_inner),
+            DeleteIntegrationResponseErrorKind::UnauthorizedException(_inner) => Some(_inner),
             DeleteIntegrationResponseErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -2822,20 +2930,20 @@ pub struct DeleteMethodError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteMethodErrorKind {
-    ConflictError(crate::error::ConflictError),
-    NotFoundError(crate::error::NotFoundError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
-    UnauthorizedError(crate::error::UnauthorizedError),
+    ConflictException(crate::error::ConflictException),
+    NotFoundException(crate::error::NotFoundException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
+    UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteMethodError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DeleteMethodErrorKind::ConflictError(_inner) => _inner.fmt(f),
-            DeleteMethodErrorKind::NotFoundError(_inner) => _inner.fmt(f),
-            DeleteMethodErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
-            DeleteMethodErrorKind::UnauthorizedError(_inner) => _inner.fmt(f),
+            DeleteMethodErrorKind::ConflictException(_inner) => _inner.fmt(f),
+            DeleteMethodErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            DeleteMethodErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
+            DeleteMethodErrorKind::UnauthorizedException(_inner) => _inner.fmt(f),
             DeleteMethodErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -2884,26 +2992,29 @@ impl DeleteMethodError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_conflict_error(&self) -> bool {
-        matches!(&self.kind, DeleteMethodErrorKind::ConflictError(_))
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(&self.kind, DeleteMethodErrorKind::ConflictException(_))
     }
-    pub fn is_not_found_error(&self) -> bool {
-        matches!(&self.kind, DeleteMethodErrorKind::NotFoundError(_))
+    pub fn is_not_found_exception(&self) -> bool {
+        matches!(&self.kind, DeleteMethodErrorKind::NotFoundException(_))
     }
-    pub fn is_too_many_requests_error(&self) -> bool {
-        matches!(&self.kind, DeleteMethodErrorKind::TooManyRequestsError(_))
+    pub fn is_too_many_requests_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteMethodErrorKind::TooManyRequestsException(_)
+        )
     }
-    pub fn is_unauthorized_error(&self) -> bool {
-        matches!(&self.kind, DeleteMethodErrorKind::UnauthorizedError(_))
+    pub fn is_unauthorized_exception(&self) -> bool {
+        matches!(&self.kind, DeleteMethodErrorKind::UnauthorizedException(_))
     }
 }
 impl std::error::Error for DeleteMethodError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DeleteMethodErrorKind::ConflictError(_inner) => Some(_inner),
-            DeleteMethodErrorKind::NotFoundError(_inner) => Some(_inner),
-            DeleteMethodErrorKind::TooManyRequestsError(_inner) => Some(_inner),
-            DeleteMethodErrorKind::UnauthorizedError(_inner) => Some(_inner),
+            DeleteMethodErrorKind::ConflictException(_inner) => Some(_inner),
+            DeleteMethodErrorKind::NotFoundException(_inner) => Some(_inner),
+            DeleteMethodErrorKind::TooManyRequestsException(_inner) => Some(_inner),
+            DeleteMethodErrorKind::UnauthorizedException(_inner) => Some(_inner),
             DeleteMethodErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -2918,22 +3029,22 @@ pub struct DeleteMethodResponseError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteMethodResponseErrorKind {
-    BadRequestError(crate::error::BadRequestError),
-    ConflictError(crate::error::ConflictError),
-    NotFoundError(crate::error::NotFoundError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
-    UnauthorizedError(crate::error::UnauthorizedError),
+    BadRequestException(crate::error::BadRequestException),
+    ConflictException(crate::error::ConflictException),
+    NotFoundException(crate::error::NotFoundException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
+    UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteMethodResponseError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DeleteMethodResponseErrorKind::BadRequestError(_inner) => _inner.fmt(f),
-            DeleteMethodResponseErrorKind::ConflictError(_inner) => _inner.fmt(f),
-            DeleteMethodResponseErrorKind::NotFoundError(_inner) => _inner.fmt(f),
-            DeleteMethodResponseErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
-            DeleteMethodResponseErrorKind::UnauthorizedError(_inner) => _inner.fmt(f),
+            DeleteMethodResponseErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            DeleteMethodResponseErrorKind::ConflictException(_inner) => _inner.fmt(f),
+            DeleteMethodResponseErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            DeleteMethodResponseErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
+            DeleteMethodResponseErrorKind::UnauthorizedException(_inner) => _inner.fmt(f),
             DeleteMethodResponseErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -2982,39 +3093,45 @@ impl DeleteMethodResponseError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_bad_request_error(&self) -> bool {
+    pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DeleteMethodResponseErrorKind::BadRequestError(_)
+            DeleteMethodResponseErrorKind::BadRequestException(_)
         )
     }
-    pub fn is_conflict_error(&self) -> bool {
-        matches!(&self.kind, DeleteMethodResponseErrorKind::ConflictError(_))
-    }
-    pub fn is_not_found_error(&self) -> bool {
-        matches!(&self.kind, DeleteMethodResponseErrorKind::NotFoundError(_))
-    }
-    pub fn is_too_many_requests_error(&self) -> bool {
+    pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DeleteMethodResponseErrorKind::TooManyRequestsError(_)
+            DeleteMethodResponseErrorKind::ConflictException(_)
         )
     }
-    pub fn is_unauthorized_error(&self) -> bool {
+    pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DeleteMethodResponseErrorKind::UnauthorizedError(_)
+            DeleteMethodResponseErrorKind::NotFoundException(_)
+        )
+    }
+    pub fn is_too_many_requests_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteMethodResponseErrorKind::TooManyRequestsException(_)
+        )
+    }
+    pub fn is_unauthorized_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteMethodResponseErrorKind::UnauthorizedException(_)
         )
     }
 }
 impl std::error::Error for DeleteMethodResponseError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DeleteMethodResponseErrorKind::BadRequestError(_inner) => Some(_inner),
-            DeleteMethodResponseErrorKind::ConflictError(_inner) => Some(_inner),
-            DeleteMethodResponseErrorKind::NotFoundError(_inner) => Some(_inner),
-            DeleteMethodResponseErrorKind::TooManyRequestsError(_inner) => Some(_inner),
-            DeleteMethodResponseErrorKind::UnauthorizedError(_inner) => Some(_inner),
+            DeleteMethodResponseErrorKind::BadRequestException(_inner) => Some(_inner),
+            DeleteMethodResponseErrorKind::ConflictException(_inner) => Some(_inner),
+            DeleteMethodResponseErrorKind::NotFoundException(_inner) => Some(_inner),
+            DeleteMethodResponseErrorKind::TooManyRequestsException(_inner) => Some(_inner),
+            DeleteMethodResponseErrorKind::UnauthorizedException(_inner) => Some(_inner),
             DeleteMethodResponseErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -3029,22 +3146,22 @@ pub struct DeleteModelError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteModelErrorKind {
-    BadRequestError(crate::error::BadRequestError),
-    ConflictError(crate::error::ConflictError),
-    NotFoundError(crate::error::NotFoundError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
-    UnauthorizedError(crate::error::UnauthorizedError),
+    BadRequestException(crate::error::BadRequestException),
+    ConflictException(crate::error::ConflictException),
+    NotFoundException(crate::error::NotFoundException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
+    UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteModelError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DeleteModelErrorKind::BadRequestError(_inner) => _inner.fmt(f),
-            DeleteModelErrorKind::ConflictError(_inner) => _inner.fmt(f),
-            DeleteModelErrorKind::NotFoundError(_inner) => _inner.fmt(f),
-            DeleteModelErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
-            DeleteModelErrorKind::UnauthorizedError(_inner) => _inner.fmt(f),
+            DeleteModelErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            DeleteModelErrorKind::ConflictException(_inner) => _inner.fmt(f),
+            DeleteModelErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            DeleteModelErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
+            DeleteModelErrorKind::UnauthorizedException(_inner) => _inner.fmt(f),
             DeleteModelErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -3093,30 +3210,33 @@ impl DeleteModelError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_bad_request_error(&self) -> bool {
-        matches!(&self.kind, DeleteModelErrorKind::BadRequestError(_))
+    pub fn is_bad_request_exception(&self) -> bool {
+        matches!(&self.kind, DeleteModelErrorKind::BadRequestException(_))
     }
-    pub fn is_conflict_error(&self) -> bool {
-        matches!(&self.kind, DeleteModelErrorKind::ConflictError(_))
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(&self.kind, DeleteModelErrorKind::ConflictException(_))
     }
-    pub fn is_not_found_error(&self) -> bool {
-        matches!(&self.kind, DeleteModelErrorKind::NotFoundError(_))
+    pub fn is_not_found_exception(&self) -> bool {
+        matches!(&self.kind, DeleteModelErrorKind::NotFoundException(_))
     }
-    pub fn is_too_many_requests_error(&self) -> bool {
-        matches!(&self.kind, DeleteModelErrorKind::TooManyRequestsError(_))
+    pub fn is_too_many_requests_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteModelErrorKind::TooManyRequestsException(_)
+        )
     }
-    pub fn is_unauthorized_error(&self) -> bool {
-        matches!(&self.kind, DeleteModelErrorKind::UnauthorizedError(_))
+    pub fn is_unauthorized_exception(&self) -> bool {
+        matches!(&self.kind, DeleteModelErrorKind::UnauthorizedException(_))
     }
 }
 impl std::error::Error for DeleteModelError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DeleteModelErrorKind::BadRequestError(_inner) => Some(_inner),
-            DeleteModelErrorKind::ConflictError(_inner) => Some(_inner),
-            DeleteModelErrorKind::NotFoundError(_inner) => Some(_inner),
-            DeleteModelErrorKind::TooManyRequestsError(_inner) => Some(_inner),
-            DeleteModelErrorKind::UnauthorizedError(_inner) => Some(_inner),
+            DeleteModelErrorKind::BadRequestException(_inner) => Some(_inner),
+            DeleteModelErrorKind::ConflictException(_inner) => Some(_inner),
+            DeleteModelErrorKind::NotFoundException(_inner) => Some(_inner),
+            DeleteModelErrorKind::TooManyRequestsException(_inner) => Some(_inner),
+            DeleteModelErrorKind::UnauthorizedException(_inner) => Some(_inner),
             DeleteModelErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -3131,22 +3251,22 @@ pub struct DeleteRequestValidatorError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteRequestValidatorErrorKind {
-    BadRequestError(crate::error::BadRequestError),
-    ConflictError(crate::error::ConflictError),
-    NotFoundError(crate::error::NotFoundError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
-    UnauthorizedError(crate::error::UnauthorizedError),
+    BadRequestException(crate::error::BadRequestException),
+    ConflictException(crate::error::ConflictException),
+    NotFoundException(crate::error::NotFoundException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
+    UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteRequestValidatorError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DeleteRequestValidatorErrorKind::BadRequestError(_inner) => _inner.fmt(f),
-            DeleteRequestValidatorErrorKind::ConflictError(_inner) => _inner.fmt(f),
-            DeleteRequestValidatorErrorKind::NotFoundError(_inner) => _inner.fmt(f),
-            DeleteRequestValidatorErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
-            DeleteRequestValidatorErrorKind::UnauthorizedError(_inner) => _inner.fmt(f),
+            DeleteRequestValidatorErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            DeleteRequestValidatorErrorKind::ConflictException(_inner) => _inner.fmt(f),
+            DeleteRequestValidatorErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            DeleteRequestValidatorErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
+            DeleteRequestValidatorErrorKind::UnauthorizedException(_inner) => _inner.fmt(f),
             DeleteRequestValidatorErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -3195,45 +3315,45 @@ impl DeleteRequestValidatorError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_bad_request_error(&self) -> bool {
+    pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DeleteRequestValidatorErrorKind::BadRequestError(_)
+            DeleteRequestValidatorErrorKind::BadRequestException(_)
         )
     }
-    pub fn is_conflict_error(&self) -> bool {
+    pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DeleteRequestValidatorErrorKind::ConflictError(_)
+            DeleteRequestValidatorErrorKind::ConflictException(_)
         )
     }
-    pub fn is_not_found_error(&self) -> bool {
+    pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DeleteRequestValidatorErrorKind::NotFoundError(_)
+            DeleteRequestValidatorErrorKind::NotFoundException(_)
         )
     }
-    pub fn is_too_many_requests_error(&self) -> bool {
+    pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DeleteRequestValidatorErrorKind::TooManyRequestsError(_)
+            DeleteRequestValidatorErrorKind::TooManyRequestsException(_)
         )
     }
-    pub fn is_unauthorized_error(&self) -> bool {
+    pub fn is_unauthorized_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DeleteRequestValidatorErrorKind::UnauthorizedError(_)
+            DeleteRequestValidatorErrorKind::UnauthorizedException(_)
         )
     }
 }
 impl std::error::Error for DeleteRequestValidatorError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DeleteRequestValidatorErrorKind::BadRequestError(_inner) => Some(_inner),
-            DeleteRequestValidatorErrorKind::ConflictError(_inner) => Some(_inner),
-            DeleteRequestValidatorErrorKind::NotFoundError(_inner) => Some(_inner),
-            DeleteRequestValidatorErrorKind::TooManyRequestsError(_inner) => Some(_inner),
-            DeleteRequestValidatorErrorKind::UnauthorizedError(_inner) => Some(_inner),
+            DeleteRequestValidatorErrorKind::BadRequestException(_inner) => Some(_inner),
+            DeleteRequestValidatorErrorKind::ConflictException(_inner) => Some(_inner),
+            DeleteRequestValidatorErrorKind::NotFoundException(_inner) => Some(_inner),
+            DeleteRequestValidatorErrorKind::TooManyRequestsException(_inner) => Some(_inner),
+            DeleteRequestValidatorErrorKind::UnauthorizedException(_inner) => Some(_inner),
             DeleteRequestValidatorErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -3248,22 +3368,22 @@ pub struct DeleteResourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteResourceErrorKind {
-    BadRequestError(crate::error::BadRequestError),
-    ConflictError(crate::error::ConflictError),
-    NotFoundError(crate::error::NotFoundError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
-    UnauthorizedError(crate::error::UnauthorizedError),
+    BadRequestException(crate::error::BadRequestException),
+    ConflictException(crate::error::ConflictException),
+    NotFoundException(crate::error::NotFoundException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
+    UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DeleteResourceErrorKind::BadRequestError(_inner) => _inner.fmt(f),
-            DeleteResourceErrorKind::ConflictError(_inner) => _inner.fmt(f),
-            DeleteResourceErrorKind::NotFoundError(_inner) => _inner.fmt(f),
-            DeleteResourceErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
-            DeleteResourceErrorKind::UnauthorizedError(_inner) => _inner.fmt(f),
+            DeleteResourceErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            DeleteResourceErrorKind::ConflictException(_inner) => _inner.fmt(f),
+            DeleteResourceErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            DeleteResourceErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
+            DeleteResourceErrorKind::UnauthorizedException(_inner) => _inner.fmt(f),
             DeleteResourceErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -3312,30 +3432,36 @@ impl DeleteResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_bad_request_error(&self) -> bool {
-        matches!(&self.kind, DeleteResourceErrorKind::BadRequestError(_))
+    pub fn is_bad_request_exception(&self) -> bool {
+        matches!(&self.kind, DeleteResourceErrorKind::BadRequestException(_))
     }
-    pub fn is_conflict_error(&self) -> bool {
-        matches!(&self.kind, DeleteResourceErrorKind::ConflictError(_))
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(&self.kind, DeleteResourceErrorKind::ConflictException(_))
     }
-    pub fn is_not_found_error(&self) -> bool {
-        matches!(&self.kind, DeleteResourceErrorKind::NotFoundError(_))
+    pub fn is_not_found_exception(&self) -> bool {
+        matches!(&self.kind, DeleteResourceErrorKind::NotFoundException(_))
     }
-    pub fn is_too_many_requests_error(&self) -> bool {
-        matches!(&self.kind, DeleteResourceErrorKind::TooManyRequestsError(_))
+    pub fn is_too_many_requests_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteResourceErrorKind::TooManyRequestsException(_)
+        )
     }
-    pub fn is_unauthorized_error(&self) -> bool {
-        matches!(&self.kind, DeleteResourceErrorKind::UnauthorizedError(_))
+    pub fn is_unauthorized_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteResourceErrorKind::UnauthorizedException(_)
+        )
     }
 }
 impl std::error::Error for DeleteResourceError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DeleteResourceErrorKind::BadRequestError(_inner) => Some(_inner),
-            DeleteResourceErrorKind::ConflictError(_inner) => Some(_inner),
-            DeleteResourceErrorKind::NotFoundError(_inner) => Some(_inner),
-            DeleteResourceErrorKind::TooManyRequestsError(_inner) => Some(_inner),
-            DeleteResourceErrorKind::UnauthorizedError(_inner) => Some(_inner),
+            DeleteResourceErrorKind::BadRequestException(_inner) => Some(_inner),
+            DeleteResourceErrorKind::ConflictException(_inner) => Some(_inner),
+            DeleteResourceErrorKind::NotFoundException(_inner) => Some(_inner),
+            DeleteResourceErrorKind::TooManyRequestsException(_inner) => Some(_inner),
+            DeleteResourceErrorKind::UnauthorizedException(_inner) => Some(_inner),
             DeleteResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -3350,20 +3476,20 @@ pub struct DeleteRestApiError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteRestApiErrorKind {
-    BadRequestError(crate::error::BadRequestError),
-    NotFoundError(crate::error::NotFoundError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
-    UnauthorizedError(crate::error::UnauthorizedError),
+    BadRequestException(crate::error::BadRequestException),
+    NotFoundException(crate::error::NotFoundException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
+    UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteRestApiError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DeleteRestApiErrorKind::BadRequestError(_inner) => _inner.fmt(f),
-            DeleteRestApiErrorKind::NotFoundError(_inner) => _inner.fmt(f),
-            DeleteRestApiErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
-            DeleteRestApiErrorKind::UnauthorizedError(_inner) => _inner.fmt(f),
+            DeleteRestApiErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            DeleteRestApiErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            DeleteRestApiErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
+            DeleteRestApiErrorKind::UnauthorizedException(_inner) => _inner.fmt(f),
             DeleteRestApiErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -3412,26 +3538,29 @@ impl DeleteRestApiError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_bad_request_error(&self) -> bool {
-        matches!(&self.kind, DeleteRestApiErrorKind::BadRequestError(_))
+    pub fn is_bad_request_exception(&self) -> bool {
+        matches!(&self.kind, DeleteRestApiErrorKind::BadRequestException(_))
     }
-    pub fn is_not_found_error(&self) -> bool {
-        matches!(&self.kind, DeleteRestApiErrorKind::NotFoundError(_))
+    pub fn is_not_found_exception(&self) -> bool {
+        matches!(&self.kind, DeleteRestApiErrorKind::NotFoundException(_))
     }
-    pub fn is_too_many_requests_error(&self) -> bool {
-        matches!(&self.kind, DeleteRestApiErrorKind::TooManyRequestsError(_))
+    pub fn is_too_many_requests_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteRestApiErrorKind::TooManyRequestsException(_)
+        )
     }
-    pub fn is_unauthorized_error(&self) -> bool {
-        matches!(&self.kind, DeleteRestApiErrorKind::UnauthorizedError(_))
+    pub fn is_unauthorized_exception(&self) -> bool {
+        matches!(&self.kind, DeleteRestApiErrorKind::UnauthorizedException(_))
     }
 }
 impl std::error::Error for DeleteRestApiError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DeleteRestApiErrorKind::BadRequestError(_inner) => Some(_inner),
-            DeleteRestApiErrorKind::NotFoundError(_inner) => Some(_inner),
-            DeleteRestApiErrorKind::TooManyRequestsError(_inner) => Some(_inner),
-            DeleteRestApiErrorKind::UnauthorizedError(_inner) => Some(_inner),
+            DeleteRestApiErrorKind::BadRequestException(_inner) => Some(_inner),
+            DeleteRestApiErrorKind::NotFoundException(_inner) => Some(_inner),
+            DeleteRestApiErrorKind::TooManyRequestsException(_inner) => Some(_inner),
+            DeleteRestApiErrorKind::UnauthorizedException(_inner) => Some(_inner),
             DeleteRestApiErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -3446,20 +3575,20 @@ pub struct DeleteStageError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteStageErrorKind {
-    BadRequestError(crate::error::BadRequestError),
-    NotFoundError(crate::error::NotFoundError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
-    UnauthorizedError(crate::error::UnauthorizedError),
+    BadRequestException(crate::error::BadRequestException),
+    NotFoundException(crate::error::NotFoundException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
+    UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteStageError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DeleteStageErrorKind::BadRequestError(_inner) => _inner.fmt(f),
-            DeleteStageErrorKind::NotFoundError(_inner) => _inner.fmt(f),
-            DeleteStageErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
-            DeleteStageErrorKind::UnauthorizedError(_inner) => _inner.fmt(f),
+            DeleteStageErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            DeleteStageErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            DeleteStageErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
+            DeleteStageErrorKind::UnauthorizedException(_inner) => _inner.fmt(f),
             DeleteStageErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -3508,26 +3637,29 @@ impl DeleteStageError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_bad_request_error(&self) -> bool {
-        matches!(&self.kind, DeleteStageErrorKind::BadRequestError(_))
+    pub fn is_bad_request_exception(&self) -> bool {
+        matches!(&self.kind, DeleteStageErrorKind::BadRequestException(_))
     }
-    pub fn is_not_found_error(&self) -> bool {
-        matches!(&self.kind, DeleteStageErrorKind::NotFoundError(_))
+    pub fn is_not_found_exception(&self) -> bool {
+        matches!(&self.kind, DeleteStageErrorKind::NotFoundException(_))
     }
-    pub fn is_too_many_requests_error(&self) -> bool {
-        matches!(&self.kind, DeleteStageErrorKind::TooManyRequestsError(_))
+    pub fn is_too_many_requests_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteStageErrorKind::TooManyRequestsException(_)
+        )
     }
-    pub fn is_unauthorized_error(&self) -> bool {
-        matches!(&self.kind, DeleteStageErrorKind::UnauthorizedError(_))
+    pub fn is_unauthorized_exception(&self) -> bool {
+        matches!(&self.kind, DeleteStageErrorKind::UnauthorizedException(_))
     }
 }
 impl std::error::Error for DeleteStageError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DeleteStageErrorKind::BadRequestError(_inner) => Some(_inner),
-            DeleteStageErrorKind::NotFoundError(_inner) => Some(_inner),
-            DeleteStageErrorKind::TooManyRequestsError(_inner) => Some(_inner),
-            DeleteStageErrorKind::UnauthorizedError(_inner) => Some(_inner),
+            DeleteStageErrorKind::BadRequestException(_inner) => Some(_inner),
+            DeleteStageErrorKind::NotFoundException(_inner) => Some(_inner),
+            DeleteStageErrorKind::TooManyRequestsException(_inner) => Some(_inner),
+            DeleteStageErrorKind::UnauthorizedException(_inner) => Some(_inner),
             DeleteStageErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -3542,20 +3674,20 @@ pub struct DeleteUsagePlanError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteUsagePlanErrorKind {
-    BadRequestError(crate::error::BadRequestError),
-    NotFoundError(crate::error::NotFoundError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
-    UnauthorizedError(crate::error::UnauthorizedError),
+    BadRequestException(crate::error::BadRequestException),
+    NotFoundException(crate::error::NotFoundException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
+    UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteUsagePlanError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DeleteUsagePlanErrorKind::BadRequestError(_inner) => _inner.fmt(f),
-            DeleteUsagePlanErrorKind::NotFoundError(_inner) => _inner.fmt(f),
-            DeleteUsagePlanErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
-            DeleteUsagePlanErrorKind::UnauthorizedError(_inner) => _inner.fmt(f),
+            DeleteUsagePlanErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            DeleteUsagePlanErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            DeleteUsagePlanErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
+            DeleteUsagePlanErrorKind::UnauthorizedException(_inner) => _inner.fmt(f),
             DeleteUsagePlanErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -3604,29 +3736,32 @@ impl DeleteUsagePlanError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_bad_request_error(&self) -> bool {
-        matches!(&self.kind, DeleteUsagePlanErrorKind::BadRequestError(_))
+    pub fn is_bad_request_exception(&self) -> bool {
+        matches!(&self.kind, DeleteUsagePlanErrorKind::BadRequestException(_))
     }
-    pub fn is_not_found_error(&self) -> bool {
-        matches!(&self.kind, DeleteUsagePlanErrorKind::NotFoundError(_))
+    pub fn is_not_found_exception(&self) -> bool {
+        matches!(&self.kind, DeleteUsagePlanErrorKind::NotFoundException(_))
     }
-    pub fn is_too_many_requests_error(&self) -> bool {
+    pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DeleteUsagePlanErrorKind::TooManyRequestsError(_)
+            DeleteUsagePlanErrorKind::TooManyRequestsException(_)
         )
     }
-    pub fn is_unauthorized_error(&self) -> bool {
-        matches!(&self.kind, DeleteUsagePlanErrorKind::UnauthorizedError(_))
+    pub fn is_unauthorized_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteUsagePlanErrorKind::UnauthorizedException(_)
+        )
     }
 }
 impl std::error::Error for DeleteUsagePlanError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DeleteUsagePlanErrorKind::BadRequestError(_inner) => Some(_inner),
-            DeleteUsagePlanErrorKind::NotFoundError(_inner) => Some(_inner),
-            DeleteUsagePlanErrorKind::TooManyRequestsError(_inner) => Some(_inner),
-            DeleteUsagePlanErrorKind::UnauthorizedError(_inner) => Some(_inner),
+            DeleteUsagePlanErrorKind::BadRequestException(_inner) => Some(_inner),
+            DeleteUsagePlanErrorKind::NotFoundException(_inner) => Some(_inner),
+            DeleteUsagePlanErrorKind::TooManyRequestsException(_inner) => Some(_inner),
+            DeleteUsagePlanErrorKind::UnauthorizedException(_inner) => Some(_inner),
             DeleteUsagePlanErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -3641,22 +3776,22 @@ pub struct DeleteUsagePlanKeyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteUsagePlanKeyErrorKind {
-    BadRequestError(crate::error::BadRequestError),
-    ConflictError(crate::error::ConflictError),
-    NotFoundError(crate::error::NotFoundError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
-    UnauthorizedError(crate::error::UnauthorizedError),
+    BadRequestException(crate::error::BadRequestException),
+    ConflictException(crate::error::ConflictException),
+    NotFoundException(crate::error::NotFoundException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
+    UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteUsagePlanKeyError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DeleteUsagePlanKeyErrorKind::BadRequestError(_inner) => _inner.fmt(f),
-            DeleteUsagePlanKeyErrorKind::ConflictError(_inner) => _inner.fmt(f),
-            DeleteUsagePlanKeyErrorKind::NotFoundError(_inner) => _inner.fmt(f),
-            DeleteUsagePlanKeyErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
-            DeleteUsagePlanKeyErrorKind::UnauthorizedError(_inner) => _inner.fmt(f),
+            DeleteUsagePlanKeyErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            DeleteUsagePlanKeyErrorKind::ConflictException(_inner) => _inner.fmt(f),
+            DeleteUsagePlanKeyErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            DeleteUsagePlanKeyErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
+            DeleteUsagePlanKeyErrorKind::UnauthorizedException(_inner) => _inner.fmt(f),
             DeleteUsagePlanKeyErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -3705,36 +3840,45 @@ impl DeleteUsagePlanKeyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_bad_request_error(&self) -> bool {
-        matches!(&self.kind, DeleteUsagePlanKeyErrorKind::BadRequestError(_))
-    }
-    pub fn is_conflict_error(&self) -> bool {
-        matches!(&self.kind, DeleteUsagePlanKeyErrorKind::ConflictError(_))
-    }
-    pub fn is_not_found_error(&self) -> bool {
-        matches!(&self.kind, DeleteUsagePlanKeyErrorKind::NotFoundError(_))
-    }
-    pub fn is_too_many_requests_error(&self) -> bool {
+    pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DeleteUsagePlanKeyErrorKind::TooManyRequestsError(_)
+            DeleteUsagePlanKeyErrorKind::BadRequestException(_)
         )
     }
-    pub fn is_unauthorized_error(&self) -> bool {
+    pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DeleteUsagePlanKeyErrorKind::UnauthorizedError(_)
+            DeleteUsagePlanKeyErrorKind::ConflictException(_)
+        )
+    }
+    pub fn is_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteUsagePlanKeyErrorKind::NotFoundException(_)
+        )
+    }
+    pub fn is_too_many_requests_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteUsagePlanKeyErrorKind::TooManyRequestsException(_)
+        )
+    }
+    pub fn is_unauthorized_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteUsagePlanKeyErrorKind::UnauthorizedException(_)
         )
     }
 }
 impl std::error::Error for DeleteUsagePlanKeyError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DeleteUsagePlanKeyErrorKind::BadRequestError(_inner) => Some(_inner),
-            DeleteUsagePlanKeyErrorKind::ConflictError(_inner) => Some(_inner),
-            DeleteUsagePlanKeyErrorKind::NotFoundError(_inner) => Some(_inner),
-            DeleteUsagePlanKeyErrorKind::TooManyRequestsError(_inner) => Some(_inner),
-            DeleteUsagePlanKeyErrorKind::UnauthorizedError(_inner) => Some(_inner),
+            DeleteUsagePlanKeyErrorKind::BadRequestException(_inner) => Some(_inner),
+            DeleteUsagePlanKeyErrorKind::ConflictException(_inner) => Some(_inner),
+            DeleteUsagePlanKeyErrorKind::NotFoundException(_inner) => Some(_inner),
+            DeleteUsagePlanKeyErrorKind::TooManyRequestsException(_inner) => Some(_inner),
+            DeleteUsagePlanKeyErrorKind::UnauthorizedException(_inner) => Some(_inner),
             DeleteUsagePlanKeyErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -3749,20 +3893,20 @@ pub struct DeleteVpcLinkError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteVpcLinkErrorKind {
-    BadRequestError(crate::error::BadRequestError),
-    NotFoundError(crate::error::NotFoundError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
-    UnauthorizedError(crate::error::UnauthorizedError),
+    BadRequestException(crate::error::BadRequestException),
+    NotFoundException(crate::error::NotFoundException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
+    UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteVpcLinkError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DeleteVpcLinkErrorKind::BadRequestError(_inner) => _inner.fmt(f),
-            DeleteVpcLinkErrorKind::NotFoundError(_inner) => _inner.fmt(f),
-            DeleteVpcLinkErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
-            DeleteVpcLinkErrorKind::UnauthorizedError(_inner) => _inner.fmt(f),
+            DeleteVpcLinkErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            DeleteVpcLinkErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            DeleteVpcLinkErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
+            DeleteVpcLinkErrorKind::UnauthorizedException(_inner) => _inner.fmt(f),
             DeleteVpcLinkErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -3811,26 +3955,29 @@ impl DeleteVpcLinkError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_bad_request_error(&self) -> bool {
-        matches!(&self.kind, DeleteVpcLinkErrorKind::BadRequestError(_))
+    pub fn is_bad_request_exception(&self) -> bool {
+        matches!(&self.kind, DeleteVpcLinkErrorKind::BadRequestException(_))
     }
-    pub fn is_not_found_error(&self) -> bool {
-        matches!(&self.kind, DeleteVpcLinkErrorKind::NotFoundError(_))
+    pub fn is_not_found_exception(&self) -> bool {
+        matches!(&self.kind, DeleteVpcLinkErrorKind::NotFoundException(_))
     }
-    pub fn is_too_many_requests_error(&self) -> bool {
-        matches!(&self.kind, DeleteVpcLinkErrorKind::TooManyRequestsError(_))
+    pub fn is_too_many_requests_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteVpcLinkErrorKind::TooManyRequestsException(_)
+        )
     }
-    pub fn is_unauthorized_error(&self) -> bool {
-        matches!(&self.kind, DeleteVpcLinkErrorKind::UnauthorizedError(_))
+    pub fn is_unauthorized_exception(&self) -> bool {
+        matches!(&self.kind, DeleteVpcLinkErrorKind::UnauthorizedException(_))
     }
 }
 impl std::error::Error for DeleteVpcLinkError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DeleteVpcLinkErrorKind::BadRequestError(_inner) => Some(_inner),
-            DeleteVpcLinkErrorKind::NotFoundError(_inner) => Some(_inner),
-            DeleteVpcLinkErrorKind::TooManyRequestsError(_inner) => Some(_inner),
-            DeleteVpcLinkErrorKind::UnauthorizedError(_inner) => Some(_inner),
+            DeleteVpcLinkErrorKind::BadRequestException(_inner) => Some(_inner),
+            DeleteVpcLinkErrorKind::NotFoundException(_inner) => Some(_inner),
+            DeleteVpcLinkErrorKind::TooManyRequestsException(_inner) => Some(_inner),
+            DeleteVpcLinkErrorKind::UnauthorizedException(_inner) => Some(_inner),
             DeleteVpcLinkErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -3845,20 +3992,20 @@ pub struct FlushStageAuthorizersCacheError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum FlushStageAuthorizersCacheErrorKind {
-    BadRequestError(crate::error::BadRequestError),
-    NotFoundError(crate::error::NotFoundError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
-    UnauthorizedError(crate::error::UnauthorizedError),
+    BadRequestException(crate::error::BadRequestException),
+    NotFoundException(crate::error::NotFoundException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
+    UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for FlushStageAuthorizersCacheError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            FlushStageAuthorizersCacheErrorKind::BadRequestError(_inner) => _inner.fmt(f),
-            FlushStageAuthorizersCacheErrorKind::NotFoundError(_inner) => _inner.fmt(f),
-            FlushStageAuthorizersCacheErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
-            FlushStageAuthorizersCacheErrorKind::UnauthorizedError(_inner) => _inner.fmt(f),
+            FlushStageAuthorizersCacheErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            FlushStageAuthorizersCacheErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            FlushStageAuthorizersCacheErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
+            FlushStageAuthorizersCacheErrorKind::UnauthorizedException(_inner) => _inner.fmt(f),
             FlushStageAuthorizersCacheErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -3907,38 +4054,38 @@ impl FlushStageAuthorizersCacheError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_bad_request_error(&self) -> bool {
+    pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
-            FlushStageAuthorizersCacheErrorKind::BadRequestError(_)
+            FlushStageAuthorizersCacheErrorKind::BadRequestException(_)
         )
     }
-    pub fn is_not_found_error(&self) -> bool {
+    pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
-            FlushStageAuthorizersCacheErrorKind::NotFoundError(_)
+            FlushStageAuthorizersCacheErrorKind::NotFoundException(_)
         )
     }
-    pub fn is_too_many_requests_error(&self) -> bool {
+    pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
-            FlushStageAuthorizersCacheErrorKind::TooManyRequestsError(_)
+            FlushStageAuthorizersCacheErrorKind::TooManyRequestsException(_)
         )
     }
-    pub fn is_unauthorized_error(&self) -> bool {
+    pub fn is_unauthorized_exception(&self) -> bool {
         matches!(
             &self.kind,
-            FlushStageAuthorizersCacheErrorKind::UnauthorizedError(_)
+            FlushStageAuthorizersCacheErrorKind::UnauthorizedException(_)
         )
     }
 }
 impl std::error::Error for FlushStageAuthorizersCacheError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            FlushStageAuthorizersCacheErrorKind::BadRequestError(_inner) => Some(_inner),
-            FlushStageAuthorizersCacheErrorKind::NotFoundError(_inner) => Some(_inner),
-            FlushStageAuthorizersCacheErrorKind::TooManyRequestsError(_inner) => Some(_inner),
-            FlushStageAuthorizersCacheErrorKind::UnauthorizedError(_inner) => Some(_inner),
+            FlushStageAuthorizersCacheErrorKind::BadRequestException(_inner) => Some(_inner),
+            FlushStageAuthorizersCacheErrorKind::NotFoundException(_inner) => Some(_inner),
+            FlushStageAuthorizersCacheErrorKind::TooManyRequestsException(_inner) => Some(_inner),
+            FlushStageAuthorizersCacheErrorKind::UnauthorizedException(_inner) => Some(_inner),
             FlushStageAuthorizersCacheErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -3953,20 +4100,20 @@ pub struct FlushStageCacheError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum FlushStageCacheErrorKind {
-    BadRequestError(crate::error::BadRequestError),
-    NotFoundError(crate::error::NotFoundError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
-    UnauthorizedError(crate::error::UnauthorizedError),
+    BadRequestException(crate::error::BadRequestException),
+    NotFoundException(crate::error::NotFoundException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
+    UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for FlushStageCacheError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            FlushStageCacheErrorKind::BadRequestError(_inner) => _inner.fmt(f),
-            FlushStageCacheErrorKind::NotFoundError(_inner) => _inner.fmt(f),
-            FlushStageCacheErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
-            FlushStageCacheErrorKind::UnauthorizedError(_inner) => _inner.fmt(f),
+            FlushStageCacheErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            FlushStageCacheErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            FlushStageCacheErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
+            FlushStageCacheErrorKind::UnauthorizedException(_inner) => _inner.fmt(f),
             FlushStageCacheErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -4015,29 +4162,32 @@ impl FlushStageCacheError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_bad_request_error(&self) -> bool {
-        matches!(&self.kind, FlushStageCacheErrorKind::BadRequestError(_))
+    pub fn is_bad_request_exception(&self) -> bool {
+        matches!(&self.kind, FlushStageCacheErrorKind::BadRequestException(_))
     }
-    pub fn is_not_found_error(&self) -> bool {
-        matches!(&self.kind, FlushStageCacheErrorKind::NotFoundError(_))
+    pub fn is_not_found_exception(&self) -> bool {
+        matches!(&self.kind, FlushStageCacheErrorKind::NotFoundException(_))
     }
-    pub fn is_too_many_requests_error(&self) -> bool {
+    pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
-            FlushStageCacheErrorKind::TooManyRequestsError(_)
+            FlushStageCacheErrorKind::TooManyRequestsException(_)
         )
     }
-    pub fn is_unauthorized_error(&self) -> bool {
-        matches!(&self.kind, FlushStageCacheErrorKind::UnauthorizedError(_))
+    pub fn is_unauthorized_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            FlushStageCacheErrorKind::UnauthorizedException(_)
+        )
     }
 }
 impl std::error::Error for FlushStageCacheError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            FlushStageCacheErrorKind::BadRequestError(_inner) => Some(_inner),
-            FlushStageCacheErrorKind::NotFoundError(_inner) => Some(_inner),
-            FlushStageCacheErrorKind::TooManyRequestsError(_inner) => Some(_inner),
-            FlushStageCacheErrorKind::UnauthorizedError(_inner) => Some(_inner),
+            FlushStageCacheErrorKind::BadRequestException(_inner) => Some(_inner),
+            FlushStageCacheErrorKind::NotFoundException(_inner) => Some(_inner),
+            FlushStageCacheErrorKind::TooManyRequestsException(_inner) => Some(_inner),
+            FlushStageCacheErrorKind::UnauthorizedException(_inner) => Some(_inner),
             FlushStageCacheErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -4052,18 +4202,18 @@ pub struct GenerateClientCertificateError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GenerateClientCertificateErrorKind {
-    LimitExceededError(crate::error::LimitExceededError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
-    UnauthorizedError(crate::error::UnauthorizedError),
+    LimitExceededException(crate::error::LimitExceededException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
+    UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GenerateClientCertificateError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            GenerateClientCertificateErrorKind::LimitExceededError(_inner) => _inner.fmt(f),
-            GenerateClientCertificateErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
-            GenerateClientCertificateErrorKind::UnauthorizedError(_inner) => _inner.fmt(f),
+            GenerateClientCertificateErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
+            GenerateClientCertificateErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
+            GenerateClientCertificateErrorKind::UnauthorizedException(_inner) => _inner.fmt(f),
             GenerateClientCertificateErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -4112,31 +4262,31 @@ impl GenerateClientCertificateError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_limit_exceeded_error(&self) -> bool {
+    pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
-            GenerateClientCertificateErrorKind::LimitExceededError(_)
+            GenerateClientCertificateErrorKind::LimitExceededException(_)
         )
     }
-    pub fn is_too_many_requests_error(&self) -> bool {
+    pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
-            GenerateClientCertificateErrorKind::TooManyRequestsError(_)
+            GenerateClientCertificateErrorKind::TooManyRequestsException(_)
         )
     }
-    pub fn is_unauthorized_error(&self) -> bool {
+    pub fn is_unauthorized_exception(&self) -> bool {
         matches!(
             &self.kind,
-            GenerateClientCertificateErrorKind::UnauthorizedError(_)
+            GenerateClientCertificateErrorKind::UnauthorizedException(_)
         )
     }
 }
 impl std::error::Error for GenerateClientCertificateError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            GenerateClientCertificateErrorKind::LimitExceededError(_inner) => Some(_inner),
-            GenerateClientCertificateErrorKind::TooManyRequestsError(_inner) => Some(_inner),
-            GenerateClientCertificateErrorKind::UnauthorizedError(_inner) => Some(_inner),
+            GenerateClientCertificateErrorKind::LimitExceededException(_inner) => Some(_inner),
+            GenerateClientCertificateErrorKind::TooManyRequestsException(_inner) => Some(_inner),
+            GenerateClientCertificateErrorKind::UnauthorizedException(_inner) => Some(_inner),
             GenerateClientCertificateErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -4151,18 +4301,18 @@ pub struct GetAccountError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetAccountErrorKind {
-    NotFoundError(crate::error::NotFoundError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
-    UnauthorizedError(crate::error::UnauthorizedError),
+    NotFoundException(crate::error::NotFoundException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
+    UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetAccountError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            GetAccountErrorKind::NotFoundError(_inner) => _inner.fmt(f),
-            GetAccountErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
-            GetAccountErrorKind::UnauthorizedError(_inner) => _inner.fmt(f),
+            GetAccountErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            GetAccountErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
+            GetAccountErrorKind::UnauthorizedException(_inner) => _inner.fmt(f),
             GetAccountErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -4211,22 +4361,22 @@ impl GetAccountError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_not_found_error(&self) -> bool {
-        matches!(&self.kind, GetAccountErrorKind::NotFoundError(_))
+    pub fn is_not_found_exception(&self) -> bool {
+        matches!(&self.kind, GetAccountErrorKind::NotFoundException(_))
     }
-    pub fn is_too_many_requests_error(&self) -> bool {
-        matches!(&self.kind, GetAccountErrorKind::TooManyRequestsError(_))
+    pub fn is_too_many_requests_exception(&self) -> bool {
+        matches!(&self.kind, GetAccountErrorKind::TooManyRequestsException(_))
     }
-    pub fn is_unauthorized_error(&self) -> bool {
-        matches!(&self.kind, GetAccountErrorKind::UnauthorizedError(_))
+    pub fn is_unauthorized_exception(&self) -> bool {
+        matches!(&self.kind, GetAccountErrorKind::UnauthorizedException(_))
     }
 }
 impl std::error::Error for GetAccountError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            GetAccountErrorKind::NotFoundError(_inner) => Some(_inner),
-            GetAccountErrorKind::TooManyRequestsError(_inner) => Some(_inner),
-            GetAccountErrorKind::UnauthorizedError(_inner) => Some(_inner),
+            GetAccountErrorKind::NotFoundException(_inner) => Some(_inner),
+            GetAccountErrorKind::TooManyRequestsException(_inner) => Some(_inner),
+            GetAccountErrorKind::UnauthorizedException(_inner) => Some(_inner),
             GetAccountErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -4241,18 +4391,18 @@ pub struct GetApiKeyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetApiKeyErrorKind {
-    NotFoundError(crate::error::NotFoundError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
-    UnauthorizedError(crate::error::UnauthorizedError),
+    NotFoundException(crate::error::NotFoundException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
+    UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetApiKeyError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            GetApiKeyErrorKind::NotFoundError(_inner) => _inner.fmt(f),
-            GetApiKeyErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
-            GetApiKeyErrorKind::UnauthorizedError(_inner) => _inner.fmt(f),
+            GetApiKeyErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            GetApiKeyErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
+            GetApiKeyErrorKind::UnauthorizedException(_inner) => _inner.fmt(f),
             GetApiKeyErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -4301,22 +4451,22 @@ impl GetApiKeyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_not_found_error(&self) -> bool {
-        matches!(&self.kind, GetApiKeyErrorKind::NotFoundError(_))
+    pub fn is_not_found_exception(&self) -> bool {
+        matches!(&self.kind, GetApiKeyErrorKind::NotFoundException(_))
     }
-    pub fn is_too_many_requests_error(&self) -> bool {
-        matches!(&self.kind, GetApiKeyErrorKind::TooManyRequestsError(_))
+    pub fn is_too_many_requests_exception(&self) -> bool {
+        matches!(&self.kind, GetApiKeyErrorKind::TooManyRequestsException(_))
     }
-    pub fn is_unauthorized_error(&self) -> bool {
-        matches!(&self.kind, GetApiKeyErrorKind::UnauthorizedError(_))
+    pub fn is_unauthorized_exception(&self) -> bool {
+        matches!(&self.kind, GetApiKeyErrorKind::UnauthorizedException(_))
     }
 }
 impl std::error::Error for GetApiKeyError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            GetApiKeyErrorKind::NotFoundError(_inner) => Some(_inner),
-            GetApiKeyErrorKind::TooManyRequestsError(_inner) => Some(_inner),
-            GetApiKeyErrorKind::UnauthorizedError(_inner) => Some(_inner),
+            GetApiKeyErrorKind::NotFoundException(_inner) => Some(_inner),
+            GetApiKeyErrorKind::TooManyRequestsException(_inner) => Some(_inner),
+            GetApiKeyErrorKind::UnauthorizedException(_inner) => Some(_inner),
             GetApiKeyErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -4331,18 +4481,18 @@ pub struct GetApiKeysError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetApiKeysErrorKind {
-    BadRequestError(crate::error::BadRequestError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
-    UnauthorizedError(crate::error::UnauthorizedError),
+    BadRequestException(crate::error::BadRequestException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
+    UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetApiKeysError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            GetApiKeysErrorKind::BadRequestError(_inner) => _inner.fmt(f),
-            GetApiKeysErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
-            GetApiKeysErrorKind::UnauthorizedError(_inner) => _inner.fmt(f),
+            GetApiKeysErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            GetApiKeysErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
+            GetApiKeysErrorKind::UnauthorizedException(_inner) => _inner.fmt(f),
             GetApiKeysErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -4391,22 +4541,22 @@ impl GetApiKeysError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_bad_request_error(&self) -> bool {
-        matches!(&self.kind, GetApiKeysErrorKind::BadRequestError(_))
+    pub fn is_bad_request_exception(&self) -> bool {
+        matches!(&self.kind, GetApiKeysErrorKind::BadRequestException(_))
     }
-    pub fn is_too_many_requests_error(&self) -> bool {
-        matches!(&self.kind, GetApiKeysErrorKind::TooManyRequestsError(_))
+    pub fn is_too_many_requests_exception(&self) -> bool {
+        matches!(&self.kind, GetApiKeysErrorKind::TooManyRequestsException(_))
     }
-    pub fn is_unauthorized_error(&self) -> bool {
-        matches!(&self.kind, GetApiKeysErrorKind::UnauthorizedError(_))
+    pub fn is_unauthorized_exception(&self) -> bool {
+        matches!(&self.kind, GetApiKeysErrorKind::UnauthorizedException(_))
     }
 }
 impl std::error::Error for GetApiKeysError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            GetApiKeysErrorKind::BadRequestError(_inner) => Some(_inner),
-            GetApiKeysErrorKind::TooManyRequestsError(_inner) => Some(_inner),
-            GetApiKeysErrorKind::UnauthorizedError(_inner) => Some(_inner),
+            GetApiKeysErrorKind::BadRequestException(_inner) => Some(_inner),
+            GetApiKeysErrorKind::TooManyRequestsException(_inner) => Some(_inner),
+            GetApiKeysErrorKind::UnauthorizedException(_inner) => Some(_inner),
             GetApiKeysErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -4421,18 +4571,18 @@ pub struct GetAuthorizerError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetAuthorizerErrorKind {
-    NotFoundError(crate::error::NotFoundError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
-    UnauthorizedError(crate::error::UnauthorizedError),
+    NotFoundException(crate::error::NotFoundException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
+    UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetAuthorizerError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            GetAuthorizerErrorKind::NotFoundError(_inner) => _inner.fmt(f),
-            GetAuthorizerErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
-            GetAuthorizerErrorKind::UnauthorizedError(_inner) => _inner.fmt(f),
+            GetAuthorizerErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            GetAuthorizerErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
+            GetAuthorizerErrorKind::UnauthorizedException(_inner) => _inner.fmt(f),
             GetAuthorizerErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -4481,22 +4631,25 @@ impl GetAuthorizerError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_not_found_error(&self) -> bool {
-        matches!(&self.kind, GetAuthorizerErrorKind::NotFoundError(_))
+    pub fn is_not_found_exception(&self) -> bool {
+        matches!(&self.kind, GetAuthorizerErrorKind::NotFoundException(_))
     }
-    pub fn is_too_many_requests_error(&self) -> bool {
-        matches!(&self.kind, GetAuthorizerErrorKind::TooManyRequestsError(_))
+    pub fn is_too_many_requests_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetAuthorizerErrorKind::TooManyRequestsException(_)
+        )
     }
-    pub fn is_unauthorized_error(&self) -> bool {
-        matches!(&self.kind, GetAuthorizerErrorKind::UnauthorizedError(_))
+    pub fn is_unauthorized_exception(&self) -> bool {
+        matches!(&self.kind, GetAuthorizerErrorKind::UnauthorizedException(_))
     }
 }
 impl std::error::Error for GetAuthorizerError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            GetAuthorizerErrorKind::NotFoundError(_inner) => Some(_inner),
-            GetAuthorizerErrorKind::TooManyRequestsError(_inner) => Some(_inner),
-            GetAuthorizerErrorKind::UnauthorizedError(_inner) => Some(_inner),
+            GetAuthorizerErrorKind::NotFoundException(_inner) => Some(_inner),
+            GetAuthorizerErrorKind::TooManyRequestsException(_inner) => Some(_inner),
+            GetAuthorizerErrorKind::UnauthorizedException(_inner) => Some(_inner),
             GetAuthorizerErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -4511,20 +4664,20 @@ pub struct GetAuthorizersError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetAuthorizersErrorKind {
-    BadRequestError(crate::error::BadRequestError),
-    NotFoundError(crate::error::NotFoundError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
-    UnauthorizedError(crate::error::UnauthorizedError),
+    BadRequestException(crate::error::BadRequestException),
+    NotFoundException(crate::error::NotFoundException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
+    UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetAuthorizersError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            GetAuthorizersErrorKind::BadRequestError(_inner) => _inner.fmt(f),
-            GetAuthorizersErrorKind::NotFoundError(_inner) => _inner.fmt(f),
-            GetAuthorizersErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
-            GetAuthorizersErrorKind::UnauthorizedError(_inner) => _inner.fmt(f),
+            GetAuthorizersErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            GetAuthorizersErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            GetAuthorizersErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
+            GetAuthorizersErrorKind::UnauthorizedException(_inner) => _inner.fmt(f),
             GetAuthorizersErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -4573,26 +4726,32 @@ impl GetAuthorizersError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_bad_request_error(&self) -> bool {
-        matches!(&self.kind, GetAuthorizersErrorKind::BadRequestError(_))
+    pub fn is_bad_request_exception(&self) -> bool {
+        matches!(&self.kind, GetAuthorizersErrorKind::BadRequestException(_))
     }
-    pub fn is_not_found_error(&self) -> bool {
-        matches!(&self.kind, GetAuthorizersErrorKind::NotFoundError(_))
+    pub fn is_not_found_exception(&self) -> bool {
+        matches!(&self.kind, GetAuthorizersErrorKind::NotFoundException(_))
     }
-    pub fn is_too_many_requests_error(&self) -> bool {
-        matches!(&self.kind, GetAuthorizersErrorKind::TooManyRequestsError(_))
+    pub fn is_too_many_requests_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetAuthorizersErrorKind::TooManyRequestsException(_)
+        )
     }
-    pub fn is_unauthorized_error(&self) -> bool {
-        matches!(&self.kind, GetAuthorizersErrorKind::UnauthorizedError(_))
+    pub fn is_unauthorized_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetAuthorizersErrorKind::UnauthorizedException(_)
+        )
     }
 }
 impl std::error::Error for GetAuthorizersError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            GetAuthorizersErrorKind::BadRequestError(_inner) => Some(_inner),
-            GetAuthorizersErrorKind::NotFoundError(_inner) => Some(_inner),
-            GetAuthorizersErrorKind::TooManyRequestsError(_inner) => Some(_inner),
-            GetAuthorizersErrorKind::UnauthorizedError(_inner) => Some(_inner),
+            GetAuthorizersErrorKind::BadRequestException(_inner) => Some(_inner),
+            GetAuthorizersErrorKind::NotFoundException(_inner) => Some(_inner),
+            GetAuthorizersErrorKind::TooManyRequestsException(_inner) => Some(_inner),
+            GetAuthorizersErrorKind::UnauthorizedException(_inner) => Some(_inner),
             GetAuthorizersErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -4607,18 +4766,18 @@ pub struct GetBasePathMappingError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetBasePathMappingErrorKind {
-    NotFoundError(crate::error::NotFoundError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
-    UnauthorizedError(crate::error::UnauthorizedError),
+    NotFoundException(crate::error::NotFoundException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
+    UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetBasePathMappingError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            GetBasePathMappingErrorKind::NotFoundError(_inner) => _inner.fmt(f),
-            GetBasePathMappingErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
-            GetBasePathMappingErrorKind::UnauthorizedError(_inner) => _inner.fmt(f),
+            GetBasePathMappingErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            GetBasePathMappingErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
+            GetBasePathMappingErrorKind::UnauthorizedException(_inner) => _inner.fmt(f),
             GetBasePathMappingErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -4667,28 +4826,31 @@ impl GetBasePathMappingError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_not_found_error(&self) -> bool {
-        matches!(&self.kind, GetBasePathMappingErrorKind::NotFoundError(_))
-    }
-    pub fn is_too_many_requests_error(&self) -> bool {
+    pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
-            GetBasePathMappingErrorKind::TooManyRequestsError(_)
+            GetBasePathMappingErrorKind::NotFoundException(_)
         )
     }
-    pub fn is_unauthorized_error(&self) -> bool {
+    pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
-            GetBasePathMappingErrorKind::UnauthorizedError(_)
+            GetBasePathMappingErrorKind::TooManyRequestsException(_)
+        )
+    }
+    pub fn is_unauthorized_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetBasePathMappingErrorKind::UnauthorizedException(_)
         )
     }
 }
 impl std::error::Error for GetBasePathMappingError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            GetBasePathMappingErrorKind::NotFoundError(_inner) => Some(_inner),
-            GetBasePathMappingErrorKind::TooManyRequestsError(_inner) => Some(_inner),
-            GetBasePathMappingErrorKind::UnauthorizedError(_inner) => Some(_inner),
+            GetBasePathMappingErrorKind::NotFoundException(_inner) => Some(_inner),
+            GetBasePathMappingErrorKind::TooManyRequestsException(_inner) => Some(_inner),
+            GetBasePathMappingErrorKind::UnauthorizedException(_inner) => Some(_inner),
             GetBasePathMappingErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -4703,18 +4865,18 @@ pub struct GetBasePathMappingsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetBasePathMappingsErrorKind {
-    NotFoundError(crate::error::NotFoundError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
-    UnauthorizedError(crate::error::UnauthorizedError),
+    NotFoundException(crate::error::NotFoundException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
+    UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetBasePathMappingsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            GetBasePathMappingsErrorKind::NotFoundError(_inner) => _inner.fmt(f),
-            GetBasePathMappingsErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
-            GetBasePathMappingsErrorKind::UnauthorizedError(_inner) => _inner.fmt(f),
+            GetBasePathMappingsErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            GetBasePathMappingsErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
+            GetBasePathMappingsErrorKind::UnauthorizedException(_inner) => _inner.fmt(f),
             GetBasePathMappingsErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -4763,28 +4925,31 @@ impl GetBasePathMappingsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_not_found_error(&self) -> bool {
-        matches!(&self.kind, GetBasePathMappingsErrorKind::NotFoundError(_))
-    }
-    pub fn is_too_many_requests_error(&self) -> bool {
+    pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
-            GetBasePathMappingsErrorKind::TooManyRequestsError(_)
+            GetBasePathMappingsErrorKind::NotFoundException(_)
         )
     }
-    pub fn is_unauthorized_error(&self) -> bool {
+    pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
-            GetBasePathMappingsErrorKind::UnauthorizedError(_)
+            GetBasePathMappingsErrorKind::TooManyRequestsException(_)
+        )
+    }
+    pub fn is_unauthorized_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetBasePathMappingsErrorKind::UnauthorizedException(_)
         )
     }
 }
 impl std::error::Error for GetBasePathMappingsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            GetBasePathMappingsErrorKind::NotFoundError(_inner) => Some(_inner),
-            GetBasePathMappingsErrorKind::TooManyRequestsError(_inner) => Some(_inner),
-            GetBasePathMappingsErrorKind::UnauthorizedError(_inner) => Some(_inner),
+            GetBasePathMappingsErrorKind::NotFoundException(_inner) => Some(_inner),
+            GetBasePathMappingsErrorKind::TooManyRequestsException(_inner) => Some(_inner),
+            GetBasePathMappingsErrorKind::UnauthorizedException(_inner) => Some(_inner),
             GetBasePathMappingsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -4799,18 +4964,18 @@ pub struct GetClientCertificateError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetClientCertificateErrorKind {
-    NotFoundError(crate::error::NotFoundError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
-    UnauthorizedError(crate::error::UnauthorizedError),
+    NotFoundException(crate::error::NotFoundException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
+    UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetClientCertificateError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            GetClientCertificateErrorKind::NotFoundError(_inner) => _inner.fmt(f),
-            GetClientCertificateErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
-            GetClientCertificateErrorKind::UnauthorizedError(_inner) => _inner.fmt(f),
+            GetClientCertificateErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            GetClientCertificateErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
+            GetClientCertificateErrorKind::UnauthorizedException(_inner) => _inner.fmt(f),
             GetClientCertificateErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -4859,28 +5024,31 @@ impl GetClientCertificateError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_not_found_error(&self) -> bool {
-        matches!(&self.kind, GetClientCertificateErrorKind::NotFoundError(_))
-    }
-    pub fn is_too_many_requests_error(&self) -> bool {
+    pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
-            GetClientCertificateErrorKind::TooManyRequestsError(_)
+            GetClientCertificateErrorKind::NotFoundException(_)
         )
     }
-    pub fn is_unauthorized_error(&self) -> bool {
+    pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
-            GetClientCertificateErrorKind::UnauthorizedError(_)
+            GetClientCertificateErrorKind::TooManyRequestsException(_)
+        )
+    }
+    pub fn is_unauthorized_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetClientCertificateErrorKind::UnauthorizedException(_)
         )
     }
 }
 impl std::error::Error for GetClientCertificateError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            GetClientCertificateErrorKind::NotFoundError(_inner) => Some(_inner),
-            GetClientCertificateErrorKind::TooManyRequestsError(_inner) => Some(_inner),
-            GetClientCertificateErrorKind::UnauthorizedError(_inner) => Some(_inner),
+            GetClientCertificateErrorKind::NotFoundException(_inner) => Some(_inner),
+            GetClientCertificateErrorKind::TooManyRequestsException(_inner) => Some(_inner),
+            GetClientCertificateErrorKind::UnauthorizedException(_inner) => Some(_inner),
             GetClientCertificateErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -4895,18 +5063,18 @@ pub struct GetClientCertificatesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetClientCertificatesErrorKind {
-    BadRequestError(crate::error::BadRequestError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
-    UnauthorizedError(crate::error::UnauthorizedError),
+    BadRequestException(crate::error::BadRequestException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
+    UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetClientCertificatesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            GetClientCertificatesErrorKind::BadRequestError(_inner) => _inner.fmt(f),
-            GetClientCertificatesErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
-            GetClientCertificatesErrorKind::UnauthorizedError(_inner) => _inner.fmt(f),
+            GetClientCertificatesErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            GetClientCertificatesErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
+            GetClientCertificatesErrorKind::UnauthorizedException(_inner) => _inner.fmt(f),
             GetClientCertificatesErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -4955,31 +5123,31 @@ impl GetClientCertificatesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_bad_request_error(&self) -> bool {
+    pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
-            GetClientCertificatesErrorKind::BadRequestError(_)
+            GetClientCertificatesErrorKind::BadRequestException(_)
         )
     }
-    pub fn is_too_many_requests_error(&self) -> bool {
+    pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
-            GetClientCertificatesErrorKind::TooManyRequestsError(_)
+            GetClientCertificatesErrorKind::TooManyRequestsException(_)
         )
     }
-    pub fn is_unauthorized_error(&self) -> bool {
+    pub fn is_unauthorized_exception(&self) -> bool {
         matches!(
             &self.kind,
-            GetClientCertificatesErrorKind::UnauthorizedError(_)
+            GetClientCertificatesErrorKind::UnauthorizedException(_)
         )
     }
 }
 impl std::error::Error for GetClientCertificatesError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            GetClientCertificatesErrorKind::BadRequestError(_inner) => Some(_inner),
-            GetClientCertificatesErrorKind::TooManyRequestsError(_inner) => Some(_inner),
-            GetClientCertificatesErrorKind::UnauthorizedError(_inner) => Some(_inner),
+            GetClientCertificatesErrorKind::BadRequestException(_inner) => Some(_inner),
+            GetClientCertificatesErrorKind::TooManyRequestsException(_inner) => Some(_inner),
+            GetClientCertificatesErrorKind::UnauthorizedException(_inner) => Some(_inner),
             GetClientCertificatesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -4994,20 +5162,20 @@ pub struct GetDeploymentError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetDeploymentErrorKind {
-    NotFoundError(crate::error::NotFoundError),
-    ServiceUnavailableError(crate::error::ServiceUnavailableError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
-    UnauthorizedError(crate::error::UnauthorizedError),
+    NotFoundException(crate::error::NotFoundException),
+    ServiceUnavailableException(crate::error::ServiceUnavailableException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
+    UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetDeploymentError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            GetDeploymentErrorKind::NotFoundError(_inner) => _inner.fmt(f),
-            GetDeploymentErrorKind::ServiceUnavailableError(_inner) => _inner.fmt(f),
-            GetDeploymentErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
-            GetDeploymentErrorKind::UnauthorizedError(_inner) => _inner.fmt(f),
+            GetDeploymentErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            GetDeploymentErrorKind::ServiceUnavailableException(_inner) => _inner.fmt(f),
+            GetDeploymentErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
+            GetDeploymentErrorKind::UnauthorizedException(_inner) => _inner.fmt(f),
             GetDeploymentErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -5056,29 +5224,32 @@ impl GetDeploymentError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_not_found_error(&self) -> bool {
-        matches!(&self.kind, GetDeploymentErrorKind::NotFoundError(_))
+    pub fn is_not_found_exception(&self) -> bool {
+        matches!(&self.kind, GetDeploymentErrorKind::NotFoundException(_))
     }
-    pub fn is_service_unavailable_error(&self) -> bool {
+    pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
-            GetDeploymentErrorKind::ServiceUnavailableError(_)
+            GetDeploymentErrorKind::ServiceUnavailableException(_)
         )
     }
-    pub fn is_too_many_requests_error(&self) -> bool {
-        matches!(&self.kind, GetDeploymentErrorKind::TooManyRequestsError(_))
+    pub fn is_too_many_requests_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetDeploymentErrorKind::TooManyRequestsException(_)
+        )
     }
-    pub fn is_unauthorized_error(&self) -> bool {
-        matches!(&self.kind, GetDeploymentErrorKind::UnauthorizedError(_))
+    pub fn is_unauthorized_exception(&self) -> bool {
+        matches!(&self.kind, GetDeploymentErrorKind::UnauthorizedException(_))
     }
 }
 impl std::error::Error for GetDeploymentError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            GetDeploymentErrorKind::NotFoundError(_inner) => Some(_inner),
-            GetDeploymentErrorKind::ServiceUnavailableError(_inner) => Some(_inner),
-            GetDeploymentErrorKind::TooManyRequestsError(_inner) => Some(_inner),
-            GetDeploymentErrorKind::UnauthorizedError(_inner) => Some(_inner),
+            GetDeploymentErrorKind::NotFoundException(_inner) => Some(_inner),
+            GetDeploymentErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
+            GetDeploymentErrorKind::TooManyRequestsException(_inner) => Some(_inner),
+            GetDeploymentErrorKind::UnauthorizedException(_inner) => Some(_inner),
             GetDeploymentErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -5093,22 +5264,22 @@ pub struct GetDeploymentsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetDeploymentsErrorKind {
-    BadRequestError(crate::error::BadRequestError),
-    NotFoundError(crate::error::NotFoundError),
-    ServiceUnavailableError(crate::error::ServiceUnavailableError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
-    UnauthorizedError(crate::error::UnauthorizedError),
+    BadRequestException(crate::error::BadRequestException),
+    NotFoundException(crate::error::NotFoundException),
+    ServiceUnavailableException(crate::error::ServiceUnavailableException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
+    UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetDeploymentsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            GetDeploymentsErrorKind::BadRequestError(_inner) => _inner.fmt(f),
-            GetDeploymentsErrorKind::NotFoundError(_inner) => _inner.fmt(f),
-            GetDeploymentsErrorKind::ServiceUnavailableError(_inner) => _inner.fmt(f),
-            GetDeploymentsErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
-            GetDeploymentsErrorKind::UnauthorizedError(_inner) => _inner.fmt(f),
+            GetDeploymentsErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            GetDeploymentsErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            GetDeploymentsErrorKind::ServiceUnavailableException(_inner) => _inner.fmt(f),
+            GetDeploymentsErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
+            GetDeploymentsErrorKind::UnauthorizedException(_inner) => _inner.fmt(f),
             GetDeploymentsErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -5157,33 +5328,39 @@ impl GetDeploymentsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_bad_request_error(&self) -> bool {
-        matches!(&self.kind, GetDeploymentsErrorKind::BadRequestError(_))
+    pub fn is_bad_request_exception(&self) -> bool {
+        matches!(&self.kind, GetDeploymentsErrorKind::BadRequestException(_))
     }
-    pub fn is_not_found_error(&self) -> bool {
-        matches!(&self.kind, GetDeploymentsErrorKind::NotFoundError(_))
+    pub fn is_not_found_exception(&self) -> bool {
+        matches!(&self.kind, GetDeploymentsErrorKind::NotFoundException(_))
     }
-    pub fn is_service_unavailable_error(&self) -> bool {
+    pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
-            GetDeploymentsErrorKind::ServiceUnavailableError(_)
+            GetDeploymentsErrorKind::ServiceUnavailableException(_)
         )
     }
-    pub fn is_too_many_requests_error(&self) -> bool {
-        matches!(&self.kind, GetDeploymentsErrorKind::TooManyRequestsError(_))
+    pub fn is_too_many_requests_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetDeploymentsErrorKind::TooManyRequestsException(_)
+        )
     }
-    pub fn is_unauthorized_error(&self) -> bool {
-        matches!(&self.kind, GetDeploymentsErrorKind::UnauthorizedError(_))
+    pub fn is_unauthorized_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetDeploymentsErrorKind::UnauthorizedException(_)
+        )
     }
 }
 impl std::error::Error for GetDeploymentsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            GetDeploymentsErrorKind::BadRequestError(_inner) => Some(_inner),
-            GetDeploymentsErrorKind::NotFoundError(_inner) => Some(_inner),
-            GetDeploymentsErrorKind::ServiceUnavailableError(_inner) => Some(_inner),
-            GetDeploymentsErrorKind::TooManyRequestsError(_inner) => Some(_inner),
-            GetDeploymentsErrorKind::UnauthorizedError(_inner) => Some(_inner),
+            GetDeploymentsErrorKind::BadRequestException(_inner) => Some(_inner),
+            GetDeploymentsErrorKind::NotFoundException(_inner) => Some(_inner),
+            GetDeploymentsErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
+            GetDeploymentsErrorKind::TooManyRequestsException(_inner) => Some(_inner),
+            GetDeploymentsErrorKind::UnauthorizedException(_inner) => Some(_inner),
             GetDeploymentsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -5198,18 +5375,18 @@ pub struct GetDocumentationPartError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetDocumentationPartErrorKind {
-    NotFoundError(crate::error::NotFoundError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
-    UnauthorizedError(crate::error::UnauthorizedError),
+    NotFoundException(crate::error::NotFoundException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
+    UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetDocumentationPartError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            GetDocumentationPartErrorKind::NotFoundError(_inner) => _inner.fmt(f),
-            GetDocumentationPartErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
-            GetDocumentationPartErrorKind::UnauthorizedError(_inner) => _inner.fmt(f),
+            GetDocumentationPartErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            GetDocumentationPartErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
+            GetDocumentationPartErrorKind::UnauthorizedException(_inner) => _inner.fmt(f),
             GetDocumentationPartErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -5258,28 +5435,31 @@ impl GetDocumentationPartError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_not_found_error(&self) -> bool {
-        matches!(&self.kind, GetDocumentationPartErrorKind::NotFoundError(_))
-    }
-    pub fn is_too_many_requests_error(&self) -> bool {
+    pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
-            GetDocumentationPartErrorKind::TooManyRequestsError(_)
+            GetDocumentationPartErrorKind::NotFoundException(_)
         )
     }
-    pub fn is_unauthorized_error(&self) -> bool {
+    pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
-            GetDocumentationPartErrorKind::UnauthorizedError(_)
+            GetDocumentationPartErrorKind::TooManyRequestsException(_)
+        )
+    }
+    pub fn is_unauthorized_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetDocumentationPartErrorKind::UnauthorizedException(_)
         )
     }
 }
 impl std::error::Error for GetDocumentationPartError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            GetDocumentationPartErrorKind::NotFoundError(_inner) => Some(_inner),
-            GetDocumentationPartErrorKind::TooManyRequestsError(_inner) => Some(_inner),
-            GetDocumentationPartErrorKind::UnauthorizedError(_inner) => Some(_inner),
+            GetDocumentationPartErrorKind::NotFoundException(_inner) => Some(_inner),
+            GetDocumentationPartErrorKind::TooManyRequestsException(_inner) => Some(_inner),
+            GetDocumentationPartErrorKind::UnauthorizedException(_inner) => Some(_inner),
             GetDocumentationPartErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -5294,20 +5474,20 @@ pub struct GetDocumentationPartsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetDocumentationPartsErrorKind {
-    BadRequestError(crate::error::BadRequestError),
-    NotFoundError(crate::error::NotFoundError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
-    UnauthorizedError(crate::error::UnauthorizedError),
+    BadRequestException(crate::error::BadRequestException),
+    NotFoundException(crate::error::NotFoundException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
+    UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetDocumentationPartsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            GetDocumentationPartsErrorKind::BadRequestError(_inner) => _inner.fmt(f),
-            GetDocumentationPartsErrorKind::NotFoundError(_inner) => _inner.fmt(f),
-            GetDocumentationPartsErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
-            GetDocumentationPartsErrorKind::UnauthorizedError(_inner) => _inner.fmt(f),
+            GetDocumentationPartsErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            GetDocumentationPartsErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            GetDocumentationPartsErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
+            GetDocumentationPartsErrorKind::UnauthorizedException(_inner) => _inner.fmt(f),
             GetDocumentationPartsErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -5356,35 +5536,38 @@ impl GetDocumentationPartsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_bad_request_error(&self) -> bool {
+    pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
-            GetDocumentationPartsErrorKind::BadRequestError(_)
+            GetDocumentationPartsErrorKind::BadRequestException(_)
         )
     }
-    pub fn is_not_found_error(&self) -> bool {
-        matches!(&self.kind, GetDocumentationPartsErrorKind::NotFoundError(_))
-    }
-    pub fn is_too_many_requests_error(&self) -> bool {
+    pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
-            GetDocumentationPartsErrorKind::TooManyRequestsError(_)
+            GetDocumentationPartsErrorKind::NotFoundException(_)
         )
     }
-    pub fn is_unauthorized_error(&self) -> bool {
+    pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
-            GetDocumentationPartsErrorKind::UnauthorizedError(_)
+            GetDocumentationPartsErrorKind::TooManyRequestsException(_)
+        )
+    }
+    pub fn is_unauthorized_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetDocumentationPartsErrorKind::UnauthorizedException(_)
         )
     }
 }
 impl std::error::Error for GetDocumentationPartsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            GetDocumentationPartsErrorKind::BadRequestError(_inner) => Some(_inner),
-            GetDocumentationPartsErrorKind::NotFoundError(_inner) => Some(_inner),
-            GetDocumentationPartsErrorKind::TooManyRequestsError(_inner) => Some(_inner),
-            GetDocumentationPartsErrorKind::UnauthorizedError(_inner) => Some(_inner),
+            GetDocumentationPartsErrorKind::BadRequestException(_inner) => Some(_inner),
+            GetDocumentationPartsErrorKind::NotFoundException(_inner) => Some(_inner),
+            GetDocumentationPartsErrorKind::TooManyRequestsException(_inner) => Some(_inner),
+            GetDocumentationPartsErrorKind::UnauthorizedException(_inner) => Some(_inner),
             GetDocumentationPartsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -5399,18 +5582,18 @@ pub struct GetDocumentationVersionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetDocumentationVersionErrorKind {
-    NotFoundError(crate::error::NotFoundError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
-    UnauthorizedError(crate::error::UnauthorizedError),
+    NotFoundException(crate::error::NotFoundException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
+    UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetDocumentationVersionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            GetDocumentationVersionErrorKind::NotFoundError(_inner) => _inner.fmt(f),
-            GetDocumentationVersionErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
-            GetDocumentationVersionErrorKind::UnauthorizedError(_inner) => _inner.fmt(f),
+            GetDocumentationVersionErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            GetDocumentationVersionErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
+            GetDocumentationVersionErrorKind::UnauthorizedException(_inner) => _inner.fmt(f),
             GetDocumentationVersionErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -5459,31 +5642,31 @@ impl GetDocumentationVersionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_not_found_error(&self) -> bool {
+    pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
-            GetDocumentationVersionErrorKind::NotFoundError(_)
+            GetDocumentationVersionErrorKind::NotFoundException(_)
         )
     }
-    pub fn is_too_many_requests_error(&self) -> bool {
+    pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
-            GetDocumentationVersionErrorKind::TooManyRequestsError(_)
+            GetDocumentationVersionErrorKind::TooManyRequestsException(_)
         )
     }
-    pub fn is_unauthorized_error(&self) -> bool {
+    pub fn is_unauthorized_exception(&self) -> bool {
         matches!(
             &self.kind,
-            GetDocumentationVersionErrorKind::UnauthorizedError(_)
+            GetDocumentationVersionErrorKind::UnauthorizedException(_)
         )
     }
 }
 impl std::error::Error for GetDocumentationVersionError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            GetDocumentationVersionErrorKind::NotFoundError(_inner) => Some(_inner),
-            GetDocumentationVersionErrorKind::TooManyRequestsError(_inner) => Some(_inner),
-            GetDocumentationVersionErrorKind::UnauthorizedError(_inner) => Some(_inner),
+            GetDocumentationVersionErrorKind::NotFoundException(_inner) => Some(_inner),
+            GetDocumentationVersionErrorKind::TooManyRequestsException(_inner) => Some(_inner),
+            GetDocumentationVersionErrorKind::UnauthorizedException(_inner) => Some(_inner),
             GetDocumentationVersionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -5498,20 +5681,20 @@ pub struct GetDocumentationVersionsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetDocumentationVersionsErrorKind {
-    BadRequestError(crate::error::BadRequestError),
-    NotFoundError(crate::error::NotFoundError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
-    UnauthorizedError(crate::error::UnauthorizedError),
+    BadRequestException(crate::error::BadRequestException),
+    NotFoundException(crate::error::NotFoundException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
+    UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetDocumentationVersionsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            GetDocumentationVersionsErrorKind::BadRequestError(_inner) => _inner.fmt(f),
-            GetDocumentationVersionsErrorKind::NotFoundError(_inner) => _inner.fmt(f),
-            GetDocumentationVersionsErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
-            GetDocumentationVersionsErrorKind::UnauthorizedError(_inner) => _inner.fmt(f),
+            GetDocumentationVersionsErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            GetDocumentationVersionsErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            GetDocumentationVersionsErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
+            GetDocumentationVersionsErrorKind::UnauthorizedException(_inner) => _inner.fmt(f),
             GetDocumentationVersionsErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -5560,38 +5743,38 @@ impl GetDocumentationVersionsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_bad_request_error(&self) -> bool {
+    pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
-            GetDocumentationVersionsErrorKind::BadRequestError(_)
+            GetDocumentationVersionsErrorKind::BadRequestException(_)
         )
     }
-    pub fn is_not_found_error(&self) -> bool {
+    pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
-            GetDocumentationVersionsErrorKind::NotFoundError(_)
+            GetDocumentationVersionsErrorKind::NotFoundException(_)
         )
     }
-    pub fn is_too_many_requests_error(&self) -> bool {
+    pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
-            GetDocumentationVersionsErrorKind::TooManyRequestsError(_)
+            GetDocumentationVersionsErrorKind::TooManyRequestsException(_)
         )
     }
-    pub fn is_unauthorized_error(&self) -> bool {
+    pub fn is_unauthorized_exception(&self) -> bool {
         matches!(
             &self.kind,
-            GetDocumentationVersionsErrorKind::UnauthorizedError(_)
+            GetDocumentationVersionsErrorKind::UnauthorizedException(_)
         )
     }
 }
 impl std::error::Error for GetDocumentationVersionsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            GetDocumentationVersionsErrorKind::BadRequestError(_inner) => Some(_inner),
-            GetDocumentationVersionsErrorKind::NotFoundError(_inner) => Some(_inner),
-            GetDocumentationVersionsErrorKind::TooManyRequestsError(_inner) => Some(_inner),
-            GetDocumentationVersionsErrorKind::UnauthorizedError(_inner) => Some(_inner),
+            GetDocumentationVersionsErrorKind::BadRequestException(_inner) => Some(_inner),
+            GetDocumentationVersionsErrorKind::NotFoundException(_inner) => Some(_inner),
+            GetDocumentationVersionsErrorKind::TooManyRequestsException(_inner) => Some(_inner),
+            GetDocumentationVersionsErrorKind::UnauthorizedException(_inner) => Some(_inner),
             GetDocumentationVersionsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -5606,20 +5789,20 @@ pub struct GetDomainNameError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetDomainNameErrorKind {
-    NotFoundError(crate::error::NotFoundError),
-    ServiceUnavailableError(crate::error::ServiceUnavailableError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
-    UnauthorizedError(crate::error::UnauthorizedError),
+    NotFoundException(crate::error::NotFoundException),
+    ServiceUnavailableException(crate::error::ServiceUnavailableException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
+    UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetDomainNameError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            GetDomainNameErrorKind::NotFoundError(_inner) => _inner.fmt(f),
-            GetDomainNameErrorKind::ServiceUnavailableError(_inner) => _inner.fmt(f),
-            GetDomainNameErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
-            GetDomainNameErrorKind::UnauthorizedError(_inner) => _inner.fmt(f),
+            GetDomainNameErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            GetDomainNameErrorKind::ServiceUnavailableException(_inner) => _inner.fmt(f),
+            GetDomainNameErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
+            GetDomainNameErrorKind::UnauthorizedException(_inner) => _inner.fmt(f),
             GetDomainNameErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -5668,29 +5851,32 @@ impl GetDomainNameError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_not_found_error(&self) -> bool {
-        matches!(&self.kind, GetDomainNameErrorKind::NotFoundError(_))
+    pub fn is_not_found_exception(&self) -> bool {
+        matches!(&self.kind, GetDomainNameErrorKind::NotFoundException(_))
     }
-    pub fn is_service_unavailable_error(&self) -> bool {
+    pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
-            GetDomainNameErrorKind::ServiceUnavailableError(_)
+            GetDomainNameErrorKind::ServiceUnavailableException(_)
         )
     }
-    pub fn is_too_many_requests_error(&self) -> bool {
-        matches!(&self.kind, GetDomainNameErrorKind::TooManyRequestsError(_))
+    pub fn is_too_many_requests_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetDomainNameErrorKind::TooManyRequestsException(_)
+        )
     }
-    pub fn is_unauthorized_error(&self) -> bool {
-        matches!(&self.kind, GetDomainNameErrorKind::UnauthorizedError(_))
+    pub fn is_unauthorized_exception(&self) -> bool {
+        matches!(&self.kind, GetDomainNameErrorKind::UnauthorizedException(_))
     }
 }
 impl std::error::Error for GetDomainNameError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            GetDomainNameErrorKind::NotFoundError(_inner) => Some(_inner),
-            GetDomainNameErrorKind::ServiceUnavailableError(_inner) => Some(_inner),
-            GetDomainNameErrorKind::TooManyRequestsError(_inner) => Some(_inner),
-            GetDomainNameErrorKind::UnauthorizedError(_inner) => Some(_inner),
+            GetDomainNameErrorKind::NotFoundException(_inner) => Some(_inner),
+            GetDomainNameErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
+            GetDomainNameErrorKind::TooManyRequestsException(_inner) => Some(_inner),
+            GetDomainNameErrorKind::UnauthorizedException(_inner) => Some(_inner),
             GetDomainNameErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -5705,18 +5891,18 @@ pub struct GetDomainNamesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetDomainNamesErrorKind {
-    BadRequestError(crate::error::BadRequestError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
-    UnauthorizedError(crate::error::UnauthorizedError),
+    BadRequestException(crate::error::BadRequestException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
+    UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetDomainNamesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            GetDomainNamesErrorKind::BadRequestError(_inner) => _inner.fmt(f),
-            GetDomainNamesErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
-            GetDomainNamesErrorKind::UnauthorizedError(_inner) => _inner.fmt(f),
+            GetDomainNamesErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            GetDomainNamesErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
+            GetDomainNamesErrorKind::UnauthorizedException(_inner) => _inner.fmt(f),
             GetDomainNamesErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -5765,22 +5951,28 @@ impl GetDomainNamesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_bad_request_error(&self) -> bool {
-        matches!(&self.kind, GetDomainNamesErrorKind::BadRequestError(_))
+    pub fn is_bad_request_exception(&self) -> bool {
+        matches!(&self.kind, GetDomainNamesErrorKind::BadRequestException(_))
     }
-    pub fn is_too_many_requests_error(&self) -> bool {
-        matches!(&self.kind, GetDomainNamesErrorKind::TooManyRequestsError(_))
+    pub fn is_too_many_requests_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetDomainNamesErrorKind::TooManyRequestsException(_)
+        )
     }
-    pub fn is_unauthorized_error(&self) -> bool {
-        matches!(&self.kind, GetDomainNamesErrorKind::UnauthorizedError(_))
+    pub fn is_unauthorized_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetDomainNamesErrorKind::UnauthorizedException(_)
+        )
     }
 }
 impl std::error::Error for GetDomainNamesError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            GetDomainNamesErrorKind::BadRequestError(_inner) => Some(_inner),
-            GetDomainNamesErrorKind::TooManyRequestsError(_inner) => Some(_inner),
-            GetDomainNamesErrorKind::UnauthorizedError(_inner) => Some(_inner),
+            GetDomainNamesErrorKind::BadRequestException(_inner) => Some(_inner),
+            GetDomainNamesErrorKind::TooManyRequestsException(_inner) => Some(_inner),
+            GetDomainNamesErrorKind::UnauthorizedException(_inner) => Some(_inner),
             GetDomainNamesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -5795,22 +5987,22 @@ pub struct GetExportError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetExportErrorKind {
-    BadRequestError(crate::error::BadRequestError),
-    ConflictError(crate::error::ConflictError),
-    NotFoundError(crate::error::NotFoundError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
-    UnauthorizedError(crate::error::UnauthorizedError),
+    BadRequestException(crate::error::BadRequestException),
+    ConflictException(crate::error::ConflictException),
+    NotFoundException(crate::error::NotFoundException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
+    UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetExportError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            GetExportErrorKind::BadRequestError(_inner) => _inner.fmt(f),
-            GetExportErrorKind::ConflictError(_inner) => _inner.fmt(f),
-            GetExportErrorKind::NotFoundError(_inner) => _inner.fmt(f),
-            GetExportErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
-            GetExportErrorKind::UnauthorizedError(_inner) => _inner.fmt(f),
+            GetExportErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            GetExportErrorKind::ConflictException(_inner) => _inner.fmt(f),
+            GetExportErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            GetExportErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
+            GetExportErrorKind::UnauthorizedException(_inner) => _inner.fmt(f),
             GetExportErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -5859,30 +6051,30 @@ impl GetExportError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_bad_request_error(&self) -> bool {
-        matches!(&self.kind, GetExportErrorKind::BadRequestError(_))
+    pub fn is_bad_request_exception(&self) -> bool {
+        matches!(&self.kind, GetExportErrorKind::BadRequestException(_))
     }
-    pub fn is_conflict_error(&self) -> bool {
-        matches!(&self.kind, GetExportErrorKind::ConflictError(_))
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(&self.kind, GetExportErrorKind::ConflictException(_))
     }
-    pub fn is_not_found_error(&self) -> bool {
-        matches!(&self.kind, GetExportErrorKind::NotFoundError(_))
+    pub fn is_not_found_exception(&self) -> bool {
+        matches!(&self.kind, GetExportErrorKind::NotFoundException(_))
     }
-    pub fn is_too_many_requests_error(&self) -> bool {
-        matches!(&self.kind, GetExportErrorKind::TooManyRequestsError(_))
+    pub fn is_too_many_requests_exception(&self) -> bool {
+        matches!(&self.kind, GetExportErrorKind::TooManyRequestsException(_))
     }
-    pub fn is_unauthorized_error(&self) -> bool {
-        matches!(&self.kind, GetExportErrorKind::UnauthorizedError(_))
+    pub fn is_unauthorized_exception(&self) -> bool {
+        matches!(&self.kind, GetExportErrorKind::UnauthorizedException(_))
     }
 }
 impl std::error::Error for GetExportError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            GetExportErrorKind::BadRequestError(_inner) => Some(_inner),
-            GetExportErrorKind::ConflictError(_inner) => Some(_inner),
-            GetExportErrorKind::NotFoundError(_inner) => Some(_inner),
-            GetExportErrorKind::TooManyRequestsError(_inner) => Some(_inner),
-            GetExportErrorKind::UnauthorizedError(_inner) => Some(_inner),
+            GetExportErrorKind::BadRequestException(_inner) => Some(_inner),
+            GetExportErrorKind::ConflictException(_inner) => Some(_inner),
+            GetExportErrorKind::NotFoundException(_inner) => Some(_inner),
+            GetExportErrorKind::TooManyRequestsException(_inner) => Some(_inner),
+            GetExportErrorKind::UnauthorizedException(_inner) => Some(_inner),
             GetExportErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -5897,18 +6089,18 @@ pub struct GetGatewayResponseError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetGatewayResponseErrorKind {
-    NotFoundError(crate::error::NotFoundError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
-    UnauthorizedError(crate::error::UnauthorizedError),
+    NotFoundException(crate::error::NotFoundException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
+    UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetGatewayResponseError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            GetGatewayResponseErrorKind::NotFoundError(_inner) => _inner.fmt(f),
-            GetGatewayResponseErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
-            GetGatewayResponseErrorKind::UnauthorizedError(_inner) => _inner.fmt(f),
+            GetGatewayResponseErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            GetGatewayResponseErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
+            GetGatewayResponseErrorKind::UnauthorizedException(_inner) => _inner.fmt(f),
             GetGatewayResponseErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -5957,28 +6149,31 @@ impl GetGatewayResponseError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_not_found_error(&self) -> bool {
-        matches!(&self.kind, GetGatewayResponseErrorKind::NotFoundError(_))
-    }
-    pub fn is_too_many_requests_error(&self) -> bool {
+    pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
-            GetGatewayResponseErrorKind::TooManyRequestsError(_)
+            GetGatewayResponseErrorKind::NotFoundException(_)
         )
     }
-    pub fn is_unauthorized_error(&self) -> bool {
+    pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
-            GetGatewayResponseErrorKind::UnauthorizedError(_)
+            GetGatewayResponseErrorKind::TooManyRequestsException(_)
+        )
+    }
+    pub fn is_unauthorized_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetGatewayResponseErrorKind::UnauthorizedException(_)
         )
     }
 }
 impl std::error::Error for GetGatewayResponseError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            GetGatewayResponseErrorKind::NotFoundError(_inner) => Some(_inner),
-            GetGatewayResponseErrorKind::TooManyRequestsError(_inner) => Some(_inner),
-            GetGatewayResponseErrorKind::UnauthorizedError(_inner) => Some(_inner),
+            GetGatewayResponseErrorKind::NotFoundException(_inner) => Some(_inner),
+            GetGatewayResponseErrorKind::TooManyRequestsException(_inner) => Some(_inner),
+            GetGatewayResponseErrorKind::UnauthorizedException(_inner) => Some(_inner),
             GetGatewayResponseErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -5993,20 +6188,20 @@ pub struct GetGatewayResponsesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetGatewayResponsesErrorKind {
-    BadRequestError(crate::error::BadRequestError),
-    NotFoundError(crate::error::NotFoundError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
-    UnauthorizedError(crate::error::UnauthorizedError),
+    BadRequestException(crate::error::BadRequestException),
+    NotFoundException(crate::error::NotFoundException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
+    UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetGatewayResponsesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            GetGatewayResponsesErrorKind::BadRequestError(_inner) => _inner.fmt(f),
-            GetGatewayResponsesErrorKind::NotFoundError(_inner) => _inner.fmt(f),
-            GetGatewayResponsesErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
-            GetGatewayResponsesErrorKind::UnauthorizedError(_inner) => _inner.fmt(f),
+            GetGatewayResponsesErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            GetGatewayResponsesErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            GetGatewayResponsesErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
+            GetGatewayResponsesErrorKind::UnauthorizedException(_inner) => _inner.fmt(f),
             GetGatewayResponsesErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -6055,32 +6250,38 @@ impl GetGatewayResponsesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_bad_request_error(&self) -> bool {
-        matches!(&self.kind, GetGatewayResponsesErrorKind::BadRequestError(_))
-    }
-    pub fn is_not_found_error(&self) -> bool {
-        matches!(&self.kind, GetGatewayResponsesErrorKind::NotFoundError(_))
-    }
-    pub fn is_too_many_requests_error(&self) -> bool {
+    pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
-            GetGatewayResponsesErrorKind::TooManyRequestsError(_)
+            GetGatewayResponsesErrorKind::BadRequestException(_)
         )
     }
-    pub fn is_unauthorized_error(&self) -> bool {
+    pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
-            GetGatewayResponsesErrorKind::UnauthorizedError(_)
+            GetGatewayResponsesErrorKind::NotFoundException(_)
+        )
+    }
+    pub fn is_too_many_requests_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetGatewayResponsesErrorKind::TooManyRequestsException(_)
+        )
+    }
+    pub fn is_unauthorized_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetGatewayResponsesErrorKind::UnauthorizedException(_)
         )
     }
 }
 impl std::error::Error for GetGatewayResponsesError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            GetGatewayResponsesErrorKind::BadRequestError(_inner) => Some(_inner),
-            GetGatewayResponsesErrorKind::NotFoundError(_inner) => Some(_inner),
-            GetGatewayResponsesErrorKind::TooManyRequestsError(_inner) => Some(_inner),
-            GetGatewayResponsesErrorKind::UnauthorizedError(_inner) => Some(_inner),
+            GetGatewayResponsesErrorKind::BadRequestException(_inner) => Some(_inner),
+            GetGatewayResponsesErrorKind::NotFoundException(_inner) => Some(_inner),
+            GetGatewayResponsesErrorKind::TooManyRequestsException(_inner) => Some(_inner),
+            GetGatewayResponsesErrorKind::UnauthorizedException(_inner) => Some(_inner),
             GetGatewayResponsesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -6095,18 +6296,18 @@ pub struct GetIntegrationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetIntegrationErrorKind {
-    NotFoundError(crate::error::NotFoundError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
-    UnauthorizedError(crate::error::UnauthorizedError),
+    NotFoundException(crate::error::NotFoundException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
+    UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetIntegrationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            GetIntegrationErrorKind::NotFoundError(_inner) => _inner.fmt(f),
-            GetIntegrationErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
-            GetIntegrationErrorKind::UnauthorizedError(_inner) => _inner.fmt(f),
+            GetIntegrationErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            GetIntegrationErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
+            GetIntegrationErrorKind::UnauthorizedException(_inner) => _inner.fmt(f),
             GetIntegrationErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -6155,22 +6356,28 @@ impl GetIntegrationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_not_found_error(&self) -> bool {
-        matches!(&self.kind, GetIntegrationErrorKind::NotFoundError(_))
+    pub fn is_not_found_exception(&self) -> bool {
+        matches!(&self.kind, GetIntegrationErrorKind::NotFoundException(_))
     }
-    pub fn is_too_many_requests_error(&self) -> bool {
-        matches!(&self.kind, GetIntegrationErrorKind::TooManyRequestsError(_))
+    pub fn is_too_many_requests_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetIntegrationErrorKind::TooManyRequestsException(_)
+        )
     }
-    pub fn is_unauthorized_error(&self) -> bool {
-        matches!(&self.kind, GetIntegrationErrorKind::UnauthorizedError(_))
+    pub fn is_unauthorized_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetIntegrationErrorKind::UnauthorizedException(_)
+        )
     }
 }
 impl std::error::Error for GetIntegrationError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            GetIntegrationErrorKind::NotFoundError(_inner) => Some(_inner),
-            GetIntegrationErrorKind::TooManyRequestsError(_inner) => Some(_inner),
-            GetIntegrationErrorKind::UnauthorizedError(_inner) => Some(_inner),
+            GetIntegrationErrorKind::NotFoundException(_inner) => Some(_inner),
+            GetIntegrationErrorKind::TooManyRequestsException(_inner) => Some(_inner),
+            GetIntegrationErrorKind::UnauthorizedException(_inner) => Some(_inner),
             GetIntegrationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -6185,18 +6392,18 @@ pub struct GetIntegrationResponseError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetIntegrationResponseErrorKind {
-    NotFoundError(crate::error::NotFoundError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
-    UnauthorizedError(crate::error::UnauthorizedError),
+    NotFoundException(crate::error::NotFoundException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
+    UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetIntegrationResponseError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            GetIntegrationResponseErrorKind::NotFoundError(_inner) => _inner.fmt(f),
-            GetIntegrationResponseErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
-            GetIntegrationResponseErrorKind::UnauthorizedError(_inner) => _inner.fmt(f),
+            GetIntegrationResponseErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            GetIntegrationResponseErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
+            GetIntegrationResponseErrorKind::UnauthorizedException(_inner) => _inner.fmt(f),
             GetIntegrationResponseErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -6245,31 +6452,31 @@ impl GetIntegrationResponseError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_not_found_error(&self) -> bool {
+    pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
-            GetIntegrationResponseErrorKind::NotFoundError(_)
+            GetIntegrationResponseErrorKind::NotFoundException(_)
         )
     }
-    pub fn is_too_many_requests_error(&self) -> bool {
+    pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
-            GetIntegrationResponseErrorKind::TooManyRequestsError(_)
+            GetIntegrationResponseErrorKind::TooManyRequestsException(_)
         )
     }
-    pub fn is_unauthorized_error(&self) -> bool {
+    pub fn is_unauthorized_exception(&self) -> bool {
         matches!(
             &self.kind,
-            GetIntegrationResponseErrorKind::UnauthorizedError(_)
+            GetIntegrationResponseErrorKind::UnauthorizedException(_)
         )
     }
 }
 impl std::error::Error for GetIntegrationResponseError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            GetIntegrationResponseErrorKind::NotFoundError(_inner) => Some(_inner),
-            GetIntegrationResponseErrorKind::TooManyRequestsError(_inner) => Some(_inner),
-            GetIntegrationResponseErrorKind::UnauthorizedError(_inner) => Some(_inner),
+            GetIntegrationResponseErrorKind::NotFoundException(_inner) => Some(_inner),
+            GetIntegrationResponseErrorKind::TooManyRequestsException(_inner) => Some(_inner),
+            GetIntegrationResponseErrorKind::UnauthorizedException(_inner) => Some(_inner),
             GetIntegrationResponseErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -6284,18 +6491,18 @@ pub struct GetMethodError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetMethodErrorKind {
-    NotFoundError(crate::error::NotFoundError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
-    UnauthorizedError(crate::error::UnauthorizedError),
+    NotFoundException(crate::error::NotFoundException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
+    UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetMethodError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            GetMethodErrorKind::NotFoundError(_inner) => _inner.fmt(f),
-            GetMethodErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
-            GetMethodErrorKind::UnauthorizedError(_inner) => _inner.fmt(f),
+            GetMethodErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            GetMethodErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
+            GetMethodErrorKind::UnauthorizedException(_inner) => _inner.fmt(f),
             GetMethodErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -6344,22 +6551,22 @@ impl GetMethodError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_not_found_error(&self) -> bool {
-        matches!(&self.kind, GetMethodErrorKind::NotFoundError(_))
+    pub fn is_not_found_exception(&self) -> bool {
+        matches!(&self.kind, GetMethodErrorKind::NotFoundException(_))
     }
-    pub fn is_too_many_requests_error(&self) -> bool {
-        matches!(&self.kind, GetMethodErrorKind::TooManyRequestsError(_))
+    pub fn is_too_many_requests_exception(&self) -> bool {
+        matches!(&self.kind, GetMethodErrorKind::TooManyRequestsException(_))
     }
-    pub fn is_unauthorized_error(&self) -> bool {
-        matches!(&self.kind, GetMethodErrorKind::UnauthorizedError(_))
+    pub fn is_unauthorized_exception(&self) -> bool {
+        matches!(&self.kind, GetMethodErrorKind::UnauthorizedException(_))
     }
 }
 impl std::error::Error for GetMethodError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            GetMethodErrorKind::NotFoundError(_inner) => Some(_inner),
-            GetMethodErrorKind::TooManyRequestsError(_inner) => Some(_inner),
-            GetMethodErrorKind::UnauthorizedError(_inner) => Some(_inner),
+            GetMethodErrorKind::NotFoundException(_inner) => Some(_inner),
+            GetMethodErrorKind::TooManyRequestsException(_inner) => Some(_inner),
+            GetMethodErrorKind::UnauthorizedException(_inner) => Some(_inner),
             GetMethodErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -6374,18 +6581,18 @@ pub struct GetMethodResponseError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetMethodResponseErrorKind {
-    NotFoundError(crate::error::NotFoundError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
-    UnauthorizedError(crate::error::UnauthorizedError),
+    NotFoundException(crate::error::NotFoundException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
+    UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetMethodResponseError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            GetMethodResponseErrorKind::NotFoundError(_inner) => _inner.fmt(f),
-            GetMethodResponseErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
-            GetMethodResponseErrorKind::UnauthorizedError(_inner) => _inner.fmt(f),
+            GetMethodResponseErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            GetMethodResponseErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
+            GetMethodResponseErrorKind::UnauthorizedException(_inner) => _inner.fmt(f),
             GetMethodResponseErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -6434,25 +6641,28 @@ impl GetMethodResponseError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_not_found_error(&self) -> bool {
-        matches!(&self.kind, GetMethodResponseErrorKind::NotFoundError(_))
+    pub fn is_not_found_exception(&self) -> bool {
+        matches!(&self.kind, GetMethodResponseErrorKind::NotFoundException(_))
     }
-    pub fn is_too_many_requests_error(&self) -> bool {
+    pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
-            GetMethodResponseErrorKind::TooManyRequestsError(_)
+            GetMethodResponseErrorKind::TooManyRequestsException(_)
         )
     }
-    pub fn is_unauthorized_error(&self) -> bool {
-        matches!(&self.kind, GetMethodResponseErrorKind::UnauthorizedError(_))
+    pub fn is_unauthorized_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetMethodResponseErrorKind::UnauthorizedException(_)
+        )
     }
 }
 impl std::error::Error for GetMethodResponseError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            GetMethodResponseErrorKind::NotFoundError(_inner) => Some(_inner),
-            GetMethodResponseErrorKind::TooManyRequestsError(_inner) => Some(_inner),
-            GetMethodResponseErrorKind::UnauthorizedError(_inner) => Some(_inner),
+            GetMethodResponseErrorKind::NotFoundException(_inner) => Some(_inner),
+            GetMethodResponseErrorKind::TooManyRequestsException(_inner) => Some(_inner),
+            GetMethodResponseErrorKind::UnauthorizedException(_inner) => Some(_inner),
             GetMethodResponseErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -6467,18 +6677,18 @@ pub struct GetModelError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetModelErrorKind {
-    NotFoundError(crate::error::NotFoundError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
-    UnauthorizedError(crate::error::UnauthorizedError),
+    NotFoundException(crate::error::NotFoundException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
+    UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetModelError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            GetModelErrorKind::NotFoundError(_inner) => _inner.fmt(f),
-            GetModelErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
-            GetModelErrorKind::UnauthorizedError(_inner) => _inner.fmt(f),
+            GetModelErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            GetModelErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
+            GetModelErrorKind::UnauthorizedException(_inner) => _inner.fmt(f),
             GetModelErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -6527,22 +6737,22 @@ impl GetModelError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_not_found_error(&self) -> bool {
-        matches!(&self.kind, GetModelErrorKind::NotFoundError(_))
+    pub fn is_not_found_exception(&self) -> bool {
+        matches!(&self.kind, GetModelErrorKind::NotFoundException(_))
     }
-    pub fn is_too_many_requests_error(&self) -> bool {
-        matches!(&self.kind, GetModelErrorKind::TooManyRequestsError(_))
+    pub fn is_too_many_requests_exception(&self) -> bool {
+        matches!(&self.kind, GetModelErrorKind::TooManyRequestsException(_))
     }
-    pub fn is_unauthorized_error(&self) -> bool {
-        matches!(&self.kind, GetModelErrorKind::UnauthorizedError(_))
+    pub fn is_unauthorized_exception(&self) -> bool {
+        matches!(&self.kind, GetModelErrorKind::UnauthorizedException(_))
     }
 }
 impl std::error::Error for GetModelError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            GetModelErrorKind::NotFoundError(_inner) => Some(_inner),
-            GetModelErrorKind::TooManyRequestsError(_inner) => Some(_inner),
-            GetModelErrorKind::UnauthorizedError(_inner) => Some(_inner),
+            GetModelErrorKind::NotFoundException(_inner) => Some(_inner),
+            GetModelErrorKind::TooManyRequestsException(_inner) => Some(_inner),
+            GetModelErrorKind::UnauthorizedException(_inner) => Some(_inner),
             GetModelErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -6557,20 +6767,20 @@ pub struct GetModelsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetModelsErrorKind {
-    BadRequestError(crate::error::BadRequestError),
-    NotFoundError(crate::error::NotFoundError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
-    UnauthorizedError(crate::error::UnauthorizedError),
+    BadRequestException(crate::error::BadRequestException),
+    NotFoundException(crate::error::NotFoundException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
+    UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetModelsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            GetModelsErrorKind::BadRequestError(_inner) => _inner.fmt(f),
-            GetModelsErrorKind::NotFoundError(_inner) => _inner.fmt(f),
-            GetModelsErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
-            GetModelsErrorKind::UnauthorizedError(_inner) => _inner.fmt(f),
+            GetModelsErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            GetModelsErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            GetModelsErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
+            GetModelsErrorKind::UnauthorizedException(_inner) => _inner.fmt(f),
             GetModelsErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -6619,26 +6829,26 @@ impl GetModelsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_bad_request_error(&self) -> bool {
-        matches!(&self.kind, GetModelsErrorKind::BadRequestError(_))
+    pub fn is_bad_request_exception(&self) -> bool {
+        matches!(&self.kind, GetModelsErrorKind::BadRequestException(_))
     }
-    pub fn is_not_found_error(&self) -> bool {
-        matches!(&self.kind, GetModelsErrorKind::NotFoundError(_))
+    pub fn is_not_found_exception(&self) -> bool {
+        matches!(&self.kind, GetModelsErrorKind::NotFoundException(_))
     }
-    pub fn is_too_many_requests_error(&self) -> bool {
-        matches!(&self.kind, GetModelsErrorKind::TooManyRequestsError(_))
+    pub fn is_too_many_requests_exception(&self) -> bool {
+        matches!(&self.kind, GetModelsErrorKind::TooManyRequestsException(_))
     }
-    pub fn is_unauthorized_error(&self) -> bool {
-        matches!(&self.kind, GetModelsErrorKind::UnauthorizedError(_))
+    pub fn is_unauthorized_exception(&self) -> bool {
+        matches!(&self.kind, GetModelsErrorKind::UnauthorizedException(_))
     }
 }
 impl std::error::Error for GetModelsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            GetModelsErrorKind::BadRequestError(_inner) => Some(_inner),
-            GetModelsErrorKind::NotFoundError(_inner) => Some(_inner),
-            GetModelsErrorKind::TooManyRequestsError(_inner) => Some(_inner),
-            GetModelsErrorKind::UnauthorizedError(_inner) => Some(_inner),
+            GetModelsErrorKind::BadRequestException(_inner) => Some(_inner),
+            GetModelsErrorKind::NotFoundException(_inner) => Some(_inner),
+            GetModelsErrorKind::TooManyRequestsException(_inner) => Some(_inner),
+            GetModelsErrorKind::UnauthorizedException(_inner) => Some(_inner),
             GetModelsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -6653,20 +6863,20 @@ pub struct GetModelTemplateError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetModelTemplateErrorKind {
-    BadRequestError(crate::error::BadRequestError),
-    NotFoundError(crate::error::NotFoundError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
-    UnauthorizedError(crate::error::UnauthorizedError),
+    BadRequestException(crate::error::BadRequestException),
+    NotFoundException(crate::error::NotFoundException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
+    UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetModelTemplateError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            GetModelTemplateErrorKind::BadRequestError(_inner) => _inner.fmt(f),
-            GetModelTemplateErrorKind::NotFoundError(_inner) => _inner.fmt(f),
-            GetModelTemplateErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
-            GetModelTemplateErrorKind::UnauthorizedError(_inner) => _inner.fmt(f),
+            GetModelTemplateErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            GetModelTemplateErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            GetModelTemplateErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
+            GetModelTemplateErrorKind::UnauthorizedException(_inner) => _inner.fmt(f),
             GetModelTemplateErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -6715,29 +6925,35 @@ impl GetModelTemplateError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_bad_request_error(&self) -> bool {
-        matches!(&self.kind, GetModelTemplateErrorKind::BadRequestError(_))
-    }
-    pub fn is_not_found_error(&self) -> bool {
-        matches!(&self.kind, GetModelTemplateErrorKind::NotFoundError(_))
-    }
-    pub fn is_too_many_requests_error(&self) -> bool {
+    pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
-            GetModelTemplateErrorKind::TooManyRequestsError(_)
+            GetModelTemplateErrorKind::BadRequestException(_)
         )
     }
-    pub fn is_unauthorized_error(&self) -> bool {
-        matches!(&self.kind, GetModelTemplateErrorKind::UnauthorizedError(_))
+    pub fn is_not_found_exception(&self) -> bool {
+        matches!(&self.kind, GetModelTemplateErrorKind::NotFoundException(_))
+    }
+    pub fn is_too_many_requests_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetModelTemplateErrorKind::TooManyRequestsException(_)
+        )
+    }
+    pub fn is_unauthorized_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetModelTemplateErrorKind::UnauthorizedException(_)
+        )
     }
 }
 impl std::error::Error for GetModelTemplateError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            GetModelTemplateErrorKind::BadRequestError(_inner) => Some(_inner),
-            GetModelTemplateErrorKind::NotFoundError(_inner) => Some(_inner),
-            GetModelTemplateErrorKind::TooManyRequestsError(_inner) => Some(_inner),
-            GetModelTemplateErrorKind::UnauthorizedError(_inner) => Some(_inner),
+            GetModelTemplateErrorKind::BadRequestException(_inner) => Some(_inner),
+            GetModelTemplateErrorKind::NotFoundException(_inner) => Some(_inner),
+            GetModelTemplateErrorKind::TooManyRequestsException(_inner) => Some(_inner),
+            GetModelTemplateErrorKind::UnauthorizedException(_inner) => Some(_inner),
             GetModelTemplateErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -6752,18 +6968,18 @@ pub struct GetRequestValidatorError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetRequestValidatorErrorKind {
-    NotFoundError(crate::error::NotFoundError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
-    UnauthorizedError(crate::error::UnauthorizedError),
+    NotFoundException(crate::error::NotFoundException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
+    UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetRequestValidatorError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            GetRequestValidatorErrorKind::NotFoundError(_inner) => _inner.fmt(f),
-            GetRequestValidatorErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
-            GetRequestValidatorErrorKind::UnauthorizedError(_inner) => _inner.fmt(f),
+            GetRequestValidatorErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            GetRequestValidatorErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
+            GetRequestValidatorErrorKind::UnauthorizedException(_inner) => _inner.fmt(f),
             GetRequestValidatorErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -6812,28 +7028,31 @@ impl GetRequestValidatorError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_not_found_error(&self) -> bool {
-        matches!(&self.kind, GetRequestValidatorErrorKind::NotFoundError(_))
-    }
-    pub fn is_too_many_requests_error(&self) -> bool {
+    pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
-            GetRequestValidatorErrorKind::TooManyRequestsError(_)
+            GetRequestValidatorErrorKind::NotFoundException(_)
         )
     }
-    pub fn is_unauthorized_error(&self) -> bool {
+    pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
-            GetRequestValidatorErrorKind::UnauthorizedError(_)
+            GetRequestValidatorErrorKind::TooManyRequestsException(_)
+        )
+    }
+    pub fn is_unauthorized_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetRequestValidatorErrorKind::UnauthorizedException(_)
         )
     }
 }
 impl std::error::Error for GetRequestValidatorError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            GetRequestValidatorErrorKind::NotFoundError(_inner) => Some(_inner),
-            GetRequestValidatorErrorKind::TooManyRequestsError(_inner) => Some(_inner),
-            GetRequestValidatorErrorKind::UnauthorizedError(_inner) => Some(_inner),
+            GetRequestValidatorErrorKind::NotFoundException(_inner) => Some(_inner),
+            GetRequestValidatorErrorKind::TooManyRequestsException(_inner) => Some(_inner),
+            GetRequestValidatorErrorKind::UnauthorizedException(_inner) => Some(_inner),
             GetRequestValidatorErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -6848,20 +7067,20 @@ pub struct GetRequestValidatorsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetRequestValidatorsErrorKind {
-    BadRequestError(crate::error::BadRequestError),
-    NotFoundError(crate::error::NotFoundError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
-    UnauthorizedError(crate::error::UnauthorizedError),
+    BadRequestException(crate::error::BadRequestException),
+    NotFoundException(crate::error::NotFoundException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
+    UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetRequestValidatorsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            GetRequestValidatorsErrorKind::BadRequestError(_inner) => _inner.fmt(f),
-            GetRequestValidatorsErrorKind::NotFoundError(_inner) => _inner.fmt(f),
-            GetRequestValidatorsErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
-            GetRequestValidatorsErrorKind::UnauthorizedError(_inner) => _inner.fmt(f),
+            GetRequestValidatorsErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            GetRequestValidatorsErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            GetRequestValidatorsErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
+            GetRequestValidatorsErrorKind::UnauthorizedException(_inner) => _inner.fmt(f),
             GetRequestValidatorsErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -6910,35 +7129,38 @@ impl GetRequestValidatorsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_bad_request_error(&self) -> bool {
+    pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
-            GetRequestValidatorsErrorKind::BadRequestError(_)
+            GetRequestValidatorsErrorKind::BadRequestException(_)
         )
     }
-    pub fn is_not_found_error(&self) -> bool {
-        matches!(&self.kind, GetRequestValidatorsErrorKind::NotFoundError(_))
-    }
-    pub fn is_too_many_requests_error(&self) -> bool {
+    pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
-            GetRequestValidatorsErrorKind::TooManyRequestsError(_)
+            GetRequestValidatorsErrorKind::NotFoundException(_)
         )
     }
-    pub fn is_unauthorized_error(&self) -> bool {
+    pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
-            GetRequestValidatorsErrorKind::UnauthorizedError(_)
+            GetRequestValidatorsErrorKind::TooManyRequestsException(_)
+        )
+    }
+    pub fn is_unauthorized_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetRequestValidatorsErrorKind::UnauthorizedException(_)
         )
     }
 }
 impl std::error::Error for GetRequestValidatorsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            GetRequestValidatorsErrorKind::BadRequestError(_inner) => Some(_inner),
-            GetRequestValidatorsErrorKind::NotFoundError(_inner) => Some(_inner),
-            GetRequestValidatorsErrorKind::TooManyRequestsError(_inner) => Some(_inner),
-            GetRequestValidatorsErrorKind::UnauthorizedError(_inner) => Some(_inner),
+            GetRequestValidatorsErrorKind::BadRequestException(_inner) => Some(_inner),
+            GetRequestValidatorsErrorKind::NotFoundException(_inner) => Some(_inner),
+            GetRequestValidatorsErrorKind::TooManyRequestsException(_inner) => Some(_inner),
+            GetRequestValidatorsErrorKind::UnauthorizedException(_inner) => Some(_inner),
             GetRequestValidatorsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -6953,18 +7175,18 @@ pub struct GetResourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetResourceErrorKind {
-    NotFoundError(crate::error::NotFoundError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
-    UnauthorizedError(crate::error::UnauthorizedError),
+    NotFoundException(crate::error::NotFoundException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
+    UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            GetResourceErrorKind::NotFoundError(_inner) => _inner.fmt(f),
-            GetResourceErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
-            GetResourceErrorKind::UnauthorizedError(_inner) => _inner.fmt(f),
+            GetResourceErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            GetResourceErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
+            GetResourceErrorKind::UnauthorizedException(_inner) => _inner.fmt(f),
             GetResourceErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -7013,22 +7235,25 @@ impl GetResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_not_found_error(&self) -> bool {
-        matches!(&self.kind, GetResourceErrorKind::NotFoundError(_))
+    pub fn is_not_found_exception(&self) -> bool {
+        matches!(&self.kind, GetResourceErrorKind::NotFoundException(_))
     }
-    pub fn is_too_many_requests_error(&self) -> bool {
-        matches!(&self.kind, GetResourceErrorKind::TooManyRequestsError(_))
+    pub fn is_too_many_requests_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetResourceErrorKind::TooManyRequestsException(_)
+        )
     }
-    pub fn is_unauthorized_error(&self) -> bool {
-        matches!(&self.kind, GetResourceErrorKind::UnauthorizedError(_))
+    pub fn is_unauthorized_exception(&self) -> bool {
+        matches!(&self.kind, GetResourceErrorKind::UnauthorizedException(_))
     }
 }
 impl std::error::Error for GetResourceError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            GetResourceErrorKind::NotFoundError(_inner) => Some(_inner),
-            GetResourceErrorKind::TooManyRequestsError(_inner) => Some(_inner),
-            GetResourceErrorKind::UnauthorizedError(_inner) => Some(_inner),
+            GetResourceErrorKind::NotFoundException(_inner) => Some(_inner),
+            GetResourceErrorKind::TooManyRequestsException(_inner) => Some(_inner),
+            GetResourceErrorKind::UnauthorizedException(_inner) => Some(_inner),
             GetResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -7043,20 +7268,20 @@ pub struct GetResourcesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetResourcesErrorKind {
-    BadRequestError(crate::error::BadRequestError),
-    NotFoundError(crate::error::NotFoundError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
-    UnauthorizedError(crate::error::UnauthorizedError),
+    BadRequestException(crate::error::BadRequestException),
+    NotFoundException(crate::error::NotFoundException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
+    UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetResourcesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            GetResourcesErrorKind::BadRequestError(_inner) => _inner.fmt(f),
-            GetResourcesErrorKind::NotFoundError(_inner) => _inner.fmt(f),
-            GetResourcesErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
-            GetResourcesErrorKind::UnauthorizedError(_inner) => _inner.fmt(f),
+            GetResourcesErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            GetResourcesErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            GetResourcesErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
+            GetResourcesErrorKind::UnauthorizedException(_inner) => _inner.fmt(f),
             GetResourcesErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -7105,26 +7330,29 @@ impl GetResourcesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_bad_request_error(&self) -> bool {
-        matches!(&self.kind, GetResourcesErrorKind::BadRequestError(_))
+    pub fn is_bad_request_exception(&self) -> bool {
+        matches!(&self.kind, GetResourcesErrorKind::BadRequestException(_))
     }
-    pub fn is_not_found_error(&self) -> bool {
-        matches!(&self.kind, GetResourcesErrorKind::NotFoundError(_))
+    pub fn is_not_found_exception(&self) -> bool {
+        matches!(&self.kind, GetResourcesErrorKind::NotFoundException(_))
     }
-    pub fn is_too_many_requests_error(&self) -> bool {
-        matches!(&self.kind, GetResourcesErrorKind::TooManyRequestsError(_))
+    pub fn is_too_many_requests_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetResourcesErrorKind::TooManyRequestsException(_)
+        )
     }
-    pub fn is_unauthorized_error(&self) -> bool {
-        matches!(&self.kind, GetResourcesErrorKind::UnauthorizedError(_))
+    pub fn is_unauthorized_exception(&self) -> bool {
+        matches!(&self.kind, GetResourcesErrorKind::UnauthorizedException(_))
     }
 }
 impl std::error::Error for GetResourcesError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            GetResourcesErrorKind::BadRequestError(_inner) => Some(_inner),
-            GetResourcesErrorKind::NotFoundError(_inner) => Some(_inner),
-            GetResourcesErrorKind::TooManyRequestsError(_inner) => Some(_inner),
-            GetResourcesErrorKind::UnauthorizedError(_inner) => Some(_inner),
+            GetResourcesErrorKind::BadRequestException(_inner) => Some(_inner),
+            GetResourcesErrorKind::NotFoundException(_inner) => Some(_inner),
+            GetResourcesErrorKind::TooManyRequestsException(_inner) => Some(_inner),
+            GetResourcesErrorKind::UnauthorizedException(_inner) => Some(_inner),
             GetResourcesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -7139,18 +7367,18 @@ pub struct GetRestApiError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetRestApiErrorKind {
-    NotFoundError(crate::error::NotFoundError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
-    UnauthorizedError(crate::error::UnauthorizedError),
+    NotFoundException(crate::error::NotFoundException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
+    UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetRestApiError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            GetRestApiErrorKind::NotFoundError(_inner) => _inner.fmt(f),
-            GetRestApiErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
-            GetRestApiErrorKind::UnauthorizedError(_inner) => _inner.fmt(f),
+            GetRestApiErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            GetRestApiErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
+            GetRestApiErrorKind::UnauthorizedException(_inner) => _inner.fmt(f),
             GetRestApiErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -7199,22 +7427,22 @@ impl GetRestApiError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_not_found_error(&self) -> bool {
-        matches!(&self.kind, GetRestApiErrorKind::NotFoundError(_))
+    pub fn is_not_found_exception(&self) -> bool {
+        matches!(&self.kind, GetRestApiErrorKind::NotFoundException(_))
     }
-    pub fn is_too_many_requests_error(&self) -> bool {
-        matches!(&self.kind, GetRestApiErrorKind::TooManyRequestsError(_))
+    pub fn is_too_many_requests_exception(&self) -> bool {
+        matches!(&self.kind, GetRestApiErrorKind::TooManyRequestsException(_))
     }
-    pub fn is_unauthorized_error(&self) -> bool {
-        matches!(&self.kind, GetRestApiErrorKind::UnauthorizedError(_))
+    pub fn is_unauthorized_exception(&self) -> bool {
+        matches!(&self.kind, GetRestApiErrorKind::UnauthorizedException(_))
     }
 }
 impl std::error::Error for GetRestApiError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            GetRestApiErrorKind::NotFoundError(_inner) => Some(_inner),
-            GetRestApiErrorKind::TooManyRequestsError(_inner) => Some(_inner),
-            GetRestApiErrorKind::UnauthorizedError(_inner) => Some(_inner),
+            GetRestApiErrorKind::NotFoundException(_inner) => Some(_inner),
+            GetRestApiErrorKind::TooManyRequestsException(_inner) => Some(_inner),
+            GetRestApiErrorKind::UnauthorizedException(_inner) => Some(_inner),
             GetRestApiErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -7229,18 +7457,18 @@ pub struct GetRestApisError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetRestApisErrorKind {
-    BadRequestError(crate::error::BadRequestError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
-    UnauthorizedError(crate::error::UnauthorizedError),
+    BadRequestException(crate::error::BadRequestException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
+    UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetRestApisError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            GetRestApisErrorKind::BadRequestError(_inner) => _inner.fmt(f),
-            GetRestApisErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
-            GetRestApisErrorKind::UnauthorizedError(_inner) => _inner.fmt(f),
+            GetRestApisErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            GetRestApisErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
+            GetRestApisErrorKind::UnauthorizedException(_inner) => _inner.fmt(f),
             GetRestApisErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -7289,22 +7517,25 @@ impl GetRestApisError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_bad_request_error(&self) -> bool {
-        matches!(&self.kind, GetRestApisErrorKind::BadRequestError(_))
+    pub fn is_bad_request_exception(&self) -> bool {
+        matches!(&self.kind, GetRestApisErrorKind::BadRequestException(_))
     }
-    pub fn is_too_many_requests_error(&self) -> bool {
-        matches!(&self.kind, GetRestApisErrorKind::TooManyRequestsError(_))
+    pub fn is_too_many_requests_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetRestApisErrorKind::TooManyRequestsException(_)
+        )
     }
-    pub fn is_unauthorized_error(&self) -> bool {
-        matches!(&self.kind, GetRestApisErrorKind::UnauthorizedError(_))
+    pub fn is_unauthorized_exception(&self) -> bool {
+        matches!(&self.kind, GetRestApisErrorKind::UnauthorizedException(_))
     }
 }
 impl std::error::Error for GetRestApisError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            GetRestApisErrorKind::BadRequestError(_inner) => Some(_inner),
-            GetRestApisErrorKind::TooManyRequestsError(_inner) => Some(_inner),
-            GetRestApisErrorKind::UnauthorizedError(_inner) => Some(_inner),
+            GetRestApisErrorKind::BadRequestException(_inner) => Some(_inner),
+            GetRestApisErrorKind::TooManyRequestsException(_inner) => Some(_inner),
+            GetRestApisErrorKind::UnauthorizedException(_inner) => Some(_inner),
             GetRestApisErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -7319,22 +7550,22 @@ pub struct GetSdkError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetSdkErrorKind {
-    BadRequestError(crate::error::BadRequestError),
-    ConflictError(crate::error::ConflictError),
-    NotFoundError(crate::error::NotFoundError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
-    UnauthorizedError(crate::error::UnauthorizedError),
+    BadRequestException(crate::error::BadRequestException),
+    ConflictException(crate::error::ConflictException),
+    NotFoundException(crate::error::NotFoundException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
+    UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetSdkError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            GetSdkErrorKind::BadRequestError(_inner) => _inner.fmt(f),
-            GetSdkErrorKind::ConflictError(_inner) => _inner.fmt(f),
-            GetSdkErrorKind::NotFoundError(_inner) => _inner.fmt(f),
-            GetSdkErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
-            GetSdkErrorKind::UnauthorizedError(_inner) => _inner.fmt(f),
+            GetSdkErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            GetSdkErrorKind::ConflictException(_inner) => _inner.fmt(f),
+            GetSdkErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            GetSdkErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
+            GetSdkErrorKind::UnauthorizedException(_inner) => _inner.fmt(f),
             GetSdkErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -7383,30 +7614,30 @@ impl GetSdkError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_bad_request_error(&self) -> bool {
-        matches!(&self.kind, GetSdkErrorKind::BadRequestError(_))
+    pub fn is_bad_request_exception(&self) -> bool {
+        matches!(&self.kind, GetSdkErrorKind::BadRequestException(_))
     }
-    pub fn is_conflict_error(&self) -> bool {
-        matches!(&self.kind, GetSdkErrorKind::ConflictError(_))
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(&self.kind, GetSdkErrorKind::ConflictException(_))
     }
-    pub fn is_not_found_error(&self) -> bool {
-        matches!(&self.kind, GetSdkErrorKind::NotFoundError(_))
+    pub fn is_not_found_exception(&self) -> bool {
+        matches!(&self.kind, GetSdkErrorKind::NotFoundException(_))
     }
-    pub fn is_too_many_requests_error(&self) -> bool {
-        matches!(&self.kind, GetSdkErrorKind::TooManyRequestsError(_))
+    pub fn is_too_many_requests_exception(&self) -> bool {
+        matches!(&self.kind, GetSdkErrorKind::TooManyRequestsException(_))
     }
-    pub fn is_unauthorized_error(&self) -> bool {
-        matches!(&self.kind, GetSdkErrorKind::UnauthorizedError(_))
+    pub fn is_unauthorized_exception(&self) -> bool {
+        matches!(&self.kind, GetSdkErrorKind::UnauthorizedException(_))
     }
 }
 impl std::error::Error for GetSdkError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            GetSdkErrorKind::BadRequestError(_inner) => Some(_inner),
-            GetSdkErrorKind::ConflictError(_inner) => Some(_inner),
-            GetSdkErrorKind::NotFoundError(_inner) => Some(_inner),
-            GetSdkErrorKind::TooManyRequestsError(_inner) => Some(_inner),
-            GetSdkErrorKind::UnauthorizedError(_inner) => Some(_inner),
+            GetSdkErrorKind::BadRequestException(_inner) => Some(_inner),
+            GetSdkErrorKind::ConflictException(_inner) => Some(_inner),
+            GetSdkErrorKind::NotFoundException(_inner) => Some(_inner),
+            GetSdkErrorKind::TooManyRequestsException(_inner) => Some(_inner),
+            GetSdkErrorKind::UnauthorizedException(_inner) => Some(_inner),
             GetSdkErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -7421,18 +7652,18 @@ pub struct GetSdkTypeError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetSdkTypeErrorKind {
-    NotFoundError(crate::error::NotFoundError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
-    UnauthorizedError(crate::error::UnauthorizedError),
+    NotFoundException(crate::error::NotFoundException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
+    UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetSdkTypeError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            GetSdkTypeErrorKind::NotFoundError(_inner) => _inner.fmt(f),
-            GetSdkTypeErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
-            GetSdkTypeErrorKind::UnauthorizedError(_inner) => _inner.fmt(f),
+            GetSdkTypeErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            GetSdkTypeErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
+            GetSdkTypeErrorKind::UnauthorizedException(_inner) => _inner.fmt(f),
             GetSdkTypeErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -7481,22 +7712,22 @@ impl GetSdkTypeError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_not_found_error(&self) -> bool {
-        matches!(&self.kind, GetSdkTypeErrorKind::NotFoundError(_))
+    pub fn is_not_found_exception(&self) -> bool {
+        matches!(&self.kind, GetSdkTypeErrorKind::NotFoundException(_))
     }
-    pub fn is_too_many_requests_error(&self) -> bool {
-        matches!(&self.kind, GetSdkTypeErrorKind::TooManyRequestsError(_))
+    pub fn is_too_many_requests_exception(&self) -> bool {
+        matches!(&self.kind, GetSdkTypeErrorKind::TooManyRequestsException(_))
     }
-    pub fn is_unauthorized_error(&self) -> bool {
-        matches!(&self.kind, GetSdkTypeErrorKind::UnauthorizedError(_))
+    pub fn is_unauthorized_exception(&self) -> bool {
+        matches!(&self.kind, GetSdkTypeErrorKind::UnauthorizedException(_))
     }
 }
 impl std::error::Error for GetSdkTypeError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            GetSdkTypeErrorKind::NotFoundError(_inner) => Some(_inner),
-            GetSdkTypeErrorKind::TooManyRequestsError(_inner) => Some(_inner),
-            GetSdkTypeErrorKind::UnauthorizedError(_inner) => Some(_inner),
+            GetSdkTypeErrorKind::NotFoundException(_inner) => Some(_inner),
+            GetSdkTypeErrorKind::TooManyRequestsException(_inner) => Some(_inner),
+            GetSdkTypeErrorKind::UnauthorizedException(_inner) => Some(_inner),
             GetSdkTypeErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -7511,16 +7742,16 @@ pub struct GetSdkTypesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetSdkTypesErrorKind {
-    TooManyRequestsError(crate::error::TooManyRequestsError),
-    UnauthorizedError(crate::error::UnauthorizedError),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
+    UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetSdkTypesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            GetSdkTypesErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
-            GetSdkTypesErrorKind::UnauthorizedError(_inner) => _inner.fmt(f),
+            GetSdkTypesErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
+            GetSdkTypesErrorKind::UnauthorizedException(_inner) => _inner.fmt(f),
             GetSdkTypesErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -7569,18 +7800,21 @@ impl GetSdkTypesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_too_many_requests_error(&self) -> bool {
-        matches!(&self.kind, GetSdkTypesErrorKind::TooManyRequestsError(_))
+    pub fn is_too_many_requests_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetSdkTypesErrorKind::TooManyRequestsException(_)
+        )
     }
-    pub fn is_unauthorized_error(&self) -> bool {
-        matches!(&self.kind, GetSdkTypesErrorKind::UnauthorizedError(_))
+    pub fn is_unauthorized_exception(&self) -> bool {
+        matches!(&self.kind, GetSdkTypesErrorKind::UnauthorizedException(_))
     }
 }
 impl std::error::Error for GetSdkTypesError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            GetSdkTypesErrorKind::TooManyRequestsError(_inner) => Some(_inner),
-            GetSdkTypesErrorKind::UnauthorizedError(_inner) => Some(_inner),
+            GetSdkTypesErrorKind::TooManyRequestsException(_inner) => Some(_inner),
+            GetSdkTypesErrorKind::UnauthorizedException(_inner) => Some(_inner),
             GetSdkTypesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -7595,18 +7829,18 @@ pub struct GetStageError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetStageErrorKind {
-    NotFoundError(crate::error::NotFoundError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
-    UnauthorizedError(crate::error::UnauthorizedError),
+    NotFoundException(crate::error::NotFoundException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
+    UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetStageError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            GetStageErrorKind::NotFoundError(_inner) => _inner.fmt(f),
-            GetStageErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
-            GetStageErrorKind::UnauthorizedError(_inner) => _inner.fmt(f),
+            GetStageErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            GetStageErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
+            GetStageErrorKind::UnauthorizedException(_inner) => _inner.fmt(f),
             GetStageErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -7655,22 +7889,22 @@ impl GetStageError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_not_found_error(&self) -> bool {
-        matches!(&self.kind, GetStageErrorKind::NotFoundError(_))
+    pub fn is_not_found_exception(&self) -> bool {
+        matches!(&self.kind, GetStageErrorKind::NotFoundException(_))
     }
-    pub fn is_too_many_requests_error(&self) -> bool {
-        matches!(&self.kind, GetStageErrorKind::TooManyRequestsError(_))
+    pub fn is_too_many_requests_exception(&self) -> bool {
+        matches!(&self.kind, GetStageErrorKind::TooManyRequestsException(_))
     }
-    pub fn is_unauthorized_error(&self) -> bool {
-        matches!(&self.kind, GetStageErrorKind::UnauthorizedError(_))
+    pub fn is_unauthorized_exception(&self) -> bool {
+        matches!(&self.kind, GetStageErrorKind::UnauthorizedException(_))
     }
 }
 impl std::error::Error for GetStageError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            GetStageErrorKind::NotFoundError(_inner) => Some(_inner),
-            GetStageErrorKind::TooManyRequestsError(_inner) => Some(_inner),
-            GetStageErrorKind::UnauthorizedError(_inner) => Some(_inner),
+            GetStageErrorKind::NotFoundException(_inner) => Some(_inner),
+            GetStageErrorKind::TooManyRequestsException(_inner) => Some(_inner),
+            GetStageErrorKind::UnauthorizedException(_inner) => Some(_inner),
             GetStageErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -7685,18 +7919,18 @@ pub struct GetStagesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetStagesErrorKind {
-    NotFoundError(crate::error::NotFoundError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
-    UnauthorizedError(crate::error::UnauthorizedError),
+    NotFoundException(crate::error::NotFoundException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
+    UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetStagesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            GetStagesErrorKind::NotFoundError(_inner) => _inner.fmt(f),
-            GetStagesErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
-            GetStagesErrorKind::UnauthorizedError(_inner) => _inner.fmt(f),
+            GetStagesErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            GetStagesErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
+            GetStagesErrorKind::UnauthorizedException(_inner) => _inner.fmt(f),
             GetStagesErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -7745,22 +7979,22 @@ impl GetStagesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_not_found_error(&self) -> bool {
-        matches!(&self.kind, GetStagesErrorKind::NotFoundError(_))
+    pub fn is_not_found_exception(&self) -> bool {
+        matches!(&self.kind, GetStagesErrorKind::NotFoundException(_))
     }
-    pub fn is_too_many_requests_error(&self) -> bool {
-        matches!(&self.kind, GetStagesErrorKind::TooManyRequestsError(_))
+    pub fn is_too_many_requests_exception(&self) -> bool {
+        matches!(&self.kind, GetStagesErrorKind::TooManyRequestsException(_))
     }
-    pub fn is_unauthorized_error(&self) -> bool {
-        matches!(&self.kind, GetStagesErrorKind::UnauthorizedError(_))
+    pub fn is_unauthorized_exception(&self) -> bool {
+        matches!(&self.kind, GetStagesErrorKind::UnauthorizedException(_))
     }
 }
 impl std::error::Error for GetStagesError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            GetStagesErrorKind::NotFoundError(_inner) => Some(_inner),
-            GetStagesErrorKind::TooManyRequestsError(_inner) => Some(_inner),
-            GetStagesErrorKind::UnauthorizedError(_inner) => Some(_inner),
+            GetStagesErrorKind::NotFoundException(_inner) => Some(_inner),
+            GetStagesErrorKind::TooManyRequestsException(_inner) => Some(_inner),
+            GetStagesErrorKind::UnauthorizedException(_inner) => Some(_inner),
             GetStagesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -7775,22 +8009,22 @@ pub struct GetTagsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetTagsErrorKind {
-    BadRequestError(crate::error::BadRequestError),
-    LimitExceededError(crate::error::LimitExceededError),
-    NotFoundError(crate::error::NotFoundError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
-    UnauthorizedError(crate::error::UnauthorizedError),
+    BadRequestException(crate::error::BadRequestException),
+    LimitExceededException(crate::error::LimitExceededException),
+    NotFoundException(crate::error::NotFoundException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
+    UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetTagsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            GetTagsErrorKind::BadRequestError(_inner) => _inner.fmt(f),
-            GetTagsErrorKind::LimitExceededError(_inner) => _inner.fmt(f),
-            GetTagsErrorKind::NotFoundError(_inner) => _inner.fmt(f),
-            GetTagsErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
-            GetTagsErrorKind::UnauthorizedError(_inner) => _inner.fmt(f),
+            GetTagsErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            GetTagsErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
+            GetTagsErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            GetTagsErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
+            GetTagsErrorKind::UnauthorizedException(_inner) => _inner.fmt(f),
             GetTagsErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -7839,30 +8073,30 @@ impl GetTagsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_bad_request_error(&self) -> bool {
-        matches!(&self.kind, GetTagsErrorKind::BadRequestError(_))
+    pub fn is_bad_request_exception(&self) -> bool {
+        matches!(&self.kind, GetTagsErrorKind::BadRequestException(_))
     }
-    pub fn is_limit_exceeded_error(&self) -> bool {
-        matches!(&self.kind, GetTagsErrorKind::LimitExceededError(_))
+    pub fn is_limit_exceeded_exception(&self) -> bool {
+        matches!(&self.kind, GetTagsErrorKind::LimitExceededException(_))
     }
-    pub fn is_not_found_error(&self) -> bool {
-        matches!(&self.kind, GetTagsErrorKind::NotFoundError(_))
+    pub fn is_not_found_exception(&self) -> bool {
+        matches!(&self.kind, GetTagsErrorKind::NotFoundException(_))
     }
-    pub fn is_too_many_requests_error(&self) -> bool {
-        matches!(&self.kind, GetTagsErrorKind::TooManyRequestsError(_))
+    pub fn is_too_many_requests_exception(&self) -> bool {
+        matches!(&self.kind, GetTagsErrorKind::TooManyRequestsException(_))
     }
-    pub fn is_unauthorized_error(&self) -> bool {
-        matches!(&self.kind, GetTagsErrorKind::UnauthorizedError(_))
+    pub fn is_unauthorized_exception(&self) -> bool {
+        matches!(&self.kind, GetTagsErrorKind::UnauthorizedException(_))
     }
 }
 impl std::error::Error for GetTagsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            GetTagsErrorKind::BadRequestError(_inner) => Some(_inner),
-            GetTagsErrorKind::LimitExceededError(_inner) => Some(_inner),
-            GetTagsErrorKind::NotFoundError(_inner) => Some(_inner),
-            GetTagsErrorKind::TooManyRequestsError(_inner) => Some(_inner),
-            GetTagsErrorKind::UnauthorizedError(_inner) => Some(_inner),
+            GetTagsErrorKind::BadRequestException(_inner) => Some(_inner),
+            GetTagsErrorKind::LimitExceededException(_inner) => Some(_inner),
+            GetTagsErrorKind::NotFoundException(_inner) => Some(_inner),
+            GetTagsErrorKind::TooManyRequestsException(_inner) => Some(_inner),
+            GetTagsErrorKind::UnauthorizedException(_inner) => Some(_inner),
             GetTagsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -7877,20 +8111,20 @@ pub struct GetUsageError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetUsageErrorKind {
-    BadRequestError(crate::error::BadRequestError),
-    NotFoundError(crate::error::NotFoundError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
-    UnauthorizedError(crate::error::UnauthorizedError),
+    BadRequestException(crate::error::BadRequestException),
+    NotFoundException(crate::error::NotFoundException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
+    UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetUsageError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            GetUsageErrorKind::BadRequestError(_inner) => _inner.fmt(f),
-            GetUsageErrorKind::NotFoundError(_inner) => _inner.fmt(f),
-            GetUsageErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
-            GetUsageErrorKind::UnauthorizedError(_inner) => _inner.fmt(f),
+            GetUsageErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            GetUsageErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            GetUsageErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
+            GetUsageErrorKind::UnauthorizedException(_inner) => _inner.fmt(f),
             GetUsageErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -7939,26 +8173,26 @@ impl GetUsageError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_bad_request_error(&self) -> bool {
-        matches!(&self.kind, GetUsageErrorKind::BadRequestError(_))
+    pub fn is_bad_request_exception(&self) -> bool {
+        matches!(&self.kind, GetUsageErrorKind::BadRequestException(_))
     }
-    pub fn is_not_found_error(&self) -> bool {
-        matches!(&self.kind, GetUsageErrorKind::NotFoundError(_))
+    pub fn is_not_found_exception(&self) -> bool {
+        matches!(&self.kind, GetUsageErrorKind::NotFoundException(_))
     }
-    pub fn is_too_many_requests_error(&self) -> bool {
-        matches!(&self.kind, GetUsageErrorKind::TooManyRequestsError(_))
+    pub fn is_too_many_requests_exception(&self) -> bool {
+        matches!(&self.kind, GetUsageErrorKind::TooManyRequestsException(_))
     }
-    pub fn is_unauthorized_error(&self) -> bool {
-        matches!(&self.kind, GetUsageErrorKind::UnauthorizedError(_))
+    pub fn is_unauthorized_exception(&self) -> bool {
+        matches!(&self.kind, GetUsageErrorKind::UnauthorizedException(_))
     }
 }
 impl std::error::Error for GetUsageError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            GetUsageErrorKind::BadRequestError(_inner) => Some(_inner),
-            GetUsageErrorKind::NotFoundError(_inner) => Some(_inner),
-            GetUsageErrorKind::TooManyRequestsError(_inner) => Some(_inner),
-            GetUsageErrorKind::UnauthorizedError(_inner) => Some(_inner),
+            GetUsageErrorKind::BadRequestException(_inner) => Some(_inner),
+            GetUsageErrorKind::NotFoundException(_inner) => Some(_inner),
+            GetUsageErrorKind::TooManyRequestsException(_inner) => Some(_inner),
+            GetUsageErrorKind::UnauthorizedException(_inner) => Some(_inner),
             GetUsageErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -7973,20 +8207,20 @@ pub struct GetUsagePlanError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetUsagePlanErrorKind {
-    BadRequestError(crate::error::BadRequestError),
-    NotFoundError(crate::error::NotFoundError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
-    UnauthorizedError(crate::error::UnauthorizedError),
+    BadRequestException(crate::error::BadRequestException),
+    NotFoundException(crate::error::NotFoundException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
+    UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetUsagePlanError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            GetUsagePlanErrorKind::BadRequestError(_inner) => _inner.fmt(f),
-            GetUsagePlanErrorKind::NotFoundError(_inner) => _inner.fmt(f),
-            GetUsagePlanErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
-            GetUsagePlanErrorKind::UnauthorizedError(_inner) => _inner.fmt(f),
+            GetUsagePlanErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            GetUsagePlanErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            GetUsagePlanErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
+            GetUsagePlanErrorKind::UnauthorizedException(_inner) => _inner.fmt(f),
             GetUsagePlanErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -8035,26 +8269,29 @@ impl GetUsagePlanError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_bad_request_error(&self) -> bool {
-        matches!(&self.kind, GetUsagePlanErrorKind::BadRequestError(_))
+    pub fn is_bad_request_exception(&self) -> bool {
+        matches!(&self.kind, GetUsagePlanErrorKind::BadRequestException(_))
     }
-    pub fn is_not_found_error(&self) -> bool {
-        matches!(&self.kind, GetUsagePlanErrorKind::NotFoundError(_))
+    pub fn is_not_found_exception(&self) -> bool {
+        matches!(&self.kind, GetUsagePlanErrorKind::NotFoundException(_))
     }
-    pub fn is_too_many_requests_error(&self) -> bool {
-        matches!(&self.kind, GetUsagePlanErrorKind::TooManyRequestsError(_))
+    pub fn is_too_many_requests_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetUsagePlanErrorKind::TooManyRequestsException(_)
+        )
     }
-    pub fn is_unauthorized_error(&self) -> bool {
-        matches!(&self.kind, GetUsagePlanErrorKind::UnauthorizedError(_))
+    pub fn is_unauthorized_exception(&self) -> bool {
+        matches!(&self.kind, GetUsagePlanErrorKind::UnauthorizedException(_))
     }
 }
 impl std::error::Error for GetUsagePlanError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            GetUsagePlanErrorKind::BadRequestError(_inner) => Some(_inner),
-            GetUsagePlanErrorKind::NotFoundError(_inner) => Some(_inner),
-            GetUsagePlanErrorKind::TooManyRequestsError(_inner) => Some(_inner),
-            GetUsagePlanErrorKind::UnauthorizedError(_inner) => Some(_inner),
+            GetUsagePlanErrorKind::BadRequestException(_inner) => Some(_inner),
+            GetUsagePlanErrorKind::NotFoundException(_inner) => Some(_inner),
+            GetUsagePlanErrorKind::TooManyRequestsException(_inner) => Some(_inner),
+            GetUsagePlanErrorKind::UnauthorizedException(_inner) => Some(_inner),
             GetUsagePlanErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -8069,20 +8306,20 @@ pub struct GetUsagePlanKeyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetUsagePlanKeyErrorKind {
-    BadRequestError(crate::error::BadRequestError),
-    NotFoundError(crate::error::NotFoundError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
-    UnauthorizedError(crate::error::UnauthorizedError),
+    BadRequestException(crate::error::BadRequestException),
+    NotFoundException(crate::error::NotFoundException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
+    UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetUsagePlanKeyError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            GetUsagePlanKeyErrorKind::BadRequestError(_inner) => _inner.fmt(f),
-            GetUsagePlanKeyErrorKind::NotFoundError(_inner) => _inner.fmt(f),
-            GetUsagePlanKeyErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
-            GetUsagePlanKeyErrorKind::UnauthorizedError(_inner) => _inner.fmt(f),
+            GetUsagePlanKeyErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            GetUsagePlanKeyErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            GetUsagePlanKeyErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
+            GetUsagePlanKeyErrorKind::UnauthorizedException(_inner) => _inner.fmt(f),
             GetUsagePlanKeyErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -8131,29 +8368,32 @@ impl GetUsagePlanKeyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_bad_request_error(&self) -> bool {
-        matches!(&self.kind, GetUsagePlanKeyErrorKind::BadRequestError(_))
+    pub fn is_bad_request_exception(&self) -> bool {
+        matches!(&self.kind, GetUsagePlanKeyErrorKind::BadRequestException(_))
     }
-    pub fn is_not_found_error(&self) -> bool {
-        matches!(&self.kind, GetUsagePlanKeyErrorKind::NotFoundError(_))
+    pub fn is_not_found_exception(&self) -> bool {
+        matches!(&self.kind, GetUsagePlanKeyErrorKind::NotFoundException(_))
     }
-    pub fn is_too_many_requests_error(&self) -> bool {
+    pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
-            GetUsagePlanKeyErrorKind::TooManyRequestsError(_)
+            GetUsagePlanKeyErrorKind::TooManyRequestsException(_)
         )
     }
-    pub fn is_unauthorized_error(&self) -> bool {
-        matches!(&self.kind, GetUsagePlanKeyErrorKind::UnauthorizedError(_))
+    pub fn is_unauthorized_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetUsagePlanKeyErrorKind::UnauthorizedException(_)
+        )
     }
 }
 impl std::error::Error for GetUsagePlanKeyError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            GetUsagePlanKeyErrorKind::BadRequestError(_inner) => Some(_inner),
-            GetUsagePlanKeyErrorKind::NotFoundError(_inner) => Some(_inner),
-            GetUsagePlanKeyErrorKind::TooManyRequestsError(_inner) => Some(_inner),
-            GetUsagePlanKeyErrorKind::UnauthorizedError(_inner) => Some(_inner),
+            GetUsagePlanKeyErrorKind::BadRequestException(_inner) => Some(_inner),
+            GetUsagePlanKeyErrorKind::NotFoundException(_inner) => Some(_inner),
+            GetUsagePlanKeyErrorKind::TooManyRequestsException(_inner) => Some(_inner),
+            GetUsagePlanKeyErrorKind::UnauthorizedException(_inner) => Some(_inner),
             GetUsagePlanKeyErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -8168,20 +8408,20 @@ pub struct GetUsagePlanKeysError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetUsagePlanKeysErrorKind {
-    BadRequestError(crate::error::BadRequestError),
-    NotFoundError(crate::error::NotFoundError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
-    UnauthorizedError(crate::error::UnauthorizedError),
+    BadRequestException(crate::error::BadRequestException),
+    NotFoundException(crate::error::NotFoundException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
+    UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetUsagePlanKeysError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            GetUsagePlanKeysErrorKind::BadRequestError(_inner) => _inner.fmt(f),
-            GetUsagePlanKeysErrorKind::NotFoundError(_inner) => _inner.fmt(f),
-            GetUsagePlanKeysErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
-            GetUsagePlanKeysErrorKind::UnauthorizedError(_inner) => _inner.fmt(f),
+            GetUsagePlanKeysErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            GetUsagePlanKeysErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            GetUsagePlanKeysErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
+            GetUsagePlanKeysErrorKind::UnauthorizedException(_inner) => _inner.fmt(f),
             GetUsagePlanKeysErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -8230,29 +8470,35 @@ impl GetUsagePlanKeysError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_bad_request_error(&self) -> bool {
-        matches!(&self.kind, GetUsagePlanKeysErrorKind::BadRequestError(_))
-    }
-    pub fn is_not_found_error(&self) -> bool {
-        matches!(&self.kind, GetUsagePlanKeysErrorKind::NotFoundError(_))
-    }
-    pub fn is_too_many_requests_error(&self) -> bool {
+    pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
-            GetUsagePlanKeysErrorKind::TooManyRequestsError(_)
+            GetUsagePlanKeysErrorKind::BadRequestException(_)
         )
     }
-    pub fn is_unauthorized_error(&self) -> bool {
-        matches!(&self.kind, GetUsagePlanKeysErrorKind::UnauthorizedError(_))
+    pub fn is_not_found_exception(&self) -> bool {
+        matches!(&self.kind, GetUsagePlanKeysErrorKind::NotFoundException(_))
+    }
+    pub fn is_too_many_requests_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetUsagePlanKeysErrorKind::TooManyRequestsException(_)
+        )
+    }
+    pub fn is_unauthorized_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetUsagePlanKeysErrorKind::UnauthorizedException(_)
+        )
     }
 }
 impl std::error::Error for GetUsagePlanKeysError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            GetUsagePlanKeysErrorKind::BadRequestError(_inner) => Some(_inner),
-            GetUsagePlanKeysErrorKind::NotFoundError(_inner) => Some(_inner),
-            GetUsagePlanKeysErrorKind::TooManyRequestsError(_inner) => Some(_inner),
-            GetUsagePlanKeysErrorKind::UnauthorizedError(_inner) => Some(_inner),
+            GetUsagePlanKeysErrorKind::BadRequestException(_inner) => Some(_inner),
+            GetUsagePlanKeysErrorKind::NotFoundException(_inner) => Some(_inner),
+            GetUsagePlanKeysErrorKind::TooManyRequestsException(_inner) => Some(_inner),
+            GetUsagePlanKeysErrorKind::UnauthorizedException(_inner) => Some(_inner),
             GetUsagePlanKeysErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -8267,22 +8513,22 @@ pub struct GetUsagePlansError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetUsagePlansErrorKind {
-    BadRequestError(crate::error::BadRequestError),
-    ConflictError(crate::error::ConflictError),
-    NotFoundError(crate::error::NotFoundError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
-    UnauthorizedError(crate::error::UnauthorizedError),
+    BadRequestException(crate::error::BadRequestException),
+    ConflictException(crate::error::ConflictException),
+    NotFoundException(crate::error::NotFoundException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
+    UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetUsagePlansError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            GetUsagePlansErrorKind::BadRequestError(_inner) => _inner.fmt(f),
-            GetUsagePlansErrorKind::ConflictError(_inner) => _inner.fmt(f),
-            GetUsagePlansErrorKind::NotFoundError(_inner) => _inner.fmt(f),
-            GetUsagePlansErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
-            GetUsagePlansErrorKind::UnauthorizedError(_inner) => _inner.fmt(f),
+            GetUsagePlansErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            GetUsagePlansErrorKind::ConflictException(_inner) => _inner.fmt(f),
+            GetUsagePlansErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            GetUsagePlansErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
+            GetUsagePlansErrorKind::UnauthorizedException(_inner) => _inner.fmt(f),
             GetUsagePlansErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -8331,30 +8577,33 @@ impl GetUsagePlansError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_bad_request_error(&self) -> bool {
-        matches!(&self.kind, GetUsagePlansErrorKind::BadRequestError(_))
+    pub fn is_bad_request_exception(&self) -> bool {
+        matches!(&self.kind, GetUsagePlansErrorKind::BadRequestException(_))
     }
-    pub fn is_conflict_error(&self) -> bool {
-        matches!(&self.kind, GetUsagePlansErrorKind::ConflictError(_))
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(&self.kind, GetUsagePlansErrorKind::ConflictException(_))
     }
-    pub fn is_not_found_error(&self) -> bool {
-        matches!(&self.kind, GetUsagePlansErrorKind::NotFoundError(_))
+    pub fn is_not_found_exception(&self) -> bool {
+        matches!(&self.kind, GetUsagePlansErrorKind::NotFoundException(_))
     }
-    pub fn is_too_many_requests_error(&self) -> bool {
-        matches!(&self.kind, GetUsagePlansErrorKind::TooManyRequestsError(_))
+    pub fn is_too_many_requests_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetUsagePlansErrorKind::TooManyRequestsException(_)
+        )
     }
-    pub fn is_unauthorized_error(&self) -> bool {
-        matches!(&self.kind, GetUsagePlansErrorKind::UnauthorizedError(_))
+    pub fn is_unauthorized_exception(&self) -> bool {
+        matches!(&self.kind, GetUsagePlansErrorKind::UnauthorizedException(_))
     }
 }
 impl std::error::Error for GetUsagePlansError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            GetUsagePlansErrorKind::BadRequestError(_inner) => Some(_inner),
-            GetUsagePlansErrorKind::ConflictError(_inner) => Some(_inner),
-            GetUsagePlansErrorKind::NotFoundError(_inner) => Some(_inner),
-            GetUsagePlansErrorKind::TooManyRequestsError(_inner) => Some(_inner),
-            GetUsagePlansErrorKind::UnauthorizedError(_inner) => Some(_inner),
+            GetUsagePlansErrorKind::BadRequestException(_inner) => Some(_inner),
+            GetUsagePlansErrorKind::ConflictException(_inner) => Some(_inner),
+            GetUsagePlansErrorKind::NotFoundException(_inner) => Some(_inner),
+            GetUsagePlansErrorKind::TooManyRequestsException(_inner) => Some(_inner),
+            GetUsagePlansErrorKind::UnauthorizedException(_inner) => Some(_inner),
             GetUsagePlansErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -8369,18 +8618,18 @@ pub struct GetVpcLinkError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetVpcLinkErrorKind {
-    NotFoundError(crate::error::NotFoundError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
-    UnauthorizedError(crate::error::UnauthorizedError),
+    NotFoundException(crate::error::NotFoundException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
+    UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetVpcLinkError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            GetVpcLinkErrorKind::NotFoundError(_inner) => _inner.fmt(f),
-            GetVpcLinkErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
-            GetVpcLinkErrorKind::UnauthorizedError(_inner) => _inner.fmt(f),
+            GetVpcLinkErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            GetVpcLinkErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
+            GetVpcLinkErrorKind::UnauthorizedException(_inner) => _inner.fmt(f),
             GetVpcLinkErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -8429,22 +8678,22 @@ impl GetVpcLinkError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_not_found_error(&self) -> bool {
-        matches!(&self.kind, GetVpcLinkErrorKind::NotFoundError(_))
+    pub fn is_not_found_exception(&self) -> bool {
+        matches!(&self.kind, GetVpcLinkErrorKind::NotFoundException(_))
     }
-    pub fn is_too_many_requests_error(&self) -> bool {
-        matches!(&self.kind, GetVpcLinkErrorKind::TooManyRequestsError(_))
+    pub fn is_too_many_requests_exception(&self) -> bool {
+        matches!(&self.kind, GetVpcLinkErrorKind::TooManyRequestsException(_))
     }
-    pub fn is_unauthorized_error(&self) -> bool {
-        matches!(&self.kind, GetVpcLinkErrorKind::UnauthorizedError(_))
+    pub fn is_unauthorized_exception(&self) -> bool {
+        matches!(&self.kind, GetVpcLinkErrorKind::UnauthorizedException(_))
     }
 }
 impl std::error::Error for GetVpcLinkError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            GetVpcLinkErrorKind::NotFoundError(_inner) => Some(_inner),
-            GetVpcLinkErrorKind::TooManyRequestsError(_inner) => Some(_inner),
-            GetVpcLinkErrorKind::UnauthorizedError(_inner) => Some(_inner),
+            GetVpcLinkErrorKind::NotFoundException(_inner) => Some(_inner),
+            GetVpcLinkErrorKind::TooManyRequestsException(_inner) => Some(_inner),
+            GetVpcLinkErrorKind::UnauthorizedException(_inner) => Some(_inner),
             GetVpcLinkErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -8459,18 +8708,18 @@ pub struct GetVpcLinksError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetVpcLinksErrorKind {
-    BadRequestError(crate::error::BadRequestError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
-    UnauthorizedError(crate::error::UnauthorizedError),
+    BadRequestException(crate::error::BadRequestException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
+    UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetVpcLinksError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            GetVpcLinksErrorKind::BadRequestError(_inner) => _inner.fmt(f),
-            GetVpcLinksErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
-            GetVpcLinksErrorKind::UnauthorizedError(_inner) => _inner.fmt(f),
+            GetVpcLinksErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            GetVpcLinksErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
+            GetVpcLinksErrorKind::UnauthorizedException(_inner) => _inner.fmt(f),
             GetVpcLinksErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -8519,22 +8768,25 @@ impl GetVpcLinksError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_bad_request_error(&self) -> bool {
-        matches!(&self.kind, GetVpcLinksErrorKind::BadRequestError(_))
+    pub fn is_bad_request_exception(&self) -> bool {
+        matches!(&self.kind, GetVpcLinksErrorKind::BadRequestException(_))
     }
-    pub fn is_too_many_requests_error(&self) -> bool {
-        matches!(&self.kind, GetVpcLinksErrorKind::TooManyRequestsError(_))
+    pub fn is_too_many_requests_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetVpcLinksErrorKind::TooManyRequestsException(_)
+        )
     }
-    pub fn is_unauthorized_error(&self) -> bool {
-        matches!(&self.kind, GetVpcLinksErrorKind::UnauthorizedError(_))
+    pub fn is_unauthorized_exception(&self) -> bool {
+        matches!(&self.kind, GetVpcLinksErrorKind::UnauthorizedException(_))
     }
 }
 impl std::error::Error for GetVpcLinksError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            GetVpcLinksErrorKind::BadRequestError(_inner) => Some(_inner),
-            GetVpcLinksErrorKind::TooManyRequestsError(_inner) => Some(_inner),
-            GetVpcLinksErrorKind::UnauthorizedError(_inner) => Some(_inner),
+            GetVpcLinksErrorKind::BadRequestException(_inner) => Some(_inner),
+            GetVpcLinksErrorKind::TooManyRequestsException(_inner) => Some(_inner),
+            GetVpcLinksErrorKind::UnauthorizedException(_inner) => Some(_inner),
             GetVpcLinksErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -8549,24 +8801,24 @@ pub struct ImportApiKeysError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ImportApiKeysErrorKind {
-    BadRequestError(crate::error::BadRequestError),
-    ConflictError(crate::error::ConflictError),
-    LimitExceededError(crate::error::LimitExceededError),
-    NotFoundError(crate::error::NotFoundError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
-    UnauthorizedError(crate::error::UnauthorizedError),
+    BadRequestException(crate::error::BadRequestException),
+    ConflictException(crate::error::ConflictException),
+    LimitExceededException(crate::error::LimitExceededException),
+    NotFoundException(crate::error::NotFoundException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
+    UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ImportApiKeysError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ImportApiKeysErrorKind::BadRequestError(_inner) => _inner.fmt(f),
-            ImportApiKeysErrorKind::ConflictError(_inner) => _inner.fmt(f),
-            ImportApiKeysErrorKind::LimitExceededError(_inner) => _inner.fmt(f),
-            ImportApiKeysErrorKind::NotFoundError(_inner) => _inner.fmt(f),
-            ImportApiKeysErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
-            ImportApiKeysErrorKind::UnauthorizedError(_inner) => _inner.fmt(f),
+            ImportApiKeysErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            ImportApiKeysErrorKind::ConflictException(_inner) => _inner.fmt(f),
+            ImportApiKeysErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
+            ImportApiKeysErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            ImportApiKeysErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
+            ImportApiKeysErrorKind::UnauthorizedException(_inner) => _inner.fmt(f),
             ImportApiKeysErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -8615,34 +8867,40 @@ impl ImportApiKeysError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_bad_request_error(&self) -> bool {
-        matches!(&self.kind, ImportApiKeysErrorKind::BadRequestError(_))
+    pub fn is_bad_request_exception(&self) -> bool {
+        matches!(&self.kind, ImportApiKeysErrorKind::BadRequestException(_))
     }
-    pub fn is_conflict_error(&self) -> bool {
-        matches!(&self.kind, ImportApiKeysErrorKind::ConflictError(_))
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(&self.kind, ImportApiKeysErrorKind::ConflictException(_))
     }
-    pub fn is_limit_exceeded_error(&self) -> bool {
-        matches!(&self.kind, ImportApiKeysErrorKind::LimitExceededError(_))
+    pub fn is_limit_exceeded_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ImportApiKeysErrorKind::LimitExceededException(_)
+        )
     }
-    pub fn is_not_found_error(&self) -> bool {
-        matches!(&self.kind, ImportApiKeysErrorKind::NotFoundError(_))
+    pub fn is_not_found_exception(&self) -> bool {
+        matches!(&self.kind, ImportApiKeysErrorKind::NotFoundException(_))
     }
-    pub fn is_too_many_requests_error(&self) -> bool {
-        matches!(&self.kind, ImportApiKeysErrorKind::TooManyRequestsError(_))
+    pub fn is_too_many_requests_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ImportApiKeysErrorKind::TooManyRequestsException(_)
+        )
     }
-    pub fn is_unauthorized_error(&self) -> bool {
-        matches!(&self.kind, ImportApiKeysErrorKind::UnauthorizedError(_))
+    pub fn is_unauthorized_exception(&self) -> bool {
+        matches!(&self.kind, ImportApiKeysErrorKind::UnauthorizedException(_))
     }
 }
 impl std::error::Error for ImportApiKeysError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ImportApiKeysErrorKind::BadRequestError(_inner) => Some(_inner),
-            ImportApiKeysErrorKind::ConflictError(_inner) => Some(_inner),
-            ImportApiKeysErrorKind::LimitExceededError(_inner) => Some(_inner),
-            ImportApiKeysErrorKind::NotFoundError(_inner) => Some(_inner),
-            ImportApiKeysErrorKind::TooManyRequestsError(_inner) => Some(_inner),
-            ImportApiKeysErrorKind::UnauthorizedError(_inner) => Some(_inner),
+            ImportApiKeysErrorKind::BadRequestException(_inner) => Some(_inner),
+            ImportApiKeysErrorKind::ConflictException(_inner) => Some(_inner),
+            ImportApiKeysErrorKind::LimitExceededException(_inner) => Some(_inner),
+            ImportApiKeysErrorKind::NotFoundException(_inner) => Some(_inner),
+            ImportApiKeysErrorKind::TooManyRequestsException(_inner) => Some(_inner),
+            ImportApiKeysErrorKind::UnauthorizedException(_inner) => Some(_inner),
             ImportApiKeysErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -8657,22 +8915,22 @@ pub struct ImportDocumentationPartsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ImportDocumentationPartsErrorKind {
-    BadRequestError(crate::error::BadRequestError),
-    LimitExceededError(crate::error::LimitExceededError),
-    NotFoundError(crate::error::NotFoundError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
-    UnauthorizedError(crate::error::UnauthorizedError),
+    BadRequestException(crate::error::BadRequestException),
+    LimitExceededException(crate::error::LimitExceededException),
+    NotFoundException(crate::error::NotFoundException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
+    UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ImportDocumentationPartsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ImportDocumentationPartsErrorKind::BadRequestError(_inner) => _inner.fmt(f),
-            ImportDocumentationPartsErrorKind::LimitExceededError(_inner) => _inner.fmt(f),
-            ImportDocumentationPartsErrorKind::NotFoundError(_inner) => _inner.fmt(f),
-            ImportDocumentationPartsErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
-            ImportDocumentationPartsErrorKind::UnauthorizedError(_inner) => _inner.fmt(f),
+            ImportDocumentationPartsErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            ImportDocumentationPartsErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
+            ImportDocumentationPartsErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            ImportDocumentationPartsErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
+            ImportDocumentationPartsErrorKind::UnauthorizedException(_inner) => _inner.fmt(f),
             ImportDocumentationPartsErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -8721,45 +8979,45 @@ impl ImportDocumentationPartsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_bad_request_error(&self) -> bool {
+    pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
-            ImportDocumentationPartsErrorKind::BadRequestError(_)
+            ImportDocumentationPartsErrorKind::BadRequestException(_)
         )
     }
-    pub fn is_limit_exceeded_error(&self) -> bool {
+    pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
-            ImportDocumentationPartsErrorKind::LimitExceededError(_)
+            ImportDocumentationPartsErrorKind::LimitExceededException(_)
         )
     }
-    pub fn is_not_found_error(&self) -> bool {
+    pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
-            ImportDocumentationPartsErrorKind::NotFoundError(_)
+            ImportDocumentationPartsErrorKind::NotFoundException(_)
         )
     }
-    pub fn is_too_many_requests_error(&self) -> bool {
+    pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
-            ImportDocumentationPartsErrorKind::TooManyRequestsError(_)
+            ImportDocumentationPartsErrorKind::TooManyRequestsException(_)
         )
     }
-    pub fn is_unauthorized_error(&self) -> bool {
+    pub fn is_unauthorized_exception(&self) -> bool {
         matches!(
             &self.kind,
-            ImportDocumentationPartsErrorKind::UnauthorizedError(_)
+            ImportDocumentationPartsErrorKind::UnauthorizedException(_)
         )
     }
 }
 impl std::error::Error for ImportDocumentationPartsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ImportDocumentationPartsErrorKind::BadRequestError(_inner) => Some(_inner),
-            ImportDocumentationPartsErrorKind::LimitExceededError(_inner) => Some(_inner),
-            ImportDocumentationPartsErrorKind::NotFoundError(_inner) => Some(_inner),
-            ImportDocumentationPartsErrorKind::TooManyRequestsError(_inner) => Some(_inner),
-            ImportDocumentationPartsErrorKind::UnauthorizedError(_inner) => Some(_inner),
+            ImportDocumentationPartsErrorKind::BadRequestException(_inner) => Some(_inner),
+            ImportDocumentationPartsErrorKind::LimitExceededException(_inner) => Some(_inner),
+            ImportDocumentationPartsErrorKind::NotFoundException(_inner) => Some(_inner),
+            ImportDocumentationPartsErrorKind::TooManyRequestsException(_inner) => Some(_inner),
+            ImportDocumentationPartsErrorKind::UnauthorizedException(_inner) => Some(_inner),
             ImportDocumentationPartsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -8774,22 +9032,22 @@ pub struct ImportRestApiError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ImportRestApiErrorKind {
-    BadRequestError(crate::error::BadRequestError),
-    ConflictError(crate::error::ConflictError),
-    LimitExceededError(crate::error::LimitExceededError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
-    UnauthorizedError(crate::error::UnauthorizedError),
+    BadRequestException(crate::error::BadRequestException),
+    ConflictException(crate::error::ConflictException),
+    LimitExceededException(crate::error::LimitExceededException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
+    UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ImportRestApiError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ImportRestApiErrorKind::BadRequestError(_inner) => _inner.fmt(f),
-            ImportRestApiErrorKind::ConflictError(_inner) => _inner.fmt(f),
-            ImportRestApiErrorKind::LimitExceededError(_inner) => _inner.fmt(f),
-            ImportRestApiErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
-            ImportRestApiErrorKind::UnauthorizedError(_inner) => _inner.fmt(f),
+            ImportRestApiErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            ImportRestApiErrorKind::ConflictException(_inner) => _inner.fmt(f),
+            ImportRestApiErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
+            ImportRestApiErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
+            ImportRestApiErrorKind::UnauthorizedException(_inner) => _inner.fmt(f),
             ImportRestApiErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -8838,30 +9096,36 @@ impl ImportRestApiError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_bad_request_error(&self) -> bool {
-        matches!(&self.kind, ImportRestApiErrorKind::BadRequestError(_))
+    pub fn is_bad_request_exception(&self) -> bool {
+        matches!(&self.kind, ImportRestApiErrorKind::BadRequestException(_))
     }
-    pub fn is_conflict_error(&self) -> bool {
-        matches!(&self.kind, ImportRestApiErrorKind::ConflictError(_))
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(&self.kind, ImportRestApiErrorKind::ConflictException(_))
     }
-    pub fn is_limit_exceeded_error(&self) -> bool {
-        matches!(&self.kind, ImportRestApiErrorKind::LimitExceededError(_))
+    pub fn is_limit_exceeded_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ImportRestApiErrorKind::LimitExceededException(_)
+        )
     }
-    pub fn is_too_many_requests_error(&self) -> bool {
-        matches!(&self.kind, ImportRestApiErrorKind::TooManyRequestsError(_))
+    pub fn is_too_many_requests_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ImportRestApiErrorKind::TooManyRequestsException(_)
+        )
     }
-    pub fn is_unauthorized_error(&self) -> bool {
-        matches!(&self.kind, ImportRestApiErrorKind::UnauthorizedError(_))
+    pub fn is_unauthorized_exception(&self) -> bool {
+        matches!(&self.kind, ImportRestApiErrorKind::UnauthorizedException(_))
     }
 }
 impl std::error::Error for ImportRestApiError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ImportRestApiErrorKind::BadRequestError(_inner) => Some(_inner),
-            ImportRestApiErrorKind::ConflictError(_inner) => Some(_inner),
-            ImportRestApiErrorKind::LimitExceededError(_inner) => Some(_inner),
-            ImportRestApiErrorKind::TooManyRequestsError(_inner) => Some(_inner),
-            ImportRestApiErrorKind::UnauthorizedError(_inner) => Some(_inner),
+            ImportRestApiErrorKind::BadRequestException(_inner) => Some(_inner),
+            ImportRestApiErrorKind::ConflictException(_inner) => Some(_inner),
+            ImportRestApiErrorKind::LimitExceededException(_inner) => Some(_inner),
+            ImportRestApiErrorKind::TooManyRequestsException(_inner) => Some(_inner),
+            ImportRestApiErrorKind::UnauthorizedException(_inner) => Some(_inner),
             ImportRestApiErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -8876,22 +9140,22 @@ pub struct PutGatewayResponseError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum PutGatewayResponseErrorKind {
-    BadRequestError(crate::error::BadRequestError),
-    LimitExceededError(crate::error::LimitExceededError),
-    NotFoundError(crate::error::NotFoundError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
-    UnauthorizedError(crate::error::UnauthorizedError),
+    BadRequestException(crate::error::BadRequestException),
+    LimitExceededException(crate::error::LimitExceededException),
+    NotFoundException(crate::error::NotFoundException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
+    UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutGatewayResponseError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            PutGatewayResponseErrorKind::BadRequestError(_inner) => _inner.fmt(f),
-            PutGatewayResponseErrorKind::LimitExceededError(_inner) => _inner.fmt(f),
-            PutGatewayResponseErrorKind::NotFoundError(_inner) => _inner.fmt(f),
-            PutGatewayResponseErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
-            PutGatewayResponseErrorKind::UnauthorizedError(_inner) => _inner.fmt(f),
+            PutGatewayResponseErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            PutGatewayResponseErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
+            PutGatewayResponseErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            PutGatewayResponseErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
+            PutGatewayResponseErrorKind::UnauthorizedException(_inner) => _inner.fmt(f),
             PutGatewayResponseErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -8940,39 +9204,45 @@ impl PutGatewayResponseError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_bad_request_error(&self) -> bool {
-        matches!(&self.kind, PutGatewayResponseErrorKind::BadRequestError(_))
-    }
-    pub fn is_limit_exceeded_error(&self) -> bool {
+    pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
-            PutGatewayResponseErrorKind::LimitExceededError(_)
+            PutGatewayResponseErrorKind::BadRequestException(_)
         )
     }
-    pub fn is_not_found_error(&self) -> bool {
-        matches!(&self.kind, PutGatewayResponseErrorKind::NotFoundError(_))
-    }
-    pub fn is_too_many_requests_error(&self) -> bool {
+    pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
-            PutGatewayResponseErrorKind::TooManyRequestsError(_)
+            PutGatewayResponseErrorKind::LimitExceededException(_)
         )
     }
-    pub fn is_unauthorized_error(&self) -> bool {
+    pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
-            PutGatewayResponseErrorKind::UnauthorizedError(_)
+            PutGatewayResponseErrorKind::NotFoundException(_)
+        )
+    }
+    pub fn is_too_many_requests_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutGatewayResponseErrorKind::TooManyRequestsException(_)
+        )
+    }
+    pub fn is_unauthorized_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutGatewayResponseErrorKind::UnauthorizedException(_)
         )
     }
 }
 impl std::error::Error for PutGatewayResponseError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            PutGatewayResponseErrorKind::BadRequestError(_inner) => Some(_inner),
-            PutGatewayResponseErrorKind::LimitExceededError(_inner) => Some(_inner),
-            PutGatewayResponseErrorKind::NotFoundError(_inner) => Some(_inner),
-            PutGatewayResponseErrorKind::TooManyRequestsError(_inner) => Some(_inner),
-            PutGatewayResponseErrorKind::UnauthorizedError(_inner) => Some(_inner),
+            PutGatewayResponseErrorKind::BadRequestException(_inner) => Some(_inner),
+            PutGatewayResponseErrorKind::LimitExceededException(_inner) => Some(_inner),
+            PutGatewayResponseErrorKind::NotFoundException(_inner) => Some(_inner),
+            PutGatewayResponseErrorKind::TooManyRequestsException(_inner) => Some(_inner),
+            PutGatewayResponseErrorKind::UnauthorizedException(_inner) => Some(_inner),
             PutGatewayResponseErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -8987,22 +9257,22 @@ pub struct PutIntegrationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum PutIntegrationErrorKind {
-    BadRequestError(crate::error::BadRequestError),
-    ConflictError(crate::error::ConflictError),
-    NotFoundError(crate::error::NotFoundError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
-    UnauthorizedError(crate::error::UnauthorizedError),
+    BadRequestException(crate::error::BadRequestException),
+    ConflictException(crate::error::ConflictException),
+    NotFoundException(crate::error::NotFoundException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
+    UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutIntegrationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            PutIntegrationErrorKind::BadRequestError(_inner) => _inner.fmt(f),
-            PutIntegrationErrorKind::ConflictError(_inner) => _inner.fmt(f),
-            PutIntegrationErrorKind::NotFoundError(_inner) => _inner.fmt(f),
-            PutIntegrationErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
-            PutIntegrationErrorKind::UnauthorizedError(_inner) => _inner.fmt(f),
+            PutIntegrationErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            PutIntegrationErrorKind::ConflictException(_inner) => _inner.fmt(f),
+            PutIntegrationErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            PutIntegrationErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
+            PutIntegrationErrorKind::UnauthorizedException(_inner) => _inner.fmt(f),
             PutIntegrationErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -9051,30 +9321,36 @@ impl PutIntegrationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_bad_request_error(&self) -> bool {
-        matches!(&self.kind, PutIntegrationErrorKind::BadRequestError(_))
+    pub fn is_bad_request_exception(&self) -> bool {
+        matches!(&self.kind, PutIntegrationErrorKind::BadRequestException(_))
     }
-    pub fn is_conflict_error(&self) -> bool {
-        matches!(&self.kind, PutIntegrationErrorKind::ConflictError(_))
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(&self.kind, PutIntegrationErrorKind::ConflictException(_))
     }
-    pub fn is_not_found_error(&self) -> bool {
-        matches!(&self.kind, PutIntegrationErrorKind::NotFoundError(_))
+    pub fn is_not_found_exception(&self) -> bool {
+        matches!(&self.kind, PutIntegrationErrorKind::NotFoundException(_))
     }
-    pub fn is_too_many_requests_error(&self) -> bool {
-        matches!(&self.kind, PutIntegrationErrorKind::TooManyRequestsError(_))
+    pub fn is_too_many_requests_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutIntegrationErrorKind::TooManyRequestsException(_)
+        )
     }
-    pub fn is_unauthorized_error(&self) -> bool {
-        matches!(&self.kind, PutIntegrationErrorKind::UnauthorizedError(_))
+    pub fn is_unauthorized_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutIntegrationErrorKind::UnauthorizedException(_)
+        )
     }
 }
 impl std::error::Error for PutIntegrationError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            PutIntegrationErrorKind::BadRequestError(_inner) => Some(_inner),
-            PutIntegrationErrorKind::ConflictError(_inner) => Some(_inner),
-            PutIntegrationErrorKind::NotFoundError(_inner) => Some(_inner),
-            PutIntegrationErrorKind::TooManyRequestsError(_inner) => Some(_inner),
-            PutIntegrationErrorKind::UnauthorizedError(_inner) => Some(_inner),
+            PutIntegrationErrorKind::BadRequestException(_inner) => Some(_inner),
+            PutIntegrationErrorKind::ConflictException(_inner) => Some(_inner),
+            PutIntegrationErrorKind::NotFoundException(_inner) => Some(_inner),
+            PutIntegrationErrorKind::TooManyRequestsException(_inner) => Some(_inner),
+            PutIntegrationErrorKind::UnauthorizedException(_inner) => Some(_inner),
             PutIntegrationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -9089,24 +9365,24 @@ pub struct PutIntegrationResponseError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum PutIntegrationResponseErrorKind {
-    BadRequestError(crate::error::BadRequestError),
-    ConflictError(crate::error::ConflictError),
-    LimitExceededError(crate::error::LimitExceededError),
-    NotFoundError(crate::error::NotFoundError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
-    UnauthorizedError(crate::error::UnauthorizedError),
+    BadRequestException(crate::error::BadRequestException),
+    ConflictException(crate::error::ConflictException),
+    LimitExceededException(crate::error::LimitExceededException),
+    NotFoundException(crate::error::NotFoundException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
+    UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutIntegrationResponseError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            PutIntegrationResponseErrorKind::BadRequestError(_inner) => _inner.fmt(f),
-            PutIntegrationResponseErrorKind::ConflictError(_inner) => _inner.fmt(f),
-            PutIntegrationResponseErrorKind::LimitExceededError(_inner) => _inner.fmt(f),
-            PutIntegrationResponseErrorKind::NotFoundError(_inner) => _inner.fmt(f),
-            PutIntegrationResponseErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
-            PutIntegrationResponseErrorKind::UnauthorizedError(_inner) => _inner.fmt(f),
+            PutIntegrationResponseErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            PutIntegrationResponseErrorKind::ConflictException(_inner) => _inner.fmt(f),
+            PutIntegrationResponseErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
+            PutIntegrationResponseErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            PutIntegrationResponseErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
+            PutIntegrationResponseErrorKind::UnauthorizedException(_inner) => _inner.fmt(f),
             PutIntegrationResponseErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -9155,52 +9431,52 @@ impl PutIntegrationResponseError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_bad_request_error(&self) -> bool {
+    pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
-            PutIntegrationResponseErrorKind::BadRequestError(_)
+            PutIntegrationResponseErrorKind::BadRequestException(_)
         )
     }
-    pub fn is_conflict_error(&self) -> bool {
+    pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
-            PutIntegrationResponseErrorKind::ConflictError(_)
+            PutIntegrationResponseErrorKind::ConflictException(_)
         )
     }
-    pub fn is_limit_exceeded_error(&self) -> bool {
+    pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
-            PutIntegrationResponseErrorKind::LimitExceededError(_)
+            PutIntegrationResponseErrorKind::LimitExceededException(_)
         )
     }
-    pub fn is_not_found_error(&self) -> bool {
+    pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
-            PutIntegrationResponseErrorKind::NotFoundError(_)
+            PutIntegrationResponseErrorKind::NotFoundException(_)
         )
     }
-    pub fn is_too_many_requests_error(&self) -> bool {
+    pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
-            PutIntegrationResponseErrorKind::TooManyRequestsError(_)
+            PutIntegrationResponseErrorKind::TooManyRequestsException(_)
         )
     }
-    pub fn is_unauthorized_error(&self) -> bool {
+    pub fn is_unauthorized_exception(&self) -> bool {
         matches!(
             &self.kind,
-            PutIntegrationResponseErrorKind::UnauthorizedError(_)
+            PutIntegrationResponseErrorKind::UnauthorizedException(_)
         )
     }
 }
 impl std::error::Error for PutIntegrationResponseError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            PutIntegrationResponseErrorKind::BadRequestError(_inner) => Some(_inner),
-            PutIntegrationResponseErrorKind::ConflictError(_inner) => Some(_inner),
-            PutIntegrationResponseErrorKind::LimitExceededError(_inner) => Some(_inner),
-            PutIntegrationResponseErrorKind::NotFoundError(_inner) => Some(_inner),
-            PutIntegrationResponseErrorKind::TooManyRequestsError(_inner) => Some(_inner),
-            PutIntegrationResponseErrorKind::UnauthorizedError(_inner) => Some(_inner),
+            PutIntegrationResponseErrorKind::BadRequestException(_inner) => Some(_inner),
+            PutIntegrationResponseErrorKind::ConflictException(_inner) => Some(_inner),
+            PutIntegrationResponseErrorKind::LimitExceededException(_inner) => Some(_inner),
+            PutIntegrationResponseErrorKind::NotFoundException(_inner) => Some(_inner),
+            PutIntegrationResponseErrorKind::TooManyRequestsException(_inner) => Some(_inner),
+            PutIntegrationResponseErrorKind::UnauthorizedException(_inner) => Some(_inner),
             PutIntegrationResponseErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -9215,24 +9491,24 @@ pub struct PutMethodError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum PutMethodErrorKind {
-    BadRequestError(crate::error::BadRequestError),
-    ConflictError(crate::error::ConflictError),
-    LimitExceededError(crate::error::LimitExceededError),
-    NotFoundError(crate::error::NotFoundError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
-    UnauthorizedError(crate::error::UnauthorizedError),
+    BadRequestException(crate::error::BadRequestException),
+    ConflictException(crate::error::ConflictException),
+    LimitExceededException(crate::error::LimitExceededException),
+    NotFoundException(crate::error::NotFoundException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
+    UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutMethodError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            PutMethodErrorKind::BadRequestError(_inner) => _inner.fmt(f),
-            PutMethodErrorKind::ConflictError(_inner) => _inner.fmt(f),
-            PutMethodErrorKind::LimitExceededError(_inner) => _inner.fmt(f),
-            PutMethodErrorKind::NotFoundError(_inner) => _inner.fmt(f),
-            PutMethodErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
-            PutMethodErrorKind::UnauthorizedError(_inner) => _inner.fmt(f),
+            PutMethodErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            PutMethodErrorKind::ConflictException(_inner) => _inner.fmt(f),
+            PutMethodErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
+            PutMethodErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            PutMethodErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
+            PutMethodErrorKind::UnauthorizedException(_inner) => _inner.fmt(f),
             PutMethodErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -9281,34 +9557,34 @@ impl PutMethodError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_bad_request_error(&self) -> bool {
-        matches!(&self.kind, PutMethodErrorKind::BadRequestError(_))
+    pub fn is_bad_request_exception(&self) -> bool {
+        matches!(&self.kind, PutMethodErrorKind::BadRequestException(_))
     }
-    pub fn is_conflict_error(&self) -> bool {
-        matches!(&self.kind, PutMethodErrorKind::ConflictError(_))
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(&self.kind, PutMethodErrorKind::ConflictException(_))
     }
-    pub fn is_limit_exceeded_error(&self) -> bool {
-        matches!(&self.kind, PutMethodErrorKind::LimitExceededError(_))
+    pub fn is_limit_exceeded_exception(&self) -> bool {
+        matches!(&self.kind, PutMethodErrorKind::LimitExceededException(_))
     }
-    pub fn is_not_found_error(&self) -> bool {
-        matches!(&self.kind, PutMethodErrorKind::NotFoundError(_))
+    pub fn is_not_found_exception(&self) -> bool {
+        matches!(&self.kind, PutMethodErrorKind::NotFoundException(_))
     }
-    pub fn is_too_many_requests_error(&self) -> bool {
-        matches!(&self.kind, PutMethodErrorKind::TooManyRequestsError(_))
+    pub fn is_too_many_requests_exception(&self) -> bool {
+        matches!(&self.kind, PutMethodErrorKind::TooManyRequestsException(_))
     }
-    pub fn is_unauthorized_error(&self) -> bool {
-        matches!(&self.kind, PutMethodErrorKind::UnauthorizedError(_))
+    pub fn is_unauthorized_exception(&self) -> bool {
+        matches!(&self.kind, PutMethodErrorKind::UnauthorizedException(_))
     }
 }
 impl std::error::Error for PutMethodError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            PutMethodErrorKind::BadRequestError(_inner) => Some(_inner),
-            PutMethodErrorKind::ConflictError(_inner) => Some(_inner),
-            PutMethodErrorKind::LimitExceededError(_inner) => Some(_inner),
-            PutMethodErrorKind::NotFoundError(_inner) => Some(_inner),
-            PutMethodErrorKind::TooManyRequestsError(_inner) => Some(_inner),
-            PutMethodErrorKind::UnauthorizedError(_inner) => Some(_inner),
+            PutMethodErrorKind::BadRequestException(_inner) => Some(_inner),
+            PutMethodErrorKind::ConflictException(_inner) => Some(_inner),
+            PutMethodErrorKind::LimitExceededException(_inner) => Some(_inner),
+            PutMethodErrorKind::NotFoundException(_inner) => Some(_inner),
+            PutMethodErrorKind::TooManyRequestsException(_inner) => Some(_inner),
+            PutMethodErrorKind::UnauthorizedException(_inner) => Some(_inner),
             PutMethodErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -9323,24 +9599,24 @@ pub struct PutMethodResponseError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum PutMethodResponseErrorKind {
-    BadRequestError(crate::error::BadRequestError),
-    ConflictError(crate::error::ConflictError),
-    LimitExceededError(crate::error::LimitExceededError),
-    NotFoundError(crate::error::NotFoundError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
-    UnauthorizedError(crate::error::UnauthorizedError),
+    BadRequestException(crate::error::BadRequestException),
+    ConflictException(crate::error::ConflictException),
+    LimitExceededException(crate::error::LimitExceededException),
+    NotFoundException(crate::error::NotFoundException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
+    UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutMethodResponseError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            PutMethodResponseErrorKind::BadRequestError(_inner) => _inner.fmt(f),
-            PutMethodResponseErrorKind::ConflictError(_inner) => _inner.fmt(f),
-            PutMethodResponseErrorKind::LimitExceededError(_inner) => _inner.fmt(f),
-            PutMethodResponseErrorKind::NotFoundError(_inner) => _inner.fmt(f),
-            PutMethodResponseErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
-            PutMethodResponseErrorKind::UnauthorizedError(_inner) => _inner.fmt(f),
+            PutMethodResponseErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            PutMethodResponseErrorKind::ConflictException(_inner) => _inner.fmt(f),
+            PutMethodResponseErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
+            PutMethodResponseErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            PutMethodResponseErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
+            PutMethodResponseErrorKind::UnauthorizedException(_inner) => _inner.fmt(f),
             PutMethodResponseErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -9389,40 +9665,46 @@ impl PutMethodResponseError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_bad_request_error(&self) -> bool {
-        matches!(&self.kind, PutMethodResponseErrorKind::BadRequestError(_))
-    }
-    pub fn is_conflict_error(&self) -> bool {
-        matches!(&self.kind, PutMethodResponseErrorKind::ConflictError(_))
-    }
-    pub fn is_limit_exceeded_error(&self) -> bool {
+    pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
-            PutMethodResponseErrorKind::LimitExceededError(_)
+            PutMethodResponseErrorKind::BadRequestException(_)
         )
     }
-    pub fn is_not_found_error(&self) -> bool {
-        matches!(&self.kind, PutMethodResponseErrorKind::NotFoundError(_))
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(&self.kind, PutMethodResponseErrorKind::ConflictException(_))
     }
-    pub fn is_too_many_requests_error(&self) -> bool {
+    pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
-            PutMethodResponseErrorKind::TooManyRequestsError(_)
+            PutMethodResponseErrorKind::LimitExceededException(_)
         )
     }
-    pub fn is_unauthorized_error(&self) -> bool {
-        matches!(&self.kind, PutMethodResponseErrorKind::UnauthorizedError(_))
+    pub fn is_not_found_exception(&self) -> bool {
+        matches!(&self.kind, PutMethodResponseErrorKind::NotFoundException(_))
+    }
+    pub fn is_too_many_requests_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutMethodResponseErrorKind::TooManyRequestsException(_)
+        )
+    }
+    pub fn is_unauthorized_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutMethodResponseErrorKind::UnauthorizedException(_)
+        )
     }
 }
 impl std::error::Error for PutMethodResponseError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            PutMethodResponseErrorKind::BadRequestError(_inner) => Some(_inner),
-            PutMethodResponseErrorKind::ConflictError(_inner) => Some(_inner),
-            PutMethodResponseErrorKind::LimitExceededError(_inner) => Some(_inner),
-            PutMethodResponseErrorKind::NotFoundError(_inner) => Some(_inner),
-            PutMethodResponseErrorKind::TooManyRequestsError(_inner) => Some(_inner),
-            PutMethodResponseErrorKind::UnauthorizedError(_inner) => Some(_inner),
+            PutMethodResponseErrorKind::BadRequestException(_inner) => Some(_inner),
+            PutMethodResponseErrorKind::ConflictException(_inner) => Some(_inner),
+            PutMethodResponseErrorKind::LimitExceededException(_inner) => Some(_inner),
+            PutMethodResponseErrorKind::NotFoundException(_inner) => Some(_inner),
+            PutMethodResponseErrorKind::TooManyRequestsException(_inner) => Some(_inner),
+            PutMethodResponseErrorKind::UnauthorizedException(_inner) => Some(_inner),
             PutMethodResponseErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -9437,24 +9719,24 @@ pub struct PutRestApiError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum PutRestApiErrorKind {
-    BadRequestError(crate::error::BadRequestError),
-    ConflictError(crate::error::ConflictError),
-    LimitExceededError(crate::error::LimitExceededError),
-    NotFoundError(crate::error::NotFoundError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
-    UnauthorizedError(crate::error::UnauthorizedError),
+    BadRequestException(crate::error::BadRequestException),
+    ConflictException(crate::error::ConflictException),
+    LimitExceededException(crate::error::LimitExceededException),
+    NotFoundException(crate::error::NotFoundException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
+    UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutRestApiError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            PutRestApiErrorKind::BadRequestError(_inner) => _inner.fmt(f),
-            PutRestApiErrorKind::ConflictError(_inner) => _inner.fmt(f),
-            PutRestApiErrorKind::LimitExceededError(_inner) => _inner.fmt(f),
-            PutRestApiErrorKind::NotFoundError(_inner) => _inner.fmt(f),
-            PutRestApiErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
-            PutRestApiErrorKind::UnauthorizedError(_inner) => _inner.fmt(f),
+            PutRestApiErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            PutRestApiErrorKind::ConflictException(_inner) => _inner.fmt(f),
+            PutRestApiErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
+            PutRestApiErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            PutRestApiErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
+            PutRestApiErrorKind::UnauthorizedException(_inner) => _inner.fmt(f),
             PutRestApiErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -9503,34 +9785,34 @@ impl PutRestApiError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_bad_request_error(&self) -> bool {
-        matches!(&self.kind, PutRestApiErrorKind::BadRequestError(_))
+    pub fn is_bad_request_exception(&self) -> bool {
+        matches!(&self.kind, PutRestApiErrorKind::BadRequestException(_))
     }
-    pub fn is_conflict_error(&self) -> bool {
-        matches!(&self.kind, PutRestApiErrorKind::ConflictError(_))
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(&self.kind, PutRestApiErrorKind::ConflictException(_))
     }
-    pub fn is_limit_exceeded_error(&self) -> bool {
-        matches!(&self.kind, PutRestApiErrorKind::LimitExceededError(_))
+    pub fn is_limit_exceeded_exception(&self) -> bool {
+        matches!(&self.kind, PutRestApiErrorKind::LimitExceededException(_))
     }
-    pub fn is_not_found_error(&self) -> bool {
-        matches!(&self.kind, PutRestApiErrorKind::NotFoundError(_))
+    pub fn is_not_found_exception(&self) -> bool {
+        matches!(&self.kind, PutRestApiErrorKind::NotFoundException(_))
     }
-    pub fn is_too_many_requests_error(&self) -> bool {
-        matches!(&self.kind, PutRestApiErrorKind::TooManyRequestsError(_))
+    pub fn is_too_many_requests_exception(&self) -> bool {
+        matches!(&self.kind, PutRestApiErrorKind::TooManyRequestsException(_))
     }
-    pub fn is_unauthorized_error(&self) -> bool {
-        matches!(&self.kind, PutRestApiErrorKind::UnauthorizedError(_))
+    pub fn is_unauthorized_exception(&self) -> bool {
+        matches!(&self.kind, PutRestApiErrorKind::UnauthorizedException(_))
     }
 }
 impl std::error::Error for PutRestApiError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            PutRestApiErrorKind::BadRequestError(_inner) => Some(_inner),
-            PutRestApiErrorKind::ConflictError(_inner) => Some(_inner),
-            PutRestApiErrorKind::LimitExceededError(_inner) => Some(_inner),
-            PutRestApiErrorKind::NotFoundError(_inner) => Some(_inner),
-            PutRestApiErrorKind::TooManyRequestsError(_inner) => Some(_inner),
-            PutRestApiErrorKind::UnauthorizedError(_inner) => Some(_inner),
+            PutRestApiErrorKind::BadRequestException(_inner) => Some(_inner),
+            PutRestApiErrorKind::ConflictException(_inner) => Some(_inner),
+            PutRestApiErrorKind::LimitExceededException(_inner) => Some(_inner),
+            PutRestApiErrorKind::NotFoundException(_inner) => Some(_inner),
+            PutRestApiErrorKind::TooManyRequestsException(_inner) => Some(_inner),
+            PutRestApiErrorKind::UnauthorizedException(_inner) => Some(_inner),
             PutRestApiErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -9545,24 +9827,24 @@ pub struct TagResourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum TagResourceErrorKind {
-    BadRequestError(crate::error::BadRequestError),
-    ConflictError(crate::error::ConflictError),
-    LimitExceededError(crate::error::LimitExceededError),
-    NotFoundError(crate::error::NotFoundError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
-    UnauthorizedError(crate::error::UnauthorizedError),
+    BadRequestException(crate::error::BadRequestException),
+    ConflictException(crate::error::ConflictException),
+    LimitExceededException(crate::error::LimitExceededException),
+    NotFoundException(crate::error::NotFoundException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
+    UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for TagResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            TagResourceErrorKind::BadRequestError(_inner) => _inner.fmt(f),
-            TagResourceErrorKind::ConflictError(_inner) => _inner.fmt(f),
-            TagResourceErrorKind::LimitExceededError(_inner) => _inner.fmt(f),
-            TagResourceErrorKind::NotFoundError(_inner) => _inner.fmt(f),
-            TagResourceErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
-            TagResourceErrorKind::UnauthorizedError(_inner) => _inner.fmt(f),
+            TagResourceErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            TagResourceErrorKind::ConflictException(_inner) => _inner.fmt(f),
+            TagResourceErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
+            TagResourceErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            TagResourceErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
+            TagResourceErrorKind::UnauthorizedException(_inner) => _inner.fmt(f),
             TagResourceErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -9611,34 +9893,37 @@ impl TagResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_bad_request_error(&self) -> bool {
-        matches!(&self.kind, TagResourceErrorKind::BadRequestError(_))
+    pub fn is_bad_request_exception(&self) -> bool {
+        matches!(&self.kind, TagResourceErrorKind::BadRequestException(_))
     }
-    pub fn is_conflict_error(&self) -> bool {
-        matches!(&self.kind, TagResourceErrorKind::ConflictError(_))
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(&self.kind, TagResourceErrorKind::ConflictException(_))
     }
-    pub fn is_limit_exceeded_error(&self) -> bool {
-        matches!(&self.kind, TagResourceErrorKind::LimitExceededError(_))
+    pub fn is_limit_exceeded_exception(&self) -> bool {
+        matches!(&self.kind, TagResourceErrorKind::LimitExceededException(_))
     }
-    pub fn is_not_found_error(&self) -> bool {
-        matches!(&self.kind, TagResourceErrorKind::NotFoundError(_))
+    pub fn is_not_found_exception(&self) -> bool {
+        matches!(&self.kind, TagResourceErrorKind::NotFoundException(_))
     }
-    pub fn is_too_many_requests_error(&self) -> bool {
-        matches!(&self.kind, TagResourceErrorKind::TooManyRequestsError(_))
+    pub fn is_too_many_requests_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            TagResourceErrorKind::TooManyRequestsException(_)
+        )
     }
-    pub fn is_unauthorized_error(&self) -> bool {
-        matches!(&self.kind, TagResourceErrorKind::UnauthorizedError(_))
+    pub fn is_unauthorized_exception(&self) -> bool {
+        matches!(&self.kind, TagResourceErrorKind::UnauthorizedException(_))
     }
 }
 impl std::error::Error for TagResourceError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            TagResourceErrorKind::BadRequestError(_inner) => Some(_inner),
-            TagResourceErrorKind::ConflictError(_inner) => Some(_inner),
-            TagResourceErrorKind::LimitExceededError(_inner) => Some(_inner),
-            TagResourceErrorKind::NotFoundError(_inner) => Some(_inner),
-            TagResourceErrorKind::TooManyRequestsError(_inner) => Some(_inner),
-            TagResourceErrorKind::UnauthorizedError(_inner) => Some(_inner),
+            TagResourceErrorKind::BadRequestException(_inner) => Some(_inner),
+            TagResourceErrorKind::ConflictException(_inner) => Some(_inner),
+            TagResourceErrorKind::LimitExceededException(_inner) => Some(_inner),
+            TagResourceErrorKind::NotFoundException(_inner) => Some(_inner),
+            TagResourceErrorKind::TooManyRequestsException(_inner) => Some(_inner),
+            TagResourceErrorKind::UnauthorizedException(_inner) => Some(_inner),
             TagResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -9653,20 +9938,20 @@ pub struct TestInvokeAuthorizerError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum TestInvokeAuthorizerErrorKind {
-    BadRequestError(crate::error::BadRequestError),
-    NotFoundError(crate::error::NotFoundError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
-    UnauthorizedError(crate::error::UnauthorizedError),
+    BadRequestException(crate::error::BadRequestException),
+    NotFoundException(crate::error::NotFoundException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
+    UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for TestInvokeAuthorizerError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            TestInvokeAuthorizerErrorKind::BadRequestError(_inner) => _inner.fmt(f),
-            TestInvokeAuthorizerErrorKind::NotFoundError(_inner) => _inner.fmt(f),
-            TestInvokeAuthorizerErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
-            TestInvokeAuthorizerErrorKind::UnauthorizedError(_inner) => _inner.fmt(f),
+            TestInvokeAuthorizerErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            TestInvokeAuthorizerErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            TestInvokeAuthorizerErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
+            TestInvokeAuthorizerErrorKind::UnauthorizedException(_inner) => _inner.fmt(f),
             TestInvokeAuthorizerErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -9715,35 +10000,38 @@ impl TestInvokeAuthorizerError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_bad_request_error(&self) -> bool {
+    pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
-            TestInvokeAuthorizerErrorKind::BadRequestError(_)
+            TestInvokeAuthorizerErrorKind::BadRequestException(_)
         )
     }
-    pub fn is_not_found_error(&self) -> bool {
-        matches!(&self.kind, TestInvokeAuthorizerErrorKind::NotFoundError(_))
-    }
-    pub fn is_too_many_requests_error(&self) -> bool {
+    pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
-            TestInvokeAuthorizerErrorKind::TooManyRequestsError(_)
+            TestInvokeAuthorizerErrorKind::NotFoundException(_)
         )
     }
-    pub fn is_unauthorized_error(&self) -> bool {
+    pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
-            TestInvokeAuthorizerErrorKind::UnauthorizedError(_)
+            TestInvokeAuthorizerErrorKind::TooManyRequestsException(_)
+        )
+    }
+    pub fn is_unauthorized_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            TestInvokeAuthorizerErrorKind::UnauthorizedException(_)
         )
     }
 }
 impl std::error::Error for TestInvokeAuthorizerError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            TestInvokeAuthorizerErrorKind::BadRequestError(_inner) => Some(_inner),
-            TestInvokeAuthorizerErrorKind::NotFoundError(_inner) => Some(_inner),
-            TestInvokeAuthorizerErrorKind::TooManyRequestsError(_inner) => Some(_inner),
-            TestInvokeAuthorizerErrorKind::UnauthorizedError(_inner) => Some(_inner),
+            TestInvokeAuthorizerErrorKind::BadRequestException(_inner) => Some(_inner),
+            TestInvokeAuthorizerErrorKind::NotFoundException(_inner) => Some(_inner),
+            TestInvokeAuthorizerErrorKind::TooManyRequestsException(_inner) => Some(_inner),
+            TestInvokeAuthorizerErrorKind::UnauthorizedException(_inner) => Some(_inner),
             TestInvokeAuthorizerErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -9758,20 +10046,20 @@ pub struct TestInvokeMethodError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum TestInvokeMethodErrorKind {
-    BadRequestError(crate::error::BadRequestError),
-    NotFoundError(crate::error::NotFoundError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
-    UnauthorizedError(crate::error::UnauthorizedError),
+    BadRequestException(crate::error::BadRequestException),
+    NotFoundException(crate::error::NotFoundException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
+    UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for TestInvokeMethodError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            TestInvokeMethodErrorKind::BadRequestError(_inner) => _inner.fmt(f),
-            TestInvokeMethodErrorKind::NotFoundError(_inner) => _inner.fmt(f),
-            TestInvokeMethodErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
-            TestInvokeMethodErrorKind::UnauthorizedError(_inner) => _inner.fmt(f),
+            TestInvokeMethodErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            TestInvokeMethodErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            TestInvokeMethodErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
+            TestInvokeMethodErrorKind::UnauthorizedException(_inner) => _inner.fmt(f),
             TestInvokeMethodErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -9820,29 +10108,35 @@ impl TestInvokeMethodError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_bad_request_error(&self) -> bool {
-        matches!(&self.kind, TestInvokeMethodErrorKind::BadRequestError(_))
-    }
-    pub fn is_not_found_error(&self) -> bool {
-        matches!(&self.kind, TestInvokeMethodErrorKind::NotFoundError(_))
-    }
-    pub fn is_too_many_requests_error(&self) -> bool {
+    pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
-            TestInvokeMethodErrorKind::TooManyRequestsError(_)
+            TestInvokeMethodErrorKind::BadRequestException(_)
         )
     }
-    pub fn is_unauthorized_error(&self) -> bool {
-        matches!(&self.kind, TestInvokeMethodErrorKind::UnauthorizedError(_))
+    pub fn is_not_found_exception(&self) -> bool {
+        matches!(&self.kind, TestInvokeMethodErrorKind::NotFoundException(_))
+    }
+    pub fn is_too_many_requests_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            TestInvokeMethodErrorKind::TooManyRequestsException(_)
+        )
+    }
+    pub fn is_unauthorized_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            TestInvokeMethodErrorKind::UnauthorizedException(_)
+        )
     }
 }
 impl std::error::Error for TestInvokeMethodError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            TestInvokeMethodErrorKind::BadRequestError(_inner) => Some(_inner),
-            TestInvokeMethodErrorKind::NotFoundError(_inner) => Some(_inner),
-            TestInvokeMethodErrorKind::TooManyRequestsError(_inner) => Some(_inner),
-            TestInvokeMethodErrorKind::UnauthorizedError(_inner) => Some(_inner),
+            TestInvokeMethodErrorKind::BadRequestException(_inner) => Some(_inner),
+            TestInvokeMethodErrorKind::NotFoundException(_inner) => Some(_inner),
+            TestInvokeMethodErrorKind::TooManyRequestsException(_inner) => Some(_inner),
+            TestInvokeMethodErrorKind::UnauthorizedException(_inner) => Some(_inner),
             TestInvokeMethodErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -9857,22 +10151,22 @@ pub struct UntagResourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UntagResourceErrorKind {
-    BadRequestError(crate::error::BadRequestError),
-    ConflictError(crate::error::ConflictError),
-    NotFoundError(crate::error::NotFoundError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
-    UnauthorizedError(crate::error::UnauthorizedError),
+    BadRequestException(crate::error::BadRequestException),
+    ConflictException(crate::error::ConflictException),
+    NotFoundException(crate::error::NotFoundException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
+    UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UntagResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            UntagResourceErrorKind::BadRequestError(_inner) => _inner.fmt(f),
-            UntagResourceErrorKind::ConflictError(_inner) => _inner.fmt(f),
-            UntagResourceErrorKind::NotFoundError(_inner) => _inner.fmt(f),
-            UntagResourceErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
-            UntagResourceErrorKind::UnauthorizedError(_inner) => _inner.fmt(f),
+            UntagResourceErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            UntagResourceErrorKind::ConflictException(_inner) => _inner.fmt(f),
+            UntagResourceErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            UntagResourceErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
+            UntagResourceErrorKind::UnauthorizedException(_inner) => _inner.fmt(f),
             UntagResourceErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -9921,30 +10215,33 @@ impl UntagResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_bad_request_error(&self) -> bool {
-        matches!(&self.kind, UntagResourceErrorKind::BadRequestError(_))
+    pub fn is_bad_request_exception(&self) -> bool {
+        matches!(&self.kind, UntagResourceErrorKind::BadRequestException(_))
     }
-    pub fn is_conflict_error(&self) -> bool {
-        matches!(&self.kind, UntagResourceErrorKind::ConflictError(_))
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(&self.kind, UntagResourceErrorKind::ConflictException(_))
     }
-    pub fn is_not_found_error(&self) -> bool {
-        matches!(&self.kind, UntagResourceErrorKind::NotFoundError(_))
+    pub fn is_not_found_exception(&self) -> bool {
+        matches!(&self.kind, UntagResourceErrorKind::NotFoundException(_))
     }
-    pub fn is_too_many_requests_error(&self) -> bool {
-        matches!(&self.kind, UntagResourceErrorKind::TooManyRequestsError(_))
+    pub fn is_too_many_requests_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UntagResourceErrorKind::TooManyRequestsException(_)
+        )
     }
-    pub fn is_unauthorized_error(&self) -> bool {
-        matches!(&self.kind, UntagResourceErrorKind::UnauthorizedError(_))
+    pub fn is_unauthorized_exception(&self) -> bool {
+        matches!(&self.kind, UntagResourceErrorKind::UnauthorizedException(_))
     }
 }
 impl std::error::Error for UntagResourceError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            UntagResourceErrorKind::BadRequestError(_inner) => Some(_inner),
-            UntagResourceErrorKind::ConflictError(_inner) => Some(_inner),
-            UntagResourceErrorKind::NotFoundError(_inner) => Some(_inner),
-            UntagResourceErrorKind::TooManyRequestsError(_inner) => Some(_inner),
-            UntagResourceErrorKind::UnauthorizedError(_inner) => Some(_inner),
+            UntagResourceErrorKind::BadRequestException(_inner) => Some(_inner),
+            UntagResourceErrorKind::ConflictException(_inner) => Some(_inner),
+            UntagResourceErrorKind::NotFoundException(_inner) => Some(_inner),
+            UntagResourceErrorKind::TooManyRequestsException(_inner) => Some(_inner),
+            UntagResourceErrorKind::UnauthorizedException(_inner) => Some(_inner),
             UntagResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -9959,20 +10256,20 @@ pub struct UpdateAccountError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateAccountErrorKind {
-    BadRequestError(crate::error::BadRequestError),
-    NotFoundError(crate::error::NotFoundError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
-    UnauthorizedError(crate::error::UnauthorizedError),
+    BadRequestException(crate::error::BadRequestException),
+    NotFoundException(crate::error::NotFoundException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
+    UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateAccountError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            UpdateAccountErrorKind::BadRequestError(_inner) => _inner.fmt(f),
-            UpdateAccountErrorKind::NotFoundError(_inner) => _inner.fmt(f),
-            UpdateAccountErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
-            UpdateAccountErrorKind::UnauthorizedError(_inner) => _inner.fmt(f),
+            UpdateAccountErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            UpdateAccountErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            UpdateAccountErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
+            UpdateAccountErrorKind::UnauthorizedException(_inner) => _inner.fmt(f),
             UpdateAccountErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -10021,26 +10318,29 @@ impl UpdateAccountError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_bad_request_error(&self) -> bool {
-        matches!(&self.kind, UpdateAccountErrorKind::BadRequestError(_))
+    pub fn is_bad_request_exception(&self) -> bool {
+        matches!(&self.kind, UpdateAccountErrorKind::BadRequestException(_))
     }
-    pub fn is_not_found_error(&self) -> bool {
-        matches!(&self.kind, UpdateAccountErrorKind::NotFoundError(_))
+    pub fn is_not_found_exception(&self) -> bool {
+        matches!(&self.kind, UpdateAccountErrorKind::NotFoundException(_))
     }
-    pub fn is_too_many_requests_error(&self) -> bool {
-        matches!(&self.kind, UpdateAccountErrorKind::TooManyRequestsError(_))
+    pub fn is_too_many_requests_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateAccountErrorKind::TooManyRequestsException(_)
+        )
     }
-    pub fn is_unauthorized_error(&self) -> bool {
-        matches!(&self.kind, UpdateAccountErrorKind::UnauthorizedError(_))
+    pub fn is_unauthorized_exception(&self) -> bool {
+        matches!(&self.kind, UpdateAccountErrorKind::UnauthorizedException(_))
     }
 }
 impl std::error::Error for UpdateAccountError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            UpdateAccountErrorKind::BadRequestError(_inner) => Some(_inner),
-            UpdateAccountErrorKind::NotFoundError(_inner) => Some(_inner),
-            UpdateAccountErrorKind::TooManyRequestsError(_inner) => Some(_inner),
-            UpdateAccountErrorKind::UnauthorizedError(_inner) => Some(_inner),
+            UpdateAccountErrorKind::BadRequestException(_inner) => Some(_inner),
+            UpdateAccountErrorKind::NotFoundException(_inner) => Some(_inner),
+            UpdateAccountErrorKind::TooManyRequestsException(_inner) => Some(_inner),
+            UpdateAccountErrorKind::UnauthorizedException(_inner) => Some(_inner),
             UpdateAccountErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -10055,22 +10355,22 @@ pub struct UpdateApiKeyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateApiKeyErrorKind {
-    BadRequestError(crate::error::BadRequestError),
-    ConflictError(crate::error::ConflictError),
-    NotFoundError(crate::error::NotFoundError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
-    UnauthorizedError(crate::error::UnauthorizedError),
+    BadRequestException(crate::error::BadRequestException),
+    ConflictException(crate::error::ConflictException),
+    NotFoundException(crate::error::NotFoundException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
+    UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateApiKeyError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            UpdateApiKeyErrorKind::BadRequestError(_inner) => _inner.fmt(f),
-            UpdateApiKeyErrorKind::ConflictError(_inner) => _inner.fmt(f),
-            UpdateApiKeyErrorKind::NotFoundError(_inner) => _inner.fmt(f),
-            UpdateApiKeyErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
-            UpdateApiKeyErrorKind::UnauthorizedError(_inner) => _inner.fmt(f),
+            UpdateApiKeyErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            UpdateApiKeyErrorKind::ConflictException(_inner) => _inner.fmt(f),
+            UpdateApiKeyErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            UpdateApiKeyErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
+            UpdateApiKeyErrorKind::UnauthorizedException(_inner) => _inner.fmt(f),
             UpdateApiKeyErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -10119,30 +10419,33 @@ impl UpdateApiKeyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_bad_request_error(&self) -> bool {
-        matches!(&self.kind, UpdateApiKeyErrorKind::BadRequestError(_))
+    pub fn is_bad_request_exception(&self) -> bool {
+        matches!(&self.kind, UpdateApiKeyErrorKind::BadRequestException(_))
     }
-    pub fn is_conflict_error(&self) -> bool {
-        matches!(&self.kind, UpdateApiKeyErrorKind::ConflictError(_))
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(&self.kind, UpdateApiKeyErrorKind::ConflictException(_))
     }
-    pub fn is_not_found_error(&self) -> bool {
-        matches!(&self.kind, UpdateApiKeyErrorKind::NotFoundError(_))
+    pub fn is_not_found_exception(&self) -> bool {
+        matches!(&self.kind, UpdateApiKeyErrorKind::NotFoundException(_))
     }
-    pub fn is_too_many_requests_error(&self) -> bool {
-        matches!(&self.kind, UpdateApiKeyErrorKind::TooManyRequestsError(_))
+    pub fn is_too_many_requests_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateApiKeyErrorKind::TooManyRequestsException(_)
+        )
     }
-    pub fn is_unauthorized_error(&self) -> bool {
-        matches!(&self.kind, UpdateApiKeyErrorKind::UnauthorizedError(_))
+    pub fn is_unauthorized_exception(&self) -> bool {
+        matches!(&self.kind, UpdateApiKeyErrorKind::UnauthorizedException(_))
     }
 }
 impl std::error::Error for UpdateApiKeyError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            UpdateApiKeyErrorKind::BadRequestError(_inner) => Some(_inner),
-            UpdateApiKeyErrorKind::ConflictError(_inner) => Some(_inner),
-            UpdateApiKeyErrorKind::NotFoundError(_inner) => Some(_inner),
-            UpdateApiKeyErrorKind::TooManyRequestsError(_inner) => Some(_inner),
-            UpdateApiKeyErrorKind::UnauthorizedError(_inner) => Some(_inner),
+            UpdateApiKeyErrorKind::BadRequestException(_inner) => Some(_inner),
+            UpdateApiKeyErrorKind::ConflictException(_inner) => Some(_inner),
+            UpdateApiKeyErrorKind::NotFoundException(_inner) => Some(_inner),
+            UpdateApiKeyErrorKind::TooManyRequestsException(_inner) => Some(_inner),
+            UpdateApiKeyErrorKind::UnauthorizedException(_inner) => Some(_inner),
             UpdateApiKeyErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -10157,20 +10460,20 @@ pub struct UpdateAuthorizerError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateAuthorizerErrorKind {
-    BadRequestError(crate::error::BadRequestError),
-    NotFoundError(crate::error::NotFoundError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
-    UnauthorizedError(crate::error::UnauthorizedError),
+    BadRequestException(crate::error::BadRequestException),
+    NotFoundException(crate::error::NotFoundException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
+    UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateAuthorizerError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            UpdateAuthorizerErrorKind::BadRequestError(_inner) => _inner.fmt(f),
-            UpdateAuthorizerErrorKind::NotFoundError(_inner) => _inner.fmt(f),
-            UpdateAuthorizerErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
-            UpdateAuthorizerErrorKind::UnauthorizedError(_inner) => _inner.fmt(f),
+            UpdateAuthorizerErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            UpdateAuthorizerErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            UpdateAuthorizerErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
+            UpdateAuthorizerErrorKind::UnauthorizedException(_inner) => _inner.fmt(f),
             UpdateAuthorizerErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -10219,29 +10522,35 @@ impl UpdateAuthorizerError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_bad_request_error(&self) -> bool {
-        matches!(&self.kind, UpdateAuthorizerErrorKind::BadRequestError(_))
-    }
-    pub fn is_not_found_error(&self) -> bool {
-        matches!(&self.kind, UpdateAuthorizerErrorKind::NotFoundError(_))
-    }
-    pub fn is_too_many_requests_error(&self) -> bool {
+    pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UpdateAuthorizerErrorKind::TooManyRequestsError(_)
+            UpdateAuthorizerErrorKind::BadRequestException(_)
         )
     }
-    pub fn is_unauthorized_error(&self) -> bool {
-        matches!(&self.kind, UpdateAuthorizerErrorKind::UnauthorizedError(_))
+    pub fn is_not_found_exception(&self) -> bool {
+        matches!(&self.kind, UpdateAuthorizerErrorKind::NotFoundException(_))
+    }
+    pub fn is_too_many_requests_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateAuthorizerErrorKind::TooManyRequestsException(_)
+        )
+    }
+    pub fn is_unauthorized_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateAuthorizerErrorKind::UnauthorizedException(_)
+        )
     }
 }
 impl std::error::Error for UpdateAuthorizerError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            UpdateAuthorizerErrorKind::BadRequestError(_inner) => Some(_inner),
-            UpdateAuthorizerErrorKind::NotFoundError(_inner) => Some(_inner),
-            UpdateAuthorizerErrorKind::TooManyRequestsError(_inner) => Some(_inner),
-            UpdateAuthorizerErrorKind::UnauthorizedError(_inner) => Some(_inner),
+            UpdateAuthorizerErrorKind::BadRequestException(_inner) => Some(_inner),
+            UpdateAuthorizerErrorKind::NotFoundException(_inner) => Some(_inner),
+            UpdateAuthorizerErrorKind::TooManyRequestsException(_inner) => Some(_inner),
+            UpdateAuthorizerErrorKind::UnauthorizedException(_inner) => Some(_inner),
             UpdateAuthorizerErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -10256,22 +10565,22 @@ pub struct UpdateBasePathMappingError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateBasePathMappingErrorKind {
-    BadRequestError(crate::error::BadRequestError),
-    ConflictError(crate::error::ConflictError),
-    NotFoundError(crate::error::NotFoundError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
-    UnauthorizedError(crate::error::UnauthorizedError),
+    BadRequestException(crate::error::BadRequestException),
+    ConflictException(crate::error::ConflictException),
+    NotFoundException(crate::error::NotFoundException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
+    UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateBasePathMappingError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            UpdateBasePathMappingErrorKind::BadRequestError(_inner) => _inner.fmt(f),
-            UpdateBasePathMappingErrorKind::ConflictError(_inner) => _inner.fmt(f),
-            UpdateBasePathMappingErrorKind::NotFoundError(_inner) => _inner.fmt(f),
-            UpdateBasePathMappingErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
-            UpdateBasePathMappingErrorKind::UnauthorizedError(_inner) => _inner.fmt(f),
+            UpdateBasePathMappingErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            UpdateBasePathMappingErrorKind::ConflictException(_inner) => _inner.fmt(f),
+            UpdateBasePathMappingErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            UpdateBasePathMappingErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
+            UpdateBasePathMappingErrorKind::UnauthorizedException(_inner) => _inner.fmt(f),
             UpdateBasePathMappingErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -10320,39 +10629,45 @@ impl UpdateBasePathMappingError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_bad_request_error(&self) -> bool {
+    pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UpdateBasePathMappingErrorKind::BadRequestError(_)
+            UpdateBasePathMappingErrorKind::BadRequestException(_)
         )
     }
-    pub fn is_conflict_error(&self) -> bool {
-        matches!(&self.kind, UpdateBasePathMappingErrorKind::ConflictError(_))
-    }
-    pub fn is_not_found_error(&self) -> bool {
-        matches!(&self.kind, UpdateBasePathMappingErrorKind::NotFoundError(_))
-    }
-    pub fn is_too_many_requests_error(&self) -> bool {
+    pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UpdateBasePathMappingErrorKind::TooManyRequestsError(_)
+            UpdateBasePathMappingErrorKind::ConflictException(_)
         )
     }
-    pub fn is_unauthorized_error(&self) -> bool {
+    pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UpdateBasePathMappingErrorKind::UnauthorizedError(_)
+            UpdateBasePathMappingErrorKind::NotFoundException(_)
+        )
+    }
+    pub fn is_too_many_requests_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateBasePathMappingErrorKind::TooManyRequestsException(_)
+        )
+    }
+    pub fn is_unauthorized_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateBasePathMappingErrorKind::UnauthorizedException(_)
         )
     }
 }
 impl std::error::Error for UpdateBasePathMappingError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            UpdateBasePathMappingErrorKind::BadRequestError(_inner) => Some(_inner),
-            UpdateBasePathMappingErrorKind::ConflictError(_inner) => Some(_inner),
-            UpdateBasePathMappingErrorKind::NotFoundError(_inner) => Some(_inner),
-            UpdateBasePathMappingErrorKind::TooManyRequestsError(_inner) => Some(_inner),
-            UpdateBasePathMappingErrorKind::UnauthorizedError(_inner) => Some(_inner),
+            UpdateBasePathMappingErrorKind::BadRequestException(_inner) => Some(_inner),
+            UpdateBasePathMappingErrorKind::ConflictException(_inner) => Some(_inner),
+            UpdateBasePathMappingErrorKind::NotFoundException(_inner) => Some(_inner),
+            UpdateBasePathMappingErrorKind::TooManyRequestsException(_inner) => Some(_inner),
+            UpdateBasePathMappingErrorKind::UnauthorizedException(_inner) => Some(_inner),
             UpdateBasePathMappingErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -10367,20 +10682,20 @@ pub struct UpdateClientCertificateError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateClientCertificateErrorKind {
-    BadRequestError(crate::error::BadRequestError),
-    NotFoundError(crate::error::NotFoundError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
-    UnauthorizedError(crate::error::UnauthorizedError),
+    BadRequestException(crate::error::BadRequestException),
+    NotFoundException(crate::error::NotFoundException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
+    UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateClientCertificateError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            UpdateClientCertificateErrorKind::BadRequestError(_inner) => _inner.fmt(f),
-            UpdateClientCertificateErrorKind::NotFoundError(_inner) => _inner.fmt(f),
-            UpdateClientCertificateErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
-            UpdateClientCertificateErrorKind::UnauthorizedError(_inner) => _inner.fmt(f),
+            UpdateClientCertificateErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            UpdateClientCertificateErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            UpdateClientCertificateErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
+            UpdateClientCertificateErrorKind::UnauthorizedException(_inner) => _inner.fmt(f),
             UpdateClientCertificateErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -10429,38 +10744,38 @@ impl UpdateClientCertificateError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_bad_request_error(&self) -> bool {
+    pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UpdateClientCertificateErrorKind::BadRequestError(_)
+            UpdateClientCertificateErrorKind::BadRequestException(_)
         )
     }
-    pub fn is_not_found_error(&self) -> bool {
+    pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UpdateClientCertificateErrorKind::NotFoundError(_)
+            UpdateClientCertificateErrorKind::NotFoundException(_)
         )
     }
-    pub fn is_too_many_requests_error(&self) -> bool {
+    pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UpdateClientCertificateErrorKind::TooManyRequestsError(_)
+            UpdateClientCertificateErrorKind::TooManyRequestsException(_)
         )
     }
-    pub fn is_unauthorized_error(&self) -> bool {
+    pub fn is_unauthorized_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UpdateClientCertificateErrorKind::UnauthorizedError(_)
+            UpdateClientCertificateErrorKind::UnauthorizedException(_)
         )
     }
 }
 impl std::error::Error for UpdateClientCertificateError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            UpdateClientCertificateErrorKind::BadRequestError(_inner) => Some(_inner),
-            UpdateClientCertificateErrorKind::NotFoundError(_inner) => Some(_inner),
-            UpdateClientCertificateErrorKind::TooManyRequestsError(_inner) => Some(_inner),
-            UpdateClientCertificateErrorKind::UnauthorizedError(_inner) => Some(_inner),
+            UpdateClientCertificateErrorKind::BadRequestException(_inner) => Some(_inner),
+            UpdateClientCertificateErrorKind::NotFoundException(_inner) => Some(_inner),
+            UpdateClientCertificateErrorKind::TooManyRequestsException(_inner) => Some(_inner),
+            UpdateClientCertificateErrorKind::UnauthorizedException(_inner) => Some(_inner),
             UpdateClientCertificateErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -10475,22 +10790,22 @@ pub struct UpdateDeploymentError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateDeploymentErrorKind {
-    BadRequestError(crate::error::BadRequestError),
-    NotFoundError(crate::error::NotFoundError),
-    ServiceUnavailableError(crate::error::ServiceUnavailableError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
-    UnauthorizedError(crate::error::UnauthorizedError),
+    BadRequestException(crate::error::BadRequestException),
+    NotFoundException(crate::error::NotFoundException),
+    ServiceUnavailableException(crate::error::ServiceUnavailableException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
+    UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateDeploymentError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            UpdateDeploymentErrorKind::BadRequestError(_inner) => _inner.fmt(f),
-            UpdateDeploymentErrorKind::NotFoundError(_inner) => _inner.fmt(f),
-            UpdateDeploymentErrorKind::ServiceUnavailableError(_inner) => _inner.fmt(f),
-            UpdateDeploymentErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
-            UpdateDeploymentErrorKind::UnauthorizedError(_inner) => _inner.fmt(f),
+            UpdateDeploymentErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            UpdateDeploymentErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            UpdateDeploymentErrorKind::ServiceUnavailableException(_inner) => _inner.fmt(f),
+            UpdateDeploymentErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
+            UpdateDeploymentErrorKind::UnauthorizedException(_inner) => _inner.fmt(f),
             UpdateDeploymentErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -10539,36 +10854,42 @@ impl UpdateDeploymentError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_bad_request_error(&self) -> bool {
-        matches!(&self.kind, UpdateDeploymentErrorKind::BadRequestError(_))
-    }
-    pub fn is_not_found_error(&self) -> bool {
-        matches!(&self.kind, UpdateDeploymentErrorKind::NotFoundError(_))
-    }
-    pub fn is_service_unavailable_error(&self) -> bool {
+    pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UpdateDeploymentErrorKind::ServiceUnavailableError(_)
+            UpdateDeploymentErrorKind::BadRequestException(_)
         )
     }
-    pub fn is_too_many_requests_error(&self) -> bool {
+    pub fn is_not_found_exception(&self) -> bool {
+        matches!(&self.kind, UpdateDeploymentErrorKind::NotFoundException(_))
+    }
+    pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UpdateDeploymentErrorKind::TooManyRequestsError(_)
+            UpdateDeploymentErrorKind::ServiceUnavailableException(_)
         )
     }
-    pub fn is_unauthorized_error(&self) -> bool {
-        matches!(&self.kind, UpdateDeploymentErrorKind::UnauthorizedError(_))
+    pub fn is_too_many_requests_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateDeploymentErrorKind::TooManyRequestsException(_)
+        )
+    }
+    pub fn is_unauthorized_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateDeploymentErrorKind::UnauthorizedException(_)
+        )
     }
 }
 impl std::error::Error for UpdateDeploymentError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            UpdateDeploymentErrorKind::BadRequestError(_inner) => Some(_inner),
-            UpdateDeploymentErrorKind::NotFoundError(_inner) => Some(_inner),
-            UpdateDeploymentErrorKind::ServiceUnavailableError(_inner) => Some(_inner),
-            UpdateDeploymentErrorKind::TooManyRequestsError(_inner) => Some(_inner),
-            UpdateDeploymentErrorKind::UnauthorizedError(_inner) => Some(_inner),
+            UpdateDeploymentErrorKind::BadRequestException(_inner) => Some(_inner),
+            UpdateDeploymentErrorKind::NotFoundException(_inner) => Some(_inner),
+            UpdateDeploymentErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
+            UpdateDeploymentErrorKind::TooManyRequestsException(_inner) => Some(_inner),
+            UpdateDeploymentErrorKind::UnauthorizedException(_inner) => Some(_inner),
             UpdateDeploymentErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -10583,24 +10904,24 @@ pub struct UpdateDocumentationPartError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateDocumentationPartErrorKind {
-    BadRequestError(crate::error::BadRequestError),
-    ConflictError(crate::error::ConflictError),
-    LimitExceededError(crate::error::LimitExceededError),
-    NotFoundError(crate::error::NotFoundError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
-    UnauthorizedError(crate::error::UnauthorizedError),
+    BadRequestException(crate::error::BadRequestException),
+    ConflictException(crate::error::ConflictException),
+    LimitExceededException(crate::error::LimitExceededException),
+    NotFoundException(crate::error::NotFoundException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
+    UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateDocumentationPartError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            UpdateDocumentationPartErrorKind::BadRequestError(_inner) => _inner.fmt(f),
-            UpdateDocumentationPartErrorKind::ConflictError(_inner) => _inner.fmt(f),
-            UpdateDocumentationPartErrorKind::LimitExceededError(_inner) => _inner.fmt(f),
-            UpdateDocumentationPartErrorKind::NotFoundError(_inner) => _inner.fmt(f),
-            UpdateDocumentationPartErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
-            UpdateDocumentationPartErrorKind::UnauthorizedError(_inner) => _inner.fmt(f),
+            UpdateDocumentationPartErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            UpdateDocumentationPartErrorKind::ConflictException(_inner) => _inner.fmt(f),
+            UpdateDocumentationPartErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
+            UpdateDocumentationPartErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            UpdateDocumentationPartErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
+            UpdateDocumentationPartErrorKind::UnauthorizedException(_inner) => _inner.fmt(f),
             UpdateDocumentationPartErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -10649,52 +10970,52 @@ impl UpdateDocumentationPartError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_bad_request_error(&self) -> bool {
+    pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UpdateDocumentationPartErrorKind::BadRequestError(_)
+            UpdateDocumentationPartErrorKind::BadRequestException(_)
         )
     }
-    pub fn is_conflict_error(&self) -> bool {
+    pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UpdateDocumentationPartErrorKind::ConflictError(_)
+            UpdateDocumentationPartErrorKind::ConflictException(_)
         )
     }
-    pub fn is_limit_exceeded_error(&self) -> bool {
+    pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UpdateDocumentationPartErrorKind::LimitExceededError(_)
+            UpdateDocumentationPartErrorKind::LimitExceededException(_)
         )
     }
-    pub fn is_not_found_error(&self) -> bool {
+    pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UpdateDocumentationPartErrorKind::NotFoundError(_)
+            UpdateDocumentationPartErrorKind::NotFoundException(_)
         )
     }
-    pub fn is_too_many_requests_error(&self) -> bool {
+    pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UpdateDocumentationPartErrorKind::TooManyRequestsError(_)
+            UpdateDocumentationPartErrorKind::TooManyRequestsException(_)
         )
     }
-    pub fn is_unauthorized_error(&self) -> bool {
+    pub fn is_unauthorized_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UpdateDocumentationPartErrorKind::UnauthorizedError(_)
+            UpdateDocumentationPartErrorKind::UnauthorizedException(_)
         )
     }
 }
 impl std::error::Error for UpdateDocumentationPartError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            UpdateDocumentationPartErrorKind::BadRequestError(_inner) => Some(_inner),
-            UpdateDocumentationPartErrorKind::ConflictError(_inner) => Some(_inner),
-            UpdateDocumentationPartErrorKind::LimitExceededError(_inner) => Some(_inner),
-            UpdateDocumentationPartErrorKind::NotFoundError(_inner) => Some(_inner),
-            UpdateDocumentationPartErrorKind::TooManyRequestsError(_inner) => Some(_inner),
-            UpdateDocumentationPartErrorKind::UnauthorizedError(_inner) => Some(_inner),
+            UpdateDocumentationPartErrorKind::BadRequestException(_inner) => Some(_inner),
+            UpdateDocumentationPartErrorKind::ConflictException(_inner) => Some(_inner),
+            UpdateDocumentationPartErrorKind::LimitExceededException(_inner) => Some(_inner),
+            UpdateDocumentationPartErrorKind::NotFoundException(_inner) => Some(_inner),
+            UpdateDocumentationPartErrorKind::TooManyRequestsException(_inner) => Some(_inner),
+            UpdateDocumentationPartErrorKind::UnauthorizedException(_inner) => Some(_inner),
             UpdateDocumentationPartErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -10709,22 +11030,22 @@ pub struct UpdateDocumentationVersionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateDocumentationVersionErrorKind {
-    BadRequestError(crate::error::BadRequestError),
-    ConflictError(crate::error::ConflictError),
-    NotFoundError(crate::error::NotFoundError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
-    UnauthorizedError(crate::error::UnauthorizedError),
+    BadRequestException(crate::error::BadRequestException),
+    ConflictException(crate::error::ConflictException),
+    NotFoundException(crate::error::NotFoundException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
+    UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateDocumentationVersionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            UpdateDocumentationVersionErrorKind::BadRequestError(_inner) => _inner.fmt(f),
-            UpdateDocumentationVersionErrorKind::ConflictError(_inner) => _inner.fmt(f),
-            UpdateDocumentationVersionErrorKind::NotFoundError(_inner) => _inner.fmt(f),
-            UpdateDocumentationVersionErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
-            UpdateDocumentationVersionErrorKind::UnauthorizedError(_inner) => _inner.fmt(f),
+            UpdateDocumentationVersionErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            UpdateDocumentationVersionErrorKind::ConflictException(_inner) => _inner.fmt(f),
+            UpdateDocumentationVersionErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            UpdateDocumentationVersionErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
+            UpdateDocumentationVersionErrorKind::UnauthorizedException(_inner) => _inner.fmt(f),
             UpdateDocumentationVersionErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -10773,45 +11094,45 @@ impl UpdateDocumentationVersionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_bad_request_error(&self) -> bool {
+    pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UpdateDocumentationVersionErrorKind::BadRequestError(_)
+            UpdateDocumentationVersionErrorKind::BadRequestException(_)
         )
     }
-    pub fn is_conflict_error(&self) -> bool {
+    pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UpdateDocumentationVersionErrorKind::ConflictError(_)
+            UpdateDocumentationVersionErrorKind::ConflictException(_)
         )
     }
-    pub fn is_not_found_error(&self) -> bool {
+    pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UpdateDocumentationVersionErrorKind::NotFoundError(_)
+            UpdateDocumentationVersionErrorKind::NotFoundException(_)
         )
     }
-    pub fn is_too_many_requests_error(&self) -> bool {
+    pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UpdateDocumentationVersionErrorKind::TooManyRequestsError(_)
+            UpdateDocumentationVersionErrorKind::TooManyRequestsException(_)
         )
     }
-    pub fn is_unauthorized_error(&self) -> bool {
+    pub fn is_unauthorized_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UpdateDocumentationVersionErrorKind::UnauthorizedError(_)
+            UpdateDocumentationVersionErrorKind::UnauthorizedException(_)
         )
     }
 }
 impl std::error::Error for UpdateDocumentationVersionError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            UpdateDocumentationVersionErrorKind::BadRequestError(_inner) => Some(_inner),
-            UpdateDocumentationVersionErrorKind::ConflictError(_inner) => Some(_inner),
-            UpdateDocumentationVersionErrorKind::NotFoundError(_inner) => Some(_inner),
-            UpdateDocumentationVersionErrorKind::TooManyRequestsError(_inner) => Some(_inner),
-            UpdateDocumentationVersionErrorKind::UnauthorizedError(_inner) => Some(_inner),
+            UpdateDocumentationVersionErrorKind::BadRequestException(_inner) => Some(_inner),
+            UpdateDocumentationVersionErrorKind::ConflictException(_inner) => Some(_inner),
+            UpdateDocumentationVersionErrorKind::NotFoundException(_inner) => Some(_inner),
+            UpdateDocumentationVersionErrorKind::TooManyRequestsException(_inner) => Some(_inner),
+            UpdateDocumentationVersionErrorKind::UnauthorizedException(_inner) => Some(_inner),
             UpdateDocumentationVersionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -10826,22 +11147,22 @@ pub struct UpdateDomainNameError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateDomainNameErrorKind {
-    BadRequestError(crate::error::BadRequestError),
-    ConflictError(crate::error::ConflictError),
-    NotFoundError(crate::error::NotFoundError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
-    UnauthorizedError(crate::error::UnauthorizedError),
+    BadRequestException(crate::error::BadRequestException),
+    ConflictException(crate::error::ConflictException),
+    NotFoundException(crate::error::NotFoundException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
+    UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateDomainNameError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            UpdateDomainNameErrorKind::BadRequestError(_inner) => _inner.fmt(f),
-            UpdateDomainNameErrorKind::ConflictError(_inner) => _inner.fmt(f),
-            UpdateDomainNameErrorKind::NotFoundError(_inner) => _inner.fmt(f),
-            UpdateDomainNameErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
-            UpdateDomainNameErrorKind::UnauthorizedError(_inner) => _inner.fmt(f),
+            UpdateDomainNameErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            UpdateDomainNameErrorKind::ConflictException(_inner) => _inner.fmt(f),
+            UpdateDomainNameErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            UpdateDomainNameErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
+            UpdateDomainNameErrorKind::UnauthorizedException(_inner) => _inner.fmt(f),
             UpdateDomainNameErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -10890,33 +11211,39 @@ impl UpdateDomainNameError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_bad_request_error(&self) -> bool {
-        matches!(&self.kind, UpdateDomainNameErrorKind::BadRequestError(_))
-    }
-    pub fn is_conflict_error(&self) -> bool {
-        matches!(&self.kind, UpdateDomainNameErrorKind::ConflictError(_))
-    }
-    pub fn is_not_found_error(&self) -> bool {
-        matches!(&self.kind, UpdateDomainNameErrorKind::NotFoundError(_))
-    }
-    pub fn is_too_many_requests_error(&self) -> bool {
+    pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UpdateDomainNameErrorKind::TooManyRequestsError(_)
+            UpdateDomainNameErrorKind::BadRequestException(_)
         )
     }
-    pub fn is_unauthorized_error(&self) -> bool {
-        matches!(&self.kind, UpdateDomainNameErrorKind::UnauthorizedError(_))
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(&self.kind, UpdateDomainNameErrorKind::ConflictException(_))
+    }
+    pub fn is_not_found_exception(&self) -> bool {
+        matches!(&self.kind, UpdateDomainNameErrorKind::NotFoundException(_))
+    }
+    pub fn is_too_many_requests_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateDomainNameErrorKind::TooManyRequestsException(_)
+        )
+    }
+    pub fn is_unauthorized_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateDomainNameErrorKind::UnauthorizedException(_)
+        )
     }
 }
 impl std::error::Error for UpdateDomainNameError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            UpdateDomainNameErrorKind::BadRequestError(_inner) => Some(_inner),
-            UpdateDomainNameErrorKind::ConflictError(_inner) => Some(_inner),
-            UpdateDomainNameErrorKind::NotFoundError(_inner) => Some(_inner),
-            UpdateDomainNameErrorKind::TooManyRequestsError(_inner) => Some(_inner),
-            UpdateDomainNameErrorKind::UnauthorizedError(_inner) => Some(_inner),
+            UpdateDomainNameErrorKind::BadRequestException(_inner) => Some(_inner),
+            UpdateDomainNameErrorKind::ConflictException(_inner) => Some(_inner),
+            UpdateDomainNameErrorKind::NotFoundException(_inner) => Some(_inner),
+            UpdateDomainNameErrorKind::TooManyRequestsException(_inner) => Some(_inner),
+            UpdateDomainNameErrorKind::UnauthorizedException(_inner) => Some(_inner),
             UpdateDomainNameErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -10931,20 +11258,20 @@ pub struct UpdateGatewayResponseError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateGatewayResponseErrorKind {
-    BadRequestError(crate::error::BadRequestError),
-    NotFoundError(crate::error::NotFoundError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
-    UnauthorizedError(crate::error::UnauthorizedError),
+    BadRequestException(crate::error::BadRequestException),
+    NotFoundException(crate::error::NotFoundException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
+    UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateGatewayResponseError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            UpdateGatewayResponseErrorKind::BadRequestError(_inner) => _inner.fmt(f),
-            UpdateGatewayResponseErrorKind::NotFoundError(_inner) => _inner.fmt(f),
-            UpdateGatewayResponseErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
-            UpdateGatewayResponseErrorKind::UnauthorizedError(_inner) => _inner.fmt(f),
+            UpdateGatewayResponseErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            UpdateGatewayResponseErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            UpdateGatewayResponseErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
+            UpdateGatewayResponseErrorKind::UnauthorizedException(_inner) => _inner.fmt(f),
             UpdateGatewayResponseErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -10993,35 +11320,38 @@ impl UpdateGatewayResponseError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_bad_request_error(&self) -> bool {
+    pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UpdateGatewayResponseErrorKind::BadRequestError(_)
+            UpdateGatewayResponseErrorKind::BadRequestException(_)
         )
     }
-    pub fn is_not_found_error(&self) -> bool {
-        matches!(&self.kind, UpdateGatewayResponseErrorKind::NotFoundError(_))
-    }
-    pub fn is_too_many_requests_error(&self) -> bool {
+    pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UpdateGatewayResponseErrorKind::TooManyRequestsError(_)
+            UpdateGatewayResponseErrorKind::NotFoundException(_)
         )
     }
-    pub fn is_unauthorized_error(&self) -> bool {
+    pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UpdateGatewayResponseErrorKind::UnauthorizedError(_)
+            UpdateGatewayResponseErrorKind::TooManyRequestsException(_)
+        )
+    }
+    pub fn is_unauthorized_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateGatewayResponseErrorKind::UnauthorizedException(_)
         )
     }
 }
 impl std::error::Error for UpdateGatewayResponseError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            UpdateGatewayResponseErrorKind::BadRequestError(_inner) => Some(_inner),
-            UpdateGatewayResponseErrorKind::NotFoundError(_inner) => Some(_inner),
-            UpdateGatewayResponseErrorKind::TooManyRequestsError(_inner) => Some(_inner),
-            UpdateGatewayResponseErrorKind::UnauthorizedError(_inner) => Some(_inner),
+            UpdateGatewayResponseErrorKind::BadRequestException(_inner) => Some(_inner),
+            UpdateGatewayResponseErrorKind::NotFoundException(_inner) => Some(_inner),
+            UpdateGatewayResponseErrorKind::TooManyRequestsException(_inner) => Some(_inner),
+            UpdateGatewayResponseErrorKind::UnauthorizedException(_inner) => Some(_inner),
             UpdateGatewayResponseErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -11036,22 +11366,22 @@ pub struct UpdateIntegrationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateIntegrationErrorKind {
-    BadRequestError(crate::error::BadRequestError),
-    ConflictError(crate::error::ConflictError),
-    NotFoundError(crate::error::NotFoundError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
-    UnauthorizedError(crate::error::UnauthorizedError),
+    BadRequestException(crate::error::BadRequestException),
+    ConflictException(crate::error::ConflictException),
+    NotFoundException(crate::error::NotFoundException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
+    UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateIntegrationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            UpdateIntegrationErrorKind::BadRequestError(_inner) => _inner.fmt(f),
-            UpdateIntegrationErrorKind::ConflictError(_inner) => _inner.fmt(f),
-            UpdateIntegrationErrorKind::NotFoundError(_inner) => _inner.fmt(f),
-            UpdateIntegrationErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
-            UpdateIntegrationErrorKind::UnauthorizedError(_inner) => _inner.fmt(f),
+            UpdateIntegrationErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            UpdateIntegrationErrorKind::ConflictException(_inner) => _inner.fmt(f),
+            UpdateIntegrationErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            UpdateIntegrationErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
+            UpdateIntegrationErrorKind::UnauthorizedException(_inner) => _inner.fmt(f),
             UpdateIntegrationErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -11100,33 +11430,39 @@ impl UpdateIntegrationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_bad_request_error(&self) -> bool {
-        matches!(&self.kind, UpdateIntegrationErrorKind::BadRequestError(_))
-    }
-    pub fn is_conflict_error(&self) -> bool {
-        matches!(&self.kind, UpdateIntegrationErrorKind::ConflictError(_))
-    }
-    pub fn is_not_found_error(&self) -> bool {
-        matches!(&self.kind, UpdateIntegrationErrorKind::NotFoundError(_))
-    }
-    pub fn is_too_many_requests_error(&self) -> bool {
+    pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UpdateIntegrationErrorKind::TooManyRequestsError(_)
+            UpdateIntegrationErrorKind::BadRequestException(_)
         )
     }
-    pub fn is_unauthorized_error(&self) -> bool {
-        matches!(&self.kind, UpdateIntegrationErrorKind::UnauthorizedError(_))
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(&self.kind, UpdateIntegrationErrorKind::ConflictException(_))
+    }
+    pub fn is_not_found_exception(&self) -> bool {
+        matches!(&self.kind, UpdateIntegrationErrorKind::NotFoundException(_))
+    }
+    pub fn is_too_many_requests_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateIntegrationErrorKind::TooManyRequestsException(_)
+        )
+    }
+    pub fn is_unauthorized_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateIntegrationErrorKind::UnauthorizedException(_)
+        )
     }
 }
 impl std::error::Error for UpdateIntegrationError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            UpdateIntegrationErrorKind::BadRequestError(_inner) => Some(_inner),
-            UpdateIntegrationErrorKind::ConflictError(_inner) => Some(_inner),
-            UpdateIntegrationErrorKind::NotFoundError(_inner) => Some(_inner),
-            UpdateIntegrationErrorKind::TooManyRequestsError(_inner) => Some(_inner),
-            UpdateIntegrationErrorKind::UnauthorizedError(_inner) => Some(_inner),
+            UpdateIntegrationErrorKind::BadRequestException(_inner) => Some(_inner),
+            UpdateIntegrationErrorKind::ConflictException(_inner) => Some(_inner),
+            UpdateIntegrationErrorKind::NotFoundException(_inner) => Some(_inner),
+            UpdateIntegrationErrorKind::TooManyRequestsException(_inner) => Some(_inner),
+            UpdateIntegrationErrorKind::UnauthorizedException(_inner) => Some(_inner),
             UpdateIntegrationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -11141,22 +11477,22 @@ pub struct UpdateIntegrationResponseError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateIntegrationResponseErrorKind {
-    BadRequestError(crate::error::BadRequestError),
-    ConflictError(crate::error::ConflictError),
-    NotFoundError(crate::error::NotFoundError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
-    UnauthorizedError(crate::error::UnauthorizedError),
+    BadRequestException(crate::error::BadRequestException),
+    ConflictException(crate::error::ConflictException),
+    NotFoundException(crate::error::NotFoundException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
+    UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateIntegrationResponseError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            UpdateIntegrationResponseErrorKind::BadRequestError(_inner) => _inner.fmt(f),
-            UpdateIntegrationResponseErrorKind::ConflictError(_inner) => _inner.fmt(f),
-            UpdateIntegrationResponseErrorKind::NotFoundError(_inner) => _inner.fmt(f),
-            UpdateIntegrationResponseErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
-            UpdateIntegrationResponseErrorKind::UnauthorizedError(_inner) => _inner.fmt(f),
+            UpdateIntegrationResponseErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            UpdateIntegrationResponseErrorKind::ConflictException(_inner) => _inner.fmt(f),
+            UpdateIntegrationResponseErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            UpdateIntegrationResponseErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
+            UpdateIntegrationResponseErrorKind::UnauthorizedException(_inner) => _inner.fmt(f),
             UpdateIntegrationResponseErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -11205,45 +11541,45 @@ impl UpdateIntegrationResponseError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_bad_request_error(&self) -> bool {
+    pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UpdateIntegrationResponseErrorKind::BadRequestError(_)
+            UpdateIntegrationResponseErrorKind::BadRequestException(_)
         )
     }
-    pub fn is_conflict_error(&self) -> bool {
+    pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UpdateIntegrationResponseErrorKind::ConflictError(_)
+            UpdateIntegrationResponseErrorKind::ConflictException(_)
         )
     }
-    pub fn is_not_found_error(&self) -> bool {
+    pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UpdateIntegrationResponseErrorKind::NotFoundError(_)
+            UpdateIntegrationResponseErrorKind::NotFoundException(_)
         )
     }
-    pub fn is_too_many_requests_error(&self) -> bool {
+    pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UpdateIntegrationResponseErrorKind::TooManyRequestsError(_)
+            UpdateIntegrationResponseErrorKind::TooManyRequestsException(_)
         )
     }
-    pub fn is_unauthorized_error(&self) -> bool {
+    pub fn is_unauthorized_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UpdateIntegrationResponseErrorKind::UnauthorizedError(_)
+            UpdateIntegrationResponseErrorKind::UnauthorizedException(_)
         )
     }
 }
 impl std::error::Error for UpdateIntegrationResponseError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            UpdateIntegrationResponseErrorKind::BadRequestError(_inner) => Some(_inner),
-            UpdateIntegrationResponseErrorKind::ConflictError(_inner) => Some(_inner),
-            UpdateIntegrationResponseErrorKind::NotFoundError(_inner) => Some(_inner),
-            UpdateIntegrationResponseErrorKind::TooManyRequestsError(_inner) => Some(_inner),
-            UpdateIntegrationResponseErrorKind::UnauthorizedError(_inner) => Some(_inner),
+            UpdateIntegrationResponseErrorKind::BadRequestException(_inner) => Some(_inner),
+            UpdateIntegrationResponseErrorKind::ConflictException(_inner) => Some(_inner),
+            UpdateIntegrationResponseErrorKind::NotFoundException(_inner) => Some(_inner),
+            UpdateIntegrationResponseErrorKind::TooManyRequestsException(_inner) => Some(_inner),
+            UpdateIntegrationResponseErrorKind::UnauthorizedException(_inner) => Some(_inner),
             UpdateIntegrationResponseErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -11258,22 +11594,22 @@ pub struct UpdateMethodError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateMethodErrorKind {
-    BadRequestError(crate::error::BadRequestError),
-    ConflictError(crate::error::ConflictError),
-    NotFoundError(crate::error::NotFoundError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
-    UnauthorizedError(crate::error::UnauthorizedError),
+    BadRequestException(crate::error::BadRequestException),
+    ConflictException(crate::error::ConflictException),
+    NotFoundException(crate::error::NotFoundException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
+    UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateMethodError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            UpdateMethodErrorKind::BadRequestError(_inner) => _inner.fmt(f),
-            UpdateMethodErrorKind::ConflictError(_inner) => _inner.fmt(f),
-            UpdateMethodErrorKind::NotFoundError(_inner) => _inner.fmt(f),
-            UpdateMethodErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
-            UpdateMethodErrorKind::UnauthorizedError(_inner) => _inner.fmt(f),
+            UpdateMethodErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            UpdateMethodErrorKind::ConflictException(_inner) => _inner.fmt(f),
+            UpdateMethodErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            UpdateMethodErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
+            UpdateMethodErrorKind::UnauthorizedException(_inner) => _inner.fmt(f),
             UpdateMethodErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -11322,30 +11658,33 @@ impl UpdateMethodError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_bad_request_error(&self) -> bool {
-        matches!(&self.kind, UpdateMethodErrorKind::BadRequestError(_))
+    pub fn is_bad_request_exception(&self) -> bool {
+        matches!(&self.kind, UpdateMethodErrorKind::BadRequestException(_))
     }
-    pub fn is_conflict_error(&self) -> bool {
-        matches!(&self.kind, UpdateMethodErrorKind::ConflictError(_))
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(&self.kind, UpdateMethodErrorKind::ConflictException(_))
     }
-    pub fn is_not_found_error(&self) -> bool {
-        matches!(&self.kind, UpdateMethodErrorKind::NotFoundError(_))
+    pub fn is_not_found_exception(&self) -> bool {
+        matches!(&self.kind, UpdateMethodErrorKind::NotFoundException(_))
     }
-    pub fn is_too_many_requests_error(&self) -> bool {
-        matches!(&self.kind, UpdateMethodErrorKind::TooManyRequestsError(_))
+    pub fn is_too_many_requests_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateMethodErrorKind::TooManyRequestsException(_)
+        )
     }
-    pub fn is_unauthorized_error(&self) -> bool {
-        matches!(&self.kind, UpdateMethodErrorKind::UnauthorizedError(_))
+    pub fn is_unauthorized_exception(&self) -> bool {
+        matches!(&self.kind, UpdateMethodErrorKind::UnauthorizedException(_))
     }
 }
 impl std::error::Error for UpdateMethodError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            UpdateMethodErrorKind::BadRequestError(_inner) => Some(_inner),
-            UpdateMethodErrorKind::ConflictError(_inner) => Some(_inner),
-            UpdateMethodErrorKind::NotFoundError(_inner) => Some(_inner),
-            UpdateMethodErrorKind::TooManyRequestsError(_inner) => Some(_inner),
-            UpdateMethodErrorKind::UnauthorizedError(_inner) => Some(_inner),
+            UpdateMethodErrorKind::BadRequestException(_inner) => Some(_inner),
+            UpdateMethodErrorKind::ConflictException(_inner) => Some(_inner),
+            UpdateMethodErrorKind::NotFoundException(_inner) => Some(_inner),
+            UpdateMethodErrorKind::TooManyRequestsException(_inner) => Some(_inner),
+            UpdateMethodErrorKind::UnauthorizedException(_inner) => Some(_inner),
             UpdateMethodErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -11360,24 +11699,24 @@ pub struct UpdateMethodResponseError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateMethodResponseErrorKind {
-    BadRequestError(crate::error::BadRequestError),
-    ConflictError(crate::error::ConflictError),
-    LimitExceededError(crate::error::LimitExceededError),
-    NotFoundError(crate::error::NotFoundError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
-    UnauthorizedError(crate::error::UnauthorizedError),
+    BadRequestException(crate::error::BadRequestException),
+    ConflictException(crate::error::ConflictException),
+    LimitExceededException(crate::error::LimitExceededException),
+    NotFoundException(crate::error::NotFoundException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
+    UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateMethodResponseError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            UpdateMethodResponseErrorKind::BadRequestError(_inner) => _inner.fmt(f),
-            UpdateMethodResponseErrorKind::ConflictError(_inner) => _inner.fmt(f),
-            UpdateMethodResponseErrorKind::LimitExceededError(_inner) => _inner.fmt(f),
-            UpdateMethodResponseErrorKind::NotFoundError(_inner) => _inner.fmt(f),
-            UpdateMethodResponseErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
-            UpdateMethodResponseErrorKind::UnauthorizedError(_inner) => _inner.fmt(f),
+            UpdateMethodResponseErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            UpdateMethodResponseErrorKind::ConflictException(_inner) => _inner.fmt(f),
+            UpdateMethodResponseErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
+            UpdateMethodResponseErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            UpdateMethodResponseErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
+            UpdateMethodResponseErrorKind::UnauthorizedException(_inner) => _inner.fmt(f),
             UpdateMethodResponseErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -11426,46 +11765,52 @@ impl UpdateMethodResponseError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_bad_request_error(&self) -> bool {
+    pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UpdateMethodResponseErrorKind::BadRequestError(_)
+            UpdateMethodResponseErrorKind::BadRequestException(_)
         )
     }
-    pub fn is_conflict_error(&self) -> bool {
-        matches!(&self.kind, UpdateMethodResponseErrorKind::ConflictError(_))
-    }
-    pub fn is_limit_exceeded_error(&self) -> bool {
+    pub fn is_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UpdateMethodResponseErrorKind::LimitExceededError(_)
+            UpdateMethodResponseErrorKind::ConflictException(_)
         )
     }
-    pub fn is_not_found_error(&self) -> bool {
-        matches!(&self.kind, UpdateMethodResponseErrorKind::NotFoundError(_))
-    }
-    pub fn is_too_many_requests_error(&self) -> bool {
+    pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UpdateMethodResponseErrorKind::TooManyRequestsError(_)
+            UpdateMethodResponseErrorKind::LimitExceededException(_)
         )
     }
-    pub fn is_unauthorized_error(&self) -> bool {
+    pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UpdateMethodResponseErrorKind::UnauthorizedError(_)
+            UpdateMethodResponseErrorKind::NotFoundException(_)
+        )
+    }
+    pub fn is_too_many_requests_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateMethodResponseErrorKind::TooManyRequestsException(_)
+        )
+    }
+    pub fn is_unauthorized_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateMethodResponseErrorKind::UnauthorizedException(_)
         )
     }
 }
 impl std::error::Error for UpdateMethodResponseError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            UpdateMethodResponseErrorKind::BadRequestError(_inner) => Some(_inner),
-            UpdateMethodResponseErrorKind::ConflictError(_inner) => Some(_inner),
-            UpdateMethodResponseErrorKind::LimitExceededError(_inner) => Some(_inner),
-            UpdateMethodResponseErrorKind::NotFoundError(_inner) => Some(_inner),
-            UpdateMethodResponseErrorKind::TooManyRequestsError(_inner) => Some(_inner),
-            UpdateMethodResponseErrorKind::UnauthorizedError(_inner) => Some(_inner),
+            UpdateMethodResponseErrorKind::BadRequestException(_inner) => Some(_inner),
+            UpdateMethodResponseErrorKind::ConflictException(_inner) => Some(_inner),
+            UpdateMethodResponseErrorKind::LimitExceededException(_inner) => Some(_inner),
+            UpdateMethodResponseErrorKind::NotFoundException(_inner) => Some(_inner),
+            UpdateMethodResponseErrorKind::TooManyRequestsException(_inner) => Some(_inner),
+            UpdateMethodResponseErrorKind::UnauthorizedException(_inner) => Some(_inner),
             UpdateMethodResponseErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -11480,22 +11825,22 @@ pub struct UpdateModelError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateModelErrorKind {
-    BadRequestError(crate::error::BadRequestError),
-    ConflictError(crate::error::ConflictError),
-    NotFoundError(crate::error::NotFoundError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
-    UnauthorizedError(crate::error::UnauthorizedError),
+    BadRequestException(crate::error::BadRequestException),
+    ConflictException(crate::error::ConflictException),
+    NotFoundException(crate::error::NotFoundException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
+    UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateModelError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            UpdateModelErrorKind::BadRequestError(_inner) => _inner.fmt(f),
-            UpdateModelErrorKind::ConflictError(_inner) => _inner.fmt(f),
-            UpdateModelErrorKind::NotFoundError(_inner) => _inner.fmt(f),
-            UpdateModelErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
-            UpdateModelErrorKind::UnauthorizedError(_inner) => _inner.fmt(f),
+            UpdateModelErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            UpdateModelErrorKind::ConflictException(_inner) => _inner.fmt(f),
+            UpdateModelErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            UpdateModelErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
+            UpdateModelErrorKind::UnauthorizedException(_inner) => _inner.fmt(f),
             UpdateModelErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -11544,30 +11889,33 @@ impl UpdateModelError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_bad_request_error(&self) -> bool {
-        matches!(&self.kind, UpdateModelErrorKind::BadRequestError(_))
+    pub fn is_bad_request_exception(&self) -> bool {
+        matches!(&self.kind, UpdateModelErrorKind::BadRequestException(_))
     }
-    pub fn is_conflict_error(&self) -> bool {
-        matches!(&self.kind, UpdateModelErrorKind::ConflictError(_))
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(&self.kind, UpdateModelErrorKind::ConflictException(_))
     }
-    pub fn is_not_found_error(&self) -> bool {
-        matches!(&self.kind, UpdateModelErrorKind::NotFoundError(_))
+    pub fn is_not_found_exception(&self) -> bool {
+        matches!(&self.kind, UpdateModelErrorKind::NotFoundException(_))
     }
-    pub fn is_too_many_requests_error(&self) -> bool {
-        matches!(&self.kind, UpdateModelErrorKind::TooManyRequestsError(_))
+    pub fn is_too_many_requests_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateModelErrorKind::TooManyRequestsException(_)
+        )
     }
-    pub fn is_unauthorized_error(&self) -> bool {
-        matches!(&self.kind, UpdateModelErrorKind::UnauthorizedError(_))
+    pub fn is_unauthorized_exception(&self) -> bool {
+        matches!(&self.kind, UpdateModelErrorKind::UnauthorizedException(_))
     }
 }
 impl std::error::Error for UpdateModelError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            UpdateModelErrorKind::BadRequestError(_inner) => Some(_inner),
-            UpdateModelErrorKind::ConflictError(_inner) => Some(_inner),
-            UpdateModelErrorKind::NotFoundError(_inner) => Some(_inner),
-            UpdateModelErrorKind::TooManyRequestsError(_inner) => Some(_inner),
-            UpdateModelErrorKind::UnauthorizedError(_inner) => Some(_inner),
+            UpdateModelErrorKind::BadRequestException(_inner) => Some(_inner),
+            UpdateModelErrorKind::ConflictException(_inner) => Some(_inner),
+            UpdateModelErrorKind::NotFoundException(_inner) => Some(_inner),
+            UpdateModelErrorKind::TooManyRequestsException(_inner) => Some(_inner),
+            UpdateModelErrorKind::UnauthorizedException(_inner) => Some(_inner),
             UpdateModelErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -11582,20 +11930,20 @@ pub struct UpdateRequestValidatorError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateRequestValidatorErrorKind {
-    BadRequestError(crate::error::BadRequestError),
-    NotFoundError(crate::error::NotFoundError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
-    UnauthorizedError(crate::error::UnauthorizedError),
+    BadRequestException(crate::error::BadRequestException),
+    NotFoundException(crate::error::NotFoundException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
+    UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateRequestValidatorError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            UpdateRequestValidatorErrorKind::BadRequestError(_inner) => _inner.fmt(f),
-            UpdateRequestValidatorErrorKind::NotFoundError(_inner) => _inner.fmt(f),
-            UpdateRequestValidatorErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
-            UpdateRequestValidatorErrorKind::UnauthorizedError(_inner) => _inner.fmt(f),
+            UpdateRequestValidatorErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            UpdateRequestValidatorErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            UpdateRequestValidatorErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
+            UpdateRequestValidatorErrorKind::UnauthorizedException(_inner) => _inner.fmt(f),
             UpdateRequestValidatorErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -11644,38 +11992,38 @@ impl UpdateRequestValidatorError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_bad_request_error(&self) -> bool {
+    pub fn is_bad_request_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UpdateRequestValidatorErrorKind::BadRequestError(_)
+            UpdateRequestValidatorErrorKind::BadRequestException(_)
         )
     }
-    pub fn is_not_found_error(&self) -> bool {
+    pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UpdateRequestValidatorErrorKind::NotFoundError(_)
+            UpdateRequestValidatorErrorKind::NotFoundException(_)
         )
     }
-    pub fn is_too_many_requests_error(&self) -> bool {
+    pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UpdateRequestValidatorErrorKind::TooManyRequestsError(_)
+            UpdateRequestValidatorErrorKind::TooManyRequestsException(_)
         )
     }
-    pub fn is_unauthorized_error(&self) -> bool {
+    pub fn is_unauthorized_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UpdateRequestValidatorErrorKind::UnauthorizedError(_)
+            UpdateRequestValidatorErrorKind::UnauthorizedException(_)
         )
     }
 }
 impl std::error::Error for UpdateRequestValidatorError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            UpdateRequestValidatorErrorKind::BadRequestError(_inner) => Some(_inner),
-            UpdateRequestValidatorErrorKind::NotFoundError(_inner) => Some(_inner),
-            UpdateRequestValidatorErrorKind::TooManyRequestsError(_inner) => Some(_inner),
-            UpdateRequestValidatorErrorKind::UnauthorizedError(_inner) => Some(_inner),
+            UpdateRequestValidatorErrorKind::BadRequestException(_inner) => Some(_inner),
+            UpdateRequestValidatorErrorKind::NotFoundException(_inner) => Some(_inner),
+            UpdateRequestValidatorErrorKind::TooManyRequestsException(_inner) => Some(_inner),
+            UpdateRequestValidatorErrorKind::UnauthorizedException(_inner) => Some(_inner),
             UpdateRequestValidatorErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -11690,22 +12038,22 @@ pub struct UpdateResourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateResourceErrorKind {
-    BadRequestError(crate::error::BadRequestError),
-    ConflictError(crate::error::ConflictError),
-    NotFoundError(crate::error::NotFoundError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
-    UnauthorizedError(crate::error::UnauthorizedError),
+    BadRequestException(crate::error::BadRequestException),
+    ConflictException(crate::error::ConflictException),
+    NotFoundException(crate::error::NotFoundException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
+    UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            UpdateResourceErrorKind::BadRequestError(_inner) => _inner.fmt(f),
-            UpdateResourceErrorKind::ConflictError(_inner) => _inner.fmt(f),
-            UpdateResourceErrorKind::NotFoundError(_inner) => _inner.fmt(f),
-            UpdateResourceErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
-            UpdateResourceErrorKind::UnauthorizedError(_inner) => _inner.fmt(f),
+            UpdateResourceErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            UpdateResourceErrorKind::ConflictException(_inner) => _inner.fmt(f),
+            UpdateResourceErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            UpdateResourceErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
+            UpdateResourceErrorKind::UnauthorizedException(_inner) => _inner.fmt(f),
             UpdateResourceErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -11754,30 +12102,36 @@ impl UpdateResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_bad_request_error(&self) -> bool {
-        matches!(&self.kind, UpdateResourceErrorKind::BadRequestError(_))
+    pub fn is_bad_request_exception(&self) -> bool {
+        matches!(&self.kind, UpdateResourceErrorKind::BadRequestException(_))
     }
-    pub fn is_conflict_error(&self) -> bool {
-        matches!(&self.kind, UpdateResourceErrorKind::ConflictError(_))
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(&self.kind, UpdateResourceErrorKind::ConflictException(_))
     }
-    pub fn is_not_found_error(&self) -> bool {
-        matches!(&self.kind, UpdateResourceErrorKind::NotFoundError(_))
+    pub fn is_not_found_exception(&self) -> bool {
+        matches!(&self.kind, UpdateResourceErrorKind::NotFoundException(_))
     }
-    pub fn is_too_many_requests_error(&self) -> bool {
-        matches!(&self.kind, UpdateResourceErrorKind::TooManyRequestsError(_))
+    pub fn is_too_many_requests_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateResourceErrorKind::TooManyRequestsException(_)
+        )
     }
-    pub fn is_unauthorized_error(&self) -> bool {
-        matches!(&self.kind, UpdateResourceErrorKind::UnauthorizedError(_))
+    pub fn is_unauthorized_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateResourceErrorKind::UnauthorizedException(_)
+        )
     }
 }
 impl std::error::Error for UpdateResourceError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            UpdateResourceErrorKind::BadRequestError(_inner) => Some(_inner),
-            UpdateResourceErrorKind::ConflictError(_inner) => Some(_inner),
-            UpdateResourceErrorKind::NotFoundError(_inner) => Some(_inner),
-            UpdateResourceErrorKind::TooManyRequestsError(_inner) => Some(_inner),
-            UpdateResourceErrorKind::UnauthorizedError(_inner) => Some(_inner),
+            UpdateResourceErrorKind::BadRequestException(_inner) => Some(_inner),
+            UpdateResourceErrorKind::ConflictException(_inner) => Some(_inner),
+            UpdateResourceErrorKind::NotFoundException(_inner) => Some(_inner),
+            UpdateResourceErrorKind::TooManyRequestsException(_inner) => Some(_inner),
+            UpdateResourceErrorKind::UnauthorizedException(_inner) => Some(_inner),
             UpdateResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -11792,22 +12146,22 @@ pub struct UpdateRestApiError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateRestApiErrorKind {
-    BadRequestError(crate::error::BadRequestError),
-    ConflictError(crate::error::ConflictError),
-    NotFoundError(crate::error::NotFoundError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
-    UnauthorizedError(crate::error::UnauthorizedError),
+    BadRequestException(crate::error::BadRequestException),
+    ConflictException(crate::error::ConflictException),
+    NotFoundException(crate::error::NotFoundException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
+    UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateRestApiError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            UpdateRestApiErrorKind::BadRequestError(_inner) => _inner.fmt(f),
-            UpdateRestApiErrorKind::ConflictError(_inner) => _inner.fmt(f),
-            UpdateRestApiErrorKind::NotFoundError(_inner) => _inner.fmt(f),
-            UpdateRestApiErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
-            UpdateRestApiErrorKind::UnauthorizedError(_inner) => _inner.fmt(f),
+            UpdateRestApiErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            UpdateRestApiErrorKind::ConflictException(_inner) => _inner.fmt(f),
+            UpdateRestApiErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            UpdateRestApiErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
+            UpdateRestApiErrorKind::UnauthorizedException(_inner) => _inner.fmt(f),
             UpdateRestApiErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -11856,30 +12210,33 @@ impl UpdateRestApiError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_bad_request_error(&self) -> bool {
-        matches!(&self.kind, UpdateRestApiErrorKind::BadRequestError(_))
+    pub fn is_bad_request_exception(&self) -> bool {
+        matches!(&self.kind, UpdateRestApiErrorKind::BadRequestException(_))
     }
-    pub fn is_conflict_error(&self) -> bool {
-        matches!(&self.kind, UpdateRestApiErrorKind::ConflictError(_))
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(&self.kind, UpdateRestApiErrorKind::ConflictException(_))
     }
-    pub fn is_not_found_error(&self) -> bool {
-        matches!(&self.kind, UpdateRestApiErrorKind::NotFoundError(_))
+    pub fn is_not_found_exception(&self) -> bool {
+        matches!(&self.kind, UpdateRestApiErrorKind::NotFoundException(_))
     }
-    pub fn is_too_many_requests_error(&self) -> bool {
-        matches!(&self.kind, UpdateRestApiErrorKind::TooManyRequestsError(_))
+    pub fn is_too_many_requests_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateRestApiErrorKind::TooManyRequestsException(_)
+        )
     }
-    pub fn is_unauthorized_error(&self) -> bool {
-        matches!(&self.kind, UpdateRestApiErrorKind::UnauthorizedError(_))
+    pub fn is_unauthorized_exception(&self) -> bool {
+        matches!(&self.kind, UpdateRestApiErrorKind::UnauthorizedException(_))
     }
 }
 impl std::error::Error for UpdateRestApiError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            UpdateRestApiErrorKind::BadRequestError(_inner) => Some(_inner),
-            UpdateRestApiErrorKind::ConflictError(_inner) => Some(_inner),
-            UpdateRestApiErrorKind::NotFoundError(_inner) => Some(_inner),
-            UpdateRestApiErrorKind::TooManyRequestsError(_inner) => Some(_inner),
-            UpdateRestApiErrorKind::UnauthorizedError(_inner) => Some(_inner),
+            UpdateRestApiErrorKind::BadRequestException(_inner) => Some(_inner),
+            UpdateRestApiErrorKind::ConflictException(_inner) => Some(_inner),
+            UpdateRestApiErrorKind::NotFoundException(_inner) => Some(_inner),
+            UpdateRestApiErrorKind::TooManyRequestsException(_inner) => Some(_inner),
+            UpdateRestApiErrorKind::UnauthorizedException(_inner) => Some(_inner),
             UpdateRestApiErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -11894,22 +12251,22 @@ pub struct UpdateStageError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateStageErrorKind {
-    BadRequestError(crate::error::BadRequestError),
-    ConflictError(crate::error::ConflictError),
-    NotFoundError(crate::error::NotFoundError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
-    UnauthorizedError(crate::error::UnauthorizedError),
+    BadRequestException(crate::error::BadRequestException),
+    ConflictException(crate::error::ConflictException),
+    NotFoundException(crate::error::NotFoundException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
+    UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateStageError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            UpdateStageErrorKind::BadRequestError(_inner) => _inner.fmt(f),
-            UpdateStageErrorKind::ConflictError(_inner) => _inner.fmt(f),
-            UpdateStageErrorKind::NotFoundError(_inner) => _inner.fmt(f),
-            UpdateStageErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
-            UpdateStageErrorKind::UnauthorizedError(_inner) => _inner.fmt(f),
+            UpdateStageErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            UpdateStageErrorKind::ConflictException(_inner) => _inner.fmt(f),
+            UpdateStageErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            UpdateStageErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
+            UpdateStageErrorKind::UnauthorizedException(_inner) => _inner.fmt(f),
             UpdateStageErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -11958,30 +12315,33 @@ impl UpdateStageError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_bad_request_error(&self) -> bool {
-        matches!(&self.kind, UpdateStageErrorKind::BadRequestError(_))
+    pub fn is_bad_request_exception(&self) -> bool {
+        matches!(&self.kind, UpdateStageErrorKind::BadRequestException(_))
     }
-    pub fn is_conflict_error(&self) -> bool {
-        matches!(&self.kind, UpdateStageErrorKind::ConflictError(_))
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(&self.kind, UpdateStageErrorKind::ConflictException(_))
     }
-    pub fn is_not_found_error(&self) -> bool {
-        matches!(&self.kind, UpdateStageErrorKind::NotFoundError(_))
+    pub fn is_not_found_exception(&self) -> bool {
+        matches!(&self.kind, UpdateStageErrorKind::NotFoundException(_))
     }
-    pub fn is_too_many_requests_error(&self) -> bool {
-        matches!(&self.kind, UpdateStageErrorKind::TooManyRequestsError(_))
+    pub fn is_too_many_requests_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateStageErrorKind::TooManyRequestsException(_)
+        )
     }
-    pub fn is_unauthorized_error(&self) -> bool {
-        matches!(&self.kind, UpdateStageErrorKind::UnauthorizedError(_))
+    pub fn is_unauthorized_exception(&self) -> bool {
+        matches!(&self.kind, UpdateStageErrorKind::UnauthorizedException(_))
     }
 }
 impl std::error::Error for UpdateStageError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            UpdateStageErrorKind::BadRequestError(_inner) => Some(_inner),
-            UpdateStageErrorKind::ConflictError(_inner) => Some(_inner),
-            UpdateStageErrorKind::NotFoundError(_inner) => Some(_inner),
-            UpdateStageErrorKind::TooManyRequestsError(_inner) => Some(_inner),
-            UpdateStageErrorKind::UnauthorizedError(_inner) => Some(_inner),
+            UpdateStageErrorKind::BadRequestException(_inner) => Some(_inner),
+            UpdateStageErrorKind::ConflictException(_inner) => Some(_inner),
+            UpdateStageErrorKind::NotFoundException(_inner) => Some(_inner),
+            UpdateStageErrorKind::TooManyRequestsException(_inner) => Some(_inner),
+            UpdateStageErrorKind::UnauthorizedException(_inner) => Some(_inner),
             UpdateStageErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -11996,20 +12356,20 @@ pub struct UpdateUsageError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateUsageErrorKind {
-    BadRequestError(crate::error::BadRequestError),
-    NotFoundError(crate::error::NotFoundError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
-    UnauthorizedError(crate::error::UnauthorizedError),
+    BadRequestException(crate::error::BadRequestException),
+    NotFoundException(crate::error::NotFoundException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
+    UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateUsageError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            UpdateUsageErrorKind::BadRequestError(_inner) => _inner.fmt(f),
-            UpdateUsageErrorKind::NotFoundError(_inner) => _inner.fmt(f),
-            UpdateUsageErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
-            UpdateUsageErrorKind::UnauthorizedError(_inner) => _inner.fmt(f),
+            UpdateUsageErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            UpdateUsageErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            UpdateUsageErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
+            UpdateUsageErrorKind::UnauthorizedException(_inner) => _inner.fmt(f),
             UpdateUsageErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -12058,26 +12418,29 @@ impl UpdateUsageError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_bad_request_error(&self) -> bool {
-        matches!(&self.kind, UpdateUsageErrorKind::BadRequestError(_))
+    pub fn is_bad_request_exception(&self) -> bool {
+        matches!(&self.kind, UpdateUsageErrorKind::BadRequestException(_))
     }
-    pub fn is_not_found_error(&self) -> bool {
-        matches!(&self.kind, UpdateUsageErrorKind::NotFoundError(_))
+    pub fn is_not_found_exception(&self) -> bool {
+        matches!(&self.kind, UpdateUsageErrorKind::NotFoundException(_))
     }
-    pub fn is_too_many_requests_error(&self) -> bool {
-        matches!(&self.kind, UpdateUsageErrorKind::TooManyRequestsError(_))
+    pub fn is_too_many_requests_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateUsageErrorKind::TooManyRequestsException(_)
+        )
     }
-    pub fn is_unauthorized_error(&self) -> bool {
-        matches!(&self.kind, UpdateUsageErrorKind::UnauthorizedError(_))
+    pub fn is_unauthorized_exception(&self) -> bool {
+        matches!(&self.kind, UpdateUsageErrorKind::UnauthorizedException(_))
     }
 }
 impl std::error::Error for UpdateUsageError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            UpdateUsageErrorKind::BadRequestError(_inner) => Some(_inner),
-            UpdateUsageErrorKind::NotFoundError(_inner) => Some(_inner),
-            UpdateUsageErrorKind::TooManyRequestsError(_inner) => Some(_inner),
-            UpdateUsageErrorKind::UnauthorizedError(_inner) => Some(_inner),
+            UpdateUsageErrorKind::BadRequestException(_inner) => Some(_inner),
+            UpdateUsageErrorKind::NotFoundException(_inner) => Some(_inner),
+            UpdateUsageErrorKind::TooManyRequestsException(_inner) => Some(_inner),
+            UpdateUsageErrorKind::UnauthorizedException(_inner) => Some(_inner),
             UpdateUsageErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -12092,22 +12455,22 @@ pub struct UpdateUsagePlanError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateUsagePlanErrorKind {
-    BadRequestError(crate::error::BadRequestError),
-    ConflictError(crate::error::ConflictError),
-    NotFoundError(crate::error::NotFoundError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
-    UnauthorizedError(crate::error::UnauthorizedError),
+    BadRequestException(crate::error::BadRequestException),
+    ConflictException(crate::error::ConflictException),
+    NotFoundException(crate::error::NotFoundException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
+    UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateUsagePlanError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            UpdateUsagePlanErrorKind::BadRequestError(_inner) => _inner.fmt(f),
-            UpdateUsagePlanErrorKind::ConflictError(_inner) => _inner.fmt(f),
-            UpdateUsagePlanErrorKind::NotFoundError(_inner) => _inner.fmt(f),
-            UpdateUsagePlanErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
-            UpdateUsagePlanErrorKind::UnauthorizedError(_inner) => _inner.fmt(f),
+            UpdateUsagePlanErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            UpdateUsagePlanErrorKind::ConflictException(_inner) => _inner.fmt(f),
+            UpdateUsagePlanErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            UpdateUsagePlanErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
+            UpdateUsagePlanErrorKind::UnauthorizedException(_inner) => _inner.fmt(f),
             UpdateUsagePlanErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -12156,33 +12519,36 @@ impl UpdateUsagePlanError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_bad_request_error(&self) -> bool {
-        matches!(&self.kind, UpdateUsagePlanErrorKind::BadRequestError(_))
+    pub fn is_bad_request_exception(&self) -> bool {
+        matches!(&self.kind, UpdateUsagePlanErrorKind::BadRequestException(_))
     }
-    pub fn is_conflict_error(&self) -> bool {
-        matches!(&self.kind, UpdateUsagePlanErrorKind::ConflictError(_))
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(&self.kind, UpdateUsagePlanErrorKind::ConflictException(_))
     }
-    pub fn is_not_found_error(&self) -> bool {
-        matches!(&self.kind, UpdateUsagePlanErrorKind::NotFoundError(_))
+    pub fn is_not_found_exception(&self) -> bool {
+        matches!(&self.kind, UpdateUsagePlanErrorKind::NotFoundException(_))
     }
-    pub fn is_too_many_requests_error(&self) -> bool {
+    pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UpdateUsagePlanErrorKind::TooManyRequestsError(_)
+            UpdateUsagePlanErrorKind::TooManyRequestsException(_)
         )
     }
-    pub fn is_unauthorized_error(&self) -> bool {
-        matches!(&self.kind, UpdateUsagePlanErrorKind::UnauthorizedError(_))
+    pub fn is_unauthorized_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateUsagePlanErrorKind::UnauthorizedException(_)
+        )
     }
 }
 impl std::error::Error for UpdateUsagePlanError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            UpdateUsagePlanErrorKind::BadRequestError(_inner) => Some(_inner),
-            UpdateUsagePlanErrorKind::ConflictError(_inner) => Some(_inner),
-            UpdateUsagePlanErrorKind::NotFoundError(_inner) => Some(_inner),
-            UpdateUsagePlanErrorKind::TooManyRequestsError(_inner) => Some(_inner),
-            UpdateUsagePlanErrorKind::UnauthorizedError(_inner) => Some(_inner),
+            UpdateUsagePlanErrorKind::BadRequestException(_inner) => Some(_inner),
+            UpdateUsagePlanErrorKind::ConflictException(_inner) => Some(_inner),
+            UpdateUsagePlanErrorKind::NotFoundException(_inner) => Some(_inner),
+            UpdateUsagePlanErrorKind::TooManyRequestsException(_inner) => Some(_inner),
+            UpdateUsagePlanErrorKind::UnauthorizedException(_inner) => Some(_inner),
             UpdateUsagePlanErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -12197,22 +12563,22 @@ pub struct UpdateVpcLinkError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateVpcLinkErrorKind {
-    BadRequestError(crate::error::BadRequestError),
-    ConflictError(crate::error::ConflictError),
-    NotFoundError(crate::error::NotFoundError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
-    UnauthorizedError(crate::error::UnauthorizedError),
+    BadRequestException(crate::error::BadRequestException),
+    ConflictException(crate::error::ConflictException),
+    NotFoundException(crate::error::NotFoundException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
+    UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateVpcLinkError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            UpdateVpcLinkErrorKind::BadRequestError(_inner) => _inner.fmt(f),
-            UpdateVpcLinkErrorKind::ConflictError(_inner) => _inner.fmt(f),
-            UpdateVpcLinkErrorKind::NotFoundError(_inner) => _inner.fmt(f),
-            UpdateVpcLinkErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
-            UpdateVpcLinkErrorKind::UnauthorizedError(_inner) => _inner.fmt(f),
+            UpdateVpcLinkErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            UpdateVpcLinkErrorKind::ConflictException(_inner) => _inner.fmt(f),
+            UpdateVpcLinkErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            UpdateVpcLinkErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
+            UpdateVpcLinkErrorKind::UnauthorizedException(_inner) => _inner.fmt(f),
             UpdateVpcLinkErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -12261,30 +12627,33 @@ impl UpdateVpcLinkError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_bad_request_error(&self) -> bool {
-        matches!(&self.kind, UpdateVpcLinkErrorKind::BadRequestError(_))
+    pub fn is_bad_request_exception(&self) -> bool {
+        matches!(&self.kind, UpdateVpcLinkErrorKind::BadRequestException(_))
     }
-    pub fn is_conflict_error(&self) -> bool {
-        matches!(&self.kind, UpdateVpcLinkErrorKind::ConflictError(_))
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(&self.kind, UpdateVpcLinkErrorKind::ConflictException(_))
     }
-    pub fn is_not_found_error(&self) -> bool {
-        matches!(&self.kind, UpdateVpcLinkErrorKind::NotFoundError(_))
+    pub fn is_not_found_exception(&self) -> bool {
+        matches!(&self.kind, UpdateVpcLinkErrorKind::NotFoundException(_))
     }
-    pub fn is_too_many_requests_error(&self) -> bool {
-        matches!(&self.kind, UpdateVpcLinkErrorKind::TooManyRequestsError(_))
+    pub fn is_too_many_requests_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateVpcLinkErrorKind::TooManyRequestsException(_)
+        )
     }
-    pub fn is_unauthorized_error(&self) -> bool {
-        matches!(&self.kind, UpdateVpcLinkErrorKind::UnauthorizedError(_))
+    pub fn is_unauthorized_exception(&self) -> bool {
+        matches!(&self.kind, UpdateVpcLinkErrorKind::UnauthorizedException(_))
     }
 }
 impl std::error::Error for UpdateVpcLinkError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            UpdateVpcLinkErrorKind::BadRequestError(_inner) => Some(_inner),
-            UpdateVpcLinkErrorKind::ConflictError(_inner) => Some(_inner),
-            UpdateVpcLinkErrorKind::NotFoundError(_inner) => Some(_inner),
-            UpdateVpcLinkErrorKind::TooManyRequestsError(_inner) => Some(_inner),
-            UpdateVpcLinkErrorKind::UnauthorizedError(_inner) => Some(_inner),
+            UpdateVpcLinkErrorKind::BadRequestException(_inner) => Some(_inner),
+            UpdateVpcLinkErrorKind::ConflictException(_inner) => Some(_inner),
+            UpdateVpcLinkErrorKind::NotFoundException(_inner) => Some(_inner),
+            UpdateVpcLinkErrorKind::TooManyRequestsException(_inner) => Some(_inner),
+            UpdateVpcLinkErrorKind::UnauthorizedException(_inner) => Some(_inner),
             UpdateVpcLinkErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -12292,37 +12661,35 @@ impl std::error::Error for UpdateVpcLinkError {
 
 /// <p>The request is denied because the caller has insufficient permissions.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
-pub struct UnauthorizedError {
-    #[serde(rename = "message")]
-    #[serde(default)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UnauthorizedException {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for UnauthorizedError {
+impl std::fmt::Debug for UnauthorizedException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UnauthorizedError");
+        let mut formatter = f.debug_struct("UnauthorizedException");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl UnauthorizedError {
+impl UnauthorizedException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for UnauthorizedError {
+impl std::fmt::Display for UnauthorizedException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "UnauthorizedError [UnauthorizedException]")?;
+        write!(f, "UnauthorizedException")?;
         if let Some(inner_1) = &self.message {
             write!(f, ": {}", inner_1)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for UnauthorizedError {}
-/// See [`UnauthorizedError`](crate::error::UnauthorizedError)
-pub mod unauthorized_error {
-    /// A builder for [`UnauthorizedError`](crate::error::UnauthorizedError)
+impl std::error::Error for UnauthorizedException {}
+/// See [`UnauthorizedException`](crate::error::UnauthorizedException)
+pub mod unauthorized_exception {
+    /// A builder for [`UnauthorizedException`](crate::error::UnauthorizedException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -12337,58 +12704,54 @@ pub mod unauthorized_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`UnauthorizedError`](crate::error::UnauthorizedError)
-        pub fn build(self) -> crate::error::UnauthorizedError {
-            crate::error::UnauthorizedError {
+        /// Consumes the builder and constructs a [`UnauthorizedException`](crate::error::UnauthorizedException)
+        pub fn build(self) -> crate::error::UnauthorizedException {
+            crate::error::UnauthorizedException {
                 message: self.message,
             }
         }
     }
 }
-impl UnauthorizedError {
-    /// Creates a new builder-style object to manufacture [`UnauthorizedError`](crate::error::UnauthorizedError)
-    pub fn builder() -> crate::error::unauthorized_error::Builder {
-        crate::error::unauthorized_error::Builder::default()
+impl UnauthorizedException {
+    /// Creates a new builder-style object to manufacture [`UnauthorizedException`](crate::error::UnauthorizedException)
+    pub fn builder() -> crate::error::unauthorized_exception::Builder {
+        crate::error::unauthorized_exception::Builder::default()
     }
 }
 
 /// <p>The request has reached its throttling limit. Retry after the specified time period.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
-pub struct TooManyRequestsError {
-    #[serde(rename = "retryAfterSeconds")]
-    #[serde(default)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct TooManyRequestsException {
     pub retry_after_seconds: std::option::Option<std::string::String>,
-    #[serde(rename = "message")]
-    #[serde(default)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for TooManyRequestsError {
+impl std::fmt::Debug for TooManyRequestsException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TooManyRequestsError");
+        let mut formatter = f.debug_struct("TooManyRequestsException");
         formatter.field("retry_after_seconds", &self.retry_after_seconds);
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl TooManyRequestsError {
+impl TooManyRequestsException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for TooManyRequestsError {
+impl std::fmt::Display for TooManyRequestsException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "TooManyRequestsError [TooManyRequestsException]")?;
+        write!(f, "TooManyRequestsException")?;
         if let Some(inner_2) = &self.message {
             write!(f, ": {}", inner_2)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for TooManyRequestsError {}
-/// See [`TooManyRequestsError`](crate::error::TooManyRequestsError)
-pub mod too_many_requests_error {
-    /// A builder for [`TooManyRequestsError`](crate::error::TooManyRequestsError)
+impl std::error::Error for TooManyRequestsException {}
+/// See [`TooManyRequestsException`](crate::error::TooManyRequestsException)
+pub mod too_many_requests_exception {
+    /// A builder for [`TooManyRequestsException`](crate::error::TooManyRequestsException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -12415,55 +12778,53 @@ pub mod too_many_requests_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`TooManyRequestsError`](crate::error::TooManyRequestsError)
-        pub fn build(self) -> crate::error::TooManyRequestsError {
-            crate::error::TooManyRequestsError {
+        /// Consumes the builder and constructs a [`TooManyRequestsException`](crate::error::TooManyRequestsException)
+        pub fn build(self) -> crate::error::TooManyRequestsException {
+            crate::error::TooManyRequestsException {
                 retry_after_seconds: self.retry_after_seconds,
                 message: self.message,
             }
         }
     }
 }
-impl TooManyRequestsError {
-    /// Creates a new builder-style object to manufacture [`TooManyRequestsError`](crate::error::TooManyRequestsError)
-    pub fn builder() -> crate::error::too_many_requests_error::Builder {
-        crate::error::too_many_requests_error::Builder::default()
+impl TooManyRequestsException {
+    /// Creates a new builder-style object to manufacture [`TooManyRequestsException`](crate::error::TooManyRequestsException)
+    pub fn builder() -> crate::error::too_many_requests_exception::Builder {
+        crate::error::too_many_requests_exception::Builder::default()
     }
 }
 
 /// <p>The requested resource is not found. Make sure that the request URI is correct.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
-pub struct NotFoundError {
-    #[serde(rename = "message")]
-    #[serde(default)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct NotFoundException {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for NotFoundError {
+impl std::fmt::Debug for NotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NotFoundError");
+        let mut formatter = f.debug_struct("NotFoundException");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl NotFoundError {
+impl NotFoundException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for NotFoundError {
+impl std::fmt::Display for NotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "NotFoundError [NotFoundException]")?;
+        write!(f, "NotFoundException")?;
         if let Some(inner_3) = &self.message {
             write!(f, ": {}", inner_3)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for NotFoundError {}
-/// See [`NotFoundError`](crate::error::NotFoundError)
-pub mod not_found_error {
-    /// A builder for [`NotFoundError`](crate::error::NotFoundError)
+impl std::error::Error for NotFoundException {}
+/// See [`NotFoundException`](crate::error::NotFoundException)
+pub mod not_found_exception {
+    /// A builder for [`NotFoundException`](crate::error::NotFoundException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -12478,54 +12839,52 @@ pub mod not_found_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`NotFoundError`](crate::error::NotFoundError)
-        pub fn build(self) -> crate::error::NotFoundError {
-            crate::error::NotFoundError {
+        /// Consumes the builder and constructs a [`NotFoundException`](crate::error::NotFoundException)
+        pub fn build(self) -> crate::error::NotFoundException {
+            crate::error::NotFoundException {
                 message: self.message,
             }
         }
     }
 }
-impl NotFoundError {
-    /// Creates a new builder-style object to manufacture [`NotFoundError`](crate::error::NotFoundError)
-    pub fn builder() -> crate::error::not_found_error::Builder {
-        crate::error::not_found_error::Builder::default()
+impl NotFoundException {
+    /// Creates a new builder-style object to manufacture [`NotFoundException`](crate::error::NotFoundException)
+    pub fn builder() -> crate::error::not_found_exception::Builder {
+        crate::error::not_found_exception::Builder::default()
     }
 }
 
 /// <p>The request configuration has conflicts. For details, see the accompanying error message.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
-pub struct ConflictError {
-    #[serde(rename = "message")]
-    #[serde(default)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ConflictException {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for ConflictError {
+impl std::fmt::Debug for ConflictException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ConflictError");
+        let mut formatter = f.debug_struct("ConflictException");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl ConflictError {
+impl ConflictException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for ConflictError {
+impl std::fmt::Display for ConflictException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "ConflictError [ConflictException]")?;
+        write!(f, "ConflictException")?;
         if let Some(inner_4) = &self.message {
             write!(f, ": {}", inner_4)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for ConflictError {}
-/// See [`ConflictError`](crate::error::ConflictError)
-pub mod conflict_error {
-    /// A builder for [`ConflictError`](crate::error::ConflictError)
+impl std::error::Error for ConflictException {}
+/// See [`ConflictException`](crate::error::ConflictException)
+pub mod conflict_exception {
+    /// A builder for [`ConflictException`](crate::error::ConflictException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -12540,54 +12899,52 @@ pub mod conflict_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`ConflictError`](crate::error::ConflictError)
-        pub fn build(self) -> crate::error::ConflictError {
-            crate::error::ConflictError {
+        /// Consumes the builder and constructs a [`ConflictException`](crate::error::ConflictException)
+        pub fn build(self) -> crate::error::ConflictException {
+            crate::error::ConflictException {
                 message: self.message,
             }
         }
     }
 }
-impl ConflictError {
-    /// Creates a new builder-style object to manufacture [`ConflictError`](crate::error::ConflictError)
-    pub fn builder() -> crate::error::conflict_error::Builder {
-        crate::error::conflict_error::Builder::default()
+impl ConflictException {
+    /// Creates a new builder-style object to manufacture [`ConflictException`](crate::error::ConflictException)
+    pub fn builder() -> crate::error::conflict_exception::Builder {
+        crate::error::conflict_exception::Builder::default()
     }
 }
 
 /// <p>The submitted request is not valid, for example, the input is incomplete or incorrect. See the accompanying error message for details.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
-pub struct BadRequestError {
-    #[serde(rename = "message")]
-    #[serde(default)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct BadRequestException {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for BadRequestError {
+impl std::fmt::Debug for BadRequestException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BadRequestError");
+        let mut formatter = f.debug_struct("BadRequestException");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl BadRequestError {
+impl BadRequestException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for BadRequestError {
+impl std::fmt::Display for BadRequestException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "BadRequestError [BadRequestException]")?;
+        write!(f, "BadRequestException")?;
         if let Some(inner_5) = &self.message {
             write!(f, ": {}", inner_5)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for BadRequestError {}
-/// See [`BadRequestError`](crate::error::BadRequestError)
-pub mod bad_request_error {
-    /// A builder for [`BadRequestError`](crate::error::BadRequestError)
+impl std::error::Error for BadRequestException {}
+/// See [`BadRequestException`](crate::error::BadRequestException)
+pub mod bad_request_exception {
+    /// A builder for [`BadRequestException`](crate::error::BadRequestException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -12602,58 +12959,54 @@ pub mod bad_request_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`BadRequestError`](crate::error::BadRequestError)
-        pub fn build(self) -> crate::error::BadRequestError {
-            crate::error::BadRequestError {
+        /// Consumes the builder and constructs a [`BadRequestException`](crate::error::BadRequestException)
+        pub fn build(self) -> crate::error::BadRequestException {
+            crate::error::BadRequestException {
                 message: self.message,
             }
         }
     }
 }
-impl BadRequestError {
-    /// Creates a new builder-style object to manufacture [`BadRequestError`](crate::error::BadRequestError)
-    pub fn builder() -> crate::error::bad_request_error::Builder {
-        crate::error::bad_request_error::Builder::default()
+impl BadRequestException {
+    /// Creates a new builder-style object to manufacture [`BadRequestException`](crate::error::BadRequestException)
+    pub fn builder() -> crate::error::bad_request_exception::Builder {
+        crate::error::bad_request_exception::Builder::default()
     }
 }
 
 /// <p>The request exceeded the rate limit. Retry after the specified time period.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
-pub struct LimitExceededError {
-    #[serde(rename = "retryAfterSeconds")]
-    #[serde(default)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct LimitExceededException {
     pub retry_after_seconds: std::option::Option<std::string::String>,
-    #[serde(rename = "message")]
-    #[serde(default)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for LimitExceededError {
+impl std::fmt::Debug for LimitExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LimitExceededError");
+        let mut formatter = f.debug_struct("LimitExceededException");
         formatter.field("retry_after_seconds", &self.retry_after_seconds);
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl LimitExceededError {
+impl LimitExceededException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for LimitExceededError {
+impl std::fmt::Display for LimitExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "LimitExceededError [LimitExceededException]")?;
+        write!(f, "LimitExceededException")?;
         if let Some(inner_6) = &self.message {
             write!(f, ": {}", inner_6)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for LimitExceededError {}
-/// See [`LimitExceededError`](crate::error::LimitExceededError)
-pub mod limit_exceeded_error {
-    /// A builder for [`LimitExceededError`](crate::error::LimitExceededError)
+impl std::error::Error for LimitExceededException {}
+/// See [`LimitExceededException`](crate::error::LimitExceededException)
+pub mod limit_exceeded_exception {
+    /// A builder for [`LimitExceededException`](crate::error::LimitExceededException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -12680,59 +13033,55 @@ pub mod limit_exceeded_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`LimitExceededError`](crate::error::LimitExceededError)
-        pub fn build(self) -> crate::error::LimitExceededError {
-            crate::error::LimitExceededError {
+        /// Consumes the builder and constructs a [`LimitExceededException`](crate::error::LimitExceededException)
+        pub fn build(self) -> crate::error::LimitExceededException {
+            crate::error::LimitExceededException {
                 retry_after_seconds: self.retry_after_seconds,
                 message: self.message,
             }
         }
     }
 }
-impl LimitExceededError {
-    /// Creates a new builder-style object to manufacture [`LimitExceededError`](crate::error::LimitExceededError)
-    pub fn builder() -> crate::error::limit_exceeded_error::Builder {
-        crate::error::limit_exceeded_error::Builder::default()
+impl LimitExceededException {
+    /// Creates a new builder-style object to manufacture [`LimitExceededException`](crate::error::LimitExceededException)
+    pub fn builder() -> crate::error::limit_exceeded_exception::Builder {
+        crate::error::limit_exceeded_exception::Builder::default()
     }
 }
 
 /// <p>The requested service is not available. For details see the accompanying error message. Retry after the specified time period.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
-pub struct ServiceUnavailableError {
-    #[serde(rename = "retryAfterSeconds")]
-    #[serde(default)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ServiceUnavailableException {
     pub retry_after_seconds: std::option::Option<std::string::String>,
-    #[serde(rename = "message")]
-    #[serde(default)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for ServiceUnavailableError {
+impl std::fmt::Debug for ServiceUnavailableException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ServiceUnavailableError");
+        let mut formatter = f.debug_struct("ServiceUnavailableException");
         formatter.field("retry_after_seconds", &self.retry_after_seconds);
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl ServiceUnavailableError {
+impl ServiceUnavailableException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for ServiceUnavailableError {
+impl std::fmt::Display for ServiceUnavailableException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "ServiceUnavailableError [ServiceUnavailableException]")?;
+        write!(f, "ServiceUnavailableException")?;
         if let Some(inner_7) = &self.message {
             write!(f, ": {}", inner_7)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for ServiceUnavailableError {}
-/// See [`ServiceUnavailableError`](crate::error::ServiceUnavailableError)
-pub mod service_unavailable_error {
-    /// A builder for [`ServiceUnavailableError`](crate::error::ServiceUnavailableError)
+impl std::error::Error for ServiceUnavailableException {}
+/// See [`ServiceUnavailableException`](crate::error::ServiceUnavailableException)
+pub mod service_unavailable_exception {
+    /// A builder for [`ServiceUnavailableException`](crate::error::ServiceUnavailableException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -12759,18 +13108,18 @@ pub mod service_unavailable_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`ServiceUnavailableError`](crate::error::ServiceUnavailableError)
-        pub fn build(self) -> crate::error::ServiceUnavailableError {
-            crate::error::ServiceUnavailableError {
+        /// Consumes the builder and constructs a [`ServiceUnavailableException`](crate::error::ServiceUnavailableException)
+        pub fn build(self) -> crate::error::ServiceUnavailableException {
+            crate::error::ServiceUnavailableException {
                 retry_after_seconds: self.retry_after_seconds,
                 message: self.message,
             }
         }
     }
 }
-impl ServiceUnavailableError {
-    /// Creates a new builder-style object to manufacture [`ServiceUnavailableError`](crate::error::ServiceUnavailableError)
-    pub fn builder() -> crate::error::service_unavailable_error::Builder {
-        crate::error::service_unavailable_error::Builder::default()
+impl ServiceUnavailableException {
+    /// Creates a new builder-style object to manufacture [`ServiceUnavailableException`](crate::error::ServiceUnavailableException)
+    pub fn builder() -> crate::error::service_unavailable_exception::Builder {
+        crate::error::service_unavailable_exception::Builder::default()
     }
 }

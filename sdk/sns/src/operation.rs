@@ -213,7 +213,7 @@ pub struct CreateSMSSandboxPhoneNumber {
     _private: (),
 }
 impl CreateSMSSandboxPhoneNumber {
-    /// Creates a new builder-style object to manufacture [`CreateSMSSandboxPhoneNumberInput`](crate::input::CreateSMSSandboxPhoneNumberInput)
+    /// Creates a new builder-style object to manufacture [`CreateSmsSandboxPhoneNumberInput`](crate::input::CreateSmsSandboxPhoneNumberInput)
     pub fn builder() -> crate::input::create_sms_sandbox_phone_number_input::Builder {
         crate::input::create_sms_sandbox_phone_number_input::Builder::default()
     }
@@ -223,7 +223,7 @@ impl CreateSMSSandboxPhoneNumber {
 }
 impl smithy_http::response::ParseStrictResponse for CreateSMSSandboxPhoneNumber {
     type Output = std::result::Result<
-        crate::output::CreateSMSSandboxPhoneNumberOutput,
+        crate::output::CreateSmsSandboxPhoneNumberOutput,
         crate::error::CreateSMSSandboxPhoneNumberError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
@@ -339,7 +339,7 @@ pub struct DeleteSMSSandboxPhoneNumber {
     _private: (),
 }
 impl DeleteSMSSandboxPhoneNumber {
-    /// Creates a new builder-style object to manufacture [`DeleteSMSSandboxPhoneNumberInput`](crate::input::DeleteSMSSandboxPhoneNumberInput)
+    /// Creates a new builder-style object to manufacture [`DeleteSmsSandboxPhoneNumberInput`](crate::input::DeleteSmsSandboxPhoneNumberInput)
     pub fn builder() -> crate::input::delete_sms_sandbox_phone_number_input::Builder {
         crate::input::delete_sms_sandbox_phone_number_input::Builder::default()
     }
@@ -349,7 +349,7 @@ impl DeleteSMSSandboxPhoneNumber {
 }
 impl smithy_http::response::ParseStrictResponse for DeleteSMSSandboxPhoneNumber {
     type Output = std::result::Result<
-        crate::output::DeleteSMSSandboxPhoneNumberOutput,
+        crate::output::DeleteSmsSandboxPhoneNumberOutput,
         crate::error::DeleteSMSSandboxPhoneNumberError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
@@ -457,7 +457,7 @@ pub struct GetSMSAttributes {
     _private: (),
 }
 impl GetSMSAttributes {
-    /// Creates a new builder-style object to manufacture [`GetSMSAttributesInput`](crate::input::GetSMSAttributesInput)
+    /// Creates a new builder-style object to manufacture [`GetSmsAttributesInput`](crate::input::GetSmsAttributesInput)
     pub fn builder() -> crate::input::get_sms_attributes_input::Builder {
         crate::input::get_sms_attributes_input::Builder::default()
     }
@@ -467,7 +467,7 @@ impl GetSMSAttributes {
 }
 impl smithy_http::response::ParseStrictResponse for GetSMSAttributes {
     type Output = std::result::Result<
-        crate::output::GetSMSAttributesOutput,
+        crate::output::GetSmsAttributesOutput,
         crate::error::GetSMSAttributesError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
@@ -494,7 +494,7 @@ pub struct GetSMSSandboxAccountStatus {
     _private: (),
 }
 impl GetSMSSandboxAccountStatus {
-    /// Creates a new builder-style object to manufacture [`GetSMSSandboxAccountStatusInput`](crate::input::GetSMSSandboxAccountStatusInput)
+    /// Creates a new builder-style object to manufacture [`GetSmsSandboxAccountStatusInput`](crate::input::GetSmsSandboxAccountStatusInput)
     pub fn builder() -> crate::input::get_sms_sandbox_account_status_input::Builder {
         crate::input::get_sms_sandbox_account_status_input::Builder::default()
     }
@@ -504,7 +504,7 @@ impl GetSMSSandboxAccountStatus {
 }
 impl smithy_http::response::ParseStrictResponse for GetSMSSandboxAccountStatus {
     type Output = std::result::Result<
-        crate::output::GetSMSSandboxAccountStatusOutput,
+        crate::output::GetSmsSandboxAccountStatusOutput,
         crate::error::GetSMSSandboxAccountStatusError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
@@ -727,7 +727,7 @@ pub struct ListSMSSandboxPhoneNumbers {
     _private: (),
 }
 impl ListSMSSandboxPhoneNumbers {
-    /// Creates a new builder-style object to manufacture [`ListSMSSandboxPhoneNumbersInput`](crate::input::ListSMSSandboxPhoneNumbersInput)
+    /// Creates a new builder-style object to manufacture [`ListSmsSandboxPhoneNumbersInput`](crate::input::ListSmsSandboxPhoneNumbersInput)
     pub fn builder() -> crate::input::list_sms_sandbox_phone_numbers_input::Builder {
         crate::input::list_sms_sandbox_phone_numbers_input::Builder::default()
     }
@@ -737,7 +737,7 @@ impl ListSMSSandboxPhoneNumbers {
 }
 impl smithy_http::response::ParseStrictResponse for ListSMSSandboxPhoneNumbers {
     type Output = std::result::Result<
-        crate::output::ListSMSSandboxPhoneNumbersOutput,
+        crate::output::ListSmsSandboxPhoneNumbersOutput,
         crate::error::ListSMSSandboxPhoneNumbersError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
@@ -1051,7 +1051,7 @@ pub struct SetSMSAttributes {
     _private: (),
 }
 impl SetSMSAttributes {
-    /// Creates a new builder-style object to manufacture [`SetSMSAttributesInput`](crate::input::SetSMSAttributesInput)
+    /// Creates a new builder-style object to manufacture [`SetSmsAttributesInput`](crate::input::SetSmsAttributesInput)
     pub fn builder() -> crate::input::set_sms_attributes_input::Builder {
         crate::input::set_sms_attributes_input::Builder::default()
     }
@@ -1061,7 +1061,7 @@ impl SetSMSAttributes {
 }
 impl smithy_http::response::ParseStrictResponse for SetSMSAttributes {
     type Output = std::result::Result<
-        crate::output::SetSMSAttributesOutput,
+        crate::output::SetSmsAttributesOutput,
         crate::error::SetSMSAttributesError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
@@ -1282,7 +1282,7 @@ pub struct VerifySMSSandboxPhoneNumber {
     _private: (),
 }
 impl VerifySMSSandboxPhoneNumber {
-    /// Creates a new builder-style object to manufacture [`VerifySMSSandboxPhoneNumberInput`](crate::input::VerifySMSSandboxPhoneNumberInput)
+    /// Creates a new builder-style object to manufacture [`VerifySmsSandboxPhoneNumberInput`](crate::input::VerifySmsSandboxPhoneNumberInput)
     pub fn builder() -> crate::input::verify_sms_sandbox_phone_number_input::Builder {
         crate::input::verify_sms_sandbox_phone_number_input::Builder::default()
     }
@@ -1292,7 +1292,7 @@ impl VerifySMSSandboxPhoneNumber {
 }
 impl smithy_http::response::ParseStrictResponse for VerifySMSSandboxPhoneNumber {
     type Output = std::result::Result<
-        crate::output::VerifySMSSandboxPhoneNumberOutput,
+        crate::output::VerifySmsSandboxPhoneNumberOutput,
         crate::error::VerifySMSSandboxPhoneNumberError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {

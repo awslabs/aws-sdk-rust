@@ -1191,7 +1191,7 @@ pub fn serialize_structure_host(
 
 pub fn serialize_structure_efs_volume_configuration(
     object: &mut smithy_json::serialize::JsonObjectWriter,
-    input: &crate::model::EFSVolumeConfiguration,
+    input: &crate::model::EfsVolumeConfiguration,
 ) {
     if let Some(var_259) = &input.file_system_id {
         object.key("fileSystemId").string(var_259);
@@ -1262,7 +1262,7 @@ pub fn serialize_structure_tmpfs(
 
 pub fn serialize_structure_efs_authorization_config(
     object: &mut smithy_json::serialize::JsonObjectWriter,
-    input: &crate::model::EFSAuthorizationConfig,
+    input: &crate::model::EfsAuthorizationConfig,
 ) {
     if let Some(var_273) = &input.access_point_id {
         object.key("accessPointId").string(var_273);

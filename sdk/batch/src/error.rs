@@ -8,16 +8,16 @@ pub struct CancelJobError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CancelJobErrorKind {
-    ClientError(crate::error::ClientError),
-    ServerError(crate::error::ServerError),
+    ClientException(crate::error::ClientException),
+    ServerException(crate::error::ServerException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CancelJobError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            CancelJobErrorKind::ClientError(_inner) => _inner.fmt(f),
-            CancelJobErrorKind::ServerError(_inner) => _inner.fmt(f),
+            CancelJobErrorKind::ClientException(_inner) => _inner.fmt(f),
+            CancelJobErrorKind::ServerException(_inner) => _inner.fmt(f),
             CancelJobErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -66,18 +66,18 @@ impl CancelJobError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_client_error(&self) -> bool {
-        matches!(&self.kind, CancelJobErrorKind::ClientError(_))
+    pub fn is_client_exception(&self) -> bool {
+        matches!(&self.kind, CancelJobErrorKind::ClientException(_))
     }
-    pub fn is_server_error(&self) -> bool {
-        matches!(&self.kind, CancelJobErrorKind::ServerError(_))
+    pub fn is_server_exception(&self) -> bool {
+        matches!(&self.kind, CancelJobErrorKind::ServerException(_))
     }
 }
 impl std::error::Error for CancelJobError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            CancelJobErrorKind::ClientError(_inner) => Some(_inner),
-            CancelJobErrorKind::ServerError(_inner) => Some(_inner),
+            CancelJobErrorKind::ClientException(_inner) => Some(_inner),
+            CancelJobErrorKind::ServerException(_inner) => Some(_inner),
             CancelJobErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -92,16 +92,16 @@ pub struct CreateComputeEnvironmentError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateComputeEnvironmentErrorKind {
-    ClientError(crate::error::ClientError),
-    ServerError(crate::error::ServerError),
+    ClientException(crate::error::ClientException),
+    ServerException(crate::error::ServerException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateComputeEnvironmentError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            CreateComputeEnvironmentErrorKind::ClientError(_inner) => _inner.fmt(f),
-            CreateComputeEnvironmentErrorKind::ServerError(_inner) => _inner.fmt(f),
+            CreateComputeEnvironmentErrorKind::ClientException(_inner) => _inner.fmt(f),
+            CreateComputeEnvironmentErrorKind::ServerException(_inner) => _inner.fmt(f),
             CreateComputeEnvironmentErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -150,24 +150,24 @@ impl CreateComputeEnvironmentError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_client_error(&self) -> bool {
+    pub fn is_client_exception(&self) -> bool {
         matches!(
             &self.kind,
-            CreateComputeEnvironmentErrorKind::ClientError(_)
+            CreateComputeEnvironmentErrorKind::ClientException(_)
         )
     }
-    pub fn is_server_error(&self) -> bool {
+    pub fn is_server_exception(&self) -> bool {
         matches!(
             &self.kind,
-            CreateComputeEnvironmentErrorKind::ServerError(_)
+            CreateComputeEnvironmentErrorKind::ServerException(_)
         )
     }
 }
 impl std::error::Error for CreateComputeEnvironmentError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            CreateComputeEnvironmentErrorKind::ClientError(_inner) => Some(_inner),
-            CreateComputeEnvironmentErrorKind::ServerError(_inner) => Some(_inner),
+            CreateComputeEnvironmentErrorKind::ClientException(_inner) => Some(_inner),
+            CreateComputeEnvironmentErrorKind::ServerException(_inner) => Some(_inner),
             CreateComputeEnvironmentErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -182,16 +182,16 @@ pub struct CreateJobQueueError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateJobQueueErrorKind {
-    ClientError(crate::error::ClientError),
-    ServerError(crate::error::ServerError),
+    ClientException(crate::error::ClientException),
+    ServerException(crate::error::ServerException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateJobQueueError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            CreateJobQueueErrorKind::ClientError(_inner) => _inner.fmt(f),
-            CreateJobQueueErrorKind::ServerError(_inner) => _inner.fmt(f),
+            CreateJobQueueErrorKind::ClientException(_inner) => _inner.fmt(f),
+            CreateJobQueueErrorKind::ServerException(_inner) => _inner.fmt(f),
             CreateJobQueueErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -240,18 +240,18 @@ impl CreateJobQueueError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_client_error(&self) -> bool {
-        matches!(&self.kind, CreateJobQueueErrorKind::ClientError(_))
+    pub fn is_client_exception(&self) -> bool {
+        matches!(&self.kind, CreateJobQueueErrorKind::ClientException(_))
     }
-    pub fn is_server_error(&self) -> bool {
-        matches!(&self.kind, CreateJobQueueErrorKind::ServerError(_))
+    pub fn is_server_exception(&self) -> bool {
+        matches!(&self.kind, CreateJobQueueErrorKind::ServerException(_))
     }
 }
 impl std::error::Error for CreateJobQueueError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            CreateJobQueueErrorKind::ClientError(_inner) => Some(_inner),
-            CreateJobQueueErrorKind::ServerError(_inner) => Some(_inner),
+            CreateJobQueueErrorKind::ClientException(_inner) => Some(_inner),
+            CreateJobQueueErrorKind::ServerException(_inner) => Some(_inner),
             CreateJobQueueErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -266,16 +266,16 @@ pub struct DeleteComputeEnvironmentError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteComputeEnvironmentErrorKind {
-    ClientError(crate::error::ClientError),
-    ServerError(crate::error::ServerError),
+    ClientException(crate::error::ClientException),
+    ServerException(crate::error::ServerException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteComputeEnvironmentError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DeleteComputeEnvironmentErrorKind::ClientError(_inner) => _inner.fmt(f),
-            DeleteComputeEnvironmentErrorKind::ServerError(_inner) => _inner.fmt(f),
+            DeleteComputeEnvironmentErrorKind::ClientException(_inner) => _inner.fmt(f),
+            DeleteComputeEnvironmentErrorKind::ServerException(_inner) => _inner.fmt(f),
             DeleteComputeEnvironmentErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -324,24 +324,24 @@ impl DeleteComputeEnvironmentError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_client_error(&self) -> bool {
+    pub fn is_client_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DeleteComputeEnvironmentErrorKind::ClientError(_)
+            DeleteComputeEnvironmentErrorKind::ClientException(_)
         )
     }
-    pub fn is_server_error(&self) -> bool {
+    pub fn is_server_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DeleteComputeEnvironmentErrorKind::ServerError(_)
+            DeleteComputeEnvironmentErrorKind::ServerException(_)
         )
     }
 }
 impl std::error::Error for DeleteComputeEnvironmentError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DeleteComputeEnvironmentErrorKind::ClientError(_inner) => Some(_inner),
-            DeleteComputeEnvironmentErrorKind::ServerError(_inner) => Some(_inner),
+            DeleteComputeEnvironmentErrorKind::ClientException(_inner) => Some(_inner),
+            DeleteComputeEnvironmentErrorKind::ServerException(_inner) => Some(_inner),
             DeleteComputeEnvironmentErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -356,16 +356,16 @@ pub struct DeleteJobQueueError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteJobQueueErrorKind {
-    ClientError(crate::error::ClientError),
-    ServerError(crate::error::ServerError),
+    ClientException(crate::error::ClientException),
+    ServerException(crate::error::ServerException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteJobQueueError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DeleteJobQueueErrorKind::ClientError(_inner) => _inner.fmt(f),
-            DeleteJobQueueErrorKind::ServerError(_inner) => _inner.fmt(f),
+            DeleteJobQueueErrorKind::ClientException(_inner) => _inner.fmt(f),
+            DeleteJobQueueErrorKind::ServerException(_inner) => _inner.fmt(f),
             DeleteJobQueueErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -414,18 +414,18 @@ impl DeleteJobQueueError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_client_error(&self) -> bool {
-        matches!(&self.kind, DeleteJobQueueErrorKind::ClientError(_))
+    pub fn is_client_exception(&self) -> bool {
+        matches!(&self.kind, DeleteJobQueueErrorKind::ClientException(_))
     }
-    pub fn is_server_error(&self) -> bool {
-        matches!(&self.kind, DeleteJobQueueErrorKind::ServerError(_))
+    pub fn is_server_exception(&self) -> bool {
+        matches!(&self.kind, DeleteJobQueueErrorKind::ServerException(_))
     }
 }
 impl std::error::Error for DeleteJobQueueError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DeleteJobQueueErrorKind::ClientError(_inner) => Some(_inner),
-            DeleteJobQueueErrorKind::ServerError(_inner) => Some(_inner),
+            DeleteJobQueueErrorKind::ClientException(_inner) => Some(_inner),
+            DeleteJobQueueErrorKind::ServerException(_inner) => Some(_inner),
             DeleteJobQueueErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -440,16 +440,16 @@ pub struct DeregisterJobDefinitionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeregisterJobDefinitionErrorKind {
-    ClientError(crate::error::ClientError),
-    ServerError(crate::error::ServerError),
+    ClientException(crate::error::ClientException),
+    ServerException(crate::error::ServerException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeregisterJobDefinitionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DeregisterJobDefinitionErrorKind::ClientError(_inner) => _inner.fmt(f),
-            DeregisterJobDefinitionErrorKind::ServerError(_inner) => _inner.fmt(f),
+            DeregisterJobDefinitionErrorKind::ClientException(_inner) => _inner.fmt(f),
+            DeregisterJobDefinitionErrorKind::ServerException(_inner) => _inner.fmt(f),
             DeregisterJobDefinitionErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -498,18 +498,24 @@ impl DeregisterJobDefinitionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_client_error(&self) -> bool {
-        matches!(&self.kind, DeregisterJobDefinitionErrorKind::ClientError(_))
+    pub fn is_client_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeregisterJobDefinitionErrorKind::ClientException(_)
+        )
     }
-    pub fn is_server_error(&self) -> bool {
-        matches!(&self.kind, DeregisterJobDefinitionErrorKind::ServerError(_))
+    pub fn is_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeregisterJobDefinitionErrorKind::ServerException(_)
+        )
     }
 }
 impl std::error::Error for DeregisterJobDefinitionError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DeregisterJobDefinitionErrorKind::ClientError(_inner) => Some(_inner),
-            DeregisterJobDefinitionErrorKind::ServerError(_inner) => Some(_inner),
+            DeregisterJobDefinitionErrorKind::ClientException(_inner) => Some(_inner),
+            DeregisterJobDefinitionErrorKind::ServerException(_inner) => Some(_inner),
             DeregisterJobDefinitionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -524,16 +530,16 @@ pub struct DescribeComputeEnvironmentsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeComputeEnvironmentsErrorKind {
-    ClientError(crate::error::ClientError),
-    ServerError(crate::error::ServerError),
+    ClientException(crate::error::ClientException),
+    ServerException(crate::error::ServerException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeComputeEnvironmentsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DescribeComputeEnvironmentsErrorKind::ClientError(_inner) => _inner.fmt(f),
-            DescribeComputeEnvironmentsErrorKind::ServerError(_inner) => _inner.fmt(f),
+            DescribeComputeEnvironmentsErrorKind::ClientException(_inner) => _inner.fmt(f),
+            DescribeComputeEnvironmentsErrorKind::ServerException(_inner) => _inner.fmt(f),
             DescribeComputeEnvironmentsErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -582,24 +588,24 @@ impl DescribeComputeEnvironmentsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_client_error(&self) -> bool {
+    pub fn is_client_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DescribeComputeEnvironmentsErrorKind::ClientError(_)
+            DescribeComputeEnvironmentsErrorKind::ClientException(_)
         )
     }
-    pub fn is_server_error(&self) -> bool {
+    pub fn is_server_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DescribeComputeEnvironmentsErrorKind::ServerError(_)
+            DescribeComputeEnvironmentsErrorKind::ServerException(_)
         )
     }
 }
 impl std::error::Error for DescribeComputeEnvironmentsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DescribeComputeEnvironmentsErrorKind::ClientError(_inner) => Some(_inner),
-            DescribeComputeEnvironmentsErrorKind::ServerError(_inner) => Some(_inner),
+            DescribeComputeEnvironmentsErrorKind::ClientException(_inner) => Some(_inner),
+            DescribeComputeEnvironmentsErrorKind::ServerException(_inner) => Some(_inner),
             DescribeComputeEnvironmentsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -614,16 +620,16 @@ pub struct DescribeJobDefinitionsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeJobDefinitionsErrorKind {
-    ClientError(crate::error::ClientError),
-    ServerError(crate::error::ServerError),
+    ClientException(crate::error::ClientException),
+    ServerException(crate::error::ServerException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeJobDefinitionsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DescribeJobDefinitionsErrorKind::ClientError(_inner) => _inner.fmt(f),
-            DescribeJobDefinitionsErrorKind::ServerError(_inner) => _inner.fmt(f),
+            DescribeJobDefinitionsErrorKind::ClientException(_inner) => _inner.fmt(f),
+            DescribeJobDefinitionsErrorKind::ServerException(_inner) => _inner.fmt(f),
             DescribeJobDefinitionsErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -672,18 +678,24 @@ impl DescribeJobDefinitionsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_client_error(&self) -> bool {
-        matches!(&self.kind, DescribeJobDefinitionsErrorKind::ClientError(_))
+    pub fn is_client_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeJobDefinitionsErrorKind::ClientException(_)
+        )
     }
-    pub fn is_server_error(&self) -> bool {
-        matches!(&self.kind, DescribeJobDefinitionsErrorKind::ServerError(_))
+    pub fn is_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeJobDefinitionsErrorKind::ServerException(_)
+        )
     }
 }
 impl std::error::Error for DescribeJobDefinitionsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DescribeJobDefinitionsErrorKind::ClientError(_inner) => Some(_inner),
-            DescribeJobDefinitionsErrorKind::ServerError(_inner) => Some(_inner),
+            DescribeJobDefinitionsErrorKind::ClientException(_inner) => Some(_inner),
+            DescribeJobDefinitionsErrorKind::ServerException(_inner) => Some(_inner),
             DescribeJobDefinitionsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -698,16 +710,16 @@ pub struct DescribeJobQueuesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeJobQueuesErrorKind {
-    ClientError(crate::error::ClientError),
-    ServerError(crate::error::ServerError),
+    ClientException(crate::error::ClientException),
+    ServerException(crate::error::ServerException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeJobQueuesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DescribeJobQueuesErrorKind::ClientError(_inner) => _inner.fmt(f),
-            DescribeJobQueuesErrorKind::ServerError(_inner) => _inner.fmt(f),
+            DescribeJobQueuesErrorKind::ClientException(_inner) => _inner.fmt(f),
+            DescribeJobQueuesErrorKind::ServerException(_inner) => _inner.fmt(f),
             DescribeJobQueuesErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -756,18 +768,18 @@ impl DescribeJobQueuesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_client_error(&self) -> bool {
-        matches!(&self.kind, DescribeJobQueuesErrorKind::ClientError(_))
+    pub fn is_client_exception(&self) -> bool {
+        matches!(&self.kind, DescribeJobQueuesErrorKind::ClientException(_))
     }
-    pub fn is_server_error(&self) -> bool {
-        matches!(&self.kind, DescribeJobQueuesErrorKind::ServerError(_))
+    pub fn is_server_exception(&self) -> bool {
+        matches!(&self.kind, DescribeJobQueuesErrorKind::ServerException(_))
     }
 }
 impl std::error::Error for DescribeJobQueuesError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DescribeJobQueuesErrorKind::ClientError(_inner) => Some(_inner),
-            DescribeJobQueuesErrorKind::ServerError(_inner) => Some(_inner),
+            DescribeJobQueuesErrorKind::ClientException(_inner) => Some(_inner),
+            DescribeJobQueuesErrorKind::ServerException(_inner) => Some(_inner),
             DescribeJobQueuesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -782,16 +794,16 @@ pub struct DescribeJobsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeJobsErrorKind {
-    ClientError(crate::error::ClientError),
-    ServerError(crate::error::ServerError),
+    ClientException(crate::error::ClientException),
+    ServerException(crate::error::ServerException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeJobsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DescribeJobsErrorKind::ClientError(_inner) => _inner.fmt(f),
-            DescribeJobsErrorKind::ServerError(_inner) => _inner.fmt(f),
+            DescribeJobsErrorKind::ClientException(_inner) => _inner.fmt(f),
+            DescribeJobsErrorKind::ServerException(_inner) => _inner.fmt(f),
             DescribeJobsErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -840,18 +852,18 @@ impl DescribeJobsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_client_error(&self) -> bool {
-        matches!(&self.kind, DescribeJobsErrorKind::ClientError(_))
+    pub fn is_client_exception(&self) -> bool {
+        matches!(&self.kind, DescribeJobsErrorKind::ClientException(_))
     }
-    pub fn is_server_error(&self) -> bool {
-        matches!(&self.kind, DescribeJobsErrorKind::ServerError(_))
+    pub fn is_server_exception(&self) -> bool {
+        matches!(&self.kind, DescribeJobsErrorKind::ServerException(_))
     }
 }
 impl std::error::Error for DescribeJobsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DescribeJobsErrorKind::ClientError(_inner) => Some(_inner),
-            DescribeJobsErrorKind::ServerError(_inner) => Some(_inner),
+            DescribeJobsErrorKind::ClientException(_inner) => Some(_inner),
+            DescribeJobsErrorKind::ServerException(_inner) => Some(_inner),
             DescribeJobsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -866,16 +878,16 @@ pub struct ListJobsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListJobsErrorKind {
-    ClientError(crate::error::ClientError),
-    ServerError(crate::error::ServerError),
+    ClientException(crate::error::ClientException),
+    ServerException(crate::error::ServerException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListJobsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ListJobsErrorKind::ClientError(_inner) => _inner.fmt(f),
-            ListJobsErrorKind::ServerError(_inner) => _inner.fmt(f),
+            ListJobsErrorKind::ClientException(_inner) => _inner.fmt(f),
+            ListJobsErrorKind::ServerException(_inner) => _inner.fmt(f),
             ListJobsErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -924,18 +936,18 @@ impl ListJobsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_client_error(&self) -> bool {
-        matches!(&self.kind, ListJobsErrorKind::ClientError(_))
+    pub fn is_client_exception(&self) -> bool {
+        matches!(&self.kind, ListJobsErrorKind::ClientException(_))
     }
-    pub fn is_server_error(&self) -> bool {
-        matches!(&self.kind, ListJobsErrorKind::ServerError(_))
+    pub fn is_server_exception(&self) -> bool {
+        matches!(&self.kind, ListJobsErrorKind::ServerException(_))
     }
 }
 impl std::error::Error for ListJobsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ListJobsErrorKind::ClientError(_inner) => Some(_inner),
-            ListJobsErrorKind::ServerError(_inner) => Some(_inner),
+            ListJobsErrorKind::ClientException(_inner) => Some(_inner),
+            ListJobsErrorKind::ServerException(_inner) => Some(_inner),
             ListJobsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -950,16 +962,16 @@ pub struct ListTagsForResourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListTagsForResourceErrorKind {
-    ClientError(crate::error::ClientError),
-    ServerError(crate::error::ServerError),
+    ClientException(crate::error::ClientException),
+    ServerException(crate::error::ServerException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListTagsForResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ListTagsForResourceErrorKind::ClientError(_inner) => _inner.fmt(f),
-            ListTagsForResourceErrorKind::ServerError(_inner) => _inner.fmt(f),
+            ListTagsForResourceErrorKind::ClientException(_inner) => _inner.fmt(f),
+            ListTagsForResourceErrorKind::ServerException(_inner) => _inner.fmt(f),
             ListTagsForResourceErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -1008,18 +1020,18 @@ impl ListTagsForResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_client_error(&self) -> bool {
-        matches!(&self.kind, ListTagsForResourceErrorKind::ClientError(_))
+    pub fn is_client_exception(&self) -> bool {
+        matches!(&self.kind, ListTagsForResourceErrorKind::ClientException(_))
     }
-    pub fn is_server_error(&self) -> bool {
-        matches!(&self.kind, ListTagsForResourceErrorKind::ServerError(_))
+    pub fn is_server_exception(&self) -> bool {
+        matches!(&self.kind, ListTagsForResourceErrorKind::ServerException(_))
     }
 }
 impl std::error::Error for ListTagsForResourceError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ListTagsForResourceErrorKind::ClientError(_inner) => Some(_inner),
-            ListTagsForResourceErrorKind::ServerError(_inner) => Some(_inner),
+            ListTagsForResourceErrorKind::ClientException(_inner) => Some(_inner),
+            ListTagsForResourceErrorKind::ServerException(_inner) => Some(_inner),
             ListTagsForResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -1034,16 +1046,16 @@ pub struct RegisterJobDefinitionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum RegisterJobDefinitionErrorKind {
-    ClientError(crate::error::ClientError),
-    ServerError(crate::error::ServerError),
+    ClientException(crate::error::ClientException),
+    ServerException(crate::error::ServerException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for RegisterJobDefinitionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            RegisterJobDefinitionErrorKind::ClientError(_inner) => _inner.fmt(f),
-            RegisterJobDefinitionErrorKind::ServerError(_inner) => _inner.fmt(f),
+            RegisterJobDefinitionErrorKind::ClientException(_inner) => _inner.fmt(f),
+            RegisterJobDefinitionErrorKind::ServerException(_inner) => _inner.fmt(f),
             RegisterJobDefinitionErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -1092,18 +1104,24 @@ impl RegisterJobDefinitionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_client_error(&self) -> bool {
-        matches!(&self.kind, RegisterJobDefinitionErrorKind::ClientError(_))
+    pub fn is_client_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            RegisterJobDefinitionErrorKind::ClientException(_)
+        )
     }
-    pub fn is_server_error(&self) -> bool {
-        matches!(&self.kind, RegisterJobDefinitionErrorKind::ServerError(_))
+    pub fn is_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            RegisterJobDefinitionErrorKind::ServerException(_)
+        )
     }
 }
 impl std::error::Error for RegisterJobDefinitionError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            RegisterJobDefinitionErrorKind::ClientError(_inner) => Some(_inner),
-            RegisterJobDefinitionErrorKind::ServerError(_inner) => Some(_inner),
+            RegisterJobDefinitionErrorKind::ClientException(_inner) => Some(_inner),
+            RegisterJobDefinitionErrorKind::ServerException(_inner) => Some(_inner),
             RegisterJobDefinitionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -1118,16 +1136,16 @@ pub struct SubmitJobError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum SubmitJobErrorKind {
-    ClientError(crate::error::ClientError),
-    ServerError(crate::error::ServerError),
+    ClientException(crate::error::ClientException),
+    ServerException(crate::error::ServerException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for SubmitJobError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            SubmitJobErrorKind::ClientError(_inner) => _inner.fmt(f),
-            SubmitJobErrorKind::ServerError(_inner) => _inner.fmt(f),
+            SubmitJobErrorKind::ClientException(_inner) => _inner.fmt(f),
+            SubmitJobErrorKind::ServerException(_inner) => _inner.fmt(f),
             SubmitJobErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -1176,18 +1194,18 @@ impl SubmitJobError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_client_error(&self) -> bool {
-        matches!(&self.kind, SubmitJobErrorKind::ClientError(_))
+    pub fn is_client_exception(&self) -> bool {
+        matches!(&self.kind, SubmitJobErrorKind::ClientException(_))
     }
-    pub fn is_server_error(&self) -> bool {
-        matches!(&self.kind, SubmitJobErrorKind::ServerError(_))
+    pub fn is_server_exception(&self) -> bool {
+        matches!(&self.kind, SubmitJobErrorKind::ServerException(_))
     }
 }
 impl std::error::Error for SubmitJobError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            SubmitJobErrorKind::ClientError(_inner) => Some(_inner),
-            SubmitJobErrorKind::ServerError(_inner) => Some(_inner),
+            SubmitJobErrorKind::ClientException(_inner) => Some(_inner),
+            SubmitJobErrorKind::ServerException(_inner) => Some(_inner),
             SubmitJobErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -1202,16 +1220,16 @@ pub struct TagResourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum TagResourceErrorKind {
-    ClientError(crate::error::ClientError),
-    ServerError(crate::error::ServerError),
+    ClientException(crate::error::ClientException),
+    ServerException(crate::error::ServerException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for TagResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            TagResourceErrorKind::ClientError(_inner) => _inner.fmt(f),
-            TagResourceErrorKind::ServerError(_inner) => _inner.fmt(f),
+            TagResourceErrorKind::ClientException(_inner) => _inner.fmt(f),
+            TagResourceErrorKind::ServerException(_inner) => _inner.fmt(f),
             TagResourceErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -1260,18 +1278,18 @@ impl TagResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_client_error(&self) -> bool {
-        matches!(&self.kind, TagResourceErrorKind::ClientError(_))
+    pub fn is_client_exception(&self) -> bool {
+        matches!(&self.kind, TagResourceErrorKind::ClientException(_))
     }
-    pub fn is_server_error(&self) -> bool {
-        matches!(&self.kind, TagResourceErrorKind::ServerError(_))
+    pub fn is_server_exception(&self) -> bool {
+        matches!(&self.kind, TagResourceErrorKind::ServerException(_))
     }
 }
 impl std::error::Error for TagResourceError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            TagResourceErrorKind::ClientError(_inner) => Some(_inner),
-            TagResourceErrorKind::ServerError(_inner) => Some(_inner),
+            TagResourceErrorKind::ClientException(_inner) => Some(_inner),
+            TagResourceErrorKind::ServerException(_inner) => Some(_inner),
             TagResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -1286,16 +1304,16 @@ pub struct TerminateJobError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum TerminateJobErrorKind {
-    ClientError(crate::error::ClientError),
-    ServerError(crate::error::ServerError),
+    ClientException(crate::error::ClientException),
+    ServerException(crate::error::ServerException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for TerminateJobError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            TerminateJobErrorKind::ClientError(_inner) => _inner.fmt(f),
-            TerminateJobErrorKind::ServerError(_inner) => _inner.fmt(f),
+            TerminateJobErrorKind::ClientException(_inner) => _inner.fmt(f),
+            TerminateJobErrorKind::ServerException(_inner) => _inner.fmt(f),
             TerminateJobErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -1344,18 +1362,18 @@ impl TerminateJobError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_client_error(&self) -> bool {
-        matches!(&self.kind, TerminateJobErrorKind::ClientError(_))
+    pub fn is_client_exception(&self) -> bool {
+        matches!(&self.kind, TerminateJobErrorKind::ClientException(_))
     }
-    pub fn is_server_error(&self) -> bool {
-        matches!(&self.kind, TerminateJobErrorKind::ServerError(_))
+    pub fn is_server_exception(&self) -> bool {
+        matches!(&self.kind, TerminateJobErrorKind::ServerException(_))
     }
 }
 impl std::error::Error for TerminateJobError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            TerminateJobErrorKind::ClientError(_inner) => Some(_inner),
-            TerminateJobErrorKind::ServerError(_inner) => Some(_inner),
+            TerminateJobErrorKind::ClientException(_inner) => Some(_inner),
+            TerminateJobErrorKind::ServerException(_inner) => Some(_inner),
             TerminateJobErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -1370,16 +1388,16 @@ pub struct UntagResourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UntagResourceErrorKind {
-    ClientError(crate::error::ClientError),
-    ServerError(crate::error::ServerError),
+    ClientException(crate::error::ClientException),
+    ServerException(crate::error::ServerException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UntagResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            UntagResourceErrorKind::ClientError(_inner) => _inner.fmt(f),
-            UntagResourceErrorKind::ServerError(_inner) => _inner.fmt(f),
+            UntagResourceErrorKind::ClientException(_inner) => _inner.fmt(f),
+            UntagResourceErrorKind::ServerException(_inner) => _inner.fmt(f),
             UntagResourceErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -1428,18 +1446,18 @@ impl UntagResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_client_error(&self) -> bool {
-        matches!(&self.kind, UntagResourceErrorKind::ClientError(_))
+    pub fn is_client_exception(&self) -> bool {
+        matches!(&self.kind, UntagResourceErrorKind::ClientException(_))
     }
-    pub fn is_server_error(&self) -> bool {
-        matches!(&self.kind, UntagResourceErrorKind::ServerError(_))
+    pub fn is_server_exception(&self) -> bool {
+        matches!(&self.kind, UntagResourceErrorKind::ServerException(_))
     }
 }
 impl std::error::Error for UntagResourceError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            UntagResourceErrorKind::ClientError(_inner) => Some(_inner),
-            UntagResourceErrorKind::ServerError(_inner) => Some(_inner),
+            UntagResourceErrorKind::ClientException(_inner) => Some(_inner),
+            UntagResourceErrorKind::ServerException(_inner) => Some(_inner),
             UntagResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -1454,16 +1472,16 @@ pub struct UpdateComputeEnvironmentError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateComputeEnvironmentErrorKind {
-    ClientError(crate::error::ClientError),
-    ServerError(crate::error::ServerError),
+    ClientException(crate::error::ClientException),
+    ServerException(crate::error::ServerException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateComputeEnvironmentError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            UpdateComputeEnvironmentErrorKind::ClientError(_inner) => _inner.fmt(f),
-            UpdateComputeEnvironmentErrorKind::ServerError(_inner) => _inner.fmt(f),
+            UpdateComputeEnvironmentErrorKind::ClientException(_inner) => _inner.fmt(f),
+            UpdateComputeEnvironmentErrorKind::ServerException(_inner) => _inner.fmt(f),
             UpdateComputeEnvironmentErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -1512,24 +1530,24 @@ impl UpdateComputeEnvironmentError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_client_error(&self) -> bool {
+    pub fn is_client_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UpdateComputeEnvironmentErrorKind::ClientError(_)
+            UpdateComputeEnvironmentErrorKind::ClientException(_)
         )
     }
-    pub fn is_server_error(&self) -> bool {
+    pub fn is_server_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UpdateComputeEnvironmentErrorKind::ServerError(_)
+            UpdateComputeEnvironmentErrorKind::ServerException(_)
         )
     }
 }
 impl std::error::Error for UpdateComputeEnvironmentError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            UpdateComputeEnvironmentErrorKind::ClientError(_inner) => Some(_inner),
-            UpdateComputeEnvironmentErrorKind::ServerError(_inner) => Some(_inner),
+            UpdateComputeEnvironmentErrorKind::ClientException(_inner) => Some(_inner),
+            UpdateComputeEnvironmentErrorKind::ServerException(_inner) => Some(_inner),
             UpdateComputeEnvironmentErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -1544,16 +1562,16 @@ pub struct UpdateJobQueueError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateJobQueueErrorKind {
-    ClientError(crate::error::ClientError),
-    ServerError(crate::error::ServerError),
+    ClientException(crate::error::ClientException),
+    ServerException(crate::error::ServerException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateJobQueueError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            UpdateJobQueueErrorKind::ClientError(_inner) => _inner.fmt(f),
-            UpdateJobQueueErrorKind::ServerError(_inner) => _inner.fmt(f),
+            UpdateJobQueueErrorKind::ClientException(_inner) => _inner.fmt(f),
+            UpdateJobQueueErrorKind::ServerException(_inner) => _inner.fmt(f),
             UpdateJobQueueErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -1602,18 +1620,18 @@ impl UpdateJobQueueError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_client_error(&self) -> bool {
-        matches!(&self.kind, UpdateJobQueueErrorKind::ClientError(_))
+    pub fn is_client_exception(&self) -> bool {
+        matches!(&self.kind, UpdateJobQueueErrorKind::ClientException(_))
     }
-    pub fn is_server_error(&self) -> bool {
-        matches!(&self.kind, UpdateJobQueueErrorKind::ServerError(_))
+    pub fn is_server_exception(&self) -> bool {
+        matches!(&self.kind, UpdateJobQueueErrorKind::ServerException(_))
     }
 }
 impl std::error::Error for UpdateJobQueueError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            UpdateJobQueueErrorKind::ClientError(_inner) => Some(_inner),
-            UpdateJobQueueErrorKind::ServerError(_inner) => Some(_inner),
+            UpdateJobQueueErrorKind::ClientException(_inner) => Some(_inner),
+            UpdateJobQueueErrorKind::ServerException(_inner) => Some(_inner),
             UpdateJobQueueErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -1621,37 +1639,35 @@ impl std::error::Error for UpdateJobQueueError {
 
 /// <p>These errors are usually caused by a server issue.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
-pub struct ServerError {
-    #[serde(rename = "message")]
-    #[serde(default)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ServerException {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for ServerError {
+impl std::fmt::Debug for ServerException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ServerError");
+        let mut formatter = f.debug_struct("ServerException");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl ServerError {
+impl ServerException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for ServerError {
+impl std::fmt::Display for ServerException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "ServerError [ServerException]")?;
+        write!(f, "ServerException")?;
         if let Some(inner_1) = &self.message {
             write!(f, ": {}", inner_1)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for ServerError {}
-/// See [`ServerError`](crate::error::ServerError)
-pub mod server_error {
-    /// A builder for [`ServerError`](crate::error::ServerError)
+impl std::error::Error for ServerException {}
+/// See [`ServerException`](crate::error::ServerException)
+pub mod server_exception {
+    /// A builder for [`ServerException`](crate::error::ServerException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -1666,55 +1682,53 @@ pub mod server_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`ServerError`](crate::error::ServerError)
-        pub fn build(self) -> crate::error::ServerError {
-            crate::error::ServerError {
+        /// Consumes the builder and constructs a [`ServerException`](crate::error::ServerException)
+        pub fn build(self) -> crate::error::ServerException {
+            crate::error::ServerException {
                 message: self.message,
             }
         }
     }
 }
-impl ServerError {
-    /// Creates a new builder-style object to manufacture [`ServerError`](crate::error::ServerError)
-    pub fn builder() -> crate::error::server_error::Builder {
-        crate::error::server_error::Builder::default()
+impl ServerException {
+    /// Creates a new builder-style object to manufacture [`ServerException`](crate::error::ServerException)
+    pub fn builder() -> crate::error::server_exception::Builder {
+        crate::error::server_exception::Builder::default()
     }
 }
 
 /// <p>These errors are usually caused by a client action, such as using an action or resource on behalf of a user that
 /// doesn't have permissions to use the action or resource, or specifying an identifier that's not valid.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
-pub struct ClientError {
-    #[serde(rename = "message")]
-    #[serde(default)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ClientException {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for ClientError {
+impl std::fmt::Debug for ClientException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ClientError");
+        let mut formatter = f.debug_struct("ClientException");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl ClientError {
+impl ClientException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for ClientError {
+impl std::fmt::Display for ClientException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "ClientError [ClientException]")?;
+        write!(f, "ClientException")?;
         if let Some(inner_2) = &self.message {
             write!(f, ": {}", inner_2)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for ClientError {}
-/// See [`ClientError`](crate::error::ClientError)
-pub mod client_error {
-    /// A builder for [`ClientError`](crate::error::ClientError)
+impl std::error::Error for ClientException {}
+/// See [`ClientException`](crate::error::ClientException)
+pub mod client_exception {
+    /// A builder for [`ClientException`](crate::error::ClientException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -1729,17 +1743,17 @@ pub mod client_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`ClientError`](crate::error::ClientError)
-        pub fn build(self) -> crate::error::ClientError {
-            crate::error::ClientError {
+        /// Consumes the builder and constructs a [`ClientException`](crate::error::ClientException)
+        pub fn build(self) -> crate::error::ClientException {
+            crate::error::ClientException {
                 message: self.message,
             }
         }
     }
 }
-impl ClientError {
-    /// Creates a new builder-style object to manufacture [`ClientError`](crate::error::ClientError)
-    pub fn builder() -> crate::error::client_error::Builder {
-        crate::error::client_error::Builder::default()
+impl ClientException {
+    /// Creates a new builder-style object to manufacture [`ClientException`](crate::error::ClientException)
+    pub fn builder() -> crate::error::client_exception::Builder {
+        crate::error::client_exception::Builder::default()
     }
 }

@@ -8,24 +8,24 @@ pub struct ConfigureLogsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ConfigureLogsErrorKind {
-    ForbiddenError(crate::error::ForbiddenError),
-    InternalServerErrorError(crate::error::InternalServerErrorError),
-    NotFoundError(crate::error::NotFoundError),
-    ServiceUnavailableError(crate::error::ServiceUnavailableError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
-    UnprocessableEntityError(crate::error::UnprocessableEntityError),
+    ForbiddenException(crate::error::ForbiddenException),
+    InternalServerErrorException(crate::error::InternalServerErrorException),
+    NotFoundException(crate::error::NotFoundException),
+    ServiceUnavailableException(crate::error::ServiceUnavailableException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
+    UnprocessableEntityException(crate::error::UnprocessableEntityException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ConfigureLogsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ConfigureLogsErrorKind::ForbiddenError(_inner) => _inner.fmt(f),
-            ConfigureLogsErrorKind::InternalServerErrorError(_inner) => _inner.fmt(f),
-            ConfigureLogsErrorKind::NotFoundError(_inner) => _inner.fmt(f),
-            ConfigureLogsErrorKind::ServiceUnavailableError(_inner) => _inner.fmt(f),
-            ConfigureLogsErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
-            ConfigureLogsErrorKind::UnprocessableEntityError(_inner) => _inner.fmt(f),
+            ConfigureLogsErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
+            ConfigureLogsErrorKind::InternalServerErrorException(_inner) => _inner.fmt(f),
+            ConfigureLogsErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            ConfigureLogsErrorKind::ServiceUnavailableException(_inner) => _inner.fmt(f),
+            ConfigureLogsErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
+            ConfigureLogsErrorKind::UnprocessableEntityException(_inner) => _inner.fmt(f),
             ConfigureLogsErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -74,43 +74,46 @@ impl ConfigureLogsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_forbidden_error(&self) -> bool {
-        matches!(&self.kind, ConfigureLogsErrorKind::ForbiddenError(_))
+    pub fn is_forbidden_exception(&self) -> bool {
+        matches!(&self.kind, ConfigureLogsErrorKind::ForbiddenException(_))
     }
-    pub fn is_internal_server_error_error(&self) -> bool {
+    pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
-            ConfigureLogsErrorKind::InternalServerErrorError(_)
+            ConfigureLogsErrorKind::InternalServerErrorException(_)
         )
     }
-    pub fn is_not_found_error(&self) -> bool {
-        matches!(&self.kind, ConfigureLogsErrorKind::NotFoundError(_))
+    pub fn is_not_found_exception(&self) -> bool {
+        matches!(&self.kind, ConfigureLogsErrorKind::NotFoundException(_))
     }
-    pub fn is_service_unavailable_error(&self) -> bool {
+    pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
-            ConfigureLogsErrorKind::ServiceUnavailableError(_)
+            ConfigureLogsErrorKind::ServiceUnavailableException(_)
         )
     }
-    pub fn is_too_many_requests_error(&self) -> bool {
-        matches!(&self.kind, ConfigureLogsErrorKind::TooManyRequestsError(_))
-    }
-    pub fn is_unprocessable_entity_error(&self) -> bool {
+    pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
-            ConfigureLogsErrorKind::UnprocessableEntityError(_)
+            ConfigureLogsErrorKind::TooManyRequestsException(_)
+        )
+    }
+    pub fn is_unprocessable_entity_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ConfigureLogsErrorKind::UnprocessableEntityException(_)
         )
     }
 }
 impl std::error::Error for ConfigureLogsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ConfigureLogsErrorKind::ForbiddenError(_inner) => Some(_inner),
-            ConfigureLogsErrorKind::InternalServerErrorError(_inner) => Some(_inner),
-            ConfigureLogsErrorKind::NotFoundError(_inner) => Some(_inner),
-            ConfigureLogsErrorKind::ServiceUnavailableError(_inner) => Some(_inner),
-            ConfigureLogsErrorKind::TooManyRequestsError(_inner) => Some(_inner),
-            ConfigureLogsErrorKind::UnprocessableEntityError(_inner) => Some(_inner),
+            ConfigureLogsErrorKind::ForbiddenException(_inner) => Some(_inner),
+            ConfigureLogsErrorKind::InternalServerErrorException(_inner) => Some(_inner),
+            ConfigureLogsErrorKind::NotFoundException(_inner) => Some(_inner),
+            ConfigureLogsErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
+            ConfigureLogsErrorKind::TooManyRequestsException(_inner) => Some(_inner),
+            ConfigureLogsErrorKind::UnprocessableEntityException(_inner) => Some(_inner),
             ConfigureLogsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -125,24 +128,24 @@ pub struct CreateChannelError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateChannelErrorKind {
-    ForbiddenError(crate::error::ForbiddenError),
-    InternalServerErrorError(crate::error::InternalServerErrorError),
-    NotFoundError(crate::error::NotFoundError),
-    ServiceUnavailableError(crate::error::ServiceUnavailableError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
-    UnprocessableEntityError(crate::error::UnprocessableEntityError),
+    ForbiddenException(crate::error::ForbiddenException),
+    InternalServerErrorException(crate::error::InternalServerErrorException),
+    NotFoundException(crate::error::NotFoundException),
+    ServiceUnavailableException(crate::error::ServiceUnavailableException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
+    UnprocessableEntityException(crate::error::UnprocessableEntityException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateChannelError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            CreateChannelErrorKind::ForbiddenError(_inner) => _inner.fmt(f),
-            CreateChannelErrorKind::InternalServerErrorError(_inner) => _inner.fmt(f),
-            CreateChannelErrorKind::NotFoundError(_inner) => _inner.fmt(f),
-            CreateChannelErrorKind::ServiceUnavailableError(_inner) => _inner.fmt(f),
-            CreateChannelErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
-            CreateChannelErrorKind::UnprocessableEntityError(_inner) => _inner.fmt(f),
+            CreateChannelErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
+            CreateChannelErrorKind::InternalServerErrorException(_inner) => _inner.fmt(f),
+            CreateChannelErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            CreateChannelErrorKind::ServiceUnavailableException(_inner) => _inner.fmt(f),
+            CreateChannelErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
+            CreateChannelErrorKind::UnprocessableEntityException(_inner) => _inner.fmt(f),
             CreateChannelErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -191,43 +194,46 @@ impl CreateChannelError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_forbidden_error(&self) -> bool {
-        matches!(&self.kind, CreateChannelErrorKind::ForbiddenError(_))
+    pub fn is_forbidden_exception(&self) -> bool {
+        matches!(&self.kind, CreateChannelErrorKind::ForbiddenException(_))
     }
-    pub fn is_internal_server_error_error(&self) -> bool {
+    pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
-            CreateChannelErrorKind::InternalServerErrorError(_)
+            CreateChannelErrorKind::InternalServerErrorException(_)
         )
     }
-    pub fn is_not_found_error(&self) -> bool {
-        matches!(&self.kind, CreateChannelErrorKind::NotFoundError(_))
+    pub fn is_not_found_exception(&self) -> bool {
+        matches!(&self.kind, CreateChannelErrorKind::NotFoundException(_))
     }
-    pub fn is_service_unavailable_error(&self) -> bool {
+    pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
-            CreateChannelErrorKind::ServiceUnavailableError(_)
+            CreateChannelErrorKind::ServiceUnavailableException(_)
         )
     }
-    pub fn is_too_many_requests_error(&self) -> bool {
-        matches!(&self.kind, CreateChannelErrorKind::TooManyRequestsError(_))
-    }
-    pub fn is_unprocessable_entity_error(&self) -> bool {
+    pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
-            CreateChannelErrorKind::UnprocessableEntityError(_)
+            CreateChannelErrorKind::TooManyRequestsException(_)
+        )
+    }
+    pub fn is_unprocessable_entity_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateChannelErrorKind::UnprocessableEntityException(_)
         )
     }
 }
 impl std::error::Error for CreateChannelError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            CreateChannelErrorKind::ForbiddenError(_inner) => Some(_inner),
-            CreateChannelErrorKind::InternalServerErrorError(_inner) => Some(_inner),
-            CreateChannelErrorKind::NotFoundError(_inner) => Some(_inner),
-            CreateChannelErrorKind::ServiceUnavailableError(_inner) => Some(_inner),
-            CreateChannelErrorKind::TooManyRequestsError(_inner) => Some(_inner),
-            CreateChannelErrorKind::UnprocessableEntityError(_inner) => Some(_inner),
+            CreateChannelErrorKind::ForbiddenException(_inner) => Some(_inner),
+            CreateChannelErrorKind::InternalServerErrorException(_inner) => Some(_inner),
+            CreateChannelErrorKind::NotFoundException(_inner) => Some(_inner),
+            CreateChannelErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
+            CreateChannelErrorKind::TooManyRequestsException(_inner) => Some(_inner),
+            CreateChannelErrorKind::UnprocessableEntityException(_inner) => Some(_inner),
             CreateChannelErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -242,24 +248,24 @@ pub struct CreateHarvestJobError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateHarvestJobErrorKind {
-    ForbiddenError(crate::error::ForbiddenError),
-    InternalServerErrorError(crate::error::InternalServerErrorError),
-    NotFoundError(crate::error::NotFoundError),
-    ServiceUnavailableError(crate::error::ServiceUnavailableError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
-    UnprocessableEntityError(crate::error::UnprocessableEntityError),
+    ForbiddenException(crate::error::ForbiddenException),
+    InternalServerErrorException(crate::error::InternalServerErrorException),
+    NotFoundException(crate::error::NotFoundException),
+    ServiceUnavailableException(crate::error::ServiceUnavailableException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
+    UnprocessableEntityException(crate::error::UnprocessableEntityException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateHarvestJobError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            CreateHarvestJobErrorKind::ForbiddenError(_inner) => _inner.fmt(f),
-            CreateHarvestJobErrorKind::InternalServerErrorError(_inner) => _inner.fmt(f),
-            CreateHarvestJobErrorKind::NotFoundError(_inner) => _inner.fmt(f),
-            CreateHarvestJobErrorKind::ServiceUnavailableError(_inner) => _inner.fmt(f),
-            CreateHarvestJobErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
-            CreateHarvestJobErrorKind::UnprocessableEntityError(_inner) => _inner.fmt(f),
+            CreateHarvestJobErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
+            CreateHarvestJobErrorKind::InternalServerErrorException(_inner) => _inner.fmt(f),
+            CreateHarvestJobErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            CreateHarvestJobErrorKind::ServiceUnavailableException(_inner) => _inner.fmt(f),
+            CreateHarvestJobErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
+            CreateHarvestJobErrorKind::UnprocessableEntityException(_inner) => _inner.fmt(f),
             CreateHarvestJobErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -308,46 +314,46 @@ impl CreateHarvestJobError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_forbidden_error(&self) -> bool {
-        matches!(&self.kind, CreateHarvestJobErrorKind::ForbiddenError(_))
+    pub fn is_forbidden_exception(&self) -> bool {
+        matches!(&self.kind, CreateHarvestJobErrorKind::ForbiddenException(_))
     }
-    pub fn is_internal_server_error_error(&self) -> bool {
+    pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
-            CreateHarvestJobErrorKind::InternalServerErrorError(_)
+            CreateHarvestJobErrorKind::InternalServerErrorException(_)
         )
     }
-    pub fn is_not_found_error(&self) -> bool {
-        matches!(&self.kind, CreateHarvestJobErrorKind::NotFoundError(_))
+    pub fn is_not_found_exception(&self) -> bool {
+        matches!(&self.kind, CreateHarvestJobErrorKind::NotFoundException(_))
     }
-    pub fn is_service_unavailable_error(&self) -> bool {
+    pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
-            CreateHarvestJobErrorKind::ServiceUnavailableError(_)
+            CreateHarvestJobErrorKind::ServiceUnavailableException(_)
         )
     }
-    pub fn is_too_many_requests_error(&self) -> bool {
+    pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
-            CreateHarvestJobErrorKind::TooManyRequestsError(_)
+            CreateHarvestJobErrorKind::TooManyRequestsException(_)
         )
     }
-    pub fn is_unprocessable_entity_error(&self) -> bool {
+    pub fn is_unprocessable_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
-            CreateHarvestJobErrorKind::UnprocessableEntityError(_)
+            CreateHarvestJobErrorKind::UnprocessableEntityException(_)
         )
     }
 }
 impl std::error::Error for CreateHarvestJobError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            CreateHarvestJobErrorKind::ForbiddenError(_inner) => Some(_inner),
-            CreateHarvestJobErrorKind::InternalServerErrorError(_inner) => Some(_inner),
-            CreateHarvestJobErrorKind::NotFoundError(_inner) => Some(_inner),
-            CreateHarvestJobErrorKind::ServiceUnavailableError(_inner) => Some(_inner),
-            CreateHarvestJobErrorKind::TooManyRequestsError(_inner) => Some(_inner),
-            CreateHarvestJobErrorKind::UnprocessableEntityError(_inner) => Some(_inner),
+            CreateHarvestJobErrorKind::ForbiddenException(_inner) => Some(_inner),
+            CreateHarvestJobErrorKind::InternalServerErrorException(_inner) => Some(_inner),
+            CreateHarvestJobErrorKind::NotFoundException(_inner) => Some(_inner),
+            CreateHarvestJobErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
+            CreateHarvestJobErrorKind::TooManyRequestsException(_inner) => Some(_inner),
+            CreateHarvestJobErrorKind::UnprocessableEntityException(_inner) => Some(_inner),
             CreateHarvestJobErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -362,24 +368,24 @@ pub struct CreateOriginEndpointError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateOriginEndpointErrorKind {
-    ForbiddenError(crate::error::ForbiddenError),
-    InternalServerErrorError(crate::error::InternalServerErrorError),
-    NotFoundError(crate::error::NotFoundError),
-    ServiceUnavailableError(crate::error::ServiceUnavailableError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
-    UnprocessableEntityError(crate::error::UnprocessableEntityError),
+    ForbiddenException(crate::error::ForbiddenException),
+    InternalServerErrorException(crate::error::InternalServerErrorException),
+    NotFoundException(crate::error::NotFoundException),
+    ServiceUnavailableException(crate::error::ServiceUnavailableException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
+    UnprocessableEntityException(crate::error::UnprocessableEntityException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateOriginEndpointError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            CreateOriginEndpointErrorKind::ForbiddenError(_inner) => _inner.fmt(f),
-            CreateOriginEndpointErrorKind::InternalServerErrorError(_inner) => _inner.fmt(f),
-            CreateOriginEndpointErrorKind::NotFoundError(_inner) => _inner.fmt(f),
-            CreateOriginEndpointErrorKind::ServiceUnavailableError(_inner) => _inner.fmt(f),
-            CreateOriginEndpointErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
-            CreateOriginEndpointErrorKind::UnprocessableEntityError(_inner) => _inner.fmt(f),
+            CreateOriginEndpointErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
+            CreateOriginEndpointErrorKind::InternalServerErrorException(_inner) => _inner.fmt(f),
+            CreateOriginEndpointErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            CreateOriginEndpointErrorKind::ServiceUnavailableException(_inner) => _inner.fmt(f),
+            CreateOriginEndpointErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
+            CreateOriginEndpointErrorKind::UnprocessableEntityException(_inner) => _inner.fmt(f),
             CreateOriginEndpointErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -428,46 +434,52 @@ impl CreateOriginEndpointError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_forbidden_error(&self) -> bool {
-        matches!(&self.kind, CreateOriginEndpointErrorKind::ForbiddenError(_))
-    }
-    pub fn is_internal_server_error_error(&self) -> bool {
+    pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
-            CreateOriginEndpointErrorKind::InternalServerErrorError(_)
+            CreateOriginEndpointErrorKind::ForbiddenException(_)
         )
     }
-    pub fn is_not_found_error(&self) -> bool {
-        matches!(&self.kind, CreateOriginEndpointErrorKind::NotFoundError(_))
-    }
-    pub fn is_service_unavailable_error(&self) -> bool {
+    pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
-            CreateOriginEndpointErrorKind::ServiceUnavailableError(_)
+            CreateOriginEndpointErrorKind::InternalServerErrorException(_)
         )
     }
-    pub fn is_too_many_requests_error(&self) -> bool {
+    pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
-            CreateOriginEndpointErrorKind::TooManyRequestsError(_)
+            CreateOriginEndpointErrorKind::NotFoundException(_)
         )
     }
-    pub fn is_unprocessable_entity_error(&self) -> bool {
+    pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
-            CreateOriginEndpointErrorKind::UnprocessableEntityError(_)
+            CreateOriginEndpointErrorKind::ServiceUnavailableException(_)
+        )
+    }
+    pub fn is_too_many_requests_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateOriginEndpointErrorKind::TooManyRequestsException(_)
+        )
+    }
+    pub fn is_unprocessable_entity_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateOriginEndpointErrorKind::UnprocessableEntityException(_)
         )
     }
 }
 impl std::error::Error for CreateOriginEndpointError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            CreateOriginEndpointErrorKind::ForbiddenError(_inner) => Some(_inner),
-            CreateOriginEndpointErrorKind::InternalServerErrorError(_inner) => Some(_inner),
-            CreateOriginEndpointErrorKind::NotFoundError(_inner) => Some(_inner),
-            CreateOriginEndpointErrorKind::ServiceUnavailableError(_inner) => Some(_inner),
-            CreateOriginEndpointErrorKind::TooManyRequestsError(_inner) => Some(_inner),
-            CreateOriginEndpointErrorKind::UnprocessableEntityError(_inner) => Some(_inner),
+            CreateOriginEndpointErrorKind::ForbiddenException(_inner) => Some(_inner),
+            CreateOriginEndpointErrorKind::InternalServerErrorException(_inner) => Some(_inner),
+            CreateOriginEndpointErrorKind::NotFoundException(_inner) => Some(_inner),
+            CreateOriginEndpointErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
+            CreateOriginEndpointErrorKind::TooManyRequestsException(_inner) => Some(_inner),
+            CreateOriginEndpointErrorKind::UnprocessableEntityException(_inner) => Some(_inner),
             CreateOriginEndpointErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -482,24 +494,24 @@ pub struct DeleteChannelError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteChannelErrorKind {
-    ForbiddenError(crate::error::ForbiddenError),
-    InternalServerErrorError(crate::error::InternalServerErrorError),
-    NotFoundError(crate::error::NotFoundError),
-    ServiceUnavailableError(crate::error::ServiceUnavailableError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
-    UnprocessableEntityError(crate::error::UnprocessableEntityError),
+    ForbiddenException(crate::error::ForbiddenException),
+    InternalServerErrorException(crate::error::InternalServerErrorException),
+    NotFoundException(crate::error::NotFoundException),
+    ServiceUnavailableException(crate::error::ServiceUnavailableException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
+    UnprocessableEntityException(crate::error::UnprocessableEntityException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteChannelError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DeleteChannelErrorKind::ForbiddenError(_inner) => _inner.fmt(f),
-            DeleteChannelErrorKind::InternalServerErrorError(_inner) => _inner.fmt(f),
-            DeleteChannelErrorKind::NotFoundError(_inner) => _inner.fmt(f),
-            DeleteChannelErrorKind::ServiceUnavailableError(_inner) => _inner.fmt(f),
-            DeleteChannelErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
-            DeleteChannelErrorKind::UnprocessableEntityError(_inner) => _inner.fmt(f),
+            DeleteChannelErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
+            DeleteChannelErrorKind::InternalServerErrorException(_inner) => _inner.fmt(f),
+            DeleteChannelErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            DeleteChannelErrorKind::ServiceUnavailableException(_inner) => _inner.fmt(f),
+            DeleteChannelErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
+            DeleteChannelErrorKind::UnprocessableEntityException(_inner) => _inner.fmt(f),
             DeleteChannelErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -548,43 +560,46 @@ impl DeleteChannelError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_forbidden_error(&self) -> bool {
-        matches!(&self.kind, DeleteChannelErrorKind::ForbiddenError(_))
+    pub fn is_forbidden_exception(&self) -> bool {
+        matches!(&self.kind, DeleteChannelErrorKind::ForbiddenException(_))
     }
-    pub fn is_internal_server_error_error(&self) -> bool {
+    pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DeleteChannelErrorKind::InternalServerErrorError(_)
+            DeleteChannelErrorKind::InternalServerErrorException(_)
         )
     }
-    pub fn is_not_found_error(&self) -> bool {
-        matches!(&self.kind, DeleteChannelErrorKind::NotFoundError(_))
+    pub fn is_not_found_exception(&self) -> bool {
+        matches!(&self.kind, DeleteChannelErrorKind::NotFoundException(_))
     }
-    pub fn is_service_unavailable_error(&self) -> bool {
+    pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DeleteChannelErrorKind::ServiceUnavailableError(_)
+            DeleteChannelErrorKind::ServiceUnavailableException(_)
         )
     }
-    pub fn is_too_many_requests_error(&self) -> bool {
-        matches!(&self.kind, DeleteChannelErrorKind::TooManyRequestsError(_))
-    }
-    pub fn is_unprocessable_entity_error(&self) -> bool {
+    pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DeleteChannelErrorKind::UnprocessableEntityError(_)
+            DeleteChannelErrorKind::TooManyRequestsException(_)
+        )
+    }
+    pub fn is_unprocessable_entity_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteChannelErrorKind::UnprocessableEntityException(_)
         )
     }
 }
 impl std::error::Error for DeleteChannelError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DeleteChannelErrorKind::ForbiddenError(_inner) => Some(_inner),
-            DeleteChannelErrorKind::InternalServerErrorError(_inner) => Some(_inner),
-            DeleteChannelErrorKind::NotFoundError(_inner) => Some(_inner),
-            DeleteChannelErrorKind::ServiceUnavailableError(_inner) => Some(_inner),
-            DeleteChannelErrorKind::TooManyRequestsError(_inner) => Some(_inner),
-            DeleteChannelErrorKind::UnprocessableEntityError(_inner) => Some(_inner),
+            DeleteChannelErrorKind::ForbiddenException(_inner) => Some(_inner),
+            DeleteChannelErrorKind::InternalServerErrorException(_inner) => Some(_inner),
+            DeleteChannelErrorKind::NotFoundException(_inner) => Some(_inner),
+            DeleteChannelErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
+            DeleteChannelErrorKind::TooManyRequestsException(_inner) => Some(_inner),
+            DeleteChannelErrorKind::UnprocessableEntityException(_inner) => Some(_inner),
             DeleteChannelErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -599,24 +614,24 @@ pub struct DeleteOriginEndpointError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteOriginEndpointErrorKind {
-    ForbiddenError(crate::error::ForbiddenError),
-    InternalServerErrorError(crate::error::InternalServerErrorError),
-    NotFoundError(crate::error::NotFoundError),
-    ServiceUnavailableError(crate::error::ServiceUnavailableError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
-    UnprocessableEntityError(crate::error::UnprocessableEntityError),
+    ForbiddenException(crate::error::ForbiddenException),
+    InternalServerErrorException(crate::error::InternalServerErrorException),
+    NotFoundException(crate::error::NotFoundException),
+    ServiceUnavailableException(crate::error::ServiceUnavailableException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
+    UnprocessableEntityException(crate::error::UnprocessableEntityException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteOriginEndpointError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DeleteOriginEndpointErrorKind::ForbiddenError(_inner) => _inner.fmt(f),
-            DeleteOriginEndpointErrorKind::InternalServerErrorError(_inner) => _inner.fmt(f),
-            DeleteOriginEndpointErrorKind::NotFoundError(_inner) => _inner.fmt(f),
-            DeleteOriginEndpointErrorKind::ServiceUnavailableError(_inner) => _inner.fmt(f),
-            DeleteOriginEndpointErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
-            DeleteOriginEndpointErrorKind::UnprocessableEntityError(_inner) => _inner.fmt(f),
+            DeleteOriginEndpointErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
+            DeleteOriginEndpointErrorKind::InternalServerErrorException(_inner) => _inner.fmt(f),
+            DeleteOriginEndpointErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            DeleteOriginEndpointErrorKind::ServiceUnavailableException(_inner) => _inner.fmt(f),
+            DeleteOriginEndpointErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
+            DeleteOriginEndpointErrorKind::UnprocessableEntityException(_inner) => _inner.fmt(f),
             DeleteOriginEndpointErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -665,46 +680,52 @@ impl DeleteOriginEndpointError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_forbidden_error(&self) -> bool {
-        matches!(&self.kind, DeleteOriginEndpointErrorKind::ForbiddenError(_))
-    }
-    pub fn is_internal_server_error_error(&self) -> bool {
+    pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DeleteOriginEndpointErrorKind::InternalServerErrorError(_)
+            DeleteOriginEndpointErrorKind::ForbiddenException(_)
         )
     }
-    pub fn is_not_found_error(&self) -> bool {
-        matches!(&self.kind, DeleteOriginEndpointErrorKind::NotFoundError(_))
-    }
-    pub fn is_service_unavailable_error(&self) -> bool {
+    pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DeleteOriginEndpointErrorKind::ServiceUnavailableError(_)
+            DeleteOriginEndpointErrorKind::InternalServerErrorException(_)
         )
     }
-    pub fn is_too_many_requests_error(&self) -> bool {
+    pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DeleteOriginEndpointErrorKind::TooManyRequestsError(_)
+            DeleteOriginEndpointErrorKind::NotFoundException(_)
         )
     }
-    pub fn is_unprocessable_entity_error(&self) -> bool {
+    pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DeleteOriginEndpointErrorKind::UnprocessableEntityError(_)
+            DeleteOriginEndpointErrorKind::ServiceUnavailableException(_)
+        )
+    }
+    pub fn is_too_many_requests_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteOriginEndpointErrorKind::TooManyRequestsException(_)
+        )
+    }
+    pub fn is_unprocessable_entity_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteOriginEndpointErrorKind::UnprocessableEntityException(_)
         )
     }
 }
 impl std::error::Error for DeleteOriginEndpointError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DeleteOriginEndpointErrorKind::ForbiddenError(_inner) => Some(_inner),
-            DeleteOriginEndpointErrorKind::InternalServerErrorError(_inner) => Some(_inner),
-            DeleteOriginEndpointErrorKind::NotFoundError(_inner) => Some(_inner),
-            DeleteOriginEndpointErrorKind::ServiceUnavailableError(_inner) => Some(_inner),
-            DeleteOriginEndpointErrorKind::TooManyRequestsError(_inner) => Some(_inner),
-            DeleteOriginEndpointErrorKind::UnprocessableEntityError(_inner) => Some(_inner),
+            DeleteOriginEndpointErrorKind::ForbiddenException(_inner) => Some(_inner),
+            DeleteOriginEndpointErrorKind::InternalServerErrorException(_inner) => Some(_inner),
+            DeleteOriginEndpointErrorKind::NotFoundException(_inner) => Some(_inner),
+            DeleteOriginEndpointErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
+            DeleteOriginEndpointErrorKind::TooManyRequestsException(_inner) => Some(_inner),
+            DeleteOriginEndpointErrorKind::UnprocessableEntityException(_inner) => Some(_inner),
             DeleteOriginEndpointErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -719,24 +740,24 @@ pub struct DescribeChannelError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeChannelErrorKind {
-    ForbiddenError(crate::error::ForbiddenError),
-    InternalServerErrorError(crate::error::InternalServerErrorError),
-    NotFoundError(crate::error::NotFoundError),
-    ServiceUnavailableError(crate::error::ServiceUnavailableError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
-    UnprocessableEntityError(crate::error::UnprocessableEntityError),
+    ForbiddenException(crate::error::ForbiddenException),
+    InternalServerErrorException(crate::error::InternalServerErrorException),
+    NotFoundException(crate::error::NotFoundException),
+    ServiceUnavailableException(crate::error::ServiceUnavailableException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
+    UnprocessableEntityException(crate::error::UnprocessableEntityException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeChannelError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DescribeChannelErrorKind::ForbiddenError(_inner) => _inner.fmt(f),
-            DescribeChannelErrorKind::InternalServerErrorError(_inner) => _inner.fmt(f),
-            DescribeChannelErrorKind::NotFoundError(_inner) => _inner.fmt(f),
-            DescribeChannelErrorKind::ServiceUnavailableError(_inner) => _inner.fmt(f),
-            DescribeChannelErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
-            DescribeChannelErrorKind::UnprocessableEntityError(_inner) => _inner.fmt(f),
+            DescribeChannelErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
+            DescribeChannelErrorKind::InternalServerErrorException(_inner) => _inner.fmt(f),
+            DescribeChannelErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            DescribeChannelErrorKind::ServiceUnavailableException(_inner) => _inner.fmt(f),
+            DescribeChannelErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
+            DescribeChannelErrorKind::UnprocessableEntityException(_inner) => _inner.fmt(f),
             DescribeChannelErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -785,46 +806,46 @@ impl DescribeChannelError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_forbidden_error(&self) -> bool {
-        matches!(&self.kind, DescribeChannelErrorKind::ForbiddenError(_))
+    pub fn is_forbidden_exception(&self) -> bool {
+        matches!(&self.kind, DescribeChannelErrorKind::ForbiddenException(_))
     }
-    pub fn is_internal_server_error_error(&self) -> bool {
+    pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DescribeChannelErrorKind::InternalServerErrorError(_)
+            DescribeChannelErrorKind::InternalServerErrorException(_)
         )
     }
-    pub fn is_not_found_error(&self) -> bool {
-        matches!(&self.kind, DescribeChannelErrorKind::NotFoundError(_))
+    pub fn is_not_found_exception(&self) -> bool {
+        matches!(&self.kind, DescribeChannelErrorKind::NotFoundException(_))
     }
-    pub fn is_service_unavailable_error(&self) -> bool {
+    pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DescribeChannelErrorKind::ServiceUnavailableError(_)
+            DescribeChannelErrorKind::ServiceUnavailableException(_)
         )
     }
-    pub fn is_too_many_requests_error(&self) -> bool {
+    pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DescribeChannelErrorKind::TooManyRequestsError(_)
+            DescribeChannelErrorKind::TooManyRequestsException(_)
         )
     }
-    pub fn is_unprocessable_entity_error(&self) -> bool {
+    pub fn is_unprocessable_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DescribeChannelErrorKind::UnprocessableEntityError(_)
+            DescribeChannelErrorKind::UnprocessableEntityException(_)
         )
     }
 }
 impl std::error::Error for DescribeChannelError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DescribeChannelErrorKind::ForbiddenError(_inner) => Some(_inner),
-            DescribeChannelErrorKind::InternalServerErrorError(_inner) => Some(_inner),
-            DescribeChannelErrorKind::NotFoundError(_inner) => Some(_inner),
-            DescribeChannelErrorKind::ServiceUnavailableError(_inner) => Some(_inner),
-            DescribeChannelErrorKind::TooManyRequestsError(_inner) => Some(_inner),
-            DescribeChannelErrorKind::UnprocessableEntityError(_inner) => Some(_inner),
+            DescribeChannelErrorKind::ForbiddenException(_inner) => Some(_inner),
+            DescribeChannelErrorKind::InternalServerErrorException(_inner) => Some(_inner),
+            DescribeChannelErrorKind::NotFoundException(_inner) => Some(_inner),
+            DescribeChannelErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
+            DescribeChannelErrorKind::TooManyRequestsException(_inner) => Some(_inner),
+            DescribeChannelErrorKind::UnprocessableEntityException(_inner) => Some(_inner),
             DescribeChannelErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -839,24 +860,24 @@ pub struct DescribeHarvestJobError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeHarvestJobErrorKind {
-    ForbiddenError(crate::error::ForbiddenError),
-    InternalServerErrorError(crate::error::InternalServerErrorError),
-    NotFoundError(crate::error::NotFoundError),
-    ServiceUnavailableError(crate::error::ServiceUnavailableError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
-    UnprocessableEntityError(crate::error::UnprocessableEntityError),
+    ForbiddenException(crate::error::ForbiddenException),
+    InternalServerErrorException(crate::error::InternalServerErrorException),
+    NotFoundException(crate::error::NotFoundException),
+    ServiceUnavailableException(crate::error::ServiceUnavailableException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
+    UnprocessableEntityException(crate::error::UnprocessableEntityException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeHarvestJobError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DescribeHarvestJobErrorKind::ForbiddenError(_inner) => _inner.fmt(f),
-            DescribeHarvestJobErrorKind::InternalServerErrorError(_inner) => _inner.fmt(f),
-            DescribeHarvestJobErrorKind::NotFoundError(_inner) => _inner.fmt(f),
-            DescribeHarvestJobErrorKind::ServiceUnavailableError(_inner) => _inner.fmt(f),
-            DescribeHarvestJobErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
-            DescribeHarvestJobErrorKind::UnprocessableEntityError(_inner) => _inner.fmt(f),
+            DescribeHarvestJobErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
+            DescribeHarvestJobErrorKind::InternalServerErrorException(_inner) => _inner.fmt(f),
+            DescribeHarvestJobErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            DescribeHarvestJobErrorKind::ServiceUnavailableException(_inner) => _inner.fmt(f),
+            DescribeHarvestJobErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
+            DescribeHarvestJobErrorKind::UnprocessableEntityException(_inner) => _inner.fmt(f),
             DescribeHarvestJobErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -905,46 +926,52 @@ impl DescribeHarvestJobError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_forbidden_error(&self) -> bool {
-        matches!(&self.kind, DescribeHarvestJobErrorKind::ForbiddenError(_))
-    }
-    pub fn is_internal_server_error_error(&self) -> bool {
+    pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DescribeHarvestJobErrorKind::InternalServerErrorError(_)
+            DescribeHarvestJobErrorKind::ForbiddenException(_)
         )
     }
-    pub fn is_not_found_error(&self) -> bool {
-        matches!(&self.kind, DescribeHarvestJobErrorKind::NotFoundError(_))
-    }
-    pub fn is_service_unavailable_error(&self) -> bool {
+    pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DescribeHarvestJobErrorKind::ServiceUnavailableError(_)
+            DescribeHarvestJobErrorKind::InternalServerErrorException(_)
         )
     }
-    pub fn is_too_many_requests_error(&self) -> bool {
+    pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DescribeHarvestJobErrorKind::TooManyRequestsError(_)
+            DescribeHarvestJobErrorKind::NotFoundException(_)
         )
     }
-    pub fn is_unprocessable_entity_error(&self) -> bool {
+    pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DescribeHarvestJobErrorKind::UnprocessableEntityError(_)
+            DescribeHarvestJobErrorKind::ServiceUnavailableException(_)
+        )
+    }
+    pub fn is_too_many_requests_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeHarvestJobErrorKind::TooManyRequestsException(_)
+        )
+    }
+    pub fn is_unprocessable_entity_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeHarvestJobErrorKind::UnprocessableEntityException(_)
         )
     }
 }
 impl std::error::Error for DescribeHarvestJobError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DescribeHarvestJobErrorKind::ForbiddenError(_inner) => Some(_inner),
-            DescribeHarvestJobErrorKind::InternalServerErrorError(_inner) => Some(_inner),
-            DescribeHarvestJobErrorKind::NotFoundError(_inner) => Some(_inner),
-            DescribeHarvestJobErrorKind::ServiceUnavailableError(_inner) => Some(_inner),
-            DescribeHarvestJobErrorKind::TooManyRequestsError(_inner) => Some(_inner),
-            DescribeHarvestJobErrorKind::UnprocessableEntityError(_inner) => Some(_inner),
+            DescribeHarvestJobErrorKind::ForbiddenException(_inner) => Some(_inner),
+            DescribeHarvestJobErrorKind::InternalServerErrorException(_inner) => Some(_inner),
+            DescribeHarvestJobErrorKind::NotFoundException(_inner) => Some(_inner),
+            DescribeHarvestJobErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
+            DescribeHarvestJobErrorKind::TooManyRequestsException(_inner) => Some(_inner),
+            DescribeHarvestJobErrorKind::UnprocessableEntityException(_inner) => Some(_inner),
             DescribeHarvestJobErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -959,24 +986,24 @@ pub struct DescribeOriginEndpointError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeOriginEndpointErrorKind {
-    ForbiddenError(crate::error::ForbiddenError),
-    InternalServerErrorError(crate::error::InternalServerErrorError),
-    NotFoundError(crate::error::NotFoundError),
-    ServiceUnavailableError(crate::error::ServiceUnavailableError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
-    UnprocessableEntityError(crate::error::UnprocessableEntityError),
+    ForbiddenException(crate::error::ForbiddenException),
+    InternalServerErrorException(crate::error::InternalServerErrorException),
+    NotFoundException(crate::error::NotFoundException),
+    ServiceUnavailableException(crate::error::ServiceUnavailableException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
+    UnprocessableEntityException(crate::error::UnprocessableEntityException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeOriginEndpointError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DescribeOriginEndpointErrorKind::ForbiddenError(_inner) => _inner.fmt(f),
-            DescribeOriginEndpointErrorKind::InternalServerErrorError(_inner) => _inner.fmt(f),
-            DescribeOriginEndpointErrorKind::NotFoundError(_inner) => _inner.fmt(f),
-            DescribeOriginEndpointErrorKind::ServiceUnavailableError(_inner) => _inner.fmt(f),
-            DescribeOriginEndpointErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
-            DescribeOriginEndpointErrorKind::UnprocessableEntityError(_inner) => _inner.fmt(f),
+            DescribeOriginEndpointErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
+            DescribeOriginEndpointErrorKind::InternalServerErrorException(_inner) => _inner.fmt(f),
+            DescribeOriginEndpointErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            DescribeOriginEndpointErrorKind::ServiceUnavailableException(_inner) => _inner.fmt(f),
+            DescribeOriginEndpointErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
+            DescribeOriginEndpointErrorKind::UnprocessableEntityException(_inner) => _inner.fmt(f),
             DescribeOriginEndpointErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -1025,52 +1052,52 @@ impl DescribeOriginEndpointError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_forbidden_error(&self) -> bool {
+    pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DescribeOriginEndpointErrorKind::ForbiddenError(_)
+            DescribeOriginEndpointErrorKind::ForbiddenException(_)
         )
     }
-    pub fn is_internal_server_error_error(&self) -> bool {
+    pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DescribeOriginEndpointErrorKind::InternalServerErrorError(_)
+            DescribeOriginEndpointErrorKind::InternalServerErrorException(_)
         )
     }
-    pub fn is_not_found_error(&self) -> bool {
+    pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DescribeOriginEndpointErrorKind::NotFoundError(_)
+            DescribeOriginEndpointErrorKind::NotFoundException(_)
         )
     }
-    pub fn is_service_unavailable_error(&self) -> bool {
+    pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DescribeOriginEndpointErrorKind::ServiceUnavailableError(_)
+            DescribeOriginEndpointErrorKind::ServiceUnavailableException(_)
         )
     }
-    pub fn is_too_many_requests_error(&self) -> bool {
+    pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DescribeOriginEndpointErrorKind::TooManyRequestsError(_)
+            DescribeOriginEndpointErrorKind::TooManyRequestsException(_)
         )
     }
-    pub fn is_unprocessable_entity_error(&self) -> bool {
+    pub fn is_unprocessable_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DescribeOriginEndpointErrorKind::UnprocessableEntityError(_)
+            DescribeOriginEndpointErrorKind::UnprocessableEntityException(_)
         )
     }
 }
 impl std::error::Error for DescribeOriginEndpointError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DescribeOriginEndpointErrorKind::ForbiddenError(_inner) => Some(_inner),
-            DescribeOriginEndpointErrorKind::InternalServerErrorError(_inner) => Some(_inner),
-            DescribeOriginEndpointErrorKind::NotFoundError(_inner) => Some(_inner),
-            DescribeOriginEndpointErrorKind::ServiceUnavailableError(_inner) => Some(_inner),
-            DescribeOriginEndpointErrorKind::TooManyRequestsError(_inner) => Some(_inner),
-            DescribeOriginEndpointErrorKind::UnprocessableEntityError(_inner) => Some(_inner),
+            DescribeOriginEndpointErrorKind::ForbiddenException(_inner) => Some(_inner),
+            DescribeOriginEndpointErrorKind::InternalServerErrorException(_inner) => Some(_inner),
+            DescribeOriginEndpointErrorKind::NotFoundException(_inner) => Some(_inner),
+            DescribeOriginEndpointErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
+            DescribeOriginEndpointErrorKind::TooManyRequestsException(_inner) => Some(_inner),
+            DescribeOriginEndpointErrorKind::UnprocessableEntityException(_inner) => Some(_inner),
             DescribeOriginEndpointErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -1085,24 +1112,24 @@ pub struct ListChannelsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListChannelsErrorKind {
-    ForbiddenError(crate::error::ForbiddenError),
-    InternalServerErrorError(crate::error::InternalServerErrorError),
-    NotFoundError(crate::error::NotFoundError),
-    ServiceUnavailableError(crate::error::ServiceUnavailableError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
-    UnprocessableEntityError(crate::error::UnprocessableEntityError),
+    ForbiddenException(crate::error::ForbiddenException),
+    InternalServerErrorException(crate::error::InternalServerErrorException),
+    NotFoundException(crate::error::NotFoundException),
+    ServiceUnavailableException(crate::error::ServiceUnavailableException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
+    UnprocessableEntityException(crate::error::UnprocessableEntityException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListChannelsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ListChannelsErrorKind::ForbiddenError(_inner) => _inner.fmt(f),
-            ListChannelsErrorKind::InternalServerErrorError(_inner) => _inner.fmt(f),
-            ListChannelsErrorKind::NotFoundError(_inner) => _inner.fmt(f),
-            ListChannelsErrorKind::ServiceUnavailableError(_inner) => _inner.fmt(f),
-            ListChannelsErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
-            ListChannelsErrorKind::UnprocessableEntityError(_inner) => _inner.fmt(f),
+            ListChannelsErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
+            ListChannelsErrorKind::InternalServerErrorException(_inner) => _inner.fmt(f),
+            ListChannelsErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            ListChannelsErrorKind::ServiceUnavailableException(_inner) => _inner.fmt(f),
+            ListChannelsErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
+            ListChannelsErrorKind::UnprocessableEntityException(_inner) => _inner.fmt(f),
             ListChannelsErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -1151,43 +1178,46 @@ impl ListChannelsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_forbidden_error(&self) -> bool {
-        matches!(&self.kind, ListChannelsErrorKind::ForbiddenError(_))
+    pub fn is_forbidden_exception(&self) -> bool {
+        matches!(&self.kind, ListChannelsErrorKind::ForbiddenException(_))
     }
-    pub fn is_internal_server_error_error(&self) -> bool {
+    pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
-            ListChannelsErrorKind::InternalServerErrorError(_)
+            ListChannelsErrorKind::InternalServerErrorException(_)
         )
     }
-    pub fn is_not_found_error(&self) -> bool {
-        matches!(&self.kind, ListChannelsErrorKind::NotFoundError(_))
+    pub fn is_not_found_exception(&self) -> bool {
+        matches!(&self.kind, ListChannelsErrorKind::NotFoundException(_))
     }
-    pub fn is_service_unavailable_error(&self) -> bool {
+    pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
-            ListChannelsErrorKind::ServiceUnavailableError(_)
+            ListChannelsErrorKind::ServiceUnavailableException(_)
         )
     }
-    pub fn is_too_many_requests_error(&self) -> bool {
-        matches!(&self.kind, ListChannelsErrorKind::TooManyRequestsError(_))
-    }
-    pub fn is_unprocessable_entity_error(&self) -> bool {
+    pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
-            ListChannelsErrorKind::UnprocessableEntityError(_)
+            ListChannelsErrorKind::TooManyRequestsException(_)
+        )
+    }
+    pub fn is_unprocessable_entity_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListChannelsErrorKind::UnprocessableEntityException(_)
         )
     }
 }
 impl std::error::Error for ListChannelsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ListChannelsErrorKind::ForbiddenError(_inner) => Some(_inner),
-            ListChannelsErrorKind::InternalServerErrorError(_inner) => Some(_inner),
-            ListChannelsErrorKind::NotFoundError(_inner) => Some(_inner),
-            ListChannelsErrorKind::ServiceUnavailableError(_inner) => Some(_inner),
-            ListChannelsErrorKind::TooManyRequestsError(_inner) => Some(_inner),
-            ListChannelsErrorKind::UnprocessableEntityError(_inner) => Some(_inner),
+            ListChannelsErrorKind::ForbiddenException(_inner) => Some(_inner),
+            ListChannelsErrorKind::InternalServerErrorException(_inner) => Some(_inner),
+            ListChannelsErrorKind::NotFoundException(_inner) => Some(_inner),
+            ListChannelsErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
+            ListChannelsErrorKind::TooManyRequestsException(_inner) => Some(_inner),
+            ListChannelsErrorKind::UnprocessableEntityException(_inner) => Some(_inner),
             ListChannelsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -1202,24 +1232,24 @@ pub struct ListHarvestJobsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListHarvestJobsErrorKind {
-    ForbiddenError(crate::error::ForbiddenError),
-    InternalServerErrorError(crate::error::InternalServerErrorError),
-    NotFoundError(crate::error::NotFoundError),
-    ServiceUnavailableError(crate::error::ServiceUnavailableError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
-    UnprocessableEntityError(crate::error::UnprocessableEntityError),
+    ForbiddenException(crate::error::ForbiddenException),
+    InternalServerErrorException(crate::error::InternalServerErrorException),
+    NotFoundException(crate::error::NotFoundException),
+    ServiceUnavailableException(crate::error::ServiceUnavailableException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
+    UnprocessableEntityException(crate::error::UnprocessableEntityException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListHarvestJobsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ListHarvestJobsErrorKind::ForbiddenError(_inner) => _inner.fmt(f),
-            ListHarvestJobsErrorKind::InternalServerErrorError(_inner) => _inner.fmt(f),
-            ListHarvestJobsErrorKind::NotFoundError(_inner) => _inner.fmt(f),
-            ListHarvestJobsErrorKind::ServiceUnavailableError(_inner) => _inner.fmt(f),
-            ListHarvestJobsErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
-            ListHarvestJobsErrorKind::UnprocessableEntityError(_inner) => _inner.fmt(f),
+            ListHarvestJobsErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
+            ListHarvestJobsErrorKind::InternalServerErrorException(_inner) => _inner.fmt(f),
+            ListHarvestJobsErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            ListHarvestJobsErrorKind::ServiceUnavailableException(_inner) => _inner.fmt(f),
+            ListHarvestJobsErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
+            ListHarvestJobsErrorKind::UnprocessableEntityException(_inner) => _inner.fmt(f),
             ListHarvestJobsErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -1268,46 +1298,46 @@ impl ListHarvestJobsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_forbidden_error(&self) -> bool {
-        matches!(&self.kind, ListHarvestJobsErrorKind::ForbiddenError(_))
+    pub fn is_forbidden_exception(&self) -> bool {
+        matches!(&self.kind, ListHarvestJobsErrorKind::ForbiddenException(_))
     }
-    pub fn is_internal_server_error_error(&self) -> bool {
+    pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
-            ListHarvestJobsErrorKind::InternalServerErrorError(_)
+            ListHarvestJobsErrorKind::InternalServerErrorException(_)
         )
     }
-    pub fn is_not_found_error(&self) -> bool {
-        matches!(&self.kind, ListHarvestJobsErrorKind::NotFoundError(_))
+    pub fn is_not_found_exception(&self) -> bool {
+        matches!(&self.kind, ListHarvestJobsErrorKind::NotFoundException(_))
     }
-    pub fn is_service_unavailable_error(&self) -> bool {
+    pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
-            ListHarvestJobsErrorKind::ServiceUnavailableError(_)
+            ListHarvestJobsErrorKind::ServiceUnavailableException(_)
         )
     }
-    pub fn is_too_many_requests_error(&self) -> bool {
+    pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
-            ListHarvestJobsErrorKind::TooManyRequestsError(_)
+            ListHarvestJobsErrorKind::TooManyRequestsException(_)
         )
     }
-    pub fn is_unprocessable_entity_error(&self) -> bool {
+    pub fn is_unprocessable_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
-            ListHarvestJobsErrorKind::UnprocessableEntityError(_)
+            ListHarvestJobsErrorKind::UnprocessableEntityException(_)
         )
     }
 }
 impl std::error::Error for ListHarvestJobsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ListHarvestJobsErrorKind::ForbiddenError(_inner) => Some(_inner),
-            ListHarvestJobsErrorKind::InternalServerErrorError(_inner) => Some(_inner),
-            ListHarvestJobsErrorKind::NotFoundError(_inner) => Some(_inner),
-            ListHarvestJobsErrorKind::ServiceUnavailableError(_inner) => Some(_inner),
-            ListHarvestJobsErrorKind::TooManyRequestsError(_inner) => Some(_inner),
-            ListHarvestJobsErrorKind::UnprocessableEntityError(_inner) => Some(_inner),
+            ListHarvestJobsErrorKind::ForbiddenException(_inner) => Some(_inner),
+            ListHarvestJobsErrorKind::InternalServerErrorException(_inner) => Some(_inner),
+            ListHarvestJobsErrorKind::NotFoundException(_inner) => Some(_inner),
+            ListHarvestJobsErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
+            ListHarvestJobsErrorKind::TooManyRequestsException(_inner) => Some(_inner),
+            ListHarvestJobsErrorKind::UnprocessableEntityException(_inner) => Some(_inner),
             ListHarvestJobsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -1322,24 +1352,24 @@ pub struct ListOriginEndpointsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListOriginEndpointsErrorKind {
-    ForbiddenError(crate::error::ForbiddenError),
-    InternalServerErrorError(crate::error::InternalServerErrorError),
-    NotFoundError(crate::error::NotFoundError),
-    ServiceUnavailableError(crate::error::ServiceUnavailableError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
-    UnprocessableEntityError(crate::error::UnprocessableEntityError),
+    ForbiddenException(crate::error::ForbiddenException),
+    InternalServerErrorException(crate::error::InternalServerErrorException),
+    NotFoundException(crate::error::NotFoundException),
+    ServiceUnavailableException(crate::error::ServiceUnavailableException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
+    UnprocessableEntityException(crate::error::UnprocessableEntityException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListOriginEndpointsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ListOriginEndpointsErrorKind::ForbiddenError(_inner) => _inner.fmt(f),
-            ListOriginEndpointsErrorKind::InternalServerErrorError(_inner) => _inner.fmt(f),
-            ListOriginEndpointsErrorKind::NotFoundError(_inner) => _inner.fmt(f),
-            ListOriginEndpointsErrorKind::ServiceUnavailableError(_inner) => _inner.fmt(f),
-            ListOriginEndpointsErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
-            ListOriginEndpointsErrorKind::UnprocessableEntityError(_inner) => _inner.fmt(f),
+            ListOriginEndpointsErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
+            ListOriginEndpointsErrorKind::InternalServerErrorException(_inner) => _inner.fmt(f),
+            ListOriginEndpointsErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            ListOriginEndpointsErrorKind::ServiceUnavailableException(_inner) => _inner.fmt(f),
+            ListOriginEndpointsErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
+            ListOriginEndpointsErrorKind::UnprocessableEntityException(_inner) => _inner.fmt(f),
             ListOriginEndpointsErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -1388,46 +1418,52 @@ impl ListOriginEndpointsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_forbidden_error(&self) -> bool {
-        matches!(&self.kind, ListOriginEndpointsErrorKind::ForbiddenError(_))
-    }
-    pub fn is_internal_server_error_error(&self) -> bool {
+    pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
-            ListOriginEndpointsErrorKind::InternalServerErrorError(_)
+            ListOriginEndpointsErrorKind::ForbiddenException(_)
         )
     }
-    pub fn is_not_found_error(&self) -> bool {
-        matches!(&self.kind, ListOriginEndpointsErrorKind::NotFoundError(_))
-    }
-    pub fn is_service_unavailable_error(&self) -> bool {
+    pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
-            ListOriginEndpointsErrorKind::ServiceUnavailableError(_)
+            ListOriginEndpointsErrorKind::InternalServerErrorException(_)
         )
     }
-    pub fn is_too_many_requests_error(&self) -> bool {
+    pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
-            ListOriginEndpointsErrorKind::TooManyRequestsError(_)
+            ListOriginEndpointsErrorKind::NotFoundException(_)
         )
     }
-    pub fn is_unprocessable_entity_error(&self) -> bool {
+    pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
-            ListOriginEndpointsErrorKind::UnprocessableEntityError(_)
+            ListOriginEndpointsErrorKind::ServiceUnavailableException(_)
+        )
+    }
+    pub fn is_too_many_requests_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListOriginEndpointsErrorKind::TooManyRequestsException(_)
+        )
+    }
+    pub fn is_unprocessable_entity_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListOriginEndpointsErrorKind::UnprocessableEntityException(_)
         )
     }
 }
 impl std::error::Error for ListOriginEndpointsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ListOriginEndpointsErrorKind::ForbiddenError(_inner) => Some(_inner),
-            ListOriginEndpointsErrorKind::InternalServerErrorError(_inner) => Some(_inner),
-            ListOriginEndpointsErrorKind::NotFoundError(_inner) => Some(_inner),
-            ListOriginEndpointsErrorKind::ServiceUnavailableError(_inner) => Some(_inner),
-            ListOriginEndpointsErrorKind::TooManyRequestsError(_inner) => Some(_inner),
-            ListOriginEndpointsErrorKind::UnprocessableEntityError(_inner) => Some(_inner),
+            ListOriginEndpointsErrorKind::ForbiddenException(_inner) => Some(_inner),
+            ListOriginEndpointsErrorKind::InternalServerErrorException(_inner) => Some(_inner),
+            ListOriginEndpointsErrorKind::NotFoundException(_inner) => Some(_inner),
+            ListOriginEndpointsErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
+            ListOriginEndpointsErrorKind::TooManyRequestsException(_inner) => Some(_inner),
+            ListOriginEndpointsErrorKind::UnprocessableEntityException(_inner) => Some(_inner),
             ListOriginEndpointsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -1514,24 +1550,28 @@ pub struct RotateChannelCredentialsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum RotateChannelCredentialsErrorKind {
-    ForbiddenError(crate::error::ForbiddenError),
-    InternalServerErrorError(crate::error::InternalServerErrorError),
-    NotFoundError(crate::error::NotFoundError),
-    ServiceUnavailableError(crate::error::ServiceUnavailableError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
-    UnprocessableEntityError(crate::error::UnprocessableEntityError),
+    ForbiddenException(crate::error::ForbiddenException),
+    InternalServerErrorException(crate::error::InternalServerErrorException),
+    NotFoundException(crate::error::NotFoundException),
+    ServiceUnavailableException(crate::error::ServiceUnavailableException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
+    UnprocessableEntityException(crate::error::UnprocessableEntityException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for RotateChannelCredentialsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            RotateChannelCredentialsErrorKind::ForbiddenError(_inner) => _inner.fmt(f),
-            RotateChannelCredentialsErrorKind::InternalServerErrorError(_inner) => _inner.fmt(f),
-            RotateChannelCredentialsErrorKind::NotFoundError(_inner) => _inner.fmt(f),
-            RotateChannelCredentialsErrorKind::ServiceUnavailableError(_inner) => _inner.fmt(f),
-            RotateChannelCredentialsErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
-            RotateChannelCredentialsErrorKind::UnprocessableEntityError(_inner) => _inner.fmt(f),
+            RotateChannelCredentialsErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
+            RotateChannelCredentialsErrorKind::InternalServerErrorException(_inner) => {
+                _inner.fmt(f)
+            }
+            RotateChannelCredentialsErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            RotateChannelCredentialsErrorKind::ServiceUnavailableException(_inner) => _inner.fmt(f),
+            RotateChannelCredentialsErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
+            RotateChannelCredentialsErrorKind::UnprocessableEntityException(_inner) => {
+                _inner.fmt(f)
+            }
             RotateChannelCredentialsErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -1580,52 +1620,52 @@ impl RotateChannelCredentialsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_forbidden_error(&self) -> bool {
+    pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
-            RotateChannelCredentialsErrorKind::ForbiddenError(_)
+            RotateChannelCredentialsErrorKind::ForbiddenException(_)
         )
     }
-    pub fn is_internal_server_error_error(&self) -> bool {
+    pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
-            RotateChannelCredentialsErrorKind::InternalServerErrorError(_)
+            RotateChannelCredentialsErrorKind::InternalServerErrorException(_)
         )
     }
-    pub fn is_not_found_error(&self) -> bool {
+    pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
-            RotateChannelCredentialsErrorKind::NotFoundError(_)
+            RotateChannelCredentialsErrorKind::NotFoundException(_)
         )
     }
-    pub fn is_service_unavailable_error(&self) -> bool {
+    pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
-            RotateChannelCredentialsErrorKind::ServiceUnavailableError(_)
+            RotateChannelCredentialsErrorKind::ServiceUnavailableException(_)
         )
     }
-    pub fn is_too_many_requests_error(&self) -> bool {
+    pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
-            RotateChannelCredentialsErrorKind::TooManyRequestsError(_)
+            RotateChannelCredentialsErrorKind::TooManyRequestsException(_)
         )
     }
-    pub fn is_unprocessable_entity_error(&self) -> bool {
+    pub fn is_unprocessable_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
-            RotateChannelCredentialsErrorKind::UnprocessableEntityError(_)
+            RotateChannelCredentialsErrorKind::UnprocessableEntityException(_)
         )
     }
 }
 impl std::error::Error for RotateChannelCredentialsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            RotateChannelCredentialsErrorKind::ForbiddenError(_inner) => Some(_inner),
-            RotateChannelCredentialsErrorKind::InternalServerErrorError(_inner) => Some(_inner),
-            RotateChannelCredentialsErrorKind::NotFoundError(_inner) => Some(_inner),
-            RotateChannelCredentialsErrorKind::ServiceUnavailableError(_inner) => Some(_inner),
-            RotateChannelCredentialsErrorKind::TooManyRequestsError(_inner) => Some(_inner),
-            RotateChannelCredentialsErrorKind::UnprocessableEntityError(_inner) => Some(_inner),
+            RotateChannelCredentialsErrorKind::ForbiddenException(_inner) => Some(_inner),
+            RotateChannelCredentialsErrorKind::InternalServerErrorException(_inner) => Some(_inner),
+            RotateChannelCredentialsErrorKind::NotFoundException(_inner) => Some(_inner),
+            RotateChannelCredentialsErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
+            RotateChannelCredentialsErrorKind::TooManyRequestsException(_inner) => Some(_inner),
+            RotateChannelCredentialsErrorKind::UnprocessableEntityException(_inner) => Some(_inner),
             RotateChannelCredentialsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -1640,28 +1680,30 @@ pub struct RotateIngestEndpointCredentialsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum RotateIngestEndpointCredentialsErrorKind {
-    ForbiddenError(crate::error::ForbiddenError),
-    InternalServerErrorError(crate::error::InternalServerErrorError),
-    NotFoundError(crate::error::NotFoundError),
-    ServiceUnavailableError(crate::error::ServiceUnavailableError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
-    UnprocessableEntityError(crate::error::UnprocessableEntityError),
+    ForbiddenException(crate::error::ForbiddenException),
+    InternalServerErrorException(crate::error::InternalServerErrorException),
+    NotFoundException(crate::error::NotFoundException),
+    ServiceUnavailableException(crate::error::ServiceUnavailableException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
+    UnprocessableEntityException(crate::error::UnprocessableEntityException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for RotateIngestEndpointCredentialsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            RotateIngestEndpointCredentialsErrorKind::ForbiddenError(_inner) => _inner.fmt(f),
-            RotateIngestEndpointCredentialsErrorKind::InternalServerErrorError(_inner) => {
+            RotateIngestEndpointCredentialsErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
+            RotateIngestEndpointCredentialsErrorKind::InternalServerErrorException(_inner) => {
                 _inner.fmt(f)
             }
-            RotateIngestEndpointCredentialsErrorKind::NotFoundError(_inner) => _inner.fmt(f),
-            RotateIngestEndpointCredentialsErrorKind::ServiceUnavailableError(_inner) => {
+            RotateIngestEndpointCredentialsErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            RotateIngestEndpointCredentialsErrorKind::ServiceUnavailableException(_inner) => {
                 _inner.fmt(f)
             }
-            RotateIngestEndpointCredentialsErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
-            RotateIngestEndpointCredentialsErrorKind::UnprocessableEntityError(_inner) => {
+            RotateIngestEndpointCredentialsErrorKind::TooManyRequestsException(_inner) => {
+                _inner.fmt(f)
+            }
+            RotateIngestEndpointCredentialsErrorKind::UnprocessableEntityException(_inner) => {
                 _inner.fmt(f)
             }
             RotateIngestEndpointCredentialsErrorKind::Unhandled(_inner) => _inner.fmt(f),
@@ -1712,56 +1754,58 @@ impl RotateIngestEndpointCredentialsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_forbidden_error(&self) -> bool {
+    pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
-            RotateIngestEndpointCredentialsErrorKind::ForbiddenError(_)
+            RotateIngestEndpointCredentialsErrorKind::ForbiddenException(_)
         )
     }
-    pub fn is_internal_server_error_error(&self) -> bool {
+    pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
-            RotateIngestEndpointCredentialsErrorKind::InternalServerErrorError(_)
+            RotateIngestEndpointCredentialsErrorKind::InternalServerErrorException(_)
         )
     }
-    pub fn is_not_found_error(&self) -> bool {
+    pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
-            RotateIngestEndpointCredentialsErrorKind::NotFoundError(_)
+            RotateIngestEndpointCredentialsErrorKind::NotFoundException(_)
         )
     }
-    pub fn is_service_unavailable_error(&self) -> bool {
+    pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
-            RotateIngestEndpointCredentialsErrorKind::ServiceUnavailableError(_)
+            RotateIngestEndpointCredentialsErrorKind::ServiceUnavailableException(_)
         )
     }
-    pub fn is_too_many_requests_error(&self) -> bool {
+    pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
-            RotateIngestEndpointCredentialsErrorKind::TooManyRequestsError(_)
+            RotateIngestEndpointCredentialsErrorKind::TooManyRequestsException(_)
         )
     }
-    pub fn is_unprocessable_entity_error(&self) -> bool {
+    pub fn is_unprocessable_entity_exception(&self) -> bool {
         matches!(
             &self.kind,
-            RotateIngestEndpointCredentialsErrorKind::UnprocessableEntityError(_)
+            RotateIngestEndpointCredentialsErrorKind::UnprocessableEntityException(_)
         )
     }
 }
 impl std::error::Error for RotateIngestEndpointCredentialsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            RotateIngestEndpointCredentialsErrorKind::ForbiddenError(_inner) => Some(_inner),
-            RotateIngestEndpointCredentialsErrorKind::InternalServerErrorError(_inner) => {
+            RotateIngestEndpointCredentialsErrorKind::ForbiddenException(_inner) => Some(_inner),
+            RotateIngestEndpointCredentialsErrorKind::InternalServerErrorException(_inner) => {
                 Some(_inner)
             }
-            RotateIngestEndpointCredentialsErrorKind::NotFoundError(_inner) => Some(_inner),
-            RotateIngestEndpointCredentialsErrorKind::ServiceUnavailableError(_inner) => {
+            RotateIngestEndpointCredentialsErrorKind::NotFoundException(_inner) => Some(_inner),
+            RotateIngestEndpointCredentialsErrorKind::ServiceUnavailableException(_inner) => {
                 Some(_inner)
             }
-            RotateIngestEndpointCredentialsErrorKind::TooManyRequestsError(_inner) => Some(_inner),
-            RotateIngestEndpointCredentialsErrorKind::UnprocessableEntityError(_inner) => {
+            RotateIngestEndpointCredentialsErrorKind::TooManyRequestsException(_inner) => {
+                Some(_inner)
+            }
+            RotateIngestEndpointCredentialsErrorKind::UnprocessableEntityException(_inner) => {
                 Some(_inner)
             }
             RotateIngestEndpointCredentialsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
@@ -1922,24 +1966,24 @@ pub struct UpdateChannelError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateChannelErrorKind {
-    ForbiddenError(crate::error::ForbiddenError),
-    InternalServerErrorError(crate::error::InternalServerErrorError),
-    NotFoundError(crate::error::NotFoundError),
-    ServiceUnavailableError(crate::error::ServiceUnavailableError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
-    UnprocessableEntityError(crate::error::UnprocessableEntityError),
+    ForbiddenException(crate::error::ForbiddenException),
+    InternalServerErrorException(crate::error::InternalServerErrorException),
+    NotFoundException(crate::error::NotFoundException),
+    ServiceUnavailableException(crate::error::ServiceUnavailableException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
+    UnprocessableEntityException(crate::error::UnprocessableEntityException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateChannelError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            UpdateChannelErrorKind::ForbiddenError(_inner) => _inner.fmt(f),
-            UpdateChannelErrorKind::InternalServerErrorError(_inner) => _inner.fmt(f),
-            UpdateChannelErrorKind::NotFoundError(_inner) => _inner.fmt(f),
-            UpdateChannelErrorKind::ServiceUnavailableError(_inner) => _inner.fmt(f),
-            UpdateChannelErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
-            UpdateChannelErrorKind::UnprocessableEntityError(_inner) => _inner.fmt(f),
+            UpdateChannelErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
+            UpdateChannelErrorKind::InternalServerErrorException(_inner) => _inner.fmt(f),
+            UpdateChannelErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            UpdateChannelErrorKind::ServiceUnavailableException(_inner) => _inner.fmt(f),
+            UpdateChannelErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
+            UpdateChannelErrorKind::UnprocessableEntityException(_inner) => _inner.fmt(f),
             UpdateChannelErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -1988,43 +2032,46 @@ impl UpdateChannelError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_forbidden_error(&self) -> bool {
-        matches!(&self.kind, UpdateChannelErrorKind::ForbiddenError(_))
+    pub fn is_forbidden_exception(&self) -> bool {
+        matches!(&self.kind, UpdateChannelErrorKind::ForbiddenException(_))
     }
-    pub fn is_internal_server_error_error(&self) -> bool {
+    pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UpdateChannelErrorKind::InternalServerErrorError(_)
+            UpdateChannelErrorKind::InternalServerErrorException(_)
         )
     }
-    pub fn is_not_found_error(&self) -> bool {
-        matches!(&self.kind, UpdateChannelErrorKind::NotFoundError(_))
+    pub fn is_not_found_exception(&self) -> bool {
+        matches!(&self.kind, UpdateChannelErrorKind::NotFoundException(_))
     }
-    pub fn is_service_unavailable_error(&self) -> bool {
+    pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UpdateChannelErrorKind::ServiceUnavailableError(_)
+            UpdateChannelErrorKind::ServiceUnavailableException(_)
         )
     }
-    pub fn is_too_many_requests_error(&self) -> bool {
-        matches!(&self.kind, UpdateChannelErrorKind::TooManyRequestsError(_))
-    }
-    pub fn is_unprocessable_entity_error(&self) -> bool {
+    pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UpdateChannelErrorKind::UnprocessableEntityError(_)
+            UpdateChannelErrorKind::TooManyRequestsException(_)
+        )
+    }
+    pub fn is_unprocessable_entity_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateChannelErrorKind::UnprocessableEntityException(_)
         )
     }
 }
 impl std::error::Error for UpdateChannelError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            UpdateChannelErrorKind::ForbiddenError(_inner) => Some(_inner),
-            UpdateChannelErrorKind::InternalServerErrorError(_inner) => Some(_inner),
-            UpdateChannelErrorKind::NotFoundError(_inner) => Some(_inner),
-            UpdateChannelErrorKind::ServiceUnavailableError(_inner) => Some(_inner),
-            UpdateChannelErrorKind::TooManyRequestsError(_inner) => Some(_inner),
-            UpdateChannelErrorKind::UnprocessableEntityError(_inner) => Some(_inner),
+            UpdateChannelErrorKind::ForbiddenException(_inner) => Some(_inner),
+            UpdateChannelErrorKind::InternalServerErrorException(_inner) => Some(_inner),
+            UpdateChannelErrorKind::NotFoundException(_inner) => Some(_inner),
+            UpdateChannelErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
+            UpdateChannelErrorKind::TooManyRequestsException(_inner) => Some(_inner),
+            UpdateChannelErrorKind::UnprocessableEntityException(_inner) => Some(_inner),
             UpdateChannelErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -2039,24 +2086,24 @@ pub struct UpdateOriginEndpointError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateOriginEndpointErrorKind {
-    ForbiddenError(crate::error::ForbiddenError),
-    InternalServerErrorError(crate::error::InternalServerErrorError),
-    NotFoundError(crate::error::NotFoundError),
-    ServiceUnavailableError(crate::error::ServiceUnavailableError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
-    UnprocessableEntityError(crate::error::UnprocessableEntityError),
+    ForbiddenException(crate::error::ForbiddenException),
+    InternalServerErrorException(crate::error::InternalServerErrorException),
+    NotFoundException(crate::error::NotFoundException),
+    ServiceUnavailableException(crate::error::ServiceUnavailableException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
+    UnprocessableEntityException(crate::error::UnprocessableEntityException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateOriginEndpointError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            UpdateOriginEndpointErrorKind::ForbiddenError(_inner) => _inner.fmt(f),
-            UpdateOriginEndpointErrorKind::InternalServerErrorError(_inner) => _inner.fmt(f),
-            UpdateOriginEndpointErrorKind::NotFoundError(_inner) => _inner.fmt(f),
-            UpdateOriginEndpointErrorKind::ServiceUnavailableError(_inner) => _inner.fmt(f),
-            UpdateOriginEndpointErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
-            UpdateOriginEndpointErrorKind::UnprocessableEntityError(_inner) => _inner.fmt(f),
+            UpdateOriginEndpointErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
+            UpdateOriginEndpointErrorKind::InternalServerErrorException(_inner) => _inner.fmt(f),
+            UpdateOriginEndpointErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            UpdateOriginEndpointErrorKind::ServiceUnavailableException(_inner) => _inner.fmt(f),
+            UpdateOriginEndpointErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
+            UpdateOriginEndpointErrorKind::UnprocessableEntityException(_inner) => _inner.fmt(f),
             UpdateOriginEndpointErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -2105,46 +2152,52 @@ impl UpdateOriginEndpointError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_forbidden_error(&self) -> bool {
-        matches!(&self.kind, UpdateOriginEndpointErrorKind::ForbiddenError(_))
-    }
-    pub fn is_internal_server_error_error(&self) -> bool {
+    pub fn is_forbidden_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UpdateOriginEndpointErrorKind::InternalServerErrorError(_)
+            UpdateOriginEndpointErrorKind::ForbiddenException(_)
         )
     }
-    pub fn is_not_found_error(&self) -> bool {
-        matches!(&self.kind, UpdateOriginEndpointErrorKind::NotFoundError(_))
-    }
-    pub fn is_service_unavailable_error(&self) -> bool {
+    pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UpdateOriginEndpointErrorKind::ServiceUnavailableError(_)
+            UpdateOriginEndpointErrorKind::InternalServerErrorException(_)
         )
     }
-    pub fn is_too_many_requests_error(&self) -> bool {
+    pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UpdateOriginEndpointErrorKind::TooManyRequestsError(_)
+            UpdateOriginEndpointErrorKind::NotFoundException(_)
         )
     }
-    pub fn is_unprocessable_entity_error(&self) -> bool {
+    pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UpdateOriginEndpointErrorKind::UnprocessableEntityError(_)
+            UpdateOriginEndpointErrorKind::ServiceUnavailableException(_)
+        )
+    }
+    pub fn is_too_many_requests_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateOriginEndpointErrorKind::TooManyRequestsException(_)
+        )
+    }
+    pub fn is_unprocessable_entity_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateOriginEndpointErrorKind::UnprocessableEntityException(_)
         )
     }
 }
 impl std::error::Error for UpdateOriginEndpointError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            UpdateOriginEndpointErrorKind::ForbiddenError(_inner) => Some(_inner),
-            UpdateOriginEndpointErrorKind::InternalServerErrorError(_inner) => Some(_inner),
-            UpdateOriginEndpointErrorKind::NotFoundError(_inner) => Some(_inner),
-            UpdateOriginEndpointErrorKind::ServiceUnavailableError(_inner) => Some(_inner),
-            UpdateOriginEndpointErrorKind::TooManyRequestsError(_inner) => Some(_inner),
-            UpdateOriginEndpointErrorKind::UnprocessableEntityError(_inner) => Some(_inner),
+            UpdateOriginEndpointErrorKind::ForbiddenException(_inner) => Some(_inner),
+            UpdateOriginEndpointErrorKind::InternalServerErrorException(_inner) => Some(_inner),
+            UpdateOriginEndpointErrorKind::NotFoundException(_inner) => Some(_inner),
+            UpdateOriginEndpointErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
+            UpdateOriginEndpointErrorKind::TooManyRequestsException(_inner) => Some(_inner),
+            UpdateOriginEndpointErrorKind::UnprocessableEntityException(_inner) => Some(_inner),
             UpdateOriginEndpointErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -2152,37 +2205,35 @@ impl std::error::Error for UpdateOriginEndpointError {
 
 /// The parameters sent in the request are not valid.
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
-pub struct UnprocessableEntityError {
-    #[serde(rename = "message")]
-    #[serde(default)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UnprocessableEntityException {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for UnprocessableEntityError {
+impl std::fmt::Debug for UnprocessableEntityException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UnprocessableEntityError");
+        let mut formatter = f.debug_struct("UnprocessableEntityException");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl UnprocessableEntityError {
+impl UnprocessableEntityException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for UnprocessableEntityError {
+impl std::fmt::Display for UnprocessableEntityException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "UnprocessableEntityError [UnprocessableEntityException]")?;
+        write!(f, "UnprocessableEntityException")?;
         if let Some(inner_1) = &self.message {
             write!(f, ": {}", inner_1)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for UnprocessableEntityError {}
-/// See [`UnprocessableEntityError`](crate::error::UnprocessableEntityError)
-pub mod unprocessable_entity_error {
-    /// A builder for [`UnprocessableEntityError`](crate::error::UnprocessableEntityError)
+impl std::error::Error for UnprocessableEntityException {}
+/// See [`UnprocessableEntityException`](crate::error::UnprocessableEntityException)
+pub mod unprocessable_entity_exception {
+    /// A builder for [`UnprocessableEntityException`](crate::error::UnprocessableEntityException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -2197,54 +2248,52 @@ pub mod unprocessable_entity_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`UnprocessableEntityError`](crate::error::UnprocessableEntityError)
-        pub fn build(self) -> crate::error::UnprocessableEntityError {
-            crate::error::UnprocessableEntityError {
+        /// Consumes the builder and constructs a [`UnprocessableEntityException`](crate::error::UnprocessableEntityException)
+        pub fn build(self) -> crate::error::UnprocessableEntityException {
+            crate::error::UnprocessableEntityException {
                 message: self.message,
             }
         }
     }
 }
-impl UnprocessableEntityError {
-    /// Creates a new builder-style object to manufacture [`UnprocessableEntityError`](crate::error::UnprocessableEntityError)
-    pub fn builder() -> crate::error::unprocessable_entity_error::Builder {
-        crate::error::unprocessable_entity_error::Builder::default()
+impl UnprocessableEntityException {
+    /// Creates a new builder-style object to manufacture [`UnprocessableEntityException`](crate::error::UnprocessableEntityException)
+    pub fn builder() -> crate::error::unprocessable_entity_exception::Builder {
+        crate::error::unprocessable_entity_exception::Builder::default()
     }
 }
 
 /// The client has exceeded their resource or throttling limits.
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
-pub struct TooManyRequestsError {
-    #[serde(rename = "message")]
-    #[serde(default)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct TooManyRequestsException {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for TooManyRequestsError {
+impl std::fmt::Debug for TooManyRequestsException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TooManyRequestsError");
+        let mut formatter = f.debug_struct("TooManyRequestsException");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl TooManyRequestsError {
+impl TooManyRequestsException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for TooManyRequestsError {
+impl std::fmt::Display for TooManyRequestsException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "TooManyRequestsError [TooManyRequestsException]")?;
+        write!(f, "TooManyRequestsException")?;
         if let Some(inner_2) = &self.message {
             write!(f, ": {}", inner_2)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for TooManyRequestsError {}
-/// See [`TooManyRequestsError`](crate::error::TooManyRequestsError)
-pub mod too_many_requests_error {
-    /// A builder for [`TooManyRequestsError`](crate::error::TooManyRequestsError)
+impl std::error::Error for TooManyRequestsException {}
+/// See [`TooManyRequestsException`](crate::error::TooManyRequestsException)
+pub mod too_many_requests_exception {
+    /// A builder for [`TooManyRequestsException`](crate::error::TooManyRequestsException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -2259,54 +2308,52 @@ pub mod too_many_requests_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`TooManyRequestsError`](crate::error::TooManyRequestsError)
-        pub fn build(self) -> crate::error::TooManyRequestsError {
-            crate::error::TooManyRequestsError {
+        /// Consumes the builder and constructs a [`TooManyRequestsException`](crate::error::TooManyRequestsException)
+        pub fn build(self) -> crate::error::TooManyRequestsException {
+            crate::error::TooManyRequestsException {
                 message: self.message,
             }
         }
     }
 }
-impl TooManyRequestsError {
-    /// Creates a new builder-style object to manufacture [`TooManyRequestsError`](crate::error::TooManyRequestsError)
-    pub fn builder() -> crate::error::too_many_requests_error::Builder {
-        crate::error::too_many_requests_error::Builder::default()
+impl TooManyRequestsException {
+    /// Creates a new builder-style object to manufacture [`TooManyRequestsException`](crate::error::TooManyRequestsException)
+    pub fn builder() -> crate::error::too_many_requests_exception::Builder {
+        crate::error::too_many_requests_exception::Builder::default()
     }
 }
 
 /// An unexpected error occurred.
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
-pub struct ServiceUnavailableError {
-    #[serde(rename = "message")]
-    #[serde(default)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ServiceUnavailableException {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for ServiceUnavailableError {
+impl std::fmt::Debug for ServiceUnavailableException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ServiceUnavailableError");
+        let mut formatter = f.debug_struct("ServiceUnavailableException");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl ServiceUnavailableError {
+impl ServiceUnavailableException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for ServiceUnavailableError {
+impl std::fmt::Display for ServiceUnavailableException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "ServiceUnavailableError [ServiceUnavailableException]")?;
+        write!(f, "ServiceUnavailableException")?;
         if let Some(inner_3) = &self.message {
             write!(f, ": {}", inner_3)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for ServiceUnavailableError {}
-/// See [`ServiceUnavailableError`](crate::error::ServiceUnavailableError)
-pub mod service_unavailable_error {
-    /// A builder for [`ServiceUnavailableError`](crate::error::ServiceUnavailableError)
+impl std::error::Error for ServiceUnavailableException {}
+/// See [`ServiceUnavailableException`](crate::error::ServiceUnavailableException)
+pub mod service_unavailable_exception {
+    /// A builder for [`ServiceUnavailableException`](crate::error::ServiceUnavailableException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -2321,54 +2368,52 @@ pub mod service_unavailable_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`ServiceUnavailableError`](crate::error::ServiceUnavailableError)
-        pub fn build(self) -> crate::error::ServiceUnavailableError {
-            crate::error::ServiceUnavailableError {
+        /// Consumes the builder and constructs a [`ServiceUnavailableException`](crate::error::ServiceUnavailableException)
+        pub fn build(self) -> crate::error::ServiceUnavailableException {
+            crate::error::ServiceUnavailableException {
                 message: self.message,
             }
         }
     }
 }
-impl ServiceUnavailableError {
-    /// Creates a new builder-style object to manufacture [`ServiceUnavailableError`](crate::error::ServiceUnavailableError)
-    pub fn builder() -> crate::error::service_unavailable_error::Builder {
-        crate::error::service_unavailable_error::Builder::default()
+impl ServiceUnavailableException {
+    /// Creates a new builder-style object to manufacture [`ServiceUnavailableException`](crate::error::ServiceUnavailableException)
+    pub fn builder() -> crate::error::service_unavailable_exception::Builder {
+        crate::error::service_unavailable_exception::Builder::default()
     }
 }
 
 /// The requested resource does not exist.
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
-pub struct NotFoundError {
-    #[serde(rename = "message")]
-    #[serde(default)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct NotFoundException {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for NotFoundError {
+impl std::fmt::Debug for NotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NotFoundError");
+        let mut formatter = f.debug_struct("NotFoundException");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl NotFoundError {
+impl NotFoundException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for NotFoundError {
+impl std::fmt::Display for NotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "NotFoundError [NotFoundException]")?;
+        write!(f, "NotFoundException")?;
         if let Some(inner_4) = &self.message {
             write!(f, ": {}", inner_4)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for NotFoundError {}
-/// See [`NotFoundError`](crate::error::NotFoundError)
-pub mod not_found_error {
-    /// A builder for [`NotFoundError`](crate::error::NotFoundError)
+impl std::error::Error for NotFoundException {}
+/// See [`NotFoundException`](crate::error::NotFoundException)
+pub mod not_found_exception {
+    /// A builder for [`NotFoundException`](crate::error::NotFoundException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -2383,54 +2428,52 @@ pub mod not_found_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`NotFoundError`](crate::error::NotFoundError)
-        pub fn build(self) -> crate::error::NotFoundError {
-            crate::error::NotFoundError {
+        /// Consumes the builder and constructs a [`NotFoundException`](crate::error::NotFoundException)
+        pub fn build(self) -> crate::error::NotFoundException {
+            crate::error::NotFoundException {
                 message: self.message,
             }
         }
     }
 }
-impl NotFoundError {
-    /// Creates a new builder-style object to manufacture [`NotFoundError`](crate::error::NotFoundError)
-    pub fn builder() -> crate::error::not_found_error::Builder {
-        crate::error::not_found_error::Builder::default()
+impl NotFoundException {
+    /// Creates a new builder-style object to manufacture [`NotFoundException`](crate::error::NotFoundException)
+    pub fn builder() -> crate::error::not_found_exception::Builder {
+        crate::error::not_found_exception::Builder::default()
     }
 }
 
 /// An unexpected error occurred.
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
-pub struct InternalServerErrorError {
-    #[serde(rename = "message")]
-    #[serde(default)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct InternalServerErrorException {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for InternalServerErrorError {
+impl std::fmt::Debug for InternalServerErrorException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InternalServerErrorError");
+        let mut formatter = f.debug_struct("InternalServerErrorException");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl InternalServerErrorError {
+impl InternalServerErrorException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for InternalServerErrorError {
+impl std::fmt::Display for InternalServerErrorException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "InternalServerErrorError [InternalServerErrorException]")?;
+        write!(f, "InternalServerErrorException")?;
         if let Some(inner_5) = &self.message {
             write!(f, ": {}", inner_5)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for InternalServerErrorError {}
-/// See [`InternalServerErrorError`](crate::error::InternalServerErrorError)
-pub mod internal_server_error_error {
-    /// A builder for [`InternalServerErrorError`](crate::error::InternalServerErrorError)
+impl std::error::Error for InternalServerErrorException {}
+/// See [`InternalServerErrorException`](crate::error::InternalServerErrorException)
+pub mod internal_server_error_exception {
+    /// A builder for [`InternalServerErrorException`](crate::error::InternalServerErrorException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -2445,54 +2488,52 @@ pub mod internal_server_error_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`InternalServerErrorError`](crate::error::InternalServerErrorError)
-        pub fn build(self) -> crate::error::InternalServerErrorError {
-            crate::error::InternalServerErrorError {
+        /// Consumes the builder and constructs a [`InternalServerErrorException`](crate::error::InternalServerErrorException)
+        pub fn build(self) -> crate::error::InternalServerErrorException {
+            crate::error::InternalServerErrorException {
                 message: self.message,
             }
         }
     }
 }
-impl InternalServerErrorError {
-    /// Creates a new builder-style object to manufacture [`InternalServerErrorError`](crate::error::InternalServerErrorError)
-    pub fn builder() -> crate::error::internal_server_error_error::Builder {
-        crate::error::internal_server_error_error::Builder::default()
+impl InternalServerErrorException {
+    /// Creates a new builder-style object to manufacture [`InternalServerErrorException`](crate::error::InternalServerErrorException)
+    pub fn builder() -> crate::error::internal_server_error_exception::Builder {
+        crate::error::internal_server_error_exception::Builder::default()
     }
 }
 
 /// The client is not authorized to access the requested resource.
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
-pub struct ForbiddenError {
-    #[serde(rename = "message")]
-    #[serde(default)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ForbiddenException {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for ForbiddenError {
+impl std::fmt::Debug for ForbiddenException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ForbiddenError");
+        let mut formatter = f.debug_struct("ForbiddenException");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl ForbiddenError {
+impl ForbiddenException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for ForbiddenError {
+impl std::fmt::Display for ForbiddenException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "ForbiddenError [ForbiddenException]")?;
+        write!(f, "ForbiddenException")?;
         if let Some(inner_6) = &self.message {
             write!(f, ": {}", inner_6)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for ForbiddenError {}
-/// See [`ForbiddenError`](crate::error::ForbiddenError)
-pub mod forbidden_error {
-    /// A builder for [`ForbiddenError`](crate::error::ForbiddenError)
+impl std::error::Error for ForbiddenException {}
+/// See [`ForbiddenException`](crate::error::ForbiddenException)
+pub mod forbidden_exception {
+    /// A builder for [`ForbiddenException`](crate::error::ForbiddenException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -2507,17 +2548,17 @@ pub mod forbidden_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`ForbiddenError`](crate::error::ForbiddenError)
-        pub fn build(self) -> crate::error::ForbiddenError {
-            crate::error::ForbiddenError {
+        /// Consumes the builder and constructs a [`ForbiddenException`](crate::error::ForbiddenException)
+        pub fn build(self) -> crate::error::ForbiddenException {
+            crate::error::ForbiddenException {
                 message: self.message,
             }
         }
     }
 }
-impl ForbiddenError {
-    /// Creates a new builder-style object to manufacture [`ForbiddenError`](crate::error::ForbiddenError)
-    pub fn builder() -> crate::error::forbidden_error::Builder {
-        crate::error::forbidden_error::Builder::default()
+impl ForbiddenException {
+    /// Creates a new builder-style object to manufacture [`ForbiddenException`](crate::error::ForbiddenException)
+    pub fn builder() -> crate::error::forbidden_exception::Builder {
+        crate::error::forbidden_exception::Builder::default()
     }
 }

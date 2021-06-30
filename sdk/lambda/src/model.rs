@@ -41,7 +41,7 @@ impl std::convert::From<&str> for ThrottleReason {
 impl std::str::FromStr for ThrottleReason {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(ThrottleReason::from(s))
     }
 }
@@ -70,27 +70,14 @@ impl AsRef<str> for ThrottleReason {
         self.as_str()
     }
 }
-impl<'de> serde::Deserialize<'de> for ThrottleReason {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
-    }
-}
 
 /// <p>A configuration object that specifies the destination of an event after Lambda processes it.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DestinationConfig {
     /// <p>The destination configuration for successful invocations.</p>
-    #[serde(rename = "OnSuccess")]
-    #[serde(default)]
     pub on_success: std::option::Option<crate::model::OnSuccess>,
     /// <p>The destination configuration for failed invocations.</p>
-    #[serde(rename = "OnFailure")]
-    #[serde(default)]
     pub on_failure: std::option::Option<crate::model::OnFailure>,
 }
 impl std::fmt::Debug for DestinationConfig {
@@ -153,11 +140,9 @@ impl DestinationConfig {
 
 /// <p>A destination for events that failed processing.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OnFailure {
     /// <p>The Amazon Resource Name (ARN) of the destination resource.</p>
-    #[serde(rename = "Destination")]
-    #[serde(default)]
     pub destination: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for OnFailure {
@@ -202,11 +187,9 @@ impl OnFailure {
 
 /// <p>A destination for events that were processed successfully.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OnSuccess {
     /// <p>The Amazon Resource Name (ARN) of the destination resource.</p>
-    #[serde(rename = "Destination")]
-    #[serde(default)]
     pub destination: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for OnSuccess {
@@ -251,15 +234,11 @@ impl OnSuccess {
 
 /// <p>Response to GetFunctionConfiguration request.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ImageConfigResponse {
     /// <p>Configuration values that override the container image Dockerfile.</p>
-    #[serde(rename = "ImageConfig")]
-    #[serde(default)]
     pub image_config: std::option::Option<crate::model::ImageConfig>,
     /// <p>Error response to GetFunctionConfiguration.</p>
-    #[serde(rename = "Error")]
-    #[serde(default)]
     pub error: std::option::Option<crate::model::ImageConfigError>,
 }
 impl std::fmt::Debug for ImageConfigResponse {
@@ -322,15 +301,11 @@ impl ImageConfigResponse {
 
 /// <p>Error response to GetFunctionConfiguration.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ImageConfigError {
     /// <p>Error code.</p>
-    #[serde(rename = "ErrorCode")]
-    #[serde(default)]
     pub error_code: std::option::Option<std::string::String>,
     /// <p>Error message.</p>
-    #[serde(rename = "Message")]
-    #[serde(default)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ImageConfigError {
@@ -388,20 +363,14 @@ impl ImageConfigError {
 /// <p>Configuration values that override the container image Dockerfile settings. See   
 /// <a href="https://docs.aws.amazon.com/lambda/latest/dg/images-create.html#images-parms">Container settings</a>. </p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ImageConfig {
     /// <p>Specifies the entry point to their application, which is typically the location of the runtime
     /// executable.</p>
-    #[serde(rename = "EntryPoint")]
-    #[serde(default)]
     pub entry_point: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Specifies parameters that you want to pass in with ENTRYPOINT. </p>
-    #[serde(rename = "Command")]
-    #[serde(default)]
     pub command: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Specifies the working directory.</p>
-    #[serde(rename = "WorkingDirectory")]
-    #[serde(default)]
     pub working_directory: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ImageConfig {
@@ -507,7 +476,7 @@ impl std::convert::From<&str> for PackageType {
 impl std::str::FromStr for PackageType {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(PackageType::from(s))
     }
 }
@@ -525,27 +494,14 @@ impl AsRef<str> for PackageType {
         self.as_str()
     }
 }
-impl<'de> serde::Deserialize<'de> for PackageType {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
-    }
-}
 
 /// <p>Details about the connection between a Lambda function and an Amazon EFS file system.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FileSystemConfig {
     /// <p>The Amazon Resource Name (ARN) of the Amazon EFS access point that provides access to the file system.</p>
-    #[serde(rename = "Arn")]
-    #[serde(default)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The path where the function can access the file system, starting with <code>/mnt/</code>.</p>
-    #[serde(rename = "LocalMountPath")]
-    #[serde(default)]
     pub local_mount_path: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for FileSystemConfig {
@@ -649,7 +605,7 @@ impl std::convert::From<&str> for LastUpdateStatusReasonCode {
 impl std::str::FromStr for LastUpdateStatusReasonCode {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(LastUpdateStatusReasonCode::from(s))
     }
 }
@@ -675,15 +631,6 @@ impl LastUpdateStatusReasonCode {
 impl AsRef<str> for LastUpdateStatusReasonCode {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for LastUpdateStatusReasonCode {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -717,7 +664,7 @@ impl std::convert::From<&str> for LastUpdateStatus {
 impl std::str::FromStr for LastUpdateStatus {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(LastUpdateStatus::from(s))
     }
 }
@@ -734,15 +681,6 @@ impl LastUpdateStatus {
 impl AsRef<str> for LastUpdateStatus {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for LastUpdateStatus {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -796,7 +734,7 @@ impl std::convert::From<&str> for StateReasonCode {
 impl std::str::FromStr for StateReasonCode {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(StateReasonCode::from(s))
     }
 }
@@ -823,15 +761,6 @@ impl StateReasonCode {
 impl AsRef<str> for StateReasonCode {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for StateReasonCode {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -867,7 +796,7 @@ impl std::convert::From<&str> for State {
 impl std::str::FromStr for State {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(State::from(s))
     }
 }
@@ -887,36 +816,19 @@ impl AsRef<str> for State {
         self.as_str()
     }
 }
-impl<'de> serde::Deserialize<'de> for State {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
-    }
-}
 
 /// <p>An <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">AWS Lambda
 /// layer</a>.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Layer {
     /// <p>The Amazon Resource Name (ARN) of the function layer.</p>
-    #[serde(rename = "Arn")]
-    #[serde(default)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The size of the layer archive in bytes.</p>
-    #[serde(rename = "CodeSize")]
-    #[serde(default)]
     pub code_size: i64,
     /// <p>The Amazon Resource Name (ARN) for a signing profile version.</p>
-    #[serde(rename = "SigningProfileVersionArn")]
-    #[serde(default)]
     pub signing_profile_version_arn: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN)  of a signing job.</p>
-    #[serde(rename = "SigningJobArn")]
-    #[serde(default)]
     pub signing_job_arn: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for Layer {
@@ -1009,11 +921,9 @@ impl Layer {
 
 /// <p>The function's AWS X-Ray tracing configuration.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TracingConfigResponse {
     /// <p>The tracing mode.</p>
-    #[serde(rename = "Mode")]
-    #[serde(default)]
     pub mode: std::option::Option<crate::model::TracingMode>,
 }
 impl std::fmt::Debug for TracingConfigResponse {
@@ -1082,7 +992,7 @@ impl std::convert::From<&str> for TracingMode {
 impl std::str::FromStr for TracingMode {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(TracingMode::from(s))
     }
 }
@@ -1100,29 +1010,16 @@ impl AsRef<str> for TracingMode {
         self.as_str()
     }
 }
-impl<'de> serde::Deserialize<'de> for TracingMode {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
-    }
-}
 
 /// <p>The results of an operation to update or read environment variables. If the operation is successful, the
 /// response contains the environment variables. If it failed, the response contains details about the error.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EnvironmentResponse {
     /// <p>Environment variable key-value pairs.</p>
-    #[serde(rename = "Variables")]
-    #[serde(default)]
     pub variables:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>Error messages for environment variables that couldn't be applied.</p>
-    #[serde(rename = "Error")]
-    #[serde(default)]
     pub error: std::option::Option<crate::model::EnvironmentError>,
 }
 impl std::fmt::Debug for EnvironmentResponse {
@@ -1194,15 +1091,11 @@ impl EnvironmentResponse {
 
 /// <p>Error messages for environment variables that couldn't be applied.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EnvironmentError {
     /// <p>The error code.</p>
-    #[serde(rename = "ErrorCode")]
-    #[serde(default)]
     pub error_code: std::option::Option<std::string::String>,
     /// <p>The error message.</p>
-    #[serde(rename = "Message")]
-    #[serde(default)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for EnvironmentError {
@@ -1260,11 +1153,9 @@ impl EnvironmentError {
 /// <p>The <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-async.html#dlq">dead-letter queue</a> for
 /// failed asynchronous invocations.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeadLetterConfig {
     /// <p>The Amazon Resource Name (ARN) of an Amazon SQS queue or Amazon SNS topic.</p>
-    #[serde(rename = "TargetArn")]
-    #[serde(default)]
     pub target_arn: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DeadLetterConfig {
@@ -1309,19 +1200,13 @@ impl DeadLetterConfig {
 
 /// <p>The VPC security groups and subnets that are attached to a Lambda function.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct VpcConfigResponse {
     /// <p>A list of VPC subnet IDs.</p>
-    #[serde(rename = "SubnetIds")]
-    #[serde(default)]
     pub subnet_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A list of VPC security groups IDs.</p>
-    #[serde(rename = "SecurityGroupIds")]
-    #[serde(default)]
     pub security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The ID of the VPC.</p>
-    #[serde(rename = "VpcId")]
-    #[serde(default)]
     pub vpc_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for VpcConfigResponse {
@@ -1468,7 +1353,7 @@ impl std::convert::From<&str> for Runtime {
 impl std::str::FromStr for Runtime {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(Runtime::from(s))
     }
 }
@@ -1508,24 +1393,13 @@ impl AsRef<str> for Runtime {
         self.as_str()
     }
 }
-impl<'de> serde::Deserialize<'de> for Runtime {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
-    }
-}
 
 /// <p>The function's AWS X-Ray tracing configuration. To sample and record incoming requests, set <code>Mode</code>
 /// to <code>Active</code>.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TracingConfig {
     /// <p>The tracing mode.</p>
-    #[serde(rename = "Mode")]
-    #[serde(default)]
     pub mode: std::option::Option<crate::model::TracingMode>,
 }
 impl std::fmt::Debug for TracingConfig {
@@ -1568,11 +1442,9 @@ impl TracingConfig {
 
 /// <p>A function's environment variable settings.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Environment {
     /// <p>Environment variable key-value pairs.</p>
-    #[serde(rename = "Variables")]
-    #[serde(default)]
     pub variables:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -1630,15 +1502,11 @@ impl Environment {
 
 /// <p>The VPC security groups and subnets that are attached to a Lambda function. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-vpc.html">VPC Settings</a>.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct VpcConfig {
     /// <p>A list of VPC subnet IDs.</p>
-    #[serde(rename = "SubnetIds")]
-    #[serde(default)]
     pub subnet_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A list of VPC security groups IDs.</p>
-    #[serde(rename = "SecurityGroupIds")]
-    #[serde(default)]
     pub security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl std::fmt::Debug for VpcConfig {
@@ -1727,7 +1595,7 @@ impl std::convert::From<&str> for FunctionResponseType {
 impl std::str::FromStr for FunctionResponseType {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(FunctionResponseType::from(s))
     }
 }
@@ -1744,23 +1612,12 @@ impl AsRef<str> for FunctionResponseType {
         self.as_str()
     }
 }
-impl<'de> serde::Deserialize<'de> for FunctionResponseType {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
-    }
-}
 
 /// <p>The Self-Managed Apache Kafka cluster for your event source.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SelfManagedEventSource {
     /// <p>The list of bootstrap servers for your Kafka brokers in the following format: <code>"KAFKA_BOOTSTRAP_SERVERS": ["abc.xyz.com:xxxx","abc2.xyz.com:xxxx"]</code>.</p>
-    #[serde(rename = "Endpoints")]
-    #[serde(default)]
     pub endpoints: std::option::Option<
         std::collections::HashMap<crate::model::EndPointType, std::vec::Vec<std::string::String>>,
     >,
@@ -1849,7 +1706,7 @@ impl std::convert::From<&str> for EndPointType {
 impl std::str::FromStr for EndPointType {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(EndPointType::from(s))
     }
 }
@@ -1866,19 +1723,10 @@ impl AsRef<str> for EndPointType {
         self.as_str()
     }
 }
-impl<'de> serde::Deserialize<'de> for EndPointType {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
-    }
-}
 
 /// <p>You can specify the authentication protocol, or the VPC components to secure access to your event source.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SourceAccessConfiguration {
     /// <p>The type of authentication protocol or the VPC components for your event source. For example: <code>"Type":"SASL_SCRAM_512_AUTH"</code>.</p>
     /// <ul>
@@ -1903,12 +1751,8 @@ pub struct SourceAccessConfiguration {
     /// <code>SASL_SCRAM_512_AUTH</code> - The Secrets Manager ARN of your secret key used for SASL SCRAM-512 authentication of your Self-Managed Apache Kafka brokers.</p>
     /// </li>
     /// </ul>
-    #[serde(rename = "Type")]
-    #[serde(default)]
     pub r#type: std::option::Option<crate::model::SourceAccessType>,
     /// <p>The value for your chosen configuration in <code>Type</code>. For example: <code>"URI": "arn:aws:secretsmanager:us-east-1:01234567890:secret:MyBrokerSecretName"</code>.</p>
-    #[serde(rename = "URI")]
-    #[serde(default)]
     pub uri: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for SourceAccessConfiguration {
@@ -2022,7 +1866,7 @@ impl std::convert::From<&str> for SourceAccessType {
 impl std::str::FromStr for SourceAccessType {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(SourceAccessType::from(s))
     }
 }
@@ -2041,15 +1885,6 @@ impl SourceAccessType {
 impl AsRef<str> for SourceAccessType {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for SourceAccessType {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -2083,7 +1918,7 @@ impl std::convert::From<&str> for EventSourcePosition {
 impl std::str::FromStr for EventSourcePosition {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(EventSourcePosition::from(s))
     }
 }
@@ -2102,43 +1937,22 @@ impl AsRef<str> for EventSourcePosition {
         self.as_str()
     }
 }
-impl<'de> serde::Deserialize<'de> for EventSourcePosition {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
-    }
-}
 
 /// <p>Details about a Code signing configuration. </p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CodeSigningConfig {
     /// <p>Unique identifer for the Code signing configuration.</p>
-    #[serde(rename = "CodeSigningConfigId")]
-    #[serde(default)]
     pub code_signing_config_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the Code signing configuration.</p>
-    #[serde(rename = "CodeSigningConfigArn")]
-    #[serde(default)]
     pub code_signing_config_arn: std::option::Option<std::string::String>,
     /// <p>Code signing configuration description.</p>
-    #[serde(rename = "Description")]
-    #[serde(default)]
     pub description: std::option::Option<std::string::String>,
     /// <p>List of allowed publishers.</p>
-    #[serde(rename = "AllowedPublishers")]
-    #[serde(default)]
     pub allowed_publishers: std::option::Option<crate::model::AllowedPublishers>,
     /// <p>The code signing policy controls the validation failure action for signature mismatch or expiry.</p>
-    #[serde(rename = "CodeSigningPolicies")]
-    #[serde(default)]
     pub code_signing_policies: std::option::Option<crate::model::CodeSigningPolicies>,
     /// <p>The date and time that the Code signing configuration was last modified, in ISO-8601 format (YYYY-MM-DDThh:mm:ss.sTZD). </p>
-    #[serde(rename = "LastModified")]
-    #[serde(default)]
     pub last_modified: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for CodeSigningConfig {
@@ -2259,15 +2073,13 @@ impl CodeSigningConfig {
 /// <p>Code signing configuration policies specifies the validation failure action for signature mismatch or
 /// expiry.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CodeSigningPolicies {
     /// <p>Code signing configuration policy for deployment validation failure. If you set the policy to
     /// <code>Enforce</code>, Lambda blocks the deployment request if signature validation checks fail. If you set the
     /// policy to <code>Warn</code>, Lambda allows the deployment and creates a CloudWatch log. </p>
     /// <p>Default value: <code>Warn</code>
     /// </p>
-    #[serde(rename = "UntrustedArtifactOnDeployment")]
-    #[serde(default)]
     pub untrusted_artifact_on_deployment: std::option::Option<crate::model::CodeSigningPolicy>,
 }
 impl std::fmt::Debug for CodeSigningPolicies {
@@ -2352,7 +2164,7 @@ impl std::convert::From<&str> for CodeSigningPolicy {
 impl std::str::FromStr for CodeSigningPolicy {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(CodeSigningPolicy::from(s))
     }
 }
@@ -2370,24 +2182,13 @@ impl AsRef<str> for CodeSigningPolicy {
         self.as_str()
     }
 }
-impl<'de> serde::Deserialize<'de> for CodeSigningPolicy {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
-    }
-}
 
 /// <p>List of signing profiles that can sign a code package. </p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AllowedPublishers {
     /// <p>The Amazon Resource Name (ARN) for each of the signing profiles. A signing profile defines a trusted user
     /// who can sign a code package. </p>
-    #[serde(rename = "SigningProfileVersionArns")]
-    #[serde(default)]
     pub signing_profile_version_arns: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl std::fmt::Debug for AllowedPublishers {
@@ -2443,11 +2244,9 @@ impl AllowedPublishers {
 
 /// <p>The <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-traffic-shifting-using-aliases.html">traffic-shifting</a> configuration of a Lambda function alias.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AliasRoutingConfiguration {
     /// <p>The second version, and the percentage of traffic that's routed to it.</p>
-    #[serde(rename = "AdditionalVersionWeights")]
-    #[serde(default)]
     pub additional_version_weights:
         std::option::Option<std::collections::HashMap<std::string::String, f64>>,
 }
@@ -2533,7 +2332,7 @@ impl std::convert::From<&str> for ProvisionedConcurrencyStatusEnum {
 impl std::str::FromStr for ProvisionedConcurrencyStatusEnum {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(ProvisionedConcurrencyStatusEnum::from(s))
     }
 }
@@ -2552,40 +2351,21 @@ impl AsRef<str> for ProvisionedConcurrencyStatusEnum {
         self.as_str()
     }
 }
-impl<'de> serde::Deserialize<'de> for ProvisionedConcurrencyStatusEnum {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
-    }
-}
 
 /// <p>Details about a version of an <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">AWS Lambda
 /// layer</a>.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LayerVersionContentOutput {
     /// <p>A link to the layer archive in Amazon S3 that is valid for 10 minutes.</p>
-    #[serde(rename = "Location")]
-    #[serde(default)]
     pub location: std::option::Option<std::string::String>,
     /// <p>The SHA-256 hash of the layer archive.</p>
-    #[serde(rename = "CodeSha256")]
-    #[serde(default)]
     pub code_sha256: std::option::Option<std::string::String>,
     /// <p>The size of the layer archive in bytes.</p>
-    #[serde(rename = "CodeSize")]
-    #[serde(default)]
     pub code_size: i64,
     /// <p>The Amazon Resource Name (ARN) for a signing profile version.</p>
-    #[serde(rename = "SigningProfileVersionArn")]
-    #[serde(default)]
     pub signing_profile_version_arn: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN)  of a signing job.</p>
-    #[serde(rename = "SigningJobArn")]
-    #[serde(default)]
     pub signing_job_arn: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for LayerVersionContentOutput {
@@ -2692,25 +2472,16 @@ impl LayerVersionContentOutput {
 /// layer</a>. You can specify either an Amazon S3 location,
 /// or upload a layer archive directly.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LayerVersionContentInput {
     /// <p>The Amazon S3 bucket of the layer archive.</p>
-    #[serde(rename = "S3Bucket")]
-    #[serde(default)]
     pub s3_bucket: std::option::Option<std::string::String>,
     /// <p>The Amazon S3 key of the layer archive.</p>
-    #[serde(rename = "S3Key")]
-    #[serde(default)]
     pub s3_key: std::option::Option<std::string::String>,
     /// <p>For versioned objects, the version of the layer archive object to use.</p>
-    #[serde(rename = "S3ObjectVersion")]
-    #[serde(default)]
     pub s3_object_version: std::option::Option<std::string::String>,
     /// <p>The base64-encoded contents of the layer archive. AWS SDK and AWS CLI clients handle the encoding for
     /// you.</p>
-    #[serde(rename = "ZipFile")]
-    #[serde(deserialize_with = "crate::serde_util::stdoptionoptionsmithytypesblob_deser")]
-    #[serde(default)]
     pub zip_file: std::option::Option<smithy_types::Blob>,
 }
 impl std::fmt::Debug for LayerVersionContentInput {
@@ -2795,137 +2566,75 @@ impl LayerVersionContentInput {
 
 /// <p>Details about a function's configuration.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FunctionConfiguration {
     /// <p>The name of the function.</p>
-    #[serde(rename = "FunctionName")]
-    #[serde(default)]
     pub function_name: std::option::Option<std::string::String>,
     /// <p>The function's Amazon Resource Name (ARN).</p>
-    #[serde(rename = "FunctionArn")]
-    #[serde(default)]
     pub function_arn: std::option::Option<std::string::String>,
     /// <p>The runtime environment for the Lambda function.</p>
-    #[serde(rename = "Runtime")]
-    #[serde(default)]
     pub runtime: std::option::Option<crate::model::Runtime>,
     /// <p>The function's execution role.</p>
-    #[serde(rename = "Role")]
-    #[serde(default)]
     pub role: std::option::Option<std::string::String>,
     /// <p>The function that Lambda calls to begin executing your function.</p>
-    #[serde(rename = "Handler")]
-    #[serde(default)]
     pub handler: std::option::Option<std::string::String>,
     /// <p>The size of the function's deployment package, in bytes.</p>
-    #[serde(rename = "CodeSize")]
-    #[serde(default)]
     pub code_size: i64,
     /// <p>The function's description.</p>
-    #[serde(rename = "Description")]
-    #[serde(default)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The amount of time in seconds that Lambda allows a function to run before stopping it.</p>
-    #[serde(rename = "Timeout")]
-    #[serde(default)]
     pub timeout: std::option::Option<i32>,
     /// <p>The amount of memory available to the function at runtime. </p>
-    #[serde(rename = "MemorySize")]
-    #[serde(default)]
     pub memory_size: std::option::Option<i32>,
     /// <p>The date and time that the function was last updated, in <a href="https://www.w3.org/TR/NOTE-datetime">ISO-8601 format</a> (YYYY-MM-DDThh:mm:ss.sTZD).</p>
-    #[serde(rename = "LastModified")]
-    #[serde(default)]
     pub last_modified: std::option::Option<std::string::String>,
     /// <p>The SHA256 hash of the function's deployment package.</p>
-    #[serde(rename = "CodeSha256")]
-    #[serde(default)]
     pub code_sha256: std::option::Option<std::string::String>,
     /// <p>The version of the Lambda function.</p>
-    #[serde(rename = "Version")]
-    #[serde(default)]
     pub version: std::option::Option<std::string::String>,
     /// <p>The function's networking configuration.</p>
-    #[serde(rename = "VpcConfig")]
-    #[serde(default)]
     pub vpc_config: std::option::Option<crate::model::VpcConfigResponse>,
     /// <p>The function's dead letter queue.</p>
-    #[serde(rename = "DeadLetterConfig")]
-    #[serde(default)]
     pub dead_letter_config: std::option::Option<crate::model::DeadLetterConfig>,
     /// <p>The function's environment variables.</p>
-    #[serde(rename = "Environment")]
-    #[serde(default)]
     pub environment: std::option::Option<crate::model::EnvironmentResponse>,
     /// <p>The KMS key that's used to encrypt the function's environment variables. This key is only returned if you've
     /// configured a customer managed CMK.</p>
-    #[serde(rename = "KMSKeyArn")]
-    #[serde(default)]
     pub kms_key_arn: std::option::Option<std::string::String>,
     /// <p>The function's AWS X-Ray tracing configuration.</p>
-    #[serde(rename = "TracingConfig")]
-    #[serde(default)]
     pub tracing_config: std::option::Option<crate::model::TracingConfigResponse>,
     /// <p>For Lambda@Edge functions, the ARN of the master function.</p>
-    #[serde(rename = "MasterArn")]
-    #[serde(default)]
     pub master_arn: std::option::Option<std::string::String>,
     /// <p>The latest updated revision of the function or alias.</p>
-    #[serde(rename = "RevisionId")]
-    #[serde(default)]
     pub revision_id: std::option::Option<std::string::String>,
     /// <p>The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">
     /// layers</a>.</p>
-    #[serde(rename = "Layers")]
-    #[serde(default)]
     pub layers: std::option::Option<std::vec::Vec<crate::model::Layer>>,
     /// <p>The current state of the function. When the state is <code>Inactive</code>, you can reactivate the function by
     /// invoking it.</p>
-    #[serde(rename = "State")]
-    #[serde(default)]
     pub state: std::option::Option<crate::model::State>,
     /// <p>The reason for the function's current state.</p>
-    #[serde(rename = "StateReason")]
-    #[serde(default)]
     pub state_reason: std::option::Option<std::string::String>,
     /// <p>The reason code for the function's current state. When the code is <code>Creating</code>, you can't invoke or
     /// modify the function.</p>
-    #[serde(rename = "StateReasonCode")]
-    #[serde(default)]
     pub state_reason_code: std::option::Option<crate::model::StateReasonCode>,
     /// <p>The status of the last update that was performed on the function. This is first set to <code>Successful</code>
     /// after function creation completes.</p>
-    #[serde(rename = "LastUpdateStatus")]
-    #[serde(default)]
     pub last_update_status: std::option::Option<crate::model::LastUpdateStatus>,
     /// <p>The reason for the last update that was performed on the function.</p>
-    #[serde(rename = "LastUpdateStatusReason")]
-    #[serde(default)]
     pub last_update_status_reason: std::option::Option<std::string::String>,
     /// <p>The reason code for the last update that was performed on the function.</p>
-    #[serde(rename = "LastUpdateStatusReasonCode")]
-    #[serde(default)]
     pub last_update_status_reason_code:
         std::option::Option<crate::model::LastUpdateStatusReasonCode>,
     /// <p>Connection settings for an Amazon EFS file system.</p>
-    #[serde(rename = "FileSystemConfigs")]
-    #[serde(default)]
     pub file_system_configs: std::option::Option<std::vec::Vec<crate::model::FileSystemConfig>>,
     /// <p>The type of deployment package. Set to <code>Image</code> for container image and set <code>Zip</code> for .zip file archive.</p>
-    #[serde(rename = "PackageType")]
-    #[serde(default)]
     pub package_type: std::option::Option<crate::model::PackageType>,
     /// <p>The function's image configuration values.</p>
-    #[serde(rename = "ImageConfigResponse")]
-    #[serde(default)]
     pub image_config_response: std::option::Option<crate::model::ImageConfigResponse>,
     /// <p>The ARN of the signing profile version.</p>
-    #[serde(rename = "SigningProfileVersionArn")]
-    #[serde(default)]
     pub signing_profile_version_arn: std::option::Option<std::string::String>,
     /// <p>The ARN of the signing job.</p>
-    #[serde(rename = "SigningJobArn")]
-    #[serde(default)]
     pub signing_job_arn: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for FunctionConfiguration {
@@ -3401,35 +3110,21 @@ impl FunctionConfiguration {
 
 /// <p>Details about the provisioned concurrency configuration for a function alias or version.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ProvisionedConcurrencyConfigListItem {
     /// <p>The Amazon Resource Name (ARN) of the alias or version.</p>
-    #[serde(rename = "FunctionArn")]
-    #[serde(default)]
     pub function_arn: std::option::Option<std::string::String>,
     /// <p>The amount of provisioned concurrency requested.</p>
-    #[serde(rename = "RequestedProvisionedConcurrentExecutions")]
-    #[serde(default)]
     pub requested_provisioned_concurrent_executions: std::option::Option<i32>,
     /// <p>The amount of provisioned concurrency available.</p>
-    #[serde(rename = "AvailableProvisionedConcurrentExecutions")]
-    #[serde(default)]
     pub available_provisioned_concurrent_executions: std::option::Option<i32>,
     /// <p>The amount of provisioned concurrency allocated.</p>
-    #[serde(rename = "AllocatedProvisionedConcurrentExecutions")]
-    #[serde(default)]
     pub allocated_provisioned_concurrent_executions: std::option::Option<i32>,
     /// <p>The status of the allocation process.</p>
-    #[serde(rename = "Status")]
-    #[serde(default)]
     pub status: std::option::Option<crate::model::ProvisionedConcurrencyStatusEnum>,
     /// <p>For failed allocations, the reason that provisioned concurrency could not be allocated.</p>
-    #[serde(rename = "StatusReason")]
-    #[serde(default)]
     pub status_reason: std::option::Option<std::string::String>,
     /// <p>The date and time that a user last updated the configuration, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601 format</a>.</p>
-    #[serde(rename = "LastModified")]
-    #[serde(default)]
     pub last_modified: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ProvisionedConcurrencyConfigListItem {
@@ -3577,31 +3272,19 @@ impl ProvisionedConcurrencyConfigListItem {
 /// <p>Details about a version of an <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">AWS Lambda
 /// layer</a>.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LayerVersionsListItem {
     /// <p>The ARN of the layer version.</p>
-    #[serde(rename = "LayerVersionArn")]
-    #[serde(default)]
     pub layer_version_arn: std::option::Option<std::string::String>,
     /// <p>The version number.</p>
-    #[serde(rename = "Version")]
-    #[serde(default)]
     pub version: i64,
     /// <p>The description of the version.</p>
-    #[serde(rename = "Description")]
-    #[serde(default)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The date that the version was created, in ISO 8601 format. For example, <code>2018-11-27T15:10:45.123+0000</code>.</p>
-    #[serde(rename = "CreatedDate")]
-    #[serde(default)]
     pub created_date: std::option::Option<std::string::String>,
     /// <p>The layer's compatible runtimes.</p>
-    #[serde(rename = "CompatibleRuntimes")]
-    #[serde(default)]
     pub compatible_runtimes: std::option::Option<std::vec::Vec<crate::model::Runtime>>,
     /// <p>The layer's open-source license.</p>
-    #[serde(rename = "LicenseInfo")]
-    #[serde(default)]
     pub license_info: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for LayerVersionsListItem {
@@ -3714,19 +3397,13 @@ impl LayerVersionsListItem {
 /// <p>Details about an <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">AWS Lambda
 /// layer</a>.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LayersListItem {
     /// <p>The name of the layer.</p>
-    #[serde(rename = "LayerName")]
-    #[serde(default)]
     pub layer_name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the function layer.</p>
-    #[serde(rename = "LayerArn")]
-    #[serde(default)]
     pub layer_arn: std::option::Option<std::string::String>,
     /// <p>The newest version of the layer.</p>
-    #[serde(rename = "LatestMatchingVersion")]
-    #[serde(default)]
     pub latest_matching_version: std::option::Option<crate::model::LayerVersionsListItem>,
 }
 impl std::fmt::Debug for LayersListItem {
@@ -3826,7 +3503,7 @@ impl std::convert::From<&str> for FunctionVersion {
 impl std::str::FromStr for FunctionVersion {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(FunctionVersion::from(s))
     }
 }
@@ -3843,37 +3520,17 @@ impl AsRef<str> for FunctionVersion {
         self.as_str()
     }
 }
-impl<'de> serde::Deserialize<'de> for FunctionVersion {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
-    }
-}
 
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FunctionEventInvokeConfig {
     /// <p>The date and time that the configuration was last updated.</p>
-    #[serde(rename = "LastModified")]
-    #[serde(
-        deserialize_with = "crate::serde_util::stdoptionoptionsmithytypesinstant_epoch_seconds_deser"
-    )]
-    #[serde(default)]
     pub last_modified: std::option::Option<smithy_types::Instant>,
     /// <p>The Amazon Resource Name (ARN) of the function.</p>
-    #[serde(rename = "FunctionArn")]
-    #[serde(default)]
     pub function_arn: std::option::Option<std::string::String>,
     /// <p>The maximum number of times to retry when the function returns an error.</p>
-    #[serde(rename = "MaximumRetryAttempts")]
-    #[serde(default)]
     pub maximum_retry_attempts: std::option::Option<i32>,
     /// <p>The maximum age of a request that Lambda sends to a function for processing.</p>
-    #[serde(rename = "MaximumEventAgeInSeconds")]
-    #[serde(default)]
     pub maximum_event_age_in_seconds: std::option::Option<i32>,
     /// <p>A destination for events after they have been sent to a function for processing.</p>
     /// <p class="title">
@@ -3897,8 +3554,6 @@ pub struct FunctionEventInvokeConfig {
     /// <b>Event Bus</b> - The ARN of an Amazon EventBridge event bus.</p>
     /// </li>
     /// </ul>
-    #[serde(rename = "DestinationConfig")]
-    #[serde(default)]
     pub destination_config: std::option::Option<crate::model::DestinationConfig>,
 }
 impl std::fmt::Debug for FunctionEventInvokeConfig {
@@ -4021,109 +3676,59 @@ impl FunctionEventInvokeConfig {
 
 /// <p>A mapping between an AWS resource and an AWS Lambda function. See <a>CreateEventSourceMapping</a> for details.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EventSourceMappingConfiguration {
     /// <p>The identifier of the event source mapping.</p>
-    #[serde(rename = "UUID")]
-    #[serde(default)]
     pub uuid: std::option::Option<std::string::String>,
     /// <p>The position in a stream from which to start reading. Required for Amazon Kinesis, Amazon DynamoDB, and Amazon MSK Streams
     /// sources. <code>AT_TIMESTAMP</code> is only supported for Amazon Kinesis streams.</p>
-    #[serde(rename = "StartingPosition")]
-    #[serde(default)]
     pub starting_position: std::option::Option<crate::model::EventSourcePosition>,
     /// <p>With <code>StartingPosition</code> set to <code>AT_TIMESTAMP</code>, the time from which to start
     /// reading.</p>
-    #[serde(rename = "StartingPositionTimestamp")]
-    #[serde(
-        deserialize_with = "crate::serde_util::stdoptionoptionsmithytypesinstant_epoch_seconds_deser"
-    )]
-    #[serde(default)]
     pub starting_position_timestamp: std::option::Option<smithy_types::Instant>,
     /// <p>The maximum number of items to retrieve in a single batch.</p>
-    #[serde(rename = "BatchSize")]
-    #[serde(default)]
     pub batch_size: std::option::Option<i32>,
     /// <p>(Streams and SQS standard queues) The maximum amount of time to gather records before invoking the function, in seconds. The default value is zero.</p>
-    #[serde(rename = "MaximumBatchingWindowInSeconds")]
-    #[serde(default)]
     pub maximum_batching_window_in_seconds: std::option::Option<i32>,
     /// <p>(Streams) The number of batches to process from each shard concurrently. The default value is 1.</p>
-    #[serde(rename = "ParallelizationFactor")]
-    #[serde(default)]
     pub parallelization_factor: std::option::Option<i32>,
     /// <p>The Amazon Resource Name (ARN) of the event source.</p>
-    #[serde(rename = "EventSourceArn")]
-    #[serde(default)]
     pub event_source_arn: std::option::Option<std::string::String>,
     /// <p>The ARN of the Lambda function.</p>
-    #[serde(rename = "FunctionArn")]
-    #[serde(default)]
     pub function_arn: std::option::Option<std::string::String>,
     /// <p>The date that the event source mapping was last updated, or its state changed.</p>
-    #[serde(rename = "LastModified")]
-    #[serde(
-        deserialize_with = "crate::serde_util::stdoptionoptionsmithytypesinstant_epoch_seconds_deser"
-    )]
-    #[serde(default)]
     pub last_modified: std::option::Option<smithy_types::Instant>,
     /// <p>The result of the last AWS Lambda invocation of your Lambda function.</p>
-    #[serde(rename = "LastProcessingResult")]
-    #[serde(default)]
     pub last_processing_result: std::option::Option<std::string::String>,
     /// <p>The state of the event source mapping. It can be one of the following: <code>Creating</code>,
     /// <code>Enabling</code>, <code>Enabled</code>, <code>Disabling</code>, <code>Disabled</code>,
     /// <code>Updating</code>, or <code>Deleting</code>.</p>
-    #[serde(rename = "State")]
-    #[serde(default)]
     pub state: std::option::Option<std::string::String>,
     /// <p>Indicates whether the last change to the event source mapping was made by a user, or by the Lambda
     /// service.</p>
-    #[serde(rename = "StateTransitionReason")]
-    #[serde(default)]
     pub state_transition_reason: std::option::Option<std::string::String>,
     /// <p>(Streams) An Amazon SQS queue or Amazon SNS topic destination for discarded records.</p>
-    #[serde(rename = "DestinationConfig")]
-    #[serde(default)]
     pub destination_config: std::option::Option<crate::model::DestinationConfig>,
     /// <p>The name of the Kafka topic.</p>
-    #[serde(rename = "Topics")]
-    #[serde(default)]
     pub topics: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>
     /// (MQ) The name of the Amazon MQ broker destination queue to consume.
     /// </p>
-    #[serde(rename = "Queues")]
-    #[serde(default)]
     pub queues: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>An array of the authentication protocol, or the VPC components to secure your event source.</p>
-    #[serde(rename = "SourceAccessConfigurations")]
-    #[serde(default)]
     pub source_access_configurations:
         std::option::Option<std::vec::Vec<crate::model::SourceAccessConfiguration>>,
     /// <p>The Self-Managed Apache Kafka cluster for your event source.</p>
-    #[serde(rename = "SelfManagedEventSource")]
-    #[serde(default)]
     pub self_managed_event_source: std::option::Option<crate::model::SelfManagedEventSource>,
     /// <p>(Streams) Discard records older than the specified age. The default value is infinite (-1). When set to infinite (-1), failed records are retried until the record expires.</p>
-    #[serde(rename = "MaximumRecordAgeInSeconds")]
-    #[serde(default)]
     pub maximum_record_age_in_seconds: std::option::Option<i32>,
     /// <p>(Streams) If the function returns an error, split the batch in two and retry. The default value is false.</p>
-    #[serde(rename = "BisectBatchOnFunctionError")]
-    #[serde(default)]
     pub bisect_batch_on_function_error: std::option::Option<bool>,
     /// <p>(Streams) Discard records after the specified number of retries. The default value is infinite (-1). When set to infinite (-1), failed records are retried until the record expires.</p>
-    #[serde(rename = "MaximumRetryAttempts")]
-    #[serde(default)]
     pub maximum_retry_attempts: std::option::Option<i32>,
     /// <p>(Streams) The duration in seconds of a processing window. The range is between 1 second up to 900 seconds.</p>
-    #[serde(rename = "TumblingWindowInSeconds")]
-    #[serde(default)]
     pub tumbling_window_in_seconds: std::option::Option<i32>,
     /// <p>(Streams) A list of current response type enums applied to the event source mapping.</p>
-    #[serde(rename = "FunctionResponseTypes")]
-    #[serde(default)]
     pub function_response_types:
         std::option::Option<std::vec::Vec<crate::model::FunctionResponseType>>,
 }
@@ -4505,32 +4110,20 @@ impl EventSourceMappingConfiguration {
 
 /// <p>Provides configuration information about a Lambda function <a href="https://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">alias</a>.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AliasConfiguration {
     /// <p>The Amazon Resource Name (ARN) of the alias.</p>
-    #[serde(rename = "AliasArn")]
-    #[serde(default)]
     pub alias_arn: std::option::Option<std::string::String>,
     /// <p>The name of the alias.</p>
-    #[serde(rename = "Name")]
-    #[serde(default)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The function version that the alias invokes.</p>
-    #[serde(rename = "FunctionVersion")]
-    #[serde(default)]
     pub function_version: std::option::Option<std::string::String>,
     /// <p>A description of the alias.</p>
-    #[serde(rename = "Description")]
-    #[serde(default)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-traffic-shifting-using-aliases.html">routing
     /// configuration</a> of the alias.</p>
-    #[serde(rename = "RoutingConfig")]
-    #[serde(default)]
     pub routing_config: std::option::Option<crate::model::AliasRoutingConfiguration>,
     /// <p>A unique identifier that changes when you update the alias.</p>
-    #[serde(rename = "RevisionId")]
-    #[serde(default)]
     pub revision_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for AliasConfiguration {
@@ -4668,7 +4261,7 @@ impl std::convert::From<&str> for LogType {
 impl std::str::FromStr for LogType {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(LogType::from(s))
     }
 }
@@ -4684,15 +4277,6 @@ impl LogType {
 impl AsRef<str> for LogType {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for LogType {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -4726,7 +4310,7 @@ impl std::convert::From<&str> for InvocationType {
 impl std::str::FromStr for InvocationType {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(InvocationType::from(s))
     }
 }
@@ -4745,22 +4329,11 @@ impl AsRef<str> for InvocationType {
         self.as_str()
     }
 }
-impl<'de> serde::Deserialize<'de> for InvocationType {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
-    }
-}
 
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Concurrency {
     /// <p>The number of concurrent executions that are reserved for this function. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/concurrent-executions.html">Managing Concurrency</a>.</p>
-    #[serde(rename = "ReservedConcurrentExecutions")]
-    #[serde(default)]
     pub reserved_concurrent_executions: std::option::Option<i32>,
 }
 impl std::fmt::Debug for Concurrency {
@@ -4811,23 +4384,15 @@ impl Concurrency {
 
 /// <p>Details about a function's deployment package.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FunctionCodeLocation {
     /// <p>The service that's hosting the file.</p>
-    #[serde(rename = "RepositoryType")]
-    #[serde(default)]
     pub repository_type: std::option::Option<std::string::String>,
     /// <p>A presigned URL that you can use to download the deployment package.</p>
-    #[serde(rename = "Location")]
-    #[serde(default)]
     pub location: std::option::Option<std::string::String>,
     /// <p>URI of a container image in the Amazon ECR registry.</p>
-    #[serde(rename = "ImageUri")]
-    #[serde(default)]
     pub image_uri: std::option::Option<std::string::String>,
     /// <p>The resolved URI for the image.</p>
-    #[serde(rename = "ResolvedImageUri")]
-    #[serde(default)]
     pub resolved_image_uri: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for FunctionCodeLocation {
@@ -4914,15 +4479,11 @@ impl FunctionCodeLocation {
 
 /// <p>The number of functions and amount of storage in use.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AccountUsage {
     /// <p>The amount of storage space, in bytes, that's being used by deployment packages and layer archives.</p>
-    #[serde(rename = "TotalCodeSize")]
-    #[serde(default)]
     pub total_code_size: i64,
     /// <p>The number of Lambda functions.</p>
-    #[serde(rename = "FunctionCount")]
-    #[serde(default)]
     pub function_count: i64,
 }
 impl std::fmt::Debug for AccountUsage {
@@ -4979,29 +4540,19 @@ impl AccountUsage {
 
 /// <p>Limits that are related to concurrency and storage. All file and storage sizes are in bytes.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AccountLimit {
     /// <p>The amount of storage space that you can use for all deployment packages and layer archives.</p>
-    #[serde(rename = "TotalCodeSize")]
-    #[serde(default)]
     pub total_code_size: i64,
     /// <p>The maximum size of a function's deployment package and layers when they're extracted.</p>
-    #[serde(rename = "CodeSizeUnzipped")]
-    #[serde(default)]
     pub code_size_unzipped: i64,
     /// <p>The maximum size of a deployment package when it's uploaded directly to AWS Lambda. Use Amazon S3 for larger
     /// files.</p>
-    #[serde(rename = "CodeSizeZipped")]
-    #[serde(default)]
     pub code_size_zipped: i64,
     /// <p>The maximum number of simultaneous function executions.</p>
-    #[serde(rename = "ConcurrentExecutions")]
-    #[serde(default)]
     pub concurrent_executions: i32,
     /// <p>The maximum number of simultaneous function executions, minus the capacity that's reserved for individual
     /// functions with <a>PutFunctionConcurrency</a>.</p>
-    #[serde(rename = "UnreservedConcurrentExecutions")]
-    #[serde(default)]
     pub unreserved_concurrent_executions: std::option::Option<i32>,
 }
 impl std::fmt::Debug for AccountLimit {
@@ -5103,29 +4654,18 @@ impl AccountLimit {
 /// <p>The code for the Lambda function. You can specify either an object in Amazon S3, upload a .zip file archive deployment
 /// package directly, or specify the URI of a container image.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FunctionCode {
     /// <p>The base64-encoded contents of the deployment package. AWS SDK and AWS CLI clients handle the encoding for
     /// you.</p>
-    #[serde(rename = "ZipFile")]
-    #[serde(deserialize_with = "crate::serde_util::stdoptionoptionsmithytypesblob_deser")]
-    #[serde(default)]
     pub zip_file: std::option::Option<smithy_types::Blob>,
     /// <p>An Amazon S3 bucket in the same AWS Region as your function. The bucket can be in a different AWS account.</p>
-    #[serde(rename = "S3Bucket")]
-    #[serde(default)]
     pub s3_bucket: std::option::Option<std::string::String>,
     /// <p>The Amazon S3 key of the deployment package.</p>
-    #[serde(rename = "S3Key")]
-    #[serde(default)]
     pub s3_key: std::option::Option<std::string::String>,
     /// <p>For versioned objects, the version of the deployment package object to use.</p>
-    #[serde(rename = "S3ObjectVersion")]
-    #[serde(default)]
     pub s3_object_version: std::option::Option<std::string::String>,
     /// <p>URI of a container image in the Amazon ECR registry.</p>
-    #[serde(rename = "ImageUri")]
-    #[serde(default)]
     pub image_uri: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for FunctionCode {

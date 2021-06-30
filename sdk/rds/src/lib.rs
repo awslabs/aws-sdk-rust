@@ -3,6 +3,7 @@
 #![allow(clippy::large_enum_variant)]
 #![allow(clippy::wrong_self_convention)]
 #![allow(clippy::should_implement_trait)]
+#![allow(clippy::blacklisted_name)]
 //! <fullname>Amazon Relational Database Service</fullname>
 //! <p> </p>
 //! <p>Amazon Relational Database Service (Amazon RDS) is a web service that makes it easier to set up, operate, and

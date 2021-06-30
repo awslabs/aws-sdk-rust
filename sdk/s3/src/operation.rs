@@ -801,6 +801,31 @@ impl smithy_http::response::ParseStrictResponse for CreateMultipartUpload {
         }
     }
 }
+#[cfg(test)]
+#[allow(unreachable_code, unused_variables)]
+mod create_multipart_upload_request_test {
+    /// This test validates that the URI for CreateMultipartUpload is created correctly
+    /// Test ID: CreateMultipartUploadUriConstruction
+    #[tokio::test]
+    async fn create_multipart_upload_uri_construction_request() {
+        let config = crate::config::Config::builder().build();
+        let input = crate::input::CreateMultipartUploadInput::builder()
+            .set_bucket(Some("test-bucket".to_string()))
+            .set_key(Some("object.txt".to_string()))
+            .build()
+            .unwrap()
+            .make_operation(&config)
+            .expect("operation failed to build");
+        let (http_request, parts) = input.into_request_response().0.into_parts();
+        assert_eq!(http_request.method(), "POST");
+        assert_eq!(http_request.uri().path(), "/test-bucket/object.txt");
+        let expected_query_params = &["uploads", "x-id=CreateMultipartUpload"];
+        protocol_test_helpers::assert_ok(protocol_test_helpers::validate_query_string(
+            &http_request,
+            expected_query_params,
+        ));
+    }
+}
 
 /// <p>Deletes the S3 bucket. All objects (including all object versions and delete markers) in
 /// the bucket must be deleted before the bucket itself can be deleted.</p>

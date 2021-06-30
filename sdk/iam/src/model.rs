@@ -4,7 +4,7 @@
 /// and <a>UploadSSHPublicKey</a> operations. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct SSHPublicKey {
+pub struct SshPublicKey {
     /// <p>The name of the IAM user associated with the SSH public key.</p>
     pub user_name: std::option::Option<std::string::String>,
     /// <p>The unique identifier for the SSH public key.</p>
@@ -21,9 +21,9 @@ pub struct SSHPublicKey {
     /// format</a>, when the SSH public key was uploaded.</p>
     pub upload_date: std::option::Option<smithy_types::Instant>,
 }
-impl std::fmt::Debug for SSHPublicKey {
+impl std::fmt::Debug for SshPublicKey {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SSHPublicKey");
+        let mut formatter = f.debug_struct("SshPublicKey");
         formatter.field("user_name", &self.user_name);
         formatter.field("ssh_public_key_id", &self.ssh_public_key_id);
         formatter.field("fingerprint", &self.fingerprint);
@@ -33,9 +33,9 @@ impl std::fmt::Debug for SSHPublicKey {
         formatter.finish()
     }
 }
-/// See [`SSHPublicKey`](crate::model::SSHPublicKey)
+/// See [`SshPublicKey`](crate::model::SshPublicKey)
 pub mod ssh_public_key {
-    /// A builder for [`SSHPublicKey`](crate::model::SSHPublicKey)
+    /// A builder for [`SshPublicKey`](crate::model::SshPublicKey)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -113,9 +113,9 @@ pub mod ssh_public_key {
             self.upload_date = input;
             self
         }
-        /// Consumes the builder and constructs a [`SSHPublicKey`](crate::model::SSHPublicKey)
-        pub fn build(self) -> crate::model::SSHPublicKey {
-            crate::model::SSHPublicKey {
+        /// Consumes the builder and constructs a [`SshPublicKey`](crate::model::SshPublicKey)
+        pub fn build(self) -> crate::model::SshPublicKey {
+            crate::model::SshPublicKey {
                 user_name: self.user_name,
                 ssh_public_key_id: self.ssh_public_key_id,
                 fingerprint: self.fingerprint,
@@ -126,8 +126,8 @@ pub mod ssh_public_key {
         }
     }
 }
-impl SSHPublicKey {
-    /// Creates a new builder-style object to manufacture [`SSHPublicKey`](crate::model::SSHPublicKey)
+impl SshPublicKey {
+    /// Creates a new builder-style object to manufacture [`SshPublicKey`](crate::model::SshPublicKey)
     pub fn builder() -> crate::model::ssh_public_key::Builder {
         crate::model::ssh_public_key::Builder::default()
     }
@@ -161,7 +161,7 @@ impl std::convert::From<&str> for StatusType {
 impl std::str::FromStr for StatusType {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(StatusType::from(s))
     }
 }
@@ -177,15 +177,6 @@ impl StatusType {
 impl AsRef<str> for StatusType {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for StatusType {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -957,7 +948,7 @@ impl std::convert::From<&str> for PermissionsBoundaryAttachmentType {
 impl std::str::FromStr for PermissionsBoundaryAttachmentType {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(PermissionsBoundaryAttachmentType::from(s))
     }
 }
@@ -972,15 +963,6 @@ impl PermissionsBoundaryAttachmentType {
 impl AsRef<str> for PermissionsBoundaryAttachmentType {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for PermissionsBoundaryAttachmentType {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -1529,7 +1511,7 @@ impl std::convert::From<&str> for PolicyEvaluationDecisionType {
 impl std::str::FromStr for PolicyEvaluationDecisionType {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(PolicyEvaluationDecisionType::from(s))
     }
 }
@@ -1546,15 +1528,6 @@ impl PolicyEvaluationDecisionType {
 impl AsRef<str> for PolicyEvaluationDecisionType {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for PolicyEvaluationDecisionType {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -1768,7 +1741,7 @@ impl std::convert::From<&str> for PolicySourceType {
 impl std::str::FromStr for PolicySourceType {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(PolicySourceType::from(s))
     }
 }
@@ -1789,15 +1762,6 @@ impl PolicySourceType {
 impl AsRef<str> for PolicySourceType {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for PolicySourceType {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -1993,7 +1957,7 @@ impl std::convert::From<&str> for ContextKeyTypeEnum {
 impl std::str::FromStr for ContextKeyTypeEnum {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(ContextKeyTypeEnum::from(s))
     }
 }
@@ -2019,15 +1983,6 @@ impl ContextKeyTypeEnum {
 impl AsRef<str> for ContextKeyTypeEnum {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for ContextKeyTypeEnum {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -2059,7 +2014,7 @@ impl std::convert::From<&str> for GlobalEndpointTokenVersion {
 impl std::str::FromStr for GlobalEndpointTokenVersion {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(GlobalEndpointTokenVersion::from(s))
     }
 }
@@ -2075,15 +2030,6 @@ impl GlobalEndpointTokenVersion {
 impl AsRef<str> for GlobalEndpointTokenVersion {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for GlobalEndpointTokenVersion {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -2249,7 +2195,7 @@ impl ServiceSpecificCredential {
 /// <p>Contains information about a virtual MFA device.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct VirtualMFADevice {
+pub struct VirtualMfaDevice {
     /// <p>The serial number associated with <code>VirtualMFADevice</code>.</p>
     pub serial_number: std::option::Option<std::string::String>,
     /// <p> The base32 seed defined as specified in <a href="https://tools.ietf.org/html/rfc3548.txt">RFC3548</a>. The <code>Base32StringSeed</code> is base64-encoded. </p>
@@ -2269,9 +2215,9 @@ pub struct VirtualMFADevice {
     /// <i>IAM User Guide</i>.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
-impl std::fmt::Debug for VirtualMFADevice {
+impl std::fmt::Debug for VirtualMfaDevice {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VirtualMFADevice");
+        let mut formatter = f.debug_struct("VirtualMfaDevice");
         formatter.field("serial_number", &self.serial_number);
         formatter.field("base32_string_seed", &"*** Sensitive Data Redacted ***");
         formatter.field("qr_code_png", &"*** Sensitive Data Redacted ***");
@@ -2281,9 +2227,9 @@ impl std::fmt::Debug for VirtualMFADevice {
         formatter.finish()
     }
 }
-/// See [`VirtualMFADevice`](crate::model::VirtualMFADevice)
+/// See [`VirtualMfaDevice`](crate::model::VirtualMfaDevice)
 pub mod virtual_mfa_device {
-    /// A builder for [`VirtualMFADevice`](crate::model::VirtualMFADevice)
+    /// A builder for [`VirtualMfaDevice`](crate::model::VirtualMfaDevice)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -2367,9 +2313,9 @@ pub mod virtual_mfa_device {
             self.tags = input;
             self
         }
-        /// Consumes the builder and constructs a [`VirtualMFADevice`](crate::model::VirtualMFADevice)
-        pub fn build(self) -> crate::model::VirtualMFADevice {
-            crate::model::VirtualMFADevice {
+        /// Consumes the builder and constructs a [`VirtualMfaDevice`](crate::model::VirtualMfaDevice)
+        pub fn build(self) -> crate::model::VirtualMfaDevice {
+            crate::model::VirtualMfaDevice {
                 serial_number: self.serial_number,
                 base32_string_seed: self.base32_string_seed,
                 qr_code_png: self.qr_code_png,
@@ -2380,8 +2326,8 @@ pub mod virtual_mfa_device {
         }
     }
 }
-impl VirtualMFADevice {
-    /// Creates a new builder-style object to manufacture [`VirtualMFADevice`](crate::model::VirtualMFADevice)
+impl VirtualMfaDevice {
+    /// Creates a new builder-style object to manufacture [`VirtualMfaDevice`](crate::model::VirtualMfaDevice)
     pub fn builder() -> crate::model::virtual_mfa_device::Builder {
         crate::model::virtual_mfa_device::Builder::default()
     }
@@ -2652,7 +2598,7 @@ impl std::convert::From<&str> for AssignmentStatusType {
 impl std::str::FromStr for AssignmentStatusType {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(AssignmentStatusType::from(s))
     }
 }
@@ -2671,15 +2617,6 @@ impl AsRef<str> for AssignmentStatusType {
         self.as_str()
     }
 }
-impl<'de> serde::Deserialize<'de> for AssignmentStatusType {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
-    }
-}
 
 /// <p>Contains information about an SSH public key, without the key's body or
 /// fingerprint.</p>
@@ -2687,7 +2624,7 @@ impl<'de> serde::Deserialize<'de> for AssignmentStatusType {
 /// operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct SSHPublicKeyMetadata {
+pub struct SshPublicKeyMetadata {
     /// <p>The name of the IAM user associated with the SSH public key.</p>
     pub user_name: std::option::Option<std::string::String>,
     /// <p>The unique identifier for the SSH public key.</p>
@@ -2700,9 +2637,9 @@ pub struct SSHPublicKeyMetadata {
     /// format</a>, when the SSH public key was uploaded.</p>
     pub upload_date: std::option::Option<smithy_types::Instant>,
 }
-impl std::fmt::Debug for SSHPublicKeyMetadata {
+impl std::fmt::Debug for SshPublicKeyMetadata {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SSHPublicKeyMetadata");
+        let mut formatter = f.debug_struct("SshPublicKeyMetadata");
         formatter.field("user_name", &self.user_name);
         formatter.field("ssh_public_key_id", &self.ssh_public_key_id);
         formatter.field("status", &self.status);
@@ -2710,9 +2647,9 @@ impl std::fmt::Debug for SSHPublicKeyMetadata {
         formatter.finish()
     }
 }
-/// See [`SSHPublicKeyMetadata`](crate::model::SSHPublicKeyMetadata)
+/// See [`SshPublicKeyMetadata`](crate::model::SshPublicKeyMetadata)
 pub mod ssh_public_key_metadata {
-    /// A builder for [`SSHPublicKeyMetadata`](crate::model::SSHPublicKeyMetadata)
+    /// A builder for [`SshPublicKeyMetadata`](crate::model::SshPublicKeyMetadata)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -2767,9 +2704,9 @@ pub mod ssh_public_key_metadata {
             self.upload_date = input;
             self
         }
-        /// Consumes the builder and constructs a [`SSHPublicKeyMetadata`](crate::model::SSHPublicKeyMetadata)
-        pub fn build(self) -> crate::model::SSHPublicKeyMetadata {
-            crate::model::SSHPublicKeyMetadata {
+        /// Consumes the builder and constructs a [`SshPublicKeyMetadata`](crate::model::SshPublicKeyMetadata)
+        pub fn build(self) -> crate::model::SshPublicKeyMetadata {
+            crate::model::SshPublicKeyMetadata {
                 user_name: self.user_name,
                 ssh_public_key_id: self.ssh_public_key_id,
                 status: self.status,
@@ -2778,8 +2715,8 @@ pub mod ssh_public_key_metadata {
         }
     }
 }
-impl SSHPublicKeyMetadata {
-    /// Creates a new builder-style object to manufacture [`SSHPublicKeyMetadata`](crate::model::SSHPublicKeyMetadata)
+impl SshPublicKeyMetadata {
+    /// Creates a new builder-style object to manufacture [`SshPublicKeyMetadata`](crate::model::SshPublicKeyMetadata)
     pub fn builder() -> crate::model::ssh_public_key_metadata::Builder {
         crate::model::ssh_public_key_metadata::Builder::default()
     }
@@ -2924,7 +2861,7 @@ impl ServiceSpecificCredentialMetadata {
 /// <p>Contains the list of SAML providers for this account.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct SAMLProviderListEntry {
+pub struct SamlProviderListEntry {
     /// <p>The Amazon Resource Name (ARN) of the SAML provider.</p>
     pub arn: std::option::Option<std::string::String>,
     /// <p>The expiration date and time for the SAML provider.</p>
@@ -2932,18 +2869,18 @@ pub struct SAMLProviderListEntry {
     /// <p>The date and time when the SAML provider was created.</p>
     pub create_date: std::option::Option<smithy_types::Instant>,
 }
-impl std::fmt::Debug for SAMLProviderListEntry {
+impl std::fmt::Debug for SamlProviderListEntry {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SAMLProviderListEntry");
+        let mut formatter = f.debug_struct("SamlProviderListEntry");
         formatter.field("arn", &self.arn);
         formatter.field("valid_until", &self.valid_until);
         formatter.field("create_date", &self.create_date);
         formatter.finish()
     }
 }
-/// See [`SAMLProviderListEntry`](crate::model::SAMLProviderListEntry)
+/// See [`SamlProviderListEntry`](crate::model::SamlProviderListEntry)
 pub mod saml_provider_list_entry {
-    /// A builder for [`SAMLProviderListEntry`](crate::model::SAMLProviderListEntry)
+    /// A builder for [`SamlProviderListEntry`](crate::model::SamlProviderListEntry)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -2985,9 +2922,9 @@ pub mod saml_provider_list_entry {
             self.create_date = input;
             self
         }
-        /// Consumes the builder and constructs a [`SAMLProviderListEntry`](crate::model::SAMLProviderListEntry)
-        pub fn build(self) -> crate::model::SAMLProviderListEntry {
-            crate::model::SAMLProviderListEntry {
+        /// Consumes the builder and constructs a [`SamlProviderListEntry`](crate::model::SamlProviderListEntry)
+        pub fn build(self) -> crate::model::SamlProviderListEntry {
+            crate::model::SamlProviderListEntry {
                 arn: self.arn,
                 valid_until: self.valid_until,
                 create_date: self.create_date,
@@ -2995,8 +2932,8 @@ pub mod saml_provider_list_entry {
         }
     }
 }
-impl SAMLProviderListEntry {
-    /// Creates a new builder-style object to manufacture [`SAMLProviderListEntry`](crate::model::SAMLProviderListEntry)
+impl SamlProviderListEntry {
+    /// Creates a new builder-style object to manufacture [`SamlProviderListEntry`](crate::model::SamlProviderListEntry)
     pub fn builder() -> crate::model::saml_provider_list_entry::Builder {
         crate::model::saml_provider_list_entry::Builder::default()
     }
@@ -3365,7 +3302,7 @@ impl std::convert::From<&str> for PolicyOwnerEntityType {
 impl std::str::FromStr for PolicyOwnerEntityType {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(PolicyOwnerEntityType::from(s))
     }
 }
@@ -3382,15 +3319,6 @@ impl PolicyOwnerEntityType {
 impl AsRef<str> for PolicyOwnerEntityType {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for PolicyOwnerEntityType {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -3422,7 +3350,7 @@ impl std::convert::From<&str> for PolicyType {
 impl std::str::FromStr for PolicyType {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(PolicyType::from(s))
     }
 }
@@ -3438,15 +3366,6 @@ impl PolicyType {
 impl AsRef<str> for PolicyType {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for PolicyType {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -3739,7 +3658,7 @@ impl std::convert::From<&str> for PolicyUsageType {
 impl std::str::FromStr for PolicyUsageType {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(PolicyUsageType::from(s))
     }
 }
@@ -3755,15 +3674,6 @@ impl PolicyUsageType {
 impl AsRef<str> for PolicyUsageType {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for PolicyUsageType {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -3797,7 +3707,7 @@ impl std::convert::From<&str> for PolicyScopeType {
 impl std::str::FromStr for PolicyScopeType {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(PolicyScopeType::from(s))
     }
 }
@@ -3816,35 +3726,26 @@ impl AsRef<str> for PolicyScopeType {
         self.as_str()
     }
 }
-impl<'de> serde::Deserialize<'de> for PolicyScopeType {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
-    }
-}
 
 /// <p>Contains the Amazon Resource Name (ARN) for an IAM OpenID Connect provider.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct OpenIDConnectProviderListEntry {
+pub struct OpenIdConnectProviderListEntry {
     /// <p>The Amazon Resource Name (ARN). ARNs are unique identifiers for AWS resources.</p>
     /// <p>For more information about ARNs, go to <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in
     /// the <i>AWS General Reference</i>. </p>
     pub arn: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for OpenIDConnectProviderListEntry {
+impl std::fmt::Debug for OpenIdConnectProviderListEntry {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OpenIDConnectProviderListEntry");
+        let mut formatter = f.debug_struct("OpenIdConnectProviderListEntry");
         formatter.field("arn", &self.arn);
         formatter.finish()
     }
 }
-/// See [`OpenIDConnectProviderListEntry`](crate::model::OpenIDConnectProviderListEntry)
+/// See [`OpenIdConnectProviderListEntry`](crate::model::OpenIdConnectProviderListEntry)
 pub mod open_id_connect_provider_list_entry {
-    /// A builder for [`OpenIDConnectProviderListEntry`](crate::model::OpenIDConnectProviderListEntry)
+    /// A builder for [`OpenIdConnectProviderListEntry`](crate::model::OpenIdConnectProviderListEntry)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -3862,14 +3763,14 @@ pub mod open_id_connect_provider_list_entry {
             self.arn = input;
             self
         }
-        /// Consumes the builder and constructs a [`OpenIDConnectProviderListEntry`](crate::model::OpenIDConnectProviderListEntry)
-        pub fn build(self) -> crate::model::OpenIDConnectProviderListEntry {
-            crate::model::OpenIDConnectProviderListEntry { arn: self.arn }
+        /// Consumes the builder and constructs a [`OpenIdConnectProviderListEntry`](crate::model::OpenIdConnectProviderListEntry)
+        pub fn build(self) -> crate::model::OpenIdConnectProviderListEntry {
+            crate::model::OpenIdConnectProviderListEntry { arn: self.arn }
         }
     }
 }
-impl OpenIDConnectProviderListEntry {
-    /// Creates a new builder-style object to manufacture [`OpenIDConnectProviderListEntry`](crate::model::OpenIDConnectProviderListEntry)
+impl OpenIdConnectProviderListEntry {
+    /// Creates a new builder-style object to manufacture [`OpenIdConnectProviderListEntry`](crate::model::OpenIdConnectProviderListEntry)
     pub fn builder() -> crate::model::open_id_connect_provider_list_entry::Builder {
         crate::model::open_id_connect_provider_list_entry::Builder::default()
     }
@@ -3880,7 +3781,7 @@ impl OpenIDConnectProviderListEntry {
 /// operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct MFADevice {
+pub struct MfaDevice {
     /// <p>The user with whom the MFA device is associated.</p>
     pub user_name: std::option::Option<std::string::String>,
     /// <p>The serial number that uniquely identifies the MFA device. For virtual MFA devices, the
@@ -3889,18 +3790,18 @@ pub struct MFADevice {
     /// <p>The date when the MFA device was enabled for the user.</p>
     pub enable_date: std::option::Option<smithy_types::Instant>,
 }
-impl std::fmt::Debug for MFADevice {
+impl std::fmt::Debug for MfaDevice {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MFADevice");
+        let mut formatter = f.debug_struct("MfaDevice");
         formatter.field("user_name", &self.user_name);
         formatter.field("serial_number", &self.serial_number);
         formatter.field("enable_date", &self.enable_date);
         formatter.finish()
     }
 }
-/// See [`MFADevice`](crate::model::MFADevice)
+/// See [`MfaDevice`](crate::model::MfaDevice)
 pub mod mfa_device {
-    /// A builder for [`MFADevice`](crate::model::MFADevice)
+    /// A builder for [`MfaDevice`](crate::model::MfaDevice)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -3943,9 +3844,9 @@ pub mod mfa_device {
             self.enable_date = input;
             self
         }
-        /// Consumes the builder and constructs a [`MFADevice`](crate::model::MFADevice)
-        pub fn build(self) -> crate::model::MFADevice {
-            crate::model::MFADevice {
+        /// Consumes the builder and constructs a [`MfaDevice`](crate::model::MfaDevice)
+        pub fn build(self) -> crate::model::MfaDevice {
+            crate::model::MfaDevice {
                 user_name: self.user_name,
                 serial_number: self.serial_number,
                 enable_date: self.enable_date,
@@ -3953,8 +3854,8 @@ pub mod mfa_device {
         }
     }
 }
-impl MFADevice {
-    /// Creates a new builder-style object to manufacture [`MFADevice`](crate::model::MFADevice)
+impl MfaDevice {
+    /// Creates a new builder-style object to manufacture [`MfaDevice`](crate::model::MfaDevice)
     pub fn builder() -> crate::model::mfa_device::Builder {
         crate::model::mfa_device::Builder::default()
     }
@@ -4514,7 +4415,7 @@ impl std::convert::From<&str> for EntityType {
 impl std::str::FromStr for EntityType {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(EntityType::from(s))
     }
 }
@@ -4533,15 +4434,6 @@ impl EntityType {
 impl AsRef<str> for EntityType {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for EntityType {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -4741,7 +4633,7 @@ impl std::convert::From<&str> for EncodingType {
 impl std::str::FromStr for EncodingType {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(EncodingType::from(s))
     }
 }
@@ -4757,15 +4649,6 @@ impl EncodingType {
 impl AsRef<str> for EncodingType {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for EncodingType {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -4939,7 +4822,7 @@ impl std::convert::From<&str> for DeletionTaskStatusType {
 impl std::str::FromStr for DeletionTaskStatusType {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(DeletionTaskStatusType::from(s))
     }
 }
@@ -4957,15 +4840,6 @@ impl DeletionTaskStatusType {
 impl AsRef<str> for DeletionTaskStatusType {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for DeletionTaskStatusType {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -5253,7 +5127,7 @@ impl std::convert::From<&str> for JobStatusType {
 impl std::str::FromStr for JobStatusType {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(JobStatusType::from(s))
     }
 }
@@ -5270,15 +5144,6 @@ impl JobStatusType {
 impl AsRef<str> for JobStatusType {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for JobStatusType {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -5629,7 +5494,7 @@ impl std::convert::From<&str> for AccessAdvisorUsageGranularityType {
 impl std::str::FromStr for AccessAdvisorUsageGranularityType {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(AccessAdvisorUsageGranularityType::from(s))
     }
 }
@@ -5645,15 +5510,6 @@ impl AccessAdvisorUsageGranularityType {
 impl AsRef<str> for AccessAdvisorUsageGranularityType {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for AccessAdvisorUsageGranularityType {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -5965,7 +5821,7 @@ impl std::convert::From<&str> for SortKeyType {
 impl std::str::FromStr for SortKeyType {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(SortKeyType::from(s))
     }
 }
@@ -5983,15 +5839,6 @@ impl SortKeyType {
 impl AsRef<str> for SortKeyType {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for SortKeyType {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -6102,7 +5949,7 @@ impl std::convert::From<&str> for ReportFormatType {
 impl std::str::FromStr for ReportFormatType {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(ReportFormatType::from(s))
     }
 }
@@ -6117,15 +5964,6 @@ impl ReportFormatType {
 impl AsRef<str> for ReportFormatType {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for ReportFormatType {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -6207,7 +6045,7 @@ impl std::convert::From<&str> for SummaryKeyType {
 impl std::str::FromStr for SummaryKeyType {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(SummaryKeyType::from(s))
     }
 }
@@ -6249,15 +6087,6 @@ impl SummaryKeyType {
 impl AsRef<str> for SummaryKeyType {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for SummaryKeyType {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -7648,7 +7477,7 @@ impl std::convert::From<&str> for ReportStateType {
 impl std::str::FromStr for ReportStateType {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(ReportStateType::from(s))
     }
 }
@@ -7665,15 +7494,6 @@ impl ReportStateType {
 impl AsRef<str> for ReportStateType {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for ReportStateType {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 

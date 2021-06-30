@@ -3,6 +3,7 @@
 #![allow(clippy::large_enum_variant)]
 #![allow(clippy::wrong_self_convention)]
 #![allow(clippy::should_implement_trait)]
+#![allow(clippy::blacklisted_name)]
 //! <fullname>AWS CloudFormation</fullname>
 //! <p>AWS CloudFormation allows you to create and manage AWS infrastructure deployments
 //! predictably and repeatedly. You can use AWS CloudFormation to leverage AWS products, such

@@ -2,23 +2,23 @@
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum Error {
-    ForbiddenError(crate::error::ForbiddenError),
-    InternalServerErrorError(crate::error::InternalServerErrorError),
-    NotFoundError(crate::error::NotFoundError),
-    ServiceUnavailableError(crate::error::ServiceUnavailableError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
-    UnprocessableEntityError(crate::error::UnprocessableEntityError),
+    ForbiddenException(crate::error::ForbiddenException),
+    InternalServerErrorException(crate::error::InternalServerErrorException),
+    NotFoundException(crate::error::NotFoundException),
+    ServiceUnavailableException(crate::error::ServiceUnavailableException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
+    UnprocessableEntityException(crate::error::UnprocessableEntityException),
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match self {
-            Error::ForbiddenError(inner) => inner.fmt(f),
-            Error::InternalServerErrorError(inner) => inner.fmt(f),
-            Error::NotFoundError(inner) => inner.fmt(f),
-            Error::ServiceUnavailableError(inner) => inner.fmt(f),
-            Error::TooManyRequestsError(inner) => inner.fmt(f),
-            Error::UnprocessableEntityError(inner) => inner.fmt(f),
+            Error::ForbiddenException(inner) => inner.fmt(f),
+            Error::InternalServerErrorException(inner) => inner.fmt(f),
+            Error::NotFoundException(inner) => inner.fmt(f),
+            Error::ServiceUnavailableException(inner) => inner.fmt(f),
+            Error::TooManyRequestsException(inner) => inner.fmt(f),
+            Error::UnprocessableEntityException(inner) => inner.fmt(f),
             Error::Unhandled(inner) => inner.fmt(f),
         }
     }
@@ -27,23 +27,23 @@ impl From<smithy_http::result::SdkError<crate::error::ConfigureLogsError>> for E
     fn from(err: smithy_http::result::SdkError<crate::error::ConfigureLogsError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::ConfigureLogsErrorKind::ForbiddenError(inner) => {
-                    Error::ForbiddenError(inner)
+                crate::error::ConfigureLogsErrorKind::ForbiddenException(inner) => {
+                    Error::ForbiddenException(inner)
                 }
-                crate::error::ConfigureLogsErrorKind::InternalServerErrorError(inner) => {
-                    Error::InternalServerErrorError(inner)
+                crate::error::ConfigureLogsErrorKind::InternalServerErrorException(inner) => {
+                    Error::InternalServerErrorException(inner)
                 }
-                crate::error::ConfigureLogsErrorKind::NotFoundError(inner) => {
-                    Error::NotFoundError(inner)
+                crate::error::ConfigureLogsErrorKind::NotFoundException(inner) => {
+                    Error::NotFoundException(inner)
                 }
-                crate::error::ConfigureLogsErrorKind::ServiceUnavailableError(inner) => {
-                    Error::ServiceUnavailableError(inner)
+                crate::error::ConfigureLogsErrorKind::ServiceUnavailableException(inner) => {
+                    Error::ServiceUnavailableException(inner)
                 }
-                crate::error::ConfigureLogsErrorKind::TooManyRequestsError(inner) => {
-                    Error::TooManyRequestsError(inner)
+                crate::error::ConfigureLogsErrorKind::TooManyRequestsException(inner) => {
+                    Error::TooManyRequestsException(inner)
                 }
-                crate::error::ConfigureLogsErrorKind::UnprocessableEntityError(inner) => {
-                    Error::UnprocessableEntityError(inner)
+                crate::error::ConfigureLogsErrorKind::UnprocessableEntityException(inner) => {
+                    Error::UnprocessableEntityException(inner)
                 }
                 crate::error::ConfigureLogsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
@@ -55,23 +55,23 @@ impl From<smithy_http::result::SdkError<crate::error::CreateChannelError>> for E
     fn from(err: smithy_http::result::SdkError<crate::error::CreateChannelError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::CreateChannelErrorKind::ForbiddenError(inner) => {
-                    Error::ForbiddenError(inner)
+                crate::error::CreateChannelErrorKind::ForbiddenException(inner) => {
+                    Error::ForbiddenException(inner)
                 }
-                crate::error::CreateChannelErrorKind::InternalServerErrorError(inner) => {
-                    Error::InternalServerErrorError(inner)
+                crate::error::CreateChannelErrorKind::InternalServerErrorException(inner) => {
+                    Error::InternalServerErrorException(inner)
                 }
-                crate::error::CreateChannelErrorKind::NotFoundError(inner) => {
-                    Error::NotFoundError(inner)
+                crate::error::CreateChannelErrorKind::NotFoundException(inner) => {
+                    Error::NotFoundException(inner)
                 }
-                crate::error::CreateChannelErrorKind::ServiceUnavailableError(inner) => {
-                    Error::ServiceUnavailableError(inner)
+                crate::error::CreateChannelErrorKind::ServiceUnavailableException(inner) => {
+                    Error::ServiceUnavailableException(inner)
                 }
-                crate::error::CreateChannelErrorKind::TooManyRequestsError(inner) => {
-                    Error::TooManyRequestsError(inner)
+                crate::error::CreateChannelErrorKind::TooManyRequestsException(inner) => {
+                    Error::TooManyRequestsException(inner)
                 }
-                crate::error::CreateChannelErrorKind::UnprocessableEntityError(inner) => {
-                    Error::UnprocessableEntityError(inner)
+                crate::error::CreateChannelErrorKind::UnprocessableEntityException(inner) => {
+                    Error::UnprocessableEntityException(inner)
                 }
                 crate::error::CreateChannelErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
@@ -83,23 +83,23 @@ impl From<smithy_http::result::SdkError<crate::error::CreateHarvestJobError>> fo
     fn from(err: smithy_http::result::SdkError<crate::error::CreateHarvestJobError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::CreateHarvestJobErrorKind::ForbiddenError(inner) => {
-                    Error::ForbiddenError(inner)
+                crate::error::CreateHarvestJobErrorKind::ForbiddenException(inner) => {
+                    Error::ForbiddenException(inner)
                 }
-                crate::error::CreateHarvestJobErrorKind::InternalServerErrorError(inner) => {
-                    Error::InternalServerErrorError(inner)
+                crate::error::CreateHarvestJobErrorKind::InternalServerErrorException(inner) => {
+                    Error::InternalServerErrorException(inner)
                 }
-                crate::error::CreateHarvestJobErrorKind::NotFoundError(inner) => {
-                    Error::NotFoundError(inner)
+                crate::error::CreateHarvestJobErrorKind::NotFoundException(inner) => {
+                    Error::NotFoundException(inner)
                 }
-                crate::error::CreateHarvestJobErrorKind::ServiceUnavailableError(inner) => {
-                    Error::ServiceUnavailableError(inner)
+                crate::error::CreateHarvestJobErrorKind::ServiceUnavailableException(inner) => {
+                    Error::ServiceUnavailableException(inner)
                 }
-                crate::error::CreateHarvestJobErrorKind::TooManyRequestsError(inner) => {
-                    Error::TooManyRequestsError(inner)
+                crate::error::CreateHarvestJobErrorKind::TooManyRequestsException(inner) => {
+                    Error::TooManyRequestsException(inner)
                 }
-                crate::error::CreateHarvestJobErrorKind::UnprocessableEntityError(inner) => {
-                    Error::UnprocessableEntityError(inner)
+                crate::error::CreateHarvestJobErrorKind::UnprocessableEntityException(inner) => {
+                    Error::UnprocessableEntityException(inner)
                 }
                 crate::error::CreateHarvestJobErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
@@ -113,24 +113,24 @@ impl From<smithy_http::result::SdkError<crate::error::CreateOriginEndpointError>
     fn from(err: smithy_http::result::SdkError<crate::error::CreateOriginEndpointError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::CreateOriginEndpointErrorKind::ForbiddenError(inner) => {
-                    Error::ForbiddenError(inner)
+                crate::error::CreateOriginEndpointErrorKind::ForbiddenException(inner) => {
+                    Error::ForbiddenException(inner)
                 }
-                crate::error::CreateOriginEndpointErrorKind::InternalServerErrorError(inner) => {
-                    Error::InternalServerErrorError(inner)
+                crate::error::CreateOriginEndpointErrorKind::InternalServerErrorException(
+                    inner,
+                ) => Error::InternalServerErrorException(inner),
+                crate::error::CreateOriginEndpointErrorKind::NotFoundException(inner) => {
+                    Error::NotFoundException(inner)
                 }
-                crate::error::CreateOriginEndpointErrorKind::NotFoundError(inner) => {
-                    Error::NotFoundError(inner)
+                crate::error::CreateOriginEndpointErrorKind::ServiceUnavailableException(inner) => {
+                    Error::ServiceUnavailableException(inner)
                 }
-                crate::error::CreateOriginEndpointErrorKind::ServiceUnavailableError(inner) => {
-                    Error::ServiceUnavailableError(inner)
+                crate::error::CreateOriginEndpointErrorKind::TooManyRequestsException(inner) => {
+                    Error::TooManyRequestsException(inner)
                 }
-                crate::error::CreateOriginEndpointErrorKind::TooManyRequestsError(inner) => {
-                    Error::TooManyRequestsError(inner)
-                }
-                crate::error::CreateOriginEndpointErrorKind::UnprocessableEntityError(inner) => {
-                    Error::UnprocessableEntityError(inner)
-                }
+                crate::error::CreateOriginEndpointErrorKind::UnprocessableEntityException(
+                    inner,
+                ) => Error::UnprocessableEntityException(inner),
                 crate::error::CreateOriginEndpointErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
                 }
@@ -143,23 +143,23 @@ impl From<smithy_http::result::SdkError<crate::error::DeleteChannelError>> for E
     fn from(err: smithy_http::result::SdkError<crate::error::DeleteChannelError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::DeleteChannelErrorKind::ForbiddenError(inner) => {
-                    Error::ForbiddenError(inner)
+                crate::error::DeleteChannelErrorKind::ForbiddenException(inner) => {
+                    Error::ForbiddenException(inner)
                 }
-                crate::error::DeleteChannelErrorKind::InternalServerErrorError(inner) => {
-                    Error::InternalServerErrorError(inner)
+                crate::error::DeleteChannelErrorKind::InternalServerErrorException(inner) => {
+                    Error::InternalServerErrorException(inner)
                 }
-                crate::error::DeleteChannelErrorKind::NotFoundError(inner) => {
-                    Error::NotFoundError(inner)
+                crate::error::DeleteChannelErrorKind::NotFoundException(inner) => {
+                    Error::NotFoundException(inner)
                 }
-                crate::error::DeleteChannelErrorKind::ServiceUnavailableError(inner) => {
-                    Error::ServiceUnavailableError(inner)
+                crate::error::DeleteChannelErrorKind::ServiceUnavailableException(inner) => {
+                    Error::ServiceUnavailableException(inner)
                 }
-                crate::error::DeleteChannelErrorKind::TooManyRequestsError(inner) => {
-                    Error::TooManyRequestsError(inner)
+                crate::error::DeleteChannelErrorKind::TooManyRequestsException(inner) => {
+                    Error::TooManyRequestsException(inner)
                 }
-                crate::error::DeleteChannelErrorKind::UnprocessableEntityError(inner) => {
-                    Error::UnprocessableEntityError(inner)
+                crate::error::DeleteChannelErrorKind::UnprocessableEntityException(inner) => {
+                    Error::UnprocessableEntityException(inner)
                 }
                 crate::error::DeleteChannelErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
@@ -171,24 +171,24 @@ impl From<smithy_http::result::SdkError<crate::error::DeleteOriginEndpointError>
     fn from(err: smithy_http::result::SdkError<crate::error::DeleteOriginEndpointError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::DeleteOriginEndpointErrorKind::ForbiddenError(inner) => {
-                    Error::ForbiddenError(inner)
+                crate::error::DeleteOriginEndpointErrorKind::ForbiddenException(inner) => {
+                    Error::ForbiddenException(inner)
                 }
-                crate::error::DeleteOriginEndpointErrorKind::InternalServerErrorError(inner) => {
-                    Error::InternalServerErrorError(inner)
+                crate::error::DeleteOriginEndpointErrorKind::InternalServerErrorException(
+                    inner,
+                ) => Error::InternalServerErrorException(inner),
+                crate::error::DeleteOriginEndpointErrorKind::NotFoundException(inner) => {
+                    Error::NotFoundException(inner)
                 }
-                crate::error::DeleteOriginEndpointErrorKind::NotFoundError(inner) => {
-                    Error::NotFoundError(inner)
+                crate::error::DeleteOriginEndpointErrorKind::ServiceUnavailableException(inner) => {
+                    Error::ServiceUnavailableException(inner)
                 }
-                crate::error::DeleteOriginEndpointErrorKind::ServiceUnavailableError(inner) => {
-                    Error::ServiceUnavailableError(inner)
+                crate::error::DeleteOriginEndpointErrorKind::TooManyRequestsException(inner) => {
+                    Error::TooManyRequestsException(inner)
                 }
-                crate::error::DeleteOriginEndpointErrorKind::TooManyRequestsError(inner) => {
-                    Error::TooManyRequestsError(inner)
-                }
-                crate::error::DeleteOriginEndpointErrorKind::UnprocessableEntityError(inner) => {
-                    Error::UnprocessableEntityError(inner)
-                }
+                crate::error::DeleteOriginEndpointErrorKind::UnprocessableEntityException(
+                    inner,
+                ) => Error::UnprocessableEntityException(inner),
                 crate::error::DeleteOriginEndpointErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
                 }
@@ -201,23 +201,23 @@ impl From<smithy_http::result::SdkError<crate::error::DescribeChannelError>> for
     fn from(err: smithy_http::result::SdkError<crate::error::DescribeChannelError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::DescribeChannelErrorKind::ForbiddenError(inner) => {
-                    Error::ForbiddenError(inner)
+                crate::error::DescribeChannelErrorKind::ForbiddenException(inner) => {
+                    Error::ForbiddenException(inner)
                 }
-                crate::error::DescribeChannelErrorKind::InternalServerErrorError(inner) => {
-                    Error::InternalServerErrorError(inner)
+                crate::error::DescribeChannelErrorKind::InternalServerErrorException(inner) => {
+                    Error::InternalServerErrorException(inner)
                 }
-                crate::error::DescribeChannelErrorKind::NotFoundError(inner) => {
-                    Error::NotFoundError(inner)
+                crate::error::DescribeChannelErrorKind::NotFoundException(inner) => {
+                    Error::NotFoundException(inner)
                 }
-                crate::error::DescribeChannelErrorKind::ServiceUnavailableError(inner) => {
-                    Error::ServiceUnavailableError(inner)
+                crate::error::DescribeChannelErrorKind::ServiceUnavailableException(inner) => {
+                    Error::ServiceUnavailableException(inner)
                 }
-                crate::error::DescribeChannelErrorKind::TooManyRequestsError(inner) => {
-                    Error::TooManyRequestsError(inner)
+                crate::error::DescribeChannelErrorKind::TooManyRequestsException(inner) => {
+                    Error::TooManyRequestsException(inner)
                 }
-                crate::error::DescribeChannelErrorKind::UnprocessableEntityError(inner) => {
-                    Error::UnprocessableEntityError(inner)
+                crate::error::DescribeChannelErrorKind::UnprocessableEntityException(inner) => {
+                    Error::UnprocessableEntityException(inner)
                 }
                 crate::error::DescribeChannelErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
@@ -229,23 +229,23 @@ impl From<smithy_http::result::SdkError<crate::error::DescribeHarvestJobError>> 
     fn from(err: smithy_http::result::SdkError<crate::error::DescribeHarvestJobError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::DescribeHarvestJobErrorKind::ForbiddenError(inner) => {
-                    Error::ForbiddenError(inner)
+                crate::error::DescribeHarvestJobErrorKind::ForbiddenException(inner) => {
+                    Error::ForbiddenException(inner)
                 }
-                crate::error::DescribeHarvestJobErrorKind::InternalServerErrorError(inner) => {
-                    Error::InternalServerErrorError(inner)
+                crate::error::DescribeHarvestJobErrorKind::InternalServerErrorException(inner) => {
+                    Error::InternalServerErrorException(inner)
                 }
-                crate::error::DescribeHarvestJobErrorKind::NotFoundError(inner) => {
-                    Error::NotFoundError(inner)
+                crate::error::DescribeHarvestJobErrorKind::NotFoundException(inner) => {
+                    Error::NotFoundException(inner)
                 }
-                crate::error::DescribeHarvestJobErrorKind::ServiceUnavailableError(inner) => {
-                    Error::ServiceUnavailableError(inner)
+                crate::error::DescribeHarvestJobErrorKind::ServiceUnavailableException(inner) => {
+                    Error::ServiceUnavailableException(inner)
                 }
-                crate::error::DescribeHarvestJobErrorKind::TooManyRequestsError(inner) => {
-                    Error::TooManyRequestsError(inner)
+                crate::error::DescribeHarvestJobErrorKind::TooManyRequestsException(inner) => {
+                    Error::TooManyRequestsException(inner)
                 }
-                crate::error::DescribeHarvestJobErrorKind::UnprocessableEntityError(inner) => {
-                    Error::UnprocessableEntityError(inner)
+                crate::error::DescribeHarvestJobErrorKind::UnprocessableEntityException(inner) => {
+                    Error::UnprocessableEntityException(inner)
                 }
                 crate::error::DescribeHarvestJobErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
@@ -259,24 +259,24 @@ impl From<smithy_http::result::SdkError<crate::error::DescribeOriginEndpointErro
     fn from(err: smithy_http::result::SdkError<crate::error::DescribeOriginEndpointError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::DescribeOriginEndpointErrorKind::ForbiddenError(inner) => {
-                    Error::ForbiddenError(inner)
+                crate::error::DescribeOriginEndpointErrorKind::ForbiddenException(inner) => {
+                    Error::ForbiddenException(inner)
                 }
-                crate::error::DescribeOriginEndpointErrorKind::InternalServerErrorError(inner) => {
-                    Error::InternalServerErrorError(inner)
+                crate::error::DescribeOriginEndpointErrorKind::InternalServerErrorException(
+                    inner,
+                ) => Error::InternalServerErrorException(inner),
+                crate::error::DescribeOriginEndpointErrorKind::NotFoundException(inner) => {
+                    Error::NotFoundException(inner)
                 }
-                crate::error::DescribeOriginEndpointErrorKind::NotFoundError(inner) => {
-                    Error::NotFoundError(inner)
+                crate::error::DescribeOriginEndpointErrorKind::ServiceUnavailableException(
+                    inner,
+                ) => Error::ServiceUnavailableException(inner),
+                crate::error::DescribeOriginEndpointErrorKind::TooManyRequestsException(inner) => {
+                    Error::TooManyRequestsException(inner)
                 }
-                crate::error::DescribeOriginEndpointErrorKind::ServiceUnavailableError(inner) => {
-                    Error::ServiceUnavailableError(inner)
-                }
-                crate::error::DescribeOriginEndpointErrorKind::TooManyRequestsError(inner) => {
-                    Error::TooManyRequestsError(inner)
-                }
-                crate::error::DescribeOriginEndpointErrorKind::UnprocessableEntityError(inner) => {
-                    Error::UnprocessableEntityError(inner)
-                }
+                crate::error::DescribeOriginEndpointErrorKind::UnprocessableEntityException(
+                    inner,
+                ) => Error::UnprocessableEntityException(inner),
                 crate::error::DescribeOriginEndpointErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
                 }
@@ -289,23 +289,23 @@ impl From<smithy_http::result::SdkError<crate::error::ListChannelsError>> for Er
     fn from(err: smithy_http::result::SdkError<crate::error::ListChannelsError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::ListChannelsErrorKind::ForbiddenError(inner) => {
-                    Error::ForbiddenError(inner)
+                crate::error::ListChannelsErrorKind::ForbiddenException(inner) => {
+                    Error::ForbiddenException(inner)
                 }
-                crate::error::ListChannelsErrorKind::InternalServerErrorError(inner) => {
-                    Error::InternalServerErrorError(inner)
+                crate::error::ListChannelsErrorKind::InternalServerErrorException(inner) => {
+                    Error::InternalServerErrorException(inner)
                 }
-                crate::error::ListChannelsErrorKind::NotFoundError(inner) => {
-                    Error::NotFoundError(inner)
+                crate::error::ListChannelsErrorKind::NotFoundException(inner) => {
+                    Error::NotFoundException(inner)
                 }
-                crate::error::ListChannelsErrorKind::ServiceUnavailableError(inner) => {
-                    Error::ServiceUnavailableError(inner)
+                crate::error::ListChannelsErrorKind::ServiceUnavailableException(inner) => {
+                    Error::ServiceUnavailableException(inner)
                 }
-                crate::error::ListChannelsErrorKind::TooManyRequestsError(inner) => {
-                    Error::TooManyRequestsError(inner)
+                crate::error::ListChannelsErrorKind::TooManyRequestsException(inner) => {
+                    Error::TooManyRequestsException(inner)
                 }
-                crate::error::ListChannelsErrorKind::UnprocessableEntityError(inner) => {
-                    Error::UnprocessableEntityError(inner)
+                crate::error::ListChannelsErrorKind::UnprocessableEntityException(inner) => {
+                    Error::UnprocessableEntityException(inner)
                 }
                 crate::error::ListChannelsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
@@ -317,23 +317,23 @@ impl From<smithy_http::result::SdkError<crate::error::ListHarvestJobsError>> for
     fn from(err: smithy_http::result::SdkError<crate::error::ListHarvestJobsError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::ListHarvestJobsErrorKind::ForbiddenError(inner) => {
-                    Error::ForbiddenError(inner)
+                crate::error::ListHarvestJobsErrorKind::ForbiddenException(inner) => {
+                    Error::ForbiddenException(inner)
                 }
-                crate::error::ListHarvestJobsErrorKind::InternalServerErrorError(inner) => {
-                    Error::InternalServerErrorError(inner)
+                crate::error::ListHarvestJobsErrorKind::InternalServerErrorException(inner) => {
+                    Error::InternalServerErrorException(inner)
                 }
-                crate::error::ListHarvestJobsErrorKind::NotFoundError(inner) => {
-                    Error::NotFoundError(inner)
+                crate::error::ListHarvestJobsErrorKind::NotFoundException(inner) => {
+                    Error::NotFoundException(inner)
                 }
-                crate::error::ListHarvestJobsErrorKind::ServiceUnavailableError(inner) => {
-                    Error::ServiceUnavailableError(inner)
+                crate::error::ListHarvestJobsErrorKind::ServiceUnavailableException(inner) => {
+                    Error::ServiceUnavailableException(inner)
                 }
-                crate::error::ListHarvestJobsErrorKind::TooManyRequestsError(inner) => {
-                    Error::TooManyRequestsError(inner)
+                crate::error::ListHarvestJobsErrorKind::TooManyRequestsException(inner) => {
+                    Error::TooManyRequestsException(inner)
                 }
-                crate::error::ListHarvestJobsErrorKind::UnprocessableEntityError(inner) => {
-                    Error::UnprocessableEntityError(inner)
+                crate::error::ListHarvestJobsErrorKind::UnprocessableEntityException(inner) => {
+                    Error::UnprocessableEntityException(inner)
                 }
                 crate::error::ListHarvestJobsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
@@ -345,23 +345,23 @@ impl From<smithy_http::result::SdkError<crate::error::ListOriginEndpointsError>>
     fn from(err: smithy_http::result::SdkError<crate::error::ListOriginEndpointsError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::ListOriginEndpointsErrorKind::ForbiddenError(inner) => {
-                    Error::ForbiddenError(inner)
+                crate::error::ListOriginEndpointsErrorKind::ForbiddenException(inner) => {
+                    Error::ForbiddenException(inner)
                 }
-                crate::error::ListOriginEndpointsErrorKind::InternalServerErrorError(inner) => {
-                    Error::InternalServerErrorError(inner)
+                crate::error::ListOriginEndpointsErrorKind::InternalServerErrorException(inner) => {
+                    Error::InternalServerErrorException(inner)
                 }
-                crate::error::ListOriginEndpointsErrorKind::NotFoundError(inner) => {
-                    Error::NotFoundError(inner)
+                crate::error::ListOriginEndpointsErrorKind::NotFoundException(inner) => {
+                    Error::NotFoundException(inner)
                 }
-                crate::error::ListOriginEndpointsErrorKind::ServiceUnavailableError(inner) => {
-                    Error::ServiceUnavailableError(inner)
+                crate::error::ListOriginEndpointsErrorKind::ServiceUnavailableException(inner) => {
+                    Error::ServiceUnavailableException(inner)
                 }
-                crate::error::ListOriginEndpointsErrorKind::TooManyRequestsError(inner) => {
-                    Error::TooManyRequestsError(inner)
+                crate::error::ListOriginEndpointsErrorKind::TooManyRequestsException(inner) => {
+                    Error::TooManyRequestsException(inner)
                 }
-                crate::error::ListOriginEndpointsErrorKind::UnprocessableEntityError(inner) => {
-                    Error::UnprocessableEntityError(inner)
+                crate::error::ListOriginEndpointsErrorKind::UnprocessableEntityException(inner) => {
+                    Error::UnprocessableEntityException(inner)
                 }
                 crate::error::ListOriginEndpointsErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
@@ -389,24 +389,24 @@ impl From<smithy_http::result::SdkError<crate::error::RotateChannelCredentialsEr
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::RotateChannelCredentialsErrorKind::ForbiddenError(inner) => {
-                    Error::ForbiddenError(inner)
+                crate::error::RotateChannelCredentialsErrorKind::ForbiddenException(inner) => {
+                    Error::ForbiddenException(inner)
                 }
-                crate::error::RotateChannelCredentialsErrorKind::InternalServerErrorError(
+                crate::error::RotateChannelCredentialsErrorKind::InternalServerErrorException(
                     inner,
-                ) => Error::InternalServerErrorError(inner),
-                crate::error::RotateChannelCredentialsErrorKind::NotFoundError(inner) => {
-                    Error::NotFoundError(inner)
+                ) => Error::InternalServerErrorException(inner),
+                crate::error::RotateChannelCredentialsErrorKind::NotFoundException(inner) => {
+                    Error::NotFoundException(inner)
                 }
-                crate::error::RotateChannelCredentialsErrorKind::ServiceUnavailableError(inner) => {
-                    Error::ServiceUnavailableError(inner)
-                }
-                crate::error::RotateChannelCredentialsErrorKind::TooManyRequestsError(inner) => {
-                    Error::TooManyRequestsError(inner)
-                }
-                crate::error::RotateChannelCredentialsErrorKind::UnprocessableEntityError(
+                crate::error::RotateChannelCredentialsErrorKind::ServiceUnavailableException(
                     inner,
-                ) => Error::UnprocessableEntityError(inner),
+                ) => Error::ServiceUnavailableException(inner),
+                crate::error::RotateChannelCredentialsErrorKind::TooManyRequestsException(
+                    inner,
+                ) => Error::TooManyRequestsException(inner),
+                crate::error::RotateChannelCredentialsErrorKind::UnprocessableEntityException(
+                    inner,
+                ) => Error::UnprocessableEntityException(inner),
                 crate::error::RotateChannelCredentialsErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
                 }
@@ -423,12 +423,12 @@ impl From<smithy_http::result::SdkError<crate::error::RotateIngestEndpointCreden
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
-                crate::error::RotateIngestEndpointCredentialsErrorKind::ForbiddenError(inner) => Error::ForbiddenError(inner),
-                crate::error::RotateIngestEndpointCredentialsErrorKind::InternalServerErrorError(inner) => Error::InternalServerErrorError(inner),
-                crate::error::RotateIngestEndpointCredentialsErrorKind::NotFoundError(inner) => Error::NotFoundError(inner),
-                crate::error::RotateIngestEndpointCredentialsErrorKind::ServiceUnavailableError(inner) => Error::ServiceUnavailableError(inner),
-                crate::error::RotateIngestEndpointCredentialsErrorKind::TooManyRequestsError(inner) => Error::TooManyRequestsError(inner),
-                crate::error::RotateIngestEndpointCredentialsErrorKind::UnprocessableEntityError(inner) => Error::UnprocessableEntityError(inner),
+                crate::error::RotateIngestEndpointCredentialsErrorKind::ForbiddenException(inner) => Error::ForbiddenException(inner),
+                crate::error::RotateIngestEndpointCredentialsErrorKind::InternalServerErrorException(inner) => Error::InternalServerErrorException(inner),
+                crate::error::RotateIngestEndpointCredentialsErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
+                crate::error::RotateIngestEndpointCredentialsErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+                crate::error::RotateIngestEndpointCredentialsErrorKind::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+                crate::error::RotateIngestEndpointCredentialsErrorKind::UnprocessableEntityException(inner) => Error::UnprocessableEntityException(inner),
                 crate::error::RotateIngestEndpointCredentialsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             }
             _ => Error::Unhandled(err.into()),
@@ -459,23 +459,23 @@ impl From<smithy_http::result::SdkError<crate::error::UpdateChannelError>> for E
     fn from(err: smithy_http::result::SdkError<crate::error::UpdateChannelError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::UpdateChannelErrorKind::ForbiddenError(inner) => {
-                    Error::ForbiddenError(inner)
+                crate::error::UpdateChannelErrorKind::ForbiddenException(inner) => {
+                    Error::ForbiddenException(inner)
                 }
-                crate::error::UpdateChannelErrorKind::InternalServerErrorError(inner) => {
-                    Error::InternalServerErrorError(inner)
+                crate::error::UpdateChannelErrorKind::InternalServerErrorException(inner) => {
+                    Error::InternalServerErrorException(inner)
                 }
-                crate::error::UpdateChannelErrorKind::NotFoundError(inner) => {
-                    Error::NotFoundError(inner)
+                crate::error::UpdateChannelErrorKind::NotFoundException(inner) => {
+                    Error::NotFoundException(inner)
                 }
-                crate::error::UpdateChannelErrorKind::ServiceUnavailableError(inner) => {
-                    Error::ServiceUnavailableError(inner)
+                crate::error::UpdateChannelErrorKind::ServiceUnavailableException(inner) => {
+                    Error::ServiceUnavailableException(inner)
                 }
-                crate::error::UpdateChannelErrorKind::TooManyRequestsError(inner) => {
-                    Error::TooManyRequestsError(inner)
+                crate::error::UpdateChannelErrorKind::TooManyRequestsException(inner) => {
+                    Error::TooManyRequestsException(inner)
                 }
-                crate::error::UpdateChannelErrorKind::UnprocessableEntityError(inner) => {
-                    Error::UnprocessableEntityError(inner)
+                crate::error::UpdateChannelErrorKind::UnprocessableEntityException(inner) => {
+                    Error::UnprocessableEntityException(inner)
                 }
                 crate::error::UpdateChannelErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
@@ -487,24 +487,24 @@ impl From<smithy_http::result::SdkError<crate::error::UpdateOriginEndpointError>
     fn from(err: smithy_http::result::SdkError<crate::error::UpdateOriginEndpointError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::UpdateOriginEndpointErrorKind::ForbiddenError(inner) => {
-                    Error::ForbiddenError(inner)
+                crate::error::UpdateOriginEndpointErrorKind::ForbiddenException(inner) => {
+                    Error::ForbiddenException(inner)
                 }
-                crate::error::UpdateOriginEndpointErrorKind::InternalServerErrorError(inner) => {
-                    Error::InternalServerErrorError(inner)
+                crate::error::UpdateOriginEndpointErrorKind::InternalServerErrorException(
+                    inner,
+                ) => Error::InternalServerErrorException(inner),
+                crate::error::UpdateOriginEndpointErrorKind::NotFoundException(inner) => {
+                    Error::NotFoundException(inner)
                 }
-                crate::error::UpdateOriginEndpointErrorKind::NotFoundError(inner) => {
-                    Error::NotFoundError(inner)
+                crate::error::UpdateOriginEndpointErrorKind::ServiceUnavailableException(inner) => {
+                    Error::ServiceUnavailableException(inner)
                 }
-                crate::error::UpdateOriginEndpointErrorKind::ServiceUnavailableError(inner) => {
-                    Error::ServiceUnavailableError(inner)
+                crate::error::UpdateOriginEndpointErrorKind::TooManyRequestsException(inner) => {
+                    Error::TooManyRequestsException(inner)
                 }
-                crate::error::UpdateOriginEndpointErrorKind::TooManyRequestsError(inner) => {
-                    Error::TooManyRequestsError(inner)
-                }
-                crate::error::UpdateOriginEndpointErrorKind::UnprocessableEntityError(inner) => {
-                    Error::UnprocessableEntityError(inner)
-                }
+                crate::error::UpdateOriginEndpointErrorKind::UnprocessableEntityException(
+                    inner,
+                ) => Error::UnprocessableEntityException(inner),
                 crate::error::UpdateOriginEndpointErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
                 }

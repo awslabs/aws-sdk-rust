@@ -25,7 +25,7 @@ impl std::convert::From<&str> for ScalingType {
 impl std::str::FromStr for ScalingType {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(ScalingType::from(s))
     }
 }
@@ -40,15 +40,6 @@ impl ScalingType {
 impl AsRef<str> for ScalingType {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for ScalingType {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -80,7 +71,7 @@ impl std::convert::From<&str> for EncryptionType {
 impl std::str::FromStr for EncryptionType {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(EncryptionType::from(s))
     }
 }
@@ -98,45 +89,25 @@ impl AsRef<str> for EncryptionType {
         self.as_str()
     }
 }
-impl<'de> serde::Deserialize<'de> for EncryptionType {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
-    }
-}
 
 /// <p>An object that represents the details of the consumer you registered. This type of
 /// object is returned by <a>RegisterStreamConsumer</a>.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Consumer {
     /// <p>The name of the consumer is something you choose when you register the
     /// consumer.</p>
-    #[serde(rename = "ConsumerName")]
-    #[serde(default)]
     pub consumer_name: std::option::Option<std::string::String>,
     /// <p>When you register a consumer, Kinesis Data Streams generates an ARN for it. You need
     /// this ARN to be able to call <a>SubscribeToShard</a>.</p>
     /// <p>If you delete a consumer and then create a new one with the same name, it won't have
     /// the same ARN. That's because consumer ARNs contain the creation timestamp. This is
     /// important to keep in mind if you have IAM policies that reference consumer ARNs.</p>
-    #[serde(rename = "ConsumerARN")]
-    #[serde(default)]
     pub consumer_arn: std::option::Option<std::string::String>,
     /// <p>A consumer can't read data while in the <code>CREATING</code> or <code>DELETING</code>
     /// states.</p>
-    #[serde(rename = "ConsumerStatus")]
-    #[serde(default)]
     pub consumer_status: std::option::Option<crate::model::ConsumerStatus>,
     /// <p></p>
-    #[serde(rename = "ConsumerCreationTimestamp")]
-    #[serde(
-        deserialize_with = "crate::serde_util::stdoptionoptionsmithytypesinstant_epoch_seconds_deser"
-    )]
-    #[serde(default)]
     pub consumer_creation_timestamp: std::option::Option<smithy_types::Instant>,
 }
 impl std::fmt::Debug for Consumer {
@@ -263,7 +234,7 @@ impl std::convert::From<&str> for ConsumerStatus {
 impl std::str::FromStr for ConsumerStatus {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(ConsumerStatus::from(s))
     }
 }
@@ -282,15 +253,6 @@ impl AsRef<str> for ConsumerStatus {
         self.as_str()
     }
 }
-impl<'de> serde::Deserialize<'de> for ConsumerStatus {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
-    }
-}
 
 /// <p>Represents the result of an individual record from a <code>PutRecords</code>
 /// request. A record that is successfully added to a stream includes
@@ -298,29 +260,21 @@ impl<'de> serde::Deserialize<'de> for ConsumerStatus {
 /// fails to be added to the stream includes <code>ErrorCode</code> and
 /// <code>ErrorMessage</code> in the result.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutRecordsResultEntry {
     /// <p>The sequence number for an individual record result.</p>
-    #[serde(rename = "SequenceNumber")]
-    #[serde(default)]
     pub sequence_number: std::option::Option<std::string::String>,
     /// <p>The shard ID for an individual record result.</p>
-    #[serde(rename = "ShardId")]
-    #[serde(default)]
     pub shard_id: std::option::Option<std::string::String>,
     /// <p>The error code for an individual record result. <code>ErrorCodes</code> can be
     /// either <code>ProvisionedThroughputExceededException</code> or
     /// <code>InternalFailure</code>.</p>
-    #[serde(rename = "ErrorCode")]
-    #[serde(default)]
     pub error_code: std::option::Option<std::string::String>,
     /// <p>The error message for an individual record result. An <code>ErrorCode</code> value
     /// of <code>ProvisionedThroughputExceededException</code> has an error message that
     /// includes the account ID, stream name, and shard ID. An <code>ErrorCode</code> value of
     /// <code>InternalFailure</code> has the error message <code>"Internal Service
     /// Failure"</code>.</p>
-    #[serde(rename = "ErrorMessage")]
-    #[serde(default)]
     pub error_message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for PutRecordsResultEntry {
@@ -413,20 +367,15 @@ impl PutRecordsResultEntry {
 
 /// <p>Represents the output for <code>PutRecords</code>.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutRecordsRequestEntry {
     /// <p>The data blob to put into the record, which is base64-encoded when the blob is
     /// serialized. When the data blob (the payload before base64-encoding) is added to the
     /// partition key size, the total size must not exceed the maximum record size (1
     /// MiB).</p>
-    #[serde(rename = "Data")]
-    #[serde(deserialize_with = "crate::serde_util::stdoptionoptionsmithytypesblob_deser")]
-    #[serde(default)]
     pub data: std::option::Option<smithy_types::Blob>,
     /// <p>The hash value used to determine explicitly the shard that the data record is
     /// assigned to by overriding the partition key hash.</p>
-    #[serde(rename = "ExplicitHashKey")]
-    #[serde(default)]
     pub explicit_hash_key: std::option::Option<std::string::String>,
     /// <p>Determines which shard in the stream the data record is assigned to. Partition keys
     /// are Unicode strings with a maximum length limit of 256 characters for each key. Amazon
@@ -435,8 +384,6 @@ pub struct PutRecordsRequestEntry {
     /// function is used to map partition keys to 128-bit integer values and to map associated
     /// data records to shards. As a result of this hashing mechanism, all data records with the
     /// same partition key map to the same shard within the stream.</p>
-    #[serde(rename = "PartitionKey")]
-    #[serde(default)]
     pub partition_key: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for PutRecordsRequestEntry {
@@ -521,18 +468,14 @@ impl PutRecordsRequestEntry {
 
 /// <p>Metadata assigned to the stream, consisting of a key-value pair.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Tag {
     /// <p>A unique identifier for the tag. Maximum length: 128 characters. Valid characters:
     /// Unicode letters, digits, white space, _ . / = + - % @</p>
-    #[serde(rename = "Key")]
-    #[serde(default)]
     pub key: std::option::Option<std::string::String>,
     /// <p>An optional string, typically used to describe or define the tag. Maximum length:
     /// 256 characters. Valid characters: Unicode letters, digits, white space, _ . / = + - %
     /// @</p>
-    #[serde(rename = "Value")]
-    #[serde(default)]
     pub value: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for Tag {
@@ -592,28 +535,18 @@ impl Tag {
 
 /// <p>A uniquely identified group of data records in a Kinesis data stream.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Shard {
     /// <p>The unique identifier of the shard within the stream.</p>
-    #[serde(rename = "ShardId")]
-    #[serde(default)]
     pub shard_id: std::option::Option<std::string::String>,
     /// <p>The shard ID of the shard's parent.</p>
-    #[serde(rename = "ParentShardId")]
-    #[serde(default)]
     pub parent_shard_id: std::option::Option<std::string::String>,
     /// <p>The shard ID of the shard adjacent to the shard's parent.</p>
-    #[serde(rename = "AdjacentParentShardId")]
-    #[serde(default)]
     pub adjacent_parent_shard_id: std::option::Option<std::string::String>,
     /// <p>The range of possible hash key values for the shard, which is a set of ordered
     /// contiguous positive integers.</p>
-    #[serde(rename = "HashKeyRange")]
-    #[serde(default)]
     pub hash_key_range: std::option::Option<crate::model::HashKeyRange>,
     /// <p>The range of possible sequence numbers for the shard.</p>
-    #[serde(rename = "SequenceNumberRange")]
-    #[serde(default)]
     pub sequence_number_range: std::option::Option<crate::model::SequenceNumberRange>,
 }
 impl std::fmt::Debug for Shard {
@@ -719,16 +652,12 @@ impl Shard {
 
 /// <p>The range of possible sequence numbers for the shard.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SequenceNumberRange {
     /// <p>The starting sequence number for the range.</p>
-    #[serde(rename = "StartingSequenceNumber")]
-    #[serde(default)]
     pub starting_sequence_number: std::option::Option<std::string::String>,
     /// <p>The ending sequence number for the range. Shards that are in the OPEN state have an
     /// ending sequence number of <code>null</code>.</p>
-    #[serde(rename = "EndingSequenceNumber")]
-    #[serde(default)]
     pub ending_sequence_number: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for SequenceNumberRange {
@@ -793,15 +722,11 @@ impl SequenceNumberRange {
 /// <p>The range of possible hash key values for the shard, which is a set of ordered
 /// contiguous positive integers.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct HashKeyRange {
     /// <p>The starting hash key of the hash key range.</p>
-    #[serde(rename = "StartingHashKey")]
-    #[serde(default)]
     pub starting_hash_key: std::option::Option<std::string::String>,
     /// <p>The ending hash key of the hash key range.</p>
-    #[serde(rename = "EndingHashKey")]
-    #[serde(default)]
     pub ending_hash_key: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for HashKeyRange {
@@ -863,19 +788,10 @@ impl HashKeyRange {
 }
 
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ShardFilter {
-    #[serde(rename = "Type")]
-    #[serde(default)]
     pub r#type: std::option::Option<crate::model::ShardFilterType>,
-    #[serde(rename = "ShardId")]
-    #[serde(default)]
     pub shard_id: std::option::Option<std::string::String>,
-    #[serde(rename = "Timestamp")]
-    #[serde(
-        deserialize_with = "crate::serde_util::stdoptionoptionsmithytypesinstant_epoch_seconds_deser"
-    )]
-    #[serde(default)]
     pub timestamp: std::option::Option<smithy_types::Instant>,
 }
 impl std::fmt::Debug for ShardFilter {
@@ -978,7 +894,7 @@ impl std::convert::From<&str> for ShardFilterType {
 impl std::str::FromStr for ShardFilterType {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(ShardFilterType::from(s))
     }
 }
@@ -998,15 +914,6 @@ impl ShardFilterType {
 impl AsRef<str> for ShardFilterType {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for ShardFilterType {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -1044,7 +951,7 @@ impl std::convert::From<&str> for ShardIteratorType {
 impl std::str::FromStr for ShardIteratorType {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(ShardIteratorType::from(s))
     }
 }
@@ -1065,29 +972,14 @@ impl AsRef<str> for ShardIteratorType {
         self.as_str()
     }
 }
-impl<'de> serde::Deserialize<'de> for ShardIteratorType {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
-    }
-}
 
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ChildShard {
-    #[serde(rename = "ShardId")]
-    #[serde(default)]
     pub shard_id: std::option::Option<std::string::String>,
-    #[serde(rename = "ParentShards")]
-    #[serde(default)]
     pub parent_shards: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The range of possible hash key values for the shard, which is a set of ordered
     /// contiguous positive integers.</p>
-    #[serde(rename = "HashKeyRange")]
-    #[serde(default)]
     pub hash_key_range: std::option::Option<crate::model::HashKeyRange>,
 }
 impl std::fmt::Debug for ChildShard {
@@ -1164,30 +1056,18 @@ impl ChildShard {
 /// <p>The unit of data of the Kinesis data stream, which is composed of a sequence
 /// number, a partition key, and a data blob.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Record {
     /// <p>The unique identifier of the record within its shard.</p>
-    #[serde(rename = "SequenceNumber")]
-    #[serde(default)]
     pub sequence_number: std::option::Option<std::string::String>,
     /// <p>The approximate time that the record was inserted into the stream.</p>
-    #[serde(rename = "ApproximateArrivalTimestamp")]
-    #[serde(
-        deserialize_with = "crate::serde_util::stdoptionoptionsmithytypesinstant_epoch_seconds_deser"
-    )]
-    #[serde(default)]
     pub approximate_arrival_timestamp: std::option::Option<smithy_types::Instant>,
     /// <p>The data blob. The data in the blob is both opaque and immutable to Kinesis Data
     /// Streams, which does not inspect, interpret, or change the data in the blob in any way.
     /// When the data blob (the payload before base64-encoding) is added to the partition key
     /// size, the total size must not exceed the maximum record size (1 MiB).</p>
-    #[serde(rename = "Data")]
-    #[serde(deserialize_with = "crate::serde_util::stdoptionoptionsmithytypesblob_deser")]
-    #[serde(default)]
     pub data: std::option::Option<smithy_types::Blob>,
     /// <p>Identifies which shard in the stream the data record is assigned to.</p>
-    #[serde(rename = "PartitionKey")]
-    #[serde(default)]
     pub partition_key: std::option::Option<std::string::String>,
     /// <p>The encryption type used on the record. This parameter can be one of the following
     /// values:</p>
@@ -1202,8 +1082,6 @@ pub struct Record {
     /// using a customer-managed AWS KMS key.</p>
     /// </li>
     /// </ul>
-    #[serde(rename = "EncryptionType")]
-    #[serde(default)]
     pub encryption_type: std::option::Option<crate::model::EncryptionType>,
 }
 impl std::fmt::Debug for Record {
@@ -1364,7 +1242,7 @@ impl std::convert::From<&str> for MetricsName {
 impl std::str::FromStr for MetricsName {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(MetricsName::from(s))
     }
 }
@@ -1388,28 +1266,15 @@ impl AsRef<str> for MetricsName {
         self.as_str()
     }
 }
-impl<'de> serde::Deserialize<'de> for MetricsName {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
-    }
-}
 
 /// <p>Represents the output for <a>DescribeStreamSummary</a>
 /// </p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StreamDescriptionSummary {
     /// <p>The name of the stream being described.</p>
-    #[serde(rename = "StreamName")]
-    #[serde(default)]
     pub stream_name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) for the stream being described.</p>
-    #[serde(rename = "StreamARN")]
-    #[serde(default)]
     pub stream_arn: std::option::Option<std::string::String>,
     /// <p>The current status of the stream being described. The stream status is one of the
     /// following states:</p>
@@ -1439,23 +1304,12 @@ pub struct StreamDescriptionSummary {
     /// <code>UPDATING</code> state.</p>
     /// </li>
     /// </ul>
-    #[serde(rename = "StreamStatus")]
-    #[serde(default)]
     pub stream_status: std::option::Option<crate::model::StreamStatus>,
     /// <p>The current retention period, in hours.</p>
-    #[serde(rename = "RetentionPeriodHours")]
-    #[serde(default)]
     pub retention_period_hours: std::option::Option<i32>,
     /// <p>The approximate time that the stream was created.</p>
-    #[serde(rename = "StreamCreationTimestamp")]
-    #[serde(
-        deserialize_with = "crate::serde_util::stdoptionoptionsmithytypesinstant_epoch_seconds_deser"
-    )]
-    #[serde(default)]
     pub stream_creation_timestamp: std::option::Option<smithy_types::Instant>,
     /// <p>Represents the current enhanced monitoring settings of the stream.</p>
-    #[serde(rename = "EnhancedMonitoring")]
-    #[serde(default)]
     pub enhanced_monitoring: std::option::Option<std::vec::Vec<crate::model::EnhancedMetrics>>,
     /// <p>The encryption type used. This value is one of the following:</p>
     /// <ul>
@@ -1470,8 +1324,6 @@ pub struct StreamDescriptionSummary {
     /// </p>
     /// </li>
     /// </ul>
-    #[serde(rename = "EncryptionType")]
-    #[serde(default)]
     pub encryption_type: std::option::Option<crate::model::EncryptionType>,
     /// <p>The GUID for the customer-managed AWS KMS key to use for encryption. This value can
     /// be a globally unique identifier, a fully specified ARN to either an alias or a key, or
@@ -1503,16 +1355,10 @@ pub struct StreamDescriptionSummary {
     /// </p>
     /// </li>
     /// </ul>
-    #[serde(rename = "KeyId")]
-    #[serde(default)]
     pub key_id: std::option::Option<std::string::String>,
     /// <p>The number of open shards in the stream.</p>
-    #[serde(rename = "OpenShardCount")]
-    #[serde(default)]
     pub open_shard_count: std::option::Option<i32>,
     /// <p>The number of enhanced fan-out consumers registered with the stream.</p>
-    #[serde(rename = "ConsumerCount")]
-    #[serde(default)]
     pub consumer_count: std::option::Option<i32>,
 }
 impl std::fmt::Debug for StreamDescriptionSummary {
@@ -1750,7 +1596,7 @@ impl StreamDescriptionSummary {
 
 /// <p>Represents enhanced metrics types.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EnhancedMetrics {
     /// <p>List of shard-level metrics.</p>
     /// <p>The following are the valid shard-level metrics. The value "<code>ALL</code>"
@@ -1800,8 +1646,6 @@ pub struct EnhancedMetrics {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/kinesis/latest/dev/monitoring-with-cloudwatch.html">Monitoring the Amazon
     /// Kinesis Data Streams Service with Amazon CloudWatch</a> in the <i>Amazon
     /// Kinesis Data Streams Developer Guide</i>.</p>
-    #[serde(rename = "ShardLevelMetrics")]
-    #[serde(default)]
     pub shard_level_metrics: std::option::Option<std::vec::Vec<crate::model::MetricsName>>,
 }
 impl std::fmt::Debug for EnhancedMetrics {
@@ -1881,7 +1725,7 @@ impl std::convert::From<&str> for StreamStatus {
 impl std::str::FromStr for StreamStatus {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(StreamStatus::from(s))
     }
 }
@@ -1901,49 +1745,27 @@ impl AsRef<str> for StreamStatus {
         self.as_str()
     }
 }
-impl<'de> serde::Deserialize<'de> for StreamStatus {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
-    }
-}
 
 /// <p>An object that represents the details of a registered consumer. This type of object is
 /// returned by <a>DescribeStreamConsumer</a>.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConsumerDescription {
     /// <p>The name of the consumer is something you choose when you register the
     /// consumer.</p>
-    #[serde(rename = "ConsumerName")]
-    #[serde(default)]
     pub consumer_name: std::option::Option<std::string::String>,
     /// <p>When you register a consumer, Kinesis Data Streams generates an ARN for it. You need
     /// this ARN to be able to call <a>SubscribeToShard</a>.</p>
     /// <p>If you delete a consumer and then create a new one with the same name, it won't have
     /// the same ARN. That's because consumer ARNs contain the creation timestamp. This is
     /// important to keep in mind if you have IAM policies that reference consumer ARNs.</p>
-    #[serde(rename = "ConsumerARN")]
-    #[serde(default)]
     pub consumer_arn: std::option::Option<std::string::String>,
     /// <p>A consumer can't read data while in the <code>CREATING</code> or <code>DELETING</code>
     /// states.</p>
-    #[serde(rename = "ConsumerStatus")]
-    #[serde(default)]
     pub consumer_status: std::option::Option<crate::model::ConsumerStatus>,
     /// <p></p>
-    #[serde(rename = "ConsumerCreationTimestamp")]
-    #[serde(
-        deserialize_with = "crate::serde_util::stdoptionoptionsmithytypesinstant_epoch_seconds_deser"
-    )]
-    #[serde(default)]
     pub consumer_creation_timestamp: std::option::Option<smithy_types::Instant>,
     /// <p>The ARN of the stream with which you registered the consumer.</p>
-    #[serde(rename = "StreamARN")]
-    #[serde(default)]
     pub stream_arn: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ConsumerDescription {
@@ -2054,15 +1876,11 @@ impl ConsumerDescription {
 
 /// <p>Represents the output for <a>DescribeStream</a>.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StreamDescription {
     /// <p>The name of the stream being described.</p>
-    #[serde(rename = "StreamName")]
-    #[serde(default)]
     pub stream_name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) for the stream being described.</p>
-    #[serde(rename = "StreamARN")]
-    #[serde(default)]
     pub stream_arn: std::option::Option<std::string::String>,
     /// <p>The current status of the stream being described. The stream status is one of the
     /// following states:</p>
@@ -2092,33 +1910,18 @@ pub struct StreamDescription {
     /// <code>UPDATING</code> state.</p>
     /// </li>
     /// </ul>
-    #[serde(rename = "StreamStatus")]
-    #[serde(default)]
     pub stream_status: std::option::Option<crate::model::StreamStatus>,
     /// <p>The shards that comprise the stream.</p>
-    #[serde(rename = "Shards")]
-    #[serde(default)]
     pub shards: std::option::Option<std::vec::Vec<crate::model::Shard>>,
     /// <p>If set to <code>true</code>, more shards in the stream are available to
     /// describe.</p>
-    #[serde(rename = "HasMoreShards")]
-    #[serde(default)]
     pub has_more_shards: std::option::Option<bool>,
     /// <p>The current retention period, in hours. Minimum value of 24. Maximum value of
     /// 168.</p>
-    #[serde(rename = "RetentionPeriodHours")]
-    #[serde(default)]
     pub retention_period_hours: std::option::Option<i32>,
     /// <p>The approximate time that the stream was created.</p>
-    #[serde(rename = "StreamCreationTimestamp")]
-    #[serde(
-        deserialize_with = "crate::serde_util::stdoptionoptionsmithytypesinstant_epoch_seconds_deser"
-    )]
-    #[serde(default)]
     pub stream_creation_timestamp: std::option::Option<smithy_types::Instant>,
     /// <p>Represents the current enhanced monitoring settings of the stream.</p>
-    #[serde(rename = "EnhancedMonitoring")]
-    #[serde(default)]
     pub enhanced_monitoring: std::option::Option<std::vec::Vec<crate::model::EnhancedMetrics>>,
     /// <p>The server-side encryption type used on the stream. This parameter can be one of
     /// the following values:</p>
@@ -2133,8 +1936,6 @@ pub struct StreamDescription {
     /// using a customer-managed AWS KMS key.</p>
     /// </li>
     /// </ul>
-    #[serde(rename = "EncryptionType")]
-    #[serde(default)]
     pub encryption_type: std::option::Option<crate::model::EncryptionType>,
     /// <p>The GUID for the customer-managed AWS KMS key to use for encryption. This value can
     /// be a globally unique identifier, a fully specified ARN to either an alias or a key, or
@@ -2166,8 +1967,6 @@ pub struct StreamDescription {
     /// </p>
     /// </li>
     /// </ul>
-    #[serde(rename = "KeyId")]
-    #[serde(default)]
     pub key_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for StreamDescription {

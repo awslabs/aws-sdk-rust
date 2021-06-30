@@ -6,10 +6,10 @@ pub fn parse_generic_error(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_token_already_exists_error_xml_err(
+pub fn deser_structure_token_already_exists_exception_xml_err(
     inp: &[u8],
-    mut builder: crate::error::token_already_exists_error::Builder,
-) -> Result<crate::error::token_already_exists_error::Builder, smithy_xml::decode::XmlError> {
+    mut builder: crate::error::token_already_exists_exception::Builder,
+) -> Result<crate::error::token_already_exists_exception::Builder, smithy_xml::decode::XmlError> {
     use std::convert::TryFrom;
     let mut document = smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]
@@ -36,10 +36,10 @@ pub fn deser_structure_token_already_exists_error_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_already_exists_error_xml_err(
+pub fn deser_structure_already_exists_exception_xml_err(
     inp: &[u8],
-    mut builder: crate::error::already_exists_error::Builder,
-) -> Result<crate::error::already_exists_error::Builder, smithy_xml::decode::XmlError> {
+    mut builder: crate::error::already_exists_exception::Builder,
+) -> Result<crate::error::already_exists_exception::Builder, smithy_xml::decode::XmlError> {
     use std::convert::TryFrom;
     let mut document = smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]
@@ -66,10 +66,11 @@ pub fn deser_structure_already_exists_error_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_insufficient_capabilities_error_xml_err(
+pub fn deser_structure_insufficient_capabilities_exception_xml_err(
     inp: &[u8],
-    mut builder: crate::error::insufficient_capabilities_error::Builder,
-) -> Result<crate::error::insufficient_capabilities_error::Builder, smithy_xml::decode::XmlError> {
+    mut builder: crate::error::insufficient_capabilities_exception::Builder,
+) -> Result<crate::error::insufficient_capabilities_exception::Builder, smithy_xml::decode::XmlError>
+{
     use std::convert::TryFrom;
     let mut document = smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]
@@ -96,10 +97,10 @@ pub fn deser_structure_insufficient_capabilities_error_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_limit_exceeded_error_xml_err(
+pub fn deser_structure_limit_exceeded_exception_xml_err(
     inp: &[u8],
-    mut builder: crate::error::limit_exceeded_error::Builder,
-) -> Result<crate::error::limit_exceeded_error::Builder, smithy_xml::decode::XmlError> {
+    mut builder: crate::error::limit_exceeded_exception::Builder,
+) -> Result<crate::error::limit_exceeded_exception::Builder, smithy_xml::decode::XmlError> {
     use std::convert::TryFrom;
     let mut document = smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]
@@ -241,10 +242,10 @@ pub fn deser_operation_create_stack(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_invalid_operation_error_xml_err(
+pub fn deser_structure_invalid_operation_exception_xml_err(
     inp: &[u8],
-    mut builder: crate::error::invalid_operation_error::Builder,
-) -> Result<crate::error::invalid_operation_error::Builder, smithy_xml::decode::XmlError> {
+    mut builder: crate::error::invalid_operation_exception::Builder,
+) -> Result<crate::error::invalid_operation_exception::Builder, smithy_xml::decode::XmlError> {
     use std::convert::TryFrom;
     let mut document = smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]
@@ -271,11 +272,13 @@ pub fn deser_structure_invalid_operation_error_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_operation_id_already_exists_error_xml_err(
+pub fn deser_structure_operation_id_already_exists_exception_xml_err(
     inp: &[u8],
-    mut builder: crate::error::operation_id_already_exists_error::Builder,
-) -> Result<crate::error::operation_id_already_exists_error::Builder, smithy_xml::decode::XmlError>
-{
+    mut builder: crate::error::operation_id_already_exists_exception::Builder,
+) -> Result<
+    crate::error::operation_id_already_exists_exception::Builder,
+    smithy_xml::decode::XmlError,
+> {
     use std::convert::TryFrom;
     let mut document = smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]
@@ -302,10 +305,10 @@ pub fn deser_structure_operation_id_already_exists_error_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_operation_in_progress_error_xml_err(
+pub fn deser_structure_operation_in_progress_exception_xml_err(
     inp: &[u8],
-    mut builder: crate::error::operation_in_progress_error::Builder,
-) -> Result<crate::error::operation_in_progress_error::Builder, smithy_xml::decode::XmlError> {
+    mut builder: crate::error::operation_in_progress_exception::Builder,
+) -> Result<crate::error::operation_in_progress_exception::Builder, smithy_xml::decode::XmlError> {
     use std::convert::TryFrom;
     let mut document = smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]
@@ -332,10 +335,10 @@ pub fn deser_structure_operation_in_progress_error_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_stack_set_not_found_error_xml_err(
+pub fn deser_structure_stack_set_not_found_exception_xml_err(
     inp: &[u8],
-    mut builder: crate::error::stack_set_not_found_error::Builder,
-) -> Result<crate::error::stack_set_not_found_error::Builder, smithy_xml::decode::XmlError> {
+    mut builder: crate::error::stack_set_not_found_exception::Builder,
+) -> Result<crate::error::stack_set_not_found_exception::Builder, smithy_xml::decode::XmlError> {
     use std::convert::TryFrom;
     let mut document = smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]
@@ -362,10 +365,10 @@ pub fn deser_structure_stack_set_not_found_error_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_stale_request_error_xml_err(
+pub fn deser_structure_stale_request_exception_xml_err(
     inp: &[u8],
-    mut builder: crate::error::stale_request_error::Builder,
-) -> Result<crate::error::stale_request_error::Builder, smithy_xml::decode::XmlError> {
+    mut builder: crate::error::stale_request_exception::Builder,
+) -> Result<crate::error::stale_request_exception::Builder, smithy_xml::decode::XmlError> {
     use std::convert::TryFrom;
     let mut document = smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]
@@ -443,10 +446,10 @@ pub fn deser_operation_create_stack_instances(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_created_but_modified_error_xml_err(
+pub fn deser_structure_created_but_modified_exception_xml_err(
     inp: &[u8],
-    mut builder: crate::error::created_but_modified_error::Builder,
-) -> Result<crate::error::created_but_modified_error::Builder, smithy_xml::decode::XmlError> {
+    mut builder: crate::error::created_but_modified_exception::Builder,
+) -> Result<crate::error::created_but_modified_exception::Builder, smithy_xml::decode::XmlError> {
     use std::convert::TryFrom;
     let mut document = smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]
@@ -473,10 +476,10 @@ pub fn deser_structure_created_but_modified_error_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_name_already_exists_error_xml_err(
+pub fn deser_structure_name_already_exists_exception_xml_err(
     inp: &[u8],
-    mut builder: crate::error::name_already_exists_error::Builder,
-) -> Result<crate::error::name_already_exists_error::Builder, smithy_xml::decode::XmlError> {
+    mut builder: crate::error::name_already_exists_exception::Builder,
+) -> Result<crate::error::name_already_exists_exception::Builder, smithy_xml::decode::XmlError> {
     use std::convert::TryFrom;
     let mut document = smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]
@@ -554,10 +557,11 @@ pub fn deser_operation_create_stack_set(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_invalid_change_set_status_error_xml_err(
+pub fn deser_structure_invalid_change_set_status_exception_xml_err(
     inp: &[u8],
-    mut builder: crate::error::invalid_change_set_status_error::Builder,
-) -> Result<crate::error::invalid_change_set_status_error::Builder, smithy_xml::decode::XmlError> {
+    mut builder: crate::error::invalid_change_set_status_exception::Builder,
+) -> Result<crate::error::invalid_change_set_status_exception::Builder, smithy_xml::decode::XmlError>
+{
     use std::convert::TryFrom;
     let mut document = smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]
@@ -635,10 +639,10 @@ pub fn deser_operation_delete_stack_instances(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_stack_set_not_empty_error_xml_err(
+pub fn deser_structure_stack_set_not_empty_exception_xml_err(
     inp: &[u8],
-    mut builder: crate::error::stack_set_not_empty_error::Builder,
-) -> Result<crate::error::stack_set_not_empty_error::Builder, smithy_xml::decode::XmlError> {
+    mut builder: crate::error::stack_set_not_empty_exception::Builder,
+) -> Result<crate::error::stack_set_not_empty_exception::Builder, smithy_xml::decode::XmlError> {
     use std::convert::TryFrom;
     let mut document = smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]
@@ -665,10 +669,10 @@ pub fn deser_structure_stack_set_not_empty_error_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_cfn_registry_error_xml_err(
+pub fn deser_structure_cfn_registry_exception_xml_err(
     inp: &[u8],
-    mut builder: crate::error::cfn_registry_error::Builder,
-) -> Result<crate::error::cfn_registry_error::Builder, smithy_xml::decode::XmlError> {
+    mut builder: crate::error::cfn_registry_exception::Builder,
+) -> Result<crate::error::cfn_registry_exception::Builder, smithy_xml::decode::XmlError> {
     use std::convert::TryFrom;
     let mut document = smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]
@@ -695,10 +699,10 @@ pub fn deser_structure_cfn_registry_error_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_type_not_found_error_xml_err(
+pub fn deser_structure_type_not_found_exception_xml_err(
     inp: &[u8],
-    mut builder: crate::error::type_not_found_error::Builder,
-) -> Result<crate::error::type_not_found_error::Builder, smithy_xml::decode::XmlError> {
+    mut builder: crate::error::type_not_found_exception::Builder,
+) -> Result<crate::error::type_not_found_exception::Builder, smithy_xml::decode::XmlError> {
     use std::convert::TryFrom;
     let mut document = smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]
@@ -786,10 +790,10 @@ pub fn deser_operation_describe_account_limits(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_change_set_not_found_error_xml_err(
+pub fn deser_structure_change_set_not_found_exception_xml_err(
     inp: &[u8],
-    mut builder: crate::error::change_set_not_found_error::Builder,
-) -> Result<crate::error::change_set_not_found_error::Builder, smithy_xml::decode::XmlError> {
+    mut builder: crate::error::change_set_not_found_exception::Builder,
+) -> Result<crate::error::change_set_not_found_exception::Builder, smithy_xml::decode::XmlError> {
     use std::convert::TryFrom;
     let mut document = smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]
@@ -1288,10 +1292,11 @@ pub fn deser_operation_describe_stack_events(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_stack_instance_not_found_error_xml_err(
+pub fn deser_structure_stack_instance_not_found_exception_xml_err(
     inp: &[u8],
-    mut builder: crate::error::stack_instance_not_found_error::Builder,
-) -> Result<crate::error::stack_instance_not_found_error::Builder, smithy_xml::decode::XmlError> {
+    mut builder: crate::error::stack_instance_not_found_exception::Builder,
+) -> Result<crate::error::stack_instance_not_found_exception::Builder, smithy_xml::decode::XmlError>
+{
     use std::convert::TryFrom;
     let mut document = smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]
@@ -1635,10 +1640,10 @@ pub fn deser_operation_describe_stack_set(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_operation_not_found_error_xml_err(
+pub fn deser_structure_operation_not_found_exception_xml_err(
     inp: &[u8],
-    mut builder: crate::error::operation_not_found_error::Builder,
-) -> Result<crate::error::operation_not_found_error::Builder, smithy_xml::decode::XmlError> {
+    mut builder: crate::error::operation_not_found_exception::Builder,
+) -> Result<crate::error::operation_not_found_exception::Builder, smithy_xml::decode::XmlError> {
     use std::convert::TryFrom;
     let mut document = smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]
@@ -3248,10 +3253,11 @@ pub fn deser_operation_list_type_versions(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_invalid_state_transition_error_xml_err(
+pub fn deser_structure_invalid_state_transition_exception_xml_err(
     inp: &[u8],
-    mut builder: crate::error::invalid_state_transition_error::Builder,
-) -> Result<crate::error::invalid_state_transition_error::Builder, smithy_xml::decode::XmlError> {
+    mut builder: crate::error::invalid_state_transition_exception::Builder,
+) -> Result<crate::error::invalid_state_transition_exception::Builder, smithy_xml::decode::XmlError>
+{
     use std::convert::TryFrom;
     let mut document = smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]
@@ -3278,11 +3284,13 @@ pub fn deser_structure_invalid_state_transition_error_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_operation_status_check_failed_error_xml_err(
+pub fn deser_structure_operation_status_check_failed_exception_xml_err(
     inp: &[u8],
-    mut builder: crate::error::operation_status_check_failed_error::Builder,
-) -> Result<crate::error::operation_status_check_failed_error::Builder, smithy_xml::decode::XmlError>
-{
+    mut builder: crate::error::operation_status_check_failed_exception::Builder,
+) -> Result<
+    crate::error::operation_status_check_failed_exception::Builder,
+    smithy_xml::decode::XmlError,
+> {
     use std::convert::TryFrom;
     let mut document = smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]

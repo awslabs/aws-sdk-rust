@@ -2441,7 +2441,7 @@ pub struct CreateModelPackageError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateModelPackageErrorKind {
-    ConflictError(crate::error::ConflictError),
+    ConflictException(crate::error::ConflictException),
     ResourceLimitExceeded(crate::error::ResourceLimitExceeded),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2449,7 +2449,7 @@ pub enum CreateModelPackageErrorKind {
 impl std::fmt::Display for CreateModelPackageError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            CreateModelPackageErrorKind::ConflictError(_inner) => _inner.fmt(f),
+            CreateModelPackageErrorKind::ConflictException(_inner) => _inner.fmt(f),
             CreateModelPackageErrorKind::ResourceLimitExceeded(_inner) => _inner.fmt(f),
             CreateModelPackageErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
@@ -2499,8 +2499,11 @@ impl CreateModelPackageError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_conflict_error(&self) -> bool {
-        matches!(&self.kind, CreateModelPackageErrorKind::ConflictError(_))
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateModelPackageErrorKind::ConflictException(_)
+        )
     }
     pub fn is_resource_limit_exceeded(&self) -> bool {
         matches!(
@@ -2512,7 +2515,7 @@ impl CreateModelPackageError {
 impl std::error::Error for CreateModelPackageError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            CreateModelPackageErrorKind::ConflictError(_inner) => Some(_inner),
+            CreateModelPackageErrorKind::ConflictException(_inner) => Some(_inner),
             CreateModelPackageErrorKind::ResourceLimitExceeded(_inner) => Some(_inner),
             CreateModelPackageErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
@@ -5716,14 +5719,14 @@ pub struct DeleteModelPackageError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteModelPackageErrorKind {
-    ConflictError(crate::error::ConflictError),
+    ConflictException(crate::error::ConflictException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteModelPackageError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DeleteModelPackageErrorKind::ConflictError(_inner) => _inner.fmt(f),
+            DeleteModelPackageErrorKind::ConflictException(_inner) => _inner.fmt(f),
             DeleteModelPackageErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -5772,14 +5775,17 @@ impl DeleteModelPackageError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_conflict_error(&self) -> bool {
-        matches!(&self.kind, DeleteModelPackageErrorKind::ConflictError(_))
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteModelPackageErrorKind::ConflictException(_)
+        )
     }
 }
 impl std::error::Error for DeleteModelPackageError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DeleteModelPackageErrorKind::ConflictError(_inner) => Some(_inner),
+            DeleteModelPackageErrorKind::ConflictException(_inner) => Some(_inner),
             DeleteModelPackageErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -16604,7 +16610,7 @@ pub struct UpdateActionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateActionErrorKind {
-    ConflictError(crate::error::ConflictError),
+    ConflictException(crate::error::ConflictException),
     ResourceNotFound(crate::error::ResourceNotFound),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -16612,7 +16618,7 @@ pub enum UpdateActionErrorKind {
 impl std::fmt::Display for UpdateActionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            UpdateActionErrorKind::ConflictError(_inner) => _inner.fmt(f),
+            UpdateActionErrorKind::ConflictException(_inner) => _inner.fmt(f),
             UpdateActionErrorKind::ResourceNotFound(_inner) => _inner.fmt(f),
             UpdateActionErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
@@ -16662,8 +16668,8 @@ impl UpdateActionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_conflict_error(&self) -> bool {
-        matches!(&self.kind, UpdateActionErrorKind::ConflictError(_))
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(&self.kind, UpdateActionErrorKind::ConflictException(_))
     }
     pub fn is_resource_not_found(&self) -> bool {
         matches!(&self.kind, UpdateActionErrorKind::ResourceNotFound(_))
@@ -16672,7 +16678,7 @@ impl UpdateActionError {
 impl std::error::Error for UpdateActionError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            UpdateActionErrorKind::ConflictError(_inner) => Some(_inner),
+            UpdateActionErrorKind::ConflictException(_inner) => Some(_inner),
             UpdateActionErrorKind::ResourceNotFound(_inner) => Some(_inner),
             UpdateActionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
@@ -16769,7 +16775,7 @@ pub struct UpdateArtifactError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateArtifactErrorKind {
-    ConflictError(crate::error::ConflictError),
+    ConflictException(crate::error::ConflictException),
     ResourceNotFound(crate::error::ResourceNotFound),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -16777,7 +16783,7 @@ pub enum UpdateArtifactErrorKind {
 impl std::fmt::Display for UpdateArtifactError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            UpdateArtifactErrorKind::ConflictError(_inner) => _inner.fmt(f),
+            UpdateArtifactErrorKind::ConflictException(_inner) => _inner.fmt(f),
             UpdateArtifactErrorKind::ResourceNotFound(_inner) => _inner.fmt(f),
             UpdateArtifactErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
@@ -16827,8 +16833,8 @@ impl UpdateArtifactError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_conflict_error(&self) -> bool {
-        matches!(&self.kind, UpdateArtifactErrorKind::ConflictError(_))
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(&self.kind, UpdateArtifactErrorKind::ConflictException(_))
     }
     pub fn is_resource_not_found(&self) -> bool {
         matches!(&self.kind, UpdateArtifactErrorKind::ResourceNotFound(_))
@@ -16837,7 +16843,7 @@ impl UpdateArtifactError {
 impl std::error::Error for UpdateArtifactError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            UpdateArtifactErrorKind::ConflictError(_inner) => Some(_inner),
+            UpdateArtifactErrorKind::ConflictException(_inner) => Some(_inner),
             UpdateArtifactErrorKind::ResourceNotFound(_inner) => Some(_inner),
             UpdateArtifactErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
@@ -16925,7 +16931,7 @@ pub struct UpdateContextError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateContextErrorKind {
-    ConflictError(crate::error::ConflictError),
+    ConflictException(crate::error::ConflictException),
     ResourceNotFound(crate::error::ResourceNotFound),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -16933,7 +16939,7 @@ pub enum UpdateContextErrorKind {
 impl std::fmt::Display for UpdateContextError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            UpdateContextErrorKind::ConflictError(_inner) => _inner.fmt(f),
+            UpdateContextErrorKind::ConflictException(_inner) => _inner.fmt(f),
             UpdateContextErrorKind::ResourceNotFound(_inner) => _inner.fmt(f),
             UpdateContextErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
@@ -16983,8 +16989,8 @@ impl UpdateContextError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_conflict_error(&self) -> bool {
-        matches!(&self.kind, UpdateContextErrorKind::ConflictError(_))
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(&self.kind, UpdateContextErrorKind::ConflictException(_))
     }
     pub fn is_resource_not_found(&self) -> bool {
         matches!(&self.kind, UpdateContextErrorKind::ResourceNotFound(_))
@@ -16993,7 +16999,7 @@ impl UpdateContextError {
 impl std::error::Error for UpdateContextError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            UpdateContextErrorKind::ConflictError(_inner) => Some(_inner),
+            UpdateContextErrorKind::ConflictException(_inner) => Some(_inner),
             UpdateContextErrorKind::ResourceNotFound(_inner) => Some(_inner),
             UpdateContextErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
@@ -17418,7 +17424,7 @@ pub struct UpdateExperimentError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateExperimentErrorKind {
-    ConflictError(crate::error::ConflictError),
+    ConflictException(crate::error::ConflictException),
     ResourceNotFound(crate::error::ResourceNotFound),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -17426,7 +17432,7 @@ pub enum UpdateExperimentErrorKind {
 impl std::fmt::Display for UpdateExperimentError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            UpdateExperimentErrorKind::ConflictError(_inner) => _inner.fmt(f),
+            UpdateExperimentErrorKind::ConflictException(_inner) => _inner.fmt(f),
             UpdateExperimentErrorKind::ResourceNotFound(_inner) => _inner.fmt(f),
             UpdateExperimentErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
@@ -17476,8 +17482,8 @@ impl UpdateExperimentError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_conflict_error(&self) -> bool {
-        matches!(&self.kind, UpdateExperimentErrorKind::ConflictError(_))
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(&self.kind, UpdateExperimentErrorKind::ConflictException(_))
     }
     pub fn is_resource_not_found(&self) -> bool {
         matches!(&self.kind, UpdateExperimentErrorKind::ResourceNotFound(_))
@@ -17486,7 +17492,7 @@ impl UpdateExperimentError {
 impl std::error::Error for UpdateExperimentError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            UpdateExperimentErrorKind::ConflictError(_inner) => Some(_inner),
+            UpdateExperimentErrorKind::ConflictException(_inner) => Some(_inner),
             UpdateExperimentErrorKind::ResourceNotFound(_inner) => Some(_inner),
             UpdateExperimentErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
@@ -18156,7 +18162,7 @@ pub struct UpdateTrialError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateTrialErrorKind {
-    ConflictError(crate::error::ConflictError),
+    ConflictException(crate::error::ConflictException),
     ResourceNotFound(crate::error::ResourceNotFound),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -18164,7 +18170,7 @@ pub enum UpdateTrialErrorKind {
 impl std::fmt::Display for UpdateTrialError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            UpdateTrialErrorKind::ConflictError(_inner) => _inner.fmt(f),
+            UpdateTrialErrorKind::ConflictException(_inner) => _inner.fmt(f),
             UpdateTrialErrorKind::ResourceNotFound(_inner) => _inner.fmt(f),
             UpdateTrialErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
@@ -18214,8 +18220,8 @@ impl UpdateTrialError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_conflict_error(&self) -> bool {
-        matches!(&self.kind, UpdateTrialErrorKind::ConflictError(_))
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(&self.kind, UpdateTrialErrorKind::ConflictException(_))
     }
     pub fn is_resource_not_found(&self) -> bool {
         matches!(&self.kind, UpdateTrialErrorKind::ResourceNotFound(_))
@@ -18224,7 +18230,7 @@ impl UpdateTrialError {
 impl std::error::Error for UpdateTrialError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            UpdateTrialErrorKind::ConflictError(_inner) => Some(_inner),
+            UpdateTrialErrorKind::ConflictException(_inner) => Some(_inner),
             UpdateTrialErrorKind::ResourceNotFound(_inner) => Some(_inner),
             UpdateTrialErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
@@ -18240,7 +18246,7 @@ pub struct UpdateTrialComponentError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateTrialComponentErrorKind {
-    ConflictError(crate::error::ConflictError),
+    ConflictException(crate::error::ConflictException),
     ResourceNotFound(crate::error::ResourceNotFound),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -18248,7 +18254,7 @@ pub enum UpdateTrialComponentErrorKind {
 impl std::fmt::Display for UpdateTrialComponentError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            UpdateTrialComponentErrorKind::ConflictError(_inner) => _inner.fmt(f),
+            UpdateTrialComponentErrorKind::ConflictException(_inner) => _inner.fmt(f),
             UpdateTrialComponentErrorKind::ResourceNotFound(_inner) => _inner.fmt(f),
             UpdateTrialComponentErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
@@ -18298,8 +18304,11 @@ impl UpdateTrialComponentError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_conflict_error(&self) -> bool {
-        matches!(&self.kind, UpdateTrialComponentErrorKind::ConflictError(_))
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateTrialComponentErrorKind::ConflictException(_)
+        )
     }
     pub fn is_resource_not_found(&self) -> bool {
         matches!(
@@ -18311,7 +18320,7 @@ impl UpdateTrialComponentError {
 impl std::error::Error for UpdateTrialComponentError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            UpdateTrialComponentErrorKind::ConflictError(_inner) => Some(_inner),
+            UpdateTrialComponentErrorKind::ConflictException(_inner) => Some(_inner),
             UpdateTrialComponentErrorKind::ResourceNotFound(_inner) => Some(_inner),
             UpdateTrialComponentErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
@@ -18567,10 +18576,8 @@ impl std::error::Error for UpdateWorkteamError {
 /// <p> You have exceeded an Amazon SageMaker resource limit. For example, you might have too many
 /// training jobs created. </p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceLimitExceeded {
-    #[serde(rename = "Message")]
-    #[serde(default)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ResourceLimitExceeded {
@@ -18629,10 +18636,8 @@ impl ResourceLimitExceeded {
 
 /// <p>Resource being access is not found.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceNotFound {
-    #[serde(rename = "Message")]
-    #[serde(default)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ResourceNotFound {
@@ -18691,10 +18696,8 @@ impl ResourceNotFound {
 
 /// <p>Resource being accessed is in use.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceInUse {
-    #[serde(rename = "Message")]
-    #[serde(default)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ResourceInUse {
@@ -18754,37 +18757,35 @@ impl ResourceInUse {
 /// <p>There was a conflict when you attempted to modify a SageMaker entity such as an
 /// <code>Experiment</code> or <code>Artifact</code>.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
-pub struct ConflictError {
-    #[serde(rename = "Message")]
-    #[serde(default)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ConflictException {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for ConflictError {
+impl std::fmt::Debug for ConflictException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ConflictError");
+        let mut formatter = f.debug_struct("ConflictException");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl ConflictError {
+impl ConflictException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for ConflictError {
+impl std::fmt::Display for ConflictException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "ConflictError [ConflictException]")?;
+        write!(f, "ConflictException")?;
         if let Some(inner_4) = &self.message {
             write!(f, ": {}", inner_4)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for ConflictError {}
-/// See [`ConflictError`](crate::error::ConflictError)
-pub mod conflict_error {
-    /// A builder for [`ConflictError`](crate::error::ConflictError)
+impl std::error::Error for ConflictException {}
+/// See [`ConflictException`](crate::error::ConflictException)
+pub mod conflict_exception {
+    /// A builder for [`ConflictException`](crate::error::ConflictException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -18799,17 +18800,17 @@ pub mod conflict_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`ConflictError`](crate::error::ConflictError)
-        pub fn build(self) -> crate::error::ConflictError {
-            crate::error::ConflictError {
+        /// Consumes the builder and constructs a [`ConflictException`](crate::error::ConflictException)
+        pub fn build(self) -> crate::error::ConflictException {
+            crate::error::ConflictException {
                 message: self.message,
             }
         }
     }
 }
-impl ConflictError {
-    /// Creates a new builder-style object to manufacture [`ConflictError`](crate::error::ConflictError)
-    pub fn builder() -> crate::error::conflict_error::Builder {
-        crate::error::conflict_error::Builder::default()
+impl ConflictException {
+    /// Creates a new builder-style object to manufacture [`ConflictException`](crate::error::ConflictException)
+    pub fn builder() -> crate::error::conflict_exception::Builder {
+        crate::error::conflict_exception::Builder::default()
     }
 }

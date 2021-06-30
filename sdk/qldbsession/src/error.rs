@@ -8,24 +8,24 @@ pub struct SendCommandError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum SendCommandErrorKind {
-    BadRequestError(crate::error::BadRequestError),
-    CapacityExceededError(crate::error::CapacityExceededError),
-    InvalidSessionError(crate::error::InvalidSessionError),
-    LimitExceededError(crate::error::LimitExceededError),
-    OccConflictError(crate::error::OccConflictError),
-    RateExceededError(crate::error::RateExceededError),
+    BadRequestException(crate::error::BadRequestException),
+    CapacityExceededException(crate::error::CapacityExceededException),
+    InvalidSessionException(crate::error::InvalidSessionException),
+    LimitExceededException(crate::error::LimitExceededException),
+    OccConflictException(crate::error::OccConflictException),
+    RateExceededException(crate::error::RateExceededException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for SendCommandError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            SendCommandErrorKind::BadRequestError(_inner) => _inner.fmt(f),
-            SendCommandErrorKind::CapacityExceededError(_inner) => _inner.fmt(f),
-            SendCommandErrorKind::InvalidSessionError(_inner) => _inner.fmt(f),
-            SendCommandErrorKind::LimitExceededError(_inner) => _inner.fmt(f),
-            SendCommandErrorKind::OccConflictError(_inner) => _inner.fmt(f),
-            SendCommandErrorKind::RateExceededError(_inner) => _inner.fmt(f),
+            SendCommandErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            SendCommandErrorKind::CapacityExceededException(_inner) => _inner.fmt(f),
+            SendCommandErrorKind::InvalidSessionException(_inner) => _inner.fmt(f),
+            SendCommandErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
+            SendCommandErrorKind::OccConflictException(_inner) => _inner.fmt(f),
+            SendCommandErrorKind::RateExceededException(_inner) => _inner.fmt(f),
             SendCommandErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -74,34 +74,37 @@ impl SendCommandError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_bad_request_error(&self) -> bool {
-        matches!(&self.kind, SendCommandErrorKind::BadRequestError(_))
+    pub fn is_bad_request_exception(&self) -> bool {
+        matches!(&self.kind, SendCommandErrorKind::BadRequestException(_))
     }
-    pub fn is_capacity_exceeded_error(&self) -> bool {
-        matches!(&self.kind, SendCommandErrorKind::CapacityExceededError(_))
+    pub fn is_capacity_exceeded_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            SendCommandErrorKind::CapacityExceededException(_)
+        )
     }
-    pub fn is_invalid_session_error(&self) -> bool {
-        matches!(&self.kind, SendCommandErrorKind::InvalidSessionError(_))
+    pub fn is_invalid_session_exception(&self) -> bool {
+        matches!(&self.kind, SendCommandErrorKind::InvalidSessionException(_))
     }
-    pub fn is_limit_exceeded_error(&self) -> bool {
-        matches!(&self.kind, SendCommandErrorKind::LimitExceededError(_))
+    pub fn is_limit_exceeded_exception(&self) -> bool {
+        matches!(&self.kind, SendCommandErrorKind::LimitExceededException(_))
     }
-    pub fn is_occ_conflict_error(&self) -> bool {
-        matches!(&self.kind, SendCommandErrorKind::OccConflictError(_))
+    pub fn is_occ_conflict_exception(&self) -> bool {
+        matches!(&self.kind, SendCommandErrorKind::OccConflictException(_))
     }
-    pub fn is_rate_exceeded_error(&self) -> bool {
-        matches!(&self.kind, SendCommandErrorKind::RateExceededError(_))
+    pub fn is_rate_exceeded_exception(&self) -> bool {
+        matches!(&self.kind, SendCommandErrorKind::RateExceededException(_))
     }
 }
 impl std::error::Error for SendCommandError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            SendCommandErrorKind::BadRequestError(_inner) => Some(_inner),
-            SendCommandErrorKind::CapacityExceededError(_inner) => Some(_inner),
-            SendCommandErrorKind::InvalidSessionError(_inner) => Some(_inner),
-            SendCommandErrorKind::LimitExceededError(_inner) => Some(_inner),
-            SendCommandErrorKind::OccConflictError(_inner) => Some(_inner),
-            SendCommandErrorKind::RateExceededError(_inner) => Some(_inner),
+            SendCommandErrorKind::BadRequestException(_inner) => Some(_inner),
+            SendCommandErrorKind::CapacityExceededException(_inner) => Some(_inner),
+            SendCommandErrorKind::InvalidSessionException(_inner) => Some(_inner),
+            SendCommandErrorKind::LimitExceededException(_inner) => Some(_inner),
+            SendCommandErrorKind::OccConflictException(_inner) => Some(_inner),
+            SendCommandErrorKind::RateExceededException(_inner) => Some(_inner),
             SendCommandErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -109,37 +112,35 @@ impl std::error::Error for SendCommandError {
 
 /// <p>Returned when the rate of requests exceeds the allowed throughput.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
-pub struct RateExceededError {
-    #[serde(rename = "Message")]
-    #[serde(default)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct RateExceededException {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for RateExceededError {
+impl std::fmt::Debug for RateExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RateExceededError");
+        let mut formatter = f.debug_struct("RateExceededException");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl RateExceededError {
+impl RateExceededException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for RateExceededError {
+impl std::fmt::Display for RateExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "RateExceededError [RateExceededException]")?;
+        write!(f, "RateExceededException")?;
         if let Some(inner_1) = &self.message {
             write!(f, ": {}", inner_1)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for RateExceededError {}
-/// See [`RateExceededError`](crate::error::RateExceededError)
-pub mod rate_exceeded_error {
-    /// A builder for [`RateExceededError`](crate::error::RateExceededError)
+impl std::error::Error for RateExceededException {}
+/// See [`RateExceededException`](crate::error::RateExceededException)
+pub mod rate_exceeded_exception {
+    /// A builder for [`RateExceededException`](crate::error::RateExceededException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -154,55 +155,53 @@ pub mod rate_exceeded_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`RateExceededError`](crate::error::RateExceededError)
-        pub fn build(self) -> crate::error::RateExceededError {
-            crate::error::RateExceededError {
+        /// Consumes the builder and constructs a [`RateExceededException`](crate::error::RateExceededException)
+        pub fn build(self) -> crate::error::RateExceededException {
+            crate::error::RateExceededException {
                 message: self.message,
             }
         }
     }
 }
-impl RateExceededError {
-    /// Creates a new builder-style object to manufacture [`RateExceededError`](crate::error::RateExceededError)
-    pub fn builder() -> crate::error::rate_exceeded_error::Builder {
-        crate::error::rate_exceeded_error::Builder::default()
+impl RateExceededException {
+    /// Creates a new builder-style object to manufacture [`RateExceededException`](crate::error::RateExceededException)
+    pub fn builder() -> crate::error::rate_exceeded_exception::Builder {
+        crate::error::rate_exceeded_exception::Builder::default()
     }
 }
 
 /// <p>Returned when a transaction cannot be written to the journal due to a failure in the
 /// verification phase of <i>optimistic concurrency control</i> (OCC).</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
-pub struct OccConflictError {
-    #[serde(rename = "Message")]
-    #[serde(default)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct OccConflictException {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for OccConflictError {
+impl std::fmt::Debug for OccConflictException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OccConflictError");
+        let mut formatter = f.debug_struct("OccConflictException");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl OccConflictError {
+impl OccConflictException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for OccConflictError {
+impl std::fmt::Display for OccConflictException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "OccConflictError [OccConflictException]")?;
+        write!(f, "OccConflictException")?;
         if let Some(inner_2) = &self.message {
             write!(f, ": {}", inner_2)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for OccConflictError {}
-/// See [`OccConflictError`](crate::error::OccConflictError)
-pub mod occ_conflict_error {
-    /// A builder for [`OccConflictError`](crate::error::OccConflictError)
+impl std::error::Error for OccConflictException {}
+/// See [`OccConflictException`](crate::error::OccConflictException)
+pub mod occ_conflict_exception {
+    /// A builder for [`OccConflictException`](crate::error::OccConflictException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -217,54 +216,52 @@ pub mod occ_conflict_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`OccConflictError`](crate::error::OccConflictError)
-        pub fn build(self) -> crate::error::OccConflictError {
-            crate::error::OccConflictError {
+        /// Consumes the builder and constructs a [`OccConflictException`](crate::error::OccConflictException)
+        pub fn build(self) -> crate::error::OccConflictException {
+            crate::error::OccConflictException {
                 message: self.message,
             }
         }
     }
 }
-impl OccConflictError {
-    /// Creates a new builder-style object to manufacture [`OccConflictError`](crate::error::OccConflictError)
-    pub fn builder() -> crate::error::occ_conflict_error::Builder {
-        crate::error::occ_conflict_error::Builder::default()
+impl OccConflictException {
+    /// Creates a new builder-style object to manufacture [`OccConflictException`](crate::error::OccConflictException)
+    pub fn builder() -> crate::error::occ_conflict_exception::Builder {
+        crate::error::occ_conflict_exception::Builder::default()
     }
 }
 
 /// <p>Returned if a resource limit such as number of active sessions is exceeded.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
-pub struct LimitExceededError {
-    #[serde(rename = "Message")]
-    #[serde(default)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct LimitExceededException {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for LimitExceededError {
+impl std::fmt::Debug for LimitExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LimitExceededError");
+        let mut formatter = f.debug_struct("LimitExceededException");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl LimitExceededError {
+impl LimitExceededException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for LimitExceededError {
+impl std::fmt::Display for LimitExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "LimitExceededError [LimitExceededException]")?;
+        write!(f, "LimitExceededException")?;
         if let Some(inner_3) = &self.message {
             write!(f, ": {}", inner_3)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for LimitExceededError {}
-/// See [`LimitExceededError`](crate::error::LimitExceededError)
-pub mod limit_exceeded_error {
-    /// A builder for [`LimitExceededError`](crate::error::LimitExceededError)
+impl std::error::Error for LimitExceededException {}
+/// See [`LimitExceededException`](crate::error::LimitExceededException)
+pub mod limit_exceeded_exception {
+    /// A builder for [`LimitExceededException`](crate::error::LimitExceededException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -279,58 +276,54 @@ pub mod limit_exceeded_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`LimitExceededError`](crate::error::LimitExceededError)
-        pub fn build(self) -> crate::error::LimitExceededError {
-            crate::error::LimitExceededError {
+        /// Consumes the builder and constructs a [`LimitExceededException`](crate::error::LimitExceededException)
+        pub fn build(self) -> crate::error::LimitExceededException {
+            crate::error::LimitExceededException {
                 message: self.message,
             }
         }
     }
 }
-impl LimitExceededError {
-    /// Creates a new builder-style object to manufacture [`LimitExceededError`](crate::error::LimitExceededError)
-    pub fn builder() -> crate::error::limit_exceeded_error::Builder {
-        crate::error::limit_exceeded_error::Builder::default()
+impl LimitExceededException {
+    /// Creates a new builder-style object to manufacture [`LimitExceededException`](crate::error::LimitExceededException)
+    pub fn builder() -> crate::error::limit_exceeded_exception::Builder {
+        crate::error::limit_exceeded_exception::Builder::default()
     }
 }
 
 /// <p>Returned if the session doesn't exist anymore because it timed out or expired.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
-pub struct InvalidSessionError {
-    #[serde(rename = "Message")]
-    #[serde(default)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct InvalidSessionException {
     pub message: std::option::Option<std::string::String>,
-    #[serde(rename = "Code")]
-    #[serde(default)]
     pub code: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for InvalidSessionError {
+impl std::fmt::Debug for InvalidSessionException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidSessionError");
+        let mut formatter = f.debug_struct("InvalidSessionException");
         formatter.field("message", &self.message);
         formatter.field("code", &self.code);
         formatter.finish()
     }
 }
-impl InvalidSessionError {
+impl InvalidSessionException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for InvalidSessionError {
+impl std::fmt::Display for InvalidSessionException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "InvalidSessionError [InvalidSessionException]")?;
+        write!(f, "InvalidSessionException")?;
         if let Some(inner_4) = &self.message {
             write!(f, ": {}", inner_4)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for InvalidSessionError {}
-/// See [`InvalidSessionError`](crate::error::InvalidSessionError)
-pub mod invalid_session_error {
-    /// A builder for [`InvalidSessionError`](crate::error::InvalidSessionError)
+impl std::error::Error for InvalidSessionException {}
+/// See [`InvalidSessionException`](crate::error::InvalidSessionException)
+pub mod invalid_session_exception {
+    /// A builder for [`InvalidSessionException`](crate::error::InvalidSessionException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -354,55 +347,53 @@ pub mod invalid_session_error {
             self.code = input;
             self
         }
-        /// Consumes the builder and constructs a [`InvalidSessionError`](crate::error::InvalidSessionError)
-        pub fn build(self) -> crate::error::InvalidSessionError {
-            crate::error::InvalidSessionError {
+        /// Consumes the builder and constructs a [`InvalidSessionException`](crate::error::InvalidSessionException)
+        pub fn build(self) -> crate::error::InvalidSessionException {
+            crate::error::InvalidSessionException {
                 message: self.message,
                 code: self.code,
             }
         }
     }
 }
-impl InvalidSessionError {
-    /// Creates a new builder-style object to manufacture [`InvalidSessionError`](crate::error::InvalidSessionError)
-    pub fn builder() -> crate::error::invalid_session_error::Builder {
-        crate::error::invalid_session_error::Builder::default()
+impl InvalidSessionException {
+    /// Creates a new builder-style object to manufacture [`InvalidSessionException`](crate::error::InvalidSessionException)
+    pub fn builder() -> crate::error::invalid_session_exception::Builder {
+        crate::error::invalid_session_exception::Builder::default()
     }
 }
 
 /// <p>Returned when the request exceeds the processing capacity of the ledger.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
-pub struct CapacityExceededError {
-    #[serde(rename = "Message")]
-    #[serde(default)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CapacityExceededException {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for CapacityExceededError {
+impl std::fmt::Debug for CapacityExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CapacityExceededError");
+        let mut formatter = f.debug_struct("CapacityExceededException");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl CapacityExceededError {
+impl CapacityExceededException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for CapacityExceededError {
+impl std::fmt::Display for CapacityExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "CapacityExceededError [CapacityExceededException]")?;
+        write!(f, "CapacityExceededException")?;
         if let Some(inner_5) = &self.message {
             write!(f, ": {}", inner_5)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for CapacityExceededError {}
-/// See [`CapacityExceededError`](crate::error::CapacityExceededError)
-pub mod capacity_exceeded_error {
-    /// A builder for [`CapacityExceededError`](crate::error::CapacityExceededError)
+impl std::error::Error for CapacityExceededException {}
+/// See [`CapacityExceededException`](crate::error::CapacityExceededException)
+pub mod capacity_exceeded_exception {
+    /// A builder for [`CapacityExceededException`](crate::error::CapacityExceededException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -417,59 +408,55 @@ pub mod capacity_exceeded_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`CapacityExceededError`](crate::error::CapacityExceededError)
-        pub fn build(self) -> crate::error::CapacityExceededError {
-            crate::error::CapacityExceededError {
+        /// Consumes the builder and constructs a [`CapacityExceededException`](crate::error::CapacityExceededException)
+        pub fn build(self) -> crate::error::CapacityExceededException {
+            crate::error::CapacityExceededException {
                 message: self.message,
             }
         }
     }
 }
-impl CapacityExceededError {
-    /// Creates a new builder-style object to manufacture [`CapacityExceededError`](crate::error::CapacityExceededError)
-    pub fn builder() -> crate::error::capacity_exceeded_error::Builder {
-        crate::error::capacity_exceeded_error::Builder::default()
+impl CapacityExceededException {
+    /// Creates a new builder-style object to manufacture [`CapacityExceededException`](crate::error::CapacityExceededException)
+    pub fn builder() -> crate::error::capacity_exceeded_exception::Builder {
+        crate::error::capacity_exceeded_exception::Builder::default()
     }
 }
 
 /// <p>Returned if the request is malformed or contains an error such as an invalid parameter
 /// value or a missing required parameter.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
-pub struct BadRequestError {
-    #[serde(rename = "Message")]
-    #[serde(default)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct BadRequestException {
     pub message: std::option::Option<std::string::String>,
-    #[serde(rename = "Code")]
-    #[serde(default)]
     pub code: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for BadRequestError {
+impl std::fmt::Debug for BadRequestException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BadRequestError");
+        let mut formatter = f.debug_struct("BadRequestException");
         formatter.field("message", &self.message);
         formatter.field("code", &self.code);
         formatter.finish()
     }
 }
-impl BadRequestError {
+impl BadRequestException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for BadRequestError {
+impl std::fmt::Display for BadRequestException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "BadRequestError [BadRequestException]")?;
+        write!(f, "BadRequestException")?;
         if let Some(inner_6) = &self.message {
             write!(f, ": {}", inner_6)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for BadRequestError {}
-/// See [`BadRequestError`](crate::error::BadRequestError)
-pub mod bad_request_error {
-    /// A builder for [`BadRequestError`](crate::error::BadRequestError)
+impl std::error::Error for BadRequestException {}
+/// See [`BadRequestException`](crate::error::BadRequestException)
+pub mod bad_request_exception {
+    /// A builder for [`BadRequestException`](crate::error::BadRequestException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -493,18 +480,18 @@ pub mod bad_request_error {
             self.code = input;
             self
         }
-        /// Consumes the builder and constructs a [`BadRequestError`](crate::error::BadRequestError)
-        pub fn build(self) -> crate::error::BadRequestError {
-            crate::error::BadRequestError {
+        /// Consumes the builder and constructs a [`BadRequestException`](crate::error::BadRequestException)
+        pub fn build(self) -> crate::error::BadRequestException {
+            crate::error::BadRequestException {
                 message: self.message,
                 code: self.code,
             }
         }
     }
 }
-impl BadRequestError {
-    /// Creates a new builder-style object to manufacture [`BadRequestError`](crate::error::BadRequestError)
-    pub fn builder() -> crate::error::bad_request_error::Builder {
-        crate::error::bad_request_error::Builder::default()
+impl BadRequestException {
+    /// Creates a new builder-style object to manufacture [`BadRequestException`](crate::error::BadRequestException)
+    pub fn builder() -> crate::error::bad_request_exception::Builder {
+        crate::error::bad_request_exception::Builder::default()
     }
 }

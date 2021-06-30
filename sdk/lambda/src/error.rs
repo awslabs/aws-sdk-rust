@@ -8,26 +8,32 @@ pub struct AddLayerVersionPermissionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum AddLayerVersionPermissionErrorKind {
-    InvalidParameterValueError(crate::error::InvalidParameterValueError),
-    PolicyLengthExceededError(crate::error::PolicyLengthExceededError),
-    PreconditionFailedError(crate::error::PreconditionFailedError),
-    ResourceConflictError(crate::error::ResourceConflictError),
-    ResourceNotFoundError(crate::error::ResourceNotFoundError),
-    ServiceError(crate::error::ServiceError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
+    InvalidParameterValueException(crate::error::InvalidParameterValueException),
+    PolicyLengthExceededException(crate::error::PolicyLengthExceededException),
+    PreconditionFailedException(crate::error::PreconditionFailedException),
+    ResourceConflictException(crate::error::ResourceConflictException),
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    ServiceException(crate::error::ServiceException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AddLayerVersionPermissionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            AddLayerVersionPermissionErrorKind::InvalidParameterValueError(_inner) => _inner.fmt(f),
-            AddLayerVersionPermissionErrorKind::PolicyLengthExceededError(_inner) => _inner.fmt(f),
-            AddLayerVersionPermissionErrorKind::PreconditionFailedError(_inner) => _inner.fmt(f),
-            AddLayerVersionPermissionErrorKind::ResourceConflictError(_inner) => _inner.fmt(f),
-            AddLayerVersionPermissionErrorKind::ResourceNotFoundError(_inner) => _inner.fmt(f),
-            AddLayerVersionPermissionErrorKind::ServiceError(_inner) => _inner.fmt(f),
-            AddLayerVersionPermissionErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
+            AddLayerVersionPermissionErrorKind::InvalidParameterValueException(_inner) => {
+                _inner.fmt(f)
+            }
+            AddLayerVersionPermissionErrorKind::PolicyLengthExceededException(_inner) => {
+                _inner.fmt(f)
+            }
+            AddLayerVersionPermissionErrorKind::PreconditionFailedException(_inner) => {
+                _inner.fmt(f)
+            }
+            AddLayerVersionPermissionErrorKind::ResourceConflictException(_inner) => _inner.fmt(f),
+            AddLayerVersionPermissionErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            AddLayerVersionPermissionErrorKind::ServiceException(_inner) => _inner.fmt(f),
+            AddLayerVersionPermissionErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
             AddLayerVersionPermissionErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -76,59 +82,63 @@ impl AddLayerVersionPermissionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_invalid_parameter_value_error(&self) -> bool {
+    pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
-            AddLayerVersionPermissionErrorKind::InvalidParameterValueError(_)
+            AddLayerVersionPermissionErrorKind::InvalidParameterValueException(_)
         )
     }
-    pub fn is_policy_length_exceeded_error(&self) -> bool {
+    pub fn is_policy_length_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
-            AddLayerVersionPermissionErrorKind::PolicyLengthExceededError(_)
+            AddLayerVersionPermissionErrorKind::PolicyLengthExceededException(_)
         )
     }
-    pub fn is_precondition_failed_error(&self) -> bool {
+    pub fn is_precondition_failed_exception(&self) -> bool {
         matches!(
             &self.kind,
-            AddLayerVersionPermissionErrorKind::PreconditionFailedError(_)
+            AddLayerVersionPermissionErrorKind::PreconditionFailedException(_)
         )
     }
-    pub fn is_resource_conflict_error(&self) -> bool {
+    pub fn is_resource_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
-            AddLayerVersionPermissionErrorKind::ResourceConflictError(_)
+            AddLayerVersionPermissionErrorKind::ResourceConflictException(_)
         )
     }
-    pub fn is_resource_not_found_error(&self) -> bool {
+    pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
-            AddLayerVersionPermissionErrorKind::ResourceNotFoundError(_)
+            AddLayerVersionPermissionErrorKind::ResourceNotFoundException(_)
         )
     }
-    pub fn is_service_error(&self) -> bool {
+    pub fn is_service_exception(&self) -> bool {
         matches!(
             &self.kind,
-            AddLayerVersionPermissionErrorKind::ServiceError(_)
+            AddLayerVersionPermissionErrorKind::ServiceException(_)
         )
     }
-    pub fn is_too_many_requests_error(&self) -> bool {
+    pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
-            AddLayerVersionPermissionErrorKind::TooManyRequestsError(_)
+            AddLayerVersionPermissionErrorKind::TooManyRequestsException(_)
         )
     }
 }
 impl std::error::Error for AddLayerVersionPermissionError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            AddLayerVersionPermissionErrorKind::InvalidParameterValueError(_inner) => Some(_inner),
-            AddLayerVersionPermissionErrorKind::PolicyLengthExceededError(_inner) => Some(_inner),
-            AddLayerVersionPermissionErrorKind::PreconditionFailedError(_inner) => Some(_inner),
-            AddLayerVersionPermissionErrorKind::ResourceConflictError(_inner) => Some(_inner),
-            AddLayerVersionPermissionErrorKind::ResourceNotFoundError(_inner) => Some(_inner),
-            AddLayerVersionPermissionErrorKind::ServiceError(_inner) => Some(_inner),
-            AddLayerVersionPermissionErrorKind::TooManyRequestsError(_inner) => Some(_inner),
+            AddLayerVersionPermissionErrorKind::InvalidParameterValueException(_inner) => {
+                Some(_inner)
+            }
+            AddLayerVersionPermissionErrorKind::PolicyLengthExceededException(_inner) => {
+                Some(_inner)
+            }
+            AddLayerVersionPermissionErrorKind::PreconditionFailedException(_inner) => Some(_inner),
+            AddLayerVersionPermissionErrorKind::ResourceConflictException(_inner) => Some(_inner),
+            AddLayerVersionPermissionErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            AddLayerVersionPermissionErrorKind::ServiceException(_inner) => Some(_inner),
+            AddLayerVersionPermissionErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             AddLayerVersionPermissionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -143,26 +153,26 @@ pub struct AddPermissionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum AddPermissionErrorKind {
-    InvalidParameterValueError(crate::error::InvalidParameterValueError),
-    PolicyLengthExceededError(crate::error::PolicyLengthExceededError),
-    PreconditionFailedError(crate::error::PreconditionFailedError),
-    ResourceConflictError(crate::error::ResourceConflictError),
-    ResourceNotFoundError(crate::error::ResourceNotFoundError),
-    ServiceError(crate::error::ServiceError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
+    InvalidParameterValueException(crate::error::InvalidParameterValueException),
+    PolicyLengthExceededException(crate::error::PolicyLengthExceededException),
+    PreconditionFailedException(crate::error::PreconditionFailedException),
+    ResourceConflictException(crate::error::ResourceConflictException),
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    ServiceException(crate::error::ServiceException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AddPermissionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            AddPermissionErrorKind::InvalidParameterValueError(_inner) => _inner.fmt(f),
-            AddPermissionErrorKind::PolicyLengthExceededError(_inner) => _inner.fmt(f),
-            AddPermissionErrorKind::PreconditionFailedError(_inner) => _inner.fmt(f),
-            AddPermissionErrorKind::ResourceConflictError(_inner) => _inner.fmt(f),
-            AddPermissionErrorKind::ResourceNotFoundError(_inner) => _inner.fmt(f),
-            AddPermissionErrorKind::ServiceError(_inner) => _inner.fmt(f),
-            AddPermissionErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
+            AddPermissionErrorKind::InvalidParameterValueException(_inner) => _inner.fmt(f),
+            AddPermissionErrorKind::PolicyLengthExceededException(_inner) => _inner.fmt(f),
+            AddPermissionErrorKind::PreconditionFailedException(_inner) => _inner.fmt(f),
+            AddPermissionErrorKind::ResourceConflictException(_inner) => _inner.fmt(f),
+            AddPermissionErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            AddPermissionErrorKind::ServiceException(_inner) => _inner.fmt(f),
+            AddPermissionErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
             AddPermissionErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -211,47 +221,56 @@ impl AddPermissionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_invalid_parameter_value_error(&self) -> bool {
+    pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
-            AddPermissionErrorKind::InvalidParameterValueError(_)
+            AddPermissionErrorKind::InvalidParameterValueException(_)
         )
     }
-    pub fn is_policy_length_exceeded_error(&self) -> bool {
+    pub fn is_policy_length_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
-            AddPermissionErrorKind::PolicyLengthExceededError(_)
+            AddPermissionErrorKind::PolicyLengthExceededException(_)
         )
     }
-    pub fn is_precondition_failed_error(&self) -> bool {
+    pub fn is_precondition_failed_exception(&self) -> bool {
         matches!(
             &self.kind,
-            AddPermissionErrorKind::PreconditionFailedError(_)
+            AddPermissionErrorKind::PreconditionFailedException(_)
         )
     }
-    pub fn is_resource_conflict_error(&self) -> bool {
-        matches!(&self.kind, AddPermissionErrorKind::ResourceConflictError(_))
+    pub fn is_resource_conflict_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            AddPermissionErrorKind::ResourceConflictException(_)
+        )
     }
-    pub fn is_resource_not_found_error(&self) -> bool {
-        matches!(&self.kind, AddPermissionErrorKind::ResourceNotFoundError(_))
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            AddPermissionErrorKind::ResourceNotFoundException(_)
+        )
     }
-    pub fn is_service_error(&self) -> bool {
-        matches!(&self.kind, AddPermissionErrorKind::ServiceError(_))
+    pub fn is_service_exception(&self) -> bool {
+        matches!(&self.kind, AddPermissionErrorKind::ServiceException(_))
     }
-    pub fn is_too_many_requests_error(&self) -> bool {
-        matches!(&self.kind, AddPermissionErrorKind::TooManyRequestsError(_))
+    pub fn is_too_many_requests_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            AddPermissionErrorKind::TooManyRequestsException(_)
+        )
     }
 }
 impl std::error::Error for AddPermissionError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            AddPermissionErrorKind::InvalidParameterValueError(_inner) => Some(_inner),
-            AddPermissionErrorKind::PolicyLengthExceededError(_inner) => Some(_inner),
-            AddPermissionErrorKind::PreconditionFailedError(_inner) => Some(_inner),
-            AddPermissionErrorKind::ResourceConflictError(_inner) => Some(_inner),
-            AddPermissionErrorKind::ResourceNotFoundError(_inner) => Some(_inner),
-            AddPermissionErrorKind::ServiceError(_inner) => Some(_inner),
-            AddPermissionErrorKind::TooManyRequestsError(_inner) => Some(_inner),
+            AddPermissionErrorKind::InvalidParameterValueException(_inner) => Some(_inner),
+            AddPermissionErrorKind::PolicyLengthExceededException(_inner) => Some(_inner),
+            AddPermissionErrorKind::PreconditionFailedException(_inner) => Some(_inner),
+            AddPermissionErrorKind::ResourceConflictException(_inner) => Some(_inner),
+            AddPermissionErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            AddPermissionErrorKind::ServiceException(_inner) => Some(_inner),
+            AddPermissionErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             AddPermissionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -266,22 +285,22 @@ pub struct CreateAliasError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateAliasErrorKind {
-    InvalidParameterValueError(crate::error::InvalidParameterValueError),
-    ResourceConflictError(crate::error::ResourceConflictError),
-    ResourceNotFoundError(crate::error::ResourceNotFoundError),
-    ServiceError(crate::error::ServiceError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
+    InvalidParameterValueException(crate::error::InvalidParameterValueException),
+    ResourceConflictException(crate::error::ResourceConflictException),
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    ServiceException(crate::error::ServiceException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateAliasError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            CreateAliasErrorKind::InvalidParameterValueError(_inner) => _inner.fmt(f),
-            CreateAliasErrorKind::ResourceConflictError(_inner) => _inner.fmt(f),
-            CreateAliasErrorKind::ResourceNotFoundError(_inner) => _inner.fmt(f),
-            CreateAliasErrorKind::ServiceError(_inner) => _inner.fmt(f),
-            CreateAliasErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
+            CreateAliasErrorKind::InvalidParameterValueException(_inner) => _inner.fmt(f),
+            CreateAliasErrorKind::ResourceConflictException(_inner) => _inner.fmt(f),
+            CreateAliasErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            CreateAliasErrorKind::ServiceException(_inner) => _inner.fmt(f),
+            CreateAliasErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
             CreateAliasErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -330,33 +349,42 @@ impl CreateAliasError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_invalid_parameter_value_error(&self) -> bool {
+    pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
-            CreateAliasErrorKind::InvalidParameterValueError(_)
+            CreateAliasErrorKind::InvalidParameterValueException(_)
         )
     }
-    pub fn is_resource_conflict_error(&self) -> bool {
-        matches!(&self.kind, CreateAliasErrorKind::ResourceConflictError(_))
+    pub fn is_resource_conflict_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateAliasErrorKind::ResourceConflictException(_)
+        )
     }
-    pub fn is_resource_not_found_error(&self) -> bool {
-        matches!(&self.kind, CreateAliasErrorKind::ResourceNotFoundError(_))
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateAliasErrorKind::ResourceNotFoundException(_)
+        )
     }
-    pub fn is_service_error(&self) -> bool {
-        matches!(&self.kind, CreateAliasErrorKind::ServiceError(_))
+    pub fn is_service_exception(&self) -> bool {
+        matches!(&self.kind, CreateAliasErrorKind::ServiceException(_))
     }
-    pub fn is_too_many_requests_error(&self) -> bool {
-        matches!(&self.kind, CreateAliasErrorKind::TooManyRequestsError(_))
+    pub fn is_too_many_requests_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateAliasErrorKind::TooManyRequestsException(_)
+        )
     }
 }
 impl std::error::Error for CreateAliasError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            CreateAliasErrorKind::InvalidParameterValueError(_inner) => Some(_inner),
-            CreateAliasErrorKind::ResourceConflictError(_inner) => Some(_inner),
-            CreateAliasErrorKind::ResourceNotFoundError(_inner) => Some(_inner),
-            CreateAliasErrorKind::ServiceError(_inner) => Some(_inner),
-            CreateAliasErrorKind::TooManyRequestsError(_inner) => Some(_inner),
+            CreateAliasErrorKind::InvalidParameterValueException(_inner) => Some(_inner),
+            CreateAliasErrorKind::ResourceConflictException(_inner) => Some(_inner),
+            CreateAliasErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            CreateAliasErrorKind::ServiceException(_inner) => Some(_inner),
+            CreateAliasErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             CreateAliasErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -371,16 +399,18 @@ pub struct CreateCodeSigningConfigError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateCodeSigningConfigErrorKind {
-    InvalidParameterValueError(crate::error::InvalidParameterValueError),
-    ServiceError(crate::error::ServiceError),
+    InvalidParameterValueException(crate::error::InvalidParameterValueException),
+    ServiceException(crate::error::ServiceException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateCodeSigningConfigError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            CreateCodeSigningConfigErrorKind::InvalidParameterValueError(_inner) => _inner.fmt(f),
-            CreateCodeSigningConfigErrorKind::ServiceError(_inner) => _inner.fmt(f),
+            CreateCodeSigningConfigErrorKind::InvalidParameterValueException(_inner) => {
+                _inner.fmt(f)
+            }
+            CreateCodeSigningConfigErrorKind::ServiceException(_inner) => _inner.fmt(f),
             CreateCodeSigningConfigErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -429,24 +459,26 @@ impl CreateCodeSigningConfigError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_invalid_parameter_value_error(&self) -> bool {
+    pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
-            CreateCodeSigningConfigErrorKind::InvalidParameterValueError(_)
+            CreateCodeSigningConfigErrorKind::InvalidParameterValueException(_)
         )
     }
-    pub fn is_service_error(&self) -> bool {
+    pub fn is_service_exception(&self) -> bool {
         matches!(
             &self.kind,
-            CreateCodeSigningConfigErrorKind::ServiceError(_)
+            CreateCodeSigningConfigErrorKind::ServiceException(_)
         )
     }
 }
 impl std::error::Error for CreateCodeSigningConfigError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            CreateCodeSigningConfigErrorKind::InvalidParameterValueError(_inner) => Some(_inner),
-            CreateCodeSigningConfigErrorKind::ServiceError(_inner) => Some(_inner),
+            CreateCodeSigningConfigErrorKind::InvalidParameterValueException(_inner) => {
+                Some(_inner)
+            }
+            CreateCodeSigningConfigErrorKind::ServiceException(_inner) => Some(_inner),
             CreateCodeSigningConfigErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -461,22 +493,24 @@ pub struct CreateEventSourceMappingError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateEventSourceMappingErrorKind {
-    InvalidParameterValueError(crate::error::InvalidParameterValueError),
-    ResourceConflictError(crate::error::ResourceConflictError),
-    ResourceNotFoundError(crate::error::ResourceNotFoundError),
-    ServiceError(crate::error::ServiceError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
+    InvalidParameterValueException(crate::error::InvalidParameterValueException),
+    ResourceConflictException(crate::error::ResourceConflictException),
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    ServiceException(crate::error::ServiceException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateEventSourceMappingError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            CreateEventSourceMappingErrorKind::InvalidParameterValueError(_inner) => _inner.fmt(f),
-            CreateEventSourceMappingErrorKind::ResourceConflictError(_inner) => _inner.fmt(f),
-            CreateEventSourceMappingErrorKind::ResourceNotFoundError(_inner) => _inner.fmt(f),
-            CreateEventSourceMappingErrorKind::ServiceError(_inner) => _inner.fmt(f),
-            CreateEventSourceMappingErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
+            CreateEventSourceMappingErrorKind::InvalidParameterValueException(_inner) => {
+                _inner.fmt(f)
+            }
+            CreateEventSourceMappingErrorKind::ResourceConflictException(_inner) => _inner.fmt(f),
+            CreateEventSourceMappingErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            CreateEventSourceMappingErrorKind::ServiceException(_inner) => _inner.fmt(f),
+            CreateEventSourceMappingErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
             CreateEventSourceMappingErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -525,45 +559,47 @@ impl CreateEventSourceMappingError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_invalid_parameter_value_error(&self) -> bool {
+    pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
-            CreateEventSourceMappingErrorKind::InvalidParameterValueError(_)
+            CreateEventSourceMappingErrorKind::InvalidParameterValueException(_)
         )
     }
-    pub fn is_resource_conflict_error(&self) -> bool {
+    pub fn is_resource_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
-            CreateEventSourceMappingErrorKind::ResourceConflictError(_)
+            CreateEventSourceMappingErrorKind::ResourceConflictException(_)
         )
     }
-    pub fn is_resource_not_found_error(&self) -> bool {
+    pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
-            CreateEventSourceMappingErrorKind::ResourceNotFoundError(_)
+            CreateEventSourceMappingErrorKind::ResourceNotFoundException(_)
         )
     }
-    pub fn is_service_error(&self) -> bool {
+    pub fn is_service_exception(&self) -> bool {
         matches!(
             &self.kind,
-            CreateEventSourceMappingErrorKind::ServiceError(_)
+            CreateEventSourceMappingErrorKind::ServiceException(_)
         )
     }
-    pub fn is_too_many_requests_error(&self) -> bool {
+    pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
-            CreateEventSourceMappingErrorKind::TooManyRequestsError(_)
+            CreateEventSourceMappingErrorKind::TooManyRequestsException(_)
         )
     }
 }
 impl std::error::Error for CreateEventSourceMappingError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            CreateEventSourceMappingErrorKind::InvalidParameterValueError(_inner) => Some(_inner),
-            CreateEventSourceMappingErrorKind::ResourceConflictError(_inner) => Some(_inner),
-            CreateEventSourceMappingErrorKind::ResourceNotFoundError(_inner) => Some(_inner),
-            CreateEventSourceMappingErrorKind::ServiceError(_inner) => Some(_inner),
-            CreateEventSourceMappingErrorKind::TooManyRequestsError(_inner) => Some(_inner),
+            CreateEventSourceMappingErrorKind::InvalidParameterValueException(_inner) => {
+                Some(_inner)
+            }
+            CreateEventSourceMappingErrorKind::ResourceConflictException(_inner) => Some(_inner),
+            CreateEventSourceMappingErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            CreateEventSourceMappingErrorKind::ServiceException(_inner) => Some(_inner),
+            CreateEventSourceMappingErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             CreateEventSourceMappingErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -578,30 +614,30 @@ pub struct CreateFunctionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateFunctionErrorKind {
-    CodeSigningConfigNotFoundError(crate::error::CodeSigningConfigNotFoundError),
-    CodeStorageExceededError(crate::error::CodeStorageExceededError),
-    CodeVerificationFailedError(crate::error::CodeVerificationFailedError),
-    InvalidCodeSignatureError(crate::error::InvalidCodeSignatureError),
-    InvalidParameterValueError(crate::error::InvalidParameterValueError),
-    ResourceConflictError(crate::error::ResourceConflictError),
-    ResourceNotFoundError(crate::error::ResourceNotFoundError),
-    ServiceError(crate::error::ServiceError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
+    CodeSigningConfigNotFoundException(crate::error::CodeSigningConfigNotFoundException),
+    CodeStorageExceededException(crate::error::CodeStorageExceededException),
+    CodeVerificationFailedException(crate::error::CodeVerificationFailedException),
+    InvalidCodeSignatureException(crate::error::InvalidCodeSignatureException),
+    InvalidParameterValueException(crate::error::InvalidParameterValueException),
+    ResourceConflictException(crate::error::ResourceConflictException),
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    ServiceException(crate::error::ServiceException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateFunctionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            CreateFunctionErrorKind::CodeSigningConfigNotFoundError(_inner) => _inner.fmt(f),
-            CreateFunctionErrorKind::CodeStorageExceededError(_inner) => _inner.fmt(f),
-            CreateFunctionErrorKind::CodeVerificationFailedError(_inner) => _inner.fmt(f),
-            CreateFunctionErrorKind::InvalidCodeSignatureError(_inner) => _inner.fmt(f),
-            CreateFunctionErrorKind::InvalidParameterValueError(_inner) => _inner.fmt(f),
-            CreateFunctionErrorKind::ResourceConflictError(_inner) => _inner.fmt(f),
-            CreateFunctionErrorKind::ResourceNotFoundError(_inner) => _inner.fmt(f),
-            CreateFunctionErrorKind::ServiceError(_inner) => _inner.fmt(f),
-            CreateFunctionErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
+            CreateFunctionErrorKind::CodeSigningConfigNotFoundException(_inner) => _inner.fmt(f),
+            CreateFunctionErrorKind::CodeStorageExceededException(_inner) => _inner.fmt(f),
+            CreateFunctionErrorKind::CodeVerificationFailedException(_inner) => _inner.fmt(f),
+            CreateFunctionErrorKind::InvalidCodeSignatureException(_inner) => _inner.fmt(f),
+            CreateFunctionErrorKind::InvalidParameterValueException(_inner) => _inner.fmt(f),
+            CreateFunctionErrorKind::ResourceConflictException(_inner) => _inner.fmt(f),
+            CreateFunctionErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            CreateFunctionErrorKind::ServiceException(_inner) => _inner.fmt(f),
+            CreateFunctionErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
             CreateFunctionErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -650,67 +686,70 @@ impl CreateFunctionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_code_signing_config_not_found_error(&self) -> bool {
+    pub fn is_code_signing_config_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
-            CreateFunctionErrorKind::CodeSigningConfigNotFoundError(_)
+            CreateFunctionErrorKind::CodeSigningConfigNotFoundException(_)
         )
     }
-    pub fn is_code_storage_exceeded_error(&self) -> bool {
+    pub fn is_code_storage_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
-            CreateFunctionErrorKind::CodeStorageExceededError(_)
+            CreateFunctionErrorKind::CodeStorageExceededException(_)
         )
     }
-    pub fn is_code_verification_failed_error(&self) -> bool {
+    pub fn is_code_verification_failed_exception(&self) -> bool {
         matches!(
             &self.kind,
-            CreateFunctionErrorKind::CodeVerificationFailedError(_)
+            CreateFunctionErrorKind::CodeVerificationFailedException(_)
         )
     }
-    pub fn is_invalid_code_signature_error(&self) -> bool {
+    pub fn is_invalid_code_signature_exception(&self) -> bool {
         matches!(
             &self.kind,
-            CreateFunctionErrorKind::InvalidCodeSignatureError(_)
+            CreateFunctionErrorKind::InvalidCodeSignatureException(_)
         )
     }
-    pub fn is_invalid_parameter_value_error(&self) -> bool {
+    pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
-            CreateFunctionErrorKind::InvalidParameterValueError(_)
+            CreateFunctionErrorKind::InvalidParameterValueException(_)
         )
     }
-    pub fn is_resource_conflict_error(&self) -> bool {
+    pub fn is_resource_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
-            CreateFunctionErrorKind::ResourceConflictError(_)
+            CreateFunctionErrorKind::ResourceConflictException(_)
         )
     }
-    pub fn is_resource_not_found_error(&self) -> bool {
+    pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
-            CreateFunctionErrorKind::ResourceNotFoundError(_)
+            CreateFunctionErrorKind::ResourceNotFoundException(_)
         )
     }
-    pub fn is_service_error(&self) -> bool {
-        matches!(&self.kind, CreateFunctionErrorKind::ServiceError(_))
+    pub fn is_service_exception(&self) -> bool {
+        matches!(&self.kind, CreateFunctionErrorKind::ServiceException(_))
     }
-    pub fn is_too_many_requests_error(&self) -> bool {
-        matches!(&self.kind, CreateFunctionErrorKind::TooManyRequestsError(_))
+    pub fn is_too_many_requests_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateFunctionErrorKind::TooManyRequestsException(_)
+        )
     }
 }
 impl std::error::Error for CreateFunctionError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            CreateFunctionErrorKind::CodeSigningConfigNotFoundError(_inner) => Some(_inner),
-            CreateFunctionErrorKind::CodeStorageExceededError(_inner) => Some(_inner),
-            CreateFunctionErrorKind::CodeVerificationFailedError(_inner) => Some(_inner),
-            CreateFunctionErrorKind::InvalidCodeSignatureError(_inner) => Some(_inner),
-            CreateFunctionErrorKind::InvalidParameterValueError(_inner) => Some(_inner),
-            CreateFunctionErrorKind::ResourceConflictError(_inner) => Some(_inner),
-            CreateFunctionErrorKind::ResourceNotFoundError(_inner) => Some(_inner),
-            CreateFunctionErrorKind::ServiceError(_inner) => Some(_inner),
-            CreateFunctionErrorKind::TooManyRequestsError(_inner) => Some(_inner),
+            CreateFunctionErrorKind::CodeSigningConfigNotFoundException(_inner) => Some(_inner),
+            CreateFunctionErrorKind::CodeStorageExceededException(_inner) => Some(_inner),
+            CreateFunctionErrorKind::CodeVerificationFailedException(_inner) => Some(_inner),
+            CreateFunctionErrorKind::InvalidCodeSignatureException(_inner) => Some(_inner),
+            CreateFunctionErrorKind::InvalidParameterValueException(_inner) => Some(_inner),
+            CreateFunctionErrorKind::ResourceConflictException(_inner) => Some(_inner),
+            CreateFunctionErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            CreateFunctionErrorKind::ServiceException(_inner) => Some(_inner),
+            CreateFunctionErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             CreateFunctionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -725,20 +764,20 @@ pub struct DeleteAliasError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteAliasErrorKind {
-    InvalidParameterValueError(crate::error::InvalidParameterValueError),
-    ResourceConflictError(crate::error::ResourceConflictError),
-    ServiceError(crate::error::ServiceError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
+    InvalidParameterValueException(crate::error::InvalidParameterValueException),
+    ResourceConflictException(crate::error::ResourceConflictException),
+    ServiceException(crate::error::ServiceException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteAliasError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DeleteAliasErrorKind::InvalidParameterValueError(_inner) => _inner.fmt(f),
-            DeleteAliasErrorKind::ResourceConflictError(_inner) => _inner.fmt(f),
-            DeleteAliasErrorKind::ServiceError(_inner) => _inner.fmt(f),
-            DeleteAliasErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
+            DeleteAliasErrorKind::InvalidParameterValueException(_inner) => _inner.fmt(f),
+            DeleteAliasErrorKind::ResourceConflictException(_inner) => _inner.fmt(f),
+            DeleteAliasErrorKind::ServiceException(_inner) => _inner.fmt(f),
+            DeleteAliasErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
             DeleteAliasErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -787,29 +826,35 @@ impl DeleteAliasError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_invalid_parameter_value_error(&self) -> bool {
+    pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DeleteAliasErrorKind::InvalidParameterValueError(_)
+            DeleteAliasErrorKind::InvalidParameterValueException(_)
         )
     }
-    pub fn is_resource_conflict_error(&self) -> bool {
-        matches!(&self.kind, DeleteAliasErrorKind::ResourceConflictError(_))
+    pub fn is_resource_conflict_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteAliasErrorKind::ResourceConflictException(_)
+        )
     }
-    pub fn is_service_error(&self) -> bool {
-        matches!(&self.kind, DeleteAliasErrorKind::ServiceError(_))
+    pub fn is_service_exception(&self) -> bool {
+        matches!(&self.kind, DeleteAliasErrorKind::ServiceException(_))
     }
-    pub fn is_too_many_requests_error(&self) -> bool {
-        matches!(&self.kind, DeleteAliasErrorKind::TooManyRequestsError(_))
+    pub fn is_too_many_requests_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteAliasErrorKind::TooManyRequestsException(_)
+        )
     }
 }
 impl std::error::Error for DeleteAliasError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DeleteAliasErrorKind::InvalidParameterValueError(_inner) => Some(_inner),
-            DeleteAliasErrorKind::ResourceConflictError(_inner) => Some(_inner),
-            DeleteAliasErrorKind::ServiceError(_inner) => Some(_inner),
-            DeleteAliasErrorKind::TooManyRequestsError(_inner) => Some(_inner),
+            DeleteAliasErrorKind::InvalidParameterValueException(_inner) => Some(_inner),
+            DeleteAliasErrorKind::ResourceConflictException(_inner) => Some(_inner),
+            DeleteAliasErrorKind::ServiceException(_inner) => Some(_inner),
+            DeleteAliasErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             DeleteAliasErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -824,20 +869,22 @@ pub struct DeleteCodeSigningConfigError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteCodeSigningConfigErrorKind {
-    InvalidParameterValueError(crate::error::InvalidParameterValueError),
-    ResourceConflictError(crate::error::ResourceConflictError),
-    ResourceNotFoundError(crate::error::ResourceNotFoundError),
-    ServiceError(crate::error::ServiceError),
+    InvalidParameterValueException(crate::error::InvalidParameterValueException),
+    ResourceConflictException(crate::error::ResourceConflictException),
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    ServiceException(crate::error::ServiceException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteCodeSigningConfigError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DeleteCodeSigningConfigErrorKind::InvalidParameterValueError(_inner) => _inner.fmt(f),
-            DeleteCodeSigningConfigErrorKind::ResourceConflictError(_inner) => _inner.fmt(f),
-            DeleteCodeSigningConfigErrorKind::ResourceNotFoundError(_inner) => _inner.fmt(f),
-            DeleteCodeSigningConfigErrorKind::ServiceError(_inner) => _inner.fmt(f),
+            DeleteCodeSigningConfigErrorKind::InvalidParameterValueException(_inner) => {
+                _inner.fmt(f)
+            }
+            DeleteCodeSigningConfigErrorKind::ResourceConflictException(_inner) => _inner.fmt(f),
+            DeleteCodeSigningConfigErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            DeleteCodeSigningConfigErrorKind::ServiceException(_inner) => _inner.fmt(f),
             DeleteCodeSigningConfigErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -886,38 +933,40 @@ impl DeleteCodeSigningConfigError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_invalid_parameter_value_error(&self) -> bool {
+    pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DeleteCodeSigningConfigErrorKind::InvalidParameterValueError(_)
+            DeleteCodeSigningConfigErrorKind::InvalidParameterValueException(_)
         )
     }
-    pub fn is_resource_conflict_error(&self) -> bool {
+    pub fn is_resource_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DeleteCodeSigningConfigErrorKind::ResourceConflictError(_)
+            DeleteCodeSigningConfigErrorKind::ResourceConflictException(_)
         )
     }
-    pub fn is_resource_not_found_error(&self) -> bool {
+    pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DeleteCodeSigningConfigErrorKind::ResourceNotFoundError(_)
+            DeleteCodeSigningConfigErrorKind::ResourceNotFoundException(_)
         )
     }
-    pub fn is_service_error(&self) -> bool {
+    pub fn is_service_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DeleteCodeSigningConfigErrorKind::ServiceError(_)
+            DeleteCodeSigningConfigErrorKind::ServiceException(_)
         )
     }
 }
 impl std::error::Error for DeleteCodeSigningConfigError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DeleteCodeSigningConfigErrorKind::InvalidParameterValueError(_inner) => Some(_inner),
-            DeleteCodeSigningConfigErrorKind::ResourceConflictError(_inner) => Some(_inner),
-            DeleteCodeSigningConfigErrorKind::ResourceNotFoundError(_inner) => Some(_inner),
-            DeleteCodeSigningConfigErrorKind::ServiceError(_inner) => Some(_inner),
+            DeleteCodeSigningConfigErrorKind::InvalidParameterValueException(_inner) => {
+                Some(_inner)
+            }
+            DeleteCodeSigningConfigErrorKind::ResourceConflictException(_inner) => Some(_inner),
+            DeleteCodeSigningConfigErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            DeleteCodeSigningConfigErrorKind::ServiceException(_inner) => Some(_inner),
             DeleteCodeSigningConfigErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -932,22 +981,24 @@ pub struct DeleteEventSourceMappingError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteEventSourceMappingErrorKind {
-    InvalidParameterValueError(crate::error::InvalidParameterValueError),
-    ResourceInUseError(crate::error::ResourceInUseError),
-    ResourceNotFoundError(crate::error::ResourceNotFoundError),
-    ServiceError(crate::error::ServiceError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
+    InvalidParameterValueException(crate::error::InvalidParameterValueException),
+    ResourceInUseException(crate::error::ResourceInUseException),
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    ServiceException(crate::error::ServiceException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteEventSourceMappingError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DeleteEventSourceMappingErrorKind::InvalidParameterValueError(_inner) => _inner.fmt(f),
-            DeleteEventSourceMappingErrorKind::ResourceInUseError(_inner) => _inner.fmt(f),
-            DeleteEventSourceMappingErrorKind::ResourceNotFoundError(_inner) => _inner.fmt(f),
-            DeleteEventSourceMappingErrorKind::ServiceError(_inner) => _inner.fmt(f),
-            DeleteEventSourceMappingErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
+            DeleteEventSourceMappingErrorKind::InvalidParameterValueException(_inner) => {
+                _inner.fmt(f)
+            }
+            DeleteEventSourceMappingErrorKind::ResourceInUseException(_inner) => _inner.fmt(f),
+            DeleteEventSourceMappingErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            DeleteEventSourceMappingErrorKind::ServiceException(_inner) => _inner.fmt(f),
+            DeleteEventSourceMappingErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
             DeleteEventSourceMappingErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -996,45 +1047,47 @@ impl DeleteEventSourceMappingError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_invalid_parameter_value_error(&self) -> bool {
+    pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DeleteEventSourceMappingErrorKind::InvalidParameterValueError(_)
+            DeleteEventSourceMappingErrorKind::InvalidParameterValueException(_)
         )
     }
-    pub fn is_resource_in_use_error(&self) -> bool {
+    pub fn is_resource_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DeleteEventSourceMappingErrorKind::ResourceInUseError(_)
+            DeleteEventSourceMappingErrorKind::ResourceInUseException(_)
         )
     }
-    pub fn is_resource_not_found_error(&self) -> bool {
+    pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DeleteEventSourceMappingErrorKind::ResourceNotFoundError(_)
+            DeleteEventSourceMappingErrorKind::ResourceNotFoundException(_)
         )
     }
-    pub fn is_service_error(&self) -> bool {
+    pub fn is_service_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DeleteEventSourceMappingErrorKind::ServiceError(_)
+            DeleteEventSourceMappingErrorKind::ServiceException(_)
         )
     }
-    pub fn is_too_many_requests_error(&self) -> bool {
+    pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DeleteEventSourceMappingErrorKind::TooManyRequestsError(_)
+            DeleteEventSourceMappingErrorKind::TooManyRequestsException(_)
         )
     }
 }
 impl std::error::Error for DeleteEventSourceMappingError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DeleteEventSourceMappingErrorKind::InvalidParameterValueError(_inner) => Some(_inner),
-            DeleteEventSourceMappingErrorKind::ResourceInUseError(_inner) => Some(_inner),
-            DeleteEventSourceMappingErrorKind::ResourceNotFoundError(_inner) => Some(_inner),
-            DeleteEventSourceMappingErrorKind::ServiceError(_inner) => Some(_inner),
-            DeleteEventSourceMappingErrorKind::TooManyRequestsError(_inner) => Some(_inner),
+            DeleteEventSourceMappingErrorKind::InvalidParameterValueException(_inner) => {
+                Some(_inner)
+            }
+            DeleteEventSourceMappingErrorKind::ResourceInUseException(_inner) => Some(_inner),
+            DeleteEventSourceMappingErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            DeleteEventSourceMappingErrorKind::ServiceException(_inner) => Some(_inner),
+            DeleteEventSourceMappingErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             DeleteEventSourceMappingErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -1049,22 +1102,22 @@ pub struct DeleteFunctionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteFunctionErrorKind {
-    InvalidParameterValueError(crate::error::InvalidParameterValueError),
-    ResourceConflictError(crate::error::ResourceConflictError),
-    ResourceNotFoundError(crate::error::ResourceNotFoundError),
-    ServiceError(crate::error::ServiceError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
+    InvalidParameterValueException(crate::error::InvalidParameterValueException),
+    ResourceConflictException(crate::error::ResourceConflictException),
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    ServiceException(crate::error::ServiceException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteFunctionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DeleteFunctionErrorKind::InvalidParameterValueError(_inner) => _inner.fmt(f),
-            DeleteFunctionErrorKind::ResourceConflictError(_inner) => _inner.fmt(f),
-            DeleteFunctionErrorKind::ResourceNotFoundError(_inner) => _inner.fmt(f),
-            DeleteFunctionErrorKind::ServiceError(_inner) => _inner.fmt(f),
-            DeleteFunctionErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
+            DeleteFunctionErrorKind::InvalidParameterValueException(_inner) => _inner.fmt(f),
+            DeleteFunctionErrorKind::ResourceConflictException(_inner) => _inner.fmt(f),
+            DeleteFunctionErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            DeleteFunctionErrorKind::ServiceException(_inner) => _inner.fmt(f),
+            DeleteFunctionErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
             DeleteFunctionErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -1113,39 +1166,42 @@ impl DeleteFunctionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_invalid_parameter_value_error(&self) -> bool {
+    pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DeleteFunctionErrorKind::InvalidParameterValueError(_)
+            DeleteFunctionErrorKind::InvalidParameterValueException(_)
         )
     }
-    pub fn is_resource_conflict_error(&self) -> bool {
+    pub fn is_resource_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DeleteFunctionErrorKind::ResourceConflictError(_)
+            DeleteFunctionErrorKind::ResourceConflictException(_)
         )
     }
-    pub fn is_resource_not_found_error(&self) -> bool {
+    pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DeleteFunctionErrorKind::ResourceNotFoundError(_)
+            DeleteFunctionErrorKind::ResourceNotFoundException(_)
         )
     }
-    pub fn is_service_error(&self) -> bool {
-        matches!(&self.kind, DeleteFunctionErrorKind::ServiceError(_))
+    pub fn is_service_exception(&self) -> bool {
+        matches!(&self.kind, DeleteFunctionErrorKind::ServiceException(_))
     }
-    pub fn is_too_many_requests_error(&self) -> bool {
-        matches!(&self.kind, DeleteFunctionErrorKind::TooManyRequestsError(_))
+    pub fn is_too_many_requests_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteFunctionErrorKind::TooManyRequestsException(_)
+        )
     }
 }
 impl std::error::Error for DeleteFunctionError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DeleteFunctionErrorKind::InvalidParameterValueError(_inner) => Some(_inner),
-            DeleteFunctionErrorKind::ResourceConflictError(_inner) => Some(_inner),
-            DeleteFunctionErrorKind::ResourceNotFoundError(_inner) => Some(_inner),
-            DeleteFunctionErrorKind::ServiceError(_inner) => Some(_inner),
-            DeleteFunctionErrorKind::TooManyRequestsError(_inner) => Some(_inner),
+            DeleteFunctionErrorKind::InvalidParameterValueException(_inner) => Some(_inner),
+            DeleteFunctionErrorKind::ResourceConflictException(_inner) => Some(_inner),
+            DeleteFunctionErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            DeleteFunctionErrorKind::ServiceException(_inner) => Some(_inner),
+            DeleteFunctionErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             DeleteFunctionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -1160,32 +1216,34 @@ pub struct DeleteFunctionCodeSigningConfigError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteFunctionCodeSigningConfigErrorKind {
-    CodeSigningConfigNotFoundError(crate::error::CodeSigningConfigNotFoundError),
-    InvalidParameterValueError(crate::error::InvalidParameterValueError),
-    ResourceConflictError(crate::error::ResourceConflictError),
-    ResourceNotFoundError(crate::error::ResourceNotFoundError),
-    ServiceError(crate::error::ServiceError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
+    CodeSigningConfigNotFoundException(crate::error::CodeSigningConfigNotFoundException),
+    InvalidParameterValueException(crate::error::InvalidParameterValueException),
+    ResourceConflictException(crate::error::ResourceConflictException),
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    ServiceException(crate::error::ServiceException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteFunctionCodeSigningConfigError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DeleteFunctionCodeSigningConfigErrorKind::CodeSigningConfigNotFoundError(_inner) => {
+            DeleteFunctionCodeSigningConfigErrorKind::CodeSigningConfigNotFoundException(
+                _inner,
+            ) => _inner.fmt(f),
+            DeleteFunctionCodeSigningConfigErrorKind::InvalidParameterValueException(_inner) => {
                 _inner.fmt(f)
             }
-            DeleteFunctionCodeSigningConfigErrorKind::InvalidParameterValueError(_inner) => {
+            DeleteFunctionCodeSigningConfigErrorKind::ResourceConflictException(_inner) => {
                 _inner.fmt(f)
             }
-            DeleteFunctionCodeSigningConfigErrorKind::ResourceConflictError(_inner) => {
+            DeleteFunctionCodeSigningConfigErrorKind::ResourceNotFoundException(_inner) => {
                 _inner.fmt(f)
             }
-            DeleteFunctionCodeSigningConfigErrorKind::ResourceNotFoundError(_inner) => {
+            DeleteFunctionCodeSigningConfigErrorKind::ServiceException(_inner) => _inner.fmt(f),
+            DeleteFunctionCodeSigningConfigErrorKind::TooManyRequestsException(_inner) => {
                 _inner.fmt(f)
             }
-            DeleteFunctionCodeSigningConfigErrorKind::ServiceError(_inner) => _inner.fmt(f),
-            DeleteFunctionCodeSigningConfigErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
             DeleteFunctionCodeSigningConfigErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -1234,56 +1292,62 @@ impl DeleteFunctionCodeSigningConfigError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_code_signing_config_not_found_error(&self) -> bool {
+    pub fn is_code_signing_config_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DeleteFunctionCodeSigningConfigErrorKind::CodeSigningConfigNotFoundError(_)
+            DeleteFunctionCodeSigningConfigErrorKind::CodeSigningConfigNotFoundException(_)
         )
     }
-    pub fn is_invalid_parameter_value_error(&self) -> bool {
+    pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DeleteFunctionCodeSigningConfigErrorKind::InvalidParameterValueError(_)
+            DeleteFunctionCodeSigningConfigErrorKind::InvalidParameterValueException(_)
         )
     }
-    pub fn is_resource_conflict_error(&self) -> bool {
+    pub fn is_resource_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DeleteFunctionCodeSigningConfigErrorKind::ResourceConflictError(_)
+            DeleteFunctionCodeSigningConfigErrorKind::ResourceConflictException(_)
         )
     }
-    pub fn is_resource_not_found_error(&self) -> bool {
+    pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DeleteFunctionCodeSigningConfigErrorKind::ResourceNotFoundError(_)
+            DeleteFunctionCodeSigningConfigErrorKind::ResourceNotFoundException(_)
         )
     }
-    pub fn is_service_error(&self) -> bool {
+    pub fn is_service_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DeleteFunctionCodeSigningConfigErrorKind::ServiceError(_)
+            DeleteFunctionCodeSigningConfigErrorKind::ServiceException(_)
         )
     }
-    pub fn is_too_many_requests_error(&self) -> bool {
+    pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DeleteFunctionCodeSigningConfigErrorKind::TooManyRequestsError(_)
+            DeleteFunctionCodeSigningConfigErrorKind::TooManyRequestsException(_)
         )
     }
 }
 impl std::error::Error for DeleteFunctionCodeSigningConfigError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DeleteFunctionCodeSigningConfigErrorKind::CodeSigningConfigNotFoundError(_inner) => {
+            DeleteFunctionCodeSigningConfigErrorKind::CodeSigningConfigNotFoundException(
+                _inner,
+            ) => Some(_inner),
+            DeleteFunctionCodeSigningConfigErrorKind::InvalidParameterValueException(_inner) => {
                 Some(_inner)
             }
-            DeleteFunctionCodeSigningConfigErrorKind::InvalidParameterValueError(_inner) => {
+            DeleteFunctionCodeSigningConfigErrorKind::ResourceConflictException(_inner) => {
                 Some(_inner)
             }
-            DeleteFunctionCodeSigningConfigErrorKind::ResourceConflictError(_inner) => Some(_inner),
-            DeleteFunctionCodeSigningConfigErrorKind::ResourceNotFoundError(_inner) => Some(_inner),
-            DeleteFunctionCodeSigningConfigErrorKind::ServiceError(_inner) => Some(_inner),
-            DeleteFunctionCodeSigningConfigErrorKind::TooManyRequestsError(_inner) => Some(_inner),
+            DeleteFunctionCodeSigningConfigErrorKind::ResourceNotFoundException(_inner) => {
+                Some(_inner)
+            }
+            DeleteFunctionCodeSigningConfigErrorKind::ServiceException(_inner) => Some(_inner),
+            DeleteFunctionCodeSigningConfigErrorKind::TooManyRequestsException(_inner) => {
+                Some(_inner)
+            }
             DeleteFunctionCodeSigningConfigErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -1298,22 +1362,24 @@ pub struct DeleteFunctionConcurrencyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteFunctionConcurrencyErrorKind {
-    InvalidParameterValueError(crate::error::InvalidParameterValueError),
-    ResourceConflictError(crate::error::ResourceConflictError),
-    ResourceNotFoundError(crate::error::ResourceNotFoundError),
-    ServiceError(crate::error::ServiceError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
+    InvalidParameterValueException(crate::error::InvalidParameterValueException),
+    ResourceConflictException(crate::error::ResourceConflictException),
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    ServiceException(crate::error::ServiceException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteFunctionConcurrencyError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DeleteFunctionConcurrencyErrorKind::InvalidParameterValueError(_inner) => _inner.fmt(f),
-            DeleteFunctionConcurrencyErrorKind::ResourceConflictError(_inner) => _inner.fmt(f),
-            DeleteFunctionConcurrencyErrorKind::ResourceNotFoundError(_inner) => _inner.fmt(f),
-            DeleteFunctionConcurrencyErrorKind::ServiceError(_inner) => _inner.fmt(f),
-            DeleteFunctionConcurrencyErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
+            DeleteFunctionConcurrencyErrorKind::InvalidParameterValueException(_inner) => {
+                _inner.fmt(f)
+            }
+            DeleteFunctionConcurrencyErrorKind::ResourceConflictException(_inner) => _inner.fmt(f),
+            DeleteFunctionConcurrencyErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            DeleteFunctionConcurrencyErrorKind::ServiceException(_inner) => _inner.fmt(f),
+            DeleteFunctionConcurrencyErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
             DeleteFunctionConcurrencyErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -1362,45 +1428,47 @@ impl DeleteFunctionConcurrencyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_invalid_parameter_value_error(&self) -> bool {
+    pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DeleteFunctionConcurrencyErrorKind::InvalidParameterValueError(_)
+            DeleteFunctionConcurrencyErrorKind::InvalidParameterValueException(_)
         )
     }
-    pub fn is_resource_conflict_error(&self) -> bool {
+    pub fn is_resource_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DeleteFunctionConcurrencyErrorKind::ResourceConflictError(_)
+            DeleteFunctionConcurrencyErrorKind::ResourceConflictException(_)
         )
     }
-    pub fn is_resource_not_found_error(&self) -> bool {
+    pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DeleteFunctionConcurrencyErrorKind::ResourceNotFoundError(_)
+            DeleteFunctionConcurrencyErrorKind::ResourceNotFoundException(_)
         )
     }
-    pub fn is_service_error(&self) -> bool {
+    pub fn is_service_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DeleteFunctionConcurrencyErrorKind::ServiceError(_)
+            DeleteFunctionConcurrencyErrorKind::ServiceException(_)
         )
     }
-    pub fn is_too_many_requests_error(&self) -> bool {
+    pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DeleteFunctionConcurrencyErrorKind::TooManyRequestsError(_)
+            DeleteFunctionConcurrencyErrorKind::TooManyRequestsException(_)
         )
     }
 }
 impl std::error::Error for DeleteFunctionConcurrencyError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DeleteFunctionConcurrencyErrorKind::InvalidParameterValueError(_inner) => Some(_inner),
-            DeleteFunctionConcurrencyErrorKind::ResourceConflictError(_inner) => Some(_inner),
-            DeleteFunctionConcurrencyErrorKind::ResourceNotFoundError(_inner) => Some(_inner),
-            DeleteFunctionConcurrencyErrorKind::ServiceError(_inner) => Some(_inner),
-            DeleteFunctionConcurrencyErrorKind::TooManyRequestsError(_inner) => Some(_inner),
+            DeleteFunctionConcurrencyErrorKind::InvalidParameterValueException(_inner) => {
+                Some(_inner)
+            }
+            DeleteFunctionConcurrencyErrorKind::ResourceConflictException(_inner) => Some(_inner),
+            DeleteFunctionConcurrencyErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            DeleteFunctionConcurrencyErrorKind::ServiceException(_inner) => Some(_inner),
+            DeleteFunctionConcurrencyErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             DeleteFunctionConcurrencyErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -1415,24 +1483,26 @@ pub struct DeleteFunctionEventInvokeConfigError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteFunctionEventInvokeConfigErrorKind {
-    InvalidParameterValueError(crate::error::InvalidParameterValueError),
-    ResourceNotFoundError(crate::error::ResourceNotFoundError),
-    ServiceError(crate::error::ServiceError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
+    InvalidParameterValueException(crate::error::InvalidParameterValueException),
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    ServiceException(crate::error::ServiceException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteFunctionEventInvokeConfigError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DeleteFunctionEventInvokeConfigErrorKind::InvalidParameterValueError(_inner) => {
+            DeleteFunctionEventInvokeConfigErrorKind::InvalidParameterValueException(_inner) => {
                 _inner.fmt(f)
             }
-            DeleteFunctionEventInvokeConfigErrorKind::ResourceNotFoundError(_inner) => {
+            DeleteFunctionEventInvokeConfigErrorKind::ResourceNotFoundException(_inner) => {
                 _inner.fmt(f)
             }
-            DeleteFunctionEventInvokeConfigErrorKind::ServiceError(_inner) => _inner.fmt(f),
-            DeleteFunctionEventInvokeConfigErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
+            DeleteFunctionEventInvokeConfigErrorKind::ServiceException(_inner) => _inner.fmt(f),
+            DeleteFunctionEventInvokeConfigErrorKind::TooManyRequestsException(_inner) => {
+                _inner.fmt(f)
+            }
             DeleteFunctionEventInvokeConfigErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -1481,40 +1551,44 @@ impl DeleteFunctionEventInvokeConfigError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_invalid_parameter_value_error(&self) -> bool {
+    pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DeleteFunctionEventInvokeConfigErrorKind::InvalidParameterValueError(_)
+            DeleteFunctionEventInvokeConfigErrorKind::InvalidParameterValueException(_)
         )
     }
-    pub fn is_resource_not_found_error(&self) -> bool {
+    pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DeleteFunctionEventInvokeConfigErrorKind::ResourceNotFoundError(_)
+            DeleteFunctionEventInvokeConfigErrorKind::ResourceNotFoundException(_)
         )
     }
-    pub fn is_service_error(&self) -> bool {
+    pub fn is_service_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DeleteFunctionEventInvokeConfigErrorKind::ServiceError(_)
+            DeleteFunctionEventInvokeConfigErrorKind::ServiceException(_)
         )
     }
-    pub fn is_too_many_requests_error(&self) -> bool {
+    pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DeleteFunctionEventInvokeConfigErrorKind::TooManyRequestsError(_)
+            DeleteFunctionEventInvokeConfigErrorKind::TooManyRequestsException(_)
         )
     }
 }
 impl std::error::Error for DeleteFunctionEventInvokeConfigError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DeleteFunctionEventInvokeConfigErrorKind::InvalidParameterValueError(_inner) => {
+            DeleteFunctionEventInvokeConfigErrorKind::InvalidParameterValueException(_inner) => {
                 Some(_inner)
             }
-            DeleteFunctionEventInvokeConfigErrorKind::ResourceNotFoundError(_inner) => Some(_inner),
-            DeleteFunctionEventInvokeConfigErrorKind::ServiceError(_inner) => Some(_inner),
-            DeleteFunctionEventInvokeConfigErrorKind::TooManyRequestsError(_inner) => Some(_inner),
+            DeleteFunctionEventInvokeConfigErrorKind::ResourceNotFoundException(_inner) => {
+                Some(_inner)
+            }
+            DeleteFunctionEventInvokeConfigErrorKind::ServiceException(_inner) => Some(_inner),
+            DeleteFunctionEventInvokeConfigErrorKind::TooManyRequestsException(_inner) => {
+                Some(_inner)
+            }
             DeleteFunctionEventInvokeConfigErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -1529,16 +1603,16 @@ pub struct DeleteLayerVersionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteLayerVersionErrorKind {
-    ServiceError(crate::error::ServiceError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
+    ServiceException(crate::error::ServiceException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteLayerVersionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DeleteLayerVersionErrorKind::ServiceError(_inner) => _inner.fmt(f),
-            DeleteLayerVersionErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
+            DeleteLayerVersionErrorKind::ServiceException(_inner) => _inner.fmt(f),
+            DeleteLayerVersionErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
             DeleteLayerVersionErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -1587,21 +1661,21 @@ impl DeleteLayerVersionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_service_error(&self) -> bool {
-        matches!(&self.kind, DeleteLayerVersionErrorKind::ServiceError(_))
+    pub fn is_service_exception(&self) -> bool {
+        matches!(&self.kind, DeleteLayerVersionErrorKind::ServiceException(_))
     }
-    pub fn is_too_many_requests_error(&self) -> bool {
+    pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DeleteLayerVersionErrorKind::TooManyRequestsError(_)
+            DeleteLayerVersionErrorKind::TooManyRequestsException(_)
         )
     }
 }
 impl std::error::Error for DeleteLayerVersionError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DeleteLayerVersionErrorKind::ServiceError(_inner) => Some(_inner),
-            DeleteLayerVersionErrorKind::TooManyRequestsError(_inner) => Some(_inner),
+            DeleteLayerVersionErrorKind::ServiceException(_inner) => Some(_inner),
+            DeleteLayerVersionErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             DeleteLayerVersionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -1616,28 +1690,28 @@ pub struct DeleteProvisionedConcurrencyConfigError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteProvisionedConcurrencyConfigErrorKind {
-    InvalidParameterValueError(crate::error::InvalidParameterValueError),
-    ResourceConflictError(crate::error::ResourceConflictError),
-    ResourceNotFoundError(crate::error::ResourceNotFoundError),
-    ServiceError(crate::error::ServiceError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
+    InvalidParameterValueException(crate::error::InvalidParameterValueException),
+    ResourceConflictException(crate::error::ResourceConflictException),
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    ServiceException(crate::error::ServiceException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteProvisionedConcurrencyConfigError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DeleteProvisionedConcurrencyConfigErrorKind::InvalidParameterValueError(_inner) => {
+            DeleteProvisionedConcurrencyConfigErrorKind::InvalidParameterValueException(_inner) => {
                 _inner.fmt(f)
             }
-            DeleteProvisionedConcurrencyConfigErrorKind::ResourceConflictError(_inner) => {
+            DeleteProvisionedConcurrencyConfigErrorKind::ResourceConflictException(_inner) => {
                 _inner.fmt(f)
             }
-            DeleteProvisionedConcurrencyConfigErrorKind::ResourceNotFoundError(_inner) => {
+            DeleteProvisionedConcurrencyConfigErrorKind::ResourceNotFoundException(_inner) => {
                 _inner.fmt(f)
             }
-            DeleteProvisionedConcurrencyConfigErrorKind::ServiceError(_inner) => _inner.fmt(f),
-            DeleteProvisionedConcurrencyConfigErrorKind::TooManyRequestsError(_inner) => {
+            DeleteProvisionedConcurrencyConfigErrorKind::ServiceException(_inner) => _inner.fmt(f),
+            DeleteProvisionedConcurrencyConfigErrorKind::TooManyRequestsException(_inner) => {
                 _inner.fmt(f)
             }
             DeleteProvisionedConcurrencyConfigErrorKind::Unhandled(_inner) => _inner.fmt(f),
@@ -1691,51 +1765,51 @@ impl DeleteProvisionedConcurrencyConfigError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_invalid_parameter_value_error(&self) -> bool {
+    pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DeleteProvisionedConcurrencyConfigErrorKind::InvalidParameterValueError(_)
+            DeleteProvisionedConcurrencyConfigErrorKind::InvalidParameterValueException(_)
         )
     }
-    pub fn is_resource_conflict_error(&self) -> bool {
+    pub fn is_resource_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DeleteProvisionedConcurrencyConfigErrorKind::ResourceConflictError(_)
+            DeleteProvisionedConcurrencyConfigErrorKind::ResourceConflictException(_)
         )
     }
-    pub fn is_resource_not_found_error(&self) -> bool {
+    pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DeleteProvisionedConcurrencyConfigErrorKind::ResourceNotFoundError(_)
+            DeleteProvisionedConcurrencyConfigErrorKind::ResourceNotFoundException(_)
         )
     }
-    pub fn is_service_error(&self) -> bool {
+    pub fn is_service_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DeleteProvisionedConcurrencyConfigErrorKind::ServiceError(_)
+            DeleteProvisionedConcurrencyConfigErrorKind::ServiceException(_)
         )
     }
-    pub fn is_too_many_requests_error(&self) -> bool {
+    pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DeleteProvisionedConcurrencyConfigErrorKind::TooManyRequestsError(_)
+            DeleteProvisionedConcurrencyConfigErrorKind::TooManyRequestsException(_)
         )
     }
 }
 impl std::error::Error for DeleteProvisionedConcurrencyConfigError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DeleteProvisionedConcurrencyConfigErrorKind::InvalidParameterValueError(_inner) => {
+            DeleteProvisionedConcurrencyConfigErrorKind::InvalidParameterValueException(_inner) => {
                 Some(_inner)
             }
-            DeleteProvisionedConcurrencyConfigErrorKind::ResourceConflictError(_inner) => {
+            DeleteProvisionedConcurrencyConfigErrorKind::ResourceConflictException(_inner) => {
                 Some(_inner)
             }
-            DeleteProvisionedConcurrencyConfigErrorKind::ResourceNotFoundError(_inner) => {
+            DeleteProvisionedConcurrencyConfigErrorKind::ResourceNotFoundException(_inner) => {
                 Some(_inner)
             }
-            DeleteProvisionedConcurrencyConfigErrorKind::ServiceError(_inner) => Some(_inner),
-            DeleteProvisionedConcurrencyConfigErrorKind::TooManyRequestsError(_inner) => {
+            DeleteProvisionedConcurrencyConfigErrorKind::ServiceException(_inner) => Some(_inner),
+            DeleteProvisionedConcurrencyConfigErrorKind::TooManyRequestsException(_inner) => {
                 Some(_inner)
             }
             DeleteProvisionedConcurrencyConfigErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
@@ -1752,16 +1826,16 @@ pub struct GetAccountSettingsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetAccountSettingsErrorKind {
-    ServiceError(crate::error::ServiceError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
+    ServiceException(crate::error::ServiceException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetAccountSettingsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            GetAccountSettingsErrorKind::ServiceError(_inner) => _inner.fmt(f),
-            GetAccountSettingsErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
+            GetAccountSettingsErrorKind::ServiceException(_inner) => _inner.fmt(f),
+            GetAccountSettingsErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
             GetAccountSettingsErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -1810,21 +1884,21 @@ impl GetAccountSettingsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_service_error(&self) -> bool {
-        matches!(&self.kind, GetAccountSettingsErrorKind::ServiceError(_))
+    pub fn is_service_exception(&self) -> bool {
+        matches!(&self.kind, GetAccountSettingsErrorKind::ServiceException(_))
     }
-    pub fn is_too_many_requests_error(&self) -> bool {
+    pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
-            GetAccountSettingsErrorKind::TooManyRequestsError(_)
+            GetAccountSettingsErrorKind::TooManyRequestsException(_)
         )
     }
 }
 impl std::error::Error for GetAccountSettingsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            GetAccountSettingsErrorKind::ServiceError(_inner) => Some(_inner),
-            GetAccountSettingsErrorKind::TooManyRequestsError(_inner) => Some(_inner),
+            GetAccountSettingsErrorKind::ServiceException(_inner) => Some(_inner),
+            GetAccountSettingsErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             GetAccountSettingsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -1839,20 +1913,20 @@ pub struct GetAliasError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetAliasErrorKind {
-    InvalidParameterValueError(crate::error::InvalidParameterValueError),
-    ResourceNotFoundError(crate::error::ResourceNotFoundError),
-    ServiceError(crate::error::ServiceError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
+    InvalidParameterValueException(crate::error::InvalidParameterValueException),
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    ServiceException(crate::error::ServiceException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetAliasError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            GetAliasErrorKind::InvalidParameterValueError(_inner) => _inner.fmt(f),
-            GetAliasErrorKind::ResourceNotFoundError(_inner) => _inner.fmt(f),
-            GetAliasErrorKind::ServiceError(_inner) => _inner.fmt(f),
-            GetAliasErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
+            GetAliasErrorKind::InvalidParameterValueException(_inner) => _inner.fmt(f),
+            GetAliasErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            GetAliasErrorKind::ServiceException(_inner) => _inner.fmt(f),
+            GetAliasErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
             GetAliasErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -1901,26 +1975,29 @@ impl GetAliasError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_invalid_parameter_value_error(&self) -> bool {
-        matches!(&self.kind, GetAliasErrorKind::InvalidParameterValueError(_))
+    pub fn is_invalid_parameter_value_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetAliasErrorKind::InvalidParameterValueException(_)
+        )
     }
-    pub fn is_resource_not_found_error(&self) -> bool {
-        matches!(&self.kind, GetAliasErrorKind::ResourceNotFoundError(_))
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(&self.kind, GetAliasErrorKind::ResourceNotFoundException(_))
     }
-    pub fn is_service_error(&self) -> bool {
-        matches!(&self.kind, GetAliasErrorKind::ServiceError(_))
+    pub fn is_service_exception(&self) -> bool {
+        matches!(&self.kind, GetAliasErrorKind::ServiceException(_))
     }
-    pub fn is_too_many_requests_error(&self) -> bool {
-        matches!(&self.kind, GetAliasErrorKind::TooManyRequestsError(_))
+    pub fn is_too_many_requests_exception(&self) -> bool {
+        matches!(&self.kind, GetAliasErrorKind::TooManyRequestsException(_))
     }
 }
 impl std::error::Error for GetAliasError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            GetAliasErrorKind::InvalidParameterValueError(_inner) => Some(_inner),
-            GetAliasErrorKind::ResourceNotFoundError(_inner) => Some(_inner),
-            GetAliasErrorKind::ServiceError(_inner) => Some(_inner),
-            GetAliasErrorKind::TooManyRequestsError(_inner) => Some(_inner),
+            GetAliasErrorKind::InvalidParameterValueException(_inner) => Some(_inner),
+            GetAliasErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            GetAliasErrorKind::ServiceException(_inner) => Some(_inner),
+            GetAliasErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             GetAliasErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -1935,18 +2012,18 @@ pub struct GetCodeSigningConfigError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetCodeSigningConfigErrorKind {
-    InvalidParameterValueError(crate::error::InvalidParameterValueError),
-    ResourceNotFoundError(crate::error::ResourceNotFoundError),
-    ServiceError(crate::error::ServiceError),
+    InvalidParameterValueException(crate::error::InvalidParameterValueException),
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    ServiceException(crate::error::ServiceException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetCodeSigningConfigError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            GetCodeSigningConfigErrorKind::InvalidParameterValueError(_inner) => _inner.fmt(f),
-            GetCodeSigningConfigErrorKind::ResourceNotFoundError(_inner) => _inner.fmt(f),
-            GetCodeSigningConfigErrorKind::ServiceError(_inner) => _inner.fmt(f),
+            GetCodeSigningConfigErrorKind::InvalidParameterValueException(_inner) => _inner.fmt(f),
+            GetCodeSigningConfigErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            GetCodeSigningConfigErrorKind::ServiceException(_inner) => _inner.fmt(f),
             GetCodeSigningConfigErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -1995,28 +2072,31 @@ impl GetCodeSigningConfigError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_invalid_parameter_value_error(&self) -> bool {
+    pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
-            GetCodeSigningConfigErrorKind::InvalidParameterValueError(_)
+            GetCodeSigningConfigErrorKind::InvalidParameterValueException(_)
         )
     }
-    pub fn is_resource_not_found_error(&self) -> bool {
+    pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
-            GetCodeSigningConfigErrorKind::ResourceNotFoundError(_)
+            GetCodeSigningConfigErrorKind::ResourceNotFoundException(_)
         )
     }
-    pub fn is_service_error(&self) -> bool {
-        matches!(&self.kind, GetCodeSigningConfigErrorKind::ServiceError(_))
+    pub fn is_service_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetCodeSigningConfigErrorKind::ServiceException(_)
+        )
     }
 }
 impl std::error::Error for GetCodeSigningConfigError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            GetCodeSigningConfigErrorKind::InvalidParameterValueError(_inner) => Some(_inner),
-            GetCodeSigningConfigErrorKind::ResourceNotFoundError(_inner) => Some(_inner),
-            GetCodeSigningConfigErrorKind::ServiceError(_inner) => Some(_inner),
+            GetCodeSigningConfigErrorKind::InvalidParameterValueException(_inner) => Some(_inner),
+            GetCodeSigningConfigErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            GetCodeSigningConfigErrorKind::ServiceException(_inner) => Some(_inner),
             GetCodeSigningConfigErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -2031,20 +2111,20 @@ pub struct GetEventSourceMappingError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetEventSourceMappingErrorKind {
-    InvalidParameterValueError(crate::error::InvalidParameterValueError),
-    ResourceNotFoundError(crate::error::ResourceNotFoundError),
-    ServiceError(crate::error::ServiceError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
+    InvalidParameterValueException(crate::error::InvalidParameterValueException),
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    ServiceException(crate::error::ServiceException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetEventSourceMappingError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            GetEventSourceMappingErrorKind::InvalidParameterValueError(_inner) => _inner.fmt(f),
-            GetEventSourceMappingErrorKind::ResourceNotFoundError(_inner) => _inner.fmt(f),
-            GetEventSourceMappingErrorKind::ServiceError(_inner) => _inner.fmt(f),
-            GetEventSourceMappingErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
+            GetEventSourceMappingErrorKind::InvalidParameterValueException(_inner) => _inner.fmt(f),
+            GetEventSourceMappingErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            GetEventSourceMappingErrorKind::ServiceException(_inner) => _inner.fmt(f),
+            GetEventSourceMappingErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
             GetEventSourceMappingErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -2093,35 +2173,38 @@ impl GetEventSourceMappingError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_invalid_parameter_value_error(&self) -> bool {
+    pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
-            GetEventSourceMappingErrorKind::InvalidParameterValueError(_)
+            GetEventSourceMappingErrorKind::InvalidParameterValueException(_)
         )
     }
-    pub fn is_resource_not_found_error(&self) -> bool {
+    pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
-            GetEventSourceMappingErrorKind::ResourceNotFoundError(_)
+            GetEventSourceMappingErrorKind::ResourceNotFoundException(_)
         )
     }
-    pub fn is_service_error(&self) -> bool {
-        matches!(&self.kind, GetEventSourceMappingErrorKind::ServiceError(_))
-    }
-    pub fn is_too_many_requests_error(&self) -> bool {
+    pub fn is_service_exception(&self) -> bool {
         matches!(
             &self.kind,
-            GetEventSourceMappingErrorKind::TooManyRequestsError(_)
+            GetEventSourceMappingErrorKind::ServiceException(_)
+        )
+    }
+    pub fn is_too_many_requests_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetEventSourceMappingErrorKind::TooManyRequestsException(_)
         )
     }
 }
 impl std::error::Error for GetEventSourceMappingError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            GetEventSourceMappingErrorKind::InvalidParameterValueError(_inner) => Some(_inner),
-            GetEventSourceMappingErrorKind::ResourceNotFoundError(_inner) => Some(_inner),
-            GetEventSourceMappingErrorKind::ServiceError(_inner) => Some(_inner),
-            GetEventSourceMappingErrorKind::TooManyRequestsError(_inner) => Some(_inner),
+            GetEventSourceMappingErrorKind::InvalidParameterValueException(_inner) => Some(_inner),
+            GetEventSourceMappingErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            GetEventSourceMappingErrorKind::ServiceException(_inner) => Some(_inner),
+            GetEventSourceMappingErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             GetEventSourceMappingErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -2136,20 +2219,20 @@ pub struct GetFunctionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetFunctionErrorKind {
-    InvalidParameterValueError(crate::error::InvalidParameterValueError),
-    ResourceNotFoundError(crate::error::ResourceNotFoundError),
-    ServiceError(crate::error::ServiceError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
+    InvalidParameterValueException(crate::error::InvalidParameterValueException),
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    ServiceException(crate::error::ServiceException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetFunctionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            GetFunctionErrorKind::InvalidParameterValueError(_inner) => _inner.fmt(f),
-            GetFunctionErrorKind::ResourceNotFoundError(_inner) => _inner.fmt(f),
-            GetFunctionErrorKind::ServiceError(_inner) => _inner.fmt(f),
-            GetFunctionErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
+            GetFunctionErrorKind::InvalidParameterValueException(_inner) => _inner.fmt(f),
+            GetFunctionErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            GetFunctionErrorKind::ServiceException(_inner) => _inner.fmt(f),
+            GetFunctionErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
             GetFunctionErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -2198,29 +2281,35 @@ impl GetFunctionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_invalid_parameter_value_error(&self) -> bool {
+    pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
-            GetFunctionErrorKind::InvalidParameterValueError(_)
+            GetFunctionErrorKind::InvalidParameterValueException(_)
         )
     }
-    pub fn is_resource_not_found_error(&self) -> bool {
-        matches!(&self.kind, GetFunctionErrorKind::ResourceNotFoundError(_))
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetFunctionErrorKind::ResourceNotFoundException(_)
+        )
     }
-    pub fn is_service_error(&self) -> bool {
-        matches!(&self.kind, GetFunctionErrorKind::ServiceError(_))
+    pub fn is_service_exception(&self) -> bool {
+        matches!(&self.kind, GetFunctionErrorKind::ServiceException(_))
     }
-    pub fn is_too_many_requests_error(&self) -> bool {
-        matches!(&self.kind, GetFunctionErrorKind::TooManyRequestsError(_))
+    pub fn is_too_many_requests_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetFunctionErrorKind::TooManyRequestsException(_)
+        )
     }
 }
 impl std::error::Error for GetFunctionError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            GetFunctionErrorKind::InvalidParameterValueError(_inner) => Some(_inner),
-            GetFunctionErrorKind::ResourceNotFoundError(_inner) => Some(_inner),
-            GetFunctionErrorKind::ServiceError(_inner) => Some(_inner),
-            GetFunctionErrorKind::TooManyRequestsError(_inner) => Some(_inner),
+            GetFunctionErrorKind::InvalidParameterValueException(_inner) => Some(_inner),
+            GetFunctionErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            GetFunctionErrorKind::ServiceException(_inner) => Some(_inner),
+            GetFunctionErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             GetFunctionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -2235,22 +2324,26 @@ pub struct GetFunctionCodeSigningConfigError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetFunctionCodeSigningConfigErrorKind {
-    InvalidParameterValueError(crate::error::InvalidParameterValueError),
-    ResourceNotFoundError(crate::error::ResourceNotFoundError),
-    ServiceError(crate::error::ServiceError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
+    InvalidParameterValueException(crate::error::InvalidParameterValueException),
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    ServiceException(crate::error::ServiceException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetFunctionCodeSigningConfigError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            GetFunctionCodeSigningConfigErrorKind::InvalidParameterValueError(_inner) => {
+            GetFunctionCodeSigningConfigErrorKind::InvalidParameterValueException(_inner) => {
                 _inner.fmt(f)
             }
-            GetFunctionCodeSigningConfigErrorKind::ResourceNotFoundError(_inner) => _inner.fmt(f),
-            GetFunctionCodeSigningConfigErrorKind::ServiceError(_inner) => _inner.fmt(f),
-            GetFunctionCodeSigningConfigErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
+            GetFunctionCodeSigningConfigErrorKind::ResourceNotFoundException(_inner) => {
+                _inner.fmt(f)
+            }
+            GetFunctionCodeSigningConfigErrorKind::ServiceException(_inner) => _inner.fmt(f),
+            GetFunctionCodeSigningConfigErrorKind::TooManyRequestsException(_inner) => {
+                _inner.fmt(f)
+            }
             GetFunctionCodeSigningConfigErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -2299,40 +2392,42 @@ impl GetFunctionCodeSigningConfigError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_invalid_parameter_value_error(&self) -> bool {
+    pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
-            GetFunctionCodeSigningConfigErrorKind::InvalidParameterValueError(_)
+            GetFunctionCodeSigningConfigErrorKind::InvalidParameterValueException(_)
         )
     }
-    pub fn is_resource_not_found_error(&self) -> bool {
+    pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
-            GetFunctionCodeSigningConfigErrorKind::ResourceNotFoundError(_)
+            GetFunctionCodeSigningConfigErrorKind::ResourceNotFoundException(_)
         )
     }
-    pub fn is_service_error(&self) -> bool {
+    pub fn is_service_exception(&self) -> bool {
         matches!(
             &self.kind,
-            GetFunctionCodeSigningConfigErrorKind::ServiceError(_)
+            GetFunctionCodeSigningConfigErrorKind::ServiceException(_)
         )
     }
-    pub fn is_too_many_requests_error(&self) -> bool {
+    pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
-            GetFunctionCodeSigningConfigErrorKind::TooManyRequestsError(_)
+            GetFunctionCodeSigningConfigErrorKind::TooManyRequestsException(_)
         )
     }
 }
 impl std::error::Error for GetFunctionCodeSigningConfigError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            GetFunctionCodeSigningConfigErrorKind::InvalidParameterValueError(_inner) => {
+            GetFunctionCodeSigningConfigErrorKind::InvalidParameterValueException(_inner) => {
                 Some(_inner)
             }
-            GetFunctionCodeSigningConfigErrorKind::ResourceNotFoundError(_inner) => Some(_inner),
-            GetFunctionCodeSigningConfigErrorKind::ServiceError(_inner) => Some(_inner),
-            GetFunctionCodeSigningConfigErrorKind::TooManyRequestsError(_inner) => Some(_inner),
+            GetFunctionCodeSigningConfigErrorKind::ResourceNotFoundException(_inner) => {
+                Some(_inner)
+            }
+            GetFunctionCodeSigningConfigErrorKind::ServiceException(_inner) => Some(_inner),
+            GetFunctionCodeSigningConfigErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             GetFunctionCodeSigningConfigErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -2347,20 +2442,22 @@ pub struct GetFunctionConcurrencyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetFunctionConcurrencyErrorKind {
-    InvalidParameterValueError(crate::error::InvalidParameterValueError),
-    ResourceNotFoundError(crate::error::ResourceNotFoundError),
-    ServiceError(crate::error::ServiceError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
+    InvalidParameterValueException(crate::error::InvalidParameterValueException),
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    ServiceException(crate::error::ServiceException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetFunctionConcurrencyError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            GetFunctionConcurrencyErrorKind::InvalidParameterValueError(_inner) => _inner.fmt(f),
-            GetFunctionConcurrencyErrorKind::ResourceNotFoundError(_inner) => _inner.fmt(f),
-            GetFunctionConcurrencyErrorKind::ServiceError(_inner) => _inner.fmt(f),
-            GetFunctionConcurrencyErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
+            GetFunctionConcurrencyErrorKind::InvalidParameterValueException(_inner) => {
+                _inner.fmt(f)
+            }
+            GetFunctionConcurrencyErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            GetFunctionConcurrencyErrorKind::ServiceException(_inner) => _inner.fmt(f),
+            GetFunctionConcurrencyErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
             GetFunctionConcurrencyErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -2409,35 +2506,38 @@ impl GetFunctionConcurrencyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_invalid_parameter_value_error(&self) -> bool {
+    pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
-            GetFunctionConcurrencyErrorKind::InvalidParameterValueError(_)
+            GetFunctionConcurrencyErrorKind::InvalidParameterValueException(_)
         )
     }
-    pub fn is_resource_not_found_error(&self) -> bool {
+    pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
-            GetFunctionConcurrencyErrorKind::ResourceNotFoundError(_)
+            GetFunctionConcurrencyErrorKind::ResourceNotFoundException(_)
         )
     }
-    pub fn is_service_error(&self) -> bool {
-        matches!(&self.kind, GetFunctionConcurrencyErrorKind::ServiceError(_))
-    }
-    pub fn is_too_many_requests_error(&self) -> bool {
+    pub fn is_service_exception(&self) -> bool {
         matches!(
             &self.kind,
-            GetFunctionConcurrencyErrorKind::TooManyRequestsError(_)
+            GetFunctionConcurrencyErrorKind::ServiceException(_)
+        )
+    }
+    pub fn is_too_many_requests_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetFunctionConcurrencyErrorKind::TooManyRequestsException(_)
         )
     }
 }
 impl std::error::Error for GetFunctionConcurrencyError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            GetFunctionConcurrencyErrorKind::InvalidParameterValueError(_inner) => Some(_inner),
-            GetFunctionConcurrencyErrorKind::ResourceNotFoundError(_inner) => Some(_inner),
-            GetFunctionConcurrencyErrorKind::ServiceError(_inner) => Some(_inner),
-            GetFunctionConcurrencyErrorKind::TooManyRequestsError(_inner) => Some(_inner),
+            GetFunctionConcurrencyErrorKind::InvalidParameterValueException(_inner) => Some(_inner),
+            GetFunctionConcurrencyErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            GetFunctionConcurrencyErrorKind::ServiceException(_inner) => Some(_inner),
+            GetFunctionConcurrencyErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             GetFunctionConcurrencyErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -2452,20 +2552,22 @@ pub struct GetFunctionConfigurationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetFunctionConfigurationErrorKind {
-    InvalidParameterValueError(crate::error::InvalidParameterValueError),
-    ResourceNotFoundError(crate::error::ResourceNotFoundError),
-    ServiceError(crate::error::ServiceError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
+    InvalidParameterValueException(crate::error::InvalidParameterValueException),
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    ServiceException(crate::error::ServiceException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetFunctionConfigurationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            GetFunctionConfigurationErrorKind::InvalidParameterValueError(_inner) => _inner.fmt(f),
-            GetFunctionConfigurationErrorKind::ResourceNotFoundError(_inner) => _inner.fmt(f),
-            GetFunctionConfigurationErrorKind::ServiceError(_inner) => _inner.fmt(f),
-            GetFunctionConfigurationErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
+            GetFunctionConfigurationErrorKind::InvalidParameterValueException(_inner) => {
+                _inner.fmt(f)
+            }
+            GetFunctionConfigurationErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            GetFunctionConfigurationErrorKind::ServiceException(_inner) => _inner.fmt(f),
+            GetFunctionConfigurationErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
             GetFunctionConfigurationErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -2514,38 +2616,40 @@ impl GetFunctionConfigurationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_invalid_parameter_value_error(&self) -> bool {
+    pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
-            GetFunctionConfigurationErrorKind::InvalidParameterValueError(_)
+            GetFunctionConfigurationErrorKind::InvalidParameterValueException(_)
         )
     }
-    pub fn is_resource_not_found_error(&self) -> bool {
+    pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
-            GetFunctionConfigurationErrorKind::ResourceNotFoundError(_)
+            GetFunctionConfigurationErrorKind::ResourceNotFoundException(_)
         )
     }
-    pub fn is_service_error(&self) -> bool {
+    pub fn is_service_exception(&self) -> bool {
         matches!(
             &self.kind,
-            GetFunctionConfigurationErrorKind::ServiceError(_)
+            GetFunctionConfigurationErrorKind::ServiceException(_)
         )
     }
-    pub fn is_too_many_requests_error(&self) -> bool {
+    pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
-            GetFunctionConfigurationErrorKind::TooManyRequestsError(_)
+            GetFunctionConfigurationErrorKind::TooManyRequestsException(_)
         )
     }
 }
 impl std::error::Error for GetFunctionConfigurationError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            GetFunctionConfigurationErrorKind::InvalidParameterValueError(_inner) => Some(_inner),
-            GetFunctionConfigurationErrorKind::ResourceNotFoundError(_inner) => Some(_inner),
-            GetFunctionConfigurationErrorKind::ServiceError(_inner) => Some(_inner),
-            GetFunctionConfigurationErrorKind::TooManyRequestsError(_inner) => Some(_inner),
+            GetFunctionConfigurationErrorKind::InvalidParameterValueException(_inner) => {
+                Some(_inner)
+            }
+            GetFunctionConfigurationErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            GetFunctionConfigurationErrorKind::ServiceException(_inner) => Some(_inner),
+            GetFunctionConfigurationErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             GetFunctionConfigurationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -2560,22 +2664,26 @@ pub struct GetFunctionEventInvokeConfigError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetFunctionEventInvokeConfigErrorKind {
-    InvalidParameterValueError(crate::error::InvalidParameterValueError),
-    ResourceNotFoundError(crate::error::ResourceNotFoundError),
-    ServiceError(crate::error::ServiceError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
+    InvalidParameterValueException(crate::error::InvalidParameterValueException),
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    ServiceException(crate::error::ServiceException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetFunctionEventInvokeConfigError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            GetFunctionEventInvokeConfigErrorKind::InvalidParameterValueError(_inner) => {
+            GetFunctionEventInvokeConfigErrorKind::InvalidParameterValueException(_inner) => {
                 _inner.fmt(f)
             }
-            GetFunctionEventInvokeConfigErrorKind::ResourceNotFoundError(_inner) => _inner.fmt(f),
-            GetFunctionEventInvokeConfigErrorKind::ServiceError(_inner) => _inner.fmt(f),
-            GetFunctionEventInvokeConfigErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
+            GetFunctionEventInvokeConfigErrorKind::ResourceNotFoundException(_inner) => {
+                _inner.fmt(f)
+            }
+            GetFunctionEventInvokeConfigErrorKind::ServiceException(_inner) => _inner.fmt(f),
+            GetFunctionEventInvokeConfigErrorKind::TooManyRequestsException(_inner) => {
+                _inner.fmt(f)
+            }
             GetFunctionEventInvokeConfigErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -2624,40 +2732,42 @@ impl GetFunctionEventInvokeConfigError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_invalid_parameter_value_error(&self) -> bool {
+    pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
-            GetFunctionEventInvokeConfigErrorKind::InvalidParameterValueError(_)
+            GetFunctionEventInvokeConfigErrorKind::InvalidParameterValueException(_)
         )
     }
-    pub fn is_resource_not_found_error(&self) -> bool {
+    pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
-            GetFunctionEventInvokeConfigErrorKind::ResourceNotFoundError(_)
+            GetFunctionEventInvokeConfigErrorKind::ResourceNotFoundException(_)
         )
     }
-    pub fn is_service_error(&self) -> bool {
+    pub fn is_service_exception(&self) -> bool {
         matches!(
             &self.kind,
-            GetFunctionEventInvokeConfigErrorKind::ServiceError(_)
+            GetFunctionEventInvokeConfigErrorKind::ServiceException(_)
         )
     }
-    pub fn is_too_many_requests_error(&self) -> bool {
+    pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
-            GetFunctionEventInvokeConfigErrorKind::TooManyRequestsError(_)
+            GetFunctionEventInvokeConfigErrorKind::TooManyRequestsException(_)
         )
     }
 }
 impl std::error::Error for GetFunctionEventInvokeConfigError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            GetFunctionEventInvokeConfigErrorKind::InvalidParameterValueError(_inner) => {
+            GetFunctionEventInvokeConfigErrorKind::InvalidParameterValueException(_inner) => {
                 Some(_inner)
             }
-            GetFunctionEventInvokeConfigErrorKind::ResourceNotFoundError(_inner) => Some(_inner),
-            GetFunctionEventInvokeConfigErrorKind::ServiceError(_inner) => Some(_inner),
-            GetFunctionEventInvokeConfigErrorKind::TooManyRequestsError(_inner) => Some(_inner),
+            GetFunctionEventInvokeConfigErrorKind::ResourceNotFoundException(_inner) => {
+                Some(_inner)
+            }
+            GetFunctionEventInvokeConfigErrorKind::ServiceException(_inner) => Some(_inner),
+            GetFunctionEventInvokeConfigErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             GetFunctionEventInvokeConfigErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -2672,20 +2782,20 @@ pub struct GetLayerVersionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetLayerVersionErrorKind {
-    InvalidParameterValueError(crate::error::InvalidParameterValueError),
-    ResourceNotFoundError(crate::error::ResourceNotFoundError),
-    ServiceError(crate::error::ServiceError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
+    InvalidParameterValueException(crate::error::InvalidParameterValueException),
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    ServiceException(crate::error::ServiceException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetLayerVersionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            GetLayerVersionErrorKind::InvalidParameterValueError(_inner) => _inner.fmt(f),
-            GetLayerVersionErrorKind::ResourceNotFoundError(_inner) => _inner.fmt(f),
-            GetLayerVersionErrorKind::ServiceError(_inner) => _inner.fmt(f),
-            GetLayerVersionErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
+            GetLayerVersionErrorKind::InvalidParameterValueException(_inner) => _inner.fmt(f),
+            GetLayerVersionErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            GetLayerVersionErrorKind::ServiceException(_inner) => _inner.fmt(f),
+            GetLayerVersionErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
             GetLayerVersionErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -2734,35 +2844,35 @@ impl GetLayerVersionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_invalid_parameter_value_error(&self) -> bool {
+    pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
-            GetLayerVersionErrorKind::InvalidParameterValueError(_)
+            GetLayerVersionErrorKind::InvalidParameterValueException(_)
         )
     }
-    pub fn is_resource_not_found_error(&self) -> bool {
+    pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
-            GetLayerVersionErrorKind::ResourceNotFoundError(_)
+            GetLayerVersionErrorKind::ResourceNotFoundException(_)
         )
     }
-    pub fn is_service_error(&self) -> bool {
-        matches!(&self.kind, GetLayerVersionErrorKind::ServiceError(_))
+    pub fn is_service_exception(&self) -> bool {
+        matches!(&self.kind, GetLayerVersionErrorKind::ServiceException(_))
     }
-    pub fn is_too_many_requests_error(&self) -> bool {
+    pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
-            GetLayerVersionErrorKind::TooManyRequestsError(_)
+            GetLayerVersionErrorKind::TooManyRequestsException(_)
         )
     }
 }
 impl std::error::Error for GetLayerVersionError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            GetLayerVersionErrorKind::InvalidParameterValueError(_inner) => Some(_inner),
-            GetLayerVersionErrorKind::ResourceNotFoundError(_inner) => Some(_inner),
-            GetLayerVersionErrorKind::ServiceError(_inner) => Some(_inner),
-            GetLayerVersionErrorKind::TooManyRequestsError(_inner) => Some(_inner),
+            GetLayerVersionErrorKind::InvalidParameterValueException(_inner) => Some(_inner),
+            GetLayerVersionErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            GetLayerVersionErrorKind::ServiceException(_inner) => Some(_inner),
+            GetLayerVersionErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             GetLayerVersionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -2777,20 +2887,20 @@ pub struct GetLayerVersionByArnError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetLayerVersionByArnErrorKind {
-    InvalidParameterValueError(crate::error::InvalidParameterValueError),
-    ResourceNotFoundError(crate::error::ResourceNotFoundError),
-    ServiceError(crate::error::ServiceError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
+    InvalidParameterValueException(crate::error::InvalidParameterValueException),
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    ServiceException(crate::error::ServiceException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetLayerVersionByArnError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            GetLayerVersionByArnErrorKind::InvalidParameterValueError(_inner) => _inner.fmt(f),
-            GetLayerVersionByArnErrorKind::ResourceNotFoundError(_inner) => _inner.fmt(f),
-            GetLayerVersionByArnErrorKind::ServiceError(_inner) => _inner.fmt(f),
-            GetLayerVersionByArnErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
+            GetLayerVersionByArnErrorKind::InvalidParameterValueException(_inner) => _inner.fmt(f),
+            GetLayerVersionByArnErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            GetLayerVersionByArnErrorKind::ServiceException(_inner) => _inner.fmt(f),
+            GetLayerVersionByArnErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
             GetLayerVersionByArnErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -2839,35 +2949,38 @@ impl GetLayerVersionByArnError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_invalid_parameter_value_error(&self) -> bool {
+    pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
-            GetLayerVersionByArnErrorKind::InvalidParameterValueError(_)
+            GetLayerVersionByArnErrorKind::InvalidParameterValueException(_)
         )
     }
-    pub fn is_resource_not_found_error(&self) -> bool {
+    pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
-            GetLayerVersionByArnErrorKind::ResourceNotFoundError(_)
+            GetLayerVersionByArnErrorKind::ResourceNotFoundException(_)
         )
     }
-    pub fn is_service_error(&self) -> bool {
-        matches!(&self.kind, GetLayerVersionByArnErrorKind::ServiceError(_))
-    }
-    pub fn is_too_many_requests_error(&self) -> bool {
+    pub fn is_service_exception(&self) -> bool {
         matches!(
             &self.kind,
-            GetLayerVersionByArnErrorKind::TooManyRequestsError(_)
+            GetLayerVersionByArnErrorKind::ServiceException(_)
+        )
+    }
+    pub fn is_too_many_requests_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetLayerVersionByArnErrorKind::TooManyRequestsException(_)
         )
     }
 }
 impl std::error::Error for GetLayerVersionByArnError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            GetLayerVersionByArnErrorKind::InvalidParameterValueError(_inner) => Some(_inner),
-            GetLayerVersionByArnErrorKind::ResourceNotFoundError(_inner) => Some(_inner),
-            GetLayerVersionByArnErrorKind::ServiceError(_inner) => Some(_inner),
-            GetLayerVersionByArnErrorKind::TooManyRequestsError(_inner) => Some(_inner),
+            GetLayerVersionByArnErrorKind::InvalidParameterValueException(_inner) => Some(_inner),
+            GetLayerVersionByArnErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            GetLayerVersionByArnErrorKind::ServiceException(_inner) => Some(_inner),
+            GetLayerVersionByArnErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             GetLayerVersionByArnErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -2882,20 +2995,20 @@ pub struct GetLayerVersionPolicyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetLayerVersionPolicyErrorKind {
-    InvalidParameterValueError(crate::error::InvalidParameterValueError),
-    ResourceNotFoundError(crate::error::ResourceNotFoundError),
-    ServiceError(crate::error::ServiceError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
+    InvalidParameterValueException(crate::error::InvalidParameterValueException),
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    ServiceException(crate::error::ServiceException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetLayerVersionPolicyError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            GetLayerVersionPolicyErrorKind::InvalidParameterValueError(_inner) => _inner.fmt(f),
-            GetLayerVersionPolicyErrorKind::ResourceNotFoundError(_inner) => _inner.fmt(f),
-            GetLayerVersionPolicyErrorKind::ServiceError(_inner) => _inner.fmt(f),
-            GetLayerVersionPolicyErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
+            GetLayerVersionPolicyErrorKind::InvalidParameterValueException(_inner) => _inner.fmt(f),
+            GetLayerVersionPolicyErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            GetLayerVersionPolicyErrorKind::ServiceException(_inner) => _inner.fmt(f),
+            GetLayerVersionPolicyErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
             GetLayerVersionPolicyErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -2944,35 +3057,38 @@ impl GetLayerVersionPolicyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_invalid_parameter_value_error(&self) -> bool {
+    pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
-            GetLayerVersionPolicyErrorKind::InvalidParameterValueError(_)
+            GetLayerVersionPolicyErrorKind::InvalidParameterValueException(_)
         )
     }
-    pub fn is_resource_not_found_error(&self) -> bool {
+    pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
-            GetLayerVersionPolicyErrorKind::ResourceNotFoundError(_)
+            GetLayerVersionPolicyErrorKind::ResourceNotFoundException(_)
         )
     }
-    pub fn is_service_error(&self) -> bool {
-        matches!(&self.kind, GetLayerVersionPolicyErrorKind::ServiceError(_))
-    }
-    pub fn is_too_many_requests_error(&self) -> bool {
+    pub fn is_service_exception(&self) -> bool {
         matches!(
             &self.kind,
-            GetLayerVersionPolicyErrorKind::TooManyRequestsError(_)
+            GetLayerVersionPolicyErrorKind::ServiceException(_)
+        )
+    }
+    pub fn is_too_many_requests_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetLayerVersionPolicyErrorKind::TooManyRequestsException(_)
         )
     }
 }
 impl std::error::Error for GetLayerVersionPolicyError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            GetLayerVersionPolicyErrorKind::InvalidParameterValueError(_inner) => Some(_inner),
-            GetLayerVersionPolicyErrorKind::ResourceNotFoundError(_inner) => Some(_inner),
-            GetLayerVersionPolicyErrorKind::ServiceError(_inner) => Some(_inner),
-            GetLayerVersionPolicyErrorKind::TooManyRequestsError(_inner) => Some(_inner),
+            GetLayerVersionPolicyErrorKind::InvalidParameterValueException(_inner) => Some(_inner),
+            GetLayerVersionPolicyErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            GetLayerVersionPolicyErrorKind::ServiceException(_inner) => Some(_inner),
+            GetLayerVersionPolicyErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             GetLayerVersionPolicyErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -2987,20 +3103,20 @@ pub struct GetPolicyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetPolicyErrorKind {
-    InvalidParameterValueError(crate::error::InvalidParameterValueError),
-    ResourceNotFoundError(crate::error::ResourceNotFoundError),
-    ServiceError(crate::error::ServiceError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
+    InvalidParameterValueException(crate::error::InvalidParameterValueException),
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    ServiceException(crate::error::ServiceException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetPolicyError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            GetPolicyErrorKind::InvalidParameterValueError(_inner) => _inner.fmt(f),
-            GetPolicyErrorKind::ResourceNotFoundError(_inner) => _inner.fmt(f),
-            GetPolicyErrorKind::ServiceError(_inner) => _inner.fmt(f),
-            GetPolicyErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
+            GetPolicyErrorKind::InvalidParameterValueException(_inner) => _inner.fmt(f),
+            GetPolicyErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            GetPolicyErrorKind::ServiceException(_inner) => _inner.fmt(f),
+            GetPolicyErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
             GetPolicyErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -3049,29 +3165,29 @@ impl GetPolicyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_invalid_parameter_value_error(&self) -> bool {
+    pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
-            GetPolicyErrorKind::InvalidParameterValueError(_)
+            GetPolicyErrorKind::InvalidParameterValueException(_)
         )
     }
-    pub fn is_resource_not_found_error(&self) -> bool {
-        matches!(&self.kind, GetPolicyErrorKind::ResourceNotFoundError(_))
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(&self.kind, GetPolicyErrorKind::ResourceNotFoundException(_))
     }
-    pub fn is_service_error(&self) -> bool {
-        matches!(&self.kind, GetPolicyErrorKind::ServiceError(_))
+    pub fn is_service_exception(&self) -> bool {
+        matches!(&self.kind, GetPolicyErrorKind::ServiceException(_))
     }
-    pub fn is_too_many_requests_error(&self) -> bool {
-        matches!(&self.kind, GetPolicyErrorKind::TooManyRequestsError(_))
+    pub fn is_too_many_requests_exception(&self) -> bool {
+        matches!(&self.kind, GetPolicyErrorKind::TooManyRequestsException(_))
     }
 }
 impl std::error::Error for GetPolicyError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            GetPolicyErrorKind::InvalidParameterValueError(_inner) => Some(_inner),
-            GetPolicyErrorKind::ResourceNotFoundError(_inner) => Some(_inner),
-            GetPolicyErrorKind::ServiceError(_inner) => Some(_inner),
-            GetPolicyErrorKind::TooManyRequestsError(_inner) => Some(_inner),
+            GetPolicyErrorKind::InvalidParameterValueException(_inner) => Some(_inner),
+            GetPolicyErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            GetPolicyErrorKind::ServiceException(_inner) => Some(_inner),
+            GetPolicyErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             GetPolicyErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -3086,31 +3202,37 @@ pub struct GetProvisionedConcurrencyConfigError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetProvisionedConcurrencyConfigErrorKind {
-    InvalidParameterValueError(crate::error::InvalidParameterValueError),
-    ProvisionedConcurrencyConfigNotFoundError(
-        crate::error::ProvisionedConcurrencyConfigNotFoundError,
+    InvalidParameterValueException(crate::error::InvalidParameterValueException),
+    ProvisionedConcurrencyConfigNotFoundException(
+        crate::error::ProvisionedConcurrencyConfigNotFoundException,
     ),
-    ResourceNotFoundError(crate::error::ResourceNotFoundError),
-    ServiceError(crate::error::ServiceError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    ServiceException(crate::error::ServiceException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for GetProvisionedConcurrencyConfigError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            GetProvisionedConcurrencyConfigErrorKind::InvalidParameterValueError(_inner) => {
+            GetProvisionedConcurrencyConfigErrorKind::InvalidParameterValueException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetProvisionedConcurrencyConfigErrorKind::ProvisionedConcurrencyConfigNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetProvisionedConcurrencyConfigErrorKind::ResourceNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetProvisionedConcurrencyConfigErrorKind::ServiceException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetProvisionedConcurrencyConfigErrorKind::TooManyRequestsException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetProvisionedConcurrencyConfigErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            GetProvisionedConcurrencyConfigErrorKind::ProvisionedConcurrencyConfigNotFoundError(
-                _inner,
-            ) => _inner.fmt(f),
-            GetProvisionedConcurrencyConfigErrorKind::ResourceNotFoundError(_inner) => {
-                _inner.fmt(f)
-            }
-            GetProvisionedConcurrencyConfigErrorKind::ServiceError(_inner) => _inner.fmt(f),
-            GetProvisionedConcurrencyConfigErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
-            GetProvisionedConcurrencyConfigErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -3158,50 +3280,60 @@ impl GetProvisionedConcurrencyConfigError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_invalid_parameter_value_error(&self) -> bool {
+    pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
-            GetProvisionedConcurrencyConfigErrorKind::InvalidParameterValueError(_)
+            GetProvisionedConcurrencyConfigErrorKind::InvalidParameterValueException(_)
         )
     }
-    pub fn is_provisioned_concurrency_config_not_found_error(&self) -> bool {
+    pub fn is_provisioned_concurrency_config_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
-            GetProvisionedConcurrencyConfigErrorKind::ProvisionedConcurrencyConfigNotFoundError(_)
+            GetProvisionedConcurrencyConfigErrorKind::ProvisionedConcurrencyConfigNotFoundException(
+                _
+            )
         )
     }
-    pub fn is_resource_not_found_error(&self) -> bool {
+    pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
-            GetProvisionedConcurrencyConfigErrorKind::ResourceNotFoundError(_)
+            GetProvisionedConcurrencyConfigErrorKind::ResourceNotFoundException(_)
         )
     }
-    pub fn is_service_error(&self) -> bool {
+    pub fn is_service_exception(&self) -> bool {
         matches!(
             &self.kind,
-            GetProvisionedConcurrencyConfigErrorKind::ServiceError(_)
+            GetProvisionedConcurrencyConfigErrorKind::ServiceException(_)
         )
     }
-    pub fn is_too_many_requests_error(&self) -> bool {
+    pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
-            GetProvisionedConcurrencyConfigErrorKind::TooManyRequestsError(_)
+            GetProvisionedConcurrencyConfigErrorKind::TooManyRequestsException(_)
         )
     }
 }
 impl std::error::Error for GetProvisionedConcurrencyConfigError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            GetProvisionedConcurrencyConfigErrorKind::InvalidParameterValueError(_inner) => {
-                Some(_inner)
+            GetProvisionedConcurrencyConfigErrorKind::InvalidParameterValueException(_inner) =>
+            Some(_inner)
+            ,
+            GetProvisionedConcurrencyConfigErrorKind::ProvisionedConcurrencyConfigNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            GetProvisionedConcurrencyConfigErrorKind::ResourceNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            GetProvisionedConcurrencyConfigErrorKind::ServiceException(_inner) =>
+            Some(_inner)
+            ,
+            GetProvisionedConcurrencyConfigErrorKind::TooManyRequestsException(_inner) =>
+            Some(_inner)
+            ,
+            GetProvisionedConcurrencyConfigErrorKind::Unhandled(_inner) => {
+                Some(_inner.as_ref())
             }
-            GetProvisionedConcurrencyConfigErrorKind::ProvisionedConcurrencyConfigNotFoundError(
-                _inner,
-            ) => Some(_inner),
-            GetProvisionedConcurrencyConfigErrorKind::ResourceNotFoundError(_inner) => Some(_inner),
-            GetProvisionedConcurrencyConfigErrorKind::ServiceError(_inner) => Some(_inner),
-            GetProvisionedConcurrencyConfigErrorKind::TooManyRequestsError(_inner) => Some(_inner),
-            GetProvisionedConcurrencyConfigErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }
@@ -3215,64 +3347,64 @@ pub struct InvokeError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum InvokeErrorKind {
-    EC2AccessDeniedError(crate::error::EC2AccessDeniedError),
-    EC2ThrottledError(crate::error::EC2ThrottledError),
-    EC2UnexpectedError(crate::error::EC2UnexpectedError),
-    EFSIOError(crate::error::EFSIOError),
-    EFSMountConnectivityError(crate::error::EFSMountConnectivityError),
-    EFSMountFailureError(crate::error::EFSMountFailureError),
-    EFSMountTimeoutError(crate::error::EFSMountTimeoutError),
-    ENILimitReachedError(crate::error::ENILimitReachedError),
-    InvalidParameterValueError(crate::error::InvalidParameterValueError),
-    InvalidRequestContentError(crate::error::InvalidRequestContentError),
-    InvalidRuntimeError(crate::error::InvalidRuntimeError),
-    InvalidSecurityGroupIDError(crate::error::InvalidSecurityGroupIDError),
-    InvalidSubnetIDError(crate::error::InvalidSubnetIDError),
-    InvalidZipFileError(crate::error::InvalidZipFileError),
-    KMSAccessDeniedError(crate::error::KMSAccessDeniedError),
-    KMSDisabledError(crate::error::KMSDisabledError),
-    KMSInvalidStateError(crate::error::KMSInvalidStateError),
-    KMSNotFoundError(crate::error::KMSNotFoundError),
-    RequestTooLargeError(crate::error::RequestTooLargeError),
-    ResourceConflictError(crate::error::ResourceConflictError),
-    ResourceNotFoundError(crate::error::ResourceNotFoundError),
-    ResourceNotReadyError(crate::error::ResourceNotReadyError),
-    ServiceError(crate::error::ServiceError),
-    SubnetIPAddressLimitReachedError(crate::error::SubnetIPAddressLimitReachedError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
-    UnsupportedMediaTypeError(crate::error::UnsupportedMediaTypeError),
+    Ec2AccessDeniedException(crate::error::Ec2AccessDeniedException),
+    Ec2ThrottledException(crate::error::Ec2ThrottledException),
+    Ec2UnexpectedException(crate::error::Ec2UnexpectedException),
+    EfsioException(crate::error::EfsioException),
+    EfsMountConnectivityException(crate::error::EfsMountConnectivityException),
+    EfsMountFailureException(crate::error::EfsMountFailureException),
+    EfsMountTimeoutException(crate::error::EfsMountTimeoutException),
+    EniLimitReachedException(crate::error::EniLimitReachedException),
+    InvalidParameterValueException(crate::error::InvalidParameterValueException),
+    InvalidRequestContentException(crate::error::InvalidRequestContentException),
+    InvalidRuntimeException(crate::error::InvalidRuntimeException),
+    InvalidSecurityGroupIdException(crate::error::InvalidSecurityGroupIdException),
+    InvalidSubnetIdException(crate::error::InvalidSubnetIdException),
+    InvalidZipFileException(crate::error::InvalidZipFileException),
+    KmsAccessDeniedException(crate::error::KmsAccessDeniedException),
+    KmsDisabledException(crate::error::KmsDisabledException),
+    KmsInvalidStateException(crate::error::KmsInvalidStateException),
+    KmsNotFoundException(crate::error::KmsNotFoundException),
+    RequestTooLargeException(crate::error::RequestTooLargeException),
+    ResourceConflictException(crate::error::ResourceConflictException),
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    ResourceNotReadyException(crate::error::ResourceNotReadyException),
+    ServiceException(crate::error::ServiceException),
+    SubnetIpAddressLimitReachedException(crate::error::SubnetIpAddressLimitReachedException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
+    UnsupportedMediaTypeException(crate::error::UnsupportedMediaTypeException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for InvokeError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            InvokeErrorKind::EC2AccessDeniedError(_inner) => _inner.fmt(f),
-            InvokeErrorKind::EC2ThrottledError(_inner) => _inner.fmt(f),
-            InvokeErrorKind::EC2UnexpectedError(_inner) => _inner.fmt(f),
-            InvokeErrorKind::EFSIOError(_inner) => _inner.fmt(f),
-            InvokeErrorKind::EFSMountConnectivityError(_inner) => _inner.fmt(f),
-            InvokeErrorKind::EFSMountFailureError(_inner) => _inner.fmt(f),
-            InvokeErrorKind::EFSMountTimeoutError(_inner) => _inner.fmt(f),
-            InvokeErrorKind::ENILimitReachedError(_inner) => _inner.fmt(f),
-            InvokeErrorKind::InvalidParameterValueError(_inner) => _inner.fmt(f),
-            InvokeErrorKind::InvalidRequestContentError(_inner) => _inner.fmt(f),
-            InvokeErrorKind::InvalidRuntimeError(_inner) => _inner.fmt(f),
-            InvokeErrorKind::InvalidSecurityGroupIDError(_inner) => _inner.fmt(f),
-            InvokeErrorKind::InvalidSubnetIDError(_inner) => _inner.fmt(f),
-            InvokeErrorKind::InvalidZipFileError(_inner) => _inner.fmt(f),
-            InvokeErrorKind::KMSAccessDeniedError(_inner) => _inner.fmt(f),
-            InvokeErrorKind::KMSDisabledError(_inner) => _inner.fmt(f),
-            InvokeErrorKind::KMSInvalidStateError(_inner) => _inner.fmt(f),
-            InvokeErrorKind::KMSNotFoundError(_inner) => _inner.fmt(f),
-            InvokeErrorKind::RequestTooLargeError(_inner) => _inner.fmt(f),
-            InvokeErrorKind::ResourceConflictError(_inner) => _inner.fmt(f),
-            InvokeErrorKind::ResourceNotFoundError(_inner) => _inner.fmt(f),
-            InvokeErrorKind::ResourceNotReadyError(_inner) => _inner.fmt(f),
-            InvokeErrorKind::ServiceError(_inner) => _inner.fmt(f),
-            InvokeErrorKind::SubnetIPAddressLimitReachedError(_inner) => _inner.fmt(f),
-            InvokeErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
-            InvokeErrorKind::UnsupportedMediaTypeError(_inner) => _inner.fmt(f),
+            InvokeErrorKind::Ec2AccessDeniedException(_inner) => _inner.fmt(f),
+            InvokeErrorKind::Ec2ThrottledException(_inner) => _inner.fmt(f),
+            InvokeErrorKind::Ec2UnexpectedException(_inner) => _inner.fmt(f),
+            InvokeErrorKind::EfsioException(_inner) => _inner.fmt(f),
+            InvokeErrorKind::EfsMountConnectivityException(_inner) => _inner.fmt(f),
+            InvokeErrorKind::EfsMountFailureException(_inner) => _inner.fmt(f),
+            InvokeErrorKind::EfsMountTimeoutException(_inner) => _inner.fmt(f),
+            InvokeErrorKind::EniLimitReachedException(_inner) => _inner.fmt(f),
+            InvokeErrorKind::InvalidParameterValueException(_inner) => _inner.fmt(f),
+            InvokeErrorKind::InvalidRequestContentException(_inner) => _inner.fmt(f),
+            InvokeErrorKind::InvalidRuntimeException(_inner) => _inner.fmt(f),
+            InvokeErrorKind::InvalidSecurityGroupIdException(_inner) => _inner.fmt(f),
+            InvokeErrorKind::InvalidSubnetIdException(_inner) => _inner.fmt(f),
+            InvokeErrorKind::InvalidZipFileException(_inner) => _inner.fmt(f),
+            InvokeErrorKind::KmsAccessDeniedException(_inner) => _inner.fmt(f),
+            InvokeErrorKind::KmsDisabledException(_inner) => _inner.fmt(f),
+            InvokeErrorKind::KmsInvalidStateException(_inner) => _inner.fmt(f),
+            InvokeErrorKind::KmsNotFoundException(_inner) => _inner.fmt(f),
+            InvokeErrorKind::RequestTooLargeException(_inner) => _inner.fmt(f),
+            InvokeErrorKind::ResourceConflictException(_inner) => _inner.fmt(f),
+            InvokeErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            InvokeErrorKind::ResourceNotReadyException(_inner) => _inner.fmt(f),
+            InvokeErrorKind::ServiceException(_inner) => _inner.fmt(f),
+            InvokeErrorKind::SubnetIpAddressLimitReachedException(_inner) => _inner.fmt(f),
+            InvokeErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
+            InvokeErrorKind::UnsupportedMediaTypeException(_inner) => _inner.fmt(f),
             InvokeErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -3321,117 +3453,132 @@ impl InvokeError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_ec2_access_denied_error(&self) -> bool {
-        matches!(&self.kind, InvokeErrorKind::EC2AccessDeniedError(_))
+    pub fn is_ec2_access_denied_exception(&self) -> bool {
+        matches!(&self.kind, InvokeErrorKind::Ec2AccessDeniedException(_))
     }
-    pub fn is_ec2_throttled_error(&self) -> bool {
-        matches!(&self.kind, InvokeErrorKind::EC2ThrottledError(_))
+    pub fn is_ec2_throttled_exception(&self) -> bool {
+        matches!(&self.kind, InvokeErrorKind::Ec2ThrottledException(_))
     }
-    pub fn is_ec2_unexpected_error(&self) -> bool {
-        matches!(&self.kind, InvokeErrorKind::EC2UnexpectedError(_))
+    pub fn is_ec2_unexpected_exception(&self) -> bool {
+        matches!(&self.kind, InvokeErrorKind::Ec2UnexpectedException(_))
     }
-    pub fn is_efsio_error(&self) -> bool {
-        matches!(&self.kind, InvokeErrorKind::EFSIOError(_))
+    pub fn is_efsio_exception(&self) -> bool {
+        matches!(&self.kind, InvokeErrorKind::EfsioException(_))
     }
-    pub fn is_efs_mount_connectivity_error(&self) -> bool {
-        matches!(&self.kind, InvokeErrorKind::EFSMountConnectivityError(_))
-    }
-    pub fn is_efs_mount_failure_error(&self) -> bool {
-        matches!(&self.kind, InvokeErrorKind::EFSMountFailureError(_))
-    }
-    pub fn is_efs_mount_timeout_error(&self) -> bool {
-        matches!(&self.kind, InvokeErrorKind::EFSMountTimeoutError(_))
-    }
-    pub fn is_eni_limit_reached_error(&self) -> bool {
-        matches!(&self.kind, InvokeErrorKind::ENILimitReachedError(_))
-    }
-    pub fn is_invalid_parameter_value_error(&self) -> bool {
-        matches!(&self.kind, InvokeErrorKind::InvalidParameterValueError(_))
-    }
-    pub fn is_invalid_request_content_error(&self) -> bool {
-        matches!(&self.kind, InvokeErrorKind::InvalidRequestContentError(_))
-    }
-    pub fn is_invalid_runtime_error(&self) -> bool {
-        matches!(&self.kind, InvokeErrorKind::InvalidRuntimeError(_))
-    }
-    pub fn is_invalid_security_group_id_error(&self) -> bool {
-        matches!(&self.kind, InvokeErrorKind::InvalidSecurityGroupIDError(_))
-    }
-    pub fn is_invalid_subnet_id_error(&self) -> bool {
-        matches!(&self.kind, InvokeErrorKind::InvalidSubnetIDError(_))
-    }
-    pub fn is_invalid_zip_file_error(&self) -> bool {
-        matches!(&self.kind, InvokeErrorKind::InvalidZipFileError(_))
-    }
-    pub fn is_kms_access_denied_error(&self) -> bool {
-        matches!(&self.kind, InvokeErrorKind::KMSAccessDeniedError(_))
-    }
-    pub fn is_kms_disabled_error(&self) -> bool {
-        matches!(&self.kind, InvokeErrorKind::KMSDisabledError(_))
-    }
-    pub fn is_kms_invalid_state_error(&self) -> bool {
-        matches!(&self.kind, InvokeErrorKind::KMSInvalidStateError(_))
-    }
-    pub fn is_kms_not_found_error(&self) -> bool {
-        matches!(&self.kind, InvokeErrorKind::KMSNotFoundError(_))
-    }
-    pub fn is_request_too_large_error(&self) -> bool {
-        matches!(&self.kind, InvokeErrorKind::RequestTooLargeError(_))
-    }
-    pub fn is_resource_conflict_error(&self) -> bool {
-        matches!(&self.kind, InvokeErrorKind::ResourceConflictError(_))
-    }
-    pub fn is_resource_not_found_error(&self) -> bool {
-        matches!(&self.kind, InvokeErrorKind::ResourceNotFoundError(_))
-    }
-    pub fn is_resource_not_ready_error(&self) -> bool {
-        matches!(&self.kind, InvokeErrorKind::ResourceNotReadyError(_))
-    }
-    pub fn is_service_error(&self) -> bool {
-        matches!(&self.kind, InvokeErrorKind::ServiceError(_))
-    }
-    pub fn is_subnet_ip_address_limit_reached_error(&self) -> bool {
+    pub fn is_efs_mount_connectivity_exception(&self) -> bool {
         matches!(
             &self.kind,
-            InvokeErrorKind::SubnetIPAddressLimitReachedError(_)
+            InvokeErrorKind::EfsMountConnectivityException(_)
         )
     }
-    pub fn is_too_many_requests_error(&self) -> bool {
-        matches!(&self.kind, InvokeErrorKind::TooManyRequestsError(_))
+    pub fn is_efs_mount_failure_exception(&self) -> bool {
+        matches!(&self.kind, InvokeErrorKind::EfsMountFailureException(_))
     }
-    pub fn is_unsupported_media_type_error(&self) -> bool {
-        matches!(&self.kind, InvokeErrorKind::UnsupportedMediaTypeError(_))
+    pub fn is_efs_mount_timeout_exception(&self) -> bool {
+        matches!(&self.kind, InvokeErrorKind::EfsMountTimeoutException(_))
+    }
+    pub fn is_eni_limit_reached_exception(&self) -> bool {
+        matches!(&self.kind, InvokeErrorKind::EniLimitReachedException(_))
+    }
+    pub fn is_invalid_parameter_value_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            InvokeErrorKind::InvalidParameterValueException(_)
+        )
+    }
+    pub fn is_invalid_request_content_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            InvokeErrorKind::InvalidRequestContentException(_)
+        )
+    }
+    pub fn is_invalid_runtime_exception(&self) -> bool {
+        matches!(&self.kind, InvokeErrorKind::InvalidRuntimeException(_))
+    }
+    pub fn is_invalid_security_group_id_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            InvokeErrorKind::InvalidSecurityGroupIdException(_)
+        )
+    }
+    pub fn is_invalid_subnet_id_exception(&self) -> bool {
+        matches!(&self.kind, InvokeErrorKind::InvalidSubnetIdException(_))
+    }
+    pub fn is_invalid_zip_file_exception(&self) -> bool {
+        matches!(&self.kind, InvokeErrorKind::InvalidZipFileException(_))
+    }
+    pub fn is_kms_access_denied_exception(&self) -> bool {
+        matches!(&self.kind, InvokeErrorKind::KmsAccessDeniedException(_))
+    }
+    pub fn is_kms_disabled_exception(&self) -> bool {
+        matches!(&self.kind, InvokeErrorKind::KmsDisabledException(_))
+    }
+    pub fn is_kms_invalid_state_exception(&self) -> bool {
+        matches!(&self.kind, InvokeErrorKind::KmsInvalidStateException(_))
+    }
+    pub fn is_kms_not_found_exception(&self) -> bool {
+        matches!(&self.kind, InvokeErrorKind::KmsNotFoundException(_))
+    }
+    pub fn is_request_too_large_exception(&self) -> bool {
+        matches!(&self.kind, InvokeErrorKind::RequestTooLargeException(_))
+    }
+    pub fn is_resource_conflict_exception(&self) -> bool {
+        matches!(&self.kind, InvokeErrorKind::ResourceConflictException(_))
+    }
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(&self.kind, InvokeErrorKind::ResourceNotFoundException(_))
+    }
+    pub fn is_resource_not_ready_exception(&self) -> bool {
+        matches!(&self.kind, InvokeErrorKind::ResourceNotReadyException(_))
+    }
+    pub fn is_service_exception(&self) -> bool {
+        matches!(&self.kind, InvokeErrorKind::ServiceException(_))
+    }
+    pub fn is_subnet_ip_address_limit_reached_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            InvokeErrorKind::SubnetIpAddressLimitReachedException(_)
+        )
+    }
+    pub fn is_too_many_requests_exception(&self) -> bool {
+        matches!(&self.kind, InvokeErrorKind::TooManyRequestsException(_))
+    }
+    pub fn is_unsupported_media_type_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            InvokeErrorKind::UnsupportedMediaTypeException(_)
+        )
     }
 }
 impl std::error::Error for InvokeError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            InvokeErrorKind::EC2AccessDeniedError(_inner) => Some(_inner),
-            InvokeErrorKind::EC2ThrottledError(_inner) => Some(_inner),
-            InvokeErrorKind::EC2UnexpectedError(_inner) => Some(_inner),
-            InvokeErrorKind::EFSIOError(_inner) => Some(_inner),
-            InvokeErrorKind::EFSMountConnectivityError(_inner) => Some(_inner),
-            InvokeErrorKind::EFSMountFailureError(_inner) => Some(_inner),
-            InvokeErrorKind::EFSMountTimeoutError(_inner) => Some(_inner),
-            InvokeErrorKind::ENILimitReachedError(_inner) => Some(_inner),
-            InvokeErrorKind::InvalidParameterValueError(_inner) => Some(_inner),
-            InvokeErrorKind::InvalidRequestContentError(_inner) => Some(_inner),
-            InvokeErrorKind::InvalidRuntimeError(_inner) => Some(_inner),
-            InvokeErrorKind::InvalidSecurityGroupIDError(_inner) => Some(_inner),
-            InvokeErrorKind::InvalidSubnetIDError(_inner) => Some(_inner),
-            InvokeErrorKind::InvalidZipFileError(_inner) => Some(_inner),
-            InvokeErrorKind::KMSAccessDeniedError(_inner) => Some(_inner),
-            InvokeErrorKind::KMSDisabledError(_inner) => Some(_inner),
-            InvokeErrorKind::KMSInvalidStateError(_inner) => Some(_inner),
-            InvokeErrorKind::KMSNotFoundError(_inner) => Some(_inner),
-            InvokeErrorKind::RequestTooLargeError(_inner) => Some(_inner),
-            InvokeErrorKind::ResourceConflictError(_inner) => Some(_inner),
-            InvokeErrorKind::ResourceNotFoundError(_inner) => Some(_inner),
-            InvokeErrorKind::ResourceNotReadyError(_inner) => Some(_inner),
-            InvokeErrorKind::ServiceError(_inner) => Some(_inner),
-            InvokeErrorKind::SubnetIPAddressLimitReachedError(_inner) => Some(_inner),
-            InvokeErrorKind::TooManyRequestsError(_inner) => Some(_inner),
-            InvokeErrorKind::UnsupportedMediaTypeError(_inner) => Some(_inner),
+            InvokeErrorKind::Ec2AccessDeniedException(_inner) => Some(_inner),
+            InvokeErrorKind::Ec2ThrottledException(_inner) => Some(_inner),
+            InvokeErrorKind::Ec2UnexpectedException(_inner) => Some(_inner),
+            InvokeErrorKind::EfsioException(_inner) => Some(_inner),
+            InvokeErrorKind::EfsMountConnectivityException(_inner) => Some(_inner),
+            InvokeErrorKind::EfsMountFailureException(_inner) => Some(_inner),
+            InvokeErrorKind::EfsMountTimeoutException(_inner) => Some(_inner),
+            InvokeErrorKind::EniLimitReachedException(_inner) => Some(_inner),
+            InvokeErrorKind::InvalidParameterValueException(_inner) => Some(_inner),
+            InvokeErrorKind::InvalidRequestContentException(_inner) => Some(_inner),
+            InvokeErrorKind::InvalidRuntimeException(_inner) => Some(_inner),
+            InvokeErrorKind::InvalidSecurityGroupIdException(_inner) => Some(_inner),
+            InvokeErrorKind::InvalidSubnetIdException(_inner) => Some(_inner),
+            InvokeErrorKind::InvalidZipFileException(_inner) => Some(_inner),
+            InvokeErrorKind::KmsAccessDeniedException(_inner) => Some(_inner),
+            InvokeErrorKind::KmsDisabledException(_inner) => Some(_inner),
+            InvokeErrorKind::KmsInvalidStateException(_inner) => Some(_inner),
+            InvokeErrorKind::KmsNotFoundException(_inner) => Some(_inner),
+            InvokeErrorKind::RequestTooLargeException(_inner) => Some(_inner),
+            InvokeErrorKind::ResourceConflictException(_inner) => Some(_inner),
+            InvokeErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            InvokeErrorKind::ResourceNotReadyException(_inner) => Some(_inner),
+            InvokeErrorKind::ServiceException(_inner) => Some(_inner),
+            InvokeErrorKind::SubnetIpAddressLimitReachedException(_inner) => Some(_inner),
+            InvokeErrorKind::TooManyRequestsException(_inner) => Some(_inner),
+            InvokeErrorKind::UnsupportedMediaTypeException(_inner) => Some(_inner),
             InvokeErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -3446,22 +3593,22 @@ pub struct InvokeAsyncError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum InvokeAsyncErrorKind {
-    InvalidRequestContentError(crate::error::InvalidRequestContentError),
-    InvalidRuntimeError(crate::error::InvalidRuntimeError),
-    ResourceConflictError(crate::error::ResourceConflictError),
-    ResourceNotFoundError(crate::error::ResourceNotFoundError),
-    ServiceError(crate::error::ServiceError),
+    InvalidRequestContentException(crate::error::InvalidRequestContentException),
+    InvalidRuntimeException(crate::error::InvalidRuntimeException),
+    ResourceConflictException(crate::error::ResourceConflictException),
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    ServiceException(crate::error::ServiceException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for InvokeAsyncError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            InvokeAsyncErrorKind::InvalidRequestContentError(_inner) => _inner.fmt(f),
-            InvokeAsyncErrorKind::InvalidRuntimeError(_inner) => _inner.fmt(f),
-            InvokeAsyncErrorKind::ResourceConflictError(_inner) => _inner.fmt(f),
-            InvokeAsyncErrorKind::ResourceNotFoundError(_inner) => _inner.fmt(f),
-            InvokeAsyncErrorKind::ServiceError(_inner) => _inner.fmt(f),
+            InvokeAsyncErrorKind::InvalidRequestContentException(_inner) => _inner.fmt(f),
+            InvokeAsyncErrorKind::InvalidRuntimeException(_inner) => _inner.fmt(f),
+            InvokeAsyncErrorKind::ResourceConflictException(_inner) => _inner.fmt(f),
+            InvokeAsyncErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            InvokeAsyncErrorKind::ServiceException(_inner) => _inner.fmt(f),
             InvokeAsyncErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -3510,33 +3657,39 @@ impl InvokeAsyncError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_invalid_request_content_error(&self) -> bool {
+    pub fn is_invalid_request_content_exception(&self) -> bool {
         matches!(
             &self.kind,
-            InvokeAsyncErrorKind::InvalidRequestContentError(_)
+            InvokeAsyncErrorKind::InvalidRequestContentException(_)
         )
     }
-    pub fn is_invalid_runtime_error(&self) -> bool {
-        matches!(&self.kind, InvokeAsyncErrorKind::InvalidRuntimeError(_))
+    pub fn is_invalid_runtime_exception(&self) -> bool {
+        matches!(&self.kind, InvokeAsyncErrorKind::InvalidRuntimeException(_))
     }
-    pub fn is_resource_conflict_error(&self) -> bool {
-        matches!(&self.kind, InvokeAsyncErrorKind::ResourceConflictError(_))
+    pub fn is_resource_conflict_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            InvokeAsyncErrorKind::ResourceConflictException(_)
+        )
     }
-    pub fn is_resource_not_found_error(&self) -> bool {
-        matches!(&self.kind, InvokeAsyncErrorKind::ResourceNotFoundError(_))
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            InvokeAsyncErrorKind::ResourceNotFoundException(_)
+        )
     }
-    pub fn is_service_error(&self) -> bool {
-        matches!(&self.kind, InvokeAsyncErrorKind::ServiceError(_))
+    pub fn is_service_exception(&self) -> bool {
+        matches!(&self.kind, InvokeAsyncErrorKind::ServiceException(_))
     }
 }
 impl std::error::Error for InvokeAsyncError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            InvokeAsyncErrorKind::InvalidRequestContentError(_inner) => Some(_inner),
-            InvokeAsyncErrorKind::InvalidRuntimeError(_inner) => Some(_inner),
-            InvokeAsyncErrorKind::ResourceConflictError(_inner) => Some(_inner),
-            InvokeAsyncErrorKind::ResourceNotFoundError(_inner) => Some(_inner),
-            InvokeAsyncErrorKind::ServiceError(_inner) => Some(_inner),
+            InvokeAsyncErrorKind::InvalidRequestContentException(_inner) => Some(_inner),
+            InvokeAsyncErrorKind::InvalidRuntimeException(_inner) => Some(_inner),
+            InvokeAsyncErrorKind::ResourceConflictException(_inner) => Some(_inner),
+            InvokeAsyncErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            InvokeAsyncErrorKind::ServiceException(_inner) => Some(_inner),
             InvokeAsyncErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -3551,20 +3704,20 @@ pub struct ListAliasesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListAliasesErrorKind {
-    InvalidParameterValueError(crate::error::InvalidParameterValueError),
-    ResourceNotFoundError(crate::error::ResourceNotFoundError),
-    ServiceError(crate::error::ServiceError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
+    InvalidParameterValueException(crate::error::InvalidParameterValueException),
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    ServiceException(crate::error::ServiceException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListAliasesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ListAliasesErrorKind::InvalidParameterValueError(_inner) => _inner.fmt(f),
-            ListAliasesErrorKind::ResourceNotFoundError(_inner) => _inner.fmt(f),
-            ListAliasesErrorKind::ServiceError(_inner) => _inner.fmt(f),
-            ListAliasesErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
+            ListAliasesErrorKind::InvalidParameterValueException(_inner) => _inner.fmt(f),
+            ListAliasesErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            ListAliasesErrorKind::ServiceException(_inner) => _inner.fmt(f),
+            ListAliasesErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
             ListAliasesErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -3613,29 +3766,35 @@ impl ListAliasesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_invalid_parameter_value_error(&self) -> bool {
+    pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
-            ListAliasesErrorKind::InvalidParameterValueError(_)
+            ListAliasesErrorKind::InvalidParameterValueException(_)
         )
     }
-    pub fn is_resource_not_found_error(&self) -> bool {
-        matches!(&self.kind, ListAliasesErrorKind::ResourceNotFoundError(_))
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListAliasesErrorKind::ResourceNotFoundException(_)
+        )
     }
-    pub fn is_service_error(&self) -> bool {
-        matches!(&self.kind, ListAliasesErrorKind::ServiceError(_))
+    pub fn is_service_exception(&self) -> bool {
+        matches!(&self.kind, ListAliasesErrorKind::ServiceException(_))
     }
-    pub fn is_too_many_requests_error(&self) -> bool {
-        matches!(&self.kind, ListAliasesErrorKind::TooManyRequestsError(_))
+    pub fn is_too_many_requests_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListAliasesErrorKind::TooManyRequestsException(_)
+        )
     }
 }
 impl std::error::Error for ListAliasesError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ListAliasesErrorKind::InvalidParameterValueError(_inner) => Some(_inner),
-            ListAliasesErrorKind::ResourceNotFoundError(_inner) => Some(_inner),
-            ListAliasesErrorKind::ServiceError(_inner) => Some(_inner),
-            ListAliasesErrorKind::TooManyRequestsError(_inner) => Some(_inner),
+            ListAliasesErrorKind::InvalidParameterValueException(_inner) => Some(_inner),
+            ListAliasesErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            ListAliasesErrorKind::ServiceException(_inner) => Some(_inner),
+            ListAliasesErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             ListAliasesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -3650,16 +3809,18 @@ pub struct ListCodeSigningConfigsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListCodeSigningConfigsErrorKind {
-    InvalidParameterValueError(crate::error::InvalidParameterValueError),
-    ServiceError(crate::error::ServiceError),
+    InvalidParameterValueException(crate::error::InvalidParameterValueException),
+    ServiceException(crate::error::ServiceException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListCodeSigningConfigsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ListCodeSigningConfigsErrorKind::InvalidParameterValueError(_inner) => _inner.fmt(f),
-            ListCodeSigningConfigsErrorKind::ServiceError(_inner) => _inner.fmt(f),
+            ListCodeSigningConfigsErrorKind::InvalidParameterValueException(_inner) => {
+                _inner.fmt(f)
+            }
+            ListCodeSigningConfigsErrorKind::ServiceException(_inner) => _inner.fmt(f),
             ListCodeSigningConfigsErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -3708,21 +3869,24 @@ impl ListCodeSigningConfigsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_invalid_parameter_value_error(&self) -> bool {
+    pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
-            ListCodeSigningConfigsErrorKind::InvalidParameterValueError(_)
+            ListCodeSigningConfigsErrorKind::InvalidParameterValueException(_)
         )
     }
-    pub fn is_service_error(&self) -> bool {
-        matches!(&self.kind, ListCodeSigningConfigsErrorKind::ServiceError(_))
+    pub fn is_service_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListCodeSigningConfigsErrorKind::ServiceException(_)
+        )
     }
 }
 impl std::error::Error for ListCodeSigningConfigsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ListCodeSigningConfigsErrorKind::InvalidParameterValueError(_inner) => Some(_inner),
-            ListCodeSigningConfigsErrorKind::ServiceError(_inner) => Some(_inner),
+            ListCodeSigningConfigsErrorKind::InvalidParameterValueException(_inner) => Some(_inner),
+            ListCodeSigningConfigsErrorKind::ServiceException(_inner) => Some(_inner),
             ListCodeSigningConfigsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -3737,20 +3901,22 @@ pub struct ListEventSourceMappingsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListEventSourceMappingsErrorKind {
-    InvalidParameterValueError(crate::error::InvalidParameterValueError),
-    ResourceNotFoundError(crate::error::ResourceNotFoundError),
-    ServiceError(crate::error::ServiceError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
+    InvalidParameterValueException(crate::error::InvalidParameterValueException),
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    ServiceException(crate::error::ServiceException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListEventSourceMappingsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ListEventSourceMappingsErrorKind::InvalidParameterValueError(_inner) => _inner.fmt(f),
-            ListEventSourceMappingsErrorKind::ResourceNotFoundError(_inner) => _inner.fmt(f),
-            ListEventSourceMappingsErrorKind::ServiceError(_inner) => _inner.fmt(f),
-            ListEventSourceMappingsErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
+            ListEventSourceMappingsErrorKind::InvalidParameterValueException(_inner) => {
+                _inner.fmt(f)
+            }
+            ListEventSourceMappingsErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            ListEventSourceMappingsErrorKind::ServiceException(_inner) => _inner.fmt(f),
+            ListEventSourceMappingsErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
             ListEventSourceMappingsErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -3799,38 +3965,40 @@ impl ListEventSourceMappingsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_invalid_parameter_value_error(&self) -> bool {
+    pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
-            ListEventSourceMappingsErrorKind::InvalidParameterValueError(_)
+            ListEventSourceMappingsErrorKind::InvalidParameterValueException(_)
         )
     }
-    pub fn is_resource_not_found_error(&self) -> bool {
+    pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
-            ListEventSourceMappingsErrorKind::ResourceNotFoundError(_)
+            ListEventSourceMappingsErrorKind::ResourceNotFoundException(_)
         )
     }
-    pub fn is_service_error(&self) -> bool {
+    pub fn is_service_exception(&self) -> bool {
         matches!(
             &self.kind,
-            ListEventSourceMappingsErrorKind::ServiceError(_)
+            ListEventSourceMappingsErrorKind::ServiceException(_)
         )
     }
-    pub fn is_too_many_requests_error(&self) -> bool {
+    pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
-            ListEventSourceMappingsErrorKind::TooManyRequestsError(_)
+            ListEventSourceMappingsErrorKind::TooManyRequestsException(_)
         )
     }
 }
 impl std::error::Error for ListEventSourceMappingsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ListEventSourceMappingsErrorKind::InvalidParameterValueError(_inner) => Some(_inner),
-            ListEventSourceMappingsErrorKind::ResourceNotFoundError(_inner) => Some(_inner),
-            ListEventSourceMappingsErrorKind::ServiceError(_inner) => Some(_inner),
-            ListEventSourceMappingsErrorKind::TooManyRequestsError(_inner) => Some(_inner),
+            ListEventSourceMappingsErrorKind::InvalidParameterValueException(_inner) => {
+                Some(_inner)
+            }
+            ListEventSourceMappingsErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            ListEventSourceMappingsErrorKind::ServiceException(_inner) => Some(_inner),
+            ListEventSourceMappingsErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             ListEventSourceMappingsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -3845,22 +4013,26 @@ pub struct ListFunctionEventInvokeConfigsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListFunctionEventInvokeConfigsErrorKind {
-    InvalidParameterValueError(crate::error::InvalidParameterValueError),
-    ResourceNotFoundError(crate::error::ResourceNotFoundError),
-    ServiceError(crate::error::ServiceError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
+    InvalidParameterValueException(crate::error::InvalidParameterValueException),
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    ServiceException(crate::error::ServiceException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListFunctionEventInvokeConfigsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ListFunctionEventInvokeConfigsErrorKind::InvalidParameterValueError(_inner) => {
+            ListFunctionEventInvokeConfigsErrorKind::InvalidParameterValueException(_inner) => {
                 _inner.fmt(f)
             }
-            ListFunctionEventInvokeConfigsErrorKind::ResourceNotFoundError(_inner) => _inner.fmt(f),
-            ListFunctionEventInvokeConfigsErrorKind::ServiceError(_inner) => _inner.fmt(f),
-            ListFunctionEventInvokeConfigsErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
+            ListFunctionEventInvokeConfigsErrorKind::ResourceNotFoundException(_inner) => {
+                _inner.fmt(f)
+            }
+            ListFunctionEventInvokeConfigsErrorKind::ServiceException(_inner) => _inner.fmt(f),
+            ListFunctionEventInvokeConfigsErrorKind::TooManyRequestsException(_inner) => {
+                _inner.fmt(f)
+            }
             ListFunctionEventInvokeConfigsErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -3909,40 +4081,44 @@ impl ListFunctionEventInvokeConfigsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_invalid_parameter_value_error(&self) -> bool {
+    pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
-            ListFunctionEventInvokeConfigsErrorKind::InvalidParameterValueError(_)
+            ListFunctionEventInvokeConfigsErrorKind::InvalidParameterValueException(_)
         )
     }
-    pub fn is_resource_not_found_error(&self) -> bool {
+    pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
-            ListFunctionEventInvokeConfigsErrorKind::ResourceNotFoundError(_)
+            ListFunctionEventInvokeConfigsErrorKind::ResourceNotFoundException(_)
         )
     }
-    pub fn is_service_error(&self) -> bool {
+    pub fn is_service_exception(&self) -> bool {
         matches!(
             &self.kind,
-            ListFunctionEventInvokeConfigsErrorKind::ServiceError(_)
+            ListFunctionEventInvokeConfigsErrorKind::ServiceException(_)
         )
     }
-    pub fn is_too_many_requests_error(&self) -> bool {
+    pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
-            ListFunctionEventInvokeConfigsErrorKind::TooManyRequestsError(_)
+            ListFunctionEventInvokeConfigsErrorKind::TooManyRequestsException(_)
         )
     }
 }
 impl std::error::Error for ListFunctionEventInvokeConfigsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ListFunctionEventInvokeConfigsErrorKind::InvalidParameterValueError(_inner) => {
+            ListFunctionEventInvokeConfigsErrorKind::InvalidParameterValueException(_inner) => {
                 Some(_inner)
             }
-            ListFunctionEventInvokeConfigsErrorKind::ResourceNotFoundError(_inner) => Some(_inner),
-            ListFunctionEventInvokeConfigsErrorKind::ServiceError(_inner) => Some(_inner),
-            ListFunctionEventInvokeConfigsErrorKind::TooManyRequestsError(_inner) => Some(_inner),
+            ListFunctionEventInvokeConfigsErrorKind::ResourceNotFoundException(_inner) => {
+                Some(_inner)
+            }
+            ListFunctionEventInvokeConfigsErrorKind::ServiceException(_inner) => Some(_inner),
+            ListFunctionEventInvokeConfigsErrorKind::TooManyRequestsException(_inner) => {
+                Some(_inner)
+            }
             ListFunctionEventInvokeConfigsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -3957,18 +4133,18 @@ pub struct ListFunctionsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListFunctionsErrorKind {
-    InvalidParameterValueError(crate::error::InvalidParameterValueError),
-    ServiceError(crate::error::ServiceError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
+    InvalidParameterValueException(crate::error::InvalidParameterValueException),
+    ServiceException(crate::error::ServiceException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListFunctionsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ListFunctionsErrorKind::InvalidParameterValueError(_inner) => _inner.fmt(f),
-            ListFunctionsErrorKind::ServiceError(_inner) => _inner.fmt(f),
-            ListFunctionsErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
+            ListFunctionsErrorKind::InvalidParameterValueException(_inner) => _inner.fmt(f),
+            ListFunctionsErrorKind::ServiceException(_inner) => _inner.fmt(f),
+            ListFunctionsErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
             ListFunctionsErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -4017,25 +4193,28 @@ impl ListFunctionsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_invalid_parameter_value_error(&self) -> bool {
+    pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
-            ListFunctionsErrorKind::InvalidParameterValueError(_)
+            ListFunctionsErrorKind::InvalidParameterValueException(_)
         )
     }
-    pub fn is_service_error(&self) -> bool {
-        matches!(&self.kind, ListFunctionsErrorKind::ServiceError(_))
+    pub fn is_service_exception(&self) -> bool {
+        matches!(&self.kind, ListFunctionsErrorKind::ServiceException(_))
     }
-    pub fn is_too_many_requests_error(&self) -> bool {
-        matches!(&self.kind, ListFunctionsErrorKind::TooManyRequestsError(_))
+    pub fn is_too_many_requests_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListFunctionsErrorKind::TooManyRequestsException(_)
+        )
     }
 }
 impl std::error::Error for ListFunctionsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ListFunctionsErrorKind::InvalidParameterValueError(_inner) => Some(_inner),
-            ListFunctionsErrorKind::ServiceError(_inner) => Some(_inner),
-            ListFunctionsErrorKind::TooManyRequestsError(_inner) => Some(_inner),
+            ListFunctionsErrorKind::InvalidParameterValueException(_inner) => Some(_inner),
+            ListFunctionsErrorKind::ServiceException(_inner) => Some(_inner),
+            ListFunctionsErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             ListFunctionsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -4050,22 +4229,22 @@ pub struct ListFunctionsByCodeSigningConfigError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListFunctionsByCodeSigningConfigErrorKind {
-    InvalidParameterValueError(crate::error::InvalidParameterValueError),
-    ResourceNotFoundError(crate::error::ResourceNotFoundError),
-    ServiceError(crate::error::ServiceError),
+    InvalidParameterValueException(crate::error::InvalidParameterValueException),
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    ServiceException(crate::error::ServiceException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListFunctionsByCodeSigningConfigError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ListFunctionsByCodeSigningConfigErrorKind::InvalidParameterValueError(_inner) => {
+            ListFunctionsByCodeSigningConfigErrorKind::InvalidParameterValueException(_inner) => {
                 _inner.fmt(f)
             }
-            ListFunctionsByCodeSigningConfigErrorKind::ResourceNotFoundError(_inner) => {
+            ListFunctionsByCodeSigningConfigErrorKind::ResourceNotFoundException(_inner) => {
                 _inner.fmt(f)
             }
-            ListFunctionsByCodeSigningConfigErrorKind::ServiceError(_inner) => _inner.fmt(f),
+            ListFunctionsByCodeSigningConfigErrorKind::ServiceException(_inner) => _inner.fmt(f),
             ListFunctionsByCodeSigningConfigErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -4114,35 +4293,35 @@ impl ListFunctionsByCodeSigningConfigError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_invalid_parameter_value_error(&self) -> bool {
+    pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
-            ListFunctionsByCodeSigningConfigErrorKind::InvalidParameterValueError(_)
+            ListFunctionsByCodeSigningConfigErrorKind::InvalidParameterValueException(_)
         )
     }
-    pub fn is_resource_not_found_error(&self) -> bool {
+    pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
-            ListFunctionsByCodeSigningConfigErrorKind::ResourceNotFoundError(_)
+            ListFunctionsByCodeSigningConfigErrorKind::ResourceNotFoundException(_)
         )
     }
-    pub fn is_service_error(&self) -> bool {
+    pub fn is_service_exception(&self) -> bool {
         matches!(
             &self.kind,
-            ListFunctionsByCodeSigningConfigErrorKind::ServiceError(_)
+            ListFunctionsByCodeSigningConfigErrorKind::ServiceException(_)
         )
     }
 }
 impl std::error::Error for ListFunctionsByCodeSigningConfigError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ListFunctionsByCodeSigningConfigErrorKind::InvalidParameterValueError(_inner) => {
+            ListFunctionsByCodeSigningConfigErrorKind::InvalidParameterValueException(_inner) => {
                 Some(_inner)
             }
-            ListFunctionsByCodeSigningConfigErrorKind::ResourceNotFoundError(_inner) => {
+            ListFunctionsByCodeSigningConfigErrorKind::ResourceNotFoundException(_inner) => {
                 Some(_inner)
             }
-            ListFunctionsByCodeSigningConfigErrorKind::ServiceError(_inner) => Some(_inner),
+            ListFunctionsByCodeSigningConfigErrorKind::ServiceException(_inner) => Some(_inner),
             ListFunctionsByCodeSigningConfigErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -4157,18 +4336,18 @@ pub struct ListLayersError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListLayersErrorKind {
-    InvalidParameterValueError(crate::error::InvalidParameterValueError),
-    ServiceError(crate::error::ServiceError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
+    InvalidParameterValueException(crate::error::InvalidParameterValueException),
+    ServiceException(crate::error::ServiceException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListLayersError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ListLayersErrorKind::InvalidParameterValueError(_inner) => _inner.fmt(f),
-            ListLayersErrorKind::ServiceError(_inner) => _inner.fmt(f),
-            ListLayersErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
+            ListLayersErrorKind::InvalidParameterValueException(_inner) => _inner.fmt(f),
+            ListLayersErrorKind::ServiceException(_inner) => _inner.fmt(f),
+            ListLayersErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
             ListLayersErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -4217,25 +4396,25 @@ impl ListLayersError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_invalid_parameter_value_error(&self) -> bool {
+    pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
-            ListLayersErrorKind::InvalidParameterValueError(_)
+            ListLayersErrorKind::InvalidParameterValueException(_)
         )
     }
-    pub fn is_service_error(&self) -> bool {
-        matches!(&self.kind, ListLayersErrorKind::ServiceError(_))
+    pub fn is_service_exception(&self) -> bool {
+        matches!(&self.kind, ListLayersErrorKind::ServiceException(_))
     }
-    pub fn is_too_many_requests_error(&self) -> bool {
-        matches!(&self.kind, ListLayersErrorKind::TooManyRequestsError(_))
+    pub fn is_too_many_requests_exception(&self) -> bool {
+        matches!(&self.kind, ListLayersErrorKind::TooManyRequestsException(_))
     }
 }
 impl std::error::Error for ListLayersError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ListLayersErrorKind::InvalidParameterValueError(_inner) => Some(_inner),
-            ListLayersErrorKind::ServiceError(_inner) => Some(_inner),
-            ListLayersErrorKind::TooManyRequestsError(_inner) => Some(_inner),
+            ListLayersErrorKind::InvalidParameterValueException(_inner) => Some(_inner),
+            ListLayersErrorKind::ServiceException(_inner) => Some(_inner),
+            ListLayersErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             ListLayersErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -4250,20 +4429,20 @@ pub struct ListLayerVersionsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListLayerVersionsErrorKind {
-    InvalidParameterValueError(crate::error::InvalidParameterValueError),
-    ResourceNotFoundError(crate::error::ResourceNotFoundError),
-    ServiceError(crate::error::ServiceError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
+    InvalidParameterValueException(crate::error::InvalidParameterValueException),
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    ServiceException(crate::error::ServiceException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListLayerVersionsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ListLayerVersionsErrorKind::InvalidParameterValueError(_inner) => _inner.fmt(f),
-            ListLayerVersionsErrorKind::ResourceNotFoundError(_inner) => _inner.fmt(f),
-            ListLayerVersionsErrorKind::ServiceError(_inner) => _inner.fmt(f),
-            ListLayerVersionsErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
+            ListLayerVersionsErrorKind::InvalidParameterValueException(_inner) => _inner.fmt(f),
+            ListLayerVersionsErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            ListLayerVersionsErrorKind::ServiceException(_inner) => _inner.fmt(f),
+            ListLayerVersionsErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
             ListLayerVersionsErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -4312,35 +4491,35 @@ impl ListLayerVersionsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_invalid_parameter_value_error(&self) -> bool {
+    pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
-            ListLayerVersionsErrorKind::InvalidParameterValueError(_)
+            ListLayerVersionsErrorKind::InvalidParameterValueException(_)
         )
     }
-    pub fn is_resource_not_found_error(&self) -> bool {
+    pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
-            ListLayerVersionsErrorKind::ResourceNotFoundError(_)
+            ListLayerVersionsErrorKind::ResourceNotFoundException(_)
         )
     }
-    pub fn is_service_error(&self) -> bool {
-        matches!(&self.kind, ListLayerVersionsErrorKind::ServiceError(_))
+    pub fn is_service_exception(&self) -> bool {
+        matches!(&self.kind, ListLayerVersionsErrorKind::ServiceException(_))
     }
-    pub fn is_too_many_requests_error(&self) -> bool {
+    pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
-            ListLayerVersionsErrorKind::TooManyRequestsError(_)
+            ListLayerVersionsErrorKind::TooManyRequestsException(_)
         )
     }
 }
 impl std::error::Error for ListLayerVersionsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ListLayerVersionsErrorKind::InvalidParameterValueError(_inner) => Some(_inner),
-            ListLayerVersionsErrorKind::ResourceNotFoundError(_inner) => Some(_inner),
-            ListLayerVersionsErrorKind::ServiceError(_inner) => Some(_inner),
-            ListLayerVersionsErrorKind::TooManyRequestsError(_inner) => Some(_inner),
+            ListLayerVersionsErrorKind::InvalidParameterValueException(_inner) => Some(_inner),
+            ListLayerVersionsErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            ListLayerVersionsErrorKind::ServiceException(_inner) => Some(_inner),
+            ListLayerVersionsErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             ListLayerVersionsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -4355,24 +4534,24 @@ pub struct ListProvisionedConcurrencyConfigsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListProvisionedConcurrencyConfigsErrorKind {
-    InvalidParameterValueError(crate::error::InvalidParameterValueError),
-    ResourceNotFoundError(crate::error::ResourceNotFoundError),
-    ServiceError(crate::error::ServiceError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
+    InvalidParameterValueException(crate::error::InvalidParameterValueException),
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    ServiceException(crate::error::ServiceException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListProvisionedConcurrencyConfigsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ListProvisionedConcurrencyConfigsErrorKind::InvalidParameterValueError(_inner) => {
+            ListProvisionedConcurrencyConfigsErrorKind::InvalidParameterValueException(_inner) => {
                 _inner.fmt(f)
             }
-            ListProvisionedConcurrencyConfigsErrorKind::ResourceNotFoundError(_inner) => {
+            ListProvisionedConcurrencyConfigsErrorKind::ResourceNotFoundException(_inner) => {
                 _inner.fmt(f)
             }
-            ListProvisionedConcurrencyConfigsErrorKind::ServiceError(_inner) => _inner.fmt(f),
-            ListProvisionedConcurrencyConfigsErrorKind::TooManyRequestsError(_inner) => {
+            ListProvisionedConcurrencyConfigsErrorKind::ServiceException(_inner) => _inner.fmt(f),
+            ListProvisionedConcurrencyConfigsErrorKind::TooManyRequestsException(_inner) => {
                 _inner.fmt(f)
             }
             ListProvisionedConcurrencyConfigsErrorKind::Unhandled(_inner) => _inner.fmt(f),
@@ -4426,42 +4605,42 @@ impl ListProvisionedConcurrencyConfigsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_invalid_parameter_value_error(&self) -> bool {
+    pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
-            ListProvisionedConcurrencyConfigsErrorKind::InvalidParameterValueError(_)
+            ListProvisionedConcurrencyConfigsErrorKind::InvalidParameterValueException(_)
         )
     }
-    pub fn is_resource_not_found_error(&self) -> bool {
+    pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
-            ListProvisionedConcurrencyConfigsErrorKind::ResourceNotFoundError(_)
+            ListProvisionedConcurrencyConfigsErrorKind::ResourceNotFoundException(_)
         )
     }
-    pub fn is_service_error(&self) -> bool {
+    pub fn is_service_exception(&self) -> bool {
         matches!(
             &self.kind,
-            ListProvisionedConcurrencyConfigsErrorKind::ServiceError(_)
+            ListProvisionedConcurrencyConfigsErrorKind::ServiceException(_)
         )
     }
-    pub fn is_too_many_requests_error(&self) -> bool {
+    pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
-            ListProvisionedConcurrencyConfigsErrorKind::TooManyRequestsError(_)
+            ListProvisionedConcurrencyConfigsErrorKind::TooManyRequestsException(_)
         )
     }
 }
 impl std::error::Error for ListProvisionedConcurrencyConfigsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ListProvisionedConcurrencyConfigsErrorKind::InvalidParameterValueError(_inner) => {
+            ListProvisionedConcurrencyConfigsErrorKind::InvalidParameterValueException(_inner) => {
                 Some(_inner)
             }
-            ListProvisionedConcurrencyConfigsErrorKind::ResourceNotFoundError(_inner) => {
+            ListProvisionedConcurrencyConfigsErrorKind::ResourceNotFoundException(_inner) => {
                 Some(_inner)
             }
-            ListProvisionedConcurrencyConfigsErrorKind::ServiceError(_inner) => Some(_inner),
-            ListProvisionedConcurrencyConfigsErrorKind::TooManyRequestsError(_inner) => {
+            ListProvisionedConcurrencyConfigsErrorKind::ServiceException(_inner) => Some(_inner),
+            ListProvisionedConcurrencyConfigsErrorKind::TooManyRequestsException(_inner) => {
                 Some(_inner)
             }
             ListProvisionedConcurrencyConfigsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
@@ -4478,20 +4657,20 @@ pub struct ListTagsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListTagsErrorKind {
-    InvalidParameterValueError(crate::error::InvalidParameterValueError),
-    ResourceNotFoundError(crate::error::ResourceNotFoundError),
-    ServiceError(crate::error::ServiceError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
+    InvalidParameterValueException(crate::error::InvalidParameterValueException),
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    ServiceException(crate::error::ServiceException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListTagsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ListTagsErrorKind::InvalidParameterValueError(_inner) => _inner.fmt(f),
-            ListTagsErrorKind::ResourceNotFoundError(_inner) => _inner.fmt(f),
-            ListTagsErrorKind::ServiceError(_inner) => _inner.fmt(f),
-            ListTagsErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
+            ListTagsErrorKind::InvalidParameterValueException(_inner) => _inner.fmt(f),
+            ListTagsErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            ListTagsErrorKind::ServiceException(_inner) => _inner.fmt(f),
+            ListTagsErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
             ListTagsErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -4540,26 +4719,29 @@ impl ListTagsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_invalid_parameter_value_error(&self) -> bool {
-        matches!(&self.kind, ListTagsErrorKind::InvalidParameterValueError(_))
+    pub fn is_invalid_parameter_value_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListTagsErrorKind::InvalidParameterValueException(_)
+        )
     }
-    pub fn is_resource_not_found_error(&self) -> bool {
-        matches!(&self.kind, ListTagsErrorKind::ResourceNotFoundError(_))
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(&self.kind, ListTagsErrorKind::ResourceNotFoundException(_))
     }
-    pub fn is_service_error(&self) -> bool {
-        matches!(&self.kind, ListTagsErrorKind::ServiceError(_))
+    pub fn is_service_exception(&self) -> bool {
+        matches!(&self.kind, ListTagsErrorKind::ServiceException(_))
     }
-    pub fn is_too_many_requests_error(&self) -> bool {
-        matches!(&self.kind, ListTagsErrorKind::TooManyRequestsError(_))
+    pub fn is_too_many_requests_exception(&self) -> bool {
+        matches!(&self.kind, ListTagsErrorKind::TooManyRequestsException(_))
     }
 }
 impl std::error::Error for ListTagsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ListTagsErrorKind::InvalidParameterValueError(_inner) => Some(_inner),
-            ListTagsErrorKind::ResourceNotFoundError(_inner) => Some(_inner),
-            ListTagsErrorKind::ServiceError(_inner) => Some(_inner),
-            ListTagsErrorKind::TooManyRequestsError(_inner) => Some(_inner),
+            ListTagsErrorKind::InvalidParameterValueException(_inner) => Some(_inner),
+            ListTagsErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            ListTagsErrorKind::ServiceException(_inner) => Some(_inner),
+            ListTagsErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             ListTagsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -4574,20 +4756,22 @@ pub struct ListVersionsByFunctionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListVersionsByFunctionErrorKind {
-    InvalidParameterValueError(crate::error::InvalidParameterValueError),
-    ResourceNotFoundError(crate::error::ResourceNotFoundError),
-    ServiceError(crate::error::ServiceError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
+    InvalidParameterValueException(crate::error::InvalidParameterValueException),
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    ServiceException(crate::error::ServiceException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListVersionsByFunctionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ListVersionsByFunctionErrorKind::InvalidParameterValueError(_inner) => _inner.fmt(f),
-            ListVersionsByFunctionErrorKind::ResourceNotFoundError(_inner) => _inner.fmt(f),
-            ListVersionsByFunctionErrorKind::ServiceError(_inner) => _inner.fmt(f),
-            ListVersionsByFunctionErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
+            ListVersionsByFunctionErrorKind::InvalidParameterValueException(_inner) => {
+                _inner.fmt(f)
+            }
+            ListVersionsByFunctionErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            ListVersionsByFunctionErrorKind::ServiceException(_inner) => _inner.fmt(f),
+            ListVersionsByFunctionErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
             ListVersionsByFunctionErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -4636,35 +4820,38 @@ impl ListVersionsByFunctionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_invalid_parameter_value_error(&self) -> bool {
+    pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
-            ListVersionsByFunctionErrorKind::InvalidParameterValueError(_)
+            ListVersionsByFunctionErrorKind::InvalidParameterValueException(_)
         )
     }
-    pub fn is_resource_not_found_error(&self) -> bool {
+    pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
-            ListVersionsByFunctionErrorKind::ResourceNotFoundError(_)
+            ListVersionsByFunctionErrorKind::ResourceNotFoundException(_)
         )
     }
-    pub fn is_service_error(&self) -> bool {
-        matches!(&self.kind, ListVersionsByFunctionErrorKind::ServiceError(_))
-    }
-    pub fn is_too_many_requests_error(&self) -> bool {
+    pub fn is_service_exception(&self) -> bool {
         matches!(
             &self.kind,
-            ListVersionsByFunctionErrorKind::TooManyRequestsError(_)
+            ListVersionsByFunctionErrorKind::ServiceException(_)
+        )
+    }
+    pub fn is_too_many_requests_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListVersionsByFunctionErrorKind::TooManyRequestsException(_)
         )
     }
 }
 impl std::error::Error for ListVersionsByFunctionError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ListVersionsByFunctionErrorKind::InvalidParameterValueError(_inner) => Some(_inner),
-            ListVersionsByFunctionErrorKind::ResourceNotFoundError(_inner) => Some(_inner),
-            ListVersionsByFunctionErrorKind::ServiceError(_inner) => Some(_inner),
-            ListVersionsByFunctionErrorKind::TooManyRequestsError(_inner) => Some(_inner),
+            ListVersionsByFunctionErrorKind::InvalidParameterValueException(_inner) => Some(_inner),
+            ListVersionsByFunctionErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            ListVersionsByFunctionErrorKind::ServiceException(_inner) => Some(_inner),
+            ListVersionsByFunctionErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             ListVersionsByFunctionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -4679,22 +4866,22 @@ pub struct PublishLayerVersionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum PublishLayerVersionErrorKind {
-    CodeStorageExceededError(crate::error::CodeStorageExceededError),
-    InvalidParameterValueError(crate::error::InvalidParameterValueError),
-    ResourceNotFoundError(crate::error::ResourceNotFoundError),
-    ServiceError(crate::error::ServiceError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
+    CodeStorageExceededException(crate::error::CodeStorageExceededException),
+    InvalidParameterValueException(crate::error::InvalidParameterValueException),
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    ServiceException(crate::error::ServiceException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PublishLayerVersionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            PublishLayerVersionErrorKind::CodeStorageExceededError(_inner) => _inner.fmt(f),
-            PublishLayerVersionErrorKind::InvalidParameterValueError(_inner) => _inner.fmt(f),
-            PublishLayerVersionErrorKind::ResourceNotFoundError(_inner) => _inner.fmt(f),
-            PublishLayerVersionErrorKind::ServiceError(_inner) => _inner.fmt(f),
-            PublishLayerVersionErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
+            PublishLayerVersionErrorKind::CodeStorageExceededException(_inner) => _inner.fmt(f),
+            PublishLayerVersionErrorKind::InvalidParameterValueException(_inner) => _inner.fmt(f),
+            PublishLayerVersionErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            PublishLayerVersionErrorKind::ServiceException(_inner) => _inner.fmt(f),
+            PublishLayerVersionErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
             PublishLayerVersionErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -4743,42 +4930,45 @@ impl PublishLayerVersionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_code_storage_exceeded_error(&self) -> bool {
+    pub fn is_code_storage_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
-            PublishLayerVersionErrorKind::CodeStorageExceededError(_)
+            PublishLayerVersionErrorKind::CodeStorageExceededException(_)
         )
     }
-    pub fn is_invalid_parameter_value_error(&self) -> bool {
+    pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
-            PublishLayerVersionErrorKind::InvalidParameterValueError(_)
+            PublishLayerVersionErrorKind::InvalidParameterValueException(_)
         )
     }
-    pub fn is_resource_not_found_error(&self) -> bool {
+    pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
-            PublishLayerVersionErrorKind::ResourceNotFoundError(_)
+            PublishLayerVersionErrorKind::ResourceNotFoundException(_)
         )
     }
-    pub fn is_service_error(&self) -> bool {
-        matches!(&self.kind, PublishLayerVersionErrorKind::ServiceError(_))
-    }
-    pub fn is_too_many_requests_error(&self) -> bool {
+    pub fn is_service_exception(&self) -> bool {
         matches!(
             &self.kind,
-            PublishLayerVersionErrorKind::TooManyRequestsError(_)
+            PublishLayerVersionErrorKind::ServiceException(_)
+        )
+    }
+    pub fn is_too_many_requests_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            PublishLayerVersionErrorKind::TooManyRequestsException(_)
         )
     }
 }
 impl std::error::Error for PublishLayerVersionError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            PublishLayerVersionErrorKind::CodeStorageExceededError(_inner) => Some(_inner),
-            PublishLayerVersionErrorKind::InvalidParameterValueError(_inner) => Some(_inner),
-            PublishLayerVersionErrorKind::ResourceNotFoundError(_inner) => Some(_inner),
-            PublishLayerVersionErrorKind::ServiceError(_inner) => Some(_inner),
-            PublishLayerVersionErrorKind::TooManyRequestsError(_inner) => Some(_inner),
+            PublishLayerVersionErrorKind::CodeStorageExceededException(_inner) => Some(_inner),
+            PublishLayerVersionErrorKind::InvalidParameterValueException(_inner) => Some(_inner),
+            PublishLayerVersionErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            PublishLayerVersionErrorKind::ServiceException(_inner) => Some(_inner),
+            PublishLayerVersionErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             PublishLayerVersionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -4793,26 +4983,26 @@ pub struct PublishVersionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum PublishVersionErrorKind {
-    CodeStorageExceededError(crate::error::CodeStorageExceededError),
-    InvalidParameterValueError(crate::error::InvalidParameterValueError),
-    PreconditionFailedError(crate::error::PreconditionFailedError),
-    ResourceConflictError(crate::error::ResourceConflictError),
-    ResourceNotFoundError(crate::error::ResourceNotFoundError),
-    ServiceError(crate::error::ServiceError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
+    CodeStorageExceededException(crate::error::CodeStorageExceededException),
+    InvalidParameterValueException(crate::error::InvalidParameterValueException),
+    PreconditionFailedException(crate::error::PreconditionFailedException),
+    ResourceConflictException(crate::error::ResourceConflictException),
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    ServiceException(crate::error::ServiceException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PublishVersionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            PublishVersionErrorKind::CodeStorageExceededError(_inner) => _inner.fmt(f),
-            PublishVersionErrorKind::InvalidParameterValueError(_inner) => _inner.fmt(f),
-            PublishVersionErrorKind::PreconditionFailedError(_inner) => _inner.fmt(f),
-            PublishVersionErrorKind::ResourceConflictError(_inner) => _inner.fmt(f),
-            PublishVersionErrorKind::ResourceNotFoundError(_inner) => _inner.fmt(f),
-            PublishVersionErrorKind::ServiceError(_inner) => _inner.fmt(f),
-            PublishVersionErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
+            PublishVersionErrorKind::CodeStorageExceededException(_inner) => _inner.fmt(f),
+            PublishVersionErrorKind::InvalidParameterValueException(_inner) => _inner.fmt(f),
+            PublishVersionErrorKind::PreconditionFailedException(_inner) => _inner.fmt(f),
+            PublishVersionErrorKind::ResourceConflictException(_inner) => _inner.fmt(f),
+            PublishVersionErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            PublishVersionErrorKind::ServiceException(_inner) => _inner.fmt(f),
+            PublishVersionErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
             PublishVersionErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -4861,53 +5051,56 @@ impl PublishVersionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_code_storage_exceeded_error(&self) -> bool {
+    pub fn is_code_storage_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
-            PublishVersionErrorKind::CodeStorageExceededError(_)
+            PublishVersionErrorKind::CodeStorageExceededException(_)
         )
     }
-    pub fn is_invalid_parameter_value_error(&self) -> bool {
+    pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
-            PublishVersionErrorKind::InvalidParameterValueError(_)
+            PublishVersionErrorKind::InvalidParameterValueException(_)
         )
     }
-    pub fn is_precondition_failed_error(&self) -> bool {
+    pub fn is_precondition_failed_exception(&self) -> bool {
         matches!(
             &self.kind,
-            PublishVersionErrorKind::PreconditionFailedError(_)
+            PublishVersionErrorKind::PreconditionFailedException(_)
         )
     }
-    pub fn is_resource_conflict_error(&self) -> bool {
+    pub fn is_resource_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
-            PublishVersionErrorKind::ResourceConflictError(_)
+            PublishVersionErrorKind::ResourceConflictException(_)
         )
     }
-    pub fn is_resource_not_found_error(&self) -> bool {
+    pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
-            PublishVersionErrorKind::ResourceNotFoundError(_)
+            PublishVersionErrorKind::ResourceNotFoundException(_)
         )
     }
-    pub fn is_service_error(&self) -> bool {
-        matches!(&self.kind, PublishVersionErrorKind::ServiceError(_))
+    pub fn is_service_exception(&self) -> bool {
+        matches!(&self.kind, PublishVersionErrorKind::ServiceException(_))
     }
-    pub fn is_too_many_requests_error(&self) -> bool {
-        matches!(&self.kind, PublishVersionErrorKind::TooManyRequestsError(_))
+    pub fn is_too_many_requests_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            PublishVersionErrorKind::TooManyRequestsException(_)
+        )
     }
 }
 impl std::error::Error for PublishVersionError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            PublishVersionErrorKind::CodeStorageExceededError(_inner) => Some(_inner),
-            PublishVersionErrorKind::InvalidParameterValueError(_inner) => Some(_inner),
-            PublishVersionErrorKind::PreconditionFailedError(_inner) => Some(_inner),
-            PublishVersionErrorKind::ResourceConflictError(_inner) => Some(_inner),
-            PublishVersionErrorKind::ResourceNotFoundError(_inner) => Some(_inner),
-            PublishVersionErrorKind::ServiceError(_inner) => Some(_inner),
-            PublishVersionErrorKind::TooManyRequestsError(_inner) => Some(_inner),
+            PublishVersionErrorKind::CodeStorageExceededException(_inner) => Some(_inner),
+            PublishVersionErrorKind::InvalidParameterValueException(_inner) => Some(_inner),
+            PublishVersionErrorKind::PreconditionFailedException(_inner) => Some(_inner),
+            PublishVersionErrorKind::ResourceConflictException(_inner) => Some(_inner),
+            PublishVersionErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            PublishVersionErrorKind::ServiceException(_inner) => Some(_inner),
+            PublishVersionErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             PublishVersionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -4922,28 +5115,34 @@ pub struct PutFunctionCodeSigningConfigError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum PutFunctionCodeSigningConfigErrorKind {
-    CodeSigningConfigNotFoundError(crate::error::CodeSigningConfigNotFoundError),
-    InvalidParameterValueError(crate::error::InvalidParameterValueError),
-    ResourceConflictError(crate::error::ResourceConflictError),
-    ResourceNotFoundError(crate::error::ResourceNotFoundError),
-    ServiceError(crate::error::ServiceError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
+    CodeSigningConfigNotFoundException(crate::error::CodeSigningConfigNotFoundException),
+    InvalidParameterValueException(crate::error::InvalidParameterValueException),
+    ResourceConflictException(crate::error::ResourceConflictException),
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    ServiceException(crate::error::ServiceException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutFunctionCodeSigningConfigError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            PutFunctionCodeSigningConfigErrorKind::CodeSigningConfigNotFoundError(_inner) => {
+            PutFunctionCodeSigningConfigErrorKind::CodeSigningConfigNotFoundException(_inner) => {
                 _inner.fmt(f)
             }
-            PutFunctionCodeSigningConfigErrorKind::InvalidParameterValueError(_inner) => {
+            PutFunctionCodeSigningConfigErrorKind::InvalidParameterValueException(_inner) => {
                 _inner.fmt(f)
             }
-            PutFunctionCodeSigningConfigErrorKind::ResourceConflictError(_inner) => _inner.fmt(f),
-            PutFunctionCodeSigningConfigErrorKind::ResourceNotFoundError(_inner) => _inner.fmt(f),
-            PutFunctionCodeSigningConfigErrorKind::ServiceError(_inner) => _inner.fmt(f),
-            PutFunctionCodeSigningConfigErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
+            PutFunctionCodeSigningConfigErrorKind::ResourceConflictException(_inner) => {
+                _inner.fmt(f)
+            }
+            PutFunctionCodeSigningConfigErrorKind::ResourceNotFoundException(_inner) => {
+                _inner.fmt(f)
+            }
+            PutFunctionCodeSigningConfigErrorKind::ServiceException(_inner) => _inner.fmt(f),
+            PutFunctionCodeSigningConfigErrorKind::TooManyRequestsException(_inner) => {
+                _inner.fmt(f)
+            }
             PutFunctionCodeSigningConfigErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -4992,56 +5191,60 @@ impl PutFunctionCodeSigningConfigError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_code_signing_config_not_found_error(&self) -> bool {
+    pub fn is_code_signing_config_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
-            PutFunctionCodeSigningConfigErrorKind::CodeSigningConfigNotFoundError(_)
+            PutFunctionCodeSigningConfigErrorKind::CodeSigningConfigNotFoundException(_)
         )
     }
-    pub fn is_invalid_parameter_value_error(&self) -> bool {
+    pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
-            PutFunctionCodeSigningConfigErrorKind::InvalidParameterValueError(_)
+            PutFunctionCodeSigningConfigErrorKind::InvalidParameterValueException(_)
         )
     }
-    pub fn is_resource_conflict_error(&self) -> bool {
+    pub fn is_resource_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
-            PutFunctionCodeSigningConfigErrorKind::ResourceConflictError(_)
+            PutFunctionCodeSigningConfigErrorKind::ResourceConflictException(_)
         )
     }
-    pub fn is_resource_not_found_error(&self) -> bool {
+    pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
-            PutFunctionCodeSigningConfigErrorKind::ResourceNotFoundError(_)
+            PutFunctionCodeSigningConfigErrorKind::ResourceNotFoundException(_)
         )
     }
-    pub fn is_service_error(&self) -> bool {
+    pub fn is_service_exception(&self) -> bool {
         matches!(
             &self.kind,
-            PutFunctionCodeSigningConfigErrorKind::ServiceError(_)
+            PutFunctionCodeSigningConfigErrorKind::ServiceException(_)
         )
     }
-    pub fn is_too_many_requests_error(&self) -> bool {
+    pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
-            PutFunctionCodeSigningConfigErrorKind::TooManyRequestsError(_)
+            PutFunctionCodeSigningConfigErrorKind::TooManyRequestsException(_)
         )
     }
 }
 impl std::error::Error for PutFunctionCodeSigningConfigError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            PutFunctionCodeSigningConfigErrorKind::CodeSigningConfigNotFoundError(_inner) => {
+            PutFunctionCodeSigningConfigErrorKind::CodeSigningConfigNotFoundException(_inner) => {
                 Some(_inner)
             }
-            PutFunctionCodeSigningConfigErrorKind::InvalidParameterValueError(_inner) => {
+            PutFunctionCodeSigningConfigErrorKind::InvalidParameterValueException(_inner) => {
                 Some(_inner)
             }
-            PutFunctionCodeSigningConfigErrorKind::ResourceConflictError(_inner) => Some(_inner),
-            PutFunctionCodeSigningConfigErrorKind::ResourceNotFoundError(_inner) => Some(_inner),
-            PutFunctionCodeSigningConfigErrorKind::ServiceError(_inner) => Some(_inner),
-            PutFunctionCodeSigningConfigErrorKind::TooManyRequestsError(_inner) => Some(_inner),
+            PutFunctionCodeSigningConfigErrorKind::ResourceConflictException(_inner) => {
+                Some(_inner)
+            }
+            PutFunctionCodeSigningConfigErrorKind::ResourceNotFoundException(_inner) => {
+                Some(_inner)
+            }
+            PutFunctionCodeSigningConfigErrorKind::ServiceException(_inner) => Some(_inner),
+            PutFunctionCodeSigningConfigErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             PutFunctionCodeSigningConfigErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -5056,22 +5259,24 @@ pub struct PutFunctionConcurrencyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum PutFunctionConcurrencyErrorKind {
-    InvalidParameterValueError(crate::error::InvalidParameterValueError),
-    ResourceConflictError(crate::error::ResourceConflictError),
-    ResourceNotFoundError(crate::error::ResourceNotFoundError),
-    ServiceError(crate::error::ServiceError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
+    InvalidParameterValueException(crate::error::InvalidParameterValueException),
+    ResourceConflictException(crate::error::ResourceConflictException),
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    ServiceException(crate::error::ServiceException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutFunctionConcurrencyError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            PutFunctionConcurrencyErrorKind::InvalidParameterValueError(_inner) => _inner.fmt(f),
-            PutFunctionConcurrencyErrorKind::ResourceConflictError(_inner) => _inner.fmt(f),
-            PutFunctionConcurrencyErrorKind::ResourceNotFoundError(_inner) => _inner.fmt(f),
-            PutFunctionConcurrencyErrorKind::ServiceError(_inner) => _inner.fmt(f),
-            PutFunctionConcurrencyErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
+            PutFunctionConcurrencyErrorKind::InvalidParameterValueException(_inner) => {
+                _inner.fmt(f)
+            }
+            PutFunctionConcurrencyErrorKind::ResourceConflictException(_inner) => _inner.fmt(f),
+            PutFunctionConcurrencyErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            PutFunctionConcurrencyErrorKind::ServiceException(_inner) => _inner.fmt(f),
+            PutFunctionConcurrencyErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
             PutFunctionConcurrencyErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -5120,42 +5325,45 @@ impl PutFunctionConcurrencyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_invalid_parameter_value_error(&self) -> bool {
+    pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
-            PutFunctionConcurrencyErrorKind::InvalidParameterValueError(_)
+            PutFunctionConcurrencyErrorKind::InvalidParameterValueException(_)
         )
     }
-    pub fn is_resource_conflict_error(&self) -> bool {
+    pub fn is_resource_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
-            PutFunctionConcurrencyErrorKind::ResourceConflictError(_)
+            PutFunctionConcurrencyErrorKind::ResourceConflictException(_)
         )
     }
-    pub fn is_resource_not_found_error(&self) -> bool {
+    pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
-            PutFunctionConcurrencyErrorKind::ResourceNotFoundError(_)
+            PutFunctionConcurrencyErrorKind::ResourceNotFoundException(_)
         )
     }
-    pub fn is_service_error(&self) -> bool {
-        matches!(&self.kind, PutFunctionConcurrencyErrorKind::ServiceError(_))
-    }
-    pub fn is_too_many_requests_error(&self) -> bool {
+    pub fn is_service_exception(&self) -> bool {
         matches!(
             &self.kind,
-            PutFunctionConcurrencyErrorKind::TooManyRequestsError(_)
+            PutFunctionConcurrencyErrorKind::ServiceException(_)
+        )
+    }
+    pub fn is_too_many_requests_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutFunctionConcurrencyErrorKind::TooManyRequestsException(_)
         )
     }
 }
 impl std::error::Error for PutFunctionConcurrencyError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            PutFunctionConcurrencyErrorKind::InvalidParameterValueError(_inner) => Some(_inner),
-            PutFunctionConcurrencyErrorKind::ResourceConflictError(_inner) => Some(_inner),
-            PutFunctionConcurrencyErrorKind::ResourceNotFoundError(_inner) => Some(_inner),
-            PutFunctionConcurrencyErrorKind::ServiceError(_inner) => Some(_inner),
-            PutFunctionConcurrencyErrorKind::TooManyRequestsError(_inner) => Some(_inner),
+            PutFunctionConcurrencyErrorKind::InvalidParameterValueException(_inner) => Some(_inner),
+            PutFunctionConcurrencyErrorKind::ResourceConflictException(_inner) => Some(_inner),
+            PutFunctionConcurrencyErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            PutFunctionConcurrencyErrorKind::ServiceException(_inner) => Some(_inner),
+            PutFunctionConcurrencyErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             PutFunctionConcurrencyErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -5170,22 +5378,26 @@ pub struct PutFunctionEventInvokeConfigError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum PutFunctionEventInvokeConfigErrorKind {
-    InvalidParameterValueError(crate::error::InvalidParameterValueError),
-    ResourceNotFoundError(crate::error::ResourceNotFoundError),
-    ServiceError(crate::error::ServiceError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
+    InvalidParameterValueException(crate::error::InvalidParameterValueException),
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    ServiceException(crate::error::ServiceException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutFunctionEventInvokeConfigError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            PutFunctionEventInvokeConfigErrorKind::InvalidParameterValueError(_inner) => {
+            PutFunctionEventInvokeConfigErrorKind::InvalidParameterValueException(_inner) => {
                 _inner.fmt(f)
             }
-            PutFunctionEventInvokeConfigErrorKind::ResourceNotFoundError(_inner) => _inner.fmt(f),
-            PutFunctionEventInvokeConfigErrorKind::ServiceError(_inner) => _inner.fmt(f),
-            PutFunctionEventInvokeConfigErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
+            PutFunctionEventInvokeConfigErrorKind::ResourceNotFoundException(_inner) => {
+                _inner.fmt(f)
+            }
+            PutFunctionEventInvokeConfigErrorKind::ServiceException(_inner) => _inner.fmt(f),
+            PutFunctionEventInvokeConfigErrorKind::TooManyRequestsException(_inner) => {
+                _inner.fmt(f)
+            }
             PutFunctionEventInvokeConfigErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -5234,40 +5446,42 @@ impl PutFunctionEventInvokeConfigError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_invalid_parameter_value_error(&self) -> bool {
+    pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
-            PutFunctionEventInvokeConfigErrorKind::InvalidParameterValueError(_)
+            PutFunctionEventInvokeConfigErrorKind::InvalidParameterValueException(_)
         )
     }
-    pub fn is_resource_not_found_error(&self) -> bool {
+    pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
-            PutFunctionEventInvokeConfigErrorKind::ResourceNotFoundError(_)
+            PutFunctionEventInvokeConfigErrorKind::ResourceNotFoundException(_)
         )
     }
-    pub fn is_service_error(&self) -> bool {
+    pub fn is_service_exception(&self) -> bool {
         matches!(
             &self.kind,
-            PutFunctionEventInvokeConfigErrorKind::ServiceError(_)
+            PutFunctionEventInvokeConfigErrorKind::ServiceException(_)
         )
     }
-    pub fn is_too_many_requests_error(&self) -> bool {
+    pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
-            PutFunctionEventInvokeConfigErrorKind::TooManyRequestsError(_)
+            PutFunctionEventInvokeConfigErrorKind::TooManyRequestsException(_)
         )
     }
 }
 impl std::error::Error for PutFunctionEventInvokeConfigError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            PutFunctionEventInvokeConfigErrorKind::InvalidParameterValueError(_inner) => {
+            PutFunctionEventInvokeConfigErrorKind::InvalidParameterValueException(_inner) => {
                 Some(_inner)
             }
-            PutFunctionEventInvokeConfigErrorKind::ResourceNotFoundError(_inner) => Some(_inner),
-            PutFunctionEventInvokeConfigErrorKind::ServiceError(_inner) => Some(_inner),
-            PutFunctionEventInvokeConfigErrorKind::TooManyRequestsError(_inner) => Some(_inner),
+            PutFunctionEventInvokeConfigErrorKind::ResourceNotFoundException(_inner) => {
+                Some(_inner)
+            }
+            PutFunctionEventInvokeConfigErrorKind::ServiceException(_inner) => Some(_inner),
+            PutFunctionEventInvokeConfigErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             PutFunctionEventInvokeConfigErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -5282,28 +5496,30 @@ pub struct PutProvisionedConcurrencyConfigError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum PutProvisionedConcurrencyConfigErrorKind {
-    InvalidParameterValueError(crate::error::InvalidParameterValueError),
-    ResourceConflictError(crate::error::ResourceConflictError),
-    ResourceNotFoundError(crate::error::ResourceNotFoundError),
-    ServiceError(crate::error::ServiceError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
+    InvalidParameterValueException(crate::error::InvalidParameterValueException),
+    ResourceConflictException(crate::error::ResourceConflictException),
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    ServiceException(crate::error::ServiceException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutProvisionedConcurrencyConfigError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            PutProvisionedConcurrencyConfigErrorKind::InvalidParameterValueError(_inner) => {
+            PutProvisionedConcurrencyConfigErrorKind::InvalidParameterValueException(_inner) => {
                 _inner.fmt(f)
             }
-            PutProvisionedConcurrencyConfigErrorKind::ResourceConflictError(_inner) => {
+            PutProvisionedConcurrencyConfigErrorKind::ResourceConflictException(_inner) => {
                 _inner.fmt(f)
             }
-            PutProvisionedConcurrencyConfigErrorKind::ResourceNotFoundError(_inner) => {
+            PutProvisionedConcurrencyConfigErrorKind::ResourceNotFoundException(_inner) => {
                 _inner.fmt(f)
             }
-            PutProvisionedConcurrencyConfigErrorKind::ServiceError(_inner) => _inner.fmt(f),
-            PutProvisionedConcurrencyConfigErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
+            PutProvisionedConcurrencyConfigErrorKind::ServiceException(_inner) => _inner.fmt(f),
+            PutProvisionedConcurrencyConfigErrorKind::TooManyRequestsException(_inner) => {
+                _inner.fmt(f)
+            }
             PutProvisionedConcurrencyConfigErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -5352,47 +5568,53 @@ impl PutProvisionedConcurrencyConfigError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_invalid_parameter_value_error(&self) -> bool {
+    pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
-            PutProvisionedConcurrencyConfigErrorKind::InvalidParameterValueError(_)
+            PutProvisionedConcurrencyConfigErrorKind::InvalidParameterValueException(_)
         )
     }
-    pub fn is_resource_conflict_error(&self) -> bool {
+    pub fn is_resource_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
-            PutProvisionedConcurrencyConfigErrorKind::ResourceConflictError(_)
+            PutProvisionedConcurrencyConfigErrorKind::ResourceConflictException(_)
         )
     }
-    pub fn is_resource_not_found_error(&self) -> bool {
+    pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
-            PutProvisionedConcurrencyConfigErrorKind::ResourceNotFoundError(_)
+            PutProvisionedConcurrencyConfigErrorKind::ResourceNotFoundException(_)
         )
     }
-    pub fn is_service_error(&self) -> bool {
+    pub fn is_service_exception(&self) -> bool {
         matches!(
             &self.kind,
-            PutProvisionedConcurrencyConfigErrorKind::ServiceError(_)
+            PutProvisionedConcurrencyConfigErrorKind::ServiceException(_)
         )
     }
-    pub fn is_too_many_requests_error(&self) -> bool {
+    pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
-            PutProvisionedConcurrencyConfigErrorKind::TooManyRequestsError(_)
+            PutProvisionedConcurrencyConfigErrorKind::TooManyRequestsException(_)
         )
     }
 }
 impl std::error::Error for PutProvisionedConcurrencyConfigError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            PutProvisionedConcurrencyConfigErrorKind::InvalidParameterValueError(_inner) => {
+            PutProvisionedConcurrencyConfigErrorKind::InvalidParameterValueException(_inner) => {
                 Some(_inner)
             }
-            PutProvisionedConcurrencyConfigErrorKind::ResourceConflictError(_inner) => Some(_inner),
-            PutProvisionedConcurrencyConfigErrorKind::ResourceNotFoundError(_inner) => Some(_inner),
-            PutProvisionedConcurrencyConfigErrorKind::ServiceError(_inner) => Some(_inner),
-            PutProvisionedConcurrencyConfigErrorKind::TooManyRequestsError(_inner) => Some(_inner),
+            PutProvisionedConcurrencyConfigErrorKind::ResourceConflictException(_inner) => {
+                Some(_inner)
+            }
+            PutProvisionedConcurrencyConfigErrorKind::ResourceNotFoundException(_inner) => {
+                Some(_inner)
+            }
+            PutProvisionedConcurrencyConfigErrorKind::ServiceException(_inner) => Some(_inner),
+            PutProvisionedConcurrencyConfigErrorKind::TooManyRequestsException(_inner) => {
+                Some(_inner)
+            }
             PutProvisionedConcurrencyConfigErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -5407,24 +5629,30 @@ pub struct RemoveLayerVersionPermissionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum RemoveLayerVersionPermissionErrorKind {
-    InvalidParameterValueError(crate::error::InvalidParameterValueError),
-    PreconditionFailedError(crate::error::PreconditionFailedError),
-    ResourceNotFoundError(crate::error::ResourceNotFoundError),
-    ServiceError(crate::error::ServiceError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
+    InvalidParameterValueException(crate::error::InvalidParameterValueException),
+    PreconditionFailedException(crate::error::PreconditionFailedException),
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    ServiceException(crate::error::ServiceException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for RemoveLayerVersionPermissionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            RemoveLayerVersionPermissionErrorKind::InvalidParameterValueError(_inner) => {
+            RemoveLayerVersionPermissionErrorKind::InvalidParameterValueException(_inner) => {
                 _inner.fmt(f)
             }
-            RemoveLayerVersionPermissionErrorKind::PreconditionFailedError(_inner) => _inner.fmt(f),
-            RemoveLayerVersionPermissionErrorKind::ResourceNotFoundError(_inner) => _inner.fmt(f),
-            RemoveLayerVersionPermissionErrorKind::ServiceError(_inner) => _inner.fmt(f),
-            RemoveLayerVersionPermissionErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
+            RemoveLayerVersionPermissionErrorKind::PreconditionFailedException(_inner) => {
+                _inner.fmt(f)
+            }
+            RemoveLayerVersionPermissionErrorKind::ResourceNotFoundException(_inner) => {
+                _inner.fmt(f)
+            }
+            RemoveLayerVersionPermissionErrorKind::ServiceException(_inner) => _inner.fmt(f),
+            RemoveLayerVersionPermissionErrorKind::TooManyRequestsException(_inner) => {
+                _inner.fmt(f)
+            }
             RemoveLayerVersionPermissionErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -5473,47 +5701,51 @@ impl RemoveLayerVersionPermissionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_invalid_parameter_value_error(&self) -> bool {
+    pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
-            RemoveLayerVersionPermissionErrorKind::InvalidParameterValueError(_)
+            RemoveLayerVersionPermissionErrorKind::InvalidParameterValueException(_)
         )
     }
-    pub fn is_precondition_failed_error(&self) -> bool {
+    pub fn is_precondition_failed_exception(&self) -> bool {
         matches!(
             &self.kind,
-            RemoveLayerVersionPermissionErrorKind::PreconditionFailedError(_)
+            RemoveLayerVersionPermissionErrorKind::PreconditionFailedException(_)
         )
     }
-    pub fn is_resource_not_found_error(&self) -> bool {
+    pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
-            RemoveLayerVersionPermissionErrorKind::ResourceNotFoundError(_)
+            RemoveLayerVersionPermissionErrorKind::ResourceNotFoundException(_)
         )
     }
-    pub fn is_service_error(&self) -> bool {
+    pub fn is_service_exception(&self) -> bool {
         matches!(
             &self.kind,
-            RemoveLayerVersionPermissionErrorKind::ServiceError(_)
+            RemoveLayerVersionPermissionErrorKind::ServiceException(_)
         )
     }
-    pub fn is_too_many_requests_error(&self) -> bool {
+    pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
-            RemoveLayerVersionPermissionErrorKind::TooManyRequestsError(_)
+            RemoveLayerVersionPermissionErrorKind::TooManyRequestsException(_)
         )
     }
 }
 impl std::error::Error for RemoveLayerVersionPermissionError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            RemoveLayerVersionPermissionErrorKind::InvalidParameterValueError(_inner) => {
+            RemoveLayerVersionPermissionErrorKind::InvalidParameterValueException(_inner) => {
                 Some(_inner)
             }
-            RemoveLayerVersionPermissionErrorKind::PreconditionFailedError(_inner) => Some(_inner),
-            RemoveLayerVersionPermissionErrorKind::ResourceNotFoundError(_inner) => Some(_inner),
-            RemoveLayerVersionPermissionErrorKind::ServiceError(_inner) => Some(_inner),
-            RemoveLayerVersionPermissionErrorKind::TooManyRequestsError(_inner) => Some(_inner),
+            RemoveLayerVersionPermissionErrorKind::PreconditionFailedException(_inner) => {
+                Some(_inner)
+            }
+            RemoveLayerVersionPermissionErrorKind::ResourceNotFoundException(_inner) => {
+                Some(_inner)
+            }
+            RemoveLayerVersionPermissionErrorKind::ServiceException(_inner) => Some(_inner),
+            RemoveLayerVersionPermissionErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             RemoveLayerVersionPermissionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -5528,22 +5760,22 @@ pub struct RemovePermissionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum RemovePermissionErrorKind {
-    InvalidParameterValueError(crate::error::InvalidParameterValueError),
-    PreconditionFailedError(crate::error::PreconditionFailedError),
-    ResourceNotFoundError(crate::error::ResourceNotFoundError),
-    ServiceError(crate::error::ServiceError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
+    InvalidParameterValueException(crate::error::InvalidParameterValueException),
+    PreconditionFailedException(crate::error::PreconditionFailedException),
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    ServiceException(crate::error::ServiceException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for RemovePermissionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            RemovePermissionErrorKind::InvalidParameterValueError(_inner) => _inner.fmt(f),
-            RemovePermissionErrorKind::PreconditionFailedError(_inner) => _inner.fmt(f),
-            RemovePermissionErrorKind::ResourceNotFoundError(_inner) => _inner.fmt(f),
-            RemovePermissionErrorKind::ServiceError(_inner) => _inner.fmt(f),
-            RemovePermissionErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
+            RemovePermissionErrorKind::InvalidParameterValueException(_inner) => _inner.fmt(f),
+            RemovePermissionErrorKind::PreconditionFailedException(_inner) => _inner.fmt(f),
+            RemovePermissionErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            RemovePermissionErrorKind::ServiceException(_inner) => _inner.fmt(f),
+            RemovePermissionErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
             RemovePermissionErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -5592,42 +5824,42 @@ impl RemovePermissionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_invalid_parameter_value_error(&self) -> bool {
+    pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
-            RemovePermissionErrorKind::InvalidParameterValueError(_)
+            RemovePermissionErrorKind::InvalidParameterValueException(_)
         )
     }
-    pub fn is_precondition_failed_error(&self) -> bool {
+    pub fn is_precondition_failed_exception(&self) -> bool {
         matches!(
             &self.kind,
-            RemovePermissionErrorKind::PreconditionFailedError(_)
+            RemovePermissionErrorKind::PreconditionFailedException(_)
         )
     }
-    pub fn is_resource_not_found_error(&self) -> bool {
+    pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
-            RemovePermissionErrorKind::ResourceNotFoundError(_)
+            RemovePermissionErrorKind::ResourceNotFoundException(_)
         )
     }
-    pub fn is_service_error(&self) -> bool {
-        matches!(&self.kind, RemovePermissionErrorKind::ServiceError(_))
+    pub fn is_service_exception(&self) -> bool {
+        matches!(&self.kind, RemovePermissionErrorKind::ServiceException(_))
     }
-    pub fn is_too_many_requests_error(&self) -> bool {
+    pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
-            RemovePermissionErrorKind::TooManyRequestsError(_)
+            RemovePermissionErrorKind::TooManyRequestsException(_)
         )
     }
 }
 impl std::error::Error for RemovePermissionError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            RemovePermissionErrorKind::InvalidParameterValueError(_inner) => Some(_inner),
-            RemovePermissionErrorKind::PreconditionFailedError(_inner) => Some(_inner),
-            RemovePermissionErrorKind::ResourceNotFoundError(_inner) => Some(_inner),
-            RemovePermissionErrorKind::ServiceError(_inner) => Some(_inner),
-            RemovePermissionErrorKind::TooManyRequestsError(_inner) => Some(_inner),
+            RemovePermissionErrorKind::InvalidParameterValueException(_inner) => Some(_inner),
+            RemovePermissionErrorKind::PreconditionFailedException(_inner) => Some(_inner),
+            RemovePermissionErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            RemovePermissionErrorKind::ServiceException(_inner) => Some(_inner),
+            RemovePermissionErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             RemovePermissionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -5642,22 +5874,22 @@ pub struct TagResourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum TagResourceErrorKind {
-    InvalidParameterValueError(crate::error::InvalidParameterValueError),
-    ResourceConflictError(crate::error::ResourceConflictError),
-    ResourceNotFoundError(crate::error::ResourceNotFoundError),
-    ServiceError(crate::error::ServiceError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
+    InvalidParameterValueException(crate::error::InvalidParameterValueException),
+    ResourceConflictException(crate::error::ResourceConflictException),
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    ServiceException(crate::error::ServiceException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for TagResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            TagResourceErrorKind::InvalidParameterValueError(_inner) => _inner.fmt(f),
-            TagResourceErrorKind::ResourceConflictError(_inner) => _inner.fmt(f),
-            TagResourceErrorKind::ResourceNotFoundError(_inner) => _inner.fmt(f),
-            TagResourceErrorKind::ServiceError(_inner) => _inner.fmt(f),
-            TagResourceErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
+            TagResourceErrorKind::InvalidParameterValueException(_inner) => _inner.fmt(f),
+            TagResourceErrorKind::ResourceConflictException(_inner) => _inner.fmt(f),
+            TagResourceErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            TagResourceErrorKind::ServiceException(_inner) => _inner.fmt(f),
+            TagResourceErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
             TagResourceErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -5706,33 +5938,42 @@ impl TagResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_invalid_parameter_value_error(&self) -> bool {
+    pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
-            TagResourceErrorKind::InvalidParameterValueError(_)
+            TagResourceErrorKind::InvalidParameterValueException(_)
         )
     }
-    pub fn is_resource_conflict_error(&self) -> bool {
-        matches!(&self.kind, TagResourceErrorKind::ResourceConflictError(_))
+    pub fn is_resource_conflict_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            TagResourceErrorKind::ResourceConflictException(_)
+        )
     }
-    pub fn is_resource_not_found_error(&self) -> bool {
-        matches!(&self.kind, TagResourceErrorKind::ResourceNotFoundError(_))
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            TagResourceErrorKind::ResourceNotFoundException(_)
+        )
     }
-    pub fn is_service_error(&self) -> bool {
-        matches!(&self.kind, TagResourceErrorKind::ServiceError(_))
+    pub fn is_service_exception(&self) -> bool {
+        matches!(&self.kind, TagResourceErrorKind::ServiceException(_))
     }
-    pub fn is_too_many_requests_error(&self) -> bool {
-        matches!(&self.kind, TagResourceErrorKind::TooManyRequestsError(_))
+    pub fn is_too_many_requests_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            TagResourceErrorKind::TooManyRequestsException(_)
+        )
     }
 }
 impl std::error::Error for TagResourceError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            TagResourceErrorKind::InvalidParameterValueError(_inner) => Some(_inner),
-            TagResourceErrorKind::ResourceConflictError(_inner) => Some(_inner),
-            TagResourceErrorKind::ResourceNotFoundError(_inner) => Some(_inner),
-            TagResourceErrorKind::ServiceError(_inner) => Some(_inner),
-            TagResourceErrorKind::TooManyRequestsError(_inner) => Some(_inner),
+            TagResourceErrorKind::InvalidParameterValueException(_inner) => Some(_inner),
+            TagResourceErrorKind::ResourceConflictException(_inner) => Some(_inner),
+            TagResourceErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            TagResourceErrorKind::ServiceException(_inner) => Some(_inner),
+            TagResourceErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             TagResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -5747,22 +5988,22 @@ pub struct UntagResourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UntagResourceErrorKind {
-    InvalidParameterValueError(crate::error::InvalidParameterValueError),
-    ResourceConflictError(crate::error::ResourceConflictError),
-    ResourceNotFoundError(crate::error::ResourceNotFoundError),
-    ServiceError(crate::error::ServiceError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
+    InvalidParameterValueException(crate::error::InvalidParameterValueException),
+    ResourceConflictException(crate::error::ResourceConflictException),
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    ServiceException(crate::error::ServiceException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UntagResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            UntagResourceErrorKind::InvalidParameterValueError(_inner) => _inner.fmt(f),
-            UntagResourceErrorKind::ResourceConflictError(_inner) => _inner.fmt(f),
-            UntagResourceErrorKind::ResourceNotFoundError(_inner) => _inner.fmt(f),
-            UntagResourceErrorKind::ServiceError(_inner) => _inner.fmt(f),
-            UntagResourceErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
+            UntagResourceErrorKind::InvalidParameterValueException(_inner) => _inner.fmt(f),
+            UntagResourceErrorKind::ResourceConflictException(_inner) => _inner.fmt(f),
+            UntagResourceErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            UntagResourceErrorKind::ServiceException(_inner) => _inner.fmt(f),
+            UntagResourceErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
             UntagResourceErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -5811,33 +6052,42 @@ impl UntagResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_invalid_parameter_value_error(&self) -> bool {
+    pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UntagResourceErrorKind::InvalidParameterValueError(_)
+            UntagResourceErrorKind::InvalidParameterValueException(_)
         )
     }
-    pub fn is_resource_conflict_error(&self) -> bool {
-        matches!(&self.kind, UntagResourceErrorKind::ResourceConflictError(_))
+    pub fn is_resource_conflict_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UntagResourceErrorKind::ResourceConflictException(_)
+        )
     }
-    pub fn is_resource_not_found_error(&self) -> bool {
-        matches!(&self.kind, UntagResourceErrorKind::ResourceNotFoundError(_))
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UntagResourceErrorKind::ResourceNotFoundException(_)
+        )
     }
-    pub fn is_service_error(&self) -> bool {
-        matches!(&self.kind, UntagResourceErrorKind::ServiceError(_))
+    pub fn is_service_exception(&self) -> bool {
+        matches!(&self.kind, UntagResourceErrorKind::ServiceException(_))
     }
-    pub fn is_too_many_requests_error(&self) -> bool {
-        matches!(&self.kind, UntagResourceErrorKind::TooManyRequestsError(_))
+    pub fn is_too_many_requests_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UntagResourceErrorKind::TooManyRequestsException(_)
+        )
     }
 }
 impl std::error::Error for UntagResourceError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            UntagResourceErrorKind::InvalidParameterValueError(_inner) => Some(_inner),
-            UntagResourceErrorKind::ResourceConflictError(_inner) => Some(_inner),
-            UntagResourceErrorKind::ResourceNotFoundError(_inner) => Some(_inner),
-            UntagResourceErrorKind::ServiceError(_inner) => Some(_inner),
-            UntagResourceErrorKind::TooManyRequestsError(_inner) => Some(_inner),
+            UntagResourceErrorKind::InvalidParameterValueException(_inner) => Some(_inner),
+            UntagResourceErrorKind::ResourceConflictException(_inner) => Some(_inner),
+            UntagResourceErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            UntagResourceErrorKind::ServiceException(_inner) => Some(_inner),
+            UntagResourceErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             UntagResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -5852,24 +6102,24 @@ pub struct UpdateAliasError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateAliasErrorKind {
-    InvalidParameterValueError(crate::error::InvalidParameterValueError),
-    PreconditionFailedError(crate::error::PreconditionFailedError),
-    ResourceConflictError(crate::error::ResourceConflictError),
-    ResourceNotFoundError(crate::error::ResourceNotFoundError),
-    ServiceError(crate::error::ServiceError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
+    InvalidParameterValueException(crate::error::InvalidParameterValueException),
+    PreconditionFailedException(crate::error::PreconditionFailedException),
+    ResourceConflictException(crate::error::ResourceConflictException),
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    ServiceException(crate::error::ServiceException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateAliasError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            UpdateAliasErrorKind::InvalidParameterValueError(_inner) => _inner.fmt(f),
-            UpdateAliasErrorKind::PreconditionFailedError(_inner) => _inner.fmt(f),
-            UpdateAliasErrorKind::ResourceConflictError(_inner) => _inner.fmt(f),
-            UpdateAliasErrorKind::ResourceNotFoundError(_inner) => _inner.fmt(f),
-            UpdateAliasErrorKind::ServiceError(_inner) => _inner.fmt(f),
-            UpdateAliasErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
+            UpdateAliasErrorKind::InvalidParameterValueException(_inner) => _inner.fmt(f),
+            UpdateAliasErrorKind::PreconditionFailedException(_inner) => _inner.fmt(f),
+            UpdateAliasErrorKind::ResourceConflictException(_inner) => _inner.fmt(f),
+            UpdateAliasErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            UpdateAliasErrorKind::ServiceException(_inner) => _inner.fmt(f),
+            UpdateAliasErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
             UpdateAliasErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -5918,37 +6168,49 @@ impl UpdateAliasError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_invalid_parameter_value_error(&self) -> bool {
+    pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UpdateAliasErrorKind::InvalidParameterValueError(_)
+            UpdateAliasErrorKind::InvalidParameterValueException(_)
         )
     }
-    pub fn is_precondition_failed_error(&self) -> bool {
-        matches!(&self.kind, UpdateAliasErrorKind::PreconditionFailedError(_))
+    pub fn is_precondition_failed_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateAliasErrorKind::PreconditionFailedException(_)
+        )
     }
-    pub fn is_resource_conflict_error(&self) -> bool {
-        matches!(&self.kind, UpdateAliasErrorKind::ResourceConflictError(_))
+    pub fn is_resource_conflict_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateAliasErrorKind::ResourceConflictException(_)
+        )
     }
-    pub fn is_resource_not_found_error(&self) -> bool {
-        matches!(&self.kind, UpdateAliasErrorKind::ResourceNotFoundError(_))
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateAliasErrorKind::ResourceNotFoundException(_)
+        )
     }
-    pub fn is_service_error(&self) -> bool {
-        matches!(&self.kind, UpdateAliasErrorKind::ServiceError(_))
+    pub fn is_service_exception(&self) -> bool {
+        matches!(&self.kind, UpdateAliasErrorKind::ServiceException(_))
     }
-    pub fn is_too_many_requests_error(&self) -> bool {
-        matches!(&self.kind, UpdateAliasErrorKind::TooManyRequestsError(_))
+    pub fn is_too_many_requests_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateAliasErrorKind::TooManyRequestsException(_)
+        )
     }
 }
 impl std::error::Error for UpdateAliasError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            UpdateAliasErrorKind::InvalidParameterValueError(_inner) => Some(_inner),
-            UpdateAliasErrorKind::PreconditionFailedError(_inner) => Some(_inner),
-            UpdateAliasErrorKind::ResourceConflictError(_inner) => Some(_inner),
-            UpdateAliasErrorKind::ResourceNotFoundError(_inner) => Some(_inner),
-            UpdateAliasErrorKind::ServiceError(_inner) => Some(_inner),
-            UpdateAliasErrorKind::TooManyRequestsError(_inner) => Some(_inner),
+            UpdateAliasErrorKind::InvalidParameterValueException(_inner) => Some(_inner),
+            UpdateAliasErrorKind::PreconditionFailedException(_inner) => Some(_inner),
+            UpdateAliasErrorKind::ResourceConflictException(_inner) => Some(_inner),
+            UpdateAliasErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            UpdateAliasErrorKind::ServiceException(_inner) => Some(_inner),
+            UpdateAliasErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             UpdateAliasErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -5963,18 +6225,20 @@ pub struct UpdateCodeSigningConfigError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateCodeSigningConfigErrorKind {
-    InvalidParameterValueError(crate::error::InvalidParameterValueError),
-    ResourceNotFoundError(crate::error::ResourceNotFoundError),
-    ServiceError(crate::error::ServiceError),
+    InvalidParameterValueException(crate::error::InvalidParameterValueException),
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    ServiceException(crate::error::ServiceException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateCodeSigningConfigError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            UpdateCodeSigningConfigErrorKind::InvalidParameterValueError(_inner) => _inner.fmt(f),
-            UpdateCodeSigningConfigErrorKind::ResourceNotFoundError(_inner) => _inner.fmt(f),
-            UpdateCodeSigningConfigErrorKind::ServiceError(_inner) => _inner.fmt(f),
+            UpdateCodeSigningConfigErrorKind::InvalidParameterValueException(_inner) => {
+                _inner.fmt(f)
+            }
+            UpdateCodeSigningConfigErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            UpdateCodeSigningConfigErrorKind::ServiceException(_inner) => _inner.fmt(f),
             UpdateCodeSigningConfigErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -6023,31 +6287,33 @@ impl UpdateCodeSigningConfigError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_invalid_parameter_value_error(&self) -> bool {
+    pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UpdateCodeSigningConfigErrorKind::InvalidParameterValueError(_)
+            UpdateCodeSigningConfigErrorKind::InvalidParameterValueException(_)
         )
     }
-    pub fn is_resource_not_found_error(&self) -> bool {
+    pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UpdateCodeSigningConfigErrorKind::ResourceNotFoundError(_)
+            UpdateCodeSigningConfigErrorKind::ResourceNotFoundException(_)
         )
     }
-    pub fn is_service_error(&self) -> bool {
+    pub fn is_service_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UpdateCodeSigningConfigErrorKind::ServiceError(_)
+            UpdateCodeSigningConfigErrorKind::ServiceException(_)
         )
     }
 }
 impl std::error::Error for UpdateCodeSigningConfigError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            UpdateCodeSigningConfigErrorKind::InvalidParameterValueError(_inner) => Some(_inner),
-            UpdateCodeSigningConfigErrorKind::ResourceNotFoundError(_inner) => Some(_inner),
-            UpdateCodeSigningConfigErrorKind::ServiceError(_inner) => Some(_inner),
+            UpdateCodeSigningConfigErrorKind::InvalidParameterValueException(_inner) => {
+                Some(_inner)
+            }
+            UpdateCodeSigningConfigErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            UpdateCodeSigningConfigErrorKind::ServiceException(_inner) => Some(_inner),
             UpdateCodeSigningConfigErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -6062,24 +6328,26 @@ pub struct UpdateEventSourceMappingError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateEventSourceMappingErrorKind {
-    InvalidParameterValueError(crate::error::InvalidParameterValueError),
-    ResourceConflictError(crate::error::ResourceConflictError),
-    ResourceInUseError(crate::error::ResourceInUseError),
-    ResourceNotFoundError(crate::error::ResourceNotFoundError),
-    ServiceError(crate::error::ServiceError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
+    InvalidParameterValueException(crate::error::InvalidParameterValueException),
+    ResourceConflictException(crate::error::ResourceConflictException),
+    ResourceInUseException(crate::error::ResourceInUseException),
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    ServiceException(crate::error::ServiceException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateEventSourceMappingError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            UpdateEventSourceMappingErrorKind::InvalidParameterValueError(_inner) => _inner.fmt(f),
-            UpdateEventSourceMappingErrorKind::ResourceConflictError(_inner) => _inner.fmt(f),
-            UpdateEventSourceMappingErrorKind::ResourceInUseError(_inner) => _inner.fmt(f),
-            UpdateEventSourceMappingErrorKind::ResourceNotFoundError(_inner) => _inner.fmt(f),
-            UpdateEventSourceMappingErrorKind::ServiceError(_inner) => _inner.fmt(f),
-            UpdateEventSourceMappingErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
+            UpdateEventSourceMappingErrorKind::InvalidParameterValueException(_inner) => {
+                _inner.fmt(f)
+            }
+            UpdateEventSourceMappingErrorKind::ResourceConflictException(_inner) => _inner.fmt(f),
+            UpdateEventSourceMappingErrorKind::ResourceInUseException(_inner) => _inner.fmt(f),
+            UpdateEventSourceMappingErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            UpdateEventSourceMappingErrorKind::ServiceException(_inner) => _inner.fmt(f),
+            UpdateEventSourceMappingErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
             UpdateEventSourceMappingErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -6128,52 +6396,54 @@ impl UpdateEventSourceMappingError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_invalid_parameter_value_error(&self) -> bool {
+    pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UpdateEventSourceMappingErrorKind::InvalidParameterValueError(_)
+            UpdateEventSourceMappingErrorKind::InvalidParameterValueException(_)
         )
     }
-    pub fn is_resource_conflict_error(&self) -> bool {
+    pub fn is_resource_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UpdateEventSourceMappingErrorKind::ResourceConflictError(_)
+            UpdateEventSourceMappingErrorKind::ResourceConflictException(_)
         )
     }
-    pub fn is_resource_in_use_error(&self) -> bool {
+    pub fn is_resource_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UpdateEventSourceMappingErrorKind::ResourceInUseError(_)
+            UpdateEventSourceMappingErrorKind::ResourceInUseException(_)
         )
     }
-    pub fn is_resource_not_found_error(&self) -> bool {
+    pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UpdateEventSourceMappingErrorKind::ResourceNotFoundError(_)
+            UpdateEventSourceMappingErrorKind::ResourceNotFoundException(_)
         )
     }
-    pub fn is_service_error(&self) -> bool {
+    pub fn is_service_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UpdateEventSourceMappingErrorKind::ServiceError(_)
+            UpdateEventSourceMappingErrorKind::ServiceException(_)
         )
     }
-    pub fn is_too_many_requests_error(&self) -> bool {
+    pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UpdateEventSourceMappingErrorKind::TooManyRequestsError(_)
+            UpdateEventSourceMappingErrorKind::TooManyRequestsException(_)
         )
     }
 }
 impl std::error::Error for UpdateEventSourceMappingError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            UpdateEventSourceMappingErrorKind::InvalidParameterValueError(_inner) => Some(_inner),
-            UpdateEventSourceMappingErrorKind::ResourceConflictError(_inner) => Some(_inner),
-            UpdateEventSourceMappingErrorKind::ResourceInUseError(_inner) => Some(_inner),
-            UpdateEventSourceMappingErrorKind::ResourceNotFoundError(_inner) => Some(_inner),
-            UpdateEventSourceMappingErrorKind::ServiceError(_inner) => Some(_inner),
-            UpdateEventSourceMappingErrorKind::TooManyRequestsError(_inner) => Some(_inner),
+            UpdateEventSourceMappingErrorKind::InvalidParameterValueException(_inner) => {
+                Some(_inner)
+            }
+            UpdateEventSourceMappingErrorKind::ResourceConflictException(_inner) => Some(_inner),
+            UpdateEventSourceMappingErrorKind::ResourceInUseException(_inner) => Some(_inner),
+            UpdateEventSourceMappingErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            UpdateEventSourceMappingErrorKind::ServiceException(_inner) => Some(_inner),
+            UpdateEventSourceMappingErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             UpdateEventSourceMappingErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -6188,32 +6458,34 @@ pub struct UpdateFunctionCodeError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateFunctionCodeErrorKind {
-    CodeSigningConfigNotFoundError(crate::error::CodeSigningConfigNotFoundError),
-    CodeStorageExceededError(crate::error::CodeStorageExceededError),
-    CodeVerificationFailedError(crate::error::CodeVerificationFailedError),
-    InvalidCodeSignatureError(crate::error::InvalidCodeSignatureError),
-    InvalidParameterValueError(crate::error::InvalidParameterValueError),
-    PreconditionFailedError(crate::error::PreconditionFailedError),
-    ResourceConflictError(crate::error::ResourceConflictError),
-    ResourceNotFoundError(crate::error::ResourceNotFoundError),
-    ServiceError(crate::error::ServiceError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
+    CodeSigningConfigNotFoundException(crate::error::CodeSigningConfigNotFoundException),
+    CodeStorageExceededException(crate::error::CodeStorageExceededException),
+    CodeVerificationFailedException(crate::error::CodeVerificationFailedException),
+    InvalidCodeSignatureException(crate::error::InvalidCodeSignatureException),
+    InvalidParameterValueException(crate::error::InvalidParameterValueException),
+    PreconditionFailedException(crate::error::PreconditionFailedException),
+    ResourceConflictException(crate::error::ResourceConflictException),
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    ServiceException(crate::error::ServiceException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateFunctionCodeError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            UpdateFunctionCodeErrorKind::CodeSigningConfigNotFoundError(_inner) => _inner.fmt(f),
-            UpdateFunctionCodeErrorKind::CodeStorageExceededError(_inner) => _inner.fmt(f),
-            UpdateFunctionCodeErrorKind::CodeVerificationFailedError(_inner) => _inner.fmt(f),
-            UpdateFunctionCodeErrorKind::InvalidCodeSignatureError(_inner) => _inner.fmt(f),
-            UpdateFunctionCodeErrorKind::InvalidParameterValueError(_inner) => _inner.fmt(f),
-            UpdateFunctionCodeErrorKind::PreconditionFailedError(_inner) => _inner.fmt(f),
-            UpdateFunctionCodeErrorKind::ResourceConflictError(_inner) => _inner.fmt(f),
-            UpdateFunctionCodeErrorKind::ResourceNotFoundError(_inner) => _inner.fmt(f),
-            UpdateFunctionCodeErrorKind::ServiceError(_inner) => _inner.fmt(f),
-            UpdateFunctionCodeErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
+            UpdateFunctionCodeErrorKind::CodeSigningConfigNotFoundException(_inner) => {
+                _inner.fmt(f)
+            }
+            UpdateFunctionCodeErrorKind::CodeStorageExceededException(_inner) => _inner.fmt(f),
+            UpdateFunctionCodeErrorKind::CodeVerificationFailedException(_inner) => _inner.fmt(f),
+            UpdateFunctionCodeErrorKind::InvalidCodeSignatureException(_inner) => _inner.fmt(f),
+            UpdateFunctionCodeErrorKind::InvalidParameterValueException(_inner) => _inner.fmt(f),
+            UpdateFunctionCodeErrorKind::PreconditionFailedException(_inner) => _inner.fmt(f),
+            UpdateFunctionCodeErrorKind::ResourceConflictException(_inner) => _inner.fmt(f),
+            UpdateFunctionCodeErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            UpdateFunctionCodeErrorKind::ServiceException(_inner) => _inner.fmt(f),
+            UpdateFunctionCodeErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
             UpdateFunctionCodeErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -6262,77 +6534,77 @@ impl UpdateFunctionCodeError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_code_signing_config_not_found_error(&self) -> bool {
+    pub fn is_code_signing_config_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UpdateFunctionCodeErrorKind::CodeSigningConfigNotFoundError(_)
+            UpdateFunctionCodeErrorKind::CodeSigningConfigNotFoundException(_)
         )
     }
-    pub fn is_code_storage_exceeded_error(&self) -> bool {
+    pub fn is_code_storage_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UpdateFunctionCodeErrorKind::CodeStorageExceededError(_)
+            UpdateFunctionCodeErrorKind::CodeStorageExceededException(_)
         )
     }
-    pub fn is_code_verification_failed_error(&self) -> bool {
+    pub fn is_code_verification_failed_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UpdateFunctionCodeErrorKind::CodeVerificationFailedError(_)
+            UpdateFunctionCodeErrorKind::CodeVerificationFailedException(_)
         )
     }
-    pub fn is_invalid_code_signature_error(&self) -> bool {
+    pub fn is_invalid_code_signature_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UpdateFunctionCodeErrorKind::InvalidCodeSignatureError(_)
+            UpdateFunctionCodeErrorKind::InvalidCodeSignatureException(_)
         )
     }
-    pub fn is_invalid_parameter_value_error(&self) -> bool {
+    pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UpdateFunctionCodeErrorKind::InvalidParameterValueError(_)
+            UpdateFunctionCodeErrorKind::InvalidParameterValueException(_)
         )
     }
-    pub fn is_precondition_failed_error(&self) -> bool {
+    pub fn is_precondition_failed_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UpdateFunctionCodeErrorKind::PreconditionFailedError(_)
+            UpdateFunctionCodeErrorKind::PreconditionFailedException(_)
         )
     }
-    pub fn is_resource_conflict_error(&self) -> bool {
+    pub fn is_resource_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UpdateFunctionCodeErrorKind::ResourceConflictError(_)
+            UpdateFunctionCodeErrorKind::ResourceConflictException(_)
         )
     }
-    pub fn is_resource_not_found_error(&self) -> bool {
+    pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UpdateFunctionCodeErrorKind::ResourceNotFoundError(_)
+            UpdateFunctionCodeErrorKind::ResourceNotFoundException(_)
         )
     }
-    pub fn is_service_error(&self) -> bool {
-        matches!(&self.kind, UpdateFunctionCodeErrorKind::ServiceError(_))
+    pub fn is_service_exception(&self) -> bool {
+        matches!(&self.kind, UpdateFunctionCodeErrorKind::ServiceException(_))
     }
-    pub fn is_too_many_requests_error(&self) -> bool {
+    pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UpdateFunctionCodeErrorKind::TooManyRequestsError(_)
+            UpdateFunctionCodeErrorKind::TooManyRequestsException(_)
         )
     }
 }
 impl std::error::Error for UpdateFunctionCodeError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            UpdateFunctionCodeErrorKind::CodeSigningConfigNotFoundError(_inner) => Some(_inner),
-            UpdateFunctionCodeErrorKind::CodeStorageExceededError(_inner) => Some(_inner),
-            UpdateFunctionCodeErrorKind::CodeVerificationFailedError(_inner) => Some(_inner),
-            UpdateFunctionCodeErrorKind::InvalidCodeSignatureError(_inner) => Some(_inner),
-            UpdateFunctionCodeErrorKind::InvalidParameterValueError(_inner) => Some(_inner),
-            UpdateFunctionCodeErrorKind::PreconditionFailedError(_inner) => Some(_inner),
-            UpdateFunctionCodeErrorKind::ResourceConflictError(_inner) => Some(_inner),
-            UpdateFunctionCodeErrorKind::ResourceNotFoundError(_inner) => Some(_inner),
-            UpdateFunctionCodeErrorKind::ServiceError(_inner) => Some(_inner),
-            UpdateFunctionCodeErrorKind::TooManyRequestsError(_inner) => Some(_inner),
+            UpdateFunctionCodeErrorKind::CodeSigningConfigNotFoundException(_inner) => Some(_inner),
+            UpdateFunctionCodeErrorKind::CodeStorageExceededException(_inner) => Some(_inner),
+            UpdateFunctionCodeErrorKind::CodeVerificationFailedException(_inner) => Some(_inner),
+            UpdateFunctionCodeErrorKind::InvalidCodeSignatureException(_inner) => Some(_inner),
+            UpdateFunctionCodeErrorKind::InvalidParameterValueException(_inner) => Some(_inner),
+            UpdateFunctionCodeErrorKind::PreconditionFailedException(_inner) => Some(_inner),
+            UpdateFunctionCodeErrorKind::ResourceConflictException(_inner) => Some(_inner),
+            UpdateFunctionCodeErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            UpdateFunctionCodeErrorKind::ServiceException(_inner) => Some(_inner),
+            UpdateFunctionCodeErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             UpdateFunctionCodeErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -6347,38 +6619,44 @@ pub struct UpdateFunctionConfigurationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateFunctionConfigurationErrorKind {
-    CodeSigningConfigNotFoundError(crate::error::CodeSigningConfigNotFoundError),
-    CodeVerificationFailedError(crate::error::CodeVerificationFailedError),
-    InvalidCodeSignatureError(crate::error::InvalidCodeSignatureError),
-    InvalidParameterValueError(crate::error::InvalidParameterValueError),
-    PreconditionFailedError(crate::error::PreconditionFailedError),
-    ResourceConflictError(crate::error::ResourceConflictError),
-    ResourceNotFoundError(crate::error::ResourceNotFoundError),
-    ServiceError(crate::error::ServiceError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
+    CodeSigningConfigNotFoundException(crate::error::CodeSigningConfigNotFoundException),
+    CodeVerificationFailedException(crate::error::CodeVerificationFailedException),
+    InvalidCodeSignatureException(crate::error::InvalidCodeSignatureException),
+    InvalidParameterValueException(crate::error::InvalidParameterValueException),
+    PreconditionFailedException(crate::error::PreconditionFailedException),
+    ResourceConflictException(crate::error::ResourceConflictException),
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    ServiceException(crate::error::ServiceException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateFunctionConfigurationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            UpdateFunctionConfigurationErrorKind::CodeSigningConfigNotFoundError(_inner) => {
+            UpdateFunctionConfigurationErrorKind::CodeSigningConfigNotFoundException(_inner) => {
                 _inner.fmt(f)
             }
-            UpdateFunctionConfigurationErrorKind::CodeVerificationFailedError(_inner) => {
+            UpdateFunctionConfigurationErrorKind::CodeVerificationFailedException(_inner) => {
                 _inner.fmt(f)
             }
-            UpdateFunctionConfigurationErrorKind::InvalidCodeSignatureError(_inner) => {
+            UpdateFunctionConfigurationErrorKind::InvalidCodeSignatureException(_inner) => {
                 _inner.fmt(f)
             }
-            UpdateFunctionConfigurationErrorKind::InvalidParameterValueError(_inner) => {
+            UpdateFunctionConfigurationErrorKind::InvalidParameterValueException(_inner) => {
                 _inner.fmt(f)
             }
-            UpdateFunctionConfigurationErrorKind::PreconditionFailedError(_inner) => _inner.fmt(f),
-            UpdateFunctionConfigurationErrorKind::ResourceConflictError(_inner) => _inner.fmt(f),
-            UpdateFunctionConfigurationErrorKind::ResourceNotFoundError(_inner) => _inner.fmt(f),
-            UpdateFunctionConfigurationErrorKind::ServiceError(_inner) => _inner.fmt(f),
-            UpdateFunctionConfigurationErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
+            UpdateFunctionConfigurationErrorKind::PreconditionFailedException(_inner) => {
+                _inner.fmt(f)
+            }
+            UpdateFunctionConfigurationErrorKind::ResourceConflictException(_inner) => {
+                _inner.fmt(f)
+            }
+            UpdateFunctionConfigurationErrorKind::ResourceNotFoundException(_inner) => {
+                _inner.fmt(f)
+            }
+            UpdateFunctionConfigurationErrorKind::ServiceException(_inner) => _inner.fmt(f),
+            UpdateFunctionConfigurationErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
             UpdateFunctionConfigurationErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -6427,79 +6705,83 @@ impl UpdateFunctionConfigurationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_code_signing_config_not_found_error(&self) -> bool {
+    pub fn is_code_signing_config_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UpdateFunctionConfigurationErrorKind::CodeSigningConfigNotFoundError(_)
+            UpdateFunctionConfigurationErrorKind::CodeSigningConfigNotFoundException(_)
         )
     }
-    pub fn is_code_verification_failed_error(&self) -> bool {
+    pub fn is_code_verification_failed_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UpdateFunctionConfigurationErrorKind::CodeVerificationFailedError(_)
+            UpdateFunctionConfigurationErrorKind::CodeVerificationFailedException(_)
         )
     }
-    pub fn is_invalid_code_signature_error(&self) -> bool {
+    pub fn is_invalid_code_signature_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UpdateFunctionConfigurationErrorKind::InvalidCodeSignatureError(_)
+            UpdateFunctionConfigurationErrorKind::InvalidCodeSignatureException(_)
         )
     }
-    pub fn is_invalid_parameter_value_error(&self) -> bool {
+    pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UpdateFunctionConfigurationErrorKind::InvalidParameterValueError(_)
+            UpdateFunctionConfigurationErrorKind::InvalidParameterValueException(_)
         )
     }
-    pub fn is_precondition_failed_error(&self) -> bool {
+    pub fn is_precondition_failed_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UpdateFunctionConfigurationErrorKind::PreconditionFailedError(_)
+            UpdateFunctionConfigurationErrorKind::PreconditionFailedException(_)
         )
     }
-    pub fn is_resource_conflict_error(&self) -> bool {
+    pub fn is_resource_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UpdateFunctionConfigurationErrorKind::ResourceConflictError(_)
+            UpdateFunctionConfigurationErrorKind::ResourceConflictException(_)
         )
     }
-    pub fn is_resource_not_found_error(&self) -> bool {
+    pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UpdateFunctionConfigurationErrorKind::ResourceNotFoundError(_)
+            UpdateFunctionConfigurationErrorKind::ResourceNotFoundException(_)
         )
     }
-    pub fn is_service_error(&self) -> bool {
+    pub fn is_service_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UpdateFunctionConfigurationErrorKind::ServiceError(_)
+            UpdateFunctionConfigurationErrorKind::ServiceException(_)
         )
     }
-    pub fn is_too_many_requests_error(&self) -> bool {
+    pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UpdateFunctionConfigurationErrorKind::TooManyRequestsError(_)
+            UpdateFunctionConfigurationErrorKind::TooManyRequestsException(_)
         )
     }
 }
 impl std::error::Error for UpdateFunctionConfigurationError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            UpdateFunctionConfigurationErrorKind::CodeSigningConfigNotFoundError(_inner) => {
+            UpdateFunctionConfigurationErrorKind::CodeSigningConfigNotFoundException(_inner) => {
                 Some(_inner)
             }
-            UpdateFunctionConfigurationErrorKind::CodeVerificationFailedError(_inner) => {
+            UpdateFunctionConfigurationErrorKind::CodeVerificationFailedException(_inner) => {
                 Some(_inner)
             }
-            UpdateFunctionConfigurationErrorKind::InvalidCodeSignatureError(_inner) => Some(_inner),
-            UpdateFunctionConfigurationErrorKind::InvalidParameterValueError(_inner) => {
+            UpdateFunctionConfigurationErrorKind::InvalidCodeSignatureException(_inner) => {
                 Some(_inner)
             }
-            UpdateFunctionConfigurationErrorKind::PreconditionFailedError(_inner) => Some(_inner),
-            UpdateFunctionConfigurationErrorKind::ResourceConflictError(_inner) => Some(_inner),
-            UpdateFunctionConfigurationErrorKind::ResourceNotFoundError(_inner) => Some(_inner),
-            UpdateFunctionConfigurationErrorKind::ServiceError(_inner) => Some(_inner),
-            UpdateFunctionConfigurationErrorKind::TooManyRequestsError(_inner) => Some(_inner),
+            UpdateFunctionConfigurationErrorKind::InvalidParameterValueException(_inner) => {
+                Some(_inner)
+            }
+            UpdateFunctionConfigurationErrorKind::PreconditionFailedException(_inner) => {
+                Some(_inner)
+            }
+            UpdateFunctionConfigurationErrorKind::ResourceConflictException(_inner) => Some(_inner),
+            UpdateFunctionConfigurationErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            UpdateFunctionConfigurationErrorKind::ServiceException(_inner) => Some(_inner),
+            UpdateFunctionConfigurationErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             UpdateFunctionConfigurationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -6514,24 +6796,26 @@ pub struct UpdateFunctionEventInvokeConfigError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateFunctionEventInvokeConfigErrorKind {
-    InvalidParameterValueError(crate::error::InvalidParameterValueError),
-    ResourceNotFoundError(crate::error::ResourceNotFoundError),
-    ServiceError(crate::error::ServiceError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
+    InvalidParameterValueException(crate::error::InvalidParameterValueException),
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    ServiceException(crate::error::ServiceException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateFunctionEventInvokeConfigError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            UpdateFunctionEventInvokeConfigErrorKind::InvalidParameterValueError(_inner) => {
+            UpdateFunctionEventInvokeConfigErrorKind::InvalidParameterValueException(_inner) => {
                 _inner.fmt(f)
             }
-            UpdateFunctionEventInvokeConfigErrorKind::ResourceNotFoundError(_inner) => {
+            UpdateFunctionEventInvokeConfigErrorKind::ResourceNotFoundException(_inner) => {
                 _inner.fmt(f)
             }
-            UpdateFunctionEventInvokeConfigErrorKind::ServiceError(_inner) => _inner.fmt(f),
-            UpdateFunctionEventInvokeConfigErrorKind::TooManyRequestsError(_inner) => _inner.fmt(f),
+            UpdateFunctionEventInvokeConfigErrorKind::ServiceException(_inner) => _inner.fmt(f),
+            UpdateFunctionEventInvokeConfigErrorKind::TooManyRequestsException(_inner) => {
+                _inner.fmt(f)
+            }
             UpdateFunctionEventInvokeConfigErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -6580,40 +6864,44 @@ impl UpdateFunctionEventInvokeConfigError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_invalid_parameter_value_error(&self) -> bool {
+    pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UpdateFunctionEventInvokeConfigErrorKind::InvalidParameterValueError(_)
+            UpdateFunctionEventInvokeConfigErrorKind::InvalidParameterValueException(_)
         )
     }
-    pub fn is_resource_not_found_error(&self) -> bool {
+    pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UpdateFunctionEventInvokeConfigErrorKind::ResourceNotFoundError(_)
+            UpdateFunctionEventInvokeConfigErrorKind::ResourceNotFoundException(_)
         )
     }
-    pub fn is_service_error(&self) -> bool {
+    pub fn is_service_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UpdateFunctionEventInvokeConfigErrorKind::ServiceError(_)
+            UpdateFunctionEventInvokeConfigErrorKind::ServiceException(_)
         )
     }
-    pub fn is_too_many_requests_error(&self) -> bool {
+    pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UpdateFunctionEventInvokeConfigErrorKind::TooManyRequestsError(_)
+            UpdateFunctionEventInvokeConfigErrorKind::TooManyRequestsException(_)
         )
     }
 }
 impl std::error::Error for UpdateFunctionEventInvokeConfigError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            UpdateFunctionEventInvokeConfigErrorKind::InvalidParameterValueError(_inner) => {
+            UpdateFunctionEventInvokeConfigErrorKind::InvalidParameterValueException(_inner) => {
                 Some(_inner)
             }
-            UpdateFunctionEventInvokeConfigErrorKind::ResourceNotFoundError(_inner) => Some(_inner),
-            UpdateFunctionEventInvokeConfigErrorKind::ServiceError(_inner) => Some(_inner),
-            UpdateFunctionEventInvokeConfigErrorKind::TooManyRequestsError(_inner) => Some(_inner),
+            UpdateFunctionEventInvokeConfigErrorKind::ResourceNotFoundException(_inner) => {
+                Some(_inner)
+            }
+            UpdateFunctionEventInvokeConfigErrorKind::ServiceException(_inner) => Some(_inner),
+            UpdateFunctionEventInvokeConfigErrorKind::TooManyRequestsException(_inner) => {
+                Some(_inner)
+            }
             UpdateFunctionEventInvokeConfigErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -6621,25 +6909,17 @@ impl std::error::Error for UpdateFunctionEventInvokeConfigError {
 
 /// <p>The request throughput limit was exceeded.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
-pub struct TooManyRequestsError {
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct TooManyRequestsException {
     /// <p>The number of seconds the caller should wait before retrying.</p>
-    #[serde(rename = "retryAfterSeconds")]
-    #[serde(default)]
     pub retry_after_seconds: std::option::Option<std::string::String>,
-    #[serde(rename = "Type")]
-    #[serde(default)]
     pub r#type: std::option::Option<std::string::String>,
-    #[serde(rename = "message")]
-    #[serde(default)]
     pub message: std::option::Option<std::string::String>,
-    #[serde(rename = "Reason")]
-    #[serde(default)]
     pub reason: std::option::Option<crate::model::ThrottleReason>,
 }
-impl std::fmt::Debug for TooManyRequestsError {
+impl std::fmt::Debug for TooManyRequestsException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TooManyRequestsError");
+        let mut formatter = f.debug_struct("TooManyRequestsException");
         formatter.field("retry_after_seconds", &self.retry_after_seconds);
         formatter.field("r#type", &self.r#type);
         formatter.field("message", &self.message);
@@ -6647,24 +6927,24 @@ impl std::fmt::Debug for TooManyRequestsError {
         formatter.finish()
     }
 }
-impl TooManyRequestsError {
+impl TooManyRequestsException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for TooManyRequestsError {
+impl std::fmt::Display for TooManyRequestsException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "TooManyRequestsError [TooManyRequestsException]")?;
+        write!(f, "TooManyRequestsException")?;
         if let Some(inner_1) = &self.message {
             write!(f, ": {}", inner_1)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for TooManyRequestsError {}
-/// See [`TooManyRequestsError`](crate::error::TooManyRequestsError)
-pub mod too_many_requests_error {
-    /// A builder for [`TooManyRequestsError`](crate::error::TooManyRequestsError)
+impl std::error::Error for TooManyRequestsException {}
+/// See [`TooManyRequestsException`](crate::error::TooManyRequestsException)
+pub mod too_many_requests_exception {
+    /// A builder for [`TooManyRequestsException`](crate::error::TooManyRequestsException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -6713,9 +6993,9 @@ pub mod too_many_requests_error {
             self.reason = input;
             self
         }
-        /// Consumes the builder and constructs a [`TooManyRequestsError`](crate::error::TooManyRequestsError)
-        pub fn build(self) -> crate::error::TooManyRequestsError {
-            crate::error::TooManyRequestsError {
+        /// Consumes the builder and constructs a [`TooManyRequestsException`](crate::error::TooManyRequestsException)
+        pub fn build(self) -> crate::error::TooManyRequestsException {
+            crate::error::TooManyRequestsException {
                 retry_after_seconds: self.retry_after_seconds,
                 r#type: self.r#type,
                 message: self.message,
@@ -6724,50 +7004,46 @@ pub mod too_many_requests_error {
         }
     }
 }
-impl TooManyRequestsError {
-    /// Creates a new builder-style object to manufacture [`TooManyRequestsError`](crate::error::TooManyRequestsError)
-    pub fn builder() -> crate::error::too_many_requests_error::Builder {
-        crate::error::too_many_requests_error::Builder::default()
+impl TooManyRequestsException {
+    /// Creates a new builder-style object to manufacture [`TooManyRequestsException`](crate::error::TooManyRequestsException)
+    pub fn builder() -> crate::error::too_many_requests_exception::Builder {
+        crate::error::too_many_requests_exception::Builder::default()
     }
 }
 
 /// <p>The AWS Lambda service encountered an internal error.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
-pub struct ServiceError {
-    #[serde(rename = "Type")]
-    #[serde(default)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ServiceException {
     pub r#type: std::option::Option<std::string::String>,
-    #[serde(rename = "Message")]
-    #[serde(default)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for ServiceError {
+impl std::fmt::Debug for ServiceException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ServiceError");
+        let mut formatter = f.debug_struct("ServiceException");
         formatter.field("r#type", &self.r#type);
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl ServiceError {
+impl ServiceException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for ServiceError {
+impl std::fmt::Display for ServiceException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "ServiceError [ServiceException]")?;
+        write!(f, "ServiceException")?;
         if let Some(inner_2) = &self.message {
             write!(f, ": {}", inner_2)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for ServiceError {}
-/// See [`ServiceError`](crate::error::ServiceError)
-pub mod service_error {
-    /// A builder for [`ServiceError`](crate::error::ServiceError)
+impl std::error::Error for ServiceException {}
+/// See [`ServiceException`](crate::error::ServiceException)
+pub mod service_exception {
+    /// A builder for [`ServiceException`](crate::error::ServiceException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -6791,59 +7067,55 @@ pub mod service_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`ServiceError`](crate::error::ServiceError)
-        pub fn build(self) -> crate::error::ServiceError {
-            crate::error::ServiceError {
+        /// Consumes the builder and constructs a [`ServiceException`](crate::error::ServiceException)
+        pub fn build(self) -> crate::error::ServiceException {
+            crate::error::ServiceException {
                 r#type: self.r#type,
                 message: self.message,
             }
         }
     }
 }
-impl ServiceError {
-    /// Creates a new builder-style object to manufacture [`ServiceError`](crate::error::ServiceError)
-    pub fn builder() -> crate::error::service_error::Builder {
-        crate::error::service_error::Builder::default()
+impl ServiceException {
+    /// Creates a new builder-style object to manufacture [`ServiceException`](crate::error::ServiceException)
+    pub fn builder() -> crate::error::service_exception::Builder {
+        crate::error::service_exception::Builder::default()
     }
 }
 
 /// <p>The resource specified in the request does not exist.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
-pub struct ResourceNotFoundError {
-    #[serde(rename = "Type")]
-    #[serde(default)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ResourceNotFoundException {
     pub r#type: std::option::Option<std::string::String>,
-    #[serde(rename = "Message")]
-    #[serde(default)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for ResourceNotFoundError {
+impl std::fmt::Debug for ResourceNotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResourceNotFoundError");
+        let mut formatter = f.debug_struct("ResourceNotFoundException");
         formatter.field("r#type", &self.r#type);
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl ResourceNotFoundError {
+impl ResourceNotFoundException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for ResourceNotFoundError {
+impl std::fmt::Display for ResourceNotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "ResourceNotFoundError [ResourceNotFoundException]")?;
+        write!(f, "ResourceNotFoundException")?;
         if let Some(inner_3) = &self.message {
             write!(f, ": {}", inner_3)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for ResourceNotFoundError {}
-/// See [`ResourceNotFoundError`](crate::error::ResourceNotFoundError)
-pub mod resource_not_found_error {
-    /// A builder for [`ResourceNotFoundError`](crate::error::ResourceNotFoundError)
+impl std::error::Error for ResourceNotFoundException {}
+/// See [`ResourceNotFoundException`](crate::error::ResourceNotFoundException)
+pub mod resource_not_found_exception {
+    /// A builder for [`ResourceNotFoundException`](crate::error::ResourceNotFoundException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -6867,64 +7139,57 @@ pub mod resource_not_found_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`ResourceNotFoundError`](crate::error::ResourceNotFoundError)
-        pub fn build(self) -> crate::error::ResourceNotFoundError {
-            crate::error::ResourceNotFoundError {
+        /// Consumes the builder and constructs a [`ResourceNotFoundException`](crate::error::ResourceNotFoundException)
+        pub fn build(self) -> crate::error::ResourceNotFoundException {
+            crate::error::ResourceNotFoundException {
                 r#type: self.r#type,
                 message: self.message,
             }
         }
     }
 }
-impl ResourceNotFoundError {
-    /// Creates a new builder-style object to manufacture [`ResourceNotFoundError`](crate::error::ResourceNotFoundError)
-    pub fn builder() -> crate::error::resource_not_found_error::Builder {
-        crate::error::resource_not_found_error::Builder::default()
+impl ResourceNotFoundException {
+    /// Creates a new builder-style object to manufacture [`ResourceNotFoundException`](crate::error::ResourceNotFoundException)
+    pub fn builder() -> crate::error::resource_not_found_exception::Builder {
+        crate::error::resource_not_found_exception::Builder::default()
     }
 }
 
 /// <p>One of the parameters in the request is invalid.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
-pub struct InvalidParameterValueError {
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct InvalidParameterValueException {
     /// <p>The exception type.</p>
-    #[serde(rename = "Type")]
-    #[serde(default)]
     pub r#type: std::option::Option<std::string::String>,
     /// <p>The exception message.</p>
-    #[serde(rename = "message")]
-    #[serde(default)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for InvalidParameterValueError {
+impl std::fmt::Debug for InvalidParameterValueException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidParameterValueError");
+        let mut formatter = f.debug_struct("InvalidParameterValueException");
         formatter.field("r#type", &self.r#type);
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl InvalidParameterValueError {
+impl InvalidParameterValueException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for InvalidParameterValueError {
+impl std::fmt::Display for InvalidParameterValueException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(
-            f,
-            "InvalidParameterValueError [InvalidParameterValueException]"
-        )?;
+        write!(f, "InvalidParameterValueException")?;
         if let Some(inner_4) = &self.message {
             write!(f, ": {}", inner_4)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for InvalidParameterValueError {}
-/// See [`InvalidParameterValueError`](crate::error::InvalidParameterValueError)
-pub mod invalid_parameter_value_error {
-    /// A builder for [`InvalidParameterValueError`](crate::error::InvalidParameterValueError)
+impl std::error::Error for InvalidParameterValueException {}
+/// See [`InvalidParameterValueException`](crate::error::InvalidParameterValueException)
+pub mod invalid_parameter_value_exception {
+    /// A builder for [`InvalidParameterValueException`](crate::error::InvalidParameterValueException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -6950,61 +7215,57 @@ pub mod invalid_parameter_value_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`InvalidParameterValueError`](crate::error::InvalidParameterValueError)
-        pub fn build(self) -> crate::error::InvalidParameterValueError {
-            crate::error::InvalidParameterValueError {
+        /// Consumes the builder and constructs a [`InvalidParameterValueException`](crate::error::InvalidParameterValueException)
+        pub fn build(self) -> crate::error::InvalidParameterValueException {
+            crate::error::InvalidParameterValueException {
                 r#type: self.r#type,
                 message: self.message,
             }
         }
     }
 }
-impl InvalidParameterValueError {
-    /// Creates a new builder-style object to manufacture [`InvalidParameterValueError`](crate::error::InvalidParameterValueError)
-    pub fn builder() -> crate::error::invalid_parameter_value_error::Builder {
-        crate::error::invalid_parameter_value_error::Builder::default()
+impl InvalidParameterValueException {
+    /// Creates a new builder-style object to manufacture [`InvalidParameterValueException`](crate::error::InvalidParameterValueException)
+    pub fn builder() -> crate::error::invalid_parameter_value_exception::Builder {
+        crate::error::invalid_parameter_value_exception::Builder::default()
     }
 }
 
 /// <p>The resource already exists, or another operation is in progress.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
-pub struct ResourceConflictError {
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ResourceConflictException {
     /// <p>The exception type.</p>
-    #[serde(rename = "Type")]
-    #[serde(default)]
     pub r#type: std::option::Option<std::string::String>,
     /// <p>The exception message.</p>
-    #[serde(rename = "message")]
-    #[serde(default)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for ResourceConflictError {
+impl std::fmt::Debug for ResourceConflictException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResourceConflictError");
+        let mut formatter = f.debug_struct("ResourceConflictException");
         formatter.field("r#type", &self.r#type);
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl ResourceConflictError {
+impl ResourceConflictException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for ResourceConflictError {
+impl std::fmt::Display for ResourceConflictException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "ResourceConflictError [ResourceConflictException]")?;
+        write!(f, "ResourceConflictException")?;
         if let Some(inner_5) = &self.message {
             write!(f, ": {}", inner_5)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for ResourceConflictError {}
-/// See [`ResourceConflictError`](crate::error::ResourceConflictError)
-pub mod resource_conflict_error {
-    /// A builder for [`ResourceConflictError`](crate::error::ResourceConflictError)
+impl std::error::Error for ResourceConflictException {}
+/// See [`ResourceConflictException`](crate::error::ResourceConflictException)
+pub mod resource_conflict_exception {
+    /// A builder for [`ResourceConflictException`](crate::error::ResourceConflictException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -7030,19 +7291,19 @@ pub mod resource_conflict_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`ResourceConflictError`](crate::error::ResourceConflictError)
-        pub fn build(self) -> crate::error::ResourceConflictError {
-            crate::error::ResourceConflictError {
+        /// Consumes the builder and constructs a [`ResourceConflictException`](crate::error::ResourceConflictException)
+        pub fn build(self) -> crate::error::ResourceConflictException {
+            crate::error::ResourceConflictException {
                 r#type: self.r#type,
                 message: self.message,
             }
         }
     }
 }
-impl ResourceConflictError {
-    /// Creates a new builder-style object to manufacture [`ResourceConflictError`](crate::error::ResourceConflictError)
-    pub fn builder() -> crate::error::resource_conflict_error::Builder {
-        crate::error::resource_conflict_error::Builder::default()
+impl ResourceConflictException {
+    /// Creates a new builder-style object to manufacture [`ResourceConflictException`](crate::error::ResourceConflictException)
+    pub fn builder() -> crate::error::resource_conflict_exception::Builder {
+        crate::error::resource_conflict_exception::Builder::default()
     }
 }
 
@@ -7050,43 +7311,39 @@ impl ResourceConflictError {
 /// <code>GetFunction</code> or the <code>GetAlias</code> API to retrieve the latest RevisionId for your
 /// resource.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
-pub struct PreconditionFailedError {
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct PreconditionFailedException {
     /// <p>The exception type.</p>
-    #[serde(rename = "Type")]
-    #[serde(default)]
     pub r#type: std::option::Option<std::string::String>,
     /// <p>The exception message.</p>
-    #[serde(rename = "message")]
-    #[serde(default)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for PreconditionFailedError {
+impl std::fmt::Debug for PreconditionFailedException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PreconditionFailedError");
+        let mut formatter = f.debug_struct("PreconditionFailedException");
         formatter.field("r#type", &self.r#type);
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl PreconditionFailedError {
+impl PreconditionFailedException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for PreconditionFailedError {
+impl std::fmt::Display for PreconditionFailedException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "PreconditionFailedError [PreconditionFailedException]")?;
+        write!(f, "PreconditionFailedException")?;
         if let Some(inner_6) = &self.message {
             write!(f, ": {}", inner_6)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for PreconditionFailedError {}
-/// See [`PreconditionFailedError`](crate::error::PreconditionFailedError)
-pub mod precondition_failed_error {
-    /// A builder for [`PreconditionFailedError`](crate::error::PreconditionFailedError)
+impl std::error::Error for PreconditionFailedException {}
+/// See [`PreconditionFailedException`](crate::error::PreconditionFailedException)
+pub mod precondition_failed_exception {
+    /// A builder for [`PreconditionFailedException`](crate::error::PreconditionFailedException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -7112,63 +7369,56 @@ pub mod precondition_failed_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`PreconditionFailedError`](crate::error::PreconditionFailedError)
-        pub fn build(self) -> crate::error::PreconditionFailedError {
-            crate::error::PreconditionFailedError {
+        /// Consumes the builder and constructs a [`PreconditionFailedException`](crate::error::PreconditionFailedException)
+        pub fn build(self) -> crate::error::PreconditionFailedException {
+            crate::error::PreconditionFailedException {
                 r#type: self.r#type,
                 message: self.message,
             }
         }
     }
 }
-impl PreconditionFailedError {
-    /// Creates a new builder-style object to manufacture [`PreconditionFailedError`](crate::error::PreconditionFailedError)
-    pub fn builder() -> crate::error::precondition_failed_error::Builder {
-        crate::error::precondition_failed_error::Builder::default()
+impl PreconditionFailedException {
+    /// Creates a new builder-style object to manufacture [`PreconditionFailedException`](crate::error::PreconditionFailedException)
+    pub fn builder() -> crate::error::precondition_failed_exception::Builder {
+        crate::error::precondition_failed_exception::Builder::default()
     }
 }
 
 /// <p>The code signature failed the integrity check. Lambda always blocks deployment if the integrity check
 /// fails, even if code signing policy is set to WARN.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
-pub struct InvalidCodeSignatureError {
-    #[serde(rename = "Type")]
-    #[serde(default)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct InvalidCodeSignatureException {
     pub r#type: std::option::Option<std::string::String>,
-    #[serde(rename = "Message")]
-    #[serde(default)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for InvalidCodeSignatureError {
+impl std::fmt::Debug for InvalidCodeSignatureException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidCodeSignatureError");
+        let mut formatter = f.debug_struct("InvalidCodeSignatureException");
         formatter.field("r#type", &self.r#type);
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl InvalidCodeSignatureError {
+impl InvalidCodeSignatureException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for InvalidCodeSignatureError {
+impl std::fmt::Display for InvalidCodeSignatureException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(
-            f,
-            "InvalidCodeSignatureError [InvalidCodeSignatureException]"
-        )?;
+        write!(f, "InvalidCodeSignatureException")?;
         if let Some(inner_7) = &self.message {
             write!(f, ": {}", inner_7)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for InvalidCodeSignatureError {}
-/// See [`InvalidCodeSignatureError`](crate::error::InvalidCodeSignatureError)
-pub mod invalid_code_signature_error {
-    /// A builder for [`InvalidCodeSignatureError`](crate::error::InvalidCodeSignatureError)
+impl std::error::Error for InvalidCodeSignatureException {}
+/// See [`InvalidCodeSignatureException`](crate::error::InvalidCodeSignatureException)
+pub mod invalid_code_signature_exception {
+    /// A builder for [`InvalidCodeSignatureException`](crate::error::InvalidCodeSignatureException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -7192,63 +7442,56 @@ pub mod invalid_code_signature_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`InvalidCodeSignatureError`](crate::error::InvalidCodeSignatureError)
-        pub fn build(self) -> crate::error::InvalidCodeSignatureError {
-            crate::error::InvalidCodeSignatureError {
+        /// Consumes the builder and constructs a [`InvalidCodeSignatureException`](crate::error::InvalidCodeSignatureException)
+        pub fn build(self) -> crate::error::InvalidCodeSignatureException {
+            crate::error::InvalidCodeSignatureException {
                 r#type: self.r#type,
                 message: self.message,
             }
         }
     }
 }
-impl InvalidCodeSignatureError {
-    /// Creates a new builder-style object to manufacture [`InvalidCodeSignatureError`](crate::error::InvalidCodeSignatureError)
-    pub fn builder() -> crate::error::invalid_code_signature_error::Builder {
-        crate::error::invalid_code_signature_error::Builder::default()
+impl InvalidCodeSignatureException {
+    /// Creates a new builder-style object to manufacture [`InvalidCodeSignatureException`](crate::error::InvalidCodeSignatureException)
+    pub fn builder() -> crate::error::invalid_code_signature_exception::Builder {
+        crate::error::invalid_code_signature_exception::Builder::default()
     }
 }
 
 /// <p>The code signature failed one or more of the validation checks for signature mismatch or expiry, and the code signing policy
 /// is set to ENFORCE. Lambda blocks the deployment. </p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
-pub struct CodeVerificationFailedError {
-    #[serde(rename = "Type")]
-    #[serde(default)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CodeVerificationFailedException {
     pub r#type: std::option::Option<std::string::String>,
-    #[serde(rename = "Message")]
-    #[serde(default)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for CodeVerificationFailedError {
+impl std::fmt::Debug for CodeVerificationFailedException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CodeVerificationFailedError");
+        let mut formatter = f.debug_struct("CodeVerificationFailedException");
         formatter.field("r#type", &self.r#type);
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl CodeVerificationFailedError {
+impl CodeVerificationFailedException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for CodeVerificationFailedError {
+impl std::fmt::Display for CodeVerificationFailedException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(
-            f,
-            "CodeVerificationFailedError [CodeVerificationFailedException]"
-        )?;
+        write!(f, "CodeVerificationFailedException")?;
         if let Some(inner_8) = &self.message {
             write!(f, ": {}", inner_8)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for CodeVerificationFailedError {}
-/// See [`CodeVerificationFailedError`](crate::error::CodeVerificationFailedError)
-pub mod code_verification_failed_error {
-    /// A builder for [`CodeVerificationFailedError`](crate::error::CodeVerificationFailedError)
+impl std::error::Error for CodeVerificationFailedException {}
+/// See [`CodeVerificationFailedException`](crate::error::CodeVerificationFailedException)
+pub mod code_verification_failed_exception {
+    /// A builder for [`CodeVerificationFailedException`](crate::error::CodeVerificationFailedException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -7272,62 +7515,55 @@ pub mod code_verification_failed_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`CodeVerificationFailedError`](crate::error::CodeVerificationFailedError)
-        pub fn build(self) -> crate::error::CodeVerificationFailedError {
-            crate::error::CodeVerificationFailedError {
+        /// Consumes the builder and constructs a [`CodeVerificationFailedException`](crate::error::CodeVerificationFailedException)
+        pub fn build(self) -> crate::error::CodeVerificationFailedException {
+            crate::error::CodeVerificationFailedException {
                 r#type: self.r#type,
                 message: self.message,
             }
         }
     }
 }
-impl CodeVerificationFailedError {
-    /// Creates a new builder-style object to manufacture [`CodeVerificationFailedError`](crate::error::CodeVerificationFailedError)
-    pub fn builder() -> crate::error::code_verification_failed_error::Builder {
-        crate::error::code_verification_failed_error::Builder::default()
+impl CodeVerificationFailedException {
+    /// Creates a new builder-style object to manufacture [`CodeVerificationFailedException`](crate::error::CodeVerificationFailedException)
+    pub fn builder() -> crate::error::code_verification_failed_exception::Builder {
+        crate::error::code_verification_failed_exception::Builder::default()
     }
 }
 
 /// <p>The specified code signing configuration does not exist.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
-pub struct CodeSigningConfigNotFoundError {
-    #[serde(rename = "Type")]
-    #[serde(default)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CodeSigningConfigNotFoundException {
     pub r#type: std::option::Option<std::string::String>,
-    #[serde(rename = "Message")]
-    #[serde(default)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for CodeSigningConfigNotFoundError {
+impl std::fmt::Debug for CodeSigningConfigNotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CodeSigningConfigNotFoundError");
+        let mut formatter = f.debug_struct("CodeSigningConfigNotFoundException");
         formatter.field("r#type", &self.r#type);
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl CodeSigningConfigNotFoundError {
+impl CodeSigningConfigNotFoundException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for CodeSigningConfigNotFoundError {
+impl std::fmt::Display for CodeSigningConfigNotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(
-            f,
-            "CodeSigningConfigNotFoundError [CodeSigningConfigNotFoundException]"
-        )?;
+        write!(f, "CodeSigningConfigNotFoundException")?;
         if let Some(inner_9) = &self.message {
             write!(f, ": {}", inner_9)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for CodeSigningConfigNotFoundError {}
-/// See [`CodeSigningConfigNotFoundError`](crate::error::CodeSigningConfigNotFoundError)
-pub mod code_signing_config_not_found_error {
-    /// A builder for [`CodeSigningConfigNotFoundError`](crate::error::CodeSigningConfigNotFoundError)
+impl std::error::Error for CodeSigningConfigNotFoundException {}
+/// See [`CodeSigningConfigNotFoundException`](crate::error::CodeSigningConfigNotFoundException)
+pub mod code_signing_config_not_found_exception {
+    /// A builder for [`CodeSigningConfigNotFoundException`](crate::error::CodeSigningConfigNotFoundException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -7351,61 +7587,57 @@ pub mod code_signing_config_not_found_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`CodeSigningConfigNotFoundError`](crate::error::CodeSigningConfigNotFoundError)
-        pub fn build(self) -> crate::error::CodeSigningConfigNotFoundError {
-            crate::error::CodeSigningConfigNotFoundError {
+        /// Consumes the builder and constructs a [`CodeSigningConfigNotFoundException`](crate::error::CodeSigningConfigNotFoundException)
+        pub fn build(self) -> crate::error::CodeSigningConfigNotFoundException {
+            crate::error::CodeSigningConfigNotFoundException {
                 r#type: self.r#type,
                 message: self.message,
             }
         }
     }
 }
-impl CodeSigningConfigNotFoundError {
-    /// Creates a new builder-style object to manufacture [`CodeSigningConfigNotFoundError`](crate::error::CodeSigningConfigNotFoundError)
-    pub fn builder() -> crate::error::code_signing_config_not_found_error::Builder {
-        crate::error::code_signing_config_not_found_error::Builder::default()
+impl CodeSigningConfigNotFoundException {
+    /// Creates a new builder-style object to manufacture [`CodeSigningConfigNotFoundException`](crate::error::CodeSigningConfigNotFoundException)
+    pub fn builder() -> crate::error::code_signing_config_not_found_exception::Builder {
+        crate::error::code_signing_config_not_found_exception::Builder::default()
     }
 }
 
 /// <p>You have exceeded your maximum total code size per account. <a href="https://docs.aws.amazon.com/lambda/latest/dg/limits.html">Learn more</a>
 /// </p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
-pub struct CodeStorageExceededError {
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CodeStorageExceededException {
     /// <p>The exception type.</p>
-    #[serde(rename = "Type")]
-    #[serde(default)]
     pub r#type: std::option::Option<std::string::String>,
-    #[serde(rename = "message")]
-    #[serde(default)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for CodeStorageExceededError {
+impl std::fmt::Debug for CodeStorageExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CodeStorageExceededError");
+        let mut formatter = f.debug_struct("CodeStorageExceededException");
         formatter.field("r#type", &self.r#type);
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl CodeStorageExceededError {
+impl CodeStorageExceededException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for CodeStorageExceededError {
+impl std::fmt::Display for CodeStorageExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "CodeStorageExceededError [CodeStorageExceededException]")?;
+        write!(f, "CodeStorageExceededException")?;
         if let Some(inner_10) = &self.message {
             write!(f, ": {}", inner_10)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for CodeStorageExceededError {}
-/// See [`CodeStorageExceededError`](crate::error::CodeStorageExceededError)
-pub mod code_storage_exceeded_error {
-    /// A builder for [`CodeStorageExceededError`](crate::error::CodeStorageExceededError)
+impl std::error::Error for CodeStorageExceededException {}
+/// See [`CodeStorageExceededException`](crate::error::CodeStorageExceededException)
+pub mod code_storage_exceeded_exception {
+    /// A builder for [`CodeStorageExceededException`](crate::error::CodeStorageExceededException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -7430,60 +7662,56 @@ pub mod code_storage_exceeded_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`CodeStorageExceededError`](crate::error::CodeStorageExceededError)
-        pub fn build(self) -> crate::error::CodeStorageExceededError {
-            crate::error::CodeStorageExceededError {
+        /// Consumes the builder and constructs a [`CodeStorageExceededException`](crate::error::CodeStorageExceededException)
+        pub fn build(self) -> crate::error::CodeStorageExceededException {
+            crate::error::CodeStorageExceededException {
                 r#type: self.r#type,
                 message: self.message,
             }
         }
     }
 }
-impl CodeStorageExceededError {
-    /// Creates a new builder-style object to manufacture [`CodeStorageExceededError`](crate::error::CodeStorageExceededError)
-    pub fn builder() -> crate::error::code_storage_exceeded_error::Builder {
-        crate::error::code_storage_exceeded_error::Builder::default()
+impl CodeStorageExceededException {
+    /// Creates a new builder-style object to manufacture [`CodeStorageExceededException`](crate::error::CodeStorageExceededException)
+    pub fn builder() -> crate::error::code_storage_exceeded_exception::Builder {
+        crate::error::code_storage_exceeded_exception::Builder::default()
     }
 }
 
 /// <p>The operation conflicts with the resource's availability. For example, you attempted to update an EventSource
 /// Mapping in CREATING, or tried to delete a EventSource mapping currently in the UPDATING state.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
-pub struct ResourceInUseError {
-    #[serde(rename = "Type")]
-    #[serde(default)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ResourceInUseException {
     pub r#type: std::option::Option<std::string::String>,
-    #[serde(rename = "Message")]
-    #[serde(default)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for ResourceInUseError {
+impl std::fmt::Debug for ResourceInUseException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResourceInUseError");
+        let mut formatter = f.debug_struct("ResourceInUseException");
         formatter.field("r#type", &self.r#type);
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl ResourceInUseError {
+impl ResourceInUseException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for ResourceInUseError {
+impl std::fmt::Display for ResourceInUseException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "ResourceInUseError [ResourceInUseException]")?;
+        write!(f, "ResourceInUseException")?;
         if let Some(inner_11) = &self.message {
             write!(f, ": {}", inner_11)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for ResourceInUseError {}
-/// See [`ResourceInUseError`](crate::error::ResourceInUseError)
-pub mod resource_in_use_error {
-    /// A builder for [`ResourceInUseError`](crate::error::ResourceInUseError)
+impl std::error::Error for ResourceInUseException {}
+/// See [`ResourceInUseException`](crate::error::ResourceInUseException)
+pub mod resource_in_use_exception {
+    /// A builder for [`ResourceInUseException`](crate::error::ResourceInUseException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -7507,59 +7735,55 @@ pub mod resource_in_use_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`ResourceInUseError`](crate::error::ResourceInUseError)
-        pub fn build(self) -> crate::error::ResourceInUseError {
-            crate::error::ResourceInUseError {
+        /// Consumes the builder and constructs a [`ResourceInUseException`](crate::error::ResourceInUseException)
+        pub fn build(self) -> crate::error::ResourceInUseException {
+            crate::error::ResourceInUseException {
                 r#type: self.r#type,
                 message: self.message,
             }
         }
     }
 }
-impl ResourceInUseError {
-    /// Creates a new builder-style object to manufacture [`ResourceInUseError`](crate::error::ResourceInUseError)
-    pub fn builder() -> crate::error::resource_in_use_error::Builder {
-        crate::error::resource_in_use_error::Builder::default()
+impl ResourceInUseException {
+    /// Creates a new builder-style object to manufacture [`ResourceInUseException`](crate::error::ResourceInUseException)
+    pub fn builder() -> crate::error::resource_in_use_exception::Builder {
+        crate::error::resource_in_use_exception::Builder::default()
     }
 }
 
 /// <p>The runtime or runtime version specified is not supported.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
-pub struct InvalidRuntimeError {
-    #[serde(rename = "Type")]
-    #[serde(default)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct InvalidRuntimeException {
     pub r#type: std::option::Option<std::string::String>,
-    #[serde(rename = "Message")]
-    #[serde(default)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for InvalidRuntimeError {
+impl std::fmt::Debug for InvalidRuntimeException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidRuntimeError");
+        let mut formatter = f.debug_struct("InvalidRuntimeException");
         formatter.field("r#type", &self.r#type);
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl InvalidRuntimeError {
+impl InvalidRuntimeException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for InvalidRuntimeError {
+impl std::fmt::Display for InvalidRuntimeException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "InvalidRuntimeError [InvalidRuntimeException]")?;
+        write!(f, "InvalidRuntimeException")?;
         if let Some(inner_12) = &self.message {
             write!(f, ": {}", inner_12)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for InvalidRuntimeError {}
-/// See [`InvalidRuntimeError`](crate::error::InvalidRuntimeError)
-pub mod invalid_runtime_error {
-    /// A builder for [`InvalidRuntimeError`](crate::error::InvalidRuntimeError)
+impl std::error::Error for InvalidRuntimeException {}
+/// See [`InvalidRuntimeException`](crate::error::InvalidRuntimeException)
+pub mod invalid_runtime_exception {
+    /// A builder for [`InvalidRuntimeException`](crate::error::InvalidRuntimeException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -7583,64 +7807,57 @@ pub mod invalid_runtime_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`InvalidRuntimeError`](crate::error::InvalidRuntimeError)
-        pub fn build(self) -> crate::error::InvalidRuntimeError {
-            crate::error::InvalidRuntimeError {
+        /// Consumes the builder and constructs a [`InvalidRuntimeException`](crate::error::InvalidRuntimeException)
+        pub fn build(self) -> crate::error::InvalidRuntimeException {
+            crate::error::InvalidRuntimeException {
                 r#type: self.r#type,
                 message: self.message,
             }
         }
     }
 }
-impl InvalidRuntimeError {
-    /// Creates a new builder-style object to manufacture [`InvalidRuntimeError`](crate::error::InvalidRuntimeError)
-    pub fn builder() -> crate::error::invalid_runtime_error::Builder {
-        crate::error::invalid_runtime_error::Builder::default()
+impl InvalidRuntimeException {
+    /// Creates a new builder-style object to manufacture [`InvalidRuntimeException`](crate::error::InvalidRuntimeException)
+    pub fn builder() -> crate::error::invalid_runtime_exception::Builder {
+        crate::error::invalid_runtime_exception::Builder::default()
     }
 }
 
 /// <p>The request body could not be parsed as JSON.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
-pub struct InvalidRequestContentError {
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct InvalidRequestContentException {
     /// <p>The exception type.</p>
-    #[serde(rename = "Type")]
-    #[serde(default)]
     pub r#type: std::option::Option<std::string::String>,
     /// <p>The exception message.</p>
-    #[serde(rename = "message")]
-    #[serde(default)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for InvalidRequestContentError {
+impl std::fmt::Debug for InvalidRequestContentException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidRequestContentError");
+        let mut formatter = f.debug_struct("InvalidRequestContentException");
         formatter.field("r#type", &self.r#type);
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl InvalidRequestContentError {
+impl InvalidRequestContentException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for InvalidRequestContentError {
+impl std::fmt::Display for InvalidRequestContentException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(
-            f,
-            "InvalidRequestContentError [InvalidRequestContentException]"
-        )?;
+        write!(f, "InvalidRequestContentException")?;
         if let Some(inner_13) = &self.message {
             write!(f, ": {}", inner_13)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for InvalidRequestContentError {}
-/// See [`InvalidRequestContentError`](crate::error::InvalidRequestContentError)
-pub mod invalid_request_content_error {
-    /// A builder for [`InvalidRequestContentError`](crate::error::InvalidRequestContentError)
+impl std::error::Error for InvalidRequestContentException {}
+/// See [`InvalidRequestContentException`](crate::error::InvalidRequestContentException)
+pub mod invalid_request_content_exception {
+    /// A builder for [`InvalidRequestContentException`](crate::error::InvalidRequestContentException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -7666,62 +7883,55 @@ pub mod invalid_request_content_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`InvalidRequestContentError`](crate::error::InvalidRequestContentError)
-        pub fn build(self) -> crate::error::InvalidRequestContentError {
-            crate::error::InvalidRequestContentError {
+        /// Consumes the builder and constructs a [`InvalidRequestContentException`](crate::error::InvalidRequestContentException)
+        pub fn build(self) -> crate::error::InvalidRequestContentException {
+            crate::error::InvalidRequestContentException {
                 r#type: self.r#type,
                 message: self.message,
             }
         }
     }
 }
-impl InvalidRequestContentError {
-    /// Creates a new builder-style object to manufacture [`InvalidRequestContentError`](crate::error::InvalidRequestContentError)
-    pub fn builder() -> crate::error::invalid_request_content_error::Builder {
-        crate::error::invalid_request_content_error::Builder::default()
+impl InvalidRequestContentException {
+    /// Creates a new builder-style object to manufacture [`InvalidRequestContentException`](crate::error::InvalidRequestContentException)
+    pub fn builder() -> crate::error::invalid_request_content_exception::Builder {
+        crate::error::invalid_request_content_exception::Builder::default()
     }
 }
 
 /// <p>The content type of the <code>Invoke</code> request body is not JSON.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
-pub struct UnsupportedMediaTypeError {
-    #[serde(rename = "Type")]
-    #[serde(default)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UnsupportedMediaTypeException {
     pub r#type: std::option::Option<std::string::String>,
-    #[serde(rename = "message")]
-    #[serde(default)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for UnsupportedMediaTypeError {
+impl std::fmt::Debug for UnsupportedMediaTypeException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UnsupportedMediaTypeError");
+        let mut formatter = f.debug_struct("UnsupportedMediaTypeException");
         formatter.field("r#type", &self.r#type);
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl UnsupportedMediaTypeError {
+impl UnsupportedMediaTypeException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for UnsupportedMediaTypeError {
+impl std::fmt::Display for UnsupportedMediaTypeException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(
-            f,
-            "UnsupportedMediaTypeError [UnsupportedMediaTypeException]"
-        )?;
+        write!(f, "UnsupportedMediaTypeException")?;
         if let Some(inner_14) = &self.message {
             write!(f, ": {}", inner_14)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for UnsupportedMediaTypeError {}
-/// See [`UnsupportedMediaTypeError`](crate::error::UnsupportedMediaTypeError)
-pub mod unsupported_media_type_error {
-    /// A builder for [`UnsupportedMediaTypeError`](crate::error::UnsupportedMediaTypeError)
+impl std::error::Error for UnsupportedMediaTypeException {}
+/// See [`UnsupportedMediaTypeException`](crate::error::UnsupportedMediaTypeException)
+pub mod unsupported_media_type_exception {
+    /// A builder for [`UnsupportedMediaTypeException`](crate::error::UnsupportedMediaTypeException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -7745,52 +7955,48 @@ pub mod unsupported_media_type_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`UnsupportedMediaTypeError`](crate::error::UnsupportedMediaTypeError)
-        pub fn build(self) -> crate::error::UnsupportedMediaTypeError {
-            crate::error::UnsupportedMediaTypeError {
+        /// Consumes the builder and constructs a [`UnsupportedMediaTypeException`](crate::error::UnsupportedMediaTypeException)
+        pub fn build(self) -> crate::error::UnsupportedMediaTypeException {
+            crate::error::UnsupportedMediaTypeException {
                 r#type: self.r#type,
                 message: self.message,
             }
         }
     }
 }
-impl UnsupportedMediaTypeError {
-    /// Creates a new builder-style object to manufacture [`UnsupportedMediaTypeError`](crate::error::UnsupportedMediaTypeError)
-    pub fn builder() -> crate::error::unsupported_media_type_error::Builder {
-        crate::error::unsupported_media_type_error::Builder::default()
+impl UnsupportedMediaTypeException {
+    /// Creates a new builder-style object to manufacture [`UnsupportedMediaTypeException`](crate::error::UnsupportedMediaTypeException)
+    pub fn builder() -> crate::error::unsupported_media_type_exception::Builder {
+        crate::error::unsupported_media_type_exception::Builder::default()
     }
 }
 
 /// <p>AWS Lambda was not able to set up VPC access for the Lambda function because one or more configured subnets
 /// has no available IP addresses.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
-pub struct SubnetIPAddressLimitReachedError {
-    #[serde(rename = "Type")]
-    #[serde(default)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct SubnetIpAddressLimitReachedException {
     pub r#type: std::option::Option<std::string::String>,
-    #[serde(rename = "Message")]
-    #[serde(default)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for SubnetIPAddressLimitReachedError {
+impl std::fmt::Debug for SubnetIpAddressLimitReachedException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SubnetIPAddressLimitReachedError");
+        let mut formatter = f.debug_struct("SubnetIpAddressLimitReachedException");
         formatter.field("r#type", &self.r#type);
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl SubnetIPAddressLimitReachedError {
+impl SubnetIpAddressLimitReachedException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for SubnetIPAddressLimitReachedError {
+impl std::fmt::Display for SubnetIpAddressLimitReachedException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(
             f,
-            "SubnetIPAddressLimitReachedError [SubnetIPAddressLimitReachedException]"
+            "SubnetIpAddressLimitReachedException [SubnetIPAddressLimitReachedException]"
         )?;
         if let Some(inner_15) = &self.message {
             write!(f, ": {}", inner_15)?;
@@ -7798,10 +8004,10 @@ impl std::fmt::Display for SubnetIPAddressLimitReachedError {
         Ok(())
     }
 }
-impl std::error::Error for SubnetIPAddressLimitReachedError {}
-/// See [`SubnetIPAddressLimitReachedError`](crate::error::SubnetIPAddressLimitReachedError)
-pub mod subnet_ip_address_limit_reached_error {
-    /// A builder for [`SubnetIPAddressLimitReachedError`](crate::error::SubnetIPAddressLimitReachedError)
+impl std::error::Error for SubnetIpAddressLimitReachedException {}
+/// See [`SubnetIpAddressLimitReachedException`](crate::error::SubnetIpAddressLimitReachedException)
+pub mod subnet_ip_address_limit_reached_exception {
+    /// A builder for [`SubnetIpAddressLimitReachedException`](crate::error::SubnetIpAddressLimitReachedException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -7825,62 +8031,58 @@ pub mod subnet_ip_address_limit_reached_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`SubnetIPAddressLimitReachedError`](crate::error::SubnetIPAddressLimitReachedError)
-        pub fn build(self) -> crate::error::SubnetIPAddressLimitReachedError {
-            crate::error::SubnetIPAddressLimitReachedError {
+        /// Consumes the builder and constructs a [`SubnetIpAddressLimitReachedException`](crate::error::SubnetIpAddressLimitReachedException)
+        pub fn build(self) -> crate::error::SubnetIpAddressLimitReachedException {
+            crate::error::SubnetIpAddressLimitReachedException {
                 r#type: self.r#type,
                 message: self.message,
             }
         }
     }
 }
-impl SubnetIPAddressLimitReachedError {
-    /// Creates a new builder-style object to manufacture [`SubnetIPAddressLimitReachedError`](crate::error::SubnetIPAddressLimitReachedError)
-    pub fn builder() -> crate::error::subnet_ip_address_limit_reached_error::Builder {
-        crate::error::subnet_ip_address_limit_reached_error::Builder::default()
+impl SubnetIpAddressLimitReachedException {
+    /// Creates a new builder-style object to manufacture [`SubnetIpAddressLimitReachedException`](crate::error::SubnetIpAddressLimitReachedException)
+    pub fn builder() -> crate::error::subnet_ip_address_limit_reached_exception::Builder {
+        crate::error::subnet_ip_address_limit_reached_exception::Builder::default()
     }
 }
 
 /// <p>The function is inactive and its VPC connection is no longer available. Wait for the VPC connection to
 /// reestablish and try again.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
-pub struct ResourceNotReadyError {
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ResourceNotReadyException {
     /// <p>The exception type.</p>
-    #[serde(rename = "Type")]
-    #[serde(default)]
     pub r#type: std::option::Option<std::string::String>,
     /// <p>The exception message.</p>
-    #[serde(rename = "message")]
-    #[serde(default)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for ResourceNotReadyError {
+impl std::fmt::Debug for ResourceNotReadyException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResourceNotReadyError");
+        let mut formatter = f.debug_struct("ResourceNotReadyException");
         formatter.field("r#type", &self.r#type);
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl ResourceNotReadyError {
+impl ResourceNotReadyException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for ResourceNotReadyError {
+impl std::fmt::Display for ResourceNotReadyException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "ResourceNotReadyError [ResourceNotReadyException]")?;
+        write!(f, "ResourceNotReadyException")?;
         if let Some(inner_16) = &self.message {
             write!(f, ": {}", inner_16)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for ResourceNotReadyError {}
-/// See [`ResourceNotReadyError`](crate::error::ResourceNotReadyError)
-pub mod resource_not_ready_error {
-    /// A builder for [`ResourceNotReadyError`](crate::error::ResourceNotReadyError)
+impl std::error::Error for ResourceNotReadyException {}
+/// See [`ResourceNotReadyException`](crate::error::ResourceNotReadyException)
+pub mod resource_not_ready_exception {
+    /// A builder for [`ResourceNotReadyException`](crate::error::ResourceNotReadyException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -7906,60 +8108,56 @@ pub mod resource_not_ready_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`ResourceNotReadyError`](crate::error::ResourceNotReadyError)
-        pub fn build(self) -> crate::error::ResourceNotReadyError {
-            crate::error::ResourceNotReadyError {
+        /// Consumes the builder and constructs a [`ResourceNotReadyException`](crate::error::ResourceNotReadyException)
+        pub fn build(self) -> crate::error::ResourceNotReadyException {
+            crate::error::ResourceNotReadyException {
                 r#type: self.r#type,
                 message: self.message,
             }
         }
     }
 }
-impl ResourceNotReadyError {
-    /// Creates a new builder-style object to manufacture [`ResourceNotReadyError`](crate::error::ResourceNotReadyError)
-    pub fn builder() -> crate::error::resource_not_ready_error::Builder {
-        crate::error::resource_not_ready_error::Builder::default()
+impl ResourceNotReadyException {
+    /// Creates a new builder-style object to manufacture [`ResourceNotReadyException`](crate::error::ResourceNotReadyException)
+    pub fn builder() -> crate::error::resource_not_ready_exception::Builder {
+        crate::error::resource_not_ready_exception::Builder::default()
     }
 }
 
 /// <p>The request payload exceeded the <code>Invoke</code> request body JSON input limit. For more information, see
 /// <a href="https://docs.aws.amazon.com/lambda/latest/dg/limits.html">Limits</a>. </p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
-pub struct RequestTooLargeError {
-    #[serde(rename = "Type")]
-    #[serde(default)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct RequestTooLargeException {
     pub r#type: std::option::Option<std::string::String>,
-    #[serde(rename = "message")]
-    #[serde(default)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for RequestTooLargeError {
+impl std::fmt::Debug for RequestTooLargeException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RequestTooLargeError");
+        let mut formatter = f.debug_struct("RequestTooLargeException");
         formatter.field("r#type", &self.r#type);
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl RequestTooLargeError {
+impl RequestTooLargeException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for RequestTooLargeError {
+impl std::fmt::Display for RequestTooLargeException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "RequestTooLargeError [RequestTooLargeException]")?;
+        write!(f, "RequestTooLargeException")?;
         if let Some(inner_17) = &self.message {
             write!(f, ": {}", inner_17)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for RequestTooLargeError {}
-/// See [`RequestTooLargeError`](crate::error::RequestTooLargeError)
-pub mod request_too_large_error {
-    /// A builder for [`RequestTooLargeError`](crate::error::RequestTooLargeError)
+impl std::error::Error for RequestTooLargeException {}
+/// See [`RequestTooLargeException`](crate::error::RequestTooLargeException)
+pub mod request_too_large_exception {
+    /// A builder for [`RequestTooLargeException`](crate::error::RequestTooLargeException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -7983,60 +8181,56 @@ pub mod request_too_large_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`RequestTooLargeError`](crate::error::RequestTooLargeError)
-        pub fn build(self) -> crate::error::RequestTooLargeError {
-            crate::error::RequestTooLargeError {
+        /// Consumes the builder and constructs a [`RequestTooLargeException`](crate::error::RequestTooLargeException)
+        pub fn build(self) -> crate::error::RequestTooLargeException {
+            crate::error::RequestTooLargeException {
                 r#type: self.r#type,
                 message: self.message,
             }
         }
     }
 }
-impl RequestTooLargeError {
-    /// Creates a new builder-style object to manufacture [`RequestTooLargeError`](crate::error::RequestTooLargeError)
-    pub fn builder() -> crate::error::request_too_large_error::Builder {
-        crate::error::request_too_large_error::Builder::default()
+impl RequestTooLargeException {
+    /// Creates a new builder-style object to manufacture [`RequestTooLargeException`](crate::error::RequestTooLargeException)
+    pub fn builder() -> crate::error::request_too_large_exception::Builder {
+        crate::error::request_too_large_exception::Builder::default()
     }
 }
 
 /// <p>Lambda was unable to decrypt the environment variables because the KMS key was not found. Check the function's
 /// KMS key settings. </p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
-pub struct KMSNotFoundError {
-    #[serde(rename = "Type")]
-    #[serde(default)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct KmsNotFoundException {
     pub r#type: std::option::Option<std::string::String>,
-    #[serde(rename = "Message")]
-    #[serde(default)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for KMSNotFoundError {
+impl std::fmt::Debug for KmsNotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("KMSNotFoundError");
+        let mut formatter = f.debug_struct("KmsNotFoundException");
         formatter.field("r#type", &self.r#type);
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl KMSNotFoundError {
+impl KmsNotFoundException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for KMSNotFoundError {
+impl std::fmt::Display for KmsNotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "KMSNotFoundError [KMSNotFoundException]")?;
+        write!(f, "KmsNotFoundException [KMSNotFoundException]")?;
         if let Some(inner_18) = &self.message {
             write!(f, ": {}", inner_18)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for KMSNotFoundError {}
-/// See [`KMSNotFoundError`](crate::error::KMSNotFoundError)
-pub mod kms_not_found_error {
-    /// A builder for [`KMSNotFoundError`](crate::error::KMSNotFoundError)
+impl std::error::Error for KmsNotFoundException {}
+/// See [`KmsNotFoundException`](crate::error::KmsNotFoundException)
+pub mod kms_not_found_exception {
+    /// A builder for [`KmsNotFoundException`](crate::error::KmsNotFoundException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -8060,60 +8254,56 @@ pub mod kms_not_found_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`KMSNotFoundError`](crate::error::KMSNotFoundError)
-        pub fn build(self) -> crate::error::KMSNotFoundError {
-            crate::error::KMSNotFoundError {
+        /// Consumes the builder and constructs a [`KmsNotFoundException`](crate::error::KmsNotFoundException)
+        pub fn build(self) -> crate::error::KmsNotFoundException {
+            crate::error::KmsNotFoundException {
                 r#type: self.r#type,
                 message: self.message,
             }
         }
     }
 }
-impl KMSNotFoundError {
-    /// Creates a new builder-style object to manufacture [`KMSNotFoundError`](crate::error::KMSNotFoundError)
-    pub fn builder() -> crate::error::kms_not_found_error::Builder {
-        crate::error::kms_not_found_error::Builder::default()
+impl KmsNotFoundException {
+    /// Creates a new builder-style object to manufacture [`KmsNotFoundException`](crate::error::KmsNotFoundException)
+    pub fn builder() -> crate::error::kms_not_found_exception::Builder {
+        crate::error::kms_not_found_exception::Builder::default()
     }
 }
 
 /// <p>Lambda was unable to decrypt the environment variables because the KMS key used is in an invalid state for
 /// Decrypt. Check the function's KMS key settings.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
-pub struct KMSInvalidStateError {
-    #[serde(rename = "Type")]
-    #[serde(default)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct KmsInvalidStateException {
     pub r#type: std::option::Option<std::string::String>,
-    #[serde(rename = "Message")]
-    #[serde(default)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for KMSInvalidStateError {
+impl std::fmt::Debug for KmsInvalidStateException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("KMSInvalidStateError");
+        let mut formatter = f.debug_struct("KmsInvalidStateException");
         formatter.field("r#type", &self.r#type);
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl KMSInvalidStateError {
+impl KmsInvalidStateException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for KMSInvalidStateError {
+impl std::fmt::Display for KmsInvalidStateException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "KMSInvalidStateError [KMSInvalidStateException]")?;
+        write!(f, "KmsInvalidStateException [KMSInvalidStateException]")?;
         if let Some(inner_19) = &self.message {
             write!(f, ": {}", inner_19)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for KMSInvalidStateError {}
-/// See [`KMSInvalidStateError`](crate::error::KMSInvalidStateError)
-pub mod kms_invalid_state_error {
-    /// A builder for [`KMSInvalidStateError`](crate::error::KMSInvalidStateError)
+impl std::error::Error for KmsInvalidStateException {}
+/// See [`KmsInvalidStateException`](crate::error::KmsInvalidStateException)
+pub mod kms_invalid_state_exception {
+    /// A builder for [`KmsInvalidStateException`](crate::error::KmsInvalidStateException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -8137,60 +8327,56 @@ pub mod kms_invalid_state_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`KMSInvalidStateError`](crate::error::KMSInvalidStateError)
-        pub fn build(self) -> crate::error::KMSInvalidStateError {
-            crate::error::KMSInvalidStateError {
+        /// Consumes the builder and constructs a [`KmsInvalidStateException`](crate::error::KmsInvalidStateException)
+        pub fn build(self) -> crate::error::KmsInvalidStateException {
+            crate::error::KmsInvalidStateException {
                 r#type: self.r#type,
                 message: self.message,
             }
         }
     }
 }
-impl KMSInvalidStateError {
-    /// Creates a new builder-style object to manufacture [`KMSInvalidStateError`](crate::error::KMSInvalidStateError)
-    pub fn builder() -> crate::error::kms_invalid_state_error::Builder {
-        crate::error::kms_invalid_state_error::Builder::default()
+impl KmsInvalidStateException {
+    /// Creates a new builder-style object to manufacture [`KmsInvalidStateException`](crate::error::KmsInvalidStateException)
+    pub fn builder() -> crate::error::kms_invalid_state_exception::Builder {
+        crate::error::kms_invalid_state_exception::Builder::default()
     }
 }
 
 /// <p>Lambda was unable to decrypt the environment variables because the KMS key used is disabled. Check the Lambda
 /// function's KMS key settings.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
-pub struct KMSDisabledError {
-    #[serde(rename = "Type")]
-    #[serde(default)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct KmsDisabledException {
     pub r#type: std::option::Option<std::string::String>,
-    #[serde(rename = "Message")]
-    #[serde(default)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for KMSDisabledError {
+impl std::fmt::Debug for KmsDisabledException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("KMSDisabledError");
+        let mut formatter = f.debug_struct("KmsDisabledException");
         formatter.field("r#type", &self.r#type);
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl KMSDisabledError {
+impl KmsDisabledException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for KMSDisabledError {
+impl std::fmt::Display for KmsDisabledException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "KMSDisabledError [KMSDisabledException]")?;
+        write!(f, "KmsDisabledException [KMSDisabledException]")?;
         if let Some(inner_20) = &self.message {
             write!(f, ": {}", inner_20)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for KMSDisabledError {}
-/// See [`KMSDisabledError`](crate::error::KMSDisabledError)
-pub mod kms_disabled_error {
-    /// A builder for [`KMSDisabledError`](crate::error::KMSDisabledError)
+impl std::error::Error for KmsDisabledException {}
+/// See [`KmsDisabledException`](crate::error::KmsDisabledException)
+pub mod kms_disabled_exception {
+    /// A builder for [`KmsDisabledException`](crate::error::KmsDisabledException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -8214,60 +8400,56 @@ pub mod kms_disabled_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`KMSDisabledError`](crate::error::KMSDisabledError)
-        pub fn build(self) -> crate::error::KMSDisabledError {
-            crate::error::KMSDisabledError {
+        /// Consumes the builder and constructs a [`KmsDisabledException`](crate::error::KmsDisabledException)
+        pub fn build(self) -> crate::error::KmsDisabledException {
+            crate::error::KmsDisabledException {
                 r#type: self.r#type,
                 message: self.message,
             }
         }
     }
 }
-impl KMSDisabledError {
-    /// Creates a new builder-style object to manufacture [`KMSDisabledError`](crate::error::KMSDisabledError)
-    pub fn builder() -> crate::error::kms_disabled_error::Builder {
-        crate::error::kms_disabled_error::Builder::default()
+impl KmsDisabledException {
+    /// Creates a new builder-style object to manufacture [`KmsDisabledException`](crate::error::KmsDisabledException)
+    pub fn builder() -> crate::error::kms_disabled_exception::Builder {
+        crate::error::kms_disabled_exception::Builder::default()
     }
 }
 
 /// <p>Lambda was unable to decrypt the environment variables because KMS access was denied. Check the Lambda
 /// function's KMS permissions.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
-pub struct KMSAccessDeniedError {
-    #[serde(rename = "Type")]
-    #[serde(default)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct KmsAccessDeniedException {
     pub r#type: std::option::Option<std::string::String>,
-    #[serde(rename = "Message")]
-    #[serde(default)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for KMSAccessDeniedError {
+impl std::fmt::Debug for KmsAccessDeniedException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("KMSAccessDeniedError");
+        let mut formatter = f.debug_struct("KmsAccessDeniedException");
         formatter.field("r#type", &self.r#type);
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl KMSAccessDeniedError {
+impl KmsAccessDeniedException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for KMSAccessDeniedError {
+impl std::fmt::Display for KmsAccessDeniedException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "KMSAccessDeniedError [KMSAccessDeniedException]")?;
+        write!(f, "KmsAccessDeniedException [KMSAccessDeniedException]")?;
         if let Some(inner_21) = &self.message {
             write!(f, ": {}", inner_21)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for KMSAccessDeniedError {}
-/// See [`KMSAccessDeniedError`](crate::error::KMSAccessDeniedError)
-pub mod kms_access_denied_error {
-    /// A builder for [`KMSAccessDeniedError`](crate::error::KMSAccessDeniedError)
+impl std::error::Error for KmsAccessDeniedException {}
+/// See [`KmsAccessDeniedException`](crate::error::KmsAccessDeniedException)
+pub mod kms_access_denied_exception {
+    /// A builder for [`KmsAccessDeniedException`](crate::error::KmsAccessDeniedException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -8291,59 +8473,55 @@ pub mod kms_access_denied_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`KMSAccessDeniedError`](crate::error::KMSAccessDeniedError)
-        pub fn build(self) -> crate::error::KMSAccessDeniedError {
-            crate::error::KMSAccessDeniedError {
+        /// Consumes the builder and constructs a [`KmsAccessDeniedException`](crate::error::KmsAccessDeniedException)
+        pub fn build(self) -> crate::error::KmsAccessDeniedException {
+            crate::error::KmsAccessDeniedException {
                 r#type: self.r#type,
                 message: self.message,
             }
         }
     }
 }
-impl KMSAccessDeniedError {
-    /// Creates a new builder-style object to manufacture [`KMSAccessDeniedError`](crate::error::KMSAccessDeniedError)
-    pub fn builder() -> crate::error::kms_access_denied_error::Builder {
-        crate::error::kms_access_denied_error::Builder::default()
+impl KmsAccessDeniedException {
+    /// Creates a new builder-style object to manufacture [`KmsAccessDeniedException`](crate::error::KmsAccessDeniedException)
+    pub fn builder() -> crate::error::kms_access_denied_exception::Builder {
+        crate::error::kms_access_denied_exception::Builder::default()
     }
 }
 
 /// <p>AWS Lambda could not unzip the deployment package.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
-pub struct InvalidZipFileError {
-    #[serde(rename = "Type")]
-    #[serde(default)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct InvalidZipFileException {
     pub r#type: std::option::Option<std::string::String>,
-    #[serde(rename = "Message")]
-    #[serde(default)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for InvalidZipFileError {
+impl std::fmt::Debug for InvalidZipFileException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidZipFileError");
+        let mut formatter = f.debug_struct("InvalidZipFileException");
         formatter.field("r#type", &self.r#type);
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl InvalidZipFileError {
+impl InvalidZipFileException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for InvalidZipFileError {
+impl std::fmt::Display for InvalidZipFileException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "InvalidZipFileError [InvalidZipFileException]")?;
+        write!(f, "InvalidZipFileException")?;
         if let Some(inner_22) = &self.message {
             write!(f, ": {}", inner_22)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for InvalidZipFileError {}
-/// See [`InvalidZipFileError`](crate::error::InvalidZipFileError)
-pub mod invalid_zip_file_error {
-    /// A builder for [`InvalidZipFileError`](crate::error::InvalidZipFileError)
+impl std::error::Error for InvalidZipFileException {}
+/// See [`InvalidZipFileException`](crate::error::InvalidZipFileException)
+pub mod invalid_zip_file_exception {
+    /// A builder for [`InvalidZipFileException`](crate::error::InvalidZipFileException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -8367,59 +8545,55 @@ pub mod invalid_zip_file_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`InvalidZipFileError`](crate::error::InvalidZipFileError)
-        pub fn build(self) -> crate::error::InvalidZipFileError {
-            crate::error::InvalidZipFileError {
+        /// Consumes the builder and constructs a [`InvalidZipFileException`](crate::error::InvalidZipFileException)
+        pub fn build(self) -> crate::error::InvalidZipFileException {
+            crate::error::InvalidZipFileException {
                 r#type: self.r#type,
                 message: self.message,
             }
         }
     }
 }
-impl InvalidZipFileError {
-    /// Creates a new builder-style object to manufacture [`InvalidZipFileError`](crate::error::InvalidZipFileError)
-    pub fn builder() -> crate::error::invalid_zip_file_error::Builder {
-        crate::error::invalid_zip_file_error::Builder::default()
+impl InvalidZipFileException {
+    /// Creates a new builder-style object to manufacture [`InvalidZipFileException`](crate::error::InvalidZipFileException)
+    pub fn builder() -> crate::error::invalid_zip_file_exception::Builder {
+        crate::error::invalid_zip_file_exception::Builder::default()
     }
 }
 
 /// <p>The Subnet ID provided in the Lambda function VPC configuration is invalid.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
-pub struct InvalidSubnetIDError {
-    #[serde(rename = "Type")]
-    #[serde(default)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct InvalidSubnetIdException {
     pub r#type: std::option::Option<std::string::String>,
-    #[serde(rename = "Message")]
-    #[serde(default)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for InvalidSubnetIDError {
+impl std::fmt::Debug for InvalidSubnetIdException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidSubnetIDError");
+        let mut formatter = f.debug_struct("InvalidSubnetIdException");
         formatter.field("r#type", &self.r#type);
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl InvalidSubnetIDError {
+impl InvalidSubnetIdException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for InvalidSubnetIDError {
+impl std::fmt::Display for InvalidSubnetIdException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "InvalidSubnetIDError [InvalidSubnetIDException]")?;
+        write!(f, "InvalidSubnetIdException [InvalidSubnetIDException]")?;
         if let Some(inner_23) = &self.message {
             write!(f, ": {}", inner_23)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for InvalidSubnetIDError {}
-/// See [`InvalidSubnetIDError`](crate::error::InvalidSubnetIDError)
-pub mod invalid_subnet_id_error {
-    /// A builder for [`InvalidSubnetIDError`](crate::error::InvalidSubnetIDError)
+impl std::error::Error for InvalidSubnetIdException {}
+/// See [`InvalidSubnetIdException`](crate::error::InvalidSubnetIdException)
+pub mod invalid_subnet_id_exception {
+    /// A builder for [`InvalidSubnetIdException`](crate::error::InvalidSubnetIdException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -8443,51 +8617,47 @@ pub mod invalid_subnet_id_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`InvalidSubnetIDError`](crate::error::InvalidSubnetIDError)
-        pub fn build(self) -> crate::error::InvalidSubnetIDError {
-            crate::error::InvalidSubnetIDError {
+        /// Consumes the builder and constructs a [`InvalidSubnetIdException`](crate::error::InvalidSubnetIdException)
+        pub fn build(self) -> crate::error::InvalidSubnetIdException {
+            crate::error::InvalidSubnetIdException {
                 r#type: self.r#type,
                 message: self.message,
             }
         }
     }
 }
-impl InvalidSubnetIDError {
-    /// Creates a new builder-style object to manufacture [`InvalidSubnetIDError`](crate::error::InvalidSubnetIDError)
-    pub fn builder() -> crate::error::invalid_subnet_id_error::Builder {
-        crate::error::invalid_subnet_id_error::Builder::default()
+impl InvalidSubnetIdException {
+    /// Creates a new builder-style object to manufacture [`InvalidSubnetIdException`](crate::error::InvalidSubnetIdException)
+    pub fn builder() -> crate::error::invalid_subnet_id_exception::Builder {
+        crate::error::invalid_subnet_id_exception::Builder::default()
     }
 }
 
 /// <p>The Security Group ID provided in the Lambda function VPC configuration is invalid.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
-pub struct InvalidSecurityGroupIDError {
-    #[serde(rename = "Type")]
-    #[serde(default)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct InvalidSecurityGroupIdException {
     pub r#type: std::option::Option<std::string::String>,
-    #[serde(rename = "Message")]
-    #[serde(default)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for InvalidSecurityGroupIDError {
+impl std::fmt::Debug for InvalidSecurityGroupIdException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidSecurityGroupIDError");
+        let mut formatter = f.debug_struct("InvalidSecurityGroupIdException");
         formatter.field("r#type", &self.r#type);
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl InvalidSecurityGroupIDError {
+impl InvalidSecurityGroupIdException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for InvalidSecurityGroupIDError {
+impl std::fmt::Display for InvalidSecurityGroupIdException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(
             f,
-            "InvalidSecurityGroupIDError [InvalidSecurityGroupIDException]"
+            "InvalidSecurityGroupIdException [InvalidSecurityGroupIDException]"
         )?;
         if let Some(inner_24) = &self.message {
             write!(f, ": {}", inner_24)?;
@@ -8495,10 +8665,10 @@ impl std::fmt::Display for InvalidSecurityGroupIDError {
         Ok(())
     }
 }
-impl std::error::Error for InvalidSecurityGroupIDError {}
-/// See [`InvalidSecurityGroupIDError`](crate::error::InvalidSecurityGroupIDError)
-pub mod invalid_security_group_id_error {
-    /// A builder for [`InvalidSecurityGroupIDError`](crate::error::InvalidSecurityGroupIDError)
+impl std::error::Error for InvalidSecurityGroupIdException {}
+/// See [`InvalidSecurityGroupIdException`](crate::error::InvalidSecurityGroupIdException)
+pub mod invalid_security_group_id_exception {
+    /// A builder for [`InvalidSecurityGroupIdException`](crate::error::InvalidSecurityGroupIdException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -8522,60 +8692,56 @@ pub mod invalid_security_group_id_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`InvalidSecurityGroupIDError`](crate::error::InvalidSecurityGroupIDError)
-        pub fn build(self) -> crate::error::InvalidSecurityGroupIDError {
-            crate::error::InvalidSecurityGroupIDError {
+        /// Consumes the builder and constructs a [`InvalidSecurityGroupIdException`](crate::error::InvalidSecurityGroupIdException)
+        pub fn build(self) -> crate::error::InvalidSecurityGroupIdException {
+            crate::error::InvalidSecurityGroupIdException {
                 r#type: self.r#type,
                 message: self.message,
             }
         }
     }
 }
-impl InvalidSecurityGroupIDError {
-    /// Creates a new builder-style object to manufacture [`InvalidSecurityGroupIDError`](crate::error::InvalidSecurityGroupIDError)
-    pub fn builder() -> crate::error::invalid_security_group_id_error::Builder {
-        crate::error::invalid_security_group_id_error::Builder::default()
+impl InvalidSecurityGroupIdException {
+    /// Creates a new builder-style object to manufacture [`InvalidSecurityGroupIdException`](crate::error::InvalidSecurityGroupIdException)
+    pub fn builder() -> crate::error::invalid_security_group_id_exception::Builder {
+        crate::error::invalid_security_group_id_exception::Builder::default()
     }
 }
 
 /// <p>AWS Lambda was not able to create an elastic network interface in the VPC, specified as part of Lambda
 /// function configuration, because the limit for network interfaces has been reached.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
-pub struct ENILimitReachedError {
-    #[serde(rename = "Type")]
-    #[serde(default)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct EniLimitReachedException {
     pub r#type: std::option::Option<std::string::String>,
-    #[serde(rename = "Message")]
-    #[serde(default)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for ENILimitReachedError {
+impl std::fmt::Debug for EniLimitReachedException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ENILimitReachedError");
+        let mut formatter = f.debug_struct("EniLimitReachedException");
         formatter.field("r#type", &self.r#type);
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl ENILimitReachedError {
+impl EniLimitReachedException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for ENILimitReachedError {
+impl std::fmt::Display for EniLimitReachedException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "ENILimitReachedError [ENILimitReachedException]")?;
+        write!(f, "EniLimitReachedException [ENILimitReachedException]")?;
         if let Some(inner_25) = &self.message {
             write!(f, ": {}", inner_25)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for ENILimitReachedError {}
-/// See [`ENILimitReachedError`](crate::error::ENILimitReachedError)
-pub mod eni_limit_reached_error {
-    /// A builder for [`ENILimitReachedError`](crate::error::ENILimitReachedError)
+impl std::error::Error for EniLimitReachedException {}
+/// See [`EniLimitReachedException`](crate::error::EniLimitReachedException)
+pub mod eni_limit_reached_exception {
+    /// A builder for [`EniLimitReachedException`](crate::error::EniLimitReachedException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -8599,60 +8765,56 @@ pub mod eni_limit_reached_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`ENILimitReachedError`](crate::error::ENILimitReachedError)
-        pub fn build(self) -> crate::error::ENILimitReachedError {
-            crate::error::ENILimitReachedError {
+        /// Consumes the builder and constructs a [`EniLimitReachedException`](crate::error::EniLimitReachedException)
+        pub fn build(self) -> crate::error::EniLimitReachedException {
+            crate::error::EniLimitReachedException {
                 r#type: self.r#type,
                 message: self.message,
             }
         }
     }
 }
-impl ENILimitReachedError {
-    /// Creates a new builder-style object to manufacture [`ENILimitReachedError`](crate::error::ENILimitReachedError)
-    pub fn builder() -> crate::error::eni_limit_reached_error::Builder {
-        crate::error::eni_limit_reached_error::Builder::default()
+impl EniLimitReachedException {
+    /// Creates a new builder-style object to manufacture [`EniLimitReachedException`](crate::error::EniLimitReachedException)
+    pub fn builder() -> crate::error::eni_limit_reached_exception::Builder {
+        crate::error::eni_limit_reached_exception::Builder::default()
     }
 }
 
 /// <p>The function was able to make a network connection to the configured file system, but the mount operation
 /// timed out.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
-pub struct EFSMountTimeoutError {
-    #[serde(rename = "Type")]
-    #[serde(default)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct EfsMountTimeoutException {
     pub r#type: std::option::Option<std::string::String>,
-    #[serde(rename = "Message")]
-    #[serde(default)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for EFSMountTimeoutError {
+impl std::fmt::Debug for EfsMountTimeoutException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EFSMountTimeoutError");
+        let mut formatter = f.debug_struct("EfsMountTimeoutException");
         formatter.field("r#type", &self.r#type);
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl EFSMountTimeoutError {
+impl EfsMountTimeoutException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for EFSMountTimeoutError {
+impl std::fmt::Display for EfsMountTimeoutException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "EFSMountTimeoutError [EFSMountTimeoutException]")?;
+        write!(f, "EfsMountTimeoutException [EFSMountTimeoutException]")?;
         if let Some(inner_26) = &self.message {
             write!(f, ": {}", inner_26)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for EFSMountTimeoutError {}
-/// See [`EFSMountTimeoutError`](crate::error::EFSMountTimeoutError)
-pub mod efs_mount_timeout_error {
-    /// A builder for [`EFSMountTimeoutError`](crate::error::EFSMountTimeoutError)
+impl std::error::Error for EfsMountTimeoutException {}
+/// See [`EfsMountTimeoutException`](crate::error::EfsMountTimeoutException)
+pub mod efs_mount_timeout_exception {
+    /// A builder for [`EfsMountTimeoutException`](crate::error::EfsMountTimeoutException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -8676,59 +8838,55 @@ pub mod efs_mount_timeout_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`EFSMountTimeoutError`](crate::error::EFSMountTimeoutError)
-        pub fn build(self) -> crate::error::EFSMountTimeoutError {
-            crate::error::EFSMountTimeoutError {
+        /// Consumes the builder and constructs a [`EfsMountTimeoutException`](crate::error::EfsMountTimeoutException)
+        pub fn build(self) -> crate::error::EfsMountTimeoutException {
+            crate::error::EfsMountTimeoutException {
                 r#type: self.r#type,
                 message: self.message,
             }
         }
     }
 }
-impl EFSMountTimeoutError {
-    /// Creates a new builder-style object to manufacture [`EFSMountTimeoutError`](crate::error::EFSMountTimeoutError)
-    pub fn builder() -> crate::error::efs_mount_timeout_error::Builder {
-        crate::error::efs_mount_timeout_error::Builder::default()
+impl EfsMountTimeoutException {
+    /// Creates a new builder-style object to manufacture [`EfsMountTimeoutException`](crate::error::EfsMountTimeoutException)
+    pub fn builder() -> crate::error::efs_mount_timeout_exception::Builder {
+        crate::error::efs_mount_timeout_exception::Builder::default()
     }
 }
 
 /// <p>The function couldn't mount the configured file system due to a permission or configuration issue.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
-pub struct EFSMountFailureError {
-    #[serde(rename = "Type")]
-    #[serde(default)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct EfsMountFailureException {
     pub r#type: std::option::Option<std::string::String>,
-    #[serde(rename = "Message")]
-    #[serde(default)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for EFSMountFailureError {
+impl std::fmt::Debug for EfsMountFailureException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EFSMountFailureError");
+        let mut formatter = f.debug_struct("EfsMountFailureException");
         formatter.field("r#type", &self.r#type);
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl EFSMountFailureError {
+impl EfsMountFailureException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for EFSMountFailureError {
+impl std::fmt::Display for EfsMountFailureException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "EFSMountFailureError [EFSMountFailureException]")?;
+        write!(f, "EfsMountFailureException [EFSMountFailureException]")?;
         if let Some(inner_27) = &self.message {
             write!(f, ": {}", inner_27)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for EFSMountFailureError {}
-/// See [`EFSMountFailureError`](crate::error::EFSMountFailureError)
-pub mod efs_mount_failure_error {
-    /// A builder for [`EFSMountFailureError`](crate::error::EFSMountFailureError)
+impl std::error::Error for EfsMountFailureException {}
+/// See [`EfsMountFailureException`](crate::error::EfsMountFailureException)
+pub mod efs_mount_failure_exception {
+    /// A builder for [`EfsMountFailureException`](crate::error::EfsMountFailureException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -8752,51 +8910,47 @@ pub mod efs_mount_failure_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`EFSMountFailureError`](crate::error::EFSMountFailureError)
-        pub fn build(self) -> crate::error::EFSMountFailureError {
-            crate::error::EFSMountFailureError {
+        /// Consumes the builder and constructs a [`EfsMountFailureException`](crate::error::EfsMountFailureException)
+        pub fn build(self) -> crate::error::EfsMountFailureException {
+            crate::error::EfsMountFailureException {
                 r#type: self.r#type,
                 message: self.message,
             }
         }
     }
 }
-impl EFSMountFailureError {
-    /// Creates a new builder-style object to manufacture [`EFSMountFailureError`](crate::error::EFSMountFailureError)
-    pub fn builder() -> crate::error::efs_mount_failure_error::Builder {
-        crate::error::efs_mount_failure_error::Builder::default()
+impl EfsMountFailureException {
+    /// Creates a new builder-style object to manufacture [`EfsMountFailureException`](crate::error::EfsMountFailureException)
+    pub fn builder() -> crate::error::efs_mount_failure_exception::Builder {
+        crate::error::efs_mount_failure_exception::Builder::default()
     }
 }
 
 /// <p>The function couldn't make a network connection to the configured file system.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
-pub struct EFSMountConnectivityError {
-    #[serde(rename = "Type")]
-    #[serde(default)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct EfsMountConnectivityException {
     pub r#type: std::option::Option<std::string::String>,
-    #[serde(rename = "Message")]
-    #[serde(default)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for EFSMountConnectivityError {
+impl std::fmt::Debug for EfsMountConnectivityException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EFSMountConnectivityError");
+        let mut formatter = f.debug_struct("EfsMountConnectivityException");
         formatter.field("r#type", &self.r#type);
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl EFSMountConnectivityError {
+impl EfsMountConnectivityException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for EFSMountConnectivityError {
+impl std::fmt::Display for EfsMountConnectivityException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(
             f,
-            "EFSMountConnectivityError [EFSMountConnectivityException]"
+            "EfsMountConnectivityException [EFSMountConnectivityException]"
         )?;
         if let Some(inner_28) = &self.message {
             write!(f, ": {}", inner_28)?;
@@ -8804,10 +8958,10 @@ impl std::fmt::Display for EFSMountConnectivityError {
         Ok(())
     }
 }
-impl std::error::Error for EFSMountConnectivityError {}
-/// See [`EFSMountConnectivityError`](crate::error::EFSMountConnectivityError)
-pub mod efs_mount_connectivity_error {
-    /// A builder for [`EFSMountConnectivityError`](crate::error::EFSMountConnectivityError)
+impl std::error::Error for EfsMountConnectivityException {}
+/// See [`EfsMountConnectivityException`](crate::error::EfsMountConnectivityException)
+pub mod efs_mount_connectivity_exception {
+    /// A builder for [`EfsMountConnectivityException`](crate::error::EfsMountConnectivityException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -8831,59 +8985,55 @@ pub mod efs_mount_connectivity_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`EFSMountConnectivityError`](crate::error::EFSMountConnectivityError)
-        pub fn build(self) -> crate::error::EFSMountConnectivityError {
-            crate::error::EFSMountConnectivityError {
+        /// Consumes the builder and constructs a [`EfsMountConnectivityException`](crate::error::EfsMountConnectivityException)
+        pub fn build(self) -> crate::error::EfsMountConnectivityException {
+            crate::error::EfsMountConnectivityException {
                 r#type: self.r#type,
                 message: self.message,
             }
         }
     }
 }
-impl EFSMountConnectivityError {
-    /// Creates a new builder-style object to manufacture [`EFSMountConnectivityError`](crate::error::EFSMountConnectivityError)
-    pub fn builder() -> crate::error::efs_mount_connectivity_error::Builder {
-        crate::error::efs_mount_connectivity_error::Builder::default()
+impl EfsMountConnectivityException {
+    /// Creates a new builder-style object to manufacture [`EfsMountConnectivityException`](crate::error::EfsMountConnectivityException)
+    pub fn builder() -> crate::error::efs_mount_connectivity_exception::Builder {
+        crate::error::efs_mount_connectivity_exception::Builder::default()
     }
 }
 
 /// <p>An error occured when reading from or writing to a connected file system.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
-pub struct EFSIOError {
-    #[serde(rename = "Type")]
-    #[serde(default)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct EfsioException {
     pub r#type: std::option::Option<std::string::String>,
-    #[serde(rename = "Message")]
-    #[serde(default)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for EFSIOError {
+impl std::fmt::Debug for EfsioException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EFSIOError");
+        let mut formatter = f.debug_struct("EfsioException");
         formatter.field("r#type", &self.r#type);
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl EFSIOError {
+impl EfsioException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for EFSIOError {
+impl std::fmt::Display for EfsioException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "EFSIOError [EFSIOException]")?;
+        write!(f, "EfsioException [EFSIOException]")?;
         if let Some(inner_29) = &self.message {
             write!(f, ": {}", inner_29)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for EFSIOError {}
-/// See [`EFSIOError`](crate::error::EFSIOError)
-pub mod efsio_error {
-    /// A builder for [`EFSIOError`](crate::error::EFSIOError)
+impl std::error::Error for EfsioException {}
+/// See [`EfsioException`](crate::error::EfsioException)
+pub mod efsio_exception {
+    /// A builder for [`EfsioException`](crate::error::EfsioException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -8907,63 +9057,57 @@ pub mod efsio_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`EFSIOError`](crate::error::EFSIOError)
-        pub fn build(self) -> crate::error::EFSIOError {
-            crate::error::EFSIOError {
+        /// Consumes the builder and constructs a [`EfsioException`](crate::error::EfsioException)
+        pub fn build(self) -> crate::error::EfsioException {
+            crate::error::EfsioException {
                 r#type: self.r#type,
                 message: self.message,
             }
         }
     }
 }
-impl EFSIOError {
-    /// Creates a new builder-style object to manufacture [`EFSIOError`](crate::error::EFSIOError)
-    pub fn builder() -> crate::error::efsio_error::Builder {
-        crate::error::efsio_error::Builder::default()
+impl EfsioException {
+    /// Creates a new builder-style object to manufacture [`EfsioException`](crate::error::EfsioException)
+    pub fn builder() -> crate::error::efsio_exception::Builder {
+        crate::error::efsio_exception::Builder::default()
     }
 }
 
 /// <p>AWS Lambda received an unexpected EC2 client exception while setting up for the Lambda function.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
-pub struct EC2UnexpectedError {
-    #[serde(rename = "Type")]
-    #[serde(default)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct Ec2UnexpectedException {
     pub r#type: std::option::Option<std::string::String>,
-    #[serde(rename = "Message")]
-    #[serde(default)]
     pub message: std::option::Option<std::string::String>,
-    #[serde(rename = "EC2ErrorCode")]
-    #[serde(default)]
     pub ec2_error_code: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for EC2UnexpectedError {
+impl std::fmt::Debug for Ec2UnexpectedException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EC2UnexpectedError");
+        let mut formatter = f.debug_struct("Ec2UnexpectedException");
         formatter.field("r#type", &self.r#type);
         formatter.field("message", &self.message);
         formatter.field("ec2_error_code", &self.ec2_error_code);
         formatter.finish()
     }
 }
-impl EC2UnexpectedError {
+impl Ec2UnexpectedException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for EC2UnexpectedError {
+impl std::fmt::Display for Ec2UnexpectedException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "EC2UnexpectedError [EC2UnexpectedException]")?;
+        write!(f, "Ec2UnexpectedException [EC2UnexpectedException]")?;
         if let Some(inner_30) = &self.message {
             write!(f, ": {}", inner_30)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for EC2UnexpectedError {}
-/// See [`EC2UnexpectedError`](crate::error::EC2UnexpectedError)
-pub mod ec2_unexpected_error {
-    /// A builder for [`EC2UnexpectedError`](crate::error::EC2UnexpectedError)
+impl std::error::Error for Ec2UnexpectedException {}
+/// See [`Ec2UnexpectedException`](crate::error::Ec2UnexpectedException)
+pub mod ec2_unexpected_exception {
+    /// A builder for [`Ec2UnexpectedException`](crate::error::Ec2UnexpectedException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -8999,9 +9143,9 @@ pub mod ec2_unexpected_error {
             self.ec2_error_code = input;
             self
         }
-        /// Consumes the builder and constructs a [`EC2UnexpectedError`](crate::error::EC2UnexpectedError)
-        pub fn build(self) -> crate::error::EC2UnexpectedError {
-            crate::error::EC2UnexpectedError {
+        /// Consumes the builder and constructs a [`Ec2UnexpectedException`](crate::error::Ec2UnexpectedException)
+        pub fn build(self) -> crate::error::Ec2UnexpectedException {
+            crate::error::Ec2UnexpectedException {
                 r#type: self.r#type,
                 message: self.message,
                 ec2_error_code: self.ec2_error_code,
@@ -9009,51 +9153,47 @@ pub mod ec2_unexpected_error {
         }
     }
 }
-impl EC2UnexpectedError {
-    /// Creates a new builder-style object to manufacture [`EC2UnexpectedError`](crate::error::EC2UnexpectedError)
-    pub fn builder() -> crate::error::ec2_unexpected_error::Builder {
-        crate::error::ec2_unexpected_error::Builder::default()
+impl Ec2UnexpectedException {
+    /// Creates a new builder-style object to manufacture [`Ec2UnexpectedException`](crate::error::Ec2UnexpectedException)
+    pub fn builder() -> crate::error::ec2_unexpected_exception::Builder {
+        crate::error::ec2_unexpected_exception::Builder::default()
     }
 }
 
 /// <p>AWS Lambda was throttled by Amazon EC2 during Lambda function initialization using the execution role provided
 /// for the Lambda function.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
-pub struct EC2ThrottledError {
-    #[serde(rename = "Type")]
-    #[serde(default)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct Ec2ThrottledException {
     pub r#type: std::option::Option<std::string::String>,
-    #[serde(rename = "Message")]
-    #[serde(default)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for EC2ThrottledError {
+impl std::fmt::Debug for Ec2ThrottledException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EC2ThrottledError");
+        let mut formatter = f.debug_struct("Ec2ThrottledException");
         formatter.field("r#type", &self.r#type);
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl EC2ThrottledError {
+impl Ec2ThrottledException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for EC2ThrottledError {
+impl std::fmt::Display for Ec2ThrottledException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "EC2ThrottledError [EC2ThrottledException]")?;
+        write!(f, "Ec2ThrottledException [EC2ThrottledException]")?;
         if let Some(inner_31) = &self.message {
             write!(f, ": {}", inner_31)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for EC2ThrottledError {}
-/// See [`EC2ThrottledError`](crate::error::EC2ThrottledError)
-pub mod ec2_throttled_error {
-    /// A builder for [`EC2ThrottledError`](crate::error::EC2ThrottledError)
+impl std::error::Error for Ec2ThrottledException {}
+/// See [`Ec2ThrottledException`](crate::error::Ec2ThrottledException)
+pub mod ec2_throttled_exception {
+    /// A builder for [`Ec2ThrottledException`](crate::error::Ec2ThrottledException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -9077,59 +9217,55 @@ pub mod ec2_throttled_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`EC2ThrottledError`](crate::error::EC2ThrottledError)
-        pub fn build(self) -> crate::error::EC2ThrottledError {
-            crate::error::EC2ThrottledError {
+        /// Consumes the builder and constructs a [`Ec2ThrottledException`](crate::error::Ec2ThrottledException)
+        pub fn build(self) -> crate::error::Ec2ThrottledException {
+            crate::error::Ec2ThrottledException {
                 r#type: self.r#type,
                 message: self.message,
             }
         }
     }
 }
-impl EC2ThrottledError {
-    /// Creates a new builder-style object to manufacture [`EC2ThrottledError`](crate::error::EC2ThrottledError)
-    pub fn builder() -> crate::error::ec2_throttled_error::Builder {
-        crate::error::ec2_throttled_error::Builder::default()
+impl Ec2ThrottledException {
+    /// Creates a new builder-style object to manufacture [`Ec2ThrottledException`](crate::error::Ec2ThrottledException)
+    pub fn builder() -> crate::error::ec2_throttled_exception::Builder {
+        crate::error::ec2_throttled_exception::Builder::default()
     }
 }
 
 /// <p>Need additional permissions to configure VPC settings.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
-pub struct EC2AccessDeniedError {
-    #[serde(rename = "Type")]
-    #[serde(default)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct Ec2AccessDeniedException {
     pub r#type: std::option::Option<std::string::String>,
-    #[serde(rename = "Message")]
-    #[serde(default)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for EC2AccessDeniedError {
+impl std::fmt::Debug for Ec2AccessDeniedException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EC2AccessDeniedError");
+        let mut formatter = f.debug_struct("Ec2AccessDeniedException");
         formatter.field("r#type", &self.r#type);
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl EC2AccessDeniedError {
+impl Ec2AccessDeniedException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for EC2AccessDeniedError {
+impl std::fmt::Display for Ec2AccessDeniedException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "EC2AccessDeniedError [EC2AccessDeniedException]")?;
+        write!(f, "Ec2AccessDeniedException [EC2AccessDeniedException]")?;
         if let Some(inner_32) = &self.message {
             write!(f, ": {}", inner_32)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for EC2AccessDeniedError {}
-/// See [`EC2AccessDeniedError`](crate::error::EC2AccessDeniedError)
-pub mod ec2_access_denied_error {
-    /// A builder for [`EC2AccessDeniedError`](crate::error::EC2AccessDeniedError)
+impl std::error::Error for Ec2AccessDeniedException {}
+/// See [`Ec2AccessDeniedException`](crate::error::Ec2AccessDeniedException)
+pub mod ec2_access_denied_exception {
+    /// A builder for [`Ec2AccessDeniedException`](crate::error::Ec2AccessDeniedException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -9153,59 +9289,55 @@ pub mod ec2_access_denied_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`EC2AccessDeniedError`](crate::error::EC2AccessDeniedError)
-        pub fn build(self) -> crate::error::EC2AccessDeniedError {
-            crate::error::EC2AccessDeniedError {
+        /// Consumes the builder and constructs a [`Ec2AccessDeniedException`](crate::error::Ec2AccessDeniedException)
+        pub fn build(self) -> crate::error::Ec2AccessDeniedException {
+            crate::error::Ec2AccessDeniedException {
                 r#type: self.r#type,
                 message: self.message,
             }
         }
     }
 }
-impl EC2AccessDeniedError {
-    /// Creates a new builder-style object to manufacture [`EC2AccessDeniedError`](crate::error::EC2AccessDeniedError)
-    pub fn builder() -> crate::error::ec2_access_denied_error::Builder {
-        crate::error::ec2_access_denied_error::Builder::default()
+impl Ec2AccessDeniedException {
+    /// Creates a new builder-style object to manufacture [`Ec2AccessDeniedException`](crate::error::Ec2AccessDeniedException)
+    pub fn builder() -> crate::error::ec2_access_denied_exception::Builder {
+        crate::error::ec2_access_denied_exception::Builder::default()
     }
 }
 
 /// <p>The specified configuration does not exist.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
-pub struct ProvisionedConcurrencyConfigNotFoundError {
-    #[serde(rename = "Type")]
-    #[serde(default)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ProvisionedConcurrencyConfigNotFoundException {
     pub r#type: std::option::Option<std::string::String>,
-    #[serde(rename = "message")]
-    #[serde(default)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for ProvisionedConcurrencyConfigNotFoundError {
+impl std::fmt::Debug for ProvisionedConcurrencyConfigNotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ProvisionedConcurrencyConfigNotFoundError");
+        let mut formatter = f.debug_struct("ProvisionedConcurrencyConfigNotFoundException");
         formatter.field("r#type", &self.r#type);
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl ProvisionedConcurrencyConfigNotFoundError {
+impl ProvisionedConcurrencyConfigNotFoundException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for ProvisionedConcurrencyConfigNotFoundError {
+impl std::fmt::Display for ProvisionedConcurrencyConfigNotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "ProvisionedConcurrencyConfigNotFoundError [ProvisionedConcurrencyConfigNotFoundException]")?;
+        write!(f, "ProvisionedConcurrencyConfigNotFoundException")?;
         if let Some(inner_33) = &self.message {
             write!(f, ": {}", inner_33)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for ProvisionedConcurrencyConfigNotFoundError {}
-/// See [`ProvisionedConcurrencyConfigNotFoundError`](crate::error::ProvisionedConcurrencyConfigNotFoundError)
-pub mod provisioned_concurrency_config_not_found_error {
-    /// A builder for [`ProvisionedConcurrencyConfigNotFoundError`](crate::error::ProvisionedConcurrencyConfigNotFoundError)
+impl std::error::Error for ProvisionedConcurrencyConfigNotFoundException {}
+/// See [`ProvisionedConcurrencyConfigNotFoundException`](crate::error::ProvisionedConcurrencyConfigNotFoundException)
+pub mod provisioned_concurrency_config_not_found_exception {
+    /// A builder for [`ProvisionedConcurrencyConfigNotFoundException`](crate::error::ProvisionedConcurrencyConfigNotFoundException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -9229,63 +9361,56 @@ pub mod provisioned_concurrency_config_not_found_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`ProvisionedConcurrencyConfigNotFoundError`](crate::error::ProvisionedConcurrencyConfigNotFoundError)
-        pub fn build(self) -> crate::error::ProvisionedConcurrencyConfigNotFoundError {
-            crate::error::ProvisionedConcurrencyConfigNotFoundError {
+        /// Consumes the builder and constructs a [`ProvisionedConcurrencyConfigNotFoundException`](crate::error::ProvisionedConcurrencyConfigNotFoundException)
+        pub fn build(self) -> crate::error::ProvisionedConcurrencyConfigNotFoundException {
+            crate::error::ProvisionedConcurrencyConfigNotFoundException {
                 r#type: self.r#type,
                 message: self.message,
             }
         }
     }
 }
-impl ProvisionedConcurrencyConfigNotFoundError {
-    /// Creates a new builder-style object to manufacture [`ProvisionedConcurrencyConfigNotFoundError`](crate::error::ProvisionedConcurrencyConfigNotFoundError)
-    pub fn builder() -> crate::error::provisioned_concurrency_config_not_found_error::Builder {
-        crate::error::provisioned_concurrency_config_not_found_error::Builder::default()
+impl ProvisionedConcurrencyConfigNotFoundException {
+    /// Creates a new builder-style object to manufacture [`ProvisionedConcurrencyConfigNotFoundException`](crate::error::ProvisionedConcurrencyConfigNotFoundException)
+    pub fn builder() -> crate::error::provisioned_concurrency_config_not_found_exception::Builder {
+        crate::error::provisioned_concurrency_config_not_found_exception::Builder::default()
     }
 }
 
 /// <p>The permissions policy for the resource is too large. <a href="https://docs.aws.amazon.com/lambda/latest/dg/limits.html">Learn more</a>
 /// </p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
-pub struct PolicyLengthExceededError {
-    #[serde(rename = "Type")]
-    #[serde(default)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct PolicyLengthExceededException {
     pub r#type: std::option::Option<std::string::String>,
-    #[serde(rename = "message")]
-    #[serde(default)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for PolicyLengthExceededError {
+impl std::fmt::Debug for PolicyLengthExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PolicyLengthExceededError");
+        let mut formatter = f.debug_struct("PolicyLengthExceededException");
         formatter.field("r#type", &self.r#type);
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl PolicyLengthExceededError {
+impl PolicyLengthExceededException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for PolicyLengthExceededError {
+impl std::fmt::Display for PolicyLengthExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(
-            f,
-            "PolicyLengthExceededError [PolicyLengthExceededException]"
-        )?;
+        write!(f, "PolicyLengthExceededException")?;
         if let Some(inner_34) = &self.message {
             write!(f, ": {}", inner_34)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for PolicyLengthExceededError {}
-/// See [`PolicyLengthExceededError`](crate::error::PolicyLengthExceededError)
-pub mod policy_length_exceeded_error {
-    /// A builder for [`PolicyLengthExceededError`](crate::error::PolicyLengthExceededError)
+impl std::error::Error for PolicyLengthExceededException {}
+/// See [`PolicyLengthExceededException`](crate::error::PolicyLengthExceededException)
+pub mod policy_length_exceeded_exception {
+    /// A builder for [`PolicyLengthExceededException`](crate::error::PolicyLengthExceededException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -9309,18 +9434,18 @@ pub mod policy_length_exceeded_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`PolicyLengthExceededError`](crate::error::PolicyLengthExceededError)
-        pub fn build(self) -> crate::error::PolicyLengthExceededError {
-            crate::error::PolicyLengthExceededError {
+        /// Consumes the builder and constructs a [`PolicyLengthExceededException`](crate::error::PolicyLengthExceededException)
+        pub fn build(self) -> crate::error::PolicyLengthExceededException {
+            crate::error::PolicyLengthExceededException {
                 r#type: self.r#type,
                 message: self.message,
             }
         }
     }
 }
-impl PolicyLengthExceededError {
-    /// Creates a new builder-style object to manufacture [`PolicyLengthExceededError`](crate::error::PolicyLengthExceededError)
-    pub fn builder() -> crate::error::policy_length_exceeded_error::Builder {
-        crate::error::policy_length_exceeded_error::Builder::default()
+impl PolicyLengthExceededException {
+    /// Creates a new builder-style object to manufacture [`PolicyLengthExceededException`](crate::error::PolicyLengthExceededException)
+    pub fn builder() -> crate::error::policy_length_exceeded_exception::Builder {
+        crate::error::policy_length_exceeded_exception::Builder::default()
     }
 }

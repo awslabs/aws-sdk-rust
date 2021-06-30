@@ -317,23 +317,23 @@ impl Subscription {
 /// the <i>Amazon SNS Developer Guide</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct SMSSandboxPhoneNumber {
+pub struct SmsSandboxPhoneNumber {
     /// <p>The destination phone number.</p>
     pub phone_number: std::option::Option<std::string::String>,
     /// <p>The destination phone number's verification status.</p>
     pub status: std::option::Option<crate::model::SmsSandboxPhoneNumberVerificationStatus>,
 }
-impl std::fmt::Debug for SMSSandboxPhoneNumber {
+impl std::fmt::Debug for SmsSandboxPhoneNumber {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SMSSandboxPhoneNumber");
+        let mut formatter = f.debug_struct("SmsSandboxPhoneNumber");
         formatter.field("phone_number", &self.phone_number);
         formatter.field("status", &self.status);
         formatter.finish()
     }
 }
-/// See [`SMSSandboxPhoneNumber`](crate::model::SMSSandboxPhoneNumber)
+/// See [`SmsSandboxPhoneNumber`](crate::model::SmsSandboxPhoneNumber)
 pub mod sms_sandbox_phone_number {
-    /// A builder for [`SMSSandboxPhoneNumber`](crate::model::SMSSandboxPhoneNumber)
+    /// A builder for [`SmsSandboxPhoneNumber`](crate::model::SmsSandboxPhoneNumber)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -366,17 +366,17 @@ pub mod sms_sandbox_phone_number {
             self.status = input;
             self
         }
-        /// Consumes the builder and constructs a [`SMSSandboxPhoneNumber`](crate::model::SMSSandboxPhoneNumber)
-        pub fn build(self) -> crate::model::SMSSandboxPhoneNumber {
-            crate::model::SMSSandboxPhoneNumber {
+        /// Consumes the builder and constructs a [`SmsSandboxPhoneNumber`](crate::model::SmsSandboxPhoneNumber)
+        pub fn build(self) -> crate::model::SmsSandboxPhoneNumber {
+            crate::model::SmsSandboxPhoneNumber {
                 phone_number: self.phone_number,
                 status: self.status,
             }
         }
     }
 }
-impl SMSSandboxPhoneNumber {
-    /// Creates a new builder-style object to manufacture [`SMSSandboxPhoneNumber`](crate::model::SMSSandboxPhoneNumber)
+impl SmsSandboxPhoneNumber {
+    /// Creates a new builder-style object to manufacture [`SmsSandboxPhoneNumber`](crate::model::SmsSandboxPhoneNumber)
     pub fn builder() -> crate::model::sms_sandbox_phone_number::Builder {
         crate::model::sms_sandbox_phone_number::Builder::default()
     }
@@ -414,7 +414,7 @@ impl std::convert::From<&str> for SmsSandboxPhoneNumberVerificationStatus {
 impl std::str::FromStr for SmsSandboxPhoneNumberVerificationStatus {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(SmsSandboxPhoneNumberVerificationStatus::from(s))
     }
 }
@@ -430,15 +430,6 @@ impl SmsSandboxPhoneNumberVerificationStatus {
 impl AsRef<str> for SmsSandboxPhoneNumberVerificationStatus {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for SmsSandboxPhoneNumberVerificationStatus {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -681,7 +672,7 @@ impl std::convert::From<&str> for NumberCapability {
 impl std::str::FromStr for NumberCapability {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(NumberCapability::from(s))
     }
 }
@@ -698,15 +689,6 @@ impl NumberCapability {
 impl AsRef<str> for NumberCapability {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for NumberCapability {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -744,7 +726,7 @@ impl std::convert::From<&str> for RouteType {
 impl std::str::FromStr for RouteType {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(RouteType::from(s))
     }
 }
@@ -761,15 +743,6 @@ impl RouteType {
 impl AsRef<str> for RouteType {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for RouteType {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -898,7 +871,7 @@ impl std::convert::From<&str> for LanguageCodeString {
 impl std::str::FromStr for LanguageCodeString {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(LanguageCodeString::from(s))
     }
 }
@@ -925,14 +898,5 @@ impl LanguageCodeString {
 impl AsRef<str> for LanguageCodeString {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for LanguageCodeString {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }

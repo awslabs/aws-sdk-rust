@@ -8,7 +8,7 @@ pub struct AddClientIDToOpenIDConnectProvider {
     _private: (),
 }
 impl AddClientIDToOpenIDConnectProvider {
-    /// Creates a new builder-style object to manufacture [`AddClientIDToOpenIDConnectProviderInput`](crate::input::AddClientIDToOpenIDConnectProviderInput)
+    /// Creates a new builder-style object to manufacture [`AddClientIdToOpenIdConnectProviderInput`](crate::input::AddClientIdToOpenIdConnectProviderInput)
     pub fn builder() -> crate::input::add_client_id_to_open_id_connect_provider_input::Builder {
         crate::input::add_client_id_to_open_id_connect_provider_input::Builder::default()
     }
@@ -18,7 +18,7 @@ impl AddClientIDToOpenIDConnectProvider {
 }
 impl smithy_http::response::ParseStrictResponse for AddClientIDToOpenIDConnectProvider {
     type Output = std::result::Result<
-        crate::output::AddClientIDToOpenIDConnectProviderOutput,
+        crate::output::AddClientIdToOpenIdConnectProviderOutput,
         crate::error::AddClientIDToOpenIDConnectProviderError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
@@ -446,7 +446,7 @@ pub struct CreateOpenIDConnectProvider {
     _private: (),
 }
 impl CreateOpenIDConnectProvider {
-    /// Creates a new builder-style object to manufacture [`CreateOpenIDConnectProviderInput`](crate::input::CreateOpenIDConnectProviderInput)
+    /// Creates a new builder-style object to manufacture [`CreateOpenIdConnectProviderInput`](crate::input::CreateOpenIdConnectProviderInput)
     pub fn builder() -> crate::input::create_open_id_connect_provider_input::Builder {
         crate::input::create_open_id_connect_provider_input::Builder::default()
     }
@@ -456,7 +456,7 @@ impl CreateOpenIDConnectProvider {
 }
 impl smithy_http::response::ParseStrictResponse for CreateOpenIDConnectProvider {
     type Output = std::result::Result<
-        crate::output::CreateOpenIDConnectProviderOutput,
+        crate::output::CreateOpenIdConnectProviderOutput,
         crate::error::CreateOpenIDConnectProviderError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
@@ -592,7 +592,7 @@ pub struct CreateSAMLProvider {
     _private: (),
 }
 impl CreateSAMLProvider {
-    /// Creates a new builder-style object to manufacture [`CreateSAMLProviderInput`](crate::input::CreateSAMLProviderInput)
+    /// Creates a new builder-style object to manufacture [`CreateSamlProviderInput`](crate::input::CreateSamlProviderInput)
     pub fn builder() -> crate::input::create_saml_provider_input::Builder {
         crate::input::create_saml_provider_input::Builder::default()
     }
@@ -602,7 +602,7 @@ impl CreateSAMLProvider {
 }
 impl smithy_http::response::ParseStrictResponse for CreateSAMLProvider {
     type Output = std::result::Result<
-        crate::output::CreateSAMLProviderOutput,
+        crate::output::CreateSamlProviderOutput,
         crate::error::CreateSAMLProviderError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
@@ -734,7 +734,7 @@ pub struct CreateVirtualMFADevice {
     _private: (),
 }
 impl CreateVirtualMFADevice {
-    /// Creates a new builder-style object to manufacture [`CreateVirtualMFADeviceInput`](crate::input::CreateVirtualMFADeviceInput)
+    /// Creates a new builder-style object to manufacture [`CreateVirtualMfaDeviceInput`](crate::input::CreateVirtualMfaDeviceInput)
     pub fn builder() -> crate::input::create_virtual_mfa_device_input::Builder {
         crate::input::create_virtual_mfa_device_input::Builder::default()
     }
@@ -744,7 +744,7 @@ impl CreateVirtualMFADevice {
 }
 impl smithy_http::response::ParseStrictResponse for CreateVirtualMFADevice {
     type Output = std::result::Result<
-        crate::output::CreateVirtualMFADeviceOutput,
+        crate::output::CreateVirtualMfaDeviceOutput,
         crate::error::CreateVirtualMFADeviceError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
@@ -766,7 +766,7 @@ pub struct DeactivateMFADevice {
     _private: (),
 }
 impl DeactivateMFADevice {
-    /// Creates a new builder-style object to manufacture [`DeactivateMFADeviceInput`](crate::input::DeactivateMFADeviceInput)
+    /// Creates a new builder-style object to manufacture [`DeactivateMfaDeviceInput`](crate::input::DeactivateMfaDeviceInput)
     pub fn builder() -> crate::input::deactivate_mfa_device_input::Builder {
         crate::input::deactivate_mfa_device_input::Builder::default()
     }
@@ -776,7 +776,7 @@ impl DeactivateMFADevice {
 }
 impl smithy_http::response::ParseStrictResponse for DeactivateMFADevice {
     type Output = std::result::Result<
-        crate::output::DeactivateMFADeviceOutput,
+        crate::output::DeactivateMfaDeviceOutput,
         crate::error::DeactivateMFADeviceError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
@@ -1026,7 +1026,7 @@ pub struct DeleteOpenIDConnectProvider {
     _private: (),
 }
 impl DeleteOpenIDConnectProvider {
-    /// Creates a new builder-style object to manufacture [`DeleteOpenIDConnectProviderInput`](crate::input::DeleteOpenIDConnectProviderInput)
+    /// Creates a new builder-style object to manufacture [`DeleteOpenIdConnectProviderInput`](crate::input::DeleteOpenIdConnectProviderInput)
     pub fn builder() -> crate::input::delete_open_id_connect_provider_input::Builder {
         crate::input::delete_open_id_connect_provider_input::Builder::default()
     }
@@ -1036,7 +1036,7 @@ impl DeleteOpenIDConnectProvider {
 }
 impl smithy_http::response::ParseStrictResponse for DeleteOpenIDConnectProvider {
     type Output = std::result::Result<
-        crate::output::DeleteOpenIDConnectProviderOutput,
+        crate::output::DeleteOpenIdConnectProviderOutput,
         crate::error::DeleteOpenIDConnectProviderError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
@@ -1241,7 +1241,7 @@ pub struct DeleteSAMLProvider {
     _private: (),
 }
 impl DeleteSAMLProvider {
-    /// Creates a new builder-style object to manufacture [`DeleteSAMLProviderInput`](crate::input::DeleteSAMLProviderInput)
+    /// Creates a new builder-style object to manufacture [`DeleteSamlProviderInput`](crate::input::DeleteSamlProviderInput)
     pub fn builder() -> crate::input::delete_saml_provider_input::Builder {
         crate::input::delete_saml_provider_input::Builder::default()
     }
@@ -1251,7 +1251,7 @@ impl DeleteSAMLProvider {
 }
 impl smithy_http::response::ParseStrictResponse for DeleteSAMLProvider {
     type Output = std::result::Result<
-        crate::output::DeleteSAMLProviderOutput,
+        crate::output::DeleteSamlProviderOutput,
         crate::error::DeleteSAMLProviderError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
@@ -1419,7 +1419,7 @@ pub struct DeleteSSHPublicKey {
     _private: (),
 }
 impl DeleteSSHPublicKey {
-    /// Creates a new builder-style object to manufacture [`DeleteSSHPublicKeyInput`](crate::input::DeleteSSHPublicKeyInput)
+    /// Creates a new builder-style object to manufacture [`DeleteSshPublicKeyInput`](crate::input::DeleteSshPublicKeyInput)
     pub fn builder() -> crate::input::delete_ssh_public_key_input::Builder {
         crate::input::delete_ssh_public_key_input::Builder::default()
     }
@@ -1429,7 +1429,7 @@ impl DeleteSSHPublicKey {
 }
 impl smithy_http::response::ParseStrictResponse for DeleteSSHPublicKey {
     type Output = std::result::Result<
-        crate::output::DeleteSSHPublicKeyOutput,
+        crate::output::DeleteSshPublicKeyOutput,
         crate::error::DeleteSSHPublicKeyError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
@@ -1575,7 +1575,7 @@ pub struct DeleteVirtualMFADevice {
     _private: (),
 }
 impl DeleteVirtualMFADevice {
-    /// Creates a new builder-style object to manufacture [`DeleteVirtualMFADeviceInput`](crate::input::DeleteVirtualMFADeviceInput)
+    /// Creates a new builder-style object to manufacture [`DeleteVirtualMfaDeviceInput`](crate::input::DeleteVirtualMfaDeviceInput)
     pub fn builder() -> crate::input::delete_virtual_mfa_device_input::Builder {
         crate::input::delete_virtual_mfa_device_input::Builder::default()
     }
@@ -1585,7 +1585,7 @@ impl DeleteVirtualMFADevice {
 }
 impl smithy_http::response::ParseStrictResponse for DeleteVirtualMFADevice {
     type Output = std::result::Result<
-        crate::output::DeleteVirtualMFADeviceOutput,
+        crate::output::DeleteVirtualMfaDeviceOutput,
         crate::error::DeleteVirtualMFADeviceError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
@@ -1701,7 +1701,7 @@ pub struct EnableMFADevice {
     _private: (),
 }
 impl EnableMFADevice {
-    /// Creates a new builder-style object to manufacture [`EnableMFADeviceInput`](crate::input::EnableMFADeviceInput)
+    /// Creates a new builder-style object to manufacture [`EnableMfaDeviceInput`](crate::input::EnableMfaDeviceInput)
     pub fn builder() -> crate::input::enable_mfa_device_input::Builder {
         crate::input::enable_mfa_device_input::Builder::default()
     }
@@ -1711,7 +1711,7 @@ impl EnableMFADevice {
 }
 impl smithy_http::response::ParseStrictResponse for EnableMFADevice {
     type Output = std::result::Result<
-        crate::output::EnableMFADeviceOutput,
+        crate::output::EnableMfaDeviceOutput,
         crate::error::EnableMFADeviceError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
@@ -2368,7 +2368,7 @@ pub struct GetOpenIDConnectProvider {
     _private: (),
 }
 impl GetOpenIDConnectProvider {
-    /// Creates a new builder-style object to manufacture [`GetOpenIDConnectProviderInput`](crate::input::GetOpenIDConnectProviderInput)
+    /// Creates a new builder-style object to manufacture [`GetOpenIdConnectProviderInput`](crate::input::GetOpenIdConnectProviderInput)
     pub fn builder() -> crate::input::get_open_id_connect_provider_input::Builder {
         crate::input::get_open_id_connect_provider_input::Builder::default()
     }
@@ -2378,7 +2378,7 @@ impl GetOpenIDConnectProvider {
 }
 impl smithy_http::response::ParseStrictResponse for GetOpenIDConnectProvider {
     type Output = std::result::Result<
-        crate::output::GetOpenIDConnectProviderOutput,
+        crate::output::GetOpenIdConnectProviderOutput,
         crate::error::GetOpenIDConnectProviderError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
@@ -2598,7 +2598,7 @@ pub struct GetSAMLProvider {
     _private: (),
 }
 impl GetSAMLProvider {
-    /// Creates a new builder-style object to manufacture [`GetSAMLProviderInput`](crate::input::GetSAMLProviderInput)
+    /// Creates a new builder-style object to manufacture [`GetSamlProviderInput`](crate::input::GetSamlProviderInput)
     pub fn builder() -> crate::input::get_saml_provider_input::Builder {
         crate::input::get_saml_provider_input::Builder::default()
     }
@@ -2608,7 +2608,7 @@ impl GetSAMLProvider {
 }
 impl smithy_http::response::ParseStrictResponse for GetSAMLProvider {
     type Output = std::result::Result<
-        crate::output::GetSAMLProviderOutput,
+        crate::output::GetSamlProviderOutput,
         crate::error::GetSAMLProviderError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
@@ -2831,7 +2831,7 @@ pub struct GetSSHPublicKey {
     _private: (),
 }
 impl GetSSHPublicKey {
-    /// Creates a new builder-style object to manufacture [`GetSSHPublicKeyInput`](crate::input::GetSSHPublicKeyInput)
+    /// Creates a new builder-style object to manufacture [`GetSshPublicKeyInput`](crate::input::GetSshPublicKeyInput)
     pub fn builder() -> crate::input::get_ssh_public_key_input::Builder {
         crate::input::get_ssh_public_key_input::Builder::default()
     }
@@ -2841,7 +2841,7 @@ impl GetSSHPublicKey {
 }
 impl smithy_http::response::ParseStrictResponse for GetSSHPublicKey {
     type Output = std::result::Result<
-        crate::output::GetSSHPublicKeyOutput,
+        crate::output::GetSshPublicKeyOutput,
         crate::error::GetSSHPublicKeyError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
@@ -3340,7 +3340,7 @@ pub struct ListMFADevices {
     _private: (),
 }
 impl ListMFADevices {
-    /// Creates a new builder-style object to manufacture [`ListMFADevicesInput`](crate::input::ListMFADevicesInput)
+    /// Creates a new builder-style object to manufacture [`ListMfaDevicesInput`](crate::input::ListMfaDevicesInput)
     pub fn builder() -> crate::input::list_mfa_devices_input::Builder {
         crate::input::list_mfa_devices_input::Builder::default()
     }
@@ -3350,7 +3350,7 @@ impl ListMFADevices {
 }
 impl smithy_http::response::ParseStrictResponse for ListMFADevices {
     type Output =
-        std::result::Result<crate::output::ListMFADevicesOutput, crate::error::ListMFADevicesError>;
+        std::result::Result<crate::output::ListMfaDevicesOutput, crate::error::ListMFADevicesError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_list_mfa_devices_error(response)
@@ -3368,7 +3368,7 @@ pub struct ListMFADeviceTags {
     _private: (),
 }
 impl ListMFADeviceTags {
-    /// Creates a new builder-style object to manufacture [`ListMFADeviceTagsInput`](crate::input::ListMFADeviceTagsInput)
+    /// Creates a new builder-style object to manufacture [`ListMfaDeviceTagsInput`](crate::input::ListMfaDeviceTagsInput)
     pub fn builder() -> crate::input::list_mfa_device_tags_input::Builder {
         crate::input::list_mfa_device_tags_input::Builder::default()
     }
@@ -3378,7 +3378,7 @@ impl ListMFADeviceTags {
 }
 impl smithy_http::response::ParseStrictResponse for ListMFADeviceTags {
     type Output = std::result::Result<
-        crate::output::ListMFADeviceTagsOutput,
+        crate::output::ListMfaDeviceTagsOutput,
         crate::error::ListMFADeviceTagsError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
@@ -3401,7 +3401,7 @@ pub struct ListOpenIDConnectProviders {
     _private: (),
 }
 impl ListOpenIDConnectProviders {
-    /// Creates a new builder-style object to manufacture [`ListOpenIDConnectProvidersInput`](crate::input::ListOpenIDConnectProvidersInput)
+    /// Creates a new builder-style object to manufacture [`ListOpenIdConnectProvidersInput`](crate::input::ListOpenIdConnectProvidersInput)
     pub fn builder() -> crate::input::list_open_id_connect_providers_input::Builder {
         crate::input::list_open_id_connect_providers_input::Builder::default()
     }
@@ -3411,7 +3411,7 @@ impl ListOpenIDConnectProviders {
 }
 impl smithy_http::response::ParseStrictResponse for ListOpenIDConnectProviders {
     type Output = std::result::Result<
-        crate::output::ListOpenIDConnectProvidersOutput,
+        crate::output::ListOpenIdConnectProvidersOutput,
         crate::error::ListOpenIDConnectProvidersError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
@@ -3433,7 +3433,7 @@ pub struct ListOpenIDConnectProviderTags {
     _private: (),
 }
 impl ListOpenIDConnectProviderTags {
-    /// Creates a new builder-style object to manufacture [`ListOpenIDConnectProviderTagsInput`](crate::input::ListOpenIDConnectProviderTagsInput)
+    /// Creates a new builder-style object to manufacture [`ListOpenIdConnectProviderTagsInput`](crate::input::ListOpenIdConnectProviderTagsInput)
     pub fn builder() -> crate::input::list_open_id_connect_provider_tags_input::Builder {
         crate::input::list_open_id_connect_provider_tags_input::Builder::default()
     }
@@ -3443,7 +3443,7 @@ impl ListOpenIDConnectProviderTags {
 }
 impl smithy_http::response::ParseStrictResponse for ListOpenIDConnectProviderTags {
     type Output = std::result::Result<
-        crate::output::ListOpenIDConnectProviderTagsOutput,
+        crate::output::ListOpenIdConnectProviderTagsOutput,
         crate::error::ListOpenIDConnectProviderTagsError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
@@ -3730,7 +3730,7 @@ pub struct ListSAMLProviders {
     _private: (),
 }
 impl ListSAMLProviders {
-    /// Creates a new builder-style object to manufacture [`ListSAMLProvidersInput`](crate::input::ListSAMLProvidersInput)
+    /// Creates a new builder-style object to manufacture [`ListSamlProvidersInput`](crate::input::ListSamlProvidersInput)
     pub fn builder() -> crate::input::list_saml_providers_input::Builder {
         crate::input::list_saml_providers_input::Builder::default()
     }
@@ -3740,7 +3740,7 @@ impl ListSAMLProviders {
 }
 impl smithy_http::response::ParseStrictResponse for ListSAMLProviders {
     type Output = std::result::Result<
-        crate::output::ListSAMLProvidersOutput,
+        crate::output::ListSamlProvidersOutput,
         crate::error::ListSAMLProvidersError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
@@ -3762,7 +3762,7 @@ pub struct ListSAMLProviderTags {
     _private: (),
 }
 impl ListSAMLProviderTags {
-    /// Creates a new builder-style object to manufacture [`ListSAMLProviderTagsInput`](crate::input::ListSAMLProviderTagsInput)
+    /// Creates a new builder-style object to manufacture [`ListSamlProviderTagsInput`](crate::input::ListSamlProviderTagsInput)
     pub fn builder() -> crate::input::list_saml_provider_tags_input::Builder {
         crate::input::list_saml_provider_tags_input::Builder::default()
     }
@@ -3772,7 +3772,7 @@ impl ListSAMLProviderTags {
 }
 impl smithy_http::response::ParseStrictResponse for ListSAMLProviderTags {
     type Output = std::result::Result<
-        crate::output::ListSAMLProviderTagsOutput,
+        crate::output::ListSamlProviderTagsOutput,
         crate::error::ListSAMLProviderTagsError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
@@ -3943,7 +3943,7 @@ pub struct ListSSHPublicKeys {
     _private: (),
 }
 impl ListSSHPublicKeys {
-    /// Creates a new builder-style object to manufacture [`ListSSHPublicKeysInput`](crate::input::ListSSHPublicKeysInput)
+    /// Creates a new builder-style object to manufacture [`ListSshPublicKeysInput`](crate::input::ListSshPublicKeysInput)
     pub fn builder() -> crate::input::list_ssh_public_keys_input::Builder {
         crate::input::list_ssh_public_keys_input::Builder::default()
     }
@@ -3953,7 +3953,7 @@ impl ListSSHPublicKeys {
 }
 impl smithy_http::response::ParseStrictResponse for ListSSHPublicKeys {
     type Output = std::result::Result<
-        crate::output::ListSSHPublicKeysOutput,
+        crate::output::ListSshPublicKeysOutput,
         crate::error::ListSSHPublicKeysError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
@@ -4076,7 +4076,7 @@ pub struct ListVirtualMFADevices {
     _private: (),
 }
 impl ListVirtualMFADevices {
-    /// Creates a new builder-style object to manufacture [`ListVirtualMFADevicesInput`](crate::input::ListVirtualMFADevicesInput)
+    /// Creates a new builder-style object to manufacture [`ListVirtualMfaDevicesInput`](crate::input::ListVirtualMfaDevicesInput)
     pub fn builder() -> crate::input::list_virtual_mfa_devices_input::Builder {
         crate::input::list_virtual_mfa_devices_input::Builder::default()
     }
@@ -4086,7 +4086,7 @@ impl ListVirtualMFADevices {
 }
 impl smithy_http::response::ParseStrictResponse for ListVirtualMFADevices {
     type Output = std::result::Result<
-        crate::output::ListVirtualMFADevicesOutput,
+        crate::output::ListVirtualMfaDevicesOutput,
         crate::error::ListVirtualMFADevicesError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
@@ -4310,7 +4310,7 @@ pub struct RemoveClientIDFromOpenIDConnectProvider {
     _private: (),
 }
 impl RemoveClientIDFromOpenIDConnectProvider {
-    /// Creates a new builder-style object to manufacture [`RemoveClientIDFromOpenIDConnectProviderInput`](crate::input::RemoveClientIDFromOpenIDConnectProviderInput)
+    /// Creates a new builder-style object to manufacture [`RemoveClientIdFromOpenIdConnectProviderInput`](crate::input::RemoveClientIdFromOpenIdConnectProviderInput)
     pub fn builder() -> crate::input::remove_client_id_from_open_id_connect_provider_input::Builder
     {
         crate::input::remove_client_id_from_open_id_connect_provider_input::Builder::default()
@@ -4321,7 +4321,7 @@ impl RemoveClientIDFromOpenIDConnectProvider {
 }
 impl smithy_http::response::ParseStrictResponse for RemoveClientIDFromOpenIDConnectProvider {
     type Output = std::result::Result<
-        crate::output::RemoveClientIDFromOpenIDConnectProviderOutput,
+        crate::output::RemoveClientIdFromOpenIdConnectProviderOutput,
         crate::error::RemoveClientIDFromOpenIDConnectProviderError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
@@ -4442,7 +4442,7 @@ pub struct ResyncMFADevice {
     _private: (),
 }
 impl ResyncMFADevice {
-    /// Creates a new builder-style object to manufacture [`ResyncMFADeviceInput`](crate::input::ResyncMFADeviceInput)
+    /// Creates a new builder-style object to manufacture [`ResyncMfaDeviceInput`](crate::input::ResyncMfaDeviceInput)
     pub fn builder() -> crate::input::resync_mfa_device_input::Builder {
         crate::input::resync_mfa_device_input::Builder::default()
     }
@@ -4452,7 +4452,7 @@ impl ResyncMFADevice {
 }
 impl smithy_http::response::ParseStrictResponse for ResyncMFADevice {
     type Output = std::result::Result<
-        crate::output::ResyncMFADeviceOutput,
+        crate::output::ResyncMfaDeviceOutput,
         crate::error::ResyncMFADeviceError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
@@ -4746,7 +4746,7 @@ pub struct TagMFADevice {
     _private: (),
 }
 impl TagMFADevice {
-    /// Creates a new builder-style object to manufacture [`TagMFADeviceInput`](crate::input::TagMFADeviceInput)
+    /// Creates a new builder-style object to manufacture [`TagMfaDeviceInput`](crate::input::TagMfaDeviceInput)
     pub fn builder() -> crate::input::tag_mfa_device_input::Builder {
         crate::input::tag_mfa_device_input::Builder::default()
     }
@@ -4756,7 +4756,7 @@ impl TagMFADevice {
 }
 impl smithy_http::response::ParseStrictResponse for TagMFADevice {
     type Output =
-        std::result::Result<crate::output::TagMFADeviceOutput, crate::error::TagMFADeviceError>;
+        std::result::Result<crate::output::TagMfaDeviceOutput, crate::error::TagMFADeviceError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_tag_mfa_device_error(response)
@@ -4809,7 +4809,7 @@ pub struct TagOpenIDConnectProvider {
     _private: (),
 }
 impl TagOpenIDConnectProvider {
-    /// Creates a new builder-style object to manufacture [`TagOpenIDConnectProviderInput`](crate::input::TagOpenIDConnectProviderInput)
+    /// Creates a new builder-style object to manufacture [`TagOpenIdConnectProviderInput`](crate::input::TagOpenIdConnectProviderInput)
     pub fn builder() -> crate::input::tag_open_id_connect_provider_input::Builder {
         crate::input::tag_open_id_connect_provider_input::Builder::default()
     }
@@ -4819,7 +4819,7 @@ impl TagOpenIDConnectProvider {
 }
 impl smithy_http::response::ParseStrictResponse for TagOpenIDConnectProvider {
     type Output = std::result::Result<
-        crate::output::TagOpenIDConnectProviderOutput,
+        crate::output::TagOpenIdConnectProviderOutput,
         crate::error::TagOpenIDConnectProviderError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
@@ -5003,7 +5003,7 @@ pub struct TagSAMLProvider {
     _private: (),
 }
 impl TagSAMLProvider {
-    /// Creates a new builder-style object to manufacture [`TagSAMLProviderInput`](crate::input::TagSAMLProviderInput)
+    /// Creates a new builder-style object to manufacture [`TagSamlProviderInput`](crate::input::TagSamlProviderInput)
     pub fn builder() -> crate::input::tag_saml_provider_input::Builder {
         crate::input::tag_saml_provider_input::Builder::default()
     }
@@ -5013,7 +5013,7 @@ impl TagSAMLProvider {
 }
 impl smithy_http::response::ParseStrictResponse for TagSAMLProvider {
     type Output = std::result::Result<
-        crate::output::TagSAMLProviderOutput,
+        crate::output::TagSamlProviderOutput,
         crate::error::TagSAMLProviderError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
@@ -5205,7 +5205,7 @@ pub struct UntagMFADevice {
     _private: (),
 }
 impl UntagMFADevice {
-    /// Creates a new builder-style object to manufacture [`UntagMFADeviceInput`](crate::input::UntagMFADeviceInput)
+    /// Creates a new builder-style object to manufacture [`UntagMfaDeviceInput`](crate::input::UntagMfaDeviceInput)
     pub fn builder() -> crate::input::untag_mfa_device_input::Builder {
         crate::input::untag_mfa_device_input::Builder::default()
     }
@@ -5215,7 +5215,7 @@ impl UntagMFADevice {
 }
 impl smithy_http::response::ParseStrictResponse for UntagMFADevice {
     type Output =
-        std::result::Result<crate::output::UntagMFADeviceOutput, crate::error::UntagMFADeviceError>;
+        std::result::Result<crate::output::UntagMfaDeviceOutput, crate::error::UntagMFADeviceError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_untag_mfa_device_error(response)
@@ -5234,7 +5234,7 @@ pub struct UntagOpenIDConnectProvider {
     _private: (),
 }
 impl UntagOpenIDConnectProvider {
-    /// Creates a new builder-style object to manufacture [`UntagOpenIDConnectProviderInput`](crate::input::UntagOpenIDConnectProviderInput)
+    /// Creates a new builder-style object to manufacture [`UntagOpenIdConnectProviderInput`](crate::input::UntagOpenIdConnectProviderInput)
     pub fn builder() -> crate::input::untag_open_id_connect_provider_input::Builder {
         crate::input::untag_open_id_connect_provider_input::Builder::default()
     }
@@ -5244,7 +5244,7 @@ impl UntagOpenIDConnectProvider {
 }
 impl smithy_http::response::ParseStrictResponse for UntagOpenIDConnectProvider {
     type Output = std::result::Result<
-        crate::output::UntagOpenIDConnectProviderOutput,
+        crate::output::UntagOpenIdConnectProviderOutput,
         crate::error::UntagOpenIDConnectProviderError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
@@ -5318,7 +5318,7 @@ pub struct UntagSAMLProvider {
     _private: (),
 }
 impl UntagSAMLProvider {
-    /// Creates a new builder-style object to manufacture [`UntagSAMLProviderInput`](crate::input::UntagSAMLProviderInput)
+    /// Creates a new builder-style object to manufacture [`UntagSamlProviderInput`](crate::input::UntagSamlProviderInput)
     pub fn builder() -> crate::input::untag_saml_provider_input::Builder {
         crate::input::untag_saml_provider_input::Builder::default()
     }
@@ -5328,7 +5328,7 @@ impl UntagSAMLProvider {
 }
 impl smithy_http::response::ParseStrictResponse for UntagSAMLProvider {
     type Output = std::result::Result<
-        crate::output::UntagSAMLProviderOutput,
+        crate::output::UntagSamlProviderOutput,
         crate::error::UntagSAMLProviderError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
@@ -5608,7 +5608,7 @@ pub struct UpdateOpenIDConnectProviderThumbprint {
     _private: (),
 }
 impl UpdateOpenIDConnectProviderThumbprint {
-    /// Creates a new builder-style object to manufacture [`UpdateOpenIDConnectProviderThumbprintInput`](crate::input::UpdateOpenIDConnectProviderThumbprintInput)
+    /// Creates a new builder-style object to manufacture [`UpdateOpenIdConnectProviderThumbprintInput`](crate::input::UpdateOpenIdConnectProviderThumbprintInput)
     pub fn builder() -> crate::input::update_open_id_connect_provider_thumbprint_input::Builder {
         crate::input::update_open_id_connect_provider_thumbprint_input::Builder::default()
     }
@@ -5618,7 +5618,7 @@ impl UpdateOpenIDConnectProviderThumbprint {
 }
 impl smithy_http::response::ParseStrictResponse for UpdateOpenIDConnectProviderThumbprint {
     type Output = std::result::Result<
-        crate::output::UpdateOpenIDConnectProviderThumbprintOutput,
+        crate::output::UpdateOpenIdConnectProviderThumbprintOutput,
         crate::error::UpdateOpenIDConnectProviderThumbprintError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
@@ -5697,7 +5697,7 @@ pub struct UpdateSAMLProvider {
     _private: (),
 }
 impl UpdateSAMLProvider {
-    /// Creates a new builder-style object to manufacture [`UpdateSAMLProviderInput`](crate::input::UpdateSAMLProviderInput)
+    /// Creates a new builder-style object to manufacture [`UpdateSamlProviderInput`](crate::input::UpdateSamlProviderInput)
     pub fn builder() -> crate::input::update_saml_provider_input::Builder {
         crate::input::update_saml_provider_input::Builder::default()
     }
@@ -5707,7 +5707,7 @@ impl UpdateSAMLProvider {
 }
 impl smithy_http::response::ParseStrictResponse for UpdateSAMLProvider {
     type Output = std::result::Result<
-        crate::output::UpdateSAMLProviderOutput,
+        crate::output::UpdateSamlProviderOutput,
         crate::error::UpdateSAMLProviderError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
@@ -5844,7 +5844,7 @@ pub struct UpdateSSHPublicKey {
     _private: (),
 }
 impl UpdateSSHPublicKey {
-    /// Creates a new builder-style object to manufacture [`UpdateSSHPublicKeyInput`](crate::input::UpdateSSHPublicKeyInput)
+    /// Creates a new builder-style object to manufacture [`UpdateSshPublicKeyInput`](crate::input::UpdateSshPublicKeyInput)
     pub fn builder() -> crate::input::update_ssh_public_key_input::Builder {
         crate::input::update_ssh_public_key_input::Builder::default()
     }
@@ -5854,7 +5854,7 @@ impl UpdateSSHPublicKey {
 }
 impl smithy_http::response::ParseStrictResponse for UpdateSSHPublicKey {
     type Output = std::result::Result<
-        crate::output::UpdateSSHPublicKeyOutput,
+        crate::output::UpdateSshPublicKeyOutput,
         crate::error::UpdateSSHPublicKeyError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
@@ -6011,7 +6011,7 @@ pub struct UploadSSHPublicKey {
     _private: (),
 }
 impl UploadSSHPublicKey {
-    /// Creates a new builder-style object to manufacture [`UploadSSHPublicKeyInput`](crate::input::UploadSSHPublicKeyInput)
+    /// Creates a new builder-style object to manufacture [`UploadSshPublicKeyInput`](crate::input::UploadSshPublicKeyInput)
     pub fn builder() -> crate::input::upload_ssh_public_key_input::Builder {
         crate::input::upload_ssh_public_key_input::Builder::default()
     }
@@ -6021,7 +6021,7 @@ impl UploadSSHPublicKey {
 }
 impl smithy_http::response::ParseStrictResponse for UploadSSHPublicKey {
     type Output = std::result::Result<
-        crate::output::UploadSSHPublicKeyOutput,
+        crate::output::UploadSshPublicKeyOutput,
         crate::error::UploadSSHPublicKeyError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {

@@ -31548,7 +31548,7 @@ pub mod fluent_builders {
         pub async fn send(
             self,
         ) -> std::result::Result<
-            crate::output::EnableVolumeIOOutput,
+            crate::output::EnableVolumeIoOutput,
             smithy_http::result::SdkError<crate::error::EnableVolumeIOError>,
         >
         where

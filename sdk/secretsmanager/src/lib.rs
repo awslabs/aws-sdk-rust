@@ -3,6 +3,7 @@
 #![allow(clippy::large_enum_variant)]
 #![allow(clippy::wrong_self_convention)]
 #![allow(clippy::should_implement_trait)]
+#![allow(clippy::blacklisted_name)]
 //! <fullname>AWS Secrets Manager API Reference</fullname>
 //! <p>AWS Secrets Manager provides a service to enable you to store, manage, and retrieve, secrets.</p>
 //! <p>This guide provides descriptions of the Secrets Manager API. For more information about using this
@@ -58,8 +59,6 @@ pub use error_meta::Error;
 pub use config::Config;
 
 mod aws_endpoint;
-mod aws_json_errors;
-mod blob_serde;
 #[cfg(feature = "client")]
 pub mod client;
 pub mod config;
@@ -67,15 +66,14 @@ pub mod error;
 mod error_meta;
 mod idempotency_token;
 pub mod input;
-mod instant_epoch;
 mod json_deser;
+mod json_errors;
 mod json_ser;
 pub mod model;
 pub mod operation;
+mod operation_deser;
 mod operation_ser;
 pub mod output;
-mod serde_util;
-mod serializer;
 pub static PKG_VERSION: &str = env!("CARGO_PKG_VERSION");
 pub use smithy_http::byte_stream::ByteStream;
 pub use smithy_http::result::SdkError;

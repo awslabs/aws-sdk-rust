@@ -77,8 +77,8 @@ pub mod abort_multipart_upload_input {
             smithy_http::operation::BuildError,
         > {
             Ok(crate::input::AbortMultipartUploadInput {
-                bucket: self.bucket.unwrap_or_default(),
-                key: self.key.unwrap_or_default(),
+                bucket: self.bucket,
+                key: self.key,
                 upload_id: self.upload_id,
                 request_payer: self.request_payer,
                 expected_bucket_owner: self.expected_bucket_owner,
@@ -148,14 +148,44 @@ impl AbortMultipartUploadInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(
-            output,
-            "/{Bucket}/{Key}",
-            Bucket = smithy_http::label::fmt_string(&self.bucket, false),
-            Key = smithy_http::label::fmt_string(&self.key, true)
-        )
-        .expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let bucket = {
+            let input = &self.bucket;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "bucket",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "bucket",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        let key = {
+            let input = &self.key;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "key",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, true);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "key",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        write!(output, "/{Bucket}/{Key}", Bucket = bucket, Key = key)
+            .expect("formatting should succeed");
+        Ok(())
     }
     fn add_headers(
         &self,
@@ -212,7 +242,7 @@ impl AbortMultipartUploadInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         self.uri_query(&mut uri);
         let builder = self.add_headers(builder)?;
         Ok(builder.method("DELETE").uri(uri))
@@ -328,8 +358,8 @@ pub mod complete_multipart_upload_input {
             smithy_http::operation::BuildError,
         > {
             Ok(crate::input::CompleteMultipartUploadInput {
-                bucket: self.bucket.unwrap_or_default(),
-                key: self.key.unwrap_or_default(),
+                bucket: self.bucket,
+                key: self.key,
                 multipart_upload: self.multipart_upload,
                 upload_id: self.upload_id,
                 request_payer: self.request_payer,
@@ -403,14 +433,44 @@ impl CompleteMultipartUploadInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(
-            output,
-            "/{Bucket}/{Key}",
-            Bucket = smithy_http::label::fmt_string(&self.bucket, false),
-            Key = smithy_http::label::fmt_string(&self.key, true)
-        )
-        .expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let bucket = {
+            let input = &self.bucket;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "bucket",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "bucket",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        let key = {
+            let input = &self.key;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "key",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, true);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "key",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        write!(output, "/{Bucket}/{Key}", Bucket = bucket, Key = key)
+            .expect("formatting should succeed");
+        Ok(())
     }
     fn add_headers(
         &self,
@@ -467,7 +527,7 @@ impl CompleteMultipartUploadInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         self.uri_query(&mut uri);
         let builder = self.add_headers(builder)?;
         Ok(builder.method("POST").uri(uri))
@@ -1098,7 +1158,7 @@ pub mod copy_object_input {
         {
             Ok(crate::input::CopyObjectInput {
                 acl: self.acl,
-                bucket: self.bucket.unwrap_or_default(),
+                bucket: self.bucket,
                 cache_control: self.cache_control,
                 content_disposition: self.content_disposition,
                 content_encoding: self.content_encoding,
@@ -1114,7 +1174,7 @@ pub mod copy_object_input {
                 grant_read: self.grant_read,
                 grant_read_acp: self.grant_read_acp,
                 grant_write_acp: self.grant_write_acp,
-                key: self.key.unwrap_or_default(),
+                key: self.key,
                 metadata: self.metadata,
                 metadata_directive: self.metadata_directive,
                 tagging_directive: self.tagging_directive,
@@ -1200,14 +1260,44 @@ impl CopyObjectInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(
-            output,
-            "/{Bucket}/{Key}",
-            Bucket = smithy_http::label::fmt_string(&self.bucket, false),
-            Key = smithy_http::label::fmt_string(&self.key, true)
-        )
-        .expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let bucket = {
+            let input = &self.bucket;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "bucket",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "bucket",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        let key = {
+            let input = &self.key;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "key",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, true);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "key",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        write!(output, "/{Bucket}/{Key}", Bucket = bucket, Key = key)
+            .expect("formatting should succeed");
+        Ok(())
     }
     fn add_headers(
         &self,
@@ -1931,7 +2021,7 @@ impl CopyObjectInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         self.uri_query(&mut uri);
         let builder = self.add_headers(builder)?;
         Ok(builder.method("PUT").uri(uri))
@@ -2088,7 +2178,7 @@ pub mod create_bucket_input {
         {
             Ok(crate::input::CreateBucketInput {
                 acl: self.acl,
-                bucket: self.bucket.unwrap_or_default(),
+                bucket: self.bucket,
                 grant_full_control: self.grant_full_control,
                 grant_read: self.grant_read,
                 grant_read_acp: self.grant_read_acp,
@@ -2163,13 +2253,26 @@ impl CreateBucketInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(
-            output,
-            "/{Bucket}",
-            Bucket = smithy_http::label::fmt_string(&self.bucket, false)
-        )
-        .expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let bucket = {
+            let input = &self.bucket;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "bucket",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "bucket",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
+        Ok(())
     }
     fn add_headers(
         &self,
@@ -2310,7 +2413,7 @@ impl CreateBucketInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         let builder = self.add_headers(builder)?;
         Ok(builder.method("PUT").uri(uri))
     }
@@ -2758,7 +2861,7 @@ pub mod create_multipart_upload_input {
         > {
             Ok(crate::input::CreateMultipartUploadInput {
                 acl: self.acl,
-                bucket: self.bucket.unwrap_or_default(),
+                bucket: self.bucket,
                 cache_control: self.cache_control,
                 content_disposition: self.content_disposition,
                 content_encoding: self.content_encoding,
@@ -2769,7 +2872,7 @@ pub mod create_multipart_upload_input {
                 grant_read: self.grant_read,
                 grant_read_acp: self.grant_read_acp,
                 grant_write_acp: self.grant_write_acp,
-                key: self.key.unwrap_or_default(),
+                key: self.key,
                 metadata: self.metadata,
                 server_side_encryption: self.server_side_encryption,
                 storage_class: self.storage_class,
@@ -2852,14 +2955,44 @@ impl CreateMultipartUploadInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(
-            output,
-            "/{Bucket}/{Key}",
-            Bucket = smithy_http::label::fmt_string(&self.bucket, false),
-            Key = smithy_http::label::fmt_string(&self.key, true)
-        )
-        .expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let bucket = {
+            let input = &self.bucket;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "bucket",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "bucket",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        let key = {
+            let input = &self.key;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "key",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, true);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "key",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        write!(output, "/{Bucket}/{Key}", Bucket = bucket, Key = key)
+            .expect("formatting should succeed");
+        Ok(())
     }
     fn add_headers(
         &self,
@@ -3377,7 +3510,7 @@ impl CreateMultipartUploadInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         self.uri_query(&mut uri);
         let builder = self.add_headers(builder)?;
         Ok(builder.method("POST").uri(uri))
@@ -3442,7 +3575,7 @@ pub mod delete_bucket_input {
         ) -> std::result::Result<crate::input::DeleteBucketInput, smithy_http::operation::BuildError>
         {
             Ok(crate::input::DeleteBucketInput {
-                bucket: self.bucket.unwrap_or_default(),
+                bucket: self.bucket,
                 expected_bucket_owner: self.expected_bucket_owner,
             })
         }
@@ -3507,13 +3640,26 @@ impl DeleteBucketInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(
-            output,
-            "/{Bucket}",
-            Bucket = smithy_http::label::fmt_string(&self.bucket, false)
-        )
-        .expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let bucket = {
+            let input = &self.bucket;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "bucket",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "bucket",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
+        Ok(())
     }
     fn add_headers(
         &self,
@@ -3545,7 +3691,7 @@ impl DeleteBucketInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         let builder = self.add_headers(builder)?;
         Ok(builder.method("DELETE").uri(uri))
     }
@@ -3621,7 +3767,7 @@ pub mod delete_bucket_analytics_configuration_input {
             smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DeleteBucketAnalyticsConfigurationInput {
-                bucket: self.bucket.unwrap_or_default(),
+                bucket: self.bucket,
                 id: self.id,
                 expected_bucket_owner: self.expected_bucket_owner,
             })
@@ -3691,13 +3837,26 @@ impl DeleteBucketAnalyticsConfigurationInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(
-            output,
-            "/{Bucket}",
-            Bucket = smithy_http::label::fmt_string(&self.bucket, false)
-        )
-        .expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let bucket = {
+            let input = &self.bucket;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "bucket",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "bucket",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
+        Ok(())
     }
     fn add_headers(
         &self,
@@ -3736,7 +3895,7 @@ impl DeleteBucketAnalyticsConfigurationInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         self.uri_query(&mut uri);
         let builder = self.add_headers(builder)?;
         Ok(builder.method("DELETE").uri(uri))
@@ -3803,7 +3962,7 @@ pub mod delete_bucket_cors_input {
             smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DeleteBucketCorsInput {
-                bucket: self.bucket.unwrap_or_default(),
+                bucket: self.bucket,
                 expected_bucket_owner: self.expected_bucket_owner,
             })
         }
@@ -3871,13 +4030,26 @@ impl DeleteBucketCorsInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(
-            output,
-            "/{Bucket}",
-            Bucket = smithy_http::label::fmt_string(&self.bucket, false)
-        )
-        .expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let bucket = {
+            let input = &self.bucket;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "bucket",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "bucket",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
+        Ok(())
     }
     fn add_headers(
         &self,
@@ -3913,7 +4085,7 @@ impl DeleteBucketCorsInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         self.uri_query(&mut uri);
         let builder = self.add_headers(builder)?;
         Ok(builder.method("DELETE").uri(uri))
@@ -3981,7 +4153,7 @@ pub mod delete_bucket_encryption_input {
             smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DeleteBucketEncryptionInput {
-                bucket: self.bucket.unwrap_or_default(),
+                bucket: self.bucket,
                 expected_bucket_owner: self.expected_bucket_owner,
             })
         }
@@ -4049,13 +4221,26 @@ impl DeleteBucketEncryptionInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(
-            output,
-            "/{Bucket}",
-            Bucket = smithy_http::label::fmt_string(&self.bucket, false)
-        )
-        .expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let bucket = {
+            let input = &self.bucket;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "bucket",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "bucket",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
+        Ok(())
     }
     fn add_headers(
         &self,
@@ -4091,7 +4276,7 @@ impl DeleteBucketEncryptionInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         self.uri_query(&mut uri);
         let builder = self.add_headers(builder)?;
         Ok(builder.method("DELETE").uri(uri))
@@ -4156,7 +4341,7 @@ pub mod delete_bucket_intelligent_tiering_configuration_input {
         > {
             Ok(
                 crate::input::DeleteBucketIntelligentTieringConfigurationInput {
-                    bucket: self.bucket.unwrap_or_default(),
+                    bucket: self.bucket,
                     id: self.id,
                 },
             )
@@ -4227,13 +4412,26 @@ impl DeleteBucketIntelligentTieringConfigurationInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(
-            output,
-            "/{Bucket}",
-            Bucket = smithy_http::label::fmt_string(&self.bucket, false)
-        )
-        .expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let bucket = {
+            let input = &self.bucket;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "bucket",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "bucket",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
+        Ok(())
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
@@ -4248,7 +4446,7 @@ impl DeleteBucketIntelligentTieringConfigurationInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         self.uri_query(&mut uri);
         Ok(builder.method("DELETE").uri(uri))
     }
@@ -4325,7 +4523,7 @@ pub mod delete_bucket_inventory_configuration_input {
             smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DeleteBucketInventoryConfigurationInput {
-                bucket: self.bucket.unwrap_or_default(),
+                bucket: self.bucket,
                 id: self.id,
                 expected_bucket_owner: self.expected_bucket_owner,
             })
@@ -4395,13 +4593,26 @@ impl DeleteBucketInventoryConfigurationInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(
-            output,
-            "/{Bucket}",
-            Bucket = smithy_http::label::fmt_string(&self.bucket, false)
-        )
-        .expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let bucket = {
+            let input = &self.bucket;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "bucket",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "bucket",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
+        Ok(())
     }
     fn add_headers(
         &self,
@@ -4440,7 +4651,7 @@ impl DeleteBucketInventoryConfigurationInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         self.uri_query(&mut uri);
         let builder = self.add_headers(builder)?;
         Ok(builder.method("DELETE").uri(uri))
@@ -4507,7 +4718,7 @@ pub mod delete_bucket_lifecycle_input {
             smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DeleteBucketLifecycleInput {
-                bucket: self.bucket.unwrap_or_default(),
+                bucket: self.bucket,
                 expected_bucket_owner: self.expected_bucket_owner,
             })
         }
@@ -4575,13 +4786,26 @@ impl DeleteBucketLifecycleInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(
-            output,
-            "/{Bucket}",
-            Bucket = smithy_http::label::fmt_string(&self.bucket, false)
-        )
-        .expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let bucket = {
+            let input = &self.bucket;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "bucket",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "bucket",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
+        Ok(())
     }
     fn add_headers(
         &self,
@@ -4617,7 +4841,7 @@ impl DeleteBucketLifecycleInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         self.uri_query(&mut uri);
         let builder = self.add_headers(builder)?;
         Ok(builder.method("DELETE").uri(uri))
@@ -4694,7 +4918,7 @@ pub mod delete_bucket_metrics_configuration_input {
             smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DeleteBucketMetricsConfigurationInput {
-                bucket: self.bucket.unwrap_or_default(),
+                bucket: self.bucket,
                 id: self.id,
                 expected_bucket_owner: self.expected_bucket_owner,
             })
@@ -4764,13 +4988,26 @@ impl DeleteBucketMetricsConfigurationInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(
-            output,
-            "/{Bucket}",
-            Bucket = smithy_http::label::fmt_string(&self.bucket, false)
-        )
-        .expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let bucket = {
+            let input = &self.bucket;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "bucket",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "bucket",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
+        Ok(())
     }
     fn add_headers(
         &self,
@@ -4809,7 +5046,7 @@ impl DeleteBucketMetricsConfigurationInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         self.uri_query(&mut uri);
         let builder = self.add_headers(builder)?;
         Ok(builder.method("DELETE").uri(uri))
@@ -4876,7 +5113,7 @@ pub mod delete_bucket_ownership_controls_input {
             smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DeleteBucketOwnershipControlsInput {
-                bucket: self.bucket.unwrap_or_default(),
+                bucket: self.bucket,
                 expected_bucket_owner: self.expected_bucket_owner,
             })
         }
@@ -4945,13 +5182,26 @@ impl DeleteBucketOwnershipControlsInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(
-            output,
-            "/{Bucket}",
-            Bucket = smithy_http::label::fmt_string(&self.bucket, false)
-        )
-        .expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let bucket = {
+            let input = &self.bucket;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "bucket",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "bucket",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
+        Ok(())
     }
     fn add_headers(
         &self,
@@ -4987,7 +5237,7 @@ impl DeleteBucketOwnershipControlsInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         self.uri_query(&mut uri);
         let builder = self.add_headers(builder)?;
         Ok(builder.method("DELETE").uri(uri))
@@ -5054,7 +5304,7 @@ pub mod delete_bucket_policy_input {
             smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DeleteBucketPolicyInput {
-                bucket: self.bucket.unwrap_or_default(),
+                bucket: self.bucket,
                 expected_bucket_owner: self.expected_bucket_owner,
             })
         }
@@ -5122,13 +5372,26 @@ impl DeleteBucketPolicyInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(
-            output,
-            "/{Bucket}",
-            Bucket = smithy_http::label::fmt_string(&self.bucket, false)
-        )
-        .expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let bucket = {
+            let input = &self.bucket;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "bucket",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "bucket",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
+        Ok(())
     }
     fn add_headers(
         &self,
@@ -5164,7 +5427,7 @@ impl DeleteBucketPolicyInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         self.uri_query(&mut uri);
         let builder = self.add_headers(builder)?;
         Ok(builder.method("DELETE").uri(uri))
@@ -5231,7 +5494,7 @@ pub mod delete_bucket_replication_input {
             smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DeleteBucketReplicationInput {
-                bucket: self.bucket.unwrap_or_default(),
+                bucket: self.bucket,
                 expected_bucket_owner: self.expected_bucket_owner,
             })
         }
@@ -5300,13 +5563,26 @@ impl DeleteBucketReplicationInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(
-            output,
-            "/{Bucket}",
-            Bucket = smithy_http::label::fmt_string(&self.bucket, false)
-        )
-        .expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let bucket = {
+            let input = &self.bucket;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "bucket",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "bucket",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
+        Ok(())
     }
     fn add_headers(
         &self,
@@ -5342,7 +5618,7 @@ impl DeleteBucketReplicationInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         self.uri_query(&mut uri);
         let builder = self.add_headers(builder)?;
         Ok(builder.method("DELETE").uri(uri))
@@ -5409,7 +5685,7 @@ pub mod delete_bucket_tagging_input {
             smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DeleteBucketTaggingInput {
-                bucket: self.bucket.unwrap_or_default(),
+                bucket: self.bucket,
                 expected_bucket_owner: self.expected_bucket_owner,
             })
         }
@@ -5477,13 +5753,26 @@ impl DeleteBucketTaggingInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(
-            output,
-            "/{Bucket}",
-            Bucket = smithy_http::label::fmt_string(&self.bucket, false)
-        )
-        .expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let bucket = {
+            let input = &self.bucket;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "bucket",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "bucket",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
+        Ok(())
     }
     fn add_headers(
         &self,
@@ -5519,7 +5808,7 @@ impl DeleteBucketTaggingInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         self.uri_query(&mut uri);
         let builder = self.add_headers(builder)?;
         Ok(builder.method("DELETE").uri(uri))
@@ -5586,7 +5875,7 @@ pub mod delete_bucket_website_input {
             smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DeleteBucketWebsiteInput {
-                bucket: self.bucket.unwrap_or_default(),
+                bucket: self.bucket,
                 expected_bucket_owner: self.expected_bucket_owner,
             })
         }
@@ -5654,13 +5943,26 @@ impl DeleteBucketWebsiteInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(
-            output,
-            "/{Bucket}",
-            Bucket = smithy_http::label::fmt_string(&self.bucket, false)
-        )
-        .expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let bucket = {
+            let input = &self.bucket;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "bucket",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "bucket",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
+        Ok(())
     }
     fn add_headers(
         &self,
@@ -5696,7 +5998,7 @@ impl DeleteBucketWebsiteInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         self.uri_query(&mut uri);
         let builder = self.add_headers(builder)?;
         Ok(builder.method("DELETE").uri(uri))
@@ -5822,8 +6124,8 @@ pub mod delete_object_input {
         ) -> std::result::Result<crate::input::DeleteObjectInput, smithy_http::operation::BuildError>
         {
             Ok(crate::input::DeleteObjectInput {
-                bucket: self.bucket.unwrap_or_default(),
-                key: self.key.unwrap_or_default(),
+                bucket: self.bucket,
+                key: self.key,
                 mfa: self.mfa,
                 version_id: self.version_id,
                 request_payer: self.request_payer,
@@ -5892,14 +6194,44 @@ impl DeleteObjectInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(
-            output,
-            "/{Bucket}/{Key}",
-            Bucket = smithy_http::label::fmt_string(&self.bucket, false),
-            Key = smithy_http::label::fmt_string(&self.key, true)
-        )
-        .expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let bucket = {
+            let input = &self.bucket;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "bucket",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "bucket",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        let key = {
+            let input = &self.key;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "key",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, true);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "key",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        write!(output, "/{Bucket}/{Key}", Bucket = bucket, Key = key)
+            .expect("formatting should succeed");
+        Ok(())
     }
     fn add_headers(
         &self,
@@ -5992,7 +6324,7 @@ impl DeleteObjectInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         self.uri_query(&mut uri);
         let builder = self.add_headers(builder)?;
         Ok(builder.method("DELETE").uri(uri))
@@ -6108,7 +6440,7 @@ pub mod delete_objects_input {
         ) -> std::result::Result<crate::input::DeleteObjectsInput, smithy_http::operation::BuildError>
         {
             Ok(crate::input::DeleteObjectsInput {
-                bucket: self.bucket.unwrap_or_default(),
+                bucket: self.bucket,
                 mfa: self.mfa,
                 request_payer: self.request_payer,
                 bypass_governance_retention: self.bypass_governance_retention.unwrap_or_default(),
@@ -6192,13 +6524,26 @@ impl DeleteObjectsInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(
-            output,
-            "/{Bucket}",
-            Bucket = smithy_http::label::fmt_string(&self.bucket, false)
-        )
-        .expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let bucket = {
+            let input = &self.bucket;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "bucket",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "bucket",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
+        Ok(())
     }
     fn add_headers(
         &self,
@@ -6289,7 +6634,7 @@ impl DeleteObjectsInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         self.uri_query(&mut uri);
         let builder = self.add_headers(builder)?;
         Ok(builder.method("POST").uri(uri))
@@ -6378,8 +6723,8 @@ pub mod delete_object_tagging_input {
             smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DeleteObjectTaggingInput {
-                bucket: self.bucket.unwrap_or_default(),
-                key: self.key.unwrap_or_default(),
+                bucket: self.bucket,
+                key: self.key,
                 version_id: self.version_id,
                 expected_bucket_owner: self.expected_bucket_owner,
             })
@@ -6448,14 +6793,44 @@ impl DeleteObjectTaggingInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(
-            output,
-            "/{Bucket}/{Key}",
-            Bucket = smithy_http::label::fmt_string(&self.bucket, false),
-            Key = smithy_http::label::fmt_string(&self.key, true)
-        )
-        .expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let bucket = {
+            let input = &self.bucket;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "bucket",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "bucket",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        let key = {
+            let input = &self.key;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "key",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, true);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "key",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        write!(output, "/{Bucket}/{Key}", Bucket = bucket, Key = key)
+            .expect("formatting should succeed");
+        Ok(())
     }
     fn add_headers(
         &self,
@@ -6494,7 +6869,7 @@ impl DeleteObjectTaggingInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         self.uri_query(&mut uri);
         let builder = self.add_headers(builder)?;
         Ok(builder.method("DELETE").uri(uri))
@@ -6562,7 +6937,7 @@ pub mod delete_public_access_block_input {
             smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DeletePublicAccessBlockInput {
-                bucket: self.bucket.unwrap_or_default(),
+                bucket: self.bucket,
                 expected_bucket_owner: self.expected_bucket_owner,
             })
         }
@@ -6631,13 +7006,26 @@ impl DeletePublicAccessBlockInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(
-            output,
-            "/{Bucket}",
-            Bucket = smithy_http::label::fmt_string(&self.bucket, false)
-        )
-        .expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let bucket = {
+            let input = &self.bucket;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "bucket",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "bucket",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
+        Ok(())
     }
     fn add_headers(
         &self,
@@ -6673,7 +7061,7 @@ impl DeletePublicAccessBlockInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         self.uri_query(&mut uri);
         let builder = self.add_headers(builder)?;
         Ok(builder.method("DELETE").uri(uri))
@@ -6740,7 +7128,7 @@ pub mod get_bucket_accelerate_configuration_input {
             smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GetBucketAccelerateConfigurationInput {
-                bucket: self.bucket.unwrap_or_default(),
+                bucket: self.bucket,
                 expected_bucket_owner: self.expected_bucket_owner,
             })
         }
@@ -6809,13 +7197,26 @@ impl GetBucketAccelerateConfigurationInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(
-            output,
-            "/{Bucket}",
-            Bucket = smithy_http::label::fmt_string(&self.bucket, false)
-        )
-        .expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let bucket = {
+            let input = &self.bucket;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "bucket",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "bucket",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
+        Ok(())
     }
     fn add_headers(
         &self,
@@ -6851,7 +7252,7 @@ impl GetBucketAccelerateConfigurationInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         self.uri_query(&mut uri);
         let builder = self.add_headers(builder)?;
         Ok(builder.method("GET").uri(uri))
@@ -6916,7 +7317,7 @@ pub mod get_bucket_acl_input {
         ) -> std::result::Result<crate::input::GetBucketAclInput, smithy_http::operation::BuildError>
         {
             Ok(crate::input::GetBucketAclInput {
-                bucket: self.bucket.unwrap_or_default(),
+                bucket: self.bucket,
                 expected_bucket_owner: self.expected_bucket_owner,
             })
         }
@@ -6981,13 +7382,26 @@ impl GetBucketAclInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(
-            output,
-            "/{Bucket}",
-            Bucket = smithy_http::label::fmt_string(&self.bucket, false)
-        )
-        .expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let bucket = {
+            let input = &self.bucket;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "bucket",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "bucket",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
+        Ok(())
     }
     fn add_headers(
         &self,
@@ -7023,7 +7437,7 @@ impl GetBucketAclInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         self.uri_query(&mut uri);
         let builder = self.add_headers(builder)?;
         Ok(builder.method("GET").uri(uri))
@@ -7100,7 +7514,7 @@ pub mod get_bucket_analytics_configuration_input {
             smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GetBucketAnalyticsConfigurationInput {
-                bucket: self.bucket.unwrap_or_default(),
+                bucket: self.bucket,
                 id: self.id,
                 expected_bucket_owner: self.expected_bucket_owner,
             })
@@ -7170,13 +7584,26 @@ impl GetBucketAnalyticsConfigurationInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(
-            output,
-            "/{Bucket}",
-            Bucket = smithy_http::label::fmt_string(&self.bucket, false)
-        )
-        .expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let bucket = {
+            let input = &self.bucket;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "bucket",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "bucket",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
+        Ok(())
     }
     fn add_headers(
         &self,
@@ -7216,7 +7643,7 @@ impl GetBucketAnalyticsConfigurationInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         self.uri_query(&mut uri);
         let builder = self.add_headers(builder)?;
         Ok(builder.method("GET").uri(uri))
@@ -7281,7 +7708,7 @@ pub mod get_bucket_cors_input {
         ) -> std::result::Result<crate::input::GetBucketCorsInput, smithy_http::operation::BuildError>
         {
             Ok(crate::input::GetBucketCorsInput {
-                bucket: self.bucket.unwrap_or_default(),
+                bucket: self.bucket,
                 expected_bucket_owner: self.expected_bucket_owner,
             })
         }
@@ -7346,13 +7773,26 @@ impl GetBucketCorsInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(
-            output,
-            "/{Bucket}",
-            Bucket = smithy_http::label::fmt_string(&self.bucket, false)
-        )
-        .expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let bucket = {
+            let input = &self.bucket;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "bucket",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "bucket",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
+        Ok(())
     }
     fn add_headers(
         &self,
@@ -7388,7 +7828,7 @@ impl GetBucketCorsInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         self.uri_query(&mut uri);
         let builder = self.add_headers(builder)?;
         Ok(builder.method("GET").uri(uri))
@@ -7456,7 +7896,7 @@ pub mod get_bucket_encryption_input {
             smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GetBucketEncryptionInput {
-                bucket: self.bucket.unwrap_or_default(),
+                bucket: self.bucket,
                 expected_bucket_owner: self.expected_bucket_owner,
             })
         }
@@ -7524,13 +7964,26 @@ impl GetBucketEncryptionInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(
-            output,
-            "/{Bucket}",
-            Bucket = smithy_http::label::fmt_string(&self.bucket, false)
-        )
-        .expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let bucket = {
+            let input = &self.bucket;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "bucket",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "bucket",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
+        Ok(())
     }
     fn add_headers(
         &self,
@@ -7566,7 +8019,7 @@ impl GetBucketEncryptionInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         self.uri_query(&mut uri);
         let builder = self.add_headers(builder)?;
         Ok(builder.method("GET").uri(uri))
@@ -7631,7 +8084,7 @@ pub mod get_bucket_intelligent_tiering_configuration_input {
         > {
             Ok(
                 crate::input::GetBucketIntelligentTieringConfigurationInput {
-                    bucket: self.bucket.unwrap_or_default(),
+                    bucket: self.bucket,
                     id: self.id,
                 },
             )
@@ -7702,13 +8155,26 @@ impl GetBucketIntelligentTieringConfigurationInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(
-            output,
-            "/{Bucket}",
-            Bucket = smithy_http::label::fmt_string(&self.bucket, false)
-        )
-        .expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let bucket = {
+            let input = &self.bucket;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "bucket",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "bucket",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
+        Ok(())
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
@@ -7724,7 +8190,7 @@ impl GetBucketIntelligentTieringConfigurationInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         self.uri_query(&mut uri);
         Ok(builder.method("GET").uri(uri))
     }
@@ -7800,7 +8266,7 @@ pub mod get_bucket_inventory_configuration_input {
             smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GetBucketInventoryConfigurationInput {
-                bucket: self.bucket.unwrap_or_default(),
+                bucket: self.bucket,
                 id: self.id,
                 expected_bucket_owner: self.expected_bucket_owner,
             })
@@ -7870,13 +8336,26 @@ impl GetBucketInventoryConfigurationInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(
-            output,
-            "/{Bucket}",
-            Bucket = smithy_http::label::fmt_string(&self.bucket, false)
-        )
-        .expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let bucket = {
+            let input = &self.bucket;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "bucket",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "bucket",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
+        Ok(())
     }
     fn add_headers(
         &self,
@@ -7916,7 +8395,7 @@ impl GetBucketInventoryConfigurationInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         self.uri_query(&mut uri);
         let builder = self.add_headers(builder)?;
         Ok(builder.method("GET").uri(uri))
@@ -7983,7 +8462,7 @@ pub mod get_bucket_lifecycle_configuration_input {
             smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GetBucketLifecycleConfigurationInput {
-                bucket: self.bucket.unwrap_or_default(),
+                bucket: self.bucket,
                 expected_bucket_owner: self.expected_bucket_owner,
             })
         }
@@ -8052,13 +8531,26 @@ impl GetBucketLifecycleConfigurationInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(
-            output,
-            "/{Bucket}",
-            Bucket = smithy_http::label::fmt_string(&self.bucket, false)
-        )
-        .expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let bucket = {
+            let input = &self.bucket;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "bucket",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "bucket",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
+        Ok(())
     }
     fn add_headers(
         &self,
@@ -8094,7 +8586,7 @@ impl GetBucketLifecycleConfigurationInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         self.uri_query(&mut uri);
         let builder = self.add_headers(builder)?;
         Ok(builder.method("GET").uri(uri))
@@ -8161,7 +8653,7 @@ pub mod get_bucket_location_input {
             smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GetBucketLocationInput {
-                bucket: self.bucket.unwrap_or_default(),
+                bucket: self.bucket,
                 expected_bucket_owner: self.expected_bucket_owner,
             })
         }
@@ -8229,13 +8721,26 @@ impl GetBucketLocationInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(
-            output,
-            "/{Bucket}",
-            Bucket = smithy_http::label::fmt_string(&self.bucket, false)
-        )
-        .expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let bucket = {
+            let input = &self.bucket;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "bucket",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "bucket",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
+        Ok(())
     }
     fn add_headers(
         &self,
@@ -8271,7 +8776,7 @@ impl GetBucketLocationInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         self.uri_query(&mut uri);
         let builder = self.add_headers(builder)?;
         Ok(builder.method("GET").uri(uri))
@@ -8338,7 +8843,7 @@ pub mod get_bucket_logging_input {
             smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GetBucketLoggingInput {
-                bucket: self.bucket.unwrap_or_default(),
+                bucket: self.bucket,
                 expected_bucket_owner: self.expected_bucket_owner,
             })
         }
@@ -8406,13 +8911,26 @@ impl GetBucketLoggingInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(
-            output,
-            "/{Bucket}",
-            Bucket = smithy_http::label::fmt_string(&self.bucket, false)
-        )
-        .expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let bucket = {
+            let input = &self.bucket;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "bucket",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "bucket",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
+        Ok(())
     }
     fn add_headers(
         &self,
@@ -8448,7 +8966,7 @@ impl GetBucketLoggingInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         self.uri_query(&mut uri);
         let builder = self.add_headers(builder)?;
         Ok(builder.method("GET").uri(uri))
@@ -8525,7 +9043,7 @@ pub mod get_bucket_metrics_configuration_input {
             smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GetBucketMetricsConfigurationInput {
-                bucket: self.bucket.unwrap_or_default(),
+                bucket: self.bucket,
                 id: self.id,
                 expected_bucket_owner: self.expected_bucket_owner,
             })
@@ -8595,13 +9113,26 @@ impl GetBucketMetricsConfigurationInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(
-            output,
-            "/{Bucket}",
-            Bucket = smithy_http::label::fmt_string(&self.bucket, false)
-        )
-        .expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let bucket = {
+            let input = &self.bucket;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "bucket",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "bucket",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
+        Ok(())
     }
     fn add_headers(
         &self,
@@ -8641,7 +9172,7 @@ impl GetBucketMetricsConfigurationInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         self.uri_query(&mut uri);
         let builder = self.add_headers(builder)?;
         Ok(builder.method("GET").uri(uri))
@@ -8708,7 +9239,7 @@ pub mod get_bucket_notification_configuration_input {
             smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GetBucketNotificationConfigurationInput {
-                bucket: self.bucket.unwrap_or_default(),
+                bucket: self.bucket,
                 expected_bucket_owner: self.expected_bucket_owner,
             })
         }
@@ -8777,13 +9308,26 @@ impl GetBucketNotificationConfigurationInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(
-            output,
-            "/{Bucket}",
-            Bucket = smithy_http::label::fmt_string(&self.bucket, false)
-        )
-        .expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let bucket = {
+            let input = &self.bucket;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "bucket",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "bucket",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
+        Ok(())
     }
     fn add_headers(
         &self,
@@ -8819,7 +9363,7 @@ impl GetBucketNotificationConfigurationInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         self.uri_query(&mut uri);
         let builder = self.add_headers(builder)?;
         Ok(builder.method("GET").uri(uri))
@@ -8887,7 +9431,7 @@ pub mod get_bucket_ownership_controls_input {
             smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GetBucketOwnershipControlsInput {
-                bucket: self.bucket.unwrap_or_default(),
+                bucket: self.bucket,
                 expected_bucket_owner: self.expected_bucket_owner,
             })
         }
@@ -8956,13 +9500,26 @@ impl GetBucketOwnershipControlsInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(
-            output,
-            "/{Bucket}",
-            Bucket = smithy_http::label::fmt_string(&self.bucket, false)
-        )
-        .expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let bucket = {
+            let input = &self.bucket;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "bucket",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "bucket",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
+        Ok(())
     }
     fn add_headers(
         &self,
@@ -8998,7 +9555,7 @@ impl GetBucketOwnershipControlsInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         self.uri_query(&mut uri);
         let builder = self.add_headers(builder)?;
         Ok(builder.method("GET").uri(uri))
@@ -9065,7 +9622,7 @@ pub mod get_bucket_policy_input {
             smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GetBucketPolicyInput {
-                bucket: self.bucket.unwrap_or_default(),
+                bucket: self.bucket,
                 expected_bucket_owner: self.expected_bucket_owner,
             })
         }
@@ -9133,13 +9690,26 @@ impl GetBucketPolicyInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(
-            output,
-            "/{Bucket}",
-            Bucket = smithy_http::label::fmt_string(&self.bucket, false)
-        )
-        .expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let bucket = {
+            let input = &self.bucket;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "bucket",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "bucket",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
+        Ok(())
     }
     fn add_headers(
         &self,
@@ -9175,7 +9745,7 @@ impl GetBucketPolicyInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         self.uri_query(&mut uri);
         let builder = self.add_headers(builder)?;
         Ok(builder.method("GET").uri(uri))
@@ -9242,7 +9812,7 @@ pub mod get_bucket_policy_status_input {
             smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GetBucketPolicyStatusInput {
-                bucket: self.bucket.unwrap_or_default(),
+                bucket: self.bucket,
                 expected_bucket_owner: self.expected_bucket_owner,
             })
         }
@@ -9310,13 +9880,26 @@ impl GetBucketPolicyStatusInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(
-            output,
-            "/{Bucket}",
-            Bucket = smithy_http::label::fmt_string(&self.bucket, false)
-        )
-        .expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let bucket = {
+            let input = &self.bucket;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "bucket",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "bucket",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
+        Ok(())
     }
     fn add_headers(
         &self,
@@ -9352,7 +9935,7 @@ impl GetBucketPolicyStatusInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         self.uri_query(&mut uri);
         let builder = self.add_headers(builder)?;
         Ok(builder.method("GET").uri(uri))
@@ -9419,7 +10002,7 @@ pub mod get_bucket_replication_input {
             smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GetBucketReplicationInput {
-                bucket: self.bucket.unwrap_or_default(),
+                bucket: self.bucket,
                 expected_bucket_owner: self.expected_bucket_owner,
             })
         }
@@ -9487,13 +10070,26 @@ impl GetBucketReplicationInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(
-            output,
-            "/{Bucket}",
-            Bucket = smithy_http::label::fmt_string(&self.bucket, false)
-        )
-        .expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let bucket = {
+            let input = &self.bucket;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "bucket",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "bucket",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
+        Ok(())
     }
     fn add_headers(
         &self,
@@ -9529,7 +10125,7 @@ impl GetBucketReplicationInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         self.uri_query(&mut uri);
         let builder = self.add_headers(builder)?;
         Ok(builder.method("GET").uri(uri))
@@ -9596,7 +10192,7 @@ pub mod get_bucket_request_payment_input {
             smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GetBucketRequestPaymentInput {
-                bucket: self.bucket.unwrap_or_default(),
+                bucket: self.bucket,
                 expected_bucket_owner: self.expected_bucket_owner,
             })
         }
@@ -9665,13 +10261,26 @@ impl GetBucketRequestPaymentInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(
-            output,
-            "/{Bucket}",
-            Bucket = smithy_http::label::fmt_string(&self.bucket, false)
-        )
-        .expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let bucket = {
+            let input = &self.bucket;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "bucket",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "bucket",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
+        Ok(())
     }
     fn add_headers(
         &self,
@@ -9707,7 +10316,7 @@ impl GetBucketRequestPaymentInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         self.uri_query(&mut uri);
         let builder = self.add_headers(builder)?;
         Ok(builder.method("GET").uri(uri))
@@ -9774,7 +10383,7 @@ pub mod get_bucket_tagging_input {
             smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GetBucketTaggingInput {
-                bucket: self.bucket.unwrap_or_default(),
+                bucket: self.bucket,
                 expected_bucket_owner: self.expected_bucket_owner,
             })
         }
@@ -9842,13 +10451,26 @@ impl GetBucketTaggingInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(
-            output,
-            "/{Bucket}",
-            Bucket = smithy_http::label::fmt_string(&self.bucket, false)
-        )
-        .expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let bucket = {
+            let input = &self.bucket;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "bucket",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "bucket",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
+        Ok(())
     }
     fn add_headers(
         &self,
@@ -9884,7 +10506,7 @@ impl GetBucketTaggingInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         self.uri_query(&mut uri);
         let builder = self.add_headers(builder)?;
         Ok(builder.method("GET").uri(uri))
@@ -9951,7 +10573,7 @@ pub mod get_bucket_versioning_input {
             smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GetBucketVersioningInput {
-                bucket: self.bucket.unwrap_or_default(),
+                bucket: self.bucket,
                 expected_bucket_owner: self.expected_bucket_owner,
             })
         }
@@ -10019,13 +10641,26 @@ impl GetBucketVersioningInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(
-            output,
-            "/{Bucket}",
-            Bucket = smithy_http::label::fmt_string(&self.bucket, false)
-        )
-        .expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let bucket = {
+            let input = &self.bucket;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "bucket",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "bucket",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
+        Ok(())
     }
     fn add_headers(
         &self,
@@ -10061,7 +10696,7 @@ impl GetBucketVersioningInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         self.uri_query(&mut uri);
         let builder = self.add_headers(builder)?;
         Ok(builder.method("GET").uri(uri))
@@ -10128,7 +10763,7 @@ pub mod get_bucket_website_input {
             smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GetBucketWebsiteInput {
-                bucket: self.bucket.unwrap_or_default(),
+                bucket: self.bucket,
                 expected_bucket_owner: self.expected_bucket_owner,
             })
         }
@@ -10196,13 +10831,26 @@ impl GetBucketWebsiteInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(
-            output,
-            "/{Bucket}",
-            Bucket = smithy_http::label::fmt_string(&self.bucket, false)
-        )
-        .expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let bucket = {
+            let input = &self.bucket;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "bucket",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "bucket",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
+        Ok(())
     }
     fn add_headers(
         &self,
@@ -10238,7 +10886,7 @@ impl GetBucketWebsiteInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         self.uri_query(&mut uri);
         let builder = self.add_headers(builder)?;
         Ok(builder.method("GET").uri(uri))
@@ -10547,12 +11195,12 @@ pub mod get_object_input {
         ) -> std::result::Result<crate::input::GetObjectInput, smithy_http::operation::BuildError>
         {
             Ok(crate::input::GetObjectInput {
-                bucket: self.bucket.unwrap_or_default(),
+                bucket: self.bucket,
                 if_match: self.if_match,
                 if_modified_since: self.if_modified_since,
                 if_none_match: self.if_none_match,
                 if_unmodified_since: self.if_unmodified_since,
-                key: self.key.unwrap_or_default(),
+                key: self.key,
                 range: self.range,
                 response_cache_control: self.response_cache_control,
                 response_content_disposition: self.response_content_disposition,
@@ -10628,14 +11276,44 @@ impl GetObjectInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(
-            output,
-            "/{Bucket}/{Key}",
-            Bucket = smithy_http::label::fmt_string(&self.bucket, false),
-            Key = smithy_http::label::fmt_string(&self.key, true)
-        )
-        .expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let bucket = {
+            let input = &self.bucket;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "bucket",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "bucket",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        let key = {
+            let input = &self.key;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "key",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, true);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "key",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        write!(output, "/{Bucket}/{Key}", Bucket = bucket, Key = key)
+            .expect("formatting should succeed");
+        Ok(())
     }
     fn add_headers(
         &self,
@@ -10887,7 +11565,7 @@ impl GetObjectInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         self.uri_query(&mut uri);
         let builder = self.add_headers(builder)?;
         Ok(builder.method("GET").uri(uri))
@@ -10989,8 +11667,8 @@ pub mod get_object_acl_input {
         ) -> std::result::Result<crate::input::GetObjectAclInput, smithy_http::operation::BuildError>
         {
             Ok(crate::input::GetObjectAclInput {
-                bucket: self.bucket.unwrap_or_default(),
-                key: self.key.unwrap_or_default(),
+                bucket: self.bucket,
+                key: self.key,
                 version_id: self.version_id,
                 request_payer: self.request_payer,
                 expected_bucket_owner: self.expected_bucket_owner,
@@ -11057,14 +11735,44 @@ impl GetObjectAclInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(
-            output,
-            "/{Bucket}/{Key}",
-            Bucket = smithy_http::label::fmt_string(&self.bucket, false),
-            Key = smithy_http::label::fmt_string(&self.key, true)
-        )
-        .expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let bucket = {
+            let input = &self.bucket;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "bucket",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "bucket",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        let key = {
+            let input = &self.key;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "key",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, true);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "key",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        write!(output, "/{Bucket}/{Key}", Bucket = bucket, Key = key)
+            .expect("formatting should succeed");
+        Ok(())
     }
     fn add_headers(
         &self,
@@ -11121,7 +11829,7 @@ impl GetObjectAclInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         self.uri_query(&mut uri);
         let builder = self.add_headers(builder)?;
         Ok(builder.method("GET").uri(uri))
@@ -11225,8 +11933,8 @@ pub mod get_object_legal_hold_input {
             smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GetObjectLegalHoldInput {
-                bucket: self.bucket.unwrap_or_default(),
-                key: self.key.unwrap_or_default(),
+                bucket: self.bucket,
+                key: self.key,
                 version_id: self.version_id,
                 request_payer: self.request_payer,
                 expected_bucket_owner: self.expected_bucket_owner,
@@ -11296,14 +12004,44 @@ impl GetObjectLegalHoldInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(
-            output,
-            "/{Bucket}/{Key}",
-            Bucket = smithy_http::label::fmt_string(&self.bucket, false),
-            Key = smithy_http::label::fmt_string(&self.key, true)
-        )
-        .expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let bucket = {
+            let input = &self.bucket;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "bucket",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "bucket",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        let key = {
+            let input = &self.key;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "key",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, true);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "key",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        write!(output, "/{Bucket}/{Key}", Bucket = bucket, Key = key)
+            .expect("formatting should succeed");
+        Ok(())
     }
     fn add_headers(
         &self,
@@ -11360,7 +12098,7 @@ impl GetObjectLegalHoldInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         self.uri_query(&mut uri);
         let builder = self.add_headers(builder)?;
         Ok(builder.method("GET").uri(uri))
@@ -11428,7 +12166,7 @@ pub mod get_object_lock_configuration_input {
             smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GetObjectLockConfigurationInput {
-                bucket: self.bucket.unwrap_or_default(),
+                bucket: self.bucket,
                 expected_bucket_owner: self.expected_bucket_owner,
             })
         }
@@ -11497,13 +12235,26 @@ impl GetObjectLockConfigurationInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(
-            output,
-            "/{Bucket}",
-            Bucket = smithy_http::label::fmt_string(&self.bucket, false)
-        )
-        .expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let bucket = {
+            let input = &self.bucket;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "bucket",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "bucket",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
+        Ok(())
     }
     fn add_headers(
         &self,
@@ -11539,7 +12290,7 @@ impl GetObjectLockConfigurationInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         self.uri_query(&mut uri);
         let builder = self.add_headers(builder)?;
         Ok(builder.method("GET").uri(uri))
@@ -11643,8 +12394,8 @@ pub mod get_object_retention_input {
             smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GetObjectRetentionInput {
-                bucket: self.bucket.unwrap_or_default(),
-                key: self.key.unwrap_or_default(),
+                bucket: self.bucket,
+                key: self.key,
                 version_id: self.version_id,
                 request_payer: self.request_payer,
                 expected_bucket_owner: self.expected_bucket_owner,
@@ -11714,14 +12465,44 @@ impl GetObjectRetentionInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(
-            output,
-            "/{Bucket}/{Key}",
-            Bucket = smithy_http::label::fmt_string(&self.bucket, false),
-            Key = smithy_http::label::fmt_string(&self.key, true)
-        )
-        .expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let bucket = {
+            let input = &self.bucket;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "bucket",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "bucket",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        let key = {
+            let input = &self.key;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "key",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, true);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "key",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        write!(output, "/{Bucket}/{Key}", Bucket = bucket, Key = key)
+            .expect("formatting should succeed");
+        Ok(())
     }
     fn add_headers(
         &self,
@@ -11778,7 +12559,7 @@ impl GetObjectRetentionInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         self.uri_query(&mut uri);
         let builder = self.add_headers(builder)?;
         Ok(builder.method("GET").uri(uri))
@@ -11883,8 +12664,8 @@ pub mod get_object_tagging_input {
             smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GetObjectTaggingInput {
-                bucket: self.bucket.unwrap_or_default(),
-                key: self.key.unwrap_or_default(),
+                bucket: self.bucket,
+                key: self.key,
                 version_id: self.version_id,
                 expected_bucket_owner: self.expected_bucket_owner,
                 request_payer: self.request_payer,
@@ -11954,14 +12735,44 @@ impl GetObjectTaggingInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(
-            output,
-            "/{Bucket}/{Key}",
-            Bucket = smithy_http::label::fmt_string(&self.bucket, false),
-            Key = smithy_http::label::fmt_string(&self.key, true)
-        )
-        .expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let bucket = {
+            let input = &self.bucket;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "bucket",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "bucket",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        let key = {
+            let input = &self.key;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "key",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, true);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "key",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        write!(output, "/{Bucket}/{Key}", Bucket = bucket, Key = key)
+            .expect("formatting should succeed");
+        Ok(())
     }
     fn add_headers(
         &self,
@@ -12018,7 +12829,7 @@ impl GetObjectTaggingInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         self.uri_query(&mut uri);
         let builder = self.add_headers(builder)?;
         Ok(builder.method("GET").uri(uri))
@@ -12111,8 +12922,8 @@ pub mod get_object_torrent_input {
             smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GetObjectTorrentInput {
-                bucket: self.bucket.unwrap_or_default(),
-                key: self.key.unwrap_or_default(),
+                bucket: self.bucket,
+                key: self.key,
                 request_payer: self.request_payer,
                 expected_bucket_owner: self.expected_bucket_owner,
             })
@@ -12181,14 +12992,44 @@ impl GetObjectTorrentInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(
-            output,
-            "/{Bucket}/{Key}",
-            Bucket = smithy_http::label::fmt_string(&self.bucket, false),
-            Key = smithy_http::label::fmt_string(&self.key, true)
-        )
-        .expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let bucket = {
+            let input = &self.bucket;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "bucket",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "bucket",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        let key = {
+            let input = &self.key;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "key",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, true);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "key",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        write!(output, "/{Bucket}/{Key}", Bucket = bucket, Key = key)
+            .expect("formatting should succeed");
+        Ok(())
     }
     fn add_headers(
         &self,
@@ -12242,7 +13083,7 @@ impl GetObjectTorrentInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         self.uri_query(&mut uri);
         let builder = self.add_headers(builder)?;
         Ok(builder.method("GET").uri(uri))
@@ -12310,7 +13151,7 @@ pub mod get_public_access_block_input {
             smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GetPublicAccessBlockInput {
-                bucket: self.bucket.unwrap_or_default(),
+                bucket: self.bucket,
                 expected_bucket_owner: self.expected_bucket_owner,
             })
         }
@@ -12378,13 +13219,26 @@ impl GetPublicAccessBlockInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(
-            output,
-            "/{Bucket}",
-            Bucket = smithy_http::label::fmt_string(&self.bucket, false)
-        )
-        .expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let bucket = {
+            let input = &self.bucket;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "bucket",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "bucket",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
+        Ok(())
     }
     fn add_headers(
         &self,
@@ -12420,7 +13274,7 @@ impl GetPublicAccessBlockInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         self.uri_query(&mut uri);
         let builder = self.add_headers(builder)?;
         Ok(builder.method("GET").uri(uri))
@@ -12487,7 +13341,7 @@ pub mod head_bucket_input {
         ) -> std::result::Result<crate::input::HeadBucketInput, smithy_http::operation::BuildError>
         {
             Ok(crate::input::HeadBucketInput {
-                bucket: self.bucket.unwrap_or_default(),
+                bucket: self.bucket,
                 expected_bucket_owner: self.expected_bucket_owner,
             })
         }
@@ -12552,13 +13406,26 @@ impl HeadBucketInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(
-            output,
-            "/{Bucket}",
-            Bucket = smithy_http::label::fmt_string(&self.bucket, false)
-        )
-        .expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let bucket = {
+            let input = &self.bucket;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "bucket",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "bucket",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
+        Ok(())
     }
     fn add_headers(
         &self,
@@ -12590,7 +13457,7 @@ impl HeadBucketInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         let builder = self.add_headers(builder)?;
         Ok(builder.method("HEAD").uri(uri))
     }
@@ -12817,12 +13684,12 @@ pub mod head_object_input {
         ) -> std::result::Result<crate::input::HeadObjectInput, smithy_http::operation::BuildError>
         {
             Ok(crate::input::HeadObjectInput {
-                bucket: self.bucket.unwrap_or_default(),
+                bucket: self.bucket,
                 if_match: self.if_match,
                 if_modified_since: self.if_modified_since,
                 if_none_match: self.if_none_match,
                 if_unmodified_since: self.if_unmodified_since,
-                key: self.key.unwrap_or_default(),
+                key: self.key,
                 range: self.range,
                 version_id: self.version_id,
                 sse_customer_algorithm: self.sse_customer_algorithm,
@@ -12894,14 +13761,44 @@ impl HeadObjectInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(
-            output,
-            "/{Bucket}/{Key}",
-            Bucket = smithy_http::label::fmt_string(&self.bucket, false),
-            Key = smithy_http::label::fmt_string(&self.key, true)
-        )
-        .expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let bucket = {
+            let input = &self.bucket;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "bucket",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "bucket",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        let key = {
+            let input = &self.key;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "key",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, true);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "key",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        write!(output, "/{Bucket}/{Key}", Bucket = bucket, Key = key)
+            .expect("formatting should succeed");
+        Ok(())
     }
     fn add_headers(
         &self,
@@ -13113,7 +14010,7 @@ impl HeadObjectInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         self.uri_query(&mut uri);
         let builder = self.add_headers(builder)?;
         Ok(builder.method("HEAD").uri(uri))
@@ -13194,7 +14091,7 @@ pub mod list_bucket_analytics_configurations_input {
             smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListBucketAnalyticsConfigurationsInput {
-                bucket: self.bucket.unwrap_or_default(),
+                bucket: self.bucket,
                 continuation_token: self.continuation_token,
                 expected_bucket_owner: self.expected_bucket_owner,
             })
@@ -13264,13 +14161,26 @@ impl ListBucketAnalyticsConfigurationsInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(
-            output,
-            "/{Bucket}",
-            Bucket = smithy_http::label::fmt_string(&self.bucket, false)
-        )
-        .expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let bucket = {
+            let input = &self.bucket;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "bucket",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "bucket",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
+        Ok(())
     }
     fn add_headers(
         &self,
@@ -13313,7 +14223,7 @@ impl ListBucketAnalyticsConfigurationsInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         self.uri_query(&mut uri);
         let builder = self.add_headers(builder)?;
         Ok(builder.method("GET").uri(uri))
@@ -13382,7 +14292,7 @@ pub mod list_bucket_intelligent_tiering_configurations_input {
         > {
             Ok(
                 crate::input::ListBucketIntelligentTieringConfigurationsInput {
-                    bucket: self.bucket.unwrap_or_default(),
+                    bucket: self.bucket,
                     continuation_token: self.continuation_token,
                 },
             )
@@ -13453,13 +14363,26 @@ impl ListBucketIntelligentTieringConfigurationsInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(
-            output,
-            "/{Bucket}",
-            Bucket = smithy_http::label::fmt_string(&self.bucket, false)
-        )
-        .expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let bucket = {
+            let input = &self.bucket;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "bucket",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "bucket",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
+        Ok(())
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
@@ -13478,7 +14401,7 @@ impl ListBucketIntelligentTieringConfigurationsInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         self.uri_query(&mut uri);
         Ok(builder.method("GET").uri(uri))
     }
@@ -13560,7 +14483,7 @@ pub mod list_bucket_inventory_configurations_input {
             smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListBucketInventoryConfigurationsInput {
-                bucket: self.bucket.unwrap_or_default(),
+                bucket: self.bucket,
                 continuation_token: self.continuation_token,
                 expected_bucket_owner: self.expected_bucket_owner,
             })
@@ -13630,13 +14553,26 @@ impl ListBucketInventoryConfigurationsInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(
-            output,
-            "/{Bucket}",
-            Bucket = smithy_http::label::fmt_string(&self.bucket, false)
-        )
-        .expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let bucket = {
+            let input = &self.bucket;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "bucket",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "bucket",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
+        Ok(())
     }
     fn add_headers(
         &self,
@@ -13679,7 +14615,7 @@ impl ListBucketInventoryConfigurationsInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         self.uri_query(&mut uri);
         let builder = self.add_headers(builder)?;
         Ok(builder.method("GET").uri(uri))
@@ -13762,7 +14698,7 @@ pub mod list_bucket_metrics_configurations_input {
             smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListBucketMetricsConfigurationsInput {
-                bucket: self.bucket.unwrap_or_default(),
+                bucket: self.bucket,
                 continuation_token: self.continuation_token,
                 expected_bucket_owner: self.expected_bucket_owner,
             })
@@ -13832,13 +14768,26 @@ impl ListBucketMetricsConfigurationsInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(
-            output,
-            "/{Bucket}",
-            Bucket = smithy_http::label::fmt_string(&self.bucket, false)
-        )
-        .expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let bucket = {
+            let input = &self.bucket;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "bucket",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "bucket",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
+        Ok(())
     }
     fn add_headers(
         &self,
@@ -13881,7 +14830,7 @@ impl ListBucketMetricsConfigurationsInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         self.uri_query(&mut uri);
         let builder = self.add_headers(builder)?;
         Ok(builder.method("GET").uri(uri))
@@ -13984,8 +14933,9 @@ impl ListBucketsInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(output, "/").expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        write!(output, "/").expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -13993,7 +14943,7 @@ impl ListBucketsInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("GET").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -14150,7 +15100,7 @@ pub mod list_multipart_uploads_input {
             smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListMultipartUploadsInput {
-                bucket: self.bucket.unwrap_or_default(),
+                bucket: self.bucket,
                 delimiter: self.delimiter,
                 encoding_type: self.encoding_type,
                 key_marker: self.key_marker,
@@ -14224,13 +15174,26 @@ impl ListMultipartUploadsInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(
-            output,
-            "/{Bucket}",
-            Bucket = smithy_http::label::fmt_string(&self.bucket, false)
-        )
-        .expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let bucket = {
+            let input = &self.bucket;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "bucket",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "bucket",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
+        Ok(())
     }
     fn add_headers(
         &self,
@@ -14290,7 +15253,7 @@ impl ListMultipartUploadsInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         self.uri_query(&mut uri);
         let builder = self.add_headers(builder)?;
         Ok(builder.method("GET").uri(uri))
@@ -14430,7 +15393,7 @@ pub mod list_objects_input {
         ) -> std::result::Result<crate::input::ListObjectsInput, smithy_http::operation::BuildError>
         {
             Ok(crate::input::ListObjectsInput {
-                bucket: self.bucket.unwrap_or_default(),
+                bucket: self.bucket,
                 delimiter: self.delimiter,
                 encoding_type: self.encoding_type,
                 marker: self.marker,
@@ -14501,13 +15464,26 @@ impl ListObjectsInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(
-            output,
-            "/{Bucket}",
-            Bucket = smithy_http::label::fmt_string(&self.bucket, false)
-        )
-        .expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let bucket = {
+            let input = &self.bucket;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "bucket",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "bucket",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
+        Ok(())
     }
     fn add_headers(
         &self,
@@ -14578,7 +15554,7 @@ impl ListObjectsInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         self.uri_query(&mut uri);
         let builder = self.add_headers(builder)?;
         Ok(builder.method("GET").uri(uri))
@@ -14741,7 +15717,7 @@ pub mod list_objects_v2_input {
         ) -> std::result::Result<crate::input::ListObjectsV2Input, smithy_http::operation::BuildError>
         {
             Ok(crate::input::ListObjectsV2Input {
-                bucket: self.bucket.unwrap_or_default(),
+                bucket: self.bucket,
                 delimiter: self.delimiter,
                 encoding_type: self.encoding_type,
                 max_keys: self.max_keys.unwrap_or_default(),
@@ -14814,13 +15790,26 @@ impl ListObjectsV2Input {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(
-            output,
-            "/{Bucket}",
-            Bucket = smithy_http::label::fmt_string(&self.bucket, false)
-        )
-        .expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let bucket = {
+            let input = &self.bucket;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "bucket",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "bucket",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
+        Ok(())
     }
     fn add_headers(
         &self,
@@ -14904,7 +15893,7 @@ impl ListObjectsV2Input {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         self.uri_query(&mut uri);
         let builder = self.add_headers(builder)?;
         Ok(builder.method("GET").uri(uri))
@@ -15053,7 +16042,7 @@ pub mod list_object_versions_input {
             smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListObjectVersionsInput {
-                bucket: self.bucket.unwrap_or_default(),
+                bucket: self.bucket,
                 delimiter: self.delimiter,
                 encoding_type: self.encoding_type,
                 key_marker: self.key_marker,
@@ -15127,13 +16116,26 @@ impl ListObjectVersionsInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(
-            output,
-            "/{Bucket}",
-            Bucket = smithy_http::label::fmt_string(&self.bucket, false)
-        )
-        .expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let bucket = {
+            let input = &self.bucket;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "bucket",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "bucket",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
+        Ok(())
     }
     fn add_headers(
         &self,
@@ -15193,7 +16195,7 @@ impl ListObjectVersionsInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         self.uri_query(&mut uri);
         let builder = self.add_headers(builder)?;
         Ok(builder.method("GET").uri(uri))
@@ -15320,8 +16322,8 @@ pub mod list_parts_input {
         ) -> std::result::Result<crate::input::ListPartsInput, smithy_http::operation::BuildError>
         {
             Ok(crate::input::ListPartsInput {
-                bucket: self.bucket.unwrap_or_default(),
-                key: self.key.unwrap_or_default(),
+                bucket: self.bucket,
+                key: self.key,
                 max_parts: self.max_parts.unwrap_or_default(),
                 part_number_marker: self.part_number_marker,
                 upload_id: self.upload_id,
@@ -15388,14 +16390,44 @@ impl ListPartsInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(
-            output,
-            "/{Bucket}/{Key}",
-            Bucket = smithy_http::label::fmt_string(&self.bucket, false),
-            Key = smithy_http::label::fmt_string(&self.key, true)
-        )
-        .expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let bucket = {
+            let input = &self.bucket;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "bucket",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "bucket",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        let key = {
+            let input = &self.key;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "key",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, true);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "key",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        write!(output, "/{Bucket}/{Key}", Bucket = bucket, Key = key)
+            .expect("formatting should succeed");
+        Ok(())
     }
     fn add_headers(
         &self,
@@ -15464,7 +16496,7 @@ impl ListPartsInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         self.uri_query(&mut uri);
         let builder = self.add_headers(builder)?;
         Ok(builder.method("GET").uri(uri))
@@ -15548,7 +16580,7 @@ pub mod put_bucket_accelerate_configuration_input {
             smithy_http::operation::BuildError,
         > {
             Ok(crate::input::PutBucketAccelerateConfigurationInput {
-                bucket: self.bucket.unwrap_or_default(),
+                bucket: self.bucket,
                 expected_bucket_owner: self.expected_bucket_owner,
                 accelerate_configuration: self.accelerate_configuration,
             })
@@ -15620,13 +16652,26 @@ impl PutBucketAccelerateConfigurationInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(
-            output,
-            "/{Bucket}",
-            Bucket = smithy_http::label::fmt_string(&self.bucket, false)
-        )
-        .expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let bucket = {
+            let input = &self.bucket;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "bucket",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "bucket",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
+        Ok(())
     }
     fn add_headers(
         &self,
@@ -15662,7 +16707,7 @@ impl PutBucketAccelerateConfigurationInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         self.uri_query(&mut uri);
         let builder = self.add_headers(builder)?;
         Ok(builder.method("PUT").uri(uri))
@@ -15830,7 +16875,7 @@ pub mod put_bucket_acl_input {
         {
             Ok(crate::input::PutBucketAclInput {
                 acl: self.acl,
-                bucket: self.bucket.unwrap_or_default(),
+                bucket: self.bucket,
                 content_md5: self.content_md5,
                 grant_full_control: self.grant_full_control,
                 grant_read: self.grant_read,
@@ -15919,13 +16964,26 @@ impl PutBucketAclInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(
-            output,
-            "/{Bucket}",
-            Bucket = smithy_http::label::fmt_string(&self.bucket, false)
-        )
-        .expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let bucket = {
+            let input = &self.bucket;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "bucket",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "bucket",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
+        Ok(())
     }
     fn add_headers(
         &self,
@@ -16087,7 +17145,7 @@ impl PutBucketAclInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         self.uri_query(&mut uri);
         let builder = self.add_headers(builder)?;
         Ok(builder.method("PUT").uri(uri))
@@ -16181,7 +17239,7 @@ pub mod put_bucket_analytics_configuration_input {
             smithy_http::operation::BuildError,
         > {
             Ok(crate::input::PutBucketAnalyticsConfigurationInput {
-                bucket: self.bucket.unwrap_or_default(),
+                bucket: self.bucket,
                 id: self.id,
                 expected_bucket_owner: self.expected_bucket_owner,
                 analytics_configuration: self.analytics_configuration,
@@ -16254,13 +17312,26 @@ impl PutBucketAnalyticsConfigurationInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(
-            output,
-            "/{Bucket}",
-            Bucket = smithy_http::label::fmt_string(&self.bucket, false)
-        )
-        .expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let bucket = {
+            let input = &self.bucket;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "bucket",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "bucket",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
+        Ok(())
     }
     fn add_headers(
         &self,
@@ -16299,7 +17370,7 @@ impl PutBucketAnalyticsConfigurationInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         self.uri_query(&mut uri);
         let builder = self.add_headers(builder)?;
         Ok(builder.method("PUT").uri(uri))
@@ -16336,7 +17407,7 @@ pub mod put_bucket_cors_input {
         pub(crate) bucket: std::option::Option<std::string::String>,
         pub(crate) content_md5: std::option::Option<std::string::String>,
         pub(crate) expected_bucket_owner: std::option::Option<std::string::String>,
-        pub(crate) cors_configuration: std::option::Option<crate::model::CORSConfiguration>,
+        pub(crate) cors_configuration: std::option::Option<crate::model::CorsConfiguration>,
     }
     impl Builder {
         /// <p>Specifies the bucket impacted by the <code>cors</code>configuration.</p>
@@ -16377,13 +17448,13 @@ pub mod put_bucket_cors_input {
         /// <p>Describes the cross-origin access configuration for objects in an Amazon S3 bucket. For more
         /// information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/cors.html">Enabling Cross-Origin Resource
         /// Sharing</a> in the <i>Amazon S3 User Guide</i>.</p>
-        pub fn cors_configuration(mut self, input: crate::model::CORSConfiguration) -> Self {
+        pub fn cors_configuration(mut self, input: crate::model::CorsConfiguration) -> Self {
             self.cors_configuration = Some(input);
             self
         }
         pub fn set_cors_configuration(
             mut self,
-            input: std::option::Option<crate::model::CORSConfiguration>,
+            input: std::option::Option<crate::model::CorsConfiguration>,
         ) -> Self {
             self.cors_configuration = input;
             self
@@ -16394,7 +17465,7 @@ pub mod put_bucket_cors_input {
         ) -> std::result::Result<crate::input::PutBucketCorsInput, smithy_http::operation::BuildError>
         {
             Ok(crate::input::PutBucketCorsInput {
-                bucket: self.bucket.unwrap_or_default(),
+                bucket: self.bucket,
                 content_md5: self.content_md5,
                 expected_bucket_owner: self.expected_bucket_owner,
                 cors_configuration: self.cors_configuration,
@@ -16477,13 +17548,26 @@ impl PutBucketCorsInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(
-            output,
-            "/{Bucket}",
-            Bucket = smithy_http::label::fmt_string(&self.bucket, false)
-        )
-        .expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let bucket = {
+            let input = &self.bucket;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "bucket",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "bucket",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
+        Ok(())
     }
     fn add_headers(
         &self,
@@ -16537,7 +17621,7 @@ impl PutBucketCorsInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         self.uri_query(&mut uri);
         let builder = self.add_headers(builder)?;
         Ok(builder.method("PUT").uri(uri))
@@ -16635,7 +17719,7 @@ pub mod put_bucket_encryption_input {
             smithy_http::operation::BuildError,
         > {
             Ok(crate::input::PutBucketEncryptionInput {
-                bucket: self.bucket.unwrap_or_default(),
+                bucket: self.bucket,
                 content_md5: self.content_md5,
                 expected_bucket_owner: self.expected_bucket_owner,
                 server_side_encryption_configuration: self.server_side_encryption_configuration,
@@ -16722,13 +17806,26 @@ impl PutBucketEncryptionInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(
-            output,
-            "/{Bucket}",
-            Bucket = smithy_http::label::fmt_string(&self.bucket, false)
-        )
-        .expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let bucket = {
+            let input = &self.bucket;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "bucket",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "bucket",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
+        Ok(())
     }
     fn add_headers(
         &self,
@@ -16782,7 +17879,7 @@ impl PutBucketEncryptionInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         self.uri_query(&mut uri);
         let builder = self.add_headers(builder)?;
         Ok(builder.method("PUT").uri(uri))
@@ -16864,7 +17961,7 @@ pub mod put_bucket_intelligent_tiering_configuration_input {
         > {
             Ok(
                 crate::input::PutBucketIntelligentTieringConfigurationInput {
-                    bucket: self.bucket.unwrap_or_default(),
+                    bucket: self.bucket,
                     id: self.id,
                     intelligent_tiering_configuration: self.intelligent_tiering_configuration,
                 },
@@ -16938,13 +18035,26 @@ impl PutBucketIntelligentTieringConfigurationInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(
-            output,
-            "/{Bucket}",
-            Bucket = smithy_http::label::fmt_string(&self.bucket, false)
-        )
-        .expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let bucket = {
+            let input = &self.bucket;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "bucket",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "bucket",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
+        Ok(())
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
@@ -16959,7 +18069,7 @@ impl PutBucketIntelligentTieringConfigurationInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         self.uri_query(&mut uri);
         Ok(builder.method("PUT").uri(uri))
     }
@@ -17052,7 +18162,7 @@ pub mod put_bucket_inventory_configuration_input {
             smithy_http::operation::BuildError,
         > {
             Ok(crate::input::PutBucketInventoryConfigurationInput {
-                bucket: self.bucket.unwrap_or_default(),
+                bucket: self.bucket,
                 id: self.id,
                 expected_bucket_owner: self.expected_bucket_owner,
                 inventory_configuration: self.inventory_configuration,
@@ -17125,13 +18235,26 @@ impl PutBucketInventoryConfigurationInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(
-            output,
-            "/{Bucket}",
-            Bucket = smithy_http::label::fmt_string(&self.bucket, false)
-        )
-        .expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let bucket = {
+            let input = &self.bucket;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "bucket",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "bucket",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
+        Ok(())
     }
     fn add_headers(
         &self,
@@ -17170,7 +18293,7 @@ impl PutBucketInventoryConfigurationInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         self.uri_query(&mut uri);
         let builder = self.add_headers(builder)?;
         Ok(builder.method("PUT").uri(uri))
@@ -17254,7 +18377,7 @@ pub mod put_bucket_lifecycle_configuration_input {
             smithy_http::operation::BuildError,
         > {
             Ok(crate::input::PutBucketLifecycleConfigurationInput {
-                bucket: self.bucket.unwrap_or_default(),
+                bucket: self.bucket,
                 expected_bucket_owner: self.expected_bucket_owner,
                 lifecycle_configuration: self.lifecycle_configuration,
             })
@@ -17341,13 +18464,26 @@ impl PutBucketLifecycleConfigurationInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(
-            output,
-            "/{Bucket}",
-            Bucket = smithy_http::label::fmt_string(&self.bucket, false)
-        )
-        .expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let bucket = {
+            let input = &self.bucket;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "bucket",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "bucket",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
+        Ok(())
     }
     fn add_headers(
         &self,
@@ -17383,7 +18519,7 @@ impl PutBucketLifecycleConfigurationInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         self.uri_query(&mut uri);
         let builder = self.add_headers(builder)?;
         Ok(builder.method("PUT").uri(uri))
@@ -17474,7 +18610,7 @@ pub mod put_bucket_logging_input {
             smithy_http::operation::BuildError,
         > {
             Ok(crate::input::PutBucketLoggingInput {
-                bucket: self.bucket.unwrap_or_default(),
+                bucket: self.bucket,
                 content_md5: self.content_md5,
                 expected_bucket_owner: self.expected_bucket_owner,
                 bucket_logging_status: self.bucket_logging_status,
@@ -17561,13 +18697,26 @@ impl PutBucketLoggingInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(
-            output,
-            "/{Bucket}",
-            Bucket = smithy_http::label::fmt_string(&self.bucket, false)
-        )
-        .expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let bucket = {
+            let input = &self.bucket;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "bucket",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "bucket",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
+        Ok(())
     }
     fn add_headers(
         &self,
@@ -17621,7 +18770,7 @@ impl PutBucketLoggingInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         self.uri_query(&mut uri);
         let builder = self.add_headers(builder)?;
         Ok(builder.method("PUT").uri(uri))
@@ -17711,7 +18860,7 @@ pub mod put_bucket_metrics_configuration_input {
             smithy_http::operation::BuildError,
         > {
             Ok(crate::input::PutBucketMetricsConfigurationInput {
-                bucket: self.bucket.unwrap_or_default(),
+                bucket: self.bucket,
                 id: self.id,
                 expected_bucket_owner: self.expected_bucket_owner,
                 metrics_configuration: self.metrics_configuration,
@@ -17784,13 +18933,26 @@ impl PutBucketMetricsConfigurationInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(
-            output,
-            "/{Bucket}",
-            Bucket = smithy_http::label::fmt_string(&self.bucket, false)
-        )
-        .expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let bucket = {
+            let input = &self.bucket;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "bucket",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "bucket",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
+        Ok(())
     }
     fn add_headers(
         &self,
@@ -17829,7 +18991,7 @@ impl PutBucketMetricsConfigurationInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         self.uri_query(&mut uri);
         let builder = self.add_headers(builder)?;
         Ok(builder.method("PUT").uri(uri))
@@ -17914,7 +19076,7 @@ pub mod put_bucket_notification_configuration_input {
             smithy_http::operation::BuildError,
         > {
             Ok(crate::input::PutBucketNotificationConfigurationInput {
-                bucket: self.bucket.unwrap_or_default(),
+                bucket: self.bucket,
                 expected_bucket_owner: self.expected_bucket_owner,
                 notification_configuration: self.notification_configuration,
             })
@@ -17987,13 +19149,26 @@ impl PutBucketNotificationConfigurationInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(
-            output,
-            "/{Bucket}",
-            Bucket = smithy_http::label::fmt_string(&self.bucket, false)
-        )
-        .expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let bucket = {
+            let input = &self.bucket;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "bucket",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "bucket",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
+        Ok(())
     }
     fn add_headers(
         &self,
@@ -18029,7 +19204,7 @@ impl PutBucketNotificationConfigurationInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         self.uri_query(&mut uri);
         let builder = self.add_headers(builder)?;
         Ok(builder.method("PUT").uri(uri))
@@ -18121,7 +19296,7 @@ pub mod put_bucket_ownership_controls_input {
             smithy_http::operation::BuildError,
         > {
             Ok(crate::input::PutBucketOwnershipControlsInput {
-                bucket: self.bucket.unwrap_or_default(),
+                bucket: self.bucket,
                 content_md5: self.content_md5,
                 expected_bucket_owner: self.expected_bucket_owner,
                 ownership_controls: self.ownership_controls,
@@ -18209,13 +19384,26 @@ impl PutBucketOwnershipControlsInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(
-            output,
-            "/{Bucket}",
-            Bucket = smithy_http::label::fmt_string(&self.bucket, false)
-        )
-        .expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let bucket = {
+            let input = &self.bucket;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "bucket",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "bucket",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
+        Ok(())
     }
     fn add_headers(
         &self,
@@ -18269,7 +19457,7 @@ impl PutBucketOwnershipControlsInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         self.uri_query(&mut uri);
         let builder = self.add_headers(builder)?;
         Ok(builder.method("PUT").uri(uri))
@@ -18371,7 +19559,7 @@ pub mod put_bucket_policy_input {
             smithy_http::operation::BuildError,
         > {
             Ok(crate::input::PutBucketPolicyInput {
-                bucket: self.bucket.unwrap_or_default(),
+                bucket: self.bucket,
                 content_md5: self.content_md5,
                 confirm_remove_self_bucket_access: self
                     .confirm_remove_self_bucket_access
@@ -18459,13 +19647,26 @@ impl PutBucketPolicyInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(
-            output,
-            "/{Bucket}",
-            Bucket = smithy_http::label::fmt_string(&self.bucket, false)
-        )
-        .expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let bucket = {
+            let input = &self.bucket;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "bucket",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "bucket",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
+        Ok(())
     }
     fn add_headers(
         &self,
@@ -18538,7 +19739,7 @@ impl PutBucketPolicyInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         self.uri_query(&mut uri);
         let builder = self.add_headers(builder)?;
         Ok(builder.method("PUT").uri(uri))
@@ -18646,7 +19847,7 @@ pub mod put_bucket_replication_input {
             smithy_http::operation::BuildError,
         > {
             Ok(crate::input::PutBucketReplicationInput {
-                bucket: self.bucket.unwrap_or_default(),
+                bucket: self.bucket,
                 content_md5: self.content_md5,
                 token: self.token,
                 expected_bucket_owner: self.expected_bucket_owner,
@@ -18734,13 +19935,26 @@ impl PutBucketReplicationInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(
-            output,
-            "/{Bucket}",
-            Bucket = smithy_http::label::fmt_string(&self.bucket, false)
-        )
-        .expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let bucket = {
+            let input = &self.bucket;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "bucket",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "bucket",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
+        Ok(())
     }
     fn add_headers(
         &self,
@@ -18812,7 +20026,7 @@ impl PutBucketReplicationInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         self.uri_query(&mut uri);
         let builder = self.add_headers(builder)?;
         Ok(builder.method("PUT").uri(uri))
@@ -18910,7 +20124,7 @@ pub mod put_bucket_request_payment_input {
             smithy_http::operation::BuildError,
         > {
             Ok(crate::input::PutBucketRequestPaymentInput {
-                bucket: self.bucket.unwrap_or_default(),
+                bucket: self.bucket,
                 content_md5: self.content_md5,
                 expected_bucket_owner: self.expected_bucket_owner,
                 request_payment_configuration: self.request_payment_configuration,
@@ -18998,13 +20212,26 @@ impl PutBucketRequestPaymentInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(
-            output,
-            "/{Bucket}",
-            Bucket = smithy_http::label::fmt_string(&self.bucket, false)
-        )
-        .expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let bucket = {
+            let input = &self.bucket;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "bucket",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "bucket",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
+        Ok(())
     }
     fn add_headers(
         &self,
@@ -19058,7 +20285,7 @@ impl PutBucketRequestPaymentInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         self.uri_query(&mut uri);
         let builder = self.add_headers(builder)?;
         Ok(builder.method("PUT").uri(uri))
@@ -19148,7 +20375,7 @@ pub mod put_bucket_tagging_input {
             smithy_http::operation::BuildError,
         > {
             Ok(crate::input::PutBucketTaggingInput {
-                bucket: self.bucket.unwrap_or_default(),
+                bucket: self.bucket,
                 content_md5: self.content_md5,
                 expected_bucket_owner: self.expected_bucket_owner,
                 tagging: self.tagging,
@@ -19233,13 +20460,26 @@ impl PutBucketTaggingInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(
-            output,
-            "/{Bucket}",
-            Bucket = smithy_http::label::fmt_string(&self.bucket, false)
-        )
-        .expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let bucket = {
+            let input = &self.bucket;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "bucket",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "bucket",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
+        Ok(())
     }
     fn add_headers(
         &self,
@@ -19293,7 +20533,7 @@ impl PutBucketTaggingInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         self.uri_query(&mut uri);
         let builder = self.add_headers(builder)?;
         Ok(builder.method("PUT").uri(uri))
@@ -19402,7 +20642,7 @@ pub mod put_bucket_versioning_input {
             smithy_http::operation::BuildError,
         > {
             Ok(crate::input::PutBucketVersioningInput {
-                bucket: self.bucket.unwrap_or_default(),
+                bucket: self.bucket,
                 content_md5: self.content_md5,
                 mfa: self.mfa,
                 expected_bucket_owner: self.expected_bucket_owner,
@@ -19490,13 +20730,26 @@ impl PutBucketVersioningInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(
-            output,
-            "/{Bucket}",
-            Bucket = smithy_http::label::fmt_string(&self.bucket, false)
-        )
-        .expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let bucket = {
+            let input = &self.bucket;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "bucket",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "bucket",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
+        Ok(())
     }
     fn add_headers(
         &self,
@@ -19568,7 +20821,7 @@ impl PutBucketVersioningInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         self.uri_query(&mut uri);
         let builder = self.add_headers(builder)?;
         Ok(builder.method("PUT").uri(uri))
@@ -19661,7 +20914,7 @@ pub mod put_bucket_website_input {
             smithy_http::operation::BuildError,
         > {
             Ok(crate::input::PutBucketWebsiteInput {
-                bucket: self.bucket.unwrap_or_default(),
+                bucket: self.bucket,
                 content_md5: self.content_md5,
                 expected_bucket_owner: self.expected_bucket_owner,
                 website_configuration: self.website_configuration,
@@ -19748,13 +21001,26 @@ impl PutBucketWebsiteInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(
-            output,
-            "/{Bucket}",
-            Bucket = smithy_http::label::fmt_string(&self.bucket, false)
-        )
-        .expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let bucket = {
+            let input = &self.bucket;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "bucket",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "bucket",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
+        Ok(())
     }
     fn add_headers(
         &self,
@@ -19808,7 +21074,7 @@ impl PutBucketWebsiteInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         self.uri_query(&mut uri);
         let builder = self.add_headers(builder)?;
         Ok(builder.method("PUT").uri(uri))
@@ -20318,7 +21584,7 @@ pub mod put_object_input {
             Ok(crate::input::PutObjectInput {
                 acl: self.acl,
                 body: self.body.unwrap_or_default(),
-                bucket: self.bucket.unwrap_or_default(),
+                bucket: self.bucket,
                 cache_control: self.cache_control,
                 content_disposition: self.content_disposition,
                 content_encoding: self.content_encoding,
@@ -20331,7 +21597,7 @@ pub mod put_object_input {
                 grant_read: self.grant_read,
                 grant_read_acp: self.grant_read_acp,
                 grant_write_acp: self.grant_write_acp,
-                key: self.key.unwrap_or_default(),
+                key: self.key,
                 metadata: self.metadata,
                 server_side_encryption: self.server_side_encryption,
                 storage_class: self.storage_class,
@@ -20409,14 +21675,44 @@ impl PutObjectInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(
-            output,
-            "/{Bucket}/{Key}",
-            Bucket = smithy_http::label::fmt_string(&self.bucket, false),
-            Key = smithy_http::label::fmt_string(&self.key, true)
-        )
-        .expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let bucket = {
+            let input = &self.bucket;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "bucket",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "bucket",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        let key = {
+            let input = &self.key;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "key",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, true);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "key",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        write!(output, "/{Bucket}/{Key}", Bucket = bucket, Key = key)
+            .expect("formatting should succeed");
+        Ok(())
     }
     fn add_headers(
         &self,
@@ -20969,7 +22265,7 @@ impl PutObjectInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         self.uri_query(&mut uri);
         let builder = self.add_headers(builder)?;
         Ok(builder.method("PUT").uri(uri))
@@ -21182,14 +22478,14 @@ pub mod put_object_acl_input {
         {
             Ok(crate::input::PutObjectAclInput {
                 acl: self.acl,
-                bucket: self.bucket.unwrap_or_default(),
+                bucket: self.bucket,
                 content_md5: self.content_md5,
                 grant_full_control: self.grant_full_control,
                 grant_read: self.grant_read,
                 grant_read_acp: self.grant_read_acp,
                 grant_write: self.grant_write,
                 grant_write_acp: self.grant_write_acp,
-                key: self.key.unwrap_or_default(),
+                key: self.key,
                 request_payer: self.request_payer,
                 version_id: self.version_id,
                 expected_bucket_owner: self.expected_bucket_owner,
@@ -21274,14 +22570,44 @@ impl PutObjectAclInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(
-            output,
-            "/{Bucket}/{Key}",
-            Bucket = smithy_http::label::fmt_string(&self.bucket, false),
-            Key = smithy_http::label::fmt_string(&self.key, true)
-        )
-        .expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let bucket = {
+            let input = &self.bucket;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "bucket",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "bucket",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        let key = {
+            let input = &self.key;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "key",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, true);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "key",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        write!(output, "/{Bucket}/{Key}", Bucket = bucket, Key = key)
+            .expect("formatting should succeed");
+        Ok(())
     }
     fn add_headers(
         &self,
@@ -21464,7 +22790,7 @@ impl PutObjectAclInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         self.uri_query(&mut uri);
         let builder = self.add_headers(builder)?;
         Ok(builder.method("PUT").uri(uri))
@@ -21593,8 +22919,8 @@ pub mod put_object_legal_hold_input {
             smithy_http::operation::BuildError,
         > {
             Ok(crate::input::PutObjectLegalHoldInput {
-                bucket: self.bucket.unwrap_or_default(),
-                key: self.key.unwrap_or_default(),
+                bucket: self.bucket,
+                key: self.key,
                 request_payer: self.request_payer,
                 version_id: self.version_id,
                 content_md5: self.content_md5,
@@ -21682,14 +23008,44 @@ impl PutObjectLegalHoldInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(
-            output,
-            "/{Bucket}/{Key}",
-            Bucket = smithy_http::label::fmt_string(&self.bucket, false),
-            Key = smithy_http::label::fmt_string(&self.key, true)
-        )
-        .expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let bucket = {
+            let input = &self.bucket;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "bucket",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "bucket",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        let key = {
+            let input = &self.key;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "key",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, true);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "key",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        write!(output, "/{Bucket}/{Key}", Bucket = bucket, Key = key)
+            .expect("formatting should succeed");
+        Ok(())
     }
     fn add_headers(
         &self,
@@ -21764,7 +23120,7 @@ impl PutObjectLegalHoldInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         self.uri_query(&mut uri);
         let builder = self.add_headers(builder)?;
         Ok(builder.method("PUT").uri(uri))
@@ -21885,7 +23241,7 @@ pub mod put_object_lock_configuration_input {
             smithy_http::operation::BuildError,
         > {
             Ok(crate::input::PutObjectLockConfigurationInput {
-                bucket: self.bucket.unwrap_or_default(),
+                bucket: self.bucket,
                 request_payer: self.request_payer,
                 token: self.token,
                 content_md5: self.content_md5,
@@ -21975,13 +23331,26 @@ impl PutObjectLockConfigurationInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(
-            output,
-            "/{Bucket}",
-            Bucket = smithy_http::label::fmt_string(&self.bucket, false)
-        )
-        .expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let bucket = {
+            let input = &self.bucket;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "bucket",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "bucket",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
+        Ok(())
     }
     fn add_headers(
         &self,
@@ -22071,7 +23440,7 @@ impl PutObjectLockConfigurationInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         self.uri_query(&mut uri);
         let builder = self.add_headers(builder)?;
         Ok(builder.method("PUT").uri(uri))
@@ -22212,8 +23581,8 @@ pub mod put_object_retention_input {
             smithy_http::operation::BuildError,
         > {
             Ok(crate::input::PutObjectRetentionInput {
-                bucket: self.bucket.unwrap_or_default(),
-                key: self.key.unwrap_or_default(),
+                bucket: self.bucket,
+                key: self.key,
                 request_payer: self.request_payer,
                 version_id: self.version_id,
                 bypass_governance_retention: self.bypass_governance_retention.unwrap_or_default(),
@@ -22302,14 +23671,44 @@ impl PutObjectRetentionInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(
-            output,
-            "/{Bucket}/{Key}",
-            Bucket = smithy_http::label::fmt_string(&self.bucket, false),
-            Key = smithy_http::label::fmt_string(&self.key, true)
-        )
-        .expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let bucket = {
+            let input = &self.bucket;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "bucket",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "bucket",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        let key = {
+            let input = &self.key;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "key",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, true);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "key",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        write!(output, "/{Bucket}/{Key}", Bucket = bucket, Key = key)
+            .expect("formatting should succeed");
+        Ok(())
     }
     fn add_headers(
         &self,
@@ -22402,7 +23801,7 @@ impl PutObjectRetentionInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         self.uri_query(&mut uri);
         let builder = self.add_headers(builder)?;
         Ok(builder.method("PUT").uri(uri))
@@ -22528,8 +23927,8 @@ pub mod put_object_tagging_input {
             smithy_http::operation::BuildError,
         > {
             Ok(crate::input::PutObjectTaggingInput {
-                bucket: self.bucket.unwrap_or_default(),
-                key: self.key.unwrap_or_default(),
+                bucket: self.bucket,
+                key: self.key,
                 version_id: self.version_id,
                 content_md5: self.content_md5,
                 expected_bucket_owner: self.expected_bucket_owner,
@@ -22616,14 +24015,44 @@ impl PutObjectTaggingInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(
-            output,
-            "/{Bucket}/{Key}",
-            Bucket = smithy_http::label::fmt_string(&self.bucket, false),
-            Key = smithy_http::label::fmt_string(&self.key, true)
-        )
-        .expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let bucket = {
+            let input = &self.bucket;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "bucket",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "bucket",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        let key = {
+            let input = &self.key;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "key",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, true);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "key",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        write!(output, "/{Bucket}/{Key}", Bucket = bucket, Key = key)
+            .expect("formatting should succeed");
+        Ok(())
     }
     fn add_headers(
         &self,
@@ -22698,7 +24127,7 @@ impl PutObjectTaggingInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         self.uri_query(&mut uri);
         let builder = self.add_headers(builder)?;
         Ok(builder.method("PUT").uri(uri))
@@ -22796,7 +24225,7 @@ pub mod put_public_access_block_input {
             smithy_http::operation::BuildError,
         > {
             Ok(crate::input::PutPublicAccessBlockInput {
-                bucket: self.bucket.unwrap_or_default(),
+                bucket: self.bucket,
                 content_md5: self.content_md5,
                 expected_bucket_owner: self.expected_bucket_owner,
                 public_access_block_configuration: self.public_access_block_configuration,
@@ -22883,13 +24312,26 @@ impl PutPublicAccessBlockInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(
-            output,
-            "/{Bucket}",
-            Bucket = smithy_http::label::fmt_string(&self.bucket, false)
-        )
-        .expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let bucket = {
+            let input = &self.bucket;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "bucket",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "bucket",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
+        Ok(())
     }
     fn add_headers(
         &self,
@@ -22943,7 +24385,7 @@ impl PutPublicAccessBlockInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         self.uri_query(&mut uri);
         let builder = self.add_headers(builder)?;
         Ok(builder.method("PUT").uri(uri))
@@ -23059,8 +24501,8 @@ pub mod restore_object_input {
         ) -> std::result::Result<crate::input::RestoreObjectInput, smithy_http::operation::BuildError>
         {
             Ok(crate::input::RestoreObjectInput {
-                bucket: self.bucket.unwrap_or_default(),
-                key: self.key.unwrap_or_default(),
+                bucket: self.bucket,
+                key: self.key,
                 version_id: self.version_id,
                 request_payer: self.request_payer,
                 expected_bucket_owner: self.expected_bucket_owner,
@@ -23129,14 +24571,44 @@ impl RestoreObjectInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(
-            output,
-            "/{Bucket}/{Key}",
-            Bucket = smithy_http::label::fmt_string(&self.bucket, false),
-            Key = smithy_http::label::fmt_string(&self.key, true)
-        )
-        .expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let bucket = {
+            let input = &self.bucket;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "bucket",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "bucket",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        let key = {
+            let input = &self.key;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "key",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, true);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "key",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        write!(output, "/{Bucket}/{Key}", Bucket = bucket, Key = key)
+            .expect("formatting should succeed");
+        Ok(())
     }
     fn add_headers(
         &self,
@@ -23194,7 +24666,7 @@ impl RestoreObjectInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         self.uri_query(&mut uri);
         let builder = self.add_headers(builder)?;
         Ok(builder.method("POST").uri(uri))
@@ -23391,10 +24863,10 @@ pub mod upload_part_input {
         {
             Ok(crate::input::UploadPartInput {
                 body: self.body.unwrap_or_default(),
-                bucket: self.bucket.unwrap_or_default(),
+                bucket: self.bucket,
                 content_length: self.content_length.unwrap_or_default(),
                 content_md5: self.content_md5,
-                key: self.key.unwrap_or_default(),
+                key: self.key,
                 part_number: self.part_number.unwrap_or_default(),
                 upload_id: self.upload_id,
                 sse_customer_algorithm: self.sse_customer_algorithm,
@@ -23465,14 +24937,44 @@ impl UploadPartInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(
-            output,
-            "/{Bucket}/{Key}",
-            Bucket = smithy_http::label::fmt_string(&self.bucket, false),
-            Key = smithy_http::label::fmt_string(&self.key, true)
-        )
-        .expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let bucket = {
+            let input = &self.bucket;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "bucket",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "bucket",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        let key = {
+            let input = &self.key;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "key",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, true);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "key",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        write!(output, "/{Bucket}/{Key}", Bucket = bucket, Key = key)
+            .expect("formatting should succeed");
+        Ok(())
     }
     fn add_headers(
         &self,
@@ -23631,7 +25133,7 @@ impl UploadPartInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         self.uri_query(&mut uri);
         let builder = self.add_headers(builder)?;
         Ok(builder.method("PUT").uri(uri))
@@ -23963,14 +25465,14 @@ pub mod upload_part_copy_input {
             smithy_http::operation::BuildError,
         > {
             Ok(crate::input::UploadPartCopyInput {
-                bucket: self.bucket.unwrap_or_default(),
+                bucket: self.bucket,
                 copy_source: self.copy_source,
                 copy_source_if_match: self.copy_source_if_match,
                 copy_source_if_modified_since: self.copy_source_if_modified_since,
                 copy_source_if_none_match: self.copy_source_if_none_match,
                 copy_source_if_unmodified_since: self.copy_source_if_unmodified_since,
                 copy_source_range: self.copy_source_range,
-                key: self.key.unwrap_or_default(),
+                key: self.key,
                 part_number: self.part_number.unwrap_or_default(),
                 upload_id: self.upload_id,
                 sse_customer_algorithm: self.sse_customer_algorithm,
@@ -24048,14 +25550,44 @@ impl UploadPartCopyInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(
-            output,
-            "/{Bucket}/{Key}",
-            Bucket = smithy_http::label::fmt_string(&self.bucket, false),
-            Key = smithy_http::label::fmt_string(&self.key, true)
-        )
-        .expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let bucket = {
+            let input = &self.bucket;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "bucket",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "bucket",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        let key = {
+            let input = &self.key;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "key",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, true);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "key",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        write!(output, "/{Bucket}/{Key}", Bucket = bucket, Key = key)
+            .expect("formatting should succeed");
+        Ok(())
     }
     fn add_headers(
         &self,
@@ -24367,7 +25899,7 @@ impl UploadPartCopyInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         self.uri_query(&mut uri);
         let builder = self.add_headers(builder)?;
         Ok(builder.method("PUT").uri(uri))
@@ -25071,8 +26603,9 @@ impl WriteGetObjectResponseInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(output, "/WriteGetObjectResponse").expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        write!(output, "/WriteGetObjectResponse").expect("formatting should succeed");
+        Ok(())
     }
     fn add_headers(
         &self,
@@ -25744,7 +27277,7 @@ impl WriteGetObjectResponseInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         self.uri_query(&mut uri);
         let builder = self.add_headers(builder)?;
         Ok(builder.method("POST").uri(uri))
@@ -26001,7 +27534,7 @@ pub struct UploadPartCopyInput {
     /// <p>The bucket name.</p>
     /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the AWS SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
     /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this action using S3 on Outposts through the AWS SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
-    pub bucket: std::string::String,
+    pub bucket: std::option::Option<std::string::String>,
     /// <p>Specifies the source object for the copy operation. You specify the value in one of two
     /// formats, depending on whether you want to access the source object through an <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points.html">access point</a>:</p>
     /// <ul>
@@ -26041,7 +27574,7 @@ pub struct UploadPartCopyInput {
     /// can copy a range only if the source object is greater than 5 MB.</p>
     pub copy_source_range: std::option::Option<std::string::String>,
     /// <p>Object key for which the multipart upload was initiated.</p>
-    pub key: std::string::String,
+    pub key: std::option::Option<std::string::String>,
     /// <p>Part number of part being copied. This is a positive integer between 1 and
     /// 10,000.</p>
     pub part_number: i32,
@@ -26132,7 +27665,7 @@ pub struct UploadPartInput {
     /// <p>The name of the bucket to which the multipart upload was initiated.</p>
     /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the AWS SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
     /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this action using S3 on Outposts through the AWS SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
-    pub bucket: std::string::String,
+    pub bucket: std::option::Option<std::string::String>,
     /// <p>Size of the body in bytes. This parameter is useful when the size of the body cannot be
     /// determined automatically.</p>
     pub content_length: i64,
@@ -26141,7 +27674,7 @@ pub struct UploadPartInput {
     /// are specified.</p>
     pub content_md5: std::option::Option<std::string::String>,
     /// <p>Object key for which the multipart upload was initiated.</p>
-    pub key: std::string::String,
+    pub key: std::option::Option<std::string::String>,
     /// <p>Part number of part being uploaded. This is a positive integer between 1 and
     /// 10,000.</p>
     pub part_number: i32,
@@ -26193,9 +27726,9 @@ pub struct RestoreObjectInput {
     /// <p>The bucket name containing the object to restore. </p>
     /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the AWS SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
     /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this action using S3 on Outposts through the AWS SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
-    pub bucket: std::string::String,
+    pub bucket: std::option::Option<std::string::String>,
     /// <p>Object key for which the action was initiated.</p>
-    pub key: std::string::String,
+    pub key: std::option::Option<std::string::String>,
     /// <p>VersionId used to reference a specific version of the object.</p>
     pub version_id: std::option::Option<std::string::String>,
     /// <p>Confirms that the requester knows that they will be charged for the request. Bucket
@@ -26226,7 +27759,7 @@ impl std::fmt::Debug for RestoreObjectInput {
 pub struct PutPublicAccessBlockInput {
     /// <p>The name of the Amazon S3 bucket whose <code>PublicAccessBlock</code> configuration you want
     /// to set.</p>
-    pub bucket: std::string::String,
+    pub bucket: std::option::Option<std::string::String>,
     /// <p>The MD5 hash of the <code>PutPublicAccessBlock</code> request body. </p>
     /// <p>For requests made using the AWS Command Line Interface (CLI) or AWS SDKs, this field is calculated automatically.</p>
     pub content_md5: std::option::Option<std::string::String>,
@@ -26258,9 +27791,9 @@ pub struct PutObjectTaggingInput {
     /// <p>The bucket name containing the object. </p>
     /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the AWS SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
     /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this action using S3 on Outposts through the AWS SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
-    pub bucket: std::string::String,
+    pub bucket: std::option::Option<std::string::String>,
     /// <p>Name of the object key.</p>
-    pub key: std::string::String,
+    pub key: std::option::Option<std::string::String>,
     /// <p>The versionId of the object that the tag-set will be added to.</p>
     pub version_id: std::option::Option<std::string::String>,
     /// <p>The MD5 hash for the request body.</p>
@@ -26296,10 +27829,10 @@ pub struct PutObjectRetentionInput {
     /// <p>The bucket name that contains the object you want to apply this Object Retention
     /// configuration to. </p>
     /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the AWS SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
-    pub bucket: std::string::String,
+    pub bucket: std::option::Option<std::string::String>,
     /// <p>The key name for the object that you want to apply this Object Retention configuration
     /// to.</p>
-    pub key: std::string::String,
+    pub key: std::option::Option<std::string::String>,
     /// <p>Confirms that the requester knows that they will be charged for the request. Bucket
     /// owners need not specify this parameter in their requests. For information about downloading
     /// objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in
@@ -26340,7 +27873,7 @@ impl std::fmt::Debug for PutObjectRetentionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutObjectLockConfigurationInput {
     /// <p>The bucket whose Object Lock configuration you want to create or replace.</p>
-    pub bucket: std::string::String,
+    pub bucket: std::option::Option<std::string::String>,
     /// <p>Confirms that the requester knows that they will be charged for the request. Bucket
     /// owners need not specify this parameter in their requests. For information about downloading
     /// objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in
@@ -26374,9 +27907,9 @@ impl std::fmt::Debug for PutObjectLockConfigurationInput {
 pub struct PutObjectLegalHoldInput {
     /// <p>The bucket name containing the object that you want to place a Legal Hold on. </p>
     /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the AWS SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
-    pub bucket: std::string::String,
+    pub bucket: std::option::Option<std::string::String>,
     /// <p>The key name for the object that you want to place a Legal Hold on.</p>
-    pub key: std::string::String,
+    pub key: std::option::Option<std::string::String>,
     /// <p>Confirms that the requester knows that they will be charged for the request. Bucket
     /// owners need not specify this parameter in their requests. For information about downloading
     /// objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in
@@ -26414,7 +27947,7 @@ pub struct PutObjectAclInput {
     pub acl: std::option::Option<crate::model::ObjectCannedAcl>,
     /// <p>The bucket name that contains the object to which you want to attach the ACL. </p>
     /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the AWS SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
-    pub bucket: std::string::String,
+    pub bucket: std::option::Option<std::string::String>,
     /// <p>The base64-encoded 128-bit MD5 digest of the data. This header must be used as a message
     /// integrity check to verify that the request body was not corrupted in transit. For more
     /// information, go to <a href="http://www.ietf.org/rfc/rfc1864.txt">RFC
@@ -26443,7 +27976,7 @@ pub struct PutObjectAclInput {
     /// <p>Key for which the PUT action was initiated.</p>
     /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the AWS SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
     /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this action using S3 on Outposts through the AWS SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
-    pub key: std::string::String,
+    pub key: std::option::Option<std::string::String>,
     /// <p>Confirms that the requester knows that they will be charged for the request. Bucket
     /// owners need not specify this parameter in their requests. For information about downloading
     /// objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in
@@ -26487,7 +28020,7 @@ pub struct PutObjectInput {
     /// <p>The bucket name to which the PUT action was initiated. </p>
     /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the AWS SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
     /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this action using S3 on Outposts through the AWS SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
-    pub bucket: std::string::String,
+    pub bucket: std::option::Option<std::string::String>,
     /// <p> Can be used to specify caching behavior along the request/reply chain. For more
     /// information, see <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9">http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9</a>.</p>
     pub cache_control: std::option::Option<std::string::String>,
@@ -26531,7 +28064,7 @@ pub struct PutObjectInput {
     /// <p>This action is not supported by Amazon S3 on Outposts.</p>
     pub grant_write_acp: std::option::Option<std::string::String>,
     /// <p>Object key for which the PUT action was initiated.</p>
-    pub key: std::string::String,
+    pub key: std::option::Option<std::string::String>,
     /// <p>A map of metadata to store with the object in S3.</p>
     pub metadata:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -26660,7 +28193,7 @@ impl std::fmt::Debug for PutObjectInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutBucketWebsiteInput {
     /// <p>The bucket name.</p>
-    pub bucket: std::string::String,
+    pub bucket: std::option::Option<std::string::String>,
     /// <p>The base64-encoded 128-bit MD5 digest of the data. You must use this header as a message
     /// integrity check to verify that the request body was not corrupted in transit. For more
     /// information, see <a href="http://www.ietf.org/rfc/rfc1864.txt">RFC 1864</a>.</p>
@@ -26686,7 +28219,7 @@ impl std::fmt::Debug for PutBucketWebsiteInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutBucketVersioningInput {
     /// <p>The bucket name.</p>
-    pub bucket: std::string::String,
+    pub bucket: std::option::Option<std::string::String>,
     /// <p>>The base64-encoded 128-bit MD5 digest of the data. You must use this header as a
     /// message integrity check to verify that the request body was not corrupted in transit. For
     /// more information, see <a href="http://www.ietf.org/rfc/rfc1864.txt">RFC
@@ -26717,7 +28250,7 @@ impl std::fmt::Debug for PutBucketVersioningInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutBucketTaggingInput {
     /// <p>The bucket name.</p>
-    pub bucket: std::string::String,
+    pub bucket: std::option::Option<std::string::String>,
     /// <p>The base64-encoded 128-bit MD5 digest of the data. You must use this header as a message
     /// integrity check to verify that the request body was not corrupted in transit. For more
     /// information, see <a href="http://www.ietf.org/rfc/rfc1864.txt">RFC 1864</a>.</p>
@@ -26743,7 +28276,7 @@ impl std::fmt::Debug for PutBucketTaggingInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutBucketRequestPaymentInput {
     /// <p>The bucket name.</p>
-    pub bucket: std::string::String,
+    pub bucket: std::option::Option<std::string::String>,
     /// <p>The base64-encoded 128-bit MD5 digest of the data. You must use this header as a
     /// message integrity check to verify that the request body was not corrupted in transit. For
     /// more information, see <a href="http://www.ietf.org/rfc/rfc1864.txt">RFC
@@ -26774,7 +28307,7 @@ impl std::fmt::Debug for PutBucketRequestPaymentInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutBucketReplicationInput {
     /// <p>The name of the bucket</p>
-    pub bucket: std::string::String,
+    pub bucket: std::option::Option<std::string::String>,
     /// <p>The base64-encoded 128-bit MD5 digest of the data. You must use this header as a message
     /// integrity check to verify that the request body was not corrupted in transit. For more
     /// information, see <a href="http://www.ietf.org/rfc/rfc1864.txt">RFC 1864</a>.</p>
@@ -26804,7 +28337,7 @@ impl std::fmt::Debug for PutBucketReplicationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutBucketPolicyInput {
     /// <p>The name of the bucket.</p>
-    pub bucket: std::string::String,
+    pub bucket: std::option::Option<std::string::String>,
     /// <p>The MD5 hash of the request body.</p>
     /// <p>For requests made using the AWS Command Line Interface (CLI) or AWS SDKs, this field is calculated automatically.</p>
     pub content_md5: std::option::Option<std::string::String>,
@@ -26835,7 +28368,7 @@ impl std::fmt::Debug for PutBucketPolicyInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutBucketOwnershipControlsInput {
     /// <p>The name of the Amazon S3 bucket whose <code>OwnershipControls</code> you want to set.</p>
-    pub bucket: std::string::String,
+    pub bucket: std::option::Option<std::string::String>,
     /// <p>The MD5 hash of the <code>OwnershipControls</code> request body. </p>
     /// <p>For requests made using the AWS Command Line Interface (CLI) or AWS SDKs, this field is calculated automatically.</p>
     pub content_md5: std::option::Option<std::string::String>,
@@ -26860,7 +28393,7 @@ impl std::fmt::Debug for PutBucketOwnershipControlsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutBucketNotificationConfigurationInput {
     /// <p>The name of the bucket.</p>
-    pub bucket: std::string::String,
+    pub bucket: std::option::Option<std::string::String>,
     /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
     pub expected_bucket_owner: std::option::Option<std::string::String>,
     /// <p>A container for specifying the notification configuration of the bucket. If this element
@@ -26884,7 +28417,7 @@ impl std::fmt::Debug for PutBucketNotificationConfigurationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutBucketMetricsConfigurationInput {
     /// <p>The name of the bucket for which the metrics configuration is set.</p>
-    pub bucket: std::string::String,
+    pub bucket: std::option::Option<std::string::String>,
     /// <p>The ID used to identify the metrics configuration.</p>
     pub id: std::option::Option<std::string::String>,
     /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
@@ -26907,7 +28440,7 @@ impl std::fmt::Debug for PutBucketMetricsConfigurationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutBucketLoggingInput {
     /// <p>The name of the bucket for which to set the logging parameters.</p>
-    pub bucket: std::string::String,
+    pub bucket: std::option::Option<std::string::String>,
     /// <p>The MD5 hash of the <code>PutBucketLogging</code> request body.</p>
     /// <p>For requests made using the AWS Command Line Interface (CLI) or AWS SDKs, this field is calculated automatically.</p>
     pub content_md5: std::option::Option<std::string::String>,
@@ -26931,7 +28464,7 @@ impl std::fmt::Debug for PutBucketLoggingInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutBucketLifecycleConfigurationInput {
     /// <p>The name of the bucket for which to set the configuration.</p>
-    pub bucket: std::string::String,
+    pub bucket: std::option::Option<std::string::String>,
     /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
     pub expected_bucket_owner: std::option::Option<std::string::String>,
     /// <p>Container for lifecycle rules. You can add as many as 1,000 rules.</p>
@@ -26951,7 +28484,7 @@ impl std::fmt::Debug for PutBucketLifecycleConfigurationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutBucketInventoryConfigurationInput {
     /// <p>The name of the bucket where the inventory configuration will be stored.</p>
-    pub bucket: std::string::String,
+    pub bucket: std::option::Option<std::string::String>,
     /// <p>The ID used to identify the inventory configuration.</p>
     pub id: std::option::Option<std::string::String>,
     /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
@@ -26974,7 +28507,7 @@ impl std::fmt::Debug for PutBucketInventoryConfigurationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutBucketIntelligentTieringConfigurationInput {
     /// <p>The name of the Amazon S3 bucket whose configuration you want to modify or retrieve.</p>
-    pub bucket: std::string::String,
+    pub bucket: std::option::Option<std::string::String>,
     /// <p>The ID used to identify the S3 Intelligent-Tiering configuration.</p>
     pub id: std::option::Option<std::string::String>,
     /// <p>Container for S3 Intelligent-Tiering configuration.</p>
@@ -27001,7 +28534,7 @@ pub struct PutBucketEncryptionInput {
     /// keys (SSE-S3) or customer master keys stored in AWS KMS (SSE-KMS). For information about
     /// the Amazon S3 default encryption feature, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/bucket-encryption.html">Amazon S3 Default Bucket Encryption</a>
     /// in the <i>Amazon S3 User Guide</i>.</p>
-    pub bucket: std::string::String,
+    pub bucket: std::option::Option<std::string::String>,
     /// <p>The base64-encoded 128-bit MD5 digest of the server-side encryption configuration.</p>
     /// <p>For requests made using the AWS Command Line Interface (CLI) or AWS SDKs, this field is calculated automatically.</p>
     pub content_md5: std::option::Option<std::string::String>,
@@ -27029,7 +28562,7 @@ impl std::fmt::Debug for PutBucketEncryptionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutBucketCorsInput {
     /// <p>Specifies the bucket impacted by the <code>cors</code>configuration.</p>
-    pub bucket: std::string::String,
+    pub bucket: std::option::Option<std::string::String>,
     /// <p>The base64-encoded 128-bit MD5 digest of the data. This header must be used as a message
     /// integrity check to verify that the request body was not corrupted in transit. For more
     /// information, go to <a href="http://www.ietf.org/rfc/rfc1864.txt">RFC
@@ -27042,7 +28575,7 @@ pub struct PutBucketCorsInput {
     /// <p>Describes the cross-origin access configuration for objects in an Amazon S3 bucket. For more
     /// information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/cors.html">Enabling Cross-Origin Resource
     /// Sharing</a> in the <i>Amazon S3 User Guide</i>.</p>
-    pub cors_configuration: std::option::Option<crate::model::CORSConfiguration>,
+    pub cors_configuration: std::option::Option<crate::model::CorsConfiguration>,
 }
 impl std::fmt::Debug for PutBucketCorsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -27059,7 +28592,7 @@ impl std::fmt::Debug for PutBucketCorsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutBucketAnalyticsConfigurationInput {
     /// <p>The name of the bucket to which an analytics configuration is stored.</p>
-    pub bucket: std::string::String,
+    pub bucket: std::option::Option<std::string::String>,
     /// <p>The ID that identifies the analytics configuration.</p>
     pub id: std::option::Option<std::string::String>,
     /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
@@ -27084,7 +28617,7 @@ pub struct PutBucketAclInput {
     /// <p>The canned ACL to apply to the bucket.</p>
     pub acl: std::option::Option<crate::model::BucketCannedAcl>,
     /// <p>The bucket to which to apply the ACL.</p>
-    pub bucket: std::string::String,
+    pub bucket: std::option::Option<std::string::String>,
     /// <p>The base64-encoded 128-bit MD5 digest of the data. This header must be used as a message
     /// integrity check to verify that the request body was not corrupted in transit. For more
     /// information, go to <a href="http://www.ietf.org/rfc/rfc1864.txt">RFC
@@ -27130,7 +28663,7 @@ impl std::fmt::Debug for PutBucketAclInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutBucketAccelerateConfigurationInput {
     /// <p>The name of the bucket for which the accelerate configuration is set.</p>
-    pub bucket: std::string::String,
+    pub bucket: std::option::Option<std::string::String>,
     /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
     pub expected_bucket_owner: std::option::Option<std::string::String>,
     /// <p>Container for setting the transfer acceleration state.</p>
@@ -27152,9 +28685,9 @@ pub struct ListPartsInput {
     /// <p>The name of the bucket to which the parts are being uploaded. </p>
     /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the AWS SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
     /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this action using S3 on Outposts through the AWS SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
-    pub bucket: std::string::String,
+    pub bucket: std::option::Option<std::string::String>,
     /// <p>Object key for which the multipart upload was initiated.</p>
-    pub key: std::string::String,
+    pub key: std::option::Option<std::string::String>,
     /// <p>Sets the maximum number of parts to return.</p>
     pub max_parts: i32,
     /// <p>Specifies the part after which listing should begin. Only parts with higher part numbers
@@ -27188,7 +28721,7 @@ impl std::fmt::Debug for ListPartsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListObjectVersionsInput {
     /// <p>The bucket name that contains the objects. </p>
-    pub bucket: std::string::String,
+    pub bucket: std::option::Option<std::string::String>,
     /// <p>A delimiter is a character that you specify to group keys. All keys that contain the
     /// same string between the <code>prefix</code> and the first occurrence of the delimiter are
     /// grouped under a single result element in CommonPrefixes. These groups are counted as one
@@ -27241,7 +28774,7 @@ pub struct ListObjectsV2Input {
     /// <p>Bucket name to list. </p>
     /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the AWS SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
     /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this action using S3 on Outposts through the AWS SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
-    pub bucket: std::string::String,
+    pub bucket: std::option::Option<std::string::String>,
     /// <p>A delimiter is a character you use to group keys.</p>
     pub delimiter: std::option::Option<std::string::String>,
     /// <p>Encoding type used by Amazon S3 to encode object keys in the response.</p>
@@ -27291,7 +28824,7 @@ pub struct ListObjectsInput {
     /// <p>The name of the bucket containing the objects.</p>
     /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the AWS SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
     /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this action using S3 on Outposts through the AWS SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
-    pub bucket: std::string::String,
+    pub bucket: std::option::Option<std::string::String>,
     /// <p>A delimiter is a character you use to group keys.</p>
     pub delimiter: std::option::Option<std::string::String>,
     /// <p>Requests Amazon S3 to encode the object keys in the response and specifies the encoding
@@ -27335,7 +28868,7 @@ pub struct ListMultipartUploadsInput {
     /// <p>The name of the bucket to which the multipart upload was initiated. </p>
     /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the AWS SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
     /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this action using S3 on Outposts through the AWS SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
-    pub bucket: std::string::String,
+    pub bucket: std::option::Option<std::string::String>,
     /// <p>Character you use to group keys.</p>
     /// <p>All keys that contain the same string between the prefix, if specified, and the first
     /// occurrence of the delimiter after the prefix are grouped under a single result element,
@@ -27404,7 +28937,7 @@ impl std::fmt::Debug for ListBucketsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListBucketMetricsConfigurationsInput {
     /// <p>The name of the bucket containing the metrics configurations to retrieve.</p>
-    pub bucket: std::string::String,
+    pub bucket: std::option::Option<std::string::String>,
     /// <p>The marker that is used to continue a metrics configuration listing that has been
     /// truncated. Use the NextContinuationToken from a previously truncated list response to
     /// continue the listing. The continuation token is an opaque value that Amazon S3
@@ -27427,7 +28960,7 @@ impl std::fmt::Debug for ListBucketMetricsConfigurationsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListBucketInventoryConfigurationsInput {
     /// <p>The name of the bucket containing the inventory configurations to retrieve.</p>
-    pub bucket: std::string::String,
+    pub bucket: std::option::Option<std::string::String>,
     /// <p>The marker used to continue an inventory configuration listing that has been truncated.
     /// Use the NextContinuationToken from a previously truncated list response to continue the
     /// listing. The continuation token is an opaque value that Amazon S3 understands.</p>
@@ -27449,7 +28982,7 @@ impl std::fmt::Debug for ListBucketInventoryConfigurationsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListBucketIntelligentTieringConfigurationsInput {
     /// <p>The name of the Amazon S3 bucket whose configuration you want to modify or retrieve.</p>
-    pub bucket: std::string::String,
+    pub bucket: std::option::Option<std::string::String>,
     /// <p>The ContinuationToken that represents a placeholder from where this request should
     /// begin.</p>
     pub continuation_token: std::option::Option<std::string::String>,
@@ -27467,7 +29000,7 @@ impl std::fmt::Debug for ListBucketIntelligentTieringConfigurationsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListBucketAnalyticsConfigurationsInput {
     /// <p>The name of the bucket from which analytics configurations are retrieved.</p>
-    pub bucket: std::string::String,
+    pub bucket: std::option::Option<std::string::String>,
     /// <p>The ContinuationToken that represents a placeholder from where this request should
     /// begin.</p>
     pub continuation_token: std::option::Option<std::string::String>,
@@ -27490,7 +29023,7 @@ pub struct HeadObjectInput {
     /// <p>The name of the bucket containing the object.</p>
     /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the AWS SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
     /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this action using S3 on Outposts through the AWS SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
-    pub bucket: std::string::String,
+    pub bucket: std::option::Option<std::string::String>,
     /// <p>Return the object only if its entity tag (ETag) is the same as the one specified,
     /// otherwise return a 412 (precondition failed).</p>
     pub if_match: std::option::Option<std::string::String>,
@@ -27504,7 +29037,7 @@ pub struct HeadObjectInput {
     /// return a 412 (precondition failed).</p>
     pub if_unmodified_since: std::option::Option<smithy_types::Instant>,
     /// <p>The object key.</p>
-    pub key: std::string::String,
+    pub key: std::option::Option<std::string::String>,
     /// <p>Downloads the specified range bytes of an object. For more information about the HTTP
     /// Range header, see <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.35">http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.35</a>.</p>
     /// <note>
@@ -27565,7 +29098,7 @@ pub struct HeadBucketInput {
     /// <p>The bucket name.</p>
     /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the AWS SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
     /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this action using S3 on Outposts through the AWS SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
-    pub bucket: std::string::String,
+    pub bucket: std::option::Option<std::string::String>,
     /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
     pub expected_bucket_owner: std::option::Option<std::string::String>,
 }
@@ -27583,7 +29116,7 @@ impl std::fmt::Debug for HeadBucketInput {
 pub struct GetPublicAccessBlockInput {
     /// <p>The name of the Amazon S3 bucket whose <code>PublicAccessBlock</code> configuration you want
     /// to retrieve. </p>
-    pub bucket: std::string::String,
+    pub bucket: std::option::Option<std::string::String>,
     /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
     pub expected_bucket_owner: std::option::Option<std::string::String>,
 }
@@ -27600,9 +29133,9 @@ impl std::fmt::Debug for GetPublicAccessBlockInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetObjectTorrentInput {
     /// <p>The name of the bucket containing the object for which to get the torrent files.</p>
-    pub bucket: std::string::String,
+    pub bucket: std::option::Option<std::string::String>,
     /// <p>The object key for which to get the information.</p>
-    pub key: std::string::String,
+    pub key: std::option::Option<std::string::String>,
     /// <p>Confirms that the requester knows that they will be charged for the request. Bucket
     /// owners need not specify this parameter in their requests. For information about downloading
     /// objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in
@@ -27628,9 +29161,9 @@ pub struct GetObjectTaggingInput {
     /// <p>The bucket name containing the object for which to get the tagging information. </p>
     /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the AWS SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
     /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this action using S3 on Outposts through the AWS SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
-    pub bucket: std::string::String,
+    pub bucket: std::option::Option<std::string::String>,
     /// <p>Object key for which to get the tagging information.</p>
-    pub key: std::string::String,
+    pub key: std::option::Option<std::string::String>,
     /// <p>The versionId of the object for which to get the tagging information.</p>
     pub version_id: std::option::Option<std::string::String>,
     /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
@@ -27658,9 +29191,9 @@ impl std::fmt::Debug for GetObjectTaggingInput {
 pub struct GetObjectRetentionInput {
     /// <p>The bucket name containing the object whose retention settings you want to retrieve. </p>
     /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the AWS SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
-    pub bucket: std::string::String,
+    pub bucket: std::option::Option<std::string::String>,
     /// <p>The key name for the object whose retention settings you want to retrieve.</p>
-    pub key: std::string::String,
+    pub key: std::option::Option<std::string::String>,
     /// <p>The version ID for the object whose retention settings you want to retrieve.</p>
     pub version_id: std::option::Option<std::string::String>,
     /// <p>Confirms that the requester knows that they will be charged for the request. Bucket
@@ -27688,7 +29221,7 @@ impl std::fmt::Debug for GetObjectRetentionInput {
 pub struct GetObjectLockConfigurationInput {
     /// <p>The bucket whose Object Lock configuration you want to retrieve.</p>
     /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the AWS SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
-    pub bucket: std::string::String,
+    pub bucket: std::option::Option<std::string::String>,
     /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
     pub expected_bucket_owner: std::option::Option<std::string::String>,
 }
@@ -27706,9 +29239,9 @@ impl std::fmt::Debug for GetObjectLockConfigurationInput {
 pub struct GetObjectLegalHoldInput {
     /// <p>The bucket name containing the object whose Legal Hold status you want to retrieve. </p>
     /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the AWS SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
-    pub bucket: std::string::String,
+    pub bucket: std::option::Option<std::string::String>,
     /// <p>The key name for the object whose Legal Hold status you want to retrieve.</p>
-    pub key: std::string::String,
+    pub key: std::option::Option<std::string::String>,
     /// <p>The version ID of the object whose Legal Hold status you want to retrieve.</p>
     pub version_id: std::option::Option<std::string::String>,
     /// <p>Confirms that the requester knows that they will be charged for the request. Bucket
@@ -27736,9 +29269,9 @@ impl std::fmt::Debug for GetObjectLegalHoldInput {
 pub struct GetObjectAclInput {
     /// <p>The bucket name that contains the object for which to get the ACL information. </p>
     /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the AWS SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
-    pub bucket: std::string::String,
+    pub bucket: std::option::Option<std::string::String>,
     /// <p>The key of the object for which to get the ACL information.</p>
-    pub key: std::string::String,
+    pub key: std::option::Option<std::string::String>,
     /// <p>VersionId used to reference a specific version of the object.</p>
     pub version_id: std::option::Option<std::string::String>,
     /// <p>Confirms that the requester knows that they will be charged for the request. Bucket
@@ -27767,7 +29300,7 @@ pub struct GetObjectInput {
     /// <p>The bucket name containing the object. </p>
     /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the AWS SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
     /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this action using S3 on Outposts through the AWS SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
-    pub bucket: std::string::String,
+    pub bucket: std::option::Option<std::string::String>,
     /// <p>Return the object only if its entity tag (ETag) is the same as the one specified,
     /// otherwise return a 412 (precondition failed).</p>
     pub if_match: std::option::Option<std::string::String>,
@@ -27781,7 +29314,7 @@ pub struct GetObjectInput {
     /// return a 412 (precondition failed).</p>
     pub if_unmodified_since: std::option::Option<smithy_types::Instant>,
     /// <p>Key of the object to get.</p>
-    pub key: std::string::String,
+    pub key: std::option::Option<std::string::String>,
     /// <p>Downloads the specified range bytes of an object. For more information about the HTTP
     /// Range header, see <a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.35">https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.35</a>.</p>
     /// <note>
@@ -27861,7 +29394,7 @@ impl std::fmt::Debug for GetObjectInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetBucketWebsiteInput {
     /// <p>The bucket name for which to get the website configuration.</p>
-    pub bucket: std::string::String,
+    pub bucket: std::option::Option<std::string::String>,
     /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
     pub expected_bucket_owner: std::option::Option<std::string::String>,
 }
@@ -27878,7 +29411,7 @@ impl std::fmt::Debug for GetBucketWebsiteInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetBucketVersioningInput {
     /// <p>The name of the bucket for which to get the versioning information.</p>
-    pub bucket: std::string::String,
+    pub bucket: std::option::Option<std::string::String>,
     /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
     pub expected_bucket_owner: std::option::Option<std::string::String>,
 }
@@ -27895,7 +29428,7 @@ impl std::fmt::Debug for GetBucketVersioningInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetBucketTaggingInput {
     /// <p>The name of the bucket for which to get the tagging information.</p>
-    pub bucket: std::string::String,
+    pub bucket: std::option::Option<std::string::String>,
     /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
     pub expected_bucket_owner: std::option::Option<std::string::String>,
 }
@@ -27912,7 +29445,7 @@ impl std::fmt::Debug for GetBucketTaggingInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetBucketRequestPaymentInput {
     /// <p>The name of the bucket for which to get the payment request configuration</p>
-    pub bucket: std::string::String,
+    pub bucket: std::option::Option<std::string::String>,
     /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
     pub expected_bucket_owner: std::option::Option<std::string::String>,
 }
@@ -27929,7 +29462,7 @@ impl std::fmt::Debug for GetBucketRequestPaymentInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetBucketReplicationInput {
     /// <p>The bucket name for which to get the replication information.</p>
-    pub bucket: std::string::String,
+    pub bucket: std::option::Option<std::string::String>,
     /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
     pub expected_bucket_owner: std::option::Option<std::string::String>,
 }
@@ -27946,7 +29479,7 @@ impl std::fmt::Debug for GetBucketReplicationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetBucketPolicyStatusInput {
     /// <p>The name of the Amazon S3 bucket whose policy status you want to retrieve.</p>
-    pub bucket: std::string::String,
+    pub bucket: std::option::Option<std::string::String>,
     /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
     pub expected_bucket_owner: std::option::Option<std::string::String>,
 }
@@ -27963,7 +29496,7 @@ impl std::fmt::Debug for GetBucketPolicyStatusInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetBucketPolicyInput {
     /// <p>The bucket name for which to get the bucket policy.</p>
-    pub bucket: std::string::String,
+    pub bucket: std::option::Option<std::string::String>,
     /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
     pub expected_bucket_owner: std::option::Option<std::string::String>,
 }
@@ -27981,7 +29514,7 @@ impl std::fmt::Debug for GetBucketPolicyInput {
 pub struct GetBucketOwnershipControlsInput {
     /// <p>The name of the Amazon S3 bucket whose <code>OwnershipControls</code> you want to retrieve.
     /// </p>
-    pub bucket: std::string::String,
+    pub bucket: std::option::Option<std::string::String>,
     /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
     pub expected_bucket_owner: std::option::Option<std::string::String>,
 }
@@ -27998,7 +29531,7 @@ impl std::fmt::Debug for GetBucketOwnershipControlsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetBucketNotificationConfigurationInput {
     /// <p>The name of the bucket for which to get the notification configuration.</p>
-    pub bucket: std::string::String,
+    pub bucket: std::option::Option<std::string::String>,
     /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
     pub expected_bucket_owner: std::option::Option<std::string::String>,
 }
@@ -28015,7 +29548,7 @@ impl std::fmt::Debug for GetBucketNotificationConfigurationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetBucketMetricsConfigurationInput {
     /// <p>The name of the bucket containing the metrics configuration to retrieve.</p>
-    pub bucket: std::string::String,
+    pub bucket: std::option::Option<std::string::String>,
     /// <p>The ID used to identify the metrics configuration.</p>
     pub id: std::option::Option<std::string::String>,
     /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
@@ -28035,7 +29568,7 @@ impl std::fmt::Debug for GetBucketMetricsConfigurationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetBucketLoggingInput {
     /// <p>The bucket name for which to get the logging information.</p>
-    pub bucket: std::string::String,
+    pub bucket: std::option::Option<std::string::String>,
     /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
     pub expected_bucket_owner: std::option::Option<std::string::String>,
 }
@@ -28052,7 +29585,7 @@ impl std::fmt::Debug for GetBucketLoggingInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetBucketLocationInput {
     /// <p>The name of the bucket for which to get the location.</p>
-    pub bucket: std::string::String,
+    pub bucket: std::option::Option<std::string::String>,
     /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
     pub expected_bucket_owner: std::option::Option<std::string::String>,
 }
@@ -28069,7 +29602,7 @@ impl std::fmt::Debug for GetBucketLocationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetBucketLifecycleConfigurationInput {
     /// <p>The name of the bucket for which to get the lifecycle information.</p>
-    pub bucket: std::string::String,
+    pub bucket: std::option::Option<std::string::String>,
     /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
     pub expected_bucket_owner: std::option::Option<std::string::String>,
 }
@@ -28086,7 +29619,7 @@ impl std::fmt::Debug for GetBucketLifecycleConfigurationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetBucketInventoryConfigurationInput {
     /// <p>The name of the bucket containing the inventory configuration to retrieve.</p>
-    pub bucket: std::string::String,
+    pub bucket: std::option::Option<std::string::String>,
     /// <p>The ID used to identify the inventory configuration.</p>
     pub id: std::option::Option<std::string::String>,
     /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
@@ -28106,7 +29639,7 @@ impl std::fmt::Debug for GetBucketInventoryConfigurationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetBucketIntelligentTieringConfigurationInput {
     /// <p>The name of the Amazon S3 bucket whose configuration you want to modify or retrieve.</p>
-    pub bucket: std::string::String,
+    pub bucket: std::option::Option<std::string::String>,
     /// <p>The ID used to identify the S3 Intelligent-Tiering configuration.</p>
     pub id: std::option::Option<std::string::String>,
 }
@@ -28124,7 +29657,7 @@ impl std::fmt::Debug for GetBucketIntelligentTieringConfigurationInput {
 pub struct GetBucketEncryptionInput {
     /// <p>The name of the bucket from which the server-side encryption configuration is
     /// retrieved.</p>
-    pub bucket: std::string::String,
+    pub bucket: std::option::Option<std::string::String>,
     /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
     pub expected_bucket_owner: std::option::Option<std::string::String>,
 }
@@ -28141,7 +29674,7 @@ impl std::fmt::Debug for GetBucketEncryptionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetBucketCorsInput {
     /// <p>The bucket name for which to get the cors configuration.</p>
-    pub bucket: std::string::String,
+    pub bucket: std::option::Option<std::string::String>,
     /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
     pub expected_bucket_owner: std::option::Option<std::string::String>,
 }
@@ -28158,7 +29691,7 @@ impl std::fmt::Debug for GetBucketCorsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetBucketAnalyticsConfigurationInput {
     /// <p>The name of the bucket from which an analytics configuration is retrieved.</p>
-    pub bucket: std::string::String,
+    pub bucket: std::option::Option<std::string::String>,
     /// <p>The ID that identifies the analytics configuration.</p>
     pub id: std::option::Option<std::string::String>,
     /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
@@ -28178,7 +29711,7 @@ impl std::fmt::Debug for GetBucketAnalyticsConfigurationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetBucketAclInput {
     /// <p>Specifies the S3 bucket whose ACL is being requested.</p>
-    pub bucket: std::string::String,
+    pub bucket: std::option::Option<std::string::String>,
     /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
     pub expected_bucket_owner: std::option::Option<std::string::String>,
 }
@@ -28195,7 +29728,7 @@ impl std::fmt::Debug for GetBucketAclInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetBucketAccelerateConfigurationInput {
     /// <p>The name of the bucket for which the accelerate configuration is retrieved.</p>
-    pub bucket: std::string::String,
+    pub bucket: std::option::Option<std::string::String>,
     /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
     pub expected_bucket_owner: std::option::Option<std::string::String>,
 }
@@ -28213,7 +29746,7 @@ impl std::fmt::Debug for GetBucketAccelerateConfigurationInput {
 pub struct DeletePublicAccessBlockInput {
     /// <p>The Amazon S3 bucket whose <code>PublicAccessBlock</code> configuration you want to delete.
     /// </p>
-    pub bucket: std::string::String,
+    pub bucket: std::option::Option<std::string::String>,
     /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
     pub expected_bucket_owner: std::option::Option<std::string::String>,
 }
@@ -28232,9 +29765,9 @@ pub struct DeleteObjectTaggingInput {
     /// <p>The bucket name containing the objects from which to remove the tags. </p>
     /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the AWS SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
     /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this action using S3 on Outposts through the AWS SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
-    pub bucket: std::string::String,
+    pub bucket: std::option::Option<std::string::String>,
     /// <p>The key that identifies the object in the bucket from which to remove all tags.</p>
-    pub key: std::string::String,
+    pub key: std::option::Option<std::string::String>,
     /// <p>The versionId of the object that the tag-set will be removed from.</p>
     pub version_id: std::option::Option<std::string::String>,
     /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
@@ -28257,7 +29790,7 @@ pub struct DeleteObjectsInput {
     /// <p>The bucket name containing the objects to delete. </p>
     /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the AWS SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
     /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this action using S3 on Outposts through the AWS SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
-    pub bucket: std::string::String,
+    pub bucket: std::option::Option<std::string::String>,
     /// <p>The concatenation of the authentication device's serial number, a space, and the value
     /// that is displayed on your authentication device. Required to permanently delete a versioned
     /// object if versioning is configured with MFA delete enabled.</p>
@@ -28297,9 +29830,9 @@ pub struct DeleteObjectInput {
     /// <p>The bucket name of the bucket containing the object. </p>
     /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the AWS SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
     /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this action using S3 on Outposts through the AWS SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
-    pub bucket: std::string::String,
+    pub bucket: std::option::Option<std::string::String>,
     /// <p>Key name of the object to delete.</p>
-    pub key: std::string::String,
+    pub key: std::option::Option<std::string::String>,
     /// <p>The concatenation of the authentication device's serial number, a space, and the value
     /// that is displayed on your authentication device. Required to permanently delete a versioned
     /// object if versioning is configured with MFA delete enabled.</p>
@@ -28338,7 +29871,7 @@ impl std::fmt::Debug for DeleteObjectInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteBucketWebsiteInput {
     /// <p>The bucket name for which you want to remove the website configuration. </p>
-    pub bucket: std::string::String,
+    pub bucket: std::option::Option<std::string::String>,
     /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
     pub expected_bucket_owner: std::option::Option<std::string::String>,
 }
@@ -28355,7 +29888,7 @@ impl std::fmt::Debug for DeleteBucketWebsiteInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteBucketTaggingInput {
     /// <p>The bucket that has the tag set to be removed.</p>
-    pub bucket: std::string::String,
+    pub bucket: std::option::Option<std::string::String>,
     /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
     pub expected_bucket_owner: std::option::Option<std::string::String>,
 }
@@ -28372,7 +29905,7 @@ impl std::fmt::Debug for DeleteBucketTaggingInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteBucketReplicationInput {
     /// <p> The bucket name. </p>
-    pub bucket: std::string::String,
+    pub bucket: std::option::Option<std::string::String>,
     /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
     pub expected_bucket_owner: std::option::Option<std::string::String>,
 }
@@ -28389,7 +29922,7 @@ impl std::fmt::Debug for DeleteBucketReplicationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteBucketPolicyInput {
     /// <p>The bucket name.</p>
-    pub bucket: std::string::String,
+    pub bucket: std::option::Option<std::string::String>,
     /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
     pub expected_bucket_owner: std::option::Option<std::string::String>,
 }
@@ -28406,7 +29939,7 @@ impl std::fmt::Debug for DeleteBucketPolicyInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteBucketOwnershipControlsInput {
     /// <p>The Amazon S3 bucket whose <code>OwnershipControls</code> you want to delete. </p>
-    pub bucket: std::string::String,
+    pub bucket: std::option::Option<std::string::String>,
     /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
     pub expected_bucket_owner: std::option::Option<std::string::String>,
 }
@@ -28423,7 +29956,7 @@ impl std::fmt::Debug for DeleteBucketOwnershipControlsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteBucketMetricsConfigurationInput {
     /// <p>The name of the bucket containing the metrics configuration to delete.</p>
-    pub bucket: std::string::String,
+    pub bucket: std::option::Option<std::string::String>,
     /// <p>The ID used to identify the metrics configuration.</p>
     pub id: std::option::Option<std::string::String>,
     /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
@@ -28443,7 +29976,7 @@ impl std::fmt::Debug for DeleteBucketMetricsConfigurationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteBucketLifecycleInput {
     /// <p>The bucket name of the lifecycle to delete.</p>
-    pub bucket: std::string::String,
+    pub bucket: std::option::Option<std::string::String>,
     /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
     pub expected_bucket_owner: std::option::Option<std::string::String>,
 }
@@ -28460,7 +29993,7 @@ impl std::fmt::Debug for DeleteBucketLifecycleInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteBucketInventoryConfigurationInput {
     /// <p>The name of the bucket containing the inventory configuration to delete.</p>
-    pub bucket: std::string::String,
+    pub bucket: std::option::Option<std::string::String>,
     /// <p>The ID used to identify the inventory configuration.</p>
     pub id: std::option::Option<std::string::String>,
     /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
@@ -28480,7 +30013,7 @@ impl std::fmt::Debug for DeleteBucketInventoryConfigurationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteBucketIntelligentTieringConfigurationInput {
     /// <p>The name of the Amazon S3 bucket whose configuration you want to modify or retrieve.</p>
-    pub bucket: std::string::String,
+    pub bucket: std::option::Option<std::string::String>,
     /// <p>The ID used to identify the S3 Intelligent-Tiering configuration.</p>
     pub id: std::option::Option<std::string::String>,
 }
@@ -28498,7 +30031,7 @@ impl std::fmt::Debug for DeleteBucketIntelligentTieringConfigurationInput {
 pub struct DeleteBucketEncryptionInput {
     /// <p>The name of the bucket containing the server-side encryption configuration to
     /// delete.</p>
-    pub bucket: std::string::String,
+    pub bucket: std::option::Option<std::string::String>,
     /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
     pub expected_bucket_owner: std::option::Option<std::string::String>,
 }
@@ -28515,7 +30048,7 @@ impl std::fmt::Debug for DeleteBucketEncryptionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteBucketCorsInput {
     /// <p>Specifies the bucket whose <code>cors</code> configuration is being deleted.</p>
-    pub bucket: std::string::String,
+    pub bucket: std::option::Option<std::string::String>,
     /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
     pub expected_bucket_owner: std::option::Option<std::string::String>,
 }
@@ -28532,7 +30065,7 @@ impl std::fmt::Debug for DeleteBucketCorsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteBucketAnalyticsConfigurationInput {
     /// <p>The name of the bucket from which an analytics configuration is deleted.</p>
-    pub bucket: std::string::String,
+    pub bucket: std::option::Option<std::string::String>,
     /// <p>The ID that identifies the analytics configuration.</p>
     pub id: std::option::Option<std::string::String>,
     /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
@@ -28552,7 +30085,7 @@ impl std::fmt::Debug for DeleteBucketAnalyticsConfigurationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteBucketInput {
     /// <p>Specifies the bucket being deleted.</p>
-    pub bucket: std::string::String,
+    pub bucket: std::option::Option<std::string::String>,
     /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
     pub expected_bucket_owner: std::option::Option<std::string::String>,
 }
@@ -28574,7 +30107,7 @@ pub struct CreateMultipartUploadInput {
     /// <p>The name of the bucket to which to initiate the upload</p>
     /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the AWS SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
     /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this action using S3 on Outposts through the AWS SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
-    pub bucket: std::string::String,
+    pub bucket: std::option::Option<std::string::String>,
     /// <p>Specifies caching behavior along the request/reply chain.</p>
     pub cache_control: std::option::Option<std::string::String>,
     /// <p>Specifies presentational information for the object.</p>
@@ -28605,7 +30138,7 @@ pub struct CreateMultipartUploadInput {
     /// <p>This action is not supported by Amazon S3 on Outposts.</p>
     pub grant_write_acp: std::option::Option<std::string::String>,
     /// <p>Object key for which the multipart upload is to be initiated.</p>
-    pub key: std::string::String,
+    pub key: std::option::Option<std::string::String>,
     /// <p>A map of metadata to store with the object in S3.</p>
     pub metadata:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -28714,7 +30247,7 @@ pub struct CreateBucketInput {
     /// <p>The canned ACL to apply to the bucket.</p>
     pub acl: std::option::Option<crate::model::BucketCannedAcl>,
     /// <p>The name of the bucket to create.</p>
-    pub bucket: std::string::String,
+    pub bucket: std::option::Option<std::string::String>,
     /// <p>Allows grantee the read, write, read ACP, and write ACP permissions on the
     /// bucket.</p>
     pub grant_full_control: std::option::Option<std::string::String>,
@@ -28763,7 +30296,7 @@ pub struct CopyObjectInput {
     /// <p>The name of the destination bucket.</p>
     /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the AWS SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
     /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this action using S3 on Outposts through the AWS SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
-    pub bucket: std::string::String,
+    pub bucket: std::option::Option<std::string::String>,
     /// <p>Specifies caching behavior along the request/reply chain.</p>
     pub cache_control: std::option::Option<std::string::String>,
     /// <p>Specifies presentational information for the object.</p>
@@ -28827,7 +30360,7 @@ pub struct CopyObjectInput {
     /// <p>This action is not supported by Amazon S3 on Outposts.</p>
     pub grant_write_acp: std::option::Option<std::string::String>,
     /// <p>The key of the destination object.</p>
-    pub key: std::string::String,
+    pub key: std::option::Option<std::string::String>,
     /// <p>A map of metadata to store with the object in S3.</p>
     pub metadata:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -28984,9 +30517,9 @@ impl std::fmt::Debug for CopyObjectInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CompleteMultipartUploadInput {
     /// <p>Name of the bucket to which the multipart upload was initiated.</p>
-    pub bucket: std::string::String,
+    pub bucket: std::option::Option<std::string::String>,
     /// <p>Object key for which the multipart upload was initiated.</p>
-    pub key: std::string::String,
+    pub key: std::option::Option<std::string::String>,
     /// <p>The container for the multipart upload request information.</p>
     pub multipart_upload: std::option::Option<crate::model::CompletedMultipartUpload>,
     /// <p>ID for the initiated multipart upload.</p>
@@ -29018,9 +30551,9 @@ pub struct AbortMultipartUploadInput {
     /// <p>The bucket name to which the upload was taking place. </p>
     /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the AWS SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
     /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this action using S3 on Outposts through the AWS SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
-    pub bucket: std::string::String,
+    pub bucket: std::option::Option<std::string::String>,
     /// <p>Key of the object for which the multipart upload was initiated.</p>
-    pub key: std::string::String,
+    pub key: std::option::Option<std::string::String>,
     /// <p>Upload ID that identifies the multipart upload.</p>
     pub upload_id: std::option::Option<std::string::String>,
     /// <p>Confirms that the requester knows that they will be charged for the request. Bucket

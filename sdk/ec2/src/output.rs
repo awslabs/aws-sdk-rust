@@ -8021,28 +8021,28 @@ impl EnableVpcClassicLinkOutput {
 
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct EnableVolumeIOOutput {}
-impl std::fmt::Debug for EnableVolumeIOOutput {
+pub struct EnableVolumeIoOutput {}
+impl std::fmt::Debug for EnableVolumeIoOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EnableVolumeIOOutput");
+        let mut formatter = f.debug_struct("EnableVolumeIoOutput");
         formatter.finish()
     }
 }
-/// See [`EnableVolumeIOOutput`](crate::output::EnableVolumeIOOutput)
+/// See [`EnableVolumeIoOutput`](crate::output::EnableVolumeIoOutput)
 pub mod enable_volume_io_output {
-    /// A builder for [`EnableVolumeIOOutput`](crate::output::EnableVolumeIOOutput)
+    /// A builder for [`EnableVolumeIoOutput`](crate::output::EnableVolumeIoOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`EnableVolumeIOOutput`](crate::output::EnableVolumeIOOutput)
-        pub fn build(self) -> crate::output::EnableVolumeIOOutput {
-            crate::output::EnableVolumeIOOutput {}
+        /// Consumes the builder and constructs a [`EnableVolumeIoOutput`](crate::output::EnableVolumeIoOutput)
+        pub fn build(self) -> crate::output::EnableVolumeIoOutput {
+            crate::output::EnableVolumeIoOutput {}
         }
     }
 }
-impl EnableVolumeIOOutput {
-    /// Creates a new builder-style object to manufacture [`EnableVolumeIOOutput`](crate::output::EnableVolumeIOOutput)
+impl EnableVolumeIoOutput {
+    /// Creates a new builder-style object to manufacture [`EnableVolumeIoOutput`](crate::output::EnableVolumeIoOutput)
     pub fn builder() -> crate::output::enable_volume_io_output::Builder {
         crate::output::enable_volume_io_output::Builder::default()
     }

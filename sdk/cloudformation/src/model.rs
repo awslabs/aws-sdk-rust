@@ -29,7 +29,7 @@ impl std::convert::From<&str> for Capability {
 impl std::str::FromStr for Capability {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(Capability::from(s))
     }
 }
@@ -46,15 +46,6 @@ impl Capability {
 impl AsRef<str> for Capability {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for Capability {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -185,7 +176,7 @@ impl std::convert::From<&str> for CallAs {
 impl std::str::FromStr for CallAs {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(CallAs::from(s))
     }
 }
@@ -201,15 +192,6 @@ impl CallAs {
 impl AsRef<str> for CallAs {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for CallAs {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -308,7 +290,7 @@ impl std::convert::From<&str> for PermissionModels {
 impl std::str::FromStr for PermissionModels {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(PermissionModels::from(s))
     }
 }
@@ -324,15 +306,6 @@ impl PermissionModels {
 impl AsRef<str> for PermissionModels {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for PermissionModels {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -639,7 +612,7 @@ impl std::convert::From<&str> for RegionConcurrencyType {
 impl std::str::FromStr for RegionConcurrencyType {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(RegionConcurrencyType::from(s))
     }
 }
@@ -655,15 +628,6 @@ impl RegionConcurrencyType {
 impl AsRef<str> for RegionConcurrencyType {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for RegionConcurrencyType {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -1066,7 +1030,7 @@ impl std::convert::From<&str> for ResourceSignalStatus {
 impl std::str::FromStr for ResourceSignalStatus {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(ResourceSignalStatus::from(s))
     }
 }
@@ -1082,15 +1046,6 @@ impl ResourceSignalStatus {
 impl AsRef<str> for ResourceSignalStatus {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for ResourceSignalStatus {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -1122,7 +1077,7 @@ impl std::convert::From<&str> for RegistryType {
 impl std::str::FromStr for RegistryType {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(RegistryType::from(s))
     }
 }
@@ -1138,15 +1093,6 @@ impl RegistryType {
 impl AsRef<str> for RegistryType {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for RegistryType {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -1266,7 +1212,7 @@ impl std::convert::From<&str> for HandlerErrorCode {
 impl std::str::FromStr for HandlerErrorCode {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(HandlerErrorCode::from(s))
     }
 }
@@ -1294,15 +1240,6 @@ impl HandlerErrorCode {
 impl AsRef<str> for HandlerErrorCode {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for HandlerErrorCode {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -1338,7 +1275,7 @@ impl std::convert::From<&str> for OperationStatus {
 impl std::str::FromStr for OperationStatus {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(OperationStatus::from(s))
     }
 }
@@ -1356,15 +1293,6 @@ impl OperationStatus {
 impl AsRef<str> for OperationStatus {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for OperationStatus {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -1530,7 +1458,7 @@ impl std::convert::From<&str> for DeprecatedStatus {
 impl std::str::FromStr for DeprecatedStatus {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(DeprecatedStatus::from(s))
     }
 }
@@ -1546,15 +1474,6 @@ impl DeprecatedStatus {
 impl AsRef<str> for DeprecatedStatus {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for DeprecatedStatus {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -1717,7 +1636,7 @@ impl std::convert::From<&str> for ProvisioningType {
 impl std::str::FromStr for ProvisioningType {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(ProvisioningType::from(s))
     }
 }
@@ -1734,15 +1653,6 @@ impl ProvisioningType {
 impl AsRef<str> for ProvisioningType {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for ProvisioningType {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -1774,7 +1684,7 @@ impl std::convert::From<&str> for Visibility {
 impl std::str::FromStr for Visibility {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(Visibility::from(s))
     }
 }
@@ -1790,15 +1700,6 @@ impl Visibility {
 impl AsRef<str> for Visibility {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for Visibility {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -1832,7 +1733,7 @@ impl std::convert::From<&str> for RegistrationStatus {
 impl std::str::FromStr for RegistrationStatus {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(RegistrationStatus::from(s))
     }
 }
@@ -1849,15 +1750,6 @@ impl RegistrationStatus {
 impl AsRef<str> for RegistrationStatus {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for RegistrationStatus {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -2134,7 +2026,7 @@ impl std::convert::From<&str> for StackDriftStatus {
 impl std::str::FromStr for StackDriftStatus {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(StackDriftStatus::from(s))
     }
 }
@@ -2152,15 +2044,6 @@ impl StackDriftStatus {
 impl AsRef<str> for StackDriftStatus {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for StackDriftStatus {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -2192,7 +2075,7 @@ impl std::convert::From<&str> for StackSetStatus {
 impl std::str::FromStr for StackSetStatus {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(StackSetStatus::from(s))
     }
 }
@@ -2208,15 +2091,6 @@ impl StackSetStatus {
 impl AsRef<str> for StackSetStatus {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for StackSetStatus {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -2462,7 +2336,7 @@ impl std::convert::From<&str> for StackSetOperationStatus {
 impl std::str::FromStr for StackSetOperationStatus {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(StackSetOperationStatus::from(s))
     }
 }
@@ -2482,15 +2356,6 @@ impl StackSetOperationStatus {
 impl AsRef<str> for StackSetOperationStatus {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for StackSetOperationStatus {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -2526,7 +2391,7 @@ impl std::convert::From<&str> for StackSetOperationAction {
 impl std::str::FromStr for StackSetOperationAction {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(StackSetOperationAction::from(s))
     }
 }
@@ -2544,15 +2409,6 @@ impl StackSetOperationAction {
 impl AsRef<str> for StackSetOperationAction {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for StackSetOperationAction {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -2940,7 +2796,7 @@ impl std::convert::From<&str> for AccountGateStatus {
 impl std::str::FromStr for AccountGateStatus {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(AccountGateStatus::from(s))
     }
 }
@@ -2957,15 +2813,6 @@ impl AccountGateStatus {
 impl AsRef<str> for AccountGateStatus {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for AccountGateStatus {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -3003,7 +2850,7 @@ impl std::convert::From<&str> for StackSetOperationResultStatus {
 impl std::str::FromStr for StackSetOperationResultStatus {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(StackSetOperationResultStatus::from(s))
     }
 }
@@ -3022,15 +2869,6 @@ impl StackSetOperationResultStatus {
 impl AsRef<str> for StackSetOperationResultStatus {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for StackSetOperationResultStatus {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -3456,7 +3294,7 @@ impl std::convert::From<&str> for StackStatus {
 impl std::str::FromStr for StackStatus {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(StackStatus::from(s))
     }
 }
@@ -3494,15 +3332,6 @@ impl StackStatus {
 impl AsRef<str> for StackStatus {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for StackStatus {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -3938,7 +3767,7 @@ impl std::convert::From<&str> for StackResourceDriftStatus {
 impl std::str::FromStr for StackResourceDriftStatus {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(StackResourceDriftStatus::from(s))
     }
 }
@@ -3956,15 +3785,6 @@ impl StackResourceDriftStatus {
 impl AsRef<str> for StackResourceDriftStatus {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for StackResourceDriftStatus {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -4024,7 +3844,7 @@ impl std::convert::From<&str> for ResourceStatus {
 impl std::str::FromStr for ResourceStatus {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(ResourceStatus::from(s))
     }
 }
@@ -4054,15 +3874,6 @@ impl ResourceStatus {
 impl AsRef<str> for ResourceStatus {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for ResourceStatus {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -4526,7 +4337,7 @@ impl std::convert::From<&str> for StackInstanceDetailedStatus {
 impl std::str::FromStr for StackInstanceDetailedStatus {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(StackInstanceDetailedStatus::from(s))
     }
 }
@@ -4546,15 +4357,6 @@ impl StackInstanceDetailedStatus {
 impl AsRef<str> for StackInstanceDetailedStatus {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for StackInstanceDetailedStatus {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -4588,7 +4390,7 @@ impl std::convert::From<&str> for StackInstanceStatus {
 impl std::str::FromStr for StackInstanceStatus {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(StackInstanceStatus::from(s))
     }
 }
@@ -4605,15 +4407,6 @@ impl StackInstanceStatus {
 impl AsRef<str> for StackInstanceStatus {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for StackInstanceStatus {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -4707,7 +4500,7 @@ impl std::convert::From<&str> for StackInstanceFilterName {
 impl std::str::FromStr for StackInstanceFilterName {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(StackInstanceFilterName::from(s))
     }
 }
@@ -4722,15 +4515,6 @@ impl StackInstanceFilterName {
 impl AsRef<str> for StackInstanceFilterName {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for StackInstanceFilterName {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -5103,7 +4887,7 @@ impl std::convert::From<&str> for ChangeSetStatus {
 impl std::str::FromStr for ChangeSetStatus {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(ChangeSetStatus::from(s))
     }
 }
@@ -5125,15 +4909,6 @@ impl ChangeSetStatus {
 impl AsRef<str> for ChangeSetStatus {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for ChangeSetStatus {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -5173,7 +4948,7 @@ impl std::convert::From<&str> for ExecutionStatus {
 impl std::str::FromStr for ExecutionStatus {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(ExecutionStatus::from(s))
     }
 }
@@ -5193,15 +4968,6 @@ impl ExecutionStatus {
 impl AsRef<str> for ExecutionStatus {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for ExecutionStatus {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -5510,7 +5276,7 @@ impl std::convert::From<&str> for TemplateStage {
 impl std::str::FromStr for TemplateStage {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(TemplateStage::from(s))
     }
 }
@@ -5526,15 +5292,6 @@ impl TemplateStage {
 impl AsRef<str> for TemplateStage {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for TemplateStage {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -6021,7 +5778,7 @@ impl std::convert::From<&str> for DifferenceType {
 impl std::str::FromStr for DifferenceType {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(DifferenceType::from(s))
     }
 }
@@ -6038,15 +5795,6 @@ impl DifferenceType {
 impl AsRef<str> for DifferenceType {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for DifferenceType {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -6844,7 +6592,7 @@ impl std::convert::From<&str> for StackSetDriftDetectionStatus {
 impl std::str::FromStr for StackSetDriftDetectionStatus {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(StackSetDriftDetectionStatus::from(s))
     }
 }
@@ -6863,15 +6611,6 @@ impl StackSetDriftDetectionStatus {
 impl AsRef<str> for StackSetDriftDetectionStatus {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for StackSetDriftDetectionStatus {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -6905,7 +6644,7 @@ impl std::convert::From<&str> for StackSetDriftStatus {
 impl std::str::FromStr for StackSetDriftStatus {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(StackSetDriftStatus::from(s))
     }
 }
@@ -6922,15 +6661,6 @@ impl StackSetDriftStatus {
 impl AsRef<str> for StackSetDriftStatus {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for StackSetDriftStatus {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -9132,7 +8862,7 @@ impl std::convert::From<&str> for StackDriftDetectionStatus {
 impl std::str::FromStr for StackDriftDetectionStatus {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(StackDriftDetectionStatus::from(s))
     }
 }
@@ -9149,15 +8879,6 @@ impl StackDriftDetectionStatus {
 impl AsRef<str> for StackDriftDetectionStatus {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for StackDriftDetectionStatus {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -9704,7 +9425,7 @@ impl std::convert::From<&str> for ChangeSource {
 impl std::str::FromStr for ChangeSource {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(ChangeSource::from(s))
     }
 }
@@ -9723,15 +9444,6 @@ impl ChangeSource {
 impl AsRef<str> for ChangeSource {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for ChangeSource {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -9763,7 +9475,7 @@ impl std::convert::From<&str> for EvaluationType {
 impl std::str::FromStr for EvaluationType {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(EvaluationType::from(s))
     }
 }
@@ -9779,15 +9491,6 @@ impl EvaluationType {
 impl AsRef<str> for EvaluationType {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for EvaluationType {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -9917,7 +9620,7 @@ impl std::convert::From<&str> for RequiresRecreation {
 impl std::str::FromStr for RequiresRecreation {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(RequiresRecreation::from(s))
     }
 }
@@ -9934,15 +9637,6 @@ impl RequiresRecreation {
 impl AsRef<str> for RequiresRecreation {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for RequiresRecreation {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -9982,7 +9676,7 @@ impl std::convert::From<&str> for ResourceAttribute {
 impl std::str::FromStr for ResourceAttribute {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(ResourceAttribute::from(s))
     }
 }
@@ -10002,15 +9696,6 @@ impl ResourceAttribute {
 impl AsRef<str> for ResourceAttribute {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for ResourceAttribute {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -10044,7 +9729,7 @@ impl std::convert::From<&str> for Replacement {
 impl std::str::FromStr for Replacement {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(Replacement::from(s))
     }
 }
@@ -10061,15 +9746,6 @@ impl Replacement {
 impl AsRef<str> for Replacement {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for Replacement {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -10107,7 +9783,7 @@ impl std::convert::From<&str> for ChangeAction {
 impl std::str::FromStr for ChangeAction {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(ChangeAction::from(s))
     }
 }
@@ -10126,15 +9802,6 @@ impl ChangeAction {
 impl AsRef<str> for ChangeAction {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for ChangeAction {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -10164,7 +9831,7 @@ impl std::convert::From<&str> for ChangeType {
 impl std::str::FromStr for ChangeType {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(ChangeType::from(s))
     }
 }
@@ -10179,15 +9846,6 @@ impl ChangeType {
 impl AsRef<str> for ChangeType {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for ChangeType {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -10303,7 +9961,7 @@ impl std::convert::From<&str> for OnFailure {
 impl std::str::FromStr for OnFailure {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(OnFailure::from(s))
     }
 }
@@ -10320,15 +9978,6 @@ impl OnFailure {
 impl AsRef<str> for OnFailure {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for OnFailure {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -10458,7 +10107,7 @@ impl std::convert::From<&str> for ChangeSetType {
 impl std::str::FromStr for ChangeSetType {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(ChangeSetType::from(s))
     }
 }
@@ -10475,14 +10124,5 @@ impl ChangeSetType {
 impl AsRef<str> for ChangeSetType {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for ChangeSetType {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }

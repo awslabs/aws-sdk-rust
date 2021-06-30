@@ -39,7 +39,7 @@ impl std::convert::From<&str> for StorageClass {
 impl std::str::FromStr for StorageClass {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(StorageClass::from(s))
     }
 }
@@ -61,15 +61,6 @@ impl StorageClass {
 impl AsRef<str> for StorageClass {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for StorageClass {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -101,7 +92,7 @@ impl std::convert::From<&str> for ServerSideEncryption {
 impl std::str::FromStr for ServerSideEncryption {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(ServerSideEncryption::from(s))
     }
 }
@@ -117,15 +108,6 @@ impl ServerSideEncryption {
 impl AsRef<str> for ServerSideEncryption {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for ServerSideEncryption {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -157,7 +139,7 @@ impl std::convert::From<&str> for RequestCharged {
 impl std::str::FromStr for RequestCharged {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(RequestCharged::from(s))
     }
 }
@@ -172,15 +154,6 @@ impl RequestCharged {
 impl AsRef<str> for RequestCharged {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for RequestCharged {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -216,7 +189,7 @@ impl std::convert::From<&str> for ReplicationStatus {
 impl std::str::FromStr for ReplicationStatus {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(ReplicationStatus::from(s))
     }
 }
@@ -234,15 +207,6 @@ impl ReplicationStatus {
 impl AsRef<str> for ReplicationStatus {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for ReplicationStatus {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -274,7 +238,7 @@ impl std::convert::From<&str> for ObjectLockLegalHoldStatus {
 impl std::str::FromStr for ObjectLockLegalHoldStatus {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(ObjectLockLegalHoldStatus::from(s))
     }
 }
@@ -290,15 +254,6 @@ impl ObjectLockLegalHoldStatus {
 impl AsRef<str> for ObjectLockLegalHoldStatus {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for ObjectLockLegalHoldStatus {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -330,7 +285,7 @@ impl std::convert::From<&str> for ObjectLockMode {
 impl std::str::FromStr for ObjectLockMode {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(ObjectLockMode::from(s))
     }
 }
@@ -346,15 +301,6 @@ impl ObjectLockMode {
 impl AsRef<str> for ObjectLockMode {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for ObjectLockMode {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -452,7 +398,7 @@ impl std::convert::From<&str> for RequestPayer {
 impl std::str::FromStr for RequestPayer {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(RequestPayer::from(s))
     }
 }
@@ -467,15 +413,6 @@ impl RequestPayer {
 impl AsRef<str> for RequestPayer {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for RequestPayer {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -1108,7 +1045,7 @@ impl std::convert::From<&str> for Permission {
 impl std::str::FromStr for Permission {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(Permission::from(s))
     }
 }
@@ -1127,15 +1064,6 @@ impl Permission {
 impl AsRef<str> for Permission {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for Permission {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -1335,7 +1263,7 @@ impl std::convert::From<&str> for Type {
 impl std::str::FromStr for Type {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(Type::from(s))
     }
 }
@@ -1352,15 +1280,6 @@ impl Type {
 impl AsRef<str> for Type {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for Type {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -1402,7 +1321,7 @@ impl std::convert::From<&str> for ObjectCannedAcl {
 impl std::str::FromStr for ObjectCannedAcl {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(ObjectCannedAcl::from(s))
     }
 }
@@ -1423,15 +1342,6 @@ impl ObjectCannedAcl {
 impl AsRef<str> for ObjectCannedAcl {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for ObjectCannedAcl {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -1626,9 +1536,9 @@ impl SelectParameters {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OutputSerialization {
     /// <p>Describes the serialization of CSV-encoded Select results.</p>
-    pub csv: std::option::Option<crate::model::CSVOutput>,
+    pub csv: std::option::Option<crate::model::CsvOutput>,
     /// <p>Specifies JSON as request's output serialization format.</p>
-    pub json: std::option::Option<crate::model::JSONOutput>,
+    pub json: std::option::Option<crate::model::JsonOutput>,
 }
 impl std::fmt::Debug for OutputSerialization {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1644,25 +1554,25 @@ pub mod output_serialization {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) csv: std::option::Option<crate::model::CSVOutput>,
-        pub(crate) json: std::option::Option<crate::model::JSONOutput>,
+        pub(crate) csv: std::option::Option<crate::model::CsvOutput>,
+        pub(crate) json: std::option::Option<crate::model::JsonOutput>,
     }
     impl Builder {
         /// <p>Describes the serialization of CSV-encoded Select results.</p>
-        pub fn csv(mut self, input: crate::model::CSVOutput) -> Self {
+        pub fn csv(mut self, input: crate::model::CsvOutput) -> Self {
             self.csv = Some(input);
             self
         }
-        pub fn set_csv(mut self, input: std::option::Option<crate::model::CSVOutput>) -> Self {
+        pub fn set_csv(mut self, input: std::option::Option<crate::model::CsvOutput>) -> Self {
             self.csv = input;
             self
         }
         /// <p>Specifies JSON as request's output serialization format.</p>
-        pub fn json(mut self, input: crate::model::JSONOutput) -> Self {
+        pub fn json(mut self, input: crate::model::JsonOutput) -> Self {
             self.json = Some(input);
             self
         }
-        pub fn set_json(mut self, input: std::option::Option<crate::model::JSONOutput>) -> Self {
+        pub fn set_json(mut self, input: std::option::Option<crate::model::JsonOutput>) -> Self {
             self.json = input;
             self
         }
@@ -1685,21 +1595,21 @@ impl OutputSerialization {
 /// <p>Specifies JSON as request's output serialization format.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct JSONOutput {
+pub struct JsonOutput {
     /// <p>The value used to separate individual records in the output. If no value is specified,
     /// Amazon S3 uses a newline character ('\n').</p>
     pub record_delimiter: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for JSONOutput {
+impl std::fmt::Debug for JsonOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("JSONOutput");
+        let mut formatter = f.debug_struct("JsonOutput");
         formatter.field("record_delimiter", &self.record_delimiter);
         formatter.finish()
     }
 }
-/// See [`JSONOutput`](crate::model::JSONOutput)
+/// See [`JsonOutput`](crate::model::JsonOutput)
 pub mod json_output {
-    /// A builder for [`JSONOutput`](crate::model::JSONOutput)
+    /// A builder for [`JsonOutput`](crate::model::JsonOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -1719,16 +1629,16 @@ pub mod json_output {
             self.record_delimiter = input;
             self
         }
-        /// Consumes the builder and constructs a [`JSONOutput`](crate::model::JSONOutput)
-        pub fn build(self) -> crate::model::JSONOutput {
-            crate::model::JSONOutput {
+        /// Consumes the builder and constructs a [`JsonOutput`](crate::model::JsonOutput)
+        pub fn build(self) -> crate::model::JsonOutput {
+            crate::model::JsonOutput {
                 record_delimiter: self.record_delimiter,
             }
         }
     }
 }
-impl JSONOutput {
-    /// Creates a new builder-style object to manufacture [`JSONOutput`](crate::model::JSONOutput)
+impl JsonOutput {
+    /// Creates a new builder-style object to manufacture [`JsonOutput`](crate::model::JsonOutput)
     pub fn builder() -> crate::model::json_output::Builder {
         crate::model::json_output::Builder::default()
     }
@@ -1738,7 +1648,7 @@ impl JSONOutput {
 /// formatted.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct CSVOutput {
+pub struct CsvOutput {
     /// <p>Indicates whether to use quotation marks around output fields. </p>
     /// <ul>
     /// <li>
@@ -1765,9 +1675,9 @@ pub struct CSVOutput {
     /// as follows: <code>" a , b "</code>.</p>
     pub quote_character: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for CSVOutput {
+impl std::fmt::Debug for CsvOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CSVOutput");
+        let mut formatter = f.debug_struct("CsvOutput");
         formatter.field("quote_fields", &self.quote_fields);
         formatter.field("quote_escape_character", &self.quote_escape_character);
         formatter.field("record_delimiter", &self.record_delimiter);
@@ -1776,9 +1686,9 @@ impl std::fmt::Debug for CSVOutput {
         formatter.finish()
     }
 }
-/// See [`CSVOutput`](crate::model::CSVOutput)
+/// See [`CsvOutput`](crate::model::CsvOutput)
 pub mod csv_output {
-    /// A builder for [`CSVOutput`](crate::model::CSVOutput)
+    /// A builder for [`CsvOutput`](crate::model::CsvOutput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -1864,9 +1774,9 @@ pub mod csv_output {
             self.quote_character = input;
             self
         }
-        /// Consumes the builder and constructs a [`CSVOutput`](crate::model::CSVOutput)
-        pub fn build(self) -> crate::model::CSVOutput {
-            crate::model::CSVOutput {
+        /// Consumes the builder and constructs a [`CsvOutput`](crate::model::CsvOutput)
+        pub fn build(self) -> crate::model::CsvOutput {
+            crate::model::CsvOutput {
                 quote_fields: self.quote_fields,
                 quote_escape_character: self.quote_escape_character,
                 record_delimiter: self.record_delimiter,
@@ -1876,8 +1786,8 @@ pub mod csv_output {
         }
     }
 }
-impl CSVOutput {
-    /// Creates a new builder-style object to manufacture [`CSVOutput`](crate::model::CSVOutput)
+impl CsvOutput {
+    /// Creates a new builder-style object to manufacture [`CsvOutput`](crate::model::CsvOutput)
     pub fn builder() -> crate::model::csv_output::Builder {
         crate::model::csv_output::Builder::default()
     }
@@ -1911,7 +1821,7 @@ impl std::convert::From<&str> for QuoteFields {
 impl std::str::FromStr for QuoteFields {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(QuoteFields::from(s))
     }
 }
@@ -1927,15 +1837,6 @@ impl QuoteFields {
 impl AsRef<str> for QuoteFields {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for QuoteFields {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -1965,7 +1866,7 @@ impl std::convert::From<&str> for ExpressionType {
 impl std::str::FromStr for ExpressionType {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(ExpressionType::from(s))
     }
 }
@@ -1982,27 +1883,18 @@ impl AsRef<str> for ExpressionType {
         self.as_str()
     }
 }
-impl<'de> serde::Deserialize<'de> for ExpressionType {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
-    }
-}
 
 /// <p>Describes the serialization format of the object.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InputSerialization {
     /// <p>Describes the serialization of a CSV-encoded object.</p>
-    pub csv: std::option::Option<crate::model::CSVInput>,
+    pub csv: std::option::Option<crate::model::CsvInput>,
     /// <p>Specifies object's compression format. Valid values: NONE, GZIP, BZIP2. Default Value:
     /// NONE.</p>
     pub compression_type: std::option::Option<crate::model::CompressionType>,
     /// <p>Specifies JSON as object's input serialization format.</p>
-    pub json: std::option::Option<crate::model::JSONInput>,
+    pub json: std::option::Option<crate::model::JsonInput>,
     /// <p>Specifies Parquet as object's input serialization format.</p>
     pub parquet: std::option::Option<crate::model::ParquetInput>,
 }
@@ -2022,18 +1914,18 @@ pub mod input_serialization {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) csv: std::option::Option<crate::model::CSVInput>,
+        pub(crate) csv: std::option::Option<crate::model::CsvInput>,
         pub(crate) compression_type: std::option::Option<crate::model::CompressionType>,
-        pub(crate) json: std::option::Option<crate::model::JSONInput>,
+        pub(crate) json: std::option::Option<crate::model::JsonInput>,
         pub(crate) parquet: std::option::Option<crate::model::ParquetInput>,
     }
     impl Builder {
         /// <p>Describes the serialization of a CSV-encoded object.</p>
-        pub fn csv(mut self, input: crate::model::CSVInput) -> Self {
+        pub fn csv(mut self, input: crate::model::CsvInput) -> Self {
             self.csv = Some(input);
             self
         }
-        pub fn set_csv(mut self, input: std::option::Option<crate::model::CSVInput>) -> Self {
+        pub fn set_csv(mut self, input: std::option::Option<crate::model::CsvInput>) -> Self {
             self.csv = input;
             self
         }
@@ -2051,11 +1943,11 @@ pub mod input_serialization {
             self
         }
         /// <p>Specifies JSON as object's input serialization format.</p>
-        pub fn json(mut self, input: crate::model::JSONInput) -> Self {
+        pub fn json(mut self, input: crate::model::JsonInput) -> Self {
             self.json = Some(input);
             self
         }
-        pub fn set_json(mut self, input: std::option::Option<crate::model::JSONInput>) -> Self {
+        pub fn set_json(mut self, input: std::option::Option<crate::model::JsonInput>) -> Self {
             self.json = input;
             self
         }
@@ -2122,20 +2014,20 @@ impl ParquetInput {
 /// <p>Specifies JSON as object's input serialization format.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct JSONInput {
+pub struct JsonInput {
     /// <p>The type of JSON. Valid values: Document, Lines.</p>
     pub r#type: std::option::Option<crate::model::JsonType>,
 }
-impl std::fmt::Debug for JSONInput {
+impl std::fmt::Debug for JsonInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("JSONInput");
+        let mut formatter = f.debug_struct("JsonInput");
         formatter.field("r#type", &self.r#type);
         formatter.finish()
     }
 }
-/// See [`JSONInput`](crate::model::JSONInput)
+/// See [`JsonInput`](crate::model::JsonInput)
 pub mod json_input {
-    /// A builder for [`JSONInput`](crate::model::JSONInput)
+    /// A builder for [`JsonInput`](crate::model::JsonInput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -2151,16 +2043,16 @@ pub mod json_input {
             self.r#type = input;
             self
         }
-        /// Consumes the builder and constructs a [`JSONInput`](crate::model::JSONInput)
-        pub fn build(self) -> crate::model::JSONInput {
-            crate::model::JSONInput {
+        /// Consumes the builder and constructs a [`JsonInput`](crate::model::JsonInput)
+        pub fn build(self) -> crate::model::JsonInput {
+            crate::model::JsonInput {
                 r#type: self.r#type,
             }
         }
     }
 }
-impl JSONInput {
-    /// Creates a new builder-style object to manufacture [`JSONInput`](crate::model::JSONInput)
+impl JsonInput {
+    /// Creates a new builder-style object to manufacture [`JsonInput`](crate::model::JsonInput)
     pub fn builder() -> crate::model::json_input::Builder {
         crate::model::json_input::Builder::default()
     }
@@ -2194,7 +2086,7 @@ impl std::convert::From<&str> for JsonType {
 impl std::str::FromStr for JsonType {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(JsonType::from(s))
     }
 }
@@ -2210,15 +2102,6 @@ impl JsonType {
 impl AsRef<str> for JsonType {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for JsonType {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -2252,7 +2135,7 @@ impl std::convert::From<&str> for CompressionType {
 impl std::str::FromStr for CompressionType {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(CompressionType::from(s))
     }
 }
@@ -2271,21 +2154,12 @@ impl AsRef<str> for CompressionType {
         self.as_str()
     }
 }
-impl<'de> serde::Deserialize<'de> for CompressionType {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
-    }
-}
 
 /// <p>Describes how an uncompressed comma-separated values (CSV)-formatted input object is
 /// formatted.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct CSVInput {
+pub struct CsvInput {
     /// <p>Describes the first line of input. Valid values are:</p>
     /// <ul>
     /// <li>
@@ -2332,9 +2206,9 @@ pub struct CSVInput {
     /// performance.</p>
     pub allow_quoted_record_delimiter: bool,
 }
-impl std::fmt::Debug for CSVInput {
+impl std::fmt::Debug for CsvInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CSVInput");
+        let mut formatter = f.debug_struct("CsvInput");
         formatter.field("file_header_info", &self.file_header_info);
         formatter.field("comments", &self.comments);
         formatter.field("quote_escape_character", &self.quote_escape_character);
@@ -2348,9 +2222,9 @@ impl std::fmt::Debug for CSVInput {
         formatter.finish()
     }
 }
-/// See [`CSVInput`](crate::model::CSVInput)
+/// See [`CsvInput`](crate::model::CsvInput)
 pub mod csv_input {
-    /// A builder for [`CSVInput`](crate::model::CSVInput)
+    /// A builder for [`CsvInput`](crate::model::CsvInput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -2475,9 +2349,9 @@ pub mod csv_input {
             self.allow_quoted_record_delimiter = input;
             self
         }
-        /// Consumes the builder and constructs a [`CSVInput`](crate::model::CSVInput)
-        pub fn build(self) -> crate::model::CSVInput {
-            crate::model::CSVInput {
+        /// Consumes the builder and constructs a [`CsvInput`](crate::model::CsvInput)
+        pub fn build(self) -> crate::model::CsvInput {
+            crate::model::CsvInput {
                 file_header_info: self.file_header_info,
                 comments: self.comments,
                 quote_escape_character: self.quote_escape_character,
@@ -2491,8 +2365,8 @@ pub mod csv_input {
         }
     }
 }
-impl CSVInput {
-    /// Creates a new builder-style object to manufacture [`CSVInput`](crate::model::CSVInput)
+impl CsvInput {
+    /// Creates a new builder-style object to manufacture [`CsvInput`](crate::model::CsvInput)
     pub fn builder() -> crate::model::csv_input::Builder {
         crate::model::csv_input::Builder::default()
     }
@@ -2528,7 +2402,7 @@ impl std::convert::From<&str> for FileHeaderInfo {
 impl std::str::FromStr for FileHeaderInfo {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(FileHeaderInfo::from(s))
     }
 }
@@ -2545,15 +2419,6 @@ impl FileHeaderInfo {
 impl AsRef<str> for FileHeaderInfo {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for FileHeaderInfo {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -2587,7 +2452,7 @@ impl std::convert::From<&str> for Tier {
 impl std::str::FromStr for Tier {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(Tier::from(s))
     }
 }
@@ -2604,15 +2469,6 @@ impl Tier {
 impl AsRef<str> for Tier {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for Tier {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -2642,7 +2498,7 @@ impl std::convert::From<&str> for RestoreRequestType {
 impl std::str::FromStr for RestoreRequestType {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(RestoreRequestType::from(s))
     }
 }
@@ -2657,15 +2513,6 @@ impl RestoreRequestType {
 impl AsRef<str> for RestoreRequestType {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for RestoreRequestType {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -2956,7 +2803,7 @@ impl std::convert::From<&str> for ObjectLockRetentionMode {
 impl std::str::FromStr for ObjectLockRetentionMode {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(ObjectLockRetentionMode::from(s))
     }
 }
@@ -2972,15 +2819,6 @@ impl ObjectLockRetentionMode {
 impl AsRef<str> for ObjectLockRetentionMode {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for ObjectLockRetentionMode {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -3241,7 +3079,7 @@ impl std::convert::From<&str> for ObjectLockEnabled {
 impl std::str::FromStr for ObjectLockEnabled {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(ObjectLockEnabled::from(s))
     }
 }
@@ -3256,15 +3094,6 @@ impl ObjectLockEnabled {
 impl AsRef<str> for ObjectLockEnabled {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for ObjectLockEnabled {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -3811,7 +3640,7 @@ impl std::convert::From<&str> for Protocol {
 impl std::str::FromStr for Protocol {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(Protocol::from(s))
     }
 }
@@ -3827,15 +3656,6 @@ impl Protocol {
 impl AsRef<str> for Protocol {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for Protocol {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -4229,7 +4049,7 @@ impl std::convert::From<&str> for BucketVersioningStatus {
 impl std::str::FromStr for BucketVersioningStatus {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(BucketVersioningStatus::from(s))
     }
 }
@@ -4245,15 +4065,6 @@ impl BucketVersioningStatus {
 impl AsRef<str> for BucketVersioningStatus {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for BucketVersioningStatus {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -4285,7 +4096,7 @@ impl std::convert::From<&str> for MfaDelete {
 impl std::str::FromStr for MfaDelete {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(MfaDelete::from(s))
     }
 }
@@ -4301,15 +4112,6 @@ impl MfaDelete {
 impl AsRef<str> for MfaDelete {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for MfaDelete {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -4386,7 +4188,7 @@ impl std::convert::From<&str> for Payer {
 impl std::str::FromStr for Payer {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(Payer::from(s))
     }
 }
@@ -4402,15 +4204,6 @@ impl Payer {
 impl AsRef<str> for Payer {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for Payer {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -4834,7 +4627,7 @@ impl std::convert::From<&str> for DeleteMarkerReplicationStatus {
 impl std::str::FromStr for DeleteMarkerReplicationStatus {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(DeleteMarkerReplicationStatus::from(s))
     }
 }
@@ -4850,15 +4643,6 @@ impl DeleteMarkerReplicationStatus {
 impl AsRef<str> for DeleteMarkerReplicationStatus {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for DeleteMarkerReplicationStatus {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -5195,7 +4979,7 @@ impl std::convert::From<&str> for MetricsStatus {
 impl std::str::FromStr for MetricsStatus {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(MetricsStatus::from(s))
     }
 }
@@ -5211,15 +4995,6 @@ impl MetricsStatus {
 impl AsRef<str> for MetricsStatus {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for MetricsStatus {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -5322,7 +5097,7 @@ impl std::convert::From<&str> for ReplicationTimeStatus {
 impl std::str::FromStr for ReplicationTimeStatus {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(ReplicationTimeStatus::from(s))
     }
 }
@@ -5338,15 +5113,6 @@ impl ReplicationTimeStatus {
 impl AsRef<str> for ReplicationTimeStatus {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for ReplicationTimeStatus {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -5485,7 +5251,7 @@ impl std::convert::From<&str> for OwnerOverride {
 impl std::str::FromStr for OwnerOverride {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(OwnerOverride::from(s))
     }
 }
@@ -5500,15 +5266,6 @@ impl OwnerOverride {
 impl AsRef<str> for OwnerOverride {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for OwnerOverride {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -5592,7 +5349,7 @@ impl std::convert::From<&str> for ExistingObjectReplicationStatus {
 impl std::str::FromStr for ExistingObjectReplicationStatus {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(ExistingObjectReplicationStatus::from(s))
     }
 }
@@ -5608,15 +5365,6 @@ impl ExistingObjectReplicationStatus {
 impl AsRef<str> for ExistingObjectReplicationStatus {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for ExistingObjectReplicationStatus {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -5801,7 +5549,7 @@ impl std::convert::From<&str> for ReplicaModificationsStatus {
 impl std::str::FromStr for ReplicaModificationsStatus {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(ReplicaModificationsStatus::from(s))
     }
 }
@@ -5817,15 +5565,6 @@ impl ReplicaModificationsStatus {
 impl AsRef<str> for ReplicaModificationsStatus {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for ReplicaModificationsStatus {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -5910,7 +5649,7 @@ impl std::convert::From<&str> for SseKmsEncryptedObjectsStatus {
 impl std::str::FromStr for SseKmsEncryptedObjectsStatus {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(SseKmsEncryptedObjectsStatus::from(s))
     }
 }
@@ -5926,15 +5665,6 @@ impl SseKmsEncryptedObjectsStatus {
 impl AsRef<str> for SseKmsEncryptedObjectsStatus {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for SseKmsEncryptedObjectsStatus {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -5966,7 +5696,7 @@ impl std::convert::From<&str> for ReplicationRuleStatus {
 impl std::str::FromStr for ReplicationRuleStatus {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(ReplicationRuleStatus::from(s))
     }
 }
@@ -5982,15 +5712,6 @@ impl ReplicationRuleStatus {
 impl AsRef<str> for ReplicationRuleStatus {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for ReplicationRuleStatus {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -6278,7 +5999,7 @@ impl std::convert::From<&str> for ObjectOwnership {
 impl std::str::FromStr for ObjectOwnership {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(ObjectOwnership::from(s))
     }
 }
@@ -6294,15 +6015,6 @@ impl ObjectOwnership {
 impl AsRef<str> for ObjectOwnership {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for ObjectOwnership {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -6720,7 +6432,7 @@ impl std::convert::From<&str> for FilterRuleName {
 impl std::str::FromStr for FilterRuleName {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(FilterRuleName::from(s))
     }
 }
@@ -6736,15 +6448,6 @@ impl FilterRuleName {
 impl AsRef<str> for FilterRuleName {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for FilterRuleName {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -6792,15 +6495,6 @@ where
 {
     fn from(s: T) -> Self {
         Event(s.as_ref().to_owned())
-    }
-}
-impl<'de> serde::Deserialize<'de> for Event {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -7448,7 +7142,7 @@ impl std::convert::From<&str> for BucketLogsPermission {
 impl std::str::FromStr for BucketLogsPermission {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(BucketLogsPermission::from(s))
     }
 }
@@ -7465,15 +7159,6 @@ impl BucketLogsPermission {
 impl AsRef<str> for BucketLogsPermission {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for BucketLogsPermission {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -7989,7 +7674,7 @@ impl std::convert::From<&str> for TransitionStorageClass {
 impl std::str::FromStr for TransitionStorageClass {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(TransitionStorageClass::from(s))
     }
 }
@@ -8008,15 +7693,6 @@ impl TransitionStorageClass {
 impl AsRef<str> for TransitionStorageClass {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for TransitionStorageClass {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -8132,7 +7808,7 @@ impl std::convert::From<&str> for ExpirationStatus {
 impl std::str::FromStr for ExpirationStatus {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(ExpirationStatus::from(s))
     }
 }
@@ -8148,15 +7824,6 @@ impl ExpirationStatus {
 impl AsRef<str> for ExpirationStatus {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for ExpirationStatus {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -8617,7 +8284,7 @@ impl std::convert::From<&str> for InventoryFrequency {
 impl std::str::FromStr for InventoryFrequency {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(InventoryFrequency::from(s))
     }
 }
@@ -8633,15 +8300,6 @@ impl InventoryFrequency {
 impl AsRef<str> for InventoryFrequency {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for InventoryFrequency {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -8693,7 +8351,7 @@ impl std::convert::From<&str> for InventoryOptionalField {
 impl std::str::FromStr for InventoryOptionalField {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(InventoryOptionalField::from(s))
     }
 }
@@ -8719,15 +8377,6 @@ impl InventoryOptionalField {
 impl AsRef<str> for InventoryOptionalField {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for InventoryOptionalField {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -8759,7 +8408,7 @@ impl std::convert::From<&str> for InventoryIncludedObjectVersions {
 impl std::str::FromStr for InventoryIncludedObjectVersions {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(InventoryIncludedObjectVersions::from(s))
     }
 }
@@ -8775,15 +8424,6 @@ impl InventoryIncludedObjectVersions {
 impl AsRef<str> for InventoryIncludedObjectVersions {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for InventoryIncludedObjectVersions {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -9021,9 +8661,9 @@ impl InventoryS3BucketDestination {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InventoryEncryption {
     /// <p>Specifies the use of SSE-S3 to encrypt delivered inventory reports.</p>
-    pub sses3: std::option::Option<crate::model::SSES3>,
+    pub sses3: std::option::Option<crate::model::Sses3>,
     /// <p>Specifies the use of SSE-KMS to encrypt delivered inventory reports.</p>
-    pub ssekms: std::option::Option<crate::model::SSEKMS>,
+    pub ssekms: std::option::Option<crate::model::Ssekms>,
 }
 impl std::fmt::Debug for InventoryEncryption {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9039,25 +8679,25 @@ pub mod inventory_encryption {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) sses3: std::option::Option<crate::model::SSES3>,
-        pub(crate) ssekms: std::option::Option<crate::model::SSEKMS>,
+        pub(crate) sses3: std::option::Option<crate::model::Sses3>,
+        pub(crate) ssekms: std::option::Option<crate::model::Ssekms>,
     }
     impl Builder {
         /// <p>Specifies the use of SSE-S3 to encrypt delivered inventory reports.</p>
-        pub fn sses3(mut self, input: crate::model::SSES3) -> Self {
+        pub fn sses3(mut self, input: crate::model::Sses3) -> Self {
             self.sses3 = Some(input);
             self
         }
-        pub fn set_sses3(mut self, input: std::option::Option<crate::model::SSES3>) -> Self {
+        pub fn set_sses3(mut self, input: std::option::Option<crate::model::Sses3>) -> Self {
             self.sses3 = input;
             self
         }
         /// <p>Specifies the use of SSE-KMS to encrypt delivered inventory reports.</p>
-        pub fn ssekms(mut self, input: crate::model::SSEKMS) -> Self {
+        pub fn ssekms(mut self, input: crate::model::Ssekms) -> Self {
             self.ssekms = Some(input);
             self
         }
-        pub fn set_ssekms(mut self, input: std::option::Option<crate::model::SSEKMS>) -> Self {
+        pub fn set_ssekms(mut self, input: std::option::Option<crate::model::Ssekms>) -> Self {
             self.ssekms = input;
             self
         }
@@ -9080,21 +8720,21 @@ impl InventoryEncryption {
 /// <p>Specifies the use of SSE-KMS to encrypt delivered inventory reports.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct SSEKMS {
+pub struct Ssekms {
     /// <p>Specifies the ID of the AWS Key Management Service (AWS KMS) symmetric customer managed
     /// customer master key (CMK) to use for encrypting inventory reports.</p>
     pub key_id: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for SSEKMS {
+impl std::fmt::Debug for Ssekms {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SSEKMS");
+        let mut formatter = f.debug_struct("Ssekms");
         formatter.field("key_id", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }
-/// See [`SSEKMS`](crate::model::SSEKMS)
+/// See [`Ssekms`](crate::model::Ssekms)
 pub mod ssekms {
-    /// A builder for [`SSEKMS`](crate::model::SSEKMS)
+    /// A builder for [`Ssekms`](crate::model::Ssekms)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -9111,16 +8751,16 @@ pub mod ssekms {
             self.key_id = input;
             self
         }
-        /// Consumes the builder and constructs a [`SSEKMS`](crate::model::SSEKMS)
-        pub fn build(self) -> crate::model::SSEKMS {
-            crate::model::SSEKMS {
+        /// Consumes the builder and constructs a [`Ssekms`](crate::model::Ssekms)
+        pub fn build(self) -> crate::model::Ssekms {
+            crate::model::Ssekms {
                 key_id: self.key_id,
             }
         }
     }
 }
-impl SSEKMS {
-    /// Creates a new builder-style object to manufacture [`SSEKMS`](crate::model::SSEKMS)
+impl Ssekms {
+    /// Creates a new builder-style object to manufacture [`Ssekms`](crate::model::Ssekms)
     pub fn builder() -> crate::model::ssekms::Builder {
         crate::model::ssekms::Builder::default()
     }
@@ -9129,28 +8769,28 @@ impl SSEKMS {
 /// <p>Specifies the use of SSE-S3 to encrypt delivered inventory reports.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct SSES3 {}
-impl std::fmt::Debug for SSES3 {
+pub struct Sses3 {}
+impl std::fmt::Debug for Sses3 {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SSES3");
+        let mut formatter = f.debug_struct("Sses3");
         formatter.finish()
     }
 }
-/// See [`SSES3`](crate::model::SSES3)
+/// See [`Sses3`](crate::model::Sses3)
 pub mod sses3 {
-    /// A builder for [`SSES3`](crate::model::SSES3)
+    /// A builder for [`Sses3`](crate::model::Sses3)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`SSES3`](crate::model::SSES3)
-        pub fn build(self) -> crate::model::SSES3 {
-            crate::model::SSES3 {}
+        /// Consumes the builder and constructs a [`Sses3`](crate::model::Sses3)
+        pub fn build(self) -> crate::model::Sses3 {
+            crate::model::Sses3 {}
         }
     }
 }
-impl SSES3 {
-    /// Creates a new builder-style object to manufacture [`SSES3`](crate::model::SSES3)
+impl Sses3 {
+    /// Creates a new builder-style object to manufacture [`Sses3`](crate::model::Sses3)
     pub fn builder() -> crate::model::sses3::Builder {
         crate::model::sses3::Builder::default()
     }
@@ -9186,7 +8826,7 @@ impl std::convert::From<&str> for InventoryFormat {
 impl std::str::FromStr for InventoryFormat {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(InventoryFormat::from(s))
     }
 }
@@ -9203,15 +8843,6 @@ impl InventoryFormat {
 impl AsRef<str> for InventoryFormat {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for InventoryFormat {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -9422,7 +9053,7 @@ impl std::convert::From<&str> for IntelligentTieringAccessTier {
 impl std::str::FromStr for IntelligentTieringAccessTier {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(IntelligentTieringAccessTier::from(s))
     }
 }
@@ -9438,15 +9069,6 @@ impl IntelligentTieringAccessTier {
 impl AsRef<str> for IntelligentTieringAccessTier {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for IntelligentTieringAccessTier {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -9478,7 +9100,7 @@ impl std::convert::From<&str> for IntelligentTieringStatus {
 impl std::str::FromStr for IntelligentTieringStatus {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(IntelligentTieringStatus::from(s))
     }
 }
@@ -9494,15 +9116,6 @@ impl IntelligentTieringStatus {
 impl AsRef<str> for IntelligentTieringStatus {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for IntelligentTieringStatus {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -9923,28 +9536,28 @@ impl ServerSideEncryptionByDefault {
 /// Cross-Origin Resource Sharing</a> in the <i>Amazon S3 User Guide</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct CORSConfiguration {
+pub struct CorsConfiguration {
     /// <p>A set of origins and methods (cross-origin access that you want to allow). You can add
     /// up to 100 rules to the configuration.</p>
-    pub cors_rules: std::option::Option<std::vec::Vec<crate::model::CORSRule>>,
+    pub cors_rules: std::option::Option<std::vec::Vec<crate::model::CorsRule>>,
 }
-impl std::fmt::Debug for CORSConfiguration {
+impl std::fmt::Debug for CorsConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CORSConfiguration");
+        let mut formatter = f.debug_struct("CorsConfiguration");
         formatter.field("cors_rules", &self.cors_rules);
         formatter.finish()
     }
 }
-/// See [`CORSConfiguration`](crate::model::CORSConfiguration)
+/// See [`CorsConfiguration`](crate::model::CorsConfiguration)
 pub mod cors_configuration {
-    /// A builder for [`CORSConfiguration`](crate::model::CORSConfiguration)
+    /// A builder for [`CorsConfiguration`](crate::model::CorsConfiguration)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) cors_rules: std::option::Option<std::vec::Vec<crate::model::CORSRule>>,
+        pub(crate) cors_rules: std::option::Option<std::vec::Vec<crate::model::CorsRule>>,
     }
     impl Builder {
-        pub fn cors_rules(mut self, input: impl Into<crate::model::CORSRule>) -> Self {
+        pub fn cors_rules(mut self, input: impl Into<crate::model::CorsRule>) -> Self {
             let mut v = self.cors_rules.unwrap_or_default();
             v.push(input.into());
             self.cors_rules = Some(v);
@@ -9952,21 +9565,21 @@ pub mod cors_configuration {
         }
         pub fn set_cors_rules(
             mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::CORSRule>>,
+            input: std::option::Option<std::vec::Vec<crate::model::CorsRule>>,
         ) -> Self {
             self.cors_rules = input;
             self
         }
-        /// Consumes the builder and constructs a [`CORSConfiguration`](crate::model::CORSConfiguration)
-        pub fn build(self) -> crate::model::CORSConfiguration {
-            crate::model::CORSConfiguration {
+        /// Consumes the builder and constructs a [`CorsConfiguration`](crate::model::CorsConfiguration)
+        pub fn build(self) -> crate::model::CorsConfiguration {
+            crate::model::CorsConfiguration {
                 cors_rules: self.cors_rules,
             }
         }
     }
 }
-impl CORSConfiguration {
-    /// Creates a new builder-style object to manufacture [`CORSConfiguration`](crate::model::CORSConfiguration)
+impl CorsConfiguration {
+    /// Creates a new builder-style object to manufacture [`CorsConfiguration`](crate::model::CorsConfiguration)
     pub fn builder() -> crate::model::cors_configuration::Builder {
         crate::model::cors_configuration::Builder::default()
     }
@@ -9975,7 +9588,7 @@ impl CORSConfiguration {
 /// <p>Specifies a cross-origin access rule for an Amazon S3 bucket.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct CORSRule {
+pub struct CorsRule {
     /// <p>Unique identifier for the rule. The value cannot be longer than 255 characters.</p>
     pub id: std::option::Option<std::string::String>,
     /// <p>Headers that are specified in the <code>Access-Control-Request-Headers</code> header.
@@ -9995,9 +9608,9 @@ pub struct CORSRule {
     /// specified resource.</p>
     pub max_age_seconds: i32,
 }
-impl std::fmt::Debug for CORSRule {
+impl std::fmt::Debug for CorsRule {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CORSRule");
+        let mut formatter = f.debug_struct("CorsRule");
         formatter.field("id", &self.id);
         formatter.field("allowed_headers", &self.allowed_headers);
         formatter.field("allowed_methods", &self.allowed_methods);
@@ -10007,9 +9620,9 @@ impl std::fmt::Debug for CORSRule {
         formatter.finish()
     }
 }
-/// See [`CORSRule`](crate::model::CORSRule)
+/// See [`CorsRule`](crate::model::CorsRule)
 pub mod cors_rule {
-    /// A builder for [`CORSRule`](crate::model::CORSRule)
+    /// A builder for [`CorsRule`](crate::model::CorsRule)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -10092,9 +9705,9 @@ pub mod cors_rule {
             self.max_age_seconds = input;
             self
         }
-        /// Consumes the builder and constructs a [`CORSRule`](crate::model::CORSRule)
-        pub fn build(self) -> crate::model::CORSRule {
-            crate::model::CORSRule {
+        /// Consumes the builder and constructs a [`CorsRule`](crate::model::CorsRule)
+        pub fn build(self) -> crate::model::CorsRule {
+            crate::model::CorsRule {
                 id: self.id,
                 allowed_headers: self.allowed_headers,
                 allowed_methods: self.allowed_methods,
@@ -10105,8 +9718,8 @@ pub mod cors_rule {
         }
     }
 }
-impl CORSRule {
-    /// Creates a new builder-style object to manufacture [`CORSRule`](crate::model::CORSRule)
+impl CorsRule {
+    /// Creates a new builder-style object to manufacture [`CorsRule`](crate::model::CorsRule)
     pub fn builder() -> crate::model::cors_rule::Builder {
         crate::model::cors_rule::Builder::default()
     }
@@ -10511,7 +10124,7 @@ impl std::convert::From<&str> for AnalyticsS3ExportFileFormat {
 impl std::str::FromStr for AnalyticsS3ExportFileFormat {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(AnalyticsS3ExportFileFormat::from(s))
     }
 }
@@ -10526,15 +10139,6 @@ impl AnalyticsS3ExportFileFormat {
 impl AsRef<str> for AnalyticsS3ExportFileFormat {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for AnalyticsS3ExportFileFormat {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -10564,7 +10168,7 @@ impl std::convert::From<&str> for StorageClassAnalysisSchemaVersion {
 impl std::str::FromStr for StorageClassAnalysisSchemaVersion {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(StorageClassAnalysisSchemaVersion::from(s))
     }
 }
@@ -10579,15 +10183,6 @@ impl StorageClassAnalysisSchemaVersion {
 impl AsRef<str> for StorageClassAnalysisSchemaVersion {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for StorageClassAnalysisSchemaVersion {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -10736,7 +10331,7 @@ impl std::convert::From<&str> for BucketCannedAcl {
 impl std::str::FromStr for BucketCannedAcl {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(BucketCannedAcl::from(s))
     }
 }
@@ -10754,15 +10349,6 @@ impl BucketCannedAcl {
 impl AsRef<str> for BucketCannedAcl {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for BucketCannedAcl {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -10846,7 +10432,7 @@ impl std::convert::From<&str> for BucketAccelerateStatus {
 impl std::str::FromStr for BucketAccelerateStatus {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(BucketAccelerateStatus::from(s))
     }
 }
@@ -10862,15 +10448,6 @@ impl BucketAccelerateStatus {
 impl AsRef<str> for BucketAccelerateStatus {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for BucketAccelerateStatus {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -11062,7 +10639,7 @@ impl std::convert::From<&str> for EncodingType {
 impl std::str::FromStr for EncodingType {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(EncodingType::from(s))
     }
 }
@@ -11077,15 +10654,6 @@ impl EncodingType {
 impl AsRef<str> for EncodingType {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for EncodingType {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -11426,7 +10994,7 @@ impl std::convert::From<&str> for ObjectVersionStorageClass {
 impl std::str::FromStr for ObjectVersionStorageClass {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(ObjectVersionStorageClass::from(s))
     }
 }
@@ -11441,15 +11009,6 @@ impl ObjectVersionStorageClass {
 impl AsRef<str> for ObjectVersionStorageClass {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for ObjectVersionStorageClass {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -11656,7 +11215,7 @@ impl std::convert::From<&str> for ObjectStorageClass {
 impl std::str::FromStr for ObjectStorageClass {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(ObjectStorageClass::from(s))
     }
 }
@@ -11678,15 +11237,6 @@ impl ObjectStorageClass {
 impl AsRef<str> for ObjectStorageClass {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for ObjectStorageClass {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -11906,7 +11456,7 @@ impl std::convert::From<&str> for ArchiveStatus {
 impl std::str::FromStr for ArchiveStatus {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(ArchiveStatus::from(s))
     }
 }
@@ -11922,15 +11472,6 @@ impl ArchiveStatus {
 impl AsRef<str> for ArchiveStatus {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for ArchiveStatus {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -11962,7 +11503,7 @@ impl std::convert::From<&str> for MfaDeleteStatus {
 impl std::str::FromStr for MfaDeleteStatus {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(MfaDeleteStatus::from(s))
     }
 }
@@ -11978,15 +11519,6 @@ impl MfaDeleteStatus {
 impl AsRef<str> for MfaDeleteStatus {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for MfaDeleteStatus {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -12113,7 +11645,7 @@ impl std::convert::From<&str> for BucketLocationConstraint {
 impl std::str::FromStr for BucketLocationConstraint {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(BucketLocationConstraint::from(s))
     }
 }
@@ -12152,15 +11684,6 @@ impl BucketLocationConstraint {
 impl AsRef<str> for BucketLocationConstraint {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for BucketLocationConstraint {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -16374,7 +15897,7 @@ impl std::convert::From<&str> for TaggingDirective {
 impl std::str::FromStr for TaggingDirective {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(TaggingDirective::from(s))
     }
 }
@@ -16390,15 +15913,6 @@ impl TaggingDirective {
 impl AsRef<str> for TaggingDirective {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for TaggingDirective {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -16430,7 +15944,7 @@ impl std::convert::From<&str> for MetadataDirective {
 impl std::str::FromStr for MetadataDirective {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(MetadataDirective::from(s))
     }
 }
@@ -16446,15 +15960,6 @@ impl MetadataDirective {
 impl AsRef<str> for MetadataDirective {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for MetadataDirective {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 

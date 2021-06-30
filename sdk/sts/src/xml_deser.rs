@@ -6,10 +6,10 @@ pub fn parse_generic_error(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_expired_token_error_xml_err(
+pub fn deser_structure_expired_token_exception_xml_err(
     inp: &[u8],
-    mut builder: crate::error::expired_token_error::Builder,
-) -> Result<crate::error::expired_token_error::Builder, smithy_xml::decode::XmlError> {
+    mut builder: crate::error::expired_token_exception::Builder,
+) -> Result<crate::error::expired_token_exception::Builder, smithy_xml::decode::XmlError> {
     use std::convert::TryFrom;
     let mut document = smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]
@@ -36,10 +36,11 @@ pub fn deser_structure_expired_token_error_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_malformed_policy_document_error_xml_err(
+pub fn deser_structure_malformed_policy_document_exception_xml_err(
     inp: &[u8],
-    mut builder: crate::error::malformed_policy_document_error::Builder,
-) -> Result<crate::error::malformed_policy_document_error::Builder, smithy_xml::decode::XmlError> {
+    mut builder: crate::error::malformed_policy_document_exception::Builder,
+) -> Result<crate::error::malformed_policy_document_exception::Builder, smithy_xml::decode::XmlError>
+{
     use std::convert::TryFrom;
     let mut document = smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]
@@ -66,10 +67,11 @@ pub fn deser_structure_malformed_policy_document_error_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_packed_policy_too_large_error_xml_err(
+pub fn deser_structure_packed_policy_too_large_exception_xml_err(
     inp: &[u8],
-    mut builder: crate::error::packed_policy_too_large_error::Builder,
-) -> Result<crate::error::packed_policy_too_large_error::Builder, smithy_xml::decode::XmlError> {
+    mut builder: crate::error::packed_policy_too_large_exception::Builder,
+) -> Result<crate::error::packed_policy_too_large_exception::Builder, smithy_xml::decode::XmlError>
+{
     use std::convert::TryFrom;
     let mut document = smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]
@@ -96,10 +98,10 @@ pub fn deser_structure_packed_policy_too_large_error_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_region_disabled_error_xml_err(
+pub fn deser_structure_region_disabled_exception_xml_err(
     inp: &[u8],
-    mut builder: crate::error::region_disabled_error::Builder,
-) -> Result<crate::error::region_disabled_error::Builder, smithy_xml::decode::XmlError> {
+    mut builder: crate::error::region_disabled_exception::Builder,
+) -> Result<crate::error::region_disabled_exception::Builder, smithy_xml::decode::XmlError> {
     use std::convert::TryFrom;
     let mut document = smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]
@@ -213,10 +215,10 @@ pub fn deser_operation_assume_role(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_idp_rejected_claim_error_xml_err(
+pub fn deser_structure_idp_rejected_claim_exception_xml_err(
     inp: &[u8],
-    mut builder: crate::error::idp_rejected_claim_error::Builder,
-) -> Result<crate::error::idp_rejected_claim_error::Builder, smithy_xml::decode::XmlError> {
+    mut builder: crate::error::idp_rejected_claim_exception::Builder,
+) -> Result<crate::error::idp_rejected_claim_exception::Builder, smithy_xml::decode::XmlError> {
     use std::convert::TryFrom;
     let mut document = smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]
@@ -243,10 +245,10 @@ pub fn deser_structure_idp_rejected_claim_error_xml_err(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_invalid_identity_token_error_xml_err(
+pub fn deser_structure_invalid_identity_token_exception_xml_err(
     inp: &[u8],
-    mut builder: crate::error::invalid_identity_token_error::Builder,
-) -> Result<crate::error::invalid_identity_token_error::Builder, smithy_xml::decode::XmlError> {
+    mut builder: crate::error::invalid_identity_token_exception::Builder,
+) -> Result<crate::error::invalid_identity_token_exception::Builder, smithy_xml::decode::XmlError> {
     use std::convert::TryFrom;
     let mut document = smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]
@@ -425,10 +427,11 @@ pub fn deser_operation_assume_role_with_saml(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_idp_communication_error_error_xml_err(
+pub fn deser_structure_idp_communication_error_exception_xml_err(
     inp: &[u8],
-    mut builder: crate::error::idp_communication_error_error::Builder,
-) -> Result<crate::error::idp_communication_error_error::Builder, smithy_xml::decode::XmlError> {
+    mut builder: crate::error::idp_communication_error_exception::Builder,
+) -> Result<crate::error::idp_communication_error_exception::Builder, smithy_xml::decode::XmlError>
+{
     use std::convert::TryFrom;
     let mut document = smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]
@@ -584,11 +587,13 @@ pub fn deser_operation_assume_role_with_web_identity(
 }
 
 #[allow(unused_mut)]
-pub fn deser_structure_invalid_authorization_message_error_xml_err(
+pub fn deser_structure_invalid_authorization_message_exception_xml_err(
     inp: &[u8],
-    mut builder: crate::error::invalid_authorization_message_error::Builder,
-) -> Result<crate::error::invalid_authorization_message_error::Builder, smithy_xml::decode::XmlError>
-{
+    mut builder: crate::error::invalid_authorization_message_exception::Builder,
+) -> Result<
+    crate::error::invalid_authorization_message_exception::Builder,
+    smithy_xml::decode::XmlError,
+> {
     use std::convert::TryFrom;
     let mut document = smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]

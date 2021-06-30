@@ -391,10 +391,8 @@ impl std::error::Error for PutRecordError {
 
 /// <p>There was an error validating your request.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ValidationError {
-    #[serde(rename = "Message")]
-    #[serde(default)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ValidationError {
@@ -453,10 +451,8 @@ impl ValidationError {
 
 /// <p>The service is currently unavailable.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ServiceUnavailable {
-    #[serde(rename = "Message")]
-    #[serde(default)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ServiceUnavailable {
@@ -516,10 +512,8 @@ impl ServiceUnavailable {
 /// <p>An internal failure occurred. Try your request again. If the problem
 /// persists, contact AWS customer support.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InternalFailure {
-    #[serde(rename = "Message")]
-    #[serde(default)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InternalFailure {
@@ -578,10 +572,8 @@ impl InternalFailure {
 
 /// <p>You do not have permission to perform an action.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AccessForbidden {
-    #[serde(rename = "Message")]
-    #[serde(default)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for AccessForbidden {
@@ -640,10 +632,8 @@ impl AccessForbidden {
 
 /// <p>A resource that is required to perform an action was not found.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceNotFound {
-    #[serde(rename = "Message")]
-    #[serde(default)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ResourceNotFound {

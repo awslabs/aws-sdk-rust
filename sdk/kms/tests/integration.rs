@@ -10,7 +10,6 @@ use aws_hyper::{Client, SdkError};
 use aws_sdk_kms as kms;
 use http::header::AUTHORIZATION;
 use http::Uri;
-use kms::error::GenerateRandomErrorKind;
 use kms::operation::GenerateRandom;
 use kms::{Config, Region};
 use smithy_http::body::SdkBody;
@@ -191,10 +190,7 @@ async fn generate_random_keystore_not_found() {
         SdkError::ServiceError { err, .. } => err,
         other => panic!("Incorrect error received: {:}", other),
     };
-    assert!(matches!(
-        inner.kind,
-        GenerateRandomErrorKind::CustomKeyStoreNotFoundError(_)
-    ));
+    assert!(inner.is_custom_key_store_not_found_exception());
     assert_eq!(
         inner.request_id(),
         Some("bfe81a0a-9a08-4e71-9910-cdb5ab6ea3b6")

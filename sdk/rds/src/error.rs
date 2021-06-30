@@ -8,20 +8,20 @@ pub struct AddRoleToDBClusterError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum AddRoleToDBClusterErrorKind {
-    DBClusterNotFoundFault(crate::error::DBClusterNotFoundFault),
-    DBClusterRoleAlreadyExistsFault(crate::error::DBClusterRoleAlreadyExistsFault),
-    DBClusterRoleQuotaExceededFault(crate::error::DBClusterRoleQuotaExceededFault),
-    InvalidDBClusterStateFault(crate::error::InvalidDBClusterStateFault),
+    DbClusterNotFoundFault(crate::error::DbClusterNotFoundFault),
+    DbClusterRoleAlreadyExistsFault(crate::error::DbClusterRoleAlreadyExistsFault),
+    DbClusterRoleQuotaExceededFault(crate::error::DbClusterRoleQuotaExceededFault),
+    InvalidDbClusterStateFault(crate::error::InvalidDbClusterStateFault),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AddRoleToDBClusterError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            AddRoleToDBClusterErrorKind::DBClusterNotFoundFault(_inner) => _inner.fmt(f),
-            AddRoleToDBClusterErrorKind::DBClusterRoleAlreadyExistsFault(_inner) => _inner.fmt(f),
-            AddRoleToDBClusterErrorKind::DBClusterRoleQuotaExceededFault(_inner) => _inner.fmt(f),
-            AddRoleToDBClusterErrorKind::InvalidDBClusterStateFault(_inner) => _inner.fmt(f),
+            AddRoleToDBClusterErrorKind::DbClusterNotFoundFault(_inner) => _inner.fmt(f),
+            AddRoleToDBClusterErrorKind::DbClusterRoleAlreadyExistsFault(_inner) => _inner.fmt(f),
+            AddRoleToDBClusterErrorKind::DbClusterRoleQuotaExceededFault(_inner) => _inner.fmt(f),
+            AddRoleToDBClusterErrorKind::InvalidDbClusterStateFault(_inner) => _inner.fmt(f),
             AddRoleToDBClusterErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -73,35 +73,35 @@ impl AddRoleToDBClusterError {
     pub fn is_db_cluster_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
-            AddRoleToDBClusterErrorKind::DBClusterNotFoundFault(_)
+            AddRoleToDBClusterErrorKind::DbClusterNotFoundFault(_)
         )
     }
     pub fn is_db_cluster_role_already_exists_fault(&self) -> bool {
         matches!(
             &self.kind,
-            AddRoleToDBClusterErrorKind::DBClusterRoleAlreadyExistsFault(_)
+            AddRoleToDBClusterErrorKind::DbClusterRoleAlreadyExistsFault(_)
         )
     }
     pub fn is_db_cluster_role_quota_exceeded_fault(&self) -> bool {
         matches!(
             &self.kind,
-            AddRoleToDBClusterErrorKind::DBClusterRoleQuotaExceededFault(_)
+            AddRoleToDBClusterErrorKind::DbClusterRoleQuotaExceededFault(_)
         )
     }
     pub fn is_invalid_db_cluster_state_fault(&self) -> bool {
         matches!(
             &self.kind,
-            AddRoleToDBClusterErrorKind::InvalidDBClusterStateFault(_)
+            AddRoleToDBClusterErrorKind::InvalidDbClusterStateFault(_)
         )
     }
 }
 impl std::error::Error for AddRoleToDBClusterError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            AddRoleToDBClusterErrorKind::DBClusterNotFoundFault(_inner) => Some(_inner),
-            AddRoleToDBClusterErrorKind::DBClusterRoleAlreadyExistsFault(_inner) => Some(_inner),
-            AddRoleToDBClusterErrorKind::DBClusterRoleQuotaExceededFault(_inner) => Some(_inner),
-            AddRoleToDBClusterErrorKind::InvalidDBClusterStateFault(_inner) => Some(_inner),
+            AddRoleToDBClusterErrorKind::DbClusterNotFoundFault(_inner) => Some(_inner),
+            AddRoleToDBClusterErrorKind::DbClusterRoleAlreadyExistsFault(_inner) => Some(_inner),
+            AddRoleToDBClusterErrorKind::DbClusterRoleQuotaExceededFault(_inner) => Some(_inner),
+            AddRoleToDBClusterErrorKind::InvalidDbClusterStateFault(_inner) => Some(_inner),
             AddRoleToDBClusterErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -116,20 +116,20 @@ pub struct AddRoleToDBInstanceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum AddRoleToDBInstanceErrorKind {
-    DBInstanceNotFoundFault(crate::error::DBInstanceNotFoundFault),
-    DBInstanceRoleAlreadyExistsFault(crate::error::DBInstanceRoleAlreadyExistsFault),
-    DBInstanceRoleQuotaExceededFault(crate::error::DBInstanceRoleQuotaExceededFault),
-    InvalidDBInstanceStateFault(crate::error::InvalidDBInstanceStateFault),
+    DbInstanceNotFoundFault(crate::error::DbInstanceNotFoundFault),
+    DbInstanceRoleAlreadyExistsFault(crate::error::DbInstanceRoleAlreadyExistsFault),
+    DbInstanceRoleQuotaExceededFault(crate::error::DbInstanceRoleQuotaExceededFault),
+    InvalidDbInstanceStateFault(crate::error::InvalidDbInstanceStateFault),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AddRoleToDBInstanceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            AddRoleToDBInstanceErrorKind::DBInstanceNotFoundFault(_inner) => _inner.fmt(f),
-            AddRoleToDBInstanceErrorKind::DBInstanceRoleAlreadyExistsFault(_inner) => _inner.fmt(f),
-            AddRoleToDBInstanceErrorKind::DBInstanceRoleQuotaExceededFault(_inner) => _inner.fmt(f),
-            AddRoleToDBInstanceErrorKind::InvalidDBInstanceStateFault(_inner) => _inner.fmt(f),
+            AddRoleToDBInstanceErrorKind::DbInstanceNotFoundFault(_inner) => _inner.fmt(f),
+            AddRoleToDBInstanceErrorKind::DbInstanceRoleAlreadyExistsFault(_inner) => _inner.fmt(f),
+            AddRoleToDBInstanceErrorKind::DbInstanceRoleQuotaExceededFault(_inner) => _inner.fmt(f),
+            AddRoleToDBInstanceErrorKind::InvalidDbInstanceStateFault(_inner) => _inner.fmt(f),
             AddRoleToDBInstanceErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -181,35 +181,35 @@ impl AddRoleToDBInstanceError {
     pub fn is_db_instance_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
-            AddRoleToDBInstanceErrorKind::DBInstanceNotFoundFault(_)
+            AddRoleToDBInstanceErrorKind::DbInstanceNotFoundFault(_)
         )
     }
     pub fn is_db_instance_role_already_exists_fault(&self) -> bool {
         matches!(
             &self.kind,
-            AddRoleToDBInstanceErrorKind::DBInstanceRoleAlreadyExistsFault(_)
+            AddRoleToDBInstanceErrorKind::DbInstanceRoleAlreadyExistsFault(_)
         )
     }
     pub fn is_db_instance_role_quota_exceeded_fault(&self) -> bool {
         matches!(
             &self.kind,
-            AddRoleToDBInstanceErrorKind::DBInstanceRoleQuotaExceededFault(_)
+            AddRoleToDBInstanceErrorKind::DbInstanceRoleQuotaExceededFault(_)
         )
     }
     pub fn is_invalid_db_instance_state_fault(&self) -> bool {
         matches!(
             &self.kind,
-            AddRoleToDBInstanceErrorKind::InvalidDBInstanceStateFault(_)
+            AddRoleToDBInstanceErrorKind::InvalidDbInstanceStateFault(_)
         )
     }
 }
 impl std::error::Error for AddRoleToDBInstanceError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            AddRoleToDBInstanceErrorKind::DBInstanceNotFoundFault(_inner) => Some(_inner),
-            AddRoleToDBInstanceErrorKind::DBInstanceRoleAlreadyExistsFault(_inner) => Some(_inner),
-            AddRoleToDBInstanceErrorKind::DBInstanceRoleQuotaExceededFault(_inner) => Some(_inner),
-            AddRoleToDBInstanceErrorKind::InvalidDBInstanceStateFault(_inner) => Some(_inner),
+            AddRoleToDBInstanceErrorKind::DbInstanceNotFoundFault(_inner) => Some(_inner),
+            AddRoleToDBInstanceErrorKind::DbInstanceRoleAlreadyExistsFault(_inner) => Some(_inner),
+            AddRoleToDBInstanceErrorKind::DbInstanceRoleQuotaExceededFault(_inner) => Some(_inner),
+            AddRoleToDBInstanceErrorKind::InvalidDbInstanceStateFault(_inner) => Some(_inner),
             AddRoleToDBInstanceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -323,22 +323,22 @@ pub struct AddTagsToResourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum AddTagsToResourceErrorKind {
-    DBClusterNotFoundFault(crate::error::DBClusterNotFoundFault),
-    DBInstanceNotFoundFault(crate::error::DBInstanceNotFoundFault),
-    DBProxyNotFoundFault(crate::error::DBProxyNotFoundFault),
-    DBProxyTargetGroupNotFoundFault(crate::error::DBProxyTargetGroupNotFoundFault),
-    DBSnapshotNotFoundFault(crate::error::DBSnapshotNotFoundFault),
+    DbClusterNotFoundFault(crate::error::DbClusterNotFoundFault),
+    DbInstanceNotFoundFault(crate::error::DbInstanceNotFoundFault),
+    DbProxyNotFoundFault(crate::error::DbProxyNotFoundFault),
+    DbProxyTargetGroupNotFoundFault(crate::error::DbProxyTargetGroupNotFoundFault),
+    DbSnapshotNotFoundFault(crate::error::DbSnapshotNotFoundFault),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for AddTagsToResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            AddTagsToResourceErrorKind::DBClusterNotFoundFault(_inner) => _inner.fmt(f),
-            AddTagsToResourceErrorKind::DBInstanceNotFoundFault(_inner) => _inner.fmt(f),
-            AddTagsToResourceErrorKind::DBProxyNotFoundFault(_inner) => _inner.fmt(f),
-            AddTagsToResourceErrorKind::DBProxyTargetGroupNotFoundFault(_inner) => _inner.fmt(f),
-            AddTagsToResourceErrorKind::DBSnapshotNotFoundFault(_inner) => _inner.fmt(f),
+            AddTagsToResourceErrorKind::DbClusterNotFoundFault(_inner) => _inner.fmt(f),
+            AddTagsToResourceErrorKind::DbInstanceNotFoundFault(_inner) => _inner.fmt(f),
+            AddTagsToResourceErrorKind::DbProxyNotFoundFault(_inner) => _inner.fmt(f),
+            AddTagsToResourceErrorKind::DbProxyTargetGroupNotFoundFault(_inner) => _inner.fmt(f),
+            AddTagsToResourceErrorKind::DbSnapshotNotFoundFault(_inner) => _inner.fmt(f),
             AddTagsToResourceErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -390,42 +390,42 @@ impl AddTagsToResourceError {
     pub fn is_db_cluster_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
-            AddTagsToResourceErrorKind::DBClusterNotFoundFault(_)
+            AddTagsToResourceErrorKind::DbClusterNotFoundFault(_)
         )
     }
     pub fn is_db_instance_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
-            AddTagsToResourceErrorKind::DBInstanceNotFoundFault(_)
+            AddTagsToResourceErrorKind::DbInstanceNotFoundFault(_)
         )
     }
     pub fn is_db_proxy_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
-            AddTagsToResourceErrorKind::DBProxyNotFoundFault(_)
+            AddTagsToResourceErrorKind::DbProxyNotFoundFault(_)
         )
     }
     pub fn is_db_proxy_target_group_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
-            AddTagsToResourceErrorKind::DBProxyTargetGroupNotFoundFault(_)
+            AddTagsToResourceErrorKind::DbProxyTargetGroupNotFoundFault(_)
         )
     }
     pub fn is_db_snapshot_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
-            AddTagsToResourceErrorKind::DBSnapshotNotFoundFault(_)
+            AddTagsToResourceErrorKind::DbSnapshotNotFoundFault(_)
         )
     }
 }
 impl std::error::Error for AddTagsToResourceError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            AddTagsToResourceErrorKind::DBClusterNotFoundFault(_inner) => Some(_inner),
-            AddTagsToResourceErrorKind::DBInstanceNotFoundFault(_inner) => Some(_inner),
-            AddTagsToResourceErrorKind::DBProxyNotFoundFault(_inner) => Some(_inner),
-            AddTagsToResourceErrorKind::DBProxyTargetGroupNotFoundFault(_inner) => Some(_inner),
-            AddTagsToResourceErrorKind::DBSnapshotNotFoundFault(_inner) => Some(_inner),
+            AddTagsToResourceErrorKind::DbClusterNotFoundFault(_inner) => Some(_inner),
+            AddTagsToResourceErrorKind::DbInstanceNotFoundFault(_inner) => Some(_inner),
+            AddTagsToResourceErrorKind::DbProxyNotFoundFault(_inner) => Some(_inner),
+            AddTagsToResourceErrorKind::DbProxyTargetGroupNotFoundFault(_inner) => Some(_inner),
+            AddTagsToResourceErrorKind::DbSnapshotNotFoundFault(_inner) => Some(_inner),
             AddTagsToResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -440,8 +440,8 @@ pub struct ApplyPendingMaintenanceActionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ApplyPendingMaintenanceActionErrorKind {
-    InvalidDBClusterStateFault(crate::error::InvalidDBClusterStateFault),
-    InvalidDBInstanceStateFault(crate::error::InvalidDBInstanceStateFault),
+    InvalidDbClusterStateFault(crate::error::InvalidDbClusterStateFault),
+    InvalidDbInstanceStateFault(crate::error::InvalidDbInstanceStateFault),
     ResourceNotFoundFault(crate::error::ResourceNotFoundFault),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -449,10 +449,10 @@ pub enum ApplyPendingMaintenanceActionErrorKind {
 impl std::fmt::Display for ApplyPendingMaintenanceActionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ApplyPendingMaintenanceActionErrorKind::InvalidDBClusterStateFault(_inner) => {
+            ApplyPendingMaintenanceActionErrorKind::InvalidDbClusterStateFault(_inner) => {
                 _inner.fmt(f)
             }
-            ApplyPendingMaintenanceActionErrorKind::InvalidDBInstanceStateFault(_inner) => {
+            ApplyPendingMaintenanceActionErrorKind::InvalidDbInstanceStateFault(_inner) => {
                 _inner.fmt(f)
             }
             ApplyPendingMaintenanceActionErrorKind::ResourceNotFoundFault(_inner) => _inner.fmt(f),
@@ -507,13 +507,13 @@ impl ApplyPendingMaintenanceActionError {
     pub fn is_invalid_db_cluster_state_fault(&self) -> bool {
         matches!(
             &self.kind,
-            ApplyPendingMaintenanceActionErrorKind::InvalidDBClusterStateFault(_)
+            ApplyPendingMaintenanceActionErrorKind::InvalidDbClusterStateFault(_)
         )
     }
     pub fn is_invalid_db_instance_state_fault(&self) -> bool {
         matches!(
             &self.kind,
-            ApplyPendingMaintenanceActionErrorKind::InvalidDBInstanceStateFault(_)
+            ApplyPendingMaintenanceActionErrorKind::InvalidDbInstanceStateFault(_)
         )
     }
     pub fn is_resource_not_found_fault(&self) -> bool {
@@ -526,10 +526,10 @@ impl ApplyPendingMaintenanceActionError {
 impl std::error::Error for ApplyPendingMaintenanceActionError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ApplyPendingMaintenanceActionErrorKind::InvalidDBClusterStateFault(_inner) => {
+            ApplyPendingMaintenanceActionErrorKind::InvalidDbClusterStateFault(_inner) => {
                 Some(_inner)
             }
-            ApplyPendingMaintenanceActionErrorKind::InvalidDBInstanceStateFault(_inner) => {
+            ApplyPendingMaintenanceActionErrorKind::InvalidDbInstanceStateFault(_inner) => {
                 Some(_inner)
             }
             ApplyPendingMaintenanceActionErrorKind::ResourceNotFoundFault(_inner) => Some(_inner),
@@ -549,8 +549,8 @@ pub struct AuthorizeDBSecurityGroupIngressError {
 pub enum AuthorizeDBSecurityGroupIngressErrorKind {
     AuthorizationAlreadyExistsFault(crate::error::AuthorizationAlreadyExistsFault),
     AuthorizationQuotaExceededFault(crate::error::AuthorizationQuotaExceededFault),
-    DBSecurityGroupNotFoundFault(crate::error::DBSecurityGroupNotFoundFault),
-    InvalidDBSecurityGroupStateFault(crate::error::InvalidDBSecurityGroupStateFault),
+    DbSecurityGroupNotFoundFault(crate::error::DbSecurityGroupNotFoundFault),
+    InvalidDbSecurityGroupStateFault(crate::error::InvalidDbSecurityGroupStateFault),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
@@ -563,10 +563,10 @@ impl std::fmt::Display for AuthorizeDBSecurityGroupIngressError {
             AuthorizeDBSecurityGroupIngressErrorKind::AuthorizationQuotaExceededFault(_inner) => {
                 _inner.fmt(f)
             }
-            AuthorizeDBSecurityGroupIngressErrorKind::DBSecurityGroupNotFoundFault(_inner) => {
+            AuthorizeDBSecurityGroupIngressErrorKind::DbSecurityGroupNotFoundFault(_inner) => {
                 _inner.fmt(f)
             }
-            AuthorizeDBSecurityGroupIngressErrorKind::InvalidDBSecurityGroupStateFault(_inner) => {
+            AuthorizeDBSecurityGroupIngressErrorKind::InvalidDbSecurityGroupStateFault(_inner) => {
                 _inner.fmt(f)
             }
             AuthorizeDBSecurityGroupIngressErrorKind::Unhandled(_inner) => _inner.fmt(f),
@@ -632,13 +632,13 @@ impl AuthorizeDBSecurityGroupIngressError {
     pub fn is_db_security_group_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
-            AuthorizeDBSecurityGroupIngressErrorKind::DBSecurityGroupNotFoundFault(_)
+            AuthorizeDBSecurityGroupIngressErrorKind::DbSecurityGroupNotFoundFault(_)
         )
     }
     pub fn is_invalid_db_security_group_state_fault(&self) -> bool {
         matches!(
             &self.kind,
-            AuthorizeDBSecurityGroupIngressErrorKind::InvalidDBSecurityGroupStateFault(_)
+            AuthorizeDBSecurityGroupIngressErrorKind::InvalidDbSecurityGroupStateFault(_)
         )
     }
 }
@@ -651,10 +651,10 @@ impl std::error::Error for AuthorizeDBSecurityGroupIngressError {
             AuthorizeDBSecurityGroupIngressErrorKind::AuthorizationQuotaExceededFault(_inner) => {
                 Some(_inner)
             }
-            AuthorizeDBSecurityGroupIngressErrorKind::DBSecurityGroupNotFoundFault(_inner) => {
+            AuthorizeDBSecurityGroupIngressErrorKind::DbSecurityGroupNotFoundFault(_inner) => {
                 Some(_inner)
             }
-            AuthorizeDBSecurityGroupIngressErrorKind::InvalidDBSecurityGroupStateFault(_inner) => {
+            AuthorizeDBSecurityGroupIngressErrorKind::InvalidDbSecurityGroupStateFault(_inner) => {
                 Some(_inner)
             }
             AuthorizeDBSecurityGroupIngressErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
@@ -671,16 +671,16 @@ pub struct BacktrackDBClusterError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum BacktrackDBClusterErrorKind {
-    DBClusterNotFoundFault(crate::error::DBClusterNotFoundFault),
-    InvalidDBClusterStateFault(crate::error::InvalidDBClusterStateFault),
+    DbClusterNotFoundFault(crate::error::DbClusterNotFoundFault),
+    InvalidDbClusterStateFault(crate::error::InvalidDbClusterStateFault),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for BacktrackDBClusterError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            BacktrackDBClusterErrorKind::DBClusterNotFoundFault(_inner) => _inner.fmt(f),
-            BacktrackDBClusterErrorKind::InvalidDBClusterStateFault(_inner) => _inner.fmt(f),
+            BacktrackDBClusterErrorKind::DbClusterNotFoundFault(_inner) => _inner.fmt(f),
+            BacktrackDBClusterErrorKind::InvalidDbClusterStateFault(_inner) => _inner.fmt(f),
             BacktrackDBClusterErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -732,21 +732,21 @@ impl BacktrackDBClusterError {
     pub fn is_db_cluster_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
-            BacktrackDBClusterErrorKind::DBClusterNotFoundFault(_)
+            BacktrackDBClusterErrorKind::DbClusterNotFoundFault(_)
         )
     }
     pub fn is_invalid_db_cluster_state_fault(&self) -> bool {
         matches!(
             &self.kind,
-            BacktrackDBClusterErrorKind::InvalidDBClusterStateFault(_)
+            BacktrackDBClusterErrorKind::InvalidDbClusterStateFault(_)
         )
     }
 }
 impl std::error::Error for BacktrackDBClusterError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            BacktrackDBClusterErrorKind::DBClusterNotFoundFault(_inner) => Some(_inner),
-            BacktrackDBClusterErrorKind::InvalidDBClusterStateFault(_inner) => Some(_inner),
+            BacktrackDBClusterErrorKind::DbClusterNotFoundFault(_inner) => Some(_inner),
+            BacktrackDBClusterErrorKind::InvalidDbClusterStateFault(_inner) => Some(_inner),
             BacktrackDBClusterErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -851,22 +851,22 @@ pub struct CopyDBClusterParameterGroupError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CopyDBClusterParameterGroupErrorKind {
-    DBParameterGroupAlreadyExistsFault(crate::error::DBParameterGroupAlreadyExistsFault),
-    DBParameterGroupNotFoundFault(crate::error::DBParameterGroupNotFoundFault),
-    DBParameterGroupQuotaExceededFault(crate::error::DBParameterGroupQuotaExceededFault),
+    DbParameterGroupAlreadyExistsFault(crate::error::DbParameterGroupAlreadyExistsFault),
+    DbParameterGroupNotFoundFault(crate::error::DbParameterGroupNotFoundFault),
+    DbParameterGroupQuotaExceededFault(crate::error::DbParameterGroupQuotaExceededFault),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CopyDBClusterParameterGroupError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            CopyDBClusterParameterGroupErrorKind::DBParameterGroupAlreadyExistsFault(_inner) => {
+            CopyDBClusterParameterGroupErrorKind::DbParameterGroupAlreadyExistsFault(_inner) => {
                 _inner.fmt(f)
             }
-            CopyDBClusterParameterGroupErrorKind::DBParameterGroupNotFoundFault(_inner) => {
+            CopyDBClusterParameterGroupErrorKind::DbParameterGroupNotFoundFault(_inner) => {
                 _inner.fmt(f)
             }
-            CopyDBClusterParameterGroupErrorKind::DBParameterGroupQuotaExceededFault(_inner) => {
+            CopyDBClusterParameterGroupErrorKind::DbParameterGroupQuotaExceededFault(_inner) => {
                 _inner.fmt(f)
             }
             CopyDBClusterParameterGroupErrorKind::Unhandled(_inner) => _inner.fmt(f),
@@ -920,32 +920,32 @@ impl CopyDBClusterParameterGroupError {
     pub fn is_db_parameter_group_already_exists_fault(&self) -> bool {
         matches!(
             &self.kind,
-            CopyDBClusterParameterGroupErrorKind::DBParameterGroupAlreadyExistsFault(_)
+            CopyDBClusterParameterGroupErrorKind::DbParameterGroupAlreadyExistsFault(_)
         )
     }
     pub fn is_db_parameter_group_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
-            CopyDBClusterParameterGroupErrorKind::DBParameterGroupNotFoundFault(_)
+            CopyDBClusterParameterGroupErrorKind::DbParameterGroupNotFoundFault(_)
         )
     }
     pub fn is_db_parameter_group_quota_exceeded_fault(&self) -> bool {
         matches!(
             &self.kind,
-            CopyDBClusterParameterGroupErrorKind::DBParameterGroupQuotaExceededFault(_)
+            CopyDBClusterParameterGroupErrorKind::DbParameterGroupQuotaExceededFault(_)
         )
     }
 }
 impl std::error::Error for CopyDBClusterParameterGroupError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            CopyDBClusterParameterGroupErrorKind::DBParameterGroupAlreadyExistsFault(_inner) => {
+            CopyDBClusterParameterGroupErrorKind::DbParameterGroupAlreadyExistsFault(_inner) => {
                 Some(_inner)
             }
-            CopyDBClusterParameterGroupErrorKind::DBParameterGroupNotFoundFault(_inner) => {
+            CopyDBClusterParameterGroupErrorKind::DbParameterGroupNotFoundFault(_inner) => {
                 Some(_inner)
             }
-            CopyDBClusterParameterGroupErrorKind::DBParameterGroupQuotaExceededFault(_inner) => {
+            CopyDBClusterParameterGroupErrorKind::DbParameterGroupQuotaExceededFault(_inner) => {
                 Some(_inner)
             }
             CopyDBClusterParameterGroupErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
@@ -962,11 +962,11 @@ pub struct CopyDBClusterSnapshotError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CopyDBClusterSnapshotErrorKind {
-    DBClusterSnapshotAlreadyExistsFault(crate::error::DBClusterSnapshotAlreadyExistsFault),
-    DBClusterSnapshotNotFoundFault(crate::error::DBClusterSnapshotNotFoundFault),
-    InvalidDBClusterSnapshotStateFault(crate::error::InvalidDBClusterSnapshotStateFault),
-    InvalidDBClusterStateFault(crate::error::InvalidDBClusterStateFault),
-    KMSKeyNotAccessibleFault(crate::error::KMSKeyNotAccessibleFault),
+    DbClusterSnapshotAlreadyExistsFault(crate::error::DbClusterSnapshotAlreadyExistsFault),
+    DbClusterSnapshotNotFoundFault(crate::error::DbClusterSnapshotNotFoundFault),
+    InvalidDbClusterSnapshotStateFault(crate::error::InvalidDbClusterSnapshotStateFault),
+    InvalidDbClusterStateFault(crate::error::InvalidDbClusterStateFault),
+    KmsKeyNotAccessibleFault(crate::error::KmsKeyNotAccessibleFault),
     SnapshotQuotaExceededFault(crate::error::SnapshotQuotaExceededFault),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -974,15 +974,15 @@ pub enum CopyDBClusterSnapshotErrorKind {
 impl std::fmt::Display for CopyDBClusterSnapshotError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            CopyDBClusterSnapshotErrorKind::DBClusterSnapshotAlreadyExistsFault(_inner) => {
+            CopyDBClusterSnapshotErrorKind::DbClusterSnapshotAlreadyExistsFault(_inner) => {
                 _inner.fmt(f)
             }
-            CopyDBClusterSnapshotErrorKind::DBClusterSnapshotNotFoundFault(_inner) => _inner.fmt(f),
-            CopyDBClusterSnapshotErrorKind::InvalidDBClusterSnapshotStateFault(_inner) => {
+            CopyDBClusterSnapshotErrorKind::DbClusterSnapshotNotFoundFault(_inner) => _inner.fmt(f),
+            CopyDBClusterSnapshotErrorKind::InvalidDbClusterSnapshotStateFault(_inner) => {
                 _inner.fmt(f)
             }
-            CopyDBClusterSnapshotErrorKind::InvalidDBClusterStateFault(_inner) => _inner.fmt(f),
-            CopyDBClusterSnapshotErrorKind::KMSKeyNotAccessibleFault(_inner) => _inner.fmt(f),
+            CopyDBClusterSnapshotErrorKind::InvalidDbClusterStateFault(_inner) => _inner.fmt(f),
+            CopyDBClusterSnapshotErrorKind::KmsKeyNotAccessibleFault(_inner) => _inner.fmt(f),
             CopyDBClusterSnapshotErrorKind::SnapshotQuotaExceededFault(_inner) => _inner.fmt(f),
             CopyDBClusterSnapshotErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
@@ -1035,31 +1035,31 @@ impl CopyDBClusterSnapshotError {
     pub fn is_db_cluster_snapshot_already_exists_fault(&self) -> bool {
         matches!(
             &self.kind,
-            CopyDBClusterSnapshotErrorKind::DBClusterSnapshotAlreadyExistsFault(_)
+            CopyDBClusterSnapshotErrorKind::DbClusterSnapshotAlreadyExistsFault(_)
         )
     }
     pub fn is_db_cluster_snapshot_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
-            CopyDBClusterSnapshotErrorKind::DBClusterSnapshotNotFoundFault(_)
+            CopyDBClusterSnapshotErrorKind::DbClusterSnapshotNotFoundFault(_)
         )
     }
     pub fn is_invalid_db_cluster_snapshot_state_fault(&self) -> bool {
         matches!(
             &self.kind,
-            CopyDBClusterSnapshotErrorKind::InvalidDBClusterSnapshotStateFault(_)
+            CopyDBClusterSnapshotErrorKind::InvalidDbClusterSnapshotStateFault(_)
         )
     }
     pub fn is_invalid_db_cluster_state_fault(&self) -> bool {
         matches!(
             &self.kind,
-            CopyDBClusterSnapshotErrorKind::InvalidDBClusterStateFault(_)
+            CopyDBClusterSnapshotErrorKind::InvalidDbClusterStateFault(_)
         )
     }
     pub fn is_kms_key_not_accessible_fault(&self) -> bool {
         matches!(
             &self.kind,
-            CopyDBClusterSnapshotErrorKind::KMSKeyNotAccessibleFault(_)
+            CopyDBClusterSnapshotErrorKind::KmsKeyNotAccessibleFault(_)
         )
     }
     pub fn is_snapshot_quota_exceeded_fault(&self) -> bool {
@@ -1072,15 +1072,15 @@ impl CopyDBClusterSnapshotError {
 impl std::error::Error for CopyDBClusterSnapshotError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            CopyDBClusterSnapshotErrorKind::DBClusterSnapshotAlreadyExistsFault(_inner) => {
+            CopyDBClusterSnapshotErrorKind::DbClusterSnapshotAlreadyExistsFault(_inner) => {
                 Some(_inner)
             }
-            CopyDBClusterSnapshotErrorKind::DBClusterSnapshotNotFoundFault(_inner) => Some(_inner),
-            CopyDBClusterSnapshotErrorKind::InvalidDBClusterSnapshotStateFault(_inner) => {
+            CopyDBClusterSnapshotErrorKind::DbClusterSnapshotNotFoundFault(_inner) => Some(_inner),
+            CopyDBClusterSnapshotErrorKind::InvalidDbClusterSnapshotStateFault(_inner) => {
                 Some(_inner)
             }
-            CopyDBClusterSnapshotErrorKind::InvalidDBClusterStateFault(_inner) => Some(_inner),
-            CopyDBClusterSnapshotErrorKind::KMSKeyNotAccessibleFault(_inner) => Some(_inner),
+            CopyDBClusterSnapshotErrorKind::InvalidDbClusterStateFault(_inner) => Some(_inner),
+            CopyDBClusterSnapshotErrorKind::KmsKeyNotAccessibleFault(_inner) => Some(_inner),
             CopyDBClusterSnapshotErrorKind::SnapshotQuotaExceededFault(_inner) => Some(_inner),
             CopyDBClusterSnapshotErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
@@ -1096,20 +1096,20 @@ pub struct CopyDBParameterGroupError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CopyDBParameterGroupErrorKind {
-    DBParameterGroupAlreadyExistsFault(crate::error::DBParameterGroupAlreadyExistsFault),
-    DBParameterGroupNotFoundFault(crate::error::DBParameterGroupNotFoundFault),
-    DBParameterGroupQuotaExceededFault(crate::error::DBParameterGroupQuotaExceededFault),
+    DbParameterGroupAlreadyExistsFault(crate::error::DbParameterGroupAlreadyExistsFault),
+    DbParameterGroupNotFoundFault(crate::error::DbParameterGroupNotFoundFault),
+    DbParameterGroupQuotaExceededFault(crate::error::DbParameterGroupQuotaExceededFault),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CopyDBParameterGroupError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            CopyDBParameterGroupErrorKind::DBParameterGroupAlreadyExistsFault(_inner) => {
+            CopyDBParameterGroupErrorKind::DbParameterGroupAlreadyExistsFault(_inner) => {
                 _inner.fmt(f)
             }
-            CopyDBParameterGroupErrorKind::DBParameterGroupNotFoundFault(_inner) => _inner.fmt(f),
-            CopyDBParameterGroupErrorKind::DBParameterGroupQuotaExceededFault(_inner) => {
+            CopyDBParameterGroupErrorKind::DbParameterGroupNotFoundFault(_inner) => _inner.fmt(f),
+            CopyDBParameterGroupErrorKind::DbParameterGroupQuotaExceededFault(_inner) => {
                 _inner.fmt(f)
             }
             CopyDBParameterGroupErrorKind::Unhandled(_inner) => _inner.fmt(f),
@@ -1163,30 +1163,30 @@ impl CopyDBParameterGroupError {
     pub fn is_db_parameter_group_already_exists_fault(&self) -> bool {
         matches!(
             &self.kind,
-            CopyDBParameterGroupErrorKind::DBParameterGroupAlreadyExistsFault(_)
+            CopyDBParameterGroupErrorKind::DbParameterGroupAlreadyExistsFault(_)
         )
     }
     pub fn is_db_parameter_group_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
-            CopyDBParameterGroupErrorKind::DBParameterGroupNotFoundFault(_)
+            CopyDBParameterGroupErrorKind::DbParameterGroupNotFoundFault(_)
         )
     }
     pub fn is_db_parameter_group_quota_exceeded_fault(&self) -> bool {
         matches!(
             &self.kind,
-            CopyDBParameterGroupErrorKind::DBParameterGroupQuotaExceededFault(_)
+            CopyDBParameterGroupErrorKind::DbParameterGroupQuotaExceededFault(_)
         )
     }
 }
 impl std::error::Error for CopyDBParameterGroupError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            CopyDBParameterGroupErrorKind::DBParameterGroupAlreadyExistsFault(_inner) => {
+            CopyDBParameterGroupErrorKind::DbParameterGroupAlreadyExistsFault(_inner) => {
                 Some(_inner)
             }
-            CopyDBParameterGroupErrorKind::DBParameterGroupNotFoundFault(_inner) => Some(_inner),
-            CopyDBParameterGroupErrorKind::DBParameterGroupQuotaExceededFault(_inner) => {
+            CopyDBParameterGroupErrorKind::DbParameterGroupNotFoundFault(_inner) => Some(_inner),
+            CopyDBParameterGroupErrorKind::DbParameterGroupQuotaExceededFault(_inner) => {
                 Some(_inner)
             }
             CopyDBParameterGroupErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
@@ -1204,10 +1204,10 @@ pub struct CopyDBSnapshotError {
 #[derive(std::fmt::Debug)]
 pub enum CopyDBSnapshotErrorKind {
     CustomAvailabilityZoneNotFoundFault(crate::error::CustomAvailabilityZoneNotFoundFault),
-    DBSnapshotAlreadyExistsFault(crate::error::DBSnapshotAlreadyExistsFault),
-    DBSnapshotNotFoundFault(crate::error::DBSnapshotNotFoundFault),
-    InvalidDBSnapshotStateFault(crate::error::InvalidDBSnapshotStateFault),
-    KMSKeyNotAccessibleFault(crate::error::KMSKeyNotAccessibleFault),
+    DbSnapshotAlreadyExistsFault(crate::error::DbSnapshotAlreadyExistsFault),
+    DbSnapshotNotFoundFault(crate::error::DbSnapshotNotFoundFault),
+    InvalidDbSnapshotStateFault(crate::error::InvalidDbSnapshotStateFault),
+    KmsKeyNotAccessibleFault(crate::error::KmsKeyNotAccessibleFault),
     SnapshotQuotaExceededFault(crate::error::SnapshotQuotaExceededFault),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1216,10 +1216,10 @@ impl std::fmt::Display for CopyDBSnapshotError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
             CopyDBSnapshotErrorKind::CustomAvailabilityZoneNotFoundFault(_inner) => _inner.fmt(f),
-            CopyDBSnapshotErrorKind::DBSnapshotAlreadyExistsFault(_inner) => _inner.fmt(f),
-            CopyDBSnapshotErrorKind::DBSnapshotNotFoundFault(_inner) => _inner.fmt(f),
-            CopyDBSnapshotErrorKind::InvalidDBSnapshotStateFault(_inner) => _inner.fmt(f),
-            CopyDBSnapshotErrorKind::KMSKeyNotAccessibleFault(_inner) => _inner.fmt(f),
+            CopyDBSnapshotErrorKind::DbSnapshotAlreadyExistsFault(_inner) => _inner.fmt(f),
+            CopyDBSnapshotErrorKind::DbSnapshotNotFoundFault(_inner) => _inner.fmt(f),
+            CopyDBSnapshotErrorKind::InvalidDbSnapshotStateFault(_inner) => _inner.fmt(f),
+            CopyDBSnapshotErrorKind::KmsKeyNotAccessibleFault(_inner) => _inner.fmt(f),
             CopyDBSnapshotErrorKind::SnapshotQuotaExceededFault(_inner) => _inner.fmt(f),
             CopyDBSnapshotErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
@@ -1278,25 +1278,25 @@ impl CopyDBSnapshotError {
     pub fn is_db_snapshot_already_exists_fault(&self) -> bool {
         matches!(
             &self.kind,
-            CopyDBSnapshotErrorKind::DBSnapshotAlreadyExistsFault(_)
+            CopyDBSnapshotErrorKind::DbSnapshotAlreadyExistsFault(_)
         )
     }
     pub fn is_db_snapshot_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
-            CopyDBSnapshotErrorKind::DBSnapshotNotFoundFault(_)
+            CopyDBSnapshotErrorKind::DbSnapshotNotFoundFault(_)
         )
     }
     pub fn is_invalid_db_snapshot_state_fault(&self) -> bool {
         matches!(
             &self.kind,
-            CopyDBSnapshotErrorKind::InvalidDBSnapshotStateFault(_)
+            CopyDBSnapshotErrorKind::InvalidDbSnapshotStateFault(_)
         )
     }
     pub fn is_kms_key_not_accessible_fault(&self) -> bool {
         matches!(
             &self.kind,
-            CopyDBSnapshotErrorKind::KMSKeyNotAccessibleFault(_)
+            CopyDBSnapshotErrorKind::KmsKeyNotAccessibleFault(_)
         )
     }
     pub fn is_snapshot_quota_exceeded_fault(&self) -> bool {
@@ -1310,10 +1310,10 @@ impl std::error::Error for CopyDBSnapshotError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             CopyDBSnapshotErrorKind::CustomAvailabilityZoneNotFoundFault(_inner) => Some(_inner),
-            CopyDBSnapshotErrorKind::DBSnapshotAlreadyExistsFault(_inner) => Some(_inner),
-            CopyDBSnapshotErrorKind::DBSnapshotNotFoundFault(_inner) => Some(_inner),
-            CopyDBSnapshotErrorKind::InvalidDBSnapshotStateFault(_inner) => Some(_inner),
-            CopyDBSnapshotErrorKind::KMSKeyNotAccessibleFault(_inner) => Some(_inner),
+            CopyDBSnapshotErrorKind::DbSnapshotAlreadyExistsFault(_inner) => Some(_inner),
+            CopyDBSnapshotErrorKind::DbSnapshotNotFoundFault(_inner) => Some(_inner),
+            CopyDBSnapshotErrorKind::InvalidDbSnapshotStateFault(_inner) => Some(_inner),
+            CopyDBSnapshotErrorKind::KmsKeyNotAccessibleFault(_inner) => Some(_inner),
             CopyDBSnapshotErrorKind::SnapshotQuotaExceededFault(_inner) => Some(_inner),
             CopyDBSnapshotErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
@@ -1434,7 +1434,7 @@ pub enum CreateCustomAvailabilityZoneErrorKind {
     CustomAvailabilityZoneQuotaExceededFault(
         crate::error::CustomAvailabilityZoneQuotaExceededFault,
     ),
-    KMSKeyNotAccessibleFault(crate::error::KMSKeyNotAccessibleFault),
+    KmsKeyNotAccessibleFault(crate::error::KmsKeyNotAccessibleFault),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
@@ -1447,7 +1447,7 @@ impl std::fmt::Display for CreateCustomAvailabilityZoneError {
             CreateCustomAvailabilityZoneErrorKind::CustomAvailabilityZoneQuotaExceededFault(
                 _inner,
             ) => _inner.fmt(f),
-            CreateCustomAvailabilityZoneErrorKind::KMSKeyNotAccessibleFault(_inner) => {
+            CreateCustomAvailabilityZoneErrorKind::KmsKeyNotAccessibleFault(_inner) => {
                 _inner.fmt(f)
             }
             CreateCustomAvailabilityZoneErrorKind::Unhandled(_inner) => _inner.fmt(f),
@@ -1513,7 +1513,7 @@ impl CreateCustomAvailabilityZoneError {
     pub fn is_kms_key_not_accessible_fault(&self) -> bool {
         matches!(
             &self.kind,
-            CreateCustomAvailabilityZoneErrorKind::KMSKeyNotAccessibleFault(_)
+            CreateCustomAvailabilityZoneErrorKind::KmsKeyNotAccessibleFault(_)
         )
     }
 }
@@ -1526,7 +1526,7 @@ impl std::error::Error for CreateCustomAvailabilityZoneError {
             CreateCustomAvailabilityZoneErrorKind::CustomAvailabilityZoneQuotaExceededFault(
                 _inner,
             ) => Some(_inner),
-            CreateCustomAvailabilityZoneErrorKind::KMSKeyNotAccessibleFault(_inner) => Some(_inner),
+            CreateCustomAvailabilityZoneErrorKind::KmsKeyNotAccessibleFault(_inner) => Some(_inner),
             CreateCustomAvailabilityZoneErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -1541,23 +1541,23 @@ pub struct CreateDBClusterError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateDBClusterErrorKind {
-    DBClusterAlreadyExistsFault(crate::error::DBClusterAlreadyExistsFault),
-    DBClusterNotFoundFault(crate::error::DBClusterNotFoundFault),
-    DBClusterParameterGroupNotFoundFault(crate::error::DBClusterParameterGroupNotFoundFault),
-    DBClusterQuotaExceededFault(crate::error::DBClusterQuotaExceededFault),
-    DBInstanceNotFoundFault(crate::error::DBInstanceNotFoundFault),
-    DBSubnetGroupDoesNotCoverEnoughAZs(crate::error::DBSubnetGroupDoesNotCoverEnoughAZs),
-    DBSubnetGroupNotFoundFault(crate::error::DBSubnetGroupNotFoundFault),
+    DbClusterAlreadyExistsFault(crate::error::DbClusterAlreadyExistsFault),
+    DbClusterNotFoundFault(crate::error::DbClusterNotFoundFault),
+    DbClusterParameterGroupNotFoundFault(crate::error::DbClusterParameterGroupNotFoundFault),
+    DbClusterQuotaExceededFault(crate::error::DbClusterQuotaExceededFault),
+    DbInstanceNotFoundFault(crate::error::DbInstanceNotFoundFault),
+    DbSubnetGroupDoesNotCoverEnoughAZs(crate::error::DbSubnetGroupDoesNotCoverEnoughAZs),
+    DbSubnetGroupNotFoundFault(crate::error::DbSubnetGroupNotFoundFault),
     DomainNotFoundFault(crate::error::DomainNotFoundFault),
     GlobalClusterNotFoundFault(crate::error::GlobalClusterNotFoundFault),
     InsufficientStorageClusterCapacityFault(crate::error::InsufficientStorageClusterCapacityFault),
-    InvalidDBClusterStateFault(crate::error::InvalidDBClusterStateFault),
-    InvalidDBInstanceStateFault(crate::error::InvalidDBInstanceStateFault),
-    InvalidDBSubnetGroupStateFault(crate::error::InvalidDBSubnetGroupStateFault),
+    InvalidDbClusterStateFault(crate::error::InvalidDbClusterStateFault),
+    InvalidDbInstanceStateFault(crate::error::InvalidDbInstanceStateFault),
+    InvalidDbSubnetGroupStateFault(crate::error::InvalidDbSubnetGroupStateFault),
     InvalidGlobalClusterStateFault(crate::error::InvalidGlobalClusterStateFault),
     InvalidSubnet(crate::error::InvalidSubnet),
-    InvalidVPCNetworkStateFault(crate::error::InvalidVPCNetworkStateFault),
-    KMSKeyNotAccessibleFault(crate::error::KMSKeyNotAccessibleFault),
+    InvalidVpcNetworkStateFault(crate::error::InvalidVpcNetworkStateFault),
+    KmsKeyNotAccessibleFault(crate::error::KmsKeyNotAccessibleFault),
     StorageQuotaExceededFault(crate::error::StorageQuotaExceededFault),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1565,25 +1565,25 @@ pub enum CreateDBClusterErrorKind {
 impl std::fmt::Display for CreateDBClusterError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            CreateDBClusterErrorKind::DBClusterAlreadyExistsFault(_inner) => _inner.fmt(f),
-            CreateDBClusterErrorKind::DBClusterNotFoundFault(_inner) => _inner.fmt(f),
-            CreateDBClusterErrorKind::DBClusterParameterGroupNotFoundFault(_inner) => _inner.fmt(f),
-            CreateDBClusterErrorKind::DBClusterQuotaExceededFault(_inner) => _inner.fmt(f),
-            CreateDBClusterErrorKind::DBInstanceNotFoundFault(_inner) => _inner.fmt(f),
-            CreateDBClusterErrorKind::DBSubnetGroupDoesNotCoverEnoughAZs(_inner) => _inner.fmt(f),
-            CreateDBClusterErrorKind::DBSubnetGroupNotFoundFault(_inner) => _inner.fmt(f),
+            CreateDBClusterErrorKind::DbClusterAlreadyExistsFault(_inner) => _inner.fmt(f),
+            CreateDBClusterErrorKind::DbClusterNotFoundFault(_inner) => _inner.fmt(f),
+            CreateDBClusterErrorKind::DbClusterParameterGroupNotFoundFault(_inner) => _inner.fmt(f),
+            CreateDBClusterErrorKind::DbClusterQuotaExceededFault(_inner) => _inner.fmt(f),
+            CreateDBClusterErrorKind::DbInstanceNotFoundFault(_inner) => _inner.fmt(f),
+            CreateDBClusterErrorKind::DbSubnetGroupDoesNotCoverEnoughAZs(_inner) => _inner.fmt(f),
+            CreateDBClusterErrorKind::DbSubnetGroupNotFoundFault(_inner) => _inner.fmt(f),
             CreateDBClusterErrorKind::DomainNotFoundFault(_inner) => _inner.fmt(f),
             CreateDBClusterErrorKind::GlobalClusterNotFoundFault(_inner) => _inner.fmt(f),
             CreateDBClusterErrorKind::InsufficientStorageClusterCapacityFault(_inner) => {
                 _inner.fmt(f)
             }
-            CreateDBClusterErrorKind::InvalidDBClusterStateFault(_inner) => _inner.fmt(f),
-            CreateDBClusterErrorKind::InvalidDBInstanceStateFault(_inner) => _inner.fmt(f),
-            CreateDBClusterErrorKind::InvalidDBSubnetGroupStateFault(_inner) => _inner.fmt(f),
+            CreateDBClusterErrorKind::InvalidDbClusterStateFault(_inner) => _inner.fmt(f),
+            CreateDBClusterErrorKind::InvalidDbInstanceStateFault(_inner) => _inner.fmt(f),
+            CreateDBClusterErrorKind::InvalidDbSubnetGroupStateFault(_inner) => _inner.fmt(f),
             CreateDBClusterErrorKind::InvalidGlobalClusterStateFault(_inner) => _inner.fmt(f),
             CreateDBClusterErrorKind::InvalidSubnet(_inner) => _inner.fmt(f),
-            CreateDBClusterErrorKind::InvalidVPCNetworkStateFault(_inner) => _inner.fmt(f),
-            CreateDBClusterErrorKind::KMSKeyNotAccessibleFault(_inner) => _inner.fmt(f),
+            CreateDBClusterErrorKind::InvalidVpcNetworkStateFault(_inner) => _inner.fmt(f),
+            CreateDBClusterErrorKind::KmsKeyNotAccessibleFault(_inner) => _inner.fmt(f),
             CreateDBClusterErrorKind::StorageQuotaExceededFault(_inner) => _inner.fmt(f),
             CreateDBClusterErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
@@ -1636,43 +1636,43 @@ impl CreateDBClusterError {
     pub fn is_db_cluster_already_exists_fault(&self) -> bool {
         matches!(
             &self.kind,
-            CreateDBClusterErrorKind::DBClusterAlreadyExistsFault(_)
+            CreateDBClusterErrorKind::DbClusterAlreadyExistsFault(_)
         )
     }
     pub fn is_db_cluster_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
-            CreateDBClusterErrorKind::DBClusterNotFoundFault(_)
+            CreateDBClusterErrorKind::DbClusterNotFoundFault(_)
         )
     }
     pub fn is_db_cluster_parameter_group_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
-            CreateDBClusterErrorKind::DBClusterParameterGroupNotFoundFault(_)
+            CreateDBClusterErrorKind::DbClusterParameterGroupNotFoundFault(_)
         )
     }
     pub fn is_db_cluster_quota_exceeded_fault(&self) -> bool {
         matches!(
             &self.kind,
-            CreateDBClusterErrorKind::DBClusterQuotaExceededFault(_)
+            CreateDBClusterErrorKind::DbClusterQuotaExceededFault(_)
         )
     }
     pub fn is_db_instance_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
-            CreateDBClusterErrorKind::DBInstanceNotFoundFault(_)
+            CreateDBClusterErrorKind::DbInstanceNotFoundFault(_)
         )
     }
     pub fn is_db_subnet_group_does_not_cover_enough_a_zs(&self) -> bool {
         matches!(
             &self.kind,
-            CreateDBClusterErrorKind::DBSubnetGroupDoesNotCoverEnoughAZs(_)
+            CreateDBClusterErrorKind::DbSubnetGroupDoesNotCoverEnoughAZs(_)
         )
     }
     pub fn is_db_subnet_group_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
-            CreateDBClusterErrorKind::DBSubnetGroupNotFoundFault(_)
+            CreateDBClusterErrorKind::DbSubnetGroupNotFoundFault(_)
         )
     }
     pub fn is_domain_not_found_fault(&self) -> bool {
@@ -1693,19 +1693,19 @@ impl CreateDBClusterError {
     pub fn is_invalid_db_cluster_state_fault(&self) -> bool {
         matches!(
             &self.kind,
-            CreateDBClusterErrorKind::InvalidDBClusterStateFault(_)
+            CreateDBClusterErrorKind::InvalidDbClusterStateFault(_)
         )
     }
     pub fn is_invalid_db_instance_state_fault(&self) -> bool {
         matches!(
             &self.kind,
-            CreateDBClusterErrorKind::InvalidDBInstanceStateFault(_)
+            CreateDBClusterErrorKind::InvalidDbInstanceStateFault(_)
         )
     }
     pub fn is_invalid_db_subnet_group_state_fault(&self) -> bool {
         matches!(
             &self.kind,
-            CreateDBClusterErrorKind::InvalidDBSubnetGroupStateFault(_)
+            CreateDBClusterErrorKind::InvalidDbSubnetGroupStateFault(_)
         )
     }
     pub fn is_invalid_global_cluster_state_fault(&self) -> bool {
@@ -1720,13 +1720,13 @@ impl CreateDBClusterError {
     pub fn is_invalid_vpc_network_state_fault(&self) -> bool {
         matches!(
             &self.kind,
-            CreateDBClusterErrorKind::InvalidVPCNetworkStateFault(_)
+            CreateDBClusterErrorKind::InvalidVpcNetworkStateFault(_)
         )
     }
     pub fn is_kms_key_not_accessible_fault(&self) -> bool {
         matches!(
             &self.kind,
-            CreateDBClusterErrorKind::KMSKeyNotAccessibleFault(_)
+            CreateDBClusterErrorKind::KmsKeyNotAccessibleFault(_)
         )
     }
     pub fn is_storage_quota_exceeded_fault(&self) -> bool {
@@ -1739,25 +1739,25 @@ impl CreateDBClusterError {
 impl std::error::Error for CreateDBClusterError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            CreateDBClusterErrorKind::DBClusterAlreadyExistsFault(_inner) => Some(_inner),
-            CreateDBClusterErrorKind::DBClusterNotFoundFault(_inner) => Some(_inner),
-            CreateDBClusterErrorKind::DBClusterParameterGroupNotFoundFault(_inner) => Some(_inner),
-            CreateDBClusterErrorKind::DBClusterQuotaExceededFault(_inner) => Some(_inner),
-            CreateDBClusterErrorKind::DBInstanceNotFoundFault(_inner) => Some(_inner),
-            CreateDBClusterErrorKind::DBSubnetGroupDoesNotCoverEnoughAZs(_inner) => Some(_inner),
-            CreateDBClusterErrorKind::DBSubnetGroupNotFoundFault(_inner) => Some(_inner),
+            CreateDBClusterErrorKind::DbClusterAlreadyExistsFault(_inner) => Some(_inner),
+            CreateDBClusterErrorKind::DbClusterNotFoundFault(_inner) => Some(_inner),
+            CreateDBClusterErrorKind::DbClusterParameterGroupNotFoundFault(_inner) => Some(_inner),
+            CreateDBClusterErrorKind::DbClusterQuotaExceededFault(_inner) => Some(_inner),
+            CreateDBClusterErrorKind::DbInstanceNotFoundFault(_inner) => Some(_inner),
+            CreateDBClusterErrorKind::DbSubnetGroupDoesNotCoverEnoughAZs(_inner) => Some(_inner),
+            CreateDBClusterErrorKind::DbSubnetGroupNotFoundFault(_inner) => Some(_inner),
             CreateDBClusterErrorKind::DomainNotFoundFault(_inner) => Some(_inner),
             CreateDBClusterErrorKind::GlobalClusterNotFoundFault(_inner) => Some(_inner),
             CreateDBClusterErrorKind::InsufficientStorageClusterCapacityFault(_inner) => {
                 Some(_inner)
             }
-            CreateDBClusterErrorKind::InvalidDBClusterStateFault(_inner) => Some(_inner),
-            CreateDBClusterErrorKind::InvalidDBInstanceStateFault(_inner) => Some(_inner),
-            CreateDBClusterErrorKind::InvalidDBSubnetGroupStateFault(_inner) => Some(_inner),
+            CreateDBClusterErrorKind::InvalidDbClusterStateFault(_inner) => Some(_inner),
+            CreateDBClusterErrorKind::InvalidDbInstanceStateFault(_inner) => Some(_inner),
+            CreateDBClusterErrorKind::InvalidDbSubnetGroupStateFault(_inner) => Some(_inner),
             CreateDBClusterErrorKind::InvalidGlobalClusterStateFault(_inner) => Some(_inner),
             CreateDBClusterErrorKind::InvalidSubnet(_inner) => Some(_inner),
-            CreateDBClusterErrorKind::InvalidVPCNetworkStateFault(_inner) => Some(_inner),
-            CreateDBClusterErrorKind::KMSKeyNotAccessibleFault(_inner) => Some(_inner),
+            CreateDBClusterErrorKind::InvalidVpcNetworkStateFault(_inner) => Some(_inner),
+            CreateDBClusterErrorKind::KmsKeyNotAccessibleFault(_inner) => Some(_inner),
             CreateDBClusterErrorKind::StorageQuotaExceededFault(_inner) => Some(_inner),
             CreateDBClusterErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
@@ -1773,28 +1773,28 @@ pub struct CreateDBClusterEndpointError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateDBClusterEndpointErrorKind {
-    DBClusterEndpointAlreadyExistsFault(crate::error::DBClusterEndpointAlreadyExistsFault),
-    DBClusterEndpointQuotaExceededFault(crate::error::DBClusterEndpointQuotaExceededFault),
-    DBClusterNotFoundFault(crate::error::DBClusterNotFoundFault),
-    DBInstanceNotFoundFault(crate::error::DBInstanceNotFoundFault),
-    InvalidDBClusterStateFault(crate::error::InvalidDBClusterStateFault),
-    InvalidDBInstanceStateFault(crate::error::InvalidDBInstanceStateFault),
+    DbClusterEndpointAlreadyExistsFault(crate::error::DbClusterEndpointAlreadyExistsFault),
+    DbClusterEndpointQuotaExceededFault(crate::error::DbClusterEndpointQuotaExceededFault),
+    DbClusterNotFoundFault(crate::error::DbClusterNotFoundFault),
+    DbInstanceNotFoundFault(crate::error::DbInstanceNotFoundFault),
+    InvalidDbClusterStateFault(crate::error::InvalidDbClusterStateFault),
+    InvalidDbInstanceStateFault(crate::error::InvalidDbInstanceStateFault),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateDBClusterEndpointError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            CreateDBClusterEndpointErrorKind::DBClusterEndpointAlreadyExistsFault(_inner) => {
+            CreateDBClusterEndpointErrorKind::DbClusterEndpointAlreadyExistsFault(_inner) => {
                 _inner.fmt(f)
             }
-            CreateDBClusterEndpointErrorKind::DBClusterEndpointQuotaExceededFault(_inner) => {
+            CreateDBClusterEndpointErrorKind::DbClusterEndpointQuotaExceededFault(_inner) => {
                 _inner.fmt(f)
             }
-            CreateDBClusterEndpointErrorKind::DBClusterNotFoundFault(_inner) => _inner.fmt(f),
-            CreateDBClusterEndpointErrorKind::DBInstanceNotFoundFault(_inner) => _inner.fmt(f),
-            CreateDBClusterEndpointErrorKind::InvalidDBClusterStateFault(_inner) => _inner.fmt(f),
-            CreateDBClusterEndpointErrorKind::InvalidDBInstanceStateFault(_inner) => _inner.fmt(f),
+            CreateDBClusterEndpointErrorKind::DbClusterNotFoundFault(_inner) => _inner.fmt(f),
+            CreateDBClusterEndpointErrorKind::DbInstanceNotFoundFault(_inner) => _inner.fmt(f),
+            CreateDBClusterEndpointErrorKind::InvalidDbClusterStateFault(_inner) => _inner.fmt(f),
+            CreateDBClusterEndpointErrorKind::InvalidDbInstanceStateFault(_inner) => _inner.fmt(f),
             CreateDBClusterEndpointErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -1846,53 +1846,53 @@ impl CreateDBClusterEndpointError {
     pub fn is_db_cluster_endpoint_already_exists_fault(&self) -> bool {
         matches!(
             &self.kind,
-            CreateDBClusterEndpointErrorKind::DBClusterEndpointAlreadyExistsFault(_)
+            CreateDBClusterEndpointErrorKind::DbClusterEndpointAlreadyExistsFault(_)
         )
     }
     pub fn is_db_cluster_endpoint_quota_exceeded_fault(&self) -> bool {
         matches!(
             &self.kind,
-            CreateDBClusterEndpointErrorKind::DBClusterEndpointQuotaExceededFault(_)
+            CreateDBClusterEndpointErrorKind::DbClusterEndpointQuotaExceededFault(_)
         )
     }
     pub fn is_db_cluster_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
-            CreateDBClusterEndpointErrorKind::DBClusterNotFoundFault(_)
+            CreateDBClusterEndpointErrorKind::DbClusterNotFoundFault(_)
         )
     }
     pub fn is_db_instance_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
-            CreateDBClusterEndpointErrorKind::DBInstanceNotFoundFault(_)
+            CreateDBClusterEndpointErrorKind::DbInstanceNotFoundFault(_)
         )
     }
     pub fn is_invalid_db_cluster_state_fault(&self) -> bool {
         matches!(
             &self.kind,
-            CreateDBClusterEndpointErrorKind::InvalidDBClusterStateFault(_)
+            CreateDBClusterEndpointErrorKind::InvalidDbClusterStateFault(_)
         )
     }
     pub fn is_invalid_db_instance_state_fault(&self) -> bool {
         matches!(
             &self.kind,
-            CreateDBClusterEndpointErrorKind::InvalidDBInstanceStateFault(_)
+            CreateDBClusterEndpointErrorKind::InvalidDbInstanceStateFault(_)
         )
     }
 }
 impl std::error::Error for CreateDBClusterEndpointError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            CreateDBClusterEndpointErrorKind::DBClusterEndpointAlreadyExistsFault(_inner) => {
+            CreateDBClusterEndpointErrorKind::DbClusterEndpointAlreadyExistsFault(_inner) => {
                 Some(_inner)
             }
-            CreateDBClusterEndpointErrorKind::DBClusterEndpointQuotaExceededFault(_inner) => {
+            CreateDBClusterEndpointErrorKind::DbClusterEndpointQuotaExceededFault(_inner) => {
                 Some(_inner)
             }
-            CreateDBClusterEndpointErrorKind::DBClusterNotFoundFault(_inner) => Some(_inner),
-            CreateDBClusterEndpointErrorKind::DBInstanceNotFoundFault(_inner) => Some(_inner),
-            CreateDBClusterEndpointErrorKind::InvalidDBClusterStateFault(_inner) => Some(_inner),
-            CreateDBClusterEndpointErrorKind::InvalidDBInstanceStateFault(_inner) => Some(_inner),
+            CreateDBClusterEndpointErrorKind::DbClusterNotFoundFault(_inner) => Some(_inner),
+            CreateDBClusterEndpointErrorKind::DbInstanceNotFoundFault(_inner) => Some(_inner),
+            CreateDBClusterEndpointErrorKind::InvalidDbClusterStateFault(_inner) => Some(_inner),
+            CreateDBClusterEndpointErrorKind::InvalidDbInstanceStateFault(_inner) => Some(_inner),
             CreateDBClusterEndpointErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -1907,18 +1907,18 @@ pub struct CreateDBClusterParameterGroupError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateDBClusterParameterGroupErrorKind {
-    DBParameterGroupAlreadyExistsFault(crate::error::DBParameterGroupAlreadyExistsFault),
-    DBParameterGroupQuotaExceededFault(crate::error::DBParameterGroupQuotaExceededFault),
+    DbParameterGroupAlreadyExistsFault(crate::error::DbParameterGroupAlreadyExistsFault),
+    DbParameterGroupQuotaExceededFault(crate::error::DbParameterGroupQuotaExceededFault),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateDBClusterParameterGroupError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            CreateDBClusterParameterGroupErrorKind::DBParameterGroupAlreadyExistsFault(_inner) => {
+            CreateDBClusterParameterGroupErrorKind::DbParameterGroupAlreadyExistsFault(_inner) => {
                 _inner.fmt(f)
             }
-            CreateDBClusterParameterGroupErrorKind::DBParameterGroupQuotaExceededFault(_inner) => {
+            CreateDBClusterParameterGroupErrorKind::DbParameterGroupQuotaExceededFault(_inner) => {
                 _inner.fmt(f)
             }
             CreateDBClusterParameterGroupErrorKind::Unhandled(_inner) => _inner.fmt(f),
@@ -1972,23 +1972,23 @@ impl CreateDBClusterParameterGroupError {
     pub fn is_db_parameter_group_already_exists_fault(&self) -> bool {
         matches!(
             &self.kind,
-            CreateDBClusterParameterGroupErrorKind::DBParameterGroupAlreadyExistsFault(_)
+            CreateDBClusterParameterGroupErrorKind::DbParameterGroupAlreadyExistsFault(_)
         )
     }
     pub fn is_db_parameter_group_quota_exceeded_fault(&self) -> bool {
         matches!(
             &self.kind,
-            CreateDBClusterParameterGroupErrorKind::DBParameterGroupQuotaExceededFault(_)
+            CreateDBClusterParameterGroupErrorKind::DbParameterGroupQuotaExceededFault(_)
         )
     }
 }
 impl std::error::Error for CreateDBClusterParameterGroupError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            CreateDBClusterParameterGroupErrorKind::DBParameterGroupAlreadyExistsFault(_inner) => {
+            CreateDBClusterParameterGroupErrorKind::DbParameterGroupAlreadyExistsFault(_inner) => {
                 Some(_inner)
             }
-            CreateDBClusterParameterGroupErrorKind::DBParameterGroupQuotaExceededFault(_inner) => {
+            CreateDBClusterParameterGroupErrorKind::DbParameterGroupQuotaExceededFault(_inner) => {
                 Some(_inner)
             }
             CreateDBClusterParameterGroupErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
@@ -2005,10 +2005,10 @@ pub struct CreateDBClusterSnapshotError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateDBClusterSnapshotErrorKind {
-    DBClusterNotFoundFault(crate::error::DBClusterNotFoundFault),
-    DBClusterSnapshotAlreadyExistsFault(crate::error::DBClusterSnapshotAlreadyExistsFault),
-    InvalidDBClusterSnapshotStateFault(crate::error::InvalidDBClusterSnapshotStateFault),
-    InvalidDBClusterStateFault(crate::error::InvalidDBClusterStateFault),
+    DbClusterNotFoundFault(crate::error::DbClusterNotFoundFault),
+    DbClusterSnapshotAlreadyExistsFault(crate::error::DbClusterSnapshotAlreadyExistsFault),
+    InvalidDbClusterSnapshotStateFault(crate::error::InvalidDbClusterSnapshotStateFault),
+    InvalidDbClusterStateFault(crate::error::InvalidDbClusterStateFault),
     SnapshotQuotaExceededFault(crate::error::SnapshotQuotaExceededFault),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2016,14 +2016,14 @@ pub enum CreateDBClusterSnapshotErrorKind {
 impl std::fmt::Display for CreateDBClusterSnapshotError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            CreateDBClusterSnapshotErrorKind::DBClusterNotFoundFault(_inner) => _inner.fmt(f),
-            CreateDBClusterSnapshotErrorKind::DBClusterSnapshotAlreadyExistsFault(_inner) => {
+            CreateDBClusterSnapshotErrorKind::DbClusterNotFoundFault(_inner) => _inner.fmt(f),
+            CreateDBClusterSnapshotErrorKind::DbClusterSnapshotAlreadyExistsFault(_inner) => {
                 _inner.fmt(f)
             }
-            CreateDBClusterSnapshotErrorKind::InvalidDBClusterSnapshotStateFault(_inner) => {
+            CreateDBClusterSnapshotErrorKind::InvalidDbClusterSnapshotStateFault(_inner) => {
                 _inner.fmt(f)
             }
-            CreateDBClusterSnapshotErrorKind::InvalidDBClusterStateFault(_inner) => _inner.fmt(f),
+            CreateDBClusterSnapshotErrorKind::InvalidDbClusterStateFault(_inner) => _inner.fmt(f),
             CreateDBClusterSnapshotErrorKind::SnapshotQuotaExceededFault(_inner) => _inner.fmt(f),
             CreateDBClusterSnapshotErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
@@ -2076,25 +2076,25 @@ impl CreateDBClusterSnapshotError {
     pub fn is_db_cluster_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
-            CreateDBClusterSnapshotErrorKind::DBClusterNotFoundFault(_)
+            CreateDBClusterSnapshotErrorKind::DbClusterNotFoundFault(_)
         )
     }
     pub fn is_db_cluster_snapshot_already_exists_fault(&self) -> bool {
         matches!(
             &self.kind,
-            CreateDBClusterSnapshotErrorKind::DBClusterSnapshotAlreadyExistsFault(_)
+            CreateDBClusterSnapshotErrorKind::DbClusterSnapshotAlreadyExistsFault(_)
         )
     }
     pub fn is_invalid_db_cluster_snapshot_state_fault(&self) -> bool {
         matches!(
             &self.kind,
-            CreateDBClusterSnapshotErrorKind::InvalidDBClusterSnapshotStateFault(_)
+            CreateDBClusterSnapshotErrorKind::InvalidDbClusterSnapshotStateFault(_)
         )
     }
     pub fn is_invalid_db_cluster_state_fault(&self) -> bool {
         matches!(
             &self.kind,
-            CreateDBClusterSnapshotErrorKind::InvalidDBClusterStateFault(_)
+            CreateDBClusterSnapshotErrorKind::InvalidDbClusterStateFault(_)
         )
     }
     pub fn is_snapshot_quota_exceeded_fault(&self) -> bool {
@@ -2107,14 +2107,14 @@ impl CreateDBClusterSnapshotError {
 impl std::error::Error for CreateDBClusterSnapshotError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            CreateDBClusterSnapshotErrorKind::DBClusterNotFoundFault(_inner) => Some(_inner),
-            CreateDBClusterSnapshotErrorKind::DBClusterSnapshotAlreadyExistsFault(_inner) => {
+            CreateDBClusterSnapshotErrorKind::DbClusterNotFoundFault(_inner) => Some(_inner),
+            CreateDBClusterSnapshotErrorKind::DbClusterSnapshotAlreadyExistsFault(_inner) => {
                 Some(_inner)
             }
-            CreateDBClusterSnapshotErrorKind::InvalidDBClusterSnapshotStateFault(_inner) => {
+            CreateDBClusterSnapshotErrorKind::InvalidDbClusterSnapshotStateFault(_inner) => {
                 Some(_inner)
             }
-            CreateDBClusterSnapshotErrorKind::InvalidDBClusterStateFault(_inner) => Some(_inner),
+            CreateDBClusterSnapshotErrorKind::InvalidDbClusterStateFault(_inner) => Some(_inner),
             CreateDBClusterSnapshotErrorKind::SnapshotQuotaExceededFault(_inner) => Some(_inner),
             CreateDBClusterSnapshotErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
@@ -2132,21 +2132,21 @@ pub struct CreateDBInstanceError {
 pub enum CreateDBInstanceErrorKind {
     AuthorizationNotFoundFault(crate::error::AuthorizationNotFoundFault),
     BackupPolicyNotFoundFault(crate::error::BackupPolicyNotFoundFault),
-    DBClusterNotFoundFault(crate::error::DBClusterNotFoundFault),
-    DBInstanceAlreadyExistsFault(crate::error::DBInstanceAlreadyExistsFault),
-    DBParameterGroupNotFoundFault(crate::error::DBParameterGroupNotFoundFault),
-    DBSecurityGroupNotFoundFault(crate::error::DBSecurityGroupNotFoundFault),
-    DBSubnetGroupDoesNotCoverEnoughAZs(crate::error::DBSubnetGroupDoesNotCoverEnoughAZs),
-    DBSubnetGroupNotFoundFault(crate::error::DBSubnetGroupNotFoundFault),
+    DbClusterNotFoundFault(crate::error::DbClusterNotFoundFault),
+    DbInstanceAlreadyExistsFault(crate::error::DbInstanceAlreadyExistsFault),
+    DbParameterGroupNotFoundFault(crate::error::DbParameterGroupNotFoundFault),
+    DbSecurityGroupNotFoundFault(crate::error::DbSecurityGroupNotFoundFault),
+    DbSubnetGroupDoesNotCoverEnoughAZs(crate::error::DbSubnetGroupDoesNotCoverEnoughAZs),
+    DbSubnetGroupNotFoundFault(crate::error::DbSubnetGroupNotFoundFault),
     DomainNotFoundFault(crate::error::DomainNotFoundFault),
     InstanceQuotaExceededFault(crate::error::InstanceQuotaExceededFault),
-    InsufficientDBInstanceCapacityFault(crate::error::InsufficientDBInstanceCapacityFault),
-    InvalidDBClusterStateFault(crate::error::InvalidDBClusterStateFault),
+    InsufficientDbInstanceCapacityFault(crate::error::InsufficientDbInstanceCapacityFault),
+    InvalidDbClusterStateFault(crate::error::InvalidDbClusterStateFault),
     InvalidSubnet(crate::error::InvalidSubnet),
-    InvalidVPCNetworkStateFault(crate::error::InvalidVPCNetworkStateFault),
-    KMSKeyNotAccessibleFault(crate::error::KMSKeyNotAccessibleFault),
+    InvalidVpcNetworkStateFault(crate::error::InvalidVpcNetworkStateFault),
+    KmsKeyNotAccessibleFault(crate::error::KmsKeyNotAccessibleFault),
     OptionGroupNotFoundFault(crate::error::OptionGroupNotFoundFault),
-    ProvisionedIopsNotAvailableInAZFault(crate::error::ProvisionedIopsNotAvailableInAZFault),
+    ProvisionedIopsNotAvailableInAzFault(crate::error::ProvisionedIopsNotAvailableInAzFault),
     StorageQuotaExceededFault(crate::error::StorageQuotaExceededFault),
     StorageTypeNotSupportedFault(crate::error::StorageTypeNotSupportedFault),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
@@ -2157,21 +2157,21 @@ impl std::fmt::Display for CreateDBInstanceError {
         match &self.kind {
             CreateDBInstanceErrorKind::AuthorizationNotFoundFault(_inner) => _inner.fmt(f),
             CreateDBInstanceErrorKind::BackupPolicyNotFoundFault(_inner) => _inner.fmt(f),
-            CreateDBInstanceErrorKind::DBClusterNotFoundFault(_inner) => _inner.fmt(f),
-            CreateDBInstanceErrorKind::DBInstanceAlreadyExistsFault(_inner) => _inner.fmt(f),
-            CreateDBInstanceErrorKind::DBParameterGroupNotFoundFault(_inner) => _inner.fmt(f),
-            CreateDBInstanceErrorKind::DBSecurityGroupNotFoundFault(_inner) => _inner.fmt(f),
-            CreateDBInstanceErrorKind::DBSubnetGroupDoesNotCoverEnoughAZs(_inner) => _inner.fmt(f),
-            CreateDBInstanceErrorKind::DBSubnetGroupNotFoundFault(_inner) => _inner.fmt(f),
+            CreateDBInstanceErrorKind::DbClusterNotFoundFault(_inner) => _inner.fmt(f),
+            CreateDBInstanceErrorKind::DbInstanceAlreadyExistsFault(_inner) => _inner.fmt(f),
+            CreateDBInstanceErrorKind::DbParameterGroupNotFoundFault(_inner) => _inner.fmt(f),
+            CreateDBInstanceErrorKind::DbSecurityGroupNotFoundFault(_inner) => _inner.fmt(f),
+            CreateDBInstanceErrorKind::DbSubnetGroupDoesNotCoverEnoughAZs(_inner) => _inner.fmt(f),
+            CreateDBInstanceErrorKind::DbSubnetGroupNotFoundFault(_inner) => _inner.fmt(f),
             CreateDBInstanceErrorKind::DomainNotFoundFault(_inner) => _inner.fmt(f),
             CreateDBInstanceErrorKind::InstanceQuotaExceededFault(_inner) => _inner.fmt(f),
-            CreateDBInstanceErrorKind::InsufficientDBInstanceCapacityFault(_inner) => _inner.fmt(f),
-            CreateDBInstanceErrorKind::InvalidDBClusterStateFault(_inner) => _inner.fmt(f),
+            CreateDBInstanceErrorKind::InsufficientDbInstanceCapacityFault(_inner) => _inner.fmt(f),
+            CreateDBInstanceErrorKind::InvalidDbClusterStateFault(_inner) => _inner.fmt(f),
             CreateDBInstanceErrorKind::InvalidSubnet(_inner) => _inner.fmt(f),
-            CreateDBInstanceErrorKind::InvalidVPCNetworkStateFault(_inner) => _inner.fmt(f),
-            CreateDBInstanceErrorKind::KMSKeyNotAccessibleFault(_inner) => _inner.fmt(f),
+            CreateDBInstanceErrorKind::InvalidVpcNetworkStateFault(_inner) => _inner.fmt(f),
+            CreateDBInstanceErrorKind::KmsKeyNotAccessibleFault(_inner) => _inner.fmt(f),
             CreateDBInstanceErrorKind::OptionGroupNotFoundFault(_inner) => _inner.fmt(f),
-            CreateDBInstanceErrorKind::ProvisionedIopsNotAvailableInAZFault(_inner) => {
+            CreateDBInstanceErrorKind::ProvisionedIopsNotAvailableInAzFault(_inner) => {
                 _inner.fmt(f)
             }
             CreateDBInstanceErrorKind::StorageQuotaExceededFault(_inner) => _inner.fmt(f),
@@ -2239,37 +2239,37 @@ impl CreateDBInstanceError {
     pub fn is_db_cluster_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
-            CreateDBInstanceErrorKind::DBClusterNotFoundFault(_)
+            CreateDBInstanceErrorKind::DbClusterNotFoundFault(_)
         )
     }
     pub fn is_db_instance_already_exists_fault(&self) -> bool {
         matches!(
             &self.kind,
-            CreateDBInstanceErrorKind::DBInstanceAlreadyExistsFault(_)
+            CreateDBInstanceErrorKind::DbInstanceAlreadyExistsFault(_)
         )
     }
     pub fn is_db_parameter_group_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
-            CreateDBInstanceErrorKind::DBParameterGroupNotFoundFault(_)
+            CreateDBInstanceErrorKind::DbParameterGroupNotFoundFault(_)
         )
     }
     pub fn is_db_security_group_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
-            CreateDBInstanceErrorKind::DBSecurityGroupNotFoundFault(_)
+            CreateDBInstanceErrorKind::DbSecurityGroupNotFoundFault(_)
         )
     }
     pub fn is_db_subnet_group_does_not_cover_enough_a_zs(&self) -> bool {
         matches!(
             &self.kind,
-            CreateDBInstanceErrorKind::DBSubnetGroupDoesNotCoverEnoughAZs(_)
+            CreateDBInstanceErrorKind::DbSubnetGroupDoesNotCoverEnoughAZs(_)
         )
     }
     pub fn is_db_subnet_group_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
-            CreateDBInstanceErrorKind::DBSubnetGroupNotFoundFault(_)
+            CreateDBInstanceErrorKind::DbSubnetGroupNotFoundFault(_)
         )
     }
     pub fn is_domain_not_found_fault(&self) -> bool {
@@ -2287,13 +2287,13 @@ impl CreateDBInstanceError {
     pub fn is_insufficient_db_instance_capacity_fault(&self) -> bool {
         matches!(
             &self.kind,
-            CreateDBInstanceErrorKind::InsufficientDBInstanceCapacityFault(_)
+            CreateDBInstanceErrorKind::InsufficientDbInstanceCapacityFault(_)
         )
     }
     pub fn is_invalid_db_cluster_state_fault(&self) -> bool {
         matches!(
             &self.kind,
-            CreateDBInstanceErrorKind::InvalidDBClusterStateFault(_)
+            CreateDBInstanceErrorKind::InvalidDbClusterStateFault(_)
         )
     }
     pub fn is_invalid_subnet(&self) -> bool {
@@ -2302,13 +2302,13 @@ impl CreateDBInstanceError {
     pub fn is_invalid_vpc_network_state_fault(&self) -> bool {
         matches!(
             &self.kind,
-            CreateDBInstanceErrorKind::InvalidVPCNetworkStateFault(_)
+            CreateDBInstanceErrorKind::InvalidVpcNetworkStateFault(_)
         )
     }
     pub fn is_kms_key_not_accessible_fault(&self) -> bool {
         matches!(
             &self.kind,
-            CreateDBInstanceErrorKind::KMSKeyNotAccessibleFault(_)
+            CreateDBInstanceErrorKind::KmsKeyNotAccessibleFault(_)
         )
     }
     pub fn is_option_group_not_found_fault(&self) -> bool {
@@ -2320,7 +2320,7 @@ impl CreateDBInstanceError {
     pub fn is_provisioned_iops_not_available_in_az_fault(&self) -> bool {
         matches!(
             &self.kind,
-            CreateDBInstanceErrorKind::ProvisionedIopsNotAvailableInAZFault(_)
+            CreateDBInstanceErrorKind::ProvisionedIopsNotAvailableInAzFault(_)
         )
     }
     pub fn is_storage_quota_exceeded_fault(&self) -> bool {
@@ -2341,21 +2341,21 @@ impl std::error::Error for CreateDBInstanceError {
         match &self.kind {
             CreateDBInstanceErrorKind::AuthorizationNotFoundFault(_inner) => Some(_inner),
             CreateDBInstanceErrorKind::BackupPolicyNotFoundFault(_inner) => Some(_inner),
-            CreateDBInstanceErrorKind::DBClusterNotFoundFault(_inner) => Some(_inner),
-            CreateDBInstanceErrorKind::DBInstanceAlreadyExistsFault(_inner) => Some(_inner),
-            CreateDBInstanceErrorKind::DBParameterGroupNotFoundFault(_inner) => Some(_inner),
-            CreateDBInstanceErrorKind::DBSecurityGroupNotFoundFault(_inner) => Some(_inner),
-            CreateDBInstanceErrorKind::DBSubnetGroupDoesNotCoverEnoughAZs(_inner) => Some(_inner),
-            CreateDBInstanceErrorKind::DBSubnetGroupNotFoundFault(_inner) => Some(_inner),
+            CreateDBInstanceErrorKind::DbClusterNotFoundFault(_inner) => Some(_inner),
+            CreateDBInstanceErrorKind::DbInstanceAlreadyExistsFault(_inner) => Some(_inner),
+            CreateDBInstanceErrorKind::DbParameterGroupNotFoundFault(_inner) => Some(_inner),
+            CreateDBInstanceErrorKind::DbSecurityGroupNotFoundFault(_inner) => Some(_inner),
+            CreateDBInstanceErrorKind::DbSubnetGroupDoesNotCoverEnoughAZs(_inner) => Some(_inner),
+            CreateDBInstanceErrorKind::DbSubnetGroupNotFoundFault(_inner) => Some(_inner),
             CreateDBInstanceErrorKind::DomainNotFoundFault(_inner) => Some(_inner),
             CreateDBInstanceErrorKind::InstanceQuotaExceededFault(_inner) => Some(_inner),
-            CreateDBInstanceErrorKind::InsufficientDBInstanceCapacityFault(_inner) => Some(_inner),
-            CreateDBInstanceErrorKind::InvalidDBClusterStateFault(_inner) => Some(_inner),
+            CreateDBInstanceErrorKind::InsufficientDbInstanceCapacityFault(_inner) => Some(_inner),
+            CreateDBInstanceErrorKind::InvalidDbClusterStateFault(_inner) => Some(_inner),
             CreateDBInstanceErrorKind::InvalidSubnet(_inner) => Some(_inner),
-            CreateDBInstanceErrorKind::InvalidVPCNetworkStateFault(_inner) => Some(_inner),
-            CreateDBInstanceErrorKind::KMSKeyNotAccessibleFault(_inner) => Some(_inner),
+            CreateDBInstanceErrorKind::InvalidVpcNetworkStateFault(_inner) => Some(_inner),
+            CreateDBInstanceErrorKind::KmsKeyNotAccessibleFault(_inner) => Some(_inner),
             CreateDBInstanceErrorKind::OptionGroupNotFoundFault(_inner) => Some(_inner),
-            CreateDBInstanceErrorKind::ProvisionedIopsNotAvailableInAZFault(_inner) => Some(_inner),
+            CreateDBInstanceErrorKind::ProvisionedIopsNotAvailableInAzFault(_inner) => Some(_inner),
             CreateDBInstanceErrorKind::StorageQuotaExceededFault(_inner) => Some(_inner),
             CreateDBInstanceErrorKind::StorageTypeNotSupportedFault(_inner) => Some(_inner),
             CreateDBInstanceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
@@ -2372,23 +2372,23 @@ pub struct CreateDBInstanceReadReplicaError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateDBInstanceReadReplicaErrorKind {
-    DBInstanceAlreadyExistsFault(crate::error::DBInstanceAlreadyExistsFault),
-    DBInstanceNotFoundFault(crate::error::DBInstanceNotFoundFault),
-    DBParameterGroupNotFoundFault(crate::error::DBParameterGroupNotFoundFault),
-    DBSecurityGroupNotFoundFault(crate::error::DBSecurityGroupNotFoundFault),
-    DBSubnetGroupDoesNotCoverEnoughAZs(crate::error::DBSubnetGroupDoesNotCoverEnoughAZs),
-    DBSubnetGroupNotAllowedFault(crate::error::DBSubnetGroupNotAllowedFault),
-    DBSubnetGroupNotFoundFault(crate::error::DBSubnetGroupNotFoundFault),
+    DbInstanceAlreadyExistsFault(crate::error::DbInstanceAlreadyExistsFault),
+    DbInstanceNotFoundFault(crate::error::DbInstanceNotFoundFault),
+    DbParameterGroupNotFoundFault(crate::error::DbParameterGroupNotFoundFault),
+    DbSecurityGroupNotFoundFault(crate::error::DbSecurityGroupNotFoundFault),
+    DbSubnetGroupDoesNotCoverEnoughAZs(crate::error::DbSubnetGroupDoesNotCoverEnoughAZs),
+    DbSubnetGroupNotAllowedFault(crate::error::DbSubnetGroupNotAllowedFault),
+    DbSubnetGroupNotFoundFault(crate::error::DbSubnetGroupNotFoundFault),
     DomainNotFoundFault(crate::error::DomainNotFoundFault),
     InstanceQuotaExceededFault(crate::error::InstanceQuotaExceededFault),
-    InsufficientDBInstanceCapacityFault(crate::error::InsufficientDBInstanceCapacityFault),
-    InvalidDBInstanceStateFault(crate::error::InvalidDBInstanceStateFault),
-    InvalidDBSubnetGroupFault(crate::error::InvalidDBSubnetGroupFault),
+    InsufficientDbInstanceCapacityFault(crate::error::InsufficientDbInstanceCapacityFault),
+    InvalidDbInstanceStateFault(crate::error::InvalidDbInstanceStateFault),
+    InvalidDbSubnetGroupFault(crate::error::InvalidDbSubnetGroupFault),
     InvalidSubnet(crate::error::InvalidSubnet),
-    InvalidVPCNetworkStateFault(crate::error::InvalidVPCNetworkStateFault),
-    KMSKeyNotAccessibleFault(crate::error::KMSKeyNotAccessibleFault),
+    InvalidVpcNetworkStateFault(crate::error::InvalidVpcNetworkStateFault),
+    KmsKeyNotAccessibleFault(crate::error::KmsKeyNotAccessibleFault),
     OptionGroupNotFoundFault(crate::error::OptionGroupNotFoundFault),
-    ProvisionedIopsNotAvailableInAZFault(crate::error::ProvisionedIopsNotAvailableInAZFault),
+    ProvisionedIopsNotAvailableInAzFault(crate::error::ProvisionedIopsNotAvailableInAzFault),
     StorageQuotaExceededFault(crate::error::StorageQuotaExceededFault),
     StorageTypeNotSupportedFault(crate::error::StorageTypeNotSupportedFault),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
@@ -2397,45 +2397,45 @@ pub enum CreateDBInstanceReadReplicaErrorKind {
 impl std::fmt::Display for CreateDBInstanceReadReplicaError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            CreateDBInstanceReadReplicaErrorKind::DBInstanceAlreadyExistsFault(_inner) => {
+            CreateDBInstanceReadReplicaErrorKind::DbInstanceAlreadyExistsFault(_inner) => {
                 _inner.fmt(f)
             }
-            CreateDBInstanceReadReplicaErrorKind::DBInstanceNotFoundFault(_inner) => _inner.fmt(f),
-            CreateDBInstanceReadReplicaErrorKind::DBParameterGroupNotFoundFault(_inner) => {
+            CreateDBInstanceReadReplicaErrorKind::DbInstanceNotFoundFault(_inner) => _inner.fmt(f),
+            CreateDBInstanceReadReplicaErrorKind::DbParameterGroupNotFoundFault(_inner) => {
                 _inner.fmt(f)
             }
-            CreateDBInstanceReadReplicaErrorKind::DBSecurityGroupNotFoundFault(_inner) => {
+            CreateDBInstanceReadReplicaErrorKind::DbSecurityGroupNotFoundFault(_inner) => {
                 _inner.fmt(f)
             }
-            CreateDBInstanceReadReplicaErrorKind::DBSubnetGroupDoesNotCoverEnoughAZs(_inner) => {
+            CreateDBInstanceReadReplicaErrorKind::DbSubnetGroupDoesNotCoverEnoughAZs(_inner) => {
                 _inner.fmt(f)
             }
-            CreateDBInstanceReadReplicaErrorKind::DBSubnetGroupNotAllowedFault(_inner) => {
+            CreateDBInstanceReadReplicaErrorKind::DbSubnetGroupNotAllowedFault(_inner) => {
                 _inner.fmt(f)
             }
-            CreateDBInstanceReadReplicaErrorKind::DBSubnetGroupNotFoundFault(_inner) => {
+            CreateDBInstanceReadReplicaErrorKind::DbSubnetGroupNotFoundFault(_inner) => {
                 _inner.fmt(f)
             }
             CreateDBInstanceReadReplicaErrorKind::DomainNotFoundFault(_inner) => _inner.fmt(f),
             CreateDBInstanceReadReplicaErrorKind::InstanceQuotaExceededFault(_inner) => {
                 _inner.fmt(f)
             }
-            CreateDBInstanceReadReplicaErrorKind::InsufficientDBInstanceCapacityFault(_inner) => {
+            CreateDBInstanceReadReplicaErrorKind::InsufficientDbInstanceCapacityFault(_inner) => {
                 _inner.fmt(f)
             }
-            CreateDBInstanceReadReplicaErrorKind::InvalidDBInstanceStateFault(_inner) => {
+            CreateDBInstanceReadReplicaErrorKind::InvalidDbInstanceStateFault(_inner) => {
                 _inner.fmt(f)
             }
-            CreateDBInstanceReadReplicaErrorKind::InvalidDBSubnetGroupFault(_inner) => {
+            CreateDBInstanceReadReplicaErrorKind::InvalidDbSubnetGroupFault(_inner) => {
                 _inner.fmt(f)
             }
             CreateDBInstanceReadReplicaErrorKind::InvalidSubnet(_inner) => _inner.fmt(f),
-            CreateDBInstanceReadReplicaErrorKind::InvalidVPCNetworkStateFault(_inner) => {
+            CreateDBInstanceReadReplicaErrorKind::InvalidVpcNetworkStateFault(_inner) => {
                 _inner.fmt(f)
             }
-            CreateDBInstanceReadReplicaErrorKind::KMSKeyNotAccessibleFault(_inner) => _inner.fmt(f),
+            CreateDBInstanceReadReplicaErrorKind::KmsKeyNotAccessibleFault(_inner) => _inner.fmt(f),
             CreateDBInstanceReadReplicaErrorKind::OptionGroupNotFoundFault(_inner) => _inner.fmt(f),
-            CreateDBInstanceReadReplicaErrorKind::ProvisionedIopsNotAvailableInAZFault(_inner) => {
+            CreateDBInstanceReadReplicaErrorKind::ProvisionedIopsNotAvailableInAzFault(_inner) => {
                 _inner.fmt(f)
             }
             CreateDBInstanceReadReplicaErrorKind::StorageQuotaExceededFault(_inner) => {
@@ -2495,43 +2495,43 @@ impl CreateDBInstanceReadReplicaError {
     pub fn is_db_instance_already_exists_fault(&self) -> bool {
         matches!(
             &self.kind,
-            CreateDBInstanceReadReplicaErrorKind::DBInstanceAlreadyExistsFault(_)
+            CreateDBInstanceReadReplicaErrorKind::DbInstanceAlreadyExistsFault(_)
         )
     }
     pub fn is_db_instance_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
-            CreateDBInstanceReadReplicaErrorKind::DBInstanceNotFoundFault(_)
+            CreateDBInstanceReadReplicaErrorKind::DbInstanceNotFoundFault(_)
         )
     }
     pub fn is_db_parameter_group_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
-            CreateDBInstanceReadReplicaErrorKind::DBParameterGroupNotFoundFault(_)
+            CreateDBInstanceReadReplicaErrorKind::DbParameterGroupNotFoundFault(_)
         )
     }
     pub fn is_db_security_group_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
-            CreateDBInstanceReadReplicaErrorKind::DBSecurityGroupNotFoundFault(_)
+            CreateDBInstanceReadReplicaErrorKind::DbSecurityGroupNotFoundFault(_)
         )
     }
     pub fn is_db_subnet_group_does_not_cover_enough_a_zs(&self) -> bool {
         matches!(
             &self.kind,
-            CreateDBInstanceReadReplicaErrorKind::DBSubnetGroupDoesNotCoverEnoughAZs(_)
+            CreateDBInstanceReadReplicaErrorKind::DbSubnetGroupDoesNotCoverEnoughAZs(_)
         )
     }
     pub fn is_db_subnet_group_not_allowed_fault(&self) -> bool {
         matches!(
             &self.kind,
-            CreateDBInstanceReadReplicaErrorKind::DBSubnetGroupNotAllowedFault(_)
+            CreateDBInstanceReadReplicaErrorKind::DbSubnetGroupNotAllowedFault(_)
         )
     }
     pub fn is_db_subnet_group_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
-            CreateDBInstanceReadReplicaErrorKind::DBSubnetGroupNotFoundFault(_)
+            CreateDBInstanceReadReplicaErrorKind::DbSubnetGroupNotFoundFault(_)
         )
     }
     pub fn is_domain_not_found_fault(&self) -> bool {
@@ -2549,19 +2549,19 @@ impl CreateDBInstanceReadReplicaError {
     pub fn is_insufficient_db_instance_capacity_fault(&self) -> bool {
         matches!(
             &self.kind,
-            CreateDBInstanceReadReplicaErrorKind::InsufficientDBInstanceCapacityFault(_)
+            CreateDBInstanceReadReplicaErrorKind::InsufficientDbInstanceCapacityFault(_)
         )
     }
     pub fn is_invalid_db_instance_state_fault(&self) -> bool {
         matches!(
             &self.kind,
-            CreateDBInstanceReadReplicaErrorKind::InvalidDBInstanceStateFault(_)
+            CreateDBInstanceReadReplicaErrorKind::InvalidDbInstanceStateFault(_)
         )
     }
     pub fn is_invalid_db_subnet_group_fault(&self) -> bool {
         matches!(
             &self.kind,
-            CreateDBInstanceReadReplicaErrorKind::InvalidDBSubnetGroupFault(_)
+            CreateDBInstanceReadReplicaErrorKind::InvalidDbSubnetGroupFault(_)
         )
     }
     pub fn is_invalid_subnet(&self) -> bool {
@@ -2573,13 +2573,13 @@ impl CreateDBInstanceReadReplicaError {
     pub fn is_invalid_vpc_network_state_fault(&self) -> bool {
         matches!(
             &self.kind,
-            CreateDBInstanceReadReplicaErrorKind::InvalidVPCNetworkStateFault(_)
+            CreateDBInstanceReadReplicaErrorKind::InvalidVpcNetworkStateFault(_)
         )
     }
     pub fn is_kms_key_not_accessible_fault(&self) -> bool {
         matches!(
             &self.kind,
-            CreateDBInstanceReadReplicaErrorKind::KMSKeyNotAccessibleFault(_)
+            CreateDBInstanceReadReplicaErrorKind::KmsKeyNotAccessibleFault(_)
         )
     }
     pub fn is_option_group_not_found_fault(&self) -> bool {
@@ -2591,7 +2591,7 @@ impl CreateDBInstanceReadReplicaError {
     pub fn is_provisioned_iops_not_available_in_az_fault(&self) -> bool {
         matches!(
             &self.kind,
-            CreateDBInstanceReadReplicaErrorKind::ProvisionedIopsNotAvailableInAZFault(_)
+            CreateDBInstanceReadReplicaErrorKind::ProvisionedIopsNotAvailableInAzFault(_)
         )
     }
     pub fn is_storage_quota_exceeded_fault(&self) -> bool {
@@ -2610,43 +2610,43 @@ impl CreateDBInstanceReadReplicaError {
 impl std::error::Error for CreateDBInstanceReadReplicaError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            CreateDBInstanceReadReplicaErrorKind::DBInstanceAlreadyExistsFault(_inner) => {
+            CreateDBInstanceReadReplicaErrorKind::DbInstanceAlreadyExistsFault(_inner) => {
                 Some(_inner)
             }
-            CreateDBInstanceReadReplicaErrorKind::DBInstanceNotFoundFault(_inner) => Some(_inner),
-            CreateDBInstanceReadReplicaErrorKind::DBParameterGroupNotFoundFault(_inner) => {
+            CreateDBInstanceReadReplicaErrorKind::DbInstanceNotFoundFault(_inner) => Some(_inner),
+            CreateDBInstanceReadReplicaErrorKind::DbParameterGroupNotFoundFault(_inner) => {
                 Some(_inner)
             }
-            CreateDBInstanceReadReplicaErrorKind::DBSecurityGroupNotFoundFault(_inner) => {
+            CreateDBInstanceReadReplicaErrorKind::DbSecurityGroupNotFoundFault(_inner) => {
                 Some(_inner)
             }
-            CreateDBInstanceReadReplicaErrorKind::DBSubnetGroupDoesNotCoverEnoughAZs(_inner) => {
+            CreateDBInstanceReadReplicaErrorKind::DbSubnetGroupDoesNotCoverEnoughAZs(_inner) => {
                 Some(_inner)
             }
-            CreateDBInstanceReadReplicaErrorKind::DBSubnetGroupNotAllowedFault(_inner) => {
+            CreateDBInstanceReadReplicaErrorKind::DbSubnetGroupNotAllowedFault(_inner) => {
                 Some(_inner)
             }
-            CreateDBInstanceReadReplicaErrorKind::DBSubnetGroupNotFoundFault(_inner) => {
+            CreateDBInstanceReadReplicaErrorKind::DbSubnetGroupNotFoundFault(_inner) => {
                 Some(_inner)
             }
             CreateDBInstanceReadReplicaErrorKind::DomainNotFoundFault(_inner) => Some(_inner),
             CreateDBInstanceReadReplicaErrorKind::InstanceQuotaExceededFault(_inner) => {
                 Some(_inner)
             }
-            CreateDBInstanceReadReplicaErrorKind::InsufficientDBInstanceCapacityFault(_inner) => {
+            CreateDBInstanceReadReplicaErrorKind::InsufficientDbInstanceCapacityFault(_inner) => {
                 Some(_inner)
             }
-            CreateDBInstanceReadReplicaErrorKind::InvalidDBInstanceStateFault(_inner) => {
+            CreateDBInstanceReadReplicaErrorKind::InvalidDbInstanceStateFault(_inner) => {
                 Some(_inner)
             }
-            CreateDBInstanceReadReplicaErrorKind::InvalidDBSubnetGroupFault(_inner) => Some(_inner),
+            CreateDBInstanceReadReplicaErrorKind::InvalidDbSubnetGroupFault(_inner) => Some(_inner),
             CreateDBInstanceReadReplicaErrorKind::InvalidSubnet(_inner) => Some(_inner),
-            CreateDBInstanceReadReplicaErrorKind::InvalidVPCNetworkStateFault(_inner) => {
+            CreateDBInstanceReadReplicaErrorKind::InvalidVpcNetworkStateFault(_inner) => {
                 Some(_inner)
             }
-            CreateDBInstanceReadReplicaErrorKind::KMSKeyNotAccessibleFault(_inner) => Some(_inner),
+            CreateDBInstanceReadReplicaErrorKind::KmsKeyNotAccessibleFault(_inner) => Some(_inner),
             CreateDBInstanceReadReplicaErrorKind::OptionGroupNotFoundFault(_inner) => Some(_inner),
-            CreateDBInstanceReadReplicaErrorKind::ProvisionedIopsNotAvailableInAZFault(_inner) => {
+            CreateDBInstanceReadReplicaErrorKind::ProvisionedIopsNotAvailableInAzFault(_inner) => {
                 Some(_inner)
             }
             CreateDBInstanceReadReplicaErrorKind::StorageQuotaExceededFault(_inner) => Some(_inner),
@@ -2667,18 +2667,18 @@ pub struct CreateDBParameterGroupError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateDBParameterGroupErrorKind {
-    DBParameterGroupAlreadyExistsFault(crate::error::DBParameterGroupAlreadyExistsFault),
-    DBParameterGroupQuotaExceededFault(crate::error::DBParameterGroupQuotaExceededFault),
+    DbParameterGroupAlreadyExistsFault(crate::error::DbParameterGroupAlreadyExistsFault),
+    DbParameterGroupQuotaExceededFault(crate::error::DbParameterGroupQuotaExceededFault),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateDBParameterGroupError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            CreateDBParameterGroupErrorKind::DBParameterGroupAlreadyExistsFault(_inner) => {
+            CreateDBParameterGroupErrorKind::DbParameterGroupAlreadyExistsFault(_inner) => {
                 _inner.fmt(f)
             }
-            CreateDBParameterGroupErrorKind::DBParameterGroupQuotaExceededFault(_inner) => {
+            CreateDBParameterGroupErrorKind::DbParameterGroupQuotaExceededFault(_inner) => {
                 _inner.fmt(f)
             }
             CreateDBParameterGroupErrorKind::Unhandled(_inner) => _inner.fmt(f),
@@ -2732,23 +2732,23 @@ impl CreateDBParameterGroupError {
     pub fn is_db_parameter_group_already_exists_fault(&self) -> bool {
         matches!(
             &self.kind,
-            CreateDBParameterGroupErrorKind::DBParameterGroupAlreadyExistsFault(_)
+            CreateDBParameterGroupErrorKind::DbParameterGroupAlreadyExistsFault(_)
         )
     }
     pub fn is_db_parameter_group_quota_exceeded_fault(&self) -> bool {
         matches!(
             &self.kind,
-            CreateDBParameterGroupErrorKind::DBParameterGroupQuotaExceededFault(_)
+            CreateDBParameterGroupErrorKind::DbParameterGroupQuotaExceededFault(_)
         )
     }
 }
 impl std::error::Error for CreateDBParameterGroupError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            CreateDBParameterGroupErrorKind::DBParameterGroupAlreadyExistsFault(_inner) => {
+            CreateDBParameterGroupErrorKind::DbParameterGroupAlreadyExistsFault(_inner) => {
                 Some(_inner)
             }
-            CreateDBParameterGroupErrorKind::DBParameterGroupQuotaExceededFault(_inner) => {
+            CreateDBParameterGroupErrorKind::DbParameterGroupQuotaExceededFault(_inner) => {
                 Some(_inner)
             }
             CreateDBParameterGroupErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
@@ -2765,8 +2765,8 @@ pub struct CreateDBProxyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateDBProxyErrorKind {
-    DBProxyAlreadyExistsFault(crate::error::DBProxyAlreadyExistsFault),
-    DBProxyQuotaExceededFault(crate::error::DBProxyQuotaExceededFault),
+    DbProxyAlreadyExistsFault(crate::error::DbProxyAlreadyExistsFault),
+    DbProxyQuotaExceededFault(crate::error::DbProxyQuotaExceededFault),
     InvalidSubnet(crate::error::InvalidSubnet),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2774,8 +2774,8 @@ pub enum CreateDBProxyErrorKind {
 impl std::fmt::Display for CreateDBProxyError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            CreateDBProxyErrorKind::DBProxyAlreadyExistsFault(_inner) => _inner.fmt(f),
-            CreateDBProxyErrorKind::DBProxyQuotaExceededFault(_inner) => _inner.fmt(f),
+            CreateDBProxyErrorKind::DbProxyAlreadyExistsFault(_inner) => _inner.fmt(f),
+            CreateDBProxyErrorKind::DbProxyQuotaExceededFault(_inner) => _inner.fmt(f),
             CreateDBProxyErrorKind::InvalidSubnet(_inner) => _inner.fmt(f),
             CreateDBProxyErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
@@ -2828,13 +2828,13 @@ impl CreateDBProxyError {
     pub fn is_db_proxy_already_exists_fault(&self) -> bool {
         matches!(
             &self.kind,
-            CreateDBProxyErrorKind::DBProxyAlreadyExistsFault(_)
+            CreateDBProxyErrorKind::DbProxyAlreadyExistsFault(_)
         )
     }
     pub fn is_db_proxy_quota_exceeded_fault(&self) -> bool {
         matches!(
             &self.kind,
-            CreateDBProxyErrorKind::DBProxyQuotaExceededFault(_)
+            CreateDBProxyErrorKind::DbProxyQuotaExceededFault(_)
         )
     }
     pub fn is_invalid_subnet(&self) -> bool {
@@ -2844,8 +2844,8 @@ impl CreateDBProxyError {
 impl std::error::Error for CreateDBProxyError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            CreateDBProxyErrorKind::DBProxyAlreadyExistsFault(_inner) => Some(_inner),
-            CreateDBProxyErrorKind::DBProxyQuotaExceededFault(_inner) => Some(_inner),
+            CreateDBProxyErrorKind::DbProxyAlreadyExistsFault(_inner) => Some(_inner),
+            CreateDBProxyErrorKind::DbProxyQuotaExceededFault(_inner) => Some(_inner),
             CreateDBProxyErrorKind::InvalidSubnet(_inner) => Some(_inner),
             CreateDBProxyErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
@@ -2861,10 +2861,10 @@ pub struct CreateDBProxyEndpointError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateDBProxyEndpointErrorKind {
-    DBProxyEndpointAlreadyExistsFault(crate::error::DBProxyEndpointAlreadyExistsFault),
-    DBProxyEndpointQuotaExceededFault(crate::error::DBProxyEndpointQuotaExceededFault),
-    DBProxyNotFoundFault(crate::error::DBProxyNotFoundFault),
-    InvalidDBProxyStateFault(crate::error::InvalidDBProxyStateFault),
+    DbProxyEndpointAlreadyExistsFault(crate::error::DbProxyEndpointAlreadyExistsFault),
+    DbProxyEndpointQuotaExceededFault(crate::error::DbProxyEndpointQuotaExceededFault),
+    DbProxyNotFoundFault(crate::error::DbProxyNotFoundFault),
+    InvalidDbProxyStateFault(crate::error::InvalidDbProxyStateFault),
     InvalidSubnet(crate::error::InvalidSubnet),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2872,14 +2872,14 @@ pub enum CreateDBProxyEndpointErrorKind {
 impl std::fmt::Display for CreateDBProxyEndpointError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            CreateDBProxyEndpointErrorKind::DBProxyEndpointAlreadyExistsFault(_inner) => {
+            CreateDBProxyEndpointErrorKind::DbProxyEndpointAlreadyExistsFault(_inner) => {
                 _inner.fmt(f)
             }
-            CreateDBProxyEndpointErrorKind::DBProxyEndpointQuotaExceededFault(_inner) => {
+            CreateDBProxyEndpointErrorKind::DbProxyEndpointQuotaExceededFault(_inner) => {
                 _inner.fmt(f)
             }
-            CreateDBProxyEndpointErrorKind::DBProxyNotFoundFault(_inner) => _inner.fmt(f),
-            CreateDBProxyEndpointErrorKind::InvalidDBProxyStateFault(_inner) => _inner.fmt(f),
+            CreateDBProxyEndpointErrorKind::DbProxyNotFoundFault(_inner) => _inner.fmt(f),
+            CreateDBProxyEndpointErrorKind::InvalidDbProxyStateFault(_inner) => _inner.fmt(f),
             CreateDBProxyEndpointErrorKind::InvalidSubnet(_inner) => _inner.fmt(f),
             CreateDBProxyEndpointErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
@@ -2932,25 +2932,25 @@ impl CreateDBProxyEndpointError {
     pub fn is_db_proxy_endpoint_already_exists_fault(&self) -> bool {
         matches!(
             &self.kind,
-            CreateDBProxyEndpointErrorKind::DBProxyEndpointAlreadyExistsFault(_)
+            CreateDBProxyEndpointErrorKind::DbProxyEndpointAlreadyExistsFault(_)
         )
     }
     pub fn is_db_proxy_endpoint_quota_exceeded_fault(&self) -> bool {
         matches!(
             &self.kind,
-            CreateDBProxyEndpointErrorKind::DBProxyEndpointQuotaExceededFault(_)
+            CreateDBProxyEndpointErrorKind::DbProxyEndpointQuotaExceededFault(_)
         )
     }
     pub fn is_db_proxy_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
-            CreateDBProxyEndpointErrorKind::DBProxyNotFoundFault(_)
+            CreateDBProxyEndpointErrorKind::DbProxyNotFoundFault(_)
         )
     }
     pub fn is_invalid_db_proxy_state_fault(&self) -> bool {
         matches!(
             &self.kind,
-            CreateDBProxyEndpointErrorKind::InvalidDBProxyStateFault(_)
+            CreateDBProxyEndpointErrorKind::InvalidDbProxyStateFault(_)
         )
     }
     pub fn is_invalid_subnet(&self) -> bool {
@@ -2960,14 +2960,14 @@ impl CreateDBProxyEndpointError {
 impl std::error::Error for CreateDBProxyEndpointError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            CreateDBProxyEndpointErrorKind::DBProxyEndpointAlreadyExistsFault(_inner) => {
+            CreateDBProxyEndpointErrorKind::DbProxyEndpointAlreadyExistsFault(_inner) => {
                 Some(_inner)
             }
-            CreateDBProxyEndpointErrorKind::DBProxyEndpointQuotaExceededFault(_inner) => {
+            CreateDBProxyEndpointErrorKind::DbProxyEndpointQuotaExceededFault(_inner) => {
                 Some(_inner)
             }
-            CreateDBProxyEndpointErrorKind::DBProxyNotFoundFault(_inner) => Some(_inner),
-            CreateDBProxyEndpointErrorKind::InvalidDBProxyStateFault(_inner) => Some(_inner),
+            CreateDBProxyEndpointErrorKind::DbProxyNotFoundFault(_inner) => Some(_inner),
+            CreateDBProxyEndpointErrorKind::InvalidDbProxyStateFault(_inner) => Some(_inner),
             CreateDBProxyEndpointErrorKind::InvalidSubnet(_inner) => Some(_inner),
             CreateDBProxyEndpointErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
@@ -2983,22 +2983,22 @@ pub struct CreateDBSecurityGroupError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateDBSecurityGroupErrorKind {
-    DBSecurityGroupAlreadyExistsFault(crate::error::DBSecurityGroupAlreadyExistsFault),
-    DBSecurityGroupNotSupportedFault(crate::error::DBSecurityGroupNotSupportedFault),
-    DBSecurityGroupQuotaExceededFault(crate::error::DBSecurityGroupQuotaExceededFault),
+    DbSecurityGroupAlreadyExistsFault(crate::error::DbSecurityGroupAlreadyExistsFault),
+    DbSecurityGroupNotSupportedFault(crate::error::DbSecurityGroupNotSupportedFault),
+    DbSecurityGroupQuotaExceededFault(crate::error::DbSecurityGroupQuotaExceededFault),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateDBSecurityGroupError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            CreateDBSecurityGroupErrorKind::DBSecurityGroupAlreadyExistsFault(_inner) => {
+            CreateDBSecurityGroupErrorKind::DbSecurityGroupAlreadyExistsFault(_inner) => {
                 _inner.fmt(f)
             }
-            CreateDBSecurityGroupErrorKind::DBSecurityGroupNotSupportedFault(_inner) => {
+            CreateDBSecurityGroupErrorKind::DbSecurityGroupNotSupportedFault(_inner) => {
                 _inner.fmt(f)
             }
-            CreateDBSecurityGroupErrorKind::DBSecurityGroupQuotaExceededFault(_inner) => {
+            CreateDBSecurityGroupErrorKind::DbSecurityGroupQuotaExceededFault(_inner) => {
                 _inner.fmt(f)
             }
             CreateDBSecurityGroupErrorKind::Unhandled(_inner) => _inner.fmt(f),
@@ -3052,32 +3052,32 @@ impl CreateDBSecurityGroupError {
     pub fn is_db_security_group_already_exists_fault(&self) -> bool {
         matches!(
             &self.kind,
-            CreateDBSecurityGroupErrorKind::DBSecurityGroupAlreadyExistsFault(_)
+            CreateDBSecurityGroupErrorKind::DbSecurityGroupAlreadyExistsFault(_)
         )
     }
     pub fn is_db_security_group_not_supported_fault(&self) -> bool {
         matches!(
             &self.kind,
-            CreateDBSecurityGroupErrorKind::DBSecurityGroupNotSupportedFault(_)
+            CreateDBSecurityGroupErrorKind::DbSecurityGroupNotSupportedFault(_)
         )
     }
     pub fn is_db_security_group_quota_exceeded_fault(&self) -> bool {
         matches!(
             &self.kind,
-            CreateDBSecurityGroupErrorKind::DBSecurityGroupQuotaExceededFault(_)
+            CreateDBSecurityGroupErrorKind::DbSecurityGroupQuotaExceededFault(_)
         )
     }
 }
 impl std::error::Error for CreateDBSecurityGroupError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            CreateDBSecurityGroupErrorKind::DBSecurityGroupAlreadyExistsFault(_inner) => {
+            CreateDBSecurityGroupErrorKind::DbSecurityGroupAlreadyExistsFault(_inner) => {
                 Some(_inner)
             }
-            CreateDBSecurityGroupErrorKind::DBSecurityGroupNotSupportedFault(_inner) => {
+            CreateDBSecurityGroupErrorKind::DbSecurityGroupNotSupportedFault(_inner) => {
                 Some(_inner)
             }
-            CreateDBSecurityGroupErrorKind::DBSecurityGroupQuotaExceededFault(_inner) => {
+            CreateDBSecurityGroupErrorKind::DbSecurityGroupQuotaExceededFault(_inner) => {
                 Some(_inner)
             }
             CreateDBSecurityGroupErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
@@ -3094,9 +3094,9 @@ pub struct CreateDBSnapshotError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateDBSnapshotErrorKind {
-    DBInstanceNotFoundFault(crate::error::DBInstanceNotFoundFault),
-    DBSnapshotAlreadyExistsFault(crate::error::DBSnapshotAlreadyExistsFault),
-    InvalidDBInstanceStateFault(crate::error::InvalidDBInstanceStateFault),
+    DbInstanceNotFoundFault(crate::error::DbInstanceNotFoundFault),
+    DbSnapshotAlreadyExistsFault(crate::error::DbSnapshotAlreadyExistsFault),
+    InvalidDbInstanceStateFault(crate::error::InvalidDbInstanceStateFault),
     SnapshotQuotaExceededFault(crate::error::SnapshotQuotaExceededFault),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3104,9 +3104,9 @@ pub enum CreateDBSnapshotErrorKind {
 impl std::fmt::Display for CreateDBSnapshotError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            CreateDBSnapshotErrorKind::DBInstanceNotFoundFault(_inner) => _inner.fmt(f),
-            CreateDBSnapshotErrorKind::DBSnapshotAlreadyExistsFault(_inner) => _inner.fmt(f),
-            CreateDBSnapshotErrorKind::InvalidDBInstanceStateFault(_inner) => _inner.fmt(f),
+            CreateDBSnapshotErrorKind::DbInstanceNotFoundFault(_inner) => _inner.fmt(f),
+            CreateDBSnapshotErrorKind::DbSnapshotAlreadyExistsFault(_inner) => _inner.fmt(f),
+            CreateDBSnapshotErrorKind::InvalidDbInstanceStateFault(_inner) => _inner.fmt(f),
             CreateDBSnapshotErrorKind::SnapshotQuotaExceededFault(_inner) => _inner.fmt(f),
             CreateDBSnapshotErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
@@ -3159,19 +3159,19 @@ impl CreateDBSnapshotError {
     pub fn is_db_instance_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
-            CreateDBSnapshotErrorKind::DBInstanceNotFoundFault(_)
+            CreateDBSnapshotErrorKind::DbInstanceNotFoundFault(_)
         )
     }
     pub fn is_db_snapshot_already_exists_fault(&self) -> bool {
         matches!(
             &self.kind,
-            CreateDBSnapshotErrorKind::DBSnapshotAlreadyExistsFault(_)
+            CreateDBSnapshotErrorKind::DbSnapshotAlreadyExistsFault(_)
         )
     }
     pub fn is_invalid_db_instance_state_fault(&self) -> bool {
         matches!(
             &self.kind,
-            CreateDBSnapshotErrorKind::InvalidDBInstanceStateFault(_)
+            CreateDBSnapshotErrorKind::InvalidDbInstanceStateFault(_)
         )
     }
     pub fn is_snapshot_quota_exceeded_fault(&self) -> bool {
@@ -3184,9 +3184,9 @@ impl CreateDBSnapshotError {
 impl std::error::Error for CreateDBSnapshotError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            CreateDBSnapshotErrorKind::DBInstanceNotFoundFault(_inner) => Some(_inner),
-            CreateDBSnapshotErrorKind::DBSnapshotAlreadyExistsFault(_inner) => Some(_inner),
-            CreateDBSnapshotErrorKind::InvalidDBInstanceStateFault(_inner) => Some(_inner),
+            CreateDBSnapshotErrorKind::DbInstanceNotFoundFault(_inner) => Some(_inner),
+            CreateDBSnapshotErrorKind::DbSnapshotAlreadyExistsFault(_inner) => Some(_inner),
+            CreateDBSnapshotErrorKind::InvalidDbInstanceStateFault(_inner) => Some(_inner),
             CreateDBSnapshotErrorKind::SnapshotQuotaExceededFault(_inner) => Some(_inner),
             CreateDBSnapshotErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
@@ -3202,10 +3202,10 @@ pub struct CreateDBSubnetGroupError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateDBSubnetGroupErrorKind {
-    DBSubnetGroupAlreadyExistsFault(crate::error::DBSubnetGroupAlreadyExistsFault),
-    DBSubnetGroupDoesNotCoverEnoughAZs(crate::error::DBSubnetGroupDoesNotCoverEnoughAZs),
-    DBSubnetGroupQuotaExceededFault(crate::error::DBSubnetGroupQuotaExceededFault),
-    DBSubnetQuotaExceededFault(crate::error::DBSubnetQuotaExceededFault),
+    DbSubnetGroupAlreadyExistsFault(crate::error::DbSubnetGroupAlreadyExistsFault),
+    DbSubnetGroupDoesNotCoverEnoughAZs(crate::error::DbSubnetGroupDoesNotCoverEnoughAZs),
+    DbSubnetGroupQuotaExceededFault(crate::error::DbSubnetGroupQuotaExceededFault),
+    DbSubnetQuotaExceededFault(crate::error::DbSubnetQuotaExceededFault),
     InvalidSubnet(crate::error::InvalidSubnet),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3213,12 +3213,12 @@ pub enum CreateDBSubnetGroupErrorKind {
 impl std::fmt::Display for CreateDBSubnetGroupError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            CreateDBSubnetGroupErrorKind::DBSubnetGroupAlreadyExistsFault(_inner) => _inner.fmt(f),
-            CreateDBSubnetGroupErrorKind::DBSubnetGroupDoesNotCoverEnoughAZs(_inner) => {
+            CreateDBSubnetGroupErrorKind::DbSubnetGroupAlreadyExistsFault(_inner) => _inner.fmt(f),
+            CreateDBSubnetGroupErrorKind::DbSubnetGroupDoesNotCoverEnoughAZs(_inner) => {
                 _inner.fmt(f)
             }
-            CreateDBSubnetGroupErrorKind::DBSubnetGroupQuotaExceededFault(_inner) => _inner.fmt(f),
-            CreateDBSubnetGroupErrorKind::DBSubnetQuotaExceededFault(_inner) => _inner.fmt(f),
+            CreateDBSubnetGroupErrorKind::DbSubnetGroupQuotaExceededFault(_inner) => _inner.fmt(f),
+            CreateDBSubnetGroupErrorKind::DbSubnetQuotaExceededFault(_inner) => _inner.fmt(f),
             CreateDBSubnetGroupErrorKind::InvalidSubnet(_inner) => _inner.fmt(f),
             CreateDBSubnetGroupErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
@@ -3271,25 +3271,25 @@ impl CreateDBSubnetGroupError {
     pub fn is_db_subnet_group_already_exists_fault(&self) -> bool {
         matches!(
             &self.kind,
-            CreateDBSubnetGroupErrorKind::DBSubnetGroupAlreadyExistsFault(_)
+            CreateDBSubnetGroupErrorKind::DbSubnetGroupAlreadyExistsFault(_)
         )
     }
     pub fn is_db_subnet_group_does_not_cover_enough_a_zs(&self) -> bool {
         matches!(
             &self.kind,
-            CreateDBSubnetGroupErrorKind::DBSubnetGroupDoesNotCoverEnoughAZs(_)
+            CreateDBSubnetGroupErrorKind::DbSubnetGroupDoesNotCoverEnoughAZs(_)
         )
     }
     pub fn is_db_subnet_group_quota_exceeded_fault(&self) -> bool {
         matches!(
             &self.kind,
-            CreateDBSubnetGroupErrorKind::DBSubnetGroupQuotaExceededFault(_)
+            CreateDBSubnetGroupErrorKind::DbSubnetGroupQuotaExceededFault(_)
         )
     }
     pub fn is_db_subnet_quota_exceeded_fault(&self) -> bool {
         matches!(
             &self.kind,
-            CreateDBSubnetGroupErrorKind::DBSubnetQuotaExceededFault(_)
+            CreateDBSubnetGroupErrorKind::DbSubnetQuotaExceededFault(_)
         )
     }
     pub fn is_invalid_subnet(&self) -> bool {
@@ -3299,12 +3299,12 @@ impl CreateDBSubnetGroupError {
 impl std::error::Error for CreateDBSubnetGroupError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            CreateDBSubnetGroupErrorKind::DBSubnetGroupAlreadyExistsFault(_inner) => Some(_inner),
-            CreateDBSubnetGroupErrorKind::DBSubnetGroupDoesNotCoverEnoughAZs(_inner) => {
+            CreateDBSubnetGroupErrorKind::DbSubnetGroupAlreadyExistsFault(_inner) => Some(_inner),
+            CreateDBSubnetGroupErrorKind::DbSubnetGroupDoesNotCoverEnoughAZs(_inner) => {
                 Some(_inner)
             }
-            CreateDBSubnetGroupErrorKind::DBSubnetGroupQuotaExceededFault(_inner) => Some(_inner),
-            CreateDBSubnetGroupErrorKind::DBSubnetQuotaExceededFault(_inner) => Some(_inner),
+            CreateDBSubnetGroupErrorKind::DbSubnetGroupQuotaExceededFault(_inner) => Some(_inner),
+            CreateDBSubnetGroupErrorKind::DbSubnetQuotaExceededFault(_inner) => Some(_inner),
             CreateDBSubnetGroupErrorKind::InvalidSubnet(_inner) => Some(_inner),
             CreateDBSubnetGroupErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
@@ -3321,9 +3321,9 @@ pub struct CreateEventSubscriptionError {
 #[derive(std::fmt::Debug)]
 pub enum CreateEventSubscriptionErrorKind {
     EventSubscriptionQuotaExceededFault(crate::error::EventSubscriptionQuotaExceededFault),
-    SNSInvalidTopicFault(crate::error::SNSInvalidTopicFault),
-    SNSNoAuthorizationFault(crate::error::SNSNoAuthorizationFault),
-    SNSTopicArnNotFoundFault(crate::error::SNSTopicArnNotFoundFault),
+    SnsInvalidTopicFault(crate::error::SnsInvalidTopicFault),
+    SnsNoAuthorizationFault(crate::error::SnsNoAuthorizationFault),
+    SnsTopicArnNotFoundFault(crate::error::SnsTopicArnNotFoundFault),
     SourceNotFoundFault(crate::error::SourceNotFoundFault),
     SubscriptionAlreadyExistFault(crate::error::SubscriptionAlreadyExistFault),
     SubscriptionCategoryNotFoundFault(crate::error::SubscriptionCategoryNotFoundFault),
@@ -3336,9 +3336,9 @@ impl std::fmt::Display for CreateEventSubscriptionError {
             CreateEventSubscriptionErrorKind::EventSubscriptionQuotaExceededFault(_inner) => {
                 _inner.fmt(f)
             }
-            CreateEventSubscriptionErrorKind::SNSInvalidTopicFault(_inner) => _inner.fmt(f),
-            CreateEventSubscriptionErrorKind::SNSNoAuthorizationFault(_inner) => _inner.fmt(f),
-            CreateEventSubscriptionErrorKind::SNSTopicArnNotFoundFault(_inner) => _inner.fmt(f),
+            CreateEventSubscriptionErrorKind::SnsInvalidTopicFault(_inner) => _inner.fmt(f),
+            CreateEventSubscriptionErrorKind::SnsNoAuthorizationFault(_inner) => _inner.fmt(f),
+            CreateEventSubscriptionErrorKind::SnsTopicArnNotFoundFault(_inner) => _inner.fmt(f),
             CreateEventSubscriptionErrorKind::SourceNotFoundFault(_inner) => _inner.fmt(f),
             CreateEventSubscriptionErrorKind::SubscriptionAlreadyExistFault(_inner) => {
                 _inner.fmt(f)
@@ -3403,19 +3403,19 @@ impl CreateEventSubscriptionError {
     pub fn is_sns_invalid_topic_fault(&self) -> bool {
         matches!(
             &self.kind,
-            CreateEventSubscriptionErrorKind::SNSInvalidTopicFault(_)
+            CreateEventSubscriptionErrorKind::SnsInvalidTopicFault(_)
         )
     }
     pub fn is_sns_no_authorization_fault(&self) -> bool {
         matches!(
             &self.kind,
-            CreateEventSubscriptionErrorKind::SNSNoAuthorizationFault(_)
+            CreateEventSubscriptionErrorKind::SnsNoAuthorizationFault(_)
         )
     }
     pub fn is_sns_topic_arn_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
-            CreateEventSubscriptionErrorKind::SNSTopicArnNotFoundFault(_)
+            CreateEventSubscriptionErrorKind::SnsTopicArnNotFoundFault(_)
         )
     }
     pub fn is_source_not_found_fault(&self) -> bool {
@@ -3443,9 +3443,9 @@ impl std::error::Error for CreateEventSubscriptionError {
             CreateEventSubscriptionErrorKind::EventSubscriptionQuotaExceededFault(_inner) => {
                 Some(_inner)
             }
-            CreateEventSubscriptionErrorKind::SNSInvalidTopicFault(_inner) => Some(_inner),
-            CreateEventSubscriptionErrorKind::SNSNoAuthorizationFault(_inner) => Some(_inner),
-            CreateEventSubscriptionErrorKind::SNSTopicArnNotFoundFault(_inner) => Some(_inner),
+            CreateEventSubscriptionErrorKind::SnsInvalidTopicFault(_inner) => Some(_inner),
+            CreateEventSubscriptionErrorKind::SnsNoAuthorizationFault(_inner) => Some(_inner),
+            CreateEventSubscriptionErrorKind::SnsTopicArnNotFoundFault(_inner) => Some(_inner),
             CreateEventSubscriptionErrorKind::SourceNotFoundFault(_inner) => Some(_inner),
             CreateEventSubscriptionErrorKind::SubscriptionAlreadyExistFault(_inner) => Some(_inner),
             CreateEventSubscriptionErrorKind::SubscriptionCategoryNotFoundFault(_inner) => {
@@ -3465,20 +3465,20 @@ pub struct CreateGlobalClusterError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateGlobalClusterErrorKind {
-    DBClusterNotFoundFault(crate::error::DBClusterNotFoundFault),
+    DbClusterNotFoundFault(crate::error::DbClusterNotFoundFault),
     GlobalClusterAlreadyExistsFault(crate::error::GlobalClusterAlreadyExistsFault),
     GlobalClusterQuotaExceededFault(crate::error::GlobalClusterQuotaExceededFault),
-    InvalidDBClusterStateFault(crate::error::InvalidDBClusterStateFault),
+    InvalidDbClusterStateFault(crate::error::InvalidDbClusterStateFault),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateGlobalClusterError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            CreateGlobalClusterErrorKind::DBClusterNotFoundFault(_inner) => _inner.fmt(f),
+            CreateGlobalClusterErrorKind::DbClusterNotFoundFault(_inner) => _inner.fmt(f),
             CreateGlobalClusterErrorKind::GlobalClusterAlreadyExistsFault(_inner) => _inner.fmt(f),
             CreateGlobalClusterErrorKind::GlobalClusterQuotaExceededFault(_inner) => _inner.fmt(f),
-            CreateGlobalClusterErrorKind::InvalidDBClusterStateFault(_inner) => _inner.fmt(f),
+            CreateGlobalClusterErrorKind::InvalidDbClusterStateFault(_inner) => _inner.fmt(f),
             CreateGlobalClusterErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -3530,7 +3530,7 @@ impl CreateGlobalClusterError {
     pub fn is_db_cluster_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
-            CreateGlobalClusterErrorKind::DBClusterNotFoundFault(_)
+            CreateGlobalClusterErrorKind::DbClusterNotFoundFault(_)
         )
     }
     pub fn is_global_cluster_already_exists_fault(&self) -> bool {
@@ -3548,17 +3548,17 @@ impl CreateGlobalClusterError {
     pub fn is_invalid_db_cluster_state_fault(&self) -> bool {
         matches!(
             &self.kind,
-            CreateGlobalClusterErrorKind::InvalidDBClusterStateFault(_)
+            CreateGlobalClusterErrorKind::InvalidDbClusterStateFault(_)
         )
     }
 }
 impl std::error::Error for CreateGlobalClusterError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            CreateGlobalClusterErrorKind::DBClusterNotFoundFault(_inner) => Some(_inner),
+            CreateGlobalClusterErrorKind::DbClusterNotFoundFault(_inner) => Some(_inner),
             CreateGlobalClusterErrorKind::GlobalClusterAlreadyExistsFault(_inner) => Some(_inner),
             CreateGlobalClusterErrorKind::GlobalClusterQuotaExceededFault(_inner) => Some(_inner),
-            CreateGlobalClusterErrorKind::InvalidDBClusterStateFault(_inner) => Some(_inner),
+            CreateGlobalClusterErrorKind::InvalidDbClusterStateFault(_inner) => Some(_inner),
             CreateGlobalClusterErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -3664,7 +3664,7 @@ pub struct DeleteCustomAvailabilityZoneError {
 #[derive(std::fmt::Debug)]
 pub enum DeleteCustomAvailabilityZoneErrorKind {
     CustomAvailabilityZoneNotFoundFault(crate::error::CustomAvailabilityZoneNotFoundFault),
-    KMSKeyNotAccessibleFault(crate::error::KMSKeyNotAccessibleFault),
+    KmsKeyNotAccessibleFault(crate::error::KmsKeyNotAccessibleFault),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
@@ -3674,7 +3674,7 @@ impl std::fmt::Display for DeleteCustomAvailabilityZoneError {
             DeleteCustomAvailabilityZoneErrorKind::CustomAvailabilityZoneNotFoundFault(_inner) => {
                 _inner.fmt(f)
             }
-            DeleteCustomAvailabilityZoneErrorKind::KMSKeyNotAccessibleFault(_inner) => {
+            DeleteCustomAvailabilityZoneErrorKind::KmsKeyNotAccessibleFault(_inner) => {
                 _inner.fmt(f)
             }
             DeleteCustomAvailabilityZoneErrorKind::Unhandled(_inner) => _inner.fmt(f),
@@ -3734,7 +3734,7 @@ impl DeleteCustomAvailabilityZoneError {
     pub fn is_kms_key_not_accessible_fault(&self) -> bool {
         matches!(
             &self.kind,
-            DeleteCustomAvailabilityZoneErrorKind::KMSKeyNotAccessibleFault(_)
+            DeleteCustomAvailabilityZoneErrorKind::KmsKeyNotAccessibleFault(_)
         )
     }
 }
@@ -3744,7 +3744,7 @@ impl std::error::Error for DeleteCustomAvailabilityZoneError {
             DeleteCustomAvailabilityZoneErrorKind::CustomAvailabilityZoneNotFoundFault(_inner) => {
                 Some(_inner)
             }
-            DeleteCustomAvailabilityZoneErrorKind::KMSKeyNotAccessibleFault(_inner) => Some(_inner),
+            DeleteCustomAvailabilityZoneErrorKind::KmsKeyNotAccessibleFault(_inner) => Some(_inner),
             DeleteCustomAvailabilityZoneErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -3759,10 +3759,10 @@ pub struct DeleteDBClusterError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteDBClusterErrorKind {
-    DBClusterNotFoundFault(crate::error::DBClusterNotFoundFault),
-    DBClusterSnapshotAlreadyExistsFault(crate::error::DBClusterSnapshotAlreadyExistsFault),
-    InvalidDBClusterSnapshotStateFault(crate::error::InvalidDBClusterSnapshotStateFault),
-    InvalidDBClusterStateFault(crate::error::InvalidDBClusterStateFault),
+    DbClusterNotFoundFault(crate::error::DbClusterNotFoundFault),
+    DbClusterSnapshotAlreadyExistsFault(crate::error::DbClusterSnapshotAlreadyExistsFault),
+    InvalidDbClusterSnapshotStateFault(crate::error::InvalidDbClusterSnapshotStateFault),
+    InvalidDbClusterStateFault(crate::error::InvalidDbClusterStateFault),
     SnapshotQuotaExceededFault(crate::error::SnapshotQuotaExceededFault),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3770,10 +3770,10 @@ pub enum DeleteDBClusterErrorKind {
 impl std::fmt::Display for DeleteDBClusterError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DeleteDBClusterErrorKind::DBClusterNotFoundFault(_inner) => _inner.fmt(f),
-            DeleteDBClusterErrorKind::DBClusterSnapshotAlreadyExistsFault(_inner) => _inner.fmt(f),
-            DeleteDBClusterErrorKind::InvalidDBClusterSnapshotStateFault(_inner) => _inner.fmt(f),
-            DeleteDBClusterErrorKind::InvalidDBClusterStateFault(_inner) => _inner.fmt(f),
+            DeleteDBClusterErrorKind::DbClusterNotFoundFault(_inner) => _inner.fmt(f),
+            DeleteDBClusterErrorKind::DbClusterSnapshotAlreadyExistsFault(_inner) => _inner.fmt(f),
+            DeleteDBClusterErrorKind::InvalidDbClusterSnapshotStateFault(_inner) => _inner.fmt(f),
+            DeleteDBClusterErrorKind::InvalidDbClusterStateFault(_inner) => _inner.fmt(f),
             DeleteDBClusterErrorKind::SnapshotQuotaExceededFault(_inner) => _inner.fmt(f),
             DeleteDBClusterErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
@@ -3826,25 +3826,25 @@ impl DeleteDBClusterError {
     pub fn is_db_cluster_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
-            DeleteDBClusterErrorKind::DBClusterNotFoundFault(_)
+            DeleteDBClusterErrorKind::DbClusterNotFoundFault(_)
         )
     }
     pub fn is_db_cluster_snapshot_already_exists_fault(&self) -> bool {
         matches!(
             &self.kind,
-            DeleteDBClusterErrorKind::DBClusterSnapshotAlreadyExistsFault(_)
+            DeleteDBClusterErrorKind::DbClusterSnapshotAlreadyExistsFault(_)
         )
     }
     pub fn is_invalid_db_cluster_snapshot_state_fault(&self) -> bool {
         matches!(
             &self.kind,
-            DeleteDBClusterErrorKind::InvalidDBClusterSnapshotStateFault(_)
+            DeleteDBClusterErrorKind::InvalidDbClusterSnapshotStateFault(_)
         )
     }
     pub fn is_invalid_db_cluster_state_fault(&self) -> bool {
         matches!(
             &self.kind,
-            DeleteDBClusterErrorKind::InvalidDBClusterStateFault(_)
+            DeleteDBClusterErrorKind::InvalidDbClusterStateFault(_)
         )
     }
     pub fn is_snapshot_quota_exceeded_fault(&self) -> bool {
@@ -3857,10 +3857,10 @@ impl DeleteDBClusterError {
 impl std::error::Error for DeleteDBClusterError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DeleteDBClusterErrorKind::DBClusterNotFoundFault(_inner) => Some(_inner),
-            DeleteDBClusterErrorKind::DBClusterSnapshotAlreadyExistsFault(_inner) => Some(_inner),
-            DeleteDBClusterErrorKind::InvalidDBClusterSnapshotStateFault(_inner) => Some(_inner),
-            DeleteDBClusterErrorKind::InvalidDBClusterStateFault(_inner) => Some(_inner),
+            DeleteDBClusterErrorKind::DbClusterNotFoundFault(_inner) => Some(_inner),
+            DeleteDBClusterErrorKind::DbClusterSnapshotAlreadyExistsFault(_inner) => Some(_inner),
+            DeleteDBClusterErrorKind::InvalidDbClusterSnapshotStateFault(_inner) => Some(_inner),
+            DeleteDBClusterErrorKind::InvalidDbClusterStateFault(_inner) => Some(_inner),
             DeleteDBClusterErrorKind::SnapshotQuotaExceededFault(_inner) => Some(_inner),
             DeleteDBClusterErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
@@ -3876,22 +3876,22 @@ pub struct DeleteDBClusterEndpointError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteDBClusterEndpointErrorKind {
-    DBClusterEndpointNotFoundFault(crate::error::DBClusterEndpointNotFoundFault),
-    InvalidDBClusterEndpointStateFault(crate::error::InvalidDBClusterEndpointStateFault),
-    InvalidDBClusterStateFault(crate::error::InvalidDBClusterStateFault),
+    DbClusterEndpointNotFoundFault(crate::error::DbClusterEndpointNotFoundFault),
+    InvalidDbClusterEndpointStateFault(crate::error::InvalidDbClusterEndpointStateFault),
+    InvalidDbClusterStateFault(crate::error::InvalidDbClusterStateFault),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteDBClusterEndpointError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DeleteDBClusterEndpointErrorKind::DBClusterEndpointNotFoundFault(_inner) => {
+            DeleteDBClusterEndpointErrorKind::DbClusterEndpointNotFoundFault(_inner) => {
                 _inner.fmt(f)
             }
-            DeleteDBClusterEndpointErrorKind::InvalidDBClusterEndpointStateFault(_inner) => {
+            DeleteDBClusterEndpointErrorKind::InvalidDbClusterEndpointStateFault(_inner) => {
                 _inner.fmt(f)
             }
-            DeleteDBClusterEndpointErrorKind::InvalidDBClusterStateFault(_inner) => _inner.fmt(f),
+            DeleteDBClusterEndpointErrorKind::InvalidDbClusterStateFault(_inner) => _inner.fmt(f),
             DeleteDBClusterEndpointErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -3943,32 +3943,32 @@ impl DeleteDBClusterEndpointError {
     pub fn is_db_cluster_endpoint_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
-            DeleteDBClusterEndpointErrorKind::DBClusterEndpointNotFoundFault(_)
+            DeleteDBClusterEndpointErrorKind::DbClusterEndpointNotFoundFault(_)
         )
     }
     pub fn is_invalid_db_cluster_endpoint_state_fault(&self) -> bool {
         matches!(
             &self.kind,
-            DeleteDBClusterEndpointErrorKind::InvalidDBClusterEndpointStateFault(_)
+            DeleteDBClusterEndpointErrorKind::InvalidDbClusterEndpointStateFault(_)
         )
     }
     pub fn is_invalid_db_cluster_state_fault(&self) -> bool {
         matches!(
             &self.kind,
-            DeleteDBClusterEndpointErrorKind::InvalidDBClusterStateFault(_)
+            DeleteDBClusterEndpointErrorKind::InvalidDbClusterStateFault(_)
         )
     }
 }
 impl std::error::Error for DeleteDBClusterEndpointError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DeleteDBClusterEndpointErrorKind::DBClusterEndpointNotFoundFault(_inner) => {
+            DeleteDBClusterEndpointErrorKind::DbClusterEndpointNotFoundFault(_inner) => {
                 Some(_inner)
             }
-            DeleteDBClusterEndpointErrorKind::InvalidDBClusterEndpointStateFault(_inner) => {
+            DeleteDBClusterEndpointErrorKind::InvalidDbClusterEndpointStateFault(_inner) => {
                 Some(_inner)
             }
-            DeleteDBClusterEndpointErrorKind::InvalidDBClusterStateFault(_inner) => Some(_inner),
+            DeleteDBClusterEndpointErrorKind::InvalidDbClusterStateFault(_inner) => Some(_inner),
             DeleteDBClusterEndpointErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -3983,18 +3983,18 @@ pub struct DeleteDBClusterParameterGroupError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteDBClusterParameterGroupErrorKind {
-    DBParameterGroupNotFoundFault(crate::error::DBParameterGroupNotFoundFault),
-    InvalidDBParameterGroupStateFault(crate::error::InvalidDBParameterGroupStateFault),
+    DbParameterGroupNotFoundFault(crate::error::DbParameterGroupNotFoundFault),
+    InvalidDbParameterGroupStateFault(crate::error::InvalidDbParameterGroupStateFault),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteDBClusterParameterGroupError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DeleteDBClusterParameterGroupErrorKind::DBParameterGroupNotFoundFault(_inner) => {
+            DeleteDBClusterParameterGroupErrorKind::DbParameterGroupNotFoundFault(_inner) => {
                 _inner.fmt(f)
             }
-            DeleteDBClusterParameterGroupErrorKind::InvalidDBParameterGroupStateFault(_inner) => {
+            DeleteDBClusterParameterGroupErrorKind::InvalidDbParameterGroupStateFault(_inner) => {
                 _inner.fmt(f)
             }
             DeleteDBClusterParameterGroupErrorKind::Unhandled(_inner) => _inner.fmt(f),
@@ -4048,23 +4048,23 @@ impl DeleteDBClusterParameterGroupError {
     pub fn is_db_parameter_group_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
-            DeleteDBClusterParameterGroupErrorKind::DBParameterGroupNotFoundFault(_)
+            DeleteDBClusterParameterGroupErrorKind::DbParameterGroupNotFoundFault(_)
         )
     }
     pub fn is_invalid_db_parameter_group_state_fault(&self) -> bool {
         matches!(
             &self.kind,
-            DeleteDBClusterParameterGroupErrorKind::InvalidDBParameterGroupStateFault(_)
+            DeleteDBClusterParameterGroupErrorKind::InvalidDbParameterGroupStateFault(_)
         )
     }
 }
 impl std::error::Error for DeleteDBClusterParameterGroupError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DeleteDBClusterParameterGroupErrorKind::DBParameterGroupNotFoundFault(_inner) => {
+            DeleteDBClusterParameterGroupErrorKind::DbParameterGroupNotFoundFault(_inner) => {
                 Some(_inner)
             }
-            DeleteDBClusterParameterGroupErrorKind::InvalidDBParameterGroupStateFault(_inner) => {
+            DeleteDBClusterParameterGroupErrorKind::InvalidDbParameterGroupStateFault(_inner) => {
                 Some(_inner)
             }
             DeleteDBClusterParameterGroupErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
@@ -4081,18 +4081,18 @@ pub struct DeleteDBClusterSnapshotError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteDBClusterSnapshotErrorKind {
-    DBClusterSnapshotNotFoundFault(crate::error::DBClusterSnapshotNotFoundFault),
-    InvalidDBClusterSnapshotStateFault(crate::error::InvalidDBClusterSnapshotStateFault),
+    DbClusterSnapshotNotFoundFault(crate::error::DbClusterSnapshotNotFoundFault),
+    InvalidDbClusterSnapshotStateFault(crate::error::InvalidDbClusterSnapshotStateFault),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteDBClusterSnapshotError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DeleteDBClusterSnapshotErrorKind::DBClusterSnapshotNotFoundFault(_inner) => {
+            DeleteDBClusterSnapshotErrorKind::DbClusterSnapshotNotFoundFault(_inner) => {
                 _inner.fmt(f)
             }
-            DeleteDBClusterSnapshotErrorKind::InvalidDBClusterSnapshotStateFault(_inner) => {
+            DeleteDBClusterSnapshotErrorKind::InvalidDbClusterSnapshotStateFault(_inner) => {
                 _inner.fmt(f)
             }
             DeleteDBClusterSnapshotErrorKind::Unhandled(_inner) => _inner.fmt(f),
@@ -4146,23 +4146,23 @@ impl DeleteDBClusterSnapshotError {
     pub fn is_db_cluster_snapshot_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
-            DeleteDBClusterSnapshotErrorKind::DBClusterSnapshotNotFoundFault(_)
+            DeleteDBClusterSnapshotErrorKind::DbClusterSnapshotNotFoundFault(_)
         )
     }
     pub fn is_invalid_db_cluster_snapshot_state_fault(&self) -> bool {
         matches!(
             &self.kind,
-            DeleteDBClusterSnapshotErrorKind::InvalidDBClusterSnapshotStateFault(_)
+            DeleteDBClusterSnapshotErrorKind::InvalidDbClusterSnapshotStateFault(_)
         )
     }
 }
 impl std::error::Error for DeleteDBClusterSnapshotError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DeleteDBClusterSnapshotErrorKind::DBClusterSnapshotNotFoundFault(_inner) => {
+            DeleteDBClusterSnapshotErrorKind::DbClusterSnapshotNotFoundFault(_inner) => {
                 Some(_inner)
             }
-            DeleteDBClusterSnapshotErrorKind::InvalidDBClusterSnapshotStateFault(_inner) => {
+            DeleteDBClusterSnapshotErrorKind::InvalidDbClusterSnapshotStateFault(_inner) => {
                 Some(_inner)
             }
             DeleteDBClusterSnapshotErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
@@ -4179,13 +4179,13 @@ pub struct DeleteDBInstanceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteDBInstanceErrorKind {
-    DBInstanceAutomatedBackupQuotaExceededFault(
-        crate::error::DBInstanceAutomatedBackupQuotaExceededFault,
+    DbInstanceAutomatedBackupQuotaExceededFault(
+        crate::error::DbInstanceAutomatedBackupQuotaExceededFault,
     ),
-    DBInstanceNotFoundFault(crate::error::DBInstanceNotFoundFault),
-    DBSnapshotAlreadyExistsFault(crate::error::DBSnapshotAlreadyExistsFault),
-    InvalidDBClusterStateFault(crate::error::InvalidDBClusterStateFault),
-    InvalidDBInstanceStateFault(crate::error::InvalidDBInstanceStateFault),
+    DbInstanceNotFoundFault(crate::error::DbInstanceNotFoundFault),
+    DbSnapshotAlreadyExistsFault(crate::error::DbSnapshotAlreadyExistsFault),
+    InvalidDbClusterStateFault(crate::error::InvalidDbClusterStateFault),
+    InvalidDbInstanceStateFault(crate::error::InvalidDbInstanceStateFault),
     SnapshotQuotaExceededFault(crate::error::SnapshotQuotaExceededFault),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -4193,13 +4193,13 @@ pub enum DeleteDBInstanceErrorKind {
 impl std::fmt::Display for DeleteDBInstanceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DeleteDBInstanceErrorKind::DBInstanceAutomatedBackupQuotaExceededFault(_inner) => {
+            DeleteDBInstanceErrorKind::DbInstanceAutomatedBackupQuotaExceededFault(_inner) => {
                 _inner.fmt(f)
             }
-            DeleteDBInstanceErrorKind::DBInstanceNotFoundFault(_inner) => _inner.fmt(f),
-            DeleteDBInstanceErrorKind::DBSnapshotAlreadyExistsFault(_inner) => _inner.fmt(f),
-            DeleteDBInstanceErrorKind::InvalidDBClusterStateFault(_inner) => _inner.fmt(f),
-            DeleteDBInstanceErrorKind::InvalidDBInstanceStateFault(_inner) => _inner.fmt(f),
+            DeleteDBInstanceErrorKind::DbInstanceNotFoundFault(_inner) => _inner.fmt(f),
+            DeleteDBInstanceErrorKind::DbSnapshotAlreadyExistsFault(_inner) => _inner.fmt(f),
+            DeleteDBInstanceErrorKind::InvalidDbClusterStateFault(_inner) => _inner.fmt(f),
+            DeleteDBInstanceErrorKind::InvalidDbInstanceStateFault(_inner) => _inner.fmt(f),
             DeleteDBInstanceErrorKind::SnapshotQuotaExceededFault(_inner) => _inner.fmt(f),
             DeleteDBInstanceErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
@@ -4252,31 +4252,31 @@ impl DeleteDBInstanceError {
     pub fn is_db_instance_automated_backup_quota_exceeded_fault(&self) -> bool {
         matches!(
             &self.kind,
-            DeleteDBInstanceErrorKind::DBInstanceAutomatedBackupQuotaExceededFault(_)
+            DeleteDBInstanceErrorKind::DbInstanceAutomatedBackupQuotaExceededFault(_)
         )
     }
     pub fn is_db_instance_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
-            DeleteDBInstanceErrorKind::DBInstanceNotFoundFault(_)
+            DeleteDBInstanceErrorKind::DbInstanceNotFoundFault(_)
         )
     }
     pub fn is_db_snapshot_already_exists_fault(&self) -> bool {
         matches!(
             &self.kind,
-            DeleteDBInstanceErrorKind::DBSnapshotAlreadyExistsFault(_)
+            DeleteDBInstanceErrorKind::DbSnapshotAlreadyExistsFault(_)
         )
     }
     pub fn is_invalid_db_cluster_state_fault(&self) -> bool {
         matches!(
             &self.kind,
-            DeleteDBInstanceErrorKind::InvalidDBClusterStateFault(_)
+            DeleteDBInstanceErrorKind::InvalidDbClusterStateFault(_)
         )
     }
     pub fn is_invalid_db_instance_state_fault(&self) -> bool {
         matches!(
             &self.kind,
-            DeleteDBInstanceErrorKind::InvalidDBInstanceStateFault(_)
+            DeleteDBInstanceErrorKind::InvalidDbInstanceStateFault(_)
         )
     }
     pub fn is_snapshot_quota_exceeded_fault(&self) -> bool {
@@ -4289,13 +4289,13 @@ impl DeleteDBInstanceError {
 impl std::error::Error for DeleteDBInstanceError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DeleteDBInstanceErrorKind::DBInstanceAutomatedBackupQuotaExceededFault(_inner) => {
+            DeleteDBInstanceErrorKind::DbInstanceAutomatedBackupQuotaExceededFault(_inner) => {
                 Some(_inner)
             }
-            DeleteDBInstanceErrorKind::DBInstanceNotFoundFault(_inner) => Some(_inner),
-            DeleteDBInstanceErrorKind::DBSnapshotAlreadyExistsFault(_inner) => Some(_inner),
-            DeleteDBInstanceErrorKind::InvalidDBClusterStateFault(_inner) => Some(_inner),
-            DeleteDBInstanceErrorKind::InvalidDBInstanceStateFault(_inner) => Some(_inner),
+            DeleteDBInstanceErrorKind::DbInstanceNotFoundFault(_inner) => Some(_inner),
+            DeleteDBInstanceErrorKind::DbSnapshotAlreadyExistsFault(_inner) => Some(_inner),
+            DeleteDBInstanceErrorKind::InvalidDbClusterStateFault(_inner) => Some(_inner),
+            DeleteDBInstanceErrorKind::InvalidDbInstanceStateFault(_inner) => Some(_inner),
             DeleteDBInstanceErrorKind::SnapshotQuotaExceededFault(_inner) => Some(_inner),
             DeleteDBInstanceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
@@ -4311,9 +4311,9 @@ pub struct DeleteDBInstanceAutomatedBackupError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteDBInstanceAutomatedBackupErrorKind {
-    DBInstanceAutomatedBackupNotFoundFault(crate::error::DBInstanceAutomatedBackupNotFoundFault),
-    InvalidDBInstanceAutomatedBackupStateFault(
-        crate::error::InvalidDBInstanceAutomatedBackupStateFault,
+    DbInstanceAutomatedBackupNotFoundFault(crate::error::DbInstanceAutomatedBackupNotFoundFault),
+    InvalidDbInstanceAutomatedBackupStateFault(
+        crate::error::InvalidDbInstanceAutomatedBackupStateFault,
     ),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -4321,10 +4321,10 @@ pub enum DeleteDBInstanceAutomatedBackupErrorKind {
 impl std::fmt::Display for DeleteDBInstanceAutomatedBackupError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DeleteDBInstanceAutomatedBackupErrorKind::DBInstanceAutomatedBackupNotFoundFault(_inner) =>
+            DeleteDBInstanceAutomatedBackupErrorKind::DbInstanceAutomatedBackupNotFoundFault(_inner) =>
             _inner.fmt(f)
             ,
-            DeleteDBInstanceAutomatedBackupErrorKind::InvalidDBInstanceAutomatedBackupStateFault(_inner) =>
+            DeleteDBInstanceAutomatedBackupErrorKind::InvalidDbInstanceAutomatedBackupStateFault(_inner) =>
             _inner.fmt(f)
             ,
             DeleteDBInstanceAutomatedBackupErrorKind::Unhandled(_inner) => {
@@ -4380,23 +4380,23 @@ impl DeleteDBInstanceAutomatedBackupError {
     pub fn is_db_instance_automated_backup_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
-            DeleteDBInstanceAutomatedBackupErrorKind::DBInstanceAutomatedBackupNotFoundFault(_)
+            DeleteDBInstanceAutomatedBackupErrorKind::DbInstanceAutomatedBackupNotFoundFault(_)
         )
     }
     pub fn is_invalid_db_instance_automated_backup_state_fault(&self) -> bool {
         matches!(
             &self.kind,
-            DeleteDBInstanceAutomatedBackupErrorKind::InvalidDBInstanceAutomatedBackupStateFault(_)
+            DeleteDBInstanceAutomatedBackupErrorKind::InvalidDbInstanceAutomatedBackupStateFault(_)
         )
     }
 }
 impl std::error::Error for DeleteDBInstanceAutomatedBackupError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DeleteDBInstanceAutomatedBackupErrorKind::DBInstanceAutomatedBackupNotFoundFault(_inner) =>
+            DeleteDBInstanceAutomatedBackupErrorKind::DbInstanceAutomatedBackupNotFoundFault(_inner) =>
             Some(_inner)
             ,
-            DeleteDBInstanceAutomatedBackupErrorKind::InvalidDBInstanceAutomatedBackupStateFault(_inner) =>
+            DeleteDBInstanceAutomatedBackupErrorKind::InvalidDbInstanceAutomatedBackupStateFault(_inner) =>
             Some(_inner)
             ,
             DeleteDBInstanceAutomatedBackupErrorKind::Unhandled(_inner) => {
@@ -4415,16 +4415,16 @@ pub struct DeleteDBParameterGroupError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteDBParameterGroupErrorKind {
-    DBParameterGroupNotFoundFault(crate::error::DBParameterGroupNotFoundFault),
-    InvalidDBParameterGroupStateFault(crate::error::InvalidDBParameterGroupStateFault),
+    DbParameterGroupNotFoundFault(crate::error::DbParameterGroupNotFoundFault),
+    InvalidDbParameterGroupStateFault(crate::error::InvalidDbParameterGroupStateFault),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteDBParameterGroupError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DeleteDBParameterGroupErrorKind::DBParameterGroupNotFoundFault(_inner) => _inner.fmt(f),
-            DeleteDBParameterGroupErrorKind::InvalidDBParameterGroupStateFault(_inner) => {
+            DeleteDBParameterGroupErrorKind::DbParameterGroupNotFoundFault(_inner) => _inner.fmt(f),
+            DeleteDBParameterGroupErrorKind::InvalidDbParameterGroupStateFault(_inner) => {
                 _inner.fmt(f)
             }
             DeleteDBParameterGroupErrorKind::Unhandled(_inner) => _inner.fmt(f),
@@ -4478,21 +4478,21 @@ impl DeleteDBParameterGroupError {
     pub fn is_db_parameter_group_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
-            DeleteDBParameterGroupErrorKind::DBParameterGroupNotFoundFault(_)
+            DeleteDBParameterGroupErrorKind::DbParameterGroupNotFoundFault(_)
         )
     }
     pub fn is_invalid_db_parameter_group_state_fault(&self) -> bool {
         matches!(
             &self.kind,
-            DeleteDBParameterGroupErrorKind::InvalidDBParameterGroupStateFault(_)
+            DeleteDBParameterGroupErrorKind::InvalidDbParameterGroupStateFault(_)
         )
     }
 }
 impl std::error::Error for DeleteDBParameterGroupError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DeleteDBParameterGroupErrorKind::DBParameterGroupNotFoundFault(_inner) => Some(_inner),
-            DeleteDBParameterGroupErrorKind::InvalidDBParameterGroupStateFault(_inner) => {
+            DeleteDBParameterGroupErrorKind::DbParameterGroupNotFoundFault(_inner) => Some(_inner),
+            DeleteDBParameterGroupErrorKind::InvalidDbParameterGroupStateFault(_inner) => {
                 Some(_inner)
             }
             DeleteDBParameterGroupErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
@@ -4509,16 +4509,16 @@ pub struct DeleteDBProxyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteDBProxyErrorKind {
-    DBProxyNotFoundFault(crate::error::DBProxyNotFoundFault),
-    InvalidDBProxyStateFault(crate::error::InvalidDBProxyStateFault),
+    DbProxyNotFoundFault(crate::error::DbProxyNotFoundFault),
+    InvalidDbProxyStateFault(crate::error::InvalidDbProxyStateFault),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteDBProxyError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DeleteDBProxyErrorKind::DBProxyNotFoundFault(_inner) => _inner.fmt(f),
-            DeleteDBProxyErrorKind::InvalidDBProxyStateFault(_inner) => _inner.fmt(f),
+            DeleteDBProxyErrorKind::DbProxyNotFoundFault(_inner) => _inner.fmt(f),
+            DeleteDBProxyErrorKind::InvalidDbProxyStateFault(_inner) => _inner.fmt(f),
             DeleteDBProxyErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -4568,20 +4568,20 @@ impl DeleteDBProxyError {
         self.meta.code()
     }
     pub fn is_db_proxy_not_found_fault(&self) -> bool {
-        matches!(&self.kind, DeleteDBProxyErrorKind::DBProxyNotFoundFault(_))
+        matches!(&self.kind, DeleteDBProxyErrorKind::DbProxyNotFoundFault(_))
     }
     pub fn is_invalid_db_proxy_state_fault(&self) -> bool {
         matches!(
             &self.kind,
-            DeleteDBProxyErrorKind::InvalidDBProxyStateFault(_)
+            DeleteDBProxyErrorKind::InvalidDbProxyStateFault(_)
         )
     }
 }
 impl std::error::Error for DeleteDBProxyError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DeleteDBProxyErrorKind::DBProxyNotFoundFault(_inner) => Some(_inner),
-            DeleteDBProxyErrorKind::InvalidDBProxyStateFault(_inner) => Some(_inner),
+            DeleteDBProxyErrorKind::DbProxyNotFoundFault(_inner) => Some(_inner),
+            DeleteDBProxyErrorKind::InvalidDbProxyStateFault(_inner) => Some(_inner),
             DeleteDBProxyErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -4596,16 +4596,16 @@ pub struct DeleteDBProxyEndpointError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteDBProxyEndpointErrorKind {
-    DBProxyEndpointNotFoundFault(crate::error::DBProxyEndpointNotFoundFault),
-    InvalidDBProxyEndpointStateFault(crate::error::InvalidDBProxyEndpointStateFault),
+    DbProxyEndpointNotFoundFault(crate::error::DbProxyEndpointNotFoundFault),
+    InvalidDbProxyEndpointStateFault(crate::error::InvalidDbProxyEndpointStateFault),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteDBProxyEndpointError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DeleteDBProxyEndpointErrorKind::DBProxyEndpointNotFoundFault(_inner) => _inner.fmt(f),
-            DeleteDBProxyEndpointErrorKind::InvalidDBProxyEndpointStateFault(_inner) => {
+            DeleteDBProxyEndpointErrorKind::DbProxyEndpointNotFoundFault(_inner) => _inner.fmt(f),
+            DeleteDBProxyEndpointErrorKind::InvalidDbProxyEndpointStateFault(_inner) => {
                 _inner.fmt(f)
             }
             DeleteDBProxyEndpointErrorKind::Unhandled(_inner) => _inner.fmt(f),
@@ -4659,21 +4659,21 @@ impl DeleteDBProxyEndpointError {
     pub fn is_db_proxy_endpoint_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
-            DeleteDBProxyEndpointErrorKind::DBProxyEndpointNotFoundFault(_)
+            DeleteDBProxyEndpointErrorKind::DbProxyEndpointNotFoundFault(_)
         )
     }
     pub fn is_invalid_db_proxy_endpoint_state_fault(&self) -> bool {
         matches!(
             &self.kind,
-            DeleteDBProxyEndpointErrorKind::InvalidDBProxyEndpointStateFault(_)
+            DeleteDBProxyEndpointErrorKind::InvalidDbProxyEndpointStateFault(_)
         )
     }
 }
 impl std::error::Error for DeleteDBProxyEndpointError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DeleteDBProxyEndpointErrorKind::DBProxyEndpointNotFoundFault(_inner) => Some(_inner),
-            DeleteDBProxyEndpointErrorKind::InvalidDBProxyEndpointStateFault(_inner) => {
+            DeleteDBProxyEndpointErrorKind::DbProxyEndpointNotFoundFault(_inner) => Some(_inner),
+            DeleteDBProxyEndpointErrorKind::InvalidDbProxyEndpointStateFault(_inner) => {
                 Some(_inner)
             }
             DeleteDBProxyEndpointErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
@@ -4690,16 +4690,16 @@ pub struct DeleteDBSecurityGroupError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteDBSecurityGroupErrorKind {
-    DBSecurityGroupNotFoundFault(crate::error::DBSecurityGroupNotFoundFault),
-    InvalidDBSecurityGroupStateFault(crate::error::InvalidDBSecurityGroupStateFault),
+    DbSecurityGroupNotFoundFault(crate::error::DbSecurityGroupNotFoundFault),
+    InvalidDbSecurityGroupStateFault(crate::error::InvalidDbSecurityGroupStateFault),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteDBSecurityGroupError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DeleteDBSecurityGroupErrorKind::DBSecurityGroupNotFoundFault(_inner) => _inner.fmt(f),
-            DeleteDBSecurityGroupErrorKind::InvalidDBSecurityGroupStateFault(_inner) => {
+            DeleteDBSecurityGroupErrorKind::DbSecurityGroupNotFoundFault(_inner) => _inner.fmt(f),
+            DeleteDBSecurityGroupErrorKind::InvalidDbSecurityGroupStateFault(_inner) => {
                 _inner.fmt(f)
             }
             DeleteDBSecurityGroupErrorKind::Unhandled(_inner) => _inner.fmt(f),
@@ -4753,21 +4753,21 @@ impl DeleteDBSecurityGroupError {
     pub fn is_db_security_group_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
-            DeleteDBSecurityGroupErrorKind::DBSecurityGroupNotFoundFault(_)
+            DeleteDBSecurityGroupErrorKind::DbSecurityGroupNotFoundFault(_)
         )
     }
     pub fn is_invalid_db_security_group_state_fault(&self) -> bool {
         matches!(
             &self.kind,
-            DeleteDBSecurityGroupErrorKind::InvalidDBSecurityGroupStateFault(_)
+            DeleteDBSecurityGroupErrorKind::InvalidDbSecurityGroupStateFault(_)
         )
     }
 }
 impl std::error::Error for DeleteDBSecurityGroupError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DeleteDBSecurityGroupErrorKind::DBSecurityGroupNotFoundFault(_inner) => Some(_inner),
-            DeleteDBSecurityGroupErrorKind::InvalidDBSecurityGroupStateFault(_inner) => {
+            DeleteDBSecurityGroupErrorKind::DbSecurityGroupNotFoundFault(_inner) => Some(_inner),
+            DeleteDBSecurityGroupErrorKind::InvalidDbSecurityGroupStateFault(_inner) => {
                 Some(_inner)
             }
             DeleteDBSecurityGroupErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
@@ -4784,16 +4784,16 @@ pub struct DeleteDBSnapshotError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteDBSnapshotErrorKind {
-    DBSnapshotNotFoundFault(crate::error::DBSnapshotNotFoundFault),
-    InvalidDBSnapshotStateFault(crate::error::InvalidDBSnapshotStateFault),
+    DbSnapshotNotFoundFault(crate::error::DbSnapshotNotFoundFault),
+    InvalidDbSnapshotStateFault(crate::error::InvalidDbSnapshotStateFault),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteDBSnapshotError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DeleteDBSnapshotErrorKind::DBSnapshotNotFoundFault(_inner) => _inner.fmt(f),
-            DeleteDBSnapshotErrorKind::InvalidDBSnapshotStateFault(_inner) => _inner.fmt(f),
+            DeleteDBSnapshotErrorKind::DbSnapshotNotFoundFault(_inner) => _inner.fmt(f),
+            DeleteDBSnapshotErrorKind::InvalidDbSnapshotStateFault(_inner) => _inner.fmt(f),
             DeleteDBSnapshotErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -4845,21 +4845,21 @@ impl DeleteDBSnapshotError {
     pub fn is_db_snapshot_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
-            DeleteDBSnapshotErrorKind::DBSnapshotNotFoundFault(_)
+            DeleteDBSnapshotErrorKind::DbSnapshotNotFoundFault(_)
         )
     }
     pub fn is_invalid_db_snapshot_state_fault(&self) -> bool {
         matches!(
             &self.kind,
-            DeleteDBSnapshotErrorKind::InvalidDBSnapshotStateFault(_)
+            DeleteDBSnapshotErrorKind::InvalidDbSnapshotStateFault(_)
         )
     }
 }
 impl std::error::Error for DeleteDBSnapshotError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DeleteDBSnapshotErrorKind::DBSnapshotNotFoundFault(_inner) => Some(_inner),
-            DeleteDBSnapshotErrorKind::InvalidDBSnapshotStateFault(_inner) => Some(_inner),
+            DeleteDBSnapshotErrorKind::DbSnapshotNotFoundFault(_inner) => Some(_inner),
+            DeleteDBSnapshotErrorKind::InvalidDbSnapshotStateFault(_inner) => Some(_inner),
             DeleteDBSnapshotErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -4874,18 +4874,18 @@ pub struct DeleteDBSubnetGroupError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteDBSubnetGroupErrorKind {
-    DBSubnetGroupNotFoundFault(crate::error::DBSubnetGroupNotFoundFault),
-    InvalidDBSubnetGroupStateFault(crate::error::InvalidDBSubnetGroupStateFault),
-    InvalidDBSubnetStateFault(crate::error::InvalidDBSubnetStateFault),
+    DbSubnetGroupNotFoundFault(crate::error::DbSubnetGroupNotFoundFault),
+    InvalidDbSubnetGroupStateFault(crate::error::InvalidDbSubnetGroupStateFault),
+    InvalidDbSubnetStateFault(crate::error::InvalidDbSubnetStateFault),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteDBSubnetGroupError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DeleteDBSubnetGroupErrorKind::DBSubnetGroupNotFoundFault(_inner) => _inner.fmt(f),
-            DeleteDBSubnetGroupErrorKind::InvalidDBSubnetGroupStateFault(_inner) => _inner.fmt(f),
-            DeleteDBSubnetGroupErrorKind::InvalidDBSubnetStateFault(_inner) => _inner.fmt(f),
+            DeleteDBSubnetGroupErrorKind::DbSubnetGroupNotFoundFault(_inner) => _inner.fmt(f),
+            DeleteDBSubnetGroupErrorKind::InvalidDbSubnetGroupStateFault(_inner) => _inner.fmt(f),
+            DeleteDBSubnetGroupErrorKind::InvalidDbSubnetStateFault(_inner) => _inner.fmt(f),
             DeleteDBSubnetGroupErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -4937,28 +4937,28 @@ impl DeleteDBSubnetGroupError {
     pub fn is_db_subnet_group_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
-            DeleteDBSubnetGroupErrorKind::DBSubnetGroupNotFoundFault(_)
+            DeleteDBSubnetGroupErrorKind::DbSubnetGroupNotFoundFault(_)
         )
     }
     pub fn is_invalid_db_subnet_group_state_fault(&self) -> bool {
         matches!(
             &self.kind,
-            DeleteDBSubnetGroupErrorKind::InvalidDBSubnetGroupStateFault(_)
+            DeleteDBSubnetGroupErrorKind::InvalidDbSubnetGroupStateFault(_)
         )
     }
     pub fn is_invalid_db_subnet_state_fault(&self) -> bool {
         matches!(
             &self.kind,
-            DeleteDBSubnetGroupErrorKind::InvalidDBSubnetStateFault(_)
+            DeleteDBSubnetGroupErrorKind::InvalidDbSubnetStateFault(_)
         )
     }
 }
 impl std::error::Error for DeleteDBSubnetGroupError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DeleteDBSubnetGroupErrorKind::DBSubnetGroupNotFoundFault(_inner) => Some(_inner),
-            DeleteDBSubnetGroupErrorKind::InvalidDBSubnetGroupStateFault(_inner) => Some(_inner),
-            DeleteDBSubnetGroupErrorKind::InvalidDBSubnetStateFault(_inner) => Some(_inner),
+            DeleteDBSubnetGroupErrorKind::DbSubnetGroupNotFoundFault(_inner) => Some(_inner),
+            DeleteDBSubnetGroupErrorKind::InvalidDbSubnetGroupStateFault(_inner) => Some(_inner),
+            DeleteDBSubnetGroupErrorKind::InvalidDbSubnetStateFault(_inner) => Some(_inner),
             DeleteDBSubnetGroupErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -5332,22 +5332,22 @@ pub struct DeregisterDBProxyTargetsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeregisterDBProxyTargetsErrorKind {
-    DBProxyNotFoundFault(crate::error::DBProxyNotFoundFault),
-    DBProxyTargetGroupNotFoundFault(crate::error::DBProxyTargetGroupNotFoundFault),
-    DBProxyTargetNotFoundFault(crate::error::DBProxyTargetNotFoundFault),
-    InvalidDBProxyStateFault(crate::error::InvalidDBProxyStateFault),
+    DbProxyNotFoundFault(crate::error::DbProxyNotFoundFault),
+    DbProxyTargetGroupNotFoundFault(crate::error::DbProxyTargetGroupNotFoundFault),
+    DbProxyTargetNotFoundFault(crate::error::DbProxyTargetNotFoundFault),
+    InvalidDbProxyStateFault(crate::error::InvalidDbProxyStateFault),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeregisterDBProxyTargetsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DeregisterDBProxyTargetsErrorKind::DBProxyNotFoundFault(_inner) => _inner.fmt(f),
-            DeregisterDBProxyTargetsErrorKind::DBProxyTargetGroupNotFoundFault(_inner) => {
+            DeregisterDBProxyTargetsErrorKind::DbProxyNotFoundFault(_inner) => _inner.fmt(f),
+            DeregisterDBProxyTargetsErrorKind::DbProxyTargetGroupNotFoundFault(_inner) => {
                 _inner.fmt(f)
             }
-            DeregisterDBProxyTargetsErrorKind::DBProxyTargetNotFoundFault(_inner) => _inner.fmt(f),
-            DeregisterDBProxyTargetsErrorKind::InvalidDBProxyStateFault(_inner) => _inner.fmt(f),
+            DeregisterDBProxyTargetsErrorKind::DbProxyTargetNotFoundFault(_inner) => _inner.fmt(f),
+            DeregisterDBProxyTargetsErrorKind::InvalidDbProxyStateFault(_inner) => _inner.fmt(f),
             DeregisterDBProxyTargetsErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -5399,37 +5399,37 @@ impl DeregisterDBProxyTargetsError {
     pub fn is_db_proxy_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
-            DeregisterDBProxyTargetsErrorKind::DBProxyNotFoundFault(_)
+            DeregisterDBProxyTargetsErrorKind::DbProxyNotFoundFault(_)
         )
     }
     pub fn is_db_proxy_target_group_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
-            DeregisterDBProxyTargetsErrorKind::DBProxyTargetGroupNotFoundFault(_)
+            DeregisterDBProxyTargetsErrorKind::DbProxyTargetGroupNotFoundFault(_)
         )
     }
     pub fn is_db_proxy_target_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
-            DeregisterDBProxyTargetsErrorKind::DBProxyTargetNotFoundFault(_)
+            DeregisterDBProxyTargetsErrorKind::DbProxyTargetNotFoundFault(_)
         )
     }
     pub fn is_invalid_db_proxy_state_fault(&self) -> bool {
         matches!(
             &self.kind,
-            DeregisterDBProxyTargetsErrorKind::InvalidDBProxyStateFault(_)
+            DeregisterDBProxyTargetsErrorKind::InvalidDbProxyStateFault(_)
         )
     }
 }
 impl std::error::Error for DeregisterDBProxyTargetsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DeregisterDBProxyTargetsErrorKind::DBProxyNotFoundFault(_inner) => Some(_inner),
-            DeregisterDBProxyTargetsErrorKind::DBProxyTargetGroupNotFoundFault(_inner) => {
+            DeregisterDBProxyTargetsErrorKind::DbProxyNotFoundFault(_inner) => Some(_inner),
+            DeregisterDBProxyTargetsErrorKind::DbProxyTargetGroupNotFoundFault(_inner) => {
                 Some(_inner)
             }
-            DeregisterDBProxyTargetsErrorKind::DBProxyTargetNotFoundFault(_inner) => Some(_inner),
-            DeregisterDBProxyTargetsErrorKind::InvalidDBProxyStateFault(_inner) => Some(_inner),
+            DeregisterDBProxyTargetsErrorKind::DbProxyTargetNotFoundFault(_inner) => Some(_inner),
+            DeregisterDBProxyTargetsErrorKind::InvalidDbProxyStateFault(_inner) => Some(_inner),
             DeregisterDBProxyTargetsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -5682,18 +5682,18 @@ pub struct DescribeDBClusterBacktracksError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeDBClusterBacktracksErrorKind {
-    DBClusterBacktrackNotFoundFault(crate::error::DBClusterBacktrackNotFoundFault),
-    DBClusterNotFoundFault(crate::error::DBClusterNotFoundFault),
+    DbClusterBacktrackNotFoundFault(crate::error::DbClusterBacktrackNotFoundFault),
+    DbClusterNotFoundFault(crate::error::DbClusterNotFoundFault),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeDBClusterBacktracksError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DescribeDBClusterBacktracksErrorKind::DBClusterBacktrackNotFoundFault(_inner) => {
+            DescribeDBClusterBacktracksErrorKind::DbClusterBacktrackNotFoundFault(_inner) => {
                 _inner.fmt(f)
             }
-            DescribeDBClusterBacktracksErrorKind::DBClusterNotFoundFault(_inner) => _inner.fmt(f),
+            DescribeDBClusterBacktracksErrorKind::DbClusterNotFoundFault(_inner) => _inner.fmt(f),
             DescribeDBClusterBacktracksErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -5745,23 +5745,23 @@ impl DescribeDBClusterBacktracksError {
     pub fn is_db_cluster_backtrack_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
-            DescribeDBClusterBacktracksErrorKind::DBClusterBacktrackNotFoundFault(_)
+            DescribeDBClusterBacktracksErrorKind::DbClusterBacktrackNotFoundFault(_)
         )
     }
     pub fn is_db_cluster_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
-            DescribeDBClusterBacktracksErrorKind::DBClusterNotFoundFault(_)
+            DescribeDBClusterBacktracksErrorKind::DbClusterNotFoundFault(_)
         )
     }
 }
 impl std::error::Error for DescribeDBClusterBacktracksError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DescribeDBClusterBacktracksErrorKind::DBClusterBacktrackNotFoundFault(_inner) => {
+            DescribeDBClusterBacktracksErrorKind::DbClusterBacktrackNotFoundFault(_inner) => {
                 Some(_inner)
             }
-            DescribeDBClusterBacktracksErrorKind::DBClusterNotFoundFault(_inner) => Some(_inner),
+            DescribeDBClusterBacktracksErrorKind::DbClusterNotFoundFault(_inner) => Some(_inner),
             DescribeDBClusterBacktracksErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -5776,14 +5776,14 @@ pub struct DescribeDBClusterEndpointsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeDBClusterEndpointsErrorKind {
-    DBClusterNotFoundFault(crate::error::DBClusterNotFoundFault),
+    DbClusterNotFoundFault(crate::error::DbClusterNotFoundFault),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeDBClusterEndpointsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DescribeDBClusterEndpointsErrorKind::DBClusterNotFoundFault(_inner) => _inner.fmt(f),
+            DescribeDBClusterEndpointsErrorKind::DbClusterNotFoundFault(_inner) => _inner.fmt(f),
             DescribeDBClusterEndpointsErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -5835,14 +5835,14 @@ impl DescribeDBClusterEndpointsError {
     pub fn is_db_cluster_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
-            DescribeDBClusterEndpointsErrorKind::DBClusterNotFoundFault(_)
+            DescribeDBClusterEndpointsErrorKind::DbClusterNotFoundFault(_)
         )
     }
 }
 impl std::error::Error for DescribeDBClusterEndpointsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DescribeDBClusterEndpointsErrorKind::DBClusterNotFoundFault(_inner) => Some(_inner),
+            DescribeDBClusterEndpointsErrorKind::DbClusterNotFoundFault(_inner) => Some(_inner),
             DescribeDBClusterEndpointsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -5857,14 +5857,14 @@ pub struct DescribeDBClusterParameterGroupsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeDBClusterParameterGroupsErrorKind {
-    DBParameterGroupNotFoundFault(crate::error::DBParameterGroupNotFoundFault),
+    DbParameterGroupNotFoundFault(crate::error::DbParameterGroupNotFoundFault),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeDBClusterParameterGroupsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DescribeDBClusterParameterGroupsErrorKind::DBParameterGroupNotFoundFault(_inner) => {
+            DescribeDBClusterParameterGroupsErrorKind::DbParameterGroupNotFoundFault(_inner) => {
                 _inner.fmt(f)
             }
             DescribeDBClusterParameterGroupsErrorKind::Unhandled(_inner) => _inner.fmt(f),
@@ -5918,14 +5918,14 @@ impl DescribeDBClusterParameterGroupsError {
     pub fn is_db_parameter_group_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
-            DescribeDBClusterParameterGroupsErrorKind::DBParameterGroupNotFoundFault(_)
+            DescribeDBClusterParameterGroupsErrorKind::DbParameterGroupNotFoundFault(_)
         )
     }
 }
 impl std::error::Error for DescribeDBClusterParameterGroupsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DescribeDBClusterParameterGroupsErrorKind::DBParameterGroupNotFoundFault(_inner) => {
+            DescribeDBClusterParameterGroupsErrorKind::DbParameterGroupNotFoundFault(_inner) => {
                 Some(_inner)
             }
             DescribeDBClusterParameterGroupsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
@@ -5942,14 +5942,14 @@ pub struct DescribeDBClusterParametersError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeDBClusterParametersErrorKind {
-    DBParameterGroupNotFoundFault(crate::error::DBParameterGroupNotFoundFault),
+    DbParameterGroupNotFoundFault(crate::error::DbParameterGroupNotFoundFault),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeDBClusterParametersError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DescribeDBClusterParametersErrorKind::DBParameterGroupNotFoundFault(_inner) => {
+            DescribeDBClusterParametersErrorKind::DbParameterGroupNotFoundFault(_inner) => {
                 _inner.fmt(f)
             }
             DescribeDBClusterParametersErrorKind::Unhandled(_inner) => _inner.fmt(f),
@@ -6003,14 +6003,14 @@ impl DescribeDBClusterParametersError {
     pub fn is_db_parameter_group_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
-            DescribeDBClusterParametersErrorKind::DBParameterGroupNotFoundFault(_)
+            DescribeDBClusterParametersErrorKind::DbParameterGroupNotFoundFault(_)
         )
     }
 }
 impl std::error::Error for DescribeDBClusterParametersError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DescribeDBClusterParametersErrorKind::DBParameterGroupNotFoundFault(_inner) => {
+            DescribeDBClusterParametersErrorKind::DbParameterGroupNotFoundFault(_inner) => {
                 Some(_inner)
             }
             DescribeDBClusterParametersErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
@@ -6027,14 +6027,14 @@ pub struct DescribeDBClustersError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeDBClustersErrorKind {
-    DBClusterNotFoundFault(crate::error::DBClusterNotFoundFault),
+    DbClusterNotFoundFault(crate::error::DbClusterNotFoundFault),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeDBClustersError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DescribeDBClustersErrorKind::DBClusterNotFoundFault(_inner) => _inner.fmt(f),
+            DescribeDBClustersErrorKind::DbClusterNotFoundFault(_inner) => _inner.fmt(f),
             DescribeDBClustersErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -6086,14 +6086,14 @@ impl DescribeDBClustersError {
     pub fn is_db_cluster_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
-            DescribeDBClustersErrorKind::DBClusterNotFoundFault(_)
+            DescribeDBClustersErrorKind::DbClusterNotFoundFault(_)
         )
     }
 }
 impl std::error::Error for DescribeDBClustersError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DescribeDBClustersErrorKind::DBClusterNotFoundFault(_inner) => Some(_inner),
+            DescribeDBClustersErrorKind::DbClusterNotFoundFault(_inner) => Some(_inner),
             DescribeDBClustersErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -6108,14 +6108,14 @@ pub struct DescribeDBClusterSnapshotAttributesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeDBClusterSnapshotAttributesErrorKind {
-    DBClusterSnapshotNotFoundFault(crate::error::DBClusterSnapshotNotFoundFault),
+    DbClusterSnapshotNotFoundFault(crate::error::DbClusterSnapshotNotFoundFault),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeDBClusterSnapshotAttributesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DescribeDBClusterSnapshotAttributesErrorKind::DBClusterSnapshotNotFoundFault(
+            DescribeDBClusterSnapshotAttributesErrorKind::DbClusterSnapshotNotFoundFault(
                 _inner,
             ) => _inner.fmt(f),
             DescribeDBClusterSnapshotAttributesErrorKind::Unhandled(_inner) => _inner.fmt(f),
@@ -6172,14 +6172,14 @@ impl DescribeDBClusterSnapshotAttributesError {
     pub fn is_db_cluster_snapshot_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
-            DescribeDBClusterSnapshotAttributesErrorKind::DBClusterSnapshotNotFoundFault(_)
+            DescribeDBClusterSnapshotAttributesErrorKind::DbClusterSnapshotNotFoundFault(_)
         )
     }
 }
 impl std::error::Error for DescribeDBClusterSnapshotAttributesError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DescribeDBClusterSnapshotAttributesErrorKind::DBClusterSnapshotNotFoundFault(
+            DescribeDBClusterSnapshotAttributesErrorKind::DbClusterSnapshotNotFoundFault(
                 _inner,
             ) => Some(_inner),
             DescribeDBClusterSnapshotAttributesErrorKind::Unhandled(_inner) => {
@@ -6198,14 +6198,14 @@ pub struct DescribeDBClusterSnapshotsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeDBClusterSnapshotsErrorKind {
-    DBClusterSnapshotNotFoundFault(crate::error::DBClusterSnapshotNotFoundFault),
+    DbClusterSnapshotNotFoundFault(crate::error::DbClusterSnapshotNotFoundFault),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeDBClusterSnapshotsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DescribeDBClusterSnapshotsErrorKind::DBClusterSnapshotNotFoundFault(_inner) => {
+            DescribeDBClusterSnapshotsErrorKind::DbClusterSnapshotNotFoundFault(_inner) => {
                 _inner.fmt(f)
             }
             DescribeDBClusterSnapshotsErrorKind::Unhandled(_inner) => _inner.fmt(f),
@@ -6259,14 +6259,14 @@ impl DescribeDBClusterSnapshotsError {
     pub fn is_db_cluster_snapshot_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
-            DescribeDBClusterSnapshotsErrorKind::DBClusterSnapshotNotFoundFault(_)
+            DescribeDBClusterSnapshotsErrorKind::DbClusterSnapshotNotFoundFault(_)
         )
     }
 }
 impl std::error::Error for DescribeDBClusterSnapshotsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DescribeDBClusterSnapshotsErrorKind::DBClusterSnapshotNotFoundFault(_inner) => {
+            DescribeDBClusterSnapshotsErrorKind::DbClusterSnapshotNotFoundFault(_inner) => {
                 Some(_inner)
             }
             DescribeDBClusterSnapshotsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
@@ -6355,14 +6355,14 @@ pub struct DescribeDBInstanceAutomatedBackupsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeDBInstanceAutomatedBackupsErrorKind {
-    DBInstanceAutomatedBackupNotFoundFault(crate::error::DBInstanceAutomatedBackupNotFoundFault),
+    DbInstanceAutomatedBackupNotFoundFault(crate::error::DbInstanceAutomatedBackupNotFoundFault),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeDBInstanceAutomatedBackupsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DescribeDBInstanceAutomatedBackupsErrorKind::DBInstanceAutomatedBackupNotFoundFault(
+            DescribeDBInstanceAutomatedBackupsErrorKind::DbInstanceAutomatedBackupNotFoundFault(
                 _inner,
             ) => _inner.fmt(f),
             DescribeDBInstanceAutomatedBackupsErrorKind::Unhandled(_inner) => _inner.fmt(f),
@@ -6419,14 +6419,14 @@ impl DescribeDBInstanceAutomatedBackupsError {
     pub fn is_db_instance_automated_backup_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
-            DescribeDBInstanceAutomatedBackupsErrorKind::DBInstanceAutomatedBackupNotFoundFault(_)
+            DescribeDBInstanceAutomatedBackupsErrorKind::DbInstanceAutomatedBackupNotFoundFault(_)
         )
     }
 }
 impl std::error::Error for DescribeDBInstanceAutomatedBackupsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DescribeDBInstanceAutomatedBackupsErrorKind::DBInstanceAutomatedBackupNotFoundFault(
+            DescribeDBInstanceAutomatedBackupsErrorKind::DbInstanceAutomatedBackupNotFoundFault(
                 _inner,
             ) => Some(_inner),
             DescribeDBInstanceAutomatedBackupsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
@@ -6443,14 +6443,14 @@ pub struct DescribeDBInstancesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeDBInstancesErrorKind {
-    DBInstanceNotFoundFault(crate::error::DBInstanceNotFoundFault),
+    DbInstanceNotFoundFault(crate::error::DbInstanceNotFoundFault),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeDBInstancesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DescribeDBInstancesErrorKind::DBInstanceNotFoundFault(_inner) => _inner.fmt(f),
+            DescribeDBInstancesErrorKind::DbInstanceNotFoundFault(_inner) => _inner.fmt(f),
             DescribeDBInstancesErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -6502,14 +6502,14 @@ impl DescribeDBInstancesError {
     pub fn is_db_instance_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
-            DescribeDBInstancesErrorKind::DBInstanceNotFoundFault(_)
+            DescribeDBInstancesErrorKind::DbInstanceNotFoundFault(_)
         )
     }
 }
 impl std::error::Error for DescribeDBInstancesError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DescribeDBInstancesErrorKind::DBInstanceNotFoundFault(_inner) => Some(_inner),
+            DescribeDBInstancesErrorKind::DbInstanceNotFoundFault(_inner) => Some(_inner),
             DescribeDBInstancesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -6524,14 +6524,14 @@ pub struct DescribeDBLogFilesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeDBLogFilesErrorKind {
-    DBInstanceNotFoundFault(crate::error::DBInstanceNotFoundFault),
+    DbInstanceNotFoundFault(crate::error::DbInstanceNotFoundFault),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeDBLogFilesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DescribeDBLogFilesErrorKind::DBInstanceNotFoundFault(_inner) => _inner.fmt(f),
+            DescribeDBLogFilesErrorKind::DbInstanceNotFoundFault(_inner) => _inner.fmt(f),
             DescribeDBLogFilesErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -6583,14 +6583,14 @@ impl DescribeDBLogFilesError {
     pub fn is_db_instance_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
-            DescribeDBLogFilesErrorKind::DBInstanceNotFoundFault(_)
+            DescribeDBLogFilesErrorKind::DbInstanceNotFoundFault(_)
         )
     }
 }
 impl std::error::Error for DescribeDBLogFilesError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DescribeDBLogFilesErrorKind::DBInstanceNotFoundFault(_inner) => Some(_inner),
+            DescribeDBLogFilesErrorKind::DbInstanceNotFoundFault(_inner) => Some(_inner),
             DescribeDBLogFilesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -6605,14 +6605,14 @@ pub struct DescribeDBParameterGroupsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeDBParameterGroupsErrorKind {
-    DBParameterGroupNotFoundFault(crate::error::DBParameterGroupNotFoundFault),
+    DbParameterGroupNotFoundFault(crate::error::DbParameterGroupNotFoundFault),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeDBParameterGroupsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DescribeDBParameterGroupsErrorKind::DBParameterGroupNotFoundFault(_inner) => {
+            DescribeDBParameterGroupsErrorKind::DbParameterGroupNotFoundFault(_inner) => {
                 _inner.fmt(f)
             }
             DescribeDBParameterGroupsErrorKind::Unhandled(_inner) => _inner.fmt(f),
@@ -6666,14 +6666,14 @@ impl DescribeDBParameterGroupsError {
     pub fn is_db_parameter_group_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
-            DescribeDBParameterGroupsErrorKind::DBParameterGroupNotFoundFault(_)
+            DescribeDBParameterGroupsErrorKind::DbParameterGroupNotFoundFault(_)
         )
     }
 }
 impl std::error::Error for DescribeDBParameterGroupsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DescribeDBParameterGroupsErrorKind::DBParameterGroupNotFoundFault(_inner) => {
+            DescribeDBParameterGroupsErrorKind::DbParameterGroupNotFoundFault(_inner) => {
                 Some(_inner)
             }
             DescribeDBParameterGroupsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
@@ -6690,14 +6690,14 @@ pub struct DescribeDBParametersError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeDBParametersErrorKind {
-    DBParameterGroupNotFoundFault(crate::error::DBParameterGroupNotFoundFault),
+    DbParameterGroupNotFoundFault(crate::error::DbParameterGroupNotFoundFault),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeDBParametersError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DescribeDBParametersErrorKind::DBParameterGroupNotFoundFault(_inner) => _inner.fmt(f),
+            DescribeDBParametersErrorKind::DbParameterGroupNotFoundFault(_inner) => _inner.fmt(f),
             DescribeDBParametersErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -6749,14 +6749,14 @@ impl DescribeDBParametersError {
     pub fn is_db_parameter_group_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
-            DescribeDBParametersErrorKind::DBParameterGroupNotFoundFault(_)
+            DescribeDBParametersErrorKind::DbParameterGroupNotFoundFault(_)
         )
     }
 }
 impl std::error::Error for DescribeDBParametersError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DescribeDBParametersErrorKind::DBParameterGroupNotFoundFault(_inner) => Some(_inner),
+            DescribeDBParametersErrorKind::DbParameterGroupNotFoundFault(_inner) => Some(_inner),
             DescribeDBParametersErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -6771,14 +6771,14 @@ pub struct DescribeDBProxiesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeDBProxiesErrorKind {
-    DBProxyNotFoundFault(crate::error::DBProxyNotFoundFault),
+    DbProxyNotFoundFault(crate::error::DbProxyNotFoundFault),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeDBProxiesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DescribeDBProxiesErrorKind::DBProxyNotFoundFault(_inner) => _inner.fmt(f),
+            DescribeDBProxiesErrorKind::DbProxyNotFoundFault(_inner) => _inner.fmt(f),
             DescribeDBProxiesErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -6830,14 +6830,14 @@ impl DescribeDBProxiesError {
     pub fn is_db_proxy_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
-            DescribeDBProxiesErrorKind::DBProxyNotFoundFault(_)
+            DescribeDBProxiesErrorKind::DbProxyNotFoundFault(_)
         )
     }
 }
 impl std::error::Error for DescribeDBProxiesError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DescribeDBProxiesErrorKind::DBProxyNotFoundFault(_inner) => Some(_inner),
+            DescribeDBProxiesErrorKind::DbProxyNotFoundFault(_inner) => Some(_inner),
             DescribeDBProxiesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -6852,18 +6852,18 @@ pub struct DescribeDBProxyEndpointsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeDBProxyEndpointsErrorKind {
-    DBProxyEndpointNotFoundFault(crate::error::DBProxyEndpointNotFoundFault),
-    DBProxyNotFoundFault(crate::error::DBProxyNotFoundFault),
+    DbProxyEndpointNotFoundFault(crate::error::DbProxyEndpointNotFoundFault),
+    DbProxyNotFoundFault(crate::error::DbProxyNotFoundFault),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeDBProxyEndpointsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DescribeDBProxyEndpointsErrorKind::DBProxyEndpointNotFoundFault(_inner) => {
+            DescribeDBProxyEndpointsErrorKind::DbProxyEndpointNotFoundFault(_inner) => {
                 _inner.fmt(f)
             }
-            DescribeDBProxyEndpointsErrorKind::DBProxyNotFoundFault(_inner) => _inner.fmt(f),
+            DescribeDBProxyEndpointsErrorKind::DbProxyNotFoundFault(_inner) => _inner.fmt(f),
             DescribeDBProxyEndpointsErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -6915,21 +6915,21 @@ impl DescribeDBProxyEndpointsError {
     pub fn is_db_proxy_endpoint_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
-            DescribeDBProxyEndpointsErrorKind::DBProxyEndpointNotFoundFault(_)
+            DescribeDBProxyEndpointsErrorKind::DbProxyEndpointNotFoundFault(_)
         )
     }
     pub fn is_db_proxy_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
-            DescribeDBProxyEndpointsErrorKind::DBProxyNotFoundFault(_)
+            DescribeDBProxyEndpointsErrorKind::DbProxyNotFoundFault(_)
         )
     }
 }
 impl std::error::Error for DescribeDBProxyEndpointsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DescribeDBProxyEndpointsErrorKind::DBProxyEndpointNotFoundFault(_inner) => Some(_inner),
-            DescribeDBProxyEndpointsErrorKind::DBProxyNotFoundFault(_inner) => Some(_inner),
+            DescribeDBProxyEndpointsErrorKind::DbProxyEndpointNotFoundFault(_inner) => Some(_inner),
+            DescribeDBProxyEndpointsErrorKind::DbProxyNotFoundFault(_inner) => Some(_inner),
             DescribeDBProxyEndpointsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -6944,20 +6944,20 @@ pub struct DescribeDBProxyTargetGroupsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeDBProxyTargetGroupsErrorKind {
-    DBProxyNotFoundFault(crate::error::DBProxyNotFoundFault),
-    DBProxyTargetGroupNotFoundFault(crate::error::DBProxyTargetGroupNotFoundFault),
-    InvalidDBProxyStateFault(crate::error::InvalidDBProxyStateFault),
+    DbProxyNotFoundFault(crate::error::DbProxyNotFoundFault),
+    DbProxyTargetGroupNotFoundFault(crate::error::DbProxyTargetGroupNotFoundFault),
+    InvalidDbProxyStateFault(crate::error::InvalidDbProxyStateFault),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeDBProxyTargetGroupsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DescribeDBProxyTargetGroupsErrorKind::DBProxyNotFoundFault(_inner) => _inner.fmt(f),
-            DescribeDBProxyTargetGroupsErrorKind::DBProxyTargetGroupNotFoundFault(_inner) => {
+            DescribeDBProxyTargetGroupsErrorKind::DbProxyNotFoundFault(_inner) => _inner.fmt(f),
+            DescribeDBProxyTargetGroupsErrorKind::DbProxyTargetGroupNotFoundFault(_inner) => {
                 _inner.fmt(f)
             }
-            DescribeDBProxyTargetGroupsErrorKind::InvalidDBProxyStateFault(_inner) => _inner.fmt(f),
+            DescribeDBProxyTargetGroupsErrorKind::InvalidDbProxyStateFault(_inner) => _inner.fmt(f),
             DescribeDBProxyTargetGroupsErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -7009,30 +7009,30 @@ impl DescribeDBProxyTargetGroupsError {
     pub fn is_db_proxy_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
-            DescribeDBProxyTargetGroupsErrorKind::DBProxyNotFoundFault(_)
+            DescribeDBProxyTargetGroupsErrorKind::DbProxyNotFoundFault(_)
         )
     }
     pub fn is_db_proxy_target_group_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
-            DescribeDBProxyTargetGroupsErrorKind::DBProxyTargetGroupNotFoundFault(_)
+            DescribeDBProxyTargetGroupsErrorKind::DbProxyTargetGroupNotFoundFault(_)
         )
     }
     pub fn is_invalid_db_proxy_state_fault(&self) -> bool {
         matches!(
             &self.kind,
-            DescribeDBProxyTargetGroupsErrorKind::InvalidDBProxyStateFault(_)
+            DescribeDBProxyTargetGroupsErrorKind::InvalidDbProxyStateFault(_)
         )
     }
 }
 impl std::error::Error for DescribeDBProxyTargetGroupsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DescribeDBProxyTargetGroupsErrorKind::DBProxyNotFoundFault(_inner) => Some(_inner),
-            DescribeDBProxyTargetGroupsErrorKind::DBProxyTargetGroupNotFoundFault(_inner) => {
+            DescribeDBProxyTargetGroupsErrorKind::DbProxyNotFoundFault(_inner) => Some(_inner),
+            DescribeDBProxyTargetGroupsErrorKind::DbProxyTargetGroupNotFoundFault(_inner) => {
                 Some(_inner)
             }
-            DescribeDBProxyTargetGroupsErrorKind::InvalidDBProxyStateFault(_inner) => Some(_inner),
+            DescribeDBProxyTargetGroupsErrorKind::InvalidDbProxyStateFault(_inner) => Some(_inner),
             DescribeDBProxyTargetGroupsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -7047,22 +7047,22 @@ pub struct DescribeDBProxyTargetsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeDBProxyTargetsErrorKind {
-    DBProxyNotFoundFault(crate::error::DBProxyNotFoundFault),
-    DBProxyTargetGroupNotFoundFault(crate::error::DBProxyTargetGroupNotFoundFault),
-    DBProxyTargetNotFoundFault(crate::error::DBProxyTargetNotFoundFault),
-    InvalidDBProxyStateFault(crate::error::InvalidDBProxyStateFault),
+    DbProxyNotFoundFault(crate::error::DbProxyNotFoundFault),
+    DbProxyTargetGroupNotFoundFault(crate::error::DbProxyTargetGroupNotFoundFault),
+    DbProxyTargetNotFoundFault(crate::error::DbProxyTargetNotFoundFault),
+    InvalidDbProxyStateFault(crate::error::InvalidDbProxyStateFault),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeDBProxyTargetsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DescribeDBProxyTargetsErrorKind::DBProxyNotFoundFault(_inner) => _inner.fmt(f),
-            DescribeDBProxyTargetsErrorKind::DBProxyTargetGroupNotFoundFault(_inner) => {
+            DescribeDBProxyTargetsErrorKind::DbProxyNotFoundFault(_inner) => _inner.fmt(f),
+            DescribeDBProxyTargetsErrorKind::DbProxyTargetGroupNotFoundFault(_inner) => {
                 _inner.fmt(f)
             }
-            DescribeDBProxyTargetsErrorKind::DBProxyTargetNotFoundFault(_inner) => _inner.fmt(f),
-            DescribeDBProxyTargetsErrorKind::InvalidDBProxyStateFault(_inner) => _inner.fmt(f),
+            DescribeDBProxyTargetsErrorKind::DbProxyTargetNotFoundFault(_inner) => _inner.fmt(f),
+            DescribeDBProxyTargetsErrorKind::InvalidDbProxyStateFault(_inner) => _inner.fmt(f),
             DescribeDBProxyTargetsErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -7114,37 +7114,37 @@ impl DescribeDBProxyTargetsError {
     pub fn is_db_proxy_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
-            DescribeDBProxyTargetsErrorKind::DBProxyNotFoundFault(_)
+            DescribeDBProxyTargetsErrorKind::DbProxyNotFoundFault(_)
         )
     }
     pub fn is_db_proxy_target_group_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
-            DescribeDBProxyTargetsErrorKind::DBProxyTargetGroupNotFoundFault(_)
+            DescribeDBProxyTargetsErrorKind::DbProxyTargetGroupNotFoundFault(_)
         )
     }
     pub fn is_db_proxy_target_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
-            DescribeDBProxyTargetsErrorKind::DBProxyTargetNotFoundFault(_)
+            DescribeDBProxyTargetsErrorKind::DbProxyTargetNotFoundFault(_)
         )
     }
     pub fn is_invalid_db_proxy_state_fault(&self) -> bool {
         matches!(
             &self.kind,
-            DescribeDBProxyTargetsErrorKind::InvalidDBProxyStateFault(_)
+            DescribeDBProxyTargetsErrorKind::InvalidDbProxyStateFault(_)
         )
     }
 }
 impl std::error::Error for DescribeDBProxyTargetsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DescribeDBProxyTargetsErrorKind::DBProxyNotFoundFault(_inner) => Some(_inner),
-            DescribeDBProxyTargetsErrorKind::DBProxyTargetGroupNotFoundFault(_inner) => {
+            DescribeDBProxyTargetsErrorKind::DbProxyNotFoundFault(_inner) => Some(_inner),
+            DescribeDBProxyTargetsErrorKind::DbProxyTargetGroupNotFoundFault(_inner) => {
                 Some(_inner)
             }
-            DescribeDBProxyTargetsErrorKind::DBProxyTargetNotFoundFault(_inner) => Some(_inner),
-            DescribeDBProxyTargetsErrorKind::InvalidDBProxyStateFault(_inner) => Some(_inner),
+            DescribeDBProxyTargetsErrorKind::DbProxyTargetNotFoundFault(_inner) => Some(_inner),
+            DescribeDBProxyTargetsErrorKind::InvalidDbProxyStateFault(_inner) => Some(_inner),
             DescribeDBProxyTargetsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -7159,14 +7159,14 @@ pub struct DescribeDBSecurityGroupsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeDBSecurityGroupsErrorKind {
-    DBSecurityGroupNotFoundFault(crate::error::DBSecurityGroupNotFoundFault),
+    DbSecurityGroupNotFoundFault(crate::error::DbSecurityGroupNotFoundFault),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeDBSecurityGroupsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DescribeDBSecurityGroupsErrorKind::DBSecurityGroupNotFoundFault(_inner) => {
+            DescribeDBSecurityGroupsErrorKind::DbSecurityGroupNotFoundFault(_inner) => {
                 _inner.fmt(f)
             }
             DescribeDBSecurityGroupsErrorKind::Unhandled(_inner) => _inner.fmt(f),
@@ -7220,14 +7220,14 @@ impl DescribeDBSecurityGroupsError {
     pub fn is_db_security_group_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
-            DescribeDBSecurityGroupsErrorKind::DBSecurityGroupNotFoundFault(_)
+            DescribeDBSecurityGroupsErrorKind::DbSecurityGroupNotFoundFault(_)
         )
     }
 }
 impl std::error::Error for DescribeDBSecurityGroupsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DescribeDBSecurityGroupsErrorKind::DBSecurityGroupNotFoundFault(_inner) => Some(_inner),
+            DescribeDBSecurityGroupsErrorKind::DbSecurityGroupNotFoundFault(_inner) => Some(_inner),
             DescribeDBSecurityGroupsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -7242,14 +7242,14 @@ pub struct DescribeDBSnapshotAttributesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeDBSnapshotAttributesErrorKind {
-    DBSnapshotNotFoundFault(crate::error::DBSnapshotNotFoundFault),
+    DbSnapshotNotFoundFault(crate::error::DbSnapshotNotFoundFault),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeDBSnapshotAttributesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DescribeDBSnapshotAttributesErrorKind::DBSnapshotNotFoundFault(_inner) => _inner.fmt(f),
+            DescribeDBSnapshotAttributesErrorKind::DbSnapshotNotFoundFault(_inner) => _inner.fmt(f),
             DescribeDBSnapshotAttributesErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -7301,14 +7301,14 @@ impl DescribeDBSnapshotAttributesError {
     pub fn is_db_snapshot_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
-            DescribeDBSnapshotAttributesErrorKind::DBSnapshotNotFoundFault(_)
+            DescribeDBSnapshotAttributesErrorKind::DbSnapshotNotFoundFault(_)
         )
     }
 }
 impl std::error::Error for DescribeDBSnapshotAttributesError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DescribeDBSnapshotAttributesErrorKind::DBSnapshotNotFoundFault(_inner) => Some(_inner),
+            DescribeDBSnapshotAttributesErrorKind::DbSnapshotNotFoundFault(_inner) => Some(_inner),
             DescribeDBSnapshotAttributesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -7323,14 +7323,14 @@ pub struct DescribeDBSnapshotsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeDBSnapshotsErrorKind {
-    DBSnapshotNotFoundFault(crate::error::DBSnapshotNotFoundFault),
+    DbSnapshotNotFoundFault(crate::error::DbSnapshotNotFoundFault),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeDBSnapshotsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DescribeDBSnapshotsErrorKind::DBSnapshotNotFoundFault(_inner) => _inner.fmt(f),
+            DescribeDBSnapshotsErrorKind::DbSnapshotNotFoundFault(_inner) => _inner.fmt(f),
             DescribeDBSnapshotsErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -7382,14 +7382,14 @@ impl DescribeDBSnapshotsError {
     pub fn is_db_snapshot_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
-            DescribeDBSnapshotsErrorKind::DBSnapshotNotFoundFault(_)
+            DescribeDBSnapshotsErrorKind::DbSnapshotNotFoundFault(_)
         )
     }
 }
 impl std::error::Error for DescribeDBSnapshotsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DescribeDBSnapshotsErrorKind::DBSnapshotNotFoundFault(_inner) => Some(_inner),
+            DescribeDBSnapshotsErrorKind::DbSnapshotNotFoundFault(_inner) => Some(_inner),
             DescribeDBSnapshotsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -7404,14 +7404,14 @@ pub struct DescribeDBSubnetGroupsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeDBSubnetGroupsErrorKind {
-    DBSubnetGroupNotFoundFault(crate::error::DBSubnetGroupNotFoundFault),
+    DbSubnetGroupNotFoundFault(crate::error::DbSubnetGroupNotFoundFault),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeDBSubnetGroupsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DescribeDBSubnetGroupsErrorKind::DBSubnetGroupNotFoundFault(_inner) => _inner.fmt(f),
+            DescribeDBSubnetGroupsErrorKind::DbSubnetGroupNotFoundFault(_inner) => _inner.fmt(f),
             DescribeDBSubnetGroupsErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -7463,14 +7463,14 @@ impl DescribeDBSubnetGroupsError {
     pub fn is_db_subnet_group_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
-            DescribeDBSubnetGroupsErrorKind::DBSubnetGroupNotFoundFault(_)
+            DescribeDBSubnetGroupsErrorKind::DbSubnetGroupNotFoundFault(_)
         )
     }
 }
 impl std::error::Error for DescribeDBSubnetGroupsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DescribeDBSubnetGroupsErrorKind::DBSubnetGroupNotFoundFault(_inner) => Some(_inner),
+            DescribeDBSubnetGroupsErrorKind::DbSubnetGroupNotFoundFault(_inner) => Some(_inner),
             DescribeDBSubnetGroupsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -8422,14 +8422,14 @@ pub struct DescribeReservedDBInstancesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeReservedDBInstancesErrorKind {
-    ReservedDBInstanceNotFoundFault(crate::error::ReservedDBInstanceNotFoundFault),
+    ReservedDbInstanceNotFoundFault(crate::error::ReservedDbInstanceNotFoundFault),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeReservedDBInstancesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DescribeReservedDBInstancesErrorKind::ReservedDBInstanceNotFoundFault(_inner) => {
+            DescribeReservedDBInstancesErrorKind::ReservedDbInstanceNotFoundFault(_inner) => {
                 _inner.fmt(f)
             }
             DescribeReservedDBInstancesErrorKind::Unhandled(_inner) => _inner.fmt(f),
@@ -8483,14 +8483,14 @@ impl DescribeReservedDBInstancesError {
     pub fn is_reserved_db_instance_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
-            DescribeReservedDBInstancesErrorKind::ReservedDBInstanceNotFoundFault(_)
+            DescribeReservedDBInstancesErrorKind::ReservedDbInstanceNotFoundFault(_)
         )
     }
 }
 impl std::error::Error for DescribeReservedDBInstancesError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DescribeReservedDBInstancesErrorKind::ReservedDBInstanceNotFoundFault(_inner) => {
+            DescribeReservedDBInstancesErrorKind::ReservedDbInstanceNotFoundFault(_inner) => {
                 Some(_inner)
             }
             DescribeReservedDBInstancesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
@@ -8507,8 +8507,8 @@ pub struct DescribeReservedDBInstancesOfferingsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeReservedDBInstancesOfferingsErrorKind {
-    ReservedDBInstancesOfferingNotFoundFault(
-        crate::error::ReservedDBInstancesOfferingNotFoundFault,
+    ReservedDbInstancesOfferingNotFoundFault(
+        crate::error::ReservedDbInstancesOfferingNotFoundFault,
     ),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -8516,7 +8516,7 @@ pub enum DescribeReservedDBInstancesOfferingsErrorKind {
 impl std::fmt::Display for DescribeReservedDBInstancesOfferingsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DescribeReservedDBInstancesOfferingsErrorKind::ReservedDBInstancesOfferingNotFoundFault(_inner) =>
+            DescribeReservedDBInstancesOfferingsErrorKind::ReservedDbInstancesOfferingNotFoundFault(_inner) =>
             _inner.fmt(f)
             ,
             DescribeReservedDBInstancesOfferingsErrorKind::Unhandled(_inner) => {
@@ -8575,7 +8575,7 @@ impl DescribeReservedDBInstancesOfferingsError {
     pub fn is_reserved_db_instances_offering_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
-            DescribeReservedDBInstancesOfferingsErrorKind::ReservedDBInstancesOfferingNotFoundFault(
+            DescribeReservedDBInstancesOfferingsErrorKind::ReservedDbInstancesOfferingNotFoundFault(
                 _
             )
         )
@@ -8584,7 +8584,7 @@ impl DescribeReservedDBInstancesOfferingsError {
 impl std::error::Error for DescribeReservedDBInstancesOfferingsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DescribeReservedDBInstancesOfferingsErrorKind::ReservedDBInstancesOfferingNotFoundFault(_inner) =>
+            DescribeReservedDBInstancesOfferingsErrorKind::ReservedDbInstancesOfferingNotFoundFault(_inner) =>
             Some(_inner)
             ,
             DescribeReservedDBInstancesOfferingsErrorKind::Unhandled(_inner) => {
@@ -8675,18 +8675,18 @@ pub struct DescribeValidDBInstanceModificationsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeValidDBInstanceModificationsErrorKind {
-    DBInstanceNotFoundFault(crate::error::DBInstanceNotFoundFault),
-    InvalidDBInstanceStateFault(crate::error::InvalidDBInstanceStateFault),
+    DbInstanceNotFoundFault(crate::error::DbInstanceNotFoundFault),
+    InvalidDbInstanceStateFault(crate::error::InvalidDbInstanceStateFault),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeValidDBInstanceModificationsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DescribeValidDBInstanceModificationsErrorKind::DBInstanceNotFoundFault(_inner) => {
+            DescribeValidDBInstanceModificationsErrorKind::DbInstanceNotFoundFault(_inner) => {
                 _inner.fmt(f)
             }
-            DescribeValidDBInstanceModificationsErrorKind::InvalidDBInstanceStateFault(_inner) => {
+            DescribeValidDBInstanceModificationsErrorKind::InvalidDbInstanceStateFault(_inner) => {
                 _inner.fmt(f)
             }
             DescribeValidDBInstanceModificationsErrorKind::Unhandled(_inner) => _inner.fmt(f),
@@ -8743,23 +8743,23 @@ impl DescribeValidDBInstanceModificationsError {
     pub fn is_db_instance_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
-            DescribeValidDBInstanceModificationsErrorKind::DBInstanceNotFoundFault(_)
+            DescribeValidDBInstanceModificationsErrorKind::DbInstanceNotFoundFault(_)
         )
     }
     pub fn is_invalid_db_instance_state_fault(&self) -> bool {
         matches!(
             &self.kind,
-            DescribeValidDBInstanceModificationsErrorKind::InvalidDBInstanceStateFault(_)
+            DescribeValidDBInstanceModificationsErrorKind::InvalidDbInstanceStateFault(_)
         )
     }
 }
 impl std::error::Error for DescribeValidDBInstanceModificationsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DescribeValidDBInstanceModificationsErrorKind::DBInstanceNotFoundFault(_inner) => {
+            DescribeValidDBInstanceModificationsErrorKind::DbInstanceNotFoundFault(_inner) => {
                 Some(_inner)
             }
-            DescribeValidDBInstanceModificationsErrorKind::InvalidDBInstanceStateFault(_inner) => {
+            DescribeValidDBInstanceModificationsErrorKind::InvalidDbInstanceStateFault(_inner) => {
                 Some(_inner)
             }
             DescribeValidDBInstanceModificationsErrorKind::Unhandled(_inner) => {
@@ -8778,16 +8778,16 @@ pub struct DownloadDBLogFilePortionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DownloadDBLogFilePortionErrorKind {
-    DBInstanceNotFoundFault(crate::error::DBInstanceNotFoundFault),
-    DBLogFileNotFoundFault(crate::error::DBLogFileNotFoundFault),
+    DbInstanceNotFoundFault(crate::error::DbInstanceNotFoundFault),
+    DbLogFileNotFoundFault(crate::error::DbLogFileNotFoundFault),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DownloadDBLogFilePortionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DownloadDBLogFilePortionErrorKind::DBInstanceNotFoundFault(_inner) => _inner.fmt(f),
-            DownloadDBLogFilePortionErrorKind::DBLogFileNotFoundFault(_inner) => _inner.fmt(f),
+            DownloadDBLogFilePortionErrorKind::DbInstanceNotFoundFault(_inner) => _inner.fmt(f),
+            DownloadDBLogFilePortionErrorKind::DbLogFileNotFoundFault(_inner) => _inner.fmt(f),
             DownloadDBLogFilePortionErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -8839,21 +8839,21 @@ impl DownloadDBLogFilePortionError {
     pub fn is_db_instance_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
-            DownloadDBLogFilePortionErrorKind::DBInstanceNotFoundFault(_)
+            DownloadDBLogFilePortionErrorKind::DbInstanceNotFoundFault(_)
         )
     }
     pub fn is_db_log_file_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
-            DownloadDBLogFilePortionErrorKind::DBLogFileNotFoundFault(_)
+            DownloadDBLogFilePortionErrorKind::DbLogFileNotFoundFault(_)
         )
     }
 }
 impl std::error::Error for DownloadDBLogFilePortionError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DownloadDBLogFilePortionErrorKind::DBInstanceNotFoundFault(_inner) => Some(_inner),
-            DownloadDBLogFilePortionErrorKind::DBLogFileNotFoundFault(_inner) => Some(_inner),
+            DownloadDBLogFilePortionErrorKind::DbInstanceNotFoundFault(_inner) => Some(_inner),
+            DownloadDBLogFilePortionErrorKind::DbLogFileNotFoundFault(_inner) => Some(_inner),
             DownloadDBLogFilePortionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -8868,18 +8868,18 @@ pub struct FailoverDBClusterError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum FailoverDBClusterErrorKind {
-    DBClusterNotFoundFault(crate::error::DBClusterNotFoundFault),
-    InvalidDBClusterStateFault(crate::error::InvalidDBClusterStateFault),
-    InvalidDBInstanceStateFault(crate::error::InvalidDBInstanceStateFault),
+    DbClusterNotFoundFault(crate::error::DbClusterNotFoundFault),
+    InvalidDbClusterStateFault(crate::error::InvalidDbClusterStateFault),
+    InvalidDbInstanceStateFault(crate::error::InvalidDbInstanceStateFault),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for FailoverDBClusterError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            FailoverDBClusterErrorKind::DBClusterNotFoundFault(_inner) => _inner.fmt(f),
-            FailoverDBClusterErrorKind::InvalidDBClusterStateFault(_inner) => _inner.fmt(f),
-            FailoverDBClusterErrorKind::InvalidDBInstanceStateFault(_inner) => _inner.fmt(f),
+            FailoverDBClusterErrorKind::DbClusterNotFoundFault(_inner) => _inner.fmt(f),
+            FailoverDBClusterErrorKind::InvalidDbClusterStateFault(_inner) => _inner.fmt(f),
+            FailoverDBClusterErrorKind::InvalidDbInstanceStateFault(_inner) => _inner.fmt(f),
             FailoverDBClusterErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -8931,28 +8931,28 @@ impl FailoverDBClusterError {
     pub fn is_db_cluster_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
-            FailoverDBClusterErrorKind::DBClusterNotFoundFault(_)
+            FailoverDBClusterErrorKind::DbClusterNotFoundFault(_)
         )
     }
     pub fn is_invalid_db_cluster_state_fault(&self) -> bool {
         matches!(
             &self.kind,
-            FailoverDBClusterErrorKind::InvalidDBClusterStateFault(_)
+            FailoverDBClusterErrorKind::InvalidDbClusterStateFault(_)
         )
     }
     pub fn is_invalid_db_instance_state_fault(&self) -> bool {
         matches!(
             &self.kind,
-            FailoverDBClusterErrorKind::InvalidDBInstanceStateFault(_)
+            FailoverDBClusterErrorKind::InvalidDbInstanceStateFault(_)
         )
     }
 }
 impl std::error::Error for FailoverDBClusterError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            FailoverDBClusterErrorKind::DBClusterNotFoundFault(_inner) => Some(_inner),
-            FailoverDBClusterErrorKind::InvalidDBClusterStateFault(_inner) => Some(_inner),
-            FailoverDBClusterErrorKind::InvalidDBInstanceStateFault(_inner) => Some(_inner),
+            FailoverDBClusterErrorKind::DbClusterNotFoundFault(_inner) => Some(_inner),
+            FailoverDBClusterErrorKind::InvalidDbClusterStateFault(_inner) => Some(_inner),
+            FailoverDBClusterErrorKind::InvalidDbInstanceStateFault(_inner) => Some(_inner),
             FailoverDBClusterErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -8967,9 +8967,9 @@ pub struct FailoverGlobalClusterError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum FailoverGlobalClusterErrorKind {
-    DBClusterNotFoundFault(crate::error::DBClusterNotFoundFault),
+    DbClusterNotFoundFault(crate::error::DbClusterNotFoundFault),
     GlobalClusterNotFoundFault(crate::error::GlobalClusterNotFoundFault),
-    InvalidDBClusterStateFault(crate::error::InvalidDBClusterStateFault),
+    InvalidDbClusterStateFault(crate::error::InvalidDbClusterStateFault),
     InvalidGlobalClusterStateFault(crate::error::InvalidGlobalClusterStateFault),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -8977,9 +8977,9 @@ pub enum FailoverGlobalClusterErrorKind {
 impl std::fmt::Display for FailoverGlobalClusterError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            FailoverGlobalClusterErrorKind::DBClusterNotFoundFault(_inner) => _inner.fmt(f),
+            FailoverGlobalClusterErrorKind::DbClusterNotFoundFault(_inner) => _inner.fmt(f),
             FailoverGlobalClusterErrorKind::GlobalClusterNotFoundFault(_inner) => _inner.fmt(f),
-            FailoverGlobalClusterErrorKind::InvalidDBClusterStateFault(_inner) => _inner.fmt(f),
+            FailoverGlobalClusterErrorKind::InvalidDbClusterStateFault(_inner) => _inner.fmt(f),
             FailoverGlobalClusterErrorKind::InvalidGlobalClusterStateFault(_inner) => _inner.fmt(f),
             FailoverGlobalClusterErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
@@ -9032,7 +9032,7 @@ impl FailoverGlobalClusterError {
     pub fn is_db_cluster_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
-            FailoverGlobalClusterErrorKind::DBClusterNotFoundFault(_)
+            FailoverGlobalClusterErrorKind::DbClusterNotFoundFault(_)
         )
     }
     pub fn is_global_cluster_not_found_fault(&self) -> bool {
@@ -9044,7 +9044,7 @@ impl FailoverGlobalClusterError {
     pub fn is_invalid_db_cluster_state_fault(&self) -> bool {
         matches!(
             &self.kind,
-            FailoverGlobalClusterErrorKind::InvalidDBClusterStateFault(_)
+            FailoverGlobalClusterErrorKind::InvalidDbClusterStateFault(_)
         )
     }
     pub fn is_invalid_global_cluster_state_fault(&self) -> bool {
@@ -9057,9 +9057,9 @@ impl FailoverGlobalClusterError {
 impl std::error::Error for FailoverGlobalClusterError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            FailoverGlobalClusterErrorKind::DBClusterNotFoundFault(_inner) => Some(_inner),
+            FailoverGlobalClusterErrorKind::DbClusterNotFoundFault(_inner) => Some(_inner),
             FailoverGlobalClusterErrorKind::GlobalClusterNotFoundFault(_inner) => Some(_inner),
-            FailoverGlobalClusterErrorKind::InvalidDBClusterStateFault(_inner) => Some(_inner),
+            FailoverGlobalClusterErrorKind::InvalidDbClusterStateFault(_inner) => Some(_inner),
             FailoverGlobalClusterErrorKind::InvalidGlobalClusterStateFault(_inner) => Some(_inner),
             FailoverGlobalClusterErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
@@ -9173,22 +9173,22 @@ pub struct ListTagsForResourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListTagsForResourceErrorKind {
-    DBClusterNotFoundFault(crate::error::DBClusterNotFoundFault),
-    DBInstanceNotFoundFault(crate::error::DBInstanceNotFoundFault),
-    DBProxyNotFoundFault(crate::error::DBProxyNotFoundFault),
-    DBProxyTargetGroupNotFoundFault(crate::error::DBProxyTargetGroupNotFoundFault),
-    DBSnapshotNotFoundFault(crate::error::DBSnapshotNotFoundFault),
+    DbClusterNotFoundFault(crate::error::DbClusterNotFoundFault),
+    DbInstanceNotFoundFault(crate::error::DbInstanceNotFoundFault),
+    DbProxyNotFoundFault(crate::error::DbProxyNotFoundFault),
+    DbProxyTargetGroupNotFoundFault(crate::error::DbProxyTargetGroupNotFoundFault),
+    DbSnapshotNotFoundFault(crate::error::DbSnapshotNotFoundFault),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ListTagsForResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ListTagsForResourceErrorKind::DBClusterNotFoundFault(_inner) => _inner.fmt(f),
-            ListTagsForResourceErrorKind::DBInstanceNotFoundFault(_inner) => _inner.fmt(f),
-            ListTagsForResourceErrorKind::DBProxyNotFoundFault(_inner) => _inner.fmt(f),
-            ListTagsForResourceErrorKind::DBProxyTargetGroupNotFoundFault(_inner) => _inner.fmt(f),
-            ListTagsForResourceErrorKind::DBSnapshotNotFoundFault(_inner) => _inner.fmt(f),
+            ListTagsForResourceErrorKind::DbClusterNotFoundFault(_inner) => _inner.fmt(f),
+            ListTagsForResourceErrorKind::DbInstanceNotFoundFault(_inner) => _inner.fmt(f),
+            ListTagsForResourceErrorKind::DbProxyNotFoundFault(_inner) => _inner.fmt(f),
+            ListTagsForResourceErrorKind::DbProxyTargetGroupNotFoundFault(_inner) => _inner.fmt(f),
+            ListTagsForResourceErrorKind::DbSnapshotNotFoundFault(_inner) => _inner.fmt(f),
             ListTagsForResourceErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -9240,42 +9240,42 @@ impl ListTagsForResourceError {
     pub fn is_db_cluster_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
-            ListTagsForResourceErrorKind::DBClusterNotFoundFault(_)
+            ListTagsForResourceErrorKind::DbClusterNotFoundFault(_)
         )
     }
     pub fn is_db_instance_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
-            ListTagsForResourceErrorKind::DBInstanceNotFoundFault(_)
+            ListTagsForResourceErrorKind::DbInstanceNotFoundFault(_)
         )
     }
     pub fn is_db_proxy_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
-            ListTagsForResourceErrorKind::DBProxyNotFoundFault(_)
+            ListTagsForResourceErrorKind::DbProxyNotFoundFault(_)
         )
     }
     pub fn is_db_proxy_target_group_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
-            ListTagsForResourceErrorKind::DBProxyTargetGroupNotFoundFault(_)
+            ListTagsForResourceErrorKind::DbProxyTargetGroupNotFoundFault(_)
         )
     }
     pub fn is_db_snapshot_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
-            ListTagsForResourceErrorKind::DBSnapshotNotFoundFault(_)
+            ListTagsForResourceErrorKind::DbSnapshotNotFoundFault(_)
         )
     }
 }
 impl std::error::Error for ListTagsForResourceError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ListTagsForResourceErrorKind::DBClusterNotFoundFault(_inner) => Some(_inner),
-            ListTagsForResourceErrorKind::DBInstanceNotFoundFault(_inner) => Some(_inner),
-            ListTagsForResourceErrorKind::DBProxyNotFoundFault(_inner) => Some(_inner),
-            ListTagsForResourceErrorKind::DBProxyTargetGroupNotFoundFault(_inner) => Some(_inner),
-            ListTagsForResourceErrorKind::DBSnapshotNotFoundFault(_inner) => Some(_inner),
+            ListTagsForResourceErrorKind::DbClusterNotFoundFault(_inner) => Some(_inner),
+            ListTagsForResourceErrorKind::DbInstanceNotFoundFault(_inner) => Some(_inner),
+            ListTagsForResourceErrorKind::DbProxyNotFoundFault(_inner) => Some(_inner),
+            ListTagsForResourceErrorKind::DbProxyTargetGroupNotFoundFault(_inner) => Some(_inner),
+            ListTagsForResourceErrorKind::DbSnapshotNotFoundFault(_inner) => Some(_inner),
             ListTagsForResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -9371,22 +9371,22 @@ pub struct ModifyCurrentDBClusterCapacityError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ModifyCurrentDBClusterCapacityErrorKind {
-    DBClusterNotFoundFault(crate::error::DBClusterNotFoundFault),
-    InvalidDBClusterCapacityFault(crate::error::InvalidDBClusterCapacityFault),
-    InvalidDBClusterStateFault(crate::error::InvalidDBClusterStateFault),
+    DbClusterNotFoundFault(crate::error::DbClusterNotFoundFault),
+    InvalidDbClusterCapacityFault(crate::error::InvalidDbClusterCapacityFault),
+    InvalidDbClusterStateFault(crate::error::InvalidDbClusterStateFault),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ModifyCurrentDBClusterCapacityError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ModifyCurrentDBClusterCapacityErrorKind::DBClusterNotFoundFault(_inner) => {
+            ModifyCurrentDBClusterCapacityErrorKind::DbClusterNotFoundFault(_inner) => {
                 _inner.fmt(f)
             }
-            ModifyCurrentDBClusterCapacityErrorKind::InvalidDBClusterCapacityFault(_inner) => {
+            ModifyCurrentDBClusterCapacityErrorKind::InvalidDbClusterCapacityFault(_inner) => {
                 _inner.fmt(f)
             }
-            ModifyCurrentDBClusterCapacityErrorKind::InvalidDBClusterStateFault(_inner) => {
+            ModifyCurrentDBClusterCapacityErrorKind::InvalidDbClusterStateFault(_inner) => {
                 _inner.fmt(f)
             }
             ModifyCurrentDBClusterCapacityErrorKind::Unhandled(_inner) => _inner.fmt(f),
@@ -9440,30 +9440,30 @@ impl ModifyCurrentDBClusterCapacityError {
     pub fn is_db_cluster_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
-            ModifyCurrentDBClusterCapacityErrorKind::DBClusterNotFoundFault(_)
+            ModifyCurrentDBClusterCapacityErrorKind::DbClusterNotFoundFault(_)
         )
     }
     pub fn is_invalid_db_cluster_capacity_fault(&self) -> bool {
         matches!(
             &self.kind,
-            ModifyCurrentDBClusterCapacityErrorKind::InvalidDBClusterCapacityFault(_)
+            ModifyCurrentDBClusterCapacityErrorKind::InvalidDbClusterCapacityFault(_)
         )
     }
     pub fn is_invalid_db_cluster_state_fault(&self) -> bool {
         matches!(
             &self.kind,
-            ModifyCurrentDBClusterCapacityErrorKind::InvalidDBClusterStateFault(_)
+            ModifyCurrentDBClusterCapacityErrorKind::InvalidDbClusterStateFault(_)
         )
     }
 }
 impl std::error::Error for ModifyCurrentDBClusterCapacityError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ModifyCurrentDBClusterCapacityErrorKind::DBClusterNotFoundFault(_inner) => Some(_inner),
-            ModifyCurrentDBClusterCapacityErrorKind::InvalidDBClusterCapacityFault(_inner) => {
+            ModifyCurrentDBClusterCapacityErrorKind::DbClusterNotFoundFault(_inner) => Some(_inner),
+            ModifyCurrentDBClusterCapacityErrorKind::InvalidDbClusterCapacityFault(_inner) => {
                 Some(_inner)
             }
-            ModifyCurrentDBClusterCapacityErrorKind::InvalidDBClusterStateFault(_inner) => {
+            ModifyCurrentDBClusterCapacityErrorKind::InvalidDbClusterStateFault(_inner) => {
                 Some(_inner)
             }
             ModifyCurrentDBClusterCapacityErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
@@ -9480,17 +9480,17 @@ pub struct ModifyDBClusterError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ModifyDBClusterErrorKind {
-    DBClusterAlreadyExistsFault(crate::error::DBClusterAlreadyExistsFault),
-    DBClusterNotFoundFault(crate::error::DBClusterNotFoundFault),
-    DBClusterParameterGroupNotFoundFault(crate::error::DBClusterParameterGroupNotFoundFault),
-    DBSubnetGroupNotFoundFault(crate::error::DBSubnetGroupNotFoundFault),
+    DbClusterAlreadyExistsFault(crate::error::DbClusterAlreadyExistsFault),
+    DbClusterNotFoundFault(crate::error::DbClusterNotFoundFault),
+    DbClusterParameterGroupNotFoundFault(crate::error::DbClusterParameterGroupNotFoundFault),
+    DbSubnetGroupNotFoundFault(crate::error::DbSubnetGroupNotFoundFault),
     DomainNotFoundFault(crate::error::DomainNotFoundFault),
-    InvalidDBClusterStateFault(crate::error::InvalidDBClusterStateFault),
-    InvalidDBInstanceStateFault(crate::error::InvalidDBInstanceStateFault),
-    InvalidDBSecurityGroupStateFault(crate::error::InvalidDBSecurityGroupStateFault),
-    InvalidDBSubnetGroupStateFault(crate::error::InvalidDBSubnetGroupStateFault),
+    InvalidDbClusterStateFault(crate::error::InvalidDbClusterStateFault),
+    InvalidDbInstanceStateFault(crate::error::InvalidDbInstanceStateFault),
+    InvalidDbSecurityGroupStateFault(crate::error::InvalidDbSecurityGroupStateFault),
+    InvalidDbSubnetGroupStateFault(crate::error::InvalidDbSubnetGroupStateFault),
     InvalidSubnet(crate::error::InvalidSubnet),
-    InvalidVPCNetworkStateFault(crate::error::InvalidVPCNetworkStateFault),
+    InvalidVpcNetworkStateFault(crate::error::InvalidVpcNetworkStateFault),
     StorageQuotaExceededFault(crate::error::StorageQuotaExceededFault),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -9498,17 +9498,17 @@ pub enum ModifyDBClusterErrorKind {
 impl std::fmt::Display for ModifyDBClusterError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ModifyDBClusterErrorKind::DBClusterAlreadyExistsFault(_inner) => _inner.fmt(f),
-            ModifyDBClusterErrorKind::DBClusterNotFoundFault(_inner) => _inner.fmt(f),
-            ModifyDBClusterErrorKind::DBClusterParameterGroupNotFoundFault(_inner) => _inner.fmt(f),
-            ModifyDBClusterErrorKind::DBSubnetGroupNotFoundFault(_inner) => _inner.fmt(f),
+            ModifyDBClusterErrorKind::DbClusterAlreadyExistsFault(_inner) => _inner.fmt(f),
+            ModifyDBClusterErrorKind::DbClusterNotFoundFault(_inner) => _inner.fmt(f),
+            ModifyDBClusterErrorKind::DbClusterParameterGroupNotFoundFault(_inner) => _inner.fmt(f),
+            ModifyDBClusterErrorKind::DbSubnetGroupNotFoundFault(_inner) => _inner.fmt(f),
             ModifyDBClusterErrorKind::DomainNotFoundFault(_inner) => _inner.fmt(f),
-            ModifyDBClusterErrorKind::InvalidDBClusterStateFault(_inner) => _inner.fmt(f),
-            ModifyDBClusterErrorKind::InvalidDBInstanceStateFault(_inner) => _inner.fmt(f),
-            ModifyDBClusterErrorKind::InvalidDBSecurityGroupStateFault(_inner) => _inner.fmt(f),
-            ModifyDBClusterErrorKind::InvalidDBSubnetGroupStateFault(_inner) => _inner.fmt(f),
+            ModifyDBClusterErrorKind::InvalidDbClusterStateFault(_inner) => _inner.fmt(f),
+            ModifyDBClusterErrorKind::InvalidDbInstanceStateFault(_inner) => _inner.fmt(f),
+            ModifyDBClusterErrorKind::InvalidDbSecurityGroupStateFault(_inner) => _inner.fmt(f),
+            ModifyDBClusterErrorKind::InvalidDbSubnetGroupStateFault(_inner) => _inner.fmt(f),
             ModifyDBClusterErrorKind::InvalidSubnet(_inner) => _inner.fmt(f),
-            ModifyDBClusterErrorKind::InvalidVPCNetworkStateFault(_inner) => _inner.fmt(f),
+            ModifyDBClusterErrorKind::InvalidVpcNetworkStateFault(_inner) => _inner.fmt(f),
             ModifyDBClusterErrorKind::StorageQuotaExceededFault(_inner) => _inner.fmt(f),
             ModifyDBClusterErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
@@ -9561,25 +9561,25 @@ impl ModifyDBClusterError {
     pub fn is_db_cluster_already_exists_fault(&self) -> bool {
         matches!(
             &self.kind,
-            ModifyDBClusterErrorKind::DBClusterAlreadyExistsFault(_)
+            ModifyDBClusterErrorKind::DbClusterAlreadyExistsFault(_)
         )
     }
     pub fn is_db_cluster_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
-            ModifyDBClusterErrorKind::DBClusterNotFoundFault(_)
+            ModifyDBClusterErrorKind::DbClusterNotFoundFault(_)
         )
     }
     pub fn is_db_cluster_parameter_group_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
-            ModifyDBClusterErrorKind::DBClusterParameterGroupNotFoundFault(_)
+            ModifyDBClusterErrorKind::DbClusterParameterGroupNotFoundFault(_)
         )
     }
     pub fn is_db_subnet_group_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
-            ModifyDBClusterErrorKind::DBSubnetGroupNotFoundFault(_)
+            ModifyDBClusterErrorKind::DbSubnetGroupNotFoundFault(_)
         )
     }
     pub fn is_domain_not_found_fault(&self) -> bool {
@@ -9588,25 +9588,25 @@ impl ModifyDBClusterError {
     pub fn is_invalid_db_cluster_state_fault(&self) -> bool {
         matches!(
             &self.kind,
-            ModifyDBClusterErrorKind::InvalidDBClusterStateFault(_)
+            ModifyDBClusterErrorKind::InvalidDbClusterStateFault(_)
         )
     }
     pub fn is_invalid_db_instance_state_fault(&self) -> bool {
         matches!(
             &self.kind,
-            ModifyDBClusterErrorKind::InvalidDBInstanceStateFault(_)
+            ModifyDBClusterErrorKind::InvalidDbInstanceStateFault(_)
         )
     }
     pub fn is_invalid_db_security_group_state_fault(&self) -> bool {
         matches!(
             &self.kind,
-            ModifyDBClusterErrorKind::InvalidDBSecurityGroupStateFault(_)
+            ModifyDBClusterErrorKind::InvalidDbSecurityGroupStateFault(_)
         )
     }
     pub fn is_invalid_db_subnet_group_state_fault(&self) -> bool {
         matches!(
             &self.kind,
-            ModifyDBClusterErrorKind::InvalidDBSubnetGroupStateFault(_)
+            ModifyDBClusterErrorKind::InvalidDbSubnetGroupStateFault(_)
         )
     }
     pub fn is_invalid_subnet(&self) -> bool {
@@ -9615,7 +9615,7 @@ impl ModifyDBClusterError {
     pub fn is_invalid_vpc_network_state_fault(&self) -> bool {
         matches!(
             &self.kind,
-            ModifyDBClusterErrorKind::InvalidVPCNetworkStateFault(_)
+            ModifyDBClusterErrorKind::InvalidVpcNetworkStateFault(_)
         )
     }
     pub fn is_storage_quota_exceeded_fault(&self) -> bool {
@@ -9628,17 +9628,17 @@ impl ModifyDBClusterError {
 impl std::error::Error for ModifyDBClusterError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ModifyDBClusterErrorKind::DBClusterAlreadyExistsFault(_inner) => Some(_inner),
-            ModifyDBClusterErrorKind::DBClusterNotFoundFault(_inner) => Some(_inner),
-            ModifyDBClusterErrorKind::DBClusterParameterGroupNotFoundFault(_inner) => Some(_inner),
-            ModifyDBClusterErrorKind::DBSubnetGroupNotFoundFault(_inner) => Some(_inner),
+            ModifyDBClusterErrorKind::DbClusterAlreadyExistsFault(_inner) => Some(_inner),
+            ModifyDBClusterErrorKind::DbClusterNotFoundFault(_inner) => Some(_inner),
+            ModifyDBClusterErrorKind::DbClusterParameterGroupNotFoundFault(_inner) => Some(_inner),
+            ModifyDBClusterErrorKind::DbSubnetGroupNotFoundFault(_inner) => Some(_inner),
             ModifyDBClusterErrorKind::DomainNotFoundFault(_inner) => Some(_inner),
-            ModifyDBClusterErrorKind::InvalidDBClusterStateFault(_inner) => Some(_inner),
-            ModifyDBClusterErrorKind::InvalidDBInstanceStateFault(_inner) => Some(_inner),
-            ModifyDBClusterErrorKind::InvalidDBSecurityGroupStateFault(_inner) => Some(_inner),
-            ModifyDBClusterErrorKind::InvalidDBSubnetGroupStateFault(_inner) => Some(_inner),
+            ModifyDBClusterErrorKind::InvalidDbClusterStateFault(_inner) => Some(_inner),
+            ModifyDBClusterErrorKind::InvalidDbInstanceStateFault(_inner) => Some(_inner),
+            ModifyDBClusterErrorKind::InvalidDbSecurityGroupStateFault(_inner) => Some(_inner),
+            ModifyDBClusterErrorKind::InvalidDbSubnetGroupStateFault(_inner) => Some(_inner),
             ModifyDBClusterErrorKind::InvalidSubnet(_inner) => Some(_inner),
-            ModifyDBClusterErrorKind::InvalidVPCNetworkStateFault(_inner) => Some(_inner),
+            ModifyDBClusterErrorKind::InvalidVpcNetworkStateFault(_inner) => Some(_inner),
             ModifyDBClusterErrorKind::StorageQuotaExceededFault(_inner) => Some(_inner),
             ModifyDBClusterErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
@@ -9654,26 +9654,26 @@ pub struct ModifyDBClusterEndpointError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ModifyDBClusterEndpointErrorKind {
-    DBClusterEndpointNotFoundFault(crate::error::DBClusterEndpointNotFoundFault),
-    DBInstanceNotFoundFault(crate::error::DBInstanceNotFoundFault),
-    InvalidDBClusterEndpointStateFault(crate::error::InvalidDBClusterEndpointStateFault),
-    InvalidDBClusterStateFault(crate::error::InvalidDBClusterStateFault),
-    InvalidDBInstanceStateFault(crate::error::InvalidDBInstanceStateFault),
+    DbClusterEndpointNotFoundFault(crate::error::DbClusterEndpointNotFoundFault),
+    DbInstanceNotFoundFault(crate::error::DbInstanceNotFoundFault),
+    InvalidDbClusterEndpointStateFault(crate::error::InvalidDbClusterEndpointStateFault),
+    InvalidDbClusterStateFault(crate::error::InvalidDbClusterStateFault),
+    InvalidDbInstanceStateFault(crate::error::InvalidDbInstanceStateFault),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ModifyDBClusterEndpointError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ModifyDBClusterEndpointErrorKind::DBClusterEndpointNotFoundFault(_inner) => {
+            ModifyDBClusterEndpointErrorKind::DbClusterEndpointNotFoundFault(_inner) => {
                 _inner.fmt(f)
             }
-            ModifyDBClusterEndpointErrorKind::DBInstanceNotFoundFault(_inner) => _inner.fmt(f),
-            ModifyDBClusterEndpointErrorKind::InvalidDBClusterEndpointStateFault(_inner) => {
+            ModifyDBClusterEndpointErrorKind::DbInstanceNotFoundFault(_inner) => _inner.fmt(f),
+            ModifyDBClusterEndpointErrorKind::InvalidDbClusterEndpointStateFault(_inner) => {
                 _inner.fmt(f)
             }
-            ModifyDBClusterEndpointErrorKind::InvalidDBClusterStateFault(_inner) => _inner.fmt(f),
-            ModifyDBClusterEndpointErrorKind::InvalidDBInstanceStateFault(_inner) => _inner.fmt(f),
+            ModifyDBClusterEndpointErrorKind::InvalidDbClusterStateFault(_inner) => _inner.fmt(f),
+            ModifyDBClusterEndpointErrorKind::InvalidDbInstanceStateFault(_inner) => _inner.fmt(f),
             ModifyDBClusterEndpointErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -9725,46 +9725,46 @@ impl ModifyDBClusterEndpointError {
     pub fn is_db_cluster_endpoint_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
-            ModifyDBClusterEndpointErrorKind::DBClusterEndpointNotFoundFault(_)
+            ModifyDBClusterEndpointErrorKind::DbClusterEndpointNotFoundFault(_)
         )
     }
     pub fn is_db_instance_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
-            ModifyDBClusterEndpointErrorKind::DBInstanceNotFoundFault(_)
+            ModifyDBClusterEndpointErrorKind::DbInstanceNotFoundFault(_)
         )
     }
     pub fn is_invalid_db_cluster_endpoint_state_fault(&self) -> bool {
         matches!(
             &self.kind,
-            ModifyDBClusterEndpointErrorKind::InvalidDBClusterEndpointStateFault(_)
+            ModifyDBClusterEndpointErrorKind::InvalidDbClusterEndpointStateFault(_)
         )
     }
     pub fn is_invalid_db_cluster_state_fault(&self) -> bool {
         matches!(
             &self.kind,
-            ModifyDBClusterEndpointErrorKind::InvalidDBClusterStateFault(_)
+            ModifyDBClusterEndpointErrorKind::InvalidDbClusterStateFault(_)
         )
     }
     pub fn is_invalid_db_instance_state_fault(&self) -> bool {
         matches!(
             &self.kind,
-            ModifyDBClusterEndpointErrorKind::InvalidDBInstanceStateFault(_)
+            ModifyDBClusterEndpointErrorKind::InvalidDbInstanceStateFault(_)
         )
     }
 }
 impl std::error::Error for ModifyDBClusterEndpointError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ModifyDBClusterEndpointErrorKind::DBClusterEndpointNotFoundFault(_inner) => {
+            ModifyDBClusterEndpointErrorKind::DbClusterEndpointNotFoundFault(_inner) => {
                 Some(_inner)
             }
-            ModifyDBClusterEndpointErrorKind::DBInstanceNotFoundFault(_inner) => Some(_inner),
-            ModifyDBClusterEndpointErrorKind::InvalidDBClusterEndpointStateFault(_inner) => {
+            ModifyDBClusterEndpointErrorKind::DbInstanceNotFoundFault(_inner) => Some(_inner),
+            ModifyDBClusterEndpointErrorKind::InvalidDbClusterEndpointStateFault(_inner) => {
                 Some(_inner)
             }
-            ModifyDBClusterEndpointErrorKind::InvalidDBClusterStateFault(_inner) => Some(_inner),
-            ModifyDBClusterEndpointErrorKind::InvalidDBInstanceStateFault(_inner) => Some(_inner),
+            ModifyDBClusterEndpointErrorKind::InvalidDbClusterStateFault(_inner) => Some(_inner),
+            ModifyDBClusterEndpointErrorKind::InvalidDbInstanceStateFault(_inner) => Some(_inner),
             ModifyDBClusterEndpointErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -9779,18 +9779,18 @@ pub struct ModifyDBClusterParameterGroupError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ModifyDBClusterParameterGroupErrorKind {
-    DBParameterGroupNotFoundFault(crate::error::DBParameterGroupNotFoundFault),
-    InvalidDBParameterGroupStateFault(crate::error::InvalidDBParameterGroupStateFault),
+    DbParameterGroupNotFoundFault(crate::error::DbParameterGroupNotFoundFault),
+    InvalidDbParameterGroupStateFault(crate::error::InvalidDbParameterGroupStateFault),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ModifyDBClusterParameterGroupError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ModifyDBClusterParameterGroupErrorKind::DBParameterGroupNotFoundFault(_inner) => {
+            ModifyDBClusterParameterGroupErrorKind::DbParameterGroupNotFoundFault(_inner) => {
                 _inner.fmt(f)
             }
-            ModifyDBClusterParameterGroupErrorKind::InvalidDBParameterGroupStateFault(_inner) => {
+            ModifyDBClusterParameterGroupErrorKind::InvalidDbParameterGroupStateFault(_inner) => {
                 _inner.fmt(f)
             }
             ModifyDBClusterParameterGroupErrorKind::Unhandled(_inner) => _inner.fmt(f),
@@ -9844,23 +9844,23 @@ impl ModifyDBClusterParameterGroupError {
     pub fn is_db_parameter_group_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
-            ModifyDBClusterParameterGroupErrorKind::DBParameterGroupNotFoundFault(_)
+            ModifyDBClusterParameterGroupErrorKind::DbParameterGroupNotFoundFault(_)
         )
     }
     pub fn is_invalid_db_parameter_group_state_fault(&self) -> bool {
         matches!(
             &self.kind,
-            ModifyDBClusterParameterGroupErrorKind::InvalidDBParameterGroupStateFault(_)
+            ModifyDBClusterParameterGroupErrorKind::InvalidDbParameterGroupStateFault(_)
         )
     }
 }
 impl std::error::Error for ModifyDBClusterParameterGroupError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ModifyDBClusterParameterGroupErrorKind::DBParameterGroupNotFoundFault(_inner) => {
+            ModifyDBClusterParameterGroupErrorKind::DbParameterGroupNotFoundFault(_inner) => {
                 Some(_inner)
             }
-            ModifyDBClusterParameterGroupErrorKind::InvalidDBParameterGroupStateFault(_inner) => {
+            ModifyDBClusterParameterGroupErrorKind::InvalidDbParameterGroupStateFault(_inner) => {
                 Some(_inner)
             }
             ModifyDBClusterParameterGroupErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
@@ -9877,8 +9877,8 @@ pub struct ModifyDBClusterSnapshotAttributeError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ModifyDBClusterSnapshotAttributeErrorKind {
-    DBClusterSnapshotNotFoundFault(crate::error::DBClusterSnapshotNotFoundFault),
-    InvalidDBClusterSnapshotStateFault(crate::error::InvalidDBClusterSnapshotStateFault),
+    DbClusterSnapshotNotFoundFault(crate::error::DbClusterSnapshotNotFoundFault),
+    InvalidDbClusterSnapshotStateFault(crate::error::InvalidDbClusterSnapshotStateFault),
     SharedSnapshotQuotaExceededFault(crate::error::SharedSnapshotQuotaExceededFault),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -9886,10 +9886,10 @@ pub enum ModifyDBClusterSnapshotAttributeErrorKind {
 impl std::fmt::Display for ModifyDBClusterSnapshotAttributeError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ModifyDBClusterSnapshotAttributeErrorKind::DBClusterSnapshotNotFoundFault(_inner) => {
+            ModifyDBClusterSnapshotAttributeErrorKind::DbClusterSnapshotNotFoundFault(_inner) => {
                 _inner.fmt(f)
             }
-            ModifyDBClusterSnapshotAttributeErrorKind::InvalidDBClusterSnapshotStateFault(
+            ModifyDBClusterSnapshotAttributeErrorKind::InvalidDbClusterSnapshotStateFault(
                 _inner,
             ) => _inner.fmt(f),
             ModifyDBClusterSnapshotAttributeErrorKind::SharedSnapshotQuotaExceededFault(_inner) => {
@@ -9946,13 +9946,13 @@ impl ModifyDBClusterSnapshotAttributeError {
     pub fn is_db_cluster_snapshot_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
-            ModifyDBClusterSnapshotAttributeErrorKind::DBClusterSnapshotNotFoundFault(_)
+            ModifyDBClusterSnapshotAttributeErrorKind::DbClusterSnapshotNotFoundFault(_)
         )
     }
     pub fn is_invalid_db_cluster_snapshot_state_fault(&self) -> bool {
         matches!(
             &self.kind,
-            ModifyDBClusterSnapshotAttributeErrorKind::InvalidDBClusterSnapshotStateFault(_)
+            ModifyDBClusterSnapshotAttributeErrorKind::InvalidDbClusterSnapshotStateFault(_)
         )
     }
     pub fn is_shared_snapshot_quota_exceeded_fault(&self) -> bool {
@@ -9965,10 +9965,10 @@ impl ModifyDBClusterSnapshotAttributeError {
 impl std::error::Error for ModifyDBClusterSnapshotAttributeError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ModifyDBClusterSnapshotAttributeErrorKind::DBClusterSnapshotNotFoundFault(_inner) => {
+            ModifyDBClusterSnapshotAttributeErrorKind::DbClusterSnapshotNotFoundFault(_inner) => {
                 Some(_inner)
             }
-            ModifyDBClusterSnapshotAttributeErrorKind::InvalidDBClusterSnapshotStateFault(
+            ModifyDBClusterSnapshotAttributeErrorKind::InvalidDbClusterSnapshotStateFault(
                 _inner,
             ) => Some(_inner),
             ModifyDBClusterSnapshotAttributeErrorKind::SharedSnapshotQuotaExceededFault(_inner) => {
@@ -9991,20 +9991,20 @@ pub enum ModifyDBInstanceErrorKind {
     AuthorizationNotFoundFault(crate::error::AuthorizationNotFoundFault),
     BackupPolicyNotFoundFault(crate::error::BackupPolicyNotFoundFault),
     CertificateNotFoundFault(crate::error::CertificateNotFoundFault),
-    DBInstanceAlreadyExistsFault(crate::error::DBInstanceAlreadyExistsFault),
-    DBInstanceNotFoundFault(crate::error::DBInstanceNotFoundFault),
-    DBParameterGroupNotFoundFault(crate::error::DBParameterGroupNotFoundFault),
-    DBSecurityGroupNotFoundFault(crate::error::DBSecurityGroupNotFoundFault),
-    DBUpgradeDependencyFailureFault(crate::error::DBUpgradeDependencyFailureFault),
+    DbInstanceAlreadyExistsFault(crate::error::DbInstanceAlreadyExistsFault),
+    DbInstanceNotFoundFault(crate::error::DbInstanceNotFoundFault),
+    DbParameterGroupNotFoundFault(crate::error::DbParameterGroupNotFoundFault),
+    DbSecurityGroupNotFoundFault(crate::error::DbSecurityGroupNotFoundFault),
+    DbUpgradeDependencyFailureFault(crate::error::DbUpgradeDependencyFailureFault),
     DomainNotFoundFault(crate::error::DomainNotFoundFault),
-    InsufficientDBInstanceCapacityFault(crate::error::InsufficientDBInstanceCapacityFault),
-    InvalidDBClusterStateFault(crate::error::InvalidDBClusterStateFault),
-    InvalidDBInstanceStateFault(crate::error::InvalidDBInstanceStateFault),
-    InvalidDBSecurityGroupStateFault(crate::error::InvalidDBSecurityGroupStateFault),
-    InvalidVPCNetworkStateFault(crate::error::InvalidVPCNetworkStateFault),
-    KMSKeyNotAccessibleFault(crate::error::KMSKeyNotAccessibleFault),
+    InsufficientDbInstanceCapacityFault(crate::error::InsufficientDbInstanceCapacityFault),
+    InvalidDbClusterStateFault(crate::error::InvalidDbClusterStateFault),
+    InvalidDbInstanceStateFault(crate::error::InvalidDbInstanceStateFault),
+    InvalidDbSecurityGroupStateFault(crate::error::InvalidDbSecurityGroupStateFault),
+    InvalidVpcNetworkStateFault(crate::error::InvalidVpcNetworkStateFault),
+    KmsKeyNotAccessibleFault(crate::error::KmsKeyNotAccessibleFault),
     OptionGroupNotFoundFault(crate::error::OptionGroupNotFoundFault),
-    ProvisionedIopsNotAvailableInAZFault(crate::error::ProvisionedIopsNotAvailableInAZFault),
+    ProvisionedIopsNotAvailableInAzFault(crate::error::ProvisionedIopsNotAvailableInAzFault),
     StorageQuotaExceededFault(crate::error::StorageQuotaExceededFault),
     StorageTypeNotSupportedFault(crate::error::StorageTypeNotSupportedFault),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
@@ -10016,20 +10016,20 @@ impl std::fmt::Display for ModifyDBInstanceError {
             ModifyDBInstanceErrorKind::AuthorizationNotFoundFault(_inner) => _inner.fmt(f),
             ModifyDBInstanceErrorKind::BackupPolicyNotFoundFault(_inner) => _inner.fmt(f),
             ModifyDBInstanceErrorKind::CertificateNotFoundFault(_inner) => _inner.fmt(f),
-            ModifyDBInstanceErrorKind::DBInstanceAlreadyExistsFault(_inner) => _inner.fmt(f),
-            ModifyDBInstanceErrorKind::DBInstanceNotFoundFault(_inner) => _inner.fmt(f),
-            ModifyDBInstanceErrorKind::DBParameterGroupNotFoundFault(_inner) => _inner.fmt(f),
-            ModifyDBInstanceErrorKind::DBSecurityGroupNotFoundFault(_inner) => _inner.fmt(f),
-            ModifyDBInstanceErrorKind::DBUpgradeDependencyFailureFault(_inner) => _inner.fmt(f),
+            ModifyDBInstanceErrorKind::DbInstanceAlreadyExistsFault(_inner) => _inner.fmt(f),
+            ModifyDBInstanceErrorKind::DbInstanceNotFoundFault(_inner) => _inner.fmt(f),
+            ModifyDBInstanceErrorKind::DbParameterGroupNotFoundFault(_inner) => _inner.fmt(f),
+            ModifyDBInstanceErrorKind::DbSecurityGroupNotFoundFault(_inner) => _inner.fmt(f),
+            ModifyDBInstanceErrorKind::DbUpgradeDependencyFailureFault(_inner) => _inner.fmt(f),
             ModifyDBInstanceErrorKind::DomainNotFoundFault(_inner) => _inner.fmt(f),
-            ModifyDBInstanceErrorKind::InsufficientDBInstanceCapacityFault(_inner) => _inner.fmt(f),
-            ModifyDBInstanceErrorKind::InvalidDBClusterStateFault(_inner) => _inner.fmt(f),
-            ModifyDBInstanceErrorKind::InvalidDBInstanceStateFault(_inner) => _inner.fmt(f),
-            ModifyDBInstanceErrorKind::InvalidDBSecurityGroupStateFault(_inner) => _inner.fmt(f),
-            ModifyDBInstanceErrorKind::InvalidVPCNetworkStateFault(_inner) => _inner.fmt(f),
-            ModifyDBInstanceErrorKind::KMSKeyNotAccessibleFault(_inner) => _inner.fmt(f),
+            ModifyDBInstanceErrorKind::InsufficientDbInstanceCapacityFault(_inner) => _inner.fmt(f),
+            ModifyDBInstanceErrorKind::InvalidDbClusterStateFault(_inner) => _inner.fmt(f),
+            ModifyDBInstanceErrorKind::InvalidDbInstanceStateFault(_inner) => _inner.fmt(f),
+            ModifyDBInstanceErrorKind::InvalidDbSecurityGroupStateFault(_inner) => _inner.fmt(f),
+            ModifyDBInstanceErrorKind::InvalidVpcNetworkStateFault(_inner) => _inner.fmt(f),
+            ModifyDBInstanceErrorKind::KmsKeyNotAccessibleFault(_inner) => _inner.fmt(f),
             ModifyDBInstanceErrorKind::OptionGroupNotFoundFault(_inner) => _inner.fmt(f),
-            ModifyDBInstanceErrorKind::ProvisionedIopsNotAvailableInAZFault(_inner) => {
+            ModifyDBInstanceErrorKind::ProvisionedIopsNotAvailableInAzFault(_inner) => {
                 _inner.fmt(f)
             }
             ModifyDBInstanceErrorKind::StorageQuotaExceededFault(_inner) => _inner.fmt(f),
@@ -10103,31 +10103,31 @@ impl ModifyDBInstanceError {
     pub fn is_db_instance_already_exists_fault(&self) -> bool {
         matches!(
             &self.kind,
-            ModifyDBInstanceErrorKind::DBInstanceAlreadyExistsFault(_)
+            ModifyDBInstanceErrorKind::DbInstanceAlreadyExistsFault(_)
         )
     }
     pub fn is_db_instance_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
-            ModifyDBInstanceErrorKind::DBInstanceNotFoundFault(_)
+            ModifyDBInstanceErrorKind::DbInstanceNotFoundFault(_)
         )
     }
     pub fn is_db_parameter_group_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
-            ModifyDBInstanceErrorKind::DBParameterGroupNotFoundFault(_)
+            ModifyDBInstanceErrorKind::DbParameterGroupNotFoundFault(_)
         )
     }
     pub fn is_db_security_group_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
-            ModifyDBInstanceErrorKind::DBSecurityGroupNotFoundFault(_)
+            ModifyDBInstanceErrorKind::DbSecurityGroupNotFoundFault(_)
         )
     }
     pub fn is_db_upgrade_dependency_failure_fault(&self) -> bool {
         matches!(
             &self.kind,
-            ModifyDBInstanceErrorKind::DBUpgradeDependencyFailureFault(_)
+            ModifyDBInstanceErrorKind::DbUpgradeDependencyFailureFault(_)
         )
     }
     pub fn is_domain_not_found_fault(&self) -> bool {
@@ -10139,37 +10139,37 @@ impl ModifyDBInstanceError {
     pub fn is_insufficient_db_instance_capacity_fault(&self) -> bool {
         matches!(
             &self.kind,
-            ModifyDBInstanceErrorKind::InsufficientDBInstanceCapacityFault(_)
+            ModifyDBInstanceErrorKind::InsufficientDbInstanceCapacityFault(_)
         )
     }
     pub fn is_invalid_db_cluster_state_fault(&self) -> bool {
         matches!(
             &self.kind,
-            ModifyDBInstanceErrorKind::InvalidDBClusterStateFault(_)
+            ModifyDBInstanceErrorKind::InvalidDbClusterStateFault(_)
         )
     }
     pub fn is_invalid_db_instance_state_fault(&self) -> bool {
         matches!(
             &self.kind,
-            ModifyDBInstanceErrorKind::InvalidDBInstanceStateFault(_)
+            ModifyDBInstanceErrorKind::InvalidDbInstanceStateFault(_)
         )
     }
     pub fn is_invalid_db_security_group_state_fault(&self) -> bool {
         matches!(
             &self.kind,
-            ModifyDBInstanceErrorKind::InvalidDBSecurityGroupStateFault(_)
+            ModifyDBInstanceErrorKind::InvalidDbSecurityGroupStateFault(_)
         )
     }
     pub fn is_invalid_vpc_network_state_fault(&self) -> bool {
         matches!(
             &self.kind,
-            ModifyDBInstanceErrorKind::InvalidVPCNetworkStateFault(_)
+            ModifyDBInstanceErrorKind::InvalidVpcNetworkStateFault(_)
         )
     }
     pub fn is_kms_key_not_accessible_fault(&self) -> bool {
         matches!(
             &self.kind,
-            ModifyDBInstanceErrorKind::KMSKeyNotAccessibleFault(_)
+            ModifyDBInstanceErrorKind::KmsKeyNotAccessibleFault(_)
         )
     }
     pub fn is_option_group_not_found_fault(&self) -> bool {
@@ -10181,7 +10181,7 @@ impl ModifyDBInstanceError {
     pub fn is_provisioned_iops_not_available_in_az_fault(&self) -> bool {
         matches!(
             &self.kind,
-            ModifyDBInstanceErrorKind::ProvisionedIopsNotAvailableInAZFault(_)
+            ModifyDBInstanceErrorKind::ProvisionedIopsNotAvailableInAzFault(_)
         )
     }
     pub fn is_storage_quota_exceeded_fault(&self) -> bool {
@@ -10203,20 +10203,20 @@ impl std::error::Error for ModifyDBInstanceError {
             ModifyDBInstanceErrorKind::AuthorizationNotFoundFault(_inner) => Some(_inner),
             ModifyDBInstanceErrorKind::BackupPolicyNotFoundFault(_inner) => Some(_inner),
             ModifyDBInstanceErrorKind::CertificateNotFoundFault(_inner) => Some(_inner),
-            ModifyDBInstanceErrorKind::DBInstanceAlreadyExistsFault(_inner) => Some(_inner),
-            ModifyDBInstanceErrorKind::DBInstanceNotFoundFault(_inner) => Some(_inner),
-            ModifyDBInstanceErrorKind::DBParameterGroupNotFoundFault(_inner) => Some(_inner),
-            ModifyDBInstanceErrorKind::DBSecurityGroupNotFoundFault(_inner) => Some(_inner),
-            ModifyDBInstanceErrorKind::DBUpgradeDependencyFailureFault(_inner) => Some(_inner),
+            ModifyDBInstanceErrorKind::DbInstanceAlreadyExistsFault(_inner) => Some(_inner),
+            ModifyDBInstanceErrorKind::DbInstanceNotFoundFault(_inner) => Some(_inner),
+            ModifyDBInstanceErrorKind::DbParameterGroupNotFoundFault(_inner) => Some(_inner),
+            ModifyDBInstanceErrorKind::DbSecurityGroupNotFoundFault(_inner) => Some(_inner),
+            ModifyDBInstanceErrorKind::DbUpgradeDependencyFailureFault(_inner) => Some(_inner),
             ModifyDBInstanceErrorKind::DomainNotFoundFault(_inner) => Some(_inner),
-            ModifyDBInstanceErrorKind::InsufficientDBInstanceCapacityFault(_inner) => Some(_inner),
-            ModifyDBInstanceErrorKind::InvalidDBClusterStateFault(_inner) => Some(_inner),
-            ModifyDBInstanceErrorKind::InvalidDBInstanceStateFault(_inner) => Some(_inner),
-            ModifyDBInstanceErrorKind::InvalidDBSecurityGroupStateFault(_inner) => Some(_inner),
-            ModifyDBInstanceErrorKind::InvalidVPCNetworkStateFault(_inner) => Some(_inner),
-            ModifyDBInstanceErrorKind::KMSKeyNotAccessibleFault(_inner) => Some(_inner),
+            ModifyDBInstanceErrorKind::InsufficientDbInstanceCapacityFault(_inner) => Some(_inner),
+            ModifyDBInstanceErrorKind::InvalidDbClusterStateFault(_inner) => Some(_inner),
+            ModifyDBInstanceErrorKind::InvalidDbInstanceStateFault(_inner) => Some(_inner),
+            ModifyDBInstanceErrorKind::InvalidDbSecurityGroupStateFault(_inner) => Some(_inner),
+            ModifyDBInstanceErrorKind::InvalidVpcNetworkStateFault(_inner) => Some(_inner),
+            ModifyDBInstanceErrorKind::KmsKeyNotAccessibleFault(_inner) => Some(_inner),
             ModifyDBInstanceErrorKind::OptionGroupNotFoundFault(_inner) => Some(_inner),
-            ModifyDBInstanceErrorKind::ProvisionedIopsNotAvailableInAZFault(_inner) => Some(_inner),
+            ModifyDBInstanceErrorKind::ProvisionedIopsNotAvailableInAzFault(_inner) => Some(_inner),
             ModifyDBInstanceErrorKind::StorageQuotaExceededFault(_inner) => Some(_inner),
             ModifyDBInstanceErrorKind::StorageTypeNotSupportedFault(_inner) => Some(_inner),
             ModifyDBInstanceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
@@ -10233,16 +10233,16 @@ pub struct ModifyDBParameterGroupError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ModifyDBParameterGroupErrorKind {
-    DBParameterGroupNotFoundFault(crate::error::DBParameterGroupNotFoundFault),
-    InvalidDBParameterGroupStateFault(crate::error::InvalidDBParameterGroupStateFault),
+    DbParameterGroupNotFoundFault(crate::error::DbParameterGroupNotFoundFault),
+    InvalidDbParameterGroupStateFault(crate::error::InvalidDbParameterGroupStateFault),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ModifyDBParameterGroupError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ModifyDBParameterGroupErrorKind::DBParameterGroupNotFoundFault(_inner) => _inner.fmt(f),
-            ModifyDBParameterGroupErrorKind::InvalidDBParameterGroupStateFault(_inner) => {
+            ModifyDBParameterGroupErrorKind::DbParameterGroupNotFoundFault(_inner) => _inner.fmt(f),
+            ModifyDBParameterGroupErrorKind::InvalidDbParameterGroupStateFault(_inner) => {
                 _inner.fmt(f)
             }
             ModifyDBParameterGroupErrorKind::Unhandled(_inner) => _inner.fmt(f),
@@ -10296,21 +10296,21 @@ impl ModifyDBParameterGroupError {
     pub fn is_db_parameter_group_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
-            ModifyDBParameterGroupErrorKind::DBParameterGroupNotFoundFault(_)
+            ModifyDBParameterGroupErrorKind::DbParameterGroupNotFoundFault(_)
         )
     }
     pub fn is_invalid_db_parameter_group_state_fault(&self) -> bool {
         matches!(
             &self.kind,
-            ModifyDBParameterGroupErrorKind::InvalidDBParameterGroupStateFault(_)
+            ModifyDBParameterGroupErrorKind::InvalidDbParameterGroupStateFault(_)
         )
     }
 }
 impl std::error::Error for ModifyDBParameterGroupError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ModifyDBParameterGroupErrorKind::DBParameterGroupNotFoundFault(_inner) => Some(_inner),
-            ModifyDBParameterGroupErrorKind::InvalidDBParameterGroupStateFault(_inner) => {
+            ModifyDBParameterGroupErrorKind::DbParameterGroupNotFoundFault(_inner) => Some(_inner),
+            ModifyDBParameterGroupErrorKind::InvalidDbParameterGroupStateFault(_inner) => {
                 Some(_inner)
             }
             ModifyDBParameterGroupErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
@@ -10327,18 +10327,18 @@ pub struct ModifyDBProxyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ModifyDBProxyErrorKind {
-    DBProxyAlreadyExistsFault(crate::error::DBProxyAlreadyExistsFault),
-    DBProxyNotFoundFault(crate::error::DBProxyNotFoundFault),
-    InvalidDBProxyStateFault(crate::error::InvalidDBProxyStateFault),
+    DbProxyAlreadyExistsFault(crate::error::DbProxyAlreadyExistsFault),
+    DbProxyNotFoundFault(crate::error::DbProxyNotFoundFault),
+    InvalidDbProxyStateFault(crate::error::InvalidDbProxyStateFault),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ModifyDBProxyError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ModifyDBProxyErrorKind::DBProxyAlreadyExistsFault(_inner) => _inner.fmt(f),
-            ModifyDBProxyErrorKind::DBProxyNotFoundFault(_inner) => _inner.fmt(f),
-            ModifyDBProxyErrorKind::InvalidDBProxyStateFault(_inner) => _inner.fmt(f),
+            ModifyDBProxyErrorKind::DbProxyAlreadyExistsFault(_inner) => _inner.fmt(f),
+            ModifyDBProxyErrorKind::DbProxyNotFoundFault(_inner) => _inner.fmt(f),
+            ModifyDBProxyErrorKind::InvalidDbProxyStateFault(_inner) => _inner.fmt(f),
             ModifyDBProxyErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -10390,25 +10390,25 @@ impl ModifyDBProxyError {
     pub fn is_db_proxy_already_exists_fault(&self) -> bool {
         matches!(
             &self.kind,
-            ModifyDBProxyErrorKind::DBProxyAlreadyExistsFault(_)
+            ModifyDBProxyErrorKind::DbProxyAlreadyExistsFault(_)
         )
     }
     pub fn is_db_proxy_not_found_fault(&self) -> bool {
-        matches!(&self.kind, ModifyDBProxyErrorKind::DBProxyNotFoundFault(_))
+        matches!(&self.kind, ModifyDBProxyErrorKind::DbProxyNotFoundFault(_))
     }
     pub fn is_invalid_db_proxy_state_fault(&self) -> bool {
         matches!(
             &self.kind,
-            ModifyDBProxyErrorKind::InvalidDBProxyStateFault(_)
+            ModifyDBProxyErrorKind::InvalidDbProxyStateFault(_)
         )
     }
 }
 impl std::error::Error for ModifyDBProxyError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ModifyDBProxyErrorKind::DBProxyAlreadyExistsFault(_inner) => Some(_inner),
-            ModifyDBProxyErrorKind::DBProxyNotFoundFault(_inner) => Some(_inner),
-            ModifyDBProxyErrorKind::InvalidDBProxyStateFault(_inner) => Some(_inner),
+            ModifyDBProxyErrorKind::DbProxyAlreadyExistsFault(_inner) => Some(_inner),
+            ModifyDBProxyErrorKind::DbProxyNotFoundFault(_inner) => Some(_inner),
+            ModifyDBProxyErrorKind::InvalidDbProxyStateFault(_inner) => Some(_inner),
             ModifyDBProxyErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -10423,24 +10423,24 @@ pub struct ModifyDBProxyEndpointError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ModifyDBProxyEndpointErrorKind {
-    DBProxyEndpointAlreadyExistsFault(crate::error::DBProxyEndpointAlreadyExistsFault),
-    DBProxyEndpointNotFoundFault(crate::error::DBProxyEndpointNotFoundFault),
-    InvalidDBProxyEndpointStateFault(crate::error::InvalidDBProxyEndpointStateFault),
-    InvalidDBProxyStateFault(crate::error::InvalidDBProxyStateFault),
+    DbProxyEndpointAlreadyExistsFault(crate::error::DbProxyEndpointAlreadyExistsFault),
+    DbProxyEndpointNotFoundFault(crate::error::DbProxyEndpointNotFoundFault),
+    InvalidDbProxyEndpointStateFault(crate::error::InvalidDbProxyEndpointStateFault),
+    InvalidDbProxyStateFault(crate::error::InvalidDbProxyStateFault),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ModifyDBProxyEndpointError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ModifyDBProxyEndpointErrorKind::DBProxyEndpointAlreadyExistsFault(_inner) => {
+            ModifyDBProxyEndpointErrorKind::DbProxyEndpointAlreadyExistsFault(_inner) => {
                 _inner.fmt(f)
             }
-            ModifyDBProxyEndpointErrorKind::DBProxyEndpointNotFoundFault(_inner) => _inner.fmt(f),
-            ModifyDBProxyEndpointErrorKind::InvalidDBProxyEndpointStateFault(_inner) => {
+            ModifyDBProxyEndpointErrorKind::DbProxyEndpointNotFoundFault(_inner) => _inner.fmt(f),
+            ModifyDBProxyEndpointErrorKind::InvalidDbProxyEndpointStateFault(_inner) => {
                 _inner.fmt(f)
             }
-            ModifyDBProxyEndpointErrorKind::InvalidDBProxyStateFault(_inner) => _inner.fmt(f),
+            ModifyDBProxyEndpointErrorKind::InvalidDbProxyStateFault(_inner) => _inner.fmt(f),
             ModifyDBProxyEndpointErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -10492,39 +10492,39 @@ impl ModifyDBProxyEndpointError {
     pub fn is_db_proxy_endpoint_already_exists_fault(&self) -> bool {
         matches!(
             &self.kind,
-            ModifyDBProxyEndpointErrorKind::DBProxyEndpointAlreadyExistsFault(_)
+            ModifyDBProxyEndpointErrorKind::DbProxyEndpointAlreadyExistsFault(_)
         )
     }
     pub fn is_db_proxy_endpoint_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
-            ModifyDBProxyEndpointErrorKind::DBProxyEndpointNotFoundFault(_)
+            ModifyDBProxyEndpointErrorKind::DbProxyEndpointNotFoundFault(_)
         )
     }
     pub fn is_invalid_db_proxy_endpoint_state_fault(&self) -> bool {
         matches!(
             &self.kind,
-            ModifyDBProxyEndpointErrorKind::InvalidDBProxyEndpointStateFault(_)
+            ModifyDBProxyEndpointErrorKind::InvalidDbProxyEndpointStateFault(_)
         )
     }
     pub fn is_invalid_db_proxy_state_fault(&self) -> bool {
         matches!(
             &self.kind,
-            ModifyDBProxyEndpointErrorKind::InvalidDBProxyStateFault(_)
+            ModifyDBProxyEndpointErrorKind::InvalidDbProxyStateFault(_)
         )
     }
 }
 impl std::error::Error for ModifyDBProxyEndpointError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ModifyDBProxyEndpointErrorKind::DBProxyEndpointAlreadyExistsFault(_inner) => {
+            ModifyDBProxyEndpointErrorKind::DbProxyEndpointAlreadyExistsFault(_inner) => {
                 Some(_inner)
             }
-            ModifyDBProxyEndpointErrorKind::DBProxyEndpointNotFoundFault(_inner) => Some(_inner),
-            ModifyDBProxyEndpointErrorKind::InvalidDBProxyEndpointStateFault(_inner) => {
+            ModifyDBProxyEndpointErrorKind::DbProxyEndpointNotFoundFault(_inner) => Some(_inner),
+            ModifyDBProxyEndpointErrorKind::InvalidDbProxyEndpointStateFault(_inner) => {
                 Some(_inner)
             }
-            ModifyDBProxyEndpointErrorKind::InvalidDBProxyStateFault(_inner) => Some(_inner),
+            ModifyDBProxyEndpointErrorKind::InvalidDbProxyStateFault(_inner) => Some(_inner),
             ModifyDBProxyEndpointErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -10539,20 +10539,20 @@ pub struct ModifyDBProxyTargetGroupError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ModifyDBProxyTargetGroupErrorKind {
-    DBProxyNotFoundFault(crate::error::DBProxyNotFoundFault),
-    DBProxyTargetGroupNotFoundFault(crate::error::DBProxyTargetGroupNotFoundFault),
-    InvalidDBProxyStateFault(crate::error::InvalidDBProxyStateFault),
+    DbProxyNotFoundFault(crate::error::DbProxyNotFoundFault),
+    DbProxyTargetGroupNotFoundFault(crate::error::DbProxyTargetGroupNotFoundFault),
+    InvalidDbProxyStateFault(crate::error::InvalidDbProxyStateFault),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ModifyDBProxyTargetGroupError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ModifyDBProxyTargetGroupErrorKind::DBProxyNotFoundFault(_inner) => _inner.fmt(f),
-            ModifyDBProxyTargetGroupErrorKind::DBProxyTargetGroupNotFoundFault(_inner) => {
+            ModifyDBProxyTargetGroupErrorKind::DbProxyNotFoundFault(_inner) => _inner.fmt(f),
+            ModifyDBProxyTargetGroupErrorKind::DbProxyTargetGroupNotFoundFault(_inner) => {
                 _inner.fmt(f)
             }
-            ModifyDBProxyTargetGroupErrorKind::InvalidDBProxyStateFault(_inner) => _inner.fmt(f),
+            ModifyDBProxyTargetGroupErrorKind::InvalidDbProxyStateFault(_inner) => _inner.fmt(f),
             ModifyDBProxyTargetGroupErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -10604,30 +10604,30 @@ impl ModifyDBProxyTargetGroupError {
     pub fn is_db_proxy_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
-            ModifyDBProxyTargetGroupErrorKind::DBProxyNotFoundFault(_)
+            ModifyDBProxyTargetGroupErrorKind::DbProxyNotFoundFault(_)
         )
     }
     pub fn is_db_proxy_target_group_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
-            ModifyDBProxyTargetGroupErrorKind::DBProxyTargetGroupNotFoundFault(_)
+            ModifyDBProxyTargetGroupErrorKind::DbProxyTargetGroupNotFoundFault(_)
         )
     }
     pub fn is_invalid_db_proxy_state_fault(&self) -> bool {
         matches!(
             &self.kind,
-            ModifyDBProxyTargetGroupErrorKind::InvalidDBProxyStateFault(_)
+            ModifyDBProxyTargetGroupErrorKind::InvalidDbProxyStateFault(_)
         )
     }
 }
 impl std::error::Error for ModifyDBProxyTargetGroupError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ModifyDBProxyTargetGroupErrorKind::DBProxyNotFoundFault(_inner) => Some(_inner),
-            ModifyDBProxyTargetGroupErrorKind::DBProxyTargetGroupNotFoundFault(_inner) => {
+            ModifyDBProxyTargetGroupErrorKind::DbProxyNotFoundFault(_inner) => Some(_inner),
+            ModifyDBProxyTargetGroupErrorKind::DbProxyTargetGroupNotFoundFault(_inner) => {
                 Some(_inner)
             }
-            ModifyDBProxyTargetGroupErrorKind::InvalidDBProxyStateFault(_inner) => Some(_inner),
+            ModifyDBProxyTargetGroupErrorKind::InvalidDbProxyStateFault(_inner) => Some(_inner),
             ModifyDBProxyTargetGroupErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -10642,14 +10642,14 @@ pub struct ModifyDBSnapshotError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ModifyDBSnapshotErrorKind {
-    DBSnapshotNotFoundFault(crate::error::DBSnapshotNotFoundFault),
+    DbSnapshotNotFoundFault(crate::error::DbSnapshotNotFoundFault),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ModifyDBSnapshotError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ModifyDBSnapshotErrorKind::DBSnapshotNotFoundFault(_inner) => _inner.fmt(f),
+            ModifyDBSnapshotErrorKind::DbSnapshotNotFoundFault(_inner) => _inner.fmt(f),
             ModifyDBSnapshotErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -10701,14 +10701,14 @@ impl ModifyDBSnapshotError {
     pub fn is_db_snapshot_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
-            ModifyDBSnapshotErrorKind::DBSnapshotNotFoundFault(_)
+            ModifyDBSnapshotErrorKind::DbSnapshotNotFoundFault(_)
         )
     }
 }
 impl std::error::Error for ModifyDBSnapshotError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ModifyDBSnapshotErrorKind::DBSnapshotNotFoundFault(_inner) => Some(_inner),
+            ModifyDBSnapshotErrorKind::DbSnapshotNotFoundFault(_inner) => Some(_inner),
             ModifyDBSnapshotErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -10723,8 +10723,8 @@ pub struct ModifyDBSnapshotAttributeError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ModifyDBSnapshotAttributeErrorKind {
-    DBSnapshotNotFoundFault(crate::error::DBSnapshotNotFoundFault),
-    InvalidDBSnapshotStateFault(crate::error::InvalidDBSnapshotStateFault),
+    DbSnapshotNotFoundFault(crate::error::DbSnapshotNotFoundFault),
+    InvalidDbSnapshotStateFault(crate::error::InvalidDbSnapshotStateFault),
     SharedSnapshotQuotaExceededFault(crate::error::SharedSnapshotQuotaExceededFault),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -10732,8 +10732,8 @@ pub enum ModifyDBSnapshotAttributeErrorKind {
 impl std::fmt::Display for ModifyDBSnapshotAttributeError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ModifyDBSnapshotAttributeErrorKind::DBSnapshotNotFoundFault(_inner) => _inner.fmt(f),
-            ModifyDBSnapshotAttributeErrorKind::InvalidDBSnapshotStateFault(_inner) => {
+            ModifyDBSnapshotAttributeErrorKind::DbSnapshotNotFoundFault(_inner) => _inner.fmt(f),
+            ModifyDBSnapshotAttributeErrorKind::InvalidDbSnapshotStateFault(_inner) => {
                 _inner.fmt(f)
             }
             ModifyDBSnapshotAttributeErrorKind::SharedSnapshotQuotaExceededFault(_inner) => {
@@ -10790,13 +10790,13 @@ impl ModifyDBSnapshotAttributeError {
     pub fn is_db_snapshot_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
-            ModifyDBSnapshotAttributeErrorKind::DBSnapshotNotFoundFault(_)
+            ModifyDBSnapshotAttributeErrorKind::DbSnapshotNotFoundFault(_)
         )
     }
     pub fn is_invalid_db_snapshot_state_fault(&self) -> bool {
         matches!(
             &self.kind,
-            ModifyDBSnapshotAttributeErrorKind::InvalidDBSnapshotStateFault(_)
+            ModifyDBSnapshotAttributeErrorKind::InvalidDbSnapshotStateFault(_)
         )
     }
     pub fn is_shared_snapshot_quota_exceeded_fault(&self) -> bool {
@@ -10809,8 +10809,8 @@ impl ModifyDBSnapshotAttributeError {
 impl std::error::Error for ModifyDBSnapshotAttributeError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ModifyDBSnapshotAttributeErrorKind::DBSnapshotNotFoundFault(_inner) => Some(_inner),
-            ModifyDBSnapshotAttributeErrorKind::InvalidDBSnapshotStateFault(_inner) => Some(_inner),
+            ModifyDBSnapshotAttributeErrorKind::DbSnapshotNotFoundFault(_inner) => Some(_inner),
+            ModifyDBSnapshotAttributeErrorKind::InvalidDbSnapshotStateFault(_inner) => Some(_inner),
             ModifyDBSnapshotAttributeErrorKind::SharedSnapshotQuotaExceededFault(_inner) => {
                 Some(_inner)
             }
@@ -10828,9 +10828,9 @@ pub struct ModifyDBSubnetGroupError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ModifyDBSubnetGroupErrorKind {
-    DBSubnetGroupDoesNotCoverEnoughAZs(crate::error::DBSubnetGroupDoesNotCoverEnoughAZs),
-    DBSubnetGroupNotFoundFault(crate::error::DBSubnetGroupNotFoundFault),
-    DBSubnetQuotaExceededFault(crate::error::DBSubnetQuotaExceededFault),
+    DbSubnetGroupDoesNotCoverEnoughAZs(crate::error::DbSubnetGroupDoesNotCoverEnoughAZs),
+    DbSubnetGroupNotFoundFault(crate::error::DbSubnetGroupNotFoundFault),
+    DbSubnetQuotaExceededFault(crate::error::DbSubnetQuotaExceededFault),
     InvalidSubnet(crate::error::InvalidSubnet),
     SubnetAlreadyInUse(crate::error::SubnetAlreadyInUse),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
@@ -10839,11 +10839,11 @@ pub enum ModifyDBSubnetGroupErrorKind {
 impl std::fmt::Display for ModifyDBSubnetGroupError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ModifyDBSubnetGroupErrorKind::DBSubnetGroupDoesNotCoverEnoughAZs(_inner) => {
+            ModifyDBSubnetGroupErrorKind::DbSubnetGroupDoesNotCoverEnoughAZs(_inner) => {
                 _inner.fmt(f)
             }
-            ModifyDBSubnetGroupErrorKind::DBSubnetGroupNotFoundFault(_inner) => _inner.fmt(f),
-            ModifyDBSubnetGroupErrorKind::DBSubnetQuotaExceededFault(_inner) => _inner.fmt(f),
+            ModifyDBSubnetGroupErrorKind::DbSubnetGroupNotFoundFault(_inner) => _inner.fmt(f),
+            ModifyDBSubnetGroupErrorKind::DbSubnetQuotaExceededFault(_inner) => _inner.fmt(f),
             ModifyDBSubnetGroupErrorKind::InvalidSubnet(_inner) => _inner.fmt(f),
             ModifyDBSubnetGroupErrorKind::SubnetAlreadyInUse(_inner) => _inner.fmt(f),
             ModifyDBSubnetGroupErrorKind::Unhandled(_inner) => _inner.fmt(f),
@@ -10897,19 +10897,19 @@ impl ModifyDBSubnetGroupError {
     pub fn is_db_subnet_group_does_not_cover_enough_a_zs(&self) -> bool {
         matches!(
             &self.kind,
-            ModifyDBSubnetGroupErrorKind::DBSubnetGroupDoesNotCoverEnoughAZs(_)
+            ModifyDBSubnetGroupErrorKind::DbSubnetGroupDoesNotCoverEnoughAZs(_)
         )
     }
     pub fn is_db_subnet_group_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
-            ModifyDBSubnetGroupErrorKind::DBSubnetGroupNotFoundFault(_)
+            ModifyDBSubnetGroupErrorKind::DbSubnetGroupNotFoundFault(_)
         )
     }
     pub fn is_db_subnet_quota_exceeded_fault(&self) -> bool {
         matches!(
             &self.kind,
-            ModifyDBSubnetGroupErrorKind::DBSubnetQuotaExceededFault(_)
+            ModifyDBSubnetGroupErrorKind::DbSubnetQuotaExceededFault(_)
         )
     }
     pub fn is_invalid_subnet(&self) -> bool {
@@ -10925,11 +10925,11 @@ impl ModifyDBSubnetGroupError {
 impl std::error::Error for ModifyDBSubnetGroupError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ModifyDBSubnetGroupErrorKind::DBSubnetGroupDoesNotCoverEnoughAZs(_inner) => {
+            ModifyDBSubnetGroupErrorKind::DbSubnetGroupDoesNotCoverEnoughAZs(_inner) => {
                 Some(_inner)
             }
-            ModifyDBSubnetGroupErrorKind::DBSubnetGroupNotFoundFault(_inner) => Some(_inner),
-            ModifyDBSubnetGroupErrorKind::DBSubnetQuotaExceededFault(_inner) => Some(_inner),
+            ModifyDBSubnetGroupErrorKind::DbSubnetGroupNotFoundFault(_inner) => Some(_inner),
+            ModifyDBSubnetGroupErrorKind::DbSubnetQuotaExceededFault(_inner) => Some(_inner),
             ModifyDBSubnetGroupErrorKind::InvalidSubnet(_inner) => Some(_inner),
             ModifyDBSubnetGroupErrorKind::SubnetAlreadyInUse(_inner) => Some(_inner),
             ModifyDBSubnetGroupErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
@@ -10947,9 +10947,9 @@ pub struct ModifyEventSubscriptionError {
 #[derive(std::fmt::Debug)]
 pub enum ModifyEventSubscriptionErrorKind {
     EventSubscriptionQuotaExceededFault(crate::error::EventSubscriptionQuotaExceededFault),
-    SNSInvalidTopicFault(crate::error::SNSInvalidTopicFault),
-    SNSNoAuthorizationFault(crate::error::SNSNoAuthorizationFault),
-    SNSTopicArnNotFoundFault(crate::error::SNSTopicArnNotFoundFault),
+    SnsInvalidTopicFault(crate::error::SnsInvalidTopicFault),
+    SnsNoAuthorizationFault(crate::error::SnsNoAuthorizationFault),
+    SnsTopicArnNotFoundFault(crate::error::SnsTopicArnNotFoundFault),
     SubscriptionCategoryNotFoundFault(crate::error::SubscriptionCategoryNotFoundFault),
     SubscriptionNotFoundFault(crate::error::SubscriptionNotFoundFault),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
@@ -10961,9 +10961,9 @@ impl std::fmt::Display for ModifyEventSubscriptionError {
             ModifyEventSubscriptionErrorKind::EventSubscriptionQuotaExceededFault(_inner) => {
                 _inner.fmt(f)
             }
-            ModifyEventSubscriptionErrorKind::SNSInvalidTopicFault(_inner) => _inner.fmt(f),
-            ModifyEventSubscriptionErrorKind::SNSNoAuthorizationFault(_inner) => _inner.fmt(f),
-            ModifyEventSubscriptionErrorKind::SNSTopicArnNotFoundFault(_inner) => _inner.fmt(f),
+            ModifyEventSubscriptionErrorKind::SnsInvalidTopicFault(_inner) => _inner.fmt(f),
+            ModifyEventSubscriptionErrorKind::SnsNoAuthorizationFault(_inner) => _inner.fmt(f),
+            ModifyEventSubscriptionErrorKind::SnsTopicArnNotFoundFault(_inner) => _inner.fmt(f),
             ModifyEventSubscriptionErrorKind::SubscriptionCategoryNotFoundFault(_inner) => {
                 _inner.fmt(f)
             }
@@ -11025,19 +11025,19 @@ impl ModifyEventSubscriptionError {
     pub fn is_sns_invalid_topic_fault(&self) -> bool {
         matches!(
             &self.kind,
-            ModifyEventSubscriptionErrorKind::SNSInvalidTopicFault(_)
+            ModifyEventSubscriptionErrorKind::SnsInvalidTopicFault(_)
         )
     }
     pub fn is_sns_no_authorization_fault(&self) -> bool {
         matches!(
             &self.kind,
-            ModifyEventSubscriptionErrorKind::SNSNoAuthorizationFault(_)
+            ModifyEventSubscriptionErrorKind::SnsNoAuthorizationFault(_)
         )
     }
     pub fn is_sns_topic_arn_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
-            ModifyEventSubscriptionErrorKind::SNSTopicArnNotFoundFault(_)
+            ModifyEventSubscriptionErrorKind::SnsTopicArnNotFoundFault(_)
         )
     }
     pub fn is_subscription_category_not_found_fault(&self) -> bool {
@@ -11059,9 +11059,9 @@ impl std::error::Error for ModifyEventSubscriptionError {
             ModifyEventSubscriptionErrorKind::EventSubscriptionQuotaExceededFault(_inner) => {
                 Some(_inner)
             }
-            ModifyEventSubscriptionErrorKind::SNSInvalidTopicFault(_inner) => Some(_inner),
-            ModifyEventSubscriptionErrorKind::SNSNoAuthorizationFault(_inner) => Some(_inner),
-            ModifyEventSubscriptionErrorKind::SNSTopicArnNotFoundFault(_inner) => Some(_inner),
+            ModifyEventSubscriptionErrorKind::SnsInvalidTopicFault(_inner) => Some(_inner),
+            ModifyEventSubscriptionErrorKind::SnsNoAuthorizationFault(_inner) => Some(_inner),
+            ModifyEventSubscriptionErrorKind::SnsTopicArnNotFoundFault(_inner) => Some(_inner),
             ModifyEventSubscriptionErrorKind::SubscriptionCategoryNotFoundFault(_inner) => {
                 Some(_inner)
             }
@@ -11081,8 +11081,8 @@ pub struct ModifyGlobalClusterError {
 #[derive(std::fmt::Debug)]
 pub enum ModifyGlobalClusterErrorKind {
     GlobalClusterNotFoundFault(crate::error::GlobalClusterNotFoundFault),
-    InvalidDBClusterStateFault(crate::error::InvalidDBClusterStateFault),
-    InvalidDBInstanceStateFault(crate::error::InvalidDBInstanceStateFault),
+    InvalidDbClusterStateFault(crate::error::InvalidDbClusterStateFault),
+    InvalidDbInstanceStateFault(crate::error::InvalidDbInstanceStateFault),
     InvalidGlobalClusterStateFault(crate::error::InvalidGlobalClusterStateFault),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -11091,8 +11091,8 @@ impl std::fmt::Display for ModifyGlobalClusterError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
             ModifyGlobalClusterErrorKind::GlobalClusterNotFoundFault(_inner) => _inner.fmt(f),
-            ModifyGlobalClusterErrorKind::InvalidDBClusterStateFault(_inner) => _inner.fmt(f),
-            ModifyGlobalClusterErrorKind::InvalidDBInstanceStateFault(_inner) => _inner.fmt(f),
+            ModifyGlobalClusterErrorKind::InvalidDbClusterStateFault(_inner) => _inner.fmt(f),
+            ModifyGlobalClusterErrorKind::InvalidDbInstanceStateFault(_inner) => _inner.fmt(f),
             ModifyGlobalClusterErrorKind::InvalidGlobalClusterStateFault(_inner) => _inner.fmt(f),
             ModifyGlobalClusterErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
@@ -11151,13 +11151,13 @@ impl ModifyGlobalClusterError {
     pub fn is_invalid_db_cluster_state_fault(&self) -> bool {
         matches!(
             &self.kind,
-            ModifyGlobalClusterErrorKind::InvalidDBClusterStateFault(_)
+            ModifyGlobalClusterErrorKind::InvalidDbClusterStateFault(_)
         )
     }
     pub fn is_invalid_db_instance_state_fault(&self) -> bool {
         matches!(
             &self.kind,
-            ModifyGlobalClusterErrorKind::InvalidDBInstanceStateFault(_)
+            ModifyGlobalClusterErrorKind::InvalidDbInstanceStateFault(_)
         )
     }
     pub fn is_invalid_global_cluster_state_fault(&self) -> bool {
@@ -11171,8 +11171,8 @@ impl std::error::Error for ModifyGlobalClusterError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             ModifyGlobalClusterErrorKind::GlobalClusterNotFoundFault(_inner) => Some(_inner),
-            ModifyGlobalClusterErrorKind::InvalidDBClusterStateFault(_inner) => Some(_inner),
-            ModifyGlobalClusterErrorKind::InvalidDBInstanceStateFault(_inner) => Some(_inner),
+            ModifyGlobalClusterErrorKind::InvalidDbClusterStateFault(_inner) => Some(_inner),
+            ModifyGlobalClusterErrorKind::InvalidDbInstanceStateFault(_inner) => Some(_inner),
             ModifyGlobalClusterErrorKind::InvalidGlobalClusterStateFault(_inner) => Some(_inner),
             ModifyGlobalClusterErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
@@ -11278,16 +11278,16 @@ pub struct PromoteReadReplicaError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum PromoteReadReplicaErrorKind {
-    DBInstanceNotFoundFault(crate::error::DBInstanceNotFoundFault),
-    InvalidDBInstanceStateFault(crate::error::InvalidDBInstanceStateFault),
+    DbInstanceNotFoundFault(crate::error::DbInstanceNotFoundFault),
+    InvalidDbInstanceStateFault(crate::error::InvalidDbInstanceStateFault),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PromoteReadReplicaError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            PromoteReadReplicaErrorKind::DBInstanceNotFoundFault(_inner) => _inner.fmt(f),
-            PromoteReadReplicaErrorKind::InvalidDBInstanceStateFault(_inner) => _inner.fmt(f),
+            PromoteReadReplicaErrorKind::DbInstanceNotFoundFault(_inner) => _inner.fmt(f),
+            PromoteReadReplicaErrorKind::InvalidDbInstanceStateFault(_inner) => _inner.fmt(f),
             PromoteReadReplicaErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -11339,21 +11339,21 @@ impl PromoteReadReplicaError {
     pub fn is_db_instance_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
-            PromoteReadReplicaErrorKind::DBInstanceNotFoundFault(_)
+            PromoteReadReplicaErrorKind::DbInstanceNotFoundFault(_)
         )
     }
     pub fn is_invalid_db_instance_state_fault(&self) -> bool {
         matches!(
             &self.kind,
-            PromoteReadReplicaErrorKind::InvalidDBInstanceStateFault(_)
+            PromoteReadReplicaErrorKind::InvalidDbInstanceStateFault(_)
         )
     }
 }
 impl std::error::Error for PromoteReadReplicaError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            PromoteReadReplicaErrorKind::DBInstanceNotFoundFault(_inner) => Some(_inner),
-            PromoteReadReplicaErrorKind::InvalidDBInstanceStateFault(_inner) => Some(_inner),
+            PromoteReadReplicaErrorKind::DbInstanceNotFoundFault(_inner) => Some(_inner),
+            PromoteReadReplicaErrorKind::InvalidDbInstanceStateFault(_inner) => Some(_inner),
             PromoteReadReplicaErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -11368,16 +11368,16 @@ pub struct PromoteReadReplicaDBClusterError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum PromoteReadReplicaDBClusterErrorKind {
-    DBClusterNotFoundFault(crate::error::DBClusterNotFoundFault),
-    InvalidDBClusterStateFault(crate::error::InvalidDBClusterStateFault),
+    DbClusterNotFoundFault(crate::error::DbClusterNotFoundFault),
+    InvalidDbClusterStateFault(crate::error::InvalidDbClusterStateFault),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PromoteReadReplicaDBClusterError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            PromoteReadReplicaDBClusterErrorKind::DBClusterNotFoundFault(_inner) => _inner.fmt(f),
-            PromoteReadReplicaDBClusterErrorKind::InvalidDBClusterStateFault(_inner) => {
+            PromoteReadReplicaDBClusterErrorKind::DbClusterNotFoundFault(_inner) => _inner.fmt(f),
+            PromoteReadReplicaDBClusterErrorKind::InvalidDbClusterStateFault(_inner) => {
                 _inner.fmt(f)
             }
             PromoteReadReplicaDBClusterErrorKind::Unhandled(_inner) => _inner.fmt(f),
@@ -11431,21 +11431,21 @@ impl PromoteReadReplicaDBClusterError {
     pub fn is_db_cluster_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
-            PromoteReadReplicaDBClusterErrorKind::DBClusterNotFoundFault(_)
+            PromoteReadReplicaDBClusterErrorKind::DbClusterNotFoundFault(_)
         )
     }
     pub fn is_invalid_db_cluster_state_fault(&self) -> bool {
         matches!(
             &self.kind,
-            PromoteReadReplicaDBClusterErrorKind::InvalidDBClusterStateFault(_)
+            PromoteReadReplicaDBClusterErrorKind::InvalidDbClusterStateFault(_)
         )
     }
 }
 impl std::error::Error for PromoteReadReplicaDBClusterError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            PromoteReadReplicaDBClusterErrorKind::DBClusterNotFoundFault(_inner) => Some(_inner),
-            PromoteReadReplicaDBClusterErrorKind::InvalidDBClusterStateFault(_inner) => {
+            PromoteReadReplicaDBClusterErrorKind::DbClusterNotFoundFault(_inner) => Some(_inner),
+            PromoteReadReplicaDBClusterErrorKind::InvalidDbClusterStateFault(_inner) => {
                 Some(_inner)
             }
             PromoteReadReplicaDBClusterErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
@@ -11462,10 +11462,10 @@ pub struct PurchaseReservedDBInstancesOfferingError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum PurchaseReservedDBInstancesOfferingErrorKind {
-    ReservedDBInstanceAlreadyExistsFault(crate::error::ReservedDBInstanceAlreadyExistsFault),
-    ReservedDBInstanceQuotaExceededFault(crate::error::ReservedDBInstanceQuotaExceededFault),
-    ReservedDBInstancesOfferingNotFoundFault(
-        crate::error::ReservedDBInstancesOfferingNotFoundFault,
+    ReservedDbInstanceAlreadyExistsFault(crate::error::ReservedDbInstanceAlreadyExistsFault),
+    ReservedDbInstanceQuotaExceededFault(crate::error::ReservedDbInstanceQuotaExceededFault),
+    ReservedDbInstancesOfferingNotFoundFault(
+        crate::error::ReservedDbInstancesOfferingNotFoundFault,
     ),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -11473,13 +11473,13 @@ pub enum PurchaseReservedDBInstancesOfferingErrorKind {
 impl std::fmt::Display for PurchaseReservedDBInstancesOfferingError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            PurchaseReservedDBInstancesOfferingErrorKind::ReservedDBInstanceAlreadyExistsFault(_inner) =>
+            PurchaseReservedDBInstancesOfferingErrorKind::ReservedDbInstanceAlreadyExistsFault(_inner) =>
             _inner.fmt(f)
             ,
-            PurchaseReservedDBInstancesOfferingErrorKind::ReservedDBInstanceQuotaExceededFault(_inner) =>
+            PurchaseReservedDBInstancesOfferingErrorKind::ReservedDbInstanceQuotaExceededFault(_inner) =>
             _inner.fmt(f)
             ,
-            PurchaseReservedDBInstancesOfferingErrorKind::ReservedDBInstancesOfferingNotFoundFault(_inner) =>
+            PurchaseReservedDBInstancesOfferingErrorKind::ReservedDbInstancesOfferingNotFoundFault(_inner) =>
             _inner.fmt(f)
             ,
             PurchaseReservedDBInstancesOfferingErrorKind::Unhandled(_inner) => {
@@ -11538,19 +11538,19 @@ impl PurchaseReservedDBInstancesOfferingError {
     pub fn is_reserved_db_instance_already_exists_fault(&self) -> bool {
         matches!(
             &self.kind,
-            PurchaseReservedDBInstancesOfferingErrorKind::ReservedDBInstanceAlreadyExistsFault(_)
+            PurchaseReservedDBInstancesOfferingErrorKind::ReservedDbInstanceAlreadyExistsFault(_)
         )
     }
     pub fn is_reserved_db_instance_quota_exceeded_fault(&self) -> bool {
         matches!(
             &self.kind,
-            PurchaseReservedDBInstancesOfferingErrorKind::ReservedDBInstanceQuotaExceededFault(_)
+            PurchaseReservedDBInstancesOfferingErrorKind::ReservedDbInstanceQuotaExceededFault(_)
         )
     }
     pub fn is_reserved_db_instances_offering_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
-            PurchaseReservedDBInstancesOfferingErrorKind::ReservedDBInstancesOfferingNotFoundFault(
+            PurchaseReservedDBInstancesOfferingErrorKind::ReservedDbInstancesOfferingNotFoundFault(
                 _
             )
         )
@@ -11559,13 +11559,13 @@ impl PurchaseReservedDBInstancesOfferingError {
 impl std::error::Error for PurchaseReservedDBInstancesOfferingError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            PurchaseReservedDBInstancesOfferingErrorKind::ReservedDBInstanceAlreadyExistsFault(_inner) =>
+            PurchaseReservedDBInstancesOfferingErrorKind::ReservedDbInstanceAlreadyExistsFault(_inner) =>
             Some(_inner)
             ,
-            PurchaseReservedDBInstancesOfferingErrorKind::ReservedDBInstanceQuotaExceededFault(_inner) =>
+            PurchaseReservedDBInstancesOfferingErrorKind::ReservedDbInstanceQuotaExceededFault(_inner) =>
             Some(_inner)
             ,
-            PurchaseReservedDBInstancesOfferingErrorKind::ReservedDBInstancesOfferingNotFoundFault(_inner) =>
+            PurchaseReservedDBInstancesOfferingErrorKind::ReservedDbInstancesOfferingNotFoundFault(_inner) =>
             Some(_inner)
             ,
             PurchaseReservedDBInstancesOfferingErrorKind::Unhandled(_inner) => {
@@ -11584,16 +11584,16 @@ pub struct RebootDBInstanceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum RebootDBInstanceErrorKind {
-    DBInstanceNotFoundFault(crate::error::DBInstanceNotFoundFault),
-    InvalidDBInstanceStateFault(crate::error::InvalidDBInstanceStateFault),
+    DbInstanceNotFoundFault(crate::error::DbInstanceNotFoundFault),
+    InvalidDbInstanceStateFault(crate::error::InvalidDbInstanceStateFault),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for RebootDBInstanceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            RebootDBInstanceErrorKind::DBInstanceNotFoundFault(_inner) => _inner.fmt(f),
-            RebootDBInstanceErrorKind::InvalidDBInstanceStateFault(_inner) => _inner.fmt(f),
+            RebootDBInstanceErrorKind::DbInstanceNotFoundFault(_inner) => _inner.fmt(f),
+            RebootDBInstanceErrorKind::InvalidDbInstanceStateFault(_inner) => _inner.fmt(f),
             RebootDBInstanceErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -11645,21 +11645,21 @@ impl RebootDBInstanceError {
     pub fn is_db_instance_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
-            RebootDBInstanceErrorKind::DBInstanceNotFoundFault(_)
+            RebootDBInstanceErrorKind::DbInstanceNotFoundFault(_)
         )
     }
     pub fn is_invalid_db_instance_state_fault(&self) -> bool {
         matches!(
             &self.kind,
-            RebootDBInstanceErrorKind::InvalidDBInstanceStateFault(_)
+            RebootDBInstanceErrorKind::InvalidDbInstanceStateFault(_)
         )
     }
 }
 impl std::error::Error for RebootDBInstanceError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            RebootDBInstanceErrorKind::DBInstanceNotFoundFault(_inner) => Some(_inner),
-            RebootDBInstanceErrorKind::InvalidDBInstanceStateFault(_inner) => Some(_inner),
+            RebootDBInstanceErrorKind::DbInstanceNotFoundFault(_inner) => Some(_inner),
+            RebootDBInstanceErrorKind::InvalidDbInstanceStateFault(_inner) => Some(_inner),
             RebootDBInstanceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -11674,36 +11674,36 @@ pub struct RegisterDBProxyTargetsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum RegisterDBProxyTargetsErrorKind {
-    DBClusterNotFoundFault(crate::error::DBClusterNotFoundFault),
-    DBInstanceNotFoundFault(crate::error::DBInstanceNotFoundFault),
-    DBProxyNotFoundFault(crate::error::DBProxyNotFoundFault),
-    DBProxyTargetAlreadyRegisteredFault(crate::error::DBProxyTargetAlreadyRegisteredFault),
-    DBProxyTargetGroupNotFoundFault(crate::error::DBProxyTargetGroupNotFoundFault),
+    DbClusterNotFoundFault(crate::error::DbClusterNotFoundFault),
+    DbInstanceNotFoundFault(crate::error::DbInstanceNotFoundFault),
+    DbProxyNotFoundFault(crate::error::DbProxyNotFoundFault),
+    DbProxyTargetAlreadyRegisteredFault(crate::error::DbProxyTargetAlreadyRegisteredFault),
+    DbProxyTargetGroupNotFoundFault(crate::error::DbProxyTargetGroupNotFoundFault),
     InsufficientAvailableIPsInSubnetFault(crate::error::InsufficientAvailableIPsInSubnetFault),
-    InvalidDBClusterStateFault(crate::error::InvalidDBClusterStateFault),
-    InvalidDBInstanceStateFault(crate::error::InvalidDBInstanceStateFault),
-    InvalidDBProxyStateFault(crate::error::InvalidDBProxyStateFault),
+    InvalidDbClusterStateFault(crate::error::InvalidDbClusterStateFault),
+    InvalidDbInstanceStateFault(crate::error::InvalidDbInstanceStateFault),
+    InvalidDbProxyStateFault(crate::error::InvalidDbProxyStateFault),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for RegisterDBProxyTargetsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            RegisterDBProxyTargetsErrorKind::DBClusterNotFoundFault(_inner) => _inner.fmt(f),
-            RegisterDBProxyTargetsErrorKind::DBInstanceNotFoundFault(_inner) => _inner.fmt(f),
-            RegisterDBProxyTargetsErrorKind::DBProxyNotFoundFault(_inner) => _inner.fmt(f),
-            RegisterDBProxyTargetsErrorKind::DBProxyTargetAlreadyRegisteredFault(_inner) => {
+            RegisterDBProxyTargetsErrorKind::DbClusterNotFoundFault(_inner) => _inner.fmt(f),
+            RegisterDBProxyTargetsErrorKind::DbInstanceNotFoundFault(_inner) => _inner.fmt(f),
+            RegisterDBProxyTargetsErrorKind::DbProxyNotFoundFault(_inner) => _inner.fmt(f),
+            RegisterDBProxyTargetsErrorKind::DbProxyTargetAlreadyRegisteredFault(_inner) => {
                 _inner.fmt(f)
             }
-            RegisterDBProxyTargetsErrorKind::DBProxyTargetGroupNotFoundFault(_inner) => {
+            RegisterDBProxyTargetsErrorKind::DbProxyTargetGroupNotFoundFault(_inner) => {
                 _inner.fmt(f)
             }
             RegisterDBProxyTargetsErrorKind::InsufficientAvailableIPsInSubnetFault(_inner) => {
                 _inner.fmt(f)
             }
-            RegisterDBProxyTargetsErrorKind::InvalidDBClusterStateFault(_inner) => _inner.fmt(f),
-            RegisterDBProxyTargetsErrorKind::InvalidDBInstanceStateFault(_inner) => _inner.fmt(f),
-            RegisterDBProxyTargetsErrorKind::InvalidDBProxyStateFault(_inner) => _inner.fmt(f),
+            RegisterDBProxyTargetsErrorKind::InvalidDbClusterStateFault(_inner) => _inner.fmt(f),
+            RegisterDBProxyTargetsErrorKind::InvalidDbInstanceStateFault(_inner) => _inner.fmt(f),
+            RegisterDBProxyTargetsErrorKind::InvalidDbProxyStateFault(_inner) => _inner.fmt(f),
             RegisterDBProxyTargetsErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -11755,31 +11755,31 @@ impl RegisterDBProxyTargetsError {
     pub fn is_db_cluster_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
-            RegisterDBProxyTargetsErrorKind::DBClusterNotFoundFault(_)
+            RegisterDBProxyTargetsErrorKind::DbClusterNotFoundFault(_)
         )
     }
     pub fn is_db_instance_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
-            RegisterDBProxyTargetsErrorKind::DBInstanceNotFoundFault(_)
+            RegisterDBProxyTargetsErrorKind::DbInstanceNotFoundFault(_)
         )
     }
     pub fn is_db_proxy_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
-            RegisterDBProxyTargetsErrorKind::DBProxyNotFoundFault(_)
+            RegisterDBProxyTargetsErrorKind::DbProxyNotFoundFault(_)
         )
     }
     pub fn is_db_proxy_target_already_registered_fault(&self) -> bool {
         matches!(
             &self.kind,
-            RegisterDBProxyTargetsErrorKind::DBProxyTargetAlreadyRegisteredFault(_)
+            RegisterDBProxyTargetsErrorKind::DbProxyTargetAlreadyRegisteredFault(_)
         )
     }
     pub fn is_db_proxy_target_group_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
-            RegisterDBProxyTargetsErrorKind::DBProxyTargetGroupNotFoundFault(_)
+            RegisterDBProxyTargetsErrorKind::DbProxyTargetGroupNotFoundFault(_)
         )
     }
     pub fn is_insufficient_available_i_ps_in_subnet_fault(&self) -> bool {
@@ -11791,40 +11791,40 @@ impl RegisterDBProxyTargetsError {
     pub fn is_invalid_db_cluster_state_fault(&self) -> bool {
         matches!(
             &self.kind,
-            RegisterDBProxyTargetsErrorKind::InvalidDBClusterStateFault(_)
+            RegisterDBProxyTargetsErrorKind::InvalidDbClusterStateFault(_)
         )
     }
     pub fn is_invalid_db_instance_state_fault(&self) -> bool {
         matches!(
             &self.kind,
-            RegisterDBProxyTargetsErrorKind::InvalidDBInstanceStateFault(_)
+            RegisterDBProxyTargetsErrorKind::InvalidDbInstanceStateFault(_)
         )
     }
     pub fn is_invalid_db_proxy_state_fault(&self) -> bool {
         matches!(
             &self.kind,
-            RegisterDBProxyTargetsErrorKind::InvalidDBProxyStateFault(_)
+            RegisterDBProxyTargetsErrorKind::InvalidDbProxyStateFault(_)
         )
     }
 }
 impl std::error::Error for RegisterDBProxyTargetsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            RegisterDBProxyTargetsErrorKind::DBClusterNotFoundFault(_inner) => Some(_inner),
-            RegisterDBProxyTargetsErrorKind::DBInstanceNotFoundFault(_inner) => Some(_inner),
-            RegisterDBProxyTargetsErrorKind::DBProxyNotFoundFault(_inner) => Some(_inner),
-            RegisterDBProxyTargetsErrorKind::DBProxyTargetAlreadyRegisteredFault(_inner) => {
+            RegisterDBProxyTargetsErrorKind::DbClusterNotFoundFault(_inner) => Some(_inner),
+            RegisterDBProxyTargetsErrorKind::DbInstanceNotFoundFault(_inner) => Some(_inner),
+            RegisterDBProxyTargetsErrorKind::DbProxyNotFoundFault(_inner) => Some(_inner),
+            RegisterDBProxyTargetsErrorKind::DbProxyTargetAlreadyRegisteredFault(_inner) => {
                 Some(_inner)
             }
-            RegisterDBProxyTargetsErrorKind::DBProxyTargetGroupNotFoundFault(_inner) => {
+            RegisterDBProxyTargetsErrorKind::DbProxyTargetGroupNotFoundFault(_inner) => {
                 Some(_inner)
             }
             RegisterDBProxyTargetsErrorKind::InsufficientAvailableIPsInSubnetFault(_inner) => {
                 Some(_inner)
             }
-            RegisterDBProxyTargetsErrorKind::InvalidDBClusterStateFault(_inner) => Some(_inner),
-            RegisterDBProxyTargetsErrorKind::InvalidDBInstanceStateFault(_inner) => Some(_inner),
-            RegisterDBProxyTargetsErrorKind::InvalidDBProxyStateFault(_inner) => Some(_inner),
+            RegisterDBProxyTargetsErrorKind::InvalidDbClusterStateFault(_inner) => Some(_inner),
+            RegisterDBProxyTargetsErrorKind::InvalidDbInstanceStateFault(_inner) => Some(_inner),
+            RegisterDBProxyTargetsErrorKind::InvalidDbProxyStateFault(_inner) => Some(_inner),
             RegisterDBProxyTargetsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -11839,7 +11839,7 @@ pub struct RemoveFromGlobalClusterError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum RemoveFromGlobalClusterErrorKind {
-    DBClusterNotFoundFault(crate::error::DBClusterNotFoundFault),
+    DbClusterNotFoundFault(crate::error::DbClusterNotFoundFault),
     GlobalClusterNotFoundFault(crate::error::GlobalClusterNotFoundFault),
     InvalidGlobalClusterStateFault(crate::error::InvalidGlobalClusterStateFault),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
@@ -11848,7 +11848,7 @@ pub enum RemoveFromGlobalClusterErrorKind {
 impl std::fmt::Display for RemoveFromGlobalClusterError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            RemoveFromGlobalClusterErrorKind::DBClusterNotFoundFault(_inner) => _inner.fmt(f),
+            RemoveFromGlobalClusterErrorKind::DbClusterNotFoundFault(_inner) => _inner.fmt(f),
             RemoveFromGlobalClusterErrorKind::GlobalClusterNotFoundFault(_inner) => _inner.fmt(f),
             RemoveFromGlobalClusterErrorKind::InvalidGlobalClusterStateFault(_inner) => {
                 _inner.fmt(f)
@@ -11904,7 +11904,7 @@ impl RemoveFromGlobalClusterError {
     pub fn is_db_cluster_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
-            RemoveFromGlobalClusterErrorKind::DBClusterNotFoundFault(_)
+            RemoveFromGlobalClusterErrorKind::DbClusterNotFoundFault(_)
         )
     }
     pub fn is_global_cluster_not_found_fault(&self) -> bool {
@@ -11923,7 +11923,7 @@ impl RemoveFromGlobalClusterError {
 impl std::error::Error for RemoveFromGlobalClusterError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            RemoveFromGlobalClusterErrorKind::DBClusterNotFoundFault(_inner) => Some(_inner),
+            RemoveFromGlobalClusterErrorKind::DbClusterNotFoundFault(_inner) => Some(_inner),
             RemoveFromGlobalClusterErrorKind::GlobalClusterNotFoundFault(_inner) => Some(_inner),
             RemoveFromGlobalClusterErrorKind::InvalidGlobalClusterStateFault(_inner) => {
                 Some(_inner)
@@ -11942,18 +11942,18 @@ pub struct RemoveRoleFromDBClusterError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum RemoveRoleFromDBClusterErrorKind {
-    DBClusterNotFoundFault(crate::error::DBClusterNotFoundFault),
-    DBClusterRoleNotFoundFault(crate::error::DBClusterRoleNotFoundFault),
-    InvalidDBClusterStateFault(crate::error::InvalidDBClusterStateFault),
+    DbClusterNotFoundFault(crate::error::DbClusterNotFoundFault),
+    DbClusterRoleNotFoundFault(crate::error::DbClusterRoleNotFoundFault),
+    InvalidDbClusterStateFault(crate::error::InvalidDbClusterStateFault),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for RemoveRoleFromDBClusterError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            RemoveRoleFromDBClusterErrorKind::DBClusterNotFoundFault(_inner) => _inner.fmt(f),
-            RemoveRoleFromDBClusterErrorKind::DBClusterRoleNotFoundFault(_inner) => _inner.fmt(f),
-            RemoveRoleFromDBClusterErrorKind::InvalidDBClusterStateFault(_inner) => _inner.fmt(f),
+            RemoveRoleFromDBClusterErrorKind::DbClusterNotFoundFault(_inner) => _inner.fmt(f),
+            RemoveRoleFromDBClusterErrorKind::DbClusterRoleNotFoundFault(_inner) => _inner.fmt(f),
+            RemoveRoleFromDBClusterErrorKind::InvalidDbClusterStateFault(_inner) => _inner.fmt(f),
             RemoveRoleFromDBClusterErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -12005,28 +12005,28 @@ impl RemoveRoleFromDBClusterError {
     pub fn is_db_cluster_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
-            RemoveRoleFromDBClusterErrorKind::DBClusterNotFoundFault(_)
+            RemoveRoleFromDBClusterErrorKind::DbClusterNotFoundFault(_)
         )
     }
     pub fn is_db_cluster_role_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
-            RemoveRoleFromDBClusterErrorKind::DBClusterRoleNotFoundFault(_)
+            RemoveRoleFromDBClusterErrorKind::DbClusterRoleNotFoundFault(_)
         )
     }
     pub fn is_invalid_db_cluster_state_fault(&self) -> bool {
         matches!(
             &self.kind,
-            RemoveRoleFromDBClusterErrorKind::InvalidDBClusterStateFault(_)
+            RemoveRoleFromDBClusterErrorKind::InvalidDbClusterStateFault(_)
         )
     }
 }
 impl std::error::Error for RemoveRoleFromDBClusterError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            RemoveRoleFromDBClusterErrorKind::DBClusterNotFoundFault(_inner) => Some(_inner),
-            RemoveRoleFromDBClusterErrorKind::DBClusterRoleNotFoundFault(_inner) => Some(_inner),
-            RemoveRoleFromDBClusterErrorKind::InvalidDBClusterStateFault(_inner) => Some(_inner),
+            RemoveRoleFromDBClusterErrorKind::DbClusterNotFoundFault(_inner) => Some(_inner),
+            RemoveRoleFromDBClusterErrorKind::DbClusterRoleNotFoundFault(_inner) => Some(_inner),
+            RemoveRoleFromDBClusterErrorKind::InvalidDbClusterStateFault(_inner) => Some(_inner),
             RemoveRoleFromDBClusterErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -12041,18 +12041,18 @@ pub struct RemoveRoleFromDBInstanceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum RemoveRoleFromDBInstanceErrorKind {
-    DBInstanceNotFoundFault(crate::error::DBInstanceNotFoundFault),
-    DBInstanceRoleNotFoundFault(crate::error::DBInstanceRoleNotFoundFault),
-    InvalidDBInstanceStateFault(crate::error::InvalidDBInstanceStateFault),
+    DbInstanceNotFoundFault(crate::error::DbInstanceNotFoundFault),
+    DbInstanceRoleNotFoundFault(crate::error::DbInstanceRoleNotFoundFault),
+    InvalidDbInstanceStateFault(crate::error::InvalidDbInstanceStateFault),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for RemoveRoleFromDBInstanceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            RemoveRoleFromDBInstanceErrorKind::DBInstanceNotFoundFault(_inner) => _inner.fmt(f),
-            RemoveRoleFromDBInstanceErrorKind::DBInstanceRoleNotFoundFault(_inner) => _inner.fmt(f),
-            RemoveRoleFromDBInstanceErrorKind::InvalidDBInstanceStateFault(_inner) => _inner.fmt(f),
+            RemoveRoleFromDBInstanceErrorKind::DbInstanceNotFoundFault(_inner) => _inner.fmt(f),
+            RemoveRoleFromDBInstanceErrorKind::DbInstanceRoleNotFoundFault(_inner) => _inner.fmt(f),
+            RemoveRoleFromDBInstanceErrorKind::InvalidDbInstanceStateFault(_inner) => _inner.fmt(f),
             RemoveRoleFromDBInstanceErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -12104,28 +12104,28 @@ impl RemoveRoleFromDBInstanceError {
     pub fn is_db_instance_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
-            RemoveRoleFromDBInstanceErrorKind::DBInstanceNotFoundFault(_)
+            RemoveRoleFromDBInstanceErrorKind::DbInstanceNotFoundFault(_)
         )
     }
     pub fn is_db_instance_role_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
-            RemoveRoleFromDBInstanceErrorKind::DBInstanceRoleNotFoundFault(_)
+            RemoveRoleFromDBInstanceErrorKind::DbInstanceRoleNotFoundFault(_)
         )
     }
     pub fn is_invalid_db_instance_state_fault(&self) -> bool {
         matches!(
             &self.kind,
-            RemoveRoleFromDBInstanceErrorKind::InvalidDBInstanceStateFault(_)
+            RemoveRoleFromDBInstanceErrorKind::InvalidDbInstanceStateFault(_)
         )
     }
 }
 impl std::error::Error for RemoveRoleFromDBInstanceError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            RemoveRoleFromDBInstanceErrorKind::DBInstanceNotFoundFault(_inner) => Some(_inner),
-            RemoveRoleFromDBInstanceErrorKind::DBInstanceRoleNotFoundFault(_inner) => Some(_inner),
-            RemoveRoleFromDBInstanceErrorKind::InvalidDBInstanceStateFault(_inner) => Some(_inner),
+            RemoveRoleFromDBInstanceErrorKind::DbInstanceNotFoundFault(_inner) => Some(_inner),
+            RemoveRoleFromDBInstanceErrorKind::DbInstanceRoleNotFoundFault(_inner) => Some(_inner),
+            RemoveRoleFromDBInstanceErrorKind::InvalidDbInstanceStateFault(_inner) => Some(_inner),
             RemoveRoleFromDBInstanceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -12243,24 +12243,24 @@ pub struct RemoveTagsFromResourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum RemoveTagsFromResourceErrorKind {
-    DBClusterNotFoundFault(crate::error::DBClusterNotFoundFault),
-    DBInstanceNotFoundFault(crate::error::DBInstanceNotFoundFault),
-    DBProxyNotFoundFault(crate::error::DBProxyNotFoundFault),
-    DBProxyTargetGroupNotFoundFault(crate::error::DBProxyTargetGroupNotFoundFault),
-    DBSnapshotNotFoundFault(crate::error::DBSnapshotNotFoundFault),
+    DbClusterNotFoundFault(crate::error::DbClusterNotFoundFault),
+    DbInstanceNotFoundFault(crate::error::DbInstanceNotFoundFault),
+    DbProxyNotFoundFault(crate::error::DbProxyNotFoundFault),
+    DbProxyTargetGroupNotFoundFault(crate::error::DbProxyTargetGroupNotFoundFault),
+    DbSnapshotNotFoundFault(crate::error::DbSnapshotNotFoundFault),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for RemoveTagsFromResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            RemoveTagsFromResourceErrorKind::DBClusterNotFoundFault(_inner) => _inner.fmt(f),
-            RemoveTagsFromResourceErrorKind::DBInstanceNotFoundFault(_inner) => _inner.fmt(f),
-            RemoveTagsFromResourceErrorKind::DBProxyNotFoundFault(_inner) => _inner.fmt(f),
-            RemoveTagsFromResourceErrorKind::DBProxyTargetGroupNotFoundFault(_inner) => {
+            RemoveTagsFromResourceErrorKind::DbClusterNotFoundFault(_inner) => _inner.fmt(f),
+            RemoveTagsFromResourceErrorKind::DbInstanceNotFoundFault(_inner) => _inner.fmt(f),
+            RemoveTagsFromResourceErrorKind::DbProxyNotFoundFault(_inner) => _inner.fmt(f),
+            RemoveTagsFromResourceErrorKind::DbProxyTargetGroupNotFoundFault(_inner) => {
                 _inner.fmt(f)
             }
-            RemoveTagsFromResourceErrorKind::DBSnapshotNotFoundFault(_inner) => _inner.fmt(f),
+            RemoveTagsFromResourceErrorKind::DbSnapshotNotFoundFault(_inner) => _inner.fmt(f),
             RemoveTagsFromResourceErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -12312,44 +12312,44 @@ impl RemoveTagsFromResourceError {
     pub fn is_db_cluster_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
-            RemoveTagsFromResourceErrorKind::DBClusterNotFoundFault(_)
+            RemoveTagsFromResourceErrorKind::DbClusterNotFoundFault(_)
         )
     }
     pub fn is_db_instance_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
-            RemoveTagsFromResourceErrorKind::DBInstanceNotFoundFault(_)
+            RemoveTagsFromResourceErrorKind::DbInstanceNotFoundFault(_)
         )
     }
     pub fn is_db_proxy_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
-            RemoveTagsFromResourceErrorKind::DBProxyNotFoundFault(_)
+            RemoveTagsFromResourceErrorKind::DbProxyNotFoundFault(_)
         )
     }
     pub fn is_db_proxy_target_group_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
-            RemoveTagsFromResourceErrorKind::DBProxyTargetGroupNotFoundFault(_)
+            RemoveTagsFromResourceErrorKind::DbProxyTargetGroupNotFoundFault(_)
         )
     }
     pub fn is_db_snapshot_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
-            RemoveTagsFromResourceErrorKind::DBSnapshotNotFoundFault(_)
+            RemoveTagsFromResourceErrorKind::DbSnapshotNotFoundFault(_)
         )
     }
 }
 impl std::error::Error for RemoveTagsFromResourceError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            RemoveTagsFromResourceErrorKind::DBClusterNotFoundFault(_inner) => Some(_inner),
-            RemoveTagsFromResourceErrorKind::DBInstanceNotFoundFault(_inner) => Some(_inner),
-            RemoveTagsFromResourceErrorKind::DBProxyNotFoundFault(_inner) => Some(_inner),
-            RemoveTagsFromResourceErrorKind::DBProxyTargetGroupNotFoundFault(_inner) => {
+            RemoveTagsFromResourceErrorKind::DbClusterNotFoundFault(_inner) => Some(_inner),
+            RemoveTagsFromResourceErrorKind::DbInstanceNotFoundFault(_inner) => Some(_inner),
+            RemoveTagsFromResourceErrorKind::DbProxyNotFoundFault(_inner) => Some(_inner),
+            RemoveTagsFromResourceErrorKind::DbProxyTargetGroupNotFoundFault(_inner) => {
                 Some(_inner)
             }
-            RemoveTagsFromResourceErrorKind::DBSnapshotNotFoundFault(_inner) => Some(_inner),
+            RemoveTagsFromResourceErrorKind::DbSnapshotNotFoundFault(_inner) => Some(_inner),
             RemoveTagsFromResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -12364,18 +12364,18 @@ pub struct ResetDBClusterParameterGroupError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ResetDBClusterParameterGroupErrorKind {
-    DBParameterGroupNotFoundFault(crate::error::DBParameterGroupNotFoundFault),
-    InvalidDBParameterGroupStateFault(crate::error::InvalidDBParameterGroupStateFault),
+    DbParameterGroupNotFoundFault(crate::error::DbParameterGroupNotFoundFault),
+    InvalidDbParameterGroupStateFault(crate::error::InvalidDbParameterGroupStateFault),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ResetDBClusterParameterGroupError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ResetDBClusterParameterGroupErrorKind::DBParameterGroupNotFoundFault(_inner) => {
+            ResetDBClusterParameterGroupErrorKind::DbParameterGroupNotFoundFault(_inner) => {
                 _inner.fmt(f)
             }
-            ResetDBClusterParameterGroupErrorKind::InvalidDBParameterGroupStateFault(_inner) => {
+            ResetDBClusterParameterGroupErrorKind::InvalidDbParameterGroupStateFault(_inner) => {
                 _inner.fmt(f)
             }
             ResetDBClusterParameterGroupErrorKind::Unhandled(_inner) => _inner.fmt(f),
@@ -12429,23 +12429,23 @@ impl ResetDBClusterParameterGroupError {
     pub fn is_db_parameter_group_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
-            ResetDBClusterParameterGroupErrorKind::DBParameterGroupNotFoundFault(_)
+            ResetDBClusterParameterGroupErrorKind::DbParameterGroupNotFoundFault(_)
         )
     }
     pub fn is_invalid_db_parameter_group_state_fault(&self) -> bool {
         matches!(
             &self.kind,
-            ResetDBClusterParameterGroupErrorKind::InvalidDBParameterGroupStateFault(_)
+            ResetDBClusterParameterGroupErrorKind::InvalidDbParameterGroupStateFault(_)
         )
     }
 }
 impl std::error::Error for ResetDBClusterParameterGroupError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ResetDBClusterParameterGroupErrorKind::DBParameterGroupNotFoundFault(_inner) => {
+            ResetDBClusterParameterGroupErrorKind::DbParameterGroupNotFoundFault(_inner) => {
                 Some(_inner)
             }
-            ResetDBClusterParameterGroupErrorKind::InvalidDBParameterGroupStateFault(_inner) => {
+            ResetDBClusterParameterGroupErrorKind::InvalidDbParameterGroupStateFault(_inner) => {
                 Some(_inner)
             }
             ResetDBClusterParameterGroupErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
@@ -12462,16 +12462,16 @@ pub struct ResetDBParameterGroupError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ResetDBParameterGroupErrorKind {
-    DBParameterGroupNotFoundFault(crate::error::DBParameterGroupNotFoundFault),
-    InvalidDBParameterGroupStateFault(crate::error::InvalidDBParameterGroupStateFault),
+    DbParameterGroupNotFoundFault(crate::error::DbParameterGroupNotFoundFault),
+    InvalidDbParameterGroupStateFault(crate::error::InvalidDbParameterGroupStateFault),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ResetDBParameterGroupError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ResetDBParameterGroupErrorKind::DBParameterGroupNotFoundFault(_inner) => _inner.fmt(f),
-            ResetDBParameterGroupErrorKind::InvalidDBParameterGroupStateFault(_inner) => {
+            ResetDBParameterGroupErrorKind::DbParameterGroupNotFoundFault(_inner) => _inner.fmt(f),
+            ResetDBParameterGroupErrorKind::InvalidDbParameterGroupStateFault(_inner) => {
                 _inner.fmt(f)
             }
             ResetDBParameterGroupErrorKind::Unhandled(_inner) => _inner.fmt(f),
@@ -12525,21 +12525,21 @@ impl ResetDBParameterGroupError {
     pub fn is_db_parameter_group_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
-            ResetDBParameterGroupErrorKind::DBParameterGroupNotFoundFault(_)
+            ResetDBParameterGroupErrorKind::DbParameterGroupNotFoundFault(_)
         )
     }
     pub fn is_invalid_db_parameter_group_state_fault(&self) -> bool {
         matches!(
             &self.kind,
-            ResetDBParameterGroupErrorKind::InvalidDBParameterGroupStateFault(_)
+            ResetDBParameterGroupErrorKind::InvalidDbParameterGroupStateFault(_)
         )
     }
 }
 impl std::error::Error for ResetDBParameterGroupError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ResetDBParameterGroupErrorKind::DBParameterGroupNotFoundFault(_inner) => Some(_inner),
-            ResetDBParameterGroupErrorKind::InvalidDBParameterGroupStateFault(_inner) => {
+            ResetDBParameterGroupErrorKind::DbParameterGroupNotFoundFault(_inner) => Some(_inner),
+            ResetDBParameterGroupErrorKind::InvalidDbParameterGroupStateFault(_inner) => {
                 Some(_inner)
             }
             ResetDBParameterGroupErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
@@ -12556,19 +12556,19 @@ pub struct RestoreDBClusterFromS3Error {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum RestoreDBClusterFromS3ErrorKind {
-    DBClusterAlreadyExistsFault(crate::error::DBClusterAlreadyExistsFault),
-    DBClusterNotFoundFault(crate::error::DBClusterNotFoundFault),
-    DBClusterParameterGroupNotFoundFault(crate::error::DBClusterParameterGroupNotFoundFault),
-    DBClusterQuotaExceededFault(crate::error::DBClusterQuotaExceededFault),
-    DBSubnetGroupNotFoundFault(crate::error::DBSubnetGroupNotFoundFault),
+    DbClusterAlreadyExistsFault(crate::error::DbClusterAlreadyExistsFault),
+    DbClusterNotFoundFault(crate::error::DbClusterNotFoundFault),
+    DbClusterParameterGroupNotFoundFault(crate::error::DbClusterParameterGroupNotFoundFault),
+    DbClusterQuotaExceededFault(crate::error::DbClusterQuotaExceededFault),
+    DbSubnetGroupNotFoundFault(crate::error::DbSubnetGroupNotFoundFault),
     DomainNotFoundFault(crate::error::DomainNotFoundFault),
     InsufficientStorageClusterCapacityFault(crate::error::InsufficientStorageClusterCapacityFault),
-    InvalidDBClusterStateFault(crate::error::InvalidDBClusterStateFault),
-    InvalidDBSubnetGroupStateFault(crate::error::InvalidDBSubnetGroupStateFault),
+    InvalidDbClusterStateFault(crate::error::InvalidDbClusterStateFault),
+    InvalidDbSubnetGroupStateFault(crate::error::InvalidDbSubnetGroupStateFault),
     InvalidS3BucketFault(crate::error::InvalidS3BucketFault),
     InvalidSubnet(crate::error::InvalidSubnet),
-    InvalidVPCNetworkStateFault(crate::error::InvalidVPCNetworkStateFault),
-    KMSKeyNotAccessibleFault(crate::error::KMSKeyNotAccessibleFault),
+    InvalidVpcNetworkStateFault(crate::error::InvalidVpcNetworkStateFault),
+    KmsKeyNotAccessibleFault(crate::error::KmsKeyNotAccessibleFault),
     StorageQuotaExceededFault(crate::error::StorageQuotaExceededFault),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -12576,25 +12576,25 @@ pub enum RestoreDBClusterFromS3ErrorKind {
 impl std::fmt::Display for RestoreDBClusterFromS3Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            RestoreDBClusterFromS3ErrorKind::DBClusterAlreadyExistsFault(_inner) => _inner.fmt(f),
-            RestoreDBClusterFromS3ErrorKind::DBClusterNotFoundFault(_inner) => _inner.fmt(f),
-            RestoreDBClusterFromS3ErrorKind::DBClusterParameterGroupNotFoundFault(_inner) => {
+            RestoreDBClusterFromS3ErrorKind::DbClusterAlreadyExistsFault(_inner) => _inner.fmt(f),
+            RestoreDBClusterFromS3ErrorKind::DbClusterNotFoundFault(_inner) => _inner.fmt(f),
+            RestoreDBClusterFromS3ErrorKind::DbClusterParameterGroupNotFoundFault(_inner) => {
                 _inner.fmt(f)
             }
-            RestoreDBClusterFromS3ErrorKind::DBClusterQuotaExceededFault(_inner) => _inner.fmt(f),
-            RestoreDBClusterFromS3ErrorKind::DBSubnetGroupNotFoundFault(_inner) => _inner.fmt(f),
+            RestoreDBClusterFromS3ErrorKind::DbClusterQuotaExceededFault(_inner) => _inner.fmt(f),
+            RestoreDBClusterFromS3ErrorKind::DbSubnetGroupNotFoundFault(_inner) => _inner.fmt(f),
             RestoreDBClusterFromS3ErrorKind::DomainNotFoundFault(_inner) => _inner.fmt(f),
             RestoreDBClusterFromS3ErrorKind::InsufficientStorageClusterCapacityFault(_inner) => {
                 _inner.fmt(f)
             }
-            RestoreDBClusterFromS3ErrorKind::InvalidDBClusterStateFault(_inner) => _inner.fmt(f),
-            RestoreDBClusterFromS3ErrorKind::InvalidDBSubnetGroupStateFault(_inner) => {
+            RestoreDBClusterFromS3ErrorKind::InvalidDbClusterStateFault(_inner) => _inner.fmt(f),
+            RestoreDBClusterFromS3ErrorKind::InvalidDbSubnetGroupStateFault(_inner) => {
                 _inner.fmt(f)
             }
             RestoreDBClusterFromS3ErrorKind::InvalidS3BucketFault(_inner) => _inner.fmt(f),
             RestoreDBClusterFromS3ErrorKind::InvalidSubnet(_inner) => _inner.fmt(f),
-            RestoreDBClusterFromS3ErrorKind::InvalidVPCNetworkStateFault(_inner) => _inner.fmt(f),
-            RestoreDBClusterFromS3ErrorKind::KMSKeyNotAccessibleFault(_inner) => _inner.fmt(f),
+            RestoreDBClusterFromS3ErrorKind::InvalidVpcNetworkStateFault(_inner) => _inner.fmt(f),
+            RestoreDBClusterFromS3ErrorKind::KmsKeyNotAccessibleFault(_inner) => _inner.fmt(f),
             RestoreDBClusterFromS3ErrorKind::StorageQuotaExceededFault(_inner) => _inner.fmt(f),
             RestoreDBClusterFromS3ErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
@@ -12647,31 +12647,31 @@ impl RestoreDBClusterFromS3Error {
     pub fn is_db_cluster_already_exists_fault(&self) -> bool {
         matches!(
             &self.kind,
-            RestoreDBClusterFromS3ErrorKind::DBClusterAlreadyExistsFault(_)
+            RestoreDBClusterFromS3ErrorKind::DbClusterAlreadyExistsFault(_)
         )
     }
     pub fn is_db_cluster_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
-            RestoreDBClusterFromS3ErrorKind::DBClusterNotFoundFault(_)
+            RestoreDBClusterFromS3ErrorKind::DbClusterNotFoundFault(_)
         )
     }
     pub fn is_db_cluster_parameter_group_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
-            RestoreDBClusterFromS3ErrorKind::DBClusterParameterGroupNotFoundFault(_)
+            RestoreDBClusterFromS3ErrorKind::DbClusterParameterGroupNotFoundFault(_)
         )
     }
     pub fn is_db_cluster_quota_exceeded_fault(&self) -> bool {
         matches!(
             &self.kind,
-            RestoreDBClusterFromS3ErrorKind::DBClusterQuotaExceededFault(_)
+            RestoreDBClusterFromS3ErrorKind::DbClusterQuotaExceededFault(_)
         )
     }
     pub fn is_db_subnet_group_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
-            RestoreDBClusterFromS3ErrorKind::DBSubnetGroupNotFoundFault(_)
+            RestoreDBClusterFromS3ErrorKind::DbSubnetGroupNotFoundFault(_)
         )
     }
     pub fn is_domain_not_found_fault(&self) -> bool {
@@ -12689,13 +12689,13 @@ impl RestoreDBClusterFromS3Error {
     pub fn is_invalid_db_cluster_state_fault(&self) -> bool {
         matches!(
             &self.kind,
-            RestoreDBClusterFromS3ErrorKind::InvalidDBClusterStateFault(_)
+            RestoreDBClusterFromS3ErrorKind::InvalidDbClusterStateFault(_)
         )
     }
     pub fn is_invalid_db_subnet_group_state_fault(&self) -> bool {
         matches!(
             &self.kind,
-            RestoreDBClusterFromS3ErrorKind::InvalidDBSubnetGroupStateFault(_)
+            RestoreDBClusterFromS3ErrorKind::InvalidDbSubnetGroupStateFault(_)
         )
     }
     pub fn is_invalid_s3_bucket_fault(&self) -> bool {
@@ -12713,13 +12713,13 @@ impl RestoreDBClusterFromS3Error {
     pub fn is_invalid_vpc_network_state_fault(&self) -> bool {
         matches!(
             &self.kind,
-            RestoreDBClusterFromS3ErrorKind::InvalidVPCNetworkStateFault(_)
+            RestoreDBClusterFromS3ErrorKind::InvalidVpcNetworkStateFault(_)
         )
     }
     pub fn is_kms_key_not_accessible_fault(&self) -> bool {
         matches!(
             &self.kind,
-            RestoreDBClusterFromS3ErrorKind::KMSKeyNotAccessibleFault(_)
+            RestoreDBClusterFromS3ErrorKind::KmsKeyNotAccessibleFault(_)
         )
     }
     pub fn is_storage_quota_exceeded_fault(&self) -> bool {
@@ -12732,23 +12732,23 @@ impl RestoreDBClusterFromS3Error {
 impl std::error::Error for RestoreDBClusterFromS3Error {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            RestoreDBClusterFromS3ErrorKind::DBClusterAlreadyExistsFault(_inner) => Some(_inner),
-            RestoreDBClusterFromS3ErrorKind::DBClusterNotFoundFault(_inner) => Some(_inner),
-            RestoreDBClusterFromS3ErrorKind::DBClusterParameterGroupNotFoundFault(_inner) => {
+            RestoreDBClusterFromS3ErrorKind::DbClusterAlreadyExistsFault(_inner) => Some(_inner),
+            RestoreDBClusterFromS3ErrorKind::DbClusterNotFoundFault(_inner) => Some(_inner),
+            RestoreDBClusterFromS3ErrorKind::DbClusterParameterGroupNotFoundFault(_inner) => {
                 Some(_inner)
             }
-            RestoreDBClusterFromS3ErrorKind::DBClusterQuotaExceededFault(_inner) => Some(_inner),
-            RestoreDBClusterFromS3ErrorKind::DBSubnetGroupNotFoundFault(_inner) => Some(_inner),
+            RestoreDBClusterFromS3ErrorKind::DbClusterQuotaExceededFault(_inner) => Some(_inner),
+            RestoreDBClusterFromS3ErrorKind::DbSubnetGroupNotFoundFault(_inner) => Some(_inner),
             RestoreDBClusterFromS3ErrorKind::DomainNotFoundFault(_inner) => Some(_inner),
             RestoreDBClusterFromS3ErrorKind::InsufficientStorageClusterCapacityFault(_inner) => {
                 Some(_inner)
             }
-            RestoreDBClusterFromS3ErrorKind::InvalidDBClusterStateFault(_inner) => Some(_inner),
-            RestoreDBClusterFromS3ErrorKind::InvalidDBSubnetGroupStateFault(_inner) => Some(_inner),
+            RestoreDBClusterFromS3ErrorKind::InvalidDbClusterStateFault(_inner) => Some(_inner),
+            RestoreDBClusterFromS3ErrorKind::InvalidDbSubnetGroupStateFault(_inner) => Some(_inner),
             RestoreDBClusterFromS3ErrorKind::InvalidS3BucketFault(_inner) => Some(_inner),
             RestoreDBClusterFromS3ErrorKind::InvalidSubnet(_inner) => Some(_inner),
-            RestoreDBClusterFromS3ErrorKind::InvalidVPCNetworkStateFault(_inner) => Some(_inner),
-            RestoreDBClusterFromS3ErrorKind::KMSKeyNotAccessibleFault(_inner) => Some(_inner),
+            RestoreDBClusterFromS3ErrorKind::InvalidVpcNetworkStateFault(_inner) => Some(_inner),
+            RestoreDBClusterFromS3ErrorKind::KmsKeyNotAccessibleFault(_inner) => Some(_inner),
             RestoreDBClusterFromS3ErrorKind::StorageQuotaExceededFault(_inner) => Some(_inner),
             RestoreDBClusterFromS3ErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
@@ -12764,21 +12764,21 @@ pub struct RestoreDBClusterFromSnapshotError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum RestoreDBClusterFromSnapshotErrorKind {
-    DBClusterAlreadyExistsFault(crate::error::DBClusterAlreadyExistsFault),
-    DBClusterParameterGroupNotFoundFault(crate::error::DBClusterParameterGroupNotFoundFault),
-    DBClusterQuotaExceededFault(crate::error::DBClusterQuotaExceededFault),
-    DBClusterSnapshotNotFoundFault(crate::error::DBClusterSnapshotNotFoundFault),
-    DBSnapshotNotFoundFault(crate::error::DBSnapshotNotFoundFault),
-    DBSubnetGroupNotFoundFault(crate::error::DBSubnetGroupNotFoundFault),
+    DbClusterAlreadyExistsFault(crate::error::DbClusterAlreadyExistsFault),
+    DbClusterParameterGroupNotFoundFault(crate::error::DbClusterParameterGroupNotFoundFault),
+    DbClusterQuotaExceededFault(crate::error::DbClusterQuotaExceededFault),
+    DbClusterSnapshotNotFoundFault(crate::error::DbClusterSnapshotNotFoundFault),
+    DbSnapshotNotFoundFault(crate::error::DbSnapshotNotFoundFault),
+    DbSubnetGroupNotFoundFault(crate::error::DbSubnetGroupNotFoundFault),
     DomainNotFoundFault(crate::error::DomainNotFoundFault),
-    InsufficientDBClusterCapacityFault(crate::error::InsufficientDBClusterCapacityFault),
+    InsufficientDbClusterCapacityFault(crate::error::InsufficientDbClusterCapacityFault),
     InsufficientStorageClusterCapacityFault(crate::error::InsufficientStorageClusterCapacityFault),
-    InvalidDBClusterSnapshotStateFault(crate::error::InvalidDBClusterSnapshotStateFault),
-    InvalidDBSnapshotStateFault(crate::error::InvalidDBSnapshotStateFault),
+    InvalidDbClusterSnapshotStateFault(crate::error::InvalidDbClusterSnapshotStateFault),
+    InvalidDbSnapshotStateFault(crate::error::InvalidDbSnapshotStateFault),
     InvalidRestoreFault(crate::error::InvalidRestoreFault),
     InvalidSubnet(crate::error::InvalidSubnet),
-    InvalidVPCNetworkStateFault(crate::error::InvalidVPCNetworkStateFault),
-    KMSKeyNotAccessibleFault(crate::error::KMSKeyNotAccessibleFault),
+    InvalidVpcNetworkStateFault(crate::error::InvalidVpcNetworkStateFault),
+    KmsKeyNotAccessibleFault(crate::error::KmsKeyNotAccessibleFault),
     OptionGroupNotFoundFault(crate::error::OptionGroupNotFoundFault),
     StorageQuotaExceededFault(crate::error::StorageQuotaExceededFault),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
@@ -12787,41 +12787,41 @@ pub enum RestoreDBClusterFromSnapshotErrorKind {
 impl std::fmt::Display for RestoreDBClusterFromSnapshotError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            RestoreDBClusterFromSnapshotErrorKind::DBClusterAlreadyExistsFault(_inner) => {
+            RestoreDBClusterFromSnapshotErrorKind::DbClusterAlreadyExistsFault(_inner) => {
                 _inner.fmt(f)
             }
-            RestoreDBClusterFromSnapshotErrorKind::DBClusterParameterGroupNotFoundFault(_inner) => {
+            RestoreDBClusterFromSnapshotErrorKind::DbClusterParameterGroupNotFoundFault(_inner) => {
                 _inner.fmt(f)
             }
-            RestoreDBClusterFromSnapshotErrorKind::DBClusterQuotaExceededFault(_inner) => {
+            RestoreDBClusterFromSnapshotErrorKind::DbClusterQuotaExceededFault(_inner) => {
                 _inner.fmt(f)
             }
-            RestoreDBClusterFromSnapshotErrorKind::DBClusterSnapshotNotFoundFault(_inner) => {
+            RestoreDBClusterFromSnapshotErrorKind::DbClusterSnapshotNotFoundFault(_inner) => {
                 _inner.fmt(f)
             }
-            RestoreDBClusterFromSnapshotErrorKind::DBSnapshotNotFoundFault(_inner) => _inner.fmt(f),
-            RestoreDBClusterFromSnapshotErrorKind::DBSubnetGroupNotFoundFault(_inner) => {
+            RestoreDBClusterFromSnapshotErrorKind::DbSnapshotNotFoundFault(_inner) => _inner.fmt(f),
+            RestoreDBClusterFromSnapshotErrorKind::DbSubnetGroupNotFoundFault(_inner) => {
                 _inner.fmt(f)
             }
             RestoreDBClusterFromSnapshotErrorKind::DomainNotFoundFault(_inner) => _inner.fmt(f),
-            RestoreDBClusterFromSnapshotErrorKind::InsufficientDBClusterCapacityFault(_inner) => {
+            RestoreDBClusterFromSnapshotErrorKind::InsufficientDbClusterCapacityFault(_inner) => {
                 _inner.fmt(f)
             }
             RestoreDBClusterFromSnapshotErrorKind::InsufficientStorageClusterCapacityFault(
                 _inner,
             ) => _inner.fmt(f),
-            RestoreDBClusterFromSnapshotErrorKind::InvalidDBClusterSnapshotStateFault(_inner) => {
+            RestoreDBClusterFromSnapshotErrorKind::InvalidDbClusterSnapshotStateFault(_inner) => {
                 _inner.fmt(f)
             }
-            RestoreDBClusterFromSnapshotErrorKind::InvalidDBSnapshotStateFault(_inner) => {
+            RestoreDBClusterFromSnapshotErrorKind::InvalidDbSnapshotStateFault(_inner) => {
                 _inner.fmt(f)
             }
             RestoreDBClusterFromSnapshotErrorKind::InvalidRestoreFault(_inner) => _inner.fmt(f),
             RestoreDBClusterFromSnapshotErrorKind::InvalidSubnet(_inner) => _inner.fmt(f),
-            RestoreDBClusterFromSnapshotErrorKind::InvalidVPCNetworkStateFault(_inner) => {
+            RestoreDBClusterFromSnapshotErrorKind::InvalidVpcNetworkStateFault(_inner) => {
                 _inner.fmt(f)
             }
-            RestoreDBClusterFromSnapshotErrorKind::KMSKeyNotAccessibleFault(_inner) => {
+            RestoreDBClusterFromSnapshotErrorKind::KmsKeyNotAccessibleFault(_inner) => {
                 _inner.fmt(f)
             }
             RestoreDBClusterFromSnapshotErrorKind::OptionGroupNotFoundFault(_inner) => {
@@ -12881,37 +12881,37 @@ impl RestoreDBClusterFromSnapshotError {
     pub fn is_db_cluster_already_exists_fault(&self) -> bool {
         matches!(
             &self.kind,
-            RestoreDBClusterFromSnapshotErrorKind::DBClusterAlreadyExistsFault(_)
+            RestoreDBClusterFromSnapshotErrorKind::DbClusterAlreadyExistsFault(_)
         )
     }
     pub fn is_db_cluster_parameter_group_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
-            RestoreDBClusterFromSnapshotErrorKind::DBClusterParameterGroupNotFoundFault(_)
+            RestoreDBClusterFromSnapshotErrorKind::DbClusterParameterGroupNotFoundFault(_)
         )
     }
     pub fn is_db_cluster_quota_exceeded_fault(&self) -> bool {
         matches!(
             &self.kind,
-            RestoreDBClusterFromSnapshotErrorKind::DBClusterQuotaExceededFault(_)
+            RestoreDBClusterFromSnapshotErrorKind::DbClusterQuotaExceededFault(_)
         )
     }
     pub fn is_db_cluster_snapshot_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
-            RestoreDBClusterFromSnapshotErrorKind::DBClusterSnapshotNotFoundFault(_)
+            RestoreDBClusterFromSnapshotErrorKind::DbClusterSnapshotNotFoundFault(_)
         )
     }
     pub fn is_db_snapshot_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
-            RestoreDBClusterFromSnapshotErrorKind::DBSnapshotNotFoundFault(_)
+            RestoreDBClusterFromSnapshotErrorKind::DbSnapshotNotFoundFault(_)
         )
     }
     pub fn is_db_subnet_group_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
-            RestoreDBClusterFromSnapshotErrorKind::DBSubnetGroupNotFoundFault(_)
+            RestoreDBClusterFromSnapshotErrorKind::DbSubnetGroupNotFoundFault(_)
         )
     }
     pub fn is_domain_not_found_fault(&self) -> bool {
@@ -12923,7 +12923,7 @@ impl RestoreDBClusterFromSnapshotError {
     pub fn is_insufficient_db_cluster_capacity_fault(&self) -> bool {
         matches!(
             &self.kind,
-            RestoreDBClusterFromSnapshotErrorKind::InsufficientDBClusterCapacityFault(_)
+            RestoreDBClusterFromSnapshotErrorKind::InsufficientDbClusterCapacityFault(_)
         )
     }
     pub fn is_insufficient_storage_cluster_capacity_fault(&self) -> bool {
@@ -12935,13 +12935,13 @@ impl RestoreDBClusterFromSnapshotError {
     pub fn is_invalid_db_cluster_snapshot_state_fault(&self) -> bool {
         matches!(
             &self.kind,
-            RestoreDBClusterFromSnapshotErrorKind::InvalidDBClusterSnapshotStateFault(_)
+            RestoreDBClusterFromSnapshotErrorKind::InvalidDbClusterSnapshotStateFault(_)
         )
     }
     pub fn is_invalid_db_snapshot_state_fault(&self) -> bool {
         matches!(
             &self.kind,
-            RestoreDBClusterFromSnapshotErrorKind::InvalidDBSnapshotStateFault(_)
+            RestoreDBClusterFromSnapshotErrorKind::InvalidDbSnapshotStateFault(_)
         )
     }
     pub fn is_invalid_restore_fault(&self) -> bool {
@@ -12959,13 +12959,13 @@ impl RestoreDBClusterFromSnapshotError {
     pub fn is_invalid_vpc_network_state_fault(&self) -> bool {
         matches!(
             &self.kind,
-            RestoreDBClusterFromSnapshotErrorKind::InvalidVPCNetworkStateFault(_)
+            RestoreDBClusterFromSnapshotErrorKind::InvalidVpcNetworkStateFault(_)
         )
     }
     pub fn is_kms_key_not_accessible_fault(&self) -> bool {
         matches!(
             &self.kind,
-            RestoreDBClusterFromSnapshotErrorKind::KMSKeyNotAccessibleFault(_)
+            RestoreDBClusterFromSnapshotErrorKind::KmsKeyNotAccessibleFault(_)
         )
     }
     pub fn is_option_group_not_found_fault(&self) -> bool {
@@ -12984,41 +12984,41 @@ impl RestoreDBClusterFromSnapshotError {
 impl std::error::Error for RestoreDBClusterFromSnapshotError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            RestoreDBClusterFromSnapshotErrorKind::DBClusterAlreadyExistsFault(_inner) => {
+            RestoreDBClusterFromSnapshotErrorKind::DbClusterAlreadyExistsFault(_inner) => {
                 Some(_inner)
             }
-            RestoreDBClusterFromSnapshotErrorKind::DBClusterParameterGroupNotFoundFault(_inner) => {
+            RestoreDBClusterFromSnapshotErrorKind::DbClusterParameterGroupNotFoundFault(_inner) => {
                 Some(_inner)
             }
-            RestoreDBClusterFromSnapshotErrorKind::DBClusterQuotaExceededFault(_inner) => {
+            RestoreDBClusterFromSnapshotErrorKind::DbClusterQuotaExceededFault(_inner) => {
                 Some(_inner)
             }
-            RestoreDBClusterFromSnapshotErrorKind::DBClusterSnapshotNotFoundFault(_inner) => {
+            RestoreDBClusterFromSnapshotErrorKind::DbClusterSnapshotNotFoundFault(_inner) => {
                 Some(_inner)
             }
-            RestoreDBClusterFromSnapshotErrorKind::DBSnapshotNotFoundFault(_inner) => Some(_inner),
-            RestoreDBClusterFromSnapshotErrorKind::DBSubnetGroupNotFoundFault(_inner) => {
+            RestoreDBClusterFromSnapshotErrorKind::DbSnapshotNotFoundFault(_inner) => Some(_inner),
+            RestoreDBClusterFromSnapshotErrorKind::DbSubnetGroupNotFoundFault(_inner) => {
                 Some(_inner)
             }
             RestoreDBClusterFromSnapshotErrorKind::DomainNotFoundFault(_inner) => Some(_inner),
-            RestoreDBClusterFromSnapshotErrorKind::InsufficientDBClusterCapacityFault(_inner) => {
+            RestoreDBClusterFromSnapshotErrorKind::InsufficientDbClusterCapacityFault(_inner) => {
                 Some(_inner)
             }
             RestoreDBClusterFromSnapshotErrorKind::InsufficientStorageClusterCapacityFault(
                 _inner,
             ) => Some(_inner),
-            RestoreDBClusterFromSnapshotErrorKind::InvalidDBClusterSnapshotStateFault(_inner) => {
+            RestoreDBClusterFromSnapshotErrorKind::InvalidDbClusterSnapshotStateFault(_inner) => {
                 Some(_inner)
             }
-            RestoreDBClusterFromSnapshotErrorKind::InvalidDBSnapshotStateFault(_inner) => {
+            RestoreDBClusterFromSnapshotErrorKind::InvalidDbSnapshotStateFault(_inner) => {
                 Some(_inner)
             }
             RestoreDBClusterFromSnapshotErrorKind::InvalidRestoreFault(_inner) => Some(_inner),
             RestoreDBClusterFromSnapshotErrorKind::InvalidSubnet(_inner) => Some(_inner),
-            RestoreDBClusterFromSnapshotErrorKind::InvalidVPCNetworkStateFault(_inner) => {
+            RestoreDBClusterFromSnapshotErrorKind::InvalidVpcNetworkStateFault(_inner) => {
                 Some(_inner)
             }
-            RestoreDBClusterFromSnapshotErrorKind::KMSKeyNotAccessibleFault(_inner) => Some(_inner),
+            RestoreDBClusterFromSnapshotErrorKind::KmsKeyNotAccessibleFault(_inner) => Some(_inner),
             RestoreDBClusterFromSnapshotErrorKind::OptionGroupNotFoundFault(_inner) => Some(_inner),
             RestoreDBClusterFromSnapshotErrorKind::StorageQuotaExceededFault(_inner) => {
                 Some(_inner)
@@ -13037,22 +13037,22 @@ pub struct RestoreDBClusterToPointInTimeError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum RestoreDBClusterToPointInTimeErrorKind {
-    DBClusterAlreadyExistsFault(crate::error::DBClusterAlreadyExistsFault),
-    DBClusterNotFoundFault(crate::error::DBClusterNotFoundFault),
-    DBClusterParameterGroupNotFoundFault(crate::error::DBClusterParameterGroupNotFoundFault),
-    DBClusterQuotaExceededFault(crate::error::DBClusterQuotaExceededFault),
-    DBClusterSnapshotNotFoundFault(crate::error::DBClusterSnapshotNotFoundFault),
-    DBSubnetGroupNotFoundFault(crate::error::DBSubnetGroupNotFoundFault),
+    DbClusterAlreadyExistsFault(crate::error::DbClusterAlreadyExistsFault),
+    DbClusterNotFoundFault(crate::error::DbClusterNotFoundFault),
+    DbClusterParameterGroupNotFoundFault(crate::error::DbClusterParameterGroupNotFoundFault),
+    DbClusterQuotaExceededFault(crate::error::DbClusterQuotaExceededFault),
+    DbClusterSnapshotNotFoundFault(crate::error::DbClusterSnapshotNotFoundFault),
+    DbSubnetGroupNotFoundFault(crate::error::DbSubnetGroupNotFoundFault),
     DomainNotFoundFault(crate::error::DomainNotFoundFault),
-    InsufficientDBClusterCapacityFault(crate::error::InsufficientDBClusterCapacityFault),
+    InsufficientDbClusterCapacityFault(crate::error::InsufficientDbClusterCapacityFault),
     InsufficientStorageClusterCapacityFault(crate::error::InsufficientStorageClusterCapacityFault),
-    InvalidDBClusterSnapshotStateFault(crate::error::InvalidDBClusterSnapshotStateFault),
-    InvalidDBClusterStateFault(crate::error::InvalidDBClusterStateFault),
-    InvalidDBSnapshotStateFault(crate::error::InvalidDBSnapshotStateFault),
+    InvalidDbClusterSnapshotStateFault(crate::error::InvalidDbClusterSnapshotStateFault),
+    InvalidDbClusterStateFault(crate::error::InvalidDbClusterStateFault),
+    InvalidDbSnapshotStateFault(crate::error::InvalidDbSnapshotStateFault),
     InvalidRestoreFault(crate::error::InvalidRestoreFault),
     InvalidSubnet(crate::error::InvalidSubnet),
-    InvalidVPCNetworkStateFault(crate::error::InvalidVPCNetworkStateFault),
-    KMSKeyNotAccessibleFault(crate::error::KMSKeyNotAccessibleFault),
+    InvalidVpcNetworkStateFault(crate::error::InvalidVpcNetworkStateFault),
+    KmsKeyNotAccessibleFault(crate::error::KmsKeyNotAccessibleFault),
     OptionGroupNotFoundFault(crate::error::OptionGroupNotFoundFault),
     StorageQuotaExceededFault(crate::error::StorageQuotaExceededFault),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
@@ -13061,44 +13061,44 @@ pub enum RestoreDBClusterToPointInTimeErrorKind {
 impl std::fmt::Display for RestoreDBClusterToPointInTimeError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            RestoreDBClusterToPointInTimeErrorKind::DBClusterAlreadyExistsFault(_inner) => {
+            RestoreDBClusterToPointInTimeErrorKind::DbClusterAlreadyExistsFault(_inner) => {
                 _inner.fmt(f)
             }
-            RestoreDBClusterToPointInTimeErrorKind::DBClusterNotFoundFault(_inner) => _inner.fmt(f),
-            RestoreDBClusterToPointInTimeErrorKind::DBClusterParameterGroupNotFoundFault(
+            RestoreDBClusterToPointInTimeErrorKind::DbClusterNotFoundFault(_inner) => _inner.fmt(f),
+            RestoreDBClusterToPointInTimeErrorKind::DbClusterParameterGroupNotFoundFault(
                 _inner,
             ) => _inner.fmt(f),
-            RestoreDBClusterToPointInTimeErrorKind::DBClusterQuotaExceededFault(_inner) => {
+            RestoreDBClusterToPointInTimeErrorKind::DbClusterQuotaExceededFault(_inner) => {
                 _inner.fmt(f)
             }
-            RestoreDBClusterToPointInTimeErrorKind::DBClusterSnapshotNotFoundFault(_inner) => {
+            RestoreDBClusterToPointInTimeErrorKind::DbClusterSnapshotNotFoundFault(_inner) => {
                 _inner.fmt(f)
             }
-            RestoreDBClusterToPointInTimeErrorKind::DBSubnetGroupNotFoundFault(_inner) => {
+            RestoreDBClusterToPointInTimeErrorKind::DbSubnetGroupNotFoundFault(_inner) => {
                 _inner.fmt(f)
             }
             RestoreDBClusterToPointInTimeErrorKind::DomainNotFoundFault(_inner) => _inner.fmt(f),
-            RestoreDBClusterToPointInTimeErrorKind::InsufficientDBClusterCapacityFault(_inner) => {
+            RestoreDBClusterToPointInTimeErrorKind::InsufficientDbClusterCapacityFault(_inner) => {
                 _inner.fmt(f)
             }
             RestoreDBClusterToPointInTimeErrorKind::InsufficientStorageClusterCapacityFault(
                 _inner,
             ) => _inner.fmt(f),
-            RestoreDBClusterToPointInTimeErrorKind::InvalidDBClusterSnapshotStateFault(_inner) => {
+            RestoreDBClusterToPointInTimeErrorKind::InvalidDbClusterSnapshotStateFault(_inner) => {
                 _inner.fmt(f)
             }
-            RestoreDBClusterToPointInTimeErrorKind::InvalidDBClusterStateFault(_inner) => {
+            RestoreDBClusterToPointInTimeErrorKind::InvalidDbClusterStateFault(_inner) => {
                 _inner.fmt(f)
             }
-            RestoreDBClusterToPointInTimeErrorKind::InvalidDBSnapshotStateFault(_inner) => {
+            RestoreDBClusterToPointInTimeErrorKind::InvalidDbSnapshotStateFault(_inner) => {
                 _inner.fmt(f)
             }
             RestoreDBClusterToPointInTimeErrorKind::InvalidRestoreFault(_inner) => _inner.fmt(f),
             RestoreDBClusterToPointInTimeErrorKind::InvalidSubnet(_inner) => _inner.fmt(f),
-            RestoreDBClusterToPointInTimeErrorKind::InvalidVPCNetworkStateFault(_inner) => {
+            RestoreDBClusterToPointInTimeErrorKind::InvalidVpcNetworkStateFault(_inner) => {
                 _inner.fmt(f)
             }
-            RestoreDBClusterToPointInTimeErrorKind::KMSKeyNotAccessibleFault(_inner) => {
+            RestoreDBClusterToPointInTimeErrorKind::KmsKeyNotAccessibleFault(_inner) => {
                 _inner.fmt(f)
             }
             RestoreDBClusterToPointInTimeErrorKind::OptionGroupNotFoundFault(_inner) => {
@@ -13158,37 +13158,37 @@ impl RestoreDBClusterToPointInTimeError {
     pub fn is_db_cluster_already_exists_fault(&self) -> bool {
         matches!(
             &self.kind,
-            RestoreDBClusterToPointInTimeErrorKind::DBClusterAlreadyExistsFault(_)
+            RestoreDBClusterToPointInTimeErrorKind::DbClusterAlreadyExistsFault(_)
         )
     }
     pub fn is_db_cluster_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
-            RestoreDBClusterToPointInTimeErrorKind::DBClusterNotFoundFault(_)
+            RestoreDBClusterToPointInTimeErrorKind::DbClusterNotFoundFault(_)
         )
     }
     pub fn is_db_cluster_parameter_group_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
-            RestoreDBClusterToPointInTimeErrorKind::DBClusterParameterGroupNotFoundFault(_)
+            RestoreDBClusterToPointInTimeErrorKind::DbClusterParameterGroupNotFoundFault(_)
         )
     }
     pub fn is_db_cluster_quota_exceeded_fault(&self) -> bool {
         matches!(
             &self.kind,
-            RestoreDBClusterToPointInTimeErrorKind::DBClusterQuotaExceededFault(_)
+            RestoreDBClusterToPointInTimeErrorKind::DbClusterQuotaExceededFault(_)
         )
     }
     pub fn is_db_cluster_snapshot_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
-            RestoreDBClusterToPointInTimeErrorKind::DBClusterSnapshotNotFoundFault(_)
+            RestoreDBClusterToPointInTimeErrorKind::DbClusterSnapshotNotFoundFault(_)
         )
     }
     pub fn is_db_subnet_group_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
-            RestoreDBClusterToPointInTimeErrorKind::DBSubnetGroupNotFoundFault(_)
+            RestoreDBClusterToPointInTimeErrorKind::DbSubnetGroupNotFoundFault(_)
         )
     }
     pub fn is_domain_not_found_fault(&self) -> bool {
@@ -13200,7 +13200,7 @@ impl RestoreDBClusterToPointInTimeError {
     pub fn is_insufficient_db_cluster_capacity_fault(&self) -> bool {
         matches!(
             &self.kind,
-            RestoreDBClusterToPointInTimeErrorKind::InsufficientDBClusterCapacityFault(_)
+            RestoreDBClusterToPointInTimeErrorKind::InsufficientDbClusterCapacityFault(_)
         )
     }
     pub fn is_insufficient_storage_cluster_capacity_fault(&self) -> bool {
@@ -13212,19 +13212,19 @@ impl RestoreDBClusterToPointInTimeError {
     pub fn is_invalid_db_cluster_snapshot_state_fault(&self) -> bool {
         matches!(
             &self.kind,
-            RestoreDBClusterToPointInTimeErrorKind::InvalidDBClusterSnapshotStateFault(_)
+            RestoreDBClusterToPointInTimeErrorKind::InvalidDbClusterSnapshotStateFault(_)
         )
     }
     pub fn is_invalid_db_cluster_state_fault(&self) -> bool {
         matches!(
             &self.kind,
-            RestoreDBClusterToPointInTimeErrorKind::InvalidDBClusterStateFault(_)
+            RestoreDBClusterToPointInTimeErrorKind::InvalidDbClusterStateFault(_)
         )
     }
     pub fn is_invalid_db_snapshot_state_fault(&self) -> bool {
         matches!(
             &self.kind,
-            RestoreDBClusterToPointInTimeErrorKind::InvalidDBSnapshotStateFault(_)
+            RestoreDBClusterToPointInTimeErrorKind::InvalidDbSnapshotStateFault(_)
         )
     }
     pub fn is_invalid_restore_fault(&self) -> bool {
@@ -13242,13 +13242,13 @@ impl RestoreDBClusterToPointInTimeError {
     pub fn is_invalid_vpc_network_state_fault(&self) -> bool {
         matches!(
             &self.kind,
-            RestoreDBClusterToPointInTimeErrorKind::InvalidVPCNetworkStateFault(_)
+            RestoreDBClusterToPointInTimeErrorKind::InvalidVpcNetworkStateFault(_)
         )
     }
     pub fn is_kms_key_not_accessible_fault(&self) -> bool {
         matches!(
             &self.kind,
-            RestoreDBClusterToPointInTimeErrorKind::KMSKeyNotAccessibleFault(_)
+            RestoreDBClusterToPointInTimeErrorKind::KmsKeyNotAccessibleFault(_)
         )
     }
     pub fn is_option_group_not_found_fault(&self) -> bool {
@@ -13267,44 +13267,44 @@ impl RestoreDBClusterToPointInTimeError {
 impl std::error::Error for RestoreDBClusterToPointInTimeError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            RestoreDBClusterToPointInTimeErrorKind::DBClusterAlreadyExistsFault(_inner) => {
+            RestoreDBClusterToPointInTimeErrorKind::DbClusterAlreadyExistsFault(_inner) => {
                 Some(_inner)
             }
-            RestoreDBClusterToPointInTimeErrorKind::DBClusterNotFoundFault(_inner) => Some(_inner),
-            RestoreDBClusterToPointInTimeErrorKind::DBClusterParameterGroupNotFoundFault(
+            RestoreDBClusterToPointInTimeErrorKind::DbClusterNotFoundFault(_inner) => Some(_inner),
+            RestoreDBClusterToPointInTimeErrorKind::DbClusterParameterGroupNotFoundFault(
                 _inner,
             ) => Some(_inner),
-            RestoreDBClusterToPointInTimeErrorKind::DBClusterQuotaExceededFault(_inner) => {
+            RestoreDBClusterToPointInTimeErrorKind::DbClusterQuotaExceededFault(_inner) => {
                 Some(_inner)
             }
-            RestoreDBClusterToPointInTimeErrorKind::DBClusterSnapshotNotFoundFault(_inner) => {
+            RestoreDBClusterToPointInTimeErrorKind::DbClusterSnapshotNotFoundFault(_inner) => {
                 Some(_inner)
             }
-            RestoreDBClusterToPointInTimeErrorKind::DBSubnetGroupNotFoundFault(_inner) => {
+            RestoreDBClusterToPointInTimeErrorKind::DbSubnetGroupNotFoundFault(_inner) => {
                 Some(_inner)
             }
             RestoreDBClusterToPointInTimeErrorKind::DomainNotFoundFault(_inner) => Some(_inner),
-            RestoreDBClusterToPointInTimeErrorKind::InsufficientDBClusterCapacityFault(_inner) => {
+            RestoreDBClusterToPointInTimeErrorKind::InsufficientDbClusterCapacityFault(_inner) => {
                 Some(_inner)
             }
             RestoreDBClusterToPointInTimeErrorKind::InsufficientStorageClusterCapacityFault(
                 _inner,
             ) => Some(_inner),
-            RestoreDBClusterToPointInTimeErrorKind::InvalidDBClusterSnapshotStateFault(_inner) => {
+            RestoreDBClusterToPointInTimeErrorKind::InvalidDbClusterSnapshotStateFault(_inner) => {
                 Some(_inner)
             }
-            RestoreDBClusterToPointInTimeErrorKind::InvalidDBClusterStateFault(_inner) => {
+            RestoreDBClusterToPointInTimeErrorKind::InvalidDbClusterStateFault(_inner) => {
                 Some(_inner)
             }
-            RestoreDBClusterToPointInTimeErrorKind::InvalidDBSnapshotStateFault(_inner) => {
+            RestoreDBClusterToPointInTimeErrorKind::InvalidDbSnapshotStateFault(_inner) => {
                 Some(_inner)
             }
             RestoreDBClusterToPointInTimeErrorKind::InvalidRestoreFault(_inner) => Some(_inner),
             RestoreDBClusterToPointInTimeErrorKind::InvalidSubnet(_inner) => Some(_inner),
-            RestoreDBClusterToPointInTimeErrorKind::InvalidVPCNetworkStateFault(_inner) => {
+            RestoreDBClusterToPointInTimeErrorKind::InvalidVpcNetworkStateFault(_inner) => {
                 Some(_inner)
             }
-            RestoreDBClusterToPointInTimeErrorKind::KMSKeyNotAccessibleFault(_inner) => {
+            RestoreDBClusterToPointInTimeErrorKind::KmsKeyNotAccessibleFault(_inner) => {
                 Some(_inner)
             }
             RestoreDBClusterToPointInTimeErrorKind::OptionGroupNotFoundFault(_inner) => {
@@ -13329,22 +13329,22 @@ pub struct RestoreDBInstanceFromDBSnapshotError {
 pub enum RestoreDBInstanceFromDBSnapshotErrorKind {
     AuthorizationNotFoundFault(crate::error::AuthorizationNotFoundFault),
     BackupPolicyNotFoundFault(crate::error::BackupPolicyNotFoundFault),
-    DBInstanceAlreadyExistsFault(crate::error::DBInstanceAlreadyExistsFault),
-    DBParameterGroupNotFoundFault(crate::error::DBParameterGroupNotFoundFault),
-    DBSecurityGroupNotFoundFault(crate::error::DBSecurityGroupNotFoundFault),
-    DBSnapshotNotFoundFault(crate::error::DBSnapshotNotFoundFault),
-    DBSubnetGroupDoesNotCoverEnoughAZs(crate::error::DBSubnetGroupDoesNotCoverEnoughAZs),
-    DBSubnetGroupNotFoundFault(crate::error::DBSubnetGroupNotFoundFault),
+    DbInstanceAlreadyExistsFault(crate::error::DbInstanceAlreadyExistsFault),
+    DbParameterGroupNotFoundFault(crate::error::DbParameterGroupNotFoundFault),
+    DbSecurityGroupNotFoundFault(crate::error::DbSecurityGroupNotFoundFault),
+    DbSnapshotNotFoundFault(crate::error::DbSnapshotNotFoundFault),
+    DbSubnetGroupDoesNotCoverEnoughAZs(crate::error::DbSubnetGroupDoesNotCoverEnoughAZs),
+    DbSubnetGroupNotFoundFault(crate::error::DbSubnetGroupNotFoundFault),
     DomainNotFoundFault(crate::error::DomainNotFoundFault),
     InstanceQuotaExceededFault(crate::error::InstanceQuotaExceededFault),
-    InsufficientDBInstanceCapacityFault(crate::error::InsufficientDBInstanceCapacityFault),
-    InvalidDBSnapshotStateFault(crate::error::InvalidDBSnapshotStateFault),
+    InsufficientDbInstanceCapacityFault(crate::error::InsufficientDbInstanceCapacityFault),
+    InvalidDbSnapshotStateFault(crate::error::InvalidDbSnapshotStateFault),
     InvalidRestoreFault(crate::error::InvalidRestoreFault),
     InvalidSubnet(crate::error::InvalidSubnet),
-    InvalidVPCNetworkStateFault(crate::error::InvalidVPCNetworkStateFault),
-    KMSKeyNotAccessibleFault(crate::error::KMSKeyNotAccessibleFault),
+    InvalidVpcNetworkStateFault(crate::error::InvalidVpcNetworkStateFault),
+    KmsKeyNotAccessibleFault(crate::error::KmsKeyNotAccessibleFault),
     OptionGroupNotFoundFault(crate::error::OptionGroupNotFoundFault),
-    ProvisionedIopsNotAvailableInAZFault(crate::error::ProvisionedIopsNotAvailableInAZFault),
+    ProvisionedIopsNotAvailableInAzFault(crate::error::ProvisionedIopsNotAvailableInAzFault),
     StorageQuotaExceededFault(crate::error::StorageQuotaExceededFault),
     StorageTypeNotSupportedFault(crate::error::StorageTypeNotSupportedFault),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
@@ -13359,46 +13359,46 @@ impl std::fmt::Display for RestoreDBInstanceFromDBSnapshotError {
             RestoreDBInstanceFromDBSnapshotErrorKind::BackupPolicyNotFoundFault(_inner) => {
                 _inner.fmt(f)
             }
-            RestoreDBInstanceFromDBSnapshotErrorKind::DBInstanceAlreadyExistsFault(_inner) => {
+            RestoreDBInstanceFromDBSnapshotErrorKind::DbInstanceAlreadyExistsFault(_inner) => {
                 _inner.fmt(f)
             }
-            RestoreDBInstanceFromDBSnapshotErrorKind::DBParameterGroupNotFoundFault(_inner) => {
+            RestoreDBInstanceFromDBSnapshotErrorKind::DbParameterGroupNotFoundFault(_inner) => {
                 _inner.fmt(f)
             }
-            RestoreDBInstanceFromDBSnapshotErrorKind::DBSecurityGroupNotFoundFault(_inner) => {
+            RestoreDBInstanceFromDBSnapshotErrorKind::DbSecurityGroupNotFoundFault(_inner) => {
                 _inner.fmt(f)
             }
-            RestoreDBInstanceFromDBSnapshotErrorKind::DBSnapshotNotFoundFault(_inner) => {
+            RestoreDBInstanceFromDBSnapshotErrorKind::DbSnapshotNotFoundFault(_inner) => {
                 _inner.fmt(f)
             }
-            RestoreDBInstanceFromDBSnapshotErrorKind::DBSubnetGroupDoesNotCoverEnoughAZs(
+            RestoreDBInstanceFromDBSnapshotErrorKind::DbSubnetGroupDoesNotCoverEnoughAZs(
                 _inner,
             ) => _inner.fmt(f),
-            RestoreDBInstanceFromDBSnapshotErrorKind::DBSubnetGroupNotFoundFault(_inner) => {
+            RestoreDBInstanceFromDBSnapshotErrorKind::DbSubnetGroupNotFoundFault(_inner) => {
                 _inner.fmt(f)
             }
             RestoreDBInstanceFromDBSnapshotErrorKind::DomainNotFoundFault(_inner) => _inner.fmt(f),
             RestoreDBInstanceFromDBSnapshotErrorKind::InstanceQuotaExceededFault(_inner) => {
                 _inner.fmt(f)
             }
-            RestoreDBInstanceFromDBSnapshotErrorKind::InsufficientDBInstanceCapacityFault(
+            RestoreDBInstanceFromDBSnapshotErrorKind::InsufficientDbInstanceCapacityFault(
                 _inner,
             ) => _inner.fmt(f),
-            RestoreDBInstanceFromDBSnapshotErrorKind::InvalidDBSnapshotStateFault(_inner) => {
+            RestoreDBInstanceFromDBSnapshotErrorKind::InvalidDbSnapshotStateFault(_inner) => {
                 _inner.fmt(f)
             }
             RestoreDBInstanceFromDBSnapshotErrorKind::InvalidRestoreFault(_inner) => _inner.fmt(f),
             RestoreDBInstanceFromDBSnapshotErrorKind::InvalidSubnet(_inner) => _inner.fmt(f),
-            RestoreDBInstanceFromDBSnapshotErrorKind::InvalidVPCNetworkStateFault(_inner) => {
+            RestoreDBInstanceFromDBSnapshotErrorKind::InvalidVpcNetworkStateFault(_inner) => {
                 _inner.fmt(f)
             }
-            RestoreDBInstanceFromDBSnapshotErrorKind::KMSKeyNotAccessibleFault(_inner) => {
+            RestoreDBInstanceFromDBSnapshotErrorKind::KmsKeyNotAccessibleFault(_inner) => {
                 _inner.fmt(f)
             }
             RestoreDBInstanceFromDBSnapshotErrorKind::OptionGroupNotFoundFault(_inner) => {
                 _inner.fmt(f)
             }
-            RestoreDBInstanceFromDBSnapshotErrorKind::ProvisionedIopsNotAvailableInAZFault(
+            RestoreDBInstanceFromDBSnapshotErrorKind::ProvisionedIopsNotAvailableInAzFault(
                 _inner,
             ) => _inner.fmt(f),
             RestoreDBInstanceFromDBSnapshotErrorKind::StorageQuotaExceededFault(_inner) => {
@@ -13470,37 +13470,37 @@ impl RestoreDBInstanceFromDBSnapshotError {
     pub fn is_db_instance_already_exists_fault(&self) -> bool {
         matches!(
             &self.kind,
-            RestoreDBInstanceFromDBSnapshotErrorKind::DBInstanceAlreadyExistsFault(_)
+            RestoreDBInstanceFromDBSnapshotErrorKind::DbInstanceAlreadyExistsFault(_)
         )
     }
     pub fn is_db_parameter_group_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
-            RestoreDBInstanceFromDBSnapshotErrorKind::DBParameterGroupNotFoundFault(_)
+            RestoreDBInstanceFromDBSnapshotErrorKind::DbParameterGroupNotFoundFault(_)
         )
     }
     pub fn is_db_security_group_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
-            RestoreDBInstanceFromDBSnapshotErrorKind::DBSecurityGroupNotFoundFault(_)
+            RestoreDBInstanceFromDBSnapshotErrorKind::DbSecurityGroupNotFoundFault(_)
         )
     }
     pub fn is_db_snapshot_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
-            RestoreDBInstanceFromDBSnapshotErrorKind::DBSnapshotNotFoundFault(_)
+            RestoreDBInstanceFromDBSnapshotErrorKind::DbSnapshotNotFoundFault(_)
         )
     }
     pub fn is_db_subnet_group_does_not_cover_enough_a_zs(&self) -> bool {
         matches!(
             &self.kind,
-            RestoreDBInstanceFromDBSnapshotErrorKind::DBSubnetGroupDoesNotCoverEnoughAZs(_)
+            RestoreDBInstanceFromDBSnapshotErrorKind::DbSubnetGroupDoesNotCoverEnoughAZs(_)
         )
     }
     pub fn is_db_subnet_group_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
-            RestoreDBInstanceFromDBSnapshotErrorKind::DBSubnetGroupNotFoundFault(_)
+            RestoreDBInstanceFromDBSnapshotErrorKind::DbSubnetGroupNotFoundFault(_)
         )
     }
     pub fn is_domain_not_found_fault(&self) -> bool {
@@ -13518,13 +13518,13 @@ impl RestoreDBInstanceFromDBSnapshotError {
     pub fn is_insufficient_db_instance_capacity_fault(&self) -> bool {
         matches!(
             &self.kind,
-            RestoreDBInstanceFromDBSnapshotErrorKind::InsufficientDBInstanceCapacityFault(_)
+            RestoreDBInstanceFromDBSnapshotErrorKind::InsufficientDbInstanceCapacityFault(_)
         )
     }
     pub fn is_invalid_db_snapshot_state_fault(&self) -> bool {
         matches!(
             &self.kind,
-            RestoreDBInstanceFromDBSnapshotErrorKind::InvalidDBSnapshotStateFault(_)
+            RestoreDBInstanceFromDBSnapshotErrorKind::InvalidDbSnapshotStateFault(_)
         )
     }
     pub fn is_invalid_restore_fault(&self) -> bool {
@@ -13542,13 +13542,13 @@ impl RestoreDBInstanceFromDBSnapshotError {
     pub fn is_invalid_vpc_network_state_fault(&self) -> bool {
         matches!(
             &self.kind,
-            RestoreDBInstanceFromDBSnapshotErrorKind::InvalidVPCNetworkStateFault(_)
+            RestoreDBInstanceFromDBSnapshotErrorKind::InvalidVpcNetworkStateFault(_)
         )
     }
     pub fn is_kms_key_not_accessible_fault(&self) -> bool {
         matches!(
             &self.kind,
-            RestoreDBInstanceFromDBSnapshotErrorKind::KMSKeyNotAccessibleFault(_)
+            RestoreDBInstanceFromDBSnapshotErrorKind::KmsKeyNotAccessibleFault(_)
         )
     }
     pub fn is_option_group_not_found_fault(&self) -> bool {
@@ -13560,7 +13560,7 @@ impl RestoreDBInstanceFromDBSnapshotError {
     pub fn is_provisioned_iops_not_available_in_az_fault(&self) -> bool {
         matches!(
             &self.kind,
-            RestoreDBInstanceFromDBSnapshotErrorKind::ProvisionedIopsNotAvailableInAZFault(_)
+            RestoreDBInstanceFromDBSnapshotErrorKind::ProvisionedIopsNotAvailableInAzFault(_)
         )
     }
     pub fn is_storage_quota_exceeded_fault(&self) -> bool {
@@ -13585,46 +13585,46 @@ impl std::error::Error for RestoreDBInstanceFromDBSnapshotError {
             RestoreDBInstanceFromDBSnapshotErrorKind::BackupPolicyNotFoundFault(_inner) => {
                 Some(_inner)
             }
-            RestoreDBInstanceFromDBSnapshotErrorKind::DBInstanceAlreadyExistsFault(_inner) => {
+            RestoreDBInstanceFromDBSnapshotErrorKind::DbInstanceAlreadyExistsFault(_inner) => {
                 Some(_inner)
             }
-            RestoreDBInstanceFromDBSnapshotErrorKind::DBParameterGroupNotFoundFault(_inner) => {
+            RestoreDBInstanceFromDBSnapshotErrorKind::DbParameterGroupNotFoundFault(_inner) => {
                 Some(_inner)
             }
-            RestoreDBInstanceFromDBSnapshotErrorKind::DBSecurityGroupNotFoundFault(_inner) => {
+            RestoreDBInstanceFromDBSnapshotErrorKind::DbSecurityGroupNotFoundFault(_inner) => {
                 Some(_inner)
             }
-            RestoreDBInstanceFromDBSnapshotErrorKind::DBSnapshotNotFoundFault(_inner) => {
+            RestoreDBInstanceFromDBSnapshotErrorKind::DbSnapshotNotFoundFault(_inner) => {
                 Some(_inner)
             }
-            RestoreDBInstanceFromDBSnapshotErrorKind::DBSubnetGroupDoesNotCoverEnoughAZs(
+            RestoreDBInstanceFromDBSnapshotErrorKind::DbSubnetGroupDoesNotCoverEnoughAZs(
                 _inner,
             ) => Some(_inner),
-            RestoreDBInstanceFromDBSnapshotErrorKind::DBSubnetGroupNotFoundFault(_inner) => {
+            RestoreDBInstanceFromDBSnapshotErrorKind::DbSubnetGroupNotFoundFault(_inner) => {
                 Some(_inner)
             }
             RestoreDBInstanceFromDBSnapshotErrorKind::DomainNotFoundFault(_inner) => Some(_inner),
             RestoreDBInstanceFromDBSnapshotErrorKind::InstanceQuotaExceededFault(_inner) => {
                 Some(_inner)
             }
-            RestoreDBInstanceFromDBSnapshotErrorKind::InsufficientDBInstanceCapacityFault(
+            RestoreDBInstanceFromDBSnapshotErrorKind::InsufficientDbInstanceCapacityFault(
                 _inner,
             ) => Some(_inner),
-            RestoreDBInstanceFromDBSnapshotErrorKind::InvalidDBSnapshotStateFault(_inner) => {
+            RestoreDBInstanceFromDBSnapshotErrorKind::InvalidDbSnapshotStateFault(_inner) => {
                 Some(_inner)
             }
             RestoreDBInstanceFromDBSnapshotErrorKind::InvalidRestoreFault(_inner) => Some(_inner),
             RestoreDBInstanceFromDBSnapshotErrorKind::InvalidSubnet(_inner) => Some(_inner),
-            RestoreDBInstanceFromDBSnapshotErrorKind::InvalidVPCNetworkStateFault(_inner) => {
+            RestoreDBInstanceFromDBSnapshotErrorKind::InvalidVpcNetworkStateFault(_inner) => {
                 Some(_inner)
             }
-            RestoreDBInstanceFromDBSnapshotErrorKind::KMSKeyNotAccessibleFault(_inner) => {
+            RestoreDBInstanceFromDBSnapshotErrorKind::KmsKeyNotAccessibleFault(_inner) => {
                 Some(_inner)
             }
             RestoreDBInstanceFromDBSnapshotErrorKind::OptionGroupNotFoundFault(_inner) => {
                 Some(_inner)
             }
-            RestoreDBInstanceFromDBSnapshotErrorKind::ProvisionedIopsNotAvailableInAZFault(
+            RestoreDBInstanceFromDBSnapshotErrorKind::ProvisionedIopsNotAvailableInAzFault(
                 _inner,
             ) => Some(_inner),
             RestoreDBInstanceFromDBSnapshotErrorKind::StorageQuotaExceededFault(_inner) => {
@@ -13649,19 +13649,19 @@ pub struct RestoreDBInstanceFromS3Error {
 pub enum RestoreDBInstanceFromS3ErrorKind {
     AuthorizationNotFoundFault(crate::error::AuthorizationNotFoundFault),
     BackupPolicyNotFoundFault(crate::error::BackupPolicyNotFoundFault),
-    DBInstanceAlreadyExistsFault(crate::error::DBInstanceAlreadyExistsFault),
-    DBParameterGroupNotFoundFault(crate::error::DBParameterGroupNotFoundFault),
-    DBSecurityGroupNotFoundFault(crate::error::DBSecurityGroupNotFoundFault),
-    DBSubnetGroupDoesNotCoverEnoughAZs(crate::error::DBSubnetGroupDoesNotCoverEnoughAZs),
-    DBSubnetGroupNotFoundFault(crate::error::DBSubnetGroupNotFoundFault),
+    DbInstanceAlreadyExistsFault(crate::error::DbInstanceAlreadyExistsFault),
+    DbParameterGroupNotFoundFault(crate::error::DbParameterGroupNotFoundFault),
+    DbSecurityGroupNotFoundFault(crate::error::DbSecurityGroupNotFoundFault),
+    DbSubnetGroupDoesNotCoverEnoughAZs(crate::error::DbSubnetGroupDoesNotCoverEnoughAZs),
+    DbSubnetGroupNotFoundFault(crate::error::DbSubnetGroupNotFoundFault),
     InstanceQuotaExceededFault(crate::error::InstanceQuotaExceededFault),
-    InsufficientDBInstanceCapacityFault(crate::error::InsufficientDBInstanceCapacityFault),
+    InsufficientDbInstanceCapacityFault(crate::error::InsufficientDbInstanceCapacityFault),
     InvalidS3BucketFault(crate::error::InvalidS3BucketFault),
     InvalidSubnet(crate::error::InvalidSubnet),
-    InvalidVPCNetworkStateFault(crate::error::InvalidVPCNetworkStateFault),
-    KMSKeyNotAccessibleFault(crate::error::KMSKeyNotAccessibleFault),
+    InvalidVpcNetworkStateFault(crate::error::InvalidVpcNetworkStateFault),
+    KmsKeyNotAccessibleFault(crate::error::KmsKeyNotAccessibleFault),
     OptionGroupNotFoundFault(crate::error::OptionGroupNotFoundFault),
-    ProvisionedIopsNotAvailableInAZFault(crate::error::ProvisionedIopsNotAvailableInAZFault),
+    ProvisionedIopsNotAvailableInAzFault(crate::error::ProvisionedIopsNotAvailableInAzFault),
     StorageQuotaExceededFault(crate::error::StorageQuotaExceededFault),
     StorageTypeNotSupportedFault(crate::error::StorageTypeNotSupportedFault),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
@@ -13672,25 +13672,25 @@ impl std::fmt::Display for RestoreDBInstanceFromS3Error {
         match &self.kind {
             RestoreDBInstanceFromS3ErrorKind::AuthorizationNotFoundFault(_inner) => _inner.fmt(f),
             RestoreDBInstanceFromS3ErrorKind::BackupPolicyNotFoundFault(_inner) => _inner.fmt(f),
-            RestoreDBInstanceFromS3ErrorKind::DBInstanceAlreadyExistsFault(_inner) => _inner.fmt(f),
-            RestoreDBInstanceFromS3ErrorKind::DBParameterGroupNotFoundFault(_inner) => {
+            RestoreDBInstanceFromS3ErrorKind::DbInstanceAlreadyExistsFault(_inner) => _inner.fmt(f),
+            RestoreDBInstanceFromS3ErrorKind::DbParameterGroupNotFoundFault(_inner) => {
                 _inner.fmt(f)
             }
-            RestoreDBInstanceFromS3ErrorKind::DBSecurityGroupNotFoundFault(_inner) => _inner.fmt(f),
-            RestoreDBInstanceFromS3ErrorKind::DBSubnetGroupDoesNotCoverEnoughAZs(_inner) => {
+            RestoreDBInstanceFromS3ErrorKind::DbSecurityGroupNotFoundFault(_inner) => _inner.fmt(f),
+            RestoreDBInstanceFromS3ErrorKind::DbSubnetGroupDoesNotCoverEnoughAZs(_inner) => {
                 _inner.fmt(f)
             }
-            RestoreDBInstanceFromS3ErrorKind::DBSubnetGroupNotFoundFault(_inner) => _inner.fmt(f),
+            RestoreDBInstanceFromS3ErrorKind::DbSubnetGroupNotFoundFault(_inner) => _inner.fmt(f),
             RestoreDBInstanceFromS3ErrorKind::InstanceQuotaExceededFault(_inner) => _inner.fmt(f),
-            RestoreDBInstanceFromS3ErrorKind::InsufficientDBInstanceCapacityFault(_inner) => {
+            RestoreDBInstanceFromS3ErrorKind::InsufficientDbInstanceCapacityFault(_inner) => {
                 _inner.fmt(f)
             }
             RestoreDBInstanceFromS3ErrorKind::InvalidS3BucketFault(_inner) => _inner.fmt(f),
             RestoreDBInstanceFromS3ErrorKind::InvalidSubnet(_inner) => _inner.fmt(f),
-            RestoreDBInstanceFromS3ErrorKind::InvalidVPCNetworkStateFault(_inner) => _inner.fmt(f),
-            RestoreDBInstanceFromS3ErrorKind::KMSKeyNotAccessibleFault(_inner) => _inner.fmt(f),
+            RestoreDBInstanceFromS3ErrorKind::InvalidVpcNetworkStateFault(_inner) => _inner.fmt(f),
+            RestoreDBInstanceFromS3ErrorKind::KmsKeyNotAccessibleFault(_inner) => _inner.fmt(f),
             RestoreDBInstanceFromS3ErrorKind::OptionGroupNotFoundFault(_inner) => _inner.fmt(f),
-            RestoreDBInstanceFromS3ErrorKind::ProvisionedIopsNotAvailableInAZFault(_inner) => {
+            RestoreDBInstanceFromS3ErrorKind::ProvisionedIopsNotAvailableInAzFault(_inner) => {
                 _inner.fmt(f)
             }
             RestoreDBInstanceFromS3ErrorKind::StorageQuotaExceededFault(_inner) => _inner.fmt(f),
@@ -13758,31 +13758,31 @@ impl RestoreDBInstanceFromS3Error {
     pub fn is_db_instance_already_exists_fault(&self) -> bool {
         matches!(
             &self.kind,
-            RestoreDBInstanceFromS3ErrorKind::DBInstanceAlreadyExistsFault(_)
+            RestoreDBInstanceFromS3ErrorKind::DbInstanceAlreadyExistsFault(_)
         )
     }
     pub fn is_db_parameter_group_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
-            RestoreDBInstanceFromS3ErrorKind::DBParameterGroupNotFoundFault(_)
+            RestoreDBInstanceFromS3ErrorKind::DbParameterGroupNotFoundFault(_)
         )
     }
     pub fn is_db_security_group_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
-            RestoreDBInstanceFromS3ErrorKind::DBSecurityGroupNotFoundFault(_)
+            RestoreDBInstanceFromS3ErrorKind::DbSecurityGroupNotFoundFault(_)
         )
     }
     pub fn is_db_subnet_group_does_not_cover_enough_a_zs(&self) -> bool {
         matches!(
             &self.kind,
-            RestoreDBInstanceFromS3ErrorKind::DBSubnetGroupDoesNotCoverEnoughAZs(_)
+            RestoreDBInstanceFromS3ErrorKind::DbSubnetGroupDoesNotCoverEnoughAZs(_)
         )
     }
     pub fn is_db_subnet_group_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
-            RestoreDBInstanceFromS3ErrorKind::DBSubnetGroupNotFoundFault(_)
+            RestoreDBInstanceFromS3ErrorKind::DbSubnetGroupNotFoundFault(_)
         )
     }
     pub fn is_instance_quota_exceeded_fault(&self) -> bool {
@@ -13794,7 +13794,7 @@ impl RestoreDBInstanceFromS3Error {
     pub fn is_insufficient_db_instance_capacity_fault(&self) -> bool {
         matches!(
             &self.kind,
-            RestoreDBInstanceFromS3ErrorKind::InsufficientDBInstanceCapacityFault(_)
+            RestoreDBInstanceFromS3ErrorKind::InsufficientDbInstanceCapacityFault(_)
         )
     }
     pub fn is_invalid_s3_bucket_fault(&self) -> bool {
@@ -13812,13 +13812,13 @@ impl RestoreDBInstanceFromS3Error {
     pub fn is_invalid_vpc_network_state_fault(&self) -> bool {
         matches!(
             &self.kind,
-            RestoreDBInstanceFromS3ErrorKind::InvalidVPCNetworkStateFault(_)
+            RestoreDBInstanceFromS3ErrorKind::InvalidVpcNetworkStateFault(_)
         )
     }
     pub fn is_kms_key_not_accessible_fault(&self) -> bool {
         matches!(
             &self.kind,
-            RestoreDBInstanceFromS3ErrorKind::KMSKeyNotAccessibleFault(_)
+            RestoreDBInstanceFromS3ErrorKind::KmsKeyNotAccessibleFault(_)
         )
     }
     pub fn is_option_group_not_found_fault(&self) -> bool {
@@ -13830,7 +13830,7 @@ impl RestoreDBInstanceFromS3Error {
     pub fn is_provisioned_iops_not_available_in_az_fault(&self) -> bool {
         matches!(
             &self.kind,
-            RestoreDBInstanceFromS3ErrorKind::ProvisionedIopsNotAvailableInAZFault(_)
+            RestoreDBInstanceFromS3ErrorKind::ProvisionedIopsNotAvailableInAzFault(_)
         )
     }
     pub fn is_storage_quota_exceeded_fault(&self) -> bool {
@@ -13851,23 +13851,23 @@ impl std::error::Error for RestoreDBInstanceFromS3Error {
         match &self.kind {
             RestoreDBInstanceFromS3ErrorKind::AuthorizationNotFoundFault(_inner) => Some(_inner),
             RestoreDBInstanceFromS3ErrorKind::BackupPolicyNotFoundFault(_inner) => Some(_inner),
-            RestoreDBInstanceFromS3ErrorKind::DBInstanceAlreadyExistsFault(_inner) => Some(_inner),
-            RestoreDBInstanceFromS3ErrorKind::DBParameterGroupNotFoundFault(_inner) => Some(_inner),
-            RestoreDBInstanceFromS3ErrorKind::DBSecurityGroupNotFoundFault(_inner) => Some(_inner),
-            RestoreDBInstanceFromS3ErrorKind::DBSubnetGroupDoesNotCoverEnoughAZs(_inner) => {
+            RestoreDBInstanceFromS3ErrorKind::DbInstanceAlreadyExistsFault(_inner) => Some(_inner),
+            RestoreDBInstanceFromS3ErrorKind::DbParameterGroupNotFoundFault(_inner) => Some(_inner),
+            RestoreDBInstanceFromS3ErrorKind::DbSecurityGroupNotFoundFault(_inner) => Some(_inner),
+            RestoreDBInstanceFromS3ErrorKind::DbSubnetGroupDoesNotCoverEnoughAZs(_inner) => {
                 Some(_inner)
             }
-            RestoreDBInstanceFromS3ErrorKind::DBSubnetGroupNotFoundFault(_inner) => Some(_inner),
+            RestoreDBInstanceFromS3ErrorKind::DbSubnetGroupNotFoundFault(_inner) => Some(_inner),
             RestoreDBInstanceFromS3ErrorKind::InstanceQuotaExceededFault(_inner) => Some(_inner),
-            RestoreDBInstanceFromS3ErrorKind::InsufficientDBInstanceCapacityFault(_inner) => {
+            RestoreDBInstanceFromS3ErrorKind::InsufficientDbInstanceCapacityFault(_inner) => {
                 Some(_inner)
             }
             RestoreDBInstanceFromS3ErrorKind::InvalidS3BucketFault(_inner) => Some(_inner),
             RestoreDBInstanceFromS3ErrorKind::InvalidSubnet(_inner) => Some(_inner),
-            RestoreDBInstanceFromS3ErrorKind::InvalidVPCNetworkStateFault(_inner) => Some(_inner),
-            RestoreDBInstanceFromS3ErrorKind::KMSKeyNotAccessibleFault(_inner) => Some(_inner),
+            RestoreDBInstanceFromS3ErrorKind::InvalidVpcNetworkStateFault(_inner) => Some(_inner),
+            RestoreDBInstanceFromS3ErrorKind::KmsKeyNotAccessibleFault(_inner) => Some(_inner),
             RestoreDBInstanceFromS3ErrorKind::OptionGroupNotFoundFault(_inner) => Some(_inner),
-            RestoreDBInstanceFromS3ErrorKind::ProvisionedIopsNotAvailableInAZFault(_inner) => {
+            RestoreDBInstanceFromS3ErrorKind::ProvisionedIopsNotAvailableInAzFault(_inner) => {
                 Some(_inner)
             }
             RestoreDBInstanceFromS3ErrorKind::StorageQuotaExceededFault(_inner) => Some(_inner),
@@ -13888,24 +13888,24 @@ pub struct RestoreDBInstanceToPointInTimeError {
 pub enum RestoreDBInstanceToPointInTimeErrorKind {
     AuthorizationNotFoundFault(crate::error::AuthorizationNotFoundFault),
     BackupPolicyNotFoundFault(crate::error::BackupPolicyNotFoundFault),
-    DBInstanceAlreadyExistsFault(crate::error::DBInstanceAlreadyExistsFault),
-    DBInstanceAutomatedBackupNotFoundFault(crate::error::DBInstanceAutomatedBackupNotFoundFault),
-    DBInstanceNotFoundFault(crate::error::DBInstanceNotFoundFault),
-    DBParameterGroupNotFoundFault(crate::error::DBParameterGroupNotFoundFault),
-    DBSecurityGroupNotFoundFault(crate::error::DBSecurityGroupNotFoundFault),
-    DBSubnetGroupDoesNotCoverEnoughAZs(crate::error::DBSubnetGroupDoesNotCoverEnoughAZs),
-    DBSubnetGroupNotFoundFault(crate::error::DBSubnetGroupNotFoundFault),
+    DbInstanceAlreadyExistsFault(crate::error::DbInstanceAlreadyExistsFault),
+    DbInstanceAutomatedBackupNotFoundFault(crate::error::DbInstanceAutomatedBackupNotFoundFault),
+    DbInstanceNotFoundFault(crate::error::DbInstanceNotFoundFault),
+    DbParameterGroupNotFoundFault(crate::error::DbParameterGroupNotFoundFault),
+    DbSecurityGroupNotFoundFault(crate::error::DbSecurityGroupNotFoundFault),
+    DbSubnetGroupDoesNotCoverEnoughAZs(crate::error::DbSubnetGroupDoesNotCoverEnoughAZs),
+    DbSubnetGroupNotFoundFault(crate::error::DbSubnetGroupNotFoundFault),
     DomainNotFoundFault(crate::error::DomainNotFoundFault),
     InstanceQuotaExceededFault(crate::error::InstanceQuotaExceededFault),
-    InsufficientDBInstanceCapacityFault(crate::error::InsufficientDBInstanceCapacityFault),
-    InvalidDBInstanceStateFault(crate::error::InvalidDBInstanceStateFault),
+    InsufficientDbInstanceCapacityFault(crate::error::InsufficientDbInstanceCapacityFault),
+    InvalidDbInstanceStateFault(crate::error::InvalidDbInstanceStateFault),
     InvalidRestoreFault(crate::error::InvalidRestoreFault),
     InvalidSubnet(crate::error::InvalidSubnet),
-    InvalidVPCNetworkStateFault(crate::error::InvalidVPCNetworkStateFault),
-    KMSKeyNotAccessibleFault(crate::error::KMSKeyNotAccessibleFault),
+    InvalidVpcNetworkStateFault(crate::error::InvalidVpcNetworkStateFault),
+    KmsKeyNotAccessibleFault(crate::error::KmsKeyNotAccessibleFault),
     OptionGroupNotFoundFault(crate::error::OptionGroupNotFoundFault),
     PointInTimeRestoreNotEnabledFault(crate::error::PointInTimeRestoreNotEnabledFault),
-    ProvisionedIopsNotAvailableInAZFault(crate::error::ProvisionedIopsNotAvailableInAZFault),
+    ProvisionedIopsNotAvailableInAzFault(crate::error::ProvisionedIopsNotAvailableInAzFault),
     StorageQuotaExceededFault(crate::error::StorageQuotaExceededFault),
     StorageTypeNotSupportedFault(crate::error::StorageTypeNotSupportedFault),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
@@ -13920,43 +13920,43 @@ impl std::fmt::Display for RestoreDBInstanceToPointInTimeError {
             RestoreDBInstanceToPointInTimeErrorKind::BackupPolicyNotFoundFault(_inner) => {
                 _inner.fmt(f)
             }
-            RestoreDBInstanceToPointInTimeErrorKind::DBInstanceAlreadyExistsFault(_inner) => {
+            RestoreDBInstanceToPointInTimeErrorKind::DbInstanceAlreadyExistsFault(_inner) => {
                 _inner.fmt(f)
             }
-            RestoreDBInstanceToPointInTimeErrorKind::DBInstanceAutomatedBackupNotFoundFault(
+            RestoreDBInstanceToPointInTimeErrorKind::DbInstanceAutomatedBackupNotFoundFault(
                 _inner,
             ) => _inner.fmt(f),
-            RestoreDBInstanceToPointInTimeErrorKind::DBInstanceNotFoundFault(_inner) => {
+            RestoreDBInstanceToPointInTimeErrorKind::DbInstanceNotFoundFault(_inner) => {
                 _inner.fmt(f)
             }
-            RestoreDBInstanceToPointInTimeErrorKind::DBParameterGroupNotFoundFault(_inner) => {
+            RestoreDBInstanceToPointInTimeErrorKind::DbParameterGroupNotFoundFault(_inner) => {
                 _inner.fmt(f)
             }
-            RestoreDBInstanceToPointInTimeErrorKind::DBSecurityGroupNotFoundFault(_inner) => {
+            RestoreDBInstanceToPointInTimeErrorKind::DbSecurityGroupNotFoundFault(_inner) => {
                 _inner.fmt(f)
             }
-            RestoreDBInstanceToPointInTimeErrorKind::DBSubnetGroupDoesNotCoverEnoughAZs(_inner) => {
+            RestoreDBInstanceToPointInTimeErrorKind::DbSubnetGroupDoesNotCoverEnoughAZs(_inner) => {
                 _inner.fmt(f)
             }
-            RestoreDBInstanceToPointInTimeErrorKind::DBSubnetGroupNotFoundFault(_inner) => {
+            RestoreDBInstanceToPointInTimeErrorKind::DbSubnetGroupNotFoundFault(_inner) => {
                 _inner.fmt(f)
             }
             RestoreDBInstanceToPointInTimeErrorKind::DomainNotFoundFault(_inner) => _inner.fmt(f),
             RestoreDBInstanceToPointInTimeErrorKind::InstanceQuotaExceededFault(_inner) => {
                 _inner.fmt(f)
             }
-            RestoreDBInstanceToPointInTimeErrorKind::InsufficientDBInstanceCapacityFault(
+            RestoreDBInstanceToPointInTimeErrorKind::InsufficientDbInstanceCapacityFault(
                 _inner,
             ) => _inner.fmt(f),
-            RestoreDBInstanceToPointInTimeErrorKind::InvalidDBInstanceStateFault(_inner) => {
+            RestoreDBInstanceToPointInTimeErrorKind::InvalidDbInstanceStateFault(_inner) => {
                 _inner.fmt(f)
             }
             RestoreDBInstanceToPointInTimeErrorKind::InvalidRestoreFault(_inner) => _inner.fmt(f),
             RestoreDBInstanceToPointInTimeErrorKind::InvalidSubnet(_inner) => _inner.fmt(f),
-            RestoreDBInstanceToPointInTimeErrorKind::InvalidVPCNetworkStateFault(_inner) => {
+            RestoreDBInstanceToPointInTimeErrorKind::InvalidVpcNetworkStateFault(_inner) => {
                 _inner.fmt(f)
             }
-            RestoreDBInstanceToPointInTimeErrorKind::KMSKeyNotAccessibleFault(_inner) => {
+            RestoreDBInstanceToPointInTimeErrorKind::KmsKeyNotAccessibleFault(_inner) => {
                 _inner.fmt(f)
             }
             RestoreDBInstanceToPointInTimeErrorKind::OptionGroupNotFoundFault(_inner) => {
@@ -13965,7 +13965,7 @@ impl std::fmt::Display for RestoreDBInstanceToPointInTimeError {
             RestoreDBInstanceToPointInTimeErrorKind::PointInTimeRestoreNotEnabledFault(_inner) => {
                 _inner.fmt(f)
             }
-            RestoreDBInstanceToPointInTimeErrorKind::ProvisionedIopsNotAvailableInAZFault(
+            RestoreDBInstanceToPointInTimeErrorKind::ProvisionedIopsNotAvailableInAzFault(
                 _inner,
             ) => _inner.fmt(f),
             RestoreDBInstanceToPointInTimeErrorKind::StorageQuotaExceededFault(_inner) => {
@@ -14037,43 +14037,43 @@ impl RestoreDBInstanceToPointInTimeError {
     pub fn is_db_instance_already_exists_fault(&self) -> bool {
         matches!(
             &self.kind,
-            RestoreDBInstanceToPointInTimeErrorKind::DBInstanceAlreadyExistsFault(_)
+            RestoreDBInstanceToPointInTimeErrorKind::DbInstanceAlreadyExistsFault(_)
         )
     }
     pub fn is_db_instance_automated_backup_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
-            RestoreDBInstanceToPointInTimeErrorKind::DBInstanceAutomatedBackupNotFoundFault(_)
+            RestoreDBInstanceToPointInTimeErrorKind::DbInstanceAutomatedBackupNotFoundFault(_)
         )
     }
     pub fn is_db_instance_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
-            RestoreDBInstanceToPointInTimeErrorKind::DBInstanceNotFoundFault(_)
+            RestoreDBInstanceToPointInTimeErrorKind::DbInstanceNotFoundFault(_)
         )
     }
     pub fn is_db_parameter_group_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
-            RestoreDBInstanceToPointInTimeErrorKind::DBParameterGroupNotFoundFault(_)
+            RestoreDBInstanceToPointInTimeErrorKind::DbParameterGroupNotFoundFault(_)
         )
     }
     pub fn is_db_security_group_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
-            RestoreDBInstanceToPointInTimeErrorKind::DBSecurityGroupNotFoundFault(_)
+            RestoreDBInstanceToPointInTimeErrorKind::DbSecurityGroupNotFoundFault(_)
         )
     }
     pub fn is_db_subnet_group_does_not_cover_enough_a_zs(&self) -> bool {
         matches!(
             &self.kind,
-            RestoreDBInstanceToPointInTimeErrorKind::DBSubnetGroupDoesNotCoverEnoughAZs(_)
+            RestoreDBInstanceToPointInTimeErrorKind::DbSubnetGroupDoesNotCoverEnoughAZs(_)
         )
     }
     pub fn is_db_subnet_group_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
-            RestoreDBInstanceToPointInTimeErrorKind::DBSubnetGroupNotFoundFault(_)
+            RestoreDBInstanceToPointInTimeErrorKind::DbSubnetGroupNotFoundFault(_)
         )
     }
     pub fn is_domain_not_found_fault(&self) -> bool {
@@ -14091,13 +14091,13 @@ impl RestoreDBInstanceToPointInTimeError {
     pub fn is_insufficient_db_instance_capacity_fault(&self) -> bool {
         matches!(
             &self.kind,
-            RestoreDBInstanceToPointInTimeErrorKind::InsufficientDBInstanceCapacityFault(_)
+            RestoreDBInstanceToPointInTimeErrorKind::InsufficientDbInstanceCapacityFault(_)
         )
     }
     pub fn is_invalid_db_instance_state_fault(&self) -> bool {
         matches!(
             &self.kind,
-            RestoreDBInstanceToPointInTimeErrorKind::InvalidDBInstanceStateFault(_)
+            RestoreDBInstanceToPointInTimeErrorKind::InvalidDbInstanceStateFault(_)
         )
     }
     pub fn is_invalid_restore_fault(&self) -> bool {
@@ -14115,13 +14115,13 @@ impl RestoreDBInstanceToPointInTimeError {
     pub fn is_invalid_vpc_network_state_fault(&self) -> bool {
         matches!(
             &self.kind,
-            RestoreDBInstanceToPointInTimeErrorKind::InvalidVPCNetworkStateFault(_)
+            RestoreDBInstanceToPointInTimeErrorKind::InvalidVpcNetworkStateFault(_)
         )
     }
     pub fn is_kms_key_not_accessible_fault(&self) -> bool {
         matches!(
             &self.kind,
-            RestoreDBInstanceToPointInTimeErrorKind::KMSKeyNotAccessibleFault(_)
+            RestoreDBInstanceToPointInTimeErrorKind::KmsKeyNotAccessibleFault(_)
         )
     }
     pub fn is_option_group_not_found_fault(&self) -> bool {
@@ -14139,7 +14139,7 @@ impl RestoreDBInstanceToPointInTimeError {
     pub fn is_provisioned_iops_not_available_in_az_fault(&self) -> bool {
         matches!(
             &self.kind,
-            RestoreDBInstanceToPointInTimeErrorKind::ProvisionedIopsNotAvailableInAZFault(_)
+            RestoreDBInstanceToPointInTimeErrorKind::ProvisionedIopsNotAvailableInAzFault(_)
         )
     }
     pub fn is_storage_quota_exceeded_fault(&self) -> bool {
@@ -14164,43 +14164,43 @@ impl std::error::Error for RestoreDBInstanceToPointInTimeError {
             RestoreDBInstanceToPointInTimeErrorKind::BackupPolicyNotFoundFault(_inner) => {
                 Some(_inner)
             }
-            RestoreDBInstanceToPointInTimeErrorKind::DBInstanceAlreadyExistsFault(_inner) => {
+            RestoreDBInstanceToPointInTimeErrorKind::DbInstanceAlreadyExistsFault(_inner) => {
                 Some(_inner)
             }
-            RestoreDBInstanceToPointInTimeErrorKind::DBInstanceAutomatedBackupNotFoundFault(
+            RestoreDBInstanceToPointInTimeErrorKind::DbInstanceAutomatedBackupNotFoundFault(
                 _inner,
             ) => Some(_inner),
-            RestoreDBInstanceToPointInTimeErrorKind::DBInstanceNotFoundFault(_inner) => {
+            RestoreDBInstanceToPointInTimeErrorKind::DbInstanceNotFoundFault(_inner) => {
                 Some(_inner)
             }
-            RestoreDBInstanceToPointInTimeErrorKind::DBParameterGroupNotFoundFault(_inner) => {
+            RestoreDBInstanceToPointInTimeErrorKind::DbParameterGroupNotFoundFault(_inner) => {
                 Some(_inner)
             }
-            RestoreDBInstanceToPointInTimeErrorKind::DBSecurityGroupNotFoundFault(_inner) => {
+            RestoreDBInstanceToPointInTimeErrorKind::DbSecurityGroupNotFoundFault(_inner) => {
                 Some(_inner)
             }
-            RestoreDBInstanceToPointInTimeErrorKind::DBSubnetGroupDoesNotCoverEnoughAZs(_inner) => {
+            RestoreDBInstanceToPointInTimeErrorKind::DbSubnetGroupDoesNotCoverEnoughAZs(_inner) => {
                 Some(_inner)
             }
-            RestoreDBInstanceToPointInTimeErrorKind::DBSubnetGroupNotFoundFault(_inner) => {
+            RestoreDBInstanceToPointInTimeErrorKind::DbSubnetGroupNotFoundFault(_inner) => {
                 Some(_inner)
             }
             RestoreDBInstanceToPointInTimeErrorKind::DomainNotFoundFault(_inner) => Some(_inner),
             RestoreDBInstanceToPointInTimeErrorKind::InstanceQuotaExceededFault(_inner) => {
                 Some(_inner)
             }
-            RestoreDBInstanceToPointInTimeErrorKind::InsufficientDBInstanceCapacityFault(
+            RestoreDBInstanceToPointInTimeErrorKind::InsufficientDbInstanceCapacityFault(
                 _inner,
             ) => Some(_inner),
-            RestoreDBInstanceToPointInTimeErrorKind::InvalidDBInstanceStateFault(_inner) => {
+            RestoreDBInstanceToPointInTimeErrorKind::InvalidDbInstanceStateFault(_inner) => {
                 Some(_inner)
             }
             RestoreDBInstanceToPointInTimeErrorKind::InvalidRestoreFault(_inner) => Some(_inner),
             RestoreDBInstanceToPointInTimeErrorKind::InvalidSubnet(_inner) => Some(_inner),
-            RestoreDBInstanceToPointInTimeErrorKind::InvalidVPCNetworkStateFault(_inner) => {
+            RestoreDBInstanceToPointInTimeErrorKind::InvalidVpcNetworkStateFault(_inner) => {
                 Some(_inner)
             }
-            RestoreDBInstanceToPointInTimeErrorKind::KMSKeyNotAccessibleFault(_inner) => {
+            RestoreDBInstanceToPointInTimeErrorKind::KmsKeyNotAccessibleFault(_inner) => {
                 Some(_inner)
             }
             RestoreDBInstanceToPointInTimeErrorKind::OptionGroupNotFoundFault(_inner) => {
@@ -14209,7 +14209,7 @@ impl std::error::Error for RestoreDBInstanceToPointInTimeError {
             RestoreDBInstanceToPointInTimeErrorKind::PointInTimeRestoreNotEnabledFault(_inner) => {
                 Some(_inner)
             }
-            RestoreDBInstanceToPointInTimeErrorKind::ProvisionedIopsNotAvailableInAZFault(
+            RestoreDBInstanceToPointInTimeErrorKind::ProvisionedIopsNotAvailableInAzFault(
                 _inner,
             ) => Some(_inner),
             RestoreDBInstanceToPointInTimeErrorKind::StorageQuotaExceededFault(_inner) => {
@@ -14233,8 +14233,8 @@ pub struct RevokeDBSecurityGroupIngressError {
 #[derive(std::fmt::Debug)]
 pub enum RevokeDBSecurityGroupIngressErrorKind {
     AuthorizationNotFoundFault(crate::error::AuthorizationNotFoundFault),
-    DBSecurityGroupNotFoundFault(crate::error::DBSecurityGroupNotFoundFault),
-    InvalidDBSecurityGroupStateFault(crate::error::InvalidDBSecurityGroupStateFault),
+    DbSecurityGroupNotFoundFault(crate::error::DbSecurityGroupNotFoundFault),
+    InvalidDbSecurityGroupStateFault(crate::error::InvalidDbSecurityGroupStateFault),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
@@ -14244,10 +14244,10 @@ impl std::fmt::Display for RevokeDBSecurityGroupIngressError {
             RevokeDBSecurityGroupIngressErrorKind::AuthorizationNotFoundFault(_inner) => {
                 _inner.fmt(f)
             }
-            RevokeDBSecurityGroupIngressErrorKind::DBSecurityGroupNotFoundFault(_inner) => {
+            RevokeDBSecurityGroupIngressErrorKind::DbSecurityGroupNotFoundFault(_inner) => {
                 _inner.fmt(f)
             }
-            RevokeDBSecurityGroupIngressErrorKind::InvalidDBSecurityGroupStateFault(_inner) => {
+            RevokeDBSecurityGroupIngressErrorKind::InvalidDbSecurityGroupStateFault(_inner) => {
                 _inner.fmt(f)
             }
             RevokeDBSecurityGroupIngressErrorKind::Unhandled(_inner) => _inner.fmt(f),
@@ -14307,13 +14307,13 @@ impl RevokeDBSecurityGroupIngressError {
     pub fn is_db_security_group_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
-            RevokeDBSecurityGroupIngressErrorKind::DBSecurityGroupNotFoundFault(_)
+            RevokeDBSecurityGroupIngressErrorKind::DbSecurityGroupNotFoundFault(_)
         )
     }
     pub fn is_invalid_db_security_group_state_fault(&self) -> bool {
         matches!(
             &self.kind,
-            RevokeDBSecurityGroupIngressErrorKind::InvalidDBSecurityGroupStateFault(_)
+            RevokeDBSecurityGroupIngressErrorKind::InvalidDbSecurityGroupStateFault(_)
         )
     }
 }
@@ -14323,10 +14323,10 @@ impl std::error::Error for RevokeDBSecurityGroupIngressError {
             RevokeDBSecurityGroupIngressErrorKind::AuthorizationNotFoundFault(_inner) => {
                 Some(_inner)
             }
-            RevokeDBSecurityGroupIngressErrorKind::DBSecurityGroupNotFoundFault(_inner) => {
+            RevokeDBSecurityGroupIngressErrorKind::DbSecurityGroupNotFoundFault(_inner) => {
                 Some(_inner)
             }
-            RevokeDBSecurityGroupIngressErrorKind::InvalidDBSecurityGroupStateFault(_inner) => {
+            RevokeDBSecurityGroupIngressErrorKind::InvalidDbSecurityGroupStateFault(_inner) => {
                 Some(_inner)
             }
             RevokeDBSecurityGroupIngressErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
@@ -14343,11 +14343,11 @@ pub struct StartActivityStreamError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum StartActivityStreamErrorKind {
-    DBClusterNotFoundFault(crate::error::DBClusterNotFoundFault),
-    DBInstanceNotFoundFault(crate::error::DBInstanceNotFoundFault),
-    InvalidDBClusterStateFault(crate::error::InvalidDBClusterStateFault),
-    InvalidDBInstanceStateFault(crate::error::InvalidDBInstanceStateFault),
-    KMSKeyNotAccessibleFault(crate::error::KMSKeyNotAccessibleFault),
+    DbClusterNotFoundFault(crate::error::DbClusterNotFoundFault),
+    DbInstanceNotFoundFault(crate::error::DbInstanceNotFoundFault),
+    InvalidDbClusterStateFault(crate::error::InvalidDbClusterStateFault),
+    InvalidDbInstanceStateFault(crate::error::InvalidDbInstanceStateFault),
+    KmsKeyNotAccessibleFault(crate::error::KmsKeyNotAccessibleFault),
     ResourceNotFoundFault(crate::error::ResourceNotFoundFault),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -14355,11 +14355,11 @@ pub enum StartActivityStreamErrorKind {
 impl std::fmt::Display for StartActivityStreamError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            StartActivityStreamErrorKind::DBClusterNotFoundFault(_inner) => _inner.fmt(f),
-            StartActivityStreamErrorKind::DBInstanceNotFoundFault(_inner) => _inner.fmt(f),
-            StartActivityStreamErrorKind::InvalidDBClusterStateFault(_inner) => _inner.fmt(f),
-            StartActivityStreamErrorKind::InvalidDBInstanceStateFault(_inner) => _inner.fmt(f),
-            StartActivityStreamErrorKind::KMSKeyNotAccessibleFault(_inner) => _inner.fmt(f),
+            StartActivityStreamErrorKind::DbClusterNotFoundFault(_inner) => _inner.fmt(f),
+            StartActivityStreamErrorKind::DbInstanceNotFoundFault(_inner) => _inner.fmt(f),
+            StartActivityStreamErrorKind::InvalidDbClusterStateFault(_inner) => _inner.fmt(f),
+            StartActivityStreamErrorKind::InvalidDbInstanceStateFault(_inner) => _inner.fmt(f),
+            StartActivityStreamErrorKind::KmsKeyNotAccessibleFault(_inner) => _inner.fmt(f),
             StartActivityStreamErrorKind::ResourceNotFoundFault(_inner) => _inner.fmt(f),
             StartActivityStreamErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
@@ -14412,31 +14412,31 @@ impl StartActivityStreamError {
     pub fn is_db_cluster_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
-            StartActivityStreamErrorKind::DBClusterNotFoundFault(_)
+            StartActivityStreamErrorKind::DbClusterNotFoundFault(_)
         )
     }
     pub fn is_db_instance_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
-            StartActivityStreamErrorKind::DBInstanceNotFoundFault(_)
+            StartActivityStreamErrorKind::DbInstanceNotFoundFault(_)
         )
     }
     pub fn is_invalid_db_cluster_state_fault(&self) -> bool {
         matches!(
             &self.kind,
-            StartActivityStreamErrorKind::InvalidDBClusterStateFault(_)
+            StartActivityStreamErrorKind::InvalidDbClusterStateFault(_)
         )
     }
     pub fn is_invalid_db_instance_state_fault(&self) -> bool {
         matches!(
             &self.kind,
-            StartActivityStreamErrorKind::InvalidDBInstanceStateFault(_)
+            StartActivityStreamErrorKind::InvalidDbInstanceStateFault(_)
         )
     }
     pub fn is_kms_key_not_accessible_fault(&self) -> bool {
         matches!(
             &self.kind,
-            StartActivityStreamErrorKind::KMSKeyNotAccessibleFault(_)
+            StartActivityStreamErrorKind::KmsKeyNotAccessibleFault(_)
         )
     }
     pub fn is_resource_not_found_fault(&self) -> bool {
@@ -14449,11 +14449,11 @@ impl StartActivityStreamError {
 impl std::error::Error for StartActivityStreamError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            StartActivityStreamErrorKind::DBClusterNotFoundFault(_inner) => Some(_inner),
-            StartActivityStreamErrorKind::DBInstanceNotFoundFault(_inner) => Some(_inner),
-            StartActivityStreamErrorKind::InvalidDBClusterStateFault(_inner) => Some(_inner),
-            StartActivityStreamErrorKind::InvalidDBInstanceStateFault(_inner) => Some(_inner),
-            StartActivityStreamErrorKind::KMSKeyNotAccessibleFault(_inner) => Some(_inner),
+            StartActivityStreamErrorKind::DbClusterNotFoundFault(_inner) => Some(_inner),
+            StartActivityStreamErrorKind::DbInstanceNotFoundFault(_inner) => Some(_inner),
+            StartActivityStreamErrorKind::InvalidDbClusterStateFault(_inner) => Some(_inner),
+            StartActivityStreamErrorKind::InvalidDbInstanceStateFault(_inner) => Some(_inner),
+            StartActivityStreamErrorKind::KmsKeyNotAccessibleFault(_inner) => Some(_inner),
             StartActivityStreamErrorKind::ResourceNotFoundFault(_inner) => Some(_inner),
             StartActivityStreamErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
@@ -14469,18 +14469,18 @@ pub struct StartDBClusterError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum StartDBClusterErrorKind {
-    DBClusterNotFoundFault(crate::error::DBClusterNotFoundFault),
-    InvalidDBClusterStateFault(crate::error::InvalidDBClusterStateFault),
-    InvalidDBInstanceStateFault(crate::error::InvalidDBInstanceStateFault),
+    DbClusterNotFoundFault(crate::error::DbClusterNotFoundFault),
+    InvalidDbClusterStateFault(crate::error::InvalidDbClusterStateFault),
+    InvalidDbInstanceStateFault(crate::error::InvalidDbInstanceStateFault),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for StartDBClusterError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            StartDBClusterErrorKind::DBClusterNotFoundFault(_inner) => _inner.fmt(f),
-            StartDBClusterErrorKind::InvalidDBClusterStateFault(_inner) => _inner.fmt(f),
-            StartDBClusterErrorKind::InvalidDBInstanceStateFault(_inner) => _inner.fmt(f),
+            StartDBClusterErrorKind::DbClusterNotFoundFault(_inner) => _inner.fmt(f),
+            StartDBClusterErrorKind::InvalidDbClusterStateFault(_inner) => _inner.fmt(f),
+            StartDBClusterErrorKind::InvalidDbInstanceStateFault(_inner) => _inner.fmt(f),
             StartDBClusterErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -14532,28 +14532,28 @@ impl StartDBClusterError {
     pub fn is_db_cluster_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
-            StartDBClusterErrorKind::DBClusterNotFoundFault(_)
+            StartDBClusterErrorKind::DbClusterNotFoundFault(_)
         )
     }
     pub fn is_invalid_db_cluster_state_fault(&self) -> bool {
         matches!(
             &self.kind,
-            StartDBClusterErrorKind::InvalidDBClusterStateFault(_)
+            StartDBClusterErrorKind::InvalidDbClusterStateFault(_)
         )
     }
     pub fn is_invalid_db_instance_state_fault(&self) -> bool {
         matches!(
             &self.kind,
-            StartDBClusterErrorKind::InvalidDBInstanceStateFault(_)
+            StartDBClusterErrorKind::InvalidDbInstanceStateFault(_)
         )
     }
 }
 impl std::error::Error for StartDBClusterError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            StartDBClusterErrorKind::DBClusterNotFoundFault(_inner) => Some(_inner),
-            StartDBClusterErrorKind::InvalidDBClusterStateFault(_inner) => Some(_inner),
-            StartDBClusterErrorKind::InvalidDBInstanceStateFault(_inner) => Some(_inner),
+            StartDBClusterErrorKind::DbClusterNotFoundFault(_inner) => Some(_inner),
+            StartDBClusterErrorKind::InvalidDbClusterStateFault(_inner) => Some(_inner),
+            StartDBClusterErrorKind::InvalidDbInstanceStateFault(_inner) => Some(_inner),
             StartDBClusterErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -14569,16 +14569,16 @@ pub struct StartDBInstanceError {
 #[derive(std::fmt::Debug)]
 pub enum StartDBInstanceErrorKind {
     AuthorizationNotFoundFault(crate::error::AuthorizationNotFoundFault),
-    DBClusterNotFoundFault(crate::error::DBClusterNotFoundFault),
-    DBInstanceNotFoundFault(crate::error::DBInstanceNotFoundFault),
-    DBSubnetGroupDoesNotCoverEnoughAZs(crate::error::DBSubnetGroupDoesNotCoverEnoughAZs),
-    DBSubnetGroupNotFoundFault(crate::error::DBSubnetGroupNotFoundFault),
-    InsufficientDBInstanceCapacityFault(crate::error::InsufficientDBInstanceCapacityFault),
-    InvalidDBClusterStateFault(crate::error::InvalidDBClusterStateFault),
-    InvalidDBInstanceStateFault(crate::error::InvalidDBInstanceStateFault),
+    DbClusterNotFoundFault(crate::error::DbClusterNotFoundFault),
+    DbInstanceNotFoundFault(crate::error::DbInstanceNotFoundFault),
+    DbSubnetGroupDoesNotCoverEnoughAZs(crate::error::DbSubnetGroupDoesNotCoverEnoughAZs),
+    DbSubnetGroupNotFoundFault(crate::error::DbSubnetGroupNotFoundFault),
+    InsufficientDbInstanceCapacityFault(crate::error::InsufficientDbInstanceCapacityFault),
+    InvalidDbClusterStateFault(crate::error::InvalidDbClusterStateFault),
+    InvalidDbInstanceStateFault(crate::error::InvalidDbInstanceStateFault),
     InvalidSubnet(crate::error::InvalidSubnet),
-    InvalidVPCNetworkStateFault(crate::error::InvalidVPCNetworkStateFault),
-    KMSKeyNotAccessibleFault(crate::error::KMSKeyNotAccessibleFault),
+    InvalidVpcNetworkStateFault(crate::error::InvalidVpcNetworkStateFault),
+    KmsKeyNotAccessibleFault(crate::error::KmsKeyNotAccessibleFault),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
@@ -14586,16 +14586,16 @@ impl std::fmt::Display for StartDBInstanceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
             StartDBInstanceErrorKind::AuthorizationNotFoundFault(_inner) => _inner.fmt(f),
-            StartDBInstanceErrorKind::DBClusterNotFoundFault(_inner) => _inner.fmt(f),
-            StartDBInstanceErrorKind::DBInstanceNotFoundFault(_inner) => _inner.fmt(f),
-            StartDBInstanceErrorKind::DBSubnetGroupDoesNotCoverEnoughAZs(_inner) => _inner.fmt(f),
-            StartDBInstanceErrorKind::DBSubnetGroupNotFoundFault(_inner) => _inner.fmt(f),
-            StartDBInstanceErrorKind::InsufficientDBInstanceCapacityFault(_inner) => _inner.fmt(f),
-            StartDBInstanceErrorKind::InvalidDBClusterStateFault(_inner) => _inner.fmt(f),
-            StartDBInstanceErrorKind::InvalidDBInstanceStateFault(_inner) => _inner.fmt(f),
+            StartDBInstanceErrorKind::DbClusterNotFoundFault(_inner) => _inner.fmt(f),
+            StartDBInstanceErrorKind::DbInstanceNotFoundFault(_inner) => _inner.fmt(f),
+            StartDBInstanceErrorKind::DbSubnetGroupDoesNotCoverEnoughAZs(_inner) => _inner.fmt(f),
+            StartDBInstanceErrorKind::DbSubnetGroupNotFoundFault(_inner) => _inner.fmt(f),
+            StartDBInstanceErrorKind::InsufficientDbInstanceCapacityFault(_inner) => _inner.fmt(f),
+            StartDBInstanceErrorKind::InvalidDbClusterStateFault(_inner) => _inner.fmt(f),
+            StartDBInstanceErrorKind::InvalidDbInstanceStateFault(_inner) => _inner.fmt(f),
             StartDBInstanceErrorKind::InvalidSubnet(_inner) => _inner.fmt(f),
-            StartDBInstanceErrorKind::InvalidVPCNetworkStateFault(_inner) => _inner.fmt(f),
-            StartDBInstanceErrorKind::KMSKeyNotAccessibleFault(_inner) => _inner.fmt(f),
+            StartDBInstanceErrorKind::InvalidVpcNetworkStateFault(_inner) => _inner.fmt(f),
+            StartDBInstanceErrorKind::KmsKeyNotAccessibleFault(_inner) => _inner.fmt(f),
             StartDBInstanceErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -14653,43 +14653,43 @@ impl StartDBInstanceError {
     pub fn is_db_cluster_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
-            StartDBInstanceErrorKind::DBClusterNotFoundFault(_)
+            StartDBInstanceErrorKind::DbClusterNotFoundFault(_)
         )
     }
     pub fn is_db_instance_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
-            StartDBInstanceErrorKind::DBInstanceNotFoundFault(_)
+            StartDBInstanceErrorKind::DbInstanceNotFoundFault(_)
         )
     }
     pub fn is_db_subnet_group_does_not_cover_enough_a_zs(&self) -> bool {
         matches!(
             &self.kind,
-            StartDBInstanceErrorKind::DBSubnetGroupDoesNotCoverEnoughAZs(_)
+            StartDBInstanceErrorKind::DbSubnetGroupDoesNotCoverEnoughAZs(_)
         )
     }
     pub fn is_db_subnet_group_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
-            StartDBInstanceErrorKind::DBSubnetGroupNotFoundFault(_)
+            StartDBInstanceErrorKind::DbSubnetGroupNotFoundFault(_)
         )
     }
     pub fn is_insufficient_db_instance_capacity_fault(&self) -> bool {
         matches!(
             &self.kind,
-            StartDBInstanceErrorKind::InsufficientDBInstanceCapacityFault(_)
+            StartDBInstanceErrorKind::InsufficientDbInstanceCapacityFault(_)
         )
     }
     pub fn is_invalid_db_cluster_state_fault(&self) -> bool {
         matches!(
             &self.kind,
-            StartDBInstanceErrorKind::InvalidDBClusterStateFault(_)
+            StartDBInstanceErrorKind::InvalidDbClusterStateFault(_)
         )
     }
     pub fn is_invalid_db_instance_state_fault(&self) -> bool {
         matches!(
             &self.kind,
-            StartDBInstanceErrorKind::InvalidDBInstanceStateFault(_)
+            StartDBInstanceErrorKind::InvalidDbInstanceStateFault(_)
         )
     }
     pub fn is_invalid_subnet(&self) -> bool {
@@ -14698,13 +14698,13 @@ impl StartDBInstanceError {
     pub fn is_invalid_vpc_network_state_fault(&self) -> bool {
         matches!(
             &self.kind,
-            StartDBInstanceErrorKind::InvalidVPCNetworkStateFault(_)
+            StartDBInstanceErrorKind::InvalidVpcNetworkStateFault(_)
         )
     }
     pub fn is_kms_key_not_accessible_fault(&self) -> bool {
         matches!(
             &self.kind,
-            StartDBInstanceErrorKind::KMSKeyNotAccessibleFault(_)
+            StartDBInstanceErrorKind::KmsKeyNotAccessibleFault(_)
         )
     }
 }
@@ -14712,16 +14712,16 @@ impl std::error::Error for StartDBInstanceError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             StartDBInstanceErrorKind::AuthorizationNotFoundFault(_inner) => Some(_inner),
-            StartDBInstanceErrorKind::DBClusterNotFoundFault(_inner) => Some(_inner),
-            StartDBInstanceErrorKind::DBInstanceNotFoundFault(_inner) => Some(_inner),
-            StartDBInstanceErrorKind::DBSubnetGroupDoesNotCoverEnoughAZs(_inner) => Some(_inner),
-            StartDBInstanceErrorKind::DBSubnetGroupNotFoundFault(_inner) => Some(_inner),
-            StartDBInstanceErrorKind::InsufficientDBInstanceCapacityFault(_inner) => Some(_inner),
-            StartDBInstanceErrorKind::InvalidDBClusterStateFault(_inner) => Some(_inner),
-            StartDBInstanceErrorKind::InvalidDBInstanceStateFault(_inner) => Some(_inner),
+            StartDBInstanceErrorKind::DbClusterNotFoundFault(_inner) => Some(_inner),
+            StartDBInstanceErrorKind::DbInstanceNotFoundFault(_inner) => Some(_inner),
+            StartDBInstanceErrorKind::DbSubnetGroupDoesNotCoverEnoughAZs(_inner) => Some(_inner),
+            StartDBInstanceErrorKind::DbSubnetGroupNotFoundFault(_inner) => Some(_inner),
+            StartDBInstanceErrorKind::InsufficientDbInstanceCapacityFault(_inner) => Some(_inner),
+            StartDBInstanceErrorKind::InvalidDbClusterStateFault(_inner) => Some(_inner),
+            StartDBInstanceErrorKind::InvalidDbInstanceStateFault(_inner) => Some(_inner),
             StartDBInstanceErrorKind::InvalidSubnet(_inner) => Some(_inner),
-            StartDBInstanceErrorKind::InvalidVPCNetworkStateFault(_inner) => Some(_inner),
-            StartDBInstanceErrorKind::KMSKeyNotAccessibleFault(_inner) => Some(_inner),
+            StartDBInstanceErrorKind::InvalidVpcNetworkStateFault(_inner) => Some(_inner),
+            StartDBInstanceErrorKind::KmsKeyNotAccessibleFault(_inner) => Some(_inner),
             StartDBInstanceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -14736,12 +14736,12 @@ pub struct StartDBInstanceAutomatedBackupsReplicationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum StartDBInstanceAutomatedBackupsReplicationErrorKind {
-    DBInstanceAutomatedBackupQuotaExceededFault(
-        crate::error::DBInstanceAutomatedBackupQuotaExceededFault,
+    DbInstanceAutomatedBackupQuotaExceededFault(
+        crate::error::DbInstanceAutomatedBackupQuotaExceededFault,
     ),
-    DBInstanceNotFoundFault(crate::error::DBInstanceNotFoundFault),
-    InvalidDBInstanceStateFault(crate::error::InvalidDBInstanceStateFault),
-    KMSKeyNotAccessibleFault(crate::error::KMSKeyNotAccessibleFault),
+    DbInstanceNotFoundFault(crate::error::DbInstanceNotFoundFault),
+    InvalidDbInstanceStateFault(crate::error::InvalidDbInstanceStateFault),
+    KmsKeyNotAccessibleFault(crate::error::KmsKeyNotAccessibleFault),
     StorageTypeNotSupportedFault(crate::error::StorageTypeNotSupportedFault),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -14749,16 +14749,16 @@ pub enum StartDBInstanceAutomatedBackupsReplicationErrorKind {
 impl std::fmt::Display for StartDBInstanceAutomatedBackupsReplicationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            StartDBInstanceAutomatedBackupsReplicationErrorKind::DBInstanceAutomatedBackupQuotaExceededFault(_inner) =>
+            StartDBInstanceAutomatedBackupsReplicationErrorKind::DbInstanceAutomatedBackupQuotaExceededFault(_inner) =>
             _inner.fmt(f)
             ,
-            StartDBInstanceAutomatedBackupsReplicationErrorKind::DBInstanceNotFoundFault(_inner) =>
+            StartDBInstanceAutomatedBackupsReplicationErrorKind::DbInstanceNotFoundFault(_inner) =>
             _inner.fmt(f)
             ,
-            StartDBInstanceAutomatedBackupsReplicationErrorKind::InvalidDBInstanceStateFault(_inner) =>
+            StartDBInstanceAutomatedBackupsReplicationErrorKind::InvalidDbInstanceStateFault(_inner) =>
             _inner.fmt(f)
             ,
-            StartDBInstanceAutomatedBackupsReplicationErrorKind::KMSKeyNotAccessibleFault(_inner) =>
+            StartDBInstanceAutomatedBackupsReplicationErrorKind::KmsKeyNotAccessibleFault(_inner) =>
             _inner.fmt(f)
             ,
             StartDBInstanceAutomatedBackupsReplicationErrorKind::StorageTypeNotSupportedFault(_inner) =>
@@ -14818,24 +14818,24 @@ impl StartDBInstanceAutomatedBackupsReplicationError {
         self.meta.code()
     }
     pub fn is_db_instance_automated_backup_quota_exceeded_fault(&self) -> bool {
-        matches!(&self.kind, StartDBInstanceAutomatedBackupsReplicationErrorKind::DBInstanceAutomatedBackupQuotaExceededFault(_))
+        matches!(&self.kind, StartDBInstanceAutomatedBackupsReplicationErrorKind::DbInstanceAutomatedBackupQuotaExceededFault(_))
     }
     pub fn is_db_instance_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
-            StartDBInstanceAutomatedBackupsReplicationErrorKind::DBInstanceNotFoundFault(_)
+            StartDBInstanceAutomatedBackupsReplicationErrorKind::DbInstanceNotFoundFault(_)
         )
     }
     pub fn is_invalid_db_instance_state_fault(&self) -> bool {
         matches!(
             &self.kind,
-            StartDBInstanceAutomatedBackupsReplicationErrorKind::InvalidDBInstanceStateFault(_)
+            StartDBInstanceAutomatedBackupsReplicationErrorKind::InvalidDbInstanceStateFault(_)
         )
     }
     pub fn is_kms_key_not_accessible_fault(&self) -> bool {
         matches!(
             &self.kind,
-            StartDBInstanceAutomatedBackupsReplicationErrorKind::KMSKeyNotAccessibleFault(_)
+            StartDBInstanceAutomatedBackupsReplicationErrorKind::KmsKeyNotAccessibleFault(_)
         )
     }
     pub fn is_storage_type_not_supported_fault(&self) -> bool {
@@ -14848,16 +14848,16 @@ impl StartDBInstanceAutomatedBackupsReplicationError {
 impl std::error::Error for StartDBInstanceAutomatedBackupsReplicationError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            StartDBInstanceAutomatedBackupsReplicationErrorKind::DBInstanceAutomatedBackupQuotaExceededFault(_inner) =>
+            StartDBInstanceAutomatedBackupsReplicationErrorKind::DbInstanceAutomatedBackupQuotaExceededFault(_inner) =>
             Some(_inner)
             ,
-            StartDBInstanceAutomatedBackupsReplicationErrorKind::DBInstanceNotFoundFault(_inner) =>
+            StartDBInstanceAutomatedBackupsReplicationErrorKind::DbInstanceNotFoundFault(_inner) =>
             Some(_inner)
             ,
-            StartDBInstanceAutomatedBackupsReplicationErrorKind::InvalidDBInstanceStateFault(_inner) =>
+            StartDBInstanceAutomatedBackupsReplicationErrorKind::InvalidDbInstanceStateFault(_inner) =>
             Some(_inner)
             ,
-            StartDBInstanceAutomatedBackupsReplicationErrorKind::KMSKeyNotAccessibleFault(_inner) =>
+            StartDBInstanceAutomatedBackupsReplicationErrorKind::KmsKeyNotAccessibleFault(_inner) =>
             Some(_inner)
             ,
             StartDBInstanceAutomatedBackupsReplicationErrorKind::StorageTypeNotSupportedFault(_inner) =>
@@ -14879,30 +14879,30 @@ pub struct StartExportTaskError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum StartExportTaskErrorKind {
-    DBClusterSnapshotNotFoundFault(crate::error::DBClusterSnapshotNotFoundFault),
-    DBSnapshotNotFoundFault(crate::error::DBSnapshotNotFoundFault),
+    DbClusterSnapshotNotFoundFault(crate::error::DbClusterSnapshotNotFoundFault),
+    DbSnapshotNotFoundFault(crate::error::DbSnapshotNotFoundFault),
     ExportTaskAlreadyExistsFault(crate::error::ExportTaskAlreadyExistsFault),
     IamRoleMissingPermissionsFault(crate::error::IamRoleMissingPermissionsFault),
     IamRoleNotFoundFault(crate::error::IamRoleNotFoundFault),
     InvalidExportOnlyFault(crate::error::InvalidExportOnlyFault),
     InvalidExportSourceStateFault(crate::error::InvalidExportSourceStateFault),
     InvalidS3BucketFault(crate::error::InvalidS3BucketFault),
-    KMSKeyNotAccessibleFault(crate::error::KMSKeyNotAccessibleFault),
+    KmsKeyNotAccessibleFault(crate::error::KmsKeyNotAccessibleFault),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for StartExportTaskError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            StartExportTaskErrorKind::DBClusterSnapshotNotFoundFault(_inner) => _inner.fmt(f),
-            StartExportTaskErrorKind::DBSnapshotNotFoundFault(_inner) => _inner.fmt(f),
+            StartExportTaskErrorKind::DbClusterSnapshotNotFoundFault(_inner) => _inner.fmt(f),
+            StartExportTaskErrorKind::DbSnapshotNotFoundFault(_inner) => _inner.fmt(f),
             StartExportTaskErrorKind::ExportTaskAlreadyExistsFault(_inner) => _inner.fmt(f),
             StartExportTaskErrorKind::IamRoleMissingPermissionsFault(_inner) => _inner.fmt(f),
             StartExportTaskErrorKind::IamRoleNotFoundFault(_inner) => _inner.fmt(f),
             StartExportTaskErrorKind::InvalidExportOnlyFault(_inner) => _inner.fmt(f),
             StartExportTaskErrorKind::InvalidExportSourceStateFault(_inner) => _inner.fmt(f),
             StartExportTaskErrorKind::InvalidS3BucketFault(_inner) => _inner.fmt(f),
-            StartExportTaskErrorKind::KMSKeyNotAccessibleFault(_inner) => _inner.fmt(f),
+            StartExportTaskErrorKind::KmsKeyNotAccessibleFault(_inner) => _inner.fmt(f),
             StartExportTaskErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -14954,13 +14954,13 @@ impl StartExportTaskError {
     pub fn is_db_cluster_snapshot_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
-            StartExportTaskErrorKind::DBClusterSnapshotNotFoundFault(_)
+            StartExportTaskErrorKind::DbClusterSnapshotNotFoundFault(_)
         )
     }
     pub fn is_db_snapshot_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
-            StartExportTaskErrorKind::DBSnapshotNotFoundFault(_)
+            StartExportTaskErrorKind::DbSnapshotNotFoundFault(_)
         )
     }
     pub fn is_export_task_already_exists_fault(&self) -> bool {
@@ -15002,22 +15002,22 @@ impl StartExportTaskError {
     pub fn is_kms_key_not_accessible_fault(&self) -> bool {
         matches!(
             &self.kind,
-            StartExportTaskErrorKind::KMSKeyNotAccessibleFault(_)
+            StartExportTaskErrorKind::KmsKeyNotAccessibleFault(_)
         )
     }
 }
 impl std::error::Error for StartExportTaskError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            StartExportTaskErrorKind::DBClusterSnapshotNotFoundFault(_inner) => Some(_inner),
-            StartExportTaskErrorKind::DBSnapshotNotFoundFault(_inner) => Some(_inner),
+            StartExportTaskErrorKind::DbClusterSnapshotNotFoundFault(_inner) => Some(_inner),
+            StartExportTaskErrorKind::DbSnapshotNotFoundFault(_inner) => Some(_inner),
             StartExportTaskErrorKind::ExportTaskAlreadyExistsFault(_inner) => Some(_inner),
             StartExportTaskErrorKind::IamRoleMissingPermissionsFault(_inner) => Some(_inner),
             StartExportTaskErrorKind::IamRoleNotFoundFault(_inner) => Some(_inner),
             StartExportTaskErrorKind::InvalidExportOnlyFault(_inner) => Some(_inner),
             StartExportTaskErrorKind::InvalidExportSourceStateFault(_inner) => Some(_inner),
             StartExportTaskErrorKind::InvalidS3BucketFault(_inner) => Some(_inner),
-            StartExportTaskErrorKind::KMSKeyNotAccessibleFault(_inner) => Some(_inner),
+            StartExportTaskErrorKind::KmsKeyNotAccessibleFault(_inner) => Some(_inner),
             StartExportTaskErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -15032,10 +15032,10 @@ pub struct StopActivityStreamError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum StopActivityStreamErrorKind {
-    DBClusterNotFoundFault(crate::error::DBClusterNotFoundFault),
-    DBInstanceNotFoundFault(crate::error::DBInstanceNotFoundFault),
-    InvalidDBClusterStateFault(crate::error::InvalidDBClusterStateFault),
-    InvalidDBInstanceStateFault(crate::error::InvalidDBInstanceStateFault),
+    DbClusterNotFoundFault(crate::error::DbClusterNotFoundFault),
+    DbInstanceNotFoundFault(crate::error::DbInstanceNotFoundFault),
+    InvalidDbClusterStateFault(crate::error::InvalidDbClusterStateFault),
+    InvalidDbInstanceStateFault(crate::error::InvalidDbInstanceStateFault),
     ResourceNotFoundFault(crate::error::ResourceNotFoundFault),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -15043,10 +15043,10 @@ pub enum StopActivityStreamErrorKind {
 impl std::fmt::Display for StopActivityStreamError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            StopActivityStreamErrorKind::DBClusterNotFoundFault(_inner) => _inner.fmt(f),
-            StopActivityStreamErrorKind::DBInstanceNotFoundFault(_inner) => _inner.fmt(f),
-            StopActivityStreamErrorKind::InvalidDBClusterStateFault(_inner) => _inner.fmt(f),
-            StopActivityStreamErrorKind::InvalidDBInstanceStateFault(_inner) => _inner.fmt(f),
+            StopActivityStreamErrorKind::DbClusterNotFoundFault(_inner) => _inner.fmt(f),
+            StopActivityStreamErrorKind::DbInstanceNotFoundFault(_inner) => _inner.fmt(f),
+            StopActivityStreamErrorKind::InvalidDbClusterStateFault(_inner) => _inner.fmt(f),
+            StopActivityStreamErrorKind::InvalidDbInstanceStateFault(_inner) => _inner.fmt(f),
             StopActivityStreamErrorKind::ResourceNotFoundFault(_inner) => _inner.fmt(f),
             StopActivityStreamErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
@@ -15099,25 +15099,25 @@ impl StopActivityStreamError {
     pub fn is_db_cluster_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
-            StopActivityStreamErrorKind::DBClusterNotFoundFault(_)
+            StopActivityStreamErrorKind::DbClusterNotFoundFault(_)
         )
     }
     pub fn is_db_instance_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
-            StopActivityStreamErrorKind::DBInstanceNotFoundFault(_)
+            StopActivityStreamErrorKind::DbInstanceNotFoundFault(_)
         )
     }
     pub fn is_invalid_db_cluster_state_fault(&self) -> bool {
         matches!(
             &self.kind,
-            StopActivityStreamErrorKind::InvalidDBClusterStateFault(_)
+            StopActivityStreamErrorKind::InvalidDbClusterStateFault(_)
         )
     }
     pub fn is_invalid_db_instance_state_fault(&self) -> bool {
         matches!(
             &self.kind,
-            StopActivityStreamErrorKind::InvalidDBInstanceStateFault(_)
+            StopActivityStreamErrorKind::InvalidDbInstanceStateFault(_)
         )
     }
     pub fn is_resource_not_found_fault(&self) -> bool {
@@ -15130,10 +15130,10 @@ impl StopActivityStreamError {
 impl std::error::Error for StopActivityStreamError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            StopActivityStreamErrorKind::DBClusterNotFoundFault(_inner) => Some(_inner),
-            StopActivityStreamErrorKind::DBInstanceNotFoundFault(_inner) => Some(_inner),
-            StopActivityStreamErrorKind::InvalidDBClusterStateFault(_inner) => Some(_inner),
-            StopActivityStreamErrorKind::InvalidDBInstanceStateFault(_inner) => Some(_inner),
+            StopActivityStreamErrorKind::DbClusterNotFoundFault(_inner) => Some(_inner),
+            StopActivityStreamErrorKind::DbInstanceNotFoundFault(_inner) => Some(_inner),
+            StopActivityStreamErrorKind::InvalidDbClusterStateFault(_inner) => Some(_inner),
+            StopActivityStreamErrorKind::InvalidDbInstanceStateFault(_inner) => Some(_inner),
             StopActivityStreamErrorKind::ResourceNotFoundFault(_inner) => Some(_inner),
             StopActivityStreamErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
@@ -15149,18 +15149,18 @@ pub struct StopDBClusterError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum StopDBClusterErrorKind {
-    DBClusterNotFoundFault(crate::error::DBClusterNotFoundFault),
-    InvalidDBClusterStateFault(crate::error::InvalidDBClusterStateFault),
-    InvalidDBInstanceStateFault(crate::error::InvalidDBInstanceStateFault),
+    DbClusterNotFoundFault(crate::error::DbClusterNotFoundFault),
+    InvalidDbClusterStateFault(crate::error::InvalidDbClusterStateFault),
+    InvalidDbInstanceStateFault(crate::error::InvalidDbInstanceStateFault),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for StopDBClusterError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            StopDBClusterErrorKind::DBClusterNotFoundFault(_inner) => _inner.fmt(f),
-            StopDBClusterErrorKind::InvalidDBClusterStateFault(_inner) => _inner.fmt(f),
-            StopDBClusterErrorKind::InvalidDBInstanceStateFault(_inner) => _inner.fmt(f),
+            StopDBClusterErrorKind::DbClusterNotFoundFault(_inner) => _inner.fmt(f),
+            StopDBClusterErrorKind::InvalidDbClusterStateFault(_inner) => _inner.fmt(f),
+            StopDBClusterErrorKind::InvalidDbInstanceStateFault(_inner) => _inner.fmt(f),
             StopDBClusterErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -15212,28 +15212,28 @@ impl StopDBClusterError {
     pub fn is_db_cluster_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
-            StopDBClusterErrorKind::DBClusterNotFoundFault(_)
+            StopDBClusterErrorKind::DbClusterNotFoundFault(_)
         )
     }
     pub fn is_invalid_db_cluster_state_fault(&self) -> bool {
         matches!(
             &self.kind,
-            StopDBClusterErrorKind::InvalidDBClusterStateFault(_)
+            StopDBClusterErrorKind::InvalidDbClusterStateFault(_)
         )
     }
     pub fn is_invalid_db_instance_state_fault(&self) -> bool {
         matches!(
             &self.kind,
-            StopDBClusterErrorKind::InvalidDBInstanceStateFault(_)
+            StopDBClusterErrorKind::InvalidDbInstanceStateFault(_)
         )
     }
 }
 impl std::error::Error for StopDBClusterError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            StopDBClusterErrorKind::DBClusterNotFoundFault(_inner) => Some(_inner),
-            StopDBClusterErrorKind::InvalidDBClusterStateFault(_inner) => Some(_inner),
-            StopDBClusterErrorKind::InvalidDBInstanceStateFault(_inner) => Some(_inner),
+            StopDBClusterErrorKind::DbClusterNotFoundFault(_inner) => Some(_inner),
+            StopDBClusterErrorKind::InvalidDbClusterStateFault(_inner) => Some(_inner),
+            StopDBClusterErrorKind::InvalidDbInstanceStateFault(_inner) => Some(_inner),
             StopDBClusterErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -15248,10 +15248,10 @@ pub struct StopDBInstanceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum StopDBInstanceErrorKind {
-    DBInstanceNotFoundFault(crate::error::DBInstanceNotFoundFault),
-    DBSnapshotAlreadyExistsFault(crate::error::DBSnapshotAlreadyExistsFault),
-    InvalidDBClusterStateFault(crate::error::InvalidDBClusterStateFault),
-    InvalidDBInstanceStateFault(crate::error::InvalidDBInstanceStateFault),
+    DbInstanceNotFoundFault(crate::error::DbInstanceNotFoundFault),
+    DbSnapshotAlreadyExistsFault(crate::error::DbSnapshotAlreadyExistsFault),
+    InvalidDbClusterStateFault(crate::error::InvalidDbClusterStateFault),
+    InvalidDbInstanceStateFault(crate::error::InvalidDbInstanceStateFault),
     SnapshotQuotaExceededFault(crate::error::SnapshotQuotaExceededFault),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -15259,10 +15259,10 @@ pub enum StopDBInstanceErrorKind {
 impl std::fmt::Display for StopDBInstanceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            StopDBInstanceErrorKind::DBInstanceNotFoundFault(_inner) => _inner.fmt(f),
-            StopDBInstanceErrorKind::DBSnapshotAlreadyExistsFault(_inner) => _inner.fmt(f),
-            StopDBInstanceErrorKind::InvalidDBClusterStateFault(_inner) => _inner.fmt(f),
-            StopDBInstanceErrorKind::InvalidDBInstanceStateFault(_inner) => _inner.fmt(f),
+            StopDBInstanceErrorKind::DbInstanceNotFoundFault(_inner) => _inner.fmt(f),
+            StopDBInstanceErrorKind::DbSnapshotAlreadyExistsFault(_inner) => _inner.fmt(f),
+            StopDBInstanceErrorKind::InvalidDbClusterStateFault(_inner) => _inner.fmt(f),
+            StopDBInstanceErrorKind::InvalidDbInstanceStateFault(_inner) => _inner.fmt(f),
             StopDBInstanceErrorKind::SnapshotQuotaExceededFault(_inner) => _inner.fmt(f),
             StopDBInstanceErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
@@ -15315,25 +15315,25 @@ impl StopDBInstanceError {
     pub fn is_db_instance_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
-            StopDBInstanceErrorKind::DBInstanceNotFoundFault(_)
+            StopDBInstanceErrorKind::DbInstanceNotFoundFault(_)
         )
     }
     pub fn is_db_snapshot_already_exists_fault(&self) -> bool {
         matches!(
             &self.kind,
-            StopDBInstanceErrorKind::DBSnapshotAlreadyExistsFault(_)
+            StopDBInstanceErrorKind::DbSnapshotAlreadyExistsFault(_)
         )
     }
     pub fn is_invalid_db_cluster_state_fault(&self) -> bool {
         matches!(
             &self.kind,
-            StopDBInstanceErrorKind::InvalidDBClusterStateFault(_)
+            StopDBInstanceErrorKind::InvalidDbClusterStateFault(_)
         )
     }
     pub fn is_invalid_db_instance_state_fault(&self) -> bool {
         matches!(
             &self.kind,
-            StopDBInstanceErrorKind::InvalidDBInstanceStateFault(_)
+            StopDBInstanceErrorKind::InvalidDbInstanceStateFault(_)
         )
     }
     pub fn is_snapshot_quota_exceeded_fault(&self) -> bool {
@@ -15346,10 +15346,10 @@ impl StopDBInstanceError {
 impl std::error::Error for StopDBInstanceError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            StopDBInstanceErrorKind::DBInstanceNotFoundFault(_inner) => Some(_inner),
-            StopDBInstanceErrorKind::DBSnapshotAlreadyExistsFault(_inner) => Some(_inner),
-            StopDBInstanceErrorKind::InvalidDBClusterStateFault(_inner) => Some(_inner),
-            StopDBInstanceErrorKind::InvalidDBInstanceStateFault(_inner) => Some(_inner),
+            StopDBInstanceErrorKind::DbInstanceNotFoundFault(_inner) => Some(_inner),
+            StopDBInstanceErrorKind::DbSnapshotAlreadyExistsFault(_inner) => Some(_inner),
+            StopDBInstanceErrorKind::InvalidDbClusterStateFault(_inner) => Some(_inner),
+            StopDBInstanceErrorKind::InvalidDbInstanceStateFault(_inner) => Some(_inner),
             StopDBInstanceErrorKind::SnapshotQuotaExceededFault(_inner) => Some(_inner),
             StopDBInstanceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
@@ -15365,18 +15365,18 @@ pub struct StopDBInstanceAutomatedBackupsReplicationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum StopDBInstanceAutomatedBackupsReplicationErrorKind {
-    DBInstanceNotFoundFault(crate::error::DBInstanceNotFoundFault),
-    InvalidDBInstanceStateFault(crate::error::InvalidDBInstanceStateFault),
+    DbInstanceNotFoundFault(crate::error::DbInstanceNotFoundFault),
+    InvalidDbInstanceStateFault(crate::error::InvalidDbInstanceStateFault),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for StopDBInstanceAutomatedBackupsReplicationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            StopDBInstanceAutomatedBackupsReplicationErrorKind::DBInstanceNotFoundFault(_inner) => {
+            StopDBInstanceAutomatedBackupsReplicationErrorKind::DbInstanceNotFoundFault(_inner) => {
                 _inner.fmt(f)
             }
-            StopDBInstanceAutomatedBackupsReplicationErrorKind::InvalidDBInstanceStateFault(
+            StopDBInstanceAutomatedBackupsReplicationErrorKind::InvalidDbInstanceStateFault(
                 _inner,
             ) => _inner.fmt(f),
             StopDBInstanceAutomatedBackupsReplicationErrorKind::Unhandled(_inner) => _inner.fmt(f),
@@ -15433,23 +15433,23 @@ impl StopDBInstanceAutomatedBackupsReplicationError {
     pub fn is_db_instance_not_found_fault(&self) -> bool {
         matches!(
             &self.kind,
-            StopDBInstanceAutomatedBackupsReplicationErrorKind::DBInstanceNotFoundFault(_)
+            StopDBInstanceAutomatedBackupsReplicationErrorKind::DbInstanceNotFoundFault(_)
         )
     }
     pub fn is_invalid_db_instance_state_fault(&self) -> bool {
         matches!(
             &self.kind,
-            StopDBInstanceAutomatedBackupsReplicationErrorKind::InvalidDBInstanceStateFault(_)
+            StopDBInstanceAutomatedBackupsReplicationErrorKind::InvalidDbInstanceStateFault(_)
         )
     }
 }
 impl std::error::Error for StopDBInstanceAutomatedBackupsReplicationError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            StopDBInstanceAutomatedBackupsReplicationErrorKind::DBInstanceNotFoundFault(_inner) => {
+            StopDBInstanceAutomatedBackupsReplicationErrorKind::DbInstanceNotFoundFault(_inner) => {
                 Some(_inner)
             }
-            StopDBInstanceAutomatedBackupsReplicationErrorKind::InvalidDBInstanceStateFault(
+            StopDBInstanceAutomatedBackupsReplicationErrorKind::InvalidDbInstanceStateFault(
                 _inner,
             ) => Some(_inner),
             StopDBInstanceAutomatedBackupsReplicationErrorKind::Unhandled(_inner) => {
@@ -15462,34 +15462,37 @@ impl std::error::Error for StopDBInstanceAutomatedBackupsReplicationError {
 /// <p>The DB instance isn't in a valid state.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct InvalidDBInstanceStateFault {
+pub struct InvalidDbInstanceStateFault {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for InvalidDBInstanceStateFault {
+impl std::fmt::Debug for InvalidDbInstanceStateFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidDBInstanceStateFault");
+        let mut formatter = f.debug_struct("InvalidDbInstanceStateFault");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl InvalidDBInstanceStateFault {
+impl InvalidDbInstanceStateFault {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for InvalidDBInstanceStateFault {
+impl std::fmt::Display for InvalidDbInstanceStateFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "InvalidDBInstanceStateFault")?;
+        write!(
+            f,
+            "InvalidDbInstanceStateFault [InvalidDBInstanceStateFault]"
+        )?;
         if let Some(inner_1) = &self.message {
             write!(f, ": {}", inner_1)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for InvalidDBInstanceStateFault {}
-/// See [`InvalidDBInstanceStateFault`](crate::error::InvalidDBInstanceStateFault)
+impl std::error::Error for InvalidDbInstanceStateFault {}
+/// See [`InvalidDbInstanceStateFault`](crate::error::InvalidDbInstanceStateFault)
 pub mod invalid_db_instance_state_fault {
-    /// A builder for [`InvalidDBInstanceStateFault`](crate::error::InvalidDBInstanceStateFault)
+    /// A builder for [`InvalidDbInstanceStateFault`](crate::error::InvalidDbInstanceStateFault)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -15504,16 +15507,16 @@ pub mod invalid_db_instance_state_fault {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`InvalidDBInstanceStateFault`](crate::error::InvalidDBInstanceStateFault)
-        pub fn build(self) -> crate::error::InvalidDBInstanceStateFault {
-            crate::error::InvalidDBInstanceStateFault {
+        /// Consumes the builder and constructs a [`InvalidDbInstanceStateFault`](crate::error::InvalidDbInstanceStateFault)
+        pub fn build(self) -> crate::error::InvalidDbInstanceStateFault {
+            crate::error::InvalidDbInstanceStateFault {
                 message: self.message,
             }
         }
     }
 }
-impl InvalidDBInstanceStateFault {
-    /// Creates a new builder-style object to manufacture [`InvalidDBInstanceStateFault`](crate::error::InvalidDBInstanceStateFault)
+impl InvalidDbInstanceStateFault {
+    /// Creates a new builder-style object to manufacture [`InvalidDbInstanceStateFault`](crate::error::InvalidDbInstanceStateFault)
     pub fn builder() -> crate::error::invalid_db_instance_state_fault::Builder {
         crate::error::invalid_db_instance_state_fault::Builder::default()
     }
@@ -15524,34 +15527,34 @@ impl InvalidDBInstanceStateFault {
 /// </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct DBInstanceNotFoundFault {
+pub struct DbInstanceNotFoundFault {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for DBInstanceNotFoundFault {
+impl std::fmt::Debug for DbInstanceNotFoundFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DBInstanceNotFoundFault");
+        let mut formatter = f.debug_struct("DbInstanceNotFoundFault");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl DBInstanceNotFoundFault {
+impl DbInstanceNotFoundFault {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for DBInstanceNotFoundFault {
+impl std::fmt::Display for DbInstanceNotFoundFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "DBInstanceNotFoundFault")?;
+        write!(f, "DbInstanceNotFoundFault [DBInstanceNotFoundFault]")?;
         if let Some(inner_2) = &self.message {
             write!(f, ": {}", inner_2)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for DBInstanceNotFoundFault {}
-/// See [`DBInstanceNotFoundFault`](crate::error::DBInstanceNotFoundFault)
+impl std::error::Error for DbInstanceNotFoundFault {}
+/// See [`DbInstanceNotFoundFault`](crate::error::DbInstanceNotFoundFault)
 pub mod db_instance_not_found_fault {
-    /// A builder for [`DBInstanceNotFoundFault`](crate::error::DBInstanceNotFoundFault)
+    /// A builder for [`DbInstanceNotFoundFault`](crate::error::DbInstanceNotFoundFault)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -15566,16 +15569,16 @@ pub mod db_instance_not_found_fault {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`DBInstanceNotFoundFault`](crate::error::DBInstanceNotFoundFault)
-        pub fn build(self) -> crate::error::DBInstanceNotFoundFault {
-            crate::error::DBInstanceNotFoundFault {
+        /// Consumes the builder and constructs a [`DbInstanceNotFoundFault`](crate::error::DbInstanceNotFoundFault)
+        pub fn build(self) -> crate::error::DbInstanceNotFoundFault {
+            crate::error::DbInstanceNotFoundFault {
                 message: self.message,
             }
         }
     }
 }
-impl DBInstanceNotFoundFault {
-    /// Creates a new builder-style object to manufacture [`DBInstanceNotFoundFault`](crate::error::DBInstanceNotFoundFault)
+impl DbInstanceNotFoundFault {
+    /// Creates a new builder-style object to manufacture [`DbInstanceNotFoundFault`](crate::error::DbInstanceNotFoundFault)
     pub fn builder() -> crate::error::db_instance_not_found_fault::Builder {
         crate::error::db_instance_not_found_fault::Builder::default()
     }
@@ -15645,34 +15648,34 @@ impl SnapshotQuotaExceededFault {
 /// <p>The requested operation can't be performed while the cluster is in this state.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct InvalidDBClusterStateFault {
+pub struct InvalidDbClusterStateFault {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for InvalidDBClusterStateFault {
+impl std::fmt::Debug for InvalidDbClusterStateFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidDBClusterStateFault");
+        let mut formatter = f.debug_struct("InvalidDbClusterStateFault");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl InvalidDBClusterStateFault {
+impl InvalidDbClusterStateFault {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for InvalidDBClusterStateFault {
+impl std::fmt::Display for InvalidDbClusterStateFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "InvalidDBClusterStateFault")?;
+        write!(f, "InvalidDbClusterStateFault [InvalidDBClusterStateFault]")?;
         if let Some(inner_4) = &self.message {
             write!(f, ": {}", inner_4)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for InvalidDBClusterStateFault {}
-/// See [`InvalidDBClusterStateFault`](crate::error::InvalidDBClusterStateFault)
+impl std::error::Error for InvalidDbClusterStateFault {}
+/// See [`InvalidDbClusterStateFault`](crate::error::InvalidDbClusterStateFault)
 pub mod invalid_db_cluster_state_fault {
-    /// A builder for [`InvalidDBClusterStateFault`](crate::error::InvalidDBClusterStateFault)
+    /// A builder for [`InvalidDbClusterStateFault`](crate::error::InvalidDbClusterStateFault)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -15687,16 +15690,16 @@ pub mod invalid_db_cluster_state_fault {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`InvalidDBClusterStateFault`](crate::error::InvalidDBClusterStateFault)
-        pub fn build(self) -> crate::error::InvalidDBClusterStateFault {
-            crate::error::InvalidDBClusterStateFault {
+        /// Consumes the builder and constructs a [`InvalidDbClusterStateFault`](crate::error::InvalidDbClusterStateFault)
+        pub fn build(self) -> crate::error::InvalidDbClusterStateFault {
+            crate::error::InvalidDbClusterStateFault {
                 message: self.message,
             }
         }
     }
 }
-impl InvalidDBClusterStateFault {
-    /// Creates a new builder-style object to manufacture [`InvalidDBClusterStateFault`](crate::error::InvalidDBClusterStateFault)
+impl InvalidDbClusterStateFault {
+    /// Creates a new builder-style object to manufacture [`InvalidDbClusterStateFault`](crate::error::InvalidDbClusterStateFault)
     pub fn builder() -> crate::error::invalid_db_cluster_state_fault::Builder {
         crate::error::invalid_db_cluster_state_fault::Builder::default()
     }
@@ -15707,34 +15710,37 @@ impl InvalidDBClusterStateFault {
 /// </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct DBSnapshotAlreadyExistsFault {
+pub struct DbSnapshotAlreadyExistsFault {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for DBSnapshotAlreadyExistsFault {
+impl std::fmt::Debug for DbSnapshotAlreadyExistsFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DBSnapshotAlreadyExistsFault");
+        let mut formatter = f.debug_struct("DbSnapshotAlreadyExistsFault");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl DBSnapshotAlreadyExistsFault {
+impl DbSnapshotAlreadyExistsFault {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for DBSnapshotAlreadyExistsFault {
+impl std::fmt::Display for DbSnapshotAlreadyExistsFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "DBSnapshotAlreadyExistsFault")?;
+        write!(
+            f,
+            "DbSnapshotAlreadyExistsFault [DBSnapshotAlreadyExistsFault]"
+        )?;
         if let Some(inner_5) = &self.message {
             write!(f, ": {}", inner_5)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for DBSnapshotAlreadyExistsFault {}
-/// See [`DBSnapshotAlreadyExistsFault`](crate::error::DBSnapshotAlreadyExistsFault)
+impl std::error::Error for DbSnapshotAlreadyExistsFault {}
+/// See [`DbSnapshotAlreadyExistsFault`](crate::error::DbSnapshotAlreadyExistsFault)
 pub mod db_snapshot_already_exists_fault {
-    /// A builder for [`DBSnapshotAlreadyExistsFault`](crate::error::DBSnapshotAlreadyExistsFault)
+    /// A builder for [`DbSnapshotAlreadyExistsFault`](crate::error::DbSnapshotAlreadyExistsFault)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -15749,16 +15755,16 @@ pub mod db_snapshot_already_exists_fault {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`DBSnapshotAlreadyExistsFault`](crate::error::DBSnapshotAlreadyExistsFault)
-        pub fn build(self) -> crate::error::DBSnapshotAlreadyExistsFault {
-            crate::error::DBSnapshotAlreadyExistsFault {
+        /// Consumes the builder and constructs a [`DbSnapshotAlreadyExistsFault`](crate::error::DbSnapshotAlreadyExistsFault)
+        pub fn build(self) -> crate::error::DbSnapshotAlreadyExistsFault {
+            crate::error::DbSnapshotAlreadyExistsFault {
                 message: self.message,
             }
         }
     }
 }
-impl DBSnapshotAlreadyExistsFault {
-    /// Creates a new builder-style object to manufacture [`DBSnapshotAlreadyExistsFault`](crate::error::DBSnapshotAlreadyExistsFault)
+impl DbSnapshotAlreadyExistsFault {
+    /// Creates a new builder-style object to manufacture [`DbSnapshotAlreadyExistsFault`](crate::error::DbSnapshotAlreadyExistsFault)
     pub fn builder() -> crate::error::db_snapshot_already_exists_fault::Builder {
         crate::error::db_snapshot_already_exists_fault::Builder::default()
     }
@@ -15769,34 +15775,34 @@ impl DBSnapshotAlreadyExistsFault {
 /// </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct DBClusterNotFoundFault {
+pub struct DbClusterNotFoundFault {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for DBClusterNotFoundFault {
+impl std::fmt::Debug for DbClusterNotFoundFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DBClusterNotFoundFault");
+        let mut formatter = f.debug_struct("DbClusterNotFoundFault");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl DBClusterNotFoundFault {
+impl DbClusterNotFoundFault {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for DBClusterNotFoundFault {
+impl std::fmt::Display for DbClusterNotFoundFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "DBClusterNotFoundFault")?;
+        write!(f, "DbClusterNotFoundFault [DBClusterNotFoundFault]")?;
         if let Some(inner_6) = &self.message {
             write!(f, ": {}", inner_6)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for DBClusterNotFoundFault {}
-/// See [`DBClusterNotFoundFault`](crate::error::DBClusterNotFoundFault)
+impl std::error::Error for DbClusterNotFoundFault {}
+/// See [`DbClusterNotFoundFault`](crate::error::DbClusterNotFoundFault)
 pub mod db_cluster_not_found_fault {
-    /// A builder for [`DBClusterNotFoundFault`](crate::error::DBClusterNotFoundFault)
+    /// A builder for [`DbClusterNotFoundFault`](crate::error::DbClusterNotFoundFault)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -15811,16 +15817,16 @@ pub mod db_cluster_not_found_fault {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`DBClusterNotFoundFault`](crate::error::DBClusterNotFoundFault)
-        pub fn build(self) -> crate::error::DBClusterNotFoundFault {
-            crate::error::DBClusterNotFoundFault {
+        /// Consumes the builder and constructs a [`DbClusterNotFoundFault`](crate::error::DbClusterNotFoundFault)
+        pub fn build(self) -> crate::error::DbClusterNotFoundFault {
+            crate::error::DbClusterNotFoundFault {
                 message: self.message,
             }
         }
     }
 }
-impl DBClusterNotFoundFault {
-    /// Creates a new builder-style object to manufacture [`DBClusterNotFoundFault`](crate::error::DBClusterNotFoundFault)
+impl DbClusterNotFoundFault {
+    /// Creates a new builder-style object to manufacture [`DbClusterNotFoundFault`](crate::error::DbClusterNotFoundFault)
     pub fn builder() -> crate::error::db_cluster_not_found_fault::Builder {
         crate::error::db_cluster_not_found_fault::Builder::default()
     }
@@ -15889,34 +15895,34 @@ impl ResourceNotFoundFault {
 /// <p>An error occurred accessing an AWS KMS key.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct KMSKeyNotAccessibleFault {
+pub struct KmsKeyNotAccessibleFault {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for KMSKeyNotAccessibleFault {
+impl std::fmt::Debug for KmsKeyNotAccessibleFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("KMSKeyNotAccessibleFault");
+        let mut formatter = f.debug_struct("KmsKeyNotAccessibleFault");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl KMSKeyNotAccessibleFault {
+impl KmsKeyNotAccessibleFault {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for KMSKeyNotAccessibleFault {
+impl std::fmt::Display for KmsKeyNotAccessibleFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "KMSKeyNotAccessibleFault")?;
+        write!(f, "KmsKeyNotAccessibleFault [KMSKeyNotAccessibleFault]")?;
         if let Some(inner_8) = &self.message {
             write!(f, ": {}", inner_8)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for KMSKeyNotAccessibleFault {}
-/// See [`KMSKeyNotAccessibleFault`](crate::error::KMSKeyNotAccessibleFault)
+impl std::error::Error for KmsKeyNotAccessibleFault {}
+/// See [`KmsKeyNotAccessibleFault`](crate::error::KmsKeyNotAccessibleFault)
 pub mod kms_key_not_accessible_fault {
-    /// A builder for [`KMSKeyNotAccessibleFault`](crate::error::KMSKeyNotAccessibleFault)
+    /// A builder for [`KmsKeyNotAccessibleFault`](crate::error::KmsKeyNotAccessibleFault)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -15931,16 +15937,16 @@ pub mod kms_key_not_accessible_fault {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`KMSKeyNotAccessibleFault`](crate::error::KMSKeyNotAccessibleFault)
-        pub fn build(self) -> crate::error::KMSKeyNotAccessibleFault {
-            crate::error::KMSKeyNotAccessibleFault {
+        /// Consumes the builder and constructs a [`KmsKeyNotAccessibleFault`](crate::error::KmsKeyNotAccessibleFault)
+        pub fn build(self) -> crate::error::KmsKeyNotAccessibleFault {
+            crate::error::KmsKeyNotAccessibleFault {
                 message: self.message,
             }
         }
     }
 }
-impl KMSKeyNotAccessibleFault {
-    /// Creates a new builder-style object to manufacture [`KMSKeyNotAccessibleFault`](crate::error::KMSKeyNotAccessibleFault)
+impl KmsKeyNotAccessibleFault {
+    /// Creates a new builder-style object to manufacture [`KmsKeyNotAccessibleFault`](crate::error::KmsKeyNotAccessibleFault)
     pub fn builder() -> crate::error::kms_key_not_accessible_fault::Builder {
         crate::error::kms_key_not_accessible_fault::Builder::default()
     }
@@ -16312,34 +16318,34 @@ impl ExportTaskAlreadyExistsFault {
 /// </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct DBSnapshotNotFoundFault {
+pub struct DbSnapshotNotFoundFault {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for DBSnapshotNotFoundFault {
+impl std::fmt::Debug for DbSnapshotNotFoundFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DBSnapshotNotFoundFault");
+        let mut formatter = f.debug_struct("DbSnapshotNotFoundFault");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl DBSnapshotNotFoundFault {
+impl DbSnapshotNotFoundFault {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for DBSnapshotNotFoundFault {
+impl std::fmt::Display for DbSnapshotNotFoundFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "DBSnapshotNotFoundFault")?;
+        write!(f, "DbSnapshotNotFoundFault [DBSnapshotNotFoundFault]")?;
         if let Some(inner_15) = &self.message {
             write!(f, ": {}", inner_15)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for DBSnapshotNotFoundFault {}
-/// See [`DBSnapshotNotFoundFault`](crate::error::DBSnapshotNotFoundFault)
+impl std::error::Error for DbSnapshotNotFoundFault {}
+/// See [`DbSnapshotNotFoundFault`](crate::error::DbSnapshotNotFoundFault)
 pub mod db_snapshot_not_found_fault {
-    /// A builder for [`DBSnapshotNotFoundFault`](crate::error::DBSnapshotNotFoundFault)
+    /// A builder for [`DbSnapshotNotFoundFault`](crate::error::DbSnapshotNotFoundFault)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -16354,16 +16360,16 @@ pub mod db_snapshot_not_found_fault {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`DBSnapshotNotFoundFault`](crate::error::DBSnapshotNotFoundFault)
-        pub fn build(self) -> crate::error::DBSnapshotNotFoundFault {
-            crate::error::DBSnapshotNotFoundFault {
+        /// Consumes the builder and constructs a [`DbSnapshotNotFoundFault`](crate::error::DbSnapshotNotFoundFault)
+        pub fn build(self) -> crate::error::DbSnapshotNotFoundFault {
+            crate::error::DbSnapshotNotFoundFault {
                 message: self.message,
             }
         }
     }
 }
-impl DBSnapshotNotFoundFault {
-    /// Creates a new builder-style object to manufacture [`DBSnapshotNotFoundFault`](crate::error::DBSnapshotNotFoundFault)
+impl DbSnapshotNotFoundFault {
+    /// Creates a new builder-style object to manufacture [`DbSnapshotNotFoundFault`](crate::error::DbSnapshotNotFoundFault)
     pub fn builder() -> crate::error::db_snapshot_not_found_fault::Builder {
         crate::error::db_snapshot_not_found_fault::Builder::default()
     }
@@ -16374,34 +16380,37 @@ impl DBSnapshotNotFoundFault {
 /// </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct DBClusterSnapshotNotFoundFault {
+pub struct DbClusterSnapshotNotFoundFault {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for DBClusterSnapshotNotFoundFault {
+impl std::fmt::Debug for DbClusterSnapshotNotFoundFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DBClusterSnapshotNotFoundFault");
+        let mut formatter = f.debug_struct("DbClusterSnapshotNotFoundFault");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl DBClusterSnapshotNotFoundFault {
+impl DbClusterSnapshotNotFoundFault {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for DBClusterSnapshotNotFoundFault {
+impl std::fmt::Display for DbClusterSnapshotNotFoundFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "DBClusterSnapshotNotFoundFault")?;
+        write!(
+            f,
+            "DbClusterSnapshotNotFoundFault [DBClusterSnapshotNotFoundFault]"
+        )?;
         if let Some(inner_16) = &self.message {
             write!(f, ": {}", inner_16)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for DBClusterSnapshotNotFoundFault {}
-/// See [`DBClusterSnapshotNotFoundFault`](crate::error::DBClusterSnapshotNotFoundFault)
+impl std::error::Error for DbClusterSnapshotNotFoundFault {}
+/// See [`DbClusterSnapshotNotFoundFault`](crate::error::DbClusterSnapshotNotFoundFault)
 pub mod db_cluster_snapshot_not_found_fault {
-    /// A builder for [`DBClusterSnapshotNotFoundFault`](crate::error::DBClusterSnapshotNotFoundFault)
+    /// A builder for [`DbClusterSnapshotNotFoundFault`](crate::error::DbClusterSnapshotNotFoundFault)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -16416,16 +16425,16 @@ pub mod db_cluster_snapshot_not_found_fault {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`DBClusterSnapshotNotFoundFault`](crate::error::DBClusterSnapshotNotFoundFault)
-        pub fn build(self) -> crate::error::DBClusterSnapshotNotFoundFault {
-            crate::error::DBClusterSnapshotNotFoundFault {
+        /// Consumes the builder and constructs a [`DbClusterSnapshotNotFoundFault`](crate::error::DbClusterSnapshotNotFoundFault)
+        pub fn build(self) -> crate::error::DbClusterSnapshotNotFoundFault {
+            crate::error::DbClusterSnapshotNotFoundFault {
                 message: self.message,
             }
         }
     }
 }
-impl DBClusterSnapshotNotFoundFault {
-    /// Creates a new builder-style object to manufacture [`DBClusterSnapshotNotFoundFault`](crate::error::DBClusterSnapshotNotFoundFault)
+impl DbClusterSnapshotNotFoundFault {
+    /// Creates a new builder-style object to manufacture [`DbClusterSnapshotNotFoundFault`](crate::error::DbClusterSnapshotNotFoundFault)
     pub fn builder() -> crate::error::db_cluster_snapshot_not_found_fault::Builder {
         crate::error::db_cluster_snapshot_not_found_fault::Builder::default()
     }
@@ -16497,34 +16506,34 @@ impl StorageTypeNotSupportedFault {
 /// quota is the same as your DB Instance quota.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct DBInstanceAutomatedBackupQuotaExceededFault {
+pub struct DbInstanceAutomatedBackupQuotaExceededFault {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for DBInstanceAutomatedBackupQuotaExceededFault {
+impl std::fmt::Debug for DbInstanceAutomatedBackupQuotaExceededFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DBInstanceAutomatedBackupQuotaExceededFault");
+        let mut formatter = f.debug_struct("DbInstanceAutomatedBackupQuotaExceededFault");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl DBInstanceAutomatedBackupQuotaExceededFault {
+impl DbInstanceAutomatedBackupQuotaExceededFault {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for DBInstanceAutomatedBackupQuotaExceededFault {
+impl std::fmt::Display for DbInstanceAutomatedBackupQuotaExceededFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "DBInstanceAutomatedBackupQuotaExceededFault")?;
+        write!(f, "DbInstanceAutomatedBackupQuotaExceededFault [DBInstanceAutomatedBackupQuotaExceededFault]")?;
         if let Some(inner_18) = &self.message {
             write!(f, ": {}", inner_18)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for DBInstanceAutomatedBackupQuotaExceededFault {}
-/// See [`DBInstanceAutomatedBackupQuotaExceededFault`](crate::error::DBInstanceAutomatedBackupQuotaExceededFault)
+impl std::error::Error for DbInstanceAutomatedBackupQuotaExceededFault {}
+/// See [`DbInstanceAutomatedBackupQuotaExceededFault`](crate::error::DbInstanceAutomatedBackupQuotaExceededFault)
 pub mod db_instance_automated_backup_quota_exceeded_fault {
-    /// A builder for [`DBInstanceAutomatedBackupQuotaExceededFault`](crate::error::DBInstanceAutomatedBackupQuotaExceededFault)
+    /// A builder for [`DbInstanceAutomatedBackupQuotaExceededFault`](crate::error::DbInstanceAutomatedBackupQuotaExceededFault)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -16539,16 +16548,16 @@ pub mod db_instance_automated_backup_quota_exceeded_fault {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`DBInstanceAutomatedBackupQuotaExceededFault`](crate::error::DBInstanceAutomatedBackupQuotaExceededFault)
-        pub fn build(self) -> crate::error::DBInstanceAutomatedBackupQuotaExceededFault {
-            crate::error::DBInstanceAutomatedBackupQuotaExceededFault {
+        /// Consumes the builder and constructs a [`DbInstanceAutomatedBackupQuotaExceededFault`](crate::error::DbInstanceAutomatedBackupQuotaExceededFault)
+        pub fn build(self) -> crate::error::DbInstanceAutomatedBackupQuotaExceededFault {
+            crate::error::DbInstanceAutomatedBackupQuotaExceededFault {
                 message: self.message,
             }
         }
     }
 }
-impl DBInstanceAutomatedBackupQuotaExceededFault {
-    /// Creates a new builder-style object to manufacture [`DBInstanceAutomatedBackupQuotaExceededFault`](crate::error::DBInstanceAutomatedBackupQuotaExceededFault)
+impl DbInstanceAutomatedBackupQuotaExceededFault {
+    /// Creates a new builder-style object to manufacture [`DbInstanceAutomatedBackupQuotaExceededFault`](crate::error::DbInstanceAutomatedBackupQuotaExceededFault)
     pub fn builder() -> crate::error::db_instance_automated_backup_quota_exceeded_fault::Builder {
         crate::error::db_instance_automated_backup_quota_exceeded_fault::Builder::default()
     }
@@ -16558,34 +16567,37 @@ impl DBInstanceAutomatedBackupQuotaExceededFault {
 /// created because of users' change.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct InvalidVPCNetworkStateFault {
+pub struct InvalidVpcNetworkStateFault {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for InvalidVPCNetworkStateFault {
+impl std::fmt::Debug for InvalidVpcNetworkStateFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidVPCNetworkStateFault");
+        let mut formatter = f.debug_struct("InvalidVpcNetworkStateFault");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl InvalidVPCNetworkStateFault {
+impl InvalidVpcNetworkStateFault {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for InvalidVPCNetworkStateFault {
+impl std::fmt::Display for InvalidVpcNetworkStateFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "InvalidVPCNetworkStateFault")?;
+        write!(
+            f,
+            "InvalidVpcNetworkStateFault [InvalidVPCNetworkStateFault]"
+        )?;
         if let Some(inner_19) = &self.message {
             write!(f, ": {}", inner_19)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for InvalidVPCNetworkStateFault {}
-/// See [`InvalidVPCNetworkStateFault`](crate::error::InvalidVPCNetworkStateFault)
+impl std::error::Error for InvalidVpcNetworkStateFault {}
+/// See [`InvalidVpcNetworkStateFault`](crate::error::InvalidVpcNetworkStateFault)
 pub mod invalid_vpc_network_state_fault {
-    /// A builder for [`InvalidVPCNetworkStateFault`](crate::error::InvalidVPCNetworkStateFault)
+    /// A builder for [`InvalidVpcNetworkStateFault`](crate::error::InvalidVpcNetworkStateFault)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -16600,16 +16612,16 @@ pub mod invalid_vpc_network_state_fault {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`InvalidVPCNetworkStateFault`](crate::error::InvalidVPCNetworkStateFault)
-        pub fn build(self) -> crate::error::InvalidVPCNetworkStateFault {
-            crate::error::InvalidVPCNetworkStateFault {
+        /// Consumes the builder and constructs a [`InvalidVpcNetworkStateFault`](crate::error::InvalidVpcNetworkStateFault)
+        pub fn build(self) -> crate::error::InvalidVpcNetworkStateFault {
+            crate::error::InvalidVpcNetworkStateFault {
                 message: self.message,
             }
         }
     }
 }
-impl InvalidVPCNetworkStateFault {
-    /// Creates a new builder-style object to manufacture [`InvalidVPCNetworkStateFault`](crate::error::InvalidVPCNetworkStateFault)
+impl InvalidVpcNetworkStateFault {
+    /// Creates a new builder-style object to manufacture [`InvalidVpcNetworkStateFault`](crate::error::InvalidVpcNetworkStateFault)
     pub fn builder() -> crate::error::invalid_vpc_network_state_fault::Builder {
         crate::error::invalid_vpc_network_state_fault::Builder::default()
     }
@@ -16679,34 +16691,37 @@ impl InvalidSubnet {
 /// Zone.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct InsufficientDBInstanceCapacityFault {
+pub struct InsufficientDbInstanceCapacityFault {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for InsufficientDBInstanceCapacityFault {
+impl std::fmt::Debug for InsufficientDbInstanceCapacityFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InsufficientDBInstanceCapacityFault");
+        let mut formatter = f.debug_struct("InsufficientDbInstanceCapacityFault");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl InsufficientDBInstanceCapacityFault {
+impl InsufficientDbInstanceCapacityFault {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for InsufficientDBInstanceCapacityFault {
+impl std::fmt::Display for InsufficientDbInstanceCapacityFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "InsufficientDBInstanceCapacityFault")?;
+        write!(
+            f,
+            "InsufficientDbInstanceCapacityFault [InsufficientDBInstanceCapacityFault]"
+        )?;
         if let Some(inner_21) = &self.message {
             write!(f, ": {}", inner_21)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for InsufficientDBInstanceCapacityFault {}
-/// See [`InsufficientDBInstanceCapacityFault`](crate::error::InsufficientDBInstanceCapacityFault)
+impl std::error::Error for InsufficientDbInstanceCapacityFault {}
+/// See [`InsufficientDbInstanceCapacityFault`](crate::error::InsufficientDbInstanceCapacityFault)
 pub mod insufficient_db_instance_capacity_fault {
-    /// A builder for [`InsufficientDBInstanceCapacityFault`](crate::error::InsufficientDBInstanceCapacityFault)
+    /// A builder for [`InsufficientDbInstanceCapacityFault`](crate::error::InsufficientDbInstanceCapacityFault)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -16721,16 +16736,16 @@ pub mod insufficient_db_instance_capacity_fault {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`InsufficientDBInstanceCapacityFault`](crate::error::InsufficientDBInstanceCapacityFault)
-        pub fn build(self) -> crate::error::InsufficientDBInstanceCapacityFault {
-            crate::error::InsufficientDBInstanceCapacityFault {
+        /// Consumes the builder and constructs a [`InsufficientDbInstanceCapacityFault`](crate::error::InsufficientDbInstanceCapacityFault)
+        pub fn build(self) -> crate::error::InsufficientDbInstanceCapacityFault {
+            crate::error::InsufficientDbInstanceCapacityFault {
                 message: self.message,
             }
         }
     }
 }
-impl InsufficientDBInstanceCapacityFault {
-    /// Creates a new builder-style object to manufacture [`InsufficientDBInstanceCapacityFault`](crate::error::InsufficientDBInstanceCapacityFault)
+impl InsufficientDbInstanceCapacityFault {
+    /// Creates a new builder-style object to manufacture [`InsufficientDbInstanceCapacityFault`](crate::error::InsufficientDbInstanceCapacityFault)
     pub fn builder() -> crate::error::insufficient_db_instance_capacity_fault::Builder {
         crate::error::insufficient_db_instance_capacity_fault::Builder::default()
     }
@@ -16741,34 +16756,34 @@ impl InsufficientDBInstanceCapacityFault {
 /// </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct DBSubnetGroupNotFoundFault {
+pub struct DbSubnetGroupNotFoundFault {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for DBSubnetGroupNotFoundFault {
+impl std::fmt::Debug for DbSubnetGroupNotFoundFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DBSubnetGroupNotFoundFault");
+        let mut formatter = f.debug_struct("DbSubnetGroupNotFoundFault");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl DBSubnetGroupNotFoundFault {
+impl DbSubnetGroupNotFoundFault {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for DBSubnetGroupNotFoundFault {
+impl std::fmt::Display for DbSubnetGroupNotFoundFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "DBSubnetGroupNotFoundFault")?;
+        write!(f, "DbSubnetGroupNotFoundFault [DBSubnetGroupNotFoundFault]")?;
         if let Some(inner_22) = &self.message {
             write!(f, ": {}", inner_22)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for DBSubnetGroupNotFoundFault {}
-/// See [`DBSubnetGroupNotFoundFault`](crate::error::DBSubnetGroupNotFoundFault)
+impl std::error::Error for DbSubnetGroupNotFoundFault {}
+/// See [`DbSubnetGroupNotFoundFault`](crate::error::DbSubnetGroupNotFoundFault)
 pub mod db_subnet_group_not_found_fault {
-    /// A builder for [`DBSubnetGroupNotFoundFault`](crate::error::DBSubnetGroupNotFoundFault)
+    /// A builder for [`DbSubnetGroupNotFoundFault`](crate::error::DbSubnetGroupNotFoundFault)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -16783,16 +16798,16 @@ pub mod db_subnet_group_not_found_fault {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`DBSubnetGroupNotFoundFault`](crate::error::DBSubnetGroupNotFoundFault)
-        pub fn build(self) -> crate::error::DBSubnetGroupNotFoundFault {
-            crate::error::DBSubnetGroupNotFoundFault {
+        /// Consumes the builder and constructs a [`DbSubnetGroupNotFoundFault`](crate::error::DbSubnetGroupNotFoundFault)
+        pub fn build(self) -> crate::error::DbSubnetGroupNotFoundFault {
+            crate::error::DbSubnetGroupNotFoundFault {
                 message: self.message,
             }
         }
     }
 }
-impl DBSubnetGroupNotFoundFault {
-    /// Creates a new builder-style object to manufacture [`DBSubnetGroupNotFoundFault`](crate::error::DBSubnetGroupNotFoundFault)
+impl DbSubnetGroupNotFoundFault {
+    /// Creates a new builder-style object to manufacture [`DbSubnetGroupNotFoundFault`](crate::error::DbSubnetGroupNotFoundFault)
     pub fn builder() -> crate::error::db_subnet_group_not_found_fault::Builder {
         crate::error::db_subnet_group_not_found_fault::Builder::default()
     }
@@ -16801,34 +16816,37 @@ impl DBSubnetGroupNotFoundFault {
 /// <p>Subnets in the DB subnet group should cover at least two Availability Zones unless there is only one Availability Zone.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct DBSubnetGroupDoesNotCoverEnoughAZs {
+pub struct DbSubnetGroupDoesNotCoverEnoughAZs {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for DBSubnetGroupDoesNotCoverEnoughAZs {
+impl std::fmt::Debug for DbSubnetGroupDoesNotCoverEnoughAZs {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DBSubnetGroupDoesNotCoverEnoughAZs");
+        let mut formatter = f.debug_struct("DbSubnetGroupDoesNotCoverEnoughAZs");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl DBSubnetGroupDoesNotCoverEnoughAZs {
+impl DbSubnetGroupDoesNotCoverEnoughAZs {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for DBSubnetGroupDoesNotCoverEnoughAZs {
+impl std::fmt::Display for DbSubnetGroupDoesNotCoverEnoughAZs {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "DBSubnetGroupDoesNotCoverEnoughAZs")?;
+        write!(
+            f,
+            "DbSubnetGroupDoesNotCoverEnoughAZs [DBSubnetGroupDoesNotCoverEnoughAZs]"
+        )?;
         if let Some(inner_23) = &self.message {
             write!(f, ": {}", inner_23)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for DBSubnetGroupDoesNotCoverEnoughAZs {}
-/// See [`DBSubnetGroupDoesNotCoverEnoughAZs`](crate::error::DBSubnetGroupDoesNotCoverEnoughAZs)
+impl std::error::Error for DbSubnetGroupDoesNotCoverEnoughAZs {}
+/// See [`DbSubnetGroupDoesNotCoverEnoughAZs`](crate::error::DbSubnetGroupDoesNotCoverEnoughAZs)
 pub mod db_subnet_group_does_not_cover_enough_a_zs {
-    /// A builder for [`DBSubnetGroupDoesNotCoverEnoughAZs`](crate::error::DBSubnetGroupDoesNotCoverEnoughAZs)
+    /// A builder for [`DbSubnetGroupDoesNotCoverEnoughAZs`](crate::error::DbSubnetGroupDoesNotCoverEnoughAZs)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -16843,16 +16861,16 @@ pub mod db_subnet_group_does_not_cover_enough_a_zs {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`DBSubnetGroupDoesNotCoverEnoughAZs`](crate::error::DBSubnetGroupDoesNotCoverEnoughAZs)
-        pub fn build(self) -> crate::error::DBSubnetGroupDoesNotCoverEnoughAZs {
-            crate::error::DBSubnetGroupDoesNotCoverEnoughAZs {
+        /// Consumes the builder and constructs a [`DbSubnetGroupDoesNotCoverEnoughAZs`](crate::error::DbSubnetGroupDoesNotCoverEnoughAZs)
+        pub fn build(self) -> crate::error::DbSubnetGroupDoesNotCoverEnoughAZs {
+            crate::error::DbSubnetGroupDoesNotCoverEnoughAZs {
                 message: self.message,
             }
         }
     }
 }
-impl DBSubnetGroupDoesNotCoverEnoughAZs {
-    /// Creates a new builder-style object to manufacture [`DBSubnetGroupDoesNotCoverEnoughAZs`](crate::error::DBSubnetGroupDoesNotCoverEnoughAZs)
+impl DbSubnetGroupDoesNotCoverEnoughAZs {
+    /// Creates a new builder-style object to manufacture [`DbSubnetGroupDoesNotCoverEnoughAZs`](crate::error::DbSubnetGroupDoesNotCoverEnoughAZs)
     pub fn builder() -> crate::error::db_subnet_group_does_not_cover_enough_a_zs::Builder {
         crate::error::db_subnet_group_does_not_cover_enough_a_zs::Builder::default()
     }
@@ -16924,34 +16942,37 @@ impl AuthorizationNotFoundFault {
 /// <p>The state of the DB security group doesn't allow deletion.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct InvalidDBSecurityGroupStateFault {
+pub struct InvalidDbSecurityGroupStateFault {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for InvalidDBSecurityGroupStateFault {
+impl std::fmt::Debug for InvalidDbSecurityGroupStateFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidDBSecurityGroupStateFault");
+        let mut formatter = f.debug_struct("InvalidDbSecurityGroupStateFault");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl InvalidDBSecurityGroupStateFault {
+impl InvalidDbSecurityGroupStateFault {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for InvalidDBSecurityGroupStateFault {
+impl std::fmt::Display for InvalidDbSecurityGroupStateFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "InvalidDBSecurityGroupStateFault")?;
+        write!(
+            f,
+            "InvalidDbSecurityGroupStateFault [InvalidDBSecurityGroupStateFault]"
+        )?;
         if let Some(inner_25) = &self.message {
             write!(f, ": {}", inner_25)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for InvalidDBSecurityGroupStateFault {}
-/// See [`InvalidDBSecurityGroupStateFault`](crate::error::InvalidDBSecurityGroupStateFault)
+impl std::error::Error for InvalidDbSecurityGroupStateFault {}
+/// See [`InvalidDbSecurityGroupStateFault`](crate::error::InvalidDbSecurityGroupStateFault)
 pub mod invalid_db_security_group_state_fault {
-    /// A builder for [`InvalidDBSecurityGroupStateFault`](crate::error::InvalidDBSecurityGroupStateFault)
+    /// A builder for [`InvalidDbSecurityGroupStateFault`](crate::error::InvalidDbSecurityGroupStateFault)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -16966,16 +16987,16 @@ pub mod invalid_db_security_group_state_fault {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`InvalidDBSecurityGroupStateFault`](crate::error::InvalidDBSecurityGroupStateFault)
-        pub fn build(self) -> crate::error::InvalidDBSecurityGroupStateFault {
-            crate::error::InvalidDBSecurityGroupStateFault {
+        /// Consumes the builder and constructs a [`InvalidDbSecurityGroupStateFault`](crate::error::InvalidDbSecurityGroupStateFault)
+        pub fn build(self) -> crate::error::InvalidDbSecurityGroupStateFault {
+            crate::error::InvalidDbSecurityGroupStateFault {
                 message: self.message,
             }
         }
     }
 }
-impl InvalidDBSecurityGroupStateFault {
-    /// Creates a new builder-style object to manufacture [`InvalidDBSecurityGroupStateFault`](crate::error::InvalidDBSecurityGroupStateFault)
+impl InvalidDbSecurityGroupStateFault {
+    /// Creates a new builder-style object to manufacture [`InvalidDbSecurityGroupStateFault`](crate::error::InvalidDbSecurityGroupStateFault)
     pub fn builder() -> crate::error::invalid_db_security_group_state_fault::Builder {
         crate::error::invalid_db_security_group_state_fault::Builder::default()
     }
@@ -16986,34 +17007,37 @@ impl InvalidDBSecurityGroupStateFault {
 /// </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct DBSecurityGroupNotFoundFault {
+pub struct DbSecurityGroupNotFoundFault {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for DBSecurityGroupNotFoundFault {
+impl std::fmt::Debug for DbSecurityGroupNotFoundFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DBSecurityGroupNotFoundFault");
+        let mut formatter = f.debug_struct("DbSecurityGroupNotFoundFault");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl DBSecurityGroupNotFoundFault {
+impl DbSecurityGroupNotFoundFault {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for DBSecurityGroupNotFoundFault {
+impl std::fmt::Display for DbSecurityGroupNotFoundFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "DBSecurityGroupNotFoundFault")?;
+        write!(
+            f,
+            "DbSecurityGroupNotFoundFault [DBSecurityGroupNotFoundFault]"
+        )?;
         if let Some(inner_26) = &self.message {
             write!(f, ": {}", inner_26)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for DBSecurityGroupNotFoundFault {}
-/// See [`DBSecurityGroupNotFoundFault`](crate::error::DBSecurityGroupNotFoundFault)
+impl std::error::Error for DbSecurityGroupNotFoundFault {}
+/// See [`DbSecurityGroupNotFoundFault`](crate::error::DbSecurityGroupNotFoundFault)
 pub mod db_security_group_not_found_fault {
-    /// A builder for [`DBSecurityGroupNotFoundFault`](crate::error::DBSecurityGroupNotFoundFault)
+    /// A builder for [`DbSecurityGroupNotFoundFault`](crate::error::DbSecurityGroupNotFoundFault)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -17028,16 +17052,16 @@ pub mod db_security_group_not_found_fault {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`DBSecurityGroupNotFoundFault`](crate::error::DBSecurityGroupNotFoundFault)
-        pub fn build(self) -> crate::error::DBSecurityGroupNotFoundFault {
-            crate::error::DBSecurityGroupNotFoundFault {
+        /// Consumes the builder and constructs a [`DbSecurityGroupNotFoundFault`](crate::error::DbSecurityGroupNotFoundFault)
+        pub fn build(self) -> crate::error::DbSecurityGroupNotFoundFault {
+            crate::error::DbSecurityGroupNotFoundFault {
                 message: self.message,
             }
         }
     }
 }
-impl DBSecurityGroupNotFoundFault {
-    /// Creates a new builder-style object to manufacture [`DBSecurityGroupNotFoundFault`](crate::error::DBSecurityGroupNotFoundFault)
+impl DbSecurityGroupNotFoundFault {
+    /// Creates a new builder-style object to manufacture [`DbSecurityGroupNotFoundFault`](crate::error::DbSecurityGroupNotFoundFault)
     pub fn builder() -> crate::error::db_security_group_not_found_fault::Builder {
         crate::error::db_security_group_not_found_fault::Builder::default()
     }
@@ -17107,34 +17131,37 @@ impl StorageQuotaExceededFault {
 /// <p>Provisioned IOPS not available in the specified Availability Zone.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct ProvisionedIopsNotAvailableInAZFault {
+pub struct ProvisionedIopsNotAvailableInAzFault {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for ProvisionedIopsNotAvailableInAZFault {
+impl std::fmt::Debug for ProvisionedIopsNotAvailableInAzFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ProvisionedIopsNotAvailableInAZFault");
+        let mut formatter = f.debug_struct("ProvisionedIopsNotAvailableInAzFault");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl ProvisionedIopsNotAvailableInAZFault {
+impl ProvisionedIopsNotAvailableInAzFault {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for ProvisionedIopsNotAvailableInAZFault {
+impl std::fmt::Display for ProvisionedIopsNotAvailableInAzFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "ProvisionedIopsNotAvailableInAZFault")?;
+        write!(
+            f,
+            "ProvisionedIopsNotAvailableInAzFault [ProvisionedIopsNotAvailableInAZFault]"
+        )?;
         if let Some(inner_28) = &self.message {
             write!(f, ": {}", inner_28)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for ProvisionedIopsNotAvailableInAZFault {}
-/// See [`ProvisionedIopsNotAvailableInAZFault`](crate::error::ProvisionedIopsNotAvailableInAZFault)
+impl std::error::Error for ProvisionedIopsNotAvailableInAzFault {}
+/// See [`ProvisionedIopsNotAvailableInAzFault`](crate::error::ProvisionedIopsNotAvailableInAzFault)
 pub mod provisioned_iops_not_available_in_az_fault {
-    /// A builder for [`ProvisionedIopsNotAvailableInAZFault`](crate::error::ProvisionedIopsNotAvailableInAZFault)
+    /// A builder for [`ProvisionedIopsNotAvailableInAzFault`](crate::error::ProvisionedIopsNotAvailableInAzFault)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -17149,16 +17176,16 @@ pub mod provisioned_iops_not_available_in_az_fault {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`ProvisionedIopsNotAvailableInAZFault`](crate::error::ProvisionedIopsNotAvailableInAZFault)
-        pub fn build(self) -> crate::error::ProvisionedIopsNotAvailableInAZFault {
-            crate::error::ProvisionedIopsNotAvailableInAZFault {
+        /// Consumes the builder and constructs a [`ProvisionedIopsNotAvailableInAzFault`](crate::error::ProvisionedIopsNotAvailableInAzFault)
+        pub fn build(self) -> crate::error::ProvisionedIopsNotAvailableInAzFault {
+            crate::error::ProvisionedIopsNotAvailableInAzFault {
                 message: self.message,
             }
         }
     }
 }
-impl ProvisionedIopsNotAvailableInAZFault {
-    /// Creates a new builder-style object to manufacture [`ProvisionedIopsNotAvailableInAZFault`](crate::error::ProvisionedIopsNotAvailableInAZFault)
+impl ProvisionedIopsNotAvailableInAzFault {
+    /// Creates a new builder-style object to manufacture [`ProvisionedIopsNotAvailableInAzFault`](crate::error::ProvisionedIopsNotAvailableInAzFault)
     pub fn builder() -> crate::error::provisioned_iops_not_available_in_az_fault::Builder {
         crate::error::provisioned_iops_not_available_in_az_fault::Builder::default()
     }
@@ -17477,34 +17504,37 @@ impl DomainNotFoundFault {
 /// </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct DBParameterGroupNotFoundFault {
+pub struct DbParameterGroupNotFoundFault {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for DBParameterGroupNotFoundFault {
+impl std::fmt::Debug for DbParameterGroupNotFoundFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DBParameterGroupNotFoundFault");
+        let mut formatter = f.debug_struct("DbParameterGroupNotFoundFault");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl DBParameterGroupNotFoundFault {
+impl DbParameterGroupNotFoundFault {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for DBParameterGroupNotFoundFault {
+impl std::fmt::Display for DbParameterGroupNotFoundFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "DBParameterGroupNotFoundFault")?;
+        write!(
+            f,
+            "DbParameterGroupNotFoundFault [DBParameterGroupNotFoundFault]"
+        )?;
         if let Some(inner_34) = &self.message {
             write!(f, ": {}", inner_34)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for DBParameterGroupNotFoundFault {}
-/// See [`DBParameterGroupNotFoundFault`](crate::error::DBParameterGroupNotFoundFault)
+impl std::error::Error for DbParameterGroupNotFoundFault {}
+/// See [`DbParameterGroupNotFoundFault`](crate::error::DbParameterGroupNotFoundFault)
 pub mod db_parameter_group_not_found_fault {
-    /// A builder for [`DBParameterGroupNotFoundFault`](crate::error::DBParameterGroupNotFoundFault)
+    /// A builder for [`DbParameterGroupNotFoundFault`](crate::error::DbParameterGroupNotFoundFault)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -17519,16 +17549,16 @@ pub mod db_parameter_group_not_found_fault {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`DBParameterGroupNotFoundFault`](crate::error::DBParameterGroupNotFoundFault)
-        pub fn build(self) -> crate::error::DBParameterGroupNotFoundFault {
-            crate::error::DBParameterGroupNotFoundFault {
+        /// Consumes the builder and constructs a [`DbParameterGroupNotFoundFault`](crate::error::DbParameterGroupNotFoundFault)
+        pub fn build(self) -> crate::error::DbParameterGroupNotFoundFault {
+            crate::error::DbParameterGroupNotFoundFault {
                 message: self.message,
             }
         }
     }
 }
-impl DBParameterGroupNotFoundFault {
-    /// Creates a new builder-style object to manufacture [`DBParameterGroupNotFoundFault`](crate::error::DBParameterGroupNotFoundFault)
+impl DbParameterGroupNotFoundFault {
+    /// Creates a new builder-style object to manufacture [`DbParameterGroupNotFoundFault`](crate::error::DbParameterGroupNotFoundFault)
     pub fn builder() -> crate::error::db_parameter_group_not_found_fault::Builder {
         crate::error::db_parameter_group_not_found_fault::Builder::default()
     }
@@ -17537,34 +17567,37 @@ impl DBParameterGroupNotFoundFault {
 /// <p>No automated backup for this DB instance was found.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct DBInstanceAutomatedBackupNotFoundFault {
+pub struct DbInstanceAutomatedBackupNotFoundFault {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for DBInstanceAutomatedBackupNotFoundFault {
+impl std::fmt::Debug for DbInstanceAutomatedBackupNotFoundFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DBInstanceAutomatedBackupNotFoundFault");
+        let mut formatter = f.debug_struct("DbInstanceAutomatedBackupNotFoundFault");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl DBInstanceAutomatedBackupNotFoundFault {
+impl DbInstanceAutomatedBackupNotFoundFault {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for DBInstanceAutomatedBackupNotFoundFault {
+impl std::fmt::Display for DbInstanceAutomatedBackupNotFoundFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "DBInstanceAutomatedBackupNotFoundFault")?;
+        write!(
+            f,
+            "DbInstanceAutomatedBackupNotFoundFault [DBInstanceAutomatedBackupNotFoundFault]"
+        )?;
         if let Some(inner_35) = &self.message {
             write!(f, ": {}", inner_35)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for DBInstanceAutomatedBackupNotFoundFault {}
-/// See [`DBInstanceAutomatedBackupNotFoundFault`](crate::error::DBInstanceAutomatedBackupNotFoundFault)
+impl std::error::Error for DbInstanceAutomatedBackupNotFoundFault {}
+/// See [`DbInstanceAutomatedBackupNotFoundFault`](crate::error::DbInstanceAutomatedBackupNotFoundFault)
 pub mod db_instance_automated_backup_not_found_fault {
-    /// A builder for [`DBInstanceAutomatedBackupNotFoundFault`](crate::error::DBInstanceAutomatedBackupNotFoundFault)
+    /// A builder for [`DbInstanceAutomatedBackupNotFoundFault`](crate::error::DbInstanceAutomatedBackupNotFoundFault)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -17579,16 +17612,16 @@ pub mod db_instance_automated_backup_not_found_fault {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`DBInstanceAutomatedBackupNotFoundFault`](crate::error::DBInstanceAutomatedBackupNotFoundFault)
-        pub fn build(self) -> crate::error::DBInstanceAutomatedBackupNotFoundFault {
-            crate::error::DBInstanceAutomatedBackupNotFoundFault {
+        /// Consumes the builder and constructs a [`DbInstanceAutomatedBackupNotFoundFault`](crate::error::DbInstanceAutomatedBackupNotFoundFault)
+        pub fn build(self) -> crate::error::DbInstanceAutomatedBackupNotFoundFault {
+            crate::error::DbInstanceAutomatedBackupNotFoundFault {
                 message: self.message,
             }
         }
     }
 }
-impl DBInstanceAutomatedBackupNotFoundFault {
-    /// Creates a new builder-style object to manufacture [`DBInstanceAutomatedBackupNotFoundFault`](crate::error::DBInstanceAutomatedBackupNotFoundFault)
+impl DbInstanceAutomatedBackupNotFoundFault {
+    /// Creates a new builder-style object to manufacture [`DbInstanceAutomatedBackupNotFoundFault`](crate::error::DbInstanceAutomatedBackupNotFoundFault)
     pub fn builder() -> crate::error::db_instance_automated_backup_not_found_fault::Builder {
         crate::error::db_instance_automated_backup_not_found_fault::Builder::default()
     }
@@ -17597,34 +17630,37 @@ impl DBInstanceAutomatedBackupNotFoundFault {
 /// <p>The user already has a DB instance with the given identifier.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct DBInstanceAlreadyExistsFault {
+pub struct DbInstanceAlreadyExistsFault {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for DBInstanceAlreadyExistsFault {
+impl std::fmt::Debug for DbInstanceAlreadyExistsFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DBInstanceAlreadyExistsFault");
+        let mut formatter = f.debug_struct("DbInstanceAlreadyExistsFault");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl DBInstanceAlreadyExistsFault {
+impl DbInstanceAlreadyExistsFault {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for DBInstanceAlreadyExistsFault {
+impl std::fmt::Display for DbInstanceAlreadyExistsFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "DBInstanceAlreadyExistsFault")?;
+        write!(
+            f,
+            "DbInstanceAlreadyExistsFault [DBInstanceAlreadyExistsFault]"
+        )?;
         if let Some(inner_36) = &self.message {
             write!(f, ": {}", inner_36)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for DBInstanceAlreadyExistsFault {}
-/// See [`DBInstanceAlreadyExistsFault`](crate::error::DBInstanceAlreadyExistsFault)
+impl std::error::Error for DbInstanceAlreadyExistsFault {}
+/// See [`DbInstanceAlreadyExistsFault`](crate::error::DbInstanceAlreadyExistsFault)
 pub mod db_instance_already_exists_fault {
-    /// A builder for [`DBInstanceAlreadyExistsFault`](crate::error::DBInstanceAlreadyExistsFault)
+    /// A builder for [`DbInstanceAlreadyExistsFault`](crate::error::DbInstanceAlreadyExistsFault)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -17639,16 +17675,16 @@ pub mod db_instance_already_exists_fault {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`DBInstanceAlreadyExistsFault`](crate::error::DBInstanceAlreadyExistsFault)
-        pub fn build(self) -> crate::error::DBInstanceAlreadyExistsFault {
-            crate::error::DBInstanceAlreadyExistsFault {
+        /// Consumes the builder and constructs a [`DbInstanceAlreadyExistsFault`](crate::error::DbInstanceAlreadyExistsFault)
+        pub fn build(self) -> crate::error::DbInstanceAlreadyExistsFault {
+            crate::error::DbInstanceAlreadyExistsFault {
                 message: self.message,
             }
         }
     }
 }
-impl DBInstanceAlreadyExistsFault {
-    /// Creates a new builder-style object to manufacture [`DBInstanceAlreadyExistsFault`](crate::error::DBInstanceAlreadyExistsFault)
+impl DbInstanceAlreadyExistsFault {
+    /// Creates a new builder-style object to manufacture [`DbInstanceAlreadyExistsFault`](crate::error::DbInstanceAlreadyExistsFault)
     pub fn builder() -> crate::error::db_instance_already_exists_fault::Builder {
         crate::error::db_instance_already_exists_fault::Builder::default()
     }
@@ -17716,34 +17752,37 @@ impl BackupPolicyNotFoundFault {
 /// <p>The state of the DB snapshot doesn't allow deletion.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct InvalidDBSnapshotStateFault {
+pub struct InvalidDbSnapshotStateFault {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for InvalidDBSnapshotStateFault {
+impl std::fmt::Debug for InvalidDbSnapshotStateFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidDBSnapshotStateFault");
+        let mut formatter = f.debug_struct("InvalidDbSnapshotStateFault");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl InvalidDBSnapshotStateFault {
+impl InvalidDbSnapshotStateFault {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for InvalidDBSnapshotStateFault {
+impl std::fmt::Display for InvalidDbSnapshotStateFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "InvalidDBSnapshotStateFault")?;
+        write!(
+            f,
+            "InvalidDbSnapshotStateFault [InvalidDBSnapshotStateFault]"
+        )?;
         if let Some(inner_38) = &self.message {
             write!(f, ": {}", inner_38)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for InvalidDBSnapshotStateFault {}
-/// See [`InvalidDBSnapshotStateFault`](crate::error::InvalidDBSnapshotStateFault)
+impl std::error::Error for InvalidDbSnapshotStateFault {}
+/// See [`InvalidDbSnapshotStateFault`](crate::error::InvalidDbSnapshotStateFault)
 pub mod invalid_db_snapshot_state_fault {
-    /// A builder for [`InvalidDBSnapshotStateFault`](crate::error::InvalidDBSnapshotStateFault)
+    /// A builder for [`InvalidDbSnapshotStateFault`](crate::error::InvalidDbSnapshotStateFault)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -17758,16 +17797,16 @@ pub mod invalid_db_snapshot_state_fault {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`InvalidDBSnapshotStateFault`](crate::error::InvalidDBSnapshotStateFault)
-        pub fn build(self) -> crate::error::InvalidDBSnapshotStateFault {
-            crate::error::InvalidDBSnapshotStateFault {
+        /// Consumes the builder and constructs a [`InvalidDbSnapshotStateFault`](crate::error::InvalidDbSnapshotStateFault)
+        pub fn build(self) -> crate::error::InvalidDbSnapshotStateFault {
+            crate::error::InvalidDbSnapshotStateFault {
                 message: self.message,
             }
         }
     }
 }
-impl InvalidDBSnapshotStateFault {
-    /// Creates a new builder-style object to manufacture [`InvalidDBSnapshotStateFault`](crate::error::InvalidDBSnapshotStateFault)
+impl InvalidDbSnapshotStateFault {
+    /// Creates a new builder-style object to manufacture [`InvalidDbSnapshotStateFault`](crate::error::InvalidDbSnapshotStateFault)
     pub fn builder() -> crate::error::invalid_db_snapshot_state_fault::Builder {
         crate::error::invalid_db_snapshot_state_fault::Builder::default()
     }
@@ -17776,34 +17815,37 @@ impl InvalidDBSnapshotStateFault {
 /// <p>The supplied value isn't a valid DB cluster snapshot state.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct InvalidDBClusterSnapshotStateFault {
+pub struct InvalidDbClusterSnapshotStateFault {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for InvalidDBClusterSnapshotStateFault {
+impl std::fmt::Debug for InvalidDbClusterSnapshotStateFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidDBClusterSnapshotStateFault");
+        let mut formatter = f.debug_struct("InvalidDbClusterSnapshotStateFault");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl InvalidDBClusterSnapshotStateFault {
+impl InvalidDbClusterSnapshotStateFault {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for InvalidDBClusterSnapshotStateFault {
+impl std::fmt::Display for InvalidDbClusterSnapshotStateFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "InvalidDBClusterSnapshotStateFault")?;
+        write!(
+            f,
+            "InvalidDbClusterSnapshotStateFault [InvalidDBClusterSnapshotStateFault]"
+        )?;
         if let Some(inner_39) = &self.message {
             write!(f, ": {}", inner_39)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for InvalidDBClusterSnapshotStateFault {}
-/// See [`InvalidDBClusterSnapshotStateFault`](crate::error::InvalidDBClusterSnapshotStateFault)
+impl std::error::Error for InvalidDbClusterSnapshotStateFault {}
+/// See [`InvalidDbClusterSnapshotStateFault`](crate::error::InvalidDbClusterSnapshotStateFault)
 pub mod invalid_db_cluster_snapshot_state_fault {
-    /// A builder for [`InvalidDBClusterSnapshotStateFault`](crate::error::InvalidDBClusterSnapshotStateFault)
+    /// A builder for [`InvalidDbClusterSnapshotStateFault`](crate::error::InvalidDbClusterSnapshotStateFault)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -17818,16 +17860,16 @@ pub mod invalid_db_cluster_snapshot_state_fault {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`InvalidDBClusterSnapshotStateFault`](crate::error::InvalidDBClusterSnapshotStateFault)
-        pub fn build(self) -> crate::error::InvalidDBClusterSnapshotStateFault {
-            crate::error::InvalidDBClusterSnapshotStateFault {
+        /// Consumes the builder and constructs a [`InvalidDbClusterSnapshotStateFault`](crate::error::InvalidDbClusterSnapshotStateFault)
+        pub fn build(self) -> crate::error::InvalidDbClusterSnapshotStateFault {
+            crate::error::InvalidDbClusterSnapshotStateFault {
                 message: self.message,
             }
         }
     }
 }
-impl InvalidDBClusterSnapshotStateFault {
-    /// Creates a new builder-style object to manufacture [`InvalidDBClusterSnapshotStateFault`](crate::error::InvalidDBClusterSnapshotStateFault)
+impl InvalidDbClusterSnapshotStateFault {
+    /// Creates a new builder-style object to manufacture [`InvalidDbClusterSnapshotStateFault`](crate::error::InvalidDbClusterSnapshotStateFault)
     pub fn builder() -> crate::error::invalid_db_cluster_snapshot_state_fault::Builder {
         crate::error::invalid_db_cluster_snapshot_state_fault::Builder::default()
     }
@@ -17898,34 +17940,37 @@ impl InsufficientStorageClusterCapacityFault {
 /// <p>The DB cluster doesn't have enough capacity for the current operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct InsufficientDBClusterCapacityFault {
+pub struct InsufficientDbClusterCapacityFault {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for InsufficientDBClusterCapacityFault {
+impl std::fmt::Debug for InsufficientDbClusterCapacityFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InsufficientDBClusterCapacityFault");
+        let mut formatter = f.debug_struct("InsufficientDbClusterCapacityFault");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl InsufficientDBClusterCapacityFault {
+impl InsufficientDbClusterCapacityFault {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for InsufficientDBClusterCapacityFault {
+impl std::fmt::Display for InsufficientDbClusterCapacityFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "InsufficientDBClusterCapacityFault")?;
+        write!(
+            f,
+            "InsufficientDbClusterCapacityFault [InsufficientDBClusterCapacityFault]"
+        )?;
         if let Some(inner_41) = &self.message {
             write!(f, ": {}", inner_41)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for InsufficientDBClusterCapacityFault {}
-/// See [`InsufficientDBClusterCapacityFault`](crate::error::InsufficientDBClusterCapacityFault)
+impl std::error::Error for InsufficientDbClusterCapacityFault {}
+/// See [`InsufficientDbClusterCapacityFault`](crate::error::InsufficientDbClusterCapacityFault)
 pub mod insufficient_db_cluster_capacity_fault {
-    /// A builder for [`InsufficientDBClusterCapacityFault`](crate::error::InsufficientDBClusterCapacityFault)
+    /// A builder for [`InsufficientDbClusterCapacityFault`](crate::error::InsufficientDbClusterCapacityFault)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -17940,16 +17985,16 @@ pub mod insufficient_db_cluster_capacity_fault {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`InsufficientDBClusterCapacityFault`](crate::error::InsufficientDBClusterCapacityFault)
-        pub fn build(self) -> crate::error::InsufficientDBClusterCapacityFault {
-            crate::error::InsufficientDBClusterCapacityFault {
+        /// Consumes the builder and constructs a [`InsufficientDbClusterCapacityFault`](crate::error::InsufficientDbClusterCapacityFault)
+        pub fn build(self) -> crate::error::InsufficientDbClusterCapacityFault {
+            crate::error::InsufficientDbClusterCapacityFault {
                 message: self.message,
             }
         }
     }
 }
-impl InsufficientDBClusterCapacityFault {
-    /// Creates a new builder-style object to manufacture [`InsufficientDBClusterCapacityFault`](crate::error::InsufficientDBClusterCapacityFault)
+impl InsufficientDbClusterCapacityFault {
+    /// Creates a new builder-style object to manufacture [`InsufficientDbClusterCapacityFault`](crate::error::InsufficientDbClusterCapacityFault)
     pub fn builder() -> crate::error::insufficient_db_cluster_capacity_fault::Builder {
         crate::error::insufficient_db_cluster_capacity_fault::Builder::default()
     }
@@ -17959,34 +18004,37 @@ impl InsufficientDBClusterCapacityFault {
 /// maximum allowed DB cluster quota.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct DBClusterQuotaExceededFault {
+pub struct DbClusterQuotaExceededFault {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for DBClusterQuotaExceededFault {
+impl std::fmt::Debug for DbClusterQuotaExceededFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DBClusterQuotaExceededFault");
+        let mut formatter = f.debug_struct("DbClusterQuotaExceededFault");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl DBClusterQuotaExceededFault {
+impl DbClusterQuotaExceededFault {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for DBClusterQuotaExceededFault {
+impl std::fmt::Display for DbClusterQuotaExceededFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "DBClusterQuotaExceededFault")?;
+        write!(
+            f,
+            "DbClusterQuotaExceededFault [DBClusterQuotaExceededFault]"
+        )?;
         if let Some(inner_42) = &self.message {
             write!(f, ": {}", inner_42)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for DBClusterQuotaExceededFault {}
-/// See [`DBClusterQuotaExceededFault`](crate::error::DBClusterQuotaExceededFault)
+impl std::error::Error for DbClusterQuotaExceededFault {}
+/// See [`DbClusterQuotaExceededFault`](crate::error::DbClusterQuotaExceededFault)
 pub mod db_cluster_quota_exceeded_fault {
-    /// A builder for [`DBClusterQuotaExceededFault`](crate::error::DBClusterQuotaExceededFault)
+    /// A builder for [`DbClusterQuotaExceededFault`](crate::error::DbClusterQuotaExceededFault)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -18001,16 +18049,16 @@ pub mod db_cluster_quota_exceeded_fault {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`DBClusterQuotaExceededFault`](crate::error::DBClusterQuotaExceededFault)
-        pub fn build(self) -> crate::error::DBClusterQuotaExceededFault {
-            crate::error::DBClusterQuotaExceededFault {
+        /// Consumes the builder and constructs a [`DbClusterQuotaExceededFault`](crate::error::DbClusterQuotaExceededFault)
+        pub fn build(self) -> crate::error::DbClusterQuotaExceededFault {
+            crate::error::DbClusterQuotaExceededFault {
                 message: self.message,
             }
         }
     }
 }
-impl DBClusterQuotaExceededFault {
-    /// Creates a new builder-style object to manufacture [`DBClusterQuotaExceededFault`](crate::error::DBClusterQuotaExceededFault)
+impl DbClusterQuotaExceededFault {
+    /// Creates a new builder-style object to manufacture [`DbClusterQuotaExceededFault`](crate::error::DbClusterQuotaExceededFault)
     pub fn builder() -> crate::error::db_cluster_quota_exceeded_fault::Builder {
         crate::error::db_cluster_quota_exceeded_fault::Builder::default()
     }
@@ -18021,34 +18069,37 @@ impl DBClusterQuotaExceededFault {
 /// cluster parameter group. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct DBClusterParameterGroupNotFoundFault {
+pub struct DbClusterParameterGroupNotFoundFault {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for DBClusterParameterGroupNotFoundFault {
+impl std::fmt::Debug for DbClusterParameterGroupNotFoundFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DBClusterParameterGroupNotFoundFault");
+        let mut formatter = f.debug_struct("DbClusterParameterGroupNotFoundFault");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl DBClusterParameterGroupNotFoundFault {
+impl DbClusterParameterGroupNotFoundFault {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for DBClusterParameterGroupNotFoundFault {
+impl std::fmt::Display for DbClusterParameterGroupNotFoundFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "DBClusterParameterGroupNotFoundFault")?;
+        write!(
+            f,
+            "DbClusterParameterGroupNotFoundFault [DBClusterParameterGroupNotFoundFault]"
+        )?;
         if let Some(inner_43) = &self.message {
             write!(f, ": {}", inner_43)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for DBClusterParameterGroupNotFoundFault {}
-/// See [`DBClusterParameterGroupNotFoundFault`](crate::error::DBClusterParameterGroupNotFoundFault)
+impl std::error::Error for DbClusterParameterGroupNotFoundFault {}
+/// See [`DbClusterParameterGroupNotFoundFault`](crate::error::DbClusterParameterGroupNotFoundFault)
 pub mod db_cluster_parameter_group_not_found_fault {
-    /// A builder for [`DBClusterParameterGroupNotFoundFault`](crate::error::DBClusterParameterGroupNotFoundFault)
+    /// A builder for [`DbClusterParameterGroupNotFoundFault`](crate::error::DbClusterParameterGroupNotFoundFault)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -18063,16 +18114,16 @@ pub mod db_cluster_parameter_group_not_found_fault {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`DBClusterParameterGroupNotFoundFault`](crate::error::DBClusterParameterGroupNotFoundFault)
-        pub fn build(self) -> crate::error::DBClusterParameterGroupNotFoundFault {
-            crate::error::DBClusterParameterGroupNotFoundFault {
+        /// Consumes the builder and constructs a [`DbClusterParameterGroupNotFoundFault`](crate::error::DbClusterParameterGroupNotFoundFault)
+        pub fn build(self) -> crate::error::DbClusterParameterGroupNotFoundFault {
+            crate::error::DbClusterParameterGroupNotFoundFault {
                 message: self.message,
             }
         }
     }
 }
-impl DBClusterParameterGroupNotFoundFault {
-    /// Creates a new builder-style object to manufacture [`DBClusterParameterGroupNotFoundFault`](crate::error::DBClusterParameterGroupNotFoundFault)
+impl DbClusterParameterGroupNotFoundFault {
+    /// Creates a new builder-style object to manufacture [`DbClusterParameterGroupNotFoundFault`](crate::error::DbClusterParameterGroupNotFoundFault)
     pub fn builder() -> crate::error::db_cluster_parameter_group_not_found_fault::Builder {
         crate::error::db_cluster_parameter_group_not_found_fault::Builder::default()
     }
@@ -18081,34 +18132,37 @@ impl DBClusterParameterGroupNotFoundFault {
 /// <p>The user already has a DB cluster with the given identifier.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct DBClusterAlreadyExistsFault {
+pub struct DbClusterAlreadyExistsFault {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for DBClusterAlreadyExistsFault {
+impl std::fmt::Debug for DbClusterAlreadyExistsFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DBClusterAlreadyExistsFault");
+        let mut formatter = f.debug_struct("DbClusterAlreadyExistsFault");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl DBClusterAlreadyExistsFault {
+impl DbClusterAlreadyExistsFault {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for DBClusterAlreadyExistsFault {
+impl std::fmt::Display for DbClusterAlreadyExistsFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "DBClusterAlreadyExistsFault")?;
+        write!(
+            f,
+            "DbClusterAlreadyExistsFault [DBClusterAlreadyExistsFault]"
+        )?;
         if let Some(inner_44) = &self.message {
             write!(f, ": {}", inner_44)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for DBClusterAlreadyExistsFault {}
-/// See [`DBClusterAlreadyExistsFault`](crate::error::DBClusterAlreadyExistsFault)
+impl std::error::Error for DbClusterAlreadyExistsFault {}
+/// See [`DbClusterAlreadyExistsFault`](crate::error::DbClusterAlreadyExistsFault)
 pub mod db_cluster_already_exists_fault {
-    /// A builder for [`DBClusterAlreadyExistsFault`](crate::error::DBClusterAlreadyExistsFault)
+    /// A builder for [`DbClusterAlreadyExistsFault`](crate::error::DbClusterAlreadyExistsFault)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -18123,16 +18177,16 @@ pub mod db_cluster_already_exists_fault {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`DBClusterAlreadyExistsFault`](crate::error::DBClusterAlreadyExistsFault)
-        pub fn build(self) -> crate::error::DBClusterAlreadyExistsFault {
-            crate::error::DBClusterAlreadyExistsFault {
+        /// Consumes the builder and constructs a [`DbClusterAlreadyExistsFault`](crate::error::DbClusterAlreadyExistsFault)
+        pub fn build(self) -> crate::error::DbClusterAlreadyExistsFault {
+            crate::error::DbClusterAlreadyExistsFault {
                 message: self.message,
             }
         }
     }
 }
-impl DBClusterAlreadyExistsFault {
-    /// Creates a new builder-style object to manufacture [`DBClusterAlreadyExistsFault`](crate::error::DBClusterAlreadyExistsFault)
+impl DbClusterAlreadyExistsFault {
+    /// Creates a new builder-style object to manufacture [`DbClusterAlreadyExistsFault`](crate::error::DbClusterAlreadyExistsFault)
     pub fn builder() -> crate::error::db_cluster_already_exists_fault::Builder {
         crate::error::db_cluster_already_exists_fault::Builder::default()
     }
@@ -18141,34 +18195,37 @@ impl DBClusterAlreadyExistsFault {
 /// <p>The DB subnet group cannot be deleted because it's in use.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct InvalidDBSubnetGroupStateFault {
+pub struct InvalidDbSubnetGroupStateFault {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for InvalidDBSubnetGroupStateFault {
+impl std::fmt::Debug for InvalidDbSubnetGroupStateFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidDBSubnetGroupStateFault");
+        let mut formatter = f.debug_struct("InvalidDbSubnetGroupStateFault");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl InvalidDBSubnetGroupStateFault {
+impl InvalidDbSubnetGroupStateFault {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for InvalidDBSubnetGroupStateFault {
+impl std::fmt::Display for InvalidDbSubnetGroupStateFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "InvalidDBSubnetGroupStateFault")?;
+        write!(
+            f,
+            "InvalidDbSubnetGroupStateFault [InvalidDBSubnetGroupStateFault]"
+        )?;
         if let Some(inner_45) = &self.message {
             write!(f, ": {}", inner_45)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for InvalidDBSubnetGroupStateFault {}
-/// See [`InvalidDBSubnetGroupStateFault`](crate::error::InvalidDBSubnetGroupStateFault)
+impl std::error::Error for InvalidDbSubnetGroupStateFault {}
+/// See [`InvalidDbSubnetGroupStateFault`](crate::error::InvalidDbSubnetGroupStateFault)
 pub mod invalid_db_subnet_group_state_fault {
-    /// A builder for [`InvalidDBSubnetGroupStateFault`](crate::error::InvalidDBSubnetGroupStateFault)
+    /// A builder for [`InvalidDbSubnetGroupStateFault`](crate::error::InvalidDbSubnetGroupStateFault)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -18183,16 +18240,16 @@ pub mod invalid_db_subnet_group_state_fault {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`InvalidDBSubnetGroupStateFault`](crate::error::InvalidDBSubnetGroupStateFault)
-        pub fn build(self) -> crate::error::InvalidDBSubnetGroupStateFault {
-            crate::error::InvalidDBSubnetGroupStateFault {
+        /// Consumes the builder and constructs a [`InvalidDbSubnetGroupStateFault`](crate::error::InvalidDbSubnetGroupStateFault)
+        pub fn build(self) -> crate::error::InvalidDbSubnetGroupStateFault {
+            crate::error::InvalidDbSubnetGroupStateFault {
                 message: self.message,
             }
         }
     }
 }
-impl InvalidDBSubnetGroupStateFault {
-    /// Creates a new builder-style object to manufacture [`InvalidDBSubnetGroupStateFault`](crate::error::InvalidDBSubnetGroupStateFault)
+impl InvalidDbSubnetGroupStateFault {
+    /// Creates a new builder-style object to manufacture [`InvalidDbSubnetGroupStateFault`](crate::error::InvalidDbSubnetGroupStateFault)
     pub fn builder() -> crate::error::invalid_db_subnet_group_state_fault::Builder {
         crate::error::invalid_db_subnet_group_state_fault::Builder::default()
     }
@@ -18203,34 +18260,37 @@ impl InvalidDBSubnetGroupStateFault {
 /// this state.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct InvalidDBParameterGroupStateFault {
+pub struct InvalidDbParameterGroupStateFault {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for InvalidDBParameterGroupStateFault {
+impl std::fmt::Debug for InvalidDbParameterGroupStateFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidDBParameterGroupStateFault");
+        let mut formatter = f.debug_struct("InvalidDbParameterGroupStateFault");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl InvalidDBParameterGroupStateFault {
+impl InvalidDbParameterGroupStateFault {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for InvalidDBParameterGroupStateFault {
+impl std::fmt::Display for InvalidDbParameterGroupStateFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "InvalidDBParameterGroupStateFault")?;
+        write!(
+            f,
+            "InvalidDbParameterGroupStateFault [InvalidDBParameterGroupStateFault]"
+        )?;
         if let Some(inner_46) = &self.message {
             write!(f, ": {}", inner_46)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for InvalidDBParameterGroupStateFault {}
-/// See [`InvalidDBParameterGroupStateFault`](crate::error::InvalidDBParameterGroupStateFault)
+impl std::error::Error for InvalidDbParameterGroupStateFault {}
+/// See [`InvalidDbParameterGroupStateFault`](crate::error::InvalidDbParameterGroupStateFault)
 pub mod invalid_db_parameter_group_state_fault {
-    /// A builder for [`InvalidDBParameterGroupStateFault`](crate::error::InvalidDBParameterGroupStateFault)
+    /// A builder for [`InvalidDbParameterGroupStateFault`](crate::error::InvalidDbParameterGroupStateFault)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -18245,16 +18305,16 @@ pub mod invalid_db_parameter_group_state_fault {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`InvalidDBParameterGroupStateFault`](crate::error::InvalidDBParameterGroupStateFault)
-        pub fn build(self) -> crate::error::InvalidDBParameterGroupStateFault {
-            crate::error::InvalidDBParameterGroupStateFault {
+        /// Consumes the builder and constructs a [`InvalidDbParameterGroupStateFault`](crate::error::InvalidDbParameterGroupStateFault)
+        pub fn build(self) -> crate::error::InvalidDbParameterGroupStateFault {
+            crate::error::InvalidDbParameterGroupStateFault {
                 message: self.message,
             }
         }
     }
 }
-impl InvalidDBParameterGroupStateFault {
-    /// Creates a new builder-style object to manufacture [`InvalidDBParameterGroupStateFault`](crate::error::InvalidDBParameterGroupStateFault)
+impl InvalidDbParameterGroupStateFault {
+    /// Creates a new builder-style object to manufacture [`InvalidDbParameterGroupStateFault`](crate::error::InvalidDbParameterGroupStateFault)
     pub fn builder() -> crate::error::invalid_db_parameter_group_state_fault::Builder {
         crate::error::invalid_db_parameter_group_state_fault::Builder::default()
     }
@@ -18263,34 +18323,37 @@ impl InvalidDBParameterGroupStateFault {
 /// <p>The specified target group isn't available for a proxy owned by your AWS account in the specified AWS Region.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct DBProxyTargetGroupNotFoundFault {
+pub struct DbProxyTargetGroupNotFoundFault {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for DBProxyTargetGroupNotFoundFault {
+impl std::fmt::Debug for DbProxyTargetGroupNotFoundFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DBProxyTargetGroupNotFoundFault");
+        let mut formatter = f.debug_struct("DbProxyTargetGroupNotFoundFault");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl DBProxyTargetGroupNotFoundFault {
+impl DbProxyTargetGroupNotFoundFault {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for DBProxyTargetGroupNotFoundFault {
+impl std::fmt::Display for DbProxyTargetGroupNotFoundFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "DBProxyTargetGroupNotFoundFault")?;
+        write!(
+            f,
+            "DbProxyTargetGroupNotFoundFault [DBProxyTargetGroupNotFoundFault]"
+        )?;
         if let Some(inner_47) = &self.message {
             write!(f, ": {}", inner_47)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for DBProxyTargetGroupNotFoundFault {}
-/// See [`DBProxyTargetGroupNotFoundFault`](crate::error::DBProxyTargetGroupNotFoundFault)
+impl std::error::Error for DbProxyTargetGroupNotFoundFault {}
+/// See [`DbProxyTargetGroupNotFoundFault`](crate::error::DbProxyTargetGroupNotFoundFault)
 pub mod db_proxy_target_group_not_found_fault {
-    /// A builder for [`DBProxyTargetGroupNotFoundFault`](crate::error::DBProxyTargetGroupNotFoundFault)
+    /// A builder for [`DbProxyTargetGroupNotFoundFault`](crate::error::DbProxyTargetGroupNotFoundFault)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -18305,16 +18368,16 @@ pub mod db_proxy_target_group_not_found_fault {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`DBProxyTargetGroupNotFoundFault`](crate::error::DBProxyTargetGroupNotFoundFault)
-        pub fn build(self) -> crate::error::DBProxyTargetGroupNotFoundFault {
-            crate::error::DBProxyTargetGroupNotFoundFault {
+        /// Consumes the builder and constructs a [`DbProxyTargetGroupNotFoundFault`](crate::error::DbProxyTargetGroupNotFoundFault)
+        pub fn build(self) -> crate::error::DbProxyTargetGroupNotFoundFault {
+            crate::error::DbProxyTargetGroupNotFoundFault {
                 message: self.message,
             }
         }
     }
 }
-impl DBProxyTargetGroupNotFoundFault {
-    /// Creates a new builder-style object to manufacture [`DBProxyTargetGroupNotFoundFault`](crate::error::DBProxyTargetGroupNotFoundFault)
+impl DbProxyTargetGroupNotFoundFault {
+    /// Creates a new builder-style object to manufacture [`DbProxyTargetGroupNotFoundFault`](crate::error::DbProxyTargetGroupNotFoundFault)
     pub fn builder() -> crate::error::db_proxy_target_group_not_found_fault::Builder {
         crate::error::db_proxy_target_group_not_found_fault::Builder::default()
     }
@@ -18323,34 +18386,34 @@ impl DBProxyTargetGroupNotFoundFault {
 /// <p>The specified proxy name doesn't correspond to a proxy owned by your AWS account in the specified AWS Region.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct DBProxyNotFoundFault {
+pub struct DbProxyNotFoundFault {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for DBProxyNotFoundFault {
+impl std::fmt::Debug for DbProxyNotFoundFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DBProxyNotFoundFault");
+        let mut formatter = f.debug_struct("DbProxyNotFoundFault");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl DBProxyNotFoundFault {
+impl DbProxyNotFoundFault {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for DBProxyNotFoundFault {
+impl std::fmt::Display for DbProxyNotFoundFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "DBProxyNotFoundFault")?;
+        write!(f, "DbProxyNotFoundFault [DBProxyNotFoundFault]")?;
         if let Some(inner_48) = &self.message {
             write!(f, ": {}", inner_48)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for DBProxyNotFoundFault {}
-/// See [`DBProxyNotFoundFault`](crate::error::DBProxyNotFoundFault)
+impl std::error::Error for DbProxyNotFoundFault {}
+/// See [`DbProxyNotFoundFault`](crate::error::DbProxyNotFoundFault)
 pub mod db_proxy_not_found_fault {
-    /// A builder for [`DBProxyNotFoundFault`](crate::error::DBProxyNotFoundFault)
+    /// A builder for [`DbProxyNotFoundFault`](crate::error::DbProxyNotFoundFault)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -18365,16 +18428,16 @@ pub mod db_proxy_not_found_fault {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`DBProxyNotFoundFault`](crate::error::DBProxyNotFoundFault)
-        pub fn build(self) -> crate::error::DBProxyNotFoundFault {
-            crate::error::DBProxyNotFoundFault {
+        /// Consumes the builder and constructs a [`DbProxyNotFoundFault`](crate::error::DbProxyNotFoundFault)
+        pub fn build(self) -> crate::error::DbProxyNotFoundFault {
+            crate::error::DbProxyNotFoundFault {
                 message: self.message,
             }
         }
     }
 }
-impl DBProxyNotFoundFault {
-    /// Creates a new builder-style object to manufacture [`DBProxyNotFoundFault`](crate::error::DBProxyNotFoundFault)
+impl DbProxyNotFoundFault {
+    /// Creates a new builder-style object to manufacture [`DbProxyNotFoundFault`](crate::error::DbProxyNotFoundFault)
     pub fn builder() -> crate::error::db_proxy_not_found_fault::Builder {
         crate::error::db_proxy_not_found_fault::Builder::default()
     }
@@ -18504,34 +18567,37 @@ impl SourceNotFoundFault {
 /// the DB instance.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct DBInstanceRoleNotFoundFault {
+pub struct DbInstanceRoleNotFoundFault {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for DBInstanceRoleNotFoundFault {
+impl std::fmt::Debug for DbInstanceRoleNotFoundFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DBInstanceRoleNotFoundFault");
+        let mut formatter = f.debug_struct("DbInstanceRoleNotFoundFault");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl DBInstanceRoleNotFoundFault {
+impl DbInstanceRoleNotFoundFault {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for DBInstanceRoleNotFoundFault {
+impl std::fmt::Display for DbInstanceRoleNotFoundFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "DBInstanceRoleNotFoundFault")?;
+        write!(
+            f,
+            "DbInstanceRoleNotFoundFault [DBInstanceRoleNotFoundFault]"
+        )?;
         if let Some(inner_51) = &self.message {
             write!(f, ": {}", inner_51)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for DBInstanceRoleNotFoundFault {}
-/// See [`DBInstanceRoleNotFoundFault`](crate::error::DBInstanceRoleNotFoundFault)
+impl std::error::Error for DbInstanceRoleNotFoundFault {}
+/// See [`DbInstanceRoleNotFoundFault`](crate::error::DbInstanceRoleNotFoundFault)
 pub mod db_instance_role_not_found_fault {
-    /// A builder for [`DBInstanceRoleNotFoundFault`](crate::error::DBInstanceRoleNotFoundFault)
+    /// A builder for [`DbInstanceRoleNotFoundFault`](crate::error::DbInstanceRoleNotFoundFault)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -18546,16 +18612,16 @@ pub mod db_instance_role_not_found_fault {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`DBInstanceRoleNotFoundFault`](crate::error::DBInstanceRoleNotFoundFault)
-        pub fn build(self) -> crate::error::DBInstanceRoleNotFoundFault {
-            crate::error::DBInstanceRoleNotFoundFault {
+        /// Consumes the builder and constructs a [`DbInstanceRoleNotFoundFault`](crate::error::DbInstanceRoleNotFoundFault)
+        pub fn build(self) -> crate::error::DbInstanceRoleNotFoundFault {
+            crate::error::DbInstanceRoleNotFoundFault {
                 message: self.message,
             }
         }
     }
 }
-impl DBInstanceRoleNotFoundFault {
-    /// Creates a new builder-style object to manufacture [`DBInstanceRoleNotFoundFault`](crate::error::DBInstanceRoleNotFoundFault)
+impl DbInstanceRoleNotFoundFault {
+    /// Creates a new builder-style object to manufacture [`DbInstanceRoleNotFoundFault`](crate::error::DbInstanceRoleNotFoundFault)
     pub fn builder() -> crate::error::db_instance_role_not_found_fault::Builder {
         crate::error::db_instance_role_not_found_fault::Builder::default()
     }
@@ -18564,34 +18630,34 @@ impl DBInstanceRoleNotFoundFault {
 /// <p>The specified IAM role Amazon Resource Name (ARN) isn't associated with the specified DB cluster.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct DBClusterRoleNotFoundFault {
+pub struct DbClusterRoleNotFoundFault {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for DBClusterRoleNotFoundFault {
+impl std::fmt::Debug for DbClusterRoleNotFoundFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DBClusterRoleNotFoundFault");
+        let mut formatter = f.debug_struct("DbClusterRoleNotFoundFault");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl DBClusterRoleNotFoundFault {
+impl DbClusterRoleNotFoundFault {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for DBClusterRoleNotFoundFault {
+impl std::fmt::Display for DbClusterRoleNotFoundFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "DBClusterRoleNotFoundFault")?;
+        write!(f, "DbClusterRoleNotFoundFault [DBClusterRoleNotFoundFault]")?;
         if let Some(inner_52) = &self.message {
             write!(f, ": {}", inner_52)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for DBClusterRoleNotFoundFault {}
-/// See [`DBClusterRoleNotFoundFault`](crate::error::DBClusterRoleNotFoundFault)
+impl std::error::Error for DbClusterRoleNotFoundFault {}
+/// See [`DbClusterRoleNotFoundFault`](crate::error::DbClusterRoleNotFoundFault)
 pub mod db_cluster_role_not_found_fault {
-    /// A builder for [`DBClusterRoleNotFoundFault`](crate::error::DBClusterRoleNotFoundFault)
+    /// A builder for [`DbClusterRoleNotFoundFault`](crate::error::DbClusterRoleNotFoundFault)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -18606,16 +18672,16 @@ pub mod db_cluster_role_not_found_fault {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`DBClusterRoleNotFoundFault`](crate::error::DBClusterRoleNotFoundFault)
-        pub fn build(self) -> crate::error::DBClusterRoleNotFoundFault {
-            crate::error::DBClusterRoleNotFoundFault {
+        /// Consumes the builder and constructs a [`DbClusterRoleNotFoundFault`](crate::error::DbClusterRoleNotFoundFault)
+        pub fn build(self) -> crate::error::DbClusterRoleNotFoundFault {
+            crate::error::DbClusterRoleNotFoundFault {
                 message: self.message,
             }
         }
     }
 }
-impl DBClusterRoleNotFoundFault {
-    /// Creates a new builder-style object to manufacture [`DBClusterRoleNotFoundFault`](crate::error::DBClusterRoleNotFoundFault)
+impl DbClusterRoleNotFoundFault {
+    /// Creates a new builder-style object to manufacture [`DbClusterRoleNotFoundFault`](crate::error::DbClusterRoleNotFoundFault)
     pub fn builder() -> crate::error::db_cluster_role_not_found_fault::Builder {
         crate::error::db_cluster_role_not_found_fault::Builder::default()
     }
@@ -18744,34 +18810,34 @@ impl GlobalClusterNotFoundFault {
 /// <p>The requested operation can't be performed while the proxy is in this state.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct InvalidDBProxyStateFault {
+pub struct InvalidDbProxyStateFault {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for InvalidDBProxyStateFault {
+impl std::fmt::Debug for InvalidDbProxyStateFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidDBProxyStateFault");
+        let mut formatter = f.debug_struct("InvalidDbProxyStateFault");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl InvalidDBProxyStateFault {
+impl InvalidDbProxyStateFault {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for InvalidDBProxyStateFault {
+impl std::fmt::Display for InvalidDbProxyStateFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "InvalidDBProxyStateFault")?;
+        write!(f, "InvalidDbProxyStateFault [InvalidDBProxyStateFault]")?;
         if let Some(inner_55) = &self.message {
             write!(f, ": {}", inner_55)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for InvalidDBProxyStateFault {}
-/// See [`InvalidDBProxyStateFault`](crate::error::InvalidDBProxyStateFault)
+impl std::error::Error for InvalidDbProxyStateFault {}
+/// See [`InvalidDbProxyStateFault`](crate::error::InvalidDbProxyStateFault)
 pub mod invalid_db_proxy_state_fault {
-    /// A builder for [`InvalidDBProxyStateFault`](crate::error::InvalidDBProxyStateFault)
+    /// A builder for [`InvalidDbProxyStateFault`](crate::error::InvalidDbProxyStateFault)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -18786,16 +18852,16 @@ pub mod invalid_db_proxy_state_fault {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`InvalidDBProxyStateFault`](crate::error::InvalidDBProxyStateFault)
-        pub fn build(self) -> crate::error::InvalidDBProxyStateFault {
-            crate::error::InvalidDBProxyStateFault {
+        /// Consumes the builder and constructs a [`InvalidDbProxyStateFault`](crate::error::InvalidDbProxyStateFault)
+        pub fn build(self) -> crate::error::InvalidDbProxyStateFault {
+            crate::error::InvalidDbProxyStateFault {
                 message: self.message,
             }
         }
     }
 }
-impl InvalidDBProxyStateFault {
-    /// Creates a new builder-style object to manufacture [`InvalidDBProxyStateFault`](crate::error::InvalidDBProxyStateFault)
+impl InvalidDbProxyStateFault {
+    /// Creates a new builder-style object to manufacture [`InvalidDbProxyStateFault`](crate::error::InvalidDbProxyStateFault)
     pub fn builder() -> crate::error::invalid_db_proxy_state_fault::Builder {
         crate::error::invalid_db_proxy_state_fault::Builder::default()
     }
@@ -18866,34 +18932,37 @@ impl InsufficientAvailableIPsInSubnetFault {
 /// <p>The proxy is already associated with the specified RDS DB instance or Aurora DB cluster.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct DBProxyTargetAlreadyRegisteredFault {
+pub struct DbProxyTargetAlreadyRegisteredFault {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for DBProxyTargetAlreadyRegisteredFault {
+impl std::fmt::Debug for DbProxyTargetAlreadyRegisteredFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DBProxyTargetAlreadyRegisteredFault");
+        let mut formatter = f.debug_struct("DbProxyTargetAlreadyRegisteredFault");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl DBProxyTargetAlreadyRegisteredFault {
+impl DbProxyTargetAlreadyRegisteredFault {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for DBProxyTargetAlreadyRegisteredFault {
+impl std::fmt::Display for DbProxyTargetAlreadyRegisteredFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "DBProxyTargetAlreadyRegisteredFault")?;
+        write!(
+            f,
+            "DbProxyTargetAlreadyRegisteredFault [DBProxyTargetAlreadyRegisteredFault]"
+        )?;
         if let Some(inner_57) = &self.message {
             write!(f, ": {}", inner_57)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for DBProxyTargetAlreadyRegisteredFault {}
-/// See [`DBProxyTargetAlreadyRegisteredFault`](crate::error::DBProxyTargetAlreadyRegisteredFault)
+impl std::error::Error for DbProxyTargetAlreadyRegisteredFault {}
+/// See [`DbProxyTargetAlreadyRegisteredFault`](crate::error::DbProxyTargetAlreadyRegisteredFault)
 pub mod db_proxy_target_already_registered_fault {
-    /// A builder for [`DBProxyTargetAlreadyRegisteredFault`](crate::error::DBProxyTargetAlreadyRegisteredFault)
+    /// A builder for [`DbProxyTargetAlreadyRegisteredFault`](crate::error::DbProxyTargetAlreadyRegisteredFault)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -18908,16 +18977,16 @@ pub mod db_proxy_target_already_registered_fault {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`DBProxyTargetAlreadyRegisteredFault`](crate::error::DBProxyTargetAlreadyRegisteredFault)
-        pub fn build(self) -> crate::error::DBProxyTargetAlreadyRegisteredFault {
-            crate::error::DBProxyTargetAlreadyRegisteredFault {
+        /// Consumes the builder and constructs a [`DbProxyTargetAlreadyRegisteredFault`](crate::error::DbProxyTargetAlreadyRegisteredFault)
+        pub fn build(self) -> crate::error::DbProxyTargetAlreadyRegisteredFault {
+            crate::error::DbProxyTargetAlreadyRegisteredFault {
                 message: self.message,
             }
         }
     }
 }
-impl DBProxyTargetAlreadyRegisteredFault {
-    /// Creates a new builder-style object to manufacture [`DBProxyTargetAlreadyRegisteredFault`](crate::error::DBProxyTargetAlreadyRegisteredFault)
+impl DbProxyTargetAlreadyRegisteredFault {
+    /// Creates a new builder-style object to manufacture [`DbProxyTargetAlreadyRegisteredFault`](crate::error::DbProxyTargetAlreadyRegisteredFault)
     pub fn builder() -> crate::error::db_proxy_target_already_registered_fault::Builder {
         crate::error::db_proxy_target_already_registered_fault::Builder::default()
     }
@@ -18926,34 +18995,37 @@ impl DBProxyTargetAlreadyRegisteredFault {
 /// <p>Specified offering does not exist.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct ReservedDBInstancesOfferingNotFoundFault {
+pub struct ReservedDbInstancesOfferingNotFoundFault {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for ReservedDBInstancesOfferingNotFoundFault {
+impl std::fmt::Debug for ReservedDbInstancesOfferingNotFoundFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ReservedDBInstancesOfferingNotFoundFault");
+        let mut formatter = f.debug_struct("ReservedDbInstancesOfferingNotFoundFault");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl ReservedDBInstancesOfferingNotFoundFault {
+impl ReservedDbInstancesOfferingNotFoundFault {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for ReservedDBInstancesOfferingNotFoundFault {
+impl std::fmt::Display for ReservedDbInstancesOfferingNotFoundFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "ReservedDBInstancesOfferingNotFoundFault")?;
+        write!(
+            f,
+            "ReservedDbInstancesOfferingNotFoundFault [ReservedDBInstancesOfferingNotFoundFault]"
+        )?;
         if let Some(inner_58) = &self.message {
             write!(f, ": {}", inner_58)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for ReservedDBInstancesOfferingNotFoundFault {}
-/// See [`ReservedDBInstancesOfferingNotFoundFault`](crate::error::ReservedDBInstancesOfferingNotFoundFault)
+impl std::error::Error for ReservedDbInstancesOfferingNotFoundFault {}
+/// See [`ReservedDbInstancesOfferingNotFoundFault`](crate::error::ReservedDbInstancesOfferingNotFoundFault)
 pub mod reserved_db_instances_offering_not_found_fault {
-    /// A builder for [`ReservedDBInstancesOfferingNotFoundFault`](crate::error::ReservedDBInstancesOfferingNotFoundFault)
+    /// A builder for [`ReservedDbInstancesOfferingNotFoundFault`](crate::error::ReservedDbInstancesOfferingNotFoundFault)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -18968,16 +19040,16 @@ pub mod reserved_db_instances_offering_not_found_fault {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`ReservedDBInstancesOfferingNotFoundFault`](crate::error::ReservedDBInstancesOfferingNotFoundFault)
-        pub fn build(self) -> crate::error::ReservedDBInstancesOfferingNotFoundFault {
-            crate::error::ReservedDBInstancesOfferingNotFoundFault {
+        /// Consumes the builder and constructs a [`ReservedDbInstancesOfferingNotFoundFault`](crate::error::ReservedDbInstancesOfferingNotFoundFault)
+        pub fn build(self) -> crate::error::ReservedDbInstancesOfferingNotFoundFault {
+            crate::error::ReservedDbInstancesOfferingNotFoundFault {
                 message: self.message,
             }
         }
     }
 }
-impl ReservedDBInstancesOfferingNotFoundFault {
-    /// Creates a new builder-style object to manufacture [`ReservedDBInstancesOfferingNotFoundFault`](crate::error::ReservedDBInstancesOfferingNotFoundFault)
+impl ReservedDbInstancesOfferingNotFoundFault {
+    /// Creates a new builder-style object to manufacture [`ReservedDbInstancesOfferingNotFoundFault`](crate::error::ReservedDbInstancesOfferingNotFoundFault)
     pub fn builder() -> crate::error::reserved_db_instances_offering_not_found_fault::Builder {
         crate::error::reserved_db_instances_offering_not_found_fault::Builder::default()
     }
@@ -18986,34 +19058,37 @@ impl ReservedDBInstancesOfferingNotFoundFault {
 /// <p>Request would exceed the user's DB Instance quota.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct ReservedDBInstanceQuotaExceededFault {
+pub struct ReservedDbInstanceQuotaExceededFault {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for ReservedDBInstanceQuotaExceededFault {
+impl std::fmt::Debug for ReservedDbInstanceQuotaExceededFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ReservedDBInstanceQuotaExceededFault");
+        let mut formatter = f.debug_struct("ReservedDbInstanceQuotaExceededFault");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl ReservedDBInstanceQuotaExceededFault {
+impl ReservedDbInstanceQuotaExceededFault {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for ReservedDBInstanceQuotaExceededFault {
+impl std::fmt::Display for ReservedDbInstanceQuotaExceededFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "ReservedDBInstanceQuotaExceededFault")?;
+        write!(
+            f,
+            "ReservedDbInstanceQuotaExceededFault [ReservedDBInstanceQuotaExceededFault]"
+        )?;
         if let Some(inner_59) = &self.message {
             write!(f, ": {}", inner_59)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for ReservedDBInstanceQuotaExceededFault {}
-/// See [`ReservedDBInstanceQuotaExceededFault`](crate::error::ReservedDBInstanceQuotaExceededFault)
+impl std::error::Error for ReservedDbInstanceQuotaExceededFault {}
+/// See [`ReservedDbInstanceQuotaExceededFault`](crate::error::ReservedDbInstanceQuotaExceededFault)
 pub mod reserved_db_instance_quota_exceeded_fault {
-    /// A builder for [`ReservedDBInstanceQuotaExceededFault`](crate::error::ReservedDBInstanceQuotaExceededFault)
+    /// A builder for [`ReservedDbInstanceQuotaExceededFault`](crate::error::ReservedDbInstanceQuotaExceededFault)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -19028,16 +19103,16 @@ pub mod reserved_db_instance_quota_exceeded_fault {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`ReservedDBInstanceQuotaExceededFault`](crate::error::ReservedDBInstanceQuotaExceededFault)
-        pub fn build(self) -> crate::error::ReservedDBInstanceQuotaExceededFault {
-            crate::error::ReservedDBInstanceQuotaExceededFault {
+        /// Consumes the builder and constructs a [`ReservedDbInstanceQuotaExceededFault`](crate::error::ReservedDbInstanceQuotaExceededFault)
+        pub fn build(self) -> crate::error::ReservedDbInstanceQuotaExceededFault {
+            crate::error::ReservedDbInstanceQuotaExceededFault {
                 message: self.message,
             }
         }
     }
 }
-impl ReservedDBInstanceQuotaExceededFault {
-    /// Creates a new builder-style object to manufacture [`ReservedDBInstanceQuotaExceededFault`](crate::error::ReservedDBInstanceQuotaExceededFault)
+impl ReservedDbInstanceQuotaExceededFault {
+    /// Creates a new builder-style object to manufacture [`ReservedDbInstanceQuotaExceededFault`](crate::error::ReservedDbInstanceQuotaExceededFault)
     pub fn builder() -> crate::error::reserved_db_instance_quota_exceeded_fault::Builder {
         crate::error::reserved_db_instance_quota_exceeded_fault::Builder::default()
     }
@@ -19046,34 +19121,37 @@ impl ReservedDBInstanceQuotaExceededFault {
 /// <p>User already has a reservation with the given identifier.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct ReservedDBInstanceAlreadyExistsFault {
+pub struct ReservedDbInstanceAlreadyExistsFault {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for ReservedDBInstanceAlreadyExistsFault {
+impl std::fmt::Debug for ReservedDbInstanceAlreadyExistsFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ReservedDBInstanceAlreadyExistsFault");
+        let mut formatter = f.debug_struct("ReservedDbInstanceAlreadyExistsFault");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl ReservedDBInstanceAlreadyExistsFault {
+impl ReservedDbInstanceAlreadyExistsFault {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for ReservedDBInstanceAlreadyExistsFault {
+impl std::fmt::Display for ReservedDbInstanceAlreadyExistsFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "ReservedDBInstanceAlreadyExistsFault")?;
+        write!(
+            f,
+            "ReservedDbInstanceAlreadyExistsFault [ReservedDBInstanceAlreadyExistsFault]"
+        )?;
         if let Some(inner_60) = &self.message {
             write!(f, ": {}", inner_60)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for ReservedDBInstanceAlreadyExistsFault {}
-/// See [`ReservedDBInstanceAlreadyExistsFault`](crate::error::ReservedDBInstanceAlreadyExistsFault)
+impl std::error::Error for ReservedDbInstanceAlreadyExistsFault {}
+/// See [`ReservedDbInstanceAlreadyExistsFault`](crate::error::ReservedDbInstanceAlreadyExistsFault)
 pub mod reserved_db_instance_already_exists_fault {
-    /// A builder for [`ReservedDBInstanceAlreadyExistsFault`](crate::error::ReservedDBInstanceAlreadyExistsFault)
+    /// A builder for [`ReservedDbInstanceAlreadyExistsFault`](crate::error::ReservedDbInstanceAlreadyExistsFault)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -19088,16 +19166,16 @@ pub mod reserved_db_instance_already_exists_fault {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`ReservedDBInstanceAlreadyExistsFault`](crate::error::ReservedDBInstanceAlreadyExistsFault)
-        pub fn build(self) -> crate::error::ReservedDBInstanceAlreadyExistsFault {
-            crate::error::ReservedDBInstanceAlreadyExistsFault {
+        /// Consumes the builder and constructs a [`ReservedDbInstanceAlreadyExistsFault`](crate::error::ReservedDbInstanceAlreadyExistsFault)
+        pub fn build(self) -> crate::error::ReservedDbInstanceAlreadyExistsFault {
+            crate::error::ReservedDbInstanceAlreadyExistsFault {
                 message: self.message,
             }
         }
     }
 }
-impl ReservedDBInstanceAlreadyExistsFault {
-    /// Creates a new builder-style object to manufacture [`ReservedDBInstanceAlreadyExistsFault`](crate::error::ReservedDBInstanceAlreadyExistsFault)
+impl ReservedDbInstanceAlreadyExistsFault {
+    /// Creates a new builder-style object to manufacture [`ReservedDbInstanceAlreadyExistsFault`](crate::error::ReservedDbInstanceAlreadyExistsFault)
     pub fn builder() -> crate::error::reserved_db_instance_already_exists_fault::Builder {
         crate::error::reserved_db_instance_already_exists_fault::Builder::default()
     }
@@ -19228,34 +19306,34 @@ impl SubscriptionCategoryNotFoundFault {
 /// <p>The SNS topic ARN does not exist.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct SNSTopicArnNotFoundFault {
+pub struct SnsTopicArnNotFoundFault {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for SNSTopicArnNotFoundFault {
+impl std::fmt::Debug for SnsTopicArnNotFoundFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SNSTopicArnNotFoundFault");
+        let mut formatter = f.debug_struct("SnsTopicArnNotFoundFault");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl SNSTopicArnNotFoundFault {
+impl SnsTopicArnNotFoundFault {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for SNSTopicArnNotFoundFault {
+impl std::fmt::Display for SnsTopicArnNotFoundFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "SNSTopicArnNotFoundFault")?;
+        write!(f, "SnsTopicArnNotFoundFault [SNSTopicArnNotFoundFault]")?;
         if let Some(inner_63) = &self.message {
             write!(f, ": {}", inner_63)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for SNSTopicArnNotFoundFault {}
-/// See [`SNSTopicArnNotFoundFault`](crate::error::SNSTopicArnNotFoundFault)
+impl std::error::Error for SnsTopicArnNotFoundFault {}
+/// See [`SnsTopicArnNotFoundFault`](crate::error::SnsTopicArnNotFoundFault)
 pub mod sns_topic_arn_not_found_fault {
-    /// A builder for [`SNSTopicArnNotFoundFault`](crate::error::SNSTopicArnNotFoundFault)
+    /// A builder for [`SnsTopicArnNotFoundFault`](crate::error::SnsTopicArnNotFoundFault)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -19270,16 +19348,16 @@ pub mod sns_topic_arn_not_found_fault {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`SNSTopicArnNotFoundFault`](crate::error::SNSTopicArnNotFoundFault)
-        pub fn build(self) -> crate::error::SNSTopicArnNotFoundFault {
-            crate::error::SNSTopicArnNotFoundFault {
+        /// Consumes the builder and constructs a [`SnsTopicArnNotFoundFault`](crate::error::SnsTopicArnNotFoundFault)
+        pub fn build(self) -> crate::error::SnsTopicArnNotFoundFault {
+            crate::error::SnsTopicArnNotFoundFault {
                 message: self.message,
             }
         }
     }
 }
-impl SNSTopicArnNotFoundFault {
-    /// Creates a new builder-style object to manufacture [`SNSTopicArnNotFoundFault`](crate::error::SNSTopicArnNotFoundFault)
+impl SnsTopicArnNotFoundFault {
+    /// Creates a new builder-style object to manufacture [`SnsTopicArnNotFoundFault`](crate::error::SnsTopicArnNotFoundFault)
     pub fn builder() -> crate::error::sns_topic_arn_not_found_fault::Builder {
         crate::error::sns_topic_arn_not_found_fault::Builder::default()
     }
@@ -19288,34 +19366,34 @@ impl SNSTopicArnNotFoundFault {
 /// <p>You do not have permission to publish to the SNS topic ARN.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct SNSNoAuthorizationFault {
+pub struct SnsNoAuthorizationFault {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for SNSNoAuthorizationFault {
+impl std::fmt::Debug for SnsNoAuthorizationFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SNSNoAuthorizationFault");
+        let mut formatter = f.debug_struct("SnsNoAuthorizationFault");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl SNSNoAuthorizationFault {
+impl SnsNoAuthorizationFault {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for SNSNoAuthorizationFault {
+impl std::fmt::Display for SnsNoAuthorizationFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "SNSNoAuthorizationFault")?;
+        write!(f, "SnsNoAuthorizationFault [SNSNoAuthorizationFault]")?;
         if let Some(inner_64) = &self.message {
             write!(f, ": {}", inner_64)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for SNSNoAuthorizationFault {}
-/// See [`SNSNoAuthorizationFault`](crate::error::SNSNoAuthorizationFault)
+impl std::error::Error for SnsNoAuthorizationFault {}
+/// See [`SnsNoAuthorizationFault`](crate::error::SnsNoAuthorizationFault)
 pub mod sns_no_authorization_fault {
-    /// A builder for [`SNSNoAuthorizationFault`](crate::error::SNSNoAuthorizationFault)
+    /// A builder for [`SnsNoAuthorizationFault`](crate::error::SnsNoAuthorizationFault)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -19330,16 +19408,16 @@ pub mod sns_no_authorization_fault {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`SNSNoAuthorizationFault`](crate::error::SNSNoAuthorizationFault)
-        pub fn build(self) -> crate::error::SNSNoAuthorizationFault {
-            crate::error::SNSNoAuthorizationFault {
+        /// Consumes the builder and constructs a [`SnsNoAuthorizationFault`](crate::error::SnsNoAuthorizationFault)
+        pub fn build(self) -> crate::error::SnsNoAuthorizationFault {
+            crate::error::SnsNoAuthorizationFault {
                 message: self.message,
             }
         }
     }
 }
-impl SNSNoAuthorizationFault {
-    /// Creates a new builder-style object to manufacture [`SNSNoAuthorizationFault`](crate::error::SNSNoAuthorizationFault)
+impl SnsNoAuthorizationFault {
+    /// Creates a new builder-style object to manufacture [`SnsNoAuthorizationFault`](crate::error::SnsNoAuthorizationFault)
     pub fn builder() -> crate::error::sns_no_authorization_fault::Builder {
         crate::error::sns_no_authorization_fault::Builder::default()
     }
@@ -19348,34 +19426,34 @@ impl SNSNoAuthorizationFault {
 /// <p>SNS has responded that there is a problem with the SND topic specified.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct SNSInvalidTopicFault {
+pub struct SnsInvalidTopicFault {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for SNSInvalidTopicFault {
+impl std::fmt::Debug for SnsInvalidTopicFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SNSInvalidTopicFault");
+        let mut formatter = f.debug_struct("SnsInvalidTopicFault");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl SNSInvalidTopicFault {
+impl SnsInvalidTopicFault {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for SNSInvalidTopicFault {
+impl std::fmt::Display for SnsInvalidTopicFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "SNSInvalidTopicFault")?;
+        write!(f, "SnsInvalidTopicFault [SNSInvalidTopicFault]")?;
         if let Some(inner_65) = &self.message {
             write!(f, ": {}", inner_65)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for SNSInvalidTopicFault {}
-/// See [`SNSInvalidTopicFault`](crate::error::SNSInvalidTopicFault)
+impl std::error::Error for SnsInvalidTopicFault {}
+/// See [`SnsInvalidTopicFault`](crate::error::SnsInvalidTopicFault)
 pub mod sns_invalid_topic_fault {
-    /// A builder for [`SNSInvalidTopicFault`](crate::error::SNSInvalidTopicFault)
+    /// A builder for [`SnsInvalidTopicFault`](crate::error::SnsInvalidTopicFault)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -19390,16 +19468,16 @@ pub mod sns_invalid_topic_fault {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`SNSInvalidTopicFault`](crate::error::SNSInvalidTopicFault)
-        pub fn build(self) -> crate::error::SNSInvalidTopicFault {
-            crate::error::SNSInvalidTopicFault {
+        /// Consumes the builder and constructs a [`SnsInvalidTopicFault`](crate::error::SnsInvalidTopicFault)
+        pub fn build(self) -> crate::error::SnsInvalidTopicFault {
+            crate::error::SnsInvalidTopicFault {
                 message: self.message,
             }
         }
     }
 }
-impl SNSInvalidTopicFault {
-    /// Creates a new builder-style object to manufacture [`SNSInvalidTopicFault`](crate::error::SNSInvalidTopicFault)
+impl SnsInvalidTopicFault {
+    /// Creates a new builder-style object to manufacture [`SnsInvalidTopicFault`](crate::error::SnsInvalidTopicFault)
     pub fn builder() -> crate::error::sns_invalid_topic_fault::Builder {
         crate::error::sns_invalid_topic_fault::Builder::default()
     }
@@ -19529,34 +19607,34 @@ impl SubnetAlreadyInUse {
 /// DB subnet groups.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct DBSubnetQuotaExceededFault {
+pub struct DbSubnetQuotaExceededFault {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for DBSubnetQuotaExceededFault {
+impl std::fmt::Debug for DbSubnetQuotaExceededFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DBSubnetQuotaExceededFault");
+        let mut formatter = f.debug_struct("DbSubnetQuotaExceededFault");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl DBSubnetQuotaExceededFault {
+impl DbSubnetQuotaExceededFault {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for DBSubnetQuotaExceededFault {
+impl std::fmt::Display for DbSubnetQuotaExceededFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "DBSubnetQuotaExceededFault")?;
+        write!(f, "DbSubnetQuotaExceededFault [DBSubnetQuotaExceededFault]")?;
         if let Some(inner_68) = &self.message {
             write!(f, ": {}", inner_68)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for DBSubnetQuotaExceededFault {}
-/// See [`DBSubnetQuotaExceededFault`](crate::error::DBSubnetQuotaExceededFault)
+impl std::error::Error for DbSubnetQuotaExceededFault {}
+/// See [`DbSubnetQuotaExceededFault`](crate::error::DbSubnetQuotaExceededFault)
 pub mod db_subnet_quota_exceeded_fault {
-    /// A builder for [`DBSubnetQuotaExceededFault`](crate::error::DBSubnetQuotaExceededFault)
+    /// A builder for [`DbSubnetQuotaExceededFault`](crate::error::DbSubnetQuotaExceededFault)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -19571,16 +19649,16 @@ pub mod db_subnet_quota_exceeded_fault {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`DBSubnetQuotaExceededFault`](crate::error::DBSubnetQuotaExceededFault)
-        pub fn build(self) -> crate::error::DBSubnetQuotaExceededFault {
-            crate::error::DBSubnetQuotaExceededFault {
+        /// Consumes the builder and constructs a [`DbSubnetQuotaExceededFault`](crate::error::DbSubnetQuotaExceededFault)
+        pub fn build(self) -> crate::error::DbSubnetQuotaExceededFault {
+            crate::error::DbSubnetQuotaExceededFault {
                 message: self.message,
             }
         }
     }
 }
-impl DBSubnetQuotaExceededFault {
-    /// Creates a new builder-style object to manufacture [`DBSubnetQuotaExceededFault`](crate::error::DBSubnetQuotaExceededFault)
+impl DbSubnetQuotaExceededFault {
+    /// Creates a new builder-style object to manufacture [`DbSubnetQuotaExceededFault`](crate::error::DbSubnetQuotaExceededFault)
     pub fn builder() -> crate::error::db_subnet_quota_exceeded_fault::Builder {
         crate::error::db_subnet_quota_exceeded_fault::Builder::default()
     }
@@ -19649,34 +19727,37 @@ impl SharedSnapshotQuotaExceededFault {
 /// <p>You can't perform this operation while the DB proxy endpoint is in a particular state.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct InvalidDBProxyEndpointStateFault {
+pub struct InvalidDbProxyEndpointStateFault {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for InvalidDBProxyEndpointStateFault {
+impl std::fmt::Debug for InvalidDbProxyEndpointStateFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidDBProxyEndpointStateFault");
+        let mut formatter = f.debug_struct("InvalidDbProxyEndpointStateFault");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl InvalidDBProxyEndpointStateFault {
+impl InvalidDbProxyEndpointStateFault {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for InvalidDBProxyEndpointStateFault {
+impl std::fmt::Display for InvalidDbProxyEndpointStateFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "InvalidDBProxyEndpointStateFault")?;
+        write!(
+            f,
+            "InvalidDbProxyEndpointStateFault [InvalidDBProxyEndpointStateFault]"
+        )?;
         if let Some(inner_70) = &self.message {
             write!(f, ": {}", inner_70)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for InvalidDBProxyEndpointStateFault {}
-/// See [`InvalidDBProxyEndpointStateFault`](crate::error::InvalidDBProxyEndpointStateFault)
+impl std::error::Error for InvalidDbProxyEndpointStateFault {}
+/// See [`InvalidDbProxyEndpointStateFault`](crate::error::InvalidDbProxyEndpointStateFault)
 pub mod invalid_db_proxy_endpoint_state_fault {
-    /// A builder for [`InvalidDBProxyEndpointStateFault`](crate::error::InvalidDBProxyEndpointStateFault)
+    /// A builder for [`InvalidDbProxyEndpointStateFault`](crate::error::InvalidDbProxyEndpointStateFault)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -19691,16 +19772,16 @@ pub mod invalid_db_proxy_endpoint_state_fault {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`InvalidDBProxyEndpointStateFault`](crate::error::InvalidDBProxyEndpointStateFault)
-        pub fn build(self) -> crate::error::InvalidDBProxyEndpointStateFault {
-            crate::error::InvalidDBProxyEndpointStateFault {
+        /// Consumes the builder and constructs a [`InvalidDbProxyEndpointStateFault`](crate::error::InvalidDbProxyEndpointStateFault)
+        pub fn build(self) -> crate::error::InvalidDbProxyEndpointStateFault {
+            crate::error::InvalidDbProxyEndpointStateFault {
                 message: self.message,
             }
         }
     }
 }
-impl InvalidDBProxyEndpointStateFault {
-    /// Creates a new builder-style object to manufacture [`InvalidDBProxyEndpointStateFault`](crate::error::InvalidDBProxyEndpointStateFault)
+impl InvalidDbProxyEndpointStateFault {
+    /// Creates a new builder-style object to manufacture [`InvalidDbProxyEndpointStateFault`](crate::error::InvalidDbProxyEndpointStateFault)
     pub fn builder() -> crate::error::invalid_db_proxy_endpoint_state_fault::Builder {
         crate::error::invalid_db_proxy_endpoint_state_fault::Builder::default()
     }
@@ -19709,34 +19790,37 @@ impl InvalidDBProxyEndpointStateFault {
 /// <p>The DB proxy endpoint doesn't exist.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct DBProxyEndpointNotFoundFault {
+pub struct DbProxyEndpointNotFoundFault {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for DBProxyEndpointNotFoundFault {
+impl std::fmt::Debug for DbProxyEndpointNotFoundFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DBProxyEndpointNotFoundFault");
+        let mut formatter = f.debug_struct("DbProxyEndpointNotFoundFault");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl DBProxyEndpointNotFoundFault {
+impl DbProxyEndpointNotFoundFault {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for DBProxyEndpointNotFoundFault {
+impl std::fmt::Display for DbProxyEndpointNotFoundFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "DBProxyEndpointNotFoundFault")?;
+        write!(
+            f,
+            "DbProxyEndpointNotFoundFault [DBProxyEndpointNotFoundFault]"
+        )?;
         if let Some(inner_71) = &self.message {
             write!(f, ": {}", inner_71)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for DBProxyEndpointNotFoundFault {}
-/// See [`DBProxyEndpointNotFoundFault`](crate::error::DBProxyEndpointNotFoundFault)
+impl std::error::Error for DbProxyEndpointNotFoundFault {}
+/// See [`DbProxyEndpointNotFoundFault`](crate::error::DbProxyEndpointNotFoundFault)
 pub mod db_proxy_endpoint_not_found_fault {
-    /// A builder for [`DBProxyEndpointNotFoundFault`](crate::error::DBProxyEndpointNotFoundFault)
+    /// A builder for [`DbProxyEndpointNotFoundFault`](crate::error::DbProxyEndpointNotFoundFault)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -19751,16 +19835,16 @@ pub mod db_proxy_endpoint_not_found_fault {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`DBProxyEndpointNotFoundFault`](crate::error::DBProxyEndpointNotFoundFault)
-        pub fn build(self) -> crate::error::DBProxyEndpointNotFoundFault {
-            crate::error::DBProxyEndpointNotFoundFault {
+        /// Consumes the builder and constructs a [`DbProxyEndpointNotFoundFault`](crate::error::DbProxyEndpointNotFoundFault)
+        pub fn build(self) -> crate::error::DbProxyEndpointNotFoundFault {
+            crate::error::DbProxyEndpointNotFoundFault {
                 message: self.message,
             }
         }
     }
 }
-impl DBProxyEndpointNotFoundFault {
-    /// Creates a new builder-style object to manufacture [`DBProxyEndpointNotFoundFault`](crate::error::DBProxyEndpointNotFoundFault)
+impl DbProxyEndpointNotFoundFault {
+    /// Creates a new builder-style object to manufacture [`DbProxyEndpointNotFoundFault`](crate::error::DbProxyEndpointNotFoundFault)
     pub fn builder() -> crate::error::db_proxy_endpoint_not_found_fault::Builder {
         crate::error::db_proxy_endpoint_not_found_fault::Builder::default()
     }
@@ -19769,34 +19853,37 @@ impl DBProxyEndpointNotFoundFault {
 /// <p>The specified DB proxy endpoint name must be unique for all DB proxy endpoints owned by your AWS account in the specified AWS Region.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct DBProxyEndpointAlreadyExistsFault {
+pub struct DbProxyEndpointAlreadyExistsFault {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for DBProxyEndpointAlreadyExistsFault {
+impl std::fmt::Debug for DbProxyEndpointAlreadyExistsFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DBProxyEndpointAlreadyExistsFault");
+        let mut formatter = f.debug_struct("DbProxyEndpointAlreadyExistsFault");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl DBProxyEndpointAlreadyExistsFault {
+impl DbProxyEndpointAlreadyExistsFault {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for DBProxyEndpointAlreadyExistsFault {
+impl std::fmt::Display for DbProxyEndpointAlreadyExistsFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "DBProxyEndpointAlreadyExistsFault")?;
+        write!(
+            f,
+            "DbProxyEndpointAlreadyExistsFault [DBProxyEndpointAlreadyExistsFault]"
+        )?;
         if let Some(inner_72) = &self.message {
             write!(f, ": {}", inner_72)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for DBProxyEndpointAlreadyExistsFault {}
-/// See [`DBProxyEndpointAlreadyExistsFault`](crate::error::DBProxyEndpointAlreadyExistsFault)
+impl std::error::Error for DbProxyEndpointAlreadyExistsFault {}
+/// See [`DbProxyEndpointAlreadyExistsFault`](crate::error::DbProxyEndpointAlreadyExistsFault)
 pub mod db_proxy_endpoint_already_exists_fault {
-    /// A builder for [`DBProxyEndpointAlreadyExistsFault`](crate::error::DBProxyEndpointAlreadyExistsFault)
+    /// A builder for [`DbProxyEndpointAlreadyExistsFault`](crate::error::DbProxyEndpointAlreadyExistsFault)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -19811,16 +19898,16 @@ pub mod db_proxy_endpoint_already_exists_fault {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`DBProxyEndpointAlreadyExistsFault`](crate::error::DBProxyEndpointAlreadyExistsFault)
-        pub fn build(self) -> crate::error::DBProxyEndpointAlreadyExistsFault {
-            crate::error::DBProxyEndpointAlreadyExistsFault {
+        /// Consumes the builder and constructs a [`DbProxyEndpointAlreadyExistsFault`](crate::error::DbProxyEndpointAlreadyExistsFault)
+        pub fn build(self) -> crate::error::DbProxyEndpointAlreadyExistsFault {
+            crate::error::DbProxyEndpointAlreadyExistsFault {
                 message: self.message,
             }
         }
     }
 }
-impl DBProxyEndpointAlreadyExistsFault {
-    /// Creates a new builder-style object to manufacture [`DBProxyEndpointAlreadyExistsFault`](crate::error::DBProxyEndpointAlreadyExistsFault)
+impl DbProxyEndpointAlreadyExistsFault {
+    /// Creates a new builder-style object to manufacture [`DbProxyEndpointAlreadyExistsFault`](crate::error::DbProxyEndpointAlreadyExistsFault)
     pub fn builder() -> crate::error::db_proxy_endpoint_already_exists_fault::Builder {
         crate::error::db_proxy_endpoint_already_exists_fault::Builder::default()
     }
@@ -19829,34 +19916,34 @@ impl DBProxyEndpointAlreadyExistsFault {
 /// <p>The specified proxy name must be unique for all proxies owned by your AWS account in the specified AWS Region.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct DBProxyAlreadyExistsFault {
+pub struct DbProxyAlreadyExistsFault {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for DBProxyAlreadyExistsFault {
+impl std::fmt::Debug for DbProxyAlreadyExistsFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DBProxyAlreadyExistsFault");
+        let mut formatter = f.debug_struct("DbProxyAlreadyExistsFault");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl DBProxyAlreadyExistsFault {
+impl DbProxyAlreadyExistsFault {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for DBProxyAlreadyExistsFault {
+impl std::fmt::Display for DbProxyAlreadyExistsFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "DBProxyAlreadyExistsFault")?;
+        write!(f, "DbProxyAlreadyExistsFault [DBProxyAlreadyExistsFault]")?;
         if let Some(inner_73) = &self.message {
             write!(f, ": {}", inner_73)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for DBProxyAlreadyExistsFault {}
-/// See [`DBProxyAlreadyExistsFault`](crate::error::DBProxyAlreadyExistsFault)
+impl std::error::Error for DbProxyAlreadyExistsFault {}
+/// See [`DbProxyAlreadyExistsFault`](crate::error::DbProxyAlreadyExistsFault)
 pub mod db_proxy_already_exists_fault {
-    /// A builder for [`DBProxyAlreadyExistsFault`](crate::error::DBProxyAlreadyExistsFault)
+    /// A builder for [`DbProxyAlreadyExistsFault`](crate::error::DbProxyAlreadyExistsFault)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -19871,16 +19958,16 @@ pub mod db_proxy_already_exists_fault {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`DBProxyAlreadyExistsFault`](crate::error::DBProxyAlreadyExistsFault)
-        pub fn build(self) -> crate::error::DBProxyAlreadyExistsFault {
-            crate::error::DBProxyAlreadyExistsFault {
+        /// Consumes the builder and constructs a [`DbProxyAlreadyExistsFault`](crate::error::DbProxyAlreadyExistsFault)
+        pub fn build(self) -> crate::error::DbProxyAlreadyExistsFault {
+            crate::error::DbProxyAlreadyExistsFault {
                 message: self.message,
             }
         }
     }
 }
-impl DBProxyAlreadyExistsFault {
-    /// Creates a new builder-style object to manufacture [`DBProxyAlreadyExistsFault`](crate::error::DBProxyAlreadyExistsFault)
+impl DbProxyAlreadyExistsFault {
+    /// Creates a new builder-style object to manufacture [`DbProxyAlreadyExistsFault`](crate::error::DbProxyAlreadyExistsFault)
     pub fn builder() -> crate::error::db_proxy_already_exists_fault::Builder {
         crate::error::db_proxy_already_exists_fault::Builder::default()
     }
@@ -19890,34 +19977,37 @@ impl DBProxyAlreadyExistsFault {
 /// modified.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct DBUpgradeDependencyFailureFault {
+pub struct DbUpgradeDependencyFailureFault {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for DBUpgradeDependencyFailureFault {
+impl std::fmt::Debug for DbUpgradeDependencyFailureFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DBUpgradeDependencyFailureFault");
+        let mut formatter = f.debug_struct("DbUpgradeDependencyFailureFault");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl DBUpgradeDependencyFailureFault {
+impl DbUpgradeDependencyFailureFault {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for DBUpgradeDependencyFailureFault {
+impl std::fmt::Display for DbUpgradeDependencyFailureFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "DBUpgradeDependencyFailureFault")?;
+        write!(
+            f,
+            "DbUpgradeDependencyFailureFault [DBUpgradeDependencyFailureFault]"
+        )?;
         if let Some(inner_74) = &self.message {
             write!(f, ": {}", inner_74)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for DBUpgradeDependencyFailureFault {}
-/// See [`DBUpgradeDependencyFailureFault`](crate::error::DBUpgradeDependencyFailureFault)
+impl std::error::Error for DbUpgradeDependencyFailureFault {}
+/// See [`DbUpgradeDependencyFailureFault`](crate::error::DbUpgradeDependencyFailureFault)
 pub mod db_upgrade_dependency_failure_fault {
-    /// A builder for [`DBUpgradeDependencyFailureFault`](crate::error::DBUpgradeDependencyFailureFault)
+    /// A builder for [`DbUpgradeDependencyFailureFault`](crate::error::DbUpgradeDependencyFailureFault)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -19932,16 +20022,16 @@ pub mod db_upgrade_dependency_failure_fault {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`DBUpgradeDependencyFailureFault`](crate::error::DBUpgradeDependencyFailureFault)
-        pub fn build(self) -> crate::error::DBUpgradeDependencyFailureFault {
-            crate::error::DBUpgradeDependencyFailureFault {
+        /// Consumes the builder and constructs a [`DbUpgradeDependencyFailureFault`](crate::error::DbUpgradeDependencyFailureFault)
+        pub fn build(self) -> crate::error::DbUpgradeDependencyFailureFault {
+            crate::error::DbUpgradeDependencyFailureFault {
                 message: self.message,
             }
         }
     }
 }
-impl DBUpgradeDependencyFailureFault {
-    /// Creates a new builder-style object to manufacture [`DBUpgradeDependencyFailureFault`](crate::error::DBUpgradeDependencyFailureFault)
+impl DbUpgradeDependencyFailureFault {
+    /// Creates a new builder-style object to manufacture [`DbUpgradeDependencyFailureFault`](crate::error::DbUpgradeDependencyFailureFault)
     pub fn builder() -> crate::error::db_upgrade_dependency_failure_fault::Builder {
         crate::error::db_upgrade_dependency_failure_fault::Builder::default()
     }
@@ -20013,34 +20103,37 @@ impl CertificateNotFoundFault {
 /// <p>The requested operation can't be performed on the endpoint while the endpoint is in this state.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct InvalidDBClusterEndpointStateFault {
+pub struct InvalidDbClusterEndpointStateFault {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for InvalidDBClusterEndpointStateFault {
+impl std::fmt::Debug for InvalidDbClusterEndpointStateFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidDBClusterEndpointStateFault");
+        let mut formatter = f.debug_struct("InvalidDbClusterEndpointStateFault");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl InvalidDBClusterEndpointStateFault {
+impl InvalidDbClusterEndpointStateFault {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for InvalidDBClusterEndpointStateFault {
+impl std::fmt::Display for InvalidDbClusterEndpointStateFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "InvalidDBClusterEndpointStateFault")?;
+        write!(
+            f,
+            "InvalidDbClusterEndpointStateFault [InvalidDBClusterEndpointStateFault]"
+        )?;
         if let Some(inner_76) = &self.message {
             write!(f, ": {}", inner_76)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for InvalidDBClusterEndpointStateFault {}
-/// See [`InvalidDBClusterEndpointStateFault`](crate::error::InvalidDBClusterEndpointStateFault)
+impl std::error::Error for InvalidDbClusterEndpointStateFault {}
+/// See [`InvalidDbClusterEndpointStateFault`](crate::error::InvalidDbClusterEndpointStateFault)
 pub mod invalid_db_cluster_endpoint_state_fault {
-    /// A builder for [`InvalidDBClusterEndpointStateFault`](crate::error::InvalidDBClusterEndpointStateFault)
+    /// A builder for [`InvalidDbClusterEndpointStateFault`](crate::error::InvalidDbClusterEndpointStateFault)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -20055,16 +20148,16 @@ pub mod invalid_db_cluster_endpoint_state_fault {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`InvalidDBClusterEndpointStateFault`](crate::error::InvalidDBClusterEndpointStateFault)
-        pub fn build(self) -> crate::error::InvalidDBClusterEndpointStateFault {
-            crate::error::InvalidDBClusterEndpointStateFault {
+        /// Consumes the builder and constructs a [`InvalidDbClusterEndpointStateFault`](crate::error::InvalidDbClusterEndpointStateFault)
+        pub fn build(self) -> crate::error::InvalidDbClusterEndpointStateFault {
+            crate::error::InvalidDbClusterEndpointStateFault {
                 message: self.message,
             }
         }
     }
 }
-impl InvalidDBClusterEndpointStateFault {
-    /// Creates a new builder-style object to manufacture [`InvalidDBClusterEndpointStateFault`](crate::error::InvalidDBClusterEndpointStateFault)
+impl InvalidDbClusterEndpointStateFault {
+    /// Creates a new builder-style object to manufacture [`InvalidDbClusterEndpointStateFault`](crate::error::InvalidDbClusterEndpointStateFault)
     pub fn builder() -> crate::error::invalid_db_cluster_endpoint_state_fault::Builder {
         crate::error::invalid_db_cluster_endpoint_state_fault::Builder::default()
     }
@@ -20073,34 +20166,37 @@ impl InvalidDBClusterEndpointStateFault {
 /// <p>The specified custom endpoint doesn't exist.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct DBClusterEndpointNotFoundFault {
+pub struct DbClusterEndpointNotFoundFault {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for DBClusterEndpointNotFoundFault {
+impl std::fmt::Debug for DbClusterEndpointNotFoundFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DBClusterEndpointNotFoundFault");
+        let mut formatter = f.debug_struct("DbClusterEndpointNotFoundFault");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl DBClusterEndpointNotFoundFault {
+impl DbClusterEndpointNotFoundFault {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for DBClusterEndpointNotFoundFault {
+impl std::fmt::Display for DbClusterEndpointNotFoundFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "DBClusterEndpointNotFoundFault")?;
+        write!(
+            f,
+            "DbClusterEndpointNotFoundFault [DBClusterEndpointNotFoundFault]"
+        )?;
         if let Some(inner_77) = &self.message {
             write!(f, ": {}", inner_77)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for DBClusterEndpointNotFoundFault {}
-/// See [`DBClusterEndpointNotFoundFault`](crate::error::DBClusterEndpointNotFoundFault)
+impl std::error::Error for DbClusterEndpointNotFoundFault {}
+/// See [`DbClusterEndpointNotFoundFault`](crate::error::DbClusterEndpointNotFoundFault)
 pub mod db_cluster_endpoint_not_found_fault {
-    /// A builder for [`DBClusterEndpointNotFoundFault`](crate::error::DBClusterEndpointNotFoundFault)
+    /// A builder for [`DbClusterEndpointNotFoundFault`](crate::error::DbClusterEndpointNotFoundFault)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -20115,16 +20211,16 @@ pub mod db_cluster_endpoint_not_found_fault {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`DBClusterEndpointNotFoundFault`](crate::error::DBClusterEndpointNotFoundFault)
-        pub fn build(self) -> crate::error::DBClusterEndpointNotFoundFault {
-            crate::error::DBClusterEndpointNotFoundFault {
+        /// Consumes the builder and constructs a [`DbClusterEndpointNotFoundFault`](crate::error::DbClusterEndpointNotFoundFault)
+        pub fn build(self) -> crate::error::DbClusterEndpointNotFoundFault {
+            crate::error::DbClusterEndpointNotFoundFault {
                 message: self.message,
             }
         }
     }
 }
-impl DBClusterEndpointNotFoundFault {
-    /// Creates a new builder-style object to manufacture [`DBClusterEndpointNotFoundFault`](crate::error::DBClusterEndpointNotFoundFault)
+impl DbClusterEndpointNotFoundFault {
+    /// Creates a new builder-style object to manufacture [`DbClusterEndpointNotFoundFault`](crate::error::DbClusterEndpointNotFoundFault)
     pub fn builder() -> crate::error::db_cluster_endpoint_not_found_fault::Builder {
         crate::error::db_cluster_endpoint_not_found_fault::Builder::default()
     }
@@ -20136,34 +20232,37 @@ impl DBClusterEndpointNotFoundFault {
 /// <code>32</code>, <code>64</code>, <code>128</code>, and <code>256</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct InvalidDBClusterCapacityFault {
+pub struct InvalidDbClusterCapacityFault {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for InvalidDBClusterCapacityFault {
+impl std::fmt::Debug for InvalidDbClusterCapacityFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidDBClusterCapacityFault");
+        let mut formatter = f.debug_struct("InvalidDbClusterCapacityFault");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl InvalidDBClusterCapacityFault {
+impl InvalidDbClusterCapacityFault {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for InvalidDBClusterCapacityFault {
+impl std::fmt::Display for InvalidDbClusterCapacityFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "InvalidDBClusterCapacityFault")?;
+        write!(
+            f,
+            "InvalidDbClusterCapacityFault [InvalidDBClusterCapacityFault]"
+        )?;
         if let Some(inner_78) = &self.message {
             write!(f, ": {}", inner_78)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for InvalidDBClusterCapacityFault {}
-/// See [`InvalidDBClusterCapacityFault`](crate::error::InvalidDBClusterCapacityFault)
+impl std::error::Error for InvalidDbClusterCapacityFault {}
+/// See [`InvalidDbClusterCapacityFault`](crate::error::InvalidDbClusterCapacityFault)
 pub mod invalid_db_cluster_capacity_fault {
-    /// A builder for [`InvalidDBClusterCapacityFault`](crate::error::InvalidDBClusterCapacityFault)
+    /// A builder for [`InvalidDbClusterCapacityFault`](crate::error::InvalidDbClusterCapacityFault)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -20178,16 +20277,16 @@ pub mod invalid_db_cluster_capacity_fault {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`InvalidDBClusterCapacityFault`](crate::error::InvalidDBClusterCapacityFault)
-        pub fn build(self) -> crate::error::InvalidDBClusterCapacityFault {
-            crate::error::InvalidDBClusterCapacityFault {
+        /// Consumes the builder and constructs a [`InvalidDbClusterCapacityFault`](crate::error::InvalidDbClusterCapacityFault)
+        pub fn build(self) -> crate::error::InvalidDbClusterCapacityFault {
+            crate::error::InvalidDbClusterCapacityFault {
                 message: self.message,
             }
         }
     }
 }
-impl InvalidDBClusterCapacityFault {
-    /// Creates a new builder-style object to manufacture [`InvalidDBClusterCapacityFault`](crate::error::InvalidDBClusterCapacityFault)
+impl InvalidDbClusterCapacityFault {
+    /// Creates a new builder-style object to manufacture [`InvalidDbClusterCapacityFault`](crate::error::InvalidDbClusterCapacityFault)
     pub fn builder() -> crate::error::invalid_db_cluster_capacity_fault::Builder {
         crate::error::invalid_db_cluster_capacity_fault::Builder::default()
     }
@@ -20319,34 +20418,34 @@ impl CustomAvailabilityZoneNotFoundFault {
 /// <code>LogFileName</code> doesn't refer to an existing DB log file.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct DBLogFileNotFoundFault {
+pub struct DbLogFileNotFoundFault {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for DBLogFileNotFoundFault {
+impl std::fmt::Debug for DbLogFileNotFoundFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DBLogFileNotFoundFault");
+        let mut formatter = f.debug_struct("DbLogFileNotFoundFault");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl DBLogFileNotFoundFault {
+impl DbLogFileNotFoundFault {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for DBLogFileNotFoundFault {
+impl std::fmt::Display for DbLogFileNotFoundFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "DBLogFileNotFoundFault")?;
+        write!(f, "DbLogFileNotFoundFault [DBLogFileNotFoundFault]")?;
         if let Some(inner_81) = &self.message {
             write!(f, ": {}", inner_81)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for DBLogFileNotFoundFault {}
-/// See [`DBLogFileNotFoundFault`](crate::error::DBLogFileNotFoundFault)
+impl std::error::Error for DbLogFileNotFoundFault {}
+/// See [`DbLogFileNotFoundFault`](crate::error::DbLogFileNotFoundFault)
 pub mod db_log_file_not_found_fault {
-    /// A builder for [`DBLogFileNotFoundFault`](crate::error::DBLogFileNotFoundFault)
+    /// A builder for [`DbLogFileNotFoundFault`](crate::error::DbLogFileNotFoundFault)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -20361,16 +20460,16 @@ pub mod db_log_file_not_found_fault {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`DBLogFileNotFoundFault`](crate::error::DBLogFileNotFoundFault)
-        pub fn build(self) -> crate::error::DBLogFileNotFoundFault {
-            crate::error::DBLogFileNotFoundFault {
+        /// Consumes the builder and constructs a [`DbLogFileNotFoundFault`](crate::error::DbLogFileNotFoundFault)
+        pub fn build(self) -> crate::error::DbLogFileNotFoundFault {
+            crate::error::DbLogFileNotFoundFault {
                 message: self.message,
             }
         }
     }
 }
-impl DBLogFileNotFoundFault {
-    /// Creates a new builder-style object to manufacture [`DBLogFileNotFoundFault`](crate::error::DBLogFileNotFoundFault)
+impl DbLogFileNotFoundFault {
+    /// Creates a new builder-style object to manufacture [`DbLogFileNotFoundFault`](crate::error::DbLogFileNotFoundFault)
     pub fn builder() -> crate::error::db_log_file_not_found_fault::Builder {
         crate::error::db_log_file_not_found_fault::Builder::default()
     }
@@ -20379,34 +20478,37 @@ impl DBLogFileNotFoundFault {
 /// <p>The specified reserved DB Instance not found.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct ReservedDBInstanceNotFoundFault {
+pub struct ReservedDbInstanceNotFoundFault {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for ReservedDBInstanceNotFoundFault {
+impl std::fmt::Debug for ReservedDbInstanceNotFoundFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ReservedDBInstanceNotFoundFault");
+        let mut formatter = f.debug_struct("ReservedDbInstanceNotFoundFault");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl ReservedDBInstanceNotFoundFault {
+impl ReservedDbInstanceNotFoundFault {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for ReservedDBInstanceNotFoundFault {
+impl std::fmt::Display for ReservedDbInstanceNotFoundFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "ReservedDBInstanceNotFoundFault")?;
+        write!(
+            f,
+            "ReservedDbInstanceNotFoundFault [ReservedDBInstanceNotFoundFault]"
+        )?;
         if let Some(inner_82) = &self.message {
             write!(f, ": {}", inner_82)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for ReservedDBInstanceNotFoundFault {}
-/// See [`ReservedDBInstanceNotFoundFault`](crate::error::ReservedDBInstanceNotFoundFault)
+impl std::error::Error for ReservedDbInstanceNotFoundFault {}
+/// See [`ReservedDbInstanceNotFoundFault`](crate::error::ReservedDbInstanceNotFoundFault)
 pub mod reserved_db_instance_not_found_fault {
-    /// A builder for [`ReservedDBInstanceNotFoundFault`](crate::error::ReservedDBInstanceNotFoundFault)
+    /// A builder for [`ReservedDbInstanceNotFoundFault`](crate::error::ReservedDbInstanceNotFoundFault)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -20421,16 +20523,16 @@ pub mod reserved_db_instance_not_found_fault {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`ReservedDBInstanceNotFoundFault`](crate::error::ReservedDBInstanceNotFoundFault)
-        pub fn build(self) -> crate::error::ReservedDBInstanceNotFoundFault {
-            crate::error::ReservedDBInstanceNotFoundFault {
+        /// Consumes the builder and constructs a [`ReservedDbInstanceNotFoundFault`](crate::error::ReservedDbInstanceNotFoundFault)
+        pub fn build(self) -> crate::error::ReservedDbInstanceNotFoundFault {
+            crate::error::ReservedDbInstanceNotFoundFault {
                 message: self.message,
             }
         }
     }
 }
-impl ReservedDBInstanceNotFoundFault {
-    /// Creates a new builder-style object to manufacture [`ReservedDBInstanceNotFoundFault`](crate::error::ReservedDBInstanceNotFoundFault)
+impl ReservedDbInstanceNotFoundFault {
+    /// Creates a new builder-style object to manufacture [`ReservedDbInstanceNotFoundFault`](crate::error::ReservedDbInstanceNotFoundFault)
     pub fn builder() -> crate::error::reserved_db_instance_not_found_fault::Builder {
         crate::error::reserved_db_instance_not_found_fault::Builder::default()
     }
@@ -20560,34 +20662,34 @@ impl ExportTaskNotFoundFault {
 /// <p>The specified RDS DB instance or Aurora DB cluster isn't available for a proxy owned by your AWS account in the specified AWS Region.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct DBProxyTargetNotFoundFault {
+pub struct DbProxyTargetNotFoundFault {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for DBProxyTargetNotFoundFault {
+impl std::fmt::Debug for DbProxyTargetNotFoundFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DBProxyTargetNotFoundFault");
+        let mut formatter = f.debug_struct("DbProxyTargetNotFoundFault");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl DBProxyTargetNotFoundFault {
+impl DbProxyTargetNotFoundFault {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for DBProxyTargetNotFoundFault {
+impl std::fmt::Display for DbProxyTargetNotFoundFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "DBProxyTargetNotFoundFault")?;
+        write!(f, "DbProxyTargetNotFoundFault [DBProxyTargetNotFoundFault]")?;
         if let Some(inner_85) = &self.message {
             write!(f, ": {}", inner_85)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for DBProxyTargetNotFoundFault {}
-/// See [`DBProxyTargetNotFoundFault`](crate::error::DBProxyTargetNotFoundFault)
+impl std::error::Error for DbProxyTargetNotFoundFault {}
+/// See [`DbProxyTargetNotFoundFault`](crate::error::DbProxyTargetNotFoundFault)
 pub mod db_proxy_target_not_found_fault {
-    /// A builder for [`DBProxyTargetNotFoundFault`](crate::error::DBProxyTargetNotFoundFault)
+    /// A builder for [`DbProxyTargetNotFoundFault`](crate::error::DbProxyTargetNotFoundFault)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -20602,16 +20704,16 @@ pub mod db_proxy_target_not_found_fault {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`DBProxyTargetNotFoundFault`](crate::error::DBProxyTargetNotFoundFault)
-        pub fn build(self) -> crate::error::DBProxyTargetNotFoundFault {
-            crate::error::DBProxyTargetNotFoundFault {
+        /// Consumes the builder and constructs a [`DbProxyTargetNotFoundFault`](crate::error::DbProxyTargetNotFoundFault)
+        pub fn build(self) -> crate::error::DbProxyTargetNotFoundFault {
+            crate::error::DbProxyTargetNotFoundFault {
                 message: self.message,
             }
         }
     }
 }
-impl DBProxyTargetNotFoundFault {
-    /// Creates a new builder-style object to manufacture [`DBProxyTargetNotFoundFault`](crate::error::DBProxyTargetNotFoundFault)
+impl DbProxyTargetNotFoundFault {
+    /// Creates a new builder-style object to manufacture [`DbProxyTargetNotFoundFault`](crate::error::DbProxyTargetNotFoundFault)
     pub fn builder() -> crate::error::db_proxy_target_not_found_fault::Builder {
         crate::error::db_proxy_target_not_found_fault::Builder::default()
     }
@@ -20621,34 +20723,37 @@ impl DBProxyTargetNotFoundFault {
 /// <code>BacktrackIdentifier</code> doesn't refer to an existing backtrack. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct DBClusterBacktrackNotFoundFault {
+pub struct DbClusterBacktrackNotFoundFault {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for DBClusterBacktrackNotFoundFault {
+impl std::fmt::Debug for DbClusterBacktrackNotFoundFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DBClusterBacktrackNotFoundFault");
+        let mut formatter = f.debug_struct("DbClusterBacktrackNotFoundFault");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl DBClusterBacktrackNotFoundFault {
+impl DbClusterBacktrackNotFoundFault {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for DBClusterBacktrackNotFoundFault {
+impl std::fmt::Display for DbClusterBacktrackNotFoundFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "DBClusterBacktrackNotFoundFault")?;
+        write!(
+            f,
+            "DbClusterBacktrackNotFoundFault [DBClusterBacktrackNotFoundFault]"
+        )?;
         if let Some(inner_86) = &self.message {
             write!(f, ": {}", inner_86)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for DBClusterBacktrackNotFoundFault {}
-/// See [`DBClusterBacktrackNotFoundFault`](crate::error::DBClusterBacktrackNotFoundFault)
+impl std::error::Error for DbClusterBacktrackNotFoundFault {}
+/// See [`DbClusterBacktrackNotFoundFault`](crate::error::DbClusterBacktrackNotFoundFault)
 pub mod db_cluster_backtrack_not_found_fault {
-    /// A builder for [`DBClusterBacktrackNotFoundFault`](crate::error::DBClusterBacktrackNotFoundFault)
+    /// A builder for [`DbClusterBacktrackNotFoundFault`](crate::error::DbClusterBacktrackNotFoundFault)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -20663,16 +20768,16 @@ pub mod db_cluster_backtrack_not_found_fault {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`DBClusterBacktrackNotFoundFault`](crate::error::DBClusterBacktrackNotFoundFault)
-        pub fn build(self) -> crate::error::DBClusterBacktrackNotFoundFault {
-            crate::error::DBClusterBacktrackNotFoundFault {
+        /// Consumes the builder and constructs a [`DbClusterBacktrackNotFoundFault`](crate::error::DbClusterBacktrackNotFoundFault)
+        pub fn build(self) -> crate::error::DbClusterBacktrackNotFoundFault {
+            crate::error::DbClusterBacktrackNotFoundFault {
                 message: self.message,
             }
         }
     }
 }
-impl DBClusterBacktrackNotFoundFault {
-    /// Creates a new builder-style object to manufacture [`DBClusterBacktrackNotFoundFault`](crate::error::DBClusterBacktrackNotFoundFault)
+impl DbClusterBacktrackNotFoundFault {
+    /// Creates a new builder-style object to manufacture [`DbClusterBacktrackNotFoundFault`](crate::error::DbClusterBacktrackNotFoundFault)
     pub fn builder() -> crate::error::db_cluster_backtrack_not_found_fault::Builder {
         crate::error::db_cluster_backtrack_not_found_fault::Builder::default()
     }
@@ -20743,34 +20848,34 @@ impl InvalidEventSubscriptionStateFault {
 /// </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct InvalidDBSubnetStateFault {
+pub struct InvalidDbSubnetStateFault {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for InvalidDBSubnetStateFault {
+impl std::fmt::Debug for InvalidDbSubnetStateFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidDBSubnetStateFault");
+        let mut formatter = f.debug_struct("InvalidDbSubnetStateFault");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl InvalidDBSubnetStateFault {
+impl InvalidDbSubnetStateFault {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for InvalidDBSubnetStateFault {
+impl std::fmt::Display for InvalidDbSubnetStateFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "InvalidDBSubnetStateFault")?;
+        write!(f, "InvalidDbSubnetStateFault [InvalidDBSubnetStateFault]")?;
         if let Some(inner_88) = &self.message {
             write!(f, ": {}", inner_88)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for InvalidDBSubnetStateFault {}
-/// See [`InvalidDBSubnetStateFault`](crate::error::InvalidDBSubnetStateFault)
+impl std::error::Error for InvalidDbSubnetStateFault {}
+/// See [`InvalidDbSubnetStateFault`](crate::error::InvalidDbSubnetStateFault)
 pub mod invalid_db_subnet_state_fault {
-    /// A builder for [`InvalidDBSubnetStateFault`](crate::error::InvalidDBSubnetStateFault)
+    /// A builder for [`InvalidDbSubnetStateFault`](crate::error::InvalidDbSubnetStateFault)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -20785,16 +20890,16 @@ pub mod invalid_db_subnet_state_fault {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`InvalidDBSubnetStateFault`](crate::error::InvalidDBSubnetStateFault)
-        pub fn build(self) -> crate::error::InvalidDBSubnetStateFault {
-            crate::error::InvalidDBSubnetStateFault {
+        /// Consumes the builder and constructs a [`InvalidDbSubnetStateFault`](crate::error::InvalidDbSubnetStateFault)
+        pub fn build(self) -> crate::error::InvalidDbSubnetStateFault {
+            crate::error::InvalidDbSubnetStateFault {
                 message: self.message,
             }
         }
     }
 }
-impl InvalidDBSubnetStateFault {
-    /// Creates a new builder-style object to manufacture [`InvalidDBSubnetStateFault`](crate::error::InvalidDBSubnetStateFault)
+impl InvalidDbSubnetStateFault {
+    /// Creates a new builder-style object to manufacture [`InvalidDbSubnetStateFault`](crate::error::InvalidDbSubnetStateFault)
     pub fn builder() -> crate::error::invalid_db_subnet_state_fault::Builder {
         crate::error::invalid_db_subnet_state_fault::Builder::default()
     }
@@ -20804,34 +20909,34 @@ impl InvalidDBSubnetStateFault {
 /// For example, this automated backup is associated with an active instance. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct InvalidDBInstanceAutomatedBackupStateFault {
+pub struct InvalidDbInstanceAutomatedBackupStateFault {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for InvalidDBInstanceAutomatedBackupStateFault {
+impl std::fmt::Debug for InvalidDbInstanceAutomatedBackupStateFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidDBInstanceAutomatedBackupStateFault");
+        let mut formatter = f.debug_struct("InvalidDbInstanceAutomatedBackupStateFault");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl InvalidDBInstanceAutomatedBackupStateFault {
+impl InvalidDbInstanceAutomatedBackupStateFault {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for InvalidDBInstanceAutomatedBackupStateFault {
+impl std::fmt::Display for InvalidDbInstanceAutomatedBackupStateFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "InvalidDBInstanceAutomatedBackupStateFault")?;
+        write!(f, "InvalidDbInstanceAutomatedBackupStateFault [InvalidDBInstanceAutomatedBackupStateFault]")?;
         if let Some(inner_89) = &self.message {
             write!(f, ": {}", inner_89)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for InvalidDBInstanceAutomatedBackupStateFault {}
-/// See [`InvalidDBInstanceAutomatedBackupStateFault`](crate::error::InvalidDBInstanceAutomatedBackupStateFault)
+impl std::error::Error for InvalidDbInstanceAutomatedBackupStateFault {}
+/// See [`InvalidDbInstanceAutomatedBackupStateFault`](crate::error::InvalidDbInstanceAutomatedBackupStateFault)
 pub mod invalid_db_instance_automated_backup_state_fault {
-    /// A builder for [`InvalidDBInstanceAutomatedBackupStateFault`](crate::error::InvalidDBInstanceAutomatedBackupStateFault)
+    /// A builder for [`InvalidDbInstanceAutomatedBackupStateFault`](crate::error::InvalidDbInstanceAutomatedBackupStateFault)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -20846,16 +20951,16 @@ pub mod invalid_db_instance_automated_backup_state_fault {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`InvalidDBInstanceAutomatedBackupStateFault`](crate::error::InvalidDBInstanceAutomatedBackupStateFault)
-        pub fn build(self) -> crate::error::InvalidDBInstanceAutomatedBackupStateFault {
-            crate::error::InvalidDBInstanceAutomatedBackupStateFault {
+        /// Consumes the builder and constructs a [`InvalidDbInstanceAutomatedBackupStateFault`](crate::error::InvalidDbInstanceAutomatedBackupStateFault)
+        pub fn build(self) -> crate::error::InvalidDbInstanceAutomatedBackupStateFault {
+            crate::error::InvalidDbInstanceAutomatedBackupStateFault {
                 message: self.message,
             }
         }
     }
 }
-impl InvalidDBInstanceAutomatedBackupStateFault {
-    /// Creates a new builder-style object to manufacture [`InvalidDBInstanceAutomatedBackupStateFault`](crate::error::InvalidDBInstanceAutomatedBackupStateFault)
+impl InvalidDbInstanceAutomatedBackupStateFault {
+    /// Creates a new builder-style object to manufacture [`InvalidDbInstanceAutomatedBackupStateFault`](crate::error::InvalidDbInstanceAutomatedBackupStateFault)
     pub fn builder() -> crate::error::invalid_db_instance_automated_backup_state_fault::Builder {
         crate::error::invalid_db_instance_automated_backup_state_fault::Builder::default()
     }
@@ -20864,34 +20969,37 @@ impl InvalidDBInstanceAutomatedBackupStateFault {
 /// <p>The user already has a DB cluster snapshot with the given identifier.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct DBClusterSnapshotAlreadyExistsFault {
+pub struct DbClusterSnapshotAlreadyExistsFault {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for DBClusterSnapshotAlreadyExistsFault {
+impl std::fmt::Debug for DbClusterSnapshotAlreadyExistsFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DBClusterSnapshotAlreadyExistsFault");
+        let mut formatter = f.debug_struct("DbClusterSnapshotAlreadyExistsFault");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl DBClusterSnapshotAlreadyExistsFault {
+impl DbClusterSnapshotAlreadyExistsFault {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for DBClusterSnapshotAlreadyExistsFault {
+impl std::fmt::Display for DbClusterSnapshotAlreadyExistsFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "DBClusterSnapshotAlreadyExistsFault")?;
+        write!(
+            f,
+            "DbClusterSnapshotAlreadyExistsFault [DBClusterSnapshotAlreadyExistsFault]"
+        )?;
         if let Some(inner_90) = &self.message {
             write!(f, ": {}", inner_90)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for DBClusterSnapshotAlreadyExistsFault {}
-/// See [`DBClusterSnapshotAlreadyExistsFault`](crate::error::DBClusterSnapshotAlreadyExistsFault)
+impl std::error::Error for DbClusterSnapshotAlreadyExistsFault {}
+/// See [`DbClusterSnapshotAlreadyExistsFault`](crate::error::DbClusterSnapshotAlreadyExistsFault)
 pub mod db_cluster_snapshot_already_exists_fault {
-    /// A builder for [`DBClusterSnapshotAlreadyExistsFault`](crate::error::DBClusterSnapshotAlreadyExistsFault)
+    /// A builder for [`DbClusterSnapshotAlreadyExistsFault`](crate::error::DbClusterSnapshotAlreadyExistsFault)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -20906,16 +21014,16 @@ pub mod db_cluster_snapshot_already_exists_fault {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`DBClusterSnapshotAlreadyExistsFault`](crate::error::DBClusterSnapshotAlreadyExistsFault)
-        pub fn build(self) -> crate::error::DBClusterSnapshotAlreadyExistsFault {
-            crate::error::DBClusterSnapshotAlreadyExistsFault {
+        /// Consumes the builder and constructs a [`DbClusterSnapshotAlreadyExistsFault`](crate::error::DbClusterSnapshotAlreadyExistsFault)
+        pub fn build(self) -> crate::error::DbClusterSnapshotAlreadyExistsFault {
+            crate::error::DbClusterSnapshotAlreadyExistsFault {
                 message: self.message,
             }
         }
     }
 }
-impl DBClusterSnapshotAlreadyExistsFault {
-    /// Creates a new builder-style object to manufacture [`DBClusterSnapshotAlreadyExistsFault`](crate::error::DBClusterSnapshotAlreadyExistsFault)
+impl DbClusterSnapshotAlreadyExistsFault {
+    /// Creates a new builder-style object to manufacture [`DbClusterSnapshotAlreadyExistsFault`](crate::error::DbClusterSnapshotAlreadyExistsFault)
     pub fn builder() -> crate::error::db_cluster_snapshot_already_exists_fault::Builder {
         crate::error::db_cluster_snapshot_already_exists_fault::Builder::default()
     }
@@ -21225,34 +21333,37 @@ impl SubscriptionAlreadyExistFault {
 /// groups.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct DBSubnetGroupQuotaExceededFault {
+pub struct DbSubnetGroupQuotaExceededFault {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for DBSubnetGroupQuotaExceededFault {
+impl std::fmt::Debug for DbSubnetGroupQuotaExceededFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DBSubnetGroupQuotaExceededFault");
+        let mut formatter = f.debug_struct("DbSubnetGroupQuotaExceededFault");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl DBSubnetGroupQuotaExceededFault {
+impl DbSubnetGroupQuotaExceededFault {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for DBSubnetGroupQuotaExceededFault {
+impl std::fmt::Display for DbSubnetGroupQuotaExceededFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "DBSubnetGroupQuotaExceededFault")?;
+        write!(
+            f,
+            "DbSubnetGroupQuotaExceededFault [DBSubnetGroupQuotaExceededFault]"
+        )?;
         if let Some(inner_96) = &self.message {
             write!(f, ": {}", inner_96)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for DBSubnetGroupQuotaExceededFault {}
-/// See [`DBSubnetGroupQuotaExceededFault`](crate::error::DBSubnetGroupQuotaExceededFault)
+impl std::error::Error for DbSubnetGroupQuotaExceededFault {}
+/// See [`DbSubnetGroupQuotaExceededFault`](crate::error::DbSubnetGroupQuotaExceededFault)
 pub mod db_subnet_group_quota_exceeded_fault {
-    /// A builder for [`DBSubnetGroupQuotaExceededFault`](crate::error::DBSubnetGroupQuotaExceededFault)
+    /// A builder for [`DbSubnetGroupQuotaExceededFault`](crate::error::DbSubnetGroupQuotaExceededFault)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -21267,16 +21378,16 @@ pub mod db_subnet_group_quota_exceeded_fault {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`DBSubnetGroupQuotaExceededFault`](crate::error::DBSubnetGroupQuotaExceededFault)
-        pub fn build(self) -> crate::error::DBSubnetGroupQuotaExceededFault {
-            crate::error::DBSubnetGroupQuotaExceededFault {
+        /// Consumes the builder and constructs a [`DbSubnetGroupQuotaExceededFault`](crate::error::DbSubnetGroupQuotaExceededFault)
+        pub fn build(self) -> crate::error::DbSubnetGroupQuotaExceededFault {
+            crate::error::DbSubnetGroupQuotaExceededFault {
                 message: self.message,
             }
         }
     }
 }
-impl DBSubnetGroupQuotaExceededFault {
-    /// Creates a new builder-style object to manufacture [`DBSubnetGroupQuotaExceededFault`](crate::error::DBSubnetGroupQuotaExceededFault)
+impl DbSubnetGroupQuotaExceededFault {
+    /// Creates a new builder-style object to manufacture [`DbSubnetGroupQuotaExceededFault`](crate::error::DbSubnetGroupQuotaExceededFault)
     pub fn builder() -> crate::error::db_subnet_group_quota_exceeded_fault::Builder {
         crate::error::db_subnet_group_quota_exceeded_fault::Builder::default()
     }
@@ -21287,34 +21398,37 @@ impl DBSubnetGroupQuotaExceededFault {
 /// </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct DBSubnetGroupAlreadyExistsFault {
+pub struct DbSubnetGroupAlreadyExistsFault {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for DBSubnetGroupAlreadyExistsFault {
+impl std::fmt::Debug for DbSubnetGroupAlreadyExistsFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DBSubnetGroupAlreadyExistsFault");
+        let mut formatter = f.debug_struct("DbSubnetGroupAlreadyExistsFault");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl DBSubnetGroupAlreadyExistsFault {
+impl DbSubnetGroupAlreadyExistsFault {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for DBSubnetGroupAlreadyExistsFault {
+impl std::fmt::Display for DbSubnetGroupAlreadyExistsFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "DBSubnetGroupAlreadyExistsFault")?;
+        write!(
+            f,
+            "DbSubnetGroupAlreadyExistsFault [DBSubnetGroupAlreadyExistsFault]"
+        )?;
         if let Some(inner_97) = &self.message {
             write!(f, ": {}", inner_97)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for DBSubnetGroupAlreadyExistsFault {}
-/// See [`DBSubnetGroupAlreadyExistsFault`](crate::error::DBSubnetGroupAlreadyExistsFault)
+impl std::error::Error for DbSubnetGroupAlreadyExistsFault {}
+/// See [`DbSubnetGroupAlreadyExistsFault`](crate::error::DbSubnetGroupAlreadyExistsFault)
 pub mod db_subnet_group_already_exists_fault {
-    /// A builder for [`DBSubnetGroupAlreadyExistsFault`](crate::error::DBSubnetGroupAlreadyExistsFault)
+    /// A builder for [`DbSubnetGroupAlreadyExistsFault`](crate::error::DbSubnetGroupAlreadyExistsFault)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -21329,16 +21443,16 @@ pub mod db_subnet_group_already_exists_fault {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`DBSubnetGroupAlreadyExistsFault`](crate::error::DBSubnetGroupAlreadyExistsFault)
-        pub fn build(self) -> crate::error::DBSubnetGroupAlreadyExistsFault {
-            crate::error::DBSubnetGroupAlreadyExistsFault {
+        /// Consumes the builder and constructs a [`DbSubnetGroupAlreadyExistsFault`](crate::error::DbSubnetGroupAlreadyExistsFault)
+        pub fn build(self) -> crate::error::DbSubnetGroupAlreadyExistsFault {
+            crate::error::DbSubnetGroupAlreadyExistsFault {
                 message: self.message,
             }
         }
     }
 }
-impl DBSubnetGroupAlreadyExistsFault {
-    /// Creates a new builder-style object to manufacture [`DBSubnetGroupAlreadyExistsFault`](crate::error::DBSubnetGroupAlreadyExistsFault)
+impl DbSubnetGroupAlreadyExistsFault {
+    /// Creates a new builder-style object to manufacture [`DbSubnetGroupAlreadyExistsFault`](crate::error::DbSubnetGroupAlreadyExistsFault)
     pub fn builder() -> crate::error::db_subnet_group_already_exists_fault::Builder {
         crate::error::db_subnet_group_already_exists_fault::Builder::default()
     }
@@ -21348,34 +21462,37 @@ impl DBSubnetGroupAlreadyExistsFault {
 /// groups.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct DBSecurityGroupQuotaExceededFault {
+pub struct DbSecurityGroupQuotaExceededFault {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for DBSecurityGroupQuotaExceededFault {
+impl std::fmt::Debug for DbSecurityGroupQuotaExceededFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DBSecurityGroupQuotaExceededFault");
+        let mut formatter = f.debug_struct("DbSecurityGroupQuotaExceededFault");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl DBSecurityGroupQuotaExceededFault {
+impl DbSecurityGroupQuotaExceededFault {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for DBSecurityGroupQuotaExceededFault {
+impl std::fmt::Display for DbSecurityGroupQuotaExceededFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "DBSecurityGroupQuotaExceededFault")?;
+        write!(
+            f,
+            "DbSecurityGroupQuotaExceededFault [DBSecurityGroupQuotaExceededFault]"
+        )?;
         if let Some(inner_98) = &self.message {
             write!(f, ": {}", inner_98)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for DBSecurityGroupQuotaExceededFault {}
-/// See [`DBSecurityGroupQuotaExceededFault`](crate::error::DBSecurityGroupQuotaExceededFault)
+impl std::error::Error for DbSecurityGroupQuotaExceededFault {}
+/// See [`DbSecurityGroupQuotaExceededFault`](crate::error::DbSecurityGroupQuotaExceededFault)
 pub mod db_security_group_quota_exceeded_fault {
-    /// A builder for [`DBSecurityGroupQuotaExceededFault`](crate::error::DBSecurityGroupQuotaExceededFault)
+    /// A builder for [`DbSecurityGroupQuotaExceededFault`](crate::error::DbSecurityGroupQuotaExceededFault)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -21390,16 +21507,16 @@ pub mod db_security_group_quota_exceeded_fault {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`DBSecurityGroupQuotaExceededFault`](crate::error::DBSecurityGroupQuotaExceededFault)
-        pub fn build(self) -> crate::error::DBSecurityGroupQuotaExceededFault {
-            crate::error::DBSecurityGroupQuotaExceededFault {
+        /// Consumes the builder and constructs a [`DbSecurityGroupQuotaExceededFault`](crate::error::DbSecurityGroupQuotaExceededFault)
+        pub fn build(self) -> crate::error::DbSecurityGroupQuotaExceededFault {
+            crate::error::DbSecurityGroupQuotaExceededFault {
                 message: self.message,
             }
         }
     }
 }
-impl DBSecurityGroupQuotaExceededFault {
-    /// Creates a new builder-style object to manufacture [`DBSecurityGroupQuotaExceededFault`](crate::error::DBSecurityGroupQuotaExceededFault)
+impl DbSecurityGroupQuotaExceededFault {
+    /// Creates a new builder-style object to manufacture [`DbSecurityGroupQuotaExceededFault`](crate::error::DbSecurityGroupQuotaExceededFault)
     pub fn builder() -> crate::error::db_security_group_quota_exceeded_fault::Builder {
         crate::error::db_security_group_quota_exceeded_fault::Builder::default()
     }
@@ -21408,34 +21525,37 @@ impl DBSecurityGroupQuotaExceededFault {
 /// <p>A DB security group isn't allowed for this action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct DBSecurityGroupNotSupportedFault {
+pub struct DbSecurityGroupNotSupportedFault {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for DBSecurityGroupNotSupportedFault {
+impl std::fmt::Debug for DbSecurityGroupNotSupportedFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DBSecurityGroupNotSupportedFault");
+        let mut formatter = f.debug_struct("DbSecurityGroupNotSupportedFault");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl DBSecurityGroupNotSupportedFault {
+impl DbSecurityGroupNotSupportedFault {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for DBSecurityGroupNotSupportedFault {
+impl std::fmt::Display for DbSecurityGroupNotSupportedFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "DBSecurityGroupNotSupportedFault")?;
+        write!(
+            f,
+            "DbSecurityGroupNotSupportedFault [DBSecurityGroupNotSupportedFault]"
+        )?;
         if let Some(inner_99) = &self.message {
             write!(f, ": {}", inner_99)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for DBSecurityGroupNotSupportedFault {}
-/// See [`DBSecurityGroupNotSupportedFault`](crate::error::DBSecurityGroupNotSupportedFault)
+impl std::error::Error for DbSecurityGroupNotSupportedFault {}
+/// See [`DbSecurityGroupNotSupportedFault`](crate::error::DbSecurityGroupNotSupportedFault)
 pub mod db_security_group_not_supported_fault {
-    /// A builder for [`DBSecurityGroupNotSupportedFault`](crate::error::DBSecurityGroupNotSupportedFault)
+    /// A builder for [`DbSecurityGroupNotSupportedFault`](crate::error::DbSecurityGroupNotSupportedFault)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -21450,16 +21570,16 @@ pub mod db_security_group_not_supported_fault {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`DBSecurityGroupNotSupportedFault`](crate::error::DBSecurityGroupNotSupportedFault)
-        pub fn build(self) -> crate::error::DBSecurityGroupNotSupportedFault {
-            crate::error::DBSecurityGroupNotSupportedFault {
+        /// Consumes the builder and constructs a [`DbSecurityGroupNotSupportedFault`](crate::error::DbSecurityGroupNotSupportedFault)
+        pub fn build(self) -> crate::error::DbSecurityGroupNotSupportedFault {
+            crate::error::DbSecurityGroupNotSupportedFault {
                 message: self.message,
             }
         }
     }
 }
-impl DBSecurityGroupNotSupportedFault {
-    /// Creates a new builder-style object to manufacture [`DBSecurityGroupNotSupportedFault`](crate::error::DBSecurityGroupNotSupportedFault)
+impl DbSecurityGroupNotSupportedFault {
+    /// Creates a new builder-style object to manufacture [`DbSecurityGroupNotSupportedFault`](crate::error::DbSecurityGroupNotSupportedFault)
     pub fn builder() -> crate::error::db_security_group_not_supported_fault::Builder {
         crate::error::db_security_group_not_supported_fault::Builder::default()
     }
@@ -21471,34 +21591,37 @@ impl DBSecurityGroupNotSupportedFault {
 /// </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct DBSecurityGroupAlreadyExistsFault {
+pub struct DbSecurityGroupAlreadyExistsFault {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for DBSecurityGroupAlreadyExistsFault {
+impl std::fmt::Debug for DbSecurityGroupAlreadyExistsFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DBSecurityGroupAlreadyExistsFault");
+        let mut formatter = f.debug_struct("DbSecurityGroupAlreadyExistsFault");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl DBSecurityGroupAlreadyExistsFault {
+impl DbSecurityGroupAlreadyExistsFault {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for DBSecurityGroupAlreadyExistsFault {
+impl std::fmt::Display for DbSecurityGroupAlreadyExistsFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "DBSecurityGroupAlreadyExistsFault")?;
+        write!(
+            f,
+            "DbSecurityGroupAlreadyExistsFault [DBSecurityGroupAlreadyExistsFault]"
+        )?;
         if let Some(inner_100) = &self.message {
             write!(f, ": {}", inner_100)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for DBSecurityGroupAlreadyExistsFault {}
-/// See [`DBSecurityGroupAlreadyExistsFault`](crate::error::DBSecurityGroupAlreadyExistsFault)
+impl std::error::Error for DbSecurityGroupAlreadyExistsFault {}
+/// See [`DbSecurityGroupAlreadyExistsFault`](crate::error::DbSecurityGroupAlreadyExistsFault)
 pub mod db_security_group_already_exists_fault {
-    /// A builder for [`DBSecurityGroupAlreadyExistsFault`](crate::error::DBSecurityGroupAlreadyExistsFault)
+    /// A builder for [`DbSecurityGroupAlreadyExistsFault`](crate::error::DbSecurityGroupAlreadyExistsFault)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -21513,16 +21636,16 @@ pub mod db_security_group_already_exists_fault {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`DBSecurityGroupAlreadyExistsFault`](crate::error::DBSecurityGroupAlreadyExistsFault)
-        pub fn build(self) -> crate::error::DBSecurityGroupAlreadyExistsFault {
-            crate::error::DBSecurityGroupAlreadyExistsFault {
+        /// Consumes the builder and constructs a [`DbSecurityGroupAlreadyExistsFault`](crate::error::DbSecurityGroupAlreadyExistsFault)
+        pub fn build(self) -> crate::error::DbSecurityGroupAlreadyExistsFault {
+            crate::error::DbSecurityGroupAlreadyExistsFault {
                 message: self.message,
             }
         }
     }
 }
-impl DBSecurityGroupAlreadyExistsFault {
-    /// Creates a new builder-style object to manufacture [`DBSecurityGroupAlreadyExistsFault`](crate::error::DBSecurityGroupAlreadyExistsFault)
+impl DbSecurityGroupAlreadyExistsFault {
+    /// Creates a new builder-style object to manufacture [`DbSecurityGroupAlreadyExistsFault`](crate::error::DbSecurityGroupAlreadyExistsFault)
     pub fn builder() -> crate::error::db_security_group_already_exists_fault::Builder {
         crate::error::db_security_group_already_exists_fault::Builder::default()
     }
@@ -21531,34 +21654,37 @@ impl DBSecurityGroupAlreadyExistsFault {
 /// <p>The DB proxy already has the maximum number of endpoints.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct DBProxyEndpointQuotaExceededFault {
+pub struct DbProxyEndpointQuotaExceededFault {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for DBProxyEndpointQuotaExceededFault {
+impl std::fmt::Debug for DbProxyEndpointQuotaExceededFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DBProxyEndpointQuotaExceededFault");
+        let mut formatter = f.debug_struct("DbProxyEndpointQuotaExceededFault");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl DBProxyEndpointQuotaExceededFault {
+impl DbProxyEndpointQuotaExceededFault {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for DBProxyEndpointQuotaExceededFault {
+impl std::fmt::Display for DbProxyEndpointQuotaExceededFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "DBProxyEndpointQuotaExceededFault")?;
+        write!(
+            f,
+            "DbProxyEndpointQuotaExceededFault [DBProxyEndpointQuotaExceededFault]"
+        )?;
         if let Some(inner_101) = &self.message {
             write!(f, ": {}", inner_101)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for DBProxyEndpointQuotaExceededFault {}
-/// See [`DBProxyEndpointQuotaExceededFault`](crate::error::DBProxyEndpointQuotaExceededFault)
+impl std::error::Error for DbProxyEndpointQuotaExceededFault {}
+/// See [`DbProxyEndpointQuotaExceededFault`](crate::error::DbProxyEndpointQuotaExceededFault)
 pub mod db_proxy_endpoint_quota_exceeded_fault {
-    /// A builder for [`DBProxyEndpointQuotaExceededFault`](crate::error::DBProxyEndpointQuotaExceededFault)
+    /// A builder for [`DbProxyEndpointQuotaExceededFault`](crate::error::DbProxyEndpointQuotaExceededFault)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -21573,16 +21699,16 @@ pub mod db_proxy_endpoint_quota_exceeded_fault {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`DBProxyEndpointQuotaExceededFault`](crate::error::DBProxyEndpointQuotaExceededFault)
-        pub fn build(self) -> crate::error::DBProxyEndpointQuotaExceededFault {
-            crate::error::DBProxyEndpointQuotaExceededFault {
+        /// Consumes the builder and constructs a [`DbProxyEndpointQuotaExceededFault`](crate::error::DbProxyEndpointQuotaExceededFault)
+        pub fn build(self) -> crate::error::DbProxyEndpointQuotaExceededFault {
+            crate::error::DbProxyEndpointQuotaExceededFault {
                 message: self.message,
             }
         }
     }
 }
-impl DBProxyEndpointQuotaExceededFault {
-    /// Creates a new builder-style object to manufacture [`DBProxyEndpointQuotaExceededFault`](crate::error::DBProxyEndpointQuotaExceededFault)
+impl DbProxyEndpointQuotaExceededFault {
+    /// Creates a new builder-style object to manufacture [`DbProxyEndpointQuotaExceededFault`](crate::error::DbProxyEndpointQuotaExceededFault)
     pub fn builder() -> crate::error::db_proxy_endpoint_quota_exceeded_fault::Builder {
         crate::error::db_proxy_endpoint_quota_exceeded_fault::Builder::default()
     }
@@ -21591,34 +21717,34 @@ impl DBProxyEndpointQuotaExceededFault {
 /// <p>Your AWS account already has the maximum number of proxies in the specified AWS Region.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct DBProxyQuotaExceededFault {
+pub struct DbProxyQuotaExceededFault {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for DBProxyQuotaExceededFault {
+impl std::fmt::Debug for DbProxyQuotaExceededFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DBProxyQuotaExceededFault");
+        let mut formatter = f.debug_struct("DbProxyQuotaExceededFault");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl DBProxyQuotaExceededFault {
+impl DbProxyQuotaExceededFault {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for DBProxyQuotaExceededFault {
+impl std::fmt::Display for DbProxyQuotaExceededFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "DBProxyQuotaExceededFault")?;
+        write!(f, "DbProxyQuotaExceededFault [DBProxyQuotaExceededFault]")?;
         if let Some(inner_102) = &self.message {
             write!(f, ": {}", inner_102)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for DBProxyQuotaExceededFault {}
-/// See [`DBProxyQuotaExceededFault`](crate::error::DBProxyQuotaExceededFault)
+impl std::error::Error for DbProxyQuotaExceededFault {}
+/// See [`DbProxyQuotaExceededFault`](crate::error::DbProxyQuotaExceededFault)
 pub mod db_proxy_quota_exceeded_fault {
-    /// A builder for [`DBProxyQuotaExceededFault`](crate::error::DBProxyQuotaExceededFault)
+    /// A builder for [`DbProxyQuotaExceededFault`](crate::error::DbProxyQuotaExceededFault)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -21633,16 +21759,16 @@ pub mod db_proxy_quota_exceeded_fault {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`DBProxyQuotaExceededFault`](crate::error::DBProxyQuotaExceededFault)
-        pub fn build(self) -> crate::error::DBProxyQuotaExceededFault {
-            crate::error::DBProxyQuotaExceededFault {
+        /// Consumes the builder and constructs a [`DbProxyQuotaExceededFault`](crate::error::DbProxyQuotaExceededFault)
+        pub fn build(self) -> crate::error::DbProxyQuotaExceededFault {
+            crate::error::DbProxyQuotaExceededFault {
                 message: self.message,
             }
         }
     }
 }
-impl DBProxyQuotaExceededFault {
-    /// Creates a new builder-style object to manufacture [`DBProxyQuotaExceededFault`](crate::error::DBProxyQuotaExceededFault)
+impl DbProxyQuotaExceededFault {
+    /// Creates a new builder-style object to manufacture [`DbProxyQuotaExceededFault`](crate::error::DbProxyQuotaExceededFault)
     pub fn builder() -> crate::error::db_proxy_quota_exceeded_fault::Builder {
         crate::error::db_proxy_quota_exceeded_fault::Builder::default()
     }
@@ -21652,34 +21778,37 @@ impl DBProxyQuotaExceededFault {
 /// groups.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct DBParameterGroupQuotaExceededFault {
+pub struct DbParameterGroupQuotaExceededFault {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for DBParameterGroupQuotaExceededFault {
+impl std::fmt::Debug for DbParameterGroupQuotaExceededFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DBParameterGroupQuotaExceededFault");
+        let mut formatter = f.debug_struct("DbParameterGroupQuotaExceededFault");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl DBParameterGroupQuotaExceededFault {
+impl DbParameterGroupQuotaExceededFault {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for DBParameterGroupQuotaExceededFault {
+impl std::fmt::Display for DbParameterGroupQuotaExceededFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "DBParameterGroupQuotaExceededFault")?;
+        write!(
+            f,
+            "DbParameterGroupQuotaExceededFault [DBParameterGroupQuotaExceededFault]"
+        )?;
         if let Some(inner_103) = &self.message {
             write!(f, ": {}", inner_103)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for DBParameterGroupQuotaExceededFault {}
-/// See [`DBParameterGroupQuotaExceededFault`](crate::error::DBParameterGroupQuotaExceededFault)
+impl std::error::Error for DbParameterGroupQuotaExceededFault {}
+/// See [`DbParameterGroupQuotaExceededFault`](crate::error::DbParameterGroupQuotaExceededFault)
 pub mod db_parameter_group_quota_exceeded_fault {
-    /// A builder for [`DBParameterGroupQuotaExceededFault`](crate::error::DBParameterGroupQuotaExceededFault)
+    /// A builder for [`DbParameterGroupQuotaExceededFault`](crate::error::DbParameterGroupQuotaExceededFault)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -21694,16 +21823,16 @@ pub mod db_parameter_group_quota_exceeded_fault {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`DBParameterGroupQuotaExceededFault`](crate::error::DBParameterGroupQuotaExceededFault)
-        pub fn build(self) -> crate::error::DBParameterGroupQuotaExceededFault {
-            crate::error::DBParameterGroupQuotaExceededFault {
+        /// Consumes the builder and constructs a [`DbParameterGroupQuotaExceededFault`](crate::error::DbParameterGroupQuotaExceededFault)
+        pub fn build(self) -> crate::error::DbParameterGroupQuotaExceededFault {
+            crate::error::DbParameterGroupQuotaExceededFault {
                 message: self.message,
             }
         }
     }
 }
-impl DBParameterGroupQuotaExceededFault {
-    /// Creates a new builder-style object to manufacture [`DBParameterGroupQuotaExceededFault`](crate::error::DBParameterGroupQuotaExceededFault)
+impl DbParameterGroupQuotaExceededFault {
+    /// Creates a new builder-style object to manufacture [`DbParameterGroupQuotaExceededFault`](crate::error::DbParameterGroupQuotaExceededFault)
     pub fn builder() -> crate::error::db_parameter_group_quota_exceeded_fault::Builder {
         crate::error::db_parameter_group_quota_exceeded_fault::Builder::default()
     }
@@ -21712,34 +21841,37 @@ impl DBParameterGroupQuotaExceededFault {
 /// <p>A DB parameter group with the same name exists.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct DBParameterGroupAlreadyExistsFault {
+pub struct DbParameterGroupAlreadyExistsFault {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for DBParameterGroupAlreadyExistsFault {
+impl std::fmt::Debug for DbParameterGroupAlreadyExistsFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DBParameterGroupAlreadyExistsFault");
+        let mut formatter = f.debug_struct("DbParameterGroupAlreadyExistsFault");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl DBParameterGroupAlreadyExistsFault {
+impl DbParameterGroupAlreadyExistsFault {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for DBParameterGroupAlreadyExistsFault {
+impl std::fmt::Display for DbParameterGroupAlreadyExistsFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "DBParameterGroupAlreadyExistsFault")?;
+        write!(
+            f,
+            "DbParameterGroupAlreadyExistsFault [DBParameterGroupAlreadyExistsFault]"
+        )?;
         if let Some(inner_104) = &self.message {
             write!(f, ": {}", inner_104)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for DBParameterGroupAlreadyExistsFault {}
-/// See [`DBParameterGroupAlreadyExistsFault`](crate::error::DBParameterGroupAlreadyExistsFault)
+impl std::error::Error for DbParameterGroupAlreadyExistsFault {}
+/// See [`DbParameterGroupAlreadyExistsFault`](crate::error::DbParameterGroupAlreadyExistsFault)
 pub mod db_parameter_group_already_exists_fault {
-    /// A builder for [`DBParameterGroupAlreadyExistsFault`](crate::error::DBParameterGroupAlreadyExistsFault)
+    /// A builder for [`DbParameterGroupAlreadyExistsFault`](crate::error::DbParameterGroupAlreadyExistsFault)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -21754,16 +21886,16 @@ pub mod db_parameter_group_already_exists_fault {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`DBParameterGroupAlreadyExistsFault`](crate::error::DBParameterGroupAlreadyExistsFault)
-        pub fn build(self) -> crate::error::DBParameterGroupAlreadyExistsFault {
-            crate::error::DBParameterGroupAlreadyExistsFault {
+        /// Consumes the builder and constructs a [`DbParameterGroupAlreadyExistsFault`](crate::error::DbParameterGroupAlreadyExistsFault)
+        pub fn build(self) -> crate::error::DbParameterGroupAlreadyExistsFault {
+            crate::error::DbParameterGroupAlreadyExistsFault {
                 message: self.message,
             }
         }
     }
 }
-impl DBParameterGroupAlreadyExistsFault {
-    /// Creates a new builder-style object to manufacture [`DBParameterGroupAlreadyExistsFault`](crate::error::DBParameterGroupAlreadyExistsFault)
+impl DbParameterGroupAlreadyExistsFault {
+    /// Creates a new builder-style object to manufacture [`DbParameterGroupAlreadyExistsFault`](crate::error::DbParameterGroupAlreadyExistsFault)
     pub fn builder() -> crate::error::db_parameter_group_already_exists_fault::Builder {
         crate::error::db_parameter_group_already_exists_fault::Builder::default()
     }
@@ -21773,34 +21905,34 @@ impl DBParameterGroupAlreadyExistsFault {
 /// cross-region read replica of the same source instance.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct InvalidDBSubnetGroupFault {
+pub struct InvalidDbSubnetGroupFault {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for InvalidDBSubnetGroupFault {
+impl std::fmt::Debug for InvalidDbSubnetGroupFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidDBSubnetGroupFault");
+        let mut formatter = f.debug_struct("InvalidDbSubnetGroupFault");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl InvalidDBSubnetGroupFault {
+impl InvalidDbSubnetGroupFault {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for InvalidDBSubnetGroupFault {
+impl std::fmt::Display for InvalidDbSubnetGroupFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "InvalidDBSubnetGroupFault")?;
+        write!(f, "InvalidDbSubnetGroupFault [InvalidDBSubnetGroupFault]")?;
         if let Some(inner_105) = &self.message {
             write!(f, ": {}", inner_105)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for InvalidDBSubnetGroupFault {}
-/// See [`InvalidDBSubnetGroupFault`](crate::error::InvalidDBSubnetGroupFault)
+impl std::error::Error for InvalidDbSubnetGroupFault {}
+/// See [`InvalidDbSubnetGroupFault`](crate::error::InvalidDbSubnetGroupFault)
 pub mod invalid_db_subnet_group_fault {
-    /// A builder for [`InvalidDBSubnetGroupFault`](crate::error::InvalidDBSubnetGroupFault)
+    /// A builder for [`InvalidDbSubnetGroupFault`](crate::error::InvalidDbSubnetGroupFault)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -21815,16 +21947,16 @@ pub mod invalid_db_subnet_group_fault {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`InvalidDBSubnetGroupFault`](crate::error::InvalidDBSubnetGroupFault)
-        pub fn build(self) -> crate::error::InvalidDBSubnetGroupFault {
-            crate::error::InvalidDBSubnetGroupFault {
+        /// Consumes the builder and constructs a [`InvalidDbSubnetGroupFault`](crate::error::InvalidDbSubnetGroupFault)
+        pub fn build(self) -> crate::error::InvalidDbSubnetGroupFault {
+            crate::error::InvalidDbSubnetGroupFault {
                 message: self.message,
             }
         }
     }
 }
-impl InvalidDBSubnetGroupFault {
-    /// Creates a new builder-style object to manufacture [`InvalidDBSubnetGroupFault`](crate::error::InvalidDBSubnetGroupFault)
+impl InvalidDbSubnetGroupFault {
+    /// Creates a new builder-style object to manufacture [`InvalidDbSubnetGroupFault`](crate::error::InvalidDbSubnetGroupFault)
     pub fn builder() -> crate::error::invalid_db_subnet_group_fault::Builder {
         crate::error::invalid_db_subnet_group_fault::Builder::default()
     }
@@ -21834,34 +21966,37 @@ impl InvalidDBSubnetGroupFault {
 /// in the same region as the source instance.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct DBSubnetGroupNotAllowedFault {
+pub struct DbSubnetGroupNotAllowedFault {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for DBSubnetGroupNotAllowedFault {
+impl std::fmt::Debug for DbSubnetGroupNotAllowedFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DBSubnetGroupNotAllowedFault");
+        let mut formatter = f.debug_struct("DbSubnetGroupNotAllowedFault");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl DBSubnetGroupNotAllowedFault {
+impl DbSubnetGroupNotAllowedFault {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for DBSubnetGroupNotAllowedFault {
+impl std::fmt::Display for DbSubnetGroupNotAllowedFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "DBSubnetGroupNotAllowedFault")?;
+        write!(
+            f,
+            "DbSubnetGroupNotAllowedFault [DBSubnetGroupNotAllowedFault]"
+        )?;
         if let Some(inner_106) = &self.message {
             write!(f, ": {}", inner_106)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for DBSubnetGroupNotAllowedFault {}
-/// See [`DBSubnetGroupNotAllowedFault`](crate::error::DBSubnetGroupNotAllowedFault)
+impl std::error::Error for DbSubnetGroupNotAllowedFault {}
+/// See [`DbSubnetGroupNotAllowedFault`](crate::error::DbSubnetGroupNotAllowedFault)
 pub mod db_subnet_group_not_allowed_fault {
-    /// A builder for [`DBSubnetGroupNotAllowedFault`](crate::error::DBSubnetGroupNotAllowedFault)
+    /// A builder for [`DbSubnetGroupNotAllowedFault`](crate::error::DbSubnetGroupNotAllowedFault)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -21876,16 +22011,16 @@ pub mod db_subnet_group_not_allowed_fault {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`DBSubnetGroupNotAllowedFault`](crate::error::DBSubnetGroupNotAllowedFault)
-        pub fn build(self) -> crate::error::DBSubnetGroupNotAllowedFault {
-            crate::error::DBSubnetGroupNotAllowedFault {
+        /// Consumes the builder and constructs a [`DbSubnetGroupNotAllowedFault`](crate::error::DbSubnetGroupNotAllowedFault)
+        pub fn build(self) -> crate::error::DbSubnetGroupNotAllowedFault {
+            crate::error::DbSubnetGroupNotAllowedFault {
                 message: self.message,
             }
         }
     }
 }
-impl DBSubnetGroupNotAllowedFault {
-    /// Creates a new builder-style object to manufacture [`DBSubnetGroupNotAllowedFault`](crate::error::DBSubnetGroupNotAllowedFault)
+impl DbSubnetGroupNotAllowedFault {
+    /// Creates a new builder-style object to manufacture [`DbSubnetGroupNotAllowedFault`](crate::error::DbSubnetGroupNotAllowedFault)
     pub fn builder() -> crate::error::db_subnet_group_not_allowed_fault::Builder {
         crate::error::db_subnet_group_not_allowed_fault::Builder::default()
     }
@@ -21894,34 +22029,37 @@ impl DBSubnetGroupNotAllowedFault {
 /// <p>The cluster already has the maximum number of custom endpoints.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct DBClusterEndpointQuotaExceededFault {
+pub struct DbClusterEndpointQuotaExceededFault {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for DBClusterEndpointQuotaExceededFault {
+impl std::fmt::Debug for DbClusterEndpointQuotaExceededFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DBClusterEndpointQuotaExceededFault");
+        let mut formatter = f.debug_struct("DbClusterEndpointQuotaExceededFault");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl DBClusterEndpointQuotaExceededFault {
+impl DbClusterEndpointQuotaExceededFault {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for DBClusterEndpointQuotaExceededFault {
+impl std::fmt::Display for DbClusterEndpointQuotaExceededFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "DBClusterEndpointQuotaExceededFault")?;
+        write!(
+            f,
+            "DbClusterEndpointQuotaExceededFault [DBClusterEndpointQuotaExceededFault]"
+        )?;
         if let Some(inner_107) = &self.message {
             write!(f, ": {}", inner_107)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for DBClusterEndpointQuotaExceededFault {}
-/// See [`DBClusterEndpointQuotaExceededFault`](crate::error::DBClusterEndpointQuotaExceededFault)
+impl std::error::Error for DbClusterEndpointQuotaExceededFault {}
+/// See [`DbClusterEndpointQuotaExceededFault`](crate::error::DbClusterEndpointQuotaExceededFault)
 pub mod db_cluster_endpoint_quota_exceeded_fault {
-    /// A builder for [`DBClusterEndpointQuotaExceededFault`](crate::error::DBClusterEndpointQuotaExceededFault)
+    /// A builder for [`DbClusterEndpointQuotaExceededFault`](crate::error::DbClusterEndpointQuotaExceededFault)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -21936,16 +22074,16 @@ pub mod db_cluster_endpoint_quota_exceeded_fault {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`DBClusterEndpointQuotaExceededFault`](crate::error::DBClusterEndpointQuotaExceededFault)
-        pub fn build(self) -> crate::error::DBClusterEndpointQuotaExceededFault {
-            crate::error::DBClusterEndpointQuotaExceededFault {
+        /// Consumes the builder and constructs a [`DbClusterEndpointQuotaExceededFault`](crate::error::DbClusterEndpointQuotaExceededFault)
+        pub fn build(self) -> crate::error::DbClusterEndpointQuotaExceededFault {
+            crate::error::DbClusterEndpointQuotaExceededFault {
                 message: self.message,
             }
         }
     }
 }
-impl DBClusterEndpointQuotaExceededFault {
-    /// Creates a new builder-style object to manufacture [`DBClusterEndpointQuotaExceededFault`](crate::error::DBClusterEndpointQuotaExceededFault)
+impl DbClusterEndpointQuotaExceededFault {
+    /// Creates a new builder-style object to manufacture [`DbClusterEndpointQuotaExceededFault`](crate::error::DbClusterEndpointQuotaExceededFault)
     pub fn builder() -> crate::error::db_cluster_endpoint_quota_exceeded_fault::Builder {
         crate::error::db_cluster_endpoint_quota_exceeded_fault::Builder::default()
     }
@@ -21954,34 +22092,37 @@ impl DBClusterEndpointQuotaExceededFault {
 /// <p>The specified custom endpoint can't be created because it already exists.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct DBClusterEndpointAlreadyExistsFault {
+pub struct DbClusterEndpointAlreadyExistsFault {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for DBClusterEndpointAlreadyExistsFault {
+impl std::fmt::Debug for DbClusterEndpointAlreadyExistsFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DBClusterEndpointAlreadyExistsFault");
+        let mut formatter = f.debug_struct("DbClusterEndpointAlreadyExistsFault");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl DBClusterEndpointAlreadyExistsFault {
+impl DbClusterEndpointAlreadyExistsFault {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for DBClusterEndpointAlreadyExistsFault {
+impl std::fmt::Display for DbClusterEndpointAlreadyExistsFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "DBClusterEndpointAlreadyExistsFault")?;
+        write!(
+            f,
+            "DbClusterEndpointAlreadyExistsFault [DBClusterEndpointAlreadyExistsFault]"
+        )?;
         if let Some(inner_108) = &self.message {
             write!(f, ": {}", inner_108)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for DBClusterEndpointAlreadyExistsFault {}
-/// See [`DBClusterEndpointAlreadyExistsFault`](crate::error::DBClusterEndpointAlreadyExistsFault)
+impl std::error::Error for DbClusterEndpointAlreadyExistsFault {}
+/// See [`DbClusterEndpointAlreadyExistsFault`](crate::error::DbClusterEndpointAlreadyExistsFault)
 pub mod db_cluster_endpoint_already_exists_fault {
-    /// A builder for [`DBClusterEndpointAlreadyExistsFault`](crate::error::DBClusterEndpointAlreadyExistsFault)
+    /// A builder for [`DbClusterEndpointAlreadyExistsFault`](crate::error::DbClusterEndpointAlreadyExistsFault)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -21996,16 +22137,16 @@ pub mod db_cluster_endpoint_already_exists_fault {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`DBClusterEndpointAlreadyExistsFault`](crate::error::DBClusterEndpointAlreadyExistsFault)
-        pub fn build(self) -> crate::error::DBClusterEndpointAlreadyExistsFault {
-            crate::error::DBClusterEndpointAlreadyExistsFault {
+        /// Consumes the builder and constructs a [`DbClusterEndpointAlreadyExistsFault`](crate::error::DbClusterEndpointAlreadyExistsFault)
+        pub fn build(self) -> crate::error::DbClusterEndpointAlreadyExistsFault {
+            crate::error::DbClusterEndpointAlreadyExistsFault {
                 message: self.message,
             }
         }
     }
 }
-impl DBClusterEndpointAlreadyExistsFault {
-    /// Creates a new builder-style object to manufacture [`DBClusterEndpointAlreadyExistsFault`](crate::error::DBClusterEndpointAlreadyExistsFault)
+impl DbClusterEndpointAlreadyExistsFault {
+    /// Creates a new builder-style object to manufacture [`DbClusterEndpointAlreadyExistsFault`](crate::error::DbClusterEndpointAlreadyExistsFault)
     pub fn builder() -> crate::error::db_cluster_endpoint_already_exists_fault::Builder {
         crate::error::db_cluster_endpoint_already_exists_fault::Builder::default()
     }
@@ -22317,34 +22458,37 @@ impl AuthorizationAlreadyExistsFault {
 /// <p>You can't associate any more AWS Identity and Access Management (IAM) roles with the DB instance because the quota has been reached.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct DBInstanceRoleQuotaExceededFault {
+pub struct DbInstanceRoleQuotaExceededFault {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for DBInstanceRoleQuotaExceededFault {
+impl std::fmt::Debug for DbInstanceRoleQuotaExceededFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DBInstanceRoleQuotaExceededFault");
+        let mut formatter = f.debug_struct("DbInstanceRoleQuotaExceededFault");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl DBInstanceRoleQuotaExceededFault {
+impl DbInstanceRoleQuotaExceededFault {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for DBInstanceRoleQuotaExceededFault {
+impl std::fmt::Display for DbInstanceRoleQuotaExceededFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "DBInstanceRoleQuotaExceededFault")?;
+        write!(
+            f,
+            "DbInstanceRoleQuotaExceededFault [DBInstanceRoleQuotaExceededFault]"
+        )?;
         if let Some(inner_114) = &self.message {
             write!(f, ": {}", inner_114)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for DBInstanceRoleQuotaExceededFault {}
-/// See [`DBInstanceRoleQuotaExceededFault`](crate::error::DBInstanceRoleQuotaExceededFault)
+impl std::error::Error for DbInstanceRoleQuotaExceededFault {}
+/// See [`DbInstanceRoleQuotaExceededFault`](crate::error::DbInstanceRoleQuotaExceededFault)
 pub mod db_instance_role_quota_exceeded_fault {
-    /// A builder for [`DBInstanceRoleQuotaExceededFault`](crate::error::DBInstanceRoleQuotaExceededFault)
+    /// A builder for [`DbInstanceRoleQuotaExceededFault`](crate::error::DbInstanceRoleQuotaExceededFault)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -22359,16 +22503,16 @@ pub mod db_instance_role_quota_exceeded_fault {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`DBInstanceRoleQuotaExceededFault`](crate::error::DBInstanceRoleQuotaExceededFault)
-        pub fn build(self) -> crate::error::DBInstanceRoleQuotaExceededFault {
-            crate::error::DBInstanceRoleQuotaExceededFault {
+        /// Consumes the builder and constructs a [`DbInstanceRoleQuotaExceededFault`](crate::error::DbInstanceRoleQuotaExceededFault)
+        pub fn build(self) -> crate::error::DbInstanceRoleQuotaExceededFault {
+            crate::error::DbInstanceRoleQuotaExceededFault {
                 message: self.message,
             }
         }
     }
 }
-impl DBInstanceRoleQuotaExceededFault {
-    /// Creates a new builder-style object to manufacture [`DBInstanceRoleQuotaExceededFault`](crate::error::DBInstanceRoleQuotaExceededFault)
+impl DbInstanceRoleQuotaExceededFault {
+    /// Creates a new builder-style object to manufacture [`DbInstanceRoleQuotaExceededFault`](crate::error::DbInstanceRoleQuotaExceededFault)
     pub fn builder() -> crate::error::db_instance_role_quota_exceeded_fault::Builder {
         crate::error::db_instance_role_quota_exceeded_fault::Builder::default()
     }
@@ -22377,34 +22521,37 @@ impl DBInstanceRoleQuotaExceededFault {
 /// <p>The specified <code>RoleArn</code> or <code>FeatureName</code> value is already associated with the DB instance.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct DBInstanceRoleAlreadyExistsFault {
+pub struct DbInstanceRoleAlreadyExistsFault {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for DBInstanceRoleAlreadyExistsFault {
+impl std::fmt::Debug for DbInstanceRoleAlreadyExistsFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DBInstanceRoleAlreadyExistsFault");
+        let mut formatter = f.debug_struct("DbInstanceRoleAlreadyExistsFault");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl DBInstanceRoleAlreadyExistsFault {
+impl DbInstanceRoleAlreadyExistsFault {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for DBInstanceRoleAlreadyExistsFault {
+impl std::fmt::Display for DbInstanceRoleAlreadyExistsFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "DBInstanceRoleAlreadyExistsFault")?;
+        write!(
+            f,
+            "DbInstanceRoleAlreadyExistsFault [DBInstanceRoleAlreadyExistsFault]"
+        )?;
         if let Some(inner_115) = &self.message {
             write!(f, ": {}", inner_115)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for DBInstanceRoleAlreadyExistsFault {}
-/// See [`DBInstanceRoleAlreadyExistsFault`](crate::error::DBInstanceRoleAlreadyExistsFault)
+impl std::error::Error for DbInstanceRoleAlreadyExistsFault {}
+/// See [`DbInstanceRoleAlreadyExistsFault`](crate::error::DbInstanceRoleAlreadyExistsFault)
 pub mod db_instance_role_already_exists_fault {
-    /// A builder for [`DBInstanceRoleAlreadyExistsFault`](crate::error::DBInstanceRoleAlreadyExistsFault)
+    /// A builder for [`DbInstanceRoleAlreadyExistsFault`](crate::error::DbInstanceRoleAlreadyExistsFault)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -22419,16 +22566,16 @@ pub mod db_instance_role_already_exists_fault {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`DBInstanceRoleAlreadyExistsFault`](crate::error::DBInstanceRoleAlreadyExistsFault)
-        pub fn build(self) -> crate::error::DBInstanceRoleAlreadyExistsFault {
-            crate::error::DBInstanceRoleAlreadyExistsFault {
+        /// Consumes the builder and constructs a [`DbInstanceRoleAlreadyExistsFault`](crate::error::DbInstanceRoleAlreadyExistsFault)
+        pub fn build(self) -> crate::error::DbInstanceRoleAlreadyExistsFault {
+            crate::error::DbInstanceRoleAlreadyExistsFault {
                 message: self.message,
             }
         }
     }
 }
-impl DBInstanceRoleAlreadyExistsFault {
-    /// Creates a new builder-style object to manufacture [`DBInstanceRoleAlreadyExistsFault`](crate::error::DBInstanceRoleAlreadyExistsFault)
+impl DbInstanceRoleAlreadyExistsFault {
+    /// Creates a new builder-style object to manufacture [`DbInstanceRoleAlreadyExistsFault`](crate::error::DbInstanceRoleAlreadyExistsFault)
     pub fn builder() -> crate::error::db_instance_role_already_exists_fault::Builder {
         crate::error::db_instance_role_already_exists_fault::Builder::default()
     }
@@ -22437,34 +22584,37 @@ impl DBInstanceRoleAlreadyExistsFault {
 /// <p>You have exceeded the maximum number of IAM roles that can be associated with the specified DB cluster.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct DBClusterRoleQuotaExceededFault {
+pub struct DbClusterRoleQuotaExceededFault {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for DBClusterRoleQuotaExceededFault {
+impl std::fmt::Debug for DbClusterRoleQuotaExceededFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DBClusterRoleQuotaExceededFault");
+        let mut formatter = f.debug_struct("DbClusterRoleQuotaExceededFault");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl DBClusterRoleQuotaExceededFault {
+impl DbClusterRoleQuotaExceededFault {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for DBClusterRoleQuotaExceededFault {
+impl std::fmt::Display for DbClusterRoleQuotaExceededFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "DBClusterRoleQuotaExceededFault")?;
+        write!(
+            f,
+            "DbClusterRoleQuotaExceededFault [DBClusterRoleQuotaExceededFault]"
+        )?;
         if let Some(inner_116) = &self.message {
             write!(f, ": {}", inner_116)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for DBClusterRoleQuotaExceededFault {}
-/// See [`DBClusterRoleQuotaExceededFault`](crate::error::DBClusterRoleQuotaExceededFault)
+impl std::error::Error for DbClusterRoleQuotaExceededFault {}
+/// See [`DbClusterRoleQuotaExceededFault`](crate::error::DbClusterRoleQuotaExceededFault)
 pub mod db_cluster_role_quota_exceeded_fault {
-    /// A builder for [`DBClusterRoleQuotaExceededFault`](crate::error::DBClusterRoleQuotaExceededFault)
+    /// A builder for [`DbClusterRoleQuotaExceededFault`](crate::error::DbClusterRoleQuotaExceededFault)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -22479,16 +22629,16 @@ pub mod db_cluster_role_quota_exceeded_fault {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`DBClusterRoleQuotaExceededFault`](crate::error::DBClusterRoleQuotaExceededFault)
-        pub fn build(self) -> crate::error::DBClusterRoleQuotaExceededFault {
-            crate::error::DBClusterRoleQuotaExceededFault {
+        /// Consumes the builder and constructs a [`DbClusterRoleQuotaExceededFault`](crate::error::DbClusterRoleQuotaExceededFault)
+        pub fn build(self) -> crate::error::DbClusterRoleQuotaExceededFault {
+            crate::error::DbClusterRoleQuotaExceededFault {
                 message: self.message,
             }
         }
     }
 }
-impl DBClusterRoleQuotaExceededFault {
-    /// Creates a new builder-style object to manufacture [`DBClusterRoleQuotaExceededFault`](crate::error::DBClusterRoleQuotaExceededFault)
+impl DbClusterRoleQuotaExceededFault {
+    /// Creates a new builder-style object to manufacture [`DbClusterRoleQuotaExceededFault`](crate::error::DbClusterRoleQuotaExceededFault)
     pub fn builder() -> crate::error::db_cluster_role_quota_exceeded_fault::Builder {
         crate::error::db_cluster_role_quota_exceeded_fault::Builder::default()
     }
@@ -22497,34 +22647,37 @@ impl DBClusterRoleQuotaExceededFault {
 /// <p>The specified IAM role Amazon Resource Name (ARN) is already associated with the specified DB cluster.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct DBClusterRoleAlreadyExistsFault {
+pub struct DbClusterRoleAlreadyExistsFault {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for DBClusterRoleAlreadyExistsFault {
+impl std::fmt::Debug for DbClusterRoleAlreadyExistsFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DBClusterRoleAlreadyExistsFault");
+        let mut formatter = f.debug_struct("DbClusterRoleAlreadyExistsFault");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl DBClusterRoleAlreadyExistsFault {
+impl DbClusterRoleAlreadyExistsFault {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for DBClusterRoleAlreadyExistsFault {
+impl std::fmt::Display for DbClusterRoleAlreadyExistsFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "DBClusterRoleAlreadyExistsFault")?;
+        write!(
+            f,
+            "DbClusterRoleAlreadyExistsFault [DBClusterRoleAlreadyExistsFault]"
+        )?;
         if let Some(inner_117) = &self.message {
             write!(f, ": {}", inner_117)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for DBClusterRoleAlreadyExistsFault {}
-/// See [`DBClusterRoleAlreadyExistsFault`](crate::error::DBClusterRoleAlreadyExistsFault)
+impl std::error::Error for DbClusterRoleAlreadyExistsFault {}
+/// See [`DbClusterRoleAlreadyExistsFault`](crate::error::DbClusterRoleAlreadyExistsFault)
 pub mod db_cluster_role_already_exists_fault {
-    /// A builder for [`DBClusterRoleAlreadyExistsFault`](crate::error::DBClusterRoleAlreadyExistsFault)
+    /// A builder for [`DbClusterRoleAlreadyExistsFault`](crate::error::DbClusterRoleAlreadyExistsFault)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -22539,16 +22692,16 @@ pub mod db_cluster_role_already_exists_fault {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`DBClusterRoleAlreadyExistsFault`](crate::error::DBClusterRoleAlreadyExistsFault)
-        pub fn build(self) -> crate::error::DBClusterRoleAlreadyExistsFault {
-            crate::error::DBClusterRoleAlreadyExistsFault {
+        /// Consumes the builder and constructs a [`DbClusterRoleAlreadyExistsFault`](crate::error::DbClusterRoleAlreadyExistsFault)
+        pub fn build(self) -> crate::error::DbClusterRoleAlreadyExistsFault {
+            crate::error::DbClusterRoleAlreadyExistsFault {
                 message: self.message,
             }
         }
     }
 }
-impl DBClusterRoleAlreadyExistsFault {
-    /// Creates a new builder-style object to manufacture [`DBClusterRoleAlreadyExistsFault`](crate::error::DBClusterRoleAlreadyExistsFault)
+impl DbClusterRoleAlreadyExistsFault {
+    /// Creates a new builder-style object to manufacture [`DbClusterRoleAlreadyExistsFault`](crate::error::DbClusterRoleAlreadyExistsFault)
     pub fn builder() -> crate::error::db_cluster_role_already_exists_fault::Builder {
         crate::error::db_cluster_role_already_exists_fault::Builder::default()
     }

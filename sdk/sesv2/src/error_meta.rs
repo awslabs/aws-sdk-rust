@@ -2,35 +2,35 @@
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum Error {
-    AccountSuspendedError(crate::error::AccountSuspendedError),
-    AlreadyExistsError(crate::error::AlreadyExistsError),
-    BadRequestError(crate::error::BadRequestError),
-    ConcurrentModificationError(crate::error::ConcurrentModificationError),
-    ConflictError(crate::error::ConflictError),
-    InvalidNextTokenError(crate::error::InvalidNextTokenError),
-    LimitExceededError(crate::error::LimitExceededError),
-    MailFromDomainNotVerifiedError(crate::error::MailFromDomainNotVerifiedError),
+    AccountSuspendedException(crate::error::AccountSuspendedException),
+    AlreadyExistsException(crate::error::AlreadyExistsException),
+    BadRequestException(crate::error::BadRequestException),
+    ConcurrentModificationException(crate::error::ConcurrentModificationException),
+    ConflictException(crate::error::ConflictException),
+    InvalidNextTokenException(crate::error::InvalidNextTokenException),
+    LimitExceededException(crate::error::LimitExceededException),
+    MailFromDomainNotVerifiedException(crate::error::MailFromDomainNotVerifiedException),
     MessageRejected(crate::error::MessageRejected),
-    NotFoundError(crate::error::NotFoundError),
-    SendingPausedError(crate::error::SendingPausedError),
-    TooManyRequestsError(crate::error::TooManyRequestsError),
+    NotFoundException(crate::error::NotFoundException),
+    SendingPausedException(crate::error::SendingPausedException),
+    TooManyRequestsException(crate::error::TooManyRequestsException),
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match self {
-            Error::AccountSuspendedError(inner) => inner.fmt(f),
-            Error::AlreadyExistsError(inner) => inner.fmt(f),
-            Error::BadRequestError(inner) => inner.fmt(f),
-            Error::ConcurrentModificationError(inner) => inner.fmt(f),
-            Error::ConflictError(inner) => inner.fmt(f),
-            Error::InvalidNextTokenError(inner) => inner.fmt(f),
-            Error::LimitExceededError(inner) => inner.fmt(f),
-            Error::MailFromDomainNotVerifiedError(inner) => inner.fmt(f),
+            Error::AccountSuspendedException(inner) => inner.fmt(f),
+            Error::AlreadyExistsException(inner) => inner.fmt(f),
+            Error::BadRequestException(inner) => inner.fmt(f),
+            Error::ConcurrentModificationException(inner) => inner.fmt(f),
+            Error::ConflictException(inner) => inner.fmt(f),
+            Error::InvalidNextTokenException(inner) => inner.fmt(f),
+            Error::LimitExceededException(inner) => inner.fmt(f),
+            Error::MailFromDomainNotVerifiedException(inner) => inner.fmt(f),
             Error::MessageRejected(inner) => inner.fmt(f),
-            Error::NotFoundError(inner) => inner.fmt(f),
-            Error::SendingPausedError(inner) => inner.fmt(f),
-            Error::TooManyRequestsError(inner) => inner.fmt(f),
+            Error::NotFoundException(inner) => inner.fmt(f),
+            Error::SendingPausedException(inner) => inner.fmt(f),
+            Error::TooManyRequestsException(inner) => inner.fmt(f),
             Error::Unhandled(inner) => inner.fmt(f),
         }
     }
@@ -39,23 +39,23 @@ impl From<smithy_http::result::SdkError<crate::error::CreateConfigurationSetErro
     fn from(err: smithy_http::result::SdkError<crate::error::CreateConfigurationSetError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::CreateConfigurationSetErrorKind::AlreadyExistsError(inner) => {
-                    Error::AlreadyExistsError(inner)
+                crate::error::CreateConfigurationSetErrorKind::AlreadyExistsException(inner) => {
+                    Error::AlreadyExistsException(inner)
                 }
-                crate::error::CreateConfigurationSetErrorKind::BadRequestError(inner) => {
-                    Error::BadRequestError(inner)
+                crate::error::CreateConfigurationSetErrorKind::BadRequestException(inner) => {
+                    Error::BadRequestException(inner)
                 }
-                crate::error::CreateConfigurationSetErrorKind::ConcurrentModificationError(
+                crate::error::CreateConfigurationSetErrorKind::ConcurrentModificationException(
                     inner,
-                ) => Error::ConcurrentModificationError(inner),
-                crate::error::CreateConfigurationSetErrorKind::LimitExceededError(inner) => {
-                    Error::LimitExceededError(inner)
+                ) => Error::ConcurrentModificationException(inner),
+                crate::error::CreateConfigurationSetErrorKind::LimitExceededException(inner) => {
+                    Error::LimitExceededException(inner)
                 }
-                crate::error::CreateConfigurationSetErrorKind::NotFoundError(inner) => {
-                    Error::NotFoundError(inner)
+                crate::error::CreateConfigurationSetErrorKind::NotFoundException(inner) => {
+                    Error::NotFoundException(inner)
                 }
-                crate::error::CreateConfigurationSetErrorKind::TooManyRequestsError(inner) => {
-                    Error::TooManyRequestsError(inner)
+                crate::error::CreateConfigurationSetErrorKind::TooManyRequestsException(inner) => {
+                    Error::TooManyRequestsException(inner)
                 }
                 crate::error::CreateConfigurationSetErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
@@ -75,11 +75,11 @@ impl From<smithy_http::result::SdkError<crate::error::CreateConfigurationSetEven
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
-                crate::error::CreateConfigurationSetEventDestinationErrorKind::AlreadyExistsError(inner) => Error::AlreadyExistsError(inner),
-                crate::error::CreateConfigurationSetEventDestinationErrorKind::BadRequestError(inner) => Error::BadRequestError(inner),
-                crate::error::CreateConfigurationSetEventDestinationErrorKind::LimitExceededError(inner) => Error::LimitExceededError(inner),
-                crate::error::CreateConfigurationSetEventDestinationErrorKind::NotFoundError(inner) => Error::NotFoundError(inner),
-                crate::error::CreateConfigurationSetEventDestinationErrorKind::TooManyRequestsError(inner) => Error::TooManyRequestsError(inner),
+                crate::error::CreateConfigurationSetEventDestinationErrorKind::AlreadyExistsException(inner) => Error::AlreadyExistsException(inner),
+                crate::error::CreateConfigurationSetEventDestinationErrorKind::BadRequestException(inner) => Error::BadRequestException(inner),
+                crate::error::CreateConfigurationSetEventDestinationErrorKind::LimitExceededException(inner) => Error::LimitExceededException(inner),
+                crate::error::CreateConfigurationSetEventDestinationErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
+                crate::error::CreateConfigurationSetEventDestinationErrorKind::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
                 crate::error::CreateConfigurationSetEventDestinationErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             }
             _ => Error::Unhandled(err.into()),
@@ -90,17 +90,17 @@ impl From<smithy_http::result::SdkError<crate::error::CreateContactError>> for E
     fn from(err: smithy_http::result::SdkError<crate::error::CreateContactError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::CreateContactErrorKind::AlreadyExistsError(inner) => {
-                    Error::AlreadyExistsError(inner)
+                crate::error::CreateContactErrorKind::AlreadyExistsException(inner) => {
+                    Error::AlreadyExistsException(inner)
                 }
-                crate::error::CreateContactErrorKind::BadRequestError(inner) => {
-                    Error::BadRequestError(inner)
+                crate::error::CreateContactErrorKind::BadRequestException(inner) => {
+                    Error::BadRequestException(inner)
                 }
-                crate::error::CreateContactErrorKind::NotFoundError(inner) => {
-                    Error::NotFoundError(inner)
+                crate::error::CreateContactErrorKind::NotFoundException(inner) => {
+                    Error::NotFoundException(inner)
                 }
-                crate::error::CreateContactErrorKind::TooManyRequestsError(inner) => {
-                    Error::TooManyRequestsError(inner)
+                crate::error::CreateContactErrorKind::TooManyRequestsException(inner) => {
+                    Error::TooManyRequestsException(inner)
                 }
                 crate::error::CreateContactErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
@@ -112,17 +112,17 @@ impl From<smithy_http::result::SdkError<crate::error::CreateContactListError>> f
     fn from(err: smithy_http::result::SdkError<crate::error::CreateContactListError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::CreateContactListErrorKind::AlreadyExistsError(inner) => {
-                    Error::AlreadyExistsError(inner)
+                crate::error::CreateContactListErrorKind::AlreadyExistsException(inner) => {
+                    Error::AlreadyExistsException(inner)
                 }
-                crate::error::CreateContactListErrorKind::BadRequestError(inner) => {
-                    Error::BadRequestError(inner)
+                crate::error::CreateContactListErrorKind::BadRequestException(inner) => {
+                    Error::BadRequestException(inner)
                 }
-                crate::error::CreateContactListErrorKind::LimitExceededError(inner) => {
-                    Error::LimitExceededError(inner)
+                crate::error::CreateContactListErrorKind::LimitExceededException(inner) => {
+                    Error::LimitExceededException(inner)
                 }
-                crate::error::CreateContactListErrorKind::TooManyRequestsError(inner) => {
-                    Error::TooManyRequestsError(inner)
+                crate::error::CreateContactListErrorKind::TooManyRequestsException(inner) => {
+                    Error::TooManyRequestsException(inner)
                 }
                 crate::error::CreateContactListErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
@@ -142,11 +142,11 @@ impl From<smithy_http::result::SdkError<crate::error::CreateCustomVerificationEm
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
-                crate::error::CreateCustomVerificationEmailTemplateErrorKind::AlreadyExistsError(inner) => Error::AlreadyExistsError(inner),
-                crate::error::CreateCustomVerificationEmailTemplateErrorKind::BadRequestError(inner) => Error::BadRequestError(inner),
-                crate::error::CreateCustomVerificationEmailTemplateErrorKind::LimitExceededError(inner) => Error::LimitExceededError(inner),
-                crate::error::CreateCustomVerificationEmailTemplateErrorKind::NotFoundError(inner) => Error::NotFoundError(inner),
-                crate::error::CreateCustomVerificationEmailTemplateErrorKind::TooManyRequestsError(inner) => Error::TooManyRequestsError(inner),
+                crate::error::CreateCustomVerificationEmailTemplateErrorKind::AlreadyExistsException(inner) => Error::AlreadyExistsException(inner),
+                crate::error::CreateCustomVerificationEmailTemplateErrorKind::BadRequestException(inner) => Error::BadRequestException(inner),
+                crate::error::CreateCustomVerificationEmailTemplateErrorKind::LimitExceededException(inner) => Error::LimitExceededException(inner),
+                crate::error::CreateCustomVerificationEmailTemplateErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
+                crate::error::CreateCustomVerificationEmailTemplateErrorKind::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
                 crate::error::CreateCustomVerificationEmailTemplateErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             }
             _ => Error::Unhandled(err.into()),
@@ -157,20 +157,20 @@ impl From<smithy_http::result::SdkError<crate::error::CreateDedicatedIpPoolError
     fn from(err: smithy_http::result::SdkError<crate::error::CreateDedicatedIpPoolError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::CreateDedicatedIpPoolErrorKind::AlreadyExistsError(inner) => {
-                    Error::AlreadyExistsError(inner)
+                crate::error::CreateDedicatedIpPoolErrorKind::AlreadyExistsException(inner) => {
+                    Error::AlreadyExistsException(inner)
                 }
-                crate::error::CreateDedicatedIpPoolErrorKind::BadRequestError(inner) => {
-                    Error::BadRequestError(inner)
+                crate::error::CreateDedicatedIpPoolErrorKind::BadRequestException(inner) => {
+                    Error::BadRequestException(inner)
                 }
-                crate::error::CreateDedicatedIpPoolErrorKind::ConcurrentModificationError(
+                crate::error::CreateDedicatedIpPoolErrorKind::ConcurrentModificationException(
                     inner,
-                ) => Error::ConcurrentModificationError(inner),
-                crate::error::CreateDedicatedIpPoolErrorKind::LimitExceededError(inner) => {
-                    Error::LimitExceededError(inner)
+                ) => Error::ConcurrentModificationException(inner),
+                crate::error::CreateDedicatedIpPoolErrorKind::LimitExceededException(inner) => {
+                    Error::LimitExceededException(inner)
                 }
-                crate::error::CreateDedicatedIpPoolErrorKind::TooManyRequestsError(inner) => {
-                    Error::TooManyRequestsError(inner)
+                crate::error::CreateDedicatedIpPoolErrorKind::TooManyRequestsException(inner) => {
+                    Error::TooManyRequestsException(inner)
                 }
                 crate::error::CreateDedicatedIpPoolErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
@@ -188,15 +188,15 @@ impl From<smithy_http::result::SdkError<crate::error::CreateDeliverabilityTestRe
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
-                crate::error::CreateDeliverabilityTestReportErrorKind::AccountSuspendedError(inner) => Error::AccountSuspendedError(inner),
-                crate::error::CreateDeliverabilityTestReportErrorKind::BadRequestError(inner) => Error::BadRequestError(inner),
-                crate::error::CreateDeliverabilityTestReportErrorKind::ConcurrentModificationError(inner) => Error::ConcurrentModificationError(inner),
-                crate::error::CreateDeliverabilityTestReportErrorKind::LimitExceededError(inner) => Error::LimitExceededError(inner),
-                crate::error::CreateDeliverabilityTestReportErrorKind::MailFromDomainNotVerifiedError(inner) => Error::MailFromDomainNotVerifiedError(inner),
+                crate::error::CreateDeliverabilityTestReportErrorKind::AccountSuspendedException(inner) => Error::AccountSuspendedException(inner),
+                crate::error::CreateDeliverabilityTestReportErrorKind::BadRequestException(inner) => Error::BadRequestException(inner),
+                crate::error::CreateDeliverabilityTestReportErrorKind::ConcurrentModificationException(inner) => Error::ConcurrentModificationException(inner),
+                crate::error::CreateDeliverabilityTestReportErrorKind::LimitExceededException(inner) => Error::LimitExceededException(inner),
+                crate::error::CreateDeliverabilityTestReportErrorKind::MailFromDomainNotVerifiedException(inner) => Error::MailFromDomainNotVerifiedException(inner),
                 crate::error::CreateDeliverabilityTestReportErrorKind::MessageRejected(inner) => Error::MessageRejected(inner),
-                crate::error::CreateDeliverabilityTestReportErrorKind::NotFoundError(inner) => Error::NotFoundError(inner),
-                crate::error::CreateDeliverabilityTestReportErrorKind::SendingPausedError(inner) => Error::SendingPausedError(inner),
-                crate::error::CreateDeliverabilityTestReportErrorKind::TooManyRequestsError(inner) => Error::TooManyRequestsError(inner),
+                crate::error::CreateDeliverabilityTestReportErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
+                crate::error::CreateDeliverabilityTestReportErrorKind::SendingPausedException(inner) => Error::SendingPausedException(inner),
+                crate::error::CreateDeliverabilityTestReportErrorKind::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
                 crate::error::CreateDeliverabilityTestReportErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             }
             _ => Error::Unhandled(err.into()),
@@ -207,23 +207,23 @@ impl From<smithy_http::result::SdkError<crate::error::CreateEmailIdentityError>>
     fn from(err: smithy_http::result::SdkError<crate::error::CreateEmailIdentityError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::CreateEmailIdentityErrorKind::AlreadyExistsError(inner) => {
-                    Error::AlreadyExistsError(inner)
+                crate::error::CreateEmailIdentityErrorKind::AlreadyExistsException(inner) => {
+                    Error::AlreadyExistsException(inner)
                 }
-                crate::error::CreateEmailIdentityErrorKind::BadRequestError(inner) => {
-                    Error::BadRequestError(inner)
+                crate::error::CreateEmailIdentityErrorKind::BadRequestException(inner) => {
+                    Error::BadRequestException(inner)
                 }
-                crate::error::CreateEmailIdentityErrorKind::ConcurrentModificationError(inner) => {
-                    Error::ConcurrentModificationError(inner)
+                crate::error::CreateEmailIdentityErrorKind::ConcurrentModificationException(
+                    inner,
+                ) => Error::ConcurrentModificationException(inner),
+                crate::error::CreateEmailIdentityErrorKind::LimitExceededException(inner) => {
+                    Error::LimitExceededException(inner)
                 }
-                crate::error::CreateEmailIdentityErrorKind::LimitExceededError(inner) => {
-                    Error::LimitExceededError(inner)
+                crate::error::CreateEmailIdentityErrorKind::NotFoundException(inner) => {
+                    Error::NotFoundException(inner)
                 }
-                crate::error::CreateEmailIdentityErrorKind::NotFoundError(inner) => {
-                    Error::NotFoundError(inner)
-                }
-                crate::error::CreateEmailIdentityErrorKind::TooManyRequestsError(inner) => {
-                    Error::TooManyRequestsError(inner)
+                crate::error::CreateEmailIdentityErrorKind::TooManyRequestsException(inner) => {
+                    Error::TooManyRequestsException(inner)
                 }
                 crate::error::CreateEmailIdentityErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
@@ -239,21 +239,21 @@ impl From<smithy_http::result::SdkError<crate::error::CreateEmailIdentityPolicyE
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::CreateEmailIdentityPolicyErrorKind::AlreadyExistsError(inner) => {
-                    Error::AlreadyExistsError(inner)
+                crate::error::CreateEmailIdentityPolicyErrorKind::AlreadyExistsException(inner) => {
+                    Error::AlreadyExistsException(inner)
                 }
-                crate::error::CreateEmailIdentityPolicyErrorKind::BadRequestError(inner) => {
-                    Error::BadRequestError(inner)
+                crate::error::CreateEmailIdentityPolicyErrorKind::BadRequestException(inner) => {
+                    Error::BadRequestException(inner)
                 }
-                crate::error::CreateEmailIdentityPolicyErrorKind::LimitExceededError(inner) => {
-                    Error::LimitExceededError(inner)
+                crate::error::CreateEmailIdentityPolicyErrorKind::LimitExceededException(inner) => {
+                    Error::LimitExceededException(inner)
                 }
-                crate::error::CreateEmailIdentityPolicyErrorKind::NotFoundError(inner) => {
-                    Error::NotFoundError(inner)
+                crate::error::CreateEmailIdentityPolicyErrorKind::NotFoundException(inner) => {
+                    Error::NotFoundException(inner)
                 }
-                crate::error::CreateEmailIdentityPolicyErrorKind::TooManyRequestsError(inner) => {
-                    Error::TooManyRequestsError(inner)
-                }
+                crate::error::CreateEmailIdentityPolicyErrorKind::TooManyRequestsException(
+                    inner,
+                ) => Error::TooManyRequestsException(inner),
                 crate::error::CreateEmailIdentityPolicyErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
                 }
@@ -266,17 +266,17 @@ impl From<smithy_http::result::SdkError<crate::error::CreateEmailTemplateError>>
     fn from(err: smithy_http::result::SdkError<crate::error::CreateEmailTemplateError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::CreateEmailTemplateErrorKind::AlreadyExistsError(inner) => {
-                    Error::AlreadyExistsError(inner)
+                crate::error::CreateEmailTemplateErrorKind::AlreadyExistsException(inner) => {
+                    Error::AlreadyExistsException(inner)
                 }
-                crate::error::CreateEmailTemplateErrorKind::BadRequestError(inner) => {
-                    Error::BadRequestError(inner)
+                crate::error::CreateEmailTemplateErrorKind::BadRequestException(inner) => {
+                    Error::BadRequestException(inner)
                 }
-                crate::error::CreateEmailTemplateErrorKind::LimitExceededError(inner) => {
-                    Error::LimitExceededError(inner)
+                crate::error::CreateEmailTemplateErrorKind::LimitExceededException(inner) => {
+                    Error::LimitExceededException(inner)
                 }
-                crate::error::CreateEmailTemplateErrorKind::TooManyRequestsError(inner) => {
-                    Error::TooManyRequestsError(inner)
+                crate::error::CreateEmailTemplateErrorKind::TooManyRequestsException(inner) => {
+                    Error::TooManyRequestsException(inner)
                 }
                 crate::error::CreateEmailTemplateErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
@@ -290,14 +290,14 @@ impl From<smithy_http::result::SdkError<crate::error::CreateImportJobError>> for
     fn from(err: smithy_http::result::SdkError<crate::error::CreateImportJobError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::CreateImportJobErrorKind::BadRequestError(inner) => {
-                    Error::BadRequestError(inner)
+                crate::error::CreateImportJobErrorKind::BadRequestException(inner) => {
+                    Error::BadRequestException(inner)
                 }
-                crate::error::CreateImportJobErrorKind::LimitExceededError(inner) => {
-                    Error::LimitExceededError(inner)
+                crate::error::CreateImportJobErrorKind::LimitExceededException(inner) => {
+                    Error::LimitExceededException(inner)
                 }
-                crate::error::CreateImportJobErrorKind::TooManyRequestsError(inner) => {
-                    Error::TooManyRequestsError(inner)
+                crate::error::CreateImportJobErrorKind::TooManyRequestsException(inner) => {
+                    Error::TooManyRequestsException(inner)
                 }
                 crate::error::CreateImportJobErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
@@ -309,17 +309,17 @@ impl From<smithy_http::result::SdkError<crate::error::DeleteConfigurationSetErro
     fn from(err: smithy_http::result::SdkError<crate::error::DeleteConfigurationSetError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::DeleteConfigurationSetErrorKind::BadRequestError(inner) => {
-                    Error::BadRequestError(inner)
+                crate::error::DeleteConfigurationSetErrorKind::BadRequestException(inner) => {
+                    Error::BadRequestException(inner)
                 }
-                crate::error::DeleteConfigurationSetErrorKind::ConcurrentModificationError(
+                crate::error::DeleteConfigurationSetErrorKind::ConcurrentModificationException(
                     inner,
-                ) => Error::ConcurrentModificationError(inner),
-                crate::error::DeleteConfigurationSetErrorKind::NotFoundError(inner) => {
-                    Error::NotFoundError(inner)
+                ) => Error::ConcurrentModificationException(inner),
+                crate::error::DeleteConfigurationSetErrorKind::NotFoundException(inner) => {
+                    Error::NotFoundException(inner)
                 }
-                crate::error::DeleteConfigurationSetErrorKind::TooManyRequestsError(inner) => {
-                    Error::TooManyRequestsError(inner)
+                crate::error::DeleteConfigurationSetErrorKind::TooManyRequestsException(inner) => {
+                    Error::TooManyRequestsException(inner)
                 }
                 crate::error::DeleteConfigurationSetErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
@@ -339,9 +339,9 @@ impl From<smithy_http::result::SdkError<crate::error::DeleteConfigurationSetEven
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
-                crate::error::DeleteConfigurationSetEventDestinationErrorKind::BadRequestError(inner) => Error::BadRequestError(inner),
-                crate::error::DeleteConfigurationSetEventDestinationErrorKind::NotFoundError(inner) => Error::NotFoundError(inner),
-                crate::error::DeleteConfigurationSetEventDestinationErrorKind::TooManyRequestsError(inner) => Error::TooManyRequestsError(inner),
+                crate::error::DeleteConfigurationSetEventDestinationErrorKind::BadRequestException(inner) => Error::BadRequestException(inner),
+                crate::error::DeleteConfigurationSetEventDestinationErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
+                crate::error::DeleteConfigurationSetEventDestinationErrorKind::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
                 crate::error::DeleteConfigurationSetEventDestinationErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             }
             _ => Error::Unhandled(err.into()),
@@ -352,14 +352,14 @@ impl From<smithy_http::result::SdkError<crate::error::DeleteContactError>> for E
     fn from(err: smithy_http::result::SdkError<crate::error::DeleteContactError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::DeleteContactErrorKind::BadRequestError(inner) => {
-                    Error::BadRequestError(inner)
+                crate::error::DeleteContactErrorKind::BadRequestException(inner) => {
+                    Error::BadRequestException(inner)
                 }
-                crate::error::DeleteContactErrorKind::NotFoundError(inner) => {
-                    Error::NotFoundError(inner)
+                crate::error::DeleteContactErrorKind::NotFoundException(inner) => {
+                    Error::NotFoundException(inner)
                 }
-                crate::error::DeleteContactErrorKind::TooManyRequestsError(inner) => {
-                    Error::TooManyRequestsError(inner)
+                crate::error::DeleteContactErrorKind::TooManyRequestsException(inner) => {
+                    Error::TooManyRequestsException(inner)
                 }
                 crate::error::DeleteContactErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
@@ -371,17 +371,17 @@ impl From<smithy_http::result::SdkError<crate::error::DeleteContactListError>> f
     fn from(err: smithy_http::result::SdkError<crate::error::DeleteContactListError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::DeleteContactListErrorKind::BadRequestError(inner) => {
-                    Error::BadRequestError(inner)
+                crate::error::DeleteContactListErrorKind::BadRequestException(inner) => {
+                    Error::BadRequestException(inner)
                 }
-                crate::error::DeleteContactListErrorKind::ConcurrentModificationError(inner) => {
-                    Error::ConcurrentModificationError(inner)
+                crate::error::DeleteContactListErrorKind::ConcurrentModificationException(
+                    inner,
+                ) => Error::ConcurrentModificationException(inner),
+                crate::error::DeleteContactListErrorKind::NotFoundException(inner) => {
+                    Error::NotFoundException(inner)
                 }
-                crate::error::DeleteContactListErrorKind::NotFoundError(inner) => {
-                    Error::NotFoundError(inner)
-                }
-                crate::error::DeleteContactListErrorKind::TooManyRequestsError(inner) => {
-                    Error::TooManyRequestsError(inner)
+                crate::error::DeleteContactListErrorKind::TooManyRequestsException(inner) => {
+                    Error::TooManyRequestsException(inner)
                 }
                 crate::error::DeleteContactListErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
@@ -401,9 +401,9 @@ impl From<smithy_http::result::SdkError<crate::error::DeleteCustomVerificationEm
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
-                crate::error::DeleteCustomVerificationEmailTemplateErrorKind::BadRequestError(inner) => Error::BadRequestError(inner),
-                crate::error::DeleteCustomVerificationEmailTemplateErrorKind::NotFoundError(inner) => Error::NotFoundError(inner),
-                crate::error::DeleteCustomVerificationEmailTemplateErrorKind::TooManyRequestsError(inner) => Error::TooManyRequestsError(inner),
+                crate::error::DeleteCustomVerificationEmailTemplateErrorKind::BadRequestException(inner) => Error::BadRequestException(inner),
+                crate::error::DeleteCustomVerificationEmailTemplateErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
+                crate::error::DeleteCustomVerificationEmailTemplateErrorKind::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
                 crate::error::DeleteCustomVerificationEmailTemplateErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             }
             _ => Error::Unhandled(err.into()),
@@ -414,17 +414,17 @@ impl From<smithy_http::result::SdkError<crate::error::DeleteDedicatedIpPoolError
     fn from(err: smithy_http::result::SdkError<crate::error::DeleteDedicatedIpPoolError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::DeleteDedicatedIpPoolErrorKind::BadRequestError(inner) => {
-                    Error::BadRequestError(inner)
+                crate::error::DeleteDedicatedIpPoolErrorKind::BadRequestException(inner) => {
+                    Error::BadRequestException(inner)
                 }
-                crate::error::DeleteDedicatedIpPoolErrorKind::ConcurrentModificationError(
+                crate::error::DeleteDedicatedIpPoolErrorKind::ConcurrentModificationException(
                     inner,
-                ) => Error::ConcurrentModificationError(inner),
-                crate::error::DeleteDedicatedIpPoolErrorKind::NotFoundError(inner) => {
-                    Error::NotFoundError(inner)
+                ) => Error::ConcurrentModificationException(inner),
+                crate::error::DeleteDedicatedIpPoolErrorKind::NotFoundException(inner) => {
+                    Error::NotFoundException(inner)
                 }
-                crate::error::DeleteDedicatedIpPoolErrorKind::TooManyRequestsError(inner) => {
-                    Error::TooManyRequestsError(inner)
+                crate::error::DeleteDedicatedIpPoolErrorKind::TooManyRequestsException(inner) => {
+                    Error::TooManyRequestsException(inner)
                 }
                 crate::error::DeleteDedicatedIpPoolErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
@@ -438,17 +438,17 @@ impl From<smithy_http::result::SdkError<crate::error::DeleteEmailIdentityError>>
     fn from(err: smithy_http::result::SdkError<crate::error::DeleteEmailIdentityError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::DeleteEmailIdentityErrorKind::BadRequestError(inner) => {
-                    Error::BadRequestError(inner)
+                crate::error::DeleteEmailIdentityErrorKind::BadRequestException(inner) => {
+                    Error::BadRequestException(inner)
                 }
-                crate::error::DeleteEmailIdentityErrorKind::ConcurrentModificationError(inner) => {
-                    Error::ConcurrentModificationError(inner)
+                crate::error::DeleteEmailIdentityErrorKind::ConcurrentModificationException(
+                    inner,
+                ) => Error::ConcurrentModificationException(inner),
+                crate::error::DeleteEmailIdentityErrorKind::NotFoundException(inner) => {
+                    Error::NotFoundException(inner)
                 }
-                crate::error::DeleteEmailIdentityErrorKind::NotFoundError(inner) => {
-                    Error::NotFoundError(inner)
-                }
-                crate::error::DeleteEmailIdentityErrorKind::TooManyRequestsError(inner) => {
-                    Error::TooManyRequestsError(inner)
+                crate::error::DeleteEmailIdentityErrorKind::TooManyRequestsException(inner) => {
+                    Error::TooManyRequestsException(inner)
                 }
                 crate::error::DeleteEmailIdentityErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
@@ -464,15 +464,15 @@ impl From<smithy_http::result::SdkError<crate::error::DeleteEmailIdentityPolicyE
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::DeleteEmailIdentityPolicyErrorKind::BadRequestError(inner) => {
-                    Error::BadRequestError(inner)
+                crate::error::DeleteEmailIdentityPolicyErrorKind::BadRequestException(inner) => {
+                    Error::BadRequestException(inner)
                 }
-                crate::error::DeleteEmailIdentityPolicyErrorKind::NotFoundError(inner) => {
-                    Error::NotFoundError(inner)
+                crate::error::DeleteEmailIdentityPolicyErrorKind::NotFoundException(inner) => {
+                    Error::NotFoundException(inner)
                 }
-                crate::error::DeleteEmailIdentityPolicyErrorKind::TooManyRequestsError(inner) => {
-                    Error::TooManyRequestsError(inner)
-                }
+                crate::error::DeleteEmailIdentityPolicyErrorKind::TooManyRequestsException(
+                    inner,
+                ) => Error::TooManyRequestsException(inner),
                 crate::error::DeleteEmailIdentityPolicyErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
                 }
@@ -485,14 +485,14 @@ impl From<smithy_http::result::SdkError<crate::error::DeleteEmailTemplateError>>
     fn from(err: smithy_http::result::SdkError<crate::error::DeleteEmailTemplateError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::DeleteEmailTemplateErrorKind::BadRequestError(inner) => {
-                    Error::BadRequestError(inner)
+                crate::error::DeleteEmailTemplateErrorKind::BadRequestException(inner) => {
+                    Error::BadRequestException(inner)
                 }
-                crate::error::DeleteEmailTemplateErrorKind::NotFoundError(inner) => {
-                    Error::NotFoundError(inner)
+                crate::error::DeleteEmailTemplateErrorKind::NotFoundException(inner) => {
+                    Error::NotFoundException(inner)
                 }
-                crate::error::DeleteEmailTemplateErrorKind::TooManyRequestsError(inner) => {
-                    Error::TooManyRequestsError(inner)
+                crate::error::DeleteEmailTemplateErrorKind::TooManyRequestsException(inner) => {
+                    Error::TooManyRequestsException(inner)
                 }
                 crate::error::DeleteEmailTemplateErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
@@ -508,15 +508,15 @@ impl From<smithy_http::result::SdkError<crate::error::DeleteSuppressedDestinatio
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::DeleteSuppressedDestinationErrorKind::BadRequestError(inner) => {
-                    Error::BadRequestError(inner)
+                crate::error::DeleteSuppressedDestinationErrorKind::BadRequestException(inner) => {
+                    Error::BadRequestException(inner)
                 }
-                crate::error::DeleteSuppressedDestinationErrorKind::NotFoundError(inner) => {
-                    Error::NotFoundError(inner)
+                crate::error::DeleteSuppressedDestinationErrorKind::NotFoundException(inner) => {
+                    Error::NotFoundException(inner)
                 }
-                crate::error::DeleteSuppressedDestinationErrorKind::TooManyRequestsError(inner) => {
-                    Error::TooManyRequestsError(inner)
-                }
+                crate::error::DeleteSuppressedDestinationErrorKind::TooManyRequestsException(
+                    inner,
+                ) => Error::TooManyRequestsException(inner),
                 crate::error::DeleteSuppressedDestinationErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
                 }
@@ -529,11 +529,11 @@ impl From<smithy_http::result::SdkError<crate::error::GetAccountError>> for Erro
     fn from(err: smithy_http::result::SdkError<crate::error::GetAccountError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::GetAccountErrorKind::BadRequestError(inner) => {
-                    Error::BadRequestError(inner)
+                crate::error::GetAccountErrorKind::BadRequestException(inner) => {
+                    Error::BadRequestException(inner)
                 }
-                crate::error::GetAccountErrorKind::TooManyRequestsError(inner) => {
-                    Error::TooManyRequestsError(inner)
+                crate::error::GetAccountErrorKind::TooManyRequestsException(inner) => {
+                    Error::TooManyRequestsException(inner)
                 }
                 crate::error::GetAccountErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
@@ -545,14 +545,14 @@ impl From<smithy_http::result::SdkError<crate::error::GetBlacklistReportsError>>
     fn from(err: smithy_http::result::SdkError<crate::error::GetBlacklistReportsError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::GetBlacklistReportsErrorKind::BadRequestError(inner) => {
-                    Error::BadRequestError(inner)
+                crate::error::GetBlacklistReportsErrorKind::BadRequestException(inner) => {
+                    Error::BadRequestException(inner)
                 }
-                crate::error::GetBlacklistReportsErrorKind::NotFoundError(inner) => {
-                    Error::NotFoundError(inner)
+                crate::error::GetBlacklistReportsErrorKind::NotFoundException(inner) => {
+                    Error::NotFoundException(inner)
                 }
-                crate::error::GetBlacklistReportsErrorKind::TooManyRequestsError(inner) => {
-                    Error::TooManyRequestsError(inner)
+                crate::error::GetBlacklistReportsErrorKind::TooManyRequestsException(inner) => {
+                    Error::TooManyRequestsException(inner)
                 }
                 crate::error::GetBlacklistReportsErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
@@ -566,14 +566,14 @@ impl From<smithy_http::result::SdkError<crate::error::GetConfigurationSetError>>
     fn from(err: smithy_http::result::SdkError<crate::error::GetConfigurationSetError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::GetConfigurationSetErrorKind::BadRequestError(inner) => {
-                    Error::BadRequestError(inner)
+                crate::error::GetConfigurationSetErrorKind::BadRequestException(inner) => {
+                    Error::BadRequestException(inner)
                 }
-                crate::error::GetConfigurationSetErrorKind::NotFoundError(inner) => {
-                    Error::NotFoundError(inner)
+                crate::error::GetConfigurationSetErrorKind::NotFoundException(inner) => {
+                    Error::NotFoundException(inner)
                 }
-                crate::error::GetConfigurationSetErrorKind::TooManyRequestsError(inner) => {
-                    Error::TooManyRequestsError(inner)
+                crate::error::GetConfigurationSetErrorKind::TooManyRequestsException(inner) => {
+                    Error::TooManyRequestsException(inner)
                 }
                 crate::error::GetConfigurationSetErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
@@ -591,9 +591,9 @@ impl From<smithy_http::result::SdkError<crate::error::GetConfigurationSetEventDe
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
-                crate::error::GetConfigurationSetEventDestinationsErrorKind::BadRequestError(inner) => Error::BadRequestError(inner),
-                crate::error::GetConfigurationSetEventDestinationsErrorKind::NotFoundError(inner) => Error::NotFoundError(inner),
-                crate::error::GetConfigurationSetEventDestinationsErrorKind::TooManyRequestsError(inner) => Error::TooManyRequestsError(inner),
+                crate::error::GetConfigurationSetEventDestinationsErrorKind::BadRequestException(inner) => Error::BadRequestException(inner),
+                crate::error::GetConfigurationSetEventDestinationsErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
+                crate::error::GetConfigurationSetEventDestinationsErrorKind::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
                 crate::error::GetConfigurationSetEventDestinationsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             }
             _ => Error::Unhandled(err.into()),
@@ -604,14 +604,14 @@ impl From<smithy_http::result::SdkError<crate::error::GetContactError>> for Erro
     fn from(err: smithy_http::result::SdkError<crate::error::GetContactError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::GetContactErrorKind::BadRequestError(inner) => {
-                    Error::BadRequestError(inner)
+                crate::error::GetContactErrorKind::BadRequestException(inner) => {
+                    Error::BadRequestException(inner)
                 }
-                crate::error::GetContactErrorKind::NotFoundError(inner) => {
-                    Error::NotFoundError(inner)
+                crate::error::GetContactErrorKind::NotFoundException(inner) => {
+                    Error::NotFoundException(inner)
                 }
-                crate::error::GetContactErrorKind::TooManyRequestsError(inner) => {
-                    Error::TooManyRequestsError(inner)
+                crate::error::GetContactErrorKind::TooManyRequestsException(inner) => {
+                    Error::TooManyRequestsException(inner)
                 }
                 crate::error::GetContactErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
@@ -623,14 +623,14 @@ impl From<smithy_http::result::SdkError<crate::error::GetContactListError>> for 
     fn from(err: smithy_http::result::SdkError<crate::error::GetContactListError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::GetContactListErrorKind::BadRequestError(inner) => {
-                    Error::BadRequestError(inner)
+                crate::error::GetContactListErrorKind::BadRequestException(inner) => {
+                    Error::BadRequestException(inner)
                 }
-                crate::error::GetContactListErrorKind::NotFoundError(inner) => {
-                    Error::NotFoundError(inner)
+                crate::error::GetContactListErrorKind::NotFoundException(inner) => {
+                    Error::NotFoundException(inner)
                 }
-                crate::error::GetContactListErrorKind::TooManyRequestsError(inner) => {
-                    Error::TooManyRequestsError(inner)
+                crate::error::GetContactListErrorKind::TooManyRequestsException(inner) => {
+                    Error::TooManyRequestsException(inner)
                 }
                 crate::error::GetContactListErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
@@ -645,20 +645,12 @@ impl From<smithy_http::result::SdkError<crate::error::GetCustomVerificationEmail
         err: smithy_http::result::SdkError<crate::error::GetCustomVerificationEmailTemplateError>,
     ) -> Self {
         match err {
-            smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::GetCustomVerificationEmailTemplateErrorKind::BadRequestError(
-                    inner,
-                ) => Error::BadRequestError(inner),
-                crate::error::GetCustomVerificationEmailTemplateErrorKind::NotFoundError(inner) => {
-                    Error::NotFoundError(inner)
-                }
-                crate::error::GetCustomVerificationEmailTemplateErrorKind::TooManyRequestsError(
-                    inner,
-                ) => Error::TooManyRequestsError(inner),
-                crate::error::GetCustomVerificationEmailTemplateErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
-                }
-            },
+            smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+                crate::error::GetCustomVerificationEmailTemplateErrorKind::BadRequestException(inner) => Error::BadRequestException(inner),
+                crate::error::GetCustomVerificationEmailTemplateErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
+                crate::error::GetCustomVerificationEmailTemplateErrorKind::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+                crate::error::GetCustomVerificationEmailTemplateErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            }
             _ => Error::Unhandled(err.into()),
         }
     }
@@ -667,14 +659,14 @@ impl From<smithy_http::result::SdkError<crate::error::GetDedicatedIpError>> for 
     fn from(err: smithy_http::result::SdkError<crate::error::GetDedicatedIpError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::GetDedicatedIpErrorKind::BadRequestError(inner) => {
-                    Error::BadRequestError(inner)
+                crate::error::GetDedicatedIpErrorKind::BadRequestException(inner) => {
+                    Error::BadRequestException(inner)
                 }
-                crate::error::GetDedicatedIpErrorKind::NotFoundError(inner) => {
-                    Error::NotFoundError(inner)
+                crate::error::GetDedicatedIpErrorKind::NotFoundException(inner) => {
+                    Error::NotFoundException(inner)
                 }
-                crate::error::GetDedicatedIpErrorKind::TooManyRequestsError(inner) => {
-                    Error::TooManyRequestsError(inner)
+                crate::error::GetDedicatedIpErrorKind::TooManyRequestsException(inner) => {
+                    Error::TooManyRequestsException(inner)
                 }
                 crate::error::GetDedicatedIpErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
@@ -686,14 +678,14 @@ impl From<smithy_http::result::SdkError<crate::error::GetDedicatedIpsError>> for
     fn from(err: smithy_http::result::SdkError<crate::error::GetDedicatedIpsError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::GetDedicatedIpsErrorKind::BadRequestError(inner) => {
-                    Error::BadRequestError(inner)
+                crate::error::GetDedicatedIpsErrorKind::BadRequestException(inner) => {
+                    Error::BadRequestException(inner)
                 }
-                crate::error::GetDedicatedIpsErrorKind::NotFoundError(inner) => {
-                    Error::NotFoundError(inner)
+                crate::error::GetDedicatedIpsErrorKind::NotFoundException(inner) => {
+                    Error::NotFoundException(inner)
                 }
-                crate::error::GetDedicatedIpsErrorKind::TooManyRequestsError(inner) => {
-                    Error::TooManyRequestsError(inner)
+                crate::error::GetDedicatedIpsErrorKind::TooManyRequestsException(inner) => {
+                    Error::TooManyRequestsException(inner)
                 }
                 crate::error::GetDedicatedIpsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
@@ -708,20 +700,12 @@ impl From<smithy_http::result::SdkError<crate::error::GetDeliverabilityDashboard
         err: smithy_http::result::SdkError<crate::error::GetDeliverabilityDashboardOptionsError>,
     ) -> Self {
         match err {
-            smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::GetDeliverabilityDashboardOptionsErrorKind::BadRequestError(
-                    inner,
-                ) => Error::BadRequestError(inner),
-                crate::error::GetDeliverabilityDashboardOptionsErrorKind::LimitExceededError(
-                    inner,
-                ) => Error::LimitExceededError(inner),
-                crate::error::GetDeliverabilityDashboardOptionsErrorKind::TooManyRequestsError(
-                    inner,
-                ) => Error::TooManyRequestsError(inner),
-                crate::error::GetDeliverabilityDashboardOptionsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
-                }
-            },
+            smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+                crate::error::GetDeliverabilityDashboardOptionsErrorKind::BadRequestException(inner) => Error::BadRequestException(inner),
+                crate::error::GetDeliverabilityDashboardOptionsErrorKind::LimitExceededException(inner) => Error::LimitExceededException(inner),
+                crate::error::GetDeliverabilityDashboardOptionsErrorKind::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+                crate::error::GetDeliverabilityDashboardOptionsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            }
             _ => Error::Unhandled(err.into()),
         }
     }
@@ -732,15 +716,15 @@ impl From<smithy_http::result::SdkError<crate::error::GetDeliverabilityTestRepor
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::GetDeliverabilityTestReportErrorKind::BadRequestError(inner) => {
-                    Error::BadRequestError(inner)
+                crate::error::GetDeliverabilityTestReportErrorKind::BadRequestException(inner) => {
+                    Error::BadRequestException(inner)
                 }
-                crate::error::GetDeliverabilityTestReportErrorKind::NotFoundError(inner) => {
-                    Error::NotFoundError(inner)
+                crate::error::GetDeliverabilityTestReportErrorKind::NotFoundException(inner) => {
+                    Error::NotFoundException(inner)
                 }
-                crate::error::GetDeliverabilityTestReportErrorKind::TooManyRequestsError(inner) => {
-                    Error::TooManyRequestsError(inner)
-                }
+                crate::error::GetDeliverabilityTestReportErrorKind::TooManyRequestsException(
+                    inner,
+                ) => Error::TooManyRequestsException(inner),
                 crate::error::GetDeliverabilityTestReportErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
                 }
@@ -756,20 +740,12 @@ impl From<smithy_http::result::SdkError<crate::error::GetDomainDeliverabilityCam
         err: smithy_http::result::SdkError<crate::error::GetDomainDeliverabilityCampaignError>,
     ) -> Self {
         match err {
-            smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::GetDomainDeliverabilityCampaignErrorKind::BadRequestError(inner) => {
-                    Error::BadRequestError(inner)
-                }
-                crate::error::GetDomainDeliverabilityCampaignErrorKind::NotFoundError(inner) => {
-                    Error::NotFoundError(inner)
-                }
-                crate::error::GetDomainDeliverabilityCampaignErrorKind::TooManyRequestsError(
-                    inner,
-                ) => Error::TooManyRequestsError(inner),
-                crate::error::GetDomainDeliverabilityCampaignErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
-                }
-            },
+            smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+                crate::error::GetDomainDeliverabilityCampaignErrorKind::BadRequestException(inner) => Error::BadRequestException(inner),
+                crate::error::GetDomainDeliverabilityCampaignErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
+                crate::error::GetDomainDeliverabilityCampaignErrorKind::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+                crate::error::GetDomainDeliverabilityCampaignErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            }
             _ => Error::Unhandled(err.into()),
         }
     }
@@ -780,15 +756,15 @@ impl From<smithy_http::result::SdkError<crate::error::GetDomainStatisticsReportE
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::GetDomainStatisticsReportErrorKind::BadRequestError(inner) => {
-                    Error::BadRequestError(inner)
+                crate::error::GetDomainStatisticsReportErrorKind::BadRequestException(inner) => {
+                    Error::BadRequestException(inner)
                 }
-                crate::error::GetDomainStatisticsReportErrorKind::NotFoundError(inner) => {
-                    Error::NotFoundError(inner)
+                crate::error::GetDomainStatisticsReportErrorKind::NotFoundException(inner) => {
+                    Error::NotFoundException(inner)
                 }
-                crate::error::GetDomainStatisticsReportErrorKind::TooManyRequestsError(inner) => {
-                    Error::TooManyRequestsError(inner)
-                }
+                crate::error::GetDomainStatisticsReportErrorKind::TooManyRequestsException(
+                    inner,
+                ) => Error::TooManyRequestsException(inner),
                 crate::error::GetDomainStatisticsReportErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
                 }
@@ -801,14 +777,14 @@ impl From<smithy_http::result::SdkError<crate::error::GetEmailIdentityError>> fo
     fn from(err: smithy_http::result::SdkError<crate::error::GetEmailIdentityError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::GetEmailIdentityErrorKind::BadRequestError(inner) => {
-                    Error::BadRequestError(inner)
+                crate::error::GetEmailIdentityErrorKind::BadRequestException(inner) => {
+                    Error::BadRequestException(inner)
                 }
-                crate::error::GetEmailIdentityErrorKind::NotFoundError(inner) => {
-                    Error::NotFoundError(inner)
+                crate::error::GetEmailIdentityErrorKind::NotFoundException(inner) => {
+                    Error::NotFoundException(inner)
                 }
-                crate::error::GetEmailIdentityErrorKind::TooManyRequestsError(inner) => {
-                    Error::TooManyRequestsError(inner)
+                crate::error::GetEmailIdentityErrorKind::TooManyRequestsException(inner) => {
+                    Error::TooManyRequestsException(inner)
                 }
                 crate::error::GetEmailIdentityErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
@@ -824,15 +800,15 @@ impl From<smithy_http::result::SdkError<crate::error::GetEmailIdentityPoliciesEr
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::GetEmailIdentityPoliciesErrorKind::BadRequestError(inner) => {
-                    Error::BadRequestError(inner)
+                crate::error::GetEmailIdentityPoliciesErrorKind::BadRequestException(inner) => {
+                    Error::BadRequestException(inner)
                 }
-                crate::error::GetEmailIdentityPoliciesErrorKind::NotFoundError(inner) => {
-                    Error::NotFoundError(inner)
+                crate::error::GetEmailIdentityPoliciesErrorKind::NotFoundException(inner) => {
+                    Error::NotFoundException(inner)
                 }
-                crate::error::GetEmailIdentityPoliciesErrorKind::TooManyRequestsError(inner) => {
-                    Error::TooManyRequestsError(inner)
-                }
+                crate::error::GetEmailIdentityPoliciesErrorKind::TooManyRequestsException(
+                    inner,
+                ) => Error::TooManyRequestsException(inner),
                 crate::error::GetEmailIdentityPoliciesErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
                 }
@@ -845,14 +821,14 @@ impl From<smithy_http::result::SdkError<crate::error::GetEmailTemplateError>> fo
     fn from(err: smithy_http::result::SdkError<crate::error::GetEmailTemplateError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::GetEmailTemplateErrorKind::BadRequestError(inner) => {
-                    Error::BadRequestError(inner)
+                crate::error::GetEmailTemplateErrorKind::BadRequestException(inner) => {
+                    Error::BadRequestException(inner)
                 }
-                crate::error::GetEmailTemplateErrorKind::NotFoundError(inner) => {
-                    Error::NotFoundError(inner)
+                crate::error::GetEmailTemplateErrorKind::NotFoundException(inner) => {
+                    Error::NotFoundException(inner)
                 }
-                crate::error::GetEmailTemplateErrorKind::TooManyRequestsError(inner) => {
-                    Error::TooManyRequestsError(inner)
+                crate::error::GetEmailTemplateErrorKind::TooManyRequestsException(inner) => {
+                    Error::TooManyRequestsException(inner)
                 }
                 crate::error::GetEmailTemplateErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
@@ -866,14 +842,14 @@ impl From<smithy_http::result::SdkError<crate::error::GetImportJobError>> for Er
     fn from(err: smithy_http::result::SdkError<crate::error::GetImportJobError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::GetImportJobErrorKind::BadRequestError(inner) => {
-                    Error::BadRequestError(inner)
+                crate::error::GetImportJobErrorKind::BadRequestException(inner) => {
+                    Error::BadRequestException(inner)
                 }
-                crate::error::GetImportJobErrorKind::NotFoundError(inner) => {
-                    Error::NotFoundError(inner)
+                crate::error::GetImportJobErrorKind::NotFoundException(inner) => {
+                    Error::NotFoundException(inner)
                 }
-                crate::error::GetImportJobErrorKind::TooManyRequestsError(inner) => {
-                    Error::TooManyRequestsError(inner)
+                crate::error::GetImportJobErrorKind::TooManyRequestsException(inner) => {
+                    Error::TooManyRequestsException(inner)
                 }
                 crate::error::GetImportJobErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
@@ -887,15 +863,15 @@ impl From<smithy_http::result::SdkError<crate::error::GetSuppressedDestinationEr
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::GetSuppressedDestinationErrorKind::BadRequestError(inner) => {
-                    Error::BadRequestError(inner)
+                crate::error::GetSuppressedDestinationErrorKind::BadRequestException(inner) => {
+                    Error::BadRequestException(inner)
                 }
-                crate::error::GetSuppressedDestinationErrorKind::NotFoundError(inner) => {
-                    Error::NotFoundError(inner)
+                crate::error::GetSuppressedDestinationErrorKind::NotFoundException(inner) => {
+                    Error::NotFoundException(inner)
                 }
-                crate::error::GetSuppressedDestinationErrorKind::TooManyRequestsError(inner) => {
-                    Error::TooManyRequestsError(inner)
-                }
+                crate::error::GetSuppressedDestinationErrorKind::TooManyRequestsException(
+                    inner,
+                ) => Error::TooManyRequestsException(inner),
                 crate::error::GetSuppressedDestinationErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
                 }
@@ -908,11 +884,11 @@ impl From<smithy_http::result::SdkError<crate::error::ListConfigurationSetsError
     fn from(err: smithy_http::result::SdkError<crate::error::ListConfigurationSetsError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::ListConfigurationSetsErrorKind::BadRequestError(inner) => {
-                    Error::BadRequestError(inner)
+                crate::error::ListConfigurationSetsErrorKind::BadRequestException(inner) => {
+                    Error::BadRequestException(inner)
                 }
-                crate::error::ListConfigurationSetsErrorKind::TooManyRequestsError(inner) => {
-                    Error::TooManyRequestsError(inner)
+                crate::error::ListConfigurationSetsErrorKind::TooManyRequestsException(inner) => {
+                    Error::TooManyRequestsException(inner)
                 }
                 crate::error::ListConfigurationSetsErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
@@ -926,11 +902,11 @@ impl From<smithy_http::result::SdkError<crate::error::ListContactListsError>> fo
     fn from(err: smithy_http::result::SdkError<crate::error::ListContactListsError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::ListContactListsErrorKind::BadRequestError(inner) => {
-                    Error::BadRequestError(inner)
+                crate::error::ListContactListsErrorKind::BadRequestException(inner) => {
+                    Error::BadRequestException(inner)
                 }
-                crate::error::ListContactListsErrorKind::TooManyRequestsError(inner) => {
-                    Error::TooManyRequestsError(inner)
+                crate::error::ListContactListsErrorKind::TooManyRequestsException(inner) => {
+                    Error::TooManyRequestsException(inner)
                 }
                 crate::error::ListContactListsErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
@@ -944,14 +920,14 @@ impl From<smithy_http::result::SdkError<crate::error::ListContactsError>> for Er
     fn from(err: smithy_http::result::SdkError<crate::error::ListContactsError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::ListContactsErrorKind::BadRequestError(inner) => {
-                    Error::BadRequestError(inner)
+                crate::error::ListContactsErrorKind::BadRequestException(inner) => {
+                    Error::BadRequestException(inner)
                 }
-                crate::error::ListContactsErrorKind::NotFoundError(inner) => {
-                    Error::NotFoundError(inner)
+                crate::error::ListContactsErrorKind::NotFoundException(inner) => {
+                    Error::NotFoundException(inner)
                 }
-                crate::error::ListContactsErrorKind::TooManyRequestsError(inner) => {
-                    Error::TooManyRequestsError(inner)
+                crate::error::ListContactsErrorKind::TooManyRequestsException(inner) => {
+                    Error::TooManyRequestsException(inner)
                 }
                 crate::error::ListContactsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
@@ -967,8 +943,8 @@ impl From<smithy_http::result::SdkError<crate::error::ListCustomVerificationEmai
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
-                crate::error::ListCustomVerificationEmailTemplatesErrorKind::BadRequestError(inner) => Error::BadRequestError(inner),
-                crate::error::ListCustomVerificationEmailTemplatesErrorKind::TooManyRequestsError(inner) => Error::TooManyRequestsError(inner),
+                crate::error::ListCustomVerificationEmailTemplatesErrorKind::BadRequestException(inner) => Error::BadRequestException(inner),
+                crate::error::ListCustomVerificationEmailTemplatesErrorKind::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
                 crate::error::ListCustomVerificationEmailTemplatesErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             }
             _ => Error::Unhandled(err.into()),
@@ -979,11 +955,11 @@ impl From<smithy_http::result::SdkError<crate::error::ListDedicatedIpPoolsError>
     fn from(err: smithy_http::result::SdkError<crate::error::ListDedicatedIpPoolsError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::ListDedicatedIpPoolsErrorKind::BadRequestError(inner) => {
-                    Error::BadRequestError(inner)
+                crate::error::ListDedicatedIpPoolsErrorKind::BadRequestException(inner) => {
+                    Error::BadRequestException(inner)
                 }
-                crate::error::ListDedicatedIpPoolsErrorKind::TooManyRequestsError(inner) => {
-                    Error::TooManyRequestsError(inner)
+                crate::error::ListDedicatedIpPoolsErrorKind::TooManyRequestsException(inner) => {
+                    Error::TooManyRequestsException(inner)
                 }
                 crate::error::ListDedicatedIpPoolsErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
@@ -1001,15 +977,15 @@ impl From<smithy_http::result::SdkError<crate::error::ListDeliverabilityTestRepo
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::ListDeliverabilityTestReportsErrorKind::BadRequestError(inner) => {
-                    Error::BadRequestError(inner)
-                }
-                crate::error::ListDeliverabilityTestReportsErrorKind::NotFoundError(inner) => {
-                    Error::NotFoundError(inner)
-                }
-                crate::error::ListDeliverabilityTestReportsErrorKind::TooManyRequestsError(
+                crate::error::ListDeliverabilityTestReportsErrorKind::BadRequestException(
                     inner,
-                ) => Error::TooManyRequestsError(inner),
+                ) => Error::BadRequestException(inner),
+                crate::error::ListDeliverabilityTestReportsErrorKind::NotFoundException(inner) => {
+                    Error::NotFoundException(inner)
+                }
+                crate::error::ListDeliverabilityTestReportsErrorKind::TooManyRequestsException(
+                    inner,
+                ) => Error::TooManyRequestsException(inner),
                 crate::error::ListDeliverabilityTestReportsErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
                 }
@@ -1025,20 +1001,12 @@ impl From<smithy_http::result::SdkError<crate::error::ListDomainDeliverabilityCa
         err: smithy_http::result::SdkError<crate::error::ListDomainDeliverabilityCampaignsError>,
     ) -> Self {
         match err {
-            smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::ListDomainDeliverabilityCampaignsErrorKind::BadRequestError(
-                    inner,
-                ) => Error::BadRequestError(inner),
-                crate::error::ListDomainDeliverabilityCampaignsErrorKind::NotFoundError(inner) => {
-                    Error::NotFoundError(inner)
-                }
-                crate::error::ListDomainDeliverabilityCampaignsErrorKind::TooManyRequestsError(
-                    inner,
-                ) => Error::TooManyRequestsError(inner),
-                crate::error::ListDomainDeliverabilityCampaignsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
-                }
-            },
+            smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+                crate::error::ListDomainDeliverabilityCampaignsErrorKind::BadRequestException(inner) => Error::BadRequestException(inner),
+                crate::error::ListDomainDeliverabilityCampaignsErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
+                crate::error::ListDomainDeliverabilityCampaignsErrorKind::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+                crate::error::ListDomainDeliverabilityCampaignsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            }
             _ => Error::Unhandled(err.into()),
         }
     }
@@ -1047,11 +1015,11 @@ impl From<smithy_http::result::SdkError<crate::error::ListEmailIdentitiesError>>
     fn from(err: smithy_http::result::SdkError<crate::error::ListEmailIdentitiesError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::ListEmailIdentitiesErrorKind::BadRequestError(inner) => {
-                    Error::BadRequestError(inner)
+                crate::error::ListEmailIdentitiesErrorKind::BadRequestException(inner) => {
+                    Error::BadRequestException(inner)
                 }
-                crate::error::ListEmailIdentitiesErrorKind::TooManyRequestsError(inner) => {
-                    Error::TooManyRequestsError(inner)
+                crate::error::ListEmailIdentitiesErrorKind::TooManyRequestsException(inner) => {
+                    Error::TooManyRequestsException(inner)
                 }
                 crate::error::ListEmailIdentitiesErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
@@ -1065,11 +1033,11 @@ impl From<smithy_http::result::SdkError<crate::error::ListEmailTemplatesError>> 
     fn from(err: smithy_http::result::SdkError<crate::error::ListEmailTemplatesError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::ListEmailTemplatesErrorKind::BadRequestError(inner) => {
-                    Error::BadRequestError(inner)
+                crate::error::ListEmailTemplatesErrorKind::BadRequestException(inner) => {
+                    Error::BadRequestException(inner)
                 }
-                crate::error::ListEmailTemplatesErrorKind::TooManyRequestsError(inner) => {
-                    Error::TooManyRequestsError(inner)
+                crate::error::ListEmailTemplatesErrorKind::TooManyRequestsException(inner) => {
+                    Error::TooManyRequestsException(inner)
                 }
                 crate::error::ListEmailTemplatesErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
@@ -1083,11 +1051,11 @@ impl From<smithy_http::result::SdkError<crate::error::ListImportJobsError>> for 
     fn from(err: smithy_http::result::SdkError<crate::error::ListImportJobsError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::ListImportJobsErrorKind::BadRequestError(inner) => {
-                    Error::BadRequestError(inner)
+                crate::error::ListImportJobsErrorKind::BadRequestException(inner) => {
+                    Error::BadRequestException(inner)
                 }
-                crate::error::ListImportJobsErrorKind::TooManyRequestsError(inner) => {
-                    Error::TooManyRequestsError(inner)
+                crate::error::ListImportJobsErrorKind::TooManyRequestsException(inner) => {
+                    Error::TooManyRequestsException(inner)
                 }
                 crate::error::ListImportJobsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
@@ -1101,15 +1069,15 @@ impl From<smithy_http::result::SdkError<crate::error::ListSuppressedDestinations
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::ListSuppressedDestinationsErrorKind::BadRequestError(inner) => {
-                    Error::BadRequestError(inner)
+                crate::error::ListSuppressedDestinationsErrorKind::BadRequestException(inner) => {
+                    Error::BadRequestException(inner)
                 }
-                crate::error::ListSuppressedDestinationsErrorKind::InvalidNextTokenError(inner) => {
-                    Error::InvalidNextTokenError(inner)
-                }
-                crate::error::ListSuppressedDestinationsErrorKind::TooManyRequestsError(inner) => {
-                    Error::TooManyRequestsError(inner)
-                }
+                crate::error::ListSuppressedDestinationsErrorKind::InvalidNextTokenException(
+                    inner,
+                ) => Error::InvalidNextTokenException(inner),
+                crate::error::ListSuppressedDestinationsErrorKind::TooManyRequestsException(
+                    inner,
+                ) => Error::TooManyRequestsException(inner),
                 crate::error::ListSuppressedDestinationsErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
                 }
@@ -1122,14 +1090,14 @@ impl From<smithy_http::result::SdkError<crate::error::ListTagsForResourceError>>
     fn from(err: smithy_http::result::SdkError<crate::error::ListTagsForResourceError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::ListTagsForResourceErrorKind::BadRequestError(inner) => {
-                    Error::BadRequestError(inner)
+                crate::error::ListTagsForResourceErrorKind::BadRequestException(inner) => {
+                    Error::BadRequestException(inner)
                 }
-                crate::error::ListTagsForResourceErrorKind::NotFoundError(inner) => {
-                    Error::NotFoundError(inner)
+                crate::error::ListTagsForResourceErrorKind::NotFoundException(inner) => {
+                    Error::NotFoundException(inner)
                 }
-                crate::error::ListTagsForResourceErrorKind::TooManyRequestsError(inner) => {
-                    Error::TooManyRequestsError(inner)
+                crate::error::ListTagsForResourceErrorKind::TooManyRequestsException(inner) => {
+                    Error::TooManyRequestsException(inner)
                 }
                 crate::error::ListTagsForResourceErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
@@ -1149,8 +1117,8 @@ impl From<smithy_http::result::SdkError<crate::error::PutAccountDedicatedIpWarmu
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
-                crate::error::PutAccountDedicatedIpWarmupAttributesErrorKind::BadRequestError(inner) => Error::BadRequestError(inner),
-                crate::error::PutAccountDedicatedIpWarmupAttributesErrorKind::TooManyRequestsError(inner) => Error::TooManyRequestsError(inner),
+                crate::error::PutAccountDedicatedIpWarmupAttributesErrorKind::BadRequestException(inner) => Error::BadRequestException(inner),
+                crate::error::PutAccountDedicatedIpWarmupAttributesErrorKind::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
                 crate::error::PutAccountDedicatedIpWarmupAttributesErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             }
             _ => Error::Unhandled(err.into()),
@@ -1161,14 +1129,14 @@ impl From<smithy_http::result::SdkError<crate::error::PutAccountDetailsError>> f
     fn from(err: smithy_http::result::SdkError<crate::error::PutAccountDetailsError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::PutAccountDetailsErrorKind::BadRequestError(inner) => {
-                    Error::BadRequestError(inner)
+                crate::error::PutAccountDetailsErrorKind::BadRequestException(inner) => {
+                    Error::BadRequestException(inner)
                 }
-                crate::error::PutAccountDetailsErrorKind::ConflictError(inner) => {
-                    Error::ConflictError(inner)
+                crate::error::PutAccountDetailsErrorKind::ConflictException(inner) => {
+                    Error::ConflictException(inner)
                 }
-                crate::error::PutAccountDetailsErrorKind::TooManyRequestsError(inner) => {
-                    Error::TooManyRequestsError(inner)
+                crate::error::PutAccountDetailsErrorKind::TooManyRequestsException(inner) => {
+                    Error::TooManyRequestsException(inner)
                 }
                 crate::error::PutAccountDetailsErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
@@ -1184,12 +1152,12 @@ impl From<smithy_http::result::SdkError<crate::error::PutAccountSendingAttribute
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::PutAccountSendingAttributesErrorKind::BadRequestError(inner) => {
-                    Error::BadRequestError(inner)
+                crate::error::PutAccountSendingAttributesErrorKind::BadRequestException(inner) => {
+                    Error::BadRequestException(inner)
                 }
-                crate::error::PutAccountSendingAttributesErrorKind::TooManyRequestsError(inner) => {
-                    Error::TooManyRequestsError(inner)
-                }
+                crate::error::PutAccountSendingAttributesErrorKind::TooManyRequestsException(
+                    inner,
+                ) => Error::TooManyRequestsException(inner),
                 crate::error::PutAccountSendingAttributesErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
                 }
@@ -1205,17 +1173,11 @@ impl From<smithy_http::result::SdkError<crate::error::PutAccountSuppressionAttri
         err: smithy_http::result::SdkError<crate::error::PutAccountSuppressionAttributesError>,
     ) -> Self {
         match err {
-            smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::PutAccountSuppressionAttributesErrorKind::BadRequestError(inner) => {
-                    Error::BadRequestError(inner)
-                }
-                crate::error::PutAccountSuppressionAttributesErrorKind::TooManyRequestsError(
-                    inner,
-                ) => Error::TooManyRequestsError(inner),
-                crate::error::PutAccountSuppressionAttributesErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
-                }
-            },
+            smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+                crate::error::PutAccountSuppressionAttributesErrorKind::BadRequestException(inner) => Error::BadRequestException(inner),
+                crate::error::PutAccountSuppressionAttributesErrorKind::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+                crate::error::PutAccountSuppressionAttributesErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            }
             _ => Error::Unhandled(err.into()),
         }
     }
@@ -1227,20 +1189,12 @@ impl From<smithy_http::result::SdkError<crate::error::PutConfigurationSetDeliver
         err: smithy_http::result::SdkError<crate::error::PutConfigurationSetDeliveryOptionsError>,
     ) -> Self {
         match err {
-            smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::PutConfigurationSetDeliveryOptionsErrorKind::BadRequestError(
-                    inner,
-                ) => Error::BadRequestError(inner),
-                crate::error::PutConfigurationSetDeliveryOptionsErrorKind::NotFoundError(inner) => {
-                    Error::NotFoundError(inner)
-                }
-                crate::error::PutConfigurationSetDeliveryOptionsErrorKind::TooManyRequestsError(
-                    inner,
-                ) => Error::TooManyRequestsError(inner),
-                crate::error::PutConfigurationSetDeliveryOptionsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
-                }
-            },
+            smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+                crate::error::PutConfigurationSetDeliveryOptionsErrorKind::BadRequestException(inner) => Error::BadRequestException(inner),
+                crate::error::PutConfigurationSetDeliveryOptionsErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
+                crate::error::PutConfigurationSetDeliveryOptionsErrorKind::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+                crate::error::PutConfigurationSetDeliveryOptionsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            }
             _ => Error::Unhandled(err.into()),
         }
     }
@@ -1253,9 +1207,9 @@ impl From<smithy_http::result::SdkError<crate::error::PutConfigurationSetReputat
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
-                crate::error::PutConfigurationSetReputationOptionsErrorKind::BadRequestError(inner) => Error::BadRequestError(inner),
-                crate::error::PutConfigurationSetReputationOptionsErrorKind::NotFoundError(inner) => Error::NotFoundError(inner),
-                crate::error::PutConfigurationSetReputationOptionsErrorKind::TooManyRequestsError(inner) => Error::TooManyRequestsError(inner),
+                crate::error::PutConfigurationSetReputationOptionsErrorKind::BadRequestException(inner) => Error::BadRequestException(inner),
+                crate::error::PutConfigurationSetReputationOptionsErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
+                crate::error::PutConfigurationSetReputationOptionsErrorKind::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
                 crate::error::PutConfigurationSetReputationOptionsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             }
             _ => Error::Unhandled(err.into()),
@@ -1269,20 +1223,12 @@ impl From<smithy_http::result::SdkError<crate::error::PutConfigurationSetSending
         err: smithy_http::result::SdkError<crate::error::PutConfigurationSetSendingOptionsError>,
     ) -> Self {
         match err {
-            smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::PutConfigurationSetSendingOptionsErrorKind::BadRequestError(
-                    inner,
-                ) => Error::BadRequestError(inner),
-                crate::error::PutConfigurationSetSendingOptionsErrorKind::NotFoundError(inner) => {
-                    Error::NotFoundError(inner)
-                }
-                crate::error::PutConfigurationSetSendingOptionsErrorKind::TooManyRequestsError(
-                    inner,
-                ) => Error::TooManyRequestsError(inner),
-                crate::error::PutConfigurationSetSendingOptionsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
-                }
-            },
+            smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+                crate::error::PutConfigurationSetSendingOptionsErrorKind::BadRequestException(inner) => Error::BadRequestException(inner),
+                crate::error::PutConfigurationSetSendingOptionsErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
+                crate::error::PutConfigurationSetSendingOptionsErrorKind::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+                crate::error::PutConfigurationSetSendingOptionsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            }
             _ => Error::Unhandled(err.into()),
         }
     }
@@ -1297,9 +1243,9 @@ impl From<smithy_http::result::SdkError<crate::error::PutConfigurationSetSuppres
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
-                crate::error::PutConfigurationSetSuppressionOptionsErrorKind::BadRequestError(inner) => Error::BadRequestError(inner),
-                crate::error::PutConfigurationSetSuppressionOptionsErrorKind::NotFoundError(inner) => Error::NotFoundError(inner),
-                crate::error::PutConfigurationSetSuppressionOptionsErrorKind::TooManyRequestsError(inner) => Error::TooManyRequestsError(inner),
+                crate::error::PutConfigurationSetSuppressionOptionsErrorKind::BadRequestException(inner) => Error::BadRequestException(inner),
+                crate::error::PutConfigurationSetSuppressionOptionsErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
+                crate::error::PutConfigurationSetSuppressionOptionsErrorKind::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
                 crate::error::PutConfigurationSetSuppressionOptionsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             }
             _ => Error::Unhandled(err.into()),
@@ -1313,20 +1259,12 @@ impl From<smithy_http::result::SdkError<crate::error::PutConfigurationSetTrackin
         err: smithy_http::result::SdkError<crate::error::PutConfigurationSetTrackingOptionsError>,
     ) -> Self {
         match err {
-            smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::PutConfigurationSetTrackingOptionsErrorKind::BadRequestError(
-                    inner,
-                ) => Error::BadRequestError(inner),
-                crate::error::PutConfigurationSetTrackingOptionsErrorKind::NotFoundError(inner) => {
-                    Error::NotFoundError(inner)
-                }
-                crate::error::PutConfigurationSetTrackingOptionsErrorKind::TooManyRequestsError(
-                    inner,
-                ) => Error::TooManyRequestsError(inner),
-                crate::error::PutConfigurationSetTrackingOptionsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
-                }
-            },
+            smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+                crate::error::PutConfigurationSetTrackingOptionsErrorKind::BadRequestException(inner) => Error::BadRequestException(inner),
+                crate::error::PutConfigurationSetTrackingOptionsErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
+                crate::error::PutConfigurationSetTrackingOptionsErrorKind::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+                crate::error::PutConfigurationSetTrackingOptionsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            }
             _ => Error::Unhandled(err.into()),
         }
     }
@@ -1335,14 +1273,14 @@ impl From<smithy_http::result::SdkError<crate::error::PutDedicatedIpInPoolError>
     fn from(err: smithy_http::result::SdkError<crate::error::PutDedicatedIpInPoolError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::PutDedicatedIpInPoolErrorKind::BadRequestError(inner) => {
-                    Error::BadRequestError(inner)
+                crate::error::PutDedicatedIpInPoolErrorKind::BadRequestException(inner) => {
+                    Error::BadRequestException(inner)
                 }
-                crate::error::PutDedicatedIpInPoolErrorKind::NotFoundError(inner) => {
-                    Error::NotFoundError(inner)
+                crate::error::PutDedicatedIpInPoolErrorKind::NotFoundException(inner) => {
+                    Error::NotFoundException(inner)
                 }
-                crate::error::PutDedicatedIpInPoolErrorKind::TooManyRequestsError(inner) => {
-                    Error::TooManyRequestsError(inner)
+                crate::error::PutDedicatedIpInPoolErrorKind::TooManyRequestsException(inner) => {
+                    Error::TooManyRequestsException(inner)
                 }
                 crate::error::PutDedicatedIpInPoolErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
@@ -1360,15 +1298,15 @@ impl From<smithy_http::result::SdkError<crate::error::PutDedicatedIpWarmupAttrib
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::PutDedicatedIpWarmupAttributesErrorKind::BadRequestError(inner) => {
-                    Error::BadRequestError(inner)
-                }
-                crate::error::PutDedicatedIpWarmupAttributesErrorKind::NotFoundError(inner) => {
-                    Error::NotFoundError(inner)
-                }
-                crate::error::PutDedicatedIpWarmupAttributesErrorKind::TooManyRequestsError(
+                crate::error::PutDedicatedIpWarmupAttributesErrorKind::BadRequestException(
                     inner,
-                ) => Error::TooManyRequestsError(inner),
+                ) => Error::BadRequestException(inner),
+                crate::error::PutDedicatedIpWarmupAttributesErrorKind::NotFoundException(inner) => {
+                    Error::NotFoundException(inner)
+                }
+                crate::error::PutDedicatedIpWarmupAttributesErrorKind::TooManyRequestsException(
+                    inner,
+                ) => Error::TooManyRequestsException(inner),
                 crate::error::PutDedicatedIpWarmupAttributesErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
                 }
@@ -1384,26 +1322,14 @@ impl From<smithy_http::result::SdkError<crate::error::PutDeliverabilityDashboard
         err: smithy_http::result::SdkError<crate::error::PutDeliverabilityDashboardOptionError>,
     ) -> Self {
         match err {
-            smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::PutDeliverabilityDashboardOptionErrorKind::AlreadyExistsError(
-                    inner,
-                ) => Error::AlreadyExistsError(inner),
-                crate::error::PutDeliverabilityDashboardOptionErrorKind::BadRequestError(inner) => {
-                    Error::BadRequestError(inner)
-                }
-                crate::error::PutDeliverabilityDashboardOptionErrorKind::LimitExceededError(
-                    inner,
-                ) => Error::LimitExceededError(inner),
-                crate::error::PutDeliverabilityDashboardOptionErrorKind::NotFoundError(inner) => {
-                    Error::NotFoundError(inner)
-                }
-                crate::error::PutDeliverabilityDashboardOptionErrorKind::TooManyRequestsError(
-                    inner,
-                ) => Error::TooManyRequestsError(inner),
-                crate::error::PutDeliverabilityDashboardOptionErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
-                }
-            },
+            smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+                crate::error::PutDeliverabilityDashboardOptionErrorKind::AlreadyExistsException(inner) => Error::AlreadyExistsException(inner),
+                crate::error::PutDeliverabilityDashboardOptionErrorKind::BadRequestException(inner) => Error::BadRequestException(inner),
+                crate::error::PutDeliverabilityDashboardOptionErrorKind::LimitExceededException(inner) => Error::LimitExceededException(inner),
+                crate::error::PutDeliverabilityDashboardOptionErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
+                crate::error::PutDeliverabilityDashboardOptionErrorKind::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+                crate::error::PutDeliverabilityDashboardOptionErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            }
             _ => Error::Unhandled(err.into()),
         }
     }
@@ -1422,9 +1348,9 @@ impl
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
-                crate::error::PutEmailIdentityConfigurationSetAttributesErrorKind::BadRequestError(inner) => Error::BadRequestError(inner),
-                crate::error::PutEmailIdentityConfigurationSetAttributesErrorKind::NotFoundError(inner) => Error::NotFoundError(inner),
-                crate::error::PutEmailIdentityConfigurationSetAttributesErrorKind::TooManyRequestsError(inner) => Error::TooManyRequestsError(inner),
+                crate::error::PutEmailIdentityConfigurationSetAttributesErrorKind::BadRequestException(inner) => Error::BadRequestException(inner),
+                crate::error::PutEmailIdentityConfigurationSetAttributesErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
+                crate::error::PutEmailIdentityConfigurationSetAttributesErrorKind::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
                 crate::error::PutEmailIdentityConfigurationSetAttributesErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             }
             _ => Error::Unhandled(err.into()),
@@ -1439,15 +1365,15 @@ impl From<smithy_http::result::SdkError<crate::error::PutEmailIdentityDkimAttrib
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::PutEmailIdentityDkimAttributesErrorKind::BadRequestError(inner) => {
-                    Error::BadRequestError(inner)
-                }
-                crate::error::PutEmailIdentityDkimAttributesErrorKind::NotFoundError(inner) => {
-                    Error::NotFoundError(inner)
-                }
-                crate::error::PutEmailIdentityDkimAttributesErrorKind::TooManyRequestsError(
+                crate::error::PutEmailIdentityDkimAttributesErrorKind::BadRequestException(
                     inner,
-                ) => Error::TooManyRequestsError(inner),
+                ) => Error::BadRequestException(inner),
+                crate::error::PutEmailIdentityDkimAttributesErrorKind::NotFoundException(inner) => {
+                    Error::NotFoundException(inner)
+                }
+                crate::error::PutEmailIdentityDkimAttributesErrorKind::TooManyRequestsException(
+                    inner,
+                ) => Error::TooManyRequestsException(inner),
                 crate::error::PutEmailIdentityDkimAttributesErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
                 }
@@ -1466,9 +1392,9 @@ impl From<smithy_http::result::SdkError<crate::error::PutEmailIdentityDkimSignin
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
-                crate::error::PutEmailIdentityDkimSigningAttributesErrorKind::BadRequestError(inner) => Error::BadRequestError(inner),
-                crate::error::PutEmailIdentityDkimSigningAttributesErrorKind::NotFoundError(inner) => Error::NotFoundError(inner),
-                crate::error::PutEmailIdentityDkimSigningAttributesErrorKind::TooManyRequestsError(inner) => Error::TooManyRequestsError(inner),
+                crate::error::PutEmailIdentityDkimSigningAttributesErrorKind::BadRequestException(inner) => Error::BadRequestException(inner),
+                crate::error::PutEmailIdentityDkimSigningAttributesErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
+                crate::error::PutEmailIdentityDkimSigningAttributesErrorKind::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
                 crate::error::PutEmailIdentityDkimSigningAttributesErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             }
             _ => Error::Unhandled(err.into()),
@@ -1482,20 +1408,12 @@ impl From<smithy_http::result::SdkError<crate::error::PutEmailIdentityFeedbackAt
         err: smithy_http::result::SdkError<crate::error::PutEmailIdentityFeedbackAttributesError>,
     ) -> Self {
         match err {
-            smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::PutEmailIdentityFeedbackAttributesErrorKind::BadRequestError(
-                    inner,
-                ) => Error::BadRequestError(inner),
-                crate::error::PutEmailIdentityFeedbackAttributesErrorKind::NotFoundError(inner) => {
-                    Error::NotFoundError(inner)
-                }
-                crate::error::PutEmailIdentityFeedbackAttributesErrorKind::TooManyRequestsError(
-                    inner,
-                ) => Error::TooManyRequestsError(inner),
-                crate::error::PutEmailIdentityFeedbackAttributesErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
-                }
-            },
+            smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+                crate::error::PutEmailIdentityFeedbackAttributesErrorKind::BadRequestException(inner) => Error::BadRequestException(inner),
+                crate::error::PutEmailIdentityFeedbackAttributesErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
+                crate::error::PutEmailIdentityFeedbackAttributesErrorKind::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+                crate::error::PutEmailIdentityFeedbackAttributesErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            }
             _ => Error::Unhandled(err.into()),
         }
     }
@@ -1507,20 +1425,12 @@ impl From<smithy_http::result::SdkError<crate::error::PutEmailIdentityMailFromAt
         err: smithy_http::result::SdkError<crate::error::PutEmailIdentityMailFromAttributesError>,
     ) -> Self {
         match err {
-            smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::PutEmailIdentityMailFromAttributesErrorKind::BadRequestError(
-                    inner,
-                ) => Error::BadRequestError(inner),
-                crate::error::PutEmailIdentityMailFromAttributesErrorKind::NotFoundError(inner) => {
-                    Error::NotFoundError(inner)
-                }
-                crate::error::PutEmailIdentityMailFromAttributesErrorKind::TooManyRequestsError(
-                    inner,
-                ) => Error::TooManyRequestsError(inner),
-                crate::error::PutEmailIdentityMailFromAttributesErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
-                }
-            },
+            smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+                crate::error::PutEmailIdentityMailFromAttributesErrorKind::BadRequestException(inner) => Error::BadRequestException(inner),
+                crate::error::PutEmailIdentityMailFromAttributesErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
+                crate::error::PutEmailIdentityMailFromAttributesErrorKind::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+                crate::error::PutEmailIdentityMailFromAttributesErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            }
             _ => Error::Unhandled(err.into()),
         }
     }
@@ -1531,12 +1441,12 @@ impl From<smithy_http::result::SdkError<crate::error::PutSuppressedDestinationEr
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::PutSuppressedDestinationErrorKind::BadRequestError(inner) => {
-                    Error::BadRequestError(inner)
+                crate::error::PutSuppressedDestinationErrorKind::BadRequestException(inner) => {
+                    Error::BadRequestException(inner)
                 }
-                crate::error::PutSuppressedDestinationErrorKind::TooManyRequestsError(inner) => {
-                    Error::TooManyRequestsError(inner)
-                }
+                crate::error::PutSuppressedDestinationErrorKind::TooManyRequestsException(
+                    inner,
+                ) => Error::TooManyRequestsException(inner),
                 crate::error::PutSuppressedDestinationErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
                 }
@@ -1549,29 +1459,29 @@ impl From<smithy_http::result::SdkError<crate::error::SendBulkEmailError>> for E
     fn from(err: smithy_http::result::SdkError<crate::error::SendBulkEmailError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::SendBulkEmailErrorKind::AccountSuspendedError(inner) => {
-                    Error::AccountSuspendedError(inner)
+                crate::error::SendBulkEmailErrorKind::AccountSuspendedException(inner) => {
+                    Error::AccountSuspendedException(inner)
                 }
-                crate::error::SendBulkEmailErrorKind::BadRequestError(inner) => {
-                    Error::BadRequestError(inner)
+                crate::error::SendBulkEmailErrorKind::BadRequestException(inner) => {
+                    Error::BadRequestException(inner)
                 }
-                crate::error::SendBulkEmailErrorKind::LimitExceededError(inner) => {
-                    Error::LimitExceededError(inner)
+                crate::error::SendBulkEmailErrorKind::LimitExceededException(inner) => {
+                    Error::LimitExceededException(inner)
                 }
-                crate::error::SendBulkEmailErrorKind::MailFromDomainNotVerifiedError(inner) => {
-                    Error::MailFromDomainNotVerifiedError(inner)
+                crate::error::SendBulkEmailErrorKind::MailFromDomainNotVerifiedException(inner) => {
+                    Error::MailFromDomainNotVerifiedException(inner)
                 }
                 crate::error::SendBulkEmailErrorKind::MessageRejected(inner) => {
                     Error::MessageRejected(inner)
                 }
-                crate::error::SendBulkEmailErrorKind::NotFoundError(inner) => {
-                    Error::NotFoundError(inner)
+                crate::error::SendBulkEmailErrorKind::NotFoundException(inner) => {
+                    Error::NotFoundException(inner)
                 }
-                crate::error::SendBulkEmailErrorKind::SendingPausedError(inner) => {
-                    Error::SendingPausedError(inner)
+                crate::error::SendBulkEmailErrorKind::SendingPausedException(inner) => {
+                    Error::SendingPausedException(inner)
                 }
-                crate::error::SendBulkEmailErrorKind::TooManyRequestsError(inner) => {
-                    Error::TooManyRequestsError(inner)
+                crate::error::SendBulkEmailErrorKind::TooManyRequestsException(inner) => {
+                    Error::TooManyRequestsException(inner)
                 }
                 crate::error::SendBulkEmailErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
@@ -1585,13 +1495,13 @@ impl From<smithy_http::result::SdkError<crate::error::SendCustomVerificationEmai
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
-                crate::error::SendCustomVerificationEmailErrorKind::BadRequestError(inner) => Error::BadRequestError(inner),
-                crate::error::SendCustomVerificationEmailErrorKind::LimitExceededError(inner) => Error::LimitExceededError(inner),
-                crate::error::SendCustomVerificationEmailErrorKind::MailFromDomainNotVerifiedError(inner) => Error::MailFromDomainNotVerifiedError(inner),
+                crate::error::SendCustomVerificationEmailErrorKind::BadRequestException(inner) => Error::BadRequestException(inner),
+                crate::error::SendCustomVerificationEmailErrorKind::LimitExceededException(inner) => Error::LimitExceededException(inner),
+                crate::error::SendCustomVerificationEmailErrorKind::MailFromDomainNotVerifiedException(inner) => Error::MailFromDomainNotVerifiedException(inner),
                 crate::error::SendCustomVerificationEmailErrorKind::MessageRejected(inner) => Error::MessageRejected(inner),
-                crate::error::SendCustomVerificationEmailErrorKind::NotFoundError(inner) => Error::NotFoundError(inner),
-                crate::error::SendCustomVerificationEmailErrorKind::SendingPausedError(inner) => Error::SendingPausedError(inner),
-                crate::error::SendCustomVerificationEmailErrorKind::TooManyRequestsError(inner) => Error::TooManyRequestsError(inner),
+                crate::error::SendCustomVerificationEmailErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
+                crate::error::SendCustomVerificationEmailErrorKind::SendingPausedException(inner) => Error::SendingPausedException(inner),
+                crate::error::SendCustomVerificationEmailErrorKind::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
                 crate::error::SendCustomVerificationEmailErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             }
             _ => Error::Unhandled(err.into()),
@@ -1602,29 +1512,29 @@ impl From<smithy_http::result::SdkError<crate::error::SendEmailError>> for Error
     fn from(err: smithy_http::result::SdkError<crate::error::SendEmailError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::SendEmailErrorKind::AccountSuspendedError(inner) => {
-                    Error::AccountSuspendedError(inner)
+                crate::error::SendEmailErrorKind::AccountSuspendedException(inner) => {
+                    Error::AccountSuspendedException(inner)
                 }
-                crate::error::SendEmailErrorKind::BadRequestError(inner) => {
-                    Error::BadRequestError(inner)
+                crate::error::SendEmailErrorKind::BadRequestException(inner) => {
+                    Error::BadRequestException(inner)
                 }
-                crate::error::SendEmailErrorKind::LimitExceededError(inner) => {
-                    Error::LimitExceededError(inner)
+                crate::error::SendEmailErrorKind::LimitExceededException(inner) => {
+                    Error::LimitExceededException(inner)
                 }
-                crate::error::SendEmailErrorKind::MailFromDomainNotVerifiedError(inner) => {
-                    Error::MailFromDomainNotVerifiedError(inner)
+                crate::error::SendEmailErrorKind::MailFromDomainNotVerifiedException(inner) => {
+                    Error::MailFromDomainNotVerifiedException(inner)
                 }
                 crate::error::SendEmailErrorKind::MessageRejected(inner) => {
                     Error::MessageRejected(inner)
                 }
-                crate::error::SendEmailErrorKind::NotFoundError(inner) => {
-                    Error::NotFoundError(inner)
+                crate::error::SendEmailErrorKind::NotFoundException(inner) => {
+                    Error::NotFoundException(inner)
                 }
-                crate::error::SendEmailErrorKind::SendingPausedError(inner) => {
-                    Error::SendingPausedError(inner)
+                crate::error::SendEmailErrorKind::SendingPausedException(inner) => {
+                    Error::SendingPausedException(inner)
                 }
-                crate::error::SendEmailErrorKind::TooManyRequestsError(inner) => {
-                    Error::TooManyRequestsError(inner)
+                crate::error::SendEmailErrorKind::TooManyRequestsException(inner) => {
+                    Error::TooManyRequestsException(inner)
                 }
                 crate::error::SendEmailErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
@@ -1636,17 +1546,17 @@ impl From<smithy_http::result::SdkError<crate::error::TagResourceError>> for Err
     fn from(err: smithy_http::result::SdkError<crate::error::TagResourceError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::TagResourceErrorKind::BadRequestError(inner) => {
-                    Error::BadRequestError(inner)
+                crate::error::TagResourceErrorKind::BadRequestException(inner) => {
+                    Error::BadRequestException(inner)
                 }
-                crate::error::TagResourceErrorKind::ConcurrentModificationError(inner) => {
-                    Error::ConcurrentModificationError(inner)
+                crate::error::TagResourceErrorKind::ConcurrentModificationException(inner) => {
+                    Error::ConcurrentModificationException(inner)
                 }
-                crate::error::TagResourceErrorKind::NotFoundError(inner) => {
-                    Error::NotFoundError(inner)
+                crate::error::TagResourceErrorKind::NotFoundException(inner) => {
+                    Error::NotFoundException(inner)
                 }
-                crate::error::TagResourceErrorKind::TooManyRequestsError(inner) => {
-                    Error::TooManyRequestsError(inner)
+                crate::error::TagResourceErrorKind::TooManyRequestsException(inner) => {
+                    Error::TooManyRequestsException(inner)
                 }
                 crate::error::TagResourceErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
@@ -1660,14 +1570,14 @@ impl From<smithy_http::result::SdkError<crate::error::TestRenderEmailTemplateErr
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::TestRenderEmailTemplateErrorKind::BadRequestError(inner) => {
-                    Error::BadRequestError(inner)
+                crate::error::TestRenderEmailTemplateErrorKind::BadRequestException(inner) => {
+                    Error::BadRequestException(inner)
                 }
-                crate::error::TestRenderEmailTemplateErrorKind::NotFoundError(inner) => {
-                    Error::NotFoundError(inner)
+                crate::error::TestRenderEmailTemplateErrorKind::NotFoundException(inner) => {
+                    Error::NotFoundException(inner)
                 }
-                crate::error::TestRenderEmailTemplateErrorKind::TooManyRequestsError(inner) => {
-                    Error::TooManyRequestsError(inner)
+                crate::error::TestRenderEmailTemplateErrorKind::TooManyRequestsException(inner) => {
+                    Error::TooManyRequestsException(inner)
                 }
                 crate::error::TestRenderEmailTemplateErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
@@ -1681,17 +1591,17 @@ impl From<smithy_http::result::SdkError<crate::error::UntagResourceError>> for E
     fn from(err: smithy_http::result::SdkError<crate::error::UntagResourceError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::UntagResourceErrorKind::BadRequestError(inner) => {
-                    Error::BadRequestError(inner)
+                crate::error::UntagResourceErrorKind::BadRequestException(inner) => {
+                    Error::BadRequestException(inner)
                 }
-                crate::error::UntagResourceErrorKind::ConcurrentModificationError(inner) => {
-                    Error::ConcurrentModificationError(inner)
+                crate::error::UntagResourceErrorKind::ConcurrentModificationException(inner) => {
+                    Error::ConcurrentModificationException(inner)
                 }
-                crate::error::UntagResourceErrorKind::NotFoundError(inner) => {
-                    Error::NotFoundError(inner)
+                crate::error::UntagResourceErrorKind::NotFoundException(inner) => {
+                    Error::NotFoundException(inner)
                 }
-                crate::error::UntagResourceErrorKind::TooManyRequestsError(inner) => {
-                    Error::TooManyRequestsError(inner)
+                crate::error::UntagResourceErrorKind::TooManyRequestsException(inner) => {
+                    Error::TooManyRequestsException(inner)
                 }
                 crate::error::UntagResourceErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
@@ -1709,9 +1619,9 @@ impl From<smithy_http::result::SdkError<crate::error::UpdateConfigurationSetEven
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
-                crate::error::UpdateConfigurationSetEventDestinationErrorKind::BadRequestError(inner) => Error::BadRequestError(inner),
-                crate::error::UpdateConfigurationSetEventDestinationErrorKind::NotFoundError(inner) => Error::NotFoundError(inner),
-                crate::error::UpdateConfigurationSetEventDestinationErrorKind::TooManyRequestsError(inner) => Error::TooManyRequestsError(inner),
+                crate::error::UpdateConfigurationSetEventDestinationErrorKind::BadRequestException(inner) => Error::BadRequestException(inner),
+                crate::error::UpdateConfigurationSetEventDestinationErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
+                crate::error::UpdateConfigurationSetEventDestinationErrorKind::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
                 crate::error::UpdateConfigurationSetEventDestinationErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             }
             _ => Error::Unhandled(err.into()),
@@ -1722,17 +1632,17 @@ impl From<smithy_http::result::SdkError<crate::error::UpdateContactError>> for E
     fn from(err: smithy_http::result::SdkError<crate::error::UpdateContactError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::UpdateContactErrorKind::BadRequestError(inner) => {
-                    Error::BadRequestError(inner)
+                crate::error::UpdateContactErrorKind::BadRequestException(inner) => {
+                    Error::BadRequestException(inner)
                 }
-                crate::error::UpdateContactErrorKind::ConcurrentModificationError(inner) => {
-                    Error::ConcurrentModificationError(inner)
+                crate::error::UpdateContactErrorKind::ConcurrentModificationException(inner) => {
+                    Error::ConcurrentModificationException(inner)
                 }
-                crate::error::UpdateContactErrorKind::NotFoundError(inner) => {
-                    Error::NotFoundError(inner)
+                crate::error::UpdateContactErrorKind::NotFoundException(inner) => {
+                    Error::NotFoundException(inner)
                 }
-                crate::error::UpdateContactErrorKind::TooManyRequestsError(inner) => {
-                    Error::TooManyRequestsError(inner)
+                crate::error::UpdateContactErrorKind::TooManyRequestsException(inner) => {
+                    Error::TooManyRequestsException(inner)
                 }
                 crate::error::UpdateContactErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
@@ -1744,17 +1654,17 @@ impl From<smithy_http::result::SdkError<crate::error::UpdateContactListError>> f
     fn from(err: smithy_http::result::SdkError<crate::error::UpdateContactListError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::UpdateContactListErrorKind::BadRequestError(inner) => {
-                    Error::BadRequestError(inner)
+                crate::error::UpdateContactListErrorKind::BadRequestException(inner) => {
+                    Error::BadRequestException(inner)
                 }
-                crate::error::UpdateContactListErrorKind::ConcurrentModificationError(inner) => {
-                    Error::ConcurrentModificationError(inner)
+                crate::error::UpdateContactListErrorKind::ConcurrentModificationException(
+                    inner,
+                ) => Error::ConcurrentModificationException(inner),
+                crate::error::UpdateContactListErrorKind::NotFoundException(inner) => {
+                    Error::NotFoundException(inner)
                 }
-                crate::error::UpdateContactListErrorKind::NotFoundError(inner) => {
-                    Error::NotFoundError(inner)
-                }
-                crate::error::UpdateContactListErrorKind::TooManyRequestsError(inner) => {
-                    Error::TooManyRequestsError(inner)
+                crate::error::UpdateContactListErrorKind::TooManyRequestsException(inner) => {
+                    Error::TooManyRequestsException(inner)
                 }
                 crate::error::UpdateContactListErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
@@ -1774,9 +1684,9 @@ impl From<smithy_http::result::SdkError<crate::error::UpdateCustomVerificationEm
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
-                crate::error::UpdateCustomVerificationEmailTemplateErrorKind::BadRequestError(inner) => Error::BadRequestError(inner),
-                crate::error::UpdateCustomVerificationEmailTemplateErrorKind::NotFoundError(inner) => Error::NotFoundError(inner),
-                crate::error::UpdateCustomVerificationEmailTemplateErrorKind::TooManyRequestsError(inner) => Error::TooManyRequestsError(inner),
+                crate::error::UpdateCustomVerificationEmailTemplateErrorKind::BadRequestException(inner) => Error::BadRequestException(inner),
+                crate::error::UpdateCustomVerificationEmailTemplateErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
+                crate::error::UpdateCustomVerificationEmailTemplateErrorKind::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
                 crate::error::UpdateCustomVerificationEmailTemplateErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             }
             _ => Error::Unhandled(err.into()),
@@ -1789,15 +1699,15 @@ impl From<smithy_http::result::SdkError<crate::error::UpdateEmailIdentityPolicyE
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::UpdateEmailIdentityPolicyErrorKind::BadRequestError(inner) => {
-                    Error::BadRequestError(inner)
+                crate::error::UpdateEmailIdentityPolicyErrorKind::BadRequestException(inner) => {
+                    Error::BadRequestException(inner)
                 }
-                crate::error::UpdateEmailIdentityPolicyErrorKind::NotFoundError(inner) => {
-                    Error::NotFoundError(inner)
+                crate::error::UpdateEmailIdentityPolicyErrorKind::NotFoundException(inner) => {
+                    Error::NotFoundException(inner)
                 }
-                crate::error::UpdateEmailIdentityPolicyErrorKind::TooManyRequestsError(inner) => {
-                    Error::TooManyRequestsError(inner)
-                }
+                crate::error::UpdateEmailIdentityPolicyErrorKind::TooManyRequestsException(
+                    inner,
+                ) => Error::TooManyRequestsException(inner),
                 crate::error::UpdateEmailIdentityPolicyErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
                 }
@@ -1810,14 +1720,14 @@ impl From<smithy_http::result::SdkError<crate::error::UpdateEmailTemplateError>>
     fn from(err: smithy_http::result::SdkError<crate::error::UpdateEmailTemplateError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::UpdateEmailTemplateErrorKind::BadRequestError(inner) => {
-                    Error::BadRequestError(inner)
+                crate::error::UpdateEmailTemplateErrorKind::BadRequestException(inner) => {
+                    Error::BadRequestException(inner)
                 }
-                crate::error::UpdateEmailTemplateErrorKind::NotFoundError(inner) => {
-                    Error::NotFoundError(inner)
+                crate::error::UpdateEmailTemplateErrorKind::NotFoundException(inner) => {
+                    Error::NotFoundException(inner)
                 }
-                crate::error::UpdateEmailTemplateErrorKind::TooManyRequestsError(inner) => {
-                    Error::TooManyRequestsError(inner)
+                crate::error::UpdateEmailTemplateErrorKind::TooManyRequestsException(inner) => {
+                    Error::TooManyRequestsException(inner)
                 }
                 crate::error::UpdateEmailTemplateErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)

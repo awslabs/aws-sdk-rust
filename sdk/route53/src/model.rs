@@ -253,7 +253,7 @@ impl std::convert::From<&str> for RrType {
 impl std::str::FromStr for RrType {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(RrType::from(s))
     }
 }
@@ -280,15 +280,6 @@ impl RrType {
 impl AsRef<str> for RrType {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for RrType {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -1093,7 +1084,7 @@ impl std::convert::From<&str> for Statistic {
 impl std::str::FromStr for Statistic {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(Statistic::from(s))
     }
 }
@@ -1112,15 +1103,6 @@ impl Statistic {
 impl AsRef<str> for Statistic {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for Statistic {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -1156,7 +1138,7 @@ impl std::convert::From<&str> for ComparisonOperator {
 impl std::str::FromStr for ComparisonOperator {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(ComparisonOperator::from(s))
     }
 }
@@ -1174,15 +1156,6 @@ impl ComparisonOperator {
 impl AsRef<str> for ComparisonOperator {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for ComparisonOperator {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -1982,7 +1955,7 @@ impl std::convert::From<&str> for InsufficientDataHealthStatus {
 impl std::str::FromStr for InsufficientDataHealthStatus {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(InsufficientDataHealthStatus::from(s))
     }
 }
@@ -1999,15 +1972,6 @@ impl InsufficientDataHealthStatus {
 impl AsRef<str> for InsufficientDataHealthStatus {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for InsufficientDataHealthStatus {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -2186,7 +2150,7 @@ impl std::convert::From<&str> for CloudWatchRegion {
 impl std::str::FromStr for CloudWatchRegion {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(CloudWatchRegion::from(s))
     }
 }
@@ -2227,15 +2191,6 @@ impl CloudWatchRegion {
 impl AsRef<str> for CloudWatchRegion {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for CloudWatchRegion {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -2279,7 +2234,7 @@ impl std::convert::From<&str> for HealthCheckRegion {
 impl std::str::FromStr for HealthCheckRegion {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(HealthCheckRegion::from(s))
     }
 }
@@ -2301,15 +2256,6 @@ impl HealthCheckRegion {
 impl AsRef<str> for HealthCheckRegion {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for HealthCheckRegion {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -2351,7 +2297,7 @@ impl std::convert::From<&str> for HealthCheckType {
 impl std::str::FromStr for HealthCheckType {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(HealthCheckType::from(s))
     }
 }
@@ -2372,15 +2318,6 @@ impl HealthCheckType {
 impl AsRef<str> for HealthCheckType {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for HealthCheckType {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -2416,7 +2353,7 @@ impl std::convert::From<&str> for ResettableElementName {
 impl std::str::FromStr for ResettableElementName {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(ResettableElementName::from(s))
     }
 }
@@ -2436,36 +2373,27 @@ impl AsRef<str> for ResettableElementName {
         self.as_str()
     }
 }
-impl<'de> serde::Deserialize<'de> for ResettableElementName {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
-    }
-}
 
 /// <p>(Private hosted zones only) A complex type that contains information about an Amazon VPC.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct VPC {
+pub struct Vpc {
     /// <p>(Private hosted zones only) The region that an Amazon VPC was created in.</p>
     pub vpc_region: std::option::Option<crate::model::VpcRegion>,
     /// <p>(Private hosted zones only) The ID of an Amazon VPC. </p>
     pub vpc_id: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for VPC {
+impl std::fmt::Debug for Vpc {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VPC");
+        let mut formatter = f.debug_struct("Vpc");
         formatter.field("vpc_region", &self.vpc_region);
         formatter.field("vpc_id", &self.vpc_id);
         formatter.finish()
     }
 }
-/// See [`VPC`](crate::model::VPC)
+/// See [`Vpc`](crate::model::Vpc)
 pub mod vpc {
-    /// A builder for [`VPC`](crate::model::VPC)
+    /// A builder for [`Vpc`](crate::model::Vpc)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -2494,17 +2422,17 @@ pub mod vpc {
             self.vpc_id = input;
             self
         }
-        /// Consumes the builder and constructs a [`VPC`](crate::model::VPC)
-        pub fn build(self) -> crate::model::VPC {
-            crate::model::VPC {
+        /// Consumes the builder and constructs a [`Vpc`](crate::model::Vpc)
+        pub fn build(self) -> crate::model::Vpc {
+            crate::model::Vpc {
                 vpc_region: self.vpc_region,
                 vpc_id: self.vpc_id,
             }
         }
     }
 }
-impl VPC {
-    /// Creates a new builder-style object to manufacture [`VPC`](crate::model::VPC)
+impl Vpc {
+    /// Creates a new builder-style object to manufacture [`Vpc`](crate::model::Vpc)
     pub fn builder() -> crate::model::vpc::Builder {
         crate::model::vpc::Builder::default()
     }
@@ -2586,7 +2514,7 @@ impl std::convert::From<&str> for VpcRegion {
 impl std::str::FromStr for VpcRegion {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(VpcRegion::from(s))
     }
 }
@@ -2626,15 +2554,6 @@ impl VpcRegion {
 impl AsRef<str> for VpcRegion {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for VpcRegion {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -2993,7 +2912,7 @@ impl std::convert::From<&str> for TagResourceType {
 impl std::str::FromStr for TagResourceType {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(TagResourceType::from(s))
     }
 }
@@ -3009,15 +2928,6 @@ impl TagResourceType {
 impl AsRef<str> for TagResourceType {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for TagResourceType {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -5052,7 +4962,7 @@ impl std::convert::From<&str> for ResourceRecordSetFailover {
 impl std::str::FromStr for ResourceRecordSetFailover {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(ResourceRecordSetFailover::from(s))
     }
 }
@@ -5068,15 +4978,6 @@ impl ResourceRecordSetFailover {
 impl AsRef<str> for ResourceRecordSetFailover {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for ResourceRecordSetFailover {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -5309,7 +5210,7 @@ impl std::convert::From<&str> for ResourceRecordSetRegion {
 impl std::str::FromStr for ResourceRecordSetRegion {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(ResourceRecordSetRegion::from(s))
     }
 }
@@ -5346,15 +5247,6 @@ impl ResourceRecordSetRegion {
 impl AsRef<str> for ResourceRecordSetRegion {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for ResourceRecordSetRegion {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -5829,7 +5721,7 @@ impl std::convert::From<&str> for ReusableDelegationSetLimitType {
 impl std::str::FromStr for ReusableDelegationSetLimitType {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(ReusableDelegationSetLimitType::from(s))
     }
 }
@@ -5846,15 +5738,6 @@ impl ReusableDelegationSetLimitType {
 impl AsRef<str> for ReusableDelegationSetLimitType {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for ReusableDelegationSetLimitType {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -5974,7 +5857,7 @@ impl std::convert::From<&str> for HostedZoneLimitType {
 impl std::str::FromStr for HostedZoneLimitType {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(HostedZoneLimitType::from(s))
     }
 }
@@ -5990,15 +5873,6 @@ impl HostedZoneLimitType {
 impl AsRef<str> for HostedZoneLimitType {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for HostedZoneLimitType {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -6598,7 +6472,7 @@ impl KeySigningKey {
 /// <p>A string repesenting the status of DNSSEC signing.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct DNSSECStatus {
+pub struct DnssecStatus {
     /// <p>A string that represents the current hosted zone signing status.</p>
     /// <p>Status can have one of the following values:</p>
     /// <dl>
@@ -6632,17 +6506,17 @@ pub struct DNSSECStatus {
     /// includes information about what the problem might be and steps that you can take to correct the issue.</p>
     pub status_message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for DNSSECStatus {
+impl std::fmt::Debug for DnssecStatus {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DNSSECStatus");
+        let mut formatter = f.debug_struct("DnssecStatus");
         formatter.field("serve_signature", &self.serve_signature);
         formatter.field("status_message", &self.status_message);
         formatter.finish()
     }
 }
-/// See [`DNSSECStatus`](crate::model::DNSSECStatus)
+/// See [`DnssecStatus`](crate::model::DnssecStatus)
 pub mod dnssec_status {
-    /// A builder for [`DNSSECStatus`](crate::model::DNSSECStatus)
+    /// A builder for [`DnssecStatus`](crate::model::DnssecStatus)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -6702,17 +6576,17 @@ pub mod dnssec_status {
             self.status_message = input;
             self
         }
-        /// Consumes the builder and constructs a [`DNSSECStatus`](crate::model::DNSSECStatus)
-        pub fn build(self) -> crate::model::DNSSECStatus {
-            crate::model::DNSSECStatus {
+        /// Consumes the builder and constructs a [`DnssecStatus`](crate::model::DnssecStatus)
+        pub fn build(self) -> crate::model::DnssecStatus {
+            crate::model::DnssecStatus {
                 serve_signature: self.serve_signature,
                 status_message: self.status_message,
             }
         }
     }
 }
-impl DNSSECStatus {
-    /// Creates a new builder-style object to manufacture [`DNSSECStatus`](crate::model::DNSSECStatus)
+impl DnssecStatus {
+    /// Creates a new builder-style object to manufacture [`DnssecStatus`](crate::model::DnssecStatus)
     pub fn builder() -> crate::model::dnssec_status::Builder {
         crate::model::dnssec_status::Builder::default()
     }
@@ -6856,7 +6730,7 @@ impl std::convert::From<&str> for ChangeStatus {
 impl std::str::FromStr for ChangeStatus {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(ChangeStatus::from(s))
     }
 }
@@ -6872,15 +6746,6 @@ impl ChangeStatus {
 impl AsRef<str> for ChangeStatus {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for ChangeStatus {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -7044,7 +6909,7 @@ impl std::convert::From<&str> for AccountLimitType {
 impl std::str::FromStr for AccountLimitType {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(AccountLimitType::from(s))
     }
 }
@@ -7067,15 +6932,6 @@ impl AccountLimitType {
 impl AsRef<str> for AccountLimitType {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for AccountLimitType {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }
 
@@ -7289,7 +7145,7 @@ impl std::convert::From<&str> for ChangeAction {
 impl std::str::FromStr for ChangeAction {
     type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         Ok(ChangeAction::from(s))
     }
 }
@@ -7306,14 +7162,5 @@ impl ChangeAction {
 impl AsRef<str> for ChangeAction {
     fn as_ref(&self) -> &str {
         self.as_str()
-    }
-}
-impl<'de> serde::Deserialize<'de> for ChangeAction {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        let data = <&str>::deserialize(deserializer)?;
-        Ok(Self::from(data))
     }
 }

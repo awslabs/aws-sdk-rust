@@ -40,8 +40,8 @@ pub mod activate_key_signing_key_input {
             smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ActivateKeySigningKeyInput {
-                hosted_zone_id: self.hosted_zone_id.unwrap_or_default(),
-                name: self.name.unwrap_or_default(),
+                hosted_zone_id: self.hosted_zone_id,
+                name: self.name,
             })
         }
     }
@@ -106,14 +106,49 @@ impl ActivateKeySigningKeyInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let hosted_zone_id = {
+            let input = &self.hosted_zone_id;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "hosted_zone_id",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "hosted_zone_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        let name = {
+            let input = &self.name;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "name",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "name",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
         write!(
             output,
             "/2013-04-01/keysigningkey/{HostedZoneId}/{Name}/activate",
-            HostedZoneId = smithy_http::label::fmt_string(&self.hosted_zone_id, false),
-            Name = smithy_http::label::fmt_string(&self.name, false)
+            HostedZoneId = hosted_zone_id,
+            Name = name
         )
-        .expect("formatting should succeed")
+        .expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -121,7 +156,7 @@ impl ActivateKeySigningKeyInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("POST").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -147,14 +182,14 @@ impl ActivateKeySigningKeyInput {
     }
 }
 
-/// See [`AssociateVPCWithHostedZoneInput`](crate::input::AssociateVPCWithHostedZoneInput)
+/// See [`AssociateVpcWithHostedZoneInput`](crate::input::AssociateVpcWithHostedZoneInput)
 pub mod associate_vpc_with_hosted_zone_input {
-    /// A builder for [`AssociateVPCWithHostedZoneInput`](crate::input::AssociateVPCWithHostedZoneInput)
+    /// A builder for [`AssociateVpcWithHostedZoneInput`](crate::input::AssociateVpcWithHostedZoneInput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) hosted_zone_id: std::option::Option<std::string::String>,
-        pub(crate) vpc: std::option::Option<crate::model::VPC>,
+        pub(crate) vpc: std::option::Option<crate::model::Vpc>,
         pub(crate) comment: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -172,11 +207,11 @@ pub mod associate_vpc_with_hosted_zone_input {
             self
         }
         /// <p>A complex type that contains information about the VPC that you want to associate with a private hosted zone.</p>
-        pub fn vpc(mut self, input: crate::model::VPC) -> Self {
+        pub fn vpc(mut self, input: crate::model::Vpc) -> Self {
             self.vpc = Some(input);
             self
         }
-        pub fn set_vpc(mut self, input: std::option::Option<crate::model::VPC>) -> Self {
+        pub fn set_vpc(mut self, input: std::option::Option<crate::model::Vpc>) -> Self {
             self.vpc = input;
             self
         }
@@ -190,15 +225,15 @@ pub mod associate_vpc_with_hosted_zone_input {
             self.comment = input;
             self
         }
-        /// Consumes the builder and constructs a [`AssociateVPCWithHostedZoneInput`](crate::input::AssociateVPCWithHostedZoneInput)
+        /// Consumes the builder and constructs a [`AssociateVpcWithHostedZoneInput`](crate::input::AssociateVpcWithHostedZoneInput)
         pub fn build(
             self,
         ) -> std::result::Result<
-            crate::input::AssociateVPCWithHostedZoneInput,
+            crate::input::AssociateVpcWithHostedZoneInput,
             smithy_http::operation::BuildError,
         > {
-            Ok(crate::input::AssociateVPCWithHostedZoneInput {
-                hosted_zone_id: self.hosted_zone_id.unwrap_or_default(),
+            Ok(crate::input::AssociateVpcWithHostedZoneInput {
+                hosted_zone_id: self.hosted_zone_id,
                 vpc: self.vpc,
                 comment: self.comment,
             })
@@ -210,7 +245,7 @@ pub type AssociateVPCWithHostedZoneInputOperationOutputAlias =
     crate::operation::AssociateVPCWithHostedZone;
 #[doc(hidden)]
 pub type AssociateVPCWithHostedZoneInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
-impl AssociateVPCWithHostedZoneInput {
+impl AssociateVpcWithHostedZoneInput {
     /// Consumes the builder and constructs an Operation<[`AssociateVPCWithHostedZone`](crate::operation::AssociateVPCWithHostedZone)>
     #[allow(clippy::let_and_return)]
     pub fn make_operation(
@@ -270,13 +305,31 @@ impl AssociateVPCWithHostedZoneInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let hosted_zone_id = {
+            let input = &self.hosted_zone_id;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "hosted_zone_id",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "hosted_zone_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
         write!(
             output,
             "/2013-04-01/hostedzone/{HostedZoneId}/associatevpc",
-            HostedZoneId = smithy_http::label::fmt_string(&self.hosted_zone_id, false)
+            HostedZoneId = hosted_zone_id
         )
-        .expect("formatting should succeed")
+        .expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -284,7 +337,7 @@ impl AssociateVPCWithHostedZoneInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("POST").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -304,7 +357,7 @@ impl AssociateVPCWithHostedZoneInput {
         }
         builder.body(body).expect("should be valid request")
     }
-    /// Creates a new builder-style object to manufacture [`AssociateVPCWithHostedZoneInput`](crate::input::AssociateVPCWithHostedZoneInput)
+    /// Creates a new builder-style object to manufacture [`AssociateVpcWithHostedZoneInput`](crate::input::AssociateVpcWithHostedZoneInput)
     pub fn builder() -> crate::input::associate_vpc_with_hosted_zone_input::Builder {
         crate::input::associate_vpc_with_hosted_zone_input::Builder::default()
     }
@@ -352,7 +405,7 @@ pub mod change_resource_record_sets_input {
             smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ChangeResourceRecordSetsInput {
-                hosted_zone_id: self.hosted_zone_id.unwrap_or_default(),
+                hosted_zone_id: self.hosted_zone_id,
                 change_batch: self.change_batch,
             })
         }
@@ -422,13 +475,31 @@ impl ChangeResourceRecordSetsInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let hosted_zone_id = {
+            let input = &self.hosted_zone_id;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "hosted_zone_id",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "hosted_zone_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
         write!(
             output,
             "/2013-04-01/hostedzone/{HostedZoneId}/rrset",
-            HostedZoneId = smithy_http::label::fmt_string(&self.hosted_zone_id, false)
+            HostedZoneId = hosted_zone_id
         )
-        .expect("formatting should succeed")
+        .expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -436,7 +507,7 @@ impl ChangeResourceRecordSetsInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("POST").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -536,22 +607,12 @@ pub mod change_tags_for_resource_input {
             crate::input::ChangeTagsForResourceInput,
             smithy_http::operation::BuildError,
         > {
-            Ok(
-                crate::input::ChangeTagsForResourceInput {
-                    resource_type: self.resource_type
-                        .ok_or(
-                            smithy_http::operation::BuildError::MissingField { field: "resource_type", details: "resource_type was not specified but it is required when building ChangeTagsForResourceInput"}
-                        )?
-                    ,
-                    resource_id: self.resource_id
-                        .unwrap_or_default()
-                    ,
-                    add_tags: self.add_tags
-                    ,
-                    remove_tag_keys: self.remove_tag_keys
-                    ,
-                }
-            )
+            Ok(crate::input::ChangeTagsForResourceInput {
+                resource_type: self.resource_type,
+                resource_id: self.resource_id,
+                add_tags: self.add_tags,
+                remove_tag_keys: self.remove_tag_keys,
+            })
         }
     }
 }
@@ -618,14 +679,49 @@ impl ChangeTagsForResourceInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let resource_type = {
+            let input = &self.resource_type;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "resource_type",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "resource_type",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        let resource_id = {
+            let input = &self.resource_id;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "resource_id",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "resource_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
         write!(
             output,
             "/2013-04-01/tags/{ResourceType}/{ResourceId}",
-            ResourceType = smithy_http::label::fmt_string(&self.resource_type, false),
-            ResourceId = smithy_http::label::fmt_string(&self.resource_id, false)
+            ResourceType = resource_type,
+            ResourceId = resource_id
         )
-        .expect("formatting should succeed")
+        .expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -633,7 +729,7 @@ impl ChangeTagsForResourceInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("POST").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -790,8 +886,9 @@ impl CreateHealthCheckInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(output, "/2013-04-01/healthcheck").expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        write!(output, "/2013-04-01/healthcheck").expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -799,7 +896,7 @@ impl CreateHealthCheckInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("POST").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -832,7 +929,7 @@ pub mod create_hosted_zone_input {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
-        pub(crate) vpc: std::option::Option<crate::model::VPC>,
+        pub(crate) vpc: std::option::Option<crate::model::Vpc>,
         pub(crate) caller_reference: std::option::Option<std::string::String>,
         pub(crate) hosted_zone_config: std::option::Option<crate::model::HostedZoneConfig>,
         pub(crate) delegation_set_id: std::option::Option<std::string::String>,
@@ -856,11 +953,11 @@ pub mod create_hosted_zone_input {
         /// <p>You can specify only one Amazon VPC when you create a private hosted zone. To associate additional Amazon VPCs with the hosted zone,
         /// use <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_AssociateVPCWithHostedZone.html">AssociateVPCWithHostedZone</a>
         /// after you create a hosted zone.</p>
-        pub fn vpc(mut self, input: crate::model::VPC) -> Self {
+        pub fn vpc(mut self, input: crate::model::Vpc) -> Self {
             self.vpc = Some(input);
             self
         }
-        pub fn set_vpc(mut self, input: std::option::Option<crate::model::VPC>) -> Self {
+        pub fn set_vpc(mut self, input: std::option::Option<crate::model::Vpc>) -> Self {
             self.vpc = input;
             self
         }
@@ -994,8 +1091,9 @@ impl CreateHostedZoneInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(output, "/2013-04-01/hostedzone").expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        write!(output, "/2013-04-01/hostedzone").expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -1003,7 +1101,7 @@ impl CreateHostedZoneInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("POST").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -1221,8 +1319,9 @@ impl CreateKeySigningKeyInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(output, "/2013-04-01/keysigningkey").expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        write!(output, "/2013-04-01/keysigningkey").expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -1230,7 +1329,7 @@ impl CreateKeySigningKeyInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("POST").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -1378,8 +1477,9 @@ impl CreateQueryLoggingConfigInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(output, "/2013-04-01/queryloggingconfig").expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        write!(output, "/2013-04-01/queryloggingconfig").expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -1387,7 +1487,7 @@ impl CreateQueryLoggingConfigInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("POST").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -1531,8 +1631,9 @@ impl CreateReusableDelegationSetInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(output, "/2013-04-01/delegationset").expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        write!(output, "/2013-04-01/delegationset").expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -1540,7 +1641,7 @@ impl CreateReusableDelegationSetInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("POST").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -1683,8 +1784,9 @@ impl CreateTrafficPolicyInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(output, "/2013-04-01/trafficpolicy").expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        write!(output, "/2013-04-01/trafficpolicy").expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -1692,7 +1794,7 @@ impl CreateTrafficPolicyInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("POST").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -1865,8 +1967,9 @@ impl CreateTrafficPolicyInstanceInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(output, "/2013-04-01/trafficpolicyinstance").expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        write!(output, "/2013-04-01/trafficpolicyinstance").expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -1874,7 +1977,7 @@ impl CreateTrafficPolicyInstanceInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("POST").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -1948,7 +2051,7 @@ pub mod create_traffic_policy_version_input {
             smithy_http::operation::BuildError,
         > {
             Ok(crate::input::CreateTrafficPolicyVersionInput {
-                id: self.id.unwrap_or_default(),
+                id: self.id,
                 document: self.document,
                 comment: self.comment,
             })
@@ -2020,13 +2123,27 @@ impl CreateTrafficPolicyVersionInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(
-            output,
-            "/2013-04-01/trafficpolicy/{Id}",
-            Id = smithy_http::label::fmt_string(&self.id, false)
-        )
-        .expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let id = {
+            let input = &self.id;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "id",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        write!(output, "/2013-04-01/trafficpolicy/{Id}", Id = id)
+            .expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -2034,7 +2151,7 @@ impl CreateTrafficPolicyVersionInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("POST").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -2060,14 +2177,14 @@ impl CreateTrafficPolicyVersionInput {
     }
 }
 
-/// See [`CreateVPCAssociationAuthorizationInput`](crate::input::CreateVPCAssociationAuthorizationInput)
+/// See [`CreateVpcAssociationAuthorizationInput`](crate::input::CreateVpcAssociationAuthorizationInput)
 pub mod create_vpc_association_authorization_input {
-    /// A builder for [`CreateVPCAssociationAuthorizationInput`](crate::input::CreateVPCAssociationAuthorizationInput)
+    /// A builder for [`CreateVpcAssociationAuthorizationInput`](crate::input::CreateVpcAssociationAuthorizationInput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) hosted_zone_id: std::option::Option<std::string::String>,
-        pub(crate) vpc: std::option::Option<crate::model::VPC>,
+        pub(crate) vpc: std::option::Option<crate::model::Vpc>,
     }
     impl Builder {
         /// <p>The ID of the private hosted zone that you want to authorize associating a VPC with.</p>
@@ -2084,23 +2201,23 @@ pub mod create_vpc_association_authorization_input {
         }
         /// <p>A complex type that contains the VPC ID and region for the VPC that you want to authorize associating
         /// with your hosted zone.</p>
-        pub fn vpc(mut self, input: crate::model::VPC) -> Self {
+        pub fn vpc(mut self, input: crate::model::Vpc) -> Self {
             self.vpc = Some(input);
             self
         }
-        pub fn set_vpc(mut self, input: std::option::Option<crate::model::VPC>) -> Self {
+        pub fn set_vpc(mut self, input: std::option::Option<crate::model::Vpc>) -> Self {
             self.vpc = input;
             self
         }
-        /// Consumes the builder and constructs a [`CreateVPCAssociationAuthorizationInput`](crate::input::CreateVPCAssociationAuthorizationInput)
+        /// Consumes the builder and constructs a [`CreateVpcAssociationAuthorizationInput`](crate::input::CreateVpcAssociationAuthorizationInput)
         pub fn build(
             self,
         ) -> std::result::Result<
-            crate::input::CreateVPCAssociationAuthorizationInput,
+            crate::input::CreateVpcAssociationAuthorizationInput,
             smithy_http::operation::BuildError,
         > {
-            Ok(crate::input::CreateVPCAssociationAuthorizationInput {
-                hosted_zone_id: self.hosted_zone_id.unwrap_or_default(),
+            Ok(crate::input::CreateVpcAssociationAuthorizationInput {
+                hosted_zone_id: self.hosted_zone_id,
                 vpc: self.vpc,
             })
         }
@@ -2111,7 +2228,7 @@ pub type CreateVPCAssociationAuthorizationInputOperationOutputAlias =
     crate::operation::CreateVPCAssociationAuthorization;
 #[doc(hidden)]
 pub type CreateVPCAssociationAuthorizationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
-impl CreateVPCAssociationAuthorizationInput {
+impl CreateVpcAssociationAuthorizationInput {
     /// Consumes the builder and constructs an Operation<[`CreateVPCAssociationAuthorization`](crate::operation::CreateVPCAssociationAuthorization)>
     #[allow(clippy::let_and_return)]
     pub fn make_operation(
@@ -2173,13 +2290,31 @@ impl CreateVPCAssociationAuthorizationInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let hosted_zone_id = {
+            let input = &self.hosted_zone_id;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "hosted_zone_id",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "hosted_zone_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
         write!(
             output,
             "/2013-04-01/hostedzone/{HostedZoneId}/authorizevpcassociation",
-            HostedZoneId = smithy_http::label::fmt_string(&self.hosted_zone_id, false)
+            HostedZoneId = hosted_zone_id
         )
-        .expect("formatting should succeed")
+        .expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -2187,7 +2322,7 @@ impl CreateVPCAssociationAuthorizationInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("POST").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -2207,7 +2342,7 @@ impl CreateVPCAssociationAuthorizationInput {
         }
         builder.body(body).expect("should be valid request")
     }
-    /// Creates a new builder-style object to manufacture [`CreateVPCAssociationAuthorizationInput`](crate::input::CreateVPCAssociationAuthorizationInput)
+    /// Creates a new builder-style object to manufacture [`CreateVpcAssociationAuthorizationInput`](crate::input::CreateVpcAssociationAuthorizationInput)
     pub fn builder() -> crate::input::create_vpc_association_authorization_input::Builder {
         crate::input::create_vpc_association_authorization_input::Builder::default()
     }
@@ -2252,8 +2387,8 @@ pub mod deactivate_key_signing_key_input {
             smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DeactivateKeySigningKeyInput {
-                hosted_zone_id: self.hosted_zone_id.unwrap_or_default(),
-                name: self.name.unwrap_or_default(),
+                hosted_zone_id: self.hosted_zone_id,
+                name: self.name,
             })
         }
     }
@@ -2319,14 +2454,49 @@ impl DeactivateKeySigningKeyInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let hosted_zone_id = {
+            let input = &self.hosted_zone_id;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "hosted_zone_id",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "hosted_zone_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        let name = {
+            let input = &self.name;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "name",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "name",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
         write!(
             output,
             "/2013-04-01/keysigningkey/{HostedZoneId}/{Name}/deactivate",
-            HostedZoneId = smithy_http::label::fmt_string(&self.hosted_zone_id, false),
-            Name = smithy_http::label::fmt_string(&self.name, false)
+            HostedZoneId = hosted_zone_id,
+            Name = name
         )
-        .expect("formatting should succeed")
+        .expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -2334,7 +2504,7 @@ impl DeactivateKeySigningKeyInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("POST").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -2389,7 +2559,7 @@ pub mod delete_health_check_input {
             smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DeleteHealthCheckInput {
-                health_check_id: self.health_check_id.unwrap_or_default(),
+                health_check_id: self.health_check_id,
             })
         }
     }
@@ -2454,13 +2624,31 @@ impl DeleteHealthCheckInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let health_check_id = {
+            let input = &self.health_check_id;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "health_check_id",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "health_check_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
         write!(
             output,
             "/2013-04-01/healthcheck/{HealthCheckId}",
-            HealthCheckId = smithy_http::label::fmt_string(&self.health_check_id, false)
+            HealthCheckId = health_check_id
         )
-        .expect("formatting should succeed")
+        .expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -2468,7 +2656,7 @@ impl DeleteHealthCheckInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("DELETE").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -2519,9 +2707,7 @@ pub mod delete_hosted_zone_input {
             crate::input::DeleteHostedZoneInput,
             smithy_http::operation::BuildError,
         > {
-            Ok(crate::input::DeleteHostedZoneInput {
-                id: self.id.unwrap_or_default(),
-            })
+            Ok(crate::input::DeleteHostedZoneInput { id: self.id })
         }
     }
 }
@@ -2585,13 +2771,26 @@ impl DeleteHostedZoneInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(
-            output,
-            "/2013-04-01/hostedzone/{Id}",
-            Id = smithy_http::label::fmt_string(&self.id, false)
-        )
-        .expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let id = {
+            let input = &self.id;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "id",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        write!(output, "/2013-04-01/hostedzone/{Id}", Id = id).expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -2599,7 +2798,7 @@ impl DeleteHostedZoneInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("DELETE").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -2664,8 +2863,8 @@ pub mod delete_key_signing_key_input {
             smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DeleteKeySigningKeyInput {
-                hosted_zone_id: self.hosted_zone_id.unwrap_or_default(),
-                name: self.name.unwrap_or_default(),
+                hosted_zone_id: self.hosted_zone_id,
+                name: self.name,
             })
         }
     }
@@ -2730,14 +2929,49 @@ impl DeleteKeySigningKeyInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let hosted_zone_id = {
+            let input = &self.hosted_zone_id;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "hosted_zone_id",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "hosted_zone_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        let name = {
+            let input = &self.name;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "name",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "name",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
         write!(
             output,
             "/2013-04-01/keysigningkey/{HostedZoneId}/{Name}",
-            HostedZoneId = smithy_http::label::fmt_string(&self.hosted_zone_id, false),
-            Name = smithy_http::label::fmt_string(&self.name, false)
+            HostedZoneId = hosted_zone_id,
+            Name = name
         )
-        .expect("formatting should succeed")
+        .expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -2745,7 +2979,7 @@ impl DeleteKeySigningKeyInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("DELETE").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -2796,9 +3030,7 @@ pub mod delete_query_logging_config_input {
             crate::input::DeleteQueryLoggingConfigInput,
             smithy_http::operation::BuildError,
         > {
-            Ok(crate::input::DeleteQueryLoggingConfigInput {
-                id: self.id.unwrap_or_default(),
-            })
+            Ok(crate::input::DeleteQueryLoggingConfigInput { id: self.id })
         }
     }
 }
@@ -2863,13 +3095,27 @@ impl DeleteQueryLoggingConfigInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(
-            output,
-            "/2013-04-01/queryloggingconfig/{Id}",
-            Id = smithy_http::label::fmt_string(&self.id, false)
-        )
-        .expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let id = {
+            let input = &self.id;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "id",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        write!(output, "/2013-04-01/queryloggingconfig/{Id}", Id = id)
+            .expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -2877,7 +3123,7 @@ impl DeleteQueryLoggingConfigInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("DELETE").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -2928,9 +3174,7 @@ pub mod delete_reusable_delegation_set_input {
             crate::input::DeleteReusableDelegationSetInput,
             smithy_http::operation::BuildError,
         > {
-            Ok(crate::input::DeleteReusableDelegationSetInput {
-                id: self.id.unwrap_or_default(),
-            })
+            Ok(crate::input::DeleteReusableDelegationSetInput { id: self.id })
         }
     }
 }
@@ -2995,13 +3239,27 @@ impl DeleteReusableDelegationSetInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(
-            output,
-            "/2013-04-01/delegationset/{Id}",
-            Id = smithy_http::label::fmt_string(&self.id, false)
-        )
-        .expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let id = {
+            let input = &self.id;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "id",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        write!(output, "/2013-04-01/delegationset/{Id}", Id = id)
+            .expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -3009,7 +3267,7 @@ impl DeleteReusableDelegationSetInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("DELETE").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -3071,8 +3329,8 @@ pub mod delete_traffic_policy_input {
             smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DeleteTrafficPolicyInput {
-                id: self.id.unwrap_or_default(),
-                version: self.version.unwrap_or_default(),
+                id: self.id,
+                version: self.version,
             })
         }
     }
@@ -3137,14 +3395,49 @@ impl DeleteTrafficPolicyInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let id = {
+            let input = &self.id;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "id",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        let version = {
+            let input = &self.version;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "version",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_default(input);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "version",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
         write!(
             output,
             "/2013-04-01/trafficpolicy/{Id}/{Version}",
-            Id = smithy_http::label::fmt_string(&self.id, false),
-            Version = smithy_http::label::fmt_default(&self.version)
+            Id = id,
+            Version = version
         )
-        .expect("formatting should succeed")
+        .expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -3152,7 +3445,7 @@ impl DeleteTrafficPolicyInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("DELETE").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -3207,9 +3500,7 @@ pub mod delete_traffic_policy_instance_input {
             crate::input::DeleteTrafficPolicyInstanceInput,
             smithy_http::operation::BuildError,
         > {
-            Ok(crate::input::DeleteTrafficPolicyInstanceInput {
-                id: self.id.unwrap_or_default(),
-            })
+            Ok(crate::input::DeleteTrafficPolicyInstanceInput { id: self.id })
         }
     }
 }
@@ -3274,13 +3565,27 @@ impl DeleteTrafficPolicyInstanceInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(
-            output,
-            "/2013-04-01/trafficpolicyinstance/{Id}",
-            Id = smithy_http::label::fmt_string(&self.id, false)
-        )
-        .expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let id = {
+            let input = &self.id;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "id",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        write!(output, "/2013-04-01/trafficpolicyinstance/{Id}", Id = id)
+            .expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -3288,7 +3593,7 @@ impl DeleteTrafficPolicyInstanceInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("DELETE").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -3314,14 +3619,14 @@ impl DeleteTrafficPolicyInstanceInput {
     }
 }
 
-/// See [`DeleteVPCAssociationAuthorizationInput`](crate::input::DeleteVPCAssociationAuthorizationInput)
+/// See [`DeleteVpcAssociationAuthorizationInput`](crate::input::DeleteVpcAssociationAuthorizationInput)
 pub mod delete_vpc_association_authorization_input {
-    /// A builder for [`DeleteVPCAssociationAuthorizationInput`](crate::input::DeleteVPCAssociationAuthorizationInput)
+    /// A builder for [`DeleteVpcAssociationAuthorizationInput`](crate::input::DeleteVpcAssociationAuthorizationInput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) hosted_zone_id: std::option::Option<std::string::String>,
-        pub(crate) vpc: std::option::Option<crate::model::VPC>,
+        pub(crate) vpc: std::option::Option<crate::model::Vpc>,
     }
     impl Builder {
         /// <p>When removing authorization to associate a VPC that was created by one AWS account with a hosted zone
@@ -3339,23 +3644,23 @@ pub mod delete_vpc_association_authorization_input {
         }
         /// <p>When removing authorization to associate a VPC that was created by one AWS account with a hosted zone
         /// that was created with a different AWS account, a complex type that includes the ID and region of the VPC.</p>
-        pub fn vpc(mut self, input: crate::model::VPC) -> Self {
+        pub fn vpc(mut self, input: crate::model::Vpc) -> Self {
             self.vpc = Some(input);
             self
         }
-        pub fn set_vpc(mut self, input: std::option::Option<crate::model::VPC>) -> Self {
+        pub fn set_vpc(mut self, input: std::option::Option<crate::model::Vpc>) -> Self {
             self.vpc = input;
             self
         }
-        /// Consumes the builder and constructs a [`DeleteVPCAssociationAuthorizationInput`](crate::input::DeleteVPCAssociationAuthorizationInput)
+        /// Consumes the builder and constructs a [`DeleteVpcAssociationAuthorizationInput`](crate::input::DeleteVpcAssociationAuthorizationInput)
         pub fn build(
             self,
         ) -> std::result::Result<
-            crate::input::DeleteVPCAssociationAuthorizationInput,
+            crate::input::DeleteVpcAssociationAuthorizationInput,
             smithy_http::operation::BuildError,
         > {
-            Ok(crate::input::DeleteVPCAssociationAuthorizationInput {
-                hosted_zone_id: self.hosted_zone_id.unwrap_or_default(),
+            Ok(crate::input::DeleteVpcAssociationAuthorizationInput {
+                hosted_zone_id: self.hosted_zone_id,
                 vpc: self.vpc,
             })
         }
@@ -3366,7 +3671,7 @@ pub type DeleteVPCAssociationAuthorizationInputOperationOutputAlias =
     crate::operation::DeleteVPCAssociationAuthorization;
 #[doc(hidden)]
 pub type DeleteVPCAssociationAuthorizationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
-impl DeleteVPCAssociationAuthorizationInput {
+impl DeleteVpcAssociationAuthorizationInput {
     /// Consumes the builder and constructs an Operation<[`DeleteVPCAssociationAuthorization`](crate::operation::DeleteVPCAssociationAuthorization)>
     #[allow(clippy::let_and_return)]
     pub fn make_operation(
@@ -3428,13 +3733,31 @@ impl DeleteVPCAssociationAuthorizationInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let hosted_zone_id = {
+            let input = &self.hosted_zone_id;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "hosted_zone_id",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "hosted_zone_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
         write!(
             output,
             "/2013-04-01/hostedzone/{HostedZoneId}/deauthorizevpcassociation",
-            HostedZoneId = smithy_http::label::fmt_string(&self.hosted_zone_id, false)
+            HostedZoneId = hosted_zone_id
         )
-        .expect("formatting should succeed")
+        .expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -3442,7 +3765,7 @@ impl DeleteVPCAssociationAuthorizationInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("POST").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -3462,15 +3785,15 @@ impl DeleteVPCAssociationAuthorizationInput {
         }
         builder.body(body).expect("should be valid request")
     }
-    /// Creates a new builder-style object to manufacture [`DeleteVPCAssociationAuthorizationInput`](crate::input::DeleteVPCAssociationAuthorizationInput)
+    /// Creates a new builder-style object to manufacture [`DeleteVpcAssociationAuthorizationInput`](crate::input::DeleteVpcAssociationAuthorizationInput)
     pub fn builder() -> crate::input::delete_vpc_association_authorization_input::Builder {
         crate::input::delete_vpc_association_authorization_input::Builder::default()
     }
 }
 
-/// See [`DisableHostedZoneDNSSECInput`](crate::input::DisableHostedZoneDNSSECInput)
+/// See [`DisableHostedZoneDnssecInput`](crate::input::DisableHostedZoneDnssecInput)
 pub mod disable_hosted_zone_dnssec_input {
-    /// A builder for [`DisableHostedZoneDNSSECInput`](crate::input::DisableHostedZoneDNSSECInput)
+    /// A builder for [`DisableHostedZoneDnssecInput`](crate::input::DisableHostedZoneDnssecInput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -3489,15 +3812,15 @@ pub mod disable_hosted_zone_dnssec_input {
             self.hosted_zone_id = input;
             self
         }
-        /// Consumes the builder and constructs a [`DisableHostedZoneDNSSECInput`](crate::input::DisableHostedZoneDNSSECInput)
+        /// Consumes the builder and constructs a [`DisableHostedZoneDnssecInput`](crate::input::DisableHostedZoneDnssecInput)
         pub fn build(
             self,
         ) -> std::result::Result<
-            crate::input::DisableHostedZoneDNSSECInput,
+            crate::input::DisableHostedZoneDnssecInput,
             smithy_http::operation::BuildError,
         > {
-            Ok(crate::input::DisableHostedZoneDNSSECInput {
-                hosted_zone_id: self.hosted_zone_id.unwrap_or_default(),
+            Ok(crate::input::DisableHostedZoneDnssecInput {
+                hosted_zone_id: self.hosted_zone_id,
             })
         }
     }
@@ -3507,7 +3830,7 @@ pub type DisableHostedZoneDNSSECInputOperationOutputAlias =
     crate::operation::DisableHostedZoneDNSSEC;
 #[doc(hidden)]
 pub type DisableHostedZoneDNSSECInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
-impl DisableHostedZoneDNSSECInput {
+impl DisableHostedZoneDnssecInput {
     /// Consumes the builder and constructs an Operation<[`DisableHostedZoneDNSSEC`](crate::operation::DisableHostedZoneDNSSEC)>
     #[allow(clippy::let_and_return)]
     pub fn make_operation(
@@ -3563,13 +3886,31 @@ impl DisableHostedZoneDNSSECInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let hosted_zone_id = {
+            let input = &self.hosted_zone_id;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "hosted_zone_id",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "hosted_zone_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
         write!(
             output,
             "/2013-04-01/hostedzone/{HostedZoneId}/disable-dnssec",
-            HostedZoneId = smithy_http::label::fmt_string(&self.hosted_zone_id, false)
+            HostedZoneId = hosted_zone_id
         )
-        .expect("formatting should succeed")
+        .expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -3577,7 +3918,7 @@ impl DisableHostedZoneDNSSECInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("POST").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -3597,20 +3938,20 @@ impl DisableHostedZoneDNSSECInput {
         }
         builder.body(body).expect("should be valid request")
     }
-    /// Creates a new builder-style object to manufacture [`DisableHostedZoneDNSSECInput`](crate::input::DisableHostedZoneDNSSECInput)
+    /// Creates a new builder-style object to manufacture [`DisableHostedZoneDnssecInput`](crate::input::DisableHostedZoneDnssecInput)
     pub fn builder() -> crate::input::disable_hosted_zone_dnssec_input::Builder {
         crate::input::disable_hosted_zone_dnssec_input::Builder::default()
     }
 }
 
-/// See [`DisassociateVPCFromHostedZoneInput`](crate::input::DisassociateVPCFromHostedZoneInput)
+/// See [`DisassociateVpcFromHostedZoneInput`](crate::input::DisassociateVpcFromHostedZoneInput)
 pub mod disassociate_vpc_from_hosted_zone_input {
-    /// A builder for [`DisassociateVPCFromHostedZoneInput`](crate::input::DisassociateVPCFromHostedZoneInput)
+    /// A builder for [`DisassociateVpcFromHostedZoneInput`](crate::input::DisassociateVpcFromHostedZoneInput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) hosted_zone_id: std::option::Option<std::string::String>,
-        pub(crate) vpc: std::option::Option<crate::model::VPC>,
+        pub(crate) vpc: std::option::Option<crate::model::Vpc>,
         pub(crate) comment: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -3628,11 +3969,11 @@ pub mod disassociate_vpc_from_hosted_zone_input {
         }
         /// <p>A complex type that contains information about the VPC that you're disassociating
         /// from the specified hosted zone.</p>
-        pub fn vpc(mut self, input: crate::model::VPC) -> Self {
+        pub fn vpc(mut self, input: crate::model::Vpc) -> Self {
             self.vpc = Some(input);
             self
         }
-        pub fn set_vpc(mut self, input: std::option::Option<crate::model::VPC>) -> Self {
+        pub fn set_vpc(mut self, input: std::option::Option<crate::model::Vpc>) -> Self {
             self.vpc = input;
             self
         }
@@ -3646,15 +3987,15 @@ pub mod disassociate_vpc_from_hosted_zone_input {
             self.comment = input;
             self
         }
-        /// Consumes the builder and constructs a [`DisassociateVPCFromHostedZoneInput`](crate::input::DisassociateVPCFromHostedZoneInput)
+        /// Consumes the builder and constructs a [`DisassociateVpcFromHostedZoneInput`](crate::input::DisassociateVpcFromHostedZoneInput)
         pub fn build(
             self,
         ) -> std::result::Result<
-            crate::input::DisassociateVPCFromHostedZoneInput,
+            crate::input::DisassociateVpcFromHostedZoneInput,
             smithy_http::operation::BuildError,
         > {
-            Ok(crate::input::DisassociateVPCFromHostedZoneInput {
-                hosted_zone_id: self.hosted_zone_id.unwrap_or_default(),
+            Ok(crate::input::DisassociateVpcFromHostedZoneInput {
+                hosted_zone_id: self.hosted_zone_id,
                 vpc: self.vpc,
                 comment: self.comment,
             })
@@ -3666,7 +4007,7 @@ pub type DisassociateVPCFromHostedZoneInputOperationOutputAlias =
     crate::operation::DisassociateVPCFromHostedZone;
 #[doc(hidden)]
 pub type DisassociateVPCFromHostedZoneInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
-impl DisassociateVPCFromHostedZoneInput {
+impl DisassociateVpcFromHostedZoneInput {
     /// Consumes the builder and constructs an Operation<[`DisassociateVPCFromHostedZone`](crate::operation::DisassociateVPCFromHostedZone)>
     #[allow(clippy::let_and_return)]
     pub fn make_operation(
@@ -3726,13 +4067,31 @@ impl DisassociateVPCFromHostedZoneInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let hosted_zone_id = {
+            let input = &self.hosted_zone_id;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "hosted_zone_id",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "hosted_zone_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
         write!(
             output,
             "/2013-04-01/hostedzone/{HostedZoneId}/disassociatevpc",
-            HostedZoneId = smithy_http::label::fmt_string(&self.hosted_zone_id, false)
+            HostedZoneId = hosted_zone_id
         )
-        .expect("formatting should succeed")
+        .expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -3740,7 +4099,7 @@ impl DisassociateVPCFromHostedZoneInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("POST").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -3760,15 +4119,15 @@ impl DisassociateVPCFromHostedZoneInput {
         }
         builder.body(body).expect("should be valid request")
     }
-    /// Creates a new builder-style object to manufacture [`DisassociateVPCFromHostedZoneInput`](crate::input::DisassociateVPCFromHostedZoneInput)
+    /// Creates a new builder-style object to manufacture [`DisassociateVpcFromHostedZoneInput`](crate::input::DisassociateVpcFromHostedZoneInput)
     pub fn builder() -> crate::input::disassociate_vpc_from_hosted_zone_input::Builder {
         crate::input::disassociate_vpc_from_hosted_zone_input::Builder::default()
     }
 }
 
-/// See [`EnableHostedZoneDNSSECInput`](crate::input::EnableHostedZoneDNSSECInput)
+/// See [`EnableHostedZoneDnssecInput`](crate::input::EnableHostedZoneDnssecInput)
 pub mod enable_hosted_zone_dnssec_input {
-    /// A builder for [`EnableHostedZoneDNSSECInput`](crate::input::EnableHostedZoneDNSSECInput)
+    /// A builder for [`EnableHostedZoneDnssecInput`](crate::input::EnableHostedZoneDnssecInput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -3787,15 +4146,15 @@ pub mod enable_hosted_zone_dnssec_input {
             self.hosted_zone_id = input;
             self
         }
-        /// Consumes the builder and constructs a [`EnableHostedZoneDNSSECInput`](crate::input::EnableHostedZoneDNSSECInput)
+        /// Consumes the builder and constructs a [`EnableHostedZoneDnssecInput`](crate::input::EnableHostedZoneDnssecInput)
         pub fn build(
             self,
         ) -> std::result::Result<
-            crate::input::EnableHostedZoneDNSSECInput,
+            crate::input::EnableHostedZoneDnssecInput,
             smithy_http::operation::BuildError,
         > {
-            Ok(crate::input::EnableHostedZoneDNSSECInput {
-                hosted_zone_id: self.hosted_zone_id.unwrap_or_default(),
+            Ok(crate::input::EnableHostedZoneDnssecInput {
+                hosted_zone_id: self.hosted_zone_id,
             })
         }
     }
@@ -3804,7 +4163,7 @@ pub mod enable_hosted_zone_dnssec_input {
 pub type EnableHostedZoneDNSSECInputOperationOutputAlias = crate::operation::EnableHostedZoneDNSSEC;
 #[doc(hidden)]
 pub type EnableHostedZoneDNSSECInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
-impl EnableHostedZoneDNSSECInput {
+impl EnableHostedZoneDnssecInput {
     /// Consumes the builder and constructs an Operation<[`EnableHostedZoneDNSSEC`](crate::operation::EnableHostedZoneDNSSEC)>
     #[allow(clippy::let_and_return)]
     pub fn make_operation(
@@ -3860,13 +4219,31 @@ impl EnableHostedZoneDNSSECInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let hosted_zone_id = {
+            let input = &self.hosted_zone_id;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "hosted_zone_id",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "hosted_zone_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
         write!(
             output,
             "/2013-04-01/hostedzone/{HostedZoneId}/enable-dnssec",
-            HostedZoneId = smithy_http::label::fmt_string(&self.hosted_zone_id, false)
+            HostedZoneId = hosted_zone_id
         )
-        .expect("formatting should succeed")
+        .expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -3874,7 +4251,7 @@ impl EnableHostedZoneDNSSECInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("POST").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -3894,7 +4271,7 @@ impl EnableHostedZoneDNSSECInput {
         }
         builder.body(body).expect("should be valid request")
     }
-    /// Creates a new builder-style object to manufacture [`EnableHostedZoneDNSSECInput`](crate::input::EnableHostedZoneDNSSECInput)
+    /// Creates a new builder-style object to manufacture [`EnableHostedZoneDnssecInput`](crate::input::EnableHostedZoneDnssecInput)
     pub fn builder() -> crate::input::enable_hosted_zone_dnssec_input::Builder {
         crate::input::enable_hosted_zone_dnssec_input::Builder::default()
     }
@@ -3956,15 +4333,9 @@ pub mod get_account_limit_input {
             crate::input::GetAccountLimitInput,
             smithy_http::operation::BuildError,
         > {
-            Ok(
-                crate::input::GetAccountLimitInput {
-                    r#type: self.r#type
-                        .ok_or(
-                            smithy_http::operation::BuildError::MissingField { field: "r#type", details: "r#type was not specified but it is required when building GetAccountLimitInput"}
-                        )?
-                    ,
-                }
-            )
+            Ok(crate::input::GetAccountLimitInput {
+                r#type: self.r#type,
+            })
         }
     }
 }
@@ -4028,13 +4399,27 @@ impl GetAccountLimitInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(
-            output,
-            "/2013-04-01/accountlimit/{Type}",
-            Type = smithy_http::label::fmt_string(&self.r#type, false)
-        )
-        .expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let r#type = {
+            let input = &self.r#type;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "r#type",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "r#type",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        write!(output, "/2013-04-01/accountlimit/{Type}", Type = r#type)
+            .expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -4042,7 +4427,7 @@ impl GetAccountLimitInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("GET").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -4092,9 +4477,7 @@ pub mod get_change_input {
             self,
         ) -> std::result::Result<crate::input::GetChangeInput, smithy_http::operation::BuildError>
         {
-            Ok(crate::input::GetChangeInput {
-                id: self.id.unwrap_or_default(),
-            })
+            Ok(crate::input::GetChangeInput { id: self.id })
         }
     }
 }
@@ -4156,13 +4539,26 @@ impl GetChangeInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(
-            output,
-            "/2013-04-01/change/{Id}",
-            Id = smithy_http::label::fmt_string(&self.id, false)
-        )
-        .expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let id = {
+            let input = &self.id;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "id",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        write!(output, "/2013-04-01/change/{Id}", Id = id).expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -4170,7 +4566,7 @@ impl GetChangeInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("GET").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -4274,8 +4670,9 @@ impl GetCheckerIpRangesInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(output, "/2013-04-01/checkeripranges").expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        write!(output, "/2013-04-01/checkeripranges").expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -4283,7 +4680,7 @@ impl GetCheckerIpRangesInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("GET").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -4309,9 +4706,9 @@ impl GetCheckerIpRangesInput {
     }
 }
 
-/// See [`GetDNSSECInput`](crate::input::GetDNSSECInput)
+/// See [`GetDnssecInput`](crate::input::GetDnssecInput)
 pub mod get_dnssec_input {
-    /// A builder for [`GetDNSSECInput`](crate::input::GetDNSSECInput)
+    /// A builder for [`GetDnssecInput`](crate::input::GetDnssecInput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -4330,13 +4727,13 @@ pub mod get_dnssec_input {
             self.hosted_zone_id = input;
             self
         }
-        /// Consumes the builder and constructs a [`GetDNSSECInput`](crate::input::GetDNSSECInput)
+        /// Consumes the builder and constructs a [`GetDnssecInput`](crate::input::GetDnssecInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::GetDNSSECInput, smithy_http::operation::BuildError>
+        ) -> std::result::Result<crate::input::GetDnssecInput, smithy_http::operation::BuildError>
         {
-            Ok(crate::input::GetDNSSECInput {
-                hosted_zone_id: self.hosted_zone_id.unwrap_or_default(),
+            Ok(crate::input::GetDnssecInput {
+                hosted_zone_id: self.hosted_zone_id,
             })
         }
     }
@@ -4345,7 +4742,7 @@ pub mod get_dnssec_input {
 pub type GetDNSSECInputOperationOutputAlias = crate::operation::GetDNSSEC;
 #[doc(hidden)]
 pub type GetDNSSECInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
-impl GetDNSSECInput {
+impl GetDnssecInput {
     /// Consumes the builder and constructs an Operation<[`GetDNSSEC`](crate::operation::GetDNSSEC)>
     #[allow(clippy::let_and_return)]
     pub fn make_operation(
@@ -4399,13 +4796,31 @@ impl GetDNSSECInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let hosted_zone_id = {
+            let input = &self.hosted_zone_id;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "hosted_zone_id",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "hosted_zone_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
         write!(
             output,
             "/2013-04-01/hostedzone/{HostedZoneId}/dnssec",
-            HostedZoneId = smithy_http::label::fmt_string(&self.hosted_zone_id, false)
+            HostedZoneId = hosted_zone_id
         )
-        .expect("formatting should succeed")
+        .expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -4413,7 +4828,7 @@ impl GetDNSSECInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("GET").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -4433,7 +4848,7 @@ impl GetDNSSECInput {
         }
         builder.body(body).expect("should be valid request")
     }
-    /// Creates a new builder-style object to manufacture [`GetDNSSECInput`](crate::input::GetDNSSECInput)
+    /// Creates a new builder-style object to manufacture [`GetDnssecInput`](crate::input::GetDnssecInput)
     pub fn builder() -> crate::input::get_dnssec_input::Builder {
         crate::input::get_dnssec_input::Builder::default()
     }
@@ -4589,8 +5004,9 @@ impl GetGeoLocationInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(output, "/2013-04-01/geolocation").expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        write!(output, "/2013-04-01/geolocation").expect("formatting should succeed");
+        Ok(())
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
@@ -4610,7 +5026,7 @@ impl GetGeoLocationInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         self.uri_query(&mut uri);
         Ok(builder.method("GET").uri(uri))
     }
@@ -4667,7 +5083,7 @@ pub mod get_health_check_input {
             smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GetHealthCheckInput {
-                health_check_id: self.health_check_id.unwrap_or_default(),
+                health_check_id: self.health_check_id,
             })
         }
     }
@@ -4732,13 +5148,31 @@ impl GetHealthCheckInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let health_check_id = {
+            let input = &self.health_check_id;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "health_check_id",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "health_check_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
         write!(
             output,
             "/2013-04-01/healthcheck/{HealthCheckId}",
-            HealthCheckId = smithy_http::label::fmt_string(&self.health_check_id, false)
+            HealthCheckId = health_check_id
         )
-        .expect("formatting should succeed")
+        .expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -4746,7 +5180,7 @@ impl GetHealthCheckInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("GET").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -4850,8 +5284,9 @@ impl GetHealthCheckCountInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(output, "/2013-04-01/healthcheckcount").expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        write!(output, "/2013-04-01/healthcheckcount").expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -4859,7 +5294,7 @@ impl GetHealthCheckCountInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("GET").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -4919,7 +5354,7 @@ pub mod get_health_check_last_failure_reason_input {
             smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GetHealthCheckLastFailureReasonInput {
-                health_check_id: self.health_check_id.unwrap_or_default(),
+                health_check_id: self.health_check_id,
             })
         }
     }
@@ -4985,13 +5420,31 @@ impl GetHealthCheckLastFailureReasonInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let health_check_id = {
+            let input = &self.health_check_id;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "health_check_id",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "health_check_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
         write!(
             output,
             "/2013-04-01/healthcheck/{HealthCheckId}/lastfailurereason",
-            HealthCheckId = smithy_http::label::fmt_string(&self.health_check_id, false)
+            HealthCheckId = health_check_id
         )
-        .expect("formatting should succeed")
+        .expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -4999,7 +5452,7 @@ impl GetHealthCheckLastFailureReasonInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("GET").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -5059,7 +5512,7 @@ pub mod get_health_check_status_input {
             smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GetHealthCheckStatusInput {
-                health_check_id: self.health_check_id.unwrap_or_default(),
+                health_check_id: self.health_check_id,
             })
         }
     }
@@ -5124,13 +5577,31 @@ impl GetHealthCheckStatusInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let health_check_id = {
+            let input = &self.health_check_id;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "health_check_id",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "health_check_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
         write!(
             output,
             "/2013-04-01/healthcheck/{HealthCheckId}/status",
-            HealthCheckId = smithy_http::label::fmt_string(&self.health_check_id, false)
+            HealthCheckId = health_check_id
         )
-        .expect("formatting should succeed")
+        .expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -5138,7 +5609,7 @@ impl GetHealthCheckStatusInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("GET").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -5187,9 +5658,7 @@ pub mod get_hosted_zone_input {
             self,
         ) -> std::result::Result<crate::input::GetHostedZoneInput, smithy_http::operation::BuildError>
         {
-            Ok(crate::input::GetHostedZoneInput {
-                id: self.id.unwrap_or_default(),
-            })
+            Ok(crate::input::GetHostedZoneInput { id: self.id })
         }
     }
 }
@@ -5253,13 +5722,26 @@ impl GetHostedZoneInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(
-            output,
-            "/2013-04-01/hostedzone/{Id}",
-            Id = smithy_http::label::fmt_string(&self.id, false)
-        )
-        .expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let id = {
+            let input = &self.id;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "id",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        write!(output, "/2013-04-01/hostedzone/{Id}", Id = id).expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -5267,7 +5749,7 @@ impl GetHostedZoneInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("GET").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -5371,8 +5853,9 @@ impl GetHostedZoneCountInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(output, "/2013-04-01/hostedzonecount").expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        write!(output, "/2013-04-01/hostedzonecount").expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -5380,7 +5863,7 @@ impl GetHostedZoneCountInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("GET").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -5459,18 +5942,10 @@ pub mod get_hosted_zone_limit_input {
             crate::input::GetHostedZoneLimitInput,
             smithy_http::operation::BuildError,
         > {
-            Ok(
-                crate::input::GetHostedZoneLimitInput {
-                    r#type: self.r#type
-                        .ok_or(
-                            smithy_http::operation::BuildError::MissingField { field: "r#type", details: "r#type was not specified but it is required when building GetHostedZoneLimitInput"}
-                        )?
-                    ,
-                    hosted_zone_id: self.hosted_zone_id
-                        .unwrap_or_default()
-                    ,
-                }
-            )
+            Ok(crate::input::GetHostedZoneLimitInput {
+                r#type: self.r#type,
+                hosted_zone_id: self.hosted_zone_id,
+            })
         }
     }
 }
@@ -5534,14 +6009,49 @@ impl GetHostedZoneLimitInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let hosted_zone_id = {
+            let input = &self.hosted_zone_id;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "hosted_zone_id",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "hosted_zone_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        let r#type = {
+            let input = &self.r#type;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "r#type",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "r#type",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
         write!(
             output,
             "/2013-04-01/hostedzonelimit/{HostedZoneId}/{Type}",
-            HostedZoneId = smithy_http::label::fmt_string(&self.hosted_zone_id, false),
-            Type = smithy_http::label::fmt_string(&self.r#type, false)
+            HostedZoneId = hosted_zone_id,
+            Type = r#type
         )
-        .expect("formatting should succeed")
+        .expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -5549,7 +6059,7 @@ impl GetHostedZoneLimitInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("GET").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -5600,9 +6110,7 @@ pub mod get_query_logging_config_input {
             crate::input::GetQueryLoggingConfigInput,
             smithy_http::operation::BuildError,
         > {
-            Ok(crate::input::GetQueryLoggingConfigInput {
-                id: self.id.unwrap_or_default(),
-            })
+            Ok(crate::input::GetQueryLoggingConfigInput { id: self.id })
         }
     }
 }
@@ -5666,13 +6174,27 @@ impl GetQueryLoggingConfigInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(
-            output,
-            "/2013-04-01/queryloggingconfig/{Id}",
-            Id = smithy_http::label::fmt_string(&self.id, false)
-        )
-        .expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let id = {
+            let input = &self.id;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "id",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        write!(output, "/2013-04-01/queryloggingconfig/{Id}", Id = id)
+            .expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -5680,7 +6202,7 @@ impl GetQueryLoggingConfigInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("GET").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -5731,9 +6253,7 @@ pub mod get_reusable_delegation_set_input {
             crate::input::GetReusableDelegationSetInput,
             smithy_http::operation::BuildError,
         > {
-            Ok(crate::input::GetReusableDelegationSetInput {
-                id: self.id.unwrap_or_default(),
-            })
+            Ok(crate::input::GetReusableDelegationSetInput { id: self.id })
         }
     }
 }
@@ -5798,13 +6318,27 @@ impl GetReusableDelegationSetInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(
-            output,
-            "/2013-04-01/delegationset/{Id}",
-            Id = smithy_http::label::fmt_string(&self.id, false)
-        )
-        .expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let id = {
+            let input = &self.id;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "id",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        write!(output, "/2013-04-01/delegationset/{Id}", Id = id)
+            .expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -5812,7 +6346,7 @@ impl GetReusableDelegationSetInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("GET").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -5880,18 +6414,10 @@ pub mod get_reusable_delegation_set_limit_input {
             crate::input::GetReusableDelegationSetLimitInput,
             smithy_http::operation::BuildError,
         > {
-            Ok(
-                crate::input::GetReusableDelegationSetLimitInput {
-                    r#type: self.r#type
-                        .ok_or(
-                            smithy_http::operation::BuildError::MissingField { field: "r#type", details: "r#type was not specified but it is required when building GetReusableDelegationSetLimitInput"}
-                        )?
-                    ,
-                    delegation_set_id: self.delegation_set_id
-                        .unwrap_or_default()
-                    ,
-                }
-            )
+            Ok(crate::input::GetReusableDelegationSetLimitInput {
+                r#type: self.r#type,
+                delegation_set_id: self.delegation_set_id,
+            })
         }
     }
 }
@@ -5956,14 +6482,49 @@ impl GetReusableDelegationSetLimitInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let delegation_set_id = {
+            let input = &self.delegation_set_id;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "delegation_set_id",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "delegation_set_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        let r#type = {
+            let input = &self.r#type;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "r#type",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "r#type",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
         write!(
             output,
             "/2013-04-01/reusabledelegationsetlimit/{DelegationSetId}/{Type}",
-            DelegationSetId = smithy_http::label::fmt_string(&self.delegation_set_id, false),
-            Type = smithy_http::label::fmt_string(&self.r#type, false)
+            DelegationSetId = delegation_set_id,
+            Type = r#type
         )
-        .expect("formatting should succeed")
+        .expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -5971,7 +6532,7 @@ impl GetReusableDelegationSetLimitInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("GET").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -6033,8 +6594,8 @@ pub mod get_traffic_policy_input {
             smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GetTrafficPolicyInput {
-                id: self.id.unwrap_or_default(),
-                version: self.version.unwrap_or_default(),
+                id: self.id,
+                version: self.version,
             })
         }
     }
@@ -6099,14 +6660,49 @@ impl GetTrafficPolicyInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let id = {
+            let input = &self.id;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "id",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        let version = {
+            let input = &self.version;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "version",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_default(input);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "version",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
         write!(
             output,
             "/2013-04-01/trafficpolicy/{Id}/{Version}",
-            Id = smithy_http::label::fmt_string(&self.id, false),
-            Version = smithy_http::label::fmt_default(&self.version)
+            Id = id,
+            Version = version
         )
-        .expect("formatting should succeed")
+        .expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -6114,7 +6710,7 @@ impl GetTrafficPolicyInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("GET").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -6165,9 +6761,7 @@ pub mod get_traffic_policy_instance_input {
             crate::input::GetTrafficPolicyInstanceInput,
             smithy_http::operation::BuildError,
         > {
-            Ok(crate::input::GetTrafficPolicyInstanceInput {
-                id: self.id.unwrap_or_default(),
-            })
+            Ok(crate::input::GetTrafficPolicyInstanceInput { id: self.id })
         }
     }
 }
@@ -6232,13 +6826,27 @@ impl GetTrafficPolicyInstanceInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(
-            output,
-            "/2013-04-01/trafficpolicyinstance/{Id}",
-            Id = smithy_http::label::fmt_string(&self.id, false)
-        )
-        .expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let id = {
+            let input = &self.id;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "id",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        write!(output, "/2013-04-01/trafficpolicyinstance/{Id}", Id = id)
+            .expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -6246,7 +6854,7 @@ impl GetTrafficPolicyInstanceInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("GET").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -6351,8 +6959,10 @@ impl GetTrafficPolicyInstanceCountInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(output, "/2013-04-01/trafficpolicyinstancecount").expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        write!(output, "/2013-04-01/trafficpolicyinstancecount")
+            .expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -6360,7 +6970,7 @@ impl GetTrafficPolicyInstanceCountInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("GET").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -6530,8 +7140,9 @@ impl ListGeoLocationsInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(output, "/2013-04-01/geolocations").expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        write!(output, "/2013-04-01/geolocations").expect("formatting should succeed");
+        Ok(())
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
@@ -6563,7 +7174,7 @@ impl ListGeoLocationsInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         self.uri_query(&mut uri);
         Ok(builder.method("GET").uri(uri))
     }
@@ -6697,8 +7308,9 @@ impl ListHealthChecksInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(output, "/2013-04-01/healthcheck").expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        write!(output, "/2013-04-01/healthcheck").expect("formatting should succeed");
+        Ok(())
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
@@ -6715,7 +7327,7 @@ impl ListHealthChecksInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         self.uri_query(&mut uri);
         Ok(builder.method("GET").uri(uri))
     }
@@ -6865,8 +7477,9 @@ impl ListHostedZonesInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(output, "/2013-04-01/hostedzone").expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        write!(output, "/2013-04-01/hostedzone").expect("formatting should succeed");
+        Ok(())
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
@@ -6889,7 +7502,7 @@ impl ListHostedZonesInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         self.uri_query(&mut uri);
         Ok(builder.method("GET").uri(uri))
     }
@@ -7041,8 +7654,9 @@ impl ListHostedZonesByNameInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(output, "/2013-04-01/hostedzonesbyname").expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        write!(output, "/2013-04-01/hostedzonesbyname").expect("formatting should succeed");
+        Ok(())
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
@@ -7062,7 +7676,7 @@ impl ListHostedZonesByNameInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         self.uri_query(&mut uri);
         Ok(builder.method("GET").uri(uri))
     }
@@ -7089,9 +7703,9 @@ impl ListHostedZonesByNameInput {
     }
 }
 
-/// See [`ListHostedZonesByVPCInput`](crate::input::ListHostedZonesByVPCInput)
+/// See [`ListHostedZonesByVpcInput`](crate::input::ListHostedZonesByVpcInput)
 pub mod list_hosted_zones_by_vpc_input {
-    /// A builder for [`ListHostedZonesByVPCInput`](crate::input::ListHostedZonesByVPCInput)
+    /// A builder for [`ListHostedZonesByVpcInput`](crate::input::ListHostedZonesByVpcInput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -7145,14 +7759,14 @@ pub mod list_hosted_zones_by_vpc_input {
             self.next_token = input;
             self
         }
-        /// Consumes the builder and constructs a [`ListHostedZonesByVPCInput`](crate::input::ListHostedZonesByVPCInput)
+        /// Consumes the builder and constructs a [`ListHostedZonesByVpcInput`](crate::input::ListHostedZonesByVpcInput)
         pub fn build(
             self,
         ) -> std::result::Result<
-            crate::input::ListHostedZonesByVPCInput,
+            crate::input::ListHostedZonesByVpcInput,
             smithy_http::operation::BuildError,
         > {
-            Ok(crate::input::ListHostedZonesByVPCInput {
+            Ok(crate::input::ListHostedZonesByVpcInput {
                 vpc_id: self.vpc_id,
                 vpc_region: self.vpc_region,
                 max_items: self.max_items,
@@ -7165,7 +7779,7 @@ pub mod list_hosted_zones_by_vpc_input {
 pub type ListHostedZonesByVPCInputOperationOutputAlias = crate::operation::ListHostedZonesByVPC;
 #[doc(hidden)]
 pub type ListHostedZonesByVPCInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
-impl ListHostedZonesByVPCInput {
+impl ListHostedZonesByVpcInput {
     /// Consumes the builder and constructs an Operation<[`ListHostedZonesByVPC`](crate::operation::ListHostedZonesByVPC)>
     #[allow(clippy::let_and_return)]
     pub fn make_operation(
@@ -7221,8 +7835,9 @@ impl ListHostedZonesByVPCInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(output, "/2013-04-01/hostedzonesbyvpc").expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        write!(output, "/2013-04-01/hostedzonesbyvpc").expect("formatting should succeed");
+        Ok(())
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
@@ -7245,7 +7860,7 @@ impl ListHostedZonesByVPCInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         self.uri_query(&mut uri);
         Ok(builder.method("GET").uri(uri))
     }
@@ -7266,7 +7881,7 @@ impl ListHostedZonesByVPCInput {
         }
         builder.body(body).expect("should be valid request")
     }
-    /// Creates a new builder-style object to manufacture [`ListHostedZonesByVPCInput`](crate::input::ListHostedZonesByVPCInput)
+    /// Creates a new builder-style object to manufacture [`ListHostedZonesByVpcInput`](crate::input::ListHostedZonesByVpcInput)
     pub fn builder() -> crate::input::list_hosted_zones_by_vpc_input::Builder {
         crate::input::list_hosted_zones_by_vpc_input::Builder::default()
     }
@@ -7400,8 +8015,9 @@ impl ListQueryLoggingConfigsInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(output, "/2013-04-01/queryloggingconfig").expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        write!(output, "/2013-04-01/queryloggingconfig").expect("formatting should succeed");
+        Ok(())
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
@@ -7421,7 +8037,7 @@ impl ListQueryLoggingConfigsInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         self.uri_query(&mut uri);
         Ok(builder.method("GET").uri(uri))
     }
@@ -7573,7 +8189,7 @@ pub mod list_resource_record_sets_input {
             smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListResourceRecordSetsInput {
-                hosted_zone_id: self.hosted_zone_id.unwrap_or_default(),
+                hosted_zone_id: self.hosted_zone_id,
                 start_record_name: self.start_record_name,
                 start_record_type: self.start_record_type,
                 start_record_identifier: self.start_record_identifier,
@@ -7642,13 +8258,31 @@ impl ListResourceRecordSetsInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let hosted_zone_id = {
+            let input = &self.hosted_zone_id;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "hosted_zone_id",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "hosted_zone_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
         write!(
             output,
             "/2013-04-01/hostedzone/{HostedZoneId}/rrset",
-            HostedZoneId = smithy_http::label::fmt_string(&self.hosted_zone_id, false)
+            HostedZoneId = hosted_zone_id
         )
-        .expect("formatting should succeed")
+        .expect("formatting should succeed");
+        Ok(())
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
@@ -7671,7 +8305,7 @@ impl ListResourceRecordSetsInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         self.uri_query(&mut uri);
         Ok(builder.method("GET").uri(uri))
     }
@@ -7806,8 +8440,9 @@ impl ListReusableDelegationSetsInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(output, "/2013-04-01/delegationset").expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        write!(output, "/2013-04-01/delegationset").expect("formatting should succeed");
+        Ok(())
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
@@ -7824,7 +8459,7 @@ impl ListReusableDelegationSetsInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         self.uri_query(&mut uri);
         Ok(builder.method("GET").uri(uri))
     }
@@ -7897,18 +8532,10 @@ pub mod list_tags_for_resource_input {
             crate::input::ListTagsForResourceInput,
             smithy_http::operation::BuildError,
         > {
-            Ok(
-                crate::input::ListTagsForResourceInput {
-                    resource_type: self.resource_type
-                        .ok_or(
-                            smithy_http::operation::BuildError::MissingField { field: "resource_type", details: "resource_type was not specified but it is required when building ListTagsForResourceInput"}
-                        )?
-                    ,
-                    resource_id: self.resource_id
-                        .unwrap_or_default()
-                    ,
-                }
-            )
+            Ok(crate::input::ListTagsForResourceInput {
+                resource_type: self.resource_type,
+                resource_id: self.resource_id,
+            })
         }
     }
 }
@@ -7972,14 +8599,49 @@ impl ListTagsForResourceInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let resource_type = {
+            let input = &self.resource_type;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "resource_type",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "resource_type",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        let resource_id = {
+            let input = &self.resource_id;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "resource_id",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "resource_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
         write!(
             output,
             "/2013-04-01/tags/{ResourceType}/{ResourceId}",
-            ResourceType = smithy_http::label::fmt_string(&self.resource_type, false),
-            ResourceId = smithy_http::label::fmt_string(&self.resource_id, false)
+            ResourceType = resource_type,
+            ResourceId = resource_id
         )
-        .expect("formatting should succeed")
+        .expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -7987,7 +8649,7 @@ impl ListTagsForResourceInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("GET").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -8063,17 +8725,10 @@ pub mod list_tags_for_resources_input {
             crate::input::ListTagsForResourcesInput,
             smithy_http::operation::BuildError,
         > {
-            Ok(
-                crate::input::ListTagsForResourcesInput {
-                    resource_type: self.resource_type
-                        .ok_or(
-                            smithy_http::operation::BuildError::MissingField { field: "resource_type", details: "resource_type was not specified but it is required when building ListTagsForResourcesInput"}
-                        )?
-                    ,
-                    resource_ids: self.resource_ids
-                    ,
-                }
-            )
+            Ok(crate::input::ListTagsForResourcesInput {
+                resource_type: self.resource_type,
+                resource_ids: self.resource_ids,
+            })
         }
     }
 }
@@ -8140,13 +8795,31 @@ impl ListTagsForResourcesInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let resource_type = {
+            let input = &self.resource_type;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "resource_type",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "resource_type",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
         write!(
             output,
             "/2013-04-01/tags/{ResourceType}",
-            ResourceType = smithy_http::label::fmt_string(&self.resource_type, false)
+            ResourceType = resource_type
         )
-        .expect("formatting should succeed")
+        .expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -8154,7 +8827,7 @@ impl ListTagsForResourcesInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("POST").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -8292,8 +8965,9 @@ impl ListTrafficPoliciesInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(output, "/2013-04-01/trafficpolicies").expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        write!(output, "/2013-04-01/trafficpolicies").expect("formatting should succeed");
+        Ok(())
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
@@ -8313,7 +8987,7 @@ impl ListTrafficPoliciesInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         self.uri_query(&mut uri);
         Ok(builder.method("GET").uri(uri))
     }
@@ -8493,8 +9167,9 @@ impl ListTrafficPolicyInstancesInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(output, "/2013-04-01/trafficpolicyinstances").expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        write!(output, "/2013-04-01/trafficpolicyinstances").expect("formatting should succeed");
+        Ok(())
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
@@ -8523,7 +9198,7 @@ impl ListTrafficPolicyInstancesInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         self.uri_query(&mut uri);
         Ok(builder.method("GET").uri(uri))
     }
@@ -8699,9 +9374,10 @@ impl ListTrafficPolicyInstancesByHostedZoneInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
         write!(output, "/2013-04-01/trafficpolicyinstances/hostedzone")
-            .expect("formatting should succeed")
+            .expect("formatting should succeed");
+        Ok(())
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
@@ -8730,7 +9406,7 @@ impl ListTrafficPolicyInstancesByHostedZoneInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         self.uri_query(&mut uri);
         Ok(builder.method("GET").uri(uri))
     }
@@ -8935,9 +9611,10 @@ impl ListTrafficPolicyInstancesByPolicyInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
         write!(output, "/2013-04-01/trafficpolicyinstances/trafficpolicy")
-            .expect("formatting should succeed")
+            .expect("formatting should succeed");
+        Ok(())
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
@@ -8972,7 +9649,7 @@ impl ListTrafficPolicyInstancesByPolicyInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         self.uri_query(&mut uri);
         Ok(builder.method("GET").uri(uri))
     }
@@ -9058,7 +9735,7 @@ pub mod list_traffic_policy_versions_input {
             smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListTrafficPolicyVersionsInput {
-                id: self.id.unwrap_or_default(),
+                id: self.id,
                 traffic_policy_version_marker: self.traffic_policy_version_marker,
                 max_items: self.max_items,
             })
@@ -9126,13 +9803,27 @@ impl ListTrafficPolicyVersionsInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(
-            output,
-            "/2013-04-01/trafficpolicies/{Id}/versions",
-            Id = smithy_http::label::fmt_string(&self.id, false)
-        )
-        .expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let id = {
+            let input = &self.id;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "id",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        write!(output, "/2013-04-01/trafficpolicies/{Id}/versions", Id = id)
+            .expect("formatting should succeed");
+        Ok(())
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
@@ -9152,7 +9843,7 @@ impl ListTrafficPolicyVersionsInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         self.uri_query(&mut uri);
         Ok(builder.method("GET").uri(uri))
     }
@@ -9179,9 +9870,9 @@ impl ListTrafficPolicyVersionsInput {
     }
 }
 
-/// See [`ListVPCAssociationAuthorizationsInput`](crate::input::ListVPCAssociationAuthorizationsInput)
+/// See [`ListVpcAssociationAuthorizationsInput`](crate::input::ListVpcAssociationAuthorizationsInput)
 pub mod list_vpc_association_authorizations_input {
-    /// A builder for [`ListVPCAssociationAuthorizationsInput`](crate::input::ListVPCAssociationAuthorizationsInput)
+    /// A builder for [`ListVpcAssociationAuthorizationsInput`](crate::input::ListVpcAssociationAuthorizationsInput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -9226,15 +9917,15 @@ pub mod list_vpc_association_authorizations_input {
             self.max_results = input;
             self
         }
-        /// Consumes the builder and constructs a [`ListVPCAssociationAuthorizationsInput`](crate::input::ListVPCAssociationAuthorizationsInput)
+        /// Consumes the builder and constructs a [`ListVpcAssociationAuthorizationsInput`](crate::input::ListVpcAssociationAuthorizationsInput)
         pub fn build(
             self,
         ) -> std::result::Result<
-            crate::input::ListVPCAssociationAuthorizationsInput,
+            crate::input::ListVpcAssociationAuthorizationsInput,
             smithy_http::operation::BuildError,
         > {
-            Ok(crate::input::ListVPCAssociationAuthorizationsInput {
-                hosted_zone_id: self.hosted_zone_id.unwrap_or_default(),
+            Ok(crate::input::ListVpcAssociationAuthorizationsInput {
+                hosted_zone_id: self.hosted_zone_id,
                 next_token: self.next_token,
                 max_results: self.max_results,
             })
@@ -9246,7 +9937,7 @@ pub type ListVPCAssociationAuthorizationsInputOperationOutputAlias =
     crate::operation::ListVPCAssociationAuthorizations;
 #[doc(hidden)]
 pub type ListVPCAssociationAuthorizationsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
-impl ListVPCAssociationAuthorizationsInput {
+impl ListVpcAssociationAuthorizationsInput {
     /// Consumes the builder and constructs an Operation<[`ListVPCAssociationAuthorizations`](crate::operation::ListVPCAssociationAuthorizations)>
     #[allow(clippy::let_and_return)]
     pub fn make_operation(
@@ -9302,13 +9993,31 @@ impl ListVPCAssociationAuthorizationsInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let hosted_zone_id = {
+            let input = &self.hosted_zone_id;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "hosted_zone_id",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "hosted_zone_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
         write!(
             output,
             "/2013-04-01/hostedzone/{HostedZoneId}/authorizevpcassociation",
-            HostedZoneId = smithy_http::label::fmt_string(&self.hosted_zone_id, false)
+            HostedZoneId = hosted_zone_id
         )
-        .expect("formatting should succeed")
+        .expect("formatting should succeed");
+        Ok(())
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
@@ -9325,7 +10034,7 @@ impl ListVPCAssociationAuthorizationsInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         self.uri_query(&mut uri);
         Ok(builder.method("GET").uri(uri))
     }
@@ -9346,15 +10055,15 @@ impl ListVPCAssociationAuthorizationsInput {
         }
         builder.body(body).expect("should be valid request")
     }
-    /// Creates a new builder-style object to manufacture [`ListVPCAssociationAuthorizationsInput`](crate::input::ListVPCAssociationAuthorizationsInput)
+    /// Creates a new builder-style object to manufacture [`ListVpcAssociationAuthorizationsInput`](crate::input::ListVpcAssociationAuthorizationsInput)
     pub fn builder() -> crate::input::list_vpc_association_authorizations_input::Builder {
         crate::input::list_vpc_association_authorizations_input::Builder::default()
     }
 }
 
-/// See [`TestDNSAnswerInput`](crate::input::TestDNSAnswerInput)
+/// See [`TestDnsAnswerInput`](crate::input::TestDnsAnswerInput)
 pub mod test_dns_answer_input {
-    /// A builder for [`TestDNSAnswerInput`](crate::input::TestDNSAnswerInput)
+    /// A builder for [`TestDnsAnswerInput`](crate::input::TestDnsAnswerInput)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -9446,12 +10155,12 @@ pub mod test_dns_answer_input {
             self.edns0_client_subnet_mask = input;
             self
         }
-        /// Consumes the builder and constructs a [`TestDNSAnswerInput`](crate::input::TestDNSAnswerInput)
+        /// Consumes the builder and constructs a [`TestDnsAnswerInput`](crate::input::TestDnsAnswerInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::TestDNSAnswerInput, smithy_http::operation::BuildError>
+        ) -> std::result::Result<crate::input::TestDnsAnswerInput, smithy_http::operation::BuildError>
         {
-            Ok(crate::input::TestDNSAnswerInput {
+            Ok(crate::input::TestDnsAnswerInput {
                 hosted_zone_id: self.hosted_zone_id,
                 record_name: self.record_name,
                 record_type: self.record_type,
@@ -9466,7 +10175,7 @@ pub mod test_dns_answer_input {
 pub type TestDNSAnswerInputOperationOutputAlias = crate::operation::TestDNSAnswer;
 #[doc(hidden)]
 pub type TestDNSAnswerInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
-impl TestDNSAnswerInput {
+impl TestDnsAnswerInput {
     /// Consumes the builder and constructs an Operation<[`TestDNSAnswer`](crate::operation::TestDNSAnswer)>
     #[allow(clippy::let_and_return)]
     pub fn make_operation(
@@ -9522,8 +10231,9 @@ impl TestDNSAnswerInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(output, "/2013-04-01/testdnsanswer").expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        write!(output, "/2013-04-01/testdnsanswer").expect("formatting should succeed");
+        Ok(())
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
@@ -9558,7 +10268,7 @@ impl TestDNSAnswerInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         self.uri_query(&mut uri);
         Ok(builder.method("GET").uri(uri))
     }
@@ -9579,7 +10289,7 @@ impl TestDNSAnswerInput {
         }
         builder.body(body).expect("should be valid request")
     }
-    /// Creates a new builder-style object to manufacture [`TestDNSAnswerInput`](crate::input::TestDNSAnswerInput)
+    /// Creates a new builder-style object to manufacture [`TestDnsAnswerInput`](crate::input::TestDnsAnswerInput)
     pub fn builder() -> crate::input::test_dns_answer_input::Builder {
         crate::input::test_dns_answer_input::Builder::default()
     }
@@ -10013,7 +10723,7 @@ pub mod update_health_check_input {
             smithy_http::operation::BuildError,
         > {
             Ok(crate::input::UpdateHealthCheckInput {
-                health_check_id: self.health_check_id.unwrap_or_default(),
+                health_check_id: self.health_check_id,
                 health_check_version: self.health_check_version,
                 ip_address: self.ip_address,
                 port: self.port,
@@ -10097,13 +10807,31 @@ impl UpdateHealthCheckInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let health_check_id = {
+            let input = &self.health_check_id;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "health_check_id",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "health_check_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
         write!(
             output,
             "/2013-04-01/healthcheck/{HealthCheckId}",
-            HealthCheckId = smithy_http::label::fmt_string(&self.health_check_id, false)
+            HealthCheckId = health_check_id
         )
-        .expect("formatting should succeed")
+        .expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -10111,7 +10839,7 @@ impl UpdateHealthCheckInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("POST").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -10174,7 +10902,7 @@ pub mod update_hosted_zone_comment_input {
             smithy_http::operation::BuildError,
         > {
             Ok(crate::input::UpdateHostedZoneCommentInput {
-                id: self.id.unwrap_or_default(),
+                id: self.id,
                 comment: self.comment,
             })
         }
@@ -10244,13 +10972,26 @@ impl UpdateHostedZoneCommentInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(
-            output,
-            "/2013-04-01/hostedzone/{Id}",
-            Id = smithy_http::label::fmt_string(&self.id, false)
-        )
-        .expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let id = {
+            let input = &self.id;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "id",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        write!(output, "/2013-04-01/hostedzone/{Id}", Id = id).expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -10258,7 +10999,7 @@ impl UpdateHostedZoneCommentInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("POST").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -10330,8 +11071,8 @@ pub mod update_traffic_policy_comment_input {
             smithy_http::operation::BuildError,
         > {
             Ok(crate::input::UpdateTrafficPolicyCommentInput {
-                id: self.id.unwrap_or_default(),
-                version: self.version.unwrap_or_default(),
+                id: self.id,
+                version: self.version,
                 comment: self.comment,
             })
         }
@@ -10402,14 +11143,49 @@ impl UpdateTrafficPolicyCommentInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let id = {
+            let input = &self.id;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "id",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        let version = {
+            let input = &self.version;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "version",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_default(input);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "version",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
         write!(
             output,
             "/2013-04-01/trafficpolicy/{Id}/{Version}",
-            Id = smithy_http::label::fmt_string(&self.id, false),
-            Version = smithy_http::label::fmt_default(&self.version)
+            Id = id,
+            Version = version
         )
-        .expect("formatting should succeed")
+        .expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -10417,7 +11193,7 @@ impl UpdateTrafficPolicyCommentInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("POST").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -10502,7 +11278,7 @@ pub mod update_traffic_policy_instance_input {
             smithy_http::operation::BuildError,
         > {
             Ok(crate::input::UpdateTrafficPolicyInstanceInput {
-                id: self.id.unwrap_or_default(),
+                id: self.id,
                 ttl: self.ttl,
                 traffic_policy_id: self.traffic_policy_id,
                 traffic_policy_version: self.traffic_policy_version,
@@ -10575,13 +11351,27 @@ impl UpdateTrafficPolicyInstanceInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(
-            output,
-            "/2013-04-01/trafficpolicyinstance/{Id}",
-            Id = smithy_http::label::fmt_string(&self.id, false)
-        )
-        .expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let id = {
+            let input = &self.id;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "id",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
+        write!(output, "/2013-04-01/trafficpolicyinstance/{Id}", Id = id)
+            .expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -10589,7 +11379,7 @@ impl UpdateTrafficPolicyInstanceInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("POST").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -10620,7 +11410,7 @@ impl UpdateTrafficPolicyInstanceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateTrafficPolicyInstanceInput {
     /// <p>The ID of the traffic policy instance that you want to update.</p>
-    pub id: std::string::String,
+    pub id: std::option::Option<std::string::String>,
     /// <p>The TTL that you want Amazon Route 53 to assign to all of the updated resource record sets.</p>
     pub ttl: std::option::Option<i64>,
     /// <p>The ID of the traffic policy that you want Amazon Route 53 to use to update resource record sets for the specified traffic policy instance.</p>
@@ -10644,9 +11434,9 @@ impl std::fmt::Debug for UpdateTrafficPolicyInstanceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateTrafficPolicyCommentInput {
     /// <p>The value of <code>Id</code> for the traffic policy that you want to update the comment for.</p>
-    pub id: std::string::String,
+    pub id: std::option::Option<std::string::String>,
     /// <p>The value of <code>Version</code> for the traffic policy that you want to update the comment for.</p>
-    pub version: i32,
+    pub version: std::option::Option<i32>,
     /// <p>The new comment for the specified traffic policy and version.</p>
     pub comment: std::option::Option<std::string::String>,
 }
@@ -10665,7 +11455,7 @@ impl std::fmt::Debug for UpdateTrafficPolicyCommentInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateHostedZoneCommentInput {
     /// <p>The ID for the hosted zone that you want to update the comment for.</p>
-    pub id: std::string::String,
+    pub id: std::option::Option<std::string::String>,
     /// <p>The new comment for the hosted zone. If you don't specify a value for <code>Comment</code>, Amazon Route 53 deletes the existing value of the
     /// <code>Comment</code> element, if any.</p>
     pub comment: std::option::Option<std::string::String>,
@@ -10685,7 +11475,7 @@ impl std::fmt::Debug for UpdateHostedZoneCommentInput {
 pub struct UpdateHealthCheckInput {
     /// <p>The ID for the health check for which you want detailed information. When you created the health check,
     /// <code>CreateHealthCheck</code> returned the ID in the response, in the <code>HealthCheckId</code> element.</p>
-    pub health_check_id: std::string::String,
+    pub health_check_id: std::option::Option<std::string::String>,
     /// <p>A sequential counter that Amazon Route 53 sets to <code>1</code> when you create a health check and increments by 1 each time you
     /// update settings for the health check.</p>
     /// <p>We recommend that you use <code>GetHealthCheck</code> or <code>ListHealthChecks</code> to get the current value of
@@ -10983,7 +11773,7 @@ impl std::fmt::Debug for UpdateHealthCheckInput {
 /// the IP address of a DNS resolver, an EDNS0 client subnet IP address, and a subnet mask. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct TestDNSAnswerInput {
+pub struct TestDnsAnswerInput {
     /// <p>The ID of the hosted zone that you want Amazon Route 53 to simulate a query for.</p>
     pub hosted_zone_id: std::option::Option<std::string::String>,
     /// <p>The name of the resource record set that you want Amazon Route 53 to simulate a query for.</p>
@@ -11014,9 +11804,9 @@ pub struct TestDNSAnswerInput {
     /// </ul>
     pub edns0_client_subnet_mask: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for TestDNSAnswerInput {
+impl std::fmt::Debug for TestDnsAnswerInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TestDNSAnswerInput");
+        let mut formatter = f.debug_struct("TestDnsAnswerInput");
         formatter.field("hosted_zone_id", &self.hosted_zone_id);
         formatter.field("record_name", &self.record_name);
         formatter.field("record_type", &self.record_type);
@@ -11030,9 +11820,9 @@ impl std::fmt::Debug for TestDNSAnswerInput {
 /// <p>A complex type that contains information about that can be associated with your hosted zone.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct ListVPCAssociationAuthorizationsInput {
+pub struct ListVpcAssociationAuthorizationsInput {
     /// <p>The ID of the hosted zone for which you want a list of VPCs that can be associated with the hosted zone.</p>
-    pub hosted_zone_id: std::string::String,
+    pub hosted_zone_id: std::option::Option<std::string::String>,
     /// <p>
     /// <i>Optional</i>: If a response includes a <code>NextToken</code> element, there are more VPCs
     /// that can be associated with the specified hosted zone. To get the next page of results, submit another request,
@@ -11044,9 +11834,9 @@ pub struct ListVPCAssociationAuthorizationsInput {
     /// If you don't specify a value for <code>MaxResults</code>, Route 53 returns up to 50 VPCs per page.</p>
     pub max_results: std::option::Option<i32>,
 }
-impl std::fmt::Debug for ListVPCAssociationAuthorizationsInput {
+impl std::fmt::Debug for ListVpcAssociationAuthorizationsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListVPCAssociationAuthorizationsInput");
+        let mut formatter = f.debug_struct("ListVpcAssociationAuthorizationsInput");
         formatter.field("hosted_zone_id", &self.hosted_zone_id);
         formatter.field("next_token", &self.next_token);
         formatter.field("max_results", &self.max_results);
@@ -11060,7 +11850,7 @@ impl std::fmt::Debug for ListVPCAssociationAuthorizationsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTrafficPolicyVersionsInput {
     /// <p>Specify the value of <code>Id</code> of the traffic policy for which you want to list all versions.</p>
-    pub id: std::string::String,
+    pub id: std::option::Option<std::string::String>,
     /// <p>For your first request to <code>ListTrafficPolicyVersions</code>, don't include the <code>TrafficPolicyVersionMarker</code> parameter.</p>
     /// <p>If you have more traffic policy versions than the value of <code>MaxItems</code>, <code>ListTrafficPolicyVersions</code> returns only
     /// the first group of <code>MaxItems</code> versions. To get more traffic policy versions, submit another <code>ListTrafficPolicyVersions</code>
@@ -11264,7 +12054,7 @@ pub struct ListTagsForResourcesInput {
     /// <p>The resource type for hosted zones is <code>hostedzone</code>.</p>
     /// </li>
     /// </ul>
-    pub resource_type: crate::model::TagResourceType,
+    pub resource_type: std::option::Option<crate::model::TagResourceType>,
     /// <p>A complex type that contains the ResourceId element for each resource for which you want to get a list of tags.</p>
     pub resource_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
@@ -11290,9 +12080,9 @@ pub struct ListTagsForResourceInput {
     /// <p>The resource type for hosted zones is <code>hostedzone</code>.</p>
     /// </li>
     /// </ul>
-    pub resource_type: crate::model::TagResourceType,
+    pub resource_type: std::option::Option<crate::model::TagResourceType>,
     /// <p>The ID of the resource for which you want to retrieve tags.</p>
-    pub resource_id: std::string::String,
+    pub resource_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ListTagsForResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11331,7 +12121,7 @@ impl std::fmt::Debug for ListReusableDelegationSetsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListResourceRecordSetsInput {
     /// <p>The ID of the hosted zone that contains the resource record sets that you want to list.</p>
-    pub hosted_zone_id: std::string::String,
+    pub hosted_zone_id: std::option::Option<std::string::String>,
     /// <p>The first name in the lexicographic ordering of resource record sets that you want to list.
     /// If the specified record name doesn't exist, the results begin with the first resource record set that has a name
     /// greater than the value of <code>name</code>.</p>
@@ -11434,7 +12224,7 @@ impl std::fmt::Debug for ListQueryLoggingConfigsInput {
 /// <p>Lists all the private hosted zones that a specified VPC is associated with, regardless of which AWS account created the hosted zones.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct ListHostedZonesByVPCInput {
+pub struct ListHostedZonesByVpcInput {
     /// <p>The ID of the Amazon VPC that you want to list hosted zones for.</p>
     pub vpc_id: std::option::Option<std::string::String>,
     /// <p>For the Amazon VPC that you specified for <code>VPCId</code>, the AWS Region that you created the VPC in. </p>
@@ -11449,9 +12239,9 @@ pub struct ListHostedZonesByVPCInput {
     /// <p>If the previous response didn't include a <code>NextToken</code> element, there are no more hosted zones to get.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for ListHostedZonesByVPCInput {
+impl std::fmt::Debug for ListHostedZonesByVpcInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListHostedZonesByVPCInput");
+        let mut formatter = f.debug_struct("ListHostedZonesByVpcInput");
         formatter.field("vpc_id", &self.vpc_id);
         formatter.field("vpc_region", &self.vpc_region);
         formatter.field("max_items", &self.max_items);
@@ -11593,7 +12383,7 @@ impl std::fmt::Debug for GetTrafficPolicyInstanceCountInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetTrafficPolicyInstanceInput {
     /// <p>The ID of the traffic policy instance that you want to get information about.</p>
-    pub id: std::string::String,
+    pub id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for GetTrafficPolicyInstanceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11608,9 +12398,9 @@ impl std::fmt::Debug for GetTrafficPolicyInstanceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetTrafficPolicyInput {
     /// <p>The ID of the traffic policy that you want to get information about.</p>
-    pub id: std::string::String,
+    pub id: std::option::Option<std::string::String>,
     /// <p>The version number of the traffic policy that you want to get information about.</p>
-    pub version: i32,
+    pub version: std::option::Option<i32>,
 }
 impl std::fmt::Debug for GetTrafficPolicyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11627,9 +12417,9 @@ impl std::fmt::Debug for GetTrafficPolicyInput {
 pub struct GetReusableDelegationSetLimitInput {
     /// <p>Specify <code>MAX_ZONES_BY_REUSABLE_DELEGATION_SET</code> to get the maximum number of hosted zones that you can associate
     /// with the specified reusable delegation set.</p>
-    pub r#type: crate::model::ReusableDelegationSetLimitType,
+    pub r#type: std::option::Option<crate::model::ReusableDelegationSetLimitType>,
     /// <p>The ID of the delegation set that you want to get the limit for.</p>
-    pub delegation_set_id: std::string::String,
+    pub delegation_set_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for GetReusableDelegationSetLimitInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11645,7 +12435,7 @@ impl std::fmt::Debug for GetReusableDelegationSetLimitInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetReusableDelegationSetInput {
     /// <p>The ID of the reusable delegation set that you want to get a list of name servers for.</p>
-    pub id: std::string::String,
+    pub id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for GetReusableDelegationSetInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11659,7 +12449,7 @@ impl std::fmt::Debug for GetReusableDelegationSetInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetQueryLoggingConfigInput {
     /// <p>The ID of the configuration for DNS query logging that you want to get information about.</p>
-    pub id: std::string::String,
+    pub id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for GetQueryLoggingConfigInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11686,9 +12476,9 @@ pub struct GetHostedZoneLimitInput {
     /// associate with the specified private hosted zone.</p>
     /// </li>
     /// </ul>
-    pub r#type: crate::model::HostedZoneLimitType,
+    pub r#type: std::option::Option<crate::model::HostedZoneLimitType>,
     /// <p>The ID of the hosted zone that you want to get a limit for.</p>
-    pub hosted_zone_id: std::string::String,
+    pub hosted_zone_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for GetHostedZoneLimitInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11715,7 +12505,7 @@ impl std::fmt::Debug for GetHostedZoneCountInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetHostedZoneInput {
     /// <p>The ID of the hosted zone that you want to get information about.</p>
-    pub id: std::string::String,
+    pub id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for GetHostedZoneInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11735,7 +12525,7 @@ pub struct GetHealthCheckStatusInput {
     /// <p>If you want to check the status of a calculated health check, you must use the Amazon Route 53 console or the CloudWatch console.
     /// You can't use <code>GetHealthCheckStatus</code> to get the status of a calculated health check.</p>
     /// </note>
-    pub health_check_id: std::string::String,
+    pub health_check_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for GetHealthCheckStatusInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11755,7 +12545,7 @@ pub struct GetHealthCheckLastFailureReasonInput {
     /// <p>If you want to get the last failure reason for a calculated health check, you must use the Amazon Route 53 console or the
     /// CloudWatch console. You can't use <code>GetHealthCheckLastFailureReason</code> for a calculated health check.</p>
     /// </note>
-    pub health_check_id: std::string::String,
+    pub health_check_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for GetHealthCheckLastFailureReasonInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11782,7 +12572,7 @@ impl std::fmt::Debug for GetHealthCheckCountInput {
 pub struct GetHealthCheckInput {
     /// <p>The identifier that Amazon Route 53 assigned to the health check when you created it. When you add or update a resource record set,
     /// you use this value to specify which health check to use. The value can be up to 64 characters long.</p>
-    pub health_check_id: std::string::String,
+    pub health_check_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for GetHealthCheckInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11846,13 +12636,13 @@ impl std::fmt::Debug for GetGeoLocationInput {
 
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct GetDNSSECInput {
+pub struct GetDnssecInput {
     /// <p>A unique string used to identify a hosted zone.</p>
-    pub hosted_zone_id: std::string::String,
+    pub hosted_zone_id: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for GetDNSSECInput {
+impl std::fmt::Debug for GetDnssecInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetDNSSECInput");
+        let mut formatter = f.debug_struct("GetDnssecInput");
         formatter.field("hosted_zone_id", &self.hosted_zone_id);
         formatter.finish()
     }
@@ -11875,7 +12665,7 @@ impl std::fmt::Debug for GetCheckerIpRangesInput {
 pub struct GetChangeInput {
     /// <p>The ID of the change batch request. The value that you specify here is the value that <code>ChangeResourceRecordSets</code>
     /// returned in the <code>Id</code> element when you submitted the request.</p>
-    pub id: std::string::String,
+    pub id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for GetChangeInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11918,7 +12708,7 @@ pub struct GetAccountLimitInput {
     /// Amazon Route 53 console.)</p>
     /// </li>
     /// </ul>
-    pub r#type: crate::model::AccountLimitType,
+    pub r#type: std::option::Option<crate::model::AccountLimitType>,
 }
 impl std::fmt::Debug for GetAccountLimitInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11930,13 +12720,13 @@ impl std::fmt::Debug for GetAccountLimitInput {
 
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct EnableHostedZoneDNSSECInput {
+pub struct EnableHostedZoneDnssecInput {
     /// <p>A unique string used to identify a hosted zone.</p>
-    pub hosted_zone_id: std::string::String,
+    pub hosted_zone_id: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for EnableHostedZoneDNSSECInput {
+impl std::fmt::Debug for EnableHostedZoneDnssecInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EnableHostedZoneDNSSECInput");
+        let mut formatter = f.debug_struct("EnableHostedZoneDnssecInput");
         formatter.field("hosted_zone_id", &self.hosted_zone_id);
         formatter.finish()
     }
@@ -11946,19 +12736,19 @@ impl std::fmt::Debug for EnableHostedZoneDNSSECInput {
 /// specified private hosted zone.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct DisassociateVPCFromHostedZoneInput {
+pub struct DisassociateVpcFromHostedZoneInput {
     /// <p>The ID of the private hosted zone that you want to disassociate a VPC from.</p>
-    pub hosted_zone_id: std::string::String,
+    pub hosted_zone_id: std::option::Option<std::string::String>,
     /// <p>A complex type that contains information about the VPC that you're disassociating
     /// from the specified hosted zone.</p>
-    pub vpc: std::option::Option<crate::model::VPC>,
+    pub vpc: std::option::Option<crate::model::Vpc>,
     /// <p>
     /// <i>Optional:</i> A comment about the disassociation request.</p>
     pub comment: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for DisassociateVPCFromHostedZoneInput {
+impl std::fmt::Debug for DisassociateVpcFromHostedZoneInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DisassociateVPCFromHostedZoneInput");
+        let mut formatter = f.debug_struct("DisassociateVpcFromHostedZoneInput");
         formatter.field("hosted_zone_id", &self.hosted_zone_id);
         formatter.field("vpc", &self.vpc);
         formatter.field("comment", &self.comment);
@@ -11968,13 +12758,13 @@ impl std::fmt::Debug for DisassociateVPCFromHostedZoneInput {
 
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct DisableHostedZoneDNSSECInput {
+pub struct DisableHostedZoneDnssecInput {
     /// <p>A unique string used to identify a hosted zone.</p>
-    pub hosted_zone_id: std::string::String,
+    pub hosted_zone_id: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for DisableHostedZoneDNSSECInput {
+impl std::fmt::Debug for DisableHostedZoneDnssecInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DisableHostedZoneDNSSECInput");
+        let mut formatter = f.debug_struct("DisableHostedZoneDnssecInput");
         formatter.field("hosted_zone_id", &self.hosted_zone_id);
         formatter.finish()
     }
@@ -11984,17 +12774,17 @@ impl std::fmt::Debug for DisableHostedZoneDNSSECInput {
 /// that was created by one AWS account with a hosted zone that was created with a different AWS account. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct DeleteVPCAssociationAuthorizationInput {
+pub struct DeleteVpcAssociationAuthorizationInput {
     /// <p>When removing authorization to associate a VPC that was created by one AWS account with a hosted zone
     /// that was created with a different AWS account, the ID of the hosted zone.</p>
-    pub hosted_zone_id: std::string::String,
+    pub hosted_zone_id: std::option::Option<std::string::String>,
     /// <p>When removing authorization to associate a VPC that was created by one AWS account with a hosted zone
     /// that was created with a different AWS account, a complex type that includes the ID and region of the VPC.</p>
-    pub vpc: std::option::Option<crate::model::VPC>,
+    pub vpc: std::option::Option<crate::model::Vpc>,
 }
-impl std::fmt::Debug for DeleteVPCAssociationAuthorizationInput {
+impl std::fmt::Debug for DeleteVpcAssociationAuthorizationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteVPCAssociationAuthorizationInput");
+        let mut formatter = f.debug_struct("DeleteVpcAssociationAuthorizationInput");
         formatter.field("hosted_zone_id", &self.hosted_zone_id);
         formatter.field("vpc", &self.vpc);
         formatter.finish()
@@ -12010,7 +12800,7 @@ pub struct DeleteTrafficPolicyInstanceInput {
     /// <p>When you delete a traffic policy instance, Amazon Route 53 also deletes all of the resource record sets that were created when you created
     /// the traffic policy instance.</p>
     /// </important>
-    pub id: std::string::String,
+    pub id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DeleteTrafficPolicyInstanceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12025,9 +12815,9 @@ impl std::fmt::Debug for DeleteTrafficPolicyInstanceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteTrafficPolicyInput {
     /// <p>The ID of the traffic policy that you want to delete.</p>
-    pub id: std::string::String,
+    pub id: std::option::Option<std::string::String>,
     /// <p>The version number of the traffic policy that you want to delete.</p>
-    pub version: i32,
+    pub version: std::option::Option<i32>,
 }
 impl std::fmt::Debug for DeleteTrafficPolicyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12043,7 +12833,7 @@ impl std::fmt::Debug for DeleteTrafficPolicyInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteReusableDelegationSetInput {
     /// <p>The ID of the reusable delegation set that you want to delete.</p>
-    pub id: std::string::String,
+    pub id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DeleteReusableDelegationSetInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12057,7 +12847,7 @@ impl std::fmt::Debug for DeleteReusableDelegationSetInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteQueryLoggingConfigInput {
     /// <p>The ID of the configuration that you want to delete. </p>
-    pub id: std::string::String,
+    pub id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DeleteQueryLoggingConfigInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12071,9 +12861,9 @@ impl std::fmt::Debug for DeleteQueryLoggingConfigInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteKeySigningKeyInput {
     /// <p>A unique string used to identify a hosted zone.</p>
-    pub hosted_zone_id: std::string::String,
+    pub hosted_zone_id: std::option::Option<std::string::String>,
     /// <p>A string used to identify a key-signing key (KSK).</p>
-    pub name: std::string::String,
+    pub name: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DeleteKeySigningKeyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12089,7 +12879,7 @@ impl std::fmt::Debug for DeleteKeySigningKeyInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteHostedZoneInput {
     /// <p>The ID of the hosted zone you want to delete.</p>
-    pub id: std::string::String,
+    pub id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DeleteHostedZoneInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12104,7 +12894,7 @@ impl std::fmt::Debug for DeleteHostedZoneInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteHealthCheckInput {
     /// <p>The ID of the health check that you want to delete.</p>
-    pub health_check_id: std::string::String,
+    pub health_check_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DeleteHealthCheckInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12118,9 +12908,9 @@ impl std::fmt::Debug for DeleteHealthCheckInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeactivateKeySigningKeyInput {
     /// <p>A unique string used to identify a hosted zone.</p>
-    pub hosted_zone_id: std::string::String,
+    pub hosted_zone_id: std::option::Option<std::string::String>,
     /// <p>A string used to identify a key-signing key (KSK).</p>
-    pub name: std::string::String,
+    pub name: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DeactivateKeySigningKeyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12135,16 +12925,16 @@ impl std::fmt::Debug for DeactivateKeySigningKeyInput {
 /// Authorization is only required when a private hosted zone and a VPC were created by using different accounts.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct CreateVPCAssociationAuthorizationInput {
+pub struct CreateVpcAssociationAuthorizationInput {
     /// <p>The ID of the private hosted zone that you want to authorize associating a VPC with.</p>
-    pub hosted_zone_id: std::string::String,
+    pub hosted_zone_id: std::option::Option<std::string::String>,
     /// <p>A complex type that contains the VPC ID and region for the VPC that you want to authorize associating
     /// with your hosted zone.</p>
-    pub vpc: std::option::Option<crate::model::VPC>,
+    pub vpc: std::option::Option<crate::model::Vpc>,
 }
-impl std::fmt::Debug for CreateVPCAssociationAuthorizationInput {
+impl std::fmt::Debug for CreateVpcAssociationAuthorizationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateVPCAssociationAuthorizationInput");
+        let mut formatter = f.debug_struct("CreateVpcAssociationAuthorizationInput");
         formatter.field("hosted_zone_id", &self.hosted_zone_id);
         formatter.field("vpc", &self.vpc);
         formatter.finish()
@@ -12156,7 +12946,7 @@ impl std::fmt::Debug for CreateVPCAssociationAuthorizationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateTrafficPolicyVersionInput {
     /// <p>The ID of the traffic policy for which you want to create a new version.</p>
-    pub id: std::string::String,
+    pub id: std::option::Option<std::string::String>,
     /// <p>The definition of this version of the traffic policy, in JSON format. You specified the JSON in the <code>CreateTrafficPolicyVersion</code>
     /// request. For more information about the JSON format, see
     /// <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_CreateTrafficPolicy.html">CreateTrafficPolicy</a>.</p>
@@ -12362,7 +13152,7 @@ pub struct CreateHostedZoneInput {
     /// <p>You can specify only one Amazon VPC when you create a private hosted zone. To associate additional Amazon VPCs with the hosted zone,
     /// use <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_AssociateVPCWithHostedZone.html">AssociateVPCWithHostedZone</a>
     /// after you create a hosted zone.</p>
-    pub vpc: std::option::Option<crate::model::VPC>,
+    pub vpc: std::option::Option<crate::model::Vpc>,
     /// <p>A unique string that identifies the request and that allows failed <code>CreateHostedZone</code> requests to be retried without
     /// the risk of executing the operation twice. You must use a unique <code>CallerReference</code> string every time you submit a
     /// <code>CreateHostedZone</code> request. <code>CallerReference</code> can be any unique string, for example, a date/time stamp.</p>
@@ -12447,9 +13237,9 @@ pub struct ChangeTagsForResourceInput {
     /// <p>The resource type for hosted zones is <code>hostedzone</code>.</p>
     /// </li>
     /// </ul>
-    pub resource_type: crate::model::TagResourceType,
+    pub resource_type: std::option::Option<crate::model::TagResourceType>,
     /// <p>The ID of the resource for which you want to add, change, or delete tags.</p>
-    pub resource_id: std::string::String,
+    pub resource_id: std::option::Option<std::string::String>,
     /// <p>A complex type that contains a list of the tags that you want to add to the specified health check or hosted zone and/or the tags
     /// that you want to edit <code>Value</code> for.</p>
     /// <p>You can add a maximum of 10 tags to a health check or a hosted zone.</p>
@@ -12474,7 +13264,7 @@ impl std::fmt::Debug for ChangeTagsForResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ChangeResourceRecordSetsInput {
     /// <p>The ID of the hosted zone that contains the resource record sets that you want to change.</p>
-    pub hosted_zone_id: std::string::String,
+    pub hosted_zone_id: std::option::Option<std::string::String>,
     /// <p>A complex type that contains an optional comment and the <code>Changes</code> element.</p>
     pub change_batch: std::option::Option<crate::model::ChangeBatch>,
 }
@@ -12490,19 +13280,19 @@ impl std::fmt::Debug for ChangeResourceRecordSetsInput {
 /// <p>A complex type that contains information about the request to associate a VPC with a private hosted zone.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct AssociateVPCWithHostedZoneInput {
+pub struct AssociateVpcWithHostedZoneInput {
     /// <p>The ID of the private hosted zone that you want to associate an Amazon VPC with.</p>
     /// <p>Note that you can't associate a VPC with a hosted zone that doesn't have an existing VPC association.</p>
-    pub hosted_zone_id: std::string::String,
+    pub hosted_zone_id: std::option::Option<std::string::String>,
     /// <p>A complex type that contains information about the VPC that you want to associate with a private hosted zone.</p>
-    pub vpc: std::option::Option<crate::model::VPC>,
+    pub vpc: std::option::Option<crate::model::Vpc>,
     /// <p>
     /// <i>Optional:</i> A comment about the association request.</p>
     pub comment: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for AssociateVPCWithHostedZoneInput {
+impl std::fmt::Debug for AssociateVpcWithHostedZoneInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AssociateVPCWithHostedZoneInput");
+        let mut formatter = f.debug_struct("AssociateVpcWithHostedZoneInput");
         formatter.field("hosted_zone_id", &self.hosted_zone_id);
         formatter.field("vpc", &self.vpc);
         formatter.field("comment", &self.comment);
@@ -12514,10 +13304,10 @@ impl std::fmt::Debug for AssociateVPCWithHostedZoneInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ActivateKeySigningKeyInput {
     /// <p>A unique string used to identify a hosted zone.</p>
-    pub hosted_zone_id: std::string::String,
+    pub hosted_zone_id: std::option::Option<std::string::String>,
     /// <p>A string used to identify a key-signing key (KSK). <code>Name</code> can include numbers, letters,  and underscores (_). <code>Name</code> must be unique for each key-signing key in the same
     /// hosted zone.</p>
-    pub name: std::string::String,
+    pub name: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ActivateKeySigningKeyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

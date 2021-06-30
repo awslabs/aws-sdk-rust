@@ -178,11 +178,11 @@ fn read_unicode_escapes(bytes: &[u8], into: &mut Vec<u8>) -> Result<usize, Error
         }
 
         let codepoint =
-            char::from_u32(0x10000 + (high - 0xD800) as u32 * 0x400 + (low - 0xDC00) as u32)
+            std::char::from_u32(0x10000 + (high - 0xD800) as u32 * 0x400 + (low - 0xDC00) as u32)
                 .ok_or(Error::InvalidSurrogatePair(high, low))?;
         (12, codepoint)
     } else {
-        let codepoint = char::from_u32(high as u32).ok_or_else(|| {
+        let codepoint = std::char::from_u32(high as u32).ok_or_else(|| {
             Error::InvalidUnicodeEscape(String::from_utf8_lossy(&bytes[0..6]).into())
         })?;
         (6, codepoint)
@@ -287,8 +287,8 @@ mod test {
 
         #[test]
         fn unicode_surrogates(chr in proptest::char::range(
-            char::from_u32(0x10000).unwrap(),
-            char::from_u32(0x10FFFF).unwrap(),
+            std::char::from_u32(0x10000).unwrap(),
+            std::char::from_u32(0x10FFFF).unwrap(),
         )) {
             let mut codepoints = [0; 2];
             chr.encode_utf16(&mut codepoints);

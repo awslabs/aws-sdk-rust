@@ -44,7 +44,7 @@ pub struct AssociateVPCWithHostedZone {
     _private: (),
 }
 impl AssociateVPCWithHostedZone {
-    /// Creates a new builder-style object to manufacture [`AssociateVPCWithHostedZoneInput`](crate::input::AssociateVPCWithHostedZoneInput)
+    /// Creates a new builder-style object to manufacture [`AssociateVpcWithHostedZoneInput`](crate::input::AssociateVpcWithHostedZoneInput)
     pub fn builder() -> crate::input::associate_vpc_with_hosted_zone_input::Builder {
         crate::input::associate_vpc_with_hosted_zone_input::Builder::default()
     }
@@ -54,7 +54,7 @@ impl AssociateVPCWithHostedZone {
 }
 impl smithy_http::response::ParseStrictResponse for AssociateVPCWithHostedZone {
     type Output = std::result::Result<
-        crate::output::AssociateVPCWithHostedZoneOutput,
+        crate::output::AssociateVpcWithHostedZoneOutput,
         crate::error::AssociateVPCWithHostedZoneError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
@@ -667,7 +667,7 @@ pub struct CreateVPCAssociationAuthorization {
     _private: (),
 }
 impl CreateVPCAssociationAuthorization {
-    /// Creates a new builder-style object to manufacture [`CreateVPCAssociationAuthorizationInput`](crate::input::CreateVPCAssociationAuthorizationInput)
+    /// Creates a new builder-style object to manufacture [`CreateVpcAssociationAuthorizationInput`](crate::input::CreateVpcAssociationAuthorizationInput)
     pub fn builder() -> crate::input::create_vpc_association_authorization_input::Builder {
         crate::input::create_vpc_association_authorization_input::Builder::default()
     }
@@ -677,7 +677,7 @@ impl CreateVPCAssociationAuthorization {
 }
 impl smithy_http::response::ParseStrictResponse for CreateVPCAssociationAuthorization {
     type Output = std::result::Result<
-        crate::output::CreateVPCAssociationAuthorizationOutput,
+        crate::output::CreateVpcAssociationAuthorizationOutput,
         crate::error::CreateVPCAssociationAuthorizationError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
@@ -1000,7 +1000,7 @@ pub struct DeleteVPCAssociationAuthorization {
     _private: (),
 }
 impl DeleteVPCAssociationAuthorization {
-    /// Creates a new builder-style object to manufacture [`DeleteVPCAssociationAuthorizationInput`](crate::input::DeleteVPCAssociationAuthorizationInput)
+    /// Creates a new builder-style object to manufacture [`DeleteVpcAssociationAuthorizationInput`](crate::input::DeleteVpcAssociationAuthorizationInput)
     pub fn builder() -> crate::input::delete_vpc_association_authorization_input::Builder {
         crate::input::delete_vpc_association_authorization_input::Builder::default()
     }
@@ -1010,7 +1010,7 @@ impl DeleteVPCAssociationAuthorization {
 }
 impl smithy_http::response::ParseStrictResponse for DeleteVPCAssociationAuthorization {
     type Output = std::result::Result<
-        crate::output::DeleteVPCAssociationAuthorizationOutput,
+        crate::output::DeleteVpcAssociationAuthorizationOutput,
         crate::error::DeleteVPCAssociationAuthorizationError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
@@ -1029,7 +1029,7 @@ pub struct DisableHostedZoneDNSSEC {
     _private: (),
 }
 impl DisableHostedZoneDNSSEC {
-    /// Creates a new builder-style object to manufacture [`DisableHostedZoneDNSSECInput`](crate::input::DisableHostedZoneDNSSECInput)
+    /// Creates a new builder-style object to manufacture [`DisableHostedZoneDnssecInput`](crate::input::DisableHostedZoneDnssecInput)
     pub fn builder() -> crate::input::disable_hosted_zone_dnssec_input::Builder {
         crate::input::disable_hosted_zone_dnssec_input::Builder::default()
     }
@@ -1039,7 +1039,7 @@ impl DisableHostedZoneDNSSEC {
 }
 impl smithy_http::response::ParseStrictResponse for DisableHostedZoneDNSSEC {
     type Output = std::result::Result<
-        crate::output::DisableHostedZoneDNSSECOutput,
+        crate::output::DisableHostedZoneDnssecOutput,
         crate::error::DisableHostedZoneDNSSECError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
@@ -1077,7 +1077,7 @@ pub struct DisassociateVPCFromHostedZone {
     _private: (),
 }
 impl DisassociateVPCFromHostedZone {
-    /// Creates a new builder-style object to manufacture [`DisassociateVPCFromHostedZoneInput`](crate::input::DisassociateVPCFromHostedZoneInput)
+    /// Creates a new builder-style object to manufacture [`DisassociateVpcFromHostedZoneInput`](crate::input::DisassociateVpcFromHostedZoneInput)
     pub fn builder() -> crate::input::disassociate_vpc_from_hosted_zone_input::Builder {
         crate::input::disassociate_vpc_from_hosted_zone_input::Builder::default()
     }
@@ -1087,7 +1087,7 @@ impl DisassociateVPCFromHostedZone {
 }
 impl smithy_http::response::ParseStrictResponse for DisassociateVPCFromHostedZone {
     type Output = std::result::Result<
-        crate::output::DisassociateVPCFromHostedZoneOutput,
+        crate::output::DisassociateVpcFromHostedZoneOutput,
         crate::error::DisassociateVPCFromHostedZoneError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
@@ -1105,7 +1105,7 @@ pub struct EnableHostedZoneDNSSEC {
     _private: (),
 }
 impl EnableHostedZoneDNSSEC {
-    /// Creates a new builder-style object to manufacture [`EnableHostedZoneDNSSECInput`](crate::input::EnableHostedZoneDNSSECInput)
+    /// Creates a new builder-style object to manufacture [`EnableHostedZoneDnssecInput`](crate::input::EnableHostedZoneDnssecInput)
     pub fn builder() -> crate::input::enable_hosted_zone_dnssec_input::Builder {
         crate::input::enable_hosted_zone_dnssec_input::Builder::default()
     }
@@ -1115,7 +1115,7 @@ impl EnableHostedZoneDNSSEC {
 }
 impl smithy_http::response::ParseStrictResponse for EnableHostedZoneDNSSEC {
     type Output = std::result::Result<
-        crate::output::EnableHostedZoneDNSSECOutput,
+        crate::output::EnableHostedZoneDnssecOutput,
         crate::error::EnableHostedZoneDNSSECError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
@@ -1242,7 +1242,7 @@ pub struct GetDNSSEC {
     _private: (),
 }
 impl GetDNSSEC {
-    /// Creates a new builder-style object to manufacture [`GetDNSSECInput`](crate::input::GetDNSSECInput)
+    /// Creates a new builder-style object to manufacture [`GetDnssecInput`](crate::input::GetDnssecInput)
     pub fn builder() -> crate::input::get_dnssec_input::Builder {
         crate::input::get_dnssec_input::Builder::default()
     }
@@ -1251,7 +1251,7 @@ impl GetDNSSEC {
     }
 }
 impl smithy_http::response::ParseStrictResponse for GetDNSSEC {
-    type Output = std::result::Result<crate::output::GetDNSSECOutput, crate::error::GetDNSSECError>;
+    type Output = std::result::Result<crate::output::GetDnssecOutput, crate::error::GetDNSSECError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_get_dnssec_error(response)
@@ -1865,7 +1865,7 @@ pub struct ListHostedZonesByVPC {
     _private: (),
 }
 impl ListHostedZonesByVPC {
-    /// Creates a new builder-style object to manufacture [`ListHostedZonesByVPCInput`](crate::input::ListHostedZonesByVPCInput)
+    /// Creates a new builder-style object to manufacture [`ListHostedZonesByVpcInput`](crate::input::ListHostedZonesByVpcInput)
     pub fn builder() -> crate::input::list_hosted_zones_by_vpc_input::Builder {
         crate::input::list_hosted_zones_by_vpc_input::Builder::default()
     }
@@ -1875,7 +1875,7 @@ impl ListHostedZonesByVPC {
 }
 impl smithy_http::response::ParseStrictResponse for ListHostedZonesByVPC {
     type Output = std::result::Result<
-        crate::output::ListHostedZonesByVPCOutput,
+        crate::output::ListHostedZonesByVpcOutput,
         crate::error::ListHostedZonesByVPCError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
@@ -2275,7 +2275,7 @@ pub struct ListVPCAssociationAuthorizations {
     _private: (),
 }
 impl ListVPCAssociationAuthorizations {
-    /// Creates a new builder-style object to manufacture [`ListVPCAssociationAuthorizationsInput`](crate::input::ListVPCAssociationAuthorizationsInput)
+    /// Creates a new builder-style object to manufacture [`ListVpcAssociationAuthorizationsInput`](crate::input::ListVpcAssociationAuthorizationsInput)
     pub fn builder() -> crate::input::list_vpc_association_authorizations_input::Builder {
         crate::input::list_vpc_association_authorizations_input::Builder::default()
     }
@@ -2285,7 +2285,7 @@ impl ListVPCAssociationAuthorizations {
 }
 impl smithy_http::response::ParseStrictResponse for ListVPCAssociationAuthorizations {
     type Output = std::result::Result<
-        crate::output::ListVPCAssociationAuthorizationsOutput,
+        crate::output::ListVpcAssociationAuthorizationsOutput,
         crate::error::ListVPCAssociationAuthorizationsError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
@@ -2305,7 +2305,7 @@ pub struct TestDNSAnswer {
     _private: (),
 }
 impl TestDNSAnswer {
-    /// Creates a new builder-style object to manufacture [`TestDNSAnswerInput`](crate::input::TestDNSAnswerInput)
+    /// Creates a new builder-style object to manufacture [`TestDnsAnswerInput`](crate::input::TestDnsAnswerInput)
     pub fn builder() -> crate::input::test_dns_answer_input::Builder {
         crate::input::test_dns_answer_input::Builder::default()
     }
@@ -2315,7 +2315,7 @@ impl TestDNSAnswer {
 }
 impl smithy_http::response::ParseStrictResponse for TestDNSAnswer {
     type Output =
-        std::result::Result<crate::output::TestDNSAnswerOutput, crate::error::TestDNSAnswerError>;
+        std::result::Result<crate::output::TestDnsAnswerOutput, crate::error::TestDNSAnswerError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_test_dns_answer_error(response)

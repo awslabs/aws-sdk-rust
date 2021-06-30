@@ -1,10 +1,15 @@
 [package]
 name = "ses-code-examples"
 version = "0.1.0"
-authors = ["Russell Cohen <rcoh@amazon.com>"]
+authors = ["Russell Cohen <rcoh@amazon.com>", "Doug Schwartz <dougsch@amazon.com>"]
 edition = "2018"
 
 [dependencies]
-tokio = { version = "1", features = ["full"]}
-aws-sdk-sesv2 = { path = "../../sesv2" }
+ses = { package = "aws-sdk-sesv2", path = "../../sesv2" }
+
+aws-types = { path = "../../aws-types" }
+
+tokio = { version = "1", features = ["full"] }
+
+structopt = { version = "0.3", default-features = false }
 tracing-subscriber = "0.2.18"

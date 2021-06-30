@@ -175,8 +175,9 @@ impl BatchExecuteStatementInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(output, "/BatchExecute").expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        write!(output, "/BatchExecute").expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -184,7 +185,7 @@ impl BatchExecuteStatementInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("POST").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -336,8 +337,9 @@ impl BeginTransactionInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(output, "/BeginTransaction").expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        write!(output, "/BeginTransaction").expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -345,7 +347,7 @@ impl BeginTransactionInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("POST").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -490,8 +492,9 @@ impl CommitTransactionInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(output, "/CommitTransaction").expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        write!(output, "/CommitTransaction").expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -499,7 +502,7 @@ impl CommitTransactionInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("POST").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -673,8 +676,9 @@ impl ExecuteSqlInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(output, "/ExecuteSql").expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        write!(output, "/ExecuteSql").expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -682,7 +686,7 @@ impl ExecuteSqlInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("POST").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -923,8 +927,9 @@ impl ExecuteStatementInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(output, "/Execute").expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        write!(output, "/Execute").expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -932,7 +937,7 @@ impl ExecuteStatementInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("POST").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -1077,8 +1082,9 @@ impl RollbackTransactionInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(output, "/RollbackTransaction").expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        write!(output, "/RollbackTransaction").expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -1086,7 +1092,7 @@ impl RollbackTransactionInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("POST").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]

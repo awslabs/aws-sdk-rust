@@ -3,6 +3,7 @@
 #![allow(clippy::large_enum_variant)]
 #![allow(clippy::wrong_self_convention)]
 #![allow(clippy::should_implement_trait)]
+#![allow(clippy::blacklisted_name)]
 //! <fullname>AWS Security Token Service</fullname>
 //! <p>AWS Security Token Service (STS) enables you to request temporary, limited-privilege
 //! credentials for AWS Identity and Access Management (IAM) users or for users that you

@@ -99,10 +99,10 @@ pub struct BatchGetItemError {
 #[derive(std::fmt::Debug)]
 pub enum BatchGetItemErrorKind {
     InternalServerError(crate::error::InternalServerError),
-    InvalidEndpointError(crate::error::InvalidEndpointError),
-    ProvisionedThroughputExceededError(crate::error::ProvisionedThroughputExceededError),
+    InvalidEndpointException(crate::error::InvalidEndpointException),
+    ProvisionedThroughputExceededException(crate::error::ProvisionedThroughputExceededException),
     RequestLimitExceeded(crate::error::RequestLimitExceeded),
-    ResourceNotFoundError(crate::error::ResourceNotFoundError),
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
@@ -110,10 +110,10 @@ impl std::fmt::Display for BatchGetItemError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
             BatchGetItemErrorKind::InternalServerError(_inner) => _inner.fmt(f),
-            BatchGetItemErrorKind::InvalidEndpointError(_inner) => _inner.fmt(f),
-            BatchGetItemErrorKind::ProvisionedThroughputExceededError(_inner) => _inner.fmt(f),
+            BatchGetItemErrorKind::InvalidEndpointException(_inner) => _inner.fmt(f),
+            BatchGetItemErrorKind::ProvisionedThroughputExceededException(_inner) => _inner.fmt(f),
             BatchGetItemErrorKind::RequestLimitExceeded(_inner) => _inner.fmt(f),
-            BatchGetItemErrorKind::ResourceNotFoundError(_inner) => _inner.fmt(f),
+            BatchGetItemErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
             BatchGetItemErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -165,30 +165,36 @@ impl BatchGetItemError {
     pub fn is_internal_server_error(&self) -> bool {
         matches!(&self.kind, BatchGetItemErrorKind::InternalServerError(_))
     }
-    pub fn is_invalid_endpoint_error(&self) -> bool {
-        matches!(&self.kind, BatchGetItemErrorKind::InvalidEndpointError(_))
-    }
-    pub fn is_provisioned_throughput_exceeded_error(&self) -> bool {
+    pub fn is_invalid_endpoint_exception(&self) -> bool {
         matches!(
             &self.kind,
-            BatchGetItemErrorKind::ProvisionedThroughputExceededError(_)
+            BatchGetItemErrorKind::InvalidEndpointException(_)
+        )
+    }
+    pub fn is_provisioned_throughput_exceeded_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            BatchGetItemErrorKind::ProvisionedThroughputExceededException(_)
         )
     }
     pub fn is_request_limit_exceeded(&self) -> bool {
         matches!(&self.kind, BatchGetItemErrorKind::RequestLimitExceeded(_))
     }
-    pub fn is_resource_not_found_error(&self) -> bool {
-        matches!(&self.kind, BatchGetItemErrorKind::ResourceNotFoundError(_))
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            BatchGetItemErrorKind::ResourceNotFoundException(_)
+        )
     }
 }
 impl std::error::Error for BatchGetItemError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             BatchGetItemErrorKind::InternalServerError(_inner) => Some(_inner),
-            BatchGetItemErrorKind::InvalidEndpointError(_inner) => Some(_inner),
-            BatchGetItemErrorKind::ProvisionedThroughputExceededError(_inner) => Some(_inner),
+            BatchGetItemErrorKind::InvalidEndpointException(_inner) => Some(_inner),
+            BatchGetItemErrorKind::ProvisionedThroughputExceededException(_inner) => Some(_inner),
             BatchGetItemErrorKind::RequestLimitExceeded(_inner) => Some(_inner),
-            BatchGetItemErrorKind::ResourceNotFoundError(_inner) => Some(_inner),
+            BatchGetItemErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             BatchGetItemErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -204,11 +210,13 @@ pub struct BatchWriteItemError {
 #[derive(std::fmt::Debug)]
 pub enum BatchWriteItemErrorKind {
     InternalServerError(crate::error::InternalServerError),
-    InvalidEndpointError(crate::error::InvalidEndpointError),
-    ItemCollectionSizeLimitExceededError(crate::error::ItemCollectionSizeLimitExceededError),
-    ProvisionedThroughputExceededError(crate::error::ProvisionedThroughputExceededError),
+    InvalidEndpointException(crate::error::InvalidEndpointException),
+    ItemCollectionSizeLimitExceededException(
+        crate::error::ItemCollectionSizeLimitExceededException,
+    ),
+    ProvisionedThroughputExceededException(crate::error::ProvisionedThroughputExceededException),
     RequestLimitExceeded(crate::error::RequestLimitExceeded),
-    ResourceNotFoundError(crate::error::ResourceNotFoundError),
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
@@ -216,11 +224,15 @@ impl std::fmt::Display for BatchWriteItemError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
             BatchWriteItemErrorKind::InternalServerError(_inner) => _inner.fmt(f),
-            BatchWriteItemErrorKind::InvalidEndpointError(_inner) => _inner.fmt(f),
-            BatchWriteItemErrorKind::ItemCollectionSizeLimitExceededError(_inner) => _inner.fmt(f),
-            BatchWriteItemErrorKind::ProvisionedThroughputExceededError(_inner) => _inner.fmt(f),
+            BatchWriteItemErrorKind::InvalidEndpointException(_inner) => _inner.fmt(f),
+            BatchWriteItemErrorKind::ItemCollectionSizeLimitExceededException(_inner) => {
+                _inner.fmt(f)
+            }
+            BatchWriteItemErrorKind::ProvisionedThroughputExceededException(_inner) => {
+                _inner.fmt(f)
+            }
             BatchWriteItemErrorKind::RequestLimitExceeded(_inner) => _inner.fmt(f),
-            BatchWriteItemErrorKind::ResourceNotFoundError(_inner) => _inner.fmt(f),
+            BatchWriteItemErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
             BatchWriteItemErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -272,28 +284,31 @@ impl BatchWriteItemError {
     pub fn is_internal_server_error(&self) -> bool {
         matches!(&self.kind, BatchWriteItemErrorKind::InternalServerError(_))
     }
-    pub fn is_invalid_endpoint_error(&self) -> bool {
-        matches!(&self.kind, BatchWriteItemErrorKind::InvalidEndpointError(_))
-    }
-    pub fn is_item_collection_size_limit_exceeded_error(&self) -> bool {
+    pub fn is_invalid_endpoint_exception(&self) -> bool {
         matches!(
             &self.kind,
-            BatchWriteItemErrorKind::ItemCollectionSizeLimitExceededError(_)
+            BatchWriteItemErrorKind::InvalidEndpointException(_)
         )
     }
-    pub fn is_provisioned_throughput_exceeded_error(&self) -> bool {
+    pub fn is_item_collection_size_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
-            BatchWriteItemErrorKind::ProvisionedThroughputExceededError(_)
+            BatchWriteItemErrorKind::ItemCollectionSizeLimitExceededException(_)
+        )
+    }
+    pub fn is_provisioned_throughput_exceeded_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            BatchWriteItemErrorKind::ProvisionedThroughputExceededException(_)
         )
     }
     pub fn is_request_limit_exceeded(&self) -> bool {
         matches!(&self.kind, BatchWriteItemErrorKind::RequestLimitExceeded(_))
     }
-    pub fn is_resource_not_found_error(&self) -> bool {
+    pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
-            BatchWriteItemErrorKind::ResourceNotFoundError(_)
+            BatchWriteItemErrorKind::ResourceNotFoundException(_)
         )
     }
 }
@@ -301,11 +316,13 @@ impl std::error::Error for BatchWriteItemError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             BatchWriteItemErrorKind::InternalServerError(_inner) => Some(_inner),
-            BatchWriteItemErrorKind::InvalidEndpointError(_inner) => Some(_inner),
-            BatchWriteItemErrorKind::ItemCollectionSizeLimitExceededError(_inner) => Some(_inner),
-            BatchWriteItemErrorKind::ProvisionedThroughputExceededError(_inner) => Some(_inner),
+            BatchWriteItemErrorKind::InvalidEndpointException(_inner) => Some(_inner),
+            BatchWriteItemErrorKind::ItemCollectionSizeLimitExceededException(_inner) => {
+                Some(_inner)
+            }
+            BatchWriteItemErrorKind::ProvisionedThroughputExceededException(_inner) => Some(_inner),
             BatchWriteItemErrorKind::RequestLimitExceeded(_inner) => Some(_inner),
-            BatchWriteItemErrorKind::ResourceNotFoundError(_inner) => Some(_inner),
+            BatchWriteItemErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             BatchWriteItemErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -320,26 +337,26 @@ pub struct CreateBackupError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateBackupErrorKind {
-    BackupInUseError(crate::error::BackupInUseError),
-    ContinuousBackupsUnavailableError(crate::error::ContinuousBackupsUnavailableError),
+    BackupInUseException(crate::error::BackupInUseException),
+    ContinuousBackupsUnavailableException(crate::error::ContinuousBackupsUnavailableException),
     InternalServerError(crate::error::InternalServerError),
-    InvalidEndpointError(crate::error::InvalidEndpointError),
-    LimitExceededError(crate::error::LimitExceededError),
-    TableInUseError(crate::error::TableInUseError),
-    TableNotFoundError(crate::error::TableNotFoundError),
+    InvalidEndpointException(crate::error::InvalidEndpointException),
+    LimitExceededException(crate::error::LimitExceededException),
+    TableInUseException(crate::error::TableInUseException),
+    TableNotFoundException(crate::error::TableNotFoundException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateBackupError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            CreateBackupErrorKind::BackupInUseError(_inner) => _inner.fmt(f),
-            CreateBackupErrorKind::ContinuousBackupsUnavailableError(_inner) => _inner.fmt(f),
+            CreateBackupErrorKind::BackupInUseException(_inner) => _inner.fmt(f),
+            CreateBackupErrorKind::ContinuousBackupsUnavailableException(_inner) => _inner.fmt(f),
             CreateBackupErrorKind::InternalServerError(_inner) => _inner.fmt(f),
-            CreateBackupErrorKind::InvalidEndpointError(_inner) => _inner.fmt(f),
-            CreateBackupErrorKind::LimitExceededError(_inner) => _inner.fmt(f),
-            CreateBackupErrorKind::TableInUseError(_inner) => _inner.fmt(f),
-            CreateBackupErrorKind::TableNotFoundError(_inner) => _inner.fmt(f),
+            CreateBackupErrorKind::InvalidEndpointException(_inner) => _inner.fmt(f),
+            CreateBackupErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
+            CreateBackupErrorKind::TableInUseException(_inner) => _inner.fmt(f),
+            CreateBackupErrorKind::TableNotFoundException(_inner) => _inner.fmt(f),
             CreateBackupErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -388,41 +405,44 @@ impl CreateBackupError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_backup_in_use_error(&self) -> bool {
-        matches!(&self.kind, CreateBackupErrorKind::BackupInUseError(_))
+    pub fn is_backup_in_use_exception(&self) -> bool {
+        matches!(&self.kind, CreateBackupErrorKind::BackupInUseException(_))
     }
-    pub fn is_continuous_backups_unavailable_error(&self) -> bool {
+    pub fn is_continuous_backups_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
-            CreateBackupErrorKind::ContinuousBackupsUnavailableError(_)
+            CreateBackupErrorKind::ContinuousBackupsUnavailableException(_)
         )
     }
     pub fn is_internal_server_error(&self) -> bool {
         matches!(&self.kind, CreateBackupErrorKind::InternalServerError(_))
     }
-    pub fn is_invalid_endpoint_error(&self) -> bool {
-        matches!(&self.kind, CreateBackupErrorKind::InvalidEndpointError(_))
+    pub fn is_invalid_endpoint_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateBackupErrorKind::InvalidEndpointException(_)
+        )
     }
-    pub fn is_limit_exceeded_error(&self) -> bool {
-        matches!(&self.kind, CreateBackupErrorKind::LimitExceededError(_))
+    pub fn is_limit_exceeded_exception(&self) -> bool {
+        matches!(&self.kind, CreateBackupErrorKind::LimitExceededException(_))
     }
-    pub fn is_table_in_use_error(&self) -> bool {
-        matches!(&self.kind, CreateBackupErrorKind::TableInUseError(_))
+    pub fn is_table_in_use_exception(&self) -> bool {
+        matches!(&self.kind, CreateBackupErrorKind::TableInUseException(_))
     }
-    pub fn is_table_not_found_error(&self) -> bool {
-        matches!(&self.kind, CreateBackupErrorKind::TableNotFoundError(_))
+    pub fn is_table_not_found_exception(&self) -> bool {
+        matches!(&self.kind, CreateBackupErrorKind::TableNotFoundException(_))
     }
 }
 impl std::error::Error for CreateBackupError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            CreateBackupErrorKind::BackupInUseError(_inner) => Some(_inner),
-            CreateBackupErrorKind::ContinuousBackupsUnavailableError(_inner) => Some(_inner),
+            CreateBackupErrorKind::BackupInUseException(_inner) => Some(_inner),
+            CreateBackupErrorKind::ContinuousBackupsUnavailableException(_inner) => Some(_inner),
             CreateBackupErrorKind::InternalServerError(_inner) => Some(_inner),
-            CreateBackupErrorKind::InvalidEndpointError(_inner) => Some(_inner),
-            CreateBackupErrorKind::LimitExceededError(_inner) => Some(_inner),
-            CreateBackupErrorKind::TableInUseError(_inner) => Some(_inner),
-            CreateBackupErrorKind::TableNotFoundError(_inner) => Some(_inner),
+            CreateBackupErrorKind::InvalidEndpointException(_inner) => Some(_inner),
+            CreateBackupErrorKind::LimitExceededException(_inner) => Some(_inner),
+            CreateBackupErrorKind::TableInUseException(_inner) => Some(_inner),
+            CreateBackupErrorKind::TableNotFoundException(_inner) => Some(_inner),
             CreateBackupErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -437,22 +457,22 @@ pub struct CreateGlobalTableError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateGlobalTableErrorKind {
-    GlobalTableAlreadyExistsError(crate::error::GlobalTableAlreadyExistsError),
+    GlobalTableAlreadyExistsException(crate::error::GlobalTableAlreadyExistsException),
     InternalServerError(crate::error::InternalServerError),
-    InvalidEndpointError(crate::error::InvalidEndpointError),
-    LimitExceededError(crate::error::LimitExceededError),
-    TableNotFoundError(crate::error::TableNotFoundError),
+    InvalidEndpointException(crate::error::InvalidEndpointException),
+    LimitExceededException(crate::error::LimitExceededException),
+    TableNotFoundException(crate::error::TableNotFoundException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for CreateGlobalTableError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            CreateGlobalTableErrorKind::GlobalTableAlreadyExistsError(_inner) => _inner.fmt(f),
+            CreateGlobalTableErrorKind::GlobalTableAlreadyExistsException(_inner) => _inner.fmt(f),
             CreateGlobalTableErrorKind::InternalServerError(_inner) => _inner.fmt(f),
-            CreateGlobalTableErrorKind::InvalidEndpointError(_inner) => _inner.fmt(f),
-            CreateGlobalTableErrorKind::LimitExceededError(_inner) => _inner.fmt(f),
-            CreateGlobalTableErrorKind::TableNotFoundError(_inner) => _inner.fmt(f),
+            CreateGlobalTableErrorKind::InvalidEndpointException(_inner) => _inner.fmt(f),
+            CreateGlobalTableErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
+            CreateGlobalTableErrorKind::TableNotFoundException(_inner) => _inner.fmt(f),
             CreateGlobalTableErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -501,10 +521,10 @@ impl CreateGlobalTableError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_global_table_already_exists_error(&self) -> bool {
+    pub fn is_global_table_already_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
-            CreateGlobalTableErrorKind::GlobalTableAlreadyExistsError(_)
+            CreateGlobalTableErrorKind::GlobalTableAlreadyExistsException(_)
         )
     }
     pub fn is_internal_server_error(&self) -> bool {
@@ -513,33 +533,33 @@ impl CreateGlobalTableError {
             CreateGlobalTableErrorKind::InternalServerError(_)
         )
     }
-    pub fn is_invalid_endpoint_error(&self) -> bool {
+    pub fn is_invalid_endpoint_exception(&self) -> bool {
         matches!(
             &self.kind,
-            CreateGlobalTableErrorKind::InvalidEndpointError(_)
+            CreateGlobalTableErrorKind::InvalidEndpointException(_)
         )
     }
-    pub fn is_limit_exceeded_error(&self) -> bool {
+    pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
-            CreateGlobalTableErrorKind::LimitExceededError(_)
+            CreateGlobalTableErrorKind::LimitExceededException(_)
         )
     }
-    pub fn is_table_not_found_error(&self) -> bool {
+    pub fn is_table_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
-            CreateGlobalTableErrorKind::TableNotFoundError(_)
+            CreateGlobalTableErrorKind::TableNotFoundException(_)
         )
     }
 }
 impl std::error::Error for CreateGlobalTableError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            CreateGlobalTableErrorKind::GlobalTableAlreadyExistsError(_inner) => Some(_inner),
+            CreateGlobalTableErrorKind::GlobalTableAlreadyExistsException(_inner) => Some(_inner),
             CreateGlobalTableErrorKind::InternalServerError(_inner) => Some(_inner),
-            CreateGlobalTableErrorKind::InvalidEndpointError(_inner) => Some(_inner),
-            CreateGlobalTableErrorKind::LimitExceededError(_inner) => Some(_inner),
-            CreateGlobalTableErrorKind::TableNotFoundError(_inner) => Some(_inner),
+            CreateGlobalTableErrorKind::InvalidEndpointException(_inner) => Some(_inner),
+            CreateGlobalTableErrorKind::LimitExceededException(_inner) => Some(_inner),
+            CreateGlobalTableErrorKind::TableNotFoundException(_inner) => Some(_inner),
             CreateGlobalTableErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -555,9 +575,9 @@ pub struct CreateTableError {
 #[derive(std::fmt::Debug)]
 pub enum CreateTableErrorKind {
     InternalServerError(crate::error::InternalServerError),
-    InvalidEndpointError(crate::error::InvalidEndpointError),
-    LimitExceededError(crate::error::LimitExceededError),
-    ResourceInUseError(crate::error::ResourceInUseError),
+    InvalidEndpointException(crate::error::InvalidEndpointException),
+    LimitExceededException(crate::error::LimitExceededException),
+    ResourceInUseException(crate::error::ResourceInUseException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
@@ -565,9 +585,9 @@ impl std::fmt::Display for CreateTableError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
             CreateTableErrorKind::InternalServerError(_inner) => _inner.fmt(f),
-            CreateTableErrorKind::InvalidEndpointError(_inner) => _inner.fmt(f),
-            CreateTableErrorKind::LimitExceededError(_inner) => _inner.fmt(f),
-            CreateTableErrorKind::ResourceInUseError(_inner) => _inner.fmt(f),
+            CreateTableErrorKind::InvalidEndpointException(_inner) => _inner.fmt(f),
+            CreateTableErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
+            CreateTableErrorKind::ResourceInUseException(_inner) => _inner.fmt(f),
             CreateTableErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -619,23 +639,26 @@ impl CreateTableError {
     pub fn is_internal_server_error(&self) -> bool {
         matches!(&self.kind, CreateTableErrorKind::InternalServerError(_))
     }
-    pub fn is_invalid_endpoint_error(&self) -> bool {
-        matches!(&self.kind, CreateTableErrorKind::InvalidEndpointError(_))
+    pub fn is_invalid_endpoint_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateTableErrorKind::InvalidEndpointException(_)
+        )
     }
-    pub fn is_limit_exceeded_error(&self) -> bool {
-        matches!(&self.kind, CreateTableErrorKind::LimitExceededError(_))
+    pub fn is_limit_exceeded_exception(&self) -> bool {
+        matches!(&self.kind, CreateTableErrorKind::LimitExceededException(_))
     }
-    pub fn is_resource_in_use_error(&self) -> bool {
-        matches!(&self.kind, CreateTableErrorKind::ResourceInUseError(_))
+    pub fn is_resource_in_use_exception(&self) -> bool {
+        matches!(&self.kind, CreateTableErrorKind::ResourceInUseException(_))
     }
 }
 impl std::error::Error for CreateTableError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             CreateTableErrorKind::InternalServerError(_inner) => Some(_inner),
-            CreateTableErrorKind::InvalidEndpointError(_inner) => Some(_inner),
-            CreateTableErrorKind::LimitExceededError(_inner) => Some(_inner),
-            CreateTableErrorKind::ResourceInUseError(_inner) => Some(_inner),
+            CreateTableErrorKind::InvalidEndpointException(_inner) => Some(_inner),
+            CreateTableErrorKind::LimitExceededException(_inner) => Some(_inner),
+            CreateTableErrorKind::ResourceInUseException(_inner) => Some(_inner),
             CreateTableErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -650,22 +673,22 @@ pub struct DeleteBackupError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteBackupErrorKind {
-    BackupInUseError(crate::error::BackupInUseError),
-    BackupNotFoundError(crate::error::BackupNotFoundError),
+    BackupInUseException(crate::error::BackupInUseException),
+    BackupNotFoundException(crate::error::BackupNotFoundException),
     InternalServerError(crate::error::InternalServerError),
-    InvalidEndpointError(crate::error::InvalidEndpointError),
-    LimitExceededError(crate::error::LimitExceededError),
+    InvalidEndpointException(crate::error::InvalidEndpointException),
+    LimitExceededException(crate::error::LimitExceededException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteBackupError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DeleteBackupErrorKind::BackupInUseError(_inner) => _inner.fmt(f),
-            DeleteBackupErrorKind::BackupNotFoundError(_inner) => _inner.fmt(f),
+            DeleteBackupErrorKind::BackupInUseException(_inner) => _inner.fmt(f),
+            DeleteBackupErrorKind::BackupNotFoundException(_inner) => _inner.fmt(f),
             DeleteBackupErrorKind::InternalServerError(_inner) => _inner.fmt(f),
-            DeleteBackupErrorKind::InvalidEndpointError(_inner) => _inner.fmt(f),
-            DeleteBackupErrorKind::LimitExceededError(_inner) => _inner.fmt(f),
+            DeleteBackupErrorKind::InvalidEndpointException(_inner) => _inner.fmt(f),
+            DeleteBackupErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
             DeleteBackupErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -714,30 +737,36 @@ impl DeleteBackupError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_backup_in_use_error(&self) -> bool {
-        matches!(&self.kind, DeleteBackupErrorKind::BackupInUseError(_))
+    pub fn is_backup_in_use_exception(&self) -> bool {
+        matches!(&self.kind, DeleteBackupErrorKind::BackupInUseException(_))
     }
-    pub fn is_backup_not_found_error(&self) -> bool {
-        matches!(&self.kind, DeleteBackupErrorKind::BackupNotFoundError(_))
+    pub fn is_backup_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteBackupErrorKind::BackupNotFoundException(_)
+        )
     }
     pub fn is_internal_server_error(&self) -> bool {
         matches!(&self.kind, DeleteBackupErrorKind::InternalServerError(_))
     }
-    pub fn is_invalid_endpoint_error(&self) -> bool {
-        matches!(&self.kind, DeleteBackupErrorKind::InvalidEndpointError(_))
+    pub fn is_invalid_endpoint_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteBackupErrorKind::InvalidEndpointException(_)
+        )
     }
-    pub fn is_limit_exceeded_error(&self) -> bool {
-        matches!(&self.kind, DeleteBackupErrorKind::LimitExceededError(_))
+    pub fn is_limit_exceeded_exception(&self) -> bool {
+        matches!(&self.kind, DeleteBackupErrorKind::LimitExceededException(_))
     }
 }
 impl std::error::Error for DeleteBackupError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DeleteBackupErrorKind::BackupInUseError(_inner) => Some(_inner),
-            DeleteBackupErrorKind::BackupNotFoundError(_inner) => Some(_inner),
+            DeleteBackupErrorKind::BackupInUseException(_inner) => Some(_inner),
+            DeleteBackupErrorKind::BackupNotFoundException(_inner) => Some(_inner),
             DeleteBackupErrorKind::InternalServerError(_inner) => Some(_inner),
-            DeleteBackupErrorKind::InvalidEndpointError(_inner) => Some(_inner),
-            DeleteBackupErrorKind::LimitExceededError(_inner) => Some(_inner),
+            DeleteBackupErrorKind::InvalidEndpointException(_inner) => Some(_inner),
+            DeleteBackupErrorKind::LimitExceededException(_inner) => Some(_inner),
             DeleteBackupErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -752,28 +781,30 @@ pub struct DeleteItemError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteItemErrorKind {
-    ConditionalCheckFailedError(crate::error::ConditionalCheckFailedError),
+    ConditionalCheckFailedException(crate::error::ConditionalCheckFailedException),
     InternalServerError(crate::error::InternalServerError),
-    InvalidEndpointError(crate::error::InvalidEndpointError),
-    ItemCollectionSizeLimitExceededError(crate::error::ItemCollectionSizeLimitExceededError),
-    ProvisionedThroughputExceededError(crate::error::ProvisionedThroughputExceededError),
+    InvalidEndpointException(crate::error::InvalidEndpointException),
+    ItemCollectionSizeLimitExceededException(
+        crate::error::ItemCollectionSizeLimitExceededException,
+    ),
+    ProvisionedThroughputExceededException(crate::error::ProvisionedThroughputExceededException),
     RequestLimitExceeded(crate::error::RequestLimitExceeded),
-    ResourceNotFoundError(crate::error::ResourceNotFoundError),
-    TransactionConflictError(crate::error::TransactionConflictError),
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    TransactionConflictException(crate::error::TransactionConflictException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteItemError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DeleteItemErrorKind::ConditionalCheckFailedError(_inner) => _inner.fmt(f),
+            DeleteItemErrorKind::ConditionalCheckFailedException(_inner) => _inner.fmt(f),
             DeleteItemErrorKind::InternalServerError(_inner) => _inner.fmt(f),
-            DeleteItemErrorKind::InvalidEndpointError(_inner) => _inner.fmt(f),
-            DeleteItemErrorKind::ItemCollectionSizeLimitExceededError(_inner) => _inner.fmt(f),
-            DeleteItemErrorKind::ProvisionedThroughputExceededError(_inner) => _inner.fmt(f),
+            DeleteItemErrorKind::InvalidEndpointException(_inner) => _inner.fmt(f),
+            DeleteItemErrorKind::ItemCollectionSizeLimitExceededException(_inner) => _inner.fmt(f),
+            DeleteItemErrorKind::ProvisionedThroughputExceededException(_inner) => _inner.fmt(f),
             DeleteItemErrorKind::RequestLimitExceeded(_inner) => _inner.fmt(f),
-            DeleteItemErrorKind::ResourceNotFoundError(_inner) => _inner.fmt(f),
-            DeleteItemErrorKind::TransactionConflictError(_inner) => _inner.fmt(f),
+            DeleteItemErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            DeleteItemErrorKind::TransactionConflictException(_inner) => _inner.fmt(f),
             DeleteItemErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -822,51 +853,57 @@ impl DeleteItemError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_conditional_check_failed_error(&self) -> bool {
+    pub fn is_conditional_check_failed_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DeleteItemErrorKind::ConditionalCheckFailedError(_)
+            DeleteItemErrorKind::ConditionalCheckFailedException(_)
         )
     }
     pub fn is_internal_server_error(&self) -> bool {
         matches!(&self.kind, DeleteItemErrorKind::InternalServerError(_))
     }
-    pub fn is_invalid_endpoint_error(&self) -> bool {
-        matches!(&self.kind, DeleteItemErrorKind::InvalidEndpointError(_))
+    pub fn is_invalid_endpoint_exception(&self) -> bool {
+        matches!(&self.kind, DeleteItemErrorKind::InvalidEndpointException(_))
     }
-    pub fn is_item_collection_size_limit_exceeded_error(&self) -> bool {
+    pub fn is_item_collection_size_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DeleteItemErrorKind::ItemCollectionSizeLimitExceededError(_)
+            DeleteItemErrorKind::ItemCollectionSizeLimitExceededException(_)
         )
     }
-    pub fn is_provisioned_throughput_exceeded_error(&self) -> bool {
+    pub fn is_provisioned_throughput_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DeleteItemErrorKind::ProvisionedThroughputExceededError(_)
+            DeleteItemErrorKind::ProvisionedThroughputExceededException(_)
         )
     }
     pub fn is_request_limit_exceeded(&self) -> bool {
         matches!(&self.kind, DeleteItemErrorKind::RequestLimitExceeded(_))
     }
-    pub fn is_resource_not_found_error(&self) -> bool {
-        matches!(&self.kind, DeleteItemErrorKind::ResourceNotFoundError(_))
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteItemErrorKind::ResourceNotFoundException(_)
+        )
     }
-    pub fn is_transaction_conflict_error(&self) -> bool {
-        matches!(&self.kind, DeleteItemErrorKind::TransactionConflictError(_))
+    pub fn is_transaction_conflict_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteItemErrorKind::TransactionConflictException(_)
+        )
     }
 }
 impl std::error::Error for DeleteItemError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DeleteItemErrorKind::ConditionalCheckFailedError(_inner) => Some(_inner),
+            DeleteItemErrorKind::ConditionalCheckFailedException(_inner) => Some(_inner),
             DeleteItemErrorKind::InternalServerError(_inner) => Some(_inner),
-            DeleteItemErrorKind::InvalidEndpointError(_inner) => Some(_inner),
-            DeleteItemErrorKind::ItemCollectionSizeLimitExceededError(_inner) => Some(_inner),
-            DeleteItemErrorKind::ProvisionedThroughputExceededError(_inner) => Some(_inner),
+            DeleteItemErrorKind::InvalidEndpointException(_inner) => Some(_inner),
+            DeleteItemErrorKind::ItemCollectionSizeLimitExceededException(_inner) => Some(_inner),
+            DeleteItemErrorKind::ProvisionedThroughputExceededException(_inner) => Some(_inner),
             DeleteItemErrorKind::RequestLimitExceeded(_inner) => Some(_inner),
-            DeleteItemErrorKind::ResourceNotFoundError(_inner) => Some(_inner),
-            DeleteItemErrorKind::TransactionConflictError(_inner) => Some(_inner),
+            DeleteItemErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            DeleteItemErrorKind::TransactionConflictException(_inner) => Some(_inner),
             DeleteItemErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -882,10 +919,10 @@ pub struct DeleteTableError {
 #[derive(std::fmt::Debug)]
 pub enum DeleteTableErrorKind {
     InternalServerError(crate::error::InternalServerError),
-    InvalidEndpointError(crate::error::InvalidEndpointError),
-    LimitExceededError(crate::error::LimitExceededError),
-    ResourceInUseError(crate::error::ResourceInUseError),
-    ResourceNotFoundError(crate::error::ResourceNotFoundError),
+    InvalidEndpointException(crate::error::InvalidEndpointException),
+    LimitExceededException(crate::error::LimitExceededException),
+    ResourceInUseException(crate::error::ResourceInUseException),
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
@@ -893,10 +930,10 @@ impl std::fmt::Display for DeleteTableError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
             DeleteTableErrorKind::InternalServerError(_inner) => _inner.fmt(f),
-            DeleteTableErrorKind::InvalidEndpointError(_inner) => _inner.fmt(f),
-            DeleteTableErrorKind::LimitExceededError(_inner) => _inner.fmt(f),
-            DeleteTableErrorKind::ResourceInUseError(_inner) => _inner.fmt(f),
-            DeleteTableErrorKind::ResourceNotFoundError(_inner) => _inner.fmt(f),
+            DeleteTableErrorKind::InvalidEndpointException(_inner) => _inner.fmt(f),
+            DeleteTableErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
+            DeleteTableErrorKind::ResourceInUseException(_inner) => _inner.fmt(f),
+            DeleteTableErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
             DeleteTableErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -948,27 +985,33 @@ impl DeleteTableError {
     pub fn is_internal_server_error(&self) -> bool {
         matches!(&self.kind, DeleteTableErrorKind::InternalServerError(_))
     }
-    pub fn is_invalid_endpoint_error(&self) -> bool {
-        matches!(&self.kind, DeleteTableErrorKind::InvalidEndpointError(_))
+    pub fn is_invalid_endpoint_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteTableErrorKind::InvalidEndpointException(_)
+        )
     }
-    pub fn is_limit_exceeded_error(&self) -> bool {
-        matches!(&self.kind, DeleteTableErrorKind::LimitExceededError(_))
+    pub fn is_limit_exceeded_exception(&self) -> bool {
+        matches!(&self.kind, DeleteTableErrorKind::LimitExceededException(_))
     }
-    pub fn is_resource_in_use_error(&self) -> bool {
-        matches!(&self.kind, DeleteTableErrorKind::ResourceInUseError(_))
+    pub fn is_resource_in_use_exception(&self) -> bool {
+        matches!(&self.kind, DeleteTableErrorKind::ResourceInUseException(_))
     }
-    pub fn is_resource_not_found_error(&self) -> bool {
-        matches!(&self.kind, DeleteTableErrorKind::ResourceNotFoundError(_))
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteTableErrorKind::ResourceNotFoundException(_)
+        )
     }
 }
 impl std::error::Error for DeleteTableError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             DeleteTableErrorKind::InternalServerError(_inner) => Some(_inner),
-            DeleteTableErrorKind::InvalidEndpointError(_inner) => Some(_inner),
-            DeleteTableErrorKind::LimitExceededError(_inner) => Some(_inner),
-            DeleteTableErrorKind::ResourceInUseError(_inner) => Some(_inner),
-            DeleteTableErrorKind::ResourceNotFoundError(_inner) => Some(_inner),
+            DeleteTableErrorKind::InvalidEndpointException(_inner) => Some(_inner),
+            DeleteTableErrorKind::LimitExceededException(_inner) => Some(_inner),
+            DeleteTableErrorKind::ResourceInUseException(_inner) => Some(_inner),
+            DeleteTableErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DeleteTableErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -983,18 +1026,18 @@ pub struct DescribeBackupError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeBackupErrorKind {
-    BackupNotFoundError(crate::error::BackupNotFoundError),
+    BackupNotFoundException(crate::error::BackupNotFoundException),
     InternalServerError(crate::error::InternalServerError),
-    InvalidEndpointError(crate::error::InvalidEndpointError),
+    InvalidEndpointException(crate::error::InvalidEndpointException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeBackupError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DescribeBackupErrorKind::BackupNotFoundError(_inner) => _inner.fmt(f),
+            DescribeBackupErrorKind::BackupNotFoundException(_inner) => _inner.fmt(f),
             DescribeBackupErrorKind::InternalServerError(_inner) => _inner.fmt(f),
-            DescribeBackupErrorKind::InvalidEndpointError(_inner) => _inner.fmt(f),
+            DescribeBackupErrorKind::InvalidEndpointException(_inner) => _inner.fmt(f),
             DescribeBackupErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -1043,22 +1086,28 @@ impl DescribeBackupError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_backup_not_found_error(&self) -> bool {
-        matches!(&self.kind, DescribeBackupErrorKind::BackupNotFoundError(_))
+    pub fn is_backup_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeBackupErrorKind::BackupNotFoundException(_)
+        )
     }
     pub fn is_internal_server_error(&self) -> bool {
         matches!(&self.kind, DescribeBackupErrorKind::InternalServerError(_))
     }
-    pub fn is_invalid_endpoint_error(&self) -> bool {
-        matches!(&self.kind, DescribeBackupErrorKind::InvalidEndpointError(_))
+    pub fn is_invalid_endpoint_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeBackupErrorKind::InvalidEndpointException(_)
+        )
     }
 }
 impl std::error::Error for DescribeBackupError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DescribeBackupErrorKind::BackupNotFoundError(_inner) => Some(_inner),
+            DescribeBackupErrorKind::BackupNotFoundException(_inner) => Some(_inner),
             DescribeBackupErrorKind::InternalServerError(_inner) => Some(_inner),
-            DescribeBackupErrorKind::InvalidEndpointError(_inner) => Some(_inner),
+            DescribeBackupErrorKind::InvalidEndpointException(_inner) => Some(_inner),
             DescribeBackupErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -1074,8 +1123,8 @@ pub struct DescribeContinuousBackupsError {
 #[derive(std::fmt::Debug)]
 pub enum DescribeContinuousBackupsErrorKind {
     InternalServerError(crate::error::InternalServerError),
-    InvalidEndpointError(crate::error::InvalidEndpointError),
-    TableNotFoundError(crate::error::TableNotFoundError),
+    InvalidEndpointException(crate::error::InvalidEndpointException),
+    TableNotFoundException(crate::error::TableNotFoundException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
@@ -1083,8 +1132,8 @@ impl std::fmt::Display for DescribeContinuousBackupsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
             DescribeContinuousBackupsErrorKind::InternalServerError(_inner) => _inner.fmt(f),
-            DescribeContinuousBackupsErrorKind::InvalidEndpointError(_inner) => _inner.fmt(f),
-            DescribeContinuousBackupsErrorKind::TableNotFoundError(_inner) => _inner.fmt(f),
+            DescribeContinuousBackupsErrorKind::InvalidEndpointException(_inner) => _inner.fmt(f),
+            DescribeContinuousBackupsErrorKind::TableNotFoundException(_inner) => _inner.fmt(f),
             DescribeContinuousBackupsErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -1139,16 +1188,16 @@ impl DescribeContinuousBackupsError {
             DescribeContinuousBackupsErrorKind::InternalServerError(_)
         )
     }
-    pub fn is_invalid_endpoint_error(&self) -> bool {
+    pub fn is_invalid_endpoint_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DescribeContinuousBackupsErrorKind::InvalidEndpointError(_)
+            DescribeContinuousBackupsErrorKind::InvalidEndpointException(_)
         )
     }
-    pub fn is_table_not_found_error(&self) -> bool {
+    pub fn is_table_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DescribeContinuousBackupsErrorKind::TableNotFoundError(_)
+            DescribeContinuousBackupsErrorKind::TableNotFoundException(_)
         )
     }
 }
@@ -1156,8 +1205,8 @@ impl std::error::Error for DescribeContinuousBackupsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             DescribeContinuousBackupsErrorKind::InternalServerError(_inner) => Some(_inner),
-            DescribeContinuousBackupsErrorKind::InvalidEndpointError(_inner) => Some(_inner),
-            DescribeContinuousBackupsErrorKind::TableNotFoundError(_inner) => Some(_inner),
+            DescribeContinuousBackupsErrorKind::InvalidEndpointException(_inner) => Some(_inner),
+            DescribeContinuousBackupsErrorKind::TableNotFoundException(_inner) => Some(_inner),
             DescribeContinuousBackupsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -1173,7 +1222,7 @@ pub struct DescribeContributorInsightsError {
 #[derive(std::fmt::Debug)]
 pub enum DescribeContributorInsightsErrorKind {
     InternalServerError(crate::error::InternalServerError),
-    ResourceNotFoundError(crate::error::ResourceNotFoundError),
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
@@ -1181,7 +1230,9 @@ impl std::fmt::Display for DescribeContributorInsightsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
             DescribeContributorInsightsErrorKind::InternalServerError(_inner) => _inner.fmt(f),
-            DescribeContributorInsightsErrorKind::ResourceNotFoundError(_inner) => _inner.fmt(f),
+            DescribeContributorInsightsErrorKind::ResourceNotFoundException(_inner) => {
+                _inner.fmt(f)
+            }
             DescribeContributorInsightsErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -1236,10 +1287,10 @@ impl DescribeContributorInsightsError {
             DescribeContributorInsightsErrorKind::InternalServerError(_)
         )
     }
-    pub fn is_resource_not_found_error(&self) -> bool {
+    pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DescribeContributorInsightsErrorKind::ResourceNotFoundError(_)
+            DescribeContributorInsightsErrorKind::ResourceNotFoundException(_)
         )
     }
 }
@@ -1247,7 +1298,7 @@ impl std::error::Error for DescribeContributorInsightsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             DescribeContributorInsightsErrorKind::InternalServerError(_inner) => Some(_inner),
-            DescribeContributorInsightsErrorKind::ResourceNotFoundError(_inner) => Some(_inner),
+            DescribeContributorInsightsErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DescribeContributorInsightsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -1334,18 +1385,18 @@ pub struct DescribeExportError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeExportErrorKind {
-    ExportNotFoundError(crate::error::ExportNotFoundError),
+    ExportNotFoundException(crate::error::ExportNotFoundException),
     InternalServerError(crate::error::InternalServerError),
-    LimitExceededError(crate::error::LimitExceededError),
+    LimitExceededException(crate::error::LimitExceededException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeExportError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DescribeExportErrorKind::ExportNotFoundError(_inner) => _inner.fmt(f),
+            DescribeExportErrorKind::ExportNotFoundException(_inner) => _inner.fmt(f),
             DescribeExportErrorKind::InternalServerError(_inner) => _inner.fmt(f),
-            DescribeExportErrorKind::LimitExceededError(_inner) => _inner.fmt(f),
+            DescribeExportErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
             DescribeExportErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -1394,22 +1445,28 @@ impl DescribeExportError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_export_not_found_error(&self) -> bool {
-        matches!(&self.kind, DescribeExportErrorKind::ExportNotFoundError(_))
+    pub fn is_export_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeExportErrorKind::ExportNotFoundException(_)
+        )
     }
     pub fn is_internal_server_error(&self) -> bool {
         matches!(&self.kind, DescribeExportErrorKind::InternalServerError(_))
     }
-    pub fn is_limit_exceeded_error(&self) -> bool {
-        matches!(&self.kind, DescribeExportErrorKind::LimitExceededError(_))
+    pub fn is_limit_exceeded_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeExportErrorKind::LimitExceededException(_)
+        )
     }
 }
 impl std::error::Error for DescribeExportError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DescribeExportErrorKind::ExportNotFoundError(_inner) => Some(_inner),
+            DescribeExportErrorKind::ExportNotFoundException(_inner) => Some(_inner),
             DescribeExportErrorKind::InternalServerError(_inner) => Some(_inner),
-            DescribeExportErrorKind::LimitExceededError(_inner) => Some(_inner),
+            DescribeExportErrorKind::LimitExceededException(_inner) => Some(_inner),
             DescribeExportErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -1424,18 +1481,18 @@ pub struct DescribeGlobalTableError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeGlobalTableErrorKind {
-    GlobalTableNotFoundError(crate::error::GlobalTableNotFoundError),
+    GlobalTableNotFoundException(crate::error::GlobalTableNotFoundException),
     InternalServerError(crate::error::InternalServerError),
-    InvalidEndpointError(crate::error::InvalidEndpointError),
+    InvalidEndpointException(crate::error::InvalidEndpointException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeGlobalTableError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DescribeGlobalTableErrorKind::GlobalTableNotFoundError(_inner) => _inner.fmt(f),
+            DescribeGlobalTableErrorKind::GlobalTableNotFoundException(_inner) => _inner.fmt(f),
             DescribeGlobalTableErrorKind::InternalServerError(_inner) => _inner.fmt(f),
-            DescribeGlobalTableErrorKind::InvalidEndpointError(_inner) => _inner.fmt(f),
+            DescribeGlobalTableErrorKind::InvalidEndpointException(_inner) => _inner.fmt(f),
             DescribeGlobalTableErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -1484,10 +1541,10 @@ impl DescribeGlobalTableError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_global_table_not_found_error(&self) -> bool {
+    pub fn is_global_table_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DescribeGlobalTableErrorKind::GlobalTableNotFoundError(_)
+            DescribeGlobalTableErrorKind::GlobalTableNotFoundException(_)
         )
     }
     pub fn is_internal_server_error(&self) -> bool {
@@ -1496,19 +1553,19 @@ impl DescribeGlobalTableError {
             DescribeGlobalTableErrorKind::InternalServerError(_)
         )
     }
-    pub fn is_invalid_endpoint_error(&self) -> bool {
+    pub fn is_invalid_endpoint_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DescribeGlobalTableErrorKind::InvalidEndpointError(_)
+            DescribeGlobalTableErrorKind::InvalidEndpointException(_)
         )
     }
 }
 impl std::error::Error for DescribeGlobalTableError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DescribeGlobalTableErrorKind::GlobalTableNotFoundError(_inner) => Some(_inner),
+            DescribeGlobalTableErrorKind::GlobalTableNotFoundException(_inner) => Some(_inner),
             DescribeGlobalTableErrorKind::InternalServerError(_inner) => Some(_inner),
-            DescribeGlobalTableErrorKind::InvalidEndpointError(_inner) => Some(_inner),
+            DescribeGlobalTableErrorKind::InvalidEndpointException(_inner) => Some(_inner),
             DescribeGlobalTableErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -1523,18 +1580,20 @@ pub struct DescribeGlobalTableSettingsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeGlobalTableSettingsErrorKind {
-    GlobalTableNotFoundError(crate::error::GlobalTableNotFoundError),
+    GlobalTableNotFoundException(crate::error::GlobalTableNotFoundException),
     InternalServerError(crate::error::InternalServerError),
-    InvalidEndpointError(crate::error::InvalidEndpointError),
+    InvalidEndpointException(crate::error::InvalidEndpointException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DescribeGlobalTableSettingsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DescribeGlobalTableSettingsErrorKind::GlobalTableNotFoundError(_inner) => _inner.fmt(f),
+            DescribeGlobalTableSettingsErrorKind::GlobalTableNotFoundException(_inner) => {
+                _inner.fmt(f)
+            }
             DescribeGlobalTableSettingsErrorKind::InternalServerError(_inner) => _inner.fmt(f),
-            DescribeGlobalTableSettingsErrorKind::InvalidEndpointError(_inner) => _inner.fmt(f),
+            DescribeGlobalTableSettingsErrorKind::InvalidEndpointException(_inner) => _inner.fmt(f),
             DescribeGlobalTableSettingsErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -1583,10 +1642,10 @@ impl DescribeGlobalTableSettingsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_global_table_not_found_error(&self) -> bool {
+    pub fn is_global_table_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DescribeGlobalTableSettingsErrorKind::GlobalTableNotFoundError(_)
+            DescribeGlobalTableSettingsErrorKind::GlobalTableNotFoundException(_)
         )
     }
     pub fn is_internal_server_error(&self) -> bool {
@@ -1595,19 +1654,21 @@ impl DescribeGlobalTableSettingsError {
             DescribeGlobalTableSettingsErrorKind::InternalServerError(_)
         )
     }
-    pub fn is_invalid_endpoint_error(&self) -> bool {
+    pub fn is_invalid_endpoint_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DescribeGlobalTableSettingsErrorKind::InvalidEndpointError(_)
+            DescribeGlobalTableSettingsErrorKind::InvalidEndpointException(_)
         )
     }
 }
 impl std::error::Error for DescribeGlobalTableSettingsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DescribeGlobalTableSettingsErrorKind::GlobalTableNotFoundError(_inner) => Some(_inner),
+            DescribeGlobalTableSettingsErrorKind::GlobalTableNotFoundException(_inner) => {
+                Some(_inner)
+            }
             DescribeGlobalTableSettingsErrorKind::InternalServerError(_inner) => Some(_inner),
-            DescribeGlobalTableSettingsErrorKind::InvalidEndpointError(_inner) => Some(_inner),
+            DescribeGlobalTableSettingsErrorKind::InvalidEndpointException(_inner) => Some(_inner),
             DescribeGlobalTableSettingsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -1623,8 +1684,8 @@ pub struct DescribeKinesisStreamingDestinationError {
 #[derive(std::fmt::Debug)]
 pub enum DescribeKinesisStreamingDestinationErrorKind {
     InternalServerError(crate::error::InternalServerError),
-    InvalidEndpointError(crate::error::InvalidEndpointError),
-    ResourceNotFoundError(crate::error::ResourceNotFoundError),
+    InvalidEndpointException(crate::error::InvalidEndpointException),
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
@@ -1634,10 +1695,10 @@ impl std::fmt::Display for DescribeKinesisStreamingDestinationError {
             DescribeKinesisStreamingDestinationErrorKind::InternalServerError(_inner) => {
                 _inner.fmt(f)
             }
-            DescribeKinesisStreamingDestinationErrorKind::InvalidEndpointError(_inner) => {
+            DescribeKinesisStreamingDestinationErrorKind::InvalidEndpointException(_inner) => {
                 _inner.fmt(f)
             }
-            DescribeKinesisStreamingDestinationErrorKind::ResourceNotFoundError(_inner) => {
+            DescribeKinesisStreamingDestinationErrorKind::ResourceNotFoundException(_inner) => {
                 _inner.fmt(f)
             }
             DescribeKinesisStreamingDestinationErrorKind::Unhandled(_inner) => _inner.fmt(f),
@@ -1697,16 +1758,16 @@ impl DescribeKinesisStreamingDestinationError {
             DescribeKinesisStreamingDestinationErrorKind::InternalServerError(_)
         )
     }
-    pub fn is_invalid_endpoint_error(&self) -> bool {
+    pub fn is_invalid_endpoint_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DescribeKinesisStreamingDestinationErrorKind::InvalidEndpointError(_)
+            DescribeKinesisStreamingDestinationErrorKind::InvalidEndpointException(_)
         )
     }
-    pub fn is_resource_not_found_error(&self) -> bool {
+    pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DescribeKinesisStreamingDestinationErrorKind::ResourceNotFoundError(_)
+            DescribeKinesisStreamingDestinationErrorKind::ResourceNotFoundException(_)
         )
     }
 }
@@ -1716,10 +1777,10 @@ impl std::error::Error for DescribeKinesisStreamingDestinationError {
             DescribeKinesisStreamingDestinationErrorKind::InternalServerError(_inner) => {
                 Some(_inner)
             }
-            DescribeKinesisStreamingDestinationErrorKind::InvalidEndpointError(_inner) => {
+            DescribeKinesisStreamingDestinationErrorKind::InvalidEndpointException(_inner) => {
                 Some(_inner)
             }
-            DescribeKinesisStreamingDestinationErrorKind::ResourceNotFoundError(_inner) => {
+            DescribeKinesisStreamingDestinationErrorKind::ResourceNotFoundException(_inner) => {
                 Some(_inner)
             }
             DescribeKinesisStreamingDestinationErrorKind::Unhandled(_inner) => {
@@ -1739,7 +1800,7 @@ pub struct DescribeLimitsError {
 #[derive(std::fmt::Debug)]
 pub enum DescribeLimitsErrorKind {
     InternalServerError(crate::error::InternalServerError),
-    InvalidEndpointError(crate::error::InvalidEndpointError),
+    InvalidEndpointException(crate::error::InvalidEndpointException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
@@ -1747,7 +1808,7 @@ impl std::fmt::Display for DescribeLimitsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
             DescribeLimitsErrorKind::InternalServerError(_inner) => _inner.fmt(f),
-            DescribeLimitsErrorKind::InvalidEndpointError(_inner) => _inner.fmt(f),
+            DescribeLimitsErrorKind::InvalidEndpointException(_inner) => _inner.fmt(f),
             DescribeLimitsErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -1799,15 +1860,18 @@ impl DescribeLimitsError {
     pub fn is_internal_server_error(&self) -> bool {
         matches!(&self.kind, DescribeLimitsErrorKind::InternalServerError(_))
     }
-    pub fn is_invalid_endpoint_error(&self) -> bool {
-        matches!(&self.kind, DescribeLimitsErrorKind::InvalidEndpointError(_))
+    pub fn is_invalid_endpoint_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeLimitsErrorKind::InvalidEndpointException(_)
+        )
     }
 }
 impl std::error::Error for DescribeLimitsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             DescribeLimitsErrorKind::InternalServerError(_inner) => Some(_inner),
-            DescribeLimitsErrorKind::InvalidEndpointError(_inner) => Some(_inner),
+            DescribeLimitsErrorKind::InvalidEndpointException(_inner) => Some(_inner),
             DescribeLimitsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -1823,8 +1887,8 @@ pub struct DescribeTableError {
 #[derive(std::fmt::Debug)]
 pub enum DescribeTableErrorKind {
     InternalServerError(crate::error::InternalServerError),
-    InvalidEndpointError(crate::error::InvalidEndpointError),
-    ResourceNotFoundError(crate::error::ResourceNotFoundError),
+    InvalidEndpointException(crate::error::InvalidEndpointException),
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
@@ -1832,8 +1896,8 @@ impl std::fmt::Display for DescribeTableError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
             DescribeTableErrorKind::InternalServerError(_inner) => _inner.fmt(f),
-            DescribeTableErrorKind::InvalidEndpointError(_inner) => _inner.fmt(f),
-            DescribeTableErrorKind::ResourceNotFoundError(_inner) => _inner.fmt(f),
+            DescribeTableErrorKind::InvalidEndpointException(_inner) => _inner.fmt(f),
+            DescribeTableErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
             DescribeTableErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -1885,19 +1949,25 @@ impl DescribeTableError {
     pub fn is_internal_server_error(&self) -> bool {
         matches!(&self.kind, DescribeTableErrorKind::InternalServerError(_))
     }
-    pub fn is_invalid_endpoint_error(&self) -> bool {
-        matches!(&self.kind, DescribeTableErrorKind::InvalidEndpointError(_))
+    pub fn is_invalid_endpoint_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeTableErrorKind::InvalidEndpointException(_)
+        )
     }
-    pub fn is_resource_not_found_error(&self) -> bool {
-        matches!(&self.kind, DescribeTableErrorKind::ResourceNotFoundError(_))
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeTableErrorKind::ResourceNotFoundException(_)
+        )
     }
 }
 impl std::error::Error for DescribeTableError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             DescribeTableErrorKind::InternalServerError(_inner) => Some(_inner),
-            DescribeTableErrorKind::InvalidEndpointError(_inner) => Some(_inner),
-            DescribeTableErrorKind::ResourceNotFoundError(_inner) => Some(_inner),
+            DescribeTableErrorKind::InvalidEndpointException(_inner) => Some(_inner),
+            DescribeTableErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DescribeTableErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -1913,7 +1983,7 @@ pub struct DescribeTableReplicaAutoScalingError {
 #[derive(std::fmt::Debug)]
 pub enum DescribeTableReplicaAutoScalingErrorKind {
     InternalServerError(crate::error::InternalServerError),
-    ResourceNotFoundError(crate::error::ResourceNotFoundError),
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
@@ -1921,7 +1991,7 @@ impl std::fmt::Display for DescribeTableReplicaAutoScalingError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
             DescribeTableReplicaAutoScalingErrorKind::InternalServerError(_inner) => _inner.fmt(f),
-            DescribeTableReplicaAutoScalingErrorKind::ResourceNotFoundError(_inner) => {
+            DescribeTableReplicaAutoScalingErrorKind::ResourceNotFoundException(_inner) => {
                 _inner.fmt(f)
             }
             DescribeTableReplicaAutoScalingErrorKind::Unhandled(_inner) => _inner.fmt(f),
@@ -1978,10 +2048,10 @@ impl DescribeTableReplicaAutoScalingError {
             DescribeTableReplicaAutoScalingErrorKind::InternalServerError(_)
         )
     }
-    pub fn is_resource_not_found_error(&self) -> bool {
+    pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DescribeTableReplicaAutoScalingErrorKind::ResourceNotFoundError(_)
+            DescribeTableReplicaAutoScalingErrorKind::ResourceNotFoundException(_)
         )
     }
 }
@@ -1989,7 +2059,9 @@ impl std::error::Error for DescribeTableReplicaAutoScalingError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             DescribeTableReplicaAutoScalingErrorKind::InternalServerError(_inner) => Some(_inner),
-            DescribeTableReplicaAutoScalingErrorKind::ResourceNotFoundError(_inner) => Some(_inner),
+            DescribeTableReplicaAutoScalingErrorKind::ResourceNotFoundException(_inner) => {
+                Some(_inner)
+            }
             DescribeTableReplicaAutoScalingErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -2005,8 +2077,8 @@ pub struct DescribeTimeToLiveError {
 #[derive(std::fmt::Debug)]
 pub enum DescribeTimeToLiveErrorKind {
     InternalServerError(crate::error::InternalServerError),
-    InvalidEndpointError(crate::error::InvalidEndpointError),
-    ResourceNotFoundError(crate::error::ResourceNotFoundError),
+    InvalidEndpointException(crate::error::InvalidEndpointException),
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
@@ -2014,8 +2086,8 @@ impl std::fmt::Display for DescribeTimeToLiveError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
             DescribeTimeToLiveErrorKind::InternalServerError(_inner) => _inner.fmt(f),
-            DescribeTimeToLiveErrorKind::InvalidEndpointError(_inner) => _inner.fmt(f),
-            DescribeTimeToLiveErrorKind::ResourceNotFoundError(_inner) => _inner.fmt(f),
+            DescribeTimeToLiveErrorKind::InvalidEndpointException(_inner) => _inner.fmt(f),
+            DescribeTimeToLiveErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
             DescribeTimeToLiveErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -2070,16 +2142,16 @@ impl DescribeTimeToLiveError {
             DescribeTimeToLiveErrorKind::InternalServerError(_)
         )
     }
-    pub fn is_invalid_endpoint_error(&self) -> bool {
+    pub fn is_invalid_endpoint_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DescribeTimeToLiveErrorKind::InvalidEndpointError(_)
+            DescribeTimeToLiveErrorKind::InvalidEndpointException(_)
         )
     }
-    pub fn is_resource_not_found_error(&self) -> bool {
+    pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DescribeTimeToLiveErrorKind::ResourceNotFoundError(_)
+            DescribeTimeToLiveErrorKind::ResourceNotFoundException(_)
         )
     }
 }
@@ -2087,8 +2159,8 @@ impl std::error::Error for DescribeTimeToLiveError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             DescribeTimeToLiveErrorKind::InternalServerError(_inner) => Some(_inner),
-            DescribeTimeToLiveErrorKind::InvalidEndpointError(_inner) => Some(_inner),
-            DescribeTimeToLiveErrorKind::ResourceNotFoundError(_inner) => Some(_inner),
+            DescribeTimeToLiveErrorKind::InvalidEndpointException(_inner) => Some(_inner),
+            DescribeTimeToLiveErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DescribeTimeToLiveErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -2104,10 +2176,10 @@ pub struct DisableKinesisStreamingDestinationError {
 #[derive(std::fmt::Debug)]
 pub enum DisableKinesisStreamingDestinationErrorKind {
     InternalServerError(crate::error::InternalServerError),
-    InvalidEndpointError(crate::error::InvalidEndpointError),
-    LimitExceededError(crate::error::LimitExceededError),
-    ResourceInUseError(crate::error::ResourceInUseError),
-    ResourceNotFoundError(crate::error::ResourceNotFoundError),
+    InvalidEndpointException(crate::error::InvalidEndpointException),
+    LimitExceededException(crate::error::LimitExceededException),
+    ResourceInUseException(crate::error::ResourceInUseException),
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
@@ -2117,16 +2189,16 @@ impl std::fmt::Display for DisableKinesisStreamingDestinationError {
             DisableKinesisStreamingDestinationErrorKind::InternalServerError(_inner) => {
                 _inner.fmt(f)
             }
-            DisableKinesisStreamingDestinationErrorKind::InvalidEndpointError(_inner) => {
+            DisableKinesisStreamingDestinationErrorKind::InvalidEndpointException(_inner) => {
                 _inner.fmt(f)
             }
-            DisableKinesisStreamingDestinationErrorKind::LimitExceededError(_inner) => {
+            DisableKinesisStreamingDestinationErrorKind::LimitExceededException(_inner) => {
                 _inner.fmt(f)
             }
-            DisableKinesisStreamingDestinationErrorKind::ResourceInUseError(_inner) => {
+            DisableKinesisStreamingDestinationErrorKind::ResourceInUseException(_inner) => {
                 _inner.fmt(f)
             }
-            DisableKinesisStreamingDestinationErrorKind::ResourceNotFoundError(_inner) => {
+            DisableKinesisStreamingDestinationErrorKind::ResourceNotFoundException(_inner) => {
                 _inner.fmt(f)
             }
             DisableKinesisStreamingDestinationErrorKind::Unhandled(_inner) => _inner.fmt(f),
@@ -2186,28 +2258,28 @@ impl DisableKinesisStreamingDestinationError {
             DisableKinesisStreamingDestinationErrorKind::InternalServerError(_)
         )
     }
-    pub fn is_invalid_endpoint_error(&self) -> bool {
+    pub fn is_invalid_endpoint_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DisableKinesisStreamingDestinationErrorKind::InvalidEndpointError(_)
+            DisableKinesisStreamingDestinationErrorKind::InvalidEndpointException(_)
         )
     }
-    pub fn is_limit_exceeded_error(&self) -> bool {
+    pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DisableKinesisStreamingDestinationErrorKind::LimitExceededError(_)
+            DisableKinesisStreamingDestinationErrorKind::LimitExceededException(_)
         )
     }
-    pub fn is_resource_in_use_error(&self) -> bool {
+    pub fn is_resource_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DisableKinesisStreamingDestinationErrorKind::ResourceInUseError(_)
+            DisableKinesisStreamingDestinationErrorKind::ResourceInUseException(_)
         )
     }
-    pub fn is_resource_not_found_error(&self) -> bool {
+    pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
-            DisableKinesisStreamingDestinationErrorKind::ResourceNotFoundError(_)
+            DisableKinesisStreamingDestinationErrorKind::ResourceNotFoundException(_)
         )
     }
 }
@@ -2217,12 +2289,16 @@ impl std::error::Error for DisableKinesisStreamingDestinationError {
             DisableKinesisStreamingDestinationErrorKind::InternalServerError(_inner) => {
                 Some(_inner)
             }
-            DisableKinesisStreamingDestinationErrorKind::InvalidEndpointError(_inner) => {
+            DisableKinesisStreamingDestinationErrorKind::InvalidEndpointException(_inner) => {
                 Some(_inner)
             }
-            DisableKinesisStreamingDestinationErrorKind::LimitExceededError(_inner) => Some(_inner),
-            DisableKinesisStreamingDestinationErrorKind::ResourceInUseError(_inner) => Some(_inner),
-            DisableKinesisStreamingDestinationErrorKind::ResourceNotFoundError(_inner) => {
+            DisableKinesisStreamingDestinationErrorKind::LimitExceededException(_inner) => {
+                Some(_inner)
+            }
+            DisableKinesisStreamingDestinationErrorKind::ResourceInUseException(_inner) => {
+                Some(_inner)
+            }
+            DisableKinesisStreamingDestinationErrorKind::ResourceNotFoundException(_inner) => {
                 Some(_inner)
             }
             DisableKinesisStreamingDestinationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
@@ -2240,10 +2316,10 @@ pub struct EnableKinesisStreamingDestinationError {
 #[derive(std::fmt::Debug)]
 pub enum EnableKinesisStreamingDestinationErrorKind {
     InternalServerError(crate::error::InternalServerError),
-    InvalidEndpointError(crate::error::InvalidEndpointError),
-    LimitExceededError(crate::error::LimitExceededError),
-    ResourceInUseError(crate::error::ResourceInUseError),
-    ResourceNotFoundError(crate::error::ResourceNotFoundError),
+    InvalidEndpointException(crate::error::InvalidEndpointException),
+    LimitExceededException(crate::error::LimitExceededException),
+    ResourceInUseException(crate::error::ResourceInUseException),
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
@@ -2253,12 +2329,16 @@ impl std::fmt::Display for EnableKinesisStreamingDestinationError {
             EnableKinesisStreamingDestinationErrorKind::InternalServerError(_inner) => {
                 _inner.fmt(f)
             }
-            EnableKinesisStreamingDestinationErrorKind::InvalidEndpointError(_inner) => {
+            EnableKinesisStreamingDestinationErrorKind::InvalidEndpointException(_inner) => {
                 _inner.fmt(f)
             }
-            EnableKinesisStreamingDestinationErrorKind::LimitExceededError(_inner) => _inner.fmt(f),
-            EnableKinesisStreamingDestinationErrorKind::ResourceInUseError(_inner) => _inner.fmt(f),
-            EnableKinesisStreamingDestinationErrorKind::ResourceNotFoundError(_inner) => {
+            EnableKinesisStreamingDestinationErrorKind::LimitExceededException(_inner) => {
+                _inner.fmt(f)
+            }
+            EnableKinesisStreamingDestinationErrorKind::ResourceInUseException(_inner) => {
+                _inner.fmt(f)
+            }
+            EnableKinesisStreamingDestinationErrorKind::ResourceNotFoundException(_inner) => {
                 _inner.fmt(f)
             }
             EnableKinesisStreamingDestinationErrorKind::Unhandled(_inner) => _inner.fmt(f),
@@ -2318,28 +2398,28 @@ impl EnableKinesisStreamingDestinationError {
             EnableKinesisStreamingDestinationErrorKind::InternalServerError(_)
         )
     }
-    pub fn is_invalid_endpoint_error(&self) -> bool {
+    pub fn is_invalid_endpoint_exception(&self) -> bool {
         matches!(
             &self.kind,
-            EnableKinesisStreamingDestinationErrorKind::InvalidEndpointError(_)
+            EnableKinesisStreamingDestinationErrorKind::InvalidEndpointException(_)
         )
     }
-    pub fn is_limit_exceeded_error(&self) -> bool {
+    pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
-            EnableKinesisStreamingDestinationErrorKind::LimitExceededError(_)
+            EnableKinesisStreamingDestinationErrorKind::LimitExceededException(_)
         )
     }
-    pub fn is_resource_in_use_error(&self) -> bool {
+    pub fn is_resource_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
-            EnableKinesisStreamingDestinationErrorKind::ResourceInUseError(_)
+            EnableKinesisStreamingDestinationErrorKind::ResourceInUseException(_)
         )
     }
-    pub fn is_resource_not_found_error(&self) -> bool {
+    pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
-            EnableKinesisStreamingDestinationErrorKind::ResourceNotFoundError(_)
+            EnableKinesisStreamingDestinationErrorKind::ResourceNotFoundException(_)
         )
     }
 }
@@ -2347,12 +2427,16 @@ impl std::error::Error for EnableKinesisStreamingDestinationError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             EnableKinesisStreamingDestinationErrorKind::InternalServerError(_inner) => Some(_inner),
-            EnableKinesisStreamingDestinationErrorKind::InvalidEndpointError(_inner) => {
+            EnableKinesisStreamingDestinationErrorKind::InvalidEndpointException(_inner) => {
                 Some(_inner)
             }
-            EnableKinesisStreamingDestinationErrorKind::LimitExceededError(_inner) => Some(_inner),
-            EnableKinesisStreamingDestinationErrorKind::ResourceInUseError(_inner) => Some(_inner),
-            EnableKinesisStreamingDestinationErrorKind::ResourceNotFoundError(_inner) => {
+            EnableKinesisStreamingDestinationErrorKind::LimitExceededException(_inner) => {
+                Some(_inner)
+            }
+            EnableKinesisStreamingDestinationErrorKind::ResourceInUseException(_inner) => {
+                Some(_inner)
+            }
+            EnableKinesisStreamingDestinationErrorKind::ResourceNotFoundException(_inner) => {
                 Some(_inner)
             }
             EnableKinesisStreamingDestinationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
@@ -2369,30 +2453,34 @@ pub struct ExecuteStatementError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ExecuteStatementErrorKind {
-    ConditionalCheckFailedError(crate::error::ConditionalCheckFailedError),
-    DuplicateItemError(crate::error::DuplicateItemError),
+    ConditionalCheckFailedException(crate::error::ConditionalCheckFailedException),
+    DuplicateItemException(crate::error::DuplicateItemException),
     InternalServerError(crate::error::InternalServerError),
-    ItemCollectionSizeLimitExceededError(crate::error::ItemCollectionSizeLimitExceededError),
-    ProvisionedThroughputExceededError(crate::error::ProvisionedThroughputExceededError),
+    ItemCollectionSizeLimitExceededException(
+        crate::error::ItemCollectionSizeLimitExceededException,
+    ),
+    ProvisionedThroughputExceededException(crate::error::ProvisionedThroughputExceededException),
     RequestLimitExceeded(crate::error::RequestLimitExceeded),
-    ResourceNotFoundError(crate::error::ResourceNotFoundError),
-    TransactionConflictError(crate::error::TransactionConflictError),
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    TransactionConflictException(crate::error::TransactionConflictException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ExecuteStatementError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ExecuteStatementErrorKind::ConditionalCheckFailedError(_inner) => _inner.fmt(f),
-            ExecuteStatementErrorKind::DuplicateItemError(_inner) => _inner.fmt(f),
+            ExecuteStatementErrorKind::ConditionalCheckFailedException(_inner) => _inner.fmt(f),
+            ExecuteStatementErrorKind::DuplicateItemException(_inner) => _inner.fmt(f),
             ExecuteStatementErrorKind::InternalServerError(_inner) => _inner.fmt(f),
-            ExecuteStatementErrorKind::ItemCollectionSizeLimitExceededError(_inner) => {
+            ExecuteStatementErrorKind::ItemCollectionSizeLimitExceededException(_inner) => {
                 _inner.fmt(f)
             }
-            ExecuteStatementErrorKind::ProvisionedThroughputExceededError(_inner) => _inner.fmt(f),
+            ExecuteStatementErrorKind::ProvisionedThroughputExceededException(_inner) => {
+                _inner.fmt(f)
+            }
             ExecuteStatementErrorKind::RequestLimitExceeded(_inner) => _inner.fmt(f),
-            ExecuteStatementErrorKind::ResourceNotFoundError(_inner) => _inner.fmt(f),
-            ExecuteStatementErrorKind::TransactionConflictError(_inner) => _inner.fmt(f),
+            ExecuteStatementErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            ExecuteStatementErrorKind::TransactionConflictException(_inner) => _inner.fmt(f),
             ExecuteStatementErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -2441,14 +2529,17 @@ impl ExecuteStatementError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_conditional_check_failed_error(&self) -> bool {
+    pub fn is_conditional_check_failed_exception(&self) -> bool {
         matches!(
             &self.kind,
-            ExecuteStatementErrorKind::ConditionalCheckFailedError(_)
+            ExecuteStatementErrorKind::ConditionalCheckFailedException(_)
         )
     }
-    pub fn is_duplicate_item_error(&self) -> bool {
-        matches!(&self.kind, ExecuteStatementErrorKind::DuplicateItemError(_))
+    pub fn is_duplicate_item_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ExecuteStatementErrorKind::DuplicateItemException(_)
+        )
     }
     pub fn is_internal_server_error(&self) -> bool {
         matches!(
@@ -2456,16 +2547,16 @@ impl ExecuteStatementError {
             ExecuteStatementErrorKind::InternalServerError(_)
         )
     }
-    pub fn is_item_collection_size_limit_exceeded_error(&self) -> bool {
+    pub fn is_item_collection_size_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
-            ExecuteStatementErrorKind::ItemCollectionSizeLimitExceededError(_)
+            ExecuteStatementErrorKind::ItemCollectionSizeLimitExceededException(_)
         )
     }
-    pub fn is_provisioned_throughput_exceeded_error(&self) -> bool {
+    pub fn is_provisioned_throughput_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
-            ExecuteStatementErrorKind::ProvisionedThroughputExceededError(_)
+            ExecuteStatementErrorKind::ProvisionedThroughputExceededException(_)
         )
     }
     pub fn is_request_limit_exceeded(&self) -> bool {
@@ -2474,30 +2565,34 @@ impl ExecuteStatementError {
             ExecuteStatementErrorKind::RequestLimitExceeded(_)
         )
     }
-    pub fn is_resource_not_found_error(&self) -> bool {
+    pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
-            ExecuteStatementErrorKind::ResourceNotFoundError(_)
+            ExecuteStatementErrorKind::ResourceNotFoundException(_)
         )
     }
-    pub fn is_transaction_conflict_error(&self) -> bool {
+    pub fn is_transaction_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
-            ExecuteStatementErrorKind::TransactionConflictError(_)
+            ExecuteStatementErrorKind::TransactionConflictException(_)
         )
     }
 }
 impl std::error::Error for ExecuteStatementError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ExecuteStatementErrorKind::ConditionalCheckFailedError(_inner) => Some(_inner),
-            ExecuteStatementErrorKind::DuplicateItemError(_inner) => Some(_inner),
+            ExecuteStatementErrorKind::ConditionalCheckFailedException(_inner) => Some(_inner),
+            ExecuteStatementErrorKind::DuplicateItemException(_inner) => Some(_inner),
             ExecuteStatementErrorKind::InternalServerError(_inner) => Some(_inner),
-            ExecuteStatementErrorKind::ItemCollectionSizeLimitExceededError(_inner) => Some(_inner),
-            ExecuteStatementErrorKind::ProvisionedThroughputExceededError(_inner) => Some(_inner),
+            ExecuteStatementErrorKind::ItemCollectionSizeLimitExceededException(_inner) => {
+                Some(_inner)
+            }
+            ExecuteStatementErrorKind::ProvisionedThroughputExceededException(_inner) => {
+                Some(_inner)
+            }
             ExecuteStatementErrorKind::RequestLimitExceeded(_inner) => Some(_inner),
-            ExecuteStatementErrorKind::ResourceNotFoundError(_inner) => Some(_inner),
-            ExecuteStatementErrorKind::TransactionConflictError(_inner) => Some(_inner),
+            ExecuteStatementErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            ExecuteStatementErrorKind::TransactionConflictException(_inner) => Some(_inner),
             ExecuteStatementErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -2512,28 +2607,30 @@ pub struct ExecuteTransactionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ExecuteTransactionErrorKind {
-    IdempotentParameterMismatchError(crate::error::IdempotentParameterMismatchError),
+    IdempotentParameterMismatchException(crate::error::IdempotentParameterMismatchException),
     InternalServerError(crate::error::InternalServerError),
-    ProvisionedThroughputExceededError(crate::error::ProvisionedThroughputExceededError),
+    ProvisionedThroughputExceededException(crate::error::ProvisionedThroughputExceededException),
     RequestLimitExceeded(crate::error::RequestLimitExceeded),
-    ResourceNotFoundError(crate::error::ResourceNotFoundError),
-    TransactionCanceledError(crate::error::TransactionCanceledError),
-    TransactionInProgressError(crate::error::TransactionInProgressError),
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    TransactionCanceledException(crate::error::TransactionCanceledException),
+    TransactionInProgressException(crate::error::TransactionInProgressException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ExecuteTransactionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ExecuteTransactionErrorKind::IdempotentParameterMismatchError(_inner) => _inner.fmt(f),
+            ExecuteTransactionErrorKind::IdempotentParameterMismatchException(_inner) => {
+                _inner.fmt(f)
+            }
             ExecuteTransactionErrorKind::InternalServerError(_inner) => _inner.fmt(f),
-            ExecuteTransactionErrorKind::ProvisionedThroughputExceededError(_inner) => {
+            ExecuteTransactionErrorKind::ProvisionedThroughputExceededException(_inner) => {
                 _inner.fmt(f)
             }
             ExecuteTransactionErrorKind::RequestLimitExceeded(_inner) => _inner.fmt(f),
-            ExecuteTransactionErrorKind::ResourceNotFoundError(_inner) => _inner.fmt(f),
-            ExecuteTransactionErrorKind::TransactionCanceledError(_inner) => _inner.fmt(f),
-            ExecuteTransactionErrorKind::TransactionInProgressError(_inner) => _inner.fmt(f),
+            ExecuteTransactionErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            ExecuteTransactionErrorKind::TransactionCanceledException(_inner) => _inner.fmt(f),
+            ExecuteTransactionErrorKind::TransactionInProgressException(_inner) => _inner.fmt(f),
             ExecuteTransactionErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -2582,10 +2679,10 @@ impl ExecuteTransactionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_idempotent_parameter_mismatch_error(&self) -> bool {
+    pub fn is_idempotent_parameter_mismatch_exception(&self) -> bool {
         matches!(
             &self.kind,
-            ExecuteTransactionErrorKind::IdempotentParameterMismatchError(_)
+            ExecuteTransactionErrorKind::IdempotentParameterMismatchException(_)
         )
     }
     pub fn is_internal_server_error(&self) -> bool {
@@ -2594,10 +2691,10 @@ impl ExecuteTransactionError {
             ExecuteTransactionErrorKind::InternalServerError(_)
         )
     }
-    pub fn is_provisioned_throughput_exceeded_error(&self) -> bool {
+    pub fn is_provisioned_throughput_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
-            ExecuteTransactionErrorKind::ProvisionedThroughputExceededError(_)
+            ExecuteTransactionErrorKind::ProvisionedThroughputExceededException(_)
         )
     }
     pub fn is_request_limit_exceeded(&self) -> bool {
@@ -2606,35 +2703,39 @@ impl ExecuteTransactionError {
             ExecuteTransactionErrorKind::RequestLimitExceeded(_)
         )
     }
-    pub fn is_resource_not_found_error(&self) -> bool {
+    pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
-            ExecuteTransactionErrorKind::ResourceNotFoundError(_)
+            ExecuteTransactionErrorKind::ResourceNotFoundException(_)
         )
     }
-    pub fn is_transaction_canceled_error(&self) -> bool {
+    pub fn is_transaction_canceled_exception(&self) -> bool {
         matches!(
             &self.kind,
-            ExecuteTransactionErrorKind::TransactionCanceledError(_)
+            ExecuteTransactionErrorKind::TransactionCanceledException(_)
         )
     }
-    pub fn is_transaction_in_progress_error(&self) -> bool {
+    pub fn is_transaction_in_progress_exception(&self) -> bool {
         matches!(
             &self.kind,
-            ExecuteTransactionErrorKind::TransactionInProgressError(_)
+            ExecuteTransactionErrorKind::TransactionInProgressException(_)
         )
     }
 }
 impl std::error::Error for ExecuteTransactionError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ExecuteTransactionErrorKind::IdempotentParameterMismatchError(_inner) => Some(_inner),
+            ExecuteTransactionErrorKind::IdempotentParameterMismatchException(_inner) => {
+                Some(_inner)
+            }
             ExecuteTransactionErrorKind::InternalServerError(_inner) => Some(_inner),
-            ExecuteTransactionErrorKind::ProvisionedThroughputExceededError(_inner) => Some(_inner),
+            ExecuteTransactionErrorKind::ProvisionedThroughputExceededException(_inner) => {
+                Some(_inner)
+            }
             ExecuteTransactionErrorKind::RequestLimitExceeded(_inner) => Some(_inner),
-            ExecuteTransactionErrorKind::ResourceNotFoundError(_inner) => Some(_inner),
-            ExecuteTransactionErrorKind::TransactionCanceledError(_inner) => Some(_inner),
-            ExecuteTransactionErrorKind::TransactionInProgressError(_inner) => Some(_inner),
+            ExecuteTransactionErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            ExecuteTransactionErrorKind::TransactionCanceledException(_inner) => Some(_inner),
+            ExecuteTransactionErrorKind::TransactionInProgressException(_inner) => Some(_inner),
             ExecuteTransactionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -2649,26 +2750,26 @@ pub struct ExportTableToPointInTimeError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ExportTableToPointInTimeErrorKind {
-    ExportConflictError(crate::error::ExportConflictError),
+    ExportConflictException(crate::error::ExportConflictException),
     InternalServerError(crate::error::InternalServerError),
-    InvalidExportTimeError(crate::error::InvalidExportTimeError),
-    LimitExceededError(crate::error::LimitExceededError),
-    PointInTimeRecoveryUnavailableError(crate::error::PointInTimeRecoveryUnavailableError),
-    TableNotFoundError(crate::error::TableNotFoundError),
+    InvalidExportTimeException(crate::error::InvalidExportTimeException),
+    LimitExceededException(crate::error::LimitExceededException),
+    PointInTimeRecoveryUnavailableException(crate::error::PointInTimeRecoveryUnavailableException),
+    TableNotFoundException(crate::error::TableNotFoundException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for ExportTableToPointInTimeError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ExportTableToPointInTimeErrorKind::ExportConflictError(_inner) => _inner.fmt(f),
+            ExportTableToPointInTimeErrorKind::ExportConflictException(_inner) => _inner.fmt(f),
             ExportTableToPointInTimeErrorKind::InternalServerError(_inner) => _inner.fmt(f),
-            ExportTableToPointInTimeErrorKind::InvalidExportTimeError(_inner) => _inner.fmt(f),
-            ExportTableToPointInTimeErrorKind::LimitExceededError(_inner) => _inner.fmt(f),
-            ExportTableToPointInTimeErrorKind::PointInTimeRecoveryUnavailableError(_inner) => {
+            ExportTableToPointInTimeErrorKind::InvalidExportTimeException(_inner) => _inner.fmt(f),
+            ExportTableToPointInTimeErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
+            ExportTableToPointInTimeErrorKind::PointInTimeRecoveryUnavailableException(_inner) => {
                 _inner.fmt(f)
             }
-            ExportTableToPointInTimeErrorKind::TableNotFoundError(_inner) => _inner.fmt(f),
+            ExportTableToPointInTimeErrorKind::TableNotFoundException(_inner) => _inner.fmt(f),
             ExportTableToPointInTimeErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -2717,10 +2818,10 @@ impl ExportTableToPointInTimeError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_export_conflict_error(&self) -> bool {
+    pub fn is_export_conflict_exception(&self) -> bool {
         matches!(
             &self.kind,
-            ExportTableToPointInTimeErrorKind::ExportConflictError(_)
+            ExportTableToPointInTimeErrorKind::ExportConflictException(_)
         )
     }
     pub fn is_internal_server_error(&self) -> bool {
@@ -2729,42 +2830,42 @@ impl ExportTableToPointInTimeError {
             ExportTableToPointInTimeErrorKind::InternalServerError(_)
         )
     }
-    pub fn is_invalid_export_time_error(&self) -> bool {
+    pub fn is_invalid_export_time_exception(&self) -> bool {
         matches!(
             &self.kind,
-            ExportTableToPointInTimeErrorKind::InvalidExportTimeError(_)
+            ExportTableToPointInTimeErrorKind::InvalidExportTimeException(_)
         )
     }
-    pub fn is_limit_exceeded_error(&self) -> bool {
+    pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
-            ExportTableToPointInTimeErrorKind::LimitExceededError(_)
+            ExportTableToPointInTimeErrorKind::LimitExceededException(_)
         )
     }
-    pub fn is_point_in_time_recovery_unavailable_error(&self) -> bool {
+    pub fn is_point_in_time_recovery_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
-            ExportTableToPointInTimeErrorKind::PointInTimeRecoveryUnavailableError(_)
+            ExportTableToPointInTimeErrorKind::PointInTimeRecoveryUnavailableException(_)
         )
     }
-    pub fn is_table_not_found_error(&self) -> bool {
+    pub fn is_table_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
-            ExportTableToPointInTimeErrorKind::TableNotFoundError(_)
+            ExportTableToPointInTimeErrorKind::TableNotFoundException(_)
         )
     }
 }
 impl std::error::Error for ExportTableToPointInTimeError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ExportTableToPointInTimeErrorKind::ExportConflictError(_inner) => Some(_inner),
+            ExportTableToPointInTimeErrorKind::ExportConflictException(_inner) => Some(_inner),
             ExportTableToPointInTimeErrorKind::InternalServerError(_inner) => Some(_inner),
-            ExportTableToPointInTimeErrorKind::InvalidExportTimeError(_inner) => Some(_inner),
-            ExportTableToPointInTimeErrorKind::LimitExceededError(_inner) => Some(_inner),
-            ExportTableToPointInTimeErrorKind::PointInTimeRecoveryUnavailableError(_inner) => {
+            ExportTableToPointInTimeErrorKind::InvalidExportTimeException(_inner) => Some(_inner),
+            ExportTableToPointInTimeErrorKind::LimitExceededException(_inner) => Some(_inner),
+            ExportTableToPointInTimeErrorKind::PointInTimeRecoveryUnavailableException(_inner) => {
                 Some(_inner)
             }
-            ExportTableToPointInTimeErrorKind::TableNotFoundError(_inner) => Some(_inner),
+            ExportTableToPointInTimeErrorKind::TableNotFoundException(_inner) => Some(_inner),
             ExportTableToPointInTimeErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -2780,10 +2881,10 @@ pub struct GetItemError {
 #[derive(std::fmt::Debug)]
 pub enum GetItemErrorKind {
     InternalServerError(crate::error::InternalServerError),
-    InvalidEndpointError(crate::error::InvalidEndpointError),
-    ProvisionedThroughputExceededError(crate::error::ProvisionedThroughputExceededError),
+    InvalidEndpointException(crate::error::InvalidEndpointException),
+    ProvisionedThroughputExceededException(crate::error::ProvisionedThroughputExceededException),
     RequestLimitExceeded(crate::error::RequestLimitExceeded),
-    ResourceNotFoundError(crate::error::ResourceNotFoundError),
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
@@ -2791,10 +2892,10 @@ impl std::fmt::Display for GetItemError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
             GetItemErrorKind::InternalServerError(_inner) => _inner.fmt(f),
-            GetItemErrorKind::InvalidEndpointError(_inner) => _inner.fmt(f),
-            GetItemErrorKind::ProvisionedThroughputExceededError(_inner) => _inner.fmt(f),
+            GetItemErrorKind::InvalidEndpointException(_inner) => _inner.fmt(f),
+            GetItemErrorKind::ProvisionedThroughputExceededException(_inner) => _inner.fmt(f),
             GetItemErrorKind::RequestLimitExceeded(_inner) => _inner.fmt(f),
-            GetItemErrorKind::ResourceNotFoundError(_inner) => _inner.fmt(f),
+            GetItemErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
             GetItemErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -2846,30 +2947,30 @@ impl GetItemError {
     pub fn is_internal_server_error(&self) -> bool {
         matches!(&self.kind, GetItemErrorKind::InternalServerError(_))
     }
-    pub fn is_invalid_endpoint_error(&self) -> bool {
-        matches!(&self.kind, GetItemErrorKind::InvalidEndpointError(_))
+    pub fn is_invalid_endpoint_exception(&self) -> bool {
+        matches!(&self.kind, GetItemErrorKind::InvalidEndpointException(_))
     }
-    pub fn is_provisioned_throughput_exceeded_error(&self) -> bool {
+    pub fn is_provisioned_throughput_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
-            GetItemErrorKind::ProvisionedThroughputExceededError(_)
+            GetItemErrorKind::ProvisionedThroughputExceededException(_)
         )
     }
     pub fn is_request_limit_exceeded(&self) -> bool {
         matches!(&self.kind, GetItemErrorKind::RequestLimitExceeded(_))
     }
-    pub fn is_resource_not_found_error(&self) -> bool {
-        matches!(&self.kind, GetItemErrorKind::ResourceNotFoundError(_))
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(&self.kind, GetItemErrorKind::ResourceNotFoundException(_))
     }
 }
 impl std::error::Error for GetItemError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             GetItemErrorKind::InternalServerError(_inner) => Some(_inner),
-            GetItemErrorKind::InvalidEndpointError(_inner) => Some(_inner),
-            GetItemErrorKind::ProvisionedThroughputExceededError(_inner) => Some(_inner),
+            GetItemErrorKind::InvalidEndpointException(_inner) => Some(_inner),
+            GetItemErrorKind::ProvisionedThroughputExceededException(_inner) => Some(_inner),
             GetItemErrorKind::RequestLimitExceeded(_inner) => Some(_inner),
-            GetItemErrorKind::ResourceNotFoundError(_inner) => Some(_inner),
+            GetItemErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             GetItemErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -2885,7 +2986,7 @@ pub struct ListBackupsError {
 #[derive(std::fmt::Debug)]
 pub enum ListBackupsErrorKind {
     InternalServerError(crate::error::InternalServerError),
-    InvalidEndpointError(crate::error::InvalidEndpointError),
+    InvalidEndpointException(crate::error::InvalidEndpointException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
@@ -2893,7 +2994,7 @@ impl std::fmt::Display for ListBackupsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
             ListBackupsErrorKind::InternalServerError(_inner) => _inner.fmt(f),
-            ListBackupsErrorKind::InvalidEndpointError(_inner) => _inner.fmt(f),
+            ListBackupsErrorKind::InvalidEndpointException(_inner) => _inner.fmt(f),
             ListBackupsErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -2945,15 +3046,18 @@ impl ListBackupsError {
     pub fn is_internal_server_error(&self) -> bool {
         matches!(&self.kind, ListBackupsErrorKind::InternalServerError(_))
     }
-    pub fn is_invalid_endpoint_error(&self) -> bool {
-        matches!(&self.kind, ListBackupsErrorKind::InvalidEndpointError(_))
+    pub fn is_invalid_endpoint_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListBackupsErrorKind::InvalidEndpointException(_)
+        )
     }
 }
 impl std::error::Error for ListBackupsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             ListBackupsErrorKind::InternalServerError(_inner) => Some(_inner),
-            ListBackupsErrorKind::InvalidEndpointError(_inner) => Some(_inner),
+            ListBackupsErrorKind::InvalidEndpointException(_inner) => Some(_inner),
             ListBackupsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -2969,7 +3073,7 @@ pub struct ListContributorInsightsError {
 #[derive(std::fmt::Debug)]
 pub enum ListContributorInsightsErrorKind {
     InternalServerError(crate::error::InternalServerError),
-    ResourceNotFoundError(crate::error::ResourceNotFoundError),
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
@@ -2977,7 +3081,7 @@ impl std::fmt::Display for ListContributorInsightsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
             ListContributorInsightsErrorKind::InternalServerError(_inner) => _inner.fmt(f),
-            ListContributorInsightsErrorKind::ResourceNotFoundError(_inner) => _inner.fmt(f),
+            ListContributorInsightsErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
             ListContributorInsightsErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -3032,10 +3136,10 @@ impl ListContributorInsightsError {
             ListContributorInsightsErrorKind::InternalServerError(_)
         )
     }
-    pub fn is_resource_not_found_error(&self) -> bool {
+    pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
-            ListContributorInsightsErrorKind::ResourceNotFoundError(_)
+            ListContributorInsightsErrorKind::ResourceNotFoundException(_)
         )
     }
 }
@@ -3043,7 +3147,7 @@ impl std::error::Error for ListContributorInsightsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             ListContributorInsightsErrorKind::InternalServerError(_inner) => Some(_inner),
-            ListContributorInsightsErrorKind::ResourceNotFoundError(_inner) => Some(_inner),
+            ListContributorInsightsErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             ListContributorInsightsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -3059,7 +3163,7 @@ pub struct ListExportsError {
 #[derive(std::fmt::Debug)]
 pub enum ListExportsErrorKind {
     InternalServerError(crate::error::InternalServerError),
-    LimitExceededError(crate::error::LimitExceededError),
+    LimitExceededException(crate::error::LimitExceededException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
@@ -3067,7 +3171,7 @@ impl std::fmt::Display for ListExportsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
             ListExportsErrorKind::InternalServerError(_inner) => _inner.fmt(f),
-            ListExportsErrorKind::LimitExceededError(_inner) => _inner.fmt(f),
+            ListExportsErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
             ListExportsErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -3119,15 +3223,15 @@ impl ListExportsError {
     pub fn is_internal_server_error(&self) -> bool {
         matches!(&self.kind, ListExportsErrorKind::InternalServerError(_))
     }
-    pub fn is_limit_exceeded_error(&self) -> bool {
-        matches!(&self.kind, ListExportsErrorKind::LimitExceededError(_))
+    pub fn is_limit_exceeded_exception(&self) -> bool {
+        matches!(&self.kind, ListExportsErrorKind::LimitExceededException(_))
     }
 }
 impl std::error::Error for ListExportsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             ListExportsErrorKind::InternalServerError(_inner) => Some(_inner),
-            ListExportsErrorKind::LimitExceededError(_inner) => Some(_inner),
+            ListExportsErrorKind::LimitExceededException(_inner) => Some(_inner),
             ListExportsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -3143,7 +3247,7 @@ pub struct ListGlobalTablesError {
 #[derive(std::fmt::Debug)]
 pub enum ListGlobalTablesErrorKind {
     InternalServerError(crate::error::InternalServerError),
-    InvalidEndpointError(crate::error::InvalidEndpointError),
+    InvalidEndpointException(crate::error::InvalidEndpointException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
@@ -3151,7 +3255,7 @@ impl std::fmt::Display for ListGlobalTablesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
             ListGlobalTablesErrorKind::InternalServerError(_inner) => _inner.fmt(f),
-            ListGlobalTablesErrorKind::InvalidEndpointError(_inner) => _inner.fmt(f),
+            ListGlobalTablesErrorKind::InvalidEndpointException(_inner) => _inner.fmt(f),
             ListGlobalTablesErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -3206,10 +3310,10 @@ impl ListGlobalTablesError {
             ListGlobalTablesErrorKind::InternalServerError(_)
         )
     }
-    pub fn is_invalid_endpoint_error(&self) -> bool {
+    pub fn is_invalid_endpoint_exception(&self) -> bool {
         matches!(
             &self.kind,
-            ListGlobalTablesErrorKind::InvalidEndpointError(_)
+            ListGlobalTablesErrorKind::InvalidEndpointException(_)
         )
     }
 }
@@ -3217,7 +3321,7 @@ impl std::error::Error for ListGlobalTablesError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             ListGlobalTablesErrorKind::InternalServerError(_inner) => Some(_inner),
-            ListGlobalTablesErrorKind::InvalidEndpointError(_inner) => Some(_inner),
+            ListGlobalTablesErrorKind::InvalidEndpointException(_inner) => Some(_inner),
             ListGlobalTablesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -3233,7 +3337,7 @@ pub struct ListTablesError {
 #[derive(std::fmt::Debug)]
 pub enum ListTablesErrorKind {
     InternalServerError(crate::error::InternalServerError),
-    InvalidEndpointError(crate::error::InvalidEndpointError),
+    InvalidEndpointException(crate::error::InvalidEndpointException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
@@ -3241,7 +3345,7 @@ impl std::fmt::Display for ListTablesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
             ListTablesErrorKind::InternalServerError(_inner) => _inner.fmt(f),
-            ListTablesErrorKind::InvalidEndpointError(_inner) => _inner.fmt(f),
+            ListTablesErrorKind::InvalidEndpointException(_inner) => _inner.fmt(f),
             ListTablesErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -3293,15 +3397,15 @@ impl ListTablesError {
     pub fn is_internal_server_error(&self) -> bool {
         matches!(&self.kind, ListTablesErrorKind::InternalServerError(_))
     }
-    pub fn is_invalid_endpoint_error(&self) -> bool {
-        matches!(&self.kind, ListTablesErrorKind::InvalidEndpointError(_))
+    pub fn is_invalid_endpoint_exception(&self) -> bool {
+        matches!(&self.kind, ListTablesErrorKind::InvalidEndpointException(_))
     }
 }
 impl std::error::Error for ListTablesError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             ListTablesErrorKind::InternalServerError(_inner) => Some(_inner),
-            ListTablesErrorKind::InvalidEndpointError(_inner) => Some(_inner),
+            ListTablesErrorKind::InvalidEndpointException(_inner) => Some(_inner),
             ListTablesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -3317,8 +3421,8 @@ pub struct ListTagsOfResourceError {
 #[derive(std::fmt::Debug)]
 pub enum ListTagsOfResourceErrorKind {
     InternalServerError(crate::error::InternalServerError),
-    InvalidEndpointError(crate::error::InvalidEndpointError),
-    ResourceNotFoundError(crate::error::ResourceNotFoundError),
+    InvalidEndpointException(crate::error::InvalidEndpointException),
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
@@ -3326,8 +3430,8 @@ impl std::fmt::Display for ListTagsOfResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
             ListTagsOfResourceErrorKind::InternalServerError(_inner) => _inner.fmt(f),
-            ListTagsOfResourceErrorKind::InvalidEndpointError(_inner) => _inner.fmt(f),
-            ListTagsOfResourceErrorKind::ResourceNotFoundError(_inner) => _inner.fmt(f),
+            ListTagsOfResourceErrorKind::InvalidEndpointException(_inner) => _inner.fmt(f),
+            ListTagsOfResourceErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
             ListTagsOfResourceErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -3382,16 +3486,16 @@ impl ListTagsOfResourceError {
             ListTagsOfResourceErrorKind::InternalServerError(_)
         )
     }
-    pub fn is_invalid_endpoint_error(&self) -> bool {
+    pub fn is_invalid_endpoint_exception(&self) -> bool {
         matches!(
             &self.kind,
-            ListTagsOfResourceErrorKind::InvalidEndpointError(_)
+            ListTagsOfResourceErrorKind::InvalidEndpointException(_)
         )
     }
-    pub fn is_resource_not_found_error(&self) -> bool {
+    pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
-            ListTagsOfResourceErrorKind::ResourceNotFoundError(_)
+            ListTagsOfResourceErrorKind::ResourceNotFoundException(_)
         )
     }
 }
@@ -3399,8 +3503,8 @@ impl std::error::Error for ListTagsOfResourceError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             ListTagsOfResourceErrorKind::InternalServerError(_inner) => Some(_inner),
-            ListTagsOfResourceErrorKind::InvalidEndpointError(_inner) => Some(_inner),
-            ListTagsOfResourceErrorKind::ResourceNotFoundError(_inner) => Some(_inner),
+            ListTagsOfResourceErrorKind::InvalidEndpointException(_inner) => Some(_inner),
+            ListTagsOfResourceErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             ListTagsOfResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -3415,28 +3519,30 @@ pub struct PutItemError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum PutItemErrorKind {
-    ConditionalCheckFailedError(crate::error::ConditionalCheckFailedError),
+    ConditionalCheckFailedException(crate::error::ConditionalCheckFailedException),
     InternalServerError(crate::error::InternalServerError),
-    InvalidEndpointError(crate::error::InvalidEndpointError),
-    ItemCollectionSizeLimitExceededError(crate::error::ItemCollectionSizeLimitExceededError),
-    ProvisionedThroughputExceededError(crate::error::ProvisionedThroughputExceededError),
+    InvalidEndpointException(crate::error::InvalidEndpointException),
+    ItemCollectionSizeLimitExceededException(
+        crate::error::ItemCollectionSizeLimitExceededException,
+    ),
+    ProvisionedThroughputExceededException(crate::error::ProvisionedThroughputExceededException),
     RequestLimitExceeded(crate::error::RequestLimitExceeded),
-    ResourceNotFoundError(crate::error::ResourceNotFoundError),
-    TransactionConflictError(crate::error::TransactionConflictError),
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    TransactionConflictException(crate::error::TransactionConflictException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for PutItemError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            PutItemErrorKind::ConditionalCheckFailedError(_inner) => _inner.fmt(f),
+            PutItemErrorKind::ConditionalCheckFailedException(_inner) => _inner.fmt(f),
             PutItemErrorKind::InternalServerError(_inner) => _inner.fmt(f),
-            PutItemErrorKind::InvalidEndpointError(_inner) => _inner.fmt(f),
-            PutItemErrorKind::ItemCollectionSizeLimitExceededError(_inner) => _inner.fmt(f),
-            PutItemErrorKind::ProvisionedThroughputExceededError(_inner) => _inner.fmt(f),
+            PutItemErrorKind::InvalidEndpointException(_inner) => _inner.fmt(f),
+            PutItemErrorKind::ItemCollectionSizeLimitExceededException(_inner) => _inner.fmt(f),
+            PutItemErrorKind::ProvisionedThroughputExceededException(_inner) => _inner.fmt(f),
             PutItemErrorKind::RequestLimitExceeded(_inner) => _inner.fmt(f),
-            PutItemErrorKind::ResourceNotFoundError(_inner) => _inner.fmt(f),
-            PutItemErrorKind::TransactionConflictError(_inner) => _inner.fmt(f),
+            PutItemErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            PutItemErrorKind::TransactionConflictException(_inner) => _inner.fmt(f),
             PutItemErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -3485,48 +3591,54 @@ impl PutItemError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_conditional_check_failed_error(&self) -> bool {
-        matches!(&self.kind, PutItemErrorKind::ConditionalCheckFailedError(_))
+    pub fn is_conditional_check_failed_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutItemErrorKind::ConditionalCheckFailedException(_)
+        )
     }
     pub fn is_internal_server_error(&self) -> bool {
         matches!(&self.kind, PutItemErrorKind::InternalServerError(_))
     }
-    pub fn is_invalid_endpoint_error(&self) -> bool {
-        matches!(&self.kind, PutItemErrorKind::InvalidEndpointError(_))
+    pub fn is_invalid_endpoint_exception(&self) -> bool {
+        matches!(&self.kind, PutItemErrorKind::InvalidEndpointException(_))
     }
-    pub fn is_item_collection_size_limit_exceeded_error(&self) -> bool {
+    pub fn is_item_collection_size_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
-            PutItemErrorKind::ItemCollectionSizeLimitExceededError(_)
+            PutItemErrorKind::ItemCollectionSizeLimitExceededException(_)
         )
     }
-    pub fn is_provisioned_throughput_exceeded_error(&self) -> bool {
+    pub fn is_provisioned_throughput_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
-            PutItemErrorKind::ProvisionedThroughputExceededError(_)
+            PutItemErrorKind::ProvisionedThroughputExceededException(_)
         )
     }
     pub fn is_request_limit_exceeded(&self) -> bool {
         matches!(&self.kind, PutItemErrorKind::RequestLimitExceeded(_))
     }
-    pub fn is_resource_not_found_error(&self) -> bool {
-        matches!(&self.kind, PutItemErrorKind::ResourceNotFoundError(_))
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(&self.kind, PutItemErrorKind::ResourceNotFoundException(_))
     }
-    pub fn is_transaction_conflict_error(&self) -> bool {
-        matches!(&self.kind, PutItemErrorKind::TransactionConflictError(_))
+    pub fn is_transaction_conflict_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutItemErrorKind::TransactionConflictException(_)
+        )
     }
 }
 impl std::error::Error for PutItemError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            PutItemErrorKind::ConditionalCheckFailedError(_inner) => Some(_inner),
+            PutItemErrorKind::ConditionalCheckFailedException(_inner) => Some(_inner),
             PutItemErrorKind::InternalServerError(_inner) => Some(_inner),
-            PutItemErrorKind::InvalidEndpointError(_inner) => Some(_inner),
-            PutItemErrorKind::ItemCollectionSizeLimitExceededError(_inner) => Some(_inner),
-            PutItemErrorKind::ProvisionedThroughputExceededError(_inner) => Some(_inner),
+            PutItemErrorKind::InvalidEndpointException(_inner) => Some(_inner),
+            PutItemErrorKind::ItemCollectionSizeLimitExceededException(_inner) => Some(_inner),
+            PutItemErrorKind::ProvisionedThroughputExceededException(_inner) => Some(_inner),
             PutItemErrorKind::RequestLimitExceeded(_inner) => Some(_inner),
-            PutItemErrorKind::ResourceNotFoundError(_inner) => Some(_inner),
-            PutItemErrorKind::TransactionConflictError(_inner) => Some(_inner),
+            PutItemErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            PutItemErrorKind::TransactionConflictException(_inner) => Some(_inner),
             PutItemErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -3542,10 +3654,10 @@ pub struct QueryError {
 #[derive(std::fmt::Debug)]
 pub enum QueryErrorKind {
     InternalServerError(crate::error::InternalServerError),
-    InvalidEndpointError(crate::error::InvalidEndpointError),
-    ProvisionedThroughputExceededError(crate::error::ProvisionedThroughputExceededError),
+    InvalidEndpointException(crate::error::InvalidEndpointException),
+    ProvisionedThroughputExceededException(crate::error::ProvisionedThroughputExceededException),
     RequestLimitExceeded(crate::error::RequestLimitExceeded),
-    ResourceNotFoundError(crate::error::ResourceNotFoundError),
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
@@ -3553,10 +3665,10 @@ impl std::fmt::Display for QueryError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
             QueryErrorKind::InternalServerError(_inner) => _inner.fmt(f),
-            QueryErrorKind::InvalidEndpointError(_inner) => _inner.fmt(f),
-            QueryErrorKind::ProvisionedThroughputExceededError(_inner) => _inner.fmt(f),
+            QueryErrorKind::InvalidEndpointException(_inner) => _inner.fmt(f),
+            QueryErrorKind::ProvisionedThroughputExceededException(_inner) => _inner.fmt(f),
             QueryErrorKind::RequestLimitExceeded(_inner) => _inner.fmt(f),
-            QueryErrorKind::ResourceNotFoundError(_inner) => _inner.fmt(f),
+            QueryErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
             QueryErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -3608,30 +3720,30 @@ impl QueryError {
     pub fn is_internal_server_error(&self) -> bool {
         matches!(&self.kind, QueryErrorKind::InternalServerError(_))
     }
-    pub fn is_invalid_endpoint_error(&self) -> bool {
-        matches!(&self.kind, QueryErrorKind::InvalidEndpointError(_))
+    pub fn is_invalid_endpoint_exception(&self) -> bool {
+        matches!(&self.kind, QueryErrorKind::InvalidEndpointException(_))
     }
-    pub fn is_provisioned_throughput_exceeded_error(&self) -> bool {
+    pub fn is_provisioned_throughput_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
-            QueryErrorKind::ProvisionedThroughputExceededError(_)
+            QueryErrorKind::ProvisionedThroughputExceededException(_)
         )
     }
     pub fn is_request_limit_exceeded(&self) -> bool {
         matches!(&self.kind, QueryErrorKind::RequestLimitExceeded(_))
     }
-    pub fn is_resource_not_found_error(&self) -> bool {
-        matches!(&self.kind, QueryErrorKind::ResourceNotFoundError(_))
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(&self.kind, QueryErrorKind::ResourceNotFoundException(_))
     }
 }
 impl std::error::Error for QueryError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             QueryErrorKind::InternalServerError(_inner) => Some(_inner),
-            QueryErrorKind::InvalidEndpointError(_inner) => Some(_inner),
-            QueryErrorKind::ProvisionedThroughputExceededError(_inner) => Some(_inner),
+            QueryErrorKind::InvalidEndpointException(_inner) => Some(_inner),
+            QueryErrorKind::ProvisionedThroughputExceededException(_inner) => Some(_inner),
             QueryErrorKind::RequestLimitExceeded(_inner) => Some(_inner),
-            QueryErrorKind::ResourceNotFoundError(_inner) => Some(_inner),
+            QueryErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             QueryErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -3646,26 +3758,26 @@ pub struct RestoreTableFromBackupError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum RestoreTableFromBackupErrorKind {
-    BackupInUseError(crate::error::BackupInUseError),
-    BackupNotFoundError(crate::error::BackupNotFoundError),
+    BackupInUseException(crate::error::BackupInUseException),
+    BackupNotFoundException(crate::error::BackupNotFoundException),
     InternalServerError(crate::error::InternalServerError),
-    InvalidEndpointError(crate::error::InvalidEndpointError),
-    LimitExceededError(crate::error::LimitExceededError),
-    TableAlreadyExistsError(crate::error::TableAlreadyExistsError),
-    TableInUseError(crate::error::TableInUseError),
+    InvalidEndpointException(crate::error::InvalidEndpointException),
+    LimitExceededException(crate::error::LimitExceededException),
+    TableAlreadyExistsException(crate::error::TableAlreadyExistsException),
+    TableInUseException(crate::error::TableInUseException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for RestoreTableFromBackupError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            RestoreTableFromBackupErrorKind::BackupInUseError(_inner) => _inner.fmt(f),
-            RestoreTableFromBackupErrorKind::BackupNotFoundError(_inner) => _inner.fmt(f),
+            RestoreTableFromBackupErrorKind::BackupInUseException(_inner) => _inner.fmt(f),
+            RestoreTableFromBackupErrorKind::BackupNotFoundException(_inner) => _inner.fmt(f),
             RestoreTableFromBackupErrorKind::InternalServerError(_inner) => _inner.fmt(f),
-            RestoreTableFromBackupErrorKind::InvalidEndpointError(_inner) => _inner.fmt(f),
-            RestoreTableFromBackupErrorKind::LimitExceededError(_inner) => _inner.fmt(f),
-            RestoreTableFromBackupErrorKind::TableAlreadyExistsError(_inner) => _inner.fmt(f),
-            RestoreTableFromBackupErrorKind::TableInUseError(_inner) => _inner.fmt(f),
+            RestoreTableFromBackupErrorKind::InvalidEndpointException(_inner) => _inner.fmt(f),
+            RestoreTableFromBackupErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
+            RestoreTableFromBackupErrorKind::TableAlreadyExistsException(_inner) => _inner.fmt(f),
+            RestoreTableFromBackupErrorKind::TableInUseException(_inner) => _inner.fmt(f),
             RestoreTableFromBackupErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -3714,16 +3826,16 @@ impl RestoreTableFromBackupError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_backup_in_use_error(&self) -> bool {
+    pub fn is_backup_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
-            RestoreTableFromBackupErrorKind::BackupInUseError(_)
+            RestoreTableFromBackupErrorKind::BackupInUseException(_)
         )
     }
-    pub fn is_backup_not_found_error(&self) -> bool {
+    pub fn is_backup_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
-            RestoreTableFromBackupErrorKind::BackupNotFoundError(_)
+            RestoreTableFromBackupErrorKind::BackupNotFoundException(_)
         )
     }
     pub fn is_internal_server_error(&self) -> bool {
@@ -3732,41 +3844,41 @@ impl RestoreTableFromBackupError {
             RestoreTableFromBackupErrorKind::InternalServerError(_)
         )
     }
-    pub fn is_invalid_endpoint_error(&self) -> bool {
+    pub fn is_invalid_endpoint_exception(&self) -> bool {
         matches!(
             &self.kind,
-            RestoreTableFromBackupErrorKind::InvalidEndpointError(_)
+            RestoreTableFromBackupErrorKind::InvalidEndpointException(_)
         )
     }
-    pub fn is_limit_exceeded_error(&self) -> bool {
+    pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
-            RestoreTableFromBackupErrorKind::LimitExceededError(_)
+            RestoreTableFromBackupErrorKind::LimitExceededException(_)
         )
     }
-    pub fn is_table_already_exists_error(&self) -> bool {
+    pub fn is_table_already_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
-            RestoreTableFromBackupErrorKind::TableAlreadyExistsError(_)
+            RestoreTableFromBackupErrorKind::TableAlreadyExistsException(_)
         )
     }
-    pub fn is_table_in_use_error(&self) -> bool {
+    pub fn is_table_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
-            RestoreTableFromBackupErrorKind::TableInUseError(_)
+            RestoreTableFromBackupErrorKind::TableInUseException(_)
         )
     }
 }
 impl std::error::Error for RestoreTableFromBackupError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            RestoreTableFromBackupErrorKind::BackupInUseError(_inner) => Some(_inner),
-            RestoreTableFromBackupErrorKind::BackupNotFoundError(_inner) => Some(_inner),
+            RestoreTableFromBackupErrorKind::BackupInUseException(_inner) => Some(_inner),
+            RestoreTableFromBackupErrorKind::BackupNotFoundException(_inner) => Some(_inner),
             RestoreTableFromBackupErrorKind::InternalServerError(_inner) => Some(_inner),
-            RestoreTableFromBackupErrorKind::InvalidEndpointError(_inner) => Some(_inner),
-            RestoreTableFromBackupErrorKind::LimitExceededError(_inner) => Some(_inner),
-            RestoreTableFromBackupErrorKind::TableAlreadyExistsError(_inner) => Some(_inner),
-            RestoreTableFromBackupErrorKind::TableInUseError(_inner) => Some(_inner),
+            RestoreTableFromBackupErrorKind::InvalidEndpointException(_inner) => Some(_inner),
+            RestoreTableFromBackupErrorKind::LimitExceededException(_inner) => Some(_inner),
+            RestoreTableFromBackupErrorKind::TableAlreadyExistsException(_inner) => Some(_inner),
+            RestoreTableFromBackupErrorKind::TableInUseException(_inner) => Some(_inner),
             RestoreTableFromBackupErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -3782,13 +3894,13 @@ pub struct RestoreTableToPointInTimeError {
 #[derive(std::fmt::Debug)]
 pub enum RestoreTableToPointInTimeErrorKind {
     InternalServerError(crate::error::InternalServerError),
-    InvalidEndpointError(crate::error::InvalidEndpointError),
-    InvalidRestoreTimeError(crate::error::InvalidRestoreTimeError),
-    LimitExceededError(crate::error::LimitExceededError),
-    PointInTimeRecoveryUnavailableError(crate::error::PointInTimeRecoveryUnavailableError),
-    TableAlreadyExistsError(crate::error::TableAlreadyExistsError),
-    TableInUseError(crate::error::TableInUseError),
-    TableNotFoundError(crate::error::TableNotFoundError),
+    InvalidEndpointException(crate::error::InvalidEndpointException),
+    InvalidRestoreTimeException(crate::error::InvalidRestoreTimeException),
+    LimitExceededException(crate::error::LimitExceededException),
+    PointInTimeRecoveryUnavailableException(crate::error::PointInTimeRecoveryUnavailableException),
+    TableAlreadyExistsException(crate::error::TableAlreadyExistsException),
+    TableInUseException(crate::error::TableInUseException),
+    TableNotFoundException(crate::error::TableNotFoundException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
@@ -3796,15 +3908,19 @@ impl std::fmt::Display for RestoreTableToPointInTimeError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
             RestoreTableToPointInTimeErrorKind::InternalServerError(_inner) => _inner.fmt(f),
-            RestoreTableToPointInTimeErrorKind::InvalidEndpointError(_inner) => _inner.fmt(f),
-            RestoreTableToPointInTimeErrorKind::InvalidRestoreTimeError(_inner) => _inner.fmt(f),
-            RestoreTableToPointInTimeErrorKind::LimitExceededError(_inner) => _inner.fmt(f),
-            RestoreTableToPointInTimeErrorKind::PointInTimeRecoveryUnavailableError(_inner) => {
+            RestoreTableToPointInTimeErrorKind::InvalidEndpointException(_inner) => _inner.fmt(f),
+            RestoreTableToPointInTimeErrorKind::InvalidRestoreTimeException(_inner) => {
                 _inner.fmt(f)
             }
-            RestoreTableToPointInTimeErrorKind::TableAlreadyExistsError(_inner) => _inner.fmt(f),
-            RestoreTableToPointInTimeErrorKind::TableInUseError(_inner) => _inner.fmt(f),
-            RestoreTableToPointInTimeErrorKind::TableNotFoundError(_inner) => _inner.fmt(f),
+            RestoreTableToPointInTimeErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
+            RestoreTableToPointInTimeErrorKind::PointInTimeRecoveryUnavailableException(_inner) => {
+                _inner.fmt(f)
+            }
+            RestoreTableToPointInTimeErrorKind::TableAlreadyExistsException(_inner) => {
+                _inner.fmt(f)
+            }
+            RestoreTableToPointInTimeErrorKind::TableInUseException(_inner) => _inner.fmt(f),
+            RestoreTableToPointInTimeErrorKind::TableNotFoundException(_inner) => _inner.fmt(f),
             RestoreTableToPointInTimeErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -3859,46 +3975,46 @@ impl RestoreTableToPointInTimeError {
             RestoreTableToPointInTimeErrorKind::InternalServerError(_)
         )
     }
-    pub fn is_invalid_endpoint_error(&self) -> bool {
+    pub fn is_invalid_endpoint_exception(&self) -> bool {
         matches!(
             &self.kind,
-            RestoreTableToPointInTimeErrorKind::InvalidEndpointError(_)
+            RestoreTableToPointInTimeErrorKind::InvalidEndpointException(_)
         )
     }
-    pub fn is_invalid_restore_time_error(&self) -> bool {
+    pub fn is_invalid_restore_time_exception(&self) -> bool {
         matches!(
             &self.kind,
-            RestoreTableToPointInTimeErrorKind::InvalidRestoreTimeError(_)
+            RestoreTableToPointInTimeErrorKind::InvalidRestoreTimeException(_)
         )
     }
-    pub fn is_limit_exceeded_error(&self) -> bool {
+    pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
-            RestoreTableToPointInTimeErrorKind::LimitExceededError(_)
+            RestoreTableToPointInTimeErrorKind::LimitExceededException(_)
         )
     }
-    pub fn is_point_in_time_recovery_unavailable_error(&self) -> bool {
+    pub fn is_point_in_time_recovery_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
-            RestoreTableToPointInTimeErrorKind::PointInTimeRecoveryUnavailableError(_)
+            RestoreTableToPointInTimeErrorKind::PointInTimeRecoveryUnavailableException(_)
         )
     }
-    pub fn is_table_already_exists_error(&self) -> bool {
+    pub fn is_table_already_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
-            RestoreTableToPointInTimeErrorKind::TableAlreadyExistsError(_)
+            RestoreTableToPointInTimeErrorKind::TableAlreadyExistsException(_)
         )
     }
-    pub fn is_table_in_use_error(&self) -> bool {
+    pub fn is_table_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
-            RestoreTableToPointInTimeErrorKind::TableInUseError(_)
+            RestoreTableToPointInTimeErrorKind::TableInUseException(_)
         )
     }
-    pub fn is_table_not_found_error(&self) -> bool {
+    pub fn is_table_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
-            RestoreTableToPointInTimeErrorKind::TableNotFoundError(_)
+            RestoreTableToPointInTimeErrorKind::TableNotFoundException(_)
         )
     }
 }
@@ -3906,15 +4022,15 @@ impl std::error::Error for RestoreTableToPointInTimeError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             RestoreTableToPointInTimeErrorKind::InternalServerError(_inner) => Some(_inner),
-            RestoreTableToPointInTimeErrorKind::InvalidEndpointError(_inner) => Some(_inner),
-            RestoreTableToPointInTimeErrorKind::InvalidRestoreTimeError(_inner) => Some(_inner),
-            RestoreTableToPointInTimeErrorKind::LimitExceededError(_inner) => Some(_inner),
-            RestoreTableToPointInTimeErrorKind::PointInTimeRecoveryUnavailableError(_inner) => {
+            RestoreTableToPointInTimeErrorKind::InvalidEndpointException(_inner) => Some(_inner),
+            RestoreTableToPointInTimeErrorKind::InvalidRestoreTimeException(_inner) => Some(_inner),
+            RestoreTableToPointInTimeErrorKind::LimitExceededException(_inner) => Some(_inner),
+            RestoreTableToPointInTimeErrorKind::PointInTimeRecoveryUnavailableException(_inner) => {
                 Some(_inner)
             }
-            RestoreTableToPointInTimeErrorKind::TableAlreadyExistsError(_inner) => Some(_inner),
-            RestoreTableToPointInTimeErrorKind::TableInUseError(_inner) => Some(_inner),
-            RestoreTableToPointInTimeErrorKind::TableNotFoundError(_inner) => Some(_inner),
+            RestoreTableToPointInTimeErrorKind::TableAlreadyExistsException(_inner) => Some(_inner),
+            RestoreTableToPointInTimeErrorKind::TableInUseException(_inner) => Some(_inner),
+            RestoreTableToPointInTimeErrorKind::TableNotFoundException(_inner) => Some(_inner),
             RestoreTableToPointInTimeErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -3930,10 +4046,10 @@ pub struct ScanError {
 #[derive(std::fmt::Debug)]
 pub enum ScanErrorKind {
     InternalServerError(crate::error::InternalServerError),
-    InvalidEndpointError(crate::error::InvalidEndpointError),
-    ProvisionedThroughputExceededError(crate::error::ProvisionedThroughputExceededError),
+    InvalidEndpointException(crate::error::InvalidEndpointException),
+    ProvisionedThroughputExceededException(crate::error::ProvisionedThroughputExceededException),
     RequestLimitExceeded(crate::error::RequestLimitExceeded),
-    ResourceNotFoundError(crate::error::ResourceNotFoundError),
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
@@ -3941,10 +4057,10 @@ impl std::fmt::Display for ScanError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
             ScanErrorKind::InternalServerError(_inner) => _inner.fmt(f),
-            ScanErrorKind::InvalidEndpointError(_inner) => _inner.fmt(f),
-            ScanErrorKind::ProvisionedThroughputExceededError(_inner) => _inner.fmt(f),
+            ScanErrorKind::InvalidEndpointException(_inner) => _inner.fmt(f),
+            ScanErrorKind::ProvisionedThroughputExceededException(_inner) => _inner.fmt(f),
             ScanErrorKind::RequestLimitExceeded(_inner) => _inner.fmt(f),
-            ScanErrorKind::ResourceNotFoundError(_inner) => _inner.fmt(f),
+            ScanErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
             ScanErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -3996,30 +4112,30 @@ impl ScanError {
     pub fn is_internal_server_error(&self) -> bool {
         matches!(&self.kind, ScanErrorKind::InternalServerError(_))
     }
-    pub fn is_invalid_endpoint_error(&self) -> bool {
-        matches!(&self.kind, ScanErrorKind::InvalidEndpointError(_))
+    pub fn is_invalid_endpoint_exception(&self) -> bool {
+        matches!(&self.kind, ScanErrorKind::InvalidEndpointException(_))
     }
-    pub fn is_provisioned_throughput_exceeded_error(&self) -> bool {
+    pub fn is_provisioned_throughput_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
-            ScanErrorKind::ProvisionedThroughputExceededError(_)
+            ScanErrorKind::ProvisionedThroughputExceededException(_)
         )
     }
     pub fn is_request_limit_exceeded(&self) -> bool {
         matches!(&self.kind, ScanErrorKind::RequestLimitExceeded(_))
     }
-    pub fn is_resource_not_found_error(&self) -> bool {
-        matches!(&self.kind, ScanErrorKind::ResourceNotFoundError(_))
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(&self.kind, ScanErrorKind::ResourceNotFoundException(_))
     }
 }
 impl std::error::Error for ScanError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             ScanErrorKind::InternalServerError(_inner) => Some(_inner),
-            ScanErrorKind::InvalidEndpointError(_inner) => Some(_inner),
-            ScanErrorKind::ProvisionedThroughputExceededError(_inner) => Some(_inner),
+            ScanErrorKind::InvalidEndpointException(_inner) => Some(_inner),
+            ScanErrorKind::ProvisionedThroughputExceededException(_inner) => Some(_inner),
             ScanErrorKind::RequestLimitExceeded(_inner) => Some(_inner),
-            ScanErrorKind::ResourceNotFoundError(_inner) => Some(_inner),
+            ScanErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             ScanErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -4035,10 +4151,10 @@ pub struct TagResourceError {
 #[derive(std::fmt::Debug)]
 pub enum TagResourceErrorKind {
     InternalServerError(crate::error::InternalServerError),
-    InvalidEndpointError(crate::error::InvalidEndpointError),
-    LimitExceededError(crate::error::LimitExceededError),
-    ResourceInUseError(crate::error::ResourceInUseError),
-    ResourceNotFoundError(crate::error::ResourceNotFoundError),
+    InvalidEndpointException(crate::error::InvalidEndpointException),
+    LimitExceededException(crate::error::LimitExceededException),
+    ResourceInUseException(crate::error::ResourceInUseException),
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
@@ -4046,10 +4162,10 @@ impl std::fmt::Display for TagResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
             TagResourceErrorKind::InternalServerError(_inner) => _inner.fmt(f),
-            TagResourceErrorKind::InvalidEndpointError(_inner) => _inner.fmt(f),
-            TagResourceErrorKind::LimitExceededError(_inner) => _inner.fmt(f),
-            TagResourceErrorKind::ResourceInUseError(_inner) => _inner.fmt(f),
-            TagResourceErrorKind::ResourceNotFoundError(_inner) => _inner.fmt(f),
+            TagResourceErrorKind::InvalidEndpointException(_inner) => _inner.fmt(f),
+            TagResourceErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
+            TagResourceErrorKind::ResourceInUseException(_inner) => _inner.fmt(f),
+            TagResourceErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
             TagResourceErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -4101,27 +4217,33 @@ impl TagResourceError {
     pub fn is_internal_server_error(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::InternalServerError(_))
     }
-    pub fn is_invalid_endpoint_error(&self) -> bool {
-        matches!(&self.kind, TagResourceErrorKind::InvalidEndpointError(_))
+    pub fn is_invalid_endpoint_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            TagResourceErrorKind::InvalidEndpointException(_)
+        )
     }
-    pub fn is_limit_exceeded_error(&self) -> bool {
-        matches!(&self.kind, TagResourceErrorKind::LimitExceededError(_))
+    pub fn is_limit_exceeded_exception(&self) -> bool {
+        matches!(&self.kind, TagResourceErrorKind::LimitExceededException(_))
     }
-    pub fn is_resource_in_use_error(&self) -> bool {
-        matches!(&self.kind, TagResourceErrorKind::ResourceInUseError(_))
+    pub fn is_resource_in_use_exception(&self) -> bool {
+        matches!(&self.kind, TagResourceErrorKind::ResourceInUseException(_))
     }
-    pub fn is_resource_not_found_error(&self) -> bool {
-        matches!(&self.kind, TagResourceErrorKind::ResourceNotFoundError(_))
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            TagResourceErrorKind::ResourceNotFoundException(_)
+        )
     }
 }
 impl std::error::Error for TagResourceError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             TagResourceErrorKind::InternalServerError(_inner) => Some(_inner),
-            TagResourceErrorKind::InvalidEndpointError(_inner) => Some(_inner),
-            TagResourceErrorKind::LimitExceededError(_inner) => Some(_inner),
-            TagResourceErrorKind::ResourceInUseError(_inner) => Some(_inner),
-            TagResourceErrorKind::ResourceNotFoundError(_inner) => Some(_inner),
+            TagResourceErrorKind::InvalidEndpointException(_inner) => Some(_inner),
+            TagResourceErrorKind::LimitExceededException(_inner) => Some(_inner),
+            TagResourceErrorKind::ResourceInUseException(_inner) => Some(_inner),
+            TagResourceErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             TagResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -4137,11 +4259,11 @@ pub struct TransactGetItemsError {
 #[derive(std::fmt::Debug)]
 pub enum TransactGetItemsErrorKind {
     InternalServerError(crate::error::InternalServerError),
-    InvalidEndpointError(crate::error::InvalidEndpointError),
-    ProvisionedThroughputExceededError(crate::error::ProvisionedThroughputExceededError),
+    InvalidEndpointException(crate::error::InvalidEndpointException),
+    ProvisionedThroughputExceededException(crate::error::ProvisionedThroughputExceededException),
     RequestLimitExceeded(crate::error::RequestLimitExceeded),
-    ResourceNotFoundError(crate::error::ResourceNotFoundError),
-    TransactionCanceledError(crate::error::TransactionCanceledError),
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    TransactionCanceledException(crate::error::TransactionCanceledException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
@@ -4149,11 +4271,13 @@ impl std::fmt::Display for TransactGetItemsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
             TransactGetItemsErrorKind::InternalServerError(_inner) => _inner.fmt(f),
-            TransactGetItemsErrorKind::InvalidEndpointError(_inner) => _inner.fmt(f),
-            TransactGetItemsErrorKind::ProvisionedThroughputExceededError(_inner) => _inner.fmt(f),
+            TransactGetItemsErrorKind::InvalidEndpointException(_inner) => _inner.fmt(f),
+            TransactGetItemsErrorKind::ProvisionedThroughputExceededException(_inner) => {
+                _inner.fmt(f)
+            }
             TransactGetItemsErrorKind::RequestLimitExceeded(_inner) => _inner.fmt(f),
-            TransactGetItemsErrorKind::ResourceNotFoundError(_inner) => _inner.fmt(f),
-            TransactGetItemsErrorKind::TransactionCanceledError(_inner) => _inner.fmt(f),
+            TransactGetItemsErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            TransactGetItemsErrorKind::TransactionCanceledException(_inner) => _inner.fmt(f),
             TransactGetItemsErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -4208,16 +4332,16 @@ impl TransactGetItemsError {
             TransactGetItemsErrorKind::InternalServerError(_)
         )
     }
-    pub fn is_invalid_endpoint_error(&self) -> bool {
+    pub fn is_invalid_endpoint_exception(&self) -> bool {
         matches!(
             &self.kind,
-            TransactGetItemsErrorKind::InvalidEndpointError(_)
+            TransactGetItemsErrorKind::InvalidEndpointException(_)
         )
     }
-    pub fn is_provisioned_throughput_exceeded_error(&self) -> bool {
+    pub fn is_provisioned_throughput_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
-            TransactGetItemsErrorKind::ProvisionedThroughputExceededError(_)
+            TransactGetItemsErrorKind::ProvisionedThroughputExceededException(_)
         )
     }
     pub fn is_request_limit_exceeded(&self) -> bool {
@@ -4226,16 +4350,16 @@ impl TransactGetItemsError {
             TransactGetItemsErrorKind::RequestLimitExceeded(_)
         )
     }
-    pub fn is_resource_not_found_error(&self) -> bool {
+    pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
-            TransactGetItemsErrorKind::ResourceNotFoundError(_)
+            TransactGetItemsErrorKind::ResourceNotFoundException(_)
         )
     }
-    pub fn is_transaction_canceled_error(&self) -> bool {
+    pub fn is_transaction_canceled_exception(&self) -> bool {
         matches!(
             &self.kind,
-            TransactGetItemsErrorKind::TransactionCanceledError(_)
+            TransactGetItemsErrorKind::TransactionCanceledException(_)
         )
     }
 }
@@ -4243,11 +4367,13 @@ impl std::error::Error for TransactGetItemsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             TransactGetItemsErrorKind::InternalServerError(_inner) => Some(_inner),
-            TransactGetItemsErrorKind::InvalidEndpointError(_inner) => Some(_inner),
-            TransactGetItemsErrorKind::ProvisionedThroughputExceededError(_inner) => Some(_inner),
+            TransactGetItemsErrorKind::InvalidEndpointException(_inner) => Some(_inner),
+            TransactGetItemsErrorKind::ProvisionedThroughputExceededException(_inner) => {
+                Some(_inner)
+            }
             TransactGetItemsErrorKind::RequestLimitExceeded(_inner) => Some(_inner),
-            TransactGetItemsErrorKind::ResourceNotFoundError(_inner) => Some(_inner),
-            TransactGetItemsErrorKind::TransactionCanceledError(_inner) => Some(_inner),
+            TransactGetItemsErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            TransactGetItemsErrorKind::TransactionCanceledException(_inner) => Some(_inner),
             TransactGetItemsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -4262,30 +4388,32 @@ pub struct TransactWriteItemsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum TransactWriteItemsErrorKind {
-    IdempotentParameterMismatchError(crate::error::IdempotentParameterMismatchError),
+    IdempotentParameterMismatchException(crate::error::IdempotentParameterMismatchException),
     InternalServerError(crate::error::InternalServerError),
-    InvalidEndpointError(crate::error::InvalidEndpointError),
-    ProvisionedThroughputExceededError(crate::error::ProvisionedThroughputExceededError),
+    InvalidEndpointException(crate::error::InvalidEndpointException),
+    ProvisionedThroughputExceededException(crate::error::ProvisionedThroughputExceededException),
     RequestLimitExceeded(crate::error::RequestLimitExceeded),
-    ResourceNotFoundError(crate::error::ResourceNotFoundError),
-    TransactionCanceledError(crate::error::TransactionCanceledError),
-    TransactionInProgressError(crate::error::TransactionInProgressError),
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    TransactionCanceledException(crate::error::TransactionCanceledException),
+    TransactionInProgressException(crate::error::TransactionInProgressException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for TransactWriteItemsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            TransactWriteItemsErrorKind::IdempotentParameterMismatchError(_inner) => _inner.fmt(f),
+            TransactWriteItemsErrorKind::IdempotentParameterMismatchException(_inner) => {
+                _inner.fmt(f)
+            }
             TransactWriteItemsErrorKind::InternalServerError(_inner) => _inner.fmt(f),
-            TransactWriteItemsErrorKind::InvalidEndpointError(_inner) => _inner.fmt(f),
-            TransactWriteItemsErrorKind::ProvisionedThroughputExceededError(_inner) => {
+            TransactWriteItemsErrorKind::InvalidEndpointException(_inner) => _inner.fmt(f),
+            TransactWriteItemsErrorKind::ProvisionedThroughputExceededException(_inner) => {
                 _inner.fmt(f)
             }
             TransactWriteItemsErrorKind::RequestLimitExceeded(_inner) => _inner.fmt(f),
-            TransactWriteItemsErrorKind::ResourceNotFoundError(_inner) => _inner.fmt(f),
-            TransactWriteItemsErrorKind::TransactionCanceledError(_inner) => _inner.fmt(f),
-            TransactWriteItemsErrorKind::TransactionInProgressError(_inner) => _inner.fmt(f),
+            TransactWriteItemsErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            TransactWriteItemsErrorKind::TransactionCanceledException(_inner) => _inner.fmt(f),
+            TransactWriteItemsErrorKind::TransactionInProgressException(_inner) => _inner.fmt(f),
             TransactWriteItemsErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -4334,10 +4462,10 @@ impl TransactWriteItemsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_idempotent_parameter_mismatch_error(&self) -> bool {
+    pub fn is_idempotent_parameter_mismatch_exception(&self) -> bool {
         matches!(
             &self.kind,
-            TransactWriteItemsErrorKind::IdempotentParameterMismatchError(_)
+            TransactWriteItemsErrorKind::IdempotentParameterMismatchException(_)
         )
     }
     pub fn is_internal_server_error(&self) -> bool {
@@ -4346,16 +4474,16 @@ impl TransactWriteItemsError {
             TransactWriteItemsErrorKind::InternalServerError(_)
         )
     }
-    pub fn is_invalid_endpoint_error(&self) -> bool {
+    pub fn is_invalid_endpoint_exception(&self) -> bool {
         matches!(
             &self.kind,
-            TransactWriteItemsErrorKind::InvalidEndpointError(_)
+            TransactWriteItemsErrorKind::InvalidEndpointException(_)
         )
     }
-    pub fn is_provisioned_throughput_exceeded_error(&self) -> bool {
+    pub fn is_provisioned_throughput_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
-            TransactWriteItemsErrorKind::ProvisionedThroughputExceededError(_)
+            TransactWriteItemsErrorKind::ProvisionedThroughputExceededException(_)
         )
     }
     pub fn is_request_limit_exceeded(&self) -> bool {
@@ -4364,36 +4492,40 @@ impl TransactWriteItemsError {
             TransactWriteItemsErrorKind::RequestLimitExceeded(_)
         )
     }
-    pub fn is_resource_not_found_error(&self) -> bool {
+    pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
-            TransactWriteItemsErrorKind::ResourceNotFoundError(_)
+            TransactWriteItemsErrorKind::ResourceNotFoundException(_)
         )
     }
-    pub fn is_transaction_canceled_error(&self) -> bool {
+    pub fn is_transaction_canceled_exception(&self) -> bool {
         matches!(
             &self.kind,
-            TransactWriteItemsErrorKind::TransactionCanceledError(_)
+            TransactWriteItemsErrorKind::TransactionCanceledException(_)
         )
     }
-    pub fn is_transaction_in_progress_error(&self) -> bool {
+    pub fn is_transaction_in_progress_exception(&self) -> bool {
         matches!(
             &self.kind,
-            TransactWriteItemsErrorKind::TransactionInProgressError(_)
+            TransactWriteItemsErrorKind::TransactionInProgressException(_)
         )
     }
 }
 impl std::error::Error for TransactWriteItemsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            TransactWriteItemsErrorKind::IdempotentParameterMismatchError(_inner) => Some(_inner),
+            TransactWriteItemsErrorKind::IdempotentParameterMismatchException(_inner) => {
+                Some(_inner)
+            }
             TransactWriteItemsErrorKind::InternalServerError(_inner) => Some(_inner),
-            TransactWriteItemsErrorKind::InvalidEndpointError(_inner) => Some(_inner),
-            TransactWriteItemsErrorKind::ProvisionedThroughputExceededError(_inner) => Some(_inner),
+            TransactWriteItemsErrorKind::InvalidEndpointException(_inner) => Some(_inner),
+            TransactWriteItemsErrorKind::ProvisionedThroughputExceededException(_inner) => {
+                Some(_inner)
+            }
             TransactWriteItemsErrorKind::RequestLimitExceeded(_inner) => Some(_inner),
-            TransactWriteItemsErrorKind::ResourceNotFoundError(_inner) => Some(_inner),
-            TransactWriteItemsErrorKind::TransactionCanceledError(_inner) => Some(_inner),
-            TransactWriteItemsErrorKind::TransactionInProgressError(_inner) => Some(_inner),
+            TransactWriteItemsErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            TransactWriteItemsErrorKind::TransactionCanceledException(_inner) => Some(_inner),
+            TransactWriteItemsErrorKind::TransactionInProgressException(_inner) => Some(_inner),
             TransactWriteItemsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -4409,10 +4541,10 @@ pub struct UntagResourceError {
 #[derive(std::fmt::Debug)]
 pub enum UntagResourceErrorKind {
     InternalServerError(crate::error::InternalServerError),
-    InvalidEndpointError(crate::error::InvalidEndpointError),
-    LimitExceededError(crate::error::LimitExceededError),
-    ResourceInUseError(crate::error::ResourceInUseError),
-    ResourceNotFoundError(crate::error::ResourceNotFoundError),
+    InvalidEndpointException(crate::error::InvalidEndpointException),
+    LimitExceededException(crate::error::LimitExceededException),
+    ResourceInUseException(crate::error::ResourceInUseException),
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
@@ -4420,10 +4552,10 @@ impl std::fmt::Display for UntagResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
             UntagResourceErrorKind::InternalServerError(_inner) => _inner.fmt(f),
-            UntagResourceErrorKind::InvalidEndpointError(_inner) => _inner.fmt(f),
-            UntagResourceErrorKind::LimitExceededError(_inner) => _inner.fmt(f),
-            UntagResourceErrorKind::ResourceInUseError(_inner) => _inner.fmt(f),
-            UntagResourceErrorKind::ResourceNotFoundError(_inner) => _inner.fmt(f),
+            UntagResourceErrorKind::InvalidEndpointException(_inner) => _inner.fmt(f),
+            UntagResourceErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
+            UntagResourceErrorKind::ResourceInUseException(_inner) => _inner.fmt(f),
+            UntagResourceErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
             UntagResourceErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -4475,27 +4607,39 @@ impl UntagResourceError {
     pub fn is_internal_server_error(&self) -> bool {
         matches!(&self.kind, UntagResourceErrorKind::InternalServerError(_))
     }
-    pub fn is_invalid_endpoint_error(&self) -> bool {
-        matches!(&self.kind, UntagResourceErrorKind::InvalidEndpointError(_))
+    pub fn is_invalid_endpoint_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UntagResourceErrorKind::InvalidEndpointException(_)
+        )
     }
-    pub fn is_limit_exceeded_error(&self) -> bool {
-        matches!(&self.kind, UntagResourceErrorKind::LimitExceededError(_))
+    pub fn is_limit_exceeded_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UntagResourceErrorKind::LimitExceededException(_)
+        )
     }
-    pub fn is_resource_in_use_error(&self) -> bool {
-        matches!(&self.kind, UntagResourceErrorKind::ResourceInUseError(_))
+    pub fn is_resource_in_use_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UntagResourceErrorKind::ResourceInUseException(_)
+        )
     }
-    pub fn is_resource_not_found_error(&self) -> bool {
-        matches!(&self.kind, UntagResourceErrorKind::ResourceNotFoundError(_))
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UntagResourceErrorKind::ResourceNotFoundException(_)
+        )
     }
 }
 impl std::error::Error for UntagResourceError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             UntagResourceErrorKind::InternalServerError(_inner) => Some(_inner),
-            UntagResourceErrorKind::InvalidEndpointError(_inner) => Some(_inner),
-            UntagResourceErrorKind::LimitExceededError(_inner) => Some(_inner),
-            UntagResourceErrorKind::ResourceInUseError(_inner) => Some(_inner),
-            UntagResourceErrorKind::ResourceNotFoundError(_inner) => Some(_inner),
+            UntagResourceErrorKind::InvalidEndpointException(_inner) => Some(_inner),
+            UntagResourceErrorKind::LimitExceededException(_inner) => Some(_inner),
+            UntagResourceErrorKind::ResourceInUseException(_inner) => Some(_inner),
+            UntagResourceErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             UntagResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -4510,22 +4654,22 @@ pub struct UpdateContinuousBackupsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateContinuousBackupsErrorKind {
-    ContinuousBackupsUnavailableError(crate::error::ContinuousBackupsUnavailableError),
+    ContinuousBackupsUnavailableException(crate::error::ContinuousBackupsUnavailableException),
     InternalServerError(crate::error::InternalServerError),
-    InvalidEndpointError(crate::error::InvalidEndpointError),
-    TableNotFoundError(crate::error::TableNotFoundError),
+    InvalidEndpointException(crate::error::InvalidEndpointException),
+    TableNotFoundException(crate::error::TableNotFoundException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateContinuousBackupsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            UpdateContinuousBackupsErrorKind::ContinuousBackupsUnavailableError(_inner) => {
+            UpdateContinuousBackupsErrorKind::ContinuousBackupsUnavailableException(_inner) => {
                 _inner.fmt(f)
             }
             UpdateContinuousBackupsErrorKind::InternalServerError(_inner) => _inner.fmt(f),
-            UpdateContinuousBackupsErrorKind::InvalidEndpointError(_inner) => _inner.fmt(f),
-            UpdateContinuousBackupsErrorKind::TableNotFoundError(_inner) => _inner.fmt(f),
+            UpdateContinuousBackupsErrorKind::InvalidEndpointException(_inner) => _inner.fmt(f),
+            UpdateContinuousBackupsErrorKind::TableNotFoundException(_inner) => _inner.fmt(f),
             UpdateContinuousBackupsErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -4574,10 +4718,10 @@ impl UpdateContinuousBackupsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_continuous_backups_unavailable_error(&self) -> bool {
+    pub fn is_continuous_backups_unavailable_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UpdateContinuousBackupsErrorKind::ContinuousBackupsUnavailableError(_)
+            UpdateContinuousBackupsErrorKind::ContinuousBackupsUnavailableException(_)
         )
     }
     pub fn is_internal_server_error(&self) -> bool {
@@ -4586,28 +4730,28 @@ impl UpdateContinuousBackupsError {
             UpdateContinuousBackupsErrorKind::InternalServerError(_)
         )
     }
-    pub fn is_invalid_endpoint_error(&self) -> bool {
+    pub fn is_invalid_endpoint_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UpdateContinuousBackupsErrorKind::InvalidEndpointError(_)
+            UpdateContinuousBackupsErrorKind::InvalidEndpointException(_)
         )
     }
-    pub fn is_table_not_found_error(&self) -> bool {
+    pub fn is_table_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UpdateContinuousBackupsErrorKind::TableNotFoundError(_)
+            UpdateContinuousBackupsErrorKind::TableNotFoundException(_)
         )
     }
 }
 impl std::error::Error for UpdateContinuousBackupsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            UpdateContinuousBackupsErrorKind::ContinuousBackupsUnavailableError(_inner) => {
+            UpdateContinuousBackupsErrorKind::ContinuousBackupsUnavailableException(_inner) => {
                 Some(_inner)
             }
             UpdateContinuousBackupsErrorKind::InternalServerError(_inner) => Some(_inner),
-            UpdateContinuousBackupsErrorKind::InvalidEndpointError(_inner) => Some(_inner),
-            UpdateContinuousBackupsErrorKind::TableNotFoundError(_inner) => Some(_inner),
+            UpdateContinuousBackupsErrorKind::InvalidEndpointException(_inner) => Some(_inner),
+            UpdateContinuousBackupsErrorKind::TableNotFoundException(_inner) => Some(_inner),
             UpdateContinuousBackupsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -4623,7 +4767,7 @@ pub struct UpdateContributorInsightsError {
 #[derive(std::fmt::Debug)]
 pub enum UpdateContributorInsightsErrorKind {
     InternalServerError(crate::error::InternalServerError),
-    ResourceNotFoundError(crate::error::ResourceNotFoundError),
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
@@ -4631,7 +4775,7 @@ impl std::fmt::Display for UpdateContributorInsightsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
             UpdateContributorInsightsErrorKind::InternalServerError(_inner) => _inner.fmt(f),
-            UpdateContributorInsightsErrorKind::ResourceNotFoundError(_inner) => _inner.fmt(f),
+            UpdateContributorInsightsErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
             UpdateContributorInsightsErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -4686,10 +4830,10 @@ impl UpdateContributorInsightsError {
             UpdateContributorInsightsErrorKind::InternalServerError(_)
         )
     }
-    pub fn is_resource_not_found_error(&self) -> bool {
+    pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UpdateContributorInsightsErrorKind::ResourceNotFoundError(_)
+            UpdateContributorInsightsErrorKind::ResourceNotFoundException(_)
         )
     }
 }
@@ -4697,7 +4841,7 @@ impl std::error::Error for UpdateContributorInsightsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             UpdateContributorInsightsErrorKind::InternalServerError(_inner) => Some(_inner),
-            UpdateContributorInsightsErrorKind::ResourceNotFoundError(_inner) => Some(_inner),
+            UpdateContributorInsightsErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             UpdateContributorInsightsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -4712,24 +4856,24 @@ pub struct UpdateGlobalTableError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateGlobalTableErrorKind {
-    GlobalTableNotFoundError(crate::error::GlobalTableNotFoundError),
+    GlobalTableNotFoundException(crate::error::GlobalTableNotFoundException),
     InternalServerError(crate::error::InternalServerError),
-    InvalidEndpointError(crate::error::InvalidEndpointError),
-    ReplicaAlreadyExistsError(crate::error::ReplicaAlreadyExistsError),
-    ReplicaNotFoundError(crate::error::ReplicaNotFoundError),
-    TableNotFoundError(crate::error::TableNotFoundError),
+    InvalidEndpointException(crate::error::InvalidEndpointException),
+    ReplicaAlreadyExistsException(crate::error::ReplicaAlreadyExistsException),
+    ReplicaNotFoundException(crate::error::ReplicaNotFoundException),
+    TableNotFoundException(crate::error::TableNotFoundException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateGlobalTableError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            UpdateGlobalTableErrorKind::GlobalTableNotFoundError(_inner) => _inner.fmt(f),
+            UpdateGlobalTableErrorKind::GlobalTableNotFoundException(_inner) => _inner.fmt(f),
             UpdateGlobalTableErrorKind::InternalServerError(_inner) => _inner.fmt(f),
-            UpdateGlobalTableErrorKind::InvalidEndpointError(_inner) => _inner.fmt(f),
-            UpdateGlobalTableErrorKind::ReplicaAlreadyExistsError(_inner) => _inner.fmt(f),
-            UpdateGlobalTableErrorKind::ReplicaNotFoundError(_inner) => _inner.fmt(f),
-            UpdateGlobalTableErrorKind::TableNotFoundError(_inner) => _inner.fmt(f),
+            UpdateGlobalTableErrorKind::InvalidEndpointException(_inner) => _inner.fmt(f),
+            UpdateGlobalTableErrorKind::ReplicaAlreadyExistsException(_inner) => _inner.fmt(f),
+            UpdateGlobalTableErrorKind::ReplicaNotFoundException(_inner) => _inner.fmt(f),
+            UpdateGlobalTableErrorKind::TableNotFoundException(_inner) => _inner.fmt(f),
             UpdateGlobalTableErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -4778,10 +4922,10 @@ impl UpdateGlobalTableError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_global_table_not_found_error(&self) -> bool {
+    pub fn is_global_table_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UpdateGlobalTableErrorKind::GlobalTableNotFoundError(_)
+            UpdateGlobalTableErrorKind::GlobalTableNotFoundException(_)
         )
     }
     pub fn is_internal_server_error(&self) -> bool {
@@ -4790,40 +4934,40 @@ impl UpdateGlobalTableError {
             UpdateGlobalTableErrorKind::InternalServerError(_)
         )
     }
-    pub fn is_invalid_endpoint_error(&self) -> bool {
+    pub fn is_invalid_endpoint_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UpdateGlobalTableErrorKind::InvalidEndpointError(_)
+            UpdateGlobalTableErrorKind::InvalidEndpointException(_)
         )
     }
-    pub fn is_replica_already_exists_error(&self) -> bool {
+    pub fn is_replica_already_exists_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UpdateGlobalTableErrorKind::ReplicaAlreadyExistsError(_)
+            UpdateGlobalTableErrorKind::ReplicaAlreadyExistsException(_)
         )
     }
-    pub fn is_replica_not_found_error(&self) -> bool {
+    pub fn is_replica_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UpdateGlobalTableErrorKind::ReplicaNotFoundError(_)
+            UpdateGlobalTableErrorKind::ReplicaNotFoundException(_)
         )
     }
-    pub fn is_table_not_found_error(&self) -> bool {
+    pub fn is_table_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UpdateGlobalTableErrorKind::TableNotFoundError(_)
+            UpdateGlobalTableErrorKind::TableNotFoundException(_)
         )
     }
 }
 impl std::error::Error for UpdateGlobalTableError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            UpdateGlobalTableErrorKind::GlobalTableNotFoundError(_inner) => Some(_inner),
+            UpdateGlobalTableErrorKind::GlobalTableNotFoundException(_inner) => Some(_inner),
             UpdateGlobalTableErrorKind::InternalServerError(_inner) => Some(_inner),
-            UpdateGlobalTableErrorKind::InvalidEndpointError(_inner) => Some(_inner),
-            UpdateGlobalTableErrorKind::ReplicaAlreadyExistsError(_inner) => Some(_inner),
-            UpdateGlobalTableErrorKind::ReplicaNotFoundError(_inner) => Some(_inner),
-            UpdateGlobalTableErrorKind::TableNotFoundError(_inner) => Some(_inner),
+            UpdateGlobalTableErrorKind::InvalidEndpointException(_inner) => Some(_inner),
+            UpdateGlobalTableErrorKind::ReplicaAlreadyExistsException(_inner) => Some(_inner),
+            UpdateGlobalTableErrorKind::ReplicaNotFoundException(_inner) => Some(_inner),
+            UpdateGlobalTableErrorKind::TableNotFoundException(_inner) => Some(_inner),
             UpdateGlobalTableErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -4838,26 +4982,28 @@ pub struct UpdateGlobalTableSettingsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateGlobalTableSettingsErrorKind {
-    GlobalTableNotFoundError(crate::error::GlobalTableNotFoundError),
-    IndexNotFoundError(crate::error::IndexNotFoundError),
+    GlobalTableNotFoundException(crate::error::GlobalTableNotFoundException),
+    IndexNotFoundException(crate::error::IndexNotFoundException),
     InternalServerError(crate::error::InternalServerError),
-    InvalidEndpointError(crate::error::InvalidEndpointError),
-    LimitExceededError(crate::error::LimitExceededError),
-    ReplicaNotFoundError(crate::error::ReplicaNotFoundError),
-    ResourceInUseError(crate::error::ResourceInUseError),
+    InvalidEndpointException(crate::error::InvalidEndpointException),
+    LimitExceededException(crate::error::LimitExceededException),
+    ReplicaNotFoundException(crate::error::ReplicaNotFoundException),
+    ResourceInUseException(crate::error::ResourceInUseException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateGlobalTableSettingsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            UpdateGlobalTableSettingsErrorKind::GlobalTableNotFoundError(_inner) => _inner.fmt(f),
-            UpdateGlobalTableSettingsErrorKind::IndexNotFoundError(_inner) => _inner.fmt(f),
+            UpdateGlobalTableSettingsErrorKind::GlobalTableNotFoundException(_inner) => {
+                _inner.fmt(f)
+            }
+            UpdateGlobalTableSettingsErrorKind::IndexNotFoundException(_inner) => _inner.fmt(f),
             UpdateGlobalTableSettingsErrorKind::InternalServerError(_inner) => _inner.fmt(f),
-            UpdateGlobalTableSettingsErrorKind::InvalidEndpointError(_inner) => _inner.fmt(f),
-            UpdateGlobalTableSettingsErrorKind::LimitExceededError(_inner) => _inner.fmt(f),
-            UpdateGlobalTableSettingsErrorKind::ReplicaNotFoundError(_inner) => _inner.fmt(f),
-            UpdateGlobalTableSettingsErrorKind::ResourceInUseError(_inner) => _inner.fmt(f),
+            UpdateGlobalTableSettingsErrorKind::InvalidEndpointException(_inner) => _inner.fmt(f),
+            UpdateGlobalTableSettingsErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
+            UpdateGlobalTableSettingsErrorKind::ReplicaNotFoundException(_inner) => _inner.fmt(f),
+            UpdateGlobalTableSettingsErrorKind::ResourceInUseException(_inner) => _inner.fmt(f),
             UpdateGlobalTableSettingsErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -4906,16 +5052,16 @@ impl UpdateGlobalTableSettingsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_global_table_not_found_error(&self) -> bool {
+    pub fn is_global_table_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UpdateGlobalTableSettingsErrorKind::GlobalTableNotFoundError(_)
+            UpdateGlobalTableSettingsErrorKind::GlobalTableNotFoundException(_)
         )
     }
-    pub fn is_index_not_found_error(&self) -> bool {
+    pub fn is_index_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UpdateGlobalTableSettingsErrorKind::IndexNotFoundError(_)
+            UpdateGlobalTableSettingsErrorKind::IndexNotFoundException(_)
         )
     }
     pub fn is_internal_server_error(&self) -> bool {
@@ -4924,41 +5070,43 @@ impl UpdateGlobalTableSettingsError {
             UpdateGlobalTableSettingsErrorKind::InternalServerError(_)
         )
     }
-    pub fn is_invalid_endpoint_error(&self) -> bool {
+    pub fn is_invalid_endpoint_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UpdateGlobalTableSettingsErrorKind::InvalidEndpointError(_)
+            UpdateGlobalTableSettingsErrorKind::InvalidEndpointException(_)
         )
     }
-    pub fn is_limit_exceeded_error(&self) -> bool {
+    pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UpdateGlobalTableSettingsErrorKind::LimitExceededError(_)
+            UpdateGlobalTableSettingsErrorKind::LimitExceededException(_)
         )
     }
-    pub fn is_replica_not_found_error(&self) -> bool {
+    pub fn is_replica_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UpdateGlobalTableSettingsErrorKind::ReplicaNotFoundError(_)
+            UpdateGlobalTableSettingsErrorKind::ReplicaNotFoundException(_)
         )
     }
-    pub fn is_resource_in_use_error(&self) -> bool {
+    pub fn is_resource_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UpdateGlobalTableSettingsErrorKind::ResourceInUseError(_)
+            UpdateGlobalTableSettingsErrorKind::ResourceInUseException(_)
         )
     }
 }
 impl std::error::Error for UpdateGlobalTableSettingsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            UpdateGlobalTableSettingsErrorKind::GlobalTableNotFoundError(_inner) => Some(_inner),
-            UpdateGlobalTableSettingsErrorKind::IndexNotFoundError(_inner) => Some(_inner),
+            UpdateGlobalTableSettingsErrorKind::GlobalTableNotFoundException(_inner) => {
+                Some(_inner)
+            }
+            UpdateGlobalTableSettingsErrorKind::IndexNotFoundException(_inner) => Some(_inner),
             UpdateGlobalTableSettingsErrorKind::InternalServerError(_inner) => Some(_inner),
-            UpdateGlobalTableSettingsErrorKind::InvalidEndpointError(_inner) => Some(_inner),
-            UpdateGlobalTableSettingsErrorKind::LimitExceededError(_inner) => Some(_inner),
-            UpdateGlobalTableSettingsErrorKind::ReplicaNotFoundError(_inner) => Some(_inner),
-            UpdateGlobalTableSettingsErrorKind::ResourceInUseError(_inner) => Some(_inner),
+            UpdateGlobalTableSettingsErrorKind::InvalidEndpointException(_inner) => Some(_inner),
+            UpdateGlobalTableSettingsErrorKind::LimitExceededException(_inner) => Some(_inner),
+            UpdateGlobalTableSettingsErrorKind::ReplicaNotFoundException(_inner) => Some(_inner),
+            UpdateGlobalTableSettingsErrorKind::ResourceInUseException(_inner) => Some(_inner),
             UpdateGlobalTableSettingsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -4973,28 +5121,30 @@ pub struct UpdateItemError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateItemErrorKind {
-    ConditionalCheckFailedError(crate::error::ConditionalCheckFailedError),
+    ConditionalCheckFailedException(crate::error::ConditionalCheckFailedException),
     InternalServerError(crate::error::InternalServerError),
-    InvalidEndpointError(crate::error::InvalidEndpointError),
-    ItemCollectionSizeLimitExceededError(crate::error::ItemCollectionSizeLimitExceededError),
-    ProvisionedThroughputExceededError(crate::error::ProvisionedThroughputExceededError),
+    InvalidEndpointException(crate::error::InvalidEndpointException),
+    ItemCollectionSizeLimitExceededException(
+        crate::error::ItemCollectionSizeLimitExceededException,
+    ),
+    ProvisionedThroughputExceededException(crate::error::ProvisionedThroughputExceededException),
     RequestLimitExceeded(crate::error::RequestLimitExceeded),
-    ResourceNotFoundError(crate::error::ResourceNotFoundError),
-    TransactionConflictError(crate::error::TransactionConflictError),
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    TransactionConflictException(crate::error::TransactionConflictException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for UpdateItemError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            UpdateItemErrorKind::ConditionalCheckFailedError(_inner) => _inner.fmt(f),
+            UpdateItemErrorKind::ConditionalCheckFailedException(_inner) => _inner.fmt(f),
             UpdateItemErrorKind::InternalServerError(_inner) => _inner.fmt(f),
-            UpdateItemErrorKind::InvalidEndpointError(_inner) => _inner.fmt(f),
-            UpdateItemErrorKind::ItemCollectionSizeLimitExceededError(_inner) => _inner.fmt(f),
-            UpdateItemErrorKind::ProvisionedThroughputExceededError(_inner) => _inner.fmt(f),
+            UpdateItemErrorKind::InvalidEndpointException(_inner) => _inner.fmt(f),
+            UpdateItemErrorKind::ItemCollectionSizeLimitExceededException(_inner) => _inner.fmt(f),
+            UpdateItemErrorKind::ProvisionedThroughputExceededException(_inner) => _inner.fmt(f),
             UpdateItemErrorKind::RequestLimitExceeded(_inner) => _inner.fmt(f),
-            UpdateItemErrorKind::ResourceNotFoundError(_inner) => _inner.fmt(f),
-            UpdateItemErrorKind::TransactionConflictError(_inner) => _inner.fmt(f),
+            UpdateItemErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            UpdateItemErrorKind::TransactionConflictException(_inner) => _inner.fmt(f),
             UpdateItemErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -5043,51 +5193,57 @@ impl UpdateItemError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
-    pub fn is_conditional_check_failed_error(&self) -> bool {
+    pub fn is_conditional_check_failed_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UpdateItemErrorKind::ConditionalCheckFailedError(_)
+            UpdateItemErrorKind::ConditionalCheckFailedException(_)
         )
     }
     pub fn is_internal_server_error(&self) -> bool {
         matches!(&self.kind, UpdateItemErrorKind::InternalServerError(_))
     }
-    pub fn is_invalid_endpoint_error(&self) -> bool {
-        matches!(&self.kind, UpdateItemErrorKind::InvalidEndpointError(_))
+    pub fn is_invalid_endpoint_exception(&self) -> bool {
+        matches!(&self.kind, UpdateItemErrorKind::InvalidEndpointException(_))
     }
-    pub fn is_item_collection_size_limit_exceeded_error(&self) -> bool {
+    pub fn is_item_collection_size_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UpdateItemErrorKind::ItemCollectionSizeLimitExceededError(_)
+            UpdateItemErrorKind::ItemCollectionSizeLimitExceededException(_)
         )
     }
-    pub fn is_provisioned_throughput_exceeded_error(&self) -> bool {
+    pub fn is_provisioned_throughput_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UpdateItemErrorKind::ProvisionedThroughputExceededError(_)
+            UpdateItemErrorKind::ProvisionedThroughputExceededException(_)
         )
     }
     pub fn is_request_limit_exceeded(&self) -> bool {
         matches!(&self.kind, UpdateItemErrorKind::RequestLimitExceeded(_))
     }
-    pub fn is_resource_not_found_error(&self) -> bool {
-        matches!(&self.kind, UpdateItemErrorKind::ResourceNotFoundError(_))
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateItemErrorKind::ResourceNotFoundException(_)
+        )
     }
-    pub fn is_transaction_conflict_error(&self) -> bool {
-        matches!(&self.kind, UpdateItemErrorKind::TransactionConflictError(_))
+    pub fn is_transaction_conflict_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateItemErrorKind::TransactionConflictException(_)
+        )
     }
 }
 impl std::error::Error for UpdateItemError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            UpdateItemErrorKind::ConditionalCheckFailedError(_inner) => Some(_inner),
+            UpdateItemErrorKind::ConditionalCheckFailedException(_inner) => Some(_inner),
             UpdateItemErrorKind::InternalServerError(_inner) => Some(_inner),
-            UpdateItemErrorKind::InvalidEndpointError(_inner) => Some(_inner),
-            UpdateItemErrorKind::ItemCollectionSizeLimitExceededError(_inner) => Some(_inner),
-            UpdateItemErrorKind::ProvisionedThroughputExceededError(_inner) => Some(_inner),
+            UpdateItemErrorKind::InvalidEndpointException(_inner) => Some(_inner),
+            UpdateItemErrorKind::ItemCollectionSizeLimitExceededException(_inner) => Some(_inner),
+            UpdateItemErrorKind::ProvisionedThroughputExceededException(_inner) => Some(_inner),
             UpdateItemErrorKind::RequestLimitExceeded(_inner) => Some(_inner),
-            UpdateItemErrorKind::ResourceNotFoundError(_inner) => Some(_inner),
-            UpdateItemErrorKind::TransactionConflictError(_inner) => Some(_inner),
+            UpdateItemErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            UpdateItemErrorKind::TransactionConflictException(_inner) => Some(_inner),
             UpdateItemErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -5103,10 +5259,10 @@ pub struct UpdateTableError {
 #[derive(std::fmt::Debug)]
 pub enum UpdateTableErrorKind {
     InternalServerError(crate::error::InternalServerError),
-    InvalidEndpointError(crate::error::InvalidEndpointError),
-    LimitExceededError(crate::error::LimitExceededError),
-    ResourceInUseError(crate::error::ResourceInUseError),
-    ResourceNotFoundError(crate::error::ResourceNotFoundError),
+    InvalidEndpointException(crate::error::InvalidEndpointException),
+    LimitExceededException(crate::error::LimitExceededException),
+    ResourceInUseException(crate::error::ResourceInUseException),
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
@@ -5114,10 +5270,10 @@ impl std::fmt::Display for UpdateTableError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
             UpdateTableErrorKind::InternalServerError(_inner) => _inner.fmt(f),
-            UpdateTableErrorKind::InvalidEndpointError(_inner) => _inner.fmt(f),
-            UpdateTableErrorKind::LimitExceededError(_inner) => _inner.fmt(f),
-            UpdateTableErrorKind::ResourceInUseError(_inner) => _inner.fmt(f),
-            UpdateTableErrorKind::ResourceNotFoundError(_inner) => _inner.fmt(f),
+            UpdateTableErrorKind::InvalidEndpointException(_inner) => _inner.fmt(f),
+            UpdateTableErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
+            UpdateTableErrorKind::ResourceInUseException(_inner) => _inner.fmt(f),
+            UpdateTableErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
             UpdateTableErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -5169,27 +5325,33 @@ impl UpdateTableError {
     pub fn is_internal_server_error(&self) -> bool {
         matches!(&self.kind, UpdateTableErrorKind::InternalServerError(_))
     }
-    pub fn is_invalid_endpoint_error(&self) -> bool {
-        matches!(&self.kind, UpdateTableErrorKind::InvalidEndpointError(_))
+    pub fn is_invalid_endpoint_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateTableErrorKind::InvalidEndpointException(_)
+        )
     }
-    pub fn is_limit_exceeded_error(&self) -> bool {
-        matches!(&self.kind, UpdateTableErrorKind::LimitExceededError(_))
+    pub fn is_limit_exceeded_exception(&self) -> bool {
+        matches!(&self.kind, UpdateTableErrorKind::LimitExceededException(_))
     }
-    pub fn is_resource_in_use_error(&self) -> bool {
-        matches!(&self.kind, UpdateTableErrorKind::ResourceInUseError(_))
+    pub fn is_resource_in_use_exception(&self) -> bool {
+        matches!(&self.kind, UpdateTableErrorKind::ResourceInUseException(_))
     }
-    pub fn is_resource_not_found_error(&self) -> bool {
-        matches!(&self.kind, UpdateTableErrorKind::ResourceNotFoundError(_))
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateTableErrorKind::ResourceNotFoundException(_)
+        )
     }
 }
 impl std::error::Error for UpdateTableError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             UpdateTableErrorKind::InternalServerError(_inner) => Some(_inner),
-            UpdateTableErrorKind::InvalidEndpointError(_inner) => Some(_inner),
-            UpdateTableErrorKind::LimitExceededError(_inner) => Some(_inner),
-            UpdateTableErrorKind::ResourceInUseError(_inner) => Some(_inner),
-            UpdateTableErrorKind::ResourceNotFoundError(_inner) => Some(_inner),
+            UpdateTableErrorKind::InvalidEndpointException(_inner) => Some(_inner),
+            UpdateTableErrorKind::LimitExceededException(_inner) => Some(_inner),
+            UpdateTableErrorKind::ResourceInUseException(_inner) => Some(_inner),
+            UpdateTableErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             UpdateTableErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -5205,9 +5367,9 @@ pub struct UpdateTableReplicaAutoScalingError {
 #[derive(std::fmt::Debug)]
 pub enum UpdateTableReplicaAutoScalingErrorKind {
     InternalServerError(crate::error::InternalServerError),
-    LimitExceededError(crate::error::LimitExceededError),
-    ResourceInUseError(crate::error::ResourceInUseError),
-    ResourceNotFoundError(crate::error::ResourceNotFoundError),
+    LimitExceededException(crate::error::LimitExceededException),
+    ResourceInUseException(crate::error::ResourceInUseException),
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
@@ -5215,9 +5377,11 @@ impl std::fmt::Display for UpdateTableReplicaAutoScalingError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
             UpdateTableReplicaAutoScalingErrorKind::InternalServerError(_inner) => _inner.fmt(f),
-            UpdateTableReplicaAutoScalingErrorKind::LimitExceededError(_inner) => _inner.fmt(f),
-            UpdateTableReplicaAutoScalingErrorKind::ResourceInUseError(_inner) => _inner.fmt(f),
-            UpdateTableReplicaAutoScalingErrorKind::ResourceNotFoundError(_inner) => _inner.fmt(f),
+            UpdateTableReplicaAutoScalingErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
+            UpdateTableReplicaAutoScalingErrorKind::ResourceInUseException(_inner) => _inner.fmt(f),
+            UpdateTableReplicaAutoScalingErrorKind::ResourceNotFoundException(_inner) => {
+                _inner.fmt(f)
+            }
             UpdateTableReplicaAutoScalingErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -5272,22 +5436,22 @@ impl UpdateTableReplicaAutoScalingError {
             UpdateTableReplicaAutoScalingErrorKind::InternalServerError(_)
         )
     }
-    pub fn is_limit_exceeded_error(&self) -> bool {
+    pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UpdateTableReplicaAutoScalingErrorKind::LimitExceededError(_)
+            UpdateTableReplicaAutoScalingErrorKind::LimitExceededException(_)
         )
     }
-    pub fn is_resource_in_use_error(&self) -> bool {
+    pub fn is_resource_in_use_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UpdateTableReplicaAutoScalingErrorKind::ResourceInUseError(_)
+            UpdateTableReplicaAutoScalingErrorKind::ResourceInUseException(_)
         )
     }
-    pub fn is_resource_not_found_error(&self) -> bool {
+    pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UpdateTableReplicaAutoScalingErrorKind::ResourceNotFoundError(_)
+            UpdateTableReplicaAutoScalingErrorKind::ResourceNotFoundException(_)
         )
     }
 }
@@ -5295,9 +5459,11 @@ impl std::error::Error for UpdateTableReplicaAutoScalingError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             UpdateTableReplicaAutoScalingErrorKind::InternalServerError(_inner) => Some(_inner),
-            UpdateTableReplicaAutoScalingErrorKind::LimitExceededError(_inner) => Some(_inner),
-            UpdateTableReplicaAutoScalingErrorKind::ResourceInUseError(_inner) => Some(_inner),
-            UpdateTableReplicaAutoScalingErrorKind::ResourceNotFoundError(_inner) => Some(_inner),
+            UpdateTableReplicaAutoScalingErrorKind::LimitExceededException(_inner) => Some(_inner),
+            UpdateTableReplicaAutoScalingErrorKind::ResourceInUseException(_inner) => Some(_inner),
+            UpdateTableReplicaAutoScalingErrorKind::ResourceNotFoundException(_inner) => {
+                Some(_inner)
+            }
             UpdateTableReplicaAutoScalingErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -5313,10 +5479,10 @@ pub struct UpdateTimeToLiveError {
 #[derive(std::fmt::Debug)]
 pub enum UpdateTimeToLiveErrorKind {
     InternalServerError(crate::error::InternalServerError),
-    InvalidEndpointError(crate::error::InvalidEndpointError),
-    LimitExceededError(crate::error::LimitExceededError),
-    ResourceInUseError(crate::error::ResourceInUseError),
-    ResourceNotFoundError(crate::error::ResourceNotFoundError),
+    InvalidEndpointException(crate::error::InvalidEndpointException),
+    LimitExceededException(crate::error::LimitExceededException),
+    ResourceInUseException(crate::error::ResourceInUseException),
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
@@ -5324,10 +5490,10 @@ impl std::fmt::Display for UpdateTimeToLiveError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
             UpdateTimeToLiveErrorKind::InternalServerError(_inner) => _inner.fmt(f),
-            UpdateTimeToLiveErrorKind::InvalidEndpointError(_inner) => _inner.fmt(f),
-            UpdateTimeToLiveErrorKind::LimitExceededError(_inner) => _inner.fmt(f),
-            UpdateTimeToLiveErrorKind::ResourceInUseError(_inner) => _inner.fmt(f),
-            UpdateTimeToLiveErrorKind::ResourceNotFoundError(_inner) => _inner.fmt(f),
+            UpdateTimeToLiveErrorKind::InvalidEndpointException(_inner) => _inner.fmt(f),
+            UpdateTimeToLiveErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
+            UpdateTimeToLiveErrorKind::ResourceInUseException(_inner) => _inner.fmt(f),
+            UpdateTimeToLiveErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
             UpdateTimeToLiveErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -5382,22 +5548,28 @@ impl UpdateTimeToLiveError {
             UpdateTimeToLiveErrorKind::InternalServerError(_)
         )
     }
-    pub fn is_invalid_endpoint_error(&self) -> bool {
+    pub fn is_invalid_endpoint_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UpdateTimeToLiveErrorKind::InvalidEndpointError(_)
+            UpdateTimeToLiveErrorKind::InvalidEndpointException(_)
         )
     }
-    pub fn is_limit_exceeded_error(&self) -> bool {
-        matches!(&self.kind, UpdateTimeToLiveErrorKind::LimitExceededError(_))
-    }
-    pub fn is_resource_in_use_error(&self) -> bool {
-        matches!(&self.kind, UpdateTimeToLiveErrorKind::ResourceInUseError(_))
-    }
-    pub fn is_resource_not_found_error(&self) -> bool {
+    pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
             &self.kind,
-            UpdateTimeToLiveErrorKind::ResourceNotFoundError(_)
+            UpdateTimeToLiveErrorKind::LimitExceededException(_)
+        )
+    }
+    pub fn is_resource_in_use_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateTimeToLiveErrorKind::ResourceInUseException(_)
+        )
+    }
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateTimeToLiveErrorKind::ResourceNotFoundException(_)
         )
     }
 }
@@ -5405,10 +5577,10 @@ impl std::error::Error for UpdateTimeToLiveError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             UpdateTimeToLiveErrorKind::InternalServerError(_inner) => Some(_inner),
-            UpdateTimeToLiveErrorKind::InvalidEndpointError(_inner) => Some(_inner),
-            UpdateTimeToLiveErrorKind::LimitExceededError(_inner) => Some(_inner),
-            UpdateTimeToLiveErrorKind::ResourceInUseError(_inner) => Some(_inner),
-            UpdateTimeToLiveErrorKind::ResourceNotFoundError(_inner) => Some(_inner),
+            UpdateTimeToLiveErrorKind::InvalidEndpointException(_inner) => Some(_inner),
+            UpdateTimeToLiveErrorKind::LimitExceededException(_inner) => Some(_inner),
+            UpdateTimeToLiveErrorKind::ResourceInUseException(_inner) => Some(_inner),
+            UpdateTimeToLiveErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             UpdateTimeToLiveErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -5417,38 +5589,36 @@ impl std::error::Error for UpdateTimeToLiveError {
 /// <p>The operation tried to access a nonexistent table or index. The resource might not be specified
 /// correctly, or its status might not be <code>ACTIVE</code>.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
-pub struct ResourceNotFoundError {
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ResourceNotFoundException {
     /// <p>The resource which is being requested does not exist.</p>
-    #[serde(rename = "message")]
-    #[serde(default)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for ResourceNotFoundError {
+impl std::fmt::Debug for ResourceNotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResourceNotFoundError");
+        let mut formatter = f.debug_struct("ResourceNotFoundException");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl ResourceNotFoundError {
+impl ResourceNotFoundException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for ResourceNotFoundError {
+impl std::fmt::Display for ResourceNotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "ResourceNotFoundError [ResourceNotFoundException]")?;
+        write!(f, "ResourceNotFoundException")?;
         if let Some(inner_1) = &self.message {
             write!(f, ": {}", inner_1)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for ResourceNotFoundError {}
-/// See [`ResourceNotFoundError`](crate::error::ResourceNotFoundError)
-pub mod resource_not_found_error {
-    /// A builder for [`ResourceNotFoundError`](crate::error::ResourceNotFoundError)
+impl std::error::Error for ResourceNotFoundException {}
+/// See [`ResourceNotFoundException`](crate::error::ResourceNotFoundException)
+pub mod resource_not_found_exception {
+    /// A builder for [`ResourceNotFoundException`](crate::error::ResourceNotFoundException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -5464,18 +5634,18 @@ pub mod resource_not_found_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`ResourceNotFoundError`](crate::error::ResourceNotFoundError)
-        pub fn build(self) -> crate::error::ResourceNotFoundError {
-            crate::error::ResourceNotFoundError {
+        /// Consumes the builder and constructs a [`ResourceNotFoundException`](crate::error::ResourceNotFoundException)
+        pub fn build(self) -> crate::error::ResourceNotFoundException {
+            crate::error::ResourceNotFoundException {
                 message: self.message,
             }
         }
     }
 }
-impl ResourceNotFoundError {
-    /// Creates a new builder-style object to manufacture [`ResourceNotFoundError`](crate::error::ResourceNotFoundError)
-    pub fn builder() -> crate::error::resource_not_found_error::Builder {
-        crate::error::resource_not_found_error::Builder::default()
+impl ResourceNotFoundException {
+    /// Creates a new builder-style object to manufacture [`ResourceNotFoundException`](crate::error::ResourceNotFoundException)
+    pub fn builder() -> crate::error::resource_not_found_exception::Builder {
+        crate::error::resource_not_found_exception::Builder::default()
     }
 }
 
@@ -5483,38 +5653,36 @@ impl ResourceNotFoundError {
 /// recreate an existing table, or tried to delete a table currently in the <code>CREATING</code>
 /// state.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
-pub struct ResourceInUseError {
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ResourceInUseException {
     /// <p>The resource which is being attempted to be changed is in use.</p>
-    #[serde(rename = "message")]
-    #[serde(default)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for ResourceInUseError {
+impl std::fmt::Debug for ResourceInUseException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResourceInUseError");
+        let mut formatter = f.debug_struct("ResourceInUseException");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl ResourceInUseError {
+impl ResourceInUseException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for ResourceInUseError {
+impl std::fmt::Display for ResourceInUseException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "ResourceInUseError [ResourceInUseException]")?;
+        write!(f, "ResourceInUseException")?;
         if let Some(inner_2) = &self.message {
             write!(f, ": {}", inner_2)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for ResourceInUseError {}
-/// See [`ResourceInUseError`](crate::error::ResourceInUseError)
-pub mod resource_in_use_error {
-    /// A builder for [`ResourceInUseError`](crate::error::ResourceInUseError)
+impl std::error::Error for ResourceInUseException {}
+/// See [`ResourceInUseException`](crate::error::ResourceInUseException)
+pub mod resource_in_use_exception {
+    /// A builder for [`ResourceInUseException`](crate::error::ResourceInUseException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -5530,18 +5698,18 @@ pub mod resource_in_use_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`ResourceInUseError`](crate::error::ResourceInUseError)
-        pub fn build(self) -> crate::error::ResourceInUseError {
-            crate::error::ResourceInUseError {
+        /// Consumes the builder and constructs a [`ResourceInUseException`](crate::error::ResourceInUseException)
+        pub fn build(self) -> crate::error::ResourceInUseException {
+            crate::error::ResourceInUseException {
                 message: self.message,
             }
         }
     }
 }
-impl ResourceInUseError {
-    /// Creates a new builder-style object to manufacture [`ResourceInUseError`](crate::error::ResourceInUseError)
-    pub fn builder() -> crate::error::resource_in_use_error::Builder {
-        crate::error::resource_in_use_error::Builder::default()
+impl ResourceInUseException {
+    /// Creates a new builder-style object to manufacture [`ResourceInUseException`](crate::error::ResourceInUseException)
+    pub fn builder() -> crate::error::resource_in_use_exception::Builder {
+        crate::error::resource_in_use_exception::Builder::default()
     }
 }
 
@@ -5555,38 +5723,36 @@ impl ResourceInUseError {
 /// reduce the number of concurrent operations.</p>
 /// <p>There is a soft account quota of 256 tables.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
-pub struct LimitExceededError {
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct LimitExceededException {
     /// <p>Too many operations for a given subscriber.</p>
-    #[serde(rename = "message")]
-    #[serde(default)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for LimitExceededError {
+impl std::fmt::Debug for LimitExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LimitExceededError");
+        let mut formatter = f.debug_struct("LimitExceededException");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl LimitExceededError {
+impl LimitExceededException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for LimitExceededError {
+impl std::fmt::Display for LimitExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "LimitExceededError [LimitExceededException]")?;
+        write!(f, "LimitExceededException")?;
         if let Some(inner_3) = &self.message {
             write!(f, ": {}", inner_3)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for LimitExceededError {}
-/// See [`LimitExceededError`](crate::error::LimitExceededError)
-pub mod limit_exceeded_error {
-    /// A builder for [`LimitExceededError`](crate::error::LimitExceededError)
+impl std::error::Error for LimitExceededException {}
+/// See [`LimitExceededException`](crate::error::LimitExceededException)
+pub mod limit_exceeded_exception {
+    /// A builder for [`LimitExceededException`](crate::error::LimitExceededException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -5602,53 +5768,51 @@ pub mod limit_exceeded_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`LimitExceededError`](crate::error::LimitExceededError)
-        pub fn build(self) -> crate::error::LimitExceededError {
-            crate::error::LimitExceededError {
+        /// Consumes the builder and constructs a [`LimitExceededException`](crate::error::LimitExceededException)
+        pub fn build(self) -> crate::error::LimitExceededException {
+            crate::error::LimitExceededException {
                 message: self.message,
             }
         }
     }
 }
-impl LimitExceededError {
-    /// Creates a new builder-style object to manufacture [`LimitExceededError`](crate::error::LimitExceededError)
-    pub fn builder() -> crate::error::limit_exceeded_error::Builder {
-        crate::error::limit_exceeded_error::Builder::default()
+impl LimitExceededException {
+    /// Creates a new builder-style object to manufacture [`LimitExceededException`](crate::error::LimitExceededException)
+    pub fn builder() -> crate::error::limit_exceeded_exception::Builder {
+        crate::error::limit_exceeded_exception::Builder::default()
     }
 }
 
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
-pub struct InvalidEndpointError {
-    #[serde(rename = "Message")]
-    #[serde(default)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct InvalidEndpointException {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for InvalidEndpointError {
+impl std::fmt::Debug for InvalidEndpointException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidEndpointError");
+        let mut formatter = f.debug_struct("InvalidEndpointException");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl InvalidEndpointError {
+impl InvalidEndpointException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for InvalidEndpointError {
+impl std::fmt::Display for InvalidEndpointException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "InvalidEndpointError [InvalidEndpointException]")?;
+        write!(f, "InvalidEndpointException")?;
         if let Some(inner_4) = &self.message {
             write!(f, ": {}", inner_4)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for InvalidEndpointError {}
-/// See [`InvalidEndpointError`](crate::error::InvalidEndpointError)
-pub mod invalid_endpoint_error {
-    /// A builder for [`InvalidEndpointError`](crate::error::InvalidEndpointError)
+impl std::error::Error for InvalidEndpointException {}
+/// See [`InvalidEndpointException`](crate::error::InvalidEndpointException)
+pub mod invalid_endpoint_exception {
+    /// A builder for [`InvalidEndpointException`](crate::error::InvalidEndpointException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -5663,28 +5827,26 @@ pub mod invalid_endpoint_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`InvalidEndpointError`](crate::error::InvalidEndpointError)
-        pub fn build(self) -> crate::error::InvalidEndpointError {
-            crate::error::InvalidEndpointError {
+        /// Consumes the builder and constructs a [`InvalidEndpointException`](crate::error::InvalidEndpointException)
+        pub fn build(self) -> crate::error::InvalidEndpointException {
+            crate::error::InvalidEndpointException {
                 message: self.message,
             }
         }
     }
 }
-impl InvalidEndpointError {
-    /// Creates a new builder-style object to manufacture [`InvalidEndpointError`](crate::error::InvalidEndpointError)
-    pub fn builder() -> crate::error::invalid_endpoint_error::Builder {
-        crate::error::invalid_endpoint_error::Builder::default()
+impl InvalidEndpointException {
+    /// Creates a new builder-style object to manufacture [`InvalidEndpointException`](crate::error::InvalidEndpointException)
+    pub fn builder() -> crate::error::invalid_endpoint_exception::Builder {
+        crate::error::invalid_endpoint_exception::Builder::default()
     }
 }
 
 /// <p>An error occurred on the server side.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InternalServerError {
     /// <p>The server encountered an internal error trying to fulfill the request.</p>
-    #[serde(rename = "message")]
-    #[serde(default)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InternalServerError {
@@ -5744,37 +5906,35 @@ impl InternalServerError {
 
 /// <p>Operation was rejected because there is an ongoing transaction for the item.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
-pub struct TransactionConflictError {
-    #[serde(rename = "message")]
-    #[serde(default)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct TransactionConflictException {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for TransactionConflictError {
+impl std::fmt::Debug for TransactionConflictException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TransactionConflictError");
+        let mut formatter = f.debug_struct("TransactionConflictException");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl TransactionConflictError {
+impl TransactionConflictException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for TransactionConflictError {
+impl std::fmt::Display for TransactionConflictException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "TransactionConflictError [TransactionConflictException]")?;
+        write!(f, "TransactionConflictException")?;
         if let Some(inner_6) = &self.message {
             write!(f, ": {}", inner_6)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for TransactionConflictError {}
-/// See [`TransactionConflictError`](crate::error::TransactionConflictError)
-pub mod transaction_conflict_error {
-    /// A builder for [`TransactionConflictError`](crate::error::TransactionConflictError)
+impl std::error::Error for TransactionConflictException {}
+/// See [`TransactionConflictException`](crate::error::TransactionConflictException)
+pub mod transaction_conflict_exception {
+    /// A builder for [`TransactionConflictException`](crate::error::TransactionConflictException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -5789,27 +5949,25 @@ pub mod transaction_conflict_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`TransactionConflictError`](crate::error::TransactionConflictError)
-        pub fn build(self) -> crate::error::TransactionConflictError {
-            crate::error::TransactionConflictError {
+        /// Consumes the builder and constructs a [`TransactionConflictException`](crate::error::TransactionConflictException)
+        pub fn build(self) -> crate::error::TransactionConflictException {
+            crate::error::TransactionConflictException {
                 message: self.message,
             }
         }
     }
 }
-impl TransactionConflictError {
-    /// Creates a new builder-style object to manufacture [`TransactionConflictError`](crate::error::TransactionConflictError)
-    pub fn builder() -> crate::error::transaction_conflict_error::Builder {
-        crate::error::transaction_conflict_error::Builder::default()
+impl TransactionConflictException {
+    /// Creates a new builder-style object to manufacture [`TransactionConflictException`](crate::error::TransactionConflictException)
+    pub fn builder() -> crate::error::transaction_conflict_exception::Builder {
+        crate::error::transaction_conflict_exception::Builder::default()
     }
 }
 
 /// <p>Throughput exceeds the current throughput quota for your account. Please contact AWS Support at <a href="https://aws.amazon.com/support">AWS Support</a> to request a quota increase.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RequestLimitExceeded {
-    #[serde(rename = "message")]
-    #[serde(default)]
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for RequestLimitExceeded {
@@ -5872,41 +6030,36 @@ impl RequestLimitExceeded {
 /// information, go to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Programming.Errors.html#Programming.Errors.RetryAndBackoff">Error Retries and Exponential
 /// Backoff</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
-pub struct ProvisionedThroughputExceededError {
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ProvisionedThroughputExceededException {
     /// <p>You exceeded your maximum allowed provisioned throughput.</p>
-    #[serde(rename = "message")]
-    #[serde(default)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for ProvisionedThroughputExceededError {
+impl std::fmt::Debug for ProvisionedThroughputExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ProvisionedThroughputExceededError");
+        let mut formatter = f.debug_struct("ProvisionedThroughputExceededException");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl ProvisionedThroughputExceededError {
+impl ProvisionedThroughputExceededException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for ProvisionedThroughputExceededError {
+impl std::fmt::Display for ProvisionedThroughputExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(
-            f,
-            "ProvisionedThroughputExceededError [ProvisionedThroughputExceededException]"
-        )?;
+        write!(f, "ProvisionedThroughputExceededException")?;
         if let Some(inner_8) = &self.message {
             write!(f, ": {}", inner_8)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for ProvisionedThroughputExceededError {}
-/// See [`ProvisionedThroughputExceededError`](crate::error::ProvisionedThroughputExceededError)
-pub mod provisioned_throughput_exceeded_error {
-    /// A builder for [`ProvisionedThroughputExceededError`](crate::error::ProvisionedThroughputExceededError)
+impl std::error::Error for ProvisionedThroughputExceededException {}
+/// See [`ProvisionedThroughputExceededException`](crate::error::ProvisionedThroughputExceededException)
+pub mod provisioned_throughput_exceeded_exception {
+    /// A builder for [`ProvisionedThroughputExceededException`](crate::error::ProvisionedThroughputExceededException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -5922,58 +6075,53 @@ pub mod provisioned_throughput_exceeded_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`ProvisionedThroughputExceededError`](crate::error::ProvisionedThroughputExceededError)
-        pub fn build(self) -> crate::error::ProvisionedThroughputExceededError {
-            crate::error::ProvisionedThroughputExceededError {
+        /// Consumes the builder and constructs a [`ProvisionedThroughputExceededException`](crate::error::ProvisionedThroughputExceededException)
+        pub fn build(self) -> crate::error::ProvisionedThroughputExceededException {
+            crate::error::ProvisionedThroughputExceededException {
                 message: self.message,
             }
         }
     }
 }
-impl ProvisionedThroughputExceededError {
-    /// Creates a new builder-style object to manufacture [`ProvisionedThroughputExceededError`](crate::error::ProvisionedThroughputExceededError)
-    pub fn builder() -> crate::error::provisioned_throughput_exceeded_error::Builder {
-        crate::error::provisioned_throughput_exceeded_error::Builder::default()
+impl ProvisionedThroughputExceededException {
+    /// Creates a new builder-style object to manufacture [`ProvisionedThroughputExceededException`](crate::error::ProvisionedThroughputExceededException)
+    pub fn builder() -> crate::error::provisioned_throughput_exceeded_exception::Builder {
+        crate::error::provisioned_throughput_exceeded_exception::Builder::default()
     }
 }
 
 /// <p>An item collection is too large. This exception is only returned for tables that have one or more local secondary indexes.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
-pub struct ItemCollectionSizeLimitExceededError {
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ItemCollectionSizeLimitExceededException {
     /// <p>The total size of an item collection has exceeded the maximum limit of 10 gigabytes.</p>
-    #[serde(rename = "message")]
-    #[serde(default)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for ItemCollectionSizeLimitExceededError {
+impl std::fmt::Debug for ItemCollectionSizeLimitExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ItemCollectionSizeLimitExceededError");
+        let mut formatter = f.debug_struct("ItemCollectionSizeLimitExceededException");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl ItemCollectionSizeLimitExceededError {
+impl ItemCollectionSizeLimitExceededException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for ItemCollectionSizeLimitExceededError {
+impl std::fmt::Display for ItemCollectionSizeLimitExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(
-            f,
-            "ItemCollectionSizeLimitExceededError [ItemCollectionSizeLimitExceededException]"
-        )?;
+        write!(f, "ItemCollectionSizeLimitExceededException")?;
         if let Some(inner_9) = &self.message {
             write!(f, ": {}", inner_9)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for ItemCollectionSizeLimitExceededError {}
-/// See [`ItemCollectionSizeLimitExceededError`](crate::error::ItemCollectionSizeLimitExceededError)
-pub mod item_collection_size_limit_exceeded_error {
-    /// A builder for [`ItemCollectionSizeLimitExceededError`](crate::error::ItemCollectionSizeLimitExceededError)
+impl std::error::Error for ItemCollectionSizeLimitExceededException {}
+/// See [`ItemCollectionSizeLimitExceededException`](crate::error::ItemCollectionSizeLimitExceededException)
+pub mod item_collection_size_limit_exceeded_exception {
+    /// A builder for [`ItemCollectionSizeLimitExceededException`](crate::error::ItemCollectionSizeLimitExceededException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -5989,58 +6137,53 @@ pub mod item_collection_size_limit_exceeded_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`ItemCollectionSizeLimitExceededError`](crate::error::ItemCollectionSizeLimitExceededError)
-        pub fn build(self) -> crate::error::ItemCollectionSizeLimitExceededError {
-            crate::error::ItemCollectionSizeLimitExceededError {
+        /// Consumes the builder and constructs a [`ItemCollectionSizeLimitExceededException`](crate::error::ItemCollectionSizeLimitExceededException)
+        pub fn build(self) -> crate::error::ItemCollectionSizeLimitExceededException {
+            crate::error::ItemCollectionSizeLimitExceededException {
                 message: self.message,
             }
         }
     }
 }
-impl ItemCollectionSizeLimitExceededError {
-    /// Creates a new builder-style object to manufacture [`ItemCollectionSizeLimitExceededError`](crate::error::ItemCollectionSizeLimitExceededError)
-    pub fn builder() -> crate::error::item_collection_size_limit_exceeded_error::Builder {
-        crate::error::item_collection_size_limit_exceeded_error::Builder::default()
+impl ItemCollectionSizeLimitExceededException {
+    /// Creates a new builder-style object to manufacture [`ItemCollectionSizeLimitExceededException`](crate::error::ItemCollectionSizeLimitExceededException)
+    pub fn builder() -> crate::error::item_collection_size_limit_exceeded_exception::Builder {
+        crate::error::item_collection_size_limit_exceeded_exception::Builder::default()
     }
 }
 
 /// <p>A condition specified in the operation could not be evaluated.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
-pub struct ConditionalCheckFailedError {
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ConditionalCheckFailedException {
     /// <p>The conditional request failed.</p>
-    #[serde(rename = "message")]
-    #[serde(default)]
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for ConditionalCheckFailedError {
+impl std::fmt::Debug for ConditionalCheckFailedException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ConditionalCheckFailedError");
+        let mut formatter = f.debug_struct("ConditionalCheckFailedException");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl ConditionalCheckFailedError {
+impl ConditionalCheckFailedException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for ConditionalCheckFailedError {
+impl std::fmt::Display for ConditionalCheckFailedException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(
-            f,
-            "ConditionalCheckFailedError [ConditionalCheckFailedException]"
-        )?;
+        write!(f, "ConditionalCheckFailedException")?;
         if let Some(inner_10) = &self.message {
             write!(f, ": {}", inner_10)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for ConditionalCheckFailedError {}
-/// See [`ConditionalCheckFailedError`](crate::error::ConditionalCheckFailedError)
-pub mod conditional_check_failed_error {
-    /// A builder for [`ConditionalCheckFailedError`](crate::error::ConditionalCheckFailedError)
+impl std::error::Error for ConditionalCheckFailedException {}
+/// See [`ConditionalCheckFailedException`](crate::error::ConditionalCheckFailedException)
+pub mod conditional_check_failed_exception {
+    /// A builder for [`ConditionalCheckFailedException`](crate::error::ConditionalCheckFailedException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -6056,54 +6199,52 @@ pub mod conditional_check_failed_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`ConditionalCheckFailedError`](crate::error::ConditionalCheckFailedError)
-        pub fn build(self) -> crate::error::ConditionalCheckFailedError {
-            crate::error::ConditionalCheckFailedError {
+        /// Consumes the builder and constructs a [`ConditionalCheckFailedException`](crate::error::ConditionalCheckFailedException)
+        pub fn build(self) -> crate::error::ConditionalCheckFailedException {
+            crate::error::ConditionalCheckFailedException {
                 message: self.message,
             }
         }
     }
 }
-impl ConditionalCheckFailedError {
-    /// Creates a new builder-style object to manufacture [`ConditionalCheckFailedError`](crate::error::ConditionalCheckFailedError)
-    pub fn builder() -> crate::error::conditional_check_failed_error::Builder {
-        crate::error::conditional_check_failed_error::Builder::default()
+impl ConditionalCheckFailedException {
+    /// Creates a new builder-style object to manufacture [`ConditionalCheckFailedException`](crate::error::ConditionalCheckFailedException)
+    pub fn builder() -> crate::error::conditional_check_failed_exception::Builder {
+        crate::error::conditional_check_failed_exception::Builder::default()
     }
 }
 
 /// <p>The specified replica is no longer part of the global table.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
-pub struct ReplicaNotFoundError {
-    #[serde(rename = "message")]
-    #[serde(default)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ReplicaNotFoundException {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for ReplicaNotFoundError {
+impl std::fmt::Debug for ReplicaNotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ReplicaNotFoundError");
+        let mut formatter = f.debug_struct("ReplicaNotFoundException");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl ReplicaNotFoundError {
+impl ReplicaNotFoundException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for ReplicaNotFoundError {
+impl std::fmt::Display for ReplicaNotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "ReplicaNotFoundError [ReplicaNotFoundException]")?;
+        write!(f, "ReplicaNotFoundException")?;
         if let Some(inner_11) = &self.message {
             write!(f, ": {}", inner_11)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for ReplicaNotFoundError {}
-/// See [`ReplicaNotFoundError`](crate::error::ReplicaNotFoundError)
-pub mod replica_not_found_error {
-    /// A builder for [`ReplicaNotFoundError`](crate::error::ReplicaNotFoundError)
+impl std::error::Error for ReplicaNotFoundException {}
+/// See [`ReplicaNotFoundException`](crate::error::ReplicaNotFoundException)
+pub mod replica_not_found_exception {
+    /// A builder for [`ReplicaNotFoundException`](crate::error::ReplicaNotFoundException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -6118,54 +6259,52 @@ pub mod replica_not_found_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`ReplicaNotFoundError`](crate::error::ReplicaNotFoundError)
-        pub fn build(self) -> crate::error::ReplicaNotFoundError {
-            crate::error::ReplicaNotFoundError {
+        /// Consumes the builder and constructs a [`ReplicaNotFoundException`](crate::error::ReplicaNotFoundException)
+        pub fn build(self) -> crate::error::ReplicaNotFoundException {
+            crate::error::ReplicaNotFoundException {
                 message: self.message,
             }
         }
     }
 }
-impl ReplicaNotFoundError {
-    /// Creates a new builder-style object to manufacture [`ReplicaNotFoundError`](crate::error::ReplicaNotFoundError)
-    pub fn builder() -> crate::error::replica_not_found_error::Builder {
-        crate::error::replica_not_found_error::Builder::default()
+impl ReplicaNotFoundException {
+    /// Creates a new builder-style object to manufacture [`ReplicaNotFoundException`](crate::error::ReplicaNotFoundException)
+    pub fn builder() -> crate::error::replica_not_found_exception::Builder {
+        crate::error::replica_not_found_exception::Builder::default()
     }
 }
 
 /// <p>The operation tried to access a nonexistent index.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
-pub struct IndexNotFoundError {
-    #[serde(rename = "message")]
-    #[serde(default)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct IndexNotFoundException {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for IndexNotFoundError {
+impl std::fmt::Debug for IndexNotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("IndexNotFoundError");
+        let mut formatter = f.debug_struct("IndexNotFoundException");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl IndexNotFoundError {
+impl IndexNotFoundException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for IndexNotFoundError {
+impl std::fmt::Display for IndexNotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "IndexNotFoundError [IndexNotFoundException]")?;
+        write!(f, "IndexNotFoundException")?;
         if let Some(inner_12) = &self.message {
             write!(f, ": {}", inner_12)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for IndexNotFoundError {}
-/// See [`IndexNotFoundError`](crate::error::IndexNotFoundError)
-pub mod index_not_found_error {
-    /// A builder for [`IndexNotFoundError`](crate::error::IndexNotFoundError)
+impl std::error::Error for IndexNotFoundException {}
+/// See [`IndexNotFoundException`](crate::error::IndexNotFoundException)
+pub mod index_not_found_exception {
+    /// A builder for [`IndexNotFoundException`](crate::error::IndexNotFoundException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -6180,54 +6319,52 @@ pub mod index_not_found_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`IndexNotFoundError`](crate::error::IndexNotFoundError)
-        pub fn build(self) -> crate::error::IndexNotFoundError {
-            crate::error::IndexNotFoundError {
+        /// Consumes the builder and constructs a [`IndexNotFoundException`](crate::error::IndexNotFoundException)
+        pub fn build(self) -> crate::error::IndexNotFoundException {
+            crate::error::IndexNotFoundException {
                 message: self.message,
             }
         }
     }
 }
-impl IndexNotFoundError {
-    /// Creates a new builder-style object to manufacture [`IndexNotFoundError`](crate::error::IndexNotFoundError)
-    pub fn builder() -> crate::error::index_not_found_error::Builder {
-        crate::error::index_not_found_error::Builder::default()
+impl IndexNotFoundException {
+    /// Creates a new builder-style object to manufacture [`IndexNotFoundException`](crate::error::IndexNotFoundException)
+    pub fn builder() -> crate::error::index_not_found_exception::Builder {
+        crate::error::index_not_found_exception::Builder::default()
     }
 }
 
 /// <p>The specified global table does not exist.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
-pub struct GlobalTableNotFoundError {
-    #[serde(rename = "message")]
-    #[serde(default)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GlobalTableNotFoundException {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for GlobalTableNotFoundError {
+impl std::fmt::Debug for GlobalTableNotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GlobalTableNotFoundError");
+        let mut formatter = f.debug_struct("GlobalTableNotFoundException");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl GlobalTableNotFoundError {
+impl GlobalTableNotFoundException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for GlobalTableNotFoundError {
+impl std::fmt::Display for GlobalTableNotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "GlobalTableNotFoundError [GlobalTableNotFoundException]")?;
+        write!(f, "GlobalTableNotFoundException")?;
         if let Some(inner_13) = &self.message {
             write!(f, ": {}", inner_13)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for GlobalTableNotFoundError {}
-/// See [`GlobalTableNotFoundError`](crate::error::GlobalTableNotFoundError)
-pub mod global_table_not_found_error {
-    /// A builder for [`GlobalTableNotFoundError`](crate::error::GlobalTableNotFoundError)
+impl std::error::Error for GlobalTableNotFoundException {}
+/// See [`GlobalTableNotFoundException`](crate::error::GlobalTableNotFoundException)
+pub mod global_table_not_found_exception {
+    /// A builder for [`GlobalTableNotFoundException`](crate::error::GlobalTableNotFoundException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -6242,54 +6379,52 @@ pub mod global_table_not_found_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`GlobalTableNotFoundError`](crate::error::GlobalTableNotFoundError)
-        pub fn build(self) -> crate::error::GlobalTableNotFoundError {
-            crate::error::GlobalTableNotFoundError {
+        /// Consumes the builder and constructs a [`GlobalTableNotFoundException`](crate::error::GlobalTableNotFoundException)
+        pub fn build(self) -> crate::error::GlobalTableNotFoundException {
+            crate::error::GlobalTableNotFoundException {
                 message: self.message,
             }
         }
     }
 }
-impl GlobalTableNotFoundError {
-    /// Creates a new builder-style object to manufacture [`GlobalTableNotFoundError`](crate::error::GlobalTableNotFoundError)
-    pub fn builder() -> crate::error::global_table_not_found_error::Builder {
-        crate::error::global_table_not_found_error::Builder::default()
+impl GlobalTableNotFoundException {
+    /// Creates a new builder-style object to manufacture [`GlobalTableNotFoundException`](crate::error::GlobalTableNotFoundException)
+    pub fn builder() -> crate::error::global_table_not_found_exception::Builder {
+        crate::error::global_table_not_found_exception::Builder::default()
     }
 }
 
 /// <p>A source table with the name <code>TableName</code> does not currently exist within the subscriber's account.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
-pub struct TableNotFoundError {
-    #[serde(rename = "message")]
-    #[serde(default)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct TableNotFoundException {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for TableNotFoundError {
+impl std::fmt::Debug for TableNotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TableNotFoundError");
+        let mut formatter = f.debug_struct("TableNotFoundException");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl TableNotFoundError {
+impl TableNotFoundException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for TableNotFoundError {
+impl std::fmt::Display for TableNotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "TableNotFoundError [TableNotFoundException]")?;
+        write!(f, "TableNotFoundException")?;
         if let Some(inner_14) = &self.message {
             write!(f, ": {}", inner_14)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for TableNotFoundError {}
-/// See [`TableNotFoundError`](crate::error::TableNotFoundError)
-pub mod table_not_found_error {
-    /// A builder for [`TableNotFoundError`](crate::error::TableNotFoundError)
+impl std::error::Error for TableNotFoundException {}
+/// See [`TableNotFoundException`](crate::error::TableNotFoundException)
+pub mod table_not_found_exception {
+    /// A builder for [`TableNotFoundException`](crate::error::TableNotFoundException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -6304,57 +6439,52 @@ pub mod table_not_found_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`TableNotFoundError`](crate::error::TableNotFoundError)
-        pub fn build(self) -> crate::error::TableNotFoundError {
-            crate::error::TableNotFoundError {
+        /// Consumes the builder and constructs a [`TableNotFoundException`](crate::error::TableNotFoundException)
+        pub fn build(self) -> crate::error::TableNotFoundException {
+            crate::error::TableNotFoundException {
                 message: self.message,
             }
         }
     }
 }
-impl TableNotFoundError {
-    /// Creates a new builder-style object to manufacture [`TableNotFoundError`](crate::error::TableNotFoundError)
-    pub fn builder() -> crate::error::table_not_found_error::Builder {
-        crate::error::table_not_found_error::Builder::default()
+impl TableNotFoundException {
+    /// Creates a new builder-style object to manufacture [`TableNotFoundException`](crate::error::TableNotFoundException)
+    pub fn builder() -> crate::error::table_not_found_exception::Builder {
+        crate::error::table_not_found_exception::Builder::default()
     }
 }
 
 /// <p>The specified replica is already part of the global table.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
-pub struct ReplicaAlreadyExistsError {
-    #[serde(rename = "message")]
-    #[serde(default)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ReplicaAlreadyExistsException {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for ReplicaAlreadyExistsError {
+impl std::fmt::Debug for ReplicaAlreadyExistsException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ReplicaAlreadyExistsError");
+        let mut formatter = f.debug_struct("ReplicaAlreadyExistsException");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl ReplicaAlreadyExistsError {
+impl ReplicaAlreadyExistsException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for ReplicaAlreadyExistsError {
+impl std::fmt::Display for ReplicaAlreadyExistsException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(
-            f,
-            "ReplicaAlreadyExistsError [ReplicaAlreadyExistsException]"
-        )?;
+        write!(f, "ReplicaAlreadyExistsException")?;
         if let Some(inner_15) = &self.message {
             write!(f, ": {}", inner_15)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for ReplicaAlreadyExistsError {}
-/// See [`ReplicaAlreadyExistsError`](crate::error::ReplicaAlreadyExistsError)
-pub mod replica_already_exists_error {
-    /// A builder for [`ReplicaAlreadyExistsError`](crate::error::ReplicaAlreadyExistsError)
+impl std::error::Error for ReplicaAlreadyExistsException {}
+/// See [`ReplicaAlreadyExistsException`](crate::error::ReplicaAlreadyExistsException)
+pub mod replica_already_exists_exception {
+    /// A builder for [`ReplicaAlreadyExistsException`](crate::error::ReplicaAlreadyExistsException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -6369,57 +6499,52 @@ pub mod replica_already_exists_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`ReplicaAlreadyExistsError`](crate::error::ReplicaAlreadyExistsError)
-        pub fn build(self) -> crate::error::ReplicaAlreadyExistsError {
-            crate::error::ReplicaAlreadyExistsError {
+        /// Consumes the builder and constructs a [`ReplicaAlreadyExistsException`](crate::error::ReplicaAlreadyExistsException)
+        pub fn build(self) -> crate::error::ReplicaAlreadyExistsException {
+            crate::error::ReplicaAlreadyExistsException {
                 message: self.message,
             }
         }
     }
 }
-impl ReplicaAlreadyExistsError {
-    /// Creates a new builder-style object to manufacture [`ReplicaAlreadyExistsError`](crate::error::ReplicaAlreadyExistsError)
-    pub fn builder() -> crate::error::replica_already_exists_error::Builder {
-        crate::error::replica_already_exists_error::Builder::default()
+impl ReplicaAlreadyExistsException {
+    /// Creates a new builder-style object to manufacture [`ReplicaAlreadyExistsException`](crate::error::ReplicaAlreadyExistsException)
+    pub fn builder() -> crate::error::replica_already_exists_exception::Builder {
+        crate::error::replica_already_exists_exception::Builder::default()
     }
 }
 
 /// <p>Backups have not yet been enabled for this table.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
-pub struct ContinuousBackupsUnavailableError {
-    #[serde(rename = "message")]
-    #[serde(default)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ContinuousBackupsUnavailableException {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for ContinuousBackupsUnavailableError {
+impl std::fmt::Debug for ContinuousBackupsUnavailableException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ContinuousBackupsUnavailableError");
+        let mut formatter = f.debug_struct("ContinuousBackupsUnavailableException");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl ContinuousBackupsUnavailableError {
+impl ContinuousBackupsUnavailableException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for ContinuousBackupsUnavailableError {
+impl std::fmt::Display for ContinuousBackupsUnavailableException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(
-            f,
-            "ContinuousBackupsUnavailableError [ContinuousBackupsUnavailableException]"
-        )?;
+        write!(f, "ContinuousBackupsUnavailableException")?;
         if let Some(inner_16) = &self.message {
             write!(f, ": {}", inner_16)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for ContinuousBackupsUnavailableError {}
-/// See [`ContinuousBackupsUnavailableError`](crate::error::ContinuousBackupsUnavailableError)
-pub mod continuous_backups_unavailable_error {
-    /// A builder for [`ContinuousBackupsUnavailableError`](crate::error::ContinuousBackupsUnavailableError)
+impl std::error::Error for ContinuousBackupsUnavailableException {}
+/// See [`ContinuousBackupsUnavailableException`](crate::error::ContinuousBackupsUnavailableException)
+pub mod continuous_backups_unavailable_exception {
+    /// A builder for [`ContinuousBackupsUnavailableException`](crate::error::ContinuousBackupsUnavailableException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -6434,57 +6559,52 @@ pub mod continuous_backups_unavailable_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`ContinuousBackupsUnavailableError`](crate::error::ContinuousBackupsUnavailableError)
-        pub fn build(self) -> crate::error::ContinuousBackupsUnavailableError {
-            crate::error::ContinuousBackupsUnavailableError {
+        /// Consumes the builder and constructs a [`ContinuousBackupsUnavailableException`](crate::error::ContinuousBackupsUnavailableException)
+        pub fn build(self) -> crate::error::ContinuousBackupsUnavailableException {
+            crate::error::ContinuousBackupsUnavailableException {
                 message: self.message,
             }
         }
     }
 }
-impl ContinuousBackupsUnavailableError {
-    /// Creates a new builder-style object to manufacture [`ContinuousBackupsUnavailableError`](crate::error::ContinuousBackupsUnavailableError)
-    pub fn builder() -> crate::error::continuous_backups_unavailable_error::Builder {
-        crate::error::continuous_backups_unavailable_error::Builder::default()
+impl ContinuousBackupsUnavailableException {
+    /// Creates a new builder-style object to manufacture [`ContinuousBackupsUnavailableException`](crate::error::ContinuousBackupsUnavailableException)
+    pub fn builder() -> crate::error::continuous_backups_unavailable_exception::Builder {
+        crate::error::continuous_backups_unavailable_exception::Builder::default()
     }
 }
 
 /// <p>The transaction with the given request token is already in progress.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
-pub struct TransactionInProgressError {
-    #[serde(rename = "Message")]
-    #[serde(default)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct TransactionInProgressException {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for TransactionInProgressError {
+impl std::fmt::Debug for TransactionInProgressException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TransactionInProgressError");
+        let mut formatter = f.debug_struct("TransactionInProgressException");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl TransactionInProgressError {
+impl TransactionInProgressException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for TransactionInProgressError {
+impl std::fmt::Display for TransactionInProgressException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(
-            f,
-            "TransactionInProgressError [TransactionInProgressException]"
-        )?;
+        write!(f, "TransactionInProgressException")?;
         if let Some(inner_17) = &self.message {
             write!(f, ": {}", inner_17)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for TransactionInProgressError {}
-/// See [`TransactionInProgressError`](crate::error::TransactionInProgressError)
-pub mod transaction_in_progress_error {
-    /// A builder for [`TransactionInProgressError`](crate::error::TransactionInProgressError)
+impl std::error::Error for TransactionInProgressException {}
+/// See [`TransactionInProgressException`](crate::error::TransactionInProgressException)
+pub mod transaction_in_progress_exception {
+    /// A builder for [`TransactionInProgressException`](crate::error::TransactionInProgressException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -6499,18 +6619,18 @@ pub mod transaction_in_progress_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`TransactionInProgressError`](crate::error::TransactionInProgressError)
-        pub fn build(self) -> crate::error::TransactionInProgressError {
-            crate::error::TransactionInProgressError {
+        /// Consumes the builder and constructs a [`TransactionInProgressException`](crate::error::TransactionInProgressException)
+        pub fn build(self) -> crate::error::TransactionInProgressException {
+            crate::error::TransactionInProgressException {
                 message: self.message,
             }
         }
     }
 }
-impl TransactionInProgressError {
-    /// Creates a new builder-style object to manufacture [`TransactionInProgressError`](crate::error::TransactionInProgressError)
-    pub fn builder() -> crate::error::transaction_in_progress_error::Builder {
-        crate::error::transaction_in_progress_error::Builder::default()
+impl TransactionInProgressException {
+    /// Creates a new builder-style object to manufacture [`TransactionInProgressException`](crate::error::TransactionInProgressException)
+    pub fn builder() -> crate::error::transaction_in_progress_exception::Builder {
+        crate::error::transaction_in_progress_exception::Builder::default()
     }
 }
 
@@ -6713,42 +6833,38 @@ impl TransactionInProgressError {
 /// </li>
 /// </ul>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
-pub struct TransactionCanceledError {
-    #[serde(rename = "Message")]
-    #[serde(default)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct TransactionCanceledException {
     pub message: std::option::Option<std::string::String>,
     /// <p>A list of cancellation reasons.</p>
-    #[serde(rename = "CancellationReasons")]
-    #[serde(default)]
     pub cancellation_reasons: std::option::Option<std::vec::Vec<crate::model::CancellationReason>>,
 }
-impl std::fmt::Debug for TransactionCanceledError {
+impl std::fmt::Debug for TransactionCanceledException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TransactionCanceledError");
+        let mut formatter = f.debug_struct("TransactionCanceledException");
         formatter.field("message", &self.message);
         formatter.field("cancellation_reasons", &self.cancellation_reasons);
         formatter.finish()
     }
 }
-impl TransactionCanceledError {
+impl TransactionCanceledException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for TransactionCanceledError {
+impl std::fmt::Display for TransactionCanceledException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "TransactionCanceledError [TransactionCanceledException]")?;
+        write!(f, "TransactionCanceledException")?;
         if let Some(inner_18) = &self.message {
             write!(f, ": {}", inner_18)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for TransactionCanceledError {}
-/// See [`TransactionCanceledError`](crate::error::TransactionCanceledError)
-pub mod transaction_canceled_error {
-    /// A builder for [`TransactionCanceledError`](crate::error::TransactionCanceledError)
+impl std::error::Error for TransactionCanceledException {}
+/// See [`TransactionCanceledException`](crate::error::TransactionCanceledException)
+pub mod transaction_canceled_exception {
+    /// A builder for [`TransactionCanceledException`](crate::error::TransactionCanceledException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -6781,59 +6897,54 @@ pub mod transaction_canceled_error {
             self.cancellation_reasons = input;
             self
         }
-        /// Consumes the builder and constructs a [`TransactionCanceledError`](crate::error::TransactionCanceledError)
-        pub fn build(self) -> crate::error::TransactionCanceledError {
-            crate::error::TransactionCanceledError {
+        /// Consumes the builder and constructs a [`TransactionCanceledException`](crate::error::TransactionCanceledException)
+        pub fn build(self) -> crate::error::TransactionCanceledException {
+            crate::error::TransactionCanceledException {
                 message: self.message,
                 cancellation_reasons: self.cancellation_reasons,
             }
         }
     }
 }
-impl TransactionCanceledError {
-    /// Creates a new builder-style object to manufacture [`TransactionCanceledError`](crate::error::TransactionCanceledError)
-    pub fn builder() -> crate::error::transaction_canceled_error::Builder {
-        crate::error::transaction_canceled_error::Builder::default()
+impl TransactionCanceledException {
+    /// Creates a new builder-style object to manufacture [`TransactionCanceledException`](crate::error::TransactionCanceledException)
+    pub fn builder() -> crate::error::transaction_canceled_exception::Builder {
+        crate::error::transaction_canceled_exception::Builder::default()
     }
 }
 
 /// <p>DynamoDB rejected the request because you retried a request with a different payload but
 /// with an idempotent token that was already used.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
-pub struct IdempotentParameterMismatchError {
-    #[serde(rename = "Message")]
-    #[serde(default)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct IdempotentParameterMismatchException {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for IdempotentParameterMismatchError {
+impl std::fmt::Debug for IdempotentParameterMismatchException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("IdempotentParameterMismatchError");
+        let mut formatter = f.debug_struct("IdempotentParameterMismatchException");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl IdempotentParameterMismatchError {
+impl IdempotentParameterMismatchException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for IdempotentParameterMismatchError {
+impl std::fmt::Display for IdempotentParameterMismatchException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(
-            f,
-            "IdempotentParameterMismatchError [IdempotentParameterMismatchException]"
-        )?;
+        write!(f, "IdempotentParameterMismatchException")?;
         if let Some(inner_19) = &self.message {
             write!(f, ": {}", inner_19)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for IdempotentParameterMismatchError {}
-/// See [`IdempotentParameterMismatchError`](crate::error::IdempotentParameterMismatchError)
-pub mod idempotent_parameter_mismatch_error {
-    /// A builder for [`IdempotentParameterMismatchError`](crate::error::IdempotentParameterMismatchError)
+impl std::error::Error for IdempotentParameterMismatchException {}
+/// See [`IdempotentParameterMismatchException`](crate::error::IdempotentParameterMismatchException)
+pub mod idempotent_parameter_mismatch_exception {
+    /// A builder for [`IdempotentParameterMismatchException`](crate::error::IdempotentParameterMismatchException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -6848,54 +6959,52 @@ pub mod idempotent_parameter_mismatch_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`IdempotentParameterMismatchError`](crate::error::IdempotentParameterMismatchError)
-        pub fn build(self) -> crate::error::IdempotentParameterMismatchError {
-            crate::error::IdempotentParameterMismatchError {
+        /// Consumes the builder and constructs a [`IdempotentParameterMismatchException`](crate::error::IdempotentParameterMismatchException)
+        pub fn build(self) -> crate::error::IdempotentParameterMismatchException {
+            crate::error::IdempotentParameterMismatchException {
                 message: self.message,
             }
         }
     }
 }
-impl IdempotentParameterMismatchError {
-    /// Creates a new builder-style object to manufacture [`IdempotentParameterMismatchError`](crate::error::IdempotentParameterMismatchError)
-    pub fn builder() -> crate::error::idempotent_parameter_mismatch_error::Builder {
-        crate::error::idempotent_parameter_mismatch_error::Builder::default()
+impl IdempotentParameterMismatchException {
+    /// Creates a new builder-style object to manufacture [`IdempotentParameterMismatchException`](crate::error::IdempotentParameterMismatchException)
+    pub fn builder() -> crate::error::idempotent_parameter_mismatch_exception::Builder {
+        crate::error::idempotent_parameter_mismatch_exception::Builder::default()
     }
 }
 
 /// <p>A target table with the specified name is either being created or deleted. </p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
-pub struct TableInUseError {
-    #[serde(rename = "message")]
-    #[serde(default)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct TableInUseException {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for TableInUseError {
+impl std::fmt::Debug for TableInUseException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TableInUseError");
+        let mut formatter = f.debug_struct("TableInUseException");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl TableInUseError {
+impl TableInUseException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for TableInUseError {
+impl std::fmt::Display for TableInUseException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "TableInUseError [TableInUseException]")?;
+        write!(f, "TableInUseException")?;
         if let Some(inner_20) = &self.message {
             write!(f, ": {}", inner_20)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for TableInUseError {}
-/// See [`TableInUseError`](crate::error::TableInUseError)
-pub mod table_in_use_error {
-    /// A builder for [`TableInUseError`](crate::error::TableInUseError)
+impl std::error::Error for TableInUseException {}
+/// See [`TableInUseException`](crate::error::TableInUseException)
+pub mod table_in_use_exception {
+    /// A builder for [`TableInUseException`](crate::error::TableInUseException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -6910,54 +7019,52 @@ pub mod table_in_use_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`TableInUseError`](crate::error::TableInUseError)
-        pub fn build(self) -> crate::error::TableInUseError {
-            crate::error::TableInUseError {
+        /// Consumes the builder and constructs a [`TableInUseException`](crate::error::TableInUseException)
+        pub fn build(self) -> crate::error::TableInUseException {
+            crate::error::TableInUseException {
                 message: self.message,
             }
         }
     }
 }
-impl TableInUseError {
-    /// Creates a new builder-style object to manufacture [`TableInUseError`](crate::error::TableInUseError)
-    pub fn builder() -> crate::error::table_in_use_error::Builder {
-        crate::error::table_in_use_error::Builder::default()
+impl TableInUseException {
+    /// Creates a new builder-style object to manufacture [`TableInUseException`](crate::error::TableInUseException)
+    pub fn builder() -> crate::error::table_in_use_exception::Builder {
+        crate::error::table_in_use_exception::Builder::default()
     }
 }
 
 /// <p>A target table with the specified name already exists. </p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
-pub struct TableAlreadyExistsError {
-    #[serde(rename = "message")]
-    #[serde(default)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct TableAlreadyExistsException {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for TableAlreadyExistsError {
+impl std::fmt::Debug for TableAlreadyExistsException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TableAlreadyExistsError");
+        let mut formatter = f.debug_struct("TableAlreadyExistsException");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl TableAlreadyExistsError {
+impl TableAlreadyExistsException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for TableAlreadyExistsError {
+impl std::fmt::Display for TableAlreadyExistsException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "TableAlreadyExistsError [TableAlreadyExistsException]")?;
+        write!(f, "TableAlreadyExistsException")?;
         if let Some(inner_21) = &self.message {
             write!(f, ": {}", inner_21)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for TableAlreadyExistsError {}
-/// See [`TableAlreadyExistsError`](crate::error::TableAlreadyExistsError)
-pub mod table_already_exists_error {
-    /// A builder for [`TableAlreadyExistsError`](crate::error::TableAlreadyExistsError)
+impl std::error::Error for TableAlreadyExistsException {}
+/// See [`TableAlreadyExistsException`](crate::error::TableAlreadyExistsException)
+pub mod table_already_exists_exception {
+    /// A builder for [`TableAlreadyExistsException`](crate::error::TableAlreadyExistsException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -6972,57 +7079,52 @@ pub mod table_already_exists_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`TableAlreadyExistsError`](crate::error::TableAlreadyExistsError)
-        pub fn build(self) -> crate::error::TableAlreadyExistsError {
-            crate::error::TableAlreadyExistsError {
+        /// Consumes the builder and constructs a [`TableAlreadyExistsException`](crate::error::TableAlreadyExistsException)
+        pub fn build(self) -> crate::error::TableAlreadyExistsException {
+            crate::error::TableAlreadyExistsException {
                 message: self.message,
             }
         }
     }
 }
-impl TableAlreadyExistsError {
-    /// Creates a new builder-style object to manufacture [`TableAlreadyExistsError`](crate::error::TableAlreadyExistsError)
-    pub fn builder() -> crate::error::table_already_exists_error::Builder {
-        crate::error::table_already_exists_error::Builder::default()
+impl TableAlreadyExistsException {
+    /// Creates a new builder-style object to manufacture [`TableAlreadyExistsException`](crate::error::TableAlreadyExistsException)
+    pub fn builder() -> crate::error::table_already_exists_exception::Builder {
+        crate::error::table_already_exists_exception::Builder::default()
     }
 }
 
 /// <p>Point in time recovery has not yet been enabled for this source table.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
-pub struct PointInTimeRecoveryUnavailableError {
-    #[serde(rename = "message")]
-    #[serde(default)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct PointInTimeRecoveryUnavailableException {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for PointInTimeRecoveryUnavailableError {
+impl std::fmt::Debug for PointInTimeRecoveryUnavailableException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PointInTimeRecoveryUnavailableError");
+        let mut formatter = f.debug_struct("PointInTimeRecoveryUnavailableException");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl PointInTimeRecoveryUnavailableError {
+impl PointInTimeRecoveryUnavailableException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for PointInTimeRecoveryUnavailableError {
+impl std::fmt::Display for PointInTimeRecoveryUnavailableException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(
-            f,
-            "PointInTimeRecoveryUnavailableError [PointInTimeRecoveryUnavailableException]"
-        )?;
+        write!(f, "PointInTimeRecoveryUnavailableException")?;
         if let Some(inner_22) = &self.message {
             write!(f, ": {}", inner_22)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for PointInTimeRecoveryUnavailableError {}
-/// See [`PointInTimeRecoveryUnavailableError`](crate::error::PointInTimeRecoveryUnavailableError)
-pub mod point_in_time_recovery_unavailable_error {
-    /// A builder for [`PointInTimeRecoveryUnavailableError`](crate::error::PointInTimeRecoveryUnavailableError)
+impl std::error::Error for PointInTimeRecoveryUnavailableException {}
+/// See [`PointInTimeRecoveryUnavailableException`](crate::error::PointInTimeRecoveryUnavailableException)
+pub mod point_in_time_recovery_unavailable_exception {
+    /// A builder for [`PointInTimeRecoveryUnavailableException`](crate::error::PointInTimeRecoveryUnavailableException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -7037,54 +7139,52 @@ pub mod point_in_time_recovery_unavailable_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`PointInTimeRecoveryUnavailableError`](crate::error::PointInTimeRecoveryUnavailableError)
-        pub fn build(self) -> crate::error::PointInTimeRecoveryUnavailableError {
-            crate::error::PointInTimeRecoveryUnavailableError {
+        /// Consumes the builder and constructs a [`PointInTimeRecoveryUnavailableException`](crate::error::PointInTimeRecoveryUnavailableException)
+        pub fn build(self) -> crate::error::PointInTimeRecoveryUnavailableException {
+            crate::error::PointInTimeRecoveryUnavailableException {
                 message: self.message,
             }
         }
     }
 }
-impl PointInTimeRecoveryUnavailableError {
-    /// Creates a new builder-style object to manufacture [`PointInTimeRecoveryUnavailableError`](crate::error::PointInTimeRecoveryUnavailableError)
-    pub fn builder() -> crate::error::point_in_time_recovery_unavailable_error::Builder {
-        crate::error::point_in_time_recovery_unavailable_error::Builder::default()
+impl PointInTimeRecoveryUnavailableException {
+    /// Creates a new builder-style object to manufacture [`PointInTimeRecoveryUnavailableException`](crate::error::PointInTimeRecoveryUnavailableException)
+    pub fn builder() -> crate::error::point_in_time_recovery_unavailable_exception::Builder {
+        crate::error::point_in_time_recovery_unavailable_exception::Builder::default()
     }
 }
 
 /// <p>An invalid restore time was specified. RestoreDateTime must be between EarliestRestorableDateTime and LatestRestorableDateTime.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
-pub struct InvalidRestoreTimeError {
-    #[serde(rename = "message")]
-    #[serde(default)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct InvalidRestoreTimeException {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for InvalidRestoreTimeError {
+impl std::fmt::Debug for InvalidRestoreTimeException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidRestoreTimeError");
+        let mut formatter = f.debug_struct("InvalidRestoreTimeException");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl InvalidRestoreTimeError {
+impl InvalidRestoreTimeException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for InvalidRestoreTimeError {
+impl std::fmt::Display for InvalidRestoreTimeException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "InvalidRestoreTimeError [InvalidRestoreTimeException]")?;
+        write!(f, "InvalidRestoreTimeException")?;
         if let Some(inner_23) = &self.message {
             write!(f, ": {}", inner_23)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for InvalidRestoreTimeError {}
-/// See [`InvalidRestoreTimeError`](crate::error::InvalidRestoreTimeError)
-pub mod invalid_restore_time_error {
-    /// A builder for [`InvalidRestoreTimeError`](crate::error::InvalidRestoreTimeError)
+impl std::error::Error for InvalidRestoreTimeException {}
+/// See [`InvalidRestoreTimeException`](crate::error::InvalidRestoreTimeException)
+pub mod invalid_restore_time_exception {
+    /// A builder for [`InvalidRestoreTimeException`](crate::error::InvalidRestoreTimeException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -7099,54 +7199,52 @@ pub mod invalid_restore_time_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`InvalidRestoreTimeError`](crate::error::InvalidRestoreTimeError)
-        pub fn build(self) -> crate::error::InvalidRestoreTimeError {
-            crate::error::InvalidRestoreTimeError {
+        /// Consumes the builder and constructs a [`InvalidRestoreTimeException`](crate::error::InvalidRestoreTimeException)
+        pub fn build(self) -> crate::error::InvalidRestoreTimeException {
+            crate::error::InvalidRestoreTimeException {
                 message: self.message,
             }
         }
     }
 }
-impl InvalidRestoreTimeError {
-    /// Creates a new builder-style object to manufacture [`InvalidRestoreTimeError`](crate::error::InvalidRestoreTimeError)
-    pub fn builder() -> crate::error::invalid_restore_time_error::Builder {
-        crate::error::invalid_restore_time_error::Builder::default()
+impl InvalidRestoreTimeException {
+    /// Creates a new builder-style object to manufacture [`InvalidRestoreTimeException`](crate::error::InvalidRestoreTimeException)
+    pub fn builder() -> crate::error::invalid_restore_time_exception::Builder {
+        crate::error::invalid_restore_time_exception::Builder::default()
     }
 }
 
 /// <p>Backup not found for the given BackupARN. </p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
-pub struct BackupNotFoundError {
-    #[serde(rename = "message")]
-    #[serde(default)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct BackupNotFoundException {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for BackupNotFoundError {
+impl std::fmt::Debug for BackupNotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BackupNotFoundError");
+        let mut formatter = f.debug_struct("BackupNotFoundException");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl BackupNotFoundError {
+impl BackupNotFoundException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for BackupNotFoundError {
+impl std::fmt::Display for BackupNotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "BackupNotFoundError [BackupNotFoundException]")?;
+        write!(f, "BackupNotFoundException")?;
         if let Some(inner_24) = &self.message {
             write!(f, ": {}", inner_24)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for BackupNotFoundError {}
-/// See [`BackupNotFoundError`](crate::error::BackupNotFoundError)
-pub mod backup_not_found_error {
-    /// A builder for [`BackupNotFoundError`](crate::error::BackupNotFoundError)
+impl std::error::Error for BackupNotFoundException {}
+/// See [`BackupNotFoundException`](crate::error::BackupNotFoundException)
+pub mod backup_not_found_exception {
+    /// A builder for [`BackupNotFoundException`](crate::error::BackupNotFoundException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -7161,54 +7259,52 @@ pub mod backup_not_found_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`BackupNotFoundError`](crate::error::BackupNotFoundError)
-        pub fn build(self) -> crate::error::BackupNotFoundError {
-            crate::error::BackupNotFoundError {
+        /// Consumes the builder and constructs a [`BackupNotFoundException`](crate::error::BackupNotFoundException)
+        pub fn build(self) -> crate::error::BackupNotFoundException {
+            crate::error::BackupNotFoundException {
                 message: self.message,
             }
         }
     }
 }
-impl BackupNotFoundError {
-    /// Creates a new builder-style object to manufacture [`BackupNotFoundError`](crate::error::BackupNotFoundError)
-    pub fn builder() -> crate::error::backup_not_found_error::Builder {
-        crate::error::backup_not_found_error::Builder::default()
+impl BackupNotFoundException {
+    /// Creates a new builder-style object to manufacture [`BackupNotFoundException`](crate::error::BackupNotFoundException)
+    pub fn builder() -> crate::error::backup_not_found_exception::Builder {
+        crate::error::backup_not_found_exception::Builder::default()
     }
 }
 
 /// <p>There is another ongoing conflicting backup control plane operation on the table. The backup is either being created, deleted or restored to a table.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
-pub struct BackupInUseError {
-    #[serde(rename = "message")]
-    #[serde(default)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct BackupInUseException {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for BackupInUseError {
+impl std::fmt::Debug for BackupInUseException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BackupInUseError");
+        let mut formatter = f.debug_struct("BackupInUseException");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl BackupInUseError {
+impl BackupInUseException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for BackupInUseError {
+impl std::fmt::Display for BackupInUseException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "BackupInUseError [BackupInUseException]")?;
+        write!(f, "BackupInUseException")?;
         if let Some(inner_25) = &self.message {
             write!(f, ": {}", inner_25)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for BackupInUseError {}
-/// See [`BackupInUseError`](crate::error::BackupInUseError)
-pub mod backup_in_use_error {
-    /// A builder for [`BackupInUseError`](crate::error::BackupInUseError)
+impl std::error::Error for BackupInUseException {}
+/// See [`BackupInUseException`](crate::error::BackupInUseException)
+pub mod backup_in_use_exception {
+    /// A builder for [`BackupInUseException`](crate::error::BackupInUseException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -7223,55 +7319,53 @@ pub mod backup_in_use_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`BackupInUseError`](crate::error::BackupInUseError)
-        pub fn build(self) -> crate::error::BackupInUseError {
-            crate::error::BackupInUseError {
+        /// Consumes the builder and constructs a [`BackupInUseException`](crate::error::BackupInUseException)
+        pub fn build(self) -> crate::error::BackupInUseException {
+            crate::error::BackupInUseException {
                 message: self.message,
             }
         }
     }
 }
-impl BackupInUseError {
-    /// Creates a new builder-style object to manufacture [`BackupInUseError`](crate::error::BackupInUseError)
-    pub fn builder() -> crate::error::backup_in_use_error::Builder {
-        crate::error::backup_in_use_error::Builder::default()
+impl BackupInUseException {
+    /// Creates a new builder-style object to manufacture [`BackupInUseException`](crate::error::BackupInUseException)
+    pub fn builder() -> crate::error::backup_in_use_exception::Builder {
+        crate::error::backup_in_use_exception::Builder::default()
     }
 }
 
 /// <p>The specified <code>ExportTime</code> is outside of the point in time recovery
 /// window.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
-pub struct InvalidExportTimeError {
-    #[serde(rename = "message")]
-    #[serde(default)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct InvalidExportTimeException {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for InvalidExportTimeError {
+impl std::fmt::Debug for InvalidExportTimeException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidExportTimeError");
+        let mut formatter = f.debug_struct("InvalidExportTimeException");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl InvalidExportTimeError {
+impl InvalidExportTimeException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for InvalidExportTimeError {
+impl std::fmt::Display for InvalidExportTimeException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "InvalidExportTimeError [InvalidExportTimeException]")?;
+        write!(f, "InvalidExportTimeException")?;
         if let Some(inner_26) = &self.message {
             write!(f, ": {}", inner_26)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for InvalidExportTimeError {}
-/// See [`InvalidExportTimeError`](crate::error::InvalidExportTimeError)
-pub mod invalid_export_time_error {
-    /// A builder for [`InvalidExportTimeError`](crate::error::InvalidExportTimeError)
+impl std::error::Error for InvalidExportTimeException {}
+/// See [`InvalidExportTimeException`](crate::error::InvalidExportTimeException)
+pub mod invalid_export_time_exception {
+    /// A builder for [`InvalidExportTimeException`](crate::error::InvalidExportTimeException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -7286,54 +7380,52 @@ pub mod invalid_export_time_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`InvalidExportTimeError`](crate::error::InvalidExportTimeError)
-        pub fn build(self) -> crate::error::InvalidExportTimeError {
-            crate::error::InvalidExportTimeError {
+        /// Consumes the builder and constructs a [`InvalidExportTimeException`](crate::error::InvalidExportTimeException)
+        pub fn build(self) -> crate::error::InvalidExportTimeException {
+            crate::error::InvalidExportTimeException {
                 message: self.message,
             }
         }
     }
 }
-impl InvalidExportTimeError {
-    /// Creates a new builder-style object to manufacture [`InvalidExportTimeError`](crate::error::InvalidExportTimeError)
-    pub fn builder() -> crate::error::invalid_export_time_error::Builder {
-        crate::error::invalid_export_time_error::Builder::default()
+impl InvalidExportTimeException {
+    /// Creates a new builder-style object to manufacture [`InvalidExportTimeException`](crate::error::InvalidExportTimeException)
+    pub fn builder() -> crate::error::invalid_export_time_exception::Builder {
+        crate::error::invalid_export_time_exception::Builder::default()
     }
 }
 
 /// <p>There was a conflict when writing to the specified S3 bucket.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
-pub struct ExportConflictError {
-    #[serde(rename = "message")]
-    #[serde(default)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ExportConflictException {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for ExportConflictError {
+impl std::fmt::Debug for ExportConflictException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ExportConflictError");
+        let mut formatter = f.debug_struct("ExportConflictException");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl ExportConflictError {
+impl ExportConflictException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for ExportConflictError {
+impl std::fmt::Display for ExportConflictException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "ExportConflictError [ExportConflictException]")?;
+        write!(f, "ExportConflictException")?;
         if let Some(inner_27) = &self.message {
             write!(f, ": {}", inner_27)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for ExportConflictError {}
-/// See [`ExportConflictError`](crate::error::ExportConflictError)
-pub mod export_conflict_error {
-    /// A builder for [`ExportConflictError`](crate::error::ExportConflictError)
+impl std::error::Error for ExportConflictException {}
+/// See [`ExportConflictException`](crate::error::ExportConflictException)
+pub mod export_conflict_exception {
+    /// A builder for [`ExportConflictException`](crate::error::ExportConflictException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -7348,18 +7440,18 @@ pub mod export_conflict_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`ExportConflictError`](crate::error::ExportConflictError)
-        pub fn build(self) -> crate::error::ExportConflictError {
-            crate::error::ExportConflictError {
+        /// Consumes the builder and constructs a [`ExportConflictException`](crate::error::ExportConflictException)
+        pub fn build(self) -> crate::error::ExportConflictException {
+            crate::error::ExportConflictException {
                 message: self.message,
             }
         }
     }
 }
-impl ExportConflictError {
-    /// Creates a new builder-style object to manufacture [`ExportConflictError`](crate::error::ExportConflictError)
-    pub fn builder() -> crate::error::export_conflict_error::Builder {
-        crate::error::export_conflict_error::Builder::default()
+impl ExportConflictException {
+    /// Creates a new builder-style object to manufacture [`ExportConflictException`](crate::error::ExportConflictException)
+    pub fn builder() -> crate::error::export_conflict_exception::Builder {
+        crate::error::export_conflict_exception::Builder::default()
     }
 }
 
@@ -7367,37 +7459,35 @@ impl ExportConflictError {
 /// There was an attempt to insert an item with the same primary key as an item that already exists in the DynamoDB table.
 /// </p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
-pub struct DuplicateItemError {
-    #[serde(rename = "message")]
-    #[serde(default)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DuplicateItemException {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for DuplicateItemError {
+impl std::fmt::Debug for DuplicateItemException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DuplicateItemError");
+        let mut formatter = f.debug_struct("DuplicateItemException");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl DuplicateItemError {
+impl DuplicateItemException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for DuplicateItemError {
+impl std::fmt::Display for DuplicateItemException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "DuplicateItemError [DuplicateItemException]")?;
+        write!(f, "DuplicateItemException")?;
         if let Some(inner_28) = &self.message {
             write!(f, ": {}", inner_28)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for DuplicateItemError {}
-/// See [`DuplicateItemError`](crate::error::DuplicateItemError)
-pub mod duplicate_item_error {
-    /// A builder for [`DuplicateItemError`](crate::error::DuplicateItemError)
+impl std::error::Error for DuplicateItemException {}
+/// See [`DuplicateItemException`](crate::error::DuplicateItemException)
+pub mod duplicate_item_exception {
+    /// A builder for [`DuplicateItemException`](crate::error::DuplicateItemException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -7412,54 +7502,52 @@ pub mod duplicate_item_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`DuplicateItemError`](crate::error::DuplicateItemError)
-        pub fn build(self) -> crate::error::DuplicateItemError {
-            crate::error::DuplicateItemError {
+        /// Consumes the builder and constructs a [`DuplicateItemException`](crate::error::DuplicateItemException)
+        pub fn build(self) -> crate::error::DuplicateItemException {
+            crate::error::DuplicateItemException {
                 message: self.message,
             }
         }
     }
 }
-impl DuplicateItemError {
-    /// Creates a new builder-style object to manufacture [`DuplicateItemError`](crate::error::DuplicateItemError)
-    pub fn builder() -> crate::error::duplicate_item_error::Builder {
-        crate::error::duplicate_item_error::Builder::default()
+impl DuplicateItemException {
+    /// Creates a new builder-style object to manufacture [`DuplicateItemException`](crate::error::DuplicateItemException)
+    pub fn builder() -> crate::error::duplicate_item_exception::Builder {
+        crate::error::duplicate_item_exception::Builder::default()
     }
 }
 
 /// <p>The specified export was not found.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
-pub struct ExportNotFoundError {
-    #[serde(rename = "message")]
-    #[serde(default)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ExportNotFoundException {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for ExportNotFoundError {
+impl std::fmt::Debug for ExportNotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ExportNotFoundError");
+        let mut formatter = f.debug_struct("ExportNotFoundException");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl ExportNotFoundError {
+impl ExportNotFoundException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for ExportNotFoundError {
+impl std::fmt::Display for ExportNotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "ExportNotFoundError [ExportNotFoundException]")?;
+        write!(f, "ExportNotFoundException")?;
         if let Some(inner_29) = &self.message {
             write!(f, ": {}", inner_29)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for ExportNotFoundError {}
-/// See [`ExportNotFoundError`](crate::error::ExportNotFoundError)
-pub mod export_not_found_error {
-    /// A builder for [`ExportNotFoundError`](crate::error::ExportNotFoundError)
+impl std::error::Error for ExportNotFoundException {}
+/// See [`ExportNotFoundException`](crate::error::ExportNotFoundException)
+pub mod export_not_found_exception {
+    /// A builder for [`ExportNotFoundException`](crate::error::ExportNotFoundException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -7474,57 +7562,52 @@ pub mod export_not_found_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`ExportNotFoundError`](crate::error::ExportNotFoundError)
-        pub fn build(self) -> crate::error::ExportNotFoundError {
-            crate::error::ExportNotFoundError {
+        /// Consumes the builder and constructs a [`ExportNotFoundException`](crate::error::ExportNotFoundException)
+        pub fn build(self) -> crate::error::ExportNotFoundException {
+            crate::error::ExportNotFoundException {
                 message: self.message,
             }
         }
     }
 }
-impl ExportNotFoundError {
-    /// Creates a new builder-style object to manufacture [`ExportNotFoundError`](crate::error::ExportNotFoundError)
-    pub fn builder() -> crate::error::export_not_found_error::Builder {
-        crate::error::export_not_found_error::Builder::default()
+impl ExportNotFoundException {
+    /// Creates a new builder-style object to manufacture [`ExportNotFoundException`](crate::error::ExportNotFoundException)
+    pub fn builder() -> crate::error::export_not_found_exception::Builder {
+        crate::error::export_not_found_exception::Builder::default()
     }
 }
 
 /// <p>The specified global table already exists.</p>
 #[non_exhaustive]
-#[derive(serde::Deserialize, std::clone::Clone, std::cmp::PartialEq)]
-pub struct GlobalTableAlreadyExistsError {
-    #[serde(rename = "message")]
-    #[serde(default)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GlobalTableAlreadyExistsException {
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for GlobalTableAlreadyExistsError {
+impl std::fmt::Debug for GlobalTableAlreadyExistsException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GlobalTableAlreadyExistsError");
+        let mut formatter = f.debug_struct("GlobalTableAlreadyExistsException");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl GlobalTableAlreadyExistsError {
+impl GlobalTableAlreadyExistsException {
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for GlobalTableAlreadyExistsError {
+impl std::fmt::Display for GlobalTableAlreadyExistsException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(
-            f,
-            "GlobalTableAlreadyExistsError [GlobalTableAlreadyExistsException]"
-        )?;
+        write!(f, "GlobalTableAlreadyExistsException")?;
         if let Some(inner_30) = &self.message {
             write!(f, ": {}", inner_30)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for GlobalTableAlreadyExistsError {}
-/// See [`GlobalTableAlreadyExistsError`](crate::error::GlobalTableAlreadyExistsError)
-pub mod global_table_already_exists_error {
-    /// A builder for [`GlobalTableAlreadyExistsError`](crate::error::GlobalTableAlreadyExistsError)
+impl std::error::Error for GlobalTableAlreadyExistsException {}
+/// See [`GlobalTableAlreadyExistsException`](crate::error::GlobalTableAlreadyExistsException)
+pub mod global_table_already_exists_exception {
+    /// A builder for [`GlobalTableAlreadyExistsException`](crate::error::GlobalTableAlreadyExistsException)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
@@ -7539,17 +7622,17 @@ pub mod global_table_already_exists_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`GlobalTableAlreadyExistsError`](crate::error::GlobalTableAlreadyExistsError)
-        pub fn build(self) -> crate::error::GlobalTableAlreadyExistsError {
-            crate::error::GlobalTableAlreadyExistsError {
+        /// Consumes the builder and constructs a [`GlobalTableAlreadyExistsException`](crate::error::GlobalTableAlreadyExistsException)
+        pub fn build(self) -> crate::error::GlobalTableAlreadyExistsException {
+            crate::error::GlobalTableAlreadyExistsException {
                 message: self.message,
             }
         }
     }
 }
-impl GlobalTableAlreadyExistsError {
-    /// Creates a new builder-style object to manufacture [`GlobalTableAlreadyExistsError`](crate::error::GlobalTableAlreadyExistsError)
-    pub fn builder() -> crate::error::global_table_already_exists_error::Builder {
-        crate::error::global_table_already_exists_error::Builder::default()
+impl GlobalTableAlreadyExistsException {
+    /// Creates a new builder-style object to manufacture [`GlobalTableAlreadyExistsException`](crate::error::GlobalTableAlreadyExistsException)
+    pub fn builder() -> crate::error::global_table_already_exists_exception::Builder {
+        crate::error::global_table_already_exists_exception::Builder::default()
     }
 }

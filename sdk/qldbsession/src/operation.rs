@@ -29,73 +29,6 @@ impl SendCommand {
     pub fn builder() -> crate::input::send_command_input::Builder {
         crate::input::send_command_input::Builder::default()
     }
-    #[allow(clippy::unnecessary_wraps)]
-    #[allow(dead_code)]
-    fn parse_response(
-        &self,
-        response: &http::response::Response<bytes::Bytes>,
-    ) -> std::result::Result<crate::output::SendCommandOutput, crate::error::SendCommandError> {
-        if crate::aws_json_errors::is_error(&response) {
-            let body = serde_json::from_slice(response.body().as_ref())
-                .unwrap_or_else(|_| serde_json::json!({}));
-            let generic = crate::aws_json_errors::parse_generic_error(&response, &body);
-            let error_code = match generic.code() {
-                Some(code) => code,
-                None => return Err(crate::error::SendCommandError::unhandled(generic)),
-            };
-            return Err(match error_code {
-                "BadRequestException" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::SendCommandError {
-                        kind: crate::error::SendCommandErrorKind::BadRequestError(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::SendCommandError::unhandled(e),
-                },
-                "CapacityExceededException" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::SendCommandError {
-                        kind: crate::error::SendCommandErrorKind::CapacityExceededError(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::SendCommandError::unhandled(e),
-                },
-                "InvalidSessionException" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::SendCommandError {
-                        kind: crate::error::SendCommandErrorKind::InvalidSessionError(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::SendCommandError::unhandled(e),
-                },
-                "LimitExceededException" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::SendCommandError {
-                        kind: crate::error::SendCommandErrorKind::LimitExceededError(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::SendCommandError::unhandled(e),
-                },
-                "OccConflictException" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::SendCommandError {
-                        kind: crate::error::SendCommandErrorKind::OccConflictError(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::SendCommandError::unhandled(e),
-                },
-                "RateExceededException" => match serde_json::from_value(body) {
-                    Ok(body) => crate::error::SendCommandError {
-                        kind: crate::error::SendCommandErrorKind::RateExceededError(body),
-                        meta: generic,
-                    },
-                    Err(e) => crate::error::SendCommandError::unhandled(e),
-                },
-                _ => crate::error::SendCommandError::generic(generic),
-            });
-        }
-        #[allow(unused_mut)]
-        let mut builder = crate::output::send_command_output::Builder::default();
-        builder =
-            crate::json_deser::send_command_deser_operation(response.body().as_ref(), builder)
-                .map_err(crate::error::SendCommandError::unhandled)?;
-        Ok(builder.build())
-    }
     pub fn new() -> Self {
         Self { _private: () }
     }
@@ -104,6 +37,10 @@ impl smithy_http::response::ParseStrictResponse for SendCommand {
     type Output =
         std::result::Result<crate::output::SendCommandOutput, crate::error::SendCommandError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        self.parse_response(response)
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_send_command_error(response)
+        } else {
+            crate::operation_deser::parse_send_command_response(response)
+        }
     }
 }

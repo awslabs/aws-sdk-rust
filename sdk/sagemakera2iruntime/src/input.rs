@@ -29,7 +29,7 @@ pub mod delete_human_loop_input {
             smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DeleteHumanLoopInput {
-                human_loop_name: self.human_loop_name.unwrap_or_default(),
+                human_loop_name: self.human_loop_name,
             })
         }
     }
@@ -94,13 +94,31 @@ impl DeleteHumanLoopInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let human_loop_name = {
+            let input = &self.human_loop_name;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "human_loop_name",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "human_loop_name",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
         write!(
             output,
             "/human-loops/{HumanLoopName}",
-            HumanLoopName = smithy_http::label::fmt_string(&self.human_loop_name, false)
+            HumanLoopName = human_loop_name
         )
-        .expect("formatting should succeed")
+        .expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -108,7 +126,7 @@ impl DeleteHumanLoopInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("DELETE").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -163,7 +181,7 @@ pub mod describe_human_loop_input {
             smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeHumanLoopInput {
-                human_loop_name: self.human_loop_name.unwrap_or_default(),
+                human_loop_name: self.human_loop_name,
             })
         }
     }
@@ -228,13 +246,31 @@ impl DescribeHumanLoopInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let human_loop_name = {
+            let input = &self.human_loop_name;
+            let input = input
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "human_loop_name",
+                    details: "cannot be empty or unset",
+                })?;
+            let formatted = smithy_http::label::fmt_string(input, false);
+            if formatted.is_empty() {
+                return Err(smithy_http::operation::BuildError::MissingField {
+                    field: "human_loop_name",
+                    details: "cannot be empty or unset",
+                });
+            }
+            formatted
+        };
         write!(
             output,
             "/human-loops/{HumanLoopName}",
-            HumanLoopName = smithy_http::label::fmt_string(&self.human_loop_name, false)
+            HumanLoopName = human_loop_name
         )
-        .expect("formatting should succeed")
+        .expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -242,7 +278,7 @@ impl DescribeHumanLoopInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("GET").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -429,8 +465,9 @@ impl ListHumanLoopsInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(output, "/human-loops").expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        write!(output, "/human-loops").expect("formatting should succeed");
+        Ok(())
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
@@ -474,7 +511,7 @@ impl ListHumanLoopsInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         self.uri_query(&mut uri);
         Ok(builder.method("GET").uri(uri))
     }
@@ -641,8 +678,9 @@ impl StartHumanLoopInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(output, "/human-loops").expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        write!(output, "/human-loops").expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -650,7 +688,7 @@ impl StartHumanLoopInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("POST").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -770,8 +808,9 @@ impl StopHumanLoopInput {
             op
         })
     }
-    fn uri_base(&self, output: &mut String) {
-        write!(output, "/human-loops/stop").expect("formatting should succeed")
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        write!(output, "/human-loops/stop").expect("formatting should succeed");
+        Ok(())
     }
     #[allow(clippy::unnecessary_wraps)]
     fn update_http_builder(
@@ -779,7 +818,7 @@ impl StopHumanLoopInput {
         builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
-        self.uri_base(&mut uri);
+        self.uri_base(&mut uri)?;
         Ok(builder.method("POST").uri(uri))
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -880,7 +919,7 @@ impl std::fmt::Debug for ListHumanLoopsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeHumanLoopInput {
     /// <p>The name of the human loop that you want information about.</p>
-    pub human_loop_name: std::string::String,
+    pub human_loop_name: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DescribeHumanLoopInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -894,7 +933,7 @@ impl std::fmt::Debug for DescribeHumanLoopInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteHumanLoopInput {
     /// <p>The name of the human loop that you want to delete.</p>
-    pub human_loop_name: std::string::String,
+    pub human_loop_name: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DeleteHumanLoopInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

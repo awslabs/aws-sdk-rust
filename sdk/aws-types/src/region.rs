@@ -31,6 +31,59 @@ impl Region {
     pub fn new(region: impl Into<Cow<'static, str>>) -> Self {
         Self(region.into())
     }
+    pub const fn from_static(region: &'static str) -> Self {
+        Self(Cow::Borrowed(region))
+    }
+}
+
+pub struct ChainProvider {
+    providers: Vec<Box<dyn ProvideRegion>>,
+}
+
+/// Implement a region provider based on a series of region providers
+///
+/// # Example
+/// ```rust
+/// use aws_types::region::{ChainProvider, Region};
+/// use std::env;
+/// // region provider that first checks the `CUSTOM_REGION` environment variable,
+/// // then checks the default provider chain, then falls back to us-east-2
+/// let provider = ChainProvider::first_try(env::var("CUSTOM_REGION").ok().map(Region::new))
+///     .or_default_provider()
+///     .or_else(Region::new("us-east-2"));
+/// ```
+impl ChainProvider {
+    pub fn first_try(provider: impl ProvideRegion + 'static) -> Self {
+        ChainProvider {
+            providers: vec![Box::new(provider)],
+        }
+    }
+    pub fn or_else(mut self, fallback: impl ProvideRegion + 'static) -> Self {
+        self.providers.push(Box::new(fallback));
+        self
+    }
+
+    pub fn or_default_provider(mut self) -> Self {
+        self.providers.push(Box::new(default_provider()));
+        self
+    }
+}
+
+impl ProvideRegion for Option<Region> {
+    fn region(&self) -> Option<Region> {
+        self.clone()
+    }
+}
+
+impl ProvideRegion for ChainProvider {
+    fn region(&self) -> Option<Region> {
+        for provider in &self.providers {
+            if let Some(region) = provider.region() {
+                return Some(region);
+            }
+        }
+        None
+    }
 }
 
 /// Provide a [`Region`](Region) to use with AWS requests

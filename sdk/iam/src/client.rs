@@ -587,7 +587,7 @@ pub mod fluent_builders {
         pub async fn send(
             self,
         ) -> std::result::Result<
-            crate::output::AddClientIDToOpenIDConnectProviderOutput,
+            crate::output::AddClientIdToOpenIdConnectProviderOutput,
             smithy_http::result::SdkError<crate::error::AddClientIDToOpenIDConnectProviderError>,
         >
         where
@@ -1270,7 +1270,7 @@ pub mod fluent_builders {
         pub async fn send(
             self,
         ) -> std::result::Result<
-            crate::output::CreateOpenIDConnectProviderOutput,
+            crate::output::CreateOpenIdConnectProviderOutput,
             smithy_http::result::SdkError<crate::error::CreateOpenIDConnectProviderError>,
         >
         where
@@ -1756,7 +1756,7 @@ pub mod fluent_builders {
         pub async fn send(
             self,
         ) -> std::result::Result<
-            crate::output::CreateSAMLProviderOutput,
+            crate::output::CreateSamlProviderOutput,
             smithy_http::result::SdkError<crate::error::CreateSAMLProviderError>,
         >
         where
@@ -2062,7 +2062,7 @@ pub mod fluent_builders {
         pub async fn send(
             self,
         ) -> std::result::Result<
-            crate::output::CreateVirtualMFADeviceOutput,
+            crate::output::CreateVirtualMfaDeviceOutput,
             smithy_http::result::SdkError<crate::error::CreateVirtualMFADeviceError>,
         >
         where
@@ -2142,7 +2142,7 @@ pub mod fluent_builders {
         pub async fn send(
             self,
         ) -> std::result::Result<
-            crate::output::DeactivateMFADeviceOutput,
+            crate::output::DeactivateMfaDeviceOutput,
             smithy_http::result::SdkError<crate::error::DeactivateMFADeviceError>,
         >
         where
@@ -2525,7 +2525,7 @@ pub mod fluent_builders {
         pub async fn send(
             self,
         ) -> std::result::Result<
-            crate::output::DeleteOpenIDConnectProviderOutput,
+            crate::output::DeleteOpenIdConnectProviderOutput,
             smithy_http::result::SdkError<crate::error::DeleteOpenIDConnectProviderError>,
         >
         where
@@ -2812,7 +2812,7 @@ pub mod fluent_builders {
         pub async fn send(
             self,
         ) -> std::result::Result<
-            crate::output::DeleteSAMLProviderOutput,
+            crate::output::DeleteSamlProviderOutput,
             smithy_http::result::SdkError<crate::error::DeleteSAMLProviderError>,
         >
         where
@@ -3063,7 +3063,7 @@ pub mod fluent_builders {
         pub async fn send(
             self,
         ) -> std::result::Result<
-            crate::output::DeleteSSHPublicKeyOutput,
+            crate::output::DeleteSshPublicKeyOutput,
             smithy_http::result::SdkError<crate::error::DeleteSSHPublicKeyError>,
         >
         where
@@ -3260,7 +3260,7 @@ pub mod fluent_builders {
         pub async fn send(
             self,
         ) -> std::result::Result<
-            crate::output::DeleteVirtualMFADeviceOutput,
+            crate::output::DeleteVirtualMfaDeviceOutput,
             smithy_http::result::SdkError<crate::error::DeleteVirtualMFADeviceError>,
         >
         where
@@ -3467,7 +3467,7 @@ pub mod fluent_builders {
         pub async fn send(
             self,
         ) -> std::result::Result<
-            crate::output::EnableMFADeviceOutput,
+            crate::output::EnableMfaDeviceOutput,
             smithy_http::result::SdkError<crate::error::EnableMFADeviceError>,
         >
         where
@@ -4297,7 +4297,7 @@ pub mod fluent_builders {
         pub async fn send(
             self,
         ) -> std::result::Result<
-            crate::output::GetOpenIDConnectProviderOutput,
+            crate::output::GetOpenIdConnectProviderOutput,
             smithy_http::result::SdkError<crate::error::GetOpenIDConnectProviderError>,
         >
         where
@@ -4624,7 +4624,7 @@ pub mod fluent_builders {
         pub async fn send(
             self,
         ) -> std::result::Result<
-            crate::output::GetSAMLProviderOutput,
+            crate::output::GetSamlProviderOutput,
             smithy_http::result::SdkError<crate::error::GetSAMLProviderError>,
         >
         where
@@ -4924,7 +4924,7 @@ pub mod fluent_builders {
         pub async fn send(
             self,
         ) -> std::result::Result<
-            crate::output::GetSSHPublicKeyOutput,
+            crate::output::GetSshPublicKeyOutput,
             smithy_http::result::SdkError<crate::error::GetSSHPublicKeyError>,
         >
         where
@@ -6035,7 +6035,7 @@ pub mod fluent_builders {
         pub async fn send(
             self,
         ) -> std::result::Result<
-            crate::output::ListMFADevicesOutput,
+            crate::output::ListMfaDevicesOutput,
             smithy_http::result::SdkError<crate::error::ListMFADevicesError>,
         >
         where
@@ -6106,7 +6106,7 @@ pub mod fluent_builders {
         pub async fn send(
             self,
         ) -> std::result::Result<
-            crate::output::ListMFADeviceTagsOutput,
+            crate::output::ListMfaDeviceTagsOutput,
             smithy_http::result::SdkError<crate::error::ListMFADeviceTagsError>,
         >
         where
@@ -6180,7 +6180,7 @@ pub mod fluent_builders {
         pub async fn send(
             self,
         ) -> std::result::Result<
-            crate::output::ListOpenIDConnectProvidersOutput,
+            crate::output::ListOpenIdConnectProvidersOutput,
             smithy_http::result::SdkError<crate::error::ListOpenIDConnectProvidersError>,
         >
         where
@@ -6212,7 +6212,7 @@ pub mod fluent_builders {
         pub async fn send(
             self,
         ) -> std::result::Result<
-            crate::output::ListOpenIDConnectProviderTagsOutput,
+            crate::output::ListOpenIdConnectProviderTagsOutput,
             smithy_http::result::SdkError<crate::error::ListOpenIDConnectProviderTagsError>,
         >
         where
@@ -6839,7 +6839,7 @@ pub mod fluent_builders {
         pub async fn send(
             self,
         ) -> std::result::Result<
-            crate::output::ListSAMLProvidersOutput,
+            crate::output::ListSamlProvidersOutput,
             smithy_http::result::SdkError<crate::error::ListSAMLProvidersError>,
         >
         where
@@ -6871,7 +6871,7 @@ pub mod fluent_builders {
         pub async fn send(
             self,
         ) -> std::result::Result<
-            crate::output::ListSAMLProviderTagsOutput,
+            crate::output::ListSamlProviderTagsOutput,
             smithy_http::result::SdkError<crate::error::ListSAMLProviderTagsError>,
         >
         where
@@ -7220,7 +7220,7 @@ pub mod fluent_builders {
         pub async fn send(
             self,
         ) -> std::result::Result<
-            crate::output::ListSSHPublicKeysOutput,
+            crate::output::ListSshPublicKeysOutput,
             smithy_http::result::SdkError<crate::error::ListSSHPublicKeysError>,
         >
         where
@@ -7510,7 +7510,7 @@ pub mod fluent_builders {
         pub async fn send(
             self,
         ) -> std::result::Result<
-            crate::output::ListVirtualMFADevicesOutput,
+            crate::output::ListVirtualMfaDevicesOutput,
             smithy_http::result::SdkError<crate::error::ListVirtualMFADevicesError>,
         >
         where
@@ -7953,7 +7953,7 @@ pub mod fluent_builders {
         pub async fn send(
             self,
         ) -> std::result::Result<
-            crate::output::RemoveClientIDFromOpenIDConnectProviderOutput,
+            crate::output::RemoveClientIdFromOpenIdConnectProviderOutput,
             smithy_http::result::SdkError<
                 crate::error::RemoveClientIDFromOpenIDConnectProviderError,
             >,
@@ -8187,7 +8187,7 @@ pub mod fluent_builders {
         pub async fn send(
             self,
         ) -> std::result::Result<
-            crate::output::ResyncMFADeviceOutput,
+            crate::output::ResyncMfaDeviceOutput,
             smithy_http::result::SdkError<crate::error::ResyncMFADeviceError>,
         >
         where
@@ -9081,7 +9081,7 @@ pub mod fluent_builders {
         pub async fn send(
             self,
         ) -> std::result::Result<
-            crate::output::TagMFADeviceOutput,
+            crate::output::TagMfaDeviceOutput,
             smithy_http::result::SdkError<crate::error::TagMFADeviceError>,
         >
         where
@@ -9141,7 +9141,7 @@ pub mod fluent_builders {
         pub async fn send(
             self,
         ) -> std::result::Result<
-            crate::output::TagOpenIDConnectProviderOutput,
+            crate::output::TagOpenIdConnectProviderOutput,
             smithy_http::result::SdkError<crate::error::TagOpenIDConnectProviderError>,
         >
         where
@@ -9314,7 +9314,7 @@ pub mod fluent_builders {
         pub async fn send(
             self,
         ) -> std::result::Result<
-            crate::output::TagSAMLProviderOutput,
+            crate::output::TagSamlProviderOutput,
             smithy_http::result::SdkError<crate::error::TagSAMLProviderError>,
         >
         where
@@ -9546,7 +9546,7 @@ pub mod fluent_builders {
         pub async fn send(
             self,
         ) -> std::result::Result<
-            crate::output::UntagMFADeviceOutput,
+            crate::output::UntagMfaDeviceOutput,
             smithy_http::result::SdkError<crate::error::UntagMFADeviceError>,
         >
         where
@@ -9606,7 +9606,7 @@ pub mod fluent_builders {
         pub async fn send(
             self,
         ) -> std::result::Result<
-            crate::output::UntagOpenIDConnectProviderOutput,
+            crate::output::UntagOpenIdConnectProviderOutput,
             smithy_http::result::SdkError<crate::error::UntagOpenIDConnectProviderError>,
         >
         where
@@ -9781,7 +9781,7 @@ pub mod fluent_builders {
         pub async fn send(
             self,
         ) -> std::result::Result<
-            crate::output::UntagSAMLProviderOutput,
+            crate::output::UntagSamlProviderOutput,
             smithy_http::result::SdkError<crate::error::UntagSAMLProviderError>,
         >
         where
@@ -10407,7 +10407,7 @@ pub mod fluent_builders {
         pub async fn send(
             self,
         ) -> std::result::Result<
-            crate::output::UpdateOpenIDConnectProviderThumbprintOutput,
+            crate::output::UpdateOpenIdConnectProviderThumbprintOutput,
             smithy_http::result::SdkError<crate::error::UpdateOpenIDConnectProviderThumbprintError>,
         >
         where
@@ -10591,7 +10591,7 @@ pub mod fluent_builders {
         pub async fn send(
             self,
         ) -> std::result::Result<
-            crate::output::UpdateSAMLProviderOutput,
+            crate::output::UpdateSamlProviderOutput,
             smithy_http::result::SdkError<crate::error::UpdateSAMLProviderError>,
         >
         where
@@ -10869,7 +10869,7 @@ pub mod fluent_builders {
         pub async fn send(
             self,
         ) -> std::result::Result<
-            crate::output::UpdateSSHPublicKeyOutput,
+            crate::output::UpdateSshPublicKeyOutput,
             smithy_http::result::SdkError<crate::error::UpdateSSHPublicKeyError>,
         >
         where
@@ -11250,7 +11250,7 @@ pub mod fluent_builders {
         pub async fn send(
             self,
         ) -> std::result::Result<
-            crate::output::UploadSSHPublicKeyOutput,
+            crate::output::UploadSshPublicKeyOutput,
             smithy_http::result::SdkError<crate::error::UploadSSHPublicKeyError>,
         >
         where
