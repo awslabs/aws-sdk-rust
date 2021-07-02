@@ -5,240 +5,239 @@ The alpha SDK for Rust currently supports the checked services below. If you wan
 - [x] Amazon API Gateway
 - [x] Amazon Dynamodb
 - [x] Amazon Kinesis
-- [x] Amazon KMS
+- [x] AWS KMS
 - [x] Amazon Polly
-- [x] Amazon Secrets Manager
+- [x] AWS Secrets Manager
 - [X] Amazon Qldb
 - [X] Amazon Qldb-Session
-- [X] Amazon Lambda
+- [X] AWS Lambda
 - [x] [Amazon S3](https://github.com/awslabs/aws-sdk-rust/issues/16)
-- [x] [Amazon SSM](https://github.com/awslabs/aws-sdk-rust/issues/22)
+- [x] [AWS Systems Manager](https://github.com/awslabs/aws-sdk-rust/issues/22)
 - [x] [Amazon SQS](https://github.com/awslabs/aws-sdk-rust/issues/19)
 - [x] [Amazon ECS](https://github.com/awslabs/aws-sdk-rust/issues/28)
-- [x] Amazon Batch
+- [x] AWS Batch
 - [x] [Amazon Route 53](https://github.com/awslabs/aws-sdk-rust/issues/35)
 - [x] [Amazon RDS](https://github.com/awslabs/aws-sdk-rust/issues/36)
-- [x] Amazon Rds-Data
-- [x] [Amazon IAM](https://github.com/awslabs/aws-sdk-rust/issues/21)
+- [x] Amazon RDS Data
+- [x] [AWS IAM](https://github.com/awslabs/aws-sdk-rust/issues/21)
 - [x] [Amazon SNS](https://github.com/awslabs/aws-sdk-rust/issues/26)
-- [x] [Amazon Sts](https://github.com/awslabs/aws-sdk-rust/issues/17)
-- [x] Amazon Medialive
-- [x] Amazon Mediapackage
-- [x] [Amazon Cloud Formation](https://github.com/awslabs/aws-sdk-rust/issues/25)
+- [x] [AWS STS](https://github.com/awslabs/aws-sdk-rust/issues/17)
+- [x] AWS Elemental MediaLive
+- [x] AWS Elemental MediaPackage
+- [x] [AWS CloudFormation](https://github.com/awslabs/aws-sdk-rust/issues/25)
 - [x] Amazon Sagemaker
 - [x] Amazon Sagemaker-A2I-Runtime
 - [x] Amazon Runtime.Sagemaker
-- [x] [Amazon Ec2](https://github.com/awslabs/aws-sdk-rust/issues/18)
+- [x] [Amazon EC2](https://github.com/awslabs/aws-sdk-rust/issues/18)
 - [x] [Amazon SES v2](https://github.com/awslabs/aws-sdk-rust/issues/27)
-- [x] [Amazon Cloudwatch Logs](https://github.com/awslabs/aws-sdk-rust/issues/30)
+- [x] [Amazon CloudWatch Logs](https://github.com/awslabs/aws-sdk-rust/issues/30)
 - [x] [Amazon ECR](https://github.com/awslabs/aws-sdk-rust/issues/34)
 - [x] Amazon EKS
 - [x] Cloudwatch (metrics)
 
 ------
-- [ ] Amazon Access Analyzer
-- [ ] Amazon ACM
-- [ ] Amazon Acm-Pca
-- [ ] Amazon Alexa For Business
-- [ ] Amazon Amplify
+- [ ] AWS IAM Access Analyzer
+- [ ] AWS ACM
+- [ ] AWS ACM-PCA
+- [ ] Alexa For Business
+- [ ] AWS Amplify
 - [ ] Amazon API Gateway Management API
 - [ ] Amazon API Gateway v2
-- [ ] Amazon App Config
-- [ ] Amazon App Flow
-- [ ] [Amazon Auto Scaling](https://github.com/awslabs/aws-sdk-rust/issues/33)
-- [ ] Amazon Application-Insights
-- [ ] Amazon Appmesh
-- [ ] Amazon Appstream
-- [ ] Amazon App Sync
+- [ ] AWS AppConfig
+- [ ] Amazon AppFlow
+- [ ] [AWS AppConfig Auto Scaling](https://github.com/awslabs/aws-sdk-rust/issues/33)
+- [ ] Amazon CloudWatch Application-Insights
+- [ ] AWS App Mesh
+- [ ] Amazon Appstream 2.0
+- [ ] AWS AppSync
 - [ ] Amazon Athena
-- [ ] Amazon Autoscaling
-- [ ] Amazon Autoscaling-Plans
-- [ ] Amazon Awsmigrationhub
-- [ ] Amazon Backup
+- [ ] Amazon Autoscaling Plans
+- [ ] AWS Migration Hub
+- [ ] AWS Backup
 - [ ] Amazon Braket
-- [ ] Amazon Budgets
-- [ ] Amazon Ce
+- [ ] AWS Budgets
+- [ ] AWS Cost Explorer
 - [ ] Amazon Chime
-- [ ] Amazon Cloud9
+- [ ] AWS Cloud9
 - [ ] Amazon Cloud Directory
-- [ ] Amazon Cloud Front
-- [ ] Amazon Cloudhsm
-- [ ] Amazon Cloudhsmv2
-- [ ] Amazon Cloudsearch
-- [ ] Amazon Cloudsearchdomain
-- [ ] Amazon Cloud Trail
-- [ ] Amazon Code Artifact
-- [ ] Amazon Code Build
-- [ ] Amazon Code Commit
-- [ ] Amazon Code Deploy
-- [ ] Amazon Code Guru Profiler
-- [ ] Amazon Code Guru Reviewer
-- [ ] Amazon Code Pipeline
-- [ ] Amazon Codestar
-- [ ] Amazon Codestar-Connections
-- [ ] Amazon Codestar-Notifications
+- [ ] Amazon CloudFront
+- [ ] AWS CloudHSM
+- [ ] Amazon CloudHSM Classic
+- [ ] Amazon CloudSearch
+- [ ] Amazon CloudSearch Domain
+- [ ] AWS CloudTrail
+- [ ] AWS CodeArtifact
+- [ ] AWS CodeBuild
+- [ ] AWS CodeCommit
+- [ ] AWS CodeDeploy
+- [ ] Amazon CodeGuru Profiler
+- [ ] Amazon CodeGuru Reviewer
+- [ ] AWS CodePipeline
+- [ ] AWS CodeStar
+- [ ] AWS CodeStar Connections
+- [ ] AWS CodeStar Notifications
 - [ ] Amazon Cognito Identity
 - [ ] Amazon Cognito Identity Provider
 - [ ] Amazon Cognito Sync
 - [ ] Amazon Comprehend
-- [ ] Amazon Comprehendmedical
-- [ ] Amazon Compute-Optimizer
-- [ ] [Amazon Config](https://github.com/awslabs/aws-sdk-rust/issues/31)
+- [ ] Amazon Comprehend Medical
+- [ ] Amazon Compute Optimizer
+- [ ] [AWS Config](https://github.com/awslabs/aws-sdk-rust/issues/31)
 - [ ] Amazon Connect
-- [ ] Amazon Connectparticipant
-- [ ] Amazon Cur
-- [ ] Amazon Databrew
-- [ ] Amazon Dataexchange
-- [ ] Amazon Datapipeline
-- [ ] Amazon Datasync
-- [ ] Amazon Dax
+- [ ] Amazon Connect Participant
+- [ ] AWS CUR
+- [ ] Amazon Glue DataBrew
+- [ ] AWS Data Exchange
+- [ ] AWS Data Pipeline
+- [ ] AWS DataSync
+- [ ] Amazon DAX
 - [ ] Amazon Detective
-- [ ] Amazon Device Farm
-- [ ] Amazon Direct Connect
-- [ ] Amazon Discovery
-- [ ] Amazon Dlm
+- [ ] AWS Device Farm
+- [ ] AWS Direct Connect
+- [ ] AWS Application Discovery
+- [ ] Amazon DLM
 - [ ] Amazon DMS
-- [ ] Amazon Docdb
-- [ ] Amazon DS
-- [ ] Amazon Ebs
-- [ ] Amazon Ec2-Instance-Connect
-- [ ] Amazon Elasticache
-- [ ] Amazon Elastic Beanstalk
-- [ ] Amazon Elastic Filesystem
+- [ ] Amazon DocumentDB
+- [ ] AWS Directory Service
+- [ ] Amazon EBS
+- [ ] Amazon EC2-Instance-Connect
+- [ ] Amazon ElastiCache
+- [ ] AWS Elastic Beanstalk
+- [ ] Amazon EFS
 - [ ] Amazon Elastic Inference
-- [ ] Amazon Elastic Load Balancing
-- [ ] Amazon Elastic Load Balancing v2
-- [ ] Amazon Elastic Map Reduce
+- [ ] Elastic Load Balancing
+- [ ] Elastic Load Balancing v2
+- [ ] Amazon EMR
 - [ ] Amazon Elastic Transcoder
-- [ ] Amazon Email
-- [ ] Amazon Entitlement.Marketplace
+- [ ] Amazon SES
+- [ ] Amazon Marketplace Entitlement
 - [ ] Amazon ES
-- [ ] Amazon Eventbridge
-- [ ] Amazon Events
-- [ ] Amazon Firehose
-- [ ] Amazon FMS
+- [ ] Amazon EventBridge
+- [ ] Amazon IoT Events
+- [ ] Amazon Kinesis Data Firehose
+- [ ] AWS FMS
 - [ ] Amazon Forecast
 - [ ] Amazon Forecast Query
 - [ ] Amazon Fraud Detector
-- [ ] Amazon FSX
-- [ ] Amazon Gamelift
-- [ ] Amazon Glacier
-- [ ] Amazon Global Accelerator
-- [ ] Amazon Glue
-- [ ] Amazon Greengrass
-- [ ] Amazon Groundstation
-- [ ] Amazon Guardduty
-- [ ] Amazon Health
+- [ ] Amazon FSx
+- [ ] Amazon GameLift
+- [ ] Amazon S3 Glacier
+- [ ] AWS Global Accelerator
+- [ ] AWS Glue
+- [ ] Amazon IoT Greengrass
+- [ ] AWS Ground Station
+- [ ] Amazon GuardDuty
+- [ ] AWS Health
 - [ ] Amazon Honeycode
-- [ ] Amazon Identitystore
-- [ ] Amazon Imagebuilder
+- [ ] AWS SSO Identity Store
+- [ ] Amazon EC2 Image Builder
 - [ ] Amazon Inspector
-- [ ] Amazon IOT
-- [ ] Amazon Iot1Click-Devices
-- [ ] Amazon Iot1Click-Projects
-- [ ] Amazon IoT Analytics
-- [ ] Amazon IoT Data
-- [ ] Amazon IoT Events
-- [ ] Amazon Iotevents-Data
-- [ ] Amazon Iot-Jobs-Data
-- [ ] Amazon Iotsecuretunneling
-- [ ] Amazon Iotsitewise
-- [ ] Amazon Iotthingsgraph
-- [ ] Amazon Ivs
-- [ ] Amazon Kafka
+- [ ] AWS IoT
+- [ ] AWS IoT 1-Click Devices
+- [ ] AWS IoT 1-Click Projects
+- [ ] AWS IoT Analytics
+- [ ] AWS IoT Data
+- [ ] AWS IoT Events
+- [ ] AWS IoT Events Data
+- [ ] AWS IoT Jobs Data
+- [ ] AWS IoT SecureTunneling
+- [ ] AWS IoT SiteWise
+- [ ] AWS IoT Things Graph
+- [ ] Amazon IVS
+- [ ] Amazon MSK
 - [ ] Amazon Kendra
 - [ ] Amazon Kinesis Analytics
 - [ ] Amazon Kinesis Analytics v2
 - [ ] Amazon Kinesis Video
-- [ ] Amazon Kinesis-Video-Archived-Media
-- [ ] Amazon Kinesis-Video-Media
-- [ ] Amazon Kinesis-Video-Signaling
-- [ ] Amazon Lake Formation
-- [ ] Amazon Lambda
-- [ ] Amazon Lex-Models
-- [ ] Amazon License-Manager
+- [ ] Amazon Kinesis Video Archived Media
+- [ ] Amazon Kinesis Video Media
+- [ ] Amazon Kinesis Video Signaling
+- [ ] AWS Lake Formation
+- [ ] AWS Lambda
+- [ ] Amazon Lex Models
+- [ ] AWS License Manager
 - [ ] Amazon Lightsail
-- [ ] Amazon Logs
+- [ ] Amazon CloudWatch Logs
 - [ ] Amazon Machine Learning
 - [ ] Amazon Macie
 - [ ] Amazon Macie2
-- [ ] Amazon Managedblockchain
-- [ ] Amazon Marketplace-Catalog
-- [ ] Amazon Marketplacecommerceanalytics
-- [ ] Amazon Mediaconnect
-- [ ] Amazon Mediaconvert
-- [ ] Amazon Mediapackage-Vod
-- [ ] Amazon Mediastore
-- [ ] Amazon Mediastore-Data
-- [ ] Amazon Mediatailor
-- [ ] Amazon Meteringmarketplace
-- [ ] Amazon Migrationhub-Config
-- [ ] Amazon Mobile
+- [ ] Amazon Managed Blockchain
+- [ ] Amazon Marketplace Catalog
+- [ ] Amazon Marketplace Commerce Analytics
+- [ ] AWS Elemental MediaConnect
+- [ ] AWS Elemental MediaConvert
+- [ ] AWS Elemental MediaPackage VOD
+- [ ] AWS Elemental MediaStore
+- [ ] AWS Elemental MediaStore Data
+- [ ] AWS Elemental MediaTailor
+- [ ] AWS Marketplace Metering
+- [ ] AWS Migration Hub Config
+- [ ] AWS Console Mobile
 - [ ] Amazon Monitoring
 - [ ] Amazon Mq
-- [ ] Amazon Mturk-Requester
+- [ ] Amazon MTurk Requester
 - [ ] Amazon Neptune
-- [ ] Amazon Network-Firewall
-- [ ] Amazon Networkmanager
-- [ ] Amazon Ops Works
-- [ ] Amazon Opsworkscm
-- [ ] Amazon Organizations
-- [ ] Amazon Outposts
+- [ ] Amazon Network Firewall
+- [ ] AWS Network Manager
+- [ ] AWS OpsWorks
+- [ ] AWS OpsWorks CM
+- [ ] AWS Organizations
+- [ ] AWS Outposts
 - [ ] Amazon Personalize
-- [ ] Amazon Personalize-Events
-- [ ] Amazon Personalize-Runtime
-- [ ] Amazon Pi
+- [ ] Amazon Personalize Events
+- [ ] Amazon Personalize Runtime
+- [ ] AWS PI
 - [ ] Amazon Pinpoint
-- [ ] Amazon Pinpoint-Email
+- [ ] Amazon Pinpoint Email
 - [ ] Amazon Pricing
-- [ ] Amazon Quicksight
-- [ ] Amazon RAM
+- [ ] Amazon QuickSight
+- [ ] AWS RAM
 - [ ] Amazon Redshift
-- [ ] Amazon Redshift-Data
+- [ ] Amazon Redshift Data
 - [ ] Amazon Rekognition
-- [ ] Amazon Resource-Groups
-- [ ] Amazon Resourcegroupstaggingapi
-- [ ] Amazon Robomaker
-- [ ] Amazon Route53Domains
-- [ ] Amazon Route53Resolver
-- [ ] Amazon Runtime.Lex
-- [ ] Amazon S3Control
-- [ ] Amazon S3Outposts
-- [ ] Amazon Savingsplans
-- [ ] Amazon Schemas
-- [ ] Amazon Securityhub
-- [ ] Amazon Serverlessrepo
-- [ ] Amazon Servicecatalog
-- [ ] Amazon Servicecatalog-Appregistry
-- [ ] Amazon Service Discovery
-- [ ] Amazon Service-Quotas
-- [ ] Amazon Shield
-- [ ] Amazon Signer
-- [ ] Amazon SMS
-- [ ] Amazon Sms-Voice
-- [ ] Amazon Snowball
-- [ ] Amazon SSO
-- [ ] Amazon Sso-Admin
-- [ ] Amazon Sso-Oidc
+- [ ] AWS Resource Groups
+- [ ] AWS Resource Groups Tagging API
+- [ ] AWS RoboMaker
+- [ ] Amazon Route 53 Domains
+- [ ] Amazon Route 53 Resolver
+- [ ] Amazon Lex Runtime
+- [ ] Amazon S3 Control
+- [ ] Amazon S3 on Outposts
+- [ ] AWS Pricing Calculator Savings Plans
+- [ ] Amazon EventBridge Schemas
+- [ ] AWS Security Hub
+- [ ] AWS Serverless Application Repository
+- [ ] AWS ServiceCatalog
+- [ ] AWS Service Catalog AppRegistry
+- [ ] AWS Service Discovery
+- [ ] AWS Service Catalog Service Quotas
+- [ ] AWS Shield
+- [ ] AWS Signer
+- [ ] AWS SMS
+- [ ] AWS SMS Voice
+- [ ] AWS Snowball
+- [ ] AWS SSO
+- [ ] AWS SSO Admin
+- [ ] AWS SSO OIDC
 - [ ] Amazon States
-- [ ] Amazon Storagegateway
-- [ ] Amazon Streams.Dynamodb
-- [ ] Amazon Support
+- [ ] AWS Storage Gateway
+- [ ] AWS DynamoDB Streams
+- [ ] AWS Support
 - [ ] Amazon Swf
-- [ ] Amazon Synthetics
+- [ ] Amazon CloudWatch Synthetics
 - [ ] Amazon Textract
-- [ ] Amazon Timestream-Query
-- [ ] Amazon Timestream-Write
+- [ ] Amazon Timestream Query
+- [ ] Amazon Timestream Write
 - [ ] Amazon Transcribe
-- [ ] Amazon Transcribe-Streaming
-- [ ] Amazon Transfer
+- [ ] Amazon Transcribe Streaming
+- [ ] AWS Transfer Family
 - [ ] Amazon Translate
-- [ ] Amazon Waf
-- [ ] Amazon Waf-Regional
-- [ ] [Amazon Wafv2](https://github.com/awslabs/aws-sdk-rust/issues/118)
-- [ ] Amazon Workdocs
-- [ ] Amazon Worklink
-- [ ] Amazon Workmail
-- [ ] Amazon Workmailmessageflow
-- [ ] Amazon Workspaces
-- [ ] Amazon Xray
+- [ ] AWS WAF
+- [ ] AWS WAF Regional
+- [ ] [AWS WAF v2](https://github.com/awslabs/aws-sdk-rust/issues/118)
+- [ ] Amazon WorkDocs
+- [ ] Amazon WorkLink
+- [ ] Amazon WorkMail
+- [ ] Amazon WorkMail Message Flow
+- [ ] Amazon WorkSpaces
+- [ ] AWS X-Ray
