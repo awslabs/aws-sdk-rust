@@ -1265,6 +1265,45 @@ pub fn deser_structure_custom_key_store_has_cm_ks_exceptionjson_err(
     Ok(builder)
 }
 
+pub fn deser_structure_invalid_marker_exceptionjson_err(
+    input: &[u8],
+    mut builder: crate::error::invalid_marker_exception::Builder,
+) -> Result<crate::error::invalid_marker_exception::Builder, smithy_json::deserialize::Error> {
+    let mut tokens_owned =
+        smithy_json::deserialize::json_token_iter(crate::json_deser::or_empty_doc(input))
+            .peekable();
+    let tokens = &mut tokens_owned;
+    smithy_json::deserialize::token::expect_start_object(tokens.next())?;
+    loop {
+        match tokens.next().transpose()? {
+            Some(smithy_json::deserialize::Token::EndObject { .. }) => break,
+            Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                match key.to_unescaped()?.as_ref() {
+                    "message" => {
+                        builder = builder.set_message(
+                            smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                .transpose()?,
+                        );
+                    }
+                    _ => smithy_json::deserialize::token::skip_value(tokens)?,
+                }
+            }
+            _ => {
+                return Err(smithy_json::deserialize::Error::custom(
+                    "expected object key or end object",
+                ))
+            }
+        }
+    }
+    if tokens.next().is_some() {
+        return Err(smithy_json::deserialize::Error::custom(
+            "found more JSON tokens after completing parsing",
+        ));
+    }
+    Ok(builder)
+}
+
 pub fn deser_operation_describe_custom_key_stores(
     input: &[u8],
     mut builder: crate::output::describe_custom_key_stores_output::Builder,
@@ -1999,45 +2038,6 @@ pub fn deser_structure_invalid_import_token_exceptionjson_err(
     Ok(builder)
 }
 
-pub fn deser_structure_invalid_marker_exceptionjson_err(
-    input: &[u8],
-    mut builder: crate::error::invalid_marker_exception::Builder,
-) -> Result<crate::error::invalid_marker_exception::Builder, smithy_json::deserialize::Error> {
-    let mut tokens_owned =
-        smithy_json::deserialize::json_token_iter(crate::json_deser::or_empty_doc(input))
-            .peekable();
-    let tokens = &mut tokens_owned;
-    smithy_json::deserialize::token::expect_start_object(tokens.next())?;
-    loop {
-        match tokens.next().transpose()? {
-            Some(smithy_json::deserialize::Token::EndObject { .. }) => break,
-            Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                match key.to_unescaped()?.as_ref() {
-                    "message" => {
-                        builder = builder.set_message(
-                            smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                .transpose()?,
-                        );
-                    }
-                    _ => smithy_json::deserialize::token::skip_value(tokens)?,
-                }
-            }
-            _ => {
-                return Err(smithy_json::deserialize::Error::custom(
-                    "expected object key or end object",
-                ))
-            }
-        }
-    }
-    if tokens.next().is_some() {
-        return Err(smithy_json::deserialize::Error::custom(
-            "found more JSON tokens after completing parsing",
-        ));
-    }
-    Ok(builder)
-}
-
 pub fn deser_operation_list_aliases(
     input: &[u8],
     mut builder: crate::output::list_aliases_output::Builder,
@@ -2437,6 +2437,54 @@ pub fn deser_operation_re_encrypt(
     Ok(builder)
 }
 
+pub fn deser_operation_replicate_key(
+    input: &[u8],
+    mut builder: crate::output::replicate_key_output::Builder,
+) -> Result<crate::output::replicate_key_output::Builder, smithy_json::deserialize::Error> {
+    let mut tokens_owned =
+        smithy_json::deserialize::json_token_iter(crate::json_deser::or_empty_doc(input))
+            .peekable();
+    let tokens = &mut tokens_owned;
+    smithy_json::deserialize::token::expect_start_object(tokens.next())?;
+    loop {
+        match tokens.next().transpose()? {
+            Some(smithy_json::deserialize::Token::EndObject { .. }) => break,
+            Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                match key.to_unescaped()?.as_ref() {
+                    "ReplicaKeyMetadata" => {
+                        builder = builder.set_replica_key_metadata(
+                            crate::json_deser::deser_structure_key_metadata(tokens)?,
+                        );
+                    }
+                    "ReplicaPolicy" => {
+                        builder = builder.set_replica_policy(
+                            smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                .transpose()?,
+                        );
+                    }
+                    "ReplicaTags" => {
+                        builder = builder
+                            .set_replica_tags(crate::json_deser::deser_list_tag_list(tokens)?);
+                    }
+                    _ => smithy_json::deserialize::token::skip_value(tokens)?,
+                }
+            }
+            _ => {
+                return Err(smithy_json::deserialize::Error::custom(
+                    "expected object key or end object",
+                ))
+            }
+        }
+    }
+    if tokens.next().is_some() {
+        return Err(smithy_json::deserialize::Error::custom(
+            "found more JSON tokens after completing parsing",
+        ));
+    }
+    Ok(builder)
+}
+
 pub fn deser_operation_schedule_key_deletion(
     input: &[u8],
     mut builder: crate::output::schedule_key_deletion_output::Builder,
@@ -2464,6 +2512,22 @@ pub fn deser_operation_schedule_key_deletion(
                                 tokens.next(),
                                 smithy_types::instant::Format::EpochSeconds,
                             )?,
+                        );
+                    }
+                    "KeyState" => {
+                        builder = builder.set_key_state(
+                            smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                .map(|s| {
+                                    s.to_unescaped()
+                                        .map(|u| crate::model::KeyState::from(u.as_ref()))
+                                })
+                                .transpose()?,
+                        );
+                    }
+                    "PendingWindowInDays" => {
+                        builder = builder.set_pending_window_in_days(
+                            smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                .map(|v| v.to_i32()),
                         );
                     }
                     _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -2875,6 +2939,28 @@ where
                                     )?,
                                 );
                             }
+                            "MultiRegion" => {
+                                builder = builder.set_multi_region(
+                                    smithy_json::deserialize::token::expect_bool_or_null(
+                                        tokens.next(),
+                                    )?,
+                                );
+                            }
+                            "MultiRegionConfiguration" => {
+                                builder = builder.set_multi_region_configuration(
+                                    crate::json_deser::deser_structure_multi_region_configuration(
+                                        tokens,
+                                    )?,
+                                );
+                            }
+                            "PendingDeletionWindowInDays" => {
+                                builder = builder.set_pending_deletion_window_in_days(
+                                    smithy_json::deserialize::token::expect_number_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|v| v.to_i32()),
+                                );
+                            }
                             _ => smithy_json::deserialize::token::skip_value(tokens)?,
                         }
                     }
@@ -3198,6 +3284,65 @@ where
         }
         _ => Err(smithy_json::deserialize::Error::custom(
             "expected start array or null",
+        )),
+    }
+}
+
+pub fn deser_structure_multi_region_configuration<'a, I>(
+    tokens: &mut std::iter::Peekable<I>,
+) -> Result<Option<crate::model::MultiRegionConfiguration>, smithy_json::deserialize::Error>
+where
+    I: Iterator<
+        Item = Result<smithy_json::deserialize::Token<'a>, smithy_json::deserialize::Error>,
+    >,
+{
+    match tokens.next().transpose()? {
+        Some(smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
+        Some(smithy_json::deserialize::Token::StartObject { .. }) => {
+            #[allow(unused_mut)]
+            let mut builder = crate::model::MultiRegionConfiguration::builder();
+            loop {
+                match tokens.next().transpose()? {
+                    Some(smithy_json::deserialize::Token::EndObject { .. }) => break,
+                    Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                        match key.to_unescaped()?.as_ref() {
+                            "MultiRegionKeyType" => {
+                                builder = builder.set_multi_region_key_type(
+                                    smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| {
+                                        s.to_unescaped().map(|u| {
+                                            crate::model::MultiRegionKeyType::from(u.as_ref())
+                                        })
+                                    })
+                                    .transpose()?,
+                                );
+                            }
+                            "PrimaryKey" => {
+                                builder = builder.set_primary_key(
+                                    crate::json_deser::deser_structure_multi_region_key(tokens)?,
+                                );
+                            }
+                            "ReplicaKeys" => {
+                                builder = builder.set_replica_keys(
+                                    crate::json_deser::deser_list_multi_region_key_list(tokens)?,
+                                );
+                            }
+                            _ => smithy_json::deserialize::token::skip_value(tokens)?,
+                        }
+                    }
+                    _ => {
+                        return Err(smithy_json::deserialize::Error::custom(
+                            "expected object key or end object",
+                        ))
+                    }
+                }
+            }
+            Ok(Some(builder.build()))
+        }
+        _ => Err(smithy_json::deserialize::Error::custom(
+            "expected start object or null",
         )),
     }
 }
@@ -3599,6 +3744,95 @@ where
         }
         _ => Err(smithy_json::deserialize::Error::custom(
             "expected start object or null",
+        )),
+    }
+}
+
+pub fn deser_structure_multi_region_key<'a, I>(
+    tokens: &mut std::iter::Peekable<I>,
+) -> Result<Option<crate::model::MultiRegionKey>, smithy_json::deserialize::Error>
+where
+    I: Iterator<
+        Item = Result<smithy_json::deserialize::Token<'a>, smithy_json::deserialize::Error>,
+    >,
+{
+    match tokens.next().transpose()? {
+        Some(smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
+        Some(smithy_json::deserialize::Token::StartObject { .. }) => {
+            #[allow(unused_mut)]
+            let mut builder = crate::model::MultiRegionKey::builder();
+            loop {
+                match tokens.next().transpose()? {
+                    Some(smithy_json::deserialize::Token::EndObject { .. }) => break,
+                    Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                        match key.to_unescaped()?.as_ref() {
+                            "Arn" => {
+                                builder = builder.set_arn(
+                                    smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
+                            "Region" => {
+                                builder = builder.set_region(
+                                    smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
+                            _ => smithy_json::deserialize::token::skip_value(tokens)?,
+                        }
+                    }
+                    _ => {
+                        return Err(smithy_json::deserialize::Error::custom(
+                            "expected object key or end object",
+                        ))
+                    }
+                }
+            }
+            Ok(Some(builder.build()))
+        }
+        _ => Err(smithy_json::deserialize::Error::custom(
+            "expected start object or null",
+        )),
+    }
+}
+
+#[allow(clippy::type_complexity, non_snake_case)]
+pub fn deser_list_multi_region_key_list<'a, I>(
+    tokens: &mut std::iter::Peekable<I>,
+) -> Result<Option<std::vec::Vec<crate::model::MultiRegionKey>>, smithy_json::deserialize::Error>
+where
+    I: Iterator<
+        Item = Result<smithy_json::deserialize::Token<'a>, smithy_json::deserialize::Error>,
+    >,
+{
+    match tokens.next().transpose()? {
+        Some(smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
+        Some(smithy_json::deserialize::Token::StartArray { .. }) => {
+            let mut items = Vec::new();
+            loop {
+                match tokens.peek() {
+                    Some(Ok(smithy_json::deserialize::Token::EndArray { .. })) => {
+                        tokens.next().transpose().unwrap();
+                        break;
+                    }
+                    _ => {
+                        let value = crate::json_deser::deser_structure_multi_region_key(tokens)?;
+                        if let Some(value) = value {
+                            items.push(value);
+                        }
+                    }
+                }
+            }
+            Ok(Some(items))
+        }
+        _ => Err(smithy_json::deserialize::Error::custom(
+            "expected start array or null",
         )),
     }
 }

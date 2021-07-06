@@ -85,7 +85,7 @@ fn test_operation() -> Operation<TestOperationParser, AwsErrorRetryPolicy> {
                     signature_versions: SignatureVersion::V4,
                 }),
             );
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut conf,
                 Arc::new(Credentials::from_keys("access_key", "secret_key", None)),
             );

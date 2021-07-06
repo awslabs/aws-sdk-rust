@@ -933,9 +933,9 @@ pub struct RunInstancesOutput {
     pub groups: std::option::Option<std::vec::Vec<crate::model::GroupIdentifier>>,
     /// <p>The instances.</p>
     pub instances: std::option::Option<std::vec::Vec<crate::model::Instance>>,
-    /// <p>The ID of the AWS account that owns the reservation.</p>
+    /// <p>The ID of the account that owns the reservation.</p>
     pub owner_id: std::option::Option<std::string::String>,
-    /// <p>The ID of the requester that launched the instances on your behalf (for example, AWS
+    /// <p>The ID of the requester that launched the instances on your behalf (for example,
     /// Management Console or Auto Scaling).</p>
     pub requester_id: std::option::Option<std::string::String>,
     /// <p>The ID of the reservation.</p>
@@ -991,7 +991,7 @@ pub mod run_instances_output {
             self.instances = input;
             self
         }
-        /// <p>The ID of the AWS account that owns the reservation.</p>
+        /// <p>The ID of the account that owns the reservation.</p>
         pub fn owner_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.owner_id = Some(input.into());
             self
@@ -1000,7 +1000,7 @@ pub mod run_instances_output {
             self.owner_id = input;
             self
         }
-        /// <p>The ID of the requester that launched the instances on your behalf (for example, AWS
+        /// <p>The ID of the requester that launched the instances on your behalf (for example,
         /// Management Console or Auto Scaling).</p>
         pub fn requester_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.requester_id = Some(input.into());
@@ -2679,7 +2679,9 @@ impl PurchaseScheduledInstancesOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PurchaseReservedInstancesOfferingOutput {
-    /// <p>The IDs of the purchased Reserved Instances.</p>
+    /// <p>The IDs of the purchased Reserved Instances. If your purchase crosses into a discounted
+    /// pricing tier, the final Reserved Instances IDs might change. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts-reserved-instances-application.html#crossing-pricing-tiers">Crossing
+    /// pricing tiers</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
     pub reserved_instances_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for PurchaseReservedInstancesOfferingOutput {
@@ -2698,7 +2700,9 @@ pub mod purchase_reserved_instances_offering_output {
         pub(crate) reserved_instances_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The IDs of the purchased Reserved Instances.</p>
+        /// <p>The IDs of the purchased Reserved Instances. If your purchase crosses into a discounted
+        /// pricing tier, the final Reserved Instances IDs might change. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts-reserved-instances-application.html#crossing-pricing-tiers">Crossing
+        /// pricing tiers</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
         pub fn reserved_instances_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.reserved_instances_id = Some(input.into());
             self
@@ -8185,6 +8189,52 @@ impl EnableSerialConsoleAccessOutput {
 
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct EnableImageDeprecationOutput {
+    /// <p>Returns <code>true</code> if the request succeeds; otherwise, it returns an error.</p>
+    pub r#return: std::option::Option<bool>,
+}
+impl std::fmt::Debug for EnableImageDeprecationOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("EnableImageDeprecationOutput");
+        formatter.field("r#return", &self.r#return);
+        formatter.finish()
+    }
+}
+/// See [`EnableImageDeprecationOutput`](crate::output::EnableImageDeprecationOutput)
+pub mod enable_image_deprecation_output {
+    /// A builder for [`EnableImageDeprecationOutput`](crate::output::EnableImageDeprecationOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) r#return: std::option::Option<bool>,
+    }
+    impl Builder {
+        /// <p>Returns <code>true</code> if the request succeeds; otherwise, it returns an error.</p>
+        pub fn r#return(mut self, input: bool) -> Self {
+            self.r#return = Some(input);
+            self
+        }
+        pub fn set_return(mut self, input: std::option::Option<bool>) -> Self {
+            self.r#return = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`EnableImageDeprecationOutput`](crate::output::EnableImageDeprecationOutput)
+        pub fn build(self) -> crate::output::EnableImageDeprecationOutput {
+            crate::output::EnableImageDeprecationOutput {
+                r#return: self.r#return,
+            }
+        }
+    }
+}
+impl EnableImageDeprecationOutput {
+    /// Creates a new builder-style object to manufacture [`EnableImageDeprecationOutput`](crate::output::EnableImageDeprecationOutput)
+    pub fn builder() -> crate::output::enable_image_deprecation_output::Builder {
+        crate::output::enable_image_deprecation_output::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EnableFastSnapshotRestoresOutput {
     /// <p>Information about the snapshots for which fast snapshot restores were successfully enabled.</p>
     pub successful:
@@ -8399,6 +8449,70 @@ impl DisassociateVpcCidrBlockOutput {
     /// Creates a new builder-style object to manufacture [`DisassociateVpcCidrBlockOutput`](crate::output::DisassociateVpcCidrBlockOutput)
     pub fn builder() -> crate::output::disassociate_vpc_cidr_block_output::Builder {
         crate::output::disassociate_vpc_cidr_block_output::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DisassociateTrunkInterfaceOutput {
+    /// <p>Returns <code>true</code> if the request succeeds; otherwise, it returns an error.</p>
+    pub r#return: std::option::Option<bool>,
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
+    /// request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to Ensure
+    /// Idempotency</a>.</p>
+    pub client_token: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for DisassociateTrunkInterfaceOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DisassociateTrunkInterfaceOutput");
+        formatter.field("r#return", &self.r#return);
+        formatter.field("client_token", &self.client_token);
+        formatter.finish()
+    }
+}
+/// See [`DisassociateTrunkInterfaceOutput`](crate::output::DisassociateTrunkInterfaceOutput)
+pub mod disassociate_trunk_interface_output {
+    /// A builder for [`DisassociateTrunkInterfaceOutput`](crate::output::DisassociateTrunkInterfaceOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) r#return: std::option::Option<bool>,
+        pub(crate) client_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>Returns <code>true</code> if the request succeeds; otherwise, it returns an error.</p>
+        pub fn r#return(mut self, input: bool) -> Self {
+            self.r#return = Some(input);
+            self
+        }
+        pub fn set_return(mut self, input: std::option::Option<bool>) -> Self {
+            self.r#return = input;
+            self
+        }
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
+        /// request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to Ensure
+        /// Idempotency</a>.</p>
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.client_token = Some(input.into());
+            self
+        }
+        pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.client_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DisassociateTrunkInterfaceOutput`](crate::output::DisassociateTrunkInterfaceOutput)
+        pub fn build(self) -> crate::output::DisassociateTrunkInterfaceOutput {
+            crate::output::DisassociateTrunkInterfaceOutput {
+                r#return: self.r#return,
+                client_token: self.client_token,
+            }
+        }
+    }
+}
+impl DisassociateTrunkInterfaceOutput {
+    /// Creates a new builder-style object to manufacture [`DisassociateTrunkInterfaceOutput`](crate::output::DisassociateTrunkInterfaceOutput)
+    pub fn builder() -> crate::output::disassociate_trunk_interface_output::Builder {
+        crate::output::disassociate_trunk_interface_output::Builder::default()
     }
 }
 
@@ -9027,6 +9141,52 @@ impl DisableSerialConsoleAccessOutput {
     /// Creates a new builder-style object to manufacture [`DisableSerialConsoleAccessOutput`](crate::output::DisableSerialConsoleAccessOutput)
     pub fn builder() -> crate::output::disable_serial_console_access_output::Builder {
         crate::output::disable_serial_console_access_output::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DisableImageDeprecationOutput {
+    /// <p>Returns <code>true</code> if the request succeeds; otherwise, it returns an error.</p>
+    pub r#return: std::option::Option<bool>,
+}
+impl std::fmt::Debug for DisableImageDeprecationOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DisableImageDeprecationOutput");
+        formatter.field("r#return", &self.r#return);
+        formatter.finish()
+    }
+}
+/// See [`DisableImageDeprecationOutput`](crate::output::DisableImageDeprecationOutput)
+pub mod disable_image_deprecation_output {
+    /// A builder for [`DisableImageDeprecationOutput`](crate::output::DisableImageDeprecationOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) r#return: std::option::Option<bool>,
+    }
+    impl Builder {
+        /// <p>Returns <code>true</code> if the request succeeds; otherwise, it returns an error.</p>
+        pub fn r#return(mut self, input: bool) -> Self {
+            self.r#return = Some(input);
+            self
+        }
+        pub fn set_return(mut self, input: std::option::Option<bool>) -> Self {
+            self.r#return = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DisableImageDeprecationOutput`](crate::output::DisableImageDeprecationOutput)
+        pub fn build(self) -> crate::output::DisableImageDeprecationOutput {
+            crate::output::DisableImageDeprecationOutput {
+                r#return: self.r#return,
+            }
+        }
+    }
+}
+impl DisableImageDeprecationOutput {
+    /// Creates a new builder-style object to manufacture [`DisableImageDeprecationOutput`](crate::output::DisableImageDeprecationOutput)
+    pub fn builder() -> crate::output::disable_image_deprecation_output::Builder {
+        crate::output::disable_image_deprecation_output::Builder::default()
     }
 }
 
@@ -10569,6 +10729,75 @@ impl DescribeVolumeAttributeOutput {
 
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DescribeTrunkInterfaceAssociationsOutput {
+    /// <p>Information about the trunk associations.</p>
+    pub interface_associations:
+        std::option::Option<std::vec::Vec<crate::model::TrunkInterfaceAssociation>>,
+    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for DescribeTrunkInterfaceAssociationsOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DescribeTrunkInterfaceAssociationsOutput");
+        formatter.field("interface_associations", &self.interface_associations);
+        formatter.field("next_token", &self.next_token);
+        formatter.finish()
+    }
+}
+/// See [`DescribeTrunkInterfaceAssociationsOutput`](crate::output::DescribeTrunkInterfaceAssociationsOutput)
+pub mod describe_trunk_interface_associations_output {
+    /// A builder for [`DescribeTrunkInterfaceAssociationsOutput`](crate::output::DescribeTrunkInterfaceAssociationsOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) interface_associations:
+            std::option::Option<std::vec::Vec<crate::model::TrunkInterfaceAssociation>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        pub fn interface_associations(
+            mut self,
+            input: impl Into<crate::model::TrunkInterfaceAssociation>,
+        ) -> Self {
+            let mut v = self.interface_associations.unwrap_or_default();
+            v.push(input.into());
+            self.interface_associations = Some(v);
+            self
+        }
+        pub fn set_interface_associations(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::TrunkInterfaceAssociation>>,
+        ) -> Self {
+            self.interface_associations = input;
+            self
+        }
+        /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DescribeTrunkInterfaceAssociationsOutput`](crate::output::DescribeTrunkInterfaceAssociationsOutput)
+        pub fn build(self) -> crate::output::DescribeTrunkInterfaceAssociationsOutput {
+            crate::output::DescribeTrunkInterfaceAssociationsOutput {
+                interface_associations: self.interface_associations,
+                next_token: self.next_token,
+            }
+        }
+    }
+}
+impl DescribeTrunkInterfaceAssociationsOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeTrunkInterfaceAssociationsOutput`](crate::output::DescribeTrunkInterfaceAssociationsOutput)
+    pub fn builder() -> crate::output::describe_trunk_interface_associations_output::Builder {
+        crate::output::describe_trunk_interface_associations_output::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeTransitGatewayVpcAttachmentsOutput {
     /// <p>Information about the VPC attachments.</p>
     pub transit_gateway_vpc_attachments:
@@ -11756,7 +11985,8 @@ impl DescribeSpotInstanceRequestsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeSpotFleetRequestsOutput {
-    /// <p>The token required to retrieve the next set of results. This value is <code>null</code> when there are no more results to return.</p>
+    /// <p>The token required to retrieve the next set of results. This value is
+    /// <code>null</code> when there are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Information about the configuration of your Spot Fleet.</p>
     pub spot_fleet_request_configs:
@@ -11784,7 +12014,8 @@ pub mod describe_spot_fleet_requests_output {
             std::option::Option<std::vec::Vec<crate::model::SpotFleetRequestConfig>>,
     }
     impl Builder {
-        /// <p>The token required to retrieve the next set of results. This value is <code>null</code> when there are no more results to return.</p>
+        /// <p>The token required to retrieve the next set of results. This value is
+        /// <code>null</code> when there are no more results to return.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
@@ -11831,15 +12062,19 @@ impl DescribeSpotFleetRequestsOutput {
 pub struct DescribeSpotFleetRequestHistoryOutput {
     /// <p>Information about the events in the history of the Spot Fleet request.</p>
     pub history_records: std::option::Option<std::vec::Vec<crate::model::HistoryRecord>>,
-    /// <p>The last date and time for the events, in UTC format (for example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).
+    /// <p>The last date and time for the events, in UTC format (for example,
+    /// <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).
     /// All records up to this time were retrieved.</p>
-    /// <p>If <code>nextToken</code> indicates that there are more results, this value is not present.</p>
+    /// <p>If <code>nextToken</code> indicates that there are more results, this value is not
+    /// present.</p>
     pub last_evaluated_time: std::option::Option<smithy_types::Instant>,
-    /// <p>The token required to retrieve the next set of results. This value is <code>null</code> when there are no more results to return.</p>
+    /// <p>The token required to retrieve the next set of results. This value is
+    /// <code>null</code> when there are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The ID of the Spot Fleet request.</p>
     pub spot_fleet_request_id: std::option::Option<std::string::String>,
-    /// <p>The starting date and time for the events, in UTC format (for example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
+    /// <p>The starting date and time for the events, in UTC format (for example,
+    /// <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
     pub start_time: std::option::Option<smithy_types::Instant>,
 }
 impl std::fmt::Debug for DescribeSpotFleetRequestHistoryOutput {
@@ -11879,9 +12114,11 @@ pub mod describe_spot_fleet_request_history_output {
             self.history_records = input;
             self
         }
-        /// <p>The last date and time for the events, in UTC format (for example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).
+        /// <p>The last date and time for the events, in UTC format (for example,
+        /// <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).
         /// All records up to this time were retrieved.</p>
-        /// <p>If <code>nextToken</code> indicates that there are more results, this value is not present.</p>
+        /// <p>If <code>nextToken</code> indicates that there are more results, this value is not
+        /// present.</p>
         pub fn last_evaluated_time(mut self, input: smithy_types::Instant) -> Self {
             self.last_evaluated_time = Some(input);
             self
@@ -11893,7 +12130,8 @@ pub mod describe_spot_fleet_request_history_output {
             self.last_evaluated_time = input;
             self
         }
-        /// <p>The token required to retrieve the next set of results. This value is <code>null</code> when there are no more results to return.</p>
+        /// <p>The token required to retrieve the next set of results. This value is
+        /// <code>null</code> when there are no more results to return.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
@@ -11914,7 +12152,8 @@ pub mod describe_spot_fleet_request_history_output {
             self.spot_fleet_request_id = input;
             self
         }
-        /// <p>The starting date and time for the events, in UTC format (for example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
+        /// <p>The starting date and time for the events, in UTC format (for example,
+        /// <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
         pub fn start_time(mut self, input: smithy_types::Instant) -> Self {
             self.start_time = Some(input);
             self
@@ -11949,7 +12188,8 @@ pub struct DescribeSpotFleetInstancesOutput {
     /// <p>The running instances. This list is refreshed periodically and might be out of
     /// date.</p>
     pub active_instances: std::option::Option<std::vec::Vec<crate::model::ActiveInstance>>,
-    /// <p>The token required to retrieve the next set of results. This value is <code>null</code> when there are no more results to return.</p>
+    /// <p>The token required to retrieve the next set of results. This value is
+    /// <code>null</code> when there are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The ID of the Spot Fleet request.</p>
     pub spot_fleet_request_id: std::option::Option<std::string::String>,
@@ -11988,7 +12228,8 @@ pub mod describe_spot_fleet_instances_output {
             self.active_instances = input;
             self
         }
-        /// <p>The token required to retrieve the next set of results. This value is <code>null</code> when there are no more results to return.</p>
+        /// <p>The token required to retrieve the next set of results. This value is
+        /// <code>null</code> when there are no more results to return.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
@@ -15041,7 +15282,7 @@ pub struct DescribeInstanceAttributeOutput {
     pub disable_api_termination: std::option::Option<crate::model::AttributeBooleanValue>,
     /// <p>Indicates whether enhanced networking with ENA is enabled.</p>
     pub ena_support: std::option::Option<crate::model::AttributeBooleanValue>,
-    /// <p>To enable the instance for AWS Nitro Enclaves, set this parameter to <code>true</code>; otherwise,
+    /// <p>To enable the instance for Amazon Web Services Nitro Enclaves, set this parameter to <code>true</code>; otherwise,
     /// set it to <code>false</code>.</p>
     pub enclave_options: std::option::Option<crate::model::EnclaveOptions>,
     /// <p>Indicates whether the instance is optimized for Amazon EBS I/O.</p>
@@ -15184,7 +15425,7 @@ pub mod describe_instance_attribute_output {
             self.ena_support = input;
             self
         }
-        /// <p>To enable the instance for AWS Nitro Enclaves, set this parameter to <code>true</code>; otherwise,
+        /// <p>To enable the instance for Amazon Web Services Nitro Enclaves, set this parameter to <code>true</code>; otherwise,
         /// set it to <code>false</code>.</p>
         pub fn enclave_options(mut self, input: crate::model::EnclaveOptions) -> Self {
             self.enclave_options = Some(input);
@@ -24107,11 +24348,11 @@ impl CreateFlowLogsOutput {
 pub struct CreateFleetOutput {
     /// <p>The ID of the EC2 Fleet.</p>
     pub fleet_id: std::option::Option<std::string::String>,
-    /// <p>Information about the instances that could not be launched by the fleet. Valid only when
-    /// <b>Type</b> is set to <code>instant</code>.</p>
+    /// <p>Information about the instances that could not be launched by the fleet. Supported only for
+    /// fleets of type <code>instant</code>.</p>
     pub errors: std::option::Option<std::vec::Vec<crate::model::CreateFleetError>>,
-    /// <p>Information about the instances that were launched by the fleet. Valid only when
-    /// <b>Type</b> is set to <code>instant</code>.</p>
+    /// <p>Information about the instances that were launched by the fleet. Supported only for
+    /// fleets of type <code>instant</code>.</p>
     pub instances: std::option::Option<std::vec::Vec<crate::model::CreateFleetInstance>>,
 }
 impl std::fmt::Debug for CreateFleetOutput {
@@ -24837,7 +25078,7 @@ impl CopyFpgaImageOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConfirmProductInstanceOutput {
-    /// <p>The AWS account ID of the instance owner. This is only present if the product code is
+    /// <p>The account ID of the instance owner. This is only present if the product code is
     /// attached to the instance.</p>
     pub owner_id: std::option::Option<std::string::String>,
     /// <p>The return value of the request. Returns <code>true</code> if the specified product
@@ -24862,7 +25103,7 @@ pub mod confirm_product_instance_output {
         pub(crate) r#return: std::option::Option<bool>,
     }
     impl Builder {
-        /// <p>The AWS account ID of the instance owner. This is only present if the product code is
+        /// <p>The account ID of the instance owner. This is only present if the product code is
         /// attached to the instance.</p>
         pub fn owner_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.owner_id = Some(input.into());
@@ -25898,6 +26139,77 @@ impl AssociateVpcCidrBlockOutput {
 
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct AssociateTrunkInterfaceOutput {
+    /// <p>Information about the association between the trunk network interface and branch network interface.</p>
+    pub interface_association: std::option::Option<crate::model::TrunkInterfaceAssociation>,
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
+    /// request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to Ensure
+    /// Idempotency</a>.</p>
+    pub client_token: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for AssociateTrunkInterfaceOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("AssociateTrunkInterfaceOutput");
+        formatter.field("interface_association", &self.interface_association);
+        formatter.field("client_token", &self.client_token);
+        formatter.finish()
+    }
+}
+/// See [`AssociateTrunkInterfaceOutput`](crate::output::AssociateTrunkInterfaceOutput)
+pub mod associate_trunk_interface_output {
+    /// A builder for [`AssociateTrunkInterfaceOutput`](crate::output::AssociateTrunkInterfaceOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) interface_association:
+            std::option::Option<crate::model::TrunkInterfaceAssociation>,
+        pub(crate) client_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>Information about the association between the trunk network interface and branch network interface.</p>
+        pub fn interface_association(
+            mut self,
+            input: crate::model::TrunkInterfaceAssociation,
+        ) -> Self {
+            self.interface_association = Some(input);
+            self
+        }
+        pub fn set_interface_association(
+            mut self,
+            input: std::option::Option<crate::model::TrunkInterfaceAssociation>,
+        ) -> Self {
+            self.interface_association = input;
+            self
+        }
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
+        /// request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to Ensure
+        /// Idempotency</a>.</p>
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.client_token = Some(input.into());
+            self
+        }
+        pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.client_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`AssociateTrunkInterfaceOutput`](crate::output::AssociateTrunkInterfaceOutput)
+        pub fn build(self) -> crate::output::AssociateTrunkInterfaceOutput {
+            crate::output::AssociateTrunkInterfaceOutput {
+                interface_association: self.interface_association,
+                client_token: self.client_token,
+            }
+        }
+    }
+}
+impl AssociateTrunkInterfaceOutput {
+    /// Creates a new builder-style object to manufacture [`AssociateTrunkInterfaceOutput`](crate::output::AssociateTrunkInterfaceOutput)
+    pub fn builder() -> crate::output::associate_trunk_interface_output::Builder {
+        crate::output::associate_trunk_interface_output::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociateTransitGatewayRouteTableOutput {
     /// <p>The ID of the association.</p>
     pub association: std::option::Option<crate::model::TransitGatewayAssociation>,
@@ -26680,7 +26992,7 @@ impl AllocateHostsOutput {
 pub struct AllocateAddressOutput {
     /// <p>The Elastic IP address.</p>
     pub public_ip: std::option::Option<std::string::String>,
-    /// <p>[EC2-VPC] The ID that AWS assigns to represent the allocation of the Elastic IP address for use with instances in a VPC.</p>
+    /// <p>[EC2-VPC] The ID that Amazon Web Services assigns to represent the allocation of the Elastic IP address for use with instances in a VPC.</p>
     pub allocation_id: std::option::Option<std::string::String>,
     /// <p>The ID of an address pool.</p>
     pub public_ipv4_pool: std::option::Option<std::string::String>,
@@ -26737,7 +27049,7 @@ pub mod allocate_address_output {
             self.public_ip = input;
             self
         }
-        /// <p>[EC2-VPC] The ID that AWS assigns to represent the allocation of the Elastic IP address for use with instances in a VPC.</p>
+        /// <p>[EC2-VPC] The ID that Amazon Web Services assigns to represent the allocation of the Elastic IP address for use with instances in a VPC.</p>
         pub fn allocation_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.allocation_id = Some(input.into());
             self

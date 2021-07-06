@@ -421,6 +421,9 @@ impl PatchAction {
             PatchAction::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["ALLOW_AS_DEPENDENCY", "BLOCK"]
+    }
 }
 impl AsRef<str> for PatchAction {
     fn as_ref(&self) -> &str {
@@ -479,6 +482,16 @@ impl PatchComplianceLevel {
             PatchComplianceLevel::Unspecified => "UNSPECIFIED",
             PatchComplianceLevel::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "CRITICAL",
+            "HIGH",
+            "INFORMATIONAL",
+            "LOW",
+            "MEDIUM",
+            "UNSPECIFIED",
+        ]
     }
 }
 impl AsRef<str> for PatchComplianceLevel {
@@ -889,6 +902,29 @@ impl PatchFilterKey {
             PatchFilterKey::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "ADVISORY_ID",
+            "ARCH",
+            "BUGZILLA_ID",
+            "CLASSIFICATION",
+            "CVE_ID",
+            "EPOCH",
+            "MSRC_SEVERITY",
+            "NAME",
+            "PATCH_ID",
+            "PATCH_SET",
+            "PRIORITY",
+            "PRODUCT",
+            "PRODUCT_FAMILY",
+            "RELEASE",
+            "REPOSITORY",
+            "SECTION",
+            "SECURITY",
+            "SEVERITY",
+            "VERSION",
+        ]
+    }
 }
 impl AsRef<str> for PatchFilterKey {
     fn as_ref(&self) -> &str {
@@ -959,6 +995,20 @@ impl OperatingSystem {
             OperatingSystem::Windows => "WINDOWS",
             OperatingSystem::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "AMAZON_LINUX",
+            "AMAZON_LINUX_2",
+            "CENTOS",
+            "DEBIAN",
+            "MACOS",
+            "ORACLE_LINUX",
+            "REDHAT_ENTERPRISE_LINUX",
+            "SUSE",
+            "UBUNTU",
+            "WINDOWS",
+        ]
     }
 }
 impl AsRef<str> for OperatingSystem {
@@ -1099,6 +1149,28 @@ impl OpsItemStatus {
             OpsItemStatus::TimedOut => "TimedOut",
             OpsItemStatus::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "Approved",
+            "Cancelled",
+            "Cancelling",
+            "ChangeCalendarOverrideApproved",
+            "ChangeCalendarOverrideRejected",
+            "CompletedWithFailure",
+            "CompletedWithSuccess",
+            "Failed",
+            "InProgress",
+            "Open",
+            "Pending",
+            "PendingApproval",
+            "PendingChangeCalendarOverride",
+            "Rejected",
+            "Resolved",
+            "RunbookInProgress",
+            "Scheduled",
+            "TimedOut",
+        ]
     }
 }
 impl AsRef<str> for OpsItemStatus {
@@ -1308,6 +1380,9 @@ impl OpsItemDataType {
             OpsItemDataType::String => "String",
             OpsItemDataType::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["SearchableString", "String"]
     }
 }
 impl AsRef<str> for OpsItemDataType {
@@ -2192,6 +2267,9 @@ impl NotificationType {
             NotificationType::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["Command", "Invocation"]
+    }
 }
 impl AsRef<str> for NotificationType {
     fn as_ref(&self) -> &str {
@@ -2251,6 +2329,16 @@ impl NotificationEvent {
             NotificationEvent::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "All",
+            "Cancelled",
+            "Failed",
+            "InProgress",
+            "Success",
+            "TimedOut",
+        ]
+    }
 }
 impl AsRef<str> for NotificationEvent {
     fn as_ref(&self) -> &str {
@@ -2297,6 +2385,9 @@ impl DocumentHashType {
             DocumentHashType::Sha256 => "Sha256",
             DocumentHashType::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["Sha1", "Sha256"]
     }
 }
 impl AsRef<str> for DocumentHashType {
@@ -2781,6 +2872,9 @@ impl DocumentReviewCommentType {
             DocumentReviewCommentType::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["Comment"]
+    }
 }
 impl AsRef<str> for DocumentReviewCommentType {
     fn as_ref(&self) -> &str {
@@ -2833,6 +2927,9 @@ impl DocumentReviewAction {
             DocumentReviewAction::UpdateReview => "UpdateReview",
             DocumentReviewAction::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["Approve", "Reject", "SendForReview", "UpdateReview"]
     }
 }
 impl AsRef<str> for DocumentReviewAction {
@@ -3491,6 +3588,9 @@ impl ReviewStatus {
             ReviewStatus::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["APPROVED", "NOT_REVIEWED", "PENDING", "REJECTED"]
+    }
 }
 impl AsRef<str> for ReviewStatus {
     fn as_ref(&self) -> &str {
@@ -3792,6 +3892,9 @@ impl DocumentFormat {
             DocumentFormat::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["JSON", "TEXT", "YAML"]
+    }
 }
 impl AsRef<str> for DocumentFormat {
     fn as_ref(&self) -> &str {
@@ -3869,6 +3972,22 @@ impl DocumentType {
             DocumentType::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "ApplicationConfiguration",
+            "ApplicationConfigurationSchema",
+            "Automation",
+            "Automation.ChangeTemplate",
+            "ChangeCalendar",
+            "Command",
+            "DeploymentStrategy",
+            "Package",
+            "Policy",
+            "ProblemAnalysis",
+            "ProblemAnalysisTemplate",
+            "Session",
+        ]
+    }
 }
 impl AsRef<str> for DocumentType {
     fn as_ref(&self) -> &str {
@@ -3915,6 +4034,9 @@ impl PlatformType {
             PlatformType::Windows => "Windows",
             PlatformType::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["Linux", "Windows"]
     }
 }
 impl AsRef<str> for PlatformType {
@@ -4063,6 +4185,9 @@ impl DocumentParameterType {
             DocumentParameterType::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["String", "StringList"]
+    }
 }
 impl AsRef<str> for DocumentParameterType {
     fn as_ref(&self) -> &str {
@@ -4119,6 +4244,9 @@ impl DocumentStatus {
             DocumentStatus::Updating => "Updating",
             DocumentStatus::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["Active", "Creating", "Deleting", "Failed", "Updating"]
     }
 }
 impl AsRef<str> for DocumentStatus {
@@ -4287,6 +4415,9 @@ impl AttachmentsSourceKey {
             AttachmentsSourceKey::SourceUrl => "SourceUrl",
             AttachmentsSourceKey::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["AttachmentReference", "S3FileUrl", "SourceUrl"]
     }
 }
 impl AsRef<str> for AttachmentsSourceKey {
@@ -4995,6 +5126,9 @@ impl AssociationSyncCompliance {
             AssociationSyncCompliance::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["AUTO", "MANUAL"]
+    }
 }
 impl AsRef<str> for AssociationSyncCompliance {
     fn as_ref(&self) -> &str {
@@ -5050,6 +5184,9 @@ impl AssociationComplianceSeverity {
             AssociationComplianceSeverity::Unspecified => "UNSPECIFIED",
             AssociationComplianceSeverity::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["CRITICAL", "HIGH", "LOW", "MEDIUM", "UNSPECIFIED"]
     }
 }
 impl AsRef<str> for AssociationComplianceSeverity {
@@ -5427,6 +5564,9 @@ impl AssociationStatusName {
             AssociationStatusName::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["Failed", "Pending", "Success"]
+    }
 }
 impl AsRef<str> for AssociationStatusName {
     fn as_ref(&self) -> &str {
@@ -5473,6 +5613,9 @@ impl StopType {
             StopType::Complete => "Complete",
             StopType::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["Cancel", "Complete"]
     }
 }
 impl AsRef<str> for StopType {
@@ -5720,6 +5863,9 @@ impl ExecutionMode {
             ExecutionMode::Interactive => "Interactive",
             ExecutionMode::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["Auto", "Interactive"]
     }
 }
 impl AsRef<str> for ExecutionMode {
@@ -6327,6 +6473,17 @@ impl CommandStatus {
             CommandStatus::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "Cancelled",
+            "Cancelling",
+            "Failed",
+            "InProgress",
+            "Pending",
+            "Success",
+            "TimedOut",
+        ]
+    }
 }
 impl AsRef<str> for CommandStatus {
     fn as_ref(&self) -> &str {
@@ -6382,6 +6539,9 @@ impl SignalType {
             SignalType::StopStep => "StopStep",
             SignalType::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["Approve", "Reject", "Resume", "StartStep", "StopStep"]
     }
 }
 impl AsRef<str> for SignalType {
@@ -6613,6 +6773,17 @@ impl ResourceTypeForTagging {
             ResourceTypeForTagging::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "Document",
+            "MaintenanceWindow",
+            "ManagedInstance",
+            "OpsItem",
+            "OpsMetadata",
+            "Parameter",
+            "PatchBaseline",
+        ]
+    }
 }
 impl AsRef<str> for ResourceTypeForTagging {
     fn as_ref(&self) -> &str {
@@ -6666,6 +6837,9 @@ impl MaintenanceWindowTaskType {
             MaintenanceWindowTaskType::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["AUTOMATION", "LAMBDA", "RUN_COMMAND", "STEP_FUNCTIONS"]
+    }
 }
 impl AsRef<str> for MaintenanceWindowTaskType {
     fn as_ref(&self) -> &str {
@@ -6712,6 +6886,9 @@ impl MaintenanceWindowResourceType {
             MaintenanceWindowResourceType::ResourceGroup => "RESOURCE_GROUP",
             MaintenanceWindowResourceType::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["INSTANCE", "RESOURCE_GROUP"]
     }
 }
 impl AsRef<str> for MaintenanceWindowResourceType {
@@ -6763,6 +6940,9 @@ impl ParameterTier {
             ParameterTier::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["Advanced", "Intelligent-Tiering", "Standard"]
+    }
 }
 impl AsRef<str> for ParameterTier {
     fn as_ref(&self) -> &str {
@@ -6812,6 +6992,9 @@ impl ParameterType {
             ParameterType::StringList => "StringList",
             ParameterType::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["SecureString", "String", "StringList"]
     }
 }
 impl AsRef<str> for ParameterType {
@@ -7018,6 +7201,9 @@ impl ComplianceUploadType {
             ComplianceUploadType::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["COMPLETE", "PARTIAL"]
+    }
 }
 impl AsRef<str> for ComplianceUploadType {
     fn as_ref(&self) -> &str {
@@ -7195,6 +7381,9 @@ impl ComplianceStatus {
             ComplianceStatus::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["COMPLIANT", "NON_COMPLIANT"]
+    }
 }
 impl AsRef<str> for ComplianceStatus {
     fn as_ref(&self) -> &str {
@@ -7253,6 +7442,16 @@ impl ComplianceSeverity {
             ComplianceSeverity::Unspecified => "UNSPECIFIED",
             ComplianceSeverity::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "CRITICAL",
+            "HIGH",
+            "INFORMATIONAL",
+            "LOW",
+            "MEDIUM",
+            "UNSPECIFIED",
+        ]
     }
 }
 impl AsRef<str> for ComplianceSeverity {
@@ -7384,6 +7583,9 @@ impl DocumentPermissionType {
             DocumentPermissionType::Share => "Share",
             DocumentPermissionType::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["Share"]
     }
 }
 impl AsRef<str> for DocumentPermissionType {
@@ -7642,6 +7844,9 @@ impl LastResourceDataSyncStatus {
             LastResourceDataSyncStatus::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["Failed", "InProgress", "Successful"]
+    }
 }
 impl AsRef<str> for LastResourceDataSyncStatus {
     fn as_ref(&self) -> &str {
@@ -7876,6 +8081,9 @@ impl ResourceDataSyncS3Format {
             ResourceDataSyncS3Format::JsonSerde => "JsonSerDe",
             ResourceDataSyncS3Format::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["JsonSerDe"]
     }
 }
 impl AsRef<str> for ResourceDataSyncS3Format {
@@ -8634,6 +8842,15 @@ impl ComplianceQueryOperatorType {
             ComplianceQueryOperatorType::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "BEGIN_WITH",
+            "EQUAL",
+            "GREATER_THAN",
+            "LESS_THAN",
+            "NOT_EQUAL",
+        ]
+    }
 }
 impl AsRef<str> for ComplianceQueryOperatorType {
     fn as_ref(&self) -> &str {
@@ -9172,6 +9389,9 @@ impl OpsItemRelatedItemsFilterOperator {
             OpsItemRelatedItemsFilterOperator::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["Equal"]
+    }
 }
 impl AsRef<str> for OpsItemRelatedItemsFilterOperator {
     fn as_ref(&self) -> &str {
@@ -9221,6 +9441,9 @@ impl OpsItemRelatedItemsFilterKey {
             OpsItemRelatedItemsFilterKey::ResourceUri => "ResourceUri",
             OpsItemRelatedItemsFilterKey::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["AssociationId", "ResourceType", "ResourceUri"]
     }
 }
 impl AsRef<str> for OpsItemRelatedItemsFilterKey {
@@ -9494,6 +9717,9 @@ impl OpsItemEventFilterOperator {
             OpsItemEventFilterOperator::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["Equal"]
+    }
 }
 impl AsRef<str> for OpsItemEventFilterOperator {
     fn as_ref(&self) -> &str {
@@ -9537,6 +9763,9 @@ impl OpsItemEventFilterKey {
             OpsItemEventFilterKey::OpsitemId => "OpsItemId",
             OpsItemEventFilterKey::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["OpsItemId"]
     }
 }
 impl AsRef<str> for OpsItemEventFilterKey {
@@ -9690,6 +9919,16 @@ impl InventoryQueryOperatorType {
             InventoryQueryOperatorType::NotEqual => "NotEqual",
             InventoryQueryOperatorType::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "BeginWith",
+            "Equal",
+            "Exists",
+            "GreaterThan",
+            "LessThan",
+            "NotEqual",
+        ]
     }
 }
 impl AsRef<str> for InventoryQueryOperatorType {
@@ -10450,6 +10689,9 @@ impl DocumentFilterKey {
             DocumentFilterKey::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["DocumentType", "Name", "Owner", "PlatformTypes"]
+    }
 }
 impl AsRef<str> for DocumentFilterKey {
     fn as_ref(&self) -> &str {
@@ -10679,6 +10921,9 @@ impl DocumentMetadataEnum {
             DocumentMetadataEnum::DocumentReviews => "DocumentReviews",
             DocumentMetadataEnum::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["DocumentReviews"]
     }
 }
 impl AsRef<str> for DocumentMetadataEnum {
@@ -11257,6 +11502,15 @@ impl CommandFilterKey {
             CommandFilterKey::Status => "Status",
             CommandFilterKey::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "DocumentName",
+            "ExecutionStage",
+            "InvokedAfter",
+            "InvokedBefore",
+            "Status",
+        ]
     }
 }
 impl AsRef<str> for CommandFilterKey {
@@ -12092,6 +12346,16 @@ impl CommandPluginStatus {
             CommandPluginStatus::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "Cancelled",
+            "Failed",
+            "InProgress",
+            "Pending",
+            "Success",
+            "TimedOut",
+        ]
+    }
 }
 impl AsRef<str> for CommandPluginStatus {
     fn as_ref(&self) -> &str {
@@ -12156,6 +12420,18 @@ impl CommandInvocationStatus {
             CommandInvocationStatus::TimedOut => "TimedOut",
             CommandInvocationStatus::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "Cancelled",
+            "Cancelling",
+            "Delayed",
+            "Failed",
+            "InProgress",
+            "Pending",
+            "Success",
+            "TimedOut",
+        ]
     }
 }
 impl AsRef<str> for CommandInvocationStatus {
@@ -12898,6 +13174,18 @@ impl AssociationFilterKey {
             AssociationFilterKey::ResourceGroupName => "ResourceGroupName",
             AssociationFilterKey::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "AssociationId",
+            "AssociationName",
+            "AssociationStatusName",
+            "InstanceId",
+            "LastExecutedAfter",
+            "LastExecutedBefore",
+            "Name",
+            "ResourceGroupName",
+        ]
     }
 }
 impl AsRef<str> for AssociationFilterKey {
@@ -14000,6 +14288,16 @@ impl OpsFilterOperatorType {
             OpsFilterOperatorType::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "BeginWith",
+            "Equal",
+            "Exists",
+            "GreaterThan",
+            "LessThan",
+            "NotEqual",
+        ]
+    }
 }
 impl AsRef<str> for OpsFilterOperatorType {
     fn as_ref(&self) -> &str {
@@ -14486,6 +14784,18 @@ impl MaintenanceWindowExecutionStatus {
             MaintenanceWindowExecutionStatus::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "CANCELLED",
+            "CANCELLING",
+            "FAILED",
+            "IN_PROGRESS",
+            "PENDING",
+            "SKIPPED_OVERLAPPING",
+            "SUCCESS",
+            "TIMED_OUT",
+        ]
+    }
 }
 impl AsRef<str> for MaintenanceWindowExecutionStatus {
     fn as_ref(&self) -> &str {
@@ -14701,6 +15011,9 @@ impl InventoryAttributeDataType {
             InventoryAttributeDataType::String => "string",
             InventoryAttributeDataType::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["number", "string"]
     }
 }
 impl AsRef<str> for InventoryAttributeDataType {
@@ -15257,6 +15570,9 @@ impl AttachmentHashType {
             AttachmentHashType::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["Sha256"]
+    }
 }
 impl AsRef<str> for AttachmentHashType {
     fn as_ref(&self) -> &str {
@@ -15520,6 +15836,9 @@ impl ConnectionStatus {
             ConnectionStatus::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["Connected", "NotConnected"]
+    }
 }
 impl AsRef<str> for ConnectionStatus {
     fn as_ref(&self) -> &str {
@@ -15566,6 +15885,9 @@ impl CalendarState {
             CalendarState::Open => "OPEN",
             CalendarState::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["CLOSED", "OPEN"]
     }
 }
 impl AsRef<str> for CalendarState {
@@ -16229,6 +16551,9 @@ impl AutomationSubtype {
             AutomationSubtype::ChangeRequest => "ChangeRequest",
             AutomationSubtype::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["ChangeRequest"]
     }
 }
 impl AsRef<str> for AutomationSubtype {
@@ -17040,6 +17365,28 @@ impl AutomationExecutionStatus {
             AutomationExecutionStatus::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "Approved",
+            "Cancelled",
+            "Cancelling",
+            "ChangeCalendarOverrideApproved",
+            "ChangeCalendarOverrideRejected",
+            "CompletedWithFailure",
+            "CompletedWithSuccess",
+            "Failed",
+            "InProgress",
+            "Pending",
+            "PendingApproval",
+            "PendingChangeCalendarOverride",
+            "Rejected",
+            "RunbookInProgress",
+            "Scheduled",
+            "Success",
+            "TimedOut",
+            "Waiting",
+        ]
+    }
 }
 impl AsRef<str> for AutomationExecutionStatus {
     fn as_ref(&self) -> &str {
@@ -17336,6 +17683,16 @@ impl SessionStatus {
             SessionStatus::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "Connected",
+            "Connecting",
+            "Disconnected",
+            "Failed",
+            "Terminated",
+            "Terminating",
+        ]
+    }
 }
 impl AsRef<str> for SessionStatus {
     fn as_ref(&self) -> &str {
@@ -17545,6 +17902,16 @@ impl SessionFilterKey {
             SessionFilterKey::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "InvokedAfter",
+            "InvokedBefore",
+            "Owner",
+            "SessionId",
+            "Status",
+            "Target",
+        ]
+    }
 }
 impl AsRef<str> for SessionFilterKey {
     fn as_ref(&self) -> &str {
@@ -17592,6 +17959,9 @@ impl SessionState {
             SessionState::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["Active", "History"]
+    }
 }
 impl AsRef<str> for SessionState {
     fn as_ref(&self) -> &str {
@@ -17638,6 +18008,9 @@ impl PatchSet {
             PatchSet::Os => "OS",
             PatchSet::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["APPLICATION", "OS"]
     }
 }
 impl AsRef<str> for PatchSet {
@@ -17697,6 +18070,16 @@ impl PatchProperty {
             PatchProperty::PatchSeverity => "SEVERITY",
             PatchProperty::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "CLASSIFICATION",
+            "MSRC_SEVERITY",
+            "PRIORITY",
+            "PRODUCT",
+            "PRODUCT_FAMILY",
+            "SEVERITY",
+        ]
     }
 }
 impl AsRef<str> for PatchProperty {
@@ -18272,6 +18655,9 @@ impl ParametersFilterKey {
             ParametersFilterKey::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["KeyId", "Name", "Type"]
+    }
 }
 impl AsRef<str> for ParametersFilterKey {
     fn as_ref(&self) -> &str {
@@ -18735,6 +19121,9 @@ impl OpsItemFilterOperator {
             OpsItemFilterOperator::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["Contains", "Equal", "GreaterThan", "LessThan"]
+    }
 }
 impl AsRef<str> for OpsItemFilterOperator {
     fn as_ref(&self) -> &str {
@@ -18857,6 +19246,36 @@ impl OpsItemFilterKey {
             OpsItemFilterKey::Title => "Title",
             OpsItemFilterKey::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "ActualEndTime",
+            "ActualStartTime",
+            "AutomationId",
+            "Category",
+            "ChangeRequestByApproverArn",
+            "ChangeRequestByApproverName",
+            "ChangeRequestByRequesterArn",
+            "ChangeRequestByRequesterName",
+            "ChangeRequestByTargetsResourceGroup",
+            "ChangeRequestByTemplate",
+            "CreatedBy",
+            "CreatedTime",
+            "LastModifiedTime",
+            "OperationalData",
+            "OperationalDataKey",
+            "OperationalDataValue",
+            "OpsItemId",
+            "OpsItemType",
+            "PlannedEndTime",
+            "PlannedStartTime",
+            "Priority",
+            "ResourceId",
+            "Severity",
+            "Source",
+            "Status",
+            "Title",
+        ]
     }
 }
 impl AsRef<str> for OpsItemFilterKey {
@@ -20606,6 +21025,9 @@ impl InventoryDeletionStatus {
             InventoryDeletionStatus::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["Complete", "InProgress"]
+    }
 }
 impl AsRef<str> for InventoryDeletionStatus {
     fn as_ref(&self) -> &str {
@@ -21148,6 +21570,9 @@ impl RebootOption {
             RebootOption::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["NoReboot", "RebootIfNeeded"]
+    }
 }
 impl AsRef<str> for RebootOption {
     fn as_ref(&self) -> &str {
@@ -21194,6 +21619,9 @@ impl PatchOperationType {
             PatchOperationType::Scan => "Scan",
             PatchOperationType::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["Install", "Scan"]
     }
 }
 impl AsRef<str> for PatchOperationType {
@@ -21334,6 +21762,9 @@ impl InstancePatchStateOperatorType {
             InstancePatchStateOperatorType::NotEqual => "NotEqual",
             InstancePatchStateOperatorType::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["Equal", "GreaterThan", "LessThan", "NotEqual"]
     }
 }
 impl AsRef<str> for InstancePatchStateOperatorType {
@@ -21545,6 +21976,17 @@ impl PatchComplianceDataState {
             PatchComplianceDataState::NotApplicable => "NOT_APPLICABLE",
             PatchComplianceDataState::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "FAILED",
+            "INSTALLED",
+            "INSTALLED_OTHER",
+            "INSTALLED_PENDING_REBOOT",
+            "INSTALLED_REJECTED",
+            "MISSING",
+            "NOT_APPLICABLE",
+        ]
     }
 }
 impl AsRef<str> for PatchComplianceDataState {
@@ -22069,6 +22511,9 @@ impl ResourceType {
             ResourceType::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["Document", "EC2Instance", "ManagedInstance"]
+    }
 }
 impl AsRef<str> for ResourceType {
     fn as_ref(&self) -> &str {
@@ -22118,6 +22563,9 @@ impl PingStatus {
             PingStatus::Online => "Online",
             PingStatus::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["ConnectionLost", "Inactive", "Online"]
     }
 }
 impl AsRef<str> for PingStatus {
@@ -22338,6 +22786,18 @@ impl InstanceInformationFilterKey {
             InstanceInformationFilterKey::ResourceType => "ResourceType",
             InstanceInformationFilterKey::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "ActivationIds",
+            "AgentVersion",
+            "AssociationStatus",
+            "IamRole",
+            "InstanceIds",
+            "PingStatus",
+            "PlatformTypes",
+            "ResourceType",
+        ]
     }
 }
 impl AsRef<str> for InstanceInformationFilterKey {
@@ -22874,6 +23334,14 @@ impl PatchDeploymentStatus {
             PatchDeploymentStatus::PendingApproval => "PENDING_APPROVAL",
             PatchDeploymentStatus::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "APPROVED",
+            "EXPLICIT_APPROVED",
+            "EXPLICIT_REJECTED",
+            "PENDING_APPROVAL",
+        ]
     }
 }
 impl AsRef<str> for PatchDeploymentStatus {
@@ -23584,6 +24052,16 @@ impl StepExecutionFilterKey {
             StepExecutionFilterKey::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "Action",
+            "StartTimeAfter",
+            "StartTimeBefore",
+            "StepExecutionId",
+            "StepExecutionStatus",
+            "StepName",
+        ]
+    }
 }
 impl AsRef<str> for StepExecutionFilterKey {
     fn as_ref(&self) -> &str {
@@ -24184,6 +24662,9 @@ impl AutomationType {
             AutomationType::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["CrossAccount", "Local"]
+    }
 }
 impl AsRef<str> for AutomationType {
     fn as_ref(&self) -> &str {
@@ -24329,6 +24810,22 @@ impl AutomationExecutionFilterKey {
             AutomationExecutionFilterKey::TargetResourceGroup => "TargetResourceGroup",
             AutomationExecutionFilterKey::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "AutomationSubtype",
+            "AutomationType",
+            "CurrentAction",
+            "DocumentNamePrefix",
+            "ExecutionId",
+            "ExecutionStatus",
+            "OpsItemId",
+            "ParentExecutionId",
+            "StartTimeAfter",
+            "StartTimeBefore",
+            "TagKey",
+            "TargetResourceGroup",
+        ]
     }
 }
 impl AsRef<str> for AutomationExecutionFilterKey {
@@ -24690,6 +25187,9 @@ impl AssociationExecutionTargetsFilterKey {
             AssociationExecutionTargetsFilterKey::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["ResourceId", "ResourceType", "Status"]
+    }
 }
 impl AsRef<str> for AssociationExecutionTargetsFilterKey {
     fn as_ref(&self) -> &str {
@@ -24984,6 +25484,9 @@ impl AssociationFilterOperatorType {
             AssociationFilterOperatorType::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["EQUAL", "GREATER_THAN", "LESS_THAN"]
+    }
 }
 impl AsRef<str> for AssociationFilterOperatorType {
     fn as_ref(&self) -> &str {
@@ -25033,6 +25536,9 @@ impl AssociationExecutionFilterKey {
             AssociationExecutionFilterKey::Status => "Status",
             AssociationExecutionFilterKey::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["CreatedTime", "ExecutionId", "Status"]
     }
 }
 impl AsRef<str> for AssociationExecutionFilterKey {
@@ -25345,6 +25851,9 @@ impl DescribeActivationsFilterKeys {
             DescribeActivationsFilterKeys::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["ActivationIds", "DefaultInstanceName", "IamRole"]
+    }
 }
 impl AsRef<str> for DescribeActivationsFilterKeys {
     fn as_ref(&self) -> &str {
@@ -25391,6 +25900,9 @@ impl InventorySchemaDeleteOption {
             InventorySchemaDeleteOption::DisableSchema => "DisableSchema",
             InventorySchemaDeleteOption::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["DeleteSchema", "DisableSchema"]
     }
 }
 impl AsRef<str> for InventorySchemaDeleteOption {
@@ -25521,6 +26033,9 @@ impl Fault {
             Fault::UnknownValue => "Unknown",
             Fault::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["Client", "Server", "Unknown"]
     }
 }
 impl AsRef<str> for Fault {

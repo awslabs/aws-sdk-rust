@@ -358,6 +358,9 @@ impl From<smithy_http::result::SdkError<crate::error::DescribeCustomKeyStoresErr
                 crate::error::DescribeCustomKeyStoresErrorKind::CustomKeyStoreNotFoundException(
                     inner,
                 ) => Error::CustomKeyStoreNotFoundException(inner),
+                crate::error::DescribeCustomKeyStoresErrorKind::InvalidMarkerException(inner) => {
+                    Error::InvalidMarkerException(inner)
+                }
                 crate::error::DescribeCustomKeyStoresErrorKind::KmsInternalException(inner) => {
                     Error::KmsInternalException(inner)
                 }
@@ -1091,6 +1094,46 @@ impl From<smithy_http::result::SdkError<crate::error::ReEncryptError>> for Error
         }
     }
 }
+impl From<smithy_http::result::SdkError<crate::error::ReplicateKeyError>> for Error {
+    fn from(err: smithy_http::result::SdkError<crate::error::ReplicateKeyError>) -> Self {
+        match err {
+            smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::ReplicateKeyErrorKind::AlreadyExistsException(inner) => {
+                    Error::AlreadyExistsException(inner)
+                }
+                crate::error::ReplicateKeyErrorKind::DisabledException(inner) => {
+                    Error::DisabledException(inner)
+                }
+                crate::error::ReplicateKeyErrorKind::InvalidArnException(inner) => {
+                    Error::InvalidArnException(inner)
+                }
+                crate::error::ReplicateKeyErrorKind::KmsInternalException(inner) => {
+                    Error::KmsInternalException(inner)
+                }
+                crate::error::ReplicateKeyErrorKind::KmsInvalidStateException(inner) => {
+                    Error::KmsInvalidStateException(inner)
+                }
+                crate::error::ReplicateKeyErrorKind::LimitExceededException(inner) => {
+                    Error::LimitExceededException(inner)
+                }
+                crate::error::ReplicateKeyErrorKind::MalformedPolicyDocumentException(inner) => {
+                    Error::MalformedPolicyDocumentException(inner)
+                }
+                crate::error::ReplicateKeyErrorKind::NotFoundException(inner) => {
+                    Error::NotFoundException(inner)
+                }
+                crate::error::ReplicateKeyErrorKind::TagException(inner) => {
+                    Error::TagException(inner)
+                }
+                crate::error::ReplicateKeyErrorKind::UnsupportedOperationException(inner) => {
+                    Error::UnsupportedOperationException(inner)
+                }
+                crate::error::ReplicateKeyErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
 impl From<smithy_http::result::SdkError<crate::error::RetireGrantError>> for Error {
     fn from(err: smithy_http::result::SdkError<crate::error::RetireGrantError>) -> Self {
         match err {
@@ -1327,6 +1370,36 @@ impl From<smithy_http::result::SdkError<crate::error::UpdateKeyDescriptionError>
                     Error::NotFoundException(inner)
                 }
                 crate::error::UpdateKeyDescriptionErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl From<smithy_http::result::SdkError<crate::error::UpdatePrimaryRegionError>> for Error {
+    fn from(err: smithy_http::result::SdkError<crate::error::UpdatePrimaryRegionError>) -> Self {
+        match err {
+            smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::UpdatePrimaryRegionErrorKind::DisabledException(inner) => {
+                    Error::DisabledException(inner)
+                }
+                crate::error::UpdatePrimaryRegionErrorKind::InvalidArnException(inner) => {
+                    Error::InvalidArnException(inner)
+                }
+                crate::error::UpdatePrimaryRegionErrorKind::KmsInternalException(inner) => {
+                    Error::KmsInternalException(inner)
+                }
+                crate::error::UpdatePrimaryRegionErrorKind::KmsInvalidStateException(inner) => {
+                    Error::KmsInvalidStateException(inner)
+                }
+                crate::error::UpdatePrimaryRegionErrorKind::NotFoundException(inner) => {
+                    Error::NotFoundException(inner)
+                }
+                crate::error::UpdatePrimaryRegionErrorKind::UnsupportedOperationException(
+                    inner,
+                ) => Error::UnsupportedOperationException(inner),
+                crate::error::UpdatePrimaryRegionErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
                 }
             },

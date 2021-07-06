@@ -124,6 +124,9 @@ where
     ) -> fluent_builders::AssociateTransitGatewayRouteTable<C> {
         fluent_builders::AssociateTransitGatewayRouteTable::new(self.handle.clone())
     }
+    pub fn associate_trunk_interface(&self) -> fluent_builders::AssociateTrunkInterface<C> {
+        fluent_builders::AssociateTrunkInterface::new(self.handle.clone())
+    }
     pub fn associate_vpc_cidr_block(&self) -> fluent_builders::AssociateVpcCidrBlock<C> {
         fluent_builders::AssociateVpcCidrBlock::new(self.handle.clone())
     }
@@ -1036,6 +1039,11 @@ where
     ) -> fluent_builders::DescribeTransitGatewayVpcAttachments<C> {
         fluent_builders::DescribeTransitGatewayVpcAttachments::new(self.handle.clone())
     }
+    pub fn describe_trunk_interface_associations(
+        &self,
+    ) -> fluent_builders::DescribeTrunkInterfaceAssociations<C> {
+        fluent_builders::DescribeTrunkInterfaceAssociations::new(self.handle.clone())
+    }
     pub fn describe_volume_attribute(&self) -> fluent_builders::DescribeVolumeAttribute<C> {
         fluent_builders::DescribeVolumeAttribute::new(self.handle.clone())
     }
@@ -1128,6 +1136,9 @@ where
     ) -> fluent_builders::DisableFastSnapshotRestores<C> {
         fluent_builders::DisableFastSnapshotRestores::new(self.handle.clone())
     }
+    pub fn disable_image_deprecation(&self) -> fluent_builders::DisableImageDeprecation<C> {
+        fluent_builders::DisableImageDeprecation::new(self.handle.clone())
+    }
     pub fn disable_serial_console_access(&self) -> fluent_builders::DisableSerialConsoleAccess<C> {
         fluent_builders::DisableSerialConsoleAccess::new(self.handle.clone())
     }
@@ -1183,6 +1194,9 @@ where
     ) -> fluent_builders::DisassociateTransitGatewayRouteTable<C> {
         fluent_builders::DisassociateTransitGatewayRouteTable::new(self.handle.clone())
     }
+    pub fn disassociate_trunk_interface(&self) -> fluent_builders::DisassociateTrunkInterface<C> {
+        fluent_builders::DisassociateTrunkInterface::new(self.handle.clone())
+    }
     pub fn disassociate_vpc_cidr_block(&self) -> fluent_builders::DisassociateVpcCidrBlock<C> {
         fluent_builders::DisassociateVpcCidrBlock::new(self.handle.clone())
     }
@@ -1193,6 +1207,9 @@ where
     }
     pub fn enable_fast_snapshot_restores(&self) -> fluent_builders::EnableFastSnapshotRestores<C> {
         fluent_builders::EnableFastSnapshotRestores::new(self.handle.clone())
+    }
+    pub fn enable_image_deprecation(&self) -> fluent_builders::EnableImageDeprecation<C> {
+        fluent_builders::EnableImageDeprecation::new(self.handle.clone())
     }
     pub fn enable_serial_console_access(&self) -> fluent_builders::EnableSerialConsoleAccess<C> {
         fluent_builders::EnableSerialConsoleAccess::new(self.handle.clone())
@@ -3321,6 +3338,102 @@ pub mod fluent_builders {
         }
     }
     #[derive(std::fmt::Debug)]
+    pub struct AssociateTrunkInterface<C = aws_hyper::DynConnector> {
+        handle: std::sync::Arc<super::Handle<C>>,
+        inner: crate::input::associate_trunk_interface_input::Builder,
+    }
+    impl<C> AssociateTrunkInterface<C> {
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::AssociateTrunkInterfaceOutput,
+            smithy_http::result::SdkError<crate::error::AssociateTrunkInterfaceError>,
+        >
+        where
+            C: aws_hyper::SmithyConnector,
+        {
+            let input = self
+                .inner
+                .build()
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The ID of the branch network interface.</p>
+        pub fn branch_interface_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.branch_interface_id(input);
+            self
+        }
+        pub fn set_branch_interface_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_branch_interface_id(input);
+            self
+        }
+        /// <p>The ID of the trunk network interface.</p>
+        pub fn trunk_interface_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.trunk_interface_id(input);
+            self
+        }
+        pub fn set_trunk_interface_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_trunk_interface_id(input);
+            self
+        }
+        /// <p>The ID of the VLAN. This applies to the VLAN protocol.</p>
+        pub fn vlan_id(mut self, input: i32) -> Self {
+            self.inner = self.inner.vlan_id(input);
+            self
+        }
+        pub fn set_vlan_id(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_vlan_id(input);
+            self
+        }
+        /// <p>The application key. This applies to the GRE protocol.</p>
+        pub fn gre_key(mut self, input: i32) -> Self {
+            self.inner = self.inner.gre_key(input);
+            self
+        }
+        pub fn set_gre_key(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_gre_key(input);
+            self
+        }
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
+        /// request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to Ensure
+        /// Idempotency</a>.</p>
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input);
+            self
+        }
+        pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_client_token(input);
+            self
+        }
+        /// <p>Checks whether you have the required permissions for the action, without actually making the request,
+        /// and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>.
+        /// Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+        pub fn dry_run(mut self, input: bool) -> Self {
+            self.inner = self.inner.dry_run(input);
+            self
+        }
+        pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_dry_run(input);
+            self
+        }
+    }
+    #[derive(std::fmt::Debug)]
     pub struct AssociateVpcCidrBlock<C = aws_hyper::DynConnector> {
         handle: std::sync::Arc<super::Handle<C>>,
         inner: crate::input::associate_vpc_cidr_block_input::Builder,
@@ -4600,9 +4713,10 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>Checks whether you have the required permissions for the action, without actually making the request,
-        /// and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>.
-        /// Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+        /// <p>Checks whether you have the required permissions for the action, without actually
+        /// making the request, and provides an error response. If you have the required
+        /// permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is
+        /// <code>UnauthorizedOperation</code>.</p>
         pub fn dry_run(mut self, input: bool) -> Self {
             self.inner = self.inner.dry_run(input);
             self
@@ -4623,7 +4737,8 @@ pub mod fluent_builders {
             self.inner = self.inner.set_spot_fleet_request_ids(input);
             self
         }
-        /// <p>Indicates whether to terminate instances for a Spot Fleet request if it is canceled successfully.</p>
+        /// <p>Indicates whether to terminate instances for a Spot Fleet request if it is canceled
+        /// successfully.</p>
         pub fn terminate_instances(mut self, input: bool) -> Self {
             self.inner = self.inner.terminate_instances(input);
             self
@@ -4664,9 +4779,10 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>Checks whether you have the required permissions for the action, without actually making the request,
-        /// and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>.
-        /// Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+        /// <p>Checks whether you have the required permissions for the action, without actually
+        /// making the request, and provides an error response. If you have the required
+        /// permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is
+        /// <code>UnauthorizedOperation</code>.</p>
         pub fn dry_run(mut self, input: bool) -> Self {
             self.inner = self.inner.dry_run(input);
             self
@@ -5289,11 +5405,11 @@ pub mod fluent_builders {
         /// <ul>
         /// <li>
         /// <p>
-        /// <code>default</code> - The Capacity Reservation is created on hardware that is shared with other AWS accounts.</p>
+        /// <code>default</code> - The Capacity Reservation is created on hardware that is shared with other accounts.</p>
         /// </li>
         /// <li>
         /// <p>
-        /// <code>dedicated</code> - The Capacity Reservation is created on single-tenant hardware that is dedicated to a single AWS account.</p>
+        /// <code>dedicated</code> - The Capacity Reservation is created on single-tenant hardware that is dedicated to a single account.</p>
         /// </li>
         /// </ul>
         pub fn tenancy(mut self, input: crate::model::CapacityReservationTenancy) -> Self {
@@ -6372,7 +6488,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_terminate_instances_with_expiration(input);
             self
         }
-        /// <p>The type of request. The default value is <code>maintain</code>.</p>
+        /// <p>The fleet type. The default value is <code>maintain</code>.</p>
         /// <ul>
         /// <li>
         /// <p>
@@ -6440,11 +6556,13 @@ pub mod fluent_builders {
             self.inner = self.inner.set_replace_unhealthy_instances(input);
             self
         }
-        /// <p>The key-value pair for tagging the EC2 Fleet request on creation. The value for
-        /// <code>ResourceType</code> must be <code>fleet</code>, otherwise the fleet request fails.
-        /// To tag instances at launch, specify the tags in the <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html#create-launch-template">launch
-        /// template</a>. For information about tagging after launch, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#tag-resources">Tagging your
-        /// resources</a>.</p>
+        /// <p>The key-value pair for tagging the EC2 Fleet request on creation. For more information, see
+        /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#tag-resources">Tagging your resources</a>.</p>
+        /// <p>If the fleet type is <code>instant</code>, specify a resource type of <code>fleet</code>
+        /// to tag the fleet or <code>instance</code> to tag the instances at launch.</p>
+        /// <p>If the fleet type is <code>maintain</code> or <code>request</code>, specify a resource
+        /// type of <code>fleet</code> to tag the fleet. You cannot specify a resource type of
+        /// <code>instance</code>. To tag instances at launch, specify the tags in a <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html#create-launch-template">launch template</a>.</p>
         pub fn tag_specifications(
             mut self,
             inp: impl Into<crate::model::TagSpecification>,
@@ -6457,6 +6575,15 @@ pub mod fluent_builders {
             input: std::option::Option<std::vec::Vec<crate::model::TagSpecification>>,
         ) -> Self {
             self.inner = self.inner.set_tag_specifications(input);
+            self
+        }
+        /// <p>Reserved.</p>
+        pub fn context(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.context(input);
+            self
+        }
+        pub fn set_context(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_context(input);
             self
         }
     }
@@ -8233,7 +8360,9 @@ pub mod fluent_builders {
         }
         /// <p>Indicates the type of network interface. To create an Elastic Fabric Adapter (EFA), specify
         /// <code>efa</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/efa.html">
-        /// Elastic Fabric Adapter</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+        /// Elastic Fabric Adapter</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>. To create a trunk network interface, specify
+        /// <code>efa</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/eni-trunking.html">
+        /// Network interface trunking</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
         pub fn interface_type(mut self, input: crate::model::NetworkInterfaceCreationType) -> Self {
             self.inner = self.inner.interface_type(input);
             self
@@ -8322,7 +8451,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_network_interface_id(input);
             self
         }
-        /// <p>The AWS account ID.</p>
+        /// <p>The account ID.</p>
         pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.aws_account_id(input);
             self
@@ -8334,7 +8463,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_aws_account_id(input);
             self
         }
-        /// <p>The AWS service. Currently not supported.</p>
+        /// <p>The Amazon Web Service. Currently not supported.</p>
         pub fn aws_service(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.aws_service(input);
             self
@@ -9354,8 +9483,9 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of the Amazon S3 bucket in which to store the Spot Instance data feed. For more information
-        /// about bucket names, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/BucketRestrictions.html#bucketnamingrules">Rules for bucket naming</a> in the <i>Amazon S3 Developer Guide</i>.</p>
+        /// <p>The name of the Amazon S3 bucket in which to store the Spot Instance data feed. For
+        /// more information about bucket names, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/BucketRestrictions.html#bucketnamingrules">Rules for bucket
+        /// naming</a> in the <i>Amazon S3 Developer Guide</i>.</p>
         pub fn bucket(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.bucket(input);
             self
@@ -9364,9 +9494,10 @@ pub mod fluent_builders {
             self.inner = self.inner.set_bucket(input);
             self
         }
-        /// <p>Checks whether you have the required permissions for the action, without actually making the request,
-        /// and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>.
-        /// Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+        /// <p>Checks whether you have the required permissions for the action, without actually
+        /// making the request, and provides an error response. If you have the required
+        /// permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is
+        /// <code>UnauthorizedOperation</code>.</p>
         pub fn dry_run(mut self, input: bool) -> Self {
             self.inner = self.inner.dry_run(input);
             self
@@ -13974,9 +14105,10 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>Checks whether you have the required permissions for the action, without actually making the request,
-        /// and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>.
-        /// Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+        /// <p>Checks whether you have the required permissions for the action, without actually
+        /// making the request, and provides an error response. If you have the required
+        /// permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is
+        /// <code>UnauthorizedOperation</code>.</p>
         pub fn dry_run(mut self, input: bool) -> Self {
             self.inner = self.inner.dry_run(input);
             self
@@ -15818,7 +15950,7 @@ pub mod fluent_builders {
         /// <li>
         /// <p>
         /// <code>network-border-group</code> -  A unique set of Availability Zones, Local Zones,
-        /// or Wavelength Zones from where AWS advertises IP addresses. </p>
+        /// or Wavelength Zones from where Amazon Web Services advertises IP addresses. </p>
         /// </li>
         /// <li>
         /// <p>
@@ -15826,7 +15958,7 @@ pub mod fluent_builders {
         /// </li>
         /// <li>
         /// <p>
-        /// <code>network-interface-owner-id</code> - The AWS account ID of the owner.</p>
+        /// <code>network-interface-owner-id</code> - The account ID of the owner.</p>
         /// </li>
         /// <li>
         /// <p>
@@ -16413,7 +16545,7 @@ pub mod fluent_builders {
         /// </li>
         /// <li>
         /// <p>
-        /// <code>owner-id</code> - The ID of the AWS account that owns the Capacity Reservation.</p>
+        /// <code>owner-id</code> - The ID of the account that owns the Capacity Reservation.</p>
         /// </li>
         /// <li>
         /// <p>
@@ -16434,11 +16566,11 @@ pub mod fluent_builders {
         /// <ul>
         /// <li>
         /// <p>
-        /// <code>default</code> - The Capacity Reservation is created on hardware that is shared with other AWS accounts.</p>
+        /// <code>default</code> - The Capacity Reservation is created on hardware that is shared with other accounts.</p>
         /// </li>
         /// <li>
         /// <p>
-        /// <code>dedicated</code> - The Capacity Reservation is created on single-tenant hardware that is dedicated to a single AWS account.</p>
+        /// <code>dedicated</code> - The Capacity Reservation is created on single-tenant hardware that is dedicated to a single account.</p>
         /// </li>
         /// </ul>
         /// </li>
@@ -19548,6 +19680,20 @@ pub mod fluent_builders {
             self.inner = self.inner.set_owners(input);
             self
         }
+        /// <p>If <code>true</code>, all deprecated AMIs are included in the response. If
+        /// <code>false</code>, no deprecated AMIs are included in the response. If no value is
+        /// specified, the default value is <code>false</code>.</p>
+        /// <note>
+        /// <p>If you are the AMI owner, all deprecated AMIs appear in the response regardless of the value (<code>true</code> or <code>false</code>) that you set for this parameter.</p>
+        /// </note>
+        pub fn include_deprecated(mut self, input: bool) -> Self {
+            self.inner = self.inner.include_deprecated(input);
+            self
+        }
+        pub fn set_include_deprecated(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_include_deprecated(input);
+            self
+        }
         /// <p>Checks whether you have the required permissions for the action, without actually making the request,
         /// and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>.
         /// Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -20271,7 +20417,7 @@ pub mod fluent_builders {
         /// <li>
         /// <p>
         /// <code>network-interface.requester-managed</code> - Indicates whether the
-        /// network interface is being managed by AWS.</p>
+        /// network interface is being managed by Amazon Web Services.</p>
         /// </li>
         /// <li>
         /// <p>
@@ -20302,7 +20448,7 @@ pub mod fluent_builders {
         /// </li>
         /// <li>
         /// <p>
-        /// <code>owner-id</code> - The AWS account ID of the instance owner.</p>
+        /// <code>owner-id</code> - The account ID of the instance owner.</p>
         /// </li>
         /// <li>
         /// <p>
@@ -20352,7 +20498,7 @@ pub mod fluent_builders {
         /// <li>
         /// <p>
         /// <code>requester-id</code> - The ID of the entity that launched the instance on
-        /// your behalf (for example, AWS Management Console, Auto Scaling, and so
+        /// your behalf (for example, Management Console, Auto Scaling, and so
         /// on).</p>
         /// </li>
         /// <li>
@@ -23155,13 +23301,11 @@ pub mod fluent_builders {
         /// </li>
         /// <li>
         /// <p>
-        /// <code>network-interface-permission.aws-account-id</code> - The AWS account
-        /// ID.</p>
+        /// <code>network-interface-permission.aws-account-id</code> - The account ID.</p>
         /// </li>
         /// <li>
         /// <p>
-        /// <code>network-interface-permission.aws-service</code> - The AWS
-        /// service.</p>
+        /// <code>network-interface-permission.aws-service</code> - The Amazon Web Service.</p>
         /// </li>
         /// <li>
         /// <p>
@@ -23338,7 +23482,7 @@ pub mod fluent_builders {
         /// </li>
         /// <li>
         /// <p>
-        /// <code>owner-id</code> - The AWS account ID of the network interface owner.</p>
+        /// <code>owner-id</code> - The account ID of the network interface owner.</p>
         /// </li>
         /// <li>
         /// <p>
@@ -23351,11 +23495,12 @@ pub mod fluent_builders {
         /// </li>
         /// <li>
         /// <p>
-        /// <code>requester-id</code> - The alias or AWS account ID of the principal or service that created the network interface.</p>
+        /// <code>requester-id</code> - The alias or account ID of the principal or service that created the network interface.</p>
         /// </li>
         /// <li>
         /// <p>
-        /// <code>requester-managed</code> - Indicates whether the network interface is being managed by an AWS service (for example, AWS Management Console, Auto Scaling, and so on).</p>
+        /// <code>requester-managed</code> - Indicates whether the network interface is being managed by an Amazon Web Service
+        /// (for example, Management Console, Auto Scaling, and so on).</p>
         /// </li>
         /// <li>
         /// <p>
@@ -24446,7 +24591,7 @@ pub mod fluent_builders {
         /// <p>
         /// <code>marketplace</code> - Set to <code>true</code> to show only Reserved Instance
         /// Marketplace offerings. When this filter is not used, which is the default behavior, all
-        /// offerings from both AWS and the Reserved Instance Marketplace are listed.</p>
+        /// offerings from both Amazon Web Services and the Reserved Instance Marketplace are listed.</p>
         /// </li>
         /// <li>
         /// <p>
@@ -25656,9 +25801,10 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>Checks whether you have the required permissions for the action, without actually making the request,
-        /// and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>.
-        /// Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+        /// <p>Checks whether you have the required permissions for the action, without actually
+        /// making the request, and provides an error response. If you have the required
+        /// permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is
+        /// <code>UnauthorizedOperation</code>.</p>
         pub fn dry_run(mut self, input: bool) -> Self {
             self.inner = self.inner.dry_run(input);
             self
@@ -25699,9 +25845,10 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>Checks whether you have the required permissions for the action, without actually making the request,
-        /// and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>.
-        /// Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+        /// <p>Checks whether you have the required permissions for the action, without actually
+        /// making the request, and provides an error response. If you have the required
+        /// permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is
+        /// <code>UnauthorizedOperation</code>.</p>
         pub fn dry_run(mut self, input: bool) -> Self {
             self.inner = self.inner.dry_run(input);
             self
@@ -25710,10 +25857,9 @@ pub mod fluent_builders {
             self.inner = self.inner.set_dry_run(input);
             self
         }
-        /// <p>The maximum number of results to return in a single call.
-        /// Specify a value between 1 and 1000. The default value is 1000.      
-        /// To retrieve the remaining results, make another call with the returned
-        /// <code>NextToken</code> value.</p>
+        /// <p>The maximum number of results to return in a single call. Specify a value between 1
+        /// and 1000. The default value is 1000. To retrieve the remaining results, make another
+        /// call with the returned <code>NextToken</code> value.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
@@ -25775,9 +25921,10 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>Checks whether you have the required permissions for the action, without actually making the request,
-        /// and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>.
-        /// Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+        /// <p>Checks whether you have the required permissions for the action, without actually
+        /// making the request, and provides an error response. If you have the required
+        /// permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is
+        /// <code>UnauthorizedOperation</code>.</p>
         pub fn dry_run(mut self, input: bool) -> Self {
             self.inner = self.inner.dry_run(input);
             self
@@ -25798,10 +25945,9 @@ pub mod fluent_builders {
             self.inner = self.inner.set_event_type(input);
             self
         }
-        /// <p>The maximum number of results to return in a single call.
-        /// Specify a value between 1 and 1000. The default value is 1000.      
-        /// To retrieve the remaining results, make another call with the returned
-        /// <code>NextToken</code> value.</p>
+        /// <p>The maximum number of results to return in a single call. Specify a value between 1
+        /// and 1000. The default value is 1000. To retrieve the remaining results, make another
+        /// call with the returned <code>NextToken</code> value.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
@@ -25831,7 +25977,8 @@ pub mod fluent_builders {
             self.inner = self.inner.set_spot_fleet_request_id(input);
             self
         }
-        /// <p>The starting date and time for the events, in UTC format (for example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
+        /// <p>The starting date and time for the events, in UTC format (for example,
+        /// <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
         pub fn start_time(mut self, input: smithy_types::Instant) -> Self {
             self.inner = self.inner.start_time(input);
             self
@@ -25872,9 +26019,10 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>Checks whether you have the required permissions for the action, without actually making the request,
-        /// and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>.
-        /// Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+        /// <p>Checks whether you have the required permissions for the action, without actually
+        /// making the request, and provides an error response. If you have the required
+        /// permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is
+        /// <code>UnauthorizedOperation</code>.</p>
         pub fn dry_run(mut self, input: bool) -> Self {
             self.inner = self.inner.dry_run(input);
             self
@@ -25883,10 +26031,9 @@ pub mod fluent_builders {
             self.inner = self.inner.set_dry_run(input);
             self
         }
-        /// <p>The maximum number of results to return in a single call.
-        /// Specify a value between 1 and 1000. The default value is 1000.      
-        /// To retrieve the remaining results, make another call with the returned
-        /// <code>NextToken</code> value.</p>
+        /// <p>The maximum number of results to return in a single call. Specify a value between 1
+        /// and 1000. The default value is 1000. To retrieve the remaining results, make another
+        /// call with the returned <code>NextToken</code> value.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
@@ -25956,7 +26103,8 @@ pub mod fluent_builders {
         /// </li>
         /// <li>
         /// <p>
-        /// <code>create-time</code> - The time stamp when the Spot Instance request was created.</p>
+        /// <code>create-time</code> - The time stamp when the Spot Instance request was
+        /// created.</p>
         /// </li>
         /// <li>
         /// <p>
@@ -25968,7 +26116,8 @@ pub mod fluent_builders {
         /// </li>
         /// <li>
         /// <p>
-        /// <code>instance-id</code> - The ID of the instance that fulfilled the request.</p>
+        /// <code>instance-id</code> - The ID of the instance that fulfilled the
+        /// request.</p>
         /// </li>
         /// <li>
         /// <p>
@@ -25976,33 +26125,42 @@ pub mod fluent_builders {
         /// </li>
         /// <li>
         /// <p>
-        /// <code>launch.block-device-mapping.delete-on-termination</code> - Indicates whether the EBS volume is deleted on instance termination.</p>
+        /// <code>launch.block-device-mapping.delete-on-termination</code> - Indicates
+        /// whether the EBS volume is deleted on instance termination.</p>
         /// </li>
         /// <li>
         /// <p>
-        /// <code>launch.block-device-mapping.device-name</code> - The device name for the volume in the block device mapping (for example, <code>/dev/sdh</code> or <code>xvdh</code>).</p>
+        /// <code>launch.block-device-mapping.device-name</code> - The device name for the
+        /// volume in the block device mapping (for example, <code>/dev/sdh</code> or
+        /// <code>xvdh</code>).</p>
         /// </li>
         /// <li>
         /// <p>
-        /// <code>launch.block-device-mapping.snapshot-id</code> - The ID of the snapshot for the EBS volume.</p>
+        /// <code>launch.block-device-mapping.snapshot-id</code> - The ID of the snapshot
+        /// for the EBS volume.</p>
         /// </li>
         /// <li>
         /// <p>
-        /// <code>launch.block-device-mapping.volume-size</code> - The size of the EBS volume, in GiB.</p>
+        /// <code>launch.block-device-mapping.volume-size</code> - The size of the EBS
+        /// volume, in GiB.</p>
         /// </li>
         /// <li>
         /// <p>
         /// <code>launch.block-device-mapping.volume-type</code> - The type of EBS volume:
-        /// <code>gp2</code> for General Purpose SSD, <code>io1</code> or <code>io2</code> for Provisioned IOPS SSD, <code>st1</code> for
-        /// Throughput Optimized HDD, <code>sc1</code>for Cold HDD, or <code>standard</code> for Magnetic.</p>
+        /// <code>gp2</code> for General Purpose SSD, <code>io1</code> or
+        /// <code>io2</code> for Provisioned IOPS SSD, <code>st1</code> for Throughput
+        /// Optimized HDD, <code>sc1</code>for Cold HDD, or <code>standard</code> for
+        /// Magnetic.</p>
         /// </li>
         /// <li>
         /// <p>
-        /// <code>launch.group-id</code> - The ID of the security group for the instance.</p>
+        /// <code>launch.group-id</code> - The ID of the security group for the
+        /// instance.</p>
         /// </li>
         /// <li>
         /// <p>
-        /// <code>launch.group-name</code> - The name of the security group for the instance.</p>
+        /// <code>launch.group-name</code> - The name of the security group for the
+        /// instance.</p>
         /// </li>
         /// <li>
         /// <p>
@@ -26010,7 +26168,8 @@ pub mod fluent_builders {
         /// </li>
         /// <li>
         /// <p>
-        /// <code>launch.instance-type</code> - The type of instance (for example, <code>m3.medium</code>).</p>
+        /// <code>launch.instance-type</code> - The type of instance (for example,
+        /// <code>m3.medium</code>).</p>
         /// </li>
         /// <li>
         /// <p>
@@ -26018,11 +26177,13 @@ pub mod fluent_builders {
         /// </li>
         /// <li>
         /// <p>
-        /// <code>launch.key-name</code> - The name of the key pair the instance launched with.</p>
+        /// <code>launch.key-name</code> - The name of the key pair the instance launched
+        /// with.</p>
         /// </li>
         /// <li>
         /// <p>
-        /// <code>launch.monitoring-enabled</code> - Whether detailed monitoring is enabled for the Spot Instance.</p>
+        /// <code>launch.monitoring-enabled</code> - Whether detailed monitoring is
+        /// enabled for the Spot Instance.</p>
         /// </li>
         /// <li>
         /// <p>
@@ -26030,47 +26191,53 @@ pub mod fluent_builders {
         /// </li>
         /// <li>
         /// <p>
-        /// <code>launched-availability-zone</code> - The Availability Zone in which the request is launched.</p>
+        /// <code>launched-availability-zone</code> - The Availability Zone in which the
+        /// request is launched.</p>
         /// </li>
         /// <li>
         /// <p>
-        /// <code>network-interface.addresses.primary</code> - Indicates whether the IP address is
-        /// the primary private IP address.</p>
+        /// <code>network-interface.addresses.primary</code> - Indicates whether the IP
+        /// address is the primary private IP address.</p>
         /// </li>
         /// <li>
         /// <p>
-        /// <code>network-interface.delete-on-termination</code> - Indicates whether the network
-        /// interface is deleted when the instance is terminated.</p>
+        /// <code>network-interface.delete-on-termination</code> - Indicates whether the
+        /// network interface is deleted when the instance is terminated.</p>
         /// </li>
         /// <li>
         /// <p>
-        /// <code>network-interface.description</code> - A description of the network interface.</p>
+        /// <code>network-interface.description</code> - A description of the network
+        /// interface.</p>
         /// </li>
         /// <li>
         /// <p>
-        /// <code>network-interface.device-index</code> - The index of the device for the network
-        /// interface attachment on the instance.</p>
+        /// <code>network-interface.device-index</code> - The index of the device for the
+        /// network interface attachment on the instance.</p>
         /// </li>
         /// <li>
         /// <p>
-        /// <code>network-interface.group-id</code> - The ID of the security group associated with the network interface.</p>
+        /// <code>network-interface.group-id</code> - The ID of the security group
+        /// associated with the network interface.</p>
         /// </li>
         /// <li>
         /// <p>
-        /// <code>network-interface.network-interface-id</code> - The ID of the network interface.</p>
+        /// <code>network-interface.network-interface-id</code> - The ID of the network
+        /// interface.</p>
         /// </li>
         /// <li>
         /// <p>
-        /// <code>network-interface.private-ip-address</code> - The primary private IP address of
-        /// the network interface.</p>
+        /// <code>network-interface.private-ip-address</code> - The primary private IP
+        /// address of the network interface.</p>
         /// </li>
         /// <li>
         /// <p>
-        /// <code>network-interface.subnet-id</code> - The ID of the subnet for the instance.</p>
+        /// <code>network-interface.subnet-id</code> - The ID of the subnet for the
+        /// instance.</p>
         /// </li>
         /// <li>
         /// <p>
-        /// <code>product-description</code> - The product description associated with the instance (<code>Linux/UNIX</code> | <code>Windows</code>).</p>
+        /// <code>product-description</code> - The product description associated with the
+        /// instance (<code>Linux/UNIX</code> | <code>Windows</code>).</p>
         /// </li>
         /// <li>
         /// <p>
@@ -26078,7 +26245,8 @@ pub mod fluent_builders {
         /// </li>
         /// <li>
         /// <p>
-        /// <code>spot-price</code> - The maximum hourly price for any Spot Instance launched to fulfill the request.</p>
+        /// <code>spot-price</code> - The maximum hourly price for any Spot Instance
+        /// launched to fulfill the request.</p>
         /// </li>
         /// <li>
         /// <p>
@@ -26086,16 +26254,17 @@ pub mod fluent_builders {
         /// | <code>active</code> | <code>closed</code> | <code>cancelled</code> |
         /// <code>failed</code>). Spot request status information can help you track
         /// your Amazon EC2 Spot Instance requests. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-bid-status.html">Spot
-        /// request status</a> in the
-        /// <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
+        /// request status</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
         /// </li>
         /// <li>
         /// <p>
-        /// <code>status-code</code> - The short code describing the most recent evaluation of your Spot Instance request.</p>
+        /// <code>status-code</code> - The short code describing the most recent
+        /// evaluation of your Spot Instance request.</p>
         /// </li>
         /// <li>
         /// <p>
-        /// <code>status-message</code> - The message explaining the status of the Spot Instance request.</p>
+        /// <code>status-message</code> - The message explaining the status of the Spot
+        /// Instance request.</p>
         /// </li>
         /// <li>
         /// <p>
@@ -26108,7 +26277,8 @@ pub mod fluent_builders {
         /// </li>
         /// <li>
         /// <p>
-        /// <code>type</code> - The type of Spot Instance request (<code>one-time</code> | <code>persistent</code>).</p>
+        /// <code>type</code> - The type of Spot Instance request (<code>one-time</code> |
+        /// <code>persistent</code>).</p>
         /// </li>
         /// <li>
         /// <p>
@@ -26130,9 +26300,10 @@ pub mod fluent_builders {
             self.inner = self.inner.set_filters(input);
             self
         }
-        /// <p>Checks whether you have the required permissions for the action, without actually making the request,
-        /// and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>.
-        /// Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+        /// <p>Checks whether you have the required permissions for the action, without actually
+        /// making the request, and provides an error response. If you have the required
+        /// permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is
+        /// <code>UnauthorizedOperation</code>.</p>
         pub fn dry_run(mut self, input: bool) -> Self {
             self.inner = self.inner.dry_run(input);
             self
@@ -26210,24 +26381,27 @@ pub mod fluent_builders {
         /// <ul>
         /// <li>
         /// <p>
-        /// <code>availability-zone</code> - The Availability Zone for which prices should be returned.</p>
+        /// <code>availability-zone</code> - The Availability Zone for which prices should
+        /// be returned.</p>
         /// </li>
         /// <li>
         /// <p>
-        /// <code>instance-type</code> - The type of instance (for example, <code>m3.medium</code>).</p>
+        /// <code>instance-type</code> - The type of instance (for example,
+        /// <code>m3.medium</code>).</p>
         /// </li>
         /// <li>
         /// <p>
         /// <code>product-description</code> - The product description for the Spot price
         /// (<code>Linux/UNIX</code> | <code>Red Hat Enterprise Linux</code> |
         /// <code>SUSE Linux</code> | <code>Windows</code> | <code>Linux/UNIX (Amazon
-        /// VPC)</code> | <code>Red Hat Enterprise Linux (Amazon VPC)</code>
-        /// | <code>SUSE Linux (Amazon VPC)</code> | <code>Windows (Amazon
+        /// VPC)</code> | <code>Red Hat Enterprise Linux (Amazon VPC)</code> |
+        /// <code>SUSE Linux (Amazon VPC)</code> | <code>Windows (Amazon
         /// VPC)</code>).</p>
         /// </li>
         /// <li>
         /// <p>
-        /// <code>spot-price</code> - The Spot price. The value must match exactly (or use wildcards; greater than or less than comparison is not supported).</p>
+        /// <code>spot-price</code> - The Spot price. The value must match exactly (or use
+        /// wildcards; greater than or less than comparison is not supported).</p>
         /// </li>
         /// <li>
         /// <p>
@@ -26261,9 +26435,10 @@ pub mod fluent_builders {
             self.inner = self.inner.set_availability_zone(input);
             self
         }
-        /// <p>Checks whether you have the required permissions for the action, without actually making the request,
-        /// and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>.
-        /// Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+        /// <p>Checks whether you have the required permissions for the action, without actually
+        /// making the request, and provides an error response. If you have the required
+        /// permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is
+        /// <code>UnauthorizedOperation</code>.</p>
         pub fn dry_run(mut self, input: bool) -> Self {
             self.inner = self.inner.dry_run(input);
             self
@@ -26272,8 +26447,9 @@ pub mod fluent_builders {
             self.inner = self.inner.set_dry_run(input);
             self
         }
-        /// <p>The date and time, up to the current date, from which to stop retrieving the price history data,
-        /// in UTC format (for example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
+        /// <p>The date and time, up to the current date, from which to stop retrieving the price
+        /// history data, in UTC format (for example,
+        /// <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
         pub fn end_time(mut self, input: smithy_types::Instant) -> Self {
             self.inner = self.inner.end_time(input);
             self
@@ -26294,10 +26470,9 @@ pub mod fluent_builders {
             self.inner = self.inner.set_instance_types(input);
             self
         }
-        /// <p>The maximum number of results to return in a single call.
-        /// Specify a value between 1 and 1000. The default value is 1000.      
-        /// To retrieve the remaining results, make another call with the returned
-        /// <code>NextToken</code> value.</p>
+        /// <p>The maximum number of results to return in a single call. Specify a value between 1
+        /// and 1000. The default value is 1000. To retrieve the remaining results, make another
+        /// call with the returned <code>NextToken</code> value.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
@@ -26327,8 +26502,9 @@ pub mod fluent_builders {
             self.inner = self.inner.set_product_descriptions(input);
             self
         }
-        /// <p>The date and time, up to the past 90 days, from which to start retrieving the price history data,
-        /// in UTC format (for example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
+        /// <p>The date and time, up to the past 90 days, from which to start retrieving the price
+        /// history data, in UTC format (for example,
+        /// <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
         pub fn start_time(mut self, input: smithy_types::Instant) -> Self {
             self.inner = self.inner.start_time(input);
             self
@@ -28029,6 +28205,102 @@ pub mod fluent_builders {
         }
         pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_dry_run(input);
+            self
+        }
+    }
+    #[derive(std::fmt::Debug)]
+    pub struct DescribeTrunkInterfaceAssociations<C = aws_hyper::DynConnector> {
+        handle: std::sync::Arc<super::Handle<C>>,
+        inner: crate::input::describe_trunk_interface_associations_input::Builder,
+    }
+    impl<C> DescribeTrunkInterfaceAssociations<C> {
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DescribeTrunkInterfaceAssociationsOutput,
+            smithy_http::result::SdkError<crate::error::DescribeTrunkInterfaceAssociationsError>,
+        >
+        where
+            C: aws_hyper::SmithyConnector,
+        {
+            let input = self
+                .inner
+                .build()
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The IDs of the associations.</p>
+        pub fn association_ids(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.association_ids(inp);
+            self
+        }
+        pub fn set_association_ids(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.inner = self.inner.set_association_ids(input);
+            self
+        }
+        /// <p>Checks whether you have the required permissions for the action, without actually making the request,
+        /// and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>.
+        /// Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+        pub fn dry_run(mut self, input: bool) -> Self {
+            self.inner = self.inner.dry_run(input);
+            self
+        }
+        pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_dry_run(input);
+            self
+        }
+        /// <p>One or more filters.</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>gre-key</code> - The ID of a trunk interface association.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>interface-protocol</code> - The interface protocol. Valid values are <code>VLAN</code> and <code>GRE</code>.</p>
+        /// </li>
+        /// </ul>
+        pub fn filters(mut self, inp: impl Into<crate::model::Filter>) -> Self {
+            self.inner = self.inner.filters(inp);
+            self
+        }
+        pub fn set_filters(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
+        ) -> Self {
+            self.inner = self.inner.set_filters(input);
+            self
+        }
+        /// <p>The token for the next page of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input);
+            self
+        }
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+        /// <p>The maximum number of results to return with a single call.
+        /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
+            self
+        }
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
             self
         }
     }
@@ -30431,6 +30703,58 @@ pub mod fluent_builders {
         }
     }
     #[derive(std::fmt::Debug)]
+    pub struct DisableImageDeprecation<C = aws_hyper::DynConnector> {
+        handle: std::sync::Arc<super::Handle<C>>,
+        inner: crate::input::disable_image_deprecation_input::Builder,
+    }
+    impl<C> DisableImageDeprecation<C> {
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DisableImageDeprecationOutput,
+            smithy_http::result::SdkError<crate::error::DisableImageDeprecationError>,
+        >
+        where
+            C: aws_hyper::SmithyConnector,
+        {
+            let input = self
+                .inner
+                .build()
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The ID of the AMI.</p>
+        pub fn image_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.image_id(input);
+            self
+        }
+        pub fn set_image_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_image_id(input);
+            self
+        }
+        /// <p>Checks whether you have the required permissions for the action, without actually making the request,
+        /// and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>.
+        /// Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+        pub fn dry_run(mut self, input: bool) -> Self {
+            self.inner = self.inner.dry_run(input);
+            self
+        }
+        pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_dry_run(input);
+            self
+        }
+    }
+    #[derive(std::fmt::Debug)]
     pub struct DisableSerialConsoleAccess<C = aws_hyper::DynConnector> {
         handle: std::sync::Arc<super::Handle<C>>,
         inner: crate::input::disable_serial_console_access_input::Builder,
@@ -31198,6 +31522,72 @@ pub mod fluent_builders {
         }
     }
     #[derive(std::fmt::Debug)]
+    pub struct DisassociateTrunkInterface<C = aws_hyper::DynConnector> {
+        handle: std::sync::Arc<super::Handle<C>>,
+        inner: crate::input::disassociate_trunk_interface_input::Builder,
+    }
+    impl<C> DisassociateTrunkInterface<C> {
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DisassociateTrunkInterfaceOutput,
+            smithy_http::result::SdkError<crate::error::DisassociateTrunkInterfaceError>,
+        >
+        where
+            C: aws_hyper::SmithyConnector,
+        {
+            let input = self
+                .inner
+                .build()
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The ID ofthe association</p>
+        pub fn association_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.association_id(input);
+            self
+        }
+        pub fn set_association_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_association_id(input);
+            self
+        }
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
+        /// request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to Ensure
+        /// Idempotency</a>.</p>
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input);
+            self
+        }
+        pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_client_token(input);
+            self
+        }
+        /// <p>Checks whether you have the required permissions for the action, without actually making the request,
+        /// and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>.
+        /// Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+        pub fn dry_run(mut self, input: bool) -> Self {
+            self.inner = self.inner.dry_run(input);
+            self
+        }
+        pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_dry_run(input);
+            self
+        }
+    }
+    #[derive(std::fmt::Debug)]
     pub struct DisassociateVpcCidrBlock<C = aws_hyper::DynConnector> {
         handle: std::sync::Arc<super::Handle<C>>,
         inner: crate::input::disassociate_vpc_cidr_block_input::Builder,
@@ -31338,6 +31728,75 @@ pub mod fluent_builders {
             input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
             self.inner = self.inner.set_source_snapshot_ids(input);
+            self
+        }
+        /// <p>Checks whether you have the required permissions for the action, without actually making the request,
+        /// and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>.
+        /// Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+        pub fn dry_run(mut self, input: bool) -> Self {
+            self.inner = self.inner.dry_run(input);
+            self
+        }
+        pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_dry_run(input);
+            self
+        }
+    }
+    #[derive(std::fmt::Debug)]
+    pub struct EnableImageDeprecation<C = aws_hyper::DynConnector> {
+        handle: std::sync::Arc<super::Handle<C>>,
+        inner: crate::input::enable_image_deprecation_input::Builder,
+    }
+    impl<C> EnableImageDeprecation<C> {
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::EnableImageDeprecationOutput,
+            smithy_http::result::SdkError<crate::error::EnableImageDeprecationError>,
+        >
+        where
+            C: aws_hyper::SmithyConnector,
+        {
+            let input = self
+                .inner
+                .build()
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The ID of the AMI.</p>
+        pub fn image_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.image_id(input);
+            self
+        }
+        pub fn set_image_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_image_id(input);
+            self
+        }
+        /// <p>The date and time to deprecate the AMI, in UTC, in the following format:
+        /// <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z.
+        /// If you specify a value for seconds, Amazon EC2 rounds the seconds to the
+        /// nearest minute.</p>
+        /// <p>You can’t specify a date in the past. The upper limit for <code>DeprecateAt</code> is 10
+        /// years from now.</p>
+        pub fn deprecate_at(mut self, input: smithy_types::Instant) -> Self {
+            self.inner = self.inner.deprecate_at(input);
+            self
+        }
+        pub fn set_deprecate_at(
+            mut self,
+            input: std::option::Option<smithy_types::Instant>,
+        ) -> Self {
+            self.inner = self.inner.set_deprecate_at(input);
             self
         }
         /// <p>Checks whether you have the required permissions for the action, without actually making the request,
@@ -35099,6 +35558,15 @@ pub mod fluent_builders {
             self.inner = self.inner.set_target_capacity_specification(input);
             self
         }
+        /// <p>Reserved.</p>
+        pub fn context(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.context(input);
+            self
+        }
+        pub fn set_context(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_context(input);
+            self
+        }
     }
     #[derive(std::fmt::Debug)]
     pub struct ModifyFpgaImageAttribute<C = aws_hyper::DynConnector> {
@@ -35874,7 +36342,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_sriov_net_support(input);
             self
         }
-        /// <p>Changes the instance's user data to the specified value. If you are using an AWS SDK
+        /// <p>Changes the instance's user data to the specified value. If you are using an Amazon Web Services SDK
         /// or command line tool, base64-encoding is performed for you, and you can load the text
         /// from a file. Otherwise, you must provide base64-encoded text.</p>
         pub fn user_data(mut self, input: crate::model::BlobAttributeValue) -> Self {
@@ -36840,7 +37308,8 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>Indicates whether running Spot Instances should be terminated if the target capacity of the Spot Fleet request is decreased below the current size of the Spot Fleet.</p>
+        /// <p>Indicates whether running Spot Instances should be terminated if the target capacity
+        /// of the Spot Fleet request is decreased below the current size of the Spot Fleet.</p>
         pub fn excess_capacity_termination_policy(
             mut self,
             input: crate::model::ExcessCapacityTerminationPolicy,
@@ -36855,7 +37324,10 @@ pub mod fluent_builders {
             self.inner = self.inner.set_excess_capacity_termination_policy(input);
             self
         }
-        /// <p>The launch template and overrides. You can only use this parameter if you specified a launch template (<code>LaunchTemplateConfigs</code>) in your Spot Fleet request. If you specified <code>LaunchSpecifications</code> in your Spot Fleet request, then omit this parameter.</p>
+        /// <p>The launch template and overrides. You can only use this parameter if you specified a
+        /// launch template (<code>LaunchTemplateConfigs</code>) in your Spot Fleet request. If you
+        /// specified <code>LaunchSpecifications</code> in your Spot Fleet request, then omit this
+        /// parameter.</p>
         pub fn launch_template_configs(
             mut self,
             inp: impl Into<crate::model::LaunchTemplateConfig>,
@@ -36898,6 +37370,15 @@ pub mod fluent_builders {
         }
         pub fn set_on_demand_target_capacity(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_on_demand_target_capacity(input);
+            self
+        }
+        /// <p>Reserved.</p>
+        pub fn context(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.context(input);
+            self
+        }
+        pub fn set_context(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_context(input);
             self
         }
     }
@@ -39149,6 +39630,15 @@ pub mod fluent_builders {
             self.inner = self.inner.set_pool_tag_specifications(input);
             self
         }
+        /// <para>Reserved.</para>
+        pub fn multi_region(mut self, input: bool) -> Self {
+            self.inner = self.inner.multi_region(input);
+            self
+        }
+        pub fn set_multi_region(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_multi_region(input);
+            self
+        }
     }
     #[derive(std::fmt::Debug)]
     pub struct PurchaseHostReservation<C = aws_hyper::DynConnector> {
@@ -41188,9 +41678,10 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>Checks whether you have the required permissions for the action, without actually making the request,
-        /// and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>.
-        /// Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+        /// <p>Checks whether you have the required permissions for the action, without actually
+        /// making the request, and provides an error response. If you have the required
+        /// permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is
+        /// <code>UnauthorizedOperation</code>.</p>
         pub fn dry_run(mut self, input: bool) -> Self {
             self.inner = self.inner.dry_run(input);
             self
@@ -41247,8 +41738,19 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The user-specified name for a logical grouping of requests.</p>
-        /// <p>When you specify an Availability Zone group in a Spot Instance request, all Spot Instances in the request are launched in the same Availability Zone. Instance proximity is maintained with this parameter, but the choice of Availability Zone is not. The group applies only to requests for Spot Instances of the same instance type. Any additional Spot Instance requests that are specified with the same Availability Zone group name are launched in that same Availability Zone, as long as at least one instance from the group is still active.</p>
-        /// <p>If there is no active instance running in the Availability Zone group that you specify for a new Spot Instance request (all instances are terminated, the request is expired, or the maximum price you specified falls below current Spot price), then Amazon EC2 launches the instance in any Availability Zone where the constraint can be met. Consequently, the subsequent set of Spot Instances could be placed in a different zone from the original request, even if you specified the same Availability Zone group.</p>
+        /// <p>When you specify an Availability Zone group in a Spot Instance request, all Spot
+        /// Instances in the request are launched in the same Availability Zone. Instance proximity
+        /// is maintained with this parameter, but the choice of Availability Zone is not. The group
+        /// applies only to requests for Spot Instances of the same instance type. Any additional
+        /// Spot Instance requests that are specified with the same Availability Zone group name are
+        /// launched in that same Availability Zone, as long as at least one instance from the group
+        /// is still active.</p>
+        /// <p>If there is no active instance running in the Availability Zone group that you specify
+        /// for a new Spot Instance request (all instances are terminated, the request is expired,
+        /// or the maximum price you specified falls below current Spot price), then Amazon EC2 launches
+        /// the instance in any Availability Zone where the constraint can be met. Consequently, the
+        /// subsequent set of Spot Instances could be placed in a different zone from the original
+        /// request, even if you specified the same Availability Zone group.</p>
         /// <p>Default: Instances are launched in any available Availability Zone.</p>
         pub fn availability_zone_group(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.availability_zone_group(input);
@@ -41261,15 +41763,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_availability_zone_group(input);
             self
         }
-        /// <p>The required duration for the Spot Instances (also known as Spot blocks), in minutes. This value must be a multiple of 60 (60, 120, 180, 240, 300, or 360).</p>
-        /// <p>The duration period starts as soon as your Spot Instance receives its instance ID. At
-        /// the end of the duration period, Amazon EC2 marks the Spot Instance for termination and
-        /// provides a Spot Instance termination notice, which gives the instance a two-minute
-        /// warning before it terminates.</p>
-        /// <p>You can't specify an Availability Zone group or a launch group if you specify a
-        /// duration.</p>
-        /// <p>New accounts or accounts with no previous billing history with AWS are not eligible for
-        /// Spot Instances with a defined duration (also known as Spot blocks).</p>
+        /// <p>Deprecated.</p>
         pub fn block_duration_minutes(mut self, input: i32) -> Self {
             self.inner = self.inner.block_duration_minutes(input);
             self
@@ -41278,9 +41772,9 @@ pub mod fluent_builders {
             self.inner = self.inner.set_block_duration_minutes(input);
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
-        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to Ensure Idempotency</a>
-        /// in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
+        /// request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to Ensure
+        /// Idempotency</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_token(input);
             self
@@ -41289,9 +41783,10 @@ pub mod fluent_builders {
             self.inner = self.inner.set_client_token(input);
             self
         }
-        /// <p>Checks whether you have the required permissions for the action, without actually making the request,
-        /// and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>.
-        /// Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+        /// <p>Checks whether you have the required permissions for the action, without actually
+        /// making the request, and provides an error response. If you have the required
+        /// permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is
+        /// <code>UnauthorizedOperation</code>.</p>
         pub fn dry_run(mut self, input: bool) -> Self {
             self.inner = self.inner.dry_run(input);
             self
@@ -41310,7 +41805,8 @@ pub mod fluent_builders {
             self.inner = self.inner.set_instance_count(input);
             self
         }
-        /// <p>The instance launch group. Launch groups are Spot Instances that launch together and terminate together.</p>
+        /// <p>The instance launch group. Launch groups are Spot Instances that launch together and
+        /// terminate together.</p>
         /// <p>Default: Instances are launched and terminated individually</p>
         pub fn launch_group(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.launch_group(input);
@@ -41335,7 +41831,8 @@ pub mod fluent_builders {
             self.inner = self.inner.set_launch_specification(input);
             self
         }
-        /// <p>The maximum price per hour that you are willing to pay for a Spot Instance. The default is the On-Demand price.</p>
+        /// <p>The maximum price per hour that you are willing to pay for a Spot Instance. The
+        /// default is the On-Demand price.</p>
         pub fn spot_price(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.spot_price(input);
             self
@@ -41358,8 +41855,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_type(input);
             self
         }
-        /// <p>The start date of the request. If this is a one-time request, the request becomes active at this date and time and remains active until all instances launch, the request expires, or the request is canceled. If the request is persistent, the request becomes active at this date and time and remains active until it expires or is canceled.</p>
-        /// <p>The specified start date and time cannot be equal to the current date and time. You must specify a start date and time that occurs after the current date and time.</p>
+        /// <p>The start date of the request. If this is a one-time request, the request becomes
+        /// active at this date and time and remains active until all instances launch, the request
+        /// expires, or the request is canceled. If the request is persistent, the request becomes
+        /// active at this date and time and remains active until it expires or is canceled.</p>
+        /// <p>The specified start date and time cannot be equal to the current date and time. You
+        /// must specify a start date and time that occurs after the current date and time.</p>
         pub fn valid_from(mut self, input: smithy_types::Instant) -> Self {
             self.inner = self.inner.valid_from(input);
             self
@@ -41372,9 +41873,9 @@ pub mod fluent_builders {
         /// (<i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
         /// <ul>
         /// <li>
-        /// <p>For a persistent request, the request remains active until the <code>ValidUntil</code> date
-        /// and time is reached. Otherwise, the request remains active until you cancel it.
-        /// </p>
+        /// <p>For a persistent request, the request remains active until the
+        /// <code>ValidUntil</code> date and time is reached. Otherwise, the request
+        /// remains active until you cancel it. </p>
         /// </li>
         /// <li>
         /// <p>For a one-time request, the request remains active until all instances launch,
@@ -41394,8 +41895,10 @@ pub mod fluent_builders {
             self.inner = self.inner.set_valid_until(input);
             self
         }
-        /// <p>The key-value pair for tagging the Spot Instance request on creation. The value for <code>ResourceType</code> must be <code>spot-instances-request</code>, otherwise the Spot Instance request fails. To tag the Spot Instance request after it has been created, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.
-        /// </p>
+        /// <p>The key-value pair for tagging the Spot Instance request on creation. The value for
+        /// <code>ResourceType</code> must be <code>spot-instances-request</code>, otherwise the
+        /// Spot Instance request fails. To tag the Spot Instance request after it has been created,
+        /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>. </p>
         pub fn tag_specifications(
             mut self,
             inp: impl Into<crate::model::TagSpecification>,
@@ -42539,7 +43042,7 @@ pub mod fluent_builders {
         }
         /// <p>The ID of the RAM disk to select. Some kernels require additional drivers at launch.
         /// Check the kernel requirements for information about whether you need to specify a RAM
-        /// disk. To find kernel requirements, go to the AWS Resource Center and search for the
+        /// disk. To find kernel requirements, go to the Amazon Web Services Resource Center and search for the
         /// kernel ID.</p>
         /// <important>
         /// <p>We recommend that you use PV-GRUB instead of kernels and RAM disks. For more
@@ -42883,7 +43386,7 @@ pub mod fluent_builders {
         /// <p>Indicates whether an instance is enabled for hibernation. For more information, see
         /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate
         /// your instance</a> in the <i>Amazon EC2 User Guide</i>.</p>
-        /// <p>You can't enable hibernation and AWS Nitro Enclaves on the same instance.</p>
+        /// <p>You can't enable hibernation and Amazon Web Services Nitro Enclaves on the same instance.</p>
         pub fn hibernation_options(
             mut self,
             input: crate::model::HibernationOptionsRequest,
@@ -42928,10 +43431,10 @@ pub mod fluent_builders {
             self.inner = self.inner.set_metadata_options(input);
             self
         }
-        /// <p>Indicates whether the instance is enabled for AWS Nitro Enclaves. For more information,
+        /// <p>Indicates whether the instance is enabled for Amazon Web Services Nitro Enclaves. For more information,
         /// see <a href="https://docs.aws.amazon.com/enclaves/latest/user/nitro-enclave.html">
-        /// What is AWS Nitro Enclaves?</a> in the <i>AWS Nitro Enclaves User Guide</i>.</p>    
-        /// <p>You can't enable AWS Nitro Enclaves and hibernation on the same instance.</p>
+        /// What is Amazon Web Services Nitro Enclaves?</a> in the <i>Amazon Web Services Nitro Enclaves User Guide</i>.</p>    
+        /// <p>You can't enable Amazon Web Services Nitro Enclaves and hibernation on the same instance.</p>
         pub fn enclave_options(mut self, input: crate::model::EnclaveOptionsRequest) -> Self {
             self.inner = self.inner.enclave_options(input);
             self

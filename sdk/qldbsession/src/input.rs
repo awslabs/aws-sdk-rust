@@ -182,7 +182,7 @@ impl SendCommandInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );

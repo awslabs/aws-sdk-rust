@@ -42,6 +42,13 @@ impl Capability {
             Capability::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "CAPABILITY_AUTO_EXPAND",
+            "CAPABILITY_IAM",
+            "CAPABILITY_NAMED_IAM",
+        ]
+    }
 }
 impl AsRef<str> for Capability {
     fn as_ref(&self) -> &str {
@@ -188,6 +195,9 @@ impl CallAs {
             CallAs::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["DELEGATED_ADMIN", "SELF"]
+    }
 }
 impl AsRef<str> for CallAs {
     fn as_ref(&self) -> &str {
@@ -302,6 +312,9 @@ impl PermissionModels {
             PermissionModels::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["SELF_MANAGED", "SERVICE_MANAGED"]
+    }
 }
 impl AsRef<str> for PermissionModels {
     fn as_ref(&self) -> &str {
@@ -408,6 +421,7 @@ pub struct StackSetOperationPreferences {
     /// AWS CloudFormation doesn't attempt the operation in any subsequent Regions.</p>
     /// <p>Conditional: You must specify either <code>FailureToleranceCount</code> or
     /// <code>FailureTolerancePercentage</code> (but not both).</p>
+    /// <p>By default, <code>0</code> is specified.</p>
     pub failure_tolerance_count: std::option::Option<i32>,
     /// <p>The percentage of accounts, per Region, for which this stack operation can fail
     /// before AWS CloudFormation stops the operation in that Region. If the operation is stopped
@@ -417,6 +431,7 @@ pub struct StackSetOperationPreferences {
     /// CloudFormation rounds <i>down</i> to the next whole number.</p>
     /// <p>Conditional: You must specify either <code>FailureToleranceCount</code> or
     /// <code>FailureTolerancePercentage</code>, but not both.</p>
+    /// <p>By default, <code>0</code> is specified.</p>
     pub failure_tolerance_percentage: std::option::Option<i32>,
     /// <p>The maximum number of accounts in which to perform this operation at one time. This
     /// is dependent on the value of
@@ -427,6 +442,7 @@ pub struct StackSetOperationPreferences {
     /// accounts acted upon concurrently may be lower due to service throttling.</p>
     /// <p>Conditional: You must specify either <code>MaxConcurrentCount</code> or
     /// <code>MaxConcurrentPercentage</code>, but not both.</p>
+    /// <p>By default, <code>1</code> is specified.</p>
     pub max_concurrent_count: std::option::Option<i32>,
     /// <p>The maximum percentage of accounts in which to perform this operation at one
     /// time.</p>
@@ -439,6 +455,7 @@ pub struct StackSetOperationPreferences {
     /// accounts acted upon concurrently may be lower due to service throttling.</p>
     /// <p>Conditional: You must specify either <code>MaxConcurrentCount</code> or
     /// <code>MaxConcurrentPercentage</code>, but not both.</p>
+    /// <p>By default, <code>1</code> is specified.</p>
     pub max_concurrent_percentage: std::option::Option<i32>,
 }
 impl std::fmt::Debug for StackSetOperationPreferences {
@@ -504,6 +521,7 @@ pub mod stack_set_operation_preferences {
         /// AWS CloudFormation doesn't attempt the operation in any subsequent Regions.</p>
         /// <p>Conditional: You must specify either <code>FailureToleranceCount</code> or
         /// <code>FailureTolerancePercentage</code> (but not both).</p>
+        /// <p>By default, <code>0</code> is specified.</p>
         pub fn failure_tolerance_count(mut self, input: i32) -> Self {
             self.failure_tolerance_count = Some(input);
             self
@@ -520,6 +538,7 @@ pub mod stack_set_operation_preferences {
         /// CloudFormation rounds <i>down</i> to the next whole number.</p>
         /// <p>Conditional: You must specify either <code>FailureToleranceCount</code> or
         /// <code>FailureTolerancePercentage</code>, but not both.</p>
+        /// <p>By default, <code>0</code> is specified.</p>
         pub fn failure_tolerance_percentage(mut self, input: i32) -> Self {
             self.failure_tolerance_percentage = Some(input);
             self
@@ -537,6 +556,7 @@ pub mod stack_set_operation_preferences {
         /// accounts acted upon concurrently may be lower due to service throttling.</p>
         /// <p>Conditional: You must specify either <code>MaxConcurrentCount</code> or
         /// <code>MaxConcurrentPercentage</code>, but not both.</p>
+        /// <p>By default, <code>1</code> is specified.</p>
         pub fn max_concurrent_count(mut self, input: i32) -> Self {
             self.max_concurrent_count = Some(input);
             self
@@ -556,6 +576,7 @@ pub mod stack_set_operation_preferences {
         /// accounts acted upon concurrently may be lower due to service throttling.</p>
         /// <p>Conditional: You must specify either <code>MaxConcurrentCount</code> or
         /// <code>MaxConcurrentPercentage</code>, but not both.</p>
+        /// <p>By default, <code>1</code> is specified.</p>
         pub fn max_concurrent_percentage(mut self, input: i32) -> Self {
             self.max_concurrent_percentage = Some(input);
             self
@@ -623,6 +644,9 @@ impl RegionConcurrencyType {
             RegionConcurrencyType::Sequential => "SEQUENTIAL",
             RegionConcurrencyType::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["PARALLEL", "SEQUENTIAL"]
     }
 }
 impl AsRef<str> for RegionConcurrencyType {
@@ -1012,6 +1036,56 @@ impl RollbackTrigger {
     std::fmt::Debug,
     std::hash::Hash,
 )]
+pub enum ThirdPartyType {
+    Module,
+    Resource,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for ThirdPartyType {
+    fn from(s: &str) -> Self {
+        match s {
+            "MODULE" => ThirdPartyType::Module,
+            "RESOURCE" => ThirdPartyType::Resource,
+            other => ThirdPartyType::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for ThirdPartyType {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(ThirdPartyType::from(s))
+    }
+}
+impl ThirdPartyType {
+    pub fn as_str(&self) -> &str {
+        match self {
+            ThirdPartyType::Module => "MODULE",
+            ThirdPartyType::Resource => "RESOURCE",
+            ThirdPartyType::Unknown(s) => s.as_ref(),
+        }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["MODULE", "RESOURCE"]
+    }
+}
+impl AsRef<str> for ThirdPartyType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
 pub enum ResourceSignalStatus {
     Failure,
     Success,
@@ -1041,6 +1115,9 @@ impl ResourceSignalStatus {
             ResourceSignalStatus::Success => "SUCCESS",
             ResourceSignalStatus::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["FAILURE", "SUCCESS"]
     }
 }
 impl AsRef<str> for ResourceSignalStatus {
@@ -1089,6 +1166,9 @@ impl RegistryType {
             RegistryType::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["MODULE", "RESOURCE"]
+    }
 }
 impl AsRef<str> for RegistryType {
     fn as_ref(&self) -> &str {
@@ -1096,13 +1176,13 @@ impl AsRef<str> for RegistryType {
     }
 }
 
-/// <p>Contains logging configuration information for a type.</p>
+/// <p>Contains logging configuration information for an extension.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LoggingConfig {
     /// <p>The ARN of the role that CloudFormation should assume when sending log entries to CloudWatch logs.</p>
     pub log_role_arn: std::option::Option<std::string::String>,
-    /// <p>The Amazon CloudWatch log group to which CloudFormation sends error logging information when invoking the type's handlers.</p>
+    /// <p>The Amazon CloudWatch log group to which CloudFormation sends error logging information when invoking the extension's handlers.</p>
     pub log_group_name: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for LoggingConfig {
@@ -1132,7 +1212,7 @@ pub mod logging_config {
             self.log_role_arn = input;
             self
         }
-        /// <p>The Amazon CloudWatch log group to which CloudFormation sends error logging information when invoking the type's handlers.</p>
+        /// <p>The Amazon CloudWatch log group to which CloudFormation sends error logging information when invoking the extension's handlers.</p>
         pub fn log_group_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.log_group_name = Some(input.into());
             self
@@ -1177,6 +1257,7 @@ pub enum HandlerErrorCode {
     InternalFailure,
     InvalidCredentials,
     InvalidRequest,
+    InvalidTypeConfiguration,
     NetworkFailure,
     NotFound,
     ServiceTimeout,
@@ -1197,6 +1278,7 @@ impl std::convert::From<&str> for HandlerErrorCode {
             "InternalFailure" => HandlerErrorCode::InternalFailure,
             "InvalidCredentials" => HandlerErrorCode::InvalidCredentials,
             "InvalidRequest" => HandlerErrorCode::InvalidRequest,
+            "InvalidTypeConfiguration" => HandlerErrorCode::InvalidTypeConfiguration,
             "NetworkFailure" => HandlerErrorCode::NetworkFailure,
             "NotFound" => HandlerErrorCode::NotFound,
             "NotStabilized" => HandlerErrorCode::ServiceTimeout,
@@ -1225,6 +1307,7 @@ impl HandlerErrorCode {
             HandlerErrorCode::InternalFailure => "InternalFailure",
             HandlerErrorCode::InvalidCredentials => "InvalidCredentials",
             HandlerErrorCode::InvalidRequest => "InvalidRequest",
+            HandlerErrorCode::InvalidTypeConfiguration => "InvalidTypeConfiguration",
             HandlerErrorCode::NetworkFailure => "NetworkFailure",
             HandlerErrorCode::NotFound => "NotFound",
             HandlerErrorCode::ServiceTimeout => "NotStabilized",
@@ -1235,6 +1318,25 @@ impl HandlerErrorCode {
             HandlerErrorCode::Throttling => "Throttling",
             HandlerErrorCode::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "AccessDenied",
+            "AlreadyExists",
+            "GeneralServiceException",
+            "InternalFailure",
+            "InvalidCredentials",
+            "InvalidRequest",
+            "InvalidTypeConfiguration",
+            "NetworkFailure",
+            "NotFound",
+            "NotStabilized",
+            "NotUpdatable",
+            "ResourceConflict",
+            "ServiceInternalError",
+            "ServiceLimitExceeded",
+            "Throttling",
+        ]
     }
 }
 impl AsRef<str> for HandlerErrorCode {
@@ -1289,6 +1391,9 @@ impl OperationStatus {
             OperationStatus::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["FAILED", "IN_PROGRESS", "PENDING", "SUCCESS"]
+    }
 }
 impl AsRef<str> for OperationStatus {
     fn as_ref(&self) -> &str {
@@ -1296,24 +1401,28 @@ impl AsRef<str> for OperationStatus {
     }
 }
 
-/// <p>Contains summary information about a specific version of a CloudFormation type.</p>
+/// <p>Contains summary information about a specific version of a CloudFormation extension.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TypeVersionSummary {
-    /// <p>The kind of type.</p>
+    /// <p>The kind of extension.</p>
     pub r#type: std::option::Option<crate::model::RegistryType>,
-    /// <p>The name of the type.</p>
+    /// <p>The name of the extension.</p>
     pub type_name: std::option::Option<std::string::String>,
-    /// <p>The ID of a specific version of the type. The version ID is the value at the end of the Amazon Resource Name (ARN) assigned to the type version when it is registered.</p>
+    /// <p>The ID of a specific version of the extension. The version ID is the value at the end of the Amazon Resource Name (ARN) assigned to the extension version when it is registered.</p>
     pub version_id: std::option::Option<std::string::String>,
-    /// <p>Whether the specified type version is set as the default version.</p>
+    /// <p>Whether the specified extension version is set as the default version.</p>
+    /// <p>This applies only to private extensions you have registered in your account, and extensions published by Amazon. For public third-party extensions, whether or not they are activated in your account, CloudFormation returns <code>null</code>.</p>
     pub is_default_version: std::option::Option<bool>,
-    /// <p>The Amazon Resource Name (ARN) of the type version.</p>
+    /// <p>The Amazon Resource Name (ARN) of the extension version.</p>
     pub arn: std::option::Option<std::string::String>,
     /// <p>When the version was registered.</p>
     pub time_created: std::option::Option<smithy_types::Instant>,
-    /// <p>The description of the type version.</p>
+    /// <p>The description of the extension version.</p>
     pub description: std::option::Option<std::string::String>,
+    /// <p>For public extensions that have been activated for this account and region, the version of the public extension to be used for CloudFormation operations in this account and region. For any extensions other than activated third-arty extensions, CloudFormation returns <code>null</code>.</p>
+    /// <p>How you specified <code>AutoUpdate</code> when enabling the extension affects whether CloudFormation automatically updates the extention in this account and region when a new version is released. For more information, see  <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable-auto">Setting CloudFormation to automatically use new versions of extensions</a> in the <i>CloudFormation User Guide</i>.</p>
+    pub public_version_number: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for TypeVersionSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1325,6 +1434,7 @@ impl std::fmt::Debug for TypeVersionSummary {
         formatter.field("arn", &self.arn);
         formatter.field("time_created", &self.time_created);
         formatter.field("description", &self.description);
+        formatter.field("public_version_number", &self.public_version_number);
         formatter.finish()
     }
 }
@@ -1341,9 +1451,10 @@ pub mod type_version_summary {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) time_created: std::option::Option<smithy_types::Instant>,
         pub(crate) description: std::option::Option<std::string::String>,
+        pub(crate) public_version_number: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The kind of type.</p>
+        /// <p>The kind of extension.</p>
         pub fn r#type(mut self, input: crate::model::RegistryType) -> Self {
             self.r#type = Some(input);
             self
@@ -1352,7 +1463,7 @@ pub mod type_version_summary {
             self.r#type = input;
             self
         }
-        /// <p>The name of the type.</p>
+        /// <p>The name of the extension.</p>
         pub fn type_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.type_name = Some(input.into());
             self
@@ -1361,7 +1472,7 @@ pub mod type_version_summary {
             self.type_name = input;
             self
         }
-        /// <p>The ID of a specific version of the type. The version ID is the value at the end of the Amazon Resource Name (ARN) assigned to the type version when it is registered.</p>
+        /// <p>The ID of a specific version of the extension. The version ID is the value at the end of the Amazon Resource Name (ARN) assigned to the extension version when it is registered.</p>
         pub fn version_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.version_id = Some(input.into());
             self
@@ -1370,7 +1481,8 @@ pub mod type_version_summary {
             self.version_id = input;
             self
         }
-        /// <p>Whether the specified type version is set as the default version.</p>
+        /// <p>Whether the specified extension version is set as the default version.</p>
+        /// <p>This applies only to private extensions you have registered in your account, and extensions published by Amazon. For public third-party extensions, whether or not they are activated in your account, CloudFormation returns <code>null</code>.</p>
         pub fn is_default_version(mut self, input: bool) -> Self {
             self.is_default_version = Some(input);
             self
@@ -1379,7 +1491,7 @@ pub mod type_version_summary {
             self.is_default_version = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the type version.</p>
+        /// <p>The Amazon Resource Name (ARN) of the extension version.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.arn = Some(input.into());
             self
@@ -1400,13 +1512,26 @@ pub mod type_version_summary {
             self.time_created = input;
             self
         }
-        /// <p>The description of the type version.</p>
+        /// <p>The description of the extension version.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
             self.description = Some(input.into());
             self
         }
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
+            self
+        }
+        /// <p>For public extensions that have been activated for this account and region, the version of the public extension to be used for CloudFormation operations in this account and region. For any extensions other than activated third-arty extensions, CloudFormation returns <code>null</code>.</p>
+        /// <p>How you specified <code>AutoUpdate</code> when enabling the extension affects whether CloudFormation automatically updates the extention in this account and region when a new version is released. For more information, see  <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable-auto">Setting CloudFormation to automatically use new versions of extensions</a> in the <i>CloudFormation User Guide</i>.</p>
+        pub fn public_version_number(mut self, input: impl Into<std::string::String>) -> Self {
+            self.public_version_number = Some(input.into());
+            self
+        }
+        pub fn set_public_version_number(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.public_version_number = input;
             self
         }
         /// Consumes the builder and constructs a [`TypeVersionSummary`](crate::model::TypeVersionSummary)
@@ -1419,6 +1544,7 @@ pub mod type_version_summary {
                 arn: self.arn,
                 time_created: self.time_created,
                 description: self.description,
+                public_version_number: self.public_version_number,
             }
         }
     }
@@ -1470,6 +1596,9 @@ impl DeprecatedStatus {
             DeprecatedStatus::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["DEPRECATED", "LIVE"]
+    }
 }
 impl AsRef<str> for DeprecatedStatus {
     fn as_ref(&self) -> &str {
@@ -1477,25 +1606,55 @@ impl AsRef<str> for DeprecatedStatus {
     }
 }
 
-/// <p>Contains summary information about the specified CloudFormation type.</p>
+/// <p>Contains summary information about the specified CloudFormation extension.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TypeSummary {
-    /// <p>The kind of type.</p>
+    /// <p>The kind of extension.</p>
     pub r#type: std::option::Option<crate::model::RegistryType>,
-    /// <p>The name of the type.</p>
+    /// <p>The name of the extension.</p>
+    /// <p>If you specified a <code>TypeNameAlias</code> when you <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">activate this extension</a> in your account and region, CloudFormation considers that alias as the type name.</p>
     pub type_name: std::option::Option<std::string::String>,
-    /// <p>The ID of the default version of the type. The default version is used when the type version is not specified.</p>
-    /// <p>To set the default version of a type, use <code>
+    /// <p>The ID of the default version of the extension. The default version is used when the extension version is not specified.</p>
+    /// <p>This applies only to private extensions you have registered in your account. For public extensions, both those provided by Amazon and published by third parties, CloudFormation returns <code>null</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">RegisterType</a>.</p>
+    /// <p>To set the default version of an extension, use <code>
     /// <a>SetTypeDefaultVersion</a>
     /// </code>. </p>
     pub default_version_id: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the type.</p>
+    /// <p>The Amazon Resource Name (ARN) of the extension.</p>
     pub type_arn: std::option::Option<std::string::String>,
-    /// <p>When the current default version of the type was registered.</p>
+    /// <p>When the specified extension version was registered. This applies only to:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Private extensions you have registered in your account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">RegisterType</a>.</p>
+    /// </li>
+    /// <li>
+    /// <p>Public extensions you have activated in your account with auto-update specified. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">ActivateType</a>.</p>
+    /// </li>
+    /// </ul>
+    /// <p>For all other extension types, CloudFormation returns <code>null</code>.</p>
     pub last_updated: std::option::Option<smithy_types::Instant>,
-    /// <p>The description of the type.</p>
+    /// <p>The description of the extension.</p>
     pub description: std::option::Option<std::string::String>,
+    /// <p>The ID of the extension publisher, if the extension is published by a third party. Extensions published by Amazon do not return a publisher ID.</p>
+    pub publisher_id: std::option::Option<std::string::String>,
+    /// <p>For public extensions that have been activated for this account and region, the type name of the public extension.</p>
+    /// <p>If you specified a <code>TypeNameAlias</code> when enabling the extension in this account and region, CloudFormation treats that alias as the extension's type name within the account and region, not the type name of the public extension. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable-alias">Specifying aliases to refer to extensions</a> in the <i>CloudFormation User Guide</i>.</p>
+    pub original_type_name: std::option::Option<std::string::String>,
+    /// <p>For public extensions that have been activated for this account and region, the version of the public extension to be used for CloudFormation operations in this account and region.</p>
+    /// <p>How you specified <code>AutoUpdate</code> when enabling the extension affects whether CloudFormation automatically updates the extention in this account and region when a new version is released. For more information, see  <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable-auto">Setting CloudFormation to automatically use new versions of extensions</a> in the <i>CloudFormation User Guide</i>.</p>
+    pub public_version_number: std::option::Option<std::string::String>,
+    /// <p>For public extensions that have been activated for this account and region, the latest version of the public extension <i>that is available</i>. For any extensions other than activated third-arty extensions, CloudFormation returns <code>null</code>.</p>
+    /// <p>How you specified <code>AutoUpdate</code> when enabling the extension affects whether CloudFormation automatically updates the extention in this account and region when a new version is released. For more information, see  <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable-auto">Setting CloudFormation to automatically use new versions of extensions</a> in the <i>CloudFormation User Guide</i>.</p>
+    pub latest_public_version: std::option::Option<std::string::String>,
+    /// <p>The service used to verify the publisher identity.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/publish-extension.html">Registering your account to publish CloudFormation extensions</a> in the <i> CFN-CLI User Guide for Extension Development</i>.</p>
+    pub publisher_identity: std::option::Option<crate::model::IdentityProvider>,
+    /// <p>The publisher name, as defined in the public profile for that publisher in the service used to verify the publisher identity.</p>
+    pub publisher_name: std::option::Option<std::string::String>,
+    /// <p>Whether or not the extension is activated for this account and region. </p>
+    /// <p>This applies only to third-party public extensions. Extensions published by Amazon are activated by default.</p>
+    pub is_activated: std::option::Option<bool>,
 }
 impl std::fmt::Debug for TypeSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1506,6 +1665,13 @@ impl std::fmt::Debug for TypeSummary {
         formatter.field("type_arn", &self.type_arn);
         formatter.field("last_updated", &self.last_updated);
         formatter.field("description", &self.description);
+        formatter.field("publisher_id", &self.publisher_id);
+        formatter.field("original_type_name", &self.original_type_name);
+        formatter.field("public_version_number", &self.public_version_number);
+        formatter.field("latest_public_version", &self.latest_public_version);
+        formatter.field("publisher_identity", &self.publisher_identity);
+        formatter.field("publisher_name", &self.publisher_name);
+        formatter.field("is_activated", &self.is_activated);
         formatter.finish()
     }
 }
@@ -1521,9 +1687,16 @@ pub mod type_summary {
         pub(crate) type_arn: std::option::Option<std::string::String>,
         pub(crate) last_updated: std::option::Option<smithy_types::Instant>,
         pub(crate) description: std::option::Option<std::string::String>,
+        pub(crate) publisher_id: std::option::Option<std::string::String>,
+        pub(crate) original_type_name: std::option::Option<std::string::String>,
+        pub(crate) public_version_number: std::option::Option<std::string::String>,
+        pub(crate) latest_public_version: std::option::Option<std::string::String>,
+        pub(crate) publisher_identity: std::option::Option<crate::model::IdentityProvider>,
+        pub(crate) publisher_name: std::option::Option<std::string::String>,
+        pub(crate) is_activated: std::option::Option<bool>,
     }
     impl Builder {
-        /// <p>The kind of type.</p>
+        /// <p>The kind of extension.</p>
         pub fn r#type(mut self, input: crate::model::RegistryType) -> Self {
             self.r#type = Some(input);
             self
@@ -1532,7 +1705,8 @@ pub mod type_summary {
             self.r#type = input;
             self
         }
-        /// <p>The name of the type.</p>
+        /// <p>The name of the extension.</p>
+        /// <p>If you specified a <code>TypeNameAlias</code> when you <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">activate this extension</a> in your account and region, CloudFormation considers that alias as the type name.</p>
         pub fn type_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.type_name = Some(input.into());
             self
@@ -1541,8 +1715,9 @@ pub mod type_summary {
             self.type_name = input;
             self
         }
-        /// <p>The ID of the default version of the type. The default version is used when the type version is not specified.</p>
-        /// <p>To set the default version of a type, use <code>
+        /// <p>The ID of the default version of the extension. The default version is used when the extension version is not specified.</p>
+        /// <p>This applies only to private extensions you have registered in your account. For public extensions, both those provided by Amazon and published by third parties, CloudFormation returns <code>null</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">RegisterType</a>.</p>
+        /// <p>To set the default version of an extension, use <code>
         /// <a>SetTypeDefaultVersion</a>
         /// </code>. </p>
         pub fn default_version_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1556,7 +1731,7 @@ pub mod type_summary {
             self.default_version_id = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the type.</p>
+        /// <p>The Amazon Resource Name (ARN) of the extension.</p>
         pub fn type_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.type_arn = Some(input.into());
             self
@@ -1565,7 +1740,16 @@ pub mod type_summary {
             self.type_arn = input;
             self
         }
-        /// <p>When the current default version of the type was registered.</p>
+        /// <p>When the specified extension version was registered. This applies only to:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Private extensions you have registered in your account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">RegisterType</a>.</p>
+        /// </li>
+        /// <li>
+        /// <p>Public extensions you have activated in your account with auto-update specified. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">ActivateType</a>.</p>
+        /// </li>
+        /// </ul>
+        /// <p>For all other extension types, CloudFormation returns <code>null</code>.</p>
         pub fn last_updated(mut self, input: smithy_types::Instant) -> Self {
             self.last_updated = Some(input);
             self
@@ -1577,13 +1761,96 @@ pub mod type_summary {
             self.last_updated = input;
             self
         }
-        /// <p>The description of the type.</p>
+        /// <p>The description of the extension.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
             self.description = Some(input.into());
             self
         }
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
+            self
+        }
+        /// <p>The ID of the extension publisher, if the extension is published by a third party. Extensions published by Amazon do not return a publisher ID.</p>
+        pub fn publisher_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.publisher_id = Some(input.into());
+            self
+        }
+        pub fn set_publisher_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.publisher_id = input;
+            self
+        }
+        /// <p>For public extensions that have been activated for this account and region, the type name of the public extension.</p>
+        /// <p>If you specified a <code>TypeNameAlias</code> when enabling the extension in this account and region, CloudFormation treats that alias as the extension's type name within the account and region, not the type name of the public extension. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable-alias">Specifying aliases to refer to extensions</a> in the <i>CloudFormation User Guide</i>.</p>
+        pub fn original_type_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.original_type_name = Some(input.into());
+            self
+        }
+        pub fn set_original_type_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.original_type_name = input;
+            self
+        }
+        /// <p>For public extensions that have been activated for this account and region, the version of the public extension to be used for CloudFormation operations in this account and region.</p>
+        /// <p>How you specified <code>AutoUpdate</code> when enabling the extension affects whether CloudFormation automatically updates the extention in this account and region when a new version is released. For more information, see  <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable-auto">Setting CloudFormation to automatically use new versions of extensions</a> in the <i>CloudFormation User Guide</i>.</p>
+        pub fn public_version_number(mut self, input: impl Into<std::string::String>) -> Self {
+            self.public_version_number = Some(input.into());
+            self
+        }
+        pub fn set_public_version_number(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.public_version_number = input;
+            self
+        }
+        /// <p>For public extensions that have been activated for this account and region, the latest version of the public extension <i>that is available</i>. For any extensions other than activated third-arty extensions, CloudFormation returns <code>null</code>.</p>
+        /// <p>How you specified <code>AutoUpdate</code> when enabling the extension affects whether CloudFormation automatically updates the extention in this account and region when a new version is released. For more information, see  <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable-auto">Setting CloudFormation to automatically use new versions of extensions</a> in the <i>CloudFormation User Guide</i>.</p>
+        pub fn latest_public_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.latest_public_version = Some(input.into());
+            self
+        }
+        pub fn set_latest_public_version(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.latest_public_version = input;
+            self
+        }
+        /// <p>The service used to verify the publisher identity.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/publish-extension.html">Registering your account to publish CloudFormation extensions</a> in the <i> CFN-CLI User Guide for Extension Development</i>.</p>
+        pub fn publisher_identity(mut self, input: crate::model::IdentityProvider) -> Self {
+            self.publisher_identity = Some(input);
+            self
+        }
+        pub fn set_publisher_identity(
+            mut self,
+            input: std::option::Option<crate::model::IdentityProvider>,
+        ) -> Self {
+            self.publisher_identity = input;
+            self
+        }
+        /// <p>The publisher name, as defined in the public profile for that publisher in the service used to verify the publisher identity.</p>
+        pub fn publisher_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.publisher_name = Some(input.into());
+            self
+        }
+        pub fn set_publisher_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.publisher_name = input;
+            self
+        }
+        /// <p>Whether or not the extension is activated for this account and region. </p>
+        /// <p>This applies only to third-party public extensions. Extensions published by Amazon are activated by default.</p>
+        pub fn is_activated(mut self, input: bool) -> Self {
+            self.is_activated = Some(input);
+            self
+        }
+        pub fn set_is_activated(mut self, input: std::option::Option<bool>) -> Self {
+            self.is_activated = input;
             self
         }
         /// Consumes the builder and constructs a [`TypeSummary`](crate::model::TypeSummary)
@@ -1595,6 +1862,13 @@ pub mod type_summary {
                 type_arn: self.type_arn,
                 last_updated: self.last_updated,
                 description: self.description,
+                publisher_id: self.publisher_id,
+                original_type_name: self.original_type_name,
+                public_version_number: self.public_version_number,
+                latest_public_version: self.latest_public_version,
+                publisher_identity: self.publisher_identity,
+                publisher_name: self.publisher_name,
+                is_activated: self.is_activated,
             }
         }
     }
@@ -1603,6 +1877,247 @@ impl TypeSummary {
     /// Creates a new builder-style object to manufacture [`TypeSummary`](crate::model::TypeSummary)
     pub fn builder() -> crate::model::type_summary::Builder {
         crate::model::type_summary::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum IdentityProvider {
+    AwsMarketplace,
+    Bitbucket,
+    GitHub,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for IdentityProvider {
+    fn from(s: &str) -> Self {
+        match s {
+            "AWS_Marketplace" => IdentityProvider::AwsMarketplace,
+            "Bitbucket" => IdentityProvider::Bitbucket,
+            "GitHub" => IdentityProvider::GitHub,
+            other => IdentityProvider::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for IdentityProvider {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(IdentityProvider::from(s))
+    }
+}
+impl IdentityProvider {
+    pub fn as_str(&self) -> &str {
+        match self {
+            IdentityProvider::AwsMarketplace => "AWS_Marketplace",
+            IdentityProvider::Bitbucket => "Bitbucket",
+            IdentityProvider::GitHub => "GitHub",
+            IdentityProvider::Unknown(s) => s.as_ref(),
+        }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["AWS_Marketplace", "Bitbucket", "GitHub"]
+    }
+}
+impl AsRef<str> for IdentityProvider {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// <p>Filter criteria to use in determining which extensions to return.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct TypeFilters {
+    /// <p>The category of extensions to return.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>REGISTERED</code>: Private extensions that have been registered for this account and region.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>ACTIVATED</code>: Public extensions that have been activated for this account and region.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>THIRD-PARTY</code>: Extensions available for use from publishers other than Amazon. This includes:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Private extensions registered in the account.</p>
+    /// </li>
+    /// <li>
+    /// <p>Public extensions from publishers other than Amazon, whether activated or not.</p>
+    /// </li>
+    /// </ul>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>AWS-TYPES</code>: Extensions available for use from Amazon.</p>
+    /// </li>
+    /// </ul>
+    pub category: std::option::Option<crate::model::Category>,
+    /// <p>The id of the publisher of the extension. </p>
+    /// <p>Extensions published by Amazon are not assigned a publisher ID. Use the <code>AWS-TYPES</code> category to specify a list of types published by Amazon.</p>
+    pub publisher_id: std::option::Option<std::string::String>,
+    /// <p>A prefix to use as a filter for results.</p>
+    pub type_name_prefix: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for TypeFilters {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("TypeFilters");
+        formatter.field("category", &self.category);
+        formatter.field("publisher_id", &self.publisher_id);
+        formatter.field("type_name_prefix", &self.type_name_prefix);
+        formatter.finish()
+    }
+}
+/// See [`TypeFilters`](crate::model::TypeFilters)
+pub mod type_filters {
+    /// A builder for [`TypeFilters`](crate::model::TypeFilters)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) category: std::option::Option<crate::model::Category>,
+        pub(crate) publisher_id: std::option::Option<std::string::String>,
+        pub(crate) type_name_prefix: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The category of extensions to return.</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>REGISTERED</code>: Private extensions that have been registered for this account and region.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>ACTIVATED</code>: Public extensions that have been activated for this account and region.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>THIRD-PARTY</code>: Extensions available for use from publishers other than Amazon. This includes:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Private extensions registered in the account.</p>
+        /// </li>
+        /// <li>
+        /// <p>Public extensions from publishers other than Amazon, whether activated or not.</p>
+        /// </li>
+        /// </ul>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>AWS-TYPES</code>: Extensions available for use from Amazon.</p>
+        /// </li>
+        /// </ul>
+        pub fn category(mut self, input: crate::model::Category) -> Self {
+            self.category = Some(input);
+            self
+        }
+        pub fn set_category(mut self, input: std::option::Option<crate::model::Category>) -> Self {
+            self.category = input;
+            self
+        }
+        /// <p>The id of the publisher of the extension. </p>
+        /// <p>Extensions published by Amazon are not assigned a publisher ID. Use the <code>AWS-TYPES</code> category to specify a list of types published by Amazon.</p>
+        pub fn publisher_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.publisher_id = Some(input.into());
+            self
+        }
+        pub fn set_publisher_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.publisher_id = input;
+            self
+        }
+        /// <p>A prefix to use as a filter for results.</p>
+        pub fn type_name_prefix(mut self, input: impl Into<std::string::String>) -> Self {
+            self.type_name_prefix = Some(input.into());
+            self
+        }
+        pub fn set_type_name_prefix(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.type_name_prefix = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`TypeFilters`](crate::model::TypeFilters)
+        pub fn build(self) -> crate::model::TypeFilters {
+            crate::model::TypeFilters {
+                category: self.category,
+                publisher_id: self.publisher_id,
+                type_name_prefix: self.type_name_prefix,
+            }
+        }
+    }
+}
+impl TypeFilters {
+    /// Creates a new builder-style object to manufacture [`TypeFilters`](crate::model::TypeFilters)
+    pub fn builder() -> crate::model::type_filters::Builder {
+        crate::model::type_filters::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum Category {
+    Activated,
+    AwsTypes,
+    Registered,
+    ThirdParty,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for Category {
+    fn from(s: &str) -> Self {
+        match s {
+            "ACTIVATED" => Category::Activated,
+            "AWS_TYPES" => Category::AwsTypes,
+            "REGISTERED" => Category::Registered,
+            "THIRD_PARTY" => Category::ThirdParty,
+            other => Category::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for Category {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(Category::from(s))
+    }
+}
+impl Category {
+    pub fn as_str(&self) -> &str {
+        match self {
+            Category::Activated => "ACTIVATED",
+            Category::AwsTypes => "AWS_TYPES",
+            Category::Registered => "REGISTERED",
+            Category::ThirdParty => "THIRD_PARTY",
+            Category::Unknown(s) => s.as_ref(),
+        }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["ACTIVATED", "AWS_TYPES", "REGISTERED", "THIRD_PARTY"]
+    }
+}
+impl AsRef<str> for Category {
+    fn as_ref(&self) -> &str {
+        self.as_str()
     }
 }
 
@@ -1648,6 +2163,9 @@ impl ProvisioningType {
             ProvisioningType::NonProvisionable => "NON_PROVISIONABLE",
             ProvisioningType::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["FULLY_MUTABLE", "IMMUTABLE", "NON_PROVISIONABLE"]
     }
 }
 impl AsRef<str> for ProvisioningType {
@@ -1695,6 +2213,9 @@ impl Visibility {
             Visibility::Public => "PUBLIC",
             Visibility::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["PRIVATE", "PUBLIC"]
     }
 }
 impl AsRef<str> for Visibility {
@@ -1745,6 +2266,9 @@ impl RegistrationStatus {
             RegistrationStatus::InProgress => "IN_PROGRESS",
             RegistrationStatus::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["COMPLETE", "FAILED", "IN_PROGRESS"]
     }
 }
 impl AsRef<str> for RegistrationStatus {
@@ -2040,6 +2564,9 @@ impl StackDriftStatus {
             StackDriftStatus::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["DRIFTED", "IN_SYNC", "NOT_CHECKED", "UNKNOWN"]
+    }
 }
 impl AsRef<str> for StackDriftStatus {
     fn as_ref(&self) -> &str {
@@ -2086,6 +2613,9 @@ impl StackSetStatus {
             StackSetStatus::Deleted => "DELETED",
             StackSetStatus::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["ACTIVE", "DELETED"]
     }
 }
 impl AsRef<str> for StackSetStatus {
@@ -2352,6 +2882,16 @@ impl StackSetOperationStatus {
             StackSetOperationStatus::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "FAILED",
+            "QUEUED",
+            "RUNNING",
+            "STOPPED",
+            "STOPPING",
+            "SUCCEEDED",
+        ]
+    }
 }
 impl AsRef<str> for StackSetOperationStatus {
     fn as_ref(&self) -> &str {
@@ -2404,6 +2944,9 @@ impl StackSetOperationAction {
             StackSetOperationAction::Update => "UPDATE",
             StackSetOperationAction::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["CREATE", "DELETE", "DETECT_DRIFT", "UPDATE"]
     }
 }
 impl AsRef<str> for StackSetOperationAction {
@@ -2809,6 +3352,9 @@ impl AccountGateStatus {
             AccountGateStatus::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["FAILED", "SKIPPED", "SUCCEEDED"]
+    }
 }
 impl AsRef<str> for AccountGateStatus {
     fn as_ref(&self) -> &str {
@@ -2864,6 +3410,9 @@ impl StackSetOperationResultStatus {
             StackSetOperationResultStatus::Succeeded => "SUCCEEDED",
             StackSetOperationResultStatus::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["CANCELLED", "FAILED", "PENDING", "RUNNING", "SUCCEEDED"]
     }
 }
 impl AsRef<str> for StackSetOperationResultStatus {
@@ -3328,6 +3877,32 @@ impl StackStatus {
             StackStatus::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "CREATE_COMPLETE",
+            "CREATE_FAILED",
+            "CREATE_IN_PROGRESS",
+            "DELETE_COMPLETE",
+            "DELETE_FAILED",
+            "DELETE_IN_PROGRESS",
+            "IMPORT_COMPLETE",
+            "IMPORT_IN_PROGRESS",
+            "IMPORT_ROLLBACK_COMPLETE",
+            "IMPORT_ROLLBACK_FAILED",
+            "IMPORT_ROLLBACK_IN_PROGRESS",
+            "REVIEW_IN_PROGRESS",
+            "ROLLBACK_COMPLETE",
+            "ROLLBACK_FAILED",
+            "ROLLBACK_IN_PROGRESS",
+            "UPDATE_COMPLETE",
+            "UPDATE_COMPLETE_CLEANUP_IN_PROGRESS",
+            "UPDATE_IN_PROGRESS",
+            "UPDATE_ROLLBACK_COMPLETE",
+            "UPDATE_ROLLBACK_COMPLETE_CLEANUP_IN_PROGRESS",
+            "UPDATE_ROLLBACK_FAILED",
+            "UPDATE_ROLLBACK_IN_PROGRESS",
+        ]
+    }
 }
 impl AsRef<str> for StackStatus {
     fn as_ref(&self) -> &str {
@@ -3781,6 +4356,9 @@ impl StackResourceDriftStatus {
             StackResourceDriftStatus::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["DELETED", "IN_SYNC", "MODIFIED", "NOT_CHECKED"]
+    }
 }
 impl AsRef<str> for StackResourceDriftStatus {
     fn as_ref(&self) -> &str {
@@ -3869,6 +4447,26 @@ impl ResourceStatus {
             ResourceStatus::UpdateInProgress => "UPDATE_IN_PROGRESS",
             ResourceStatus::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "CREATE_COMPLETE",
+            "CREATE_FAILED",
+            "CREATE_IN_PROGRESS",
+            "DELETE_COMPLETE",
+            "DELETE_FAILED",
+            "DELETE_IN_PROGRESS",
+            "DELETE_SKIPPED",
+            "IMPORT_COMPLETE",
+            "IMPORT_FAILED",
+            "IMPORT_IN_PROGRESS",
+            "IMPORT_ROLLBACK_COMPLETE",
+            "IMPORT_ROLLBACK_FAILED",
+            "IMPORT_ROLLBACK_IN_PROGRESS",
+            "UPDATE_COMPLETE",
+            "UPDATE_FAILED",
+            "UPDATE_IN_PROGRESS",
+        ]
     }
 }
 impl AsRef<str> for ResourceStatus {
@@ -4353,6 +4951,16 @@ impl StackInstanceDetailedStatus {
             StackInstanceDetailedStatus::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "CANCELLED",
+            "FAILED",
+            "INOPERABLE",
+            "PENDING",
+            "RUNNING",
+            "SUCCEEDED",
+        ]
+    }
 }
 impl AsRef<str> for StackInstanceDetailedStatus {
     fn as_ref(&self) -> &str {
@@ -4402,6 +5010,9 @@ impl StackInstanceStatus {
             StackInstanceStatus::Outdated => "OUTDATED",
             StackInstanceStatus::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["CURRENT", "INOPERABLE", "OUTDATED"]
     }
 }
 impl AsRef<str> for StackInstanceStatus {
@@ -4510,6 +5121,9 @@ impl StackInstanceFilterName {
             StackInstanceFilterName::DetailedStatus => "DETAILED_STATUS",
             StackInstanceFilterName::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["DETAILED_STATUS"]
     }
 }
 impl AsRef<str> for StackInstanceFilterName {
@@ -4905,6 +5519,18 @@ impl ChangeSetStatus {
             ChangeSetStatus::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "CREATE_COMPLETE",
+            "CREATE_IN_PROGRESS",
+            "CREATE_PENDING",
+            "DELETE_COMPLETE",
+            "DELETE_FAILED",
+            "DELETE_IN_PROGRESS",
+            "DELETE_PENDING",
+            "FAILED",
+        ]
+    }
 }
 impl AsRef<str> for ChangeSetStatus {
     fn as_ref(&self) -> &str {
@@ -4963,6 +5589,16 @@ impl ExecutionStatus {
             ExecutionStatus::Unavailable => "UNAVAILABLE",
             ExecutionStatus::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "AVAILABLE",
+            "EXECUTE_COMPLETE",
+            "EXECUTE_FAILED",
+            "EXECUTE_IN_PROGRESS",
+            "OBSOLETE",
+            "UNAVAILABLE",
+        ]
     }
 }
 impl AsRef<str> for ExecutionStatus {
@@ -5287,6 +5923,9 @@ impl TemplateStage {
             TemplateStage::Processed => "Processed",
             TemplateStage::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["Original", "Processed"]
     }
 }
 impl AsRef<str> for TemplateStage {
@@ -5791,6 +6430,9 @@ impl DifferenceType {
             DifferenceType::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["ADD", "NOT_EQUAL", "REMOVE"]
+    }
 }
 impl AsRef<str> for DifferenceType {
     fn as_ref(&self) -> &str {
@@ -5859,6 +6501,164 @@ impl PhysicalResourceIdContextKeyValuePair {
     /// Creates a new builder-style object to manufacture [`PhysicalResourceIdContextKeyValuePair`](crate::model::PhysicalResourceIdContextKeyValuePair)
     pub fn builder() -> crate::model::physical_resource_id_context_key_value_pair::Builder {
         crate::model::physical_resource_id_context_key_value_pair::Builder::default()
+    }
+}
+
+/// <p>For extensions that are modules, a public third-party extension that must be activated in your account in order for the module itself to be activated.</p>
+/// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/modules.html#module-enabling">Activating public modules for use in your account</a> in the <i>AWS CloudFormation User Guide</i>.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct RequiredActivatedType {
+    /// <p>An alias assigned to the public extension, in this account and region. If you specify an alias for the extension, CloudFormation treats the alias as the extension type name within this account and region. You must use the alias to refer to the extension in your templates, API calls, and CloudFormation console.</p>
+    pub type_name_alias: std::option::Option<std::string::String>,
+    /// <p>The type name of the public extension.</p>
+    /// <p>If you specified a <code>TypeNameAlias</code> when enabling the extension in this account and region, CloudFormation treats that alias as the extension's type name within the account and region, not the type name of the public extension. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable-alias">Specifying aliases to refer to extensions</a> in the <i>CloudFormation User Guide</i>.</p>
+    pub original_type_name: std::option::Option<std::string::String>,
+    /// <p>The publisher ID of the extension publisher.</p>
+    pub publisher_id: std::option::Option<std::string::String>,
+    /// <p>A list of the major versions of the extension type that the macro supports.</p>
+    pub supported_major_versions: std::option::Option<std::vec::Vec<i32>>,
+}
+impl std::fmt::Debug for RequiredActivatedType {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("RequiredActivatedType");
+        formatter.field("type_name_alias", &self.type_name_alias);
+        formatter.field("original_type_name", &self.original_type_name);
+        formatter.field("publisher_id", &self.publisher_id);
+        formatter.field("supported_major_versions", &self.supported_major_versions);
+        formatter.finish()
+    }
+}
+/// See [`RequiredActivatedType`](crate::model::RequiredActivatedType)
+pub mod required_activated_type {
+    /// A builder for [`RequiredActivatedType`](crate::model::RequiredActivatedType)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) type_name_alias: std::option::Option<std::string::String>,
+        pub(crate) original_type_name: std::option::Option<std::string::String>,
+        pub(crate) publisher_id: std::option::Option<std::string::String>,
+        pub(crate) supported_major_versions: std::option::Option<std::vec::Vec<i32>>,
+    }
+    impl Builder {
+        /// <p>An alias assigned to the public extension, in this account and region. If you specify an alias for the extension, CloudFormation treats the alias as the extension type name within this account and region. You must use the alias to refer to the extension in your templates, API calls, and CloudFormation console.</p>
+        pub fn type_name_alias(mut self, input: impl Into<std::string::String>) -> Self {
+            self.type_name_alias = Some(input.into());
+            self
+        }
+        pub fn set_type_name_alias(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.type_name_alias = input;
+            self
+        }
+        /// <p>The type name of the public extension.</p>
+        /// <p>If you specified a <code>TypeNameAlias</code> when enabling the extension in this account and region, CloudFormation treats that alias as the extension's type name within the account and region, not the type name of the public extension. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable-alias">Specifying aliases to refer to extensions</a> in the <i>CloudFormation User Guide</i>.</p>
+        pub fn original_type_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.original_type_name = Some(input.into());
+            self
+        }
+        pub fn set_original_type_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.original_type_name = input;
+            self
+        }
+        /// <p>The publisher ID of the extension publisher.</p>
+        pub fn publisher_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.publisher_id = Some(input.into());
+            self
+        }
+        pub fn set_publisher_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.publisher_id = input;
+            self
+        }
+        pub fn supported_major_versions(mut self, input: impl Into<i32>) -> Self {
+            let mut v = self.supported_major_versions.unwrap_or_default();
+            v.push(input.into());
+            self.supported_major_versions = Some(v);
+            self
+        }
+        pub fn set_supported_major_versions(
+            mut self,
+            input: std::option::Option<std::vec::Vec<i32>>,
+        ) -> Self {
+            self.supported_major_versions = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`RequiredActivatedType`](crate::model::RequiredActivatedType)
+        pub fn build(self) -> crate::model::RequiredActivatedType {
+            crate::model::RequiredActivatedType {
+                type_name_alias: self.type_name_alias,
+                original_type_name: self.original_type_name,
+                publisher_id: self.publisher_id,
+                supported_major_versions: self.supported_major_versions,
+            }
+        }
+    }
+}
+impl RequiredActivatedType {
+    /// Creates a new builder-style object to manufacture [`RequiredActivatedType`](crate::model::RequiredActivatedType)
+    pub fn builder() -> crate::model::required_activated_type::Builder {
+        crate::model::required_activated_type::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum TypeTestsStatus {
+    Failed,
+    InProgress,
+    NotTested,
+    Passed,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for TypeTestsStatus {
+    fn from(s: &str) -> Self {
+        match s {
+            "FAILED" => TypeTestsStatus::Failed,
+            "IN_PROGRESS" => TypeTestsStatus::InProgress,
+            "NOT_TESTED" => TypeTestsStatus::NotTested,
+            "PASSED" => TypeTestsStatus::Passed,
+            other => TypeTestsStatus::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for TypeTestsStatus {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(TypeTestsStatus::from(s))
+    }
+}
+impl TypeTestsStatus {
+    pub fn as_str(&self) -> &str {
+        match self {
+            TypeTestsStatus::Failed => "FAILED",
+            TypeTestsStatus::InProgress => "IN_PROGRESS",
+            TypeTestsStatus::NotTested => "NOT_TESTED",
+            TypeTestsStatus::Passed => "PASSED",
+            TypeTestsStatus::Unknown(s) => s.as_ref(),
+        }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["FAILED", "IN_PROGRESS", "NOT_TESTED", "PASSED"]
+    }
+}
+impl AsRef<str> for TypeTestsStatus {
+    fn as_ref(&self) -> &str {
+        self.as_str()
     }
 }
 
@@ -6607,6 +7407,15 @@ impl StackSetDriftDetectionStatus {
             StackSetDriftDetectionStatus::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "COMPLETED",
+            "FAILED",
+            "IN_PROGRESS",
+            "PARTIAL_SUCCESS",
+            "STOPPED",
+        ]
+    }
 }
 impl AsRef<str> for StackSetDriftDetectionStatus {
     fn as_ref(&self) -> &str {
@@ -6656,6 +7465,9 @@ impl StackSetDriftStatus {
             StackSetDriftStatus::NotChecked => "NOT_CHECKED",
             StackSetDriftStatus::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["DRIFTED", "IN_SYNC", "NOT_CHECKED"]
     }
 }
 impl AsRef<str> for StackSetDriftStatus {
@@ -8875,8 +9687,65 @@ impl StackDriftDetectionStatus {
             StackDriftDetectionStatus::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "DETECTION_COMPLETE",
+            "DETECTION_FAILED",
+            "DETECTION_IN_PROGRESS",
+        ]
+    }
 }
 impl AsRef<str> for StackDriftDetectionStatus {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum PublisherStatus {
+    Unverified,
+    Verified,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for PublisherStatus {
+    fn from(s: &str) -> Self {
+        match s {
+            "UNVERIFIED" => PublisherStatus::Unverified,
+            "VERIFIED" => PublisherStatus::Verified,
+            other => PublisherStatus::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for PublisherStatus {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(PublisherStatus::from(s))
+    }
+}
+impl PublisherStatus {
+    pub fn as_str(&self) -> &str {
+        match self {
+            PublisherStatus::Unverified => "UNVERIFIED",
+            PublisherStatus::Verified => "VERIFIED",
+            PublisherStatus::Unknown(s) => s.as_ref(),
+        }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["UNVERIFIED", "VERIFIED"]
+    }
+}
+impl AsRef<str> for PublisherStatus {
     fn as_ref(&self) -> &str {
         self.as_str()
     }
@@ -9440,6 +10309,15 @@ impl ChangeSource {
             ChangeSource::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "Automatic",
+            "DirectModification",
+            "ParameterReference",
+            "ResourceAttribute",
+            "ResourceReference",
+        ]
+    }
 }
 impl AsRef<str> for ChangeSource {
     fn as_ref(&self) -> &str {
@@ -9486,6 +10364,9 @@ impl EvaluationType {
             EvaluationType::Static => "Static",
             EvaluationType::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["Dynamic", "Static"]
     }
 }
 impl AsRef<str> for EvaluationType {
@@ -9633,6 +10514,9 @@ impl RequiresRecreation {
             RequiresRecreation::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["Always", "Conditionally", "Never"]
+    }
 }
 impl AsRef<str> for RequiresRecreation {
     fn as_ref(&self) -> &str {
@@ -9692,6 +10576,16 @@ impl ResourceAttribute {
             ResourceAttribute::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "CreationPolicy",
+            "DeletionPolicy",
+            "Metadata",
+            "Properties",
+            "Tags",
+            "UpdatePolicy",
+        ]
+    }
 }
 impl AsRef<str> for ResourceAttribute {
     fn as_ref(&self) -> &str {
@@ -9741,6 +10635,9 @@ impl Replacement {
             Replacement::True => "True",
             Replacement::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["Conditional", "False", "True"]
     }
 }
 impl AsRef<str> for Replacement {
@@ -9798,6 +10695,9 @@ impl ChangeAction {
             ChangeAction::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["Add", "Dynamic", "Import", "Modify", "Remove"]
+    }
 }
 impl AsRef<str> for ChangeAction {
     fn as_ref(&self) -> &str {
@@ -9841,6 +10741,9 @@ impl ChangeType {
             ChangeType::Resource => "Resource",
             ChangeType::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["Resource"]
     }
 }
 impl AsRef<str> for ChangeType {
@@ -9973,6 +10876,9 @@ impl OnFailure {
             OnFailure::Rollback => "ROLLBACK",
             OnFailure::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["DELETE", "DO_NOTHING", "ROLLBACK"]
     }
 }
 impl AsRef<str> for OnFailure {
@@ -10120,8 +11026,408 @@ impl ChangeSetType {
             ChangeSetType::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["CREATE", "IMPORT", "UPDATE"]
+    }
 }
 impl AsRef<str> for ChangeSetType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// <p>Detailed information concerning the specification of a CloudFormation extension in a given account and region.</p>
+/// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-register.html#registry-set-configuration">Configuring extensions at the account level</a> in the <i>CloudFormation User Guide</i>.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct TypeConfigurationDetails {
+    /// <p>The Amazon Resource Name (ARN) for the configuration data, in this account and region.</p>
+    pub arn: std::option::Option<std::string::String>,
+    /// <p>The alias specified for this configuration, if one was specified when the configuration was set.</p>
+    pub alias: std::option::Option<std::string::String>,
+    /// <p>A JSON string specifying the configuration data for the extension, in this account and region. </p>
+    /// <p>If a configuration has not been set for a specified extension, CloudFormation returns <code>{}</code>.</p>
+    pub configuration: std::option::Option<std::string::String>,
+    /// <p>When the configuration data was last updated for this extension.</p>
+    /// <p>If a configuration has not been set for a specified extension, CloudFormation returns <code>null</code>.</p>
+    pub last_updated: std::option::Option<smithy_types::Instant>,
+    /// <p>The Amazon Resource Name (ARN) for the extension, in this account and region.</p>
+    /// <p>For public extensions, this will be the ARN assigned when you <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">activate the type</a> in this account and region. For private extensions, this will be the ARN assigned when you <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">register the type</a> in this account and region. </p>
+    pub type_arn: std::option::Option<std::string::String>,
+    /// <p>The name of the extension.</p>
+    pub type_name: std::option::Option<std::string::String>,
+    /// <p>Whether or not this configuration data is the default configuration for the extension.</p>
+    pub is_default_configuration: std::option::Option<bool>,
+}
+impl std::fmt::Debug for TypeConfigurationDetails {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("TypeConfigurationDetails");
+        formatter.field("arn", &self.arn);
+        formatter.field("alias", &self.alias);
+        formatter.field("configuration", &self.configuration);
+        formatter.field("last_updated", &self.last_updated);
+        formatter.field("type_arn", &self.type_arn);
+        formatter.field("type_name", &self.type_name);
+        formatter.field("is_default_configuration", &self.is_default_configuration);
+        formatter.finish()
+    }
+}
+/// See [`TypeConfigurationDetails`](crate::model::TypeConfigurationDetails)
+pub mod type_configuration_details {
+    /// A builder for [`TypeConfigurationDetails`](crate::model::TypeConfigurationDetails)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) arn: std::option::Option<std::string::String>,
+        pub(crate) alias: std::option::Option<std::string::String>,
+        pub(crate) configuration: std::option::Option<std::string::String>,
+        pub(crate) last_updated: std::option::Option<smithy_types::Instant>,
+        pub(crate) type_arn: std::option::Option<std::string::String>,
+        pub(crate) type_name: std::option::Option<std::string::String>,
+        pub(crate) is_default_configuration: std::option::Option<bool>,
+    }
+    impl Builder {
+        /// <p>The Amazon Resource Name (ARN) for the configuration data, in this account and region.</p>
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.arn = Some(input.into());
+            self
+        }
+        pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.arn = input;
+            self
+        }
+        /// <p>The alias specified for this configuration, if one was specified when the configuration was set.</p>
+        pub fn alias(mut self, input: impl Into<std::string::String>) -> Self {
+            self.alias = Some(input.into());
+            self
+        }
+        pub fn set_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.alias = input;
+            self
+        }
+        /// <p>A JSON string specifying the configuration data for the extension, in this account and region. </p>
+        /// <p>If a configuration has not been set for a specified extension, CloudFormation returns <code>{}</code>.</p>
+        pub fn configuration(mut self, input: impl Into<std::string::String>) -> Self {
+            self.configuration = Some(input.into());
+            self
+        }
+        pub fn set_configuration(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.configuration = input;
+            self
+        }
+        /// <p>When the configuration data was last updated for this extension.</p>
+        /// <p>If a configuration has not been set for a specified extension, CloudFormation returns <code>null</code>.</p>
+        pub fn last_updated(mut self, input: smithy_types::Instant) -> Self {
+            self.last_updated = Some(input);
+            self
+        }
+        pub fn set_last_updated(
+            mut self,
+            input: std::option::Option<smithy_types::Instant>,
+        ) -> Self {
+            self.last_updated = input;
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) for the extension, in this account and region.</p>
+        /// <p>For public extensions, this will be the ARN assigned when you <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">activate the type</a> in this account and region. For private extensions, this will be the ARN assigned when you <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">register the type</a> in this account and region. </p>
+        pub fn type_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.type_arn = Some(input.into());
+            self
+        }
+        pub fn set_type_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.type_arn = input;
+            self
+        }
+        /// <p>The name of the extension.</p>
+        pub fn type_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.type_name = Some(input.into());
+            self
+        }
+        pub fn set_type_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.type_name = input;
+            self
+        }
+        /// <p>Whether or not this configuration data is the default configuration for the extension.</p>
+        pub fn is_default_configuration(mut self, input: bool) -> Self {
+            self.is_default_configuration = Some(input);
+            self
+        }
+        pub fn set_is_default_configuration(mut self, input: std::option::Option<bool>) -> Self {
+            self.is_default_configuration = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`TypeConfigurationDetails`](crate::model::TypeConfigurationDetails)
+        pub fn build(self) -> crate::model::TypeConfigurationDetails {
+            crate::model::TypeConfigurationDetails {
+                arn: self.arn,
+                alias: self.alias,
+                configuration: self.configuration,
+                last_updated: self.last_updated,
+                type_arn: self.type_arn,
+                type_name: self.type_name,
+                is_default_configuration: self.is_default_configuration,
+            }
+        }
+    }
+}
+impl TypeConfigurationDetails {
+    /// Creates a new builder-style object to manufacture [`TypeConfigurationDetails`](crate::model::TypeConfigurationDetails)
+    pub fn builder() -> crate::model::type_configuration_details::Builder {
+        crate::model::type_configuration_details::Builder::default()
+    }
+}
+
+/// <p>Identifying information for the configuration of a CloudFormation extension.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct TypeConfigurationIdentifier {
+    /// <p>The Amazon Resource Name (ARN) for the extension, in this account and region.</p>
+    /// <p>For public extensions, this will be the ARN assigned when you <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">activate the type</a> in this account and region. For private extensions, this will be the ARN assigned when you <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">register the type</a> in this account and region. </p>
+    pub type_arn: std::option::Option<std::string::String>,
+    /// <p>The alias specified for this configuration, if one was specified when the configuration was set.</p>
+    pub type_configuration_alias: std::option::Option<std::string::String>,
+    /// <p>The Amazon Resource Name (ARN) for the configuration, in this account and region.</p>
+    pub type_configuration_arn: std::option::Option<std::string::String>,
+    /// <p>The type of extension.</p>
+    pub r#type: std::option::Option<crate::model::ThirdPartyType>,
+    /// <p>The name of the extension type to which this configuration applies.</p>
+    pub type_name: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for TypeConfigurationIdentifier {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("TypeConfigurationIdentifier");
+        formatter.field("type_arn", &self.type_arn);
+        formatter.field("type_configuration_alias", &self.type_configuration_alias);
+        formatter.field("type_configuration_arn", &self.type_configuration_arn);
+        formatter.field("r#type", &self.r#type);
+        formatter.field("type_name", &self.type_name);
+        formatter.finish()
+    }
+}
+/// See [`TypeConfigurationIdentifier`](crate::model::TypeConfigurationIdentifier)
+pub mod type_configuration_identifier {
+    /// A builder for [`TypeConfigurationIdentifier`](crate::model::TypeConfigurationIdentifier)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) type_arn: std::option::Option<std::string::String>,
+        pub(crate) type_configuration_alias: std::option::Option<std::string::String>,
+        pub(crate) type_configuration_arn: std::option::Option<std::string::String>,
+        pub(crate) r#type: std::option::Option<crate::model::ThirdPartyType>,
+        pub(crate) type_name: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The Amazon Resource Name (ARN) for the extension, in this account and region.</p>
+        /// <p>For public extensions, this will be the ARN assigned when you <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">activate the type</a> in this account and region. For private extensions, this will be the ARN assigned when you <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">register the type</a> in this account and region. </p>
+        pub fn type_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.type_arn = Some(input.into());
+            self
+        }
+        pub fn set_type_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.type_arn = input;
+            self
+        }
+        /// <p>The alias specified for this configuration, if one was specified when the configuration was set.</p>
+        pub fn type_configuration_alias(mut self, input: impl Into<std::string::String>) -> Self {
+            self.type_configuration_alias = Some(input.into());
+            self
+        }
+        pub fn set_type_configuration_alias(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.type_configuration_alias = input;
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) for the configuration, in this account and region.</p>
+        pub fn type_configuration_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.type_configuration_arn = Some(input.into());
+            self
+        }
+        pub fn set_type_configuration_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.type_configuration_arn = input;
+            self
+        }
+        /// <p>The type of extension.</p>
+        pub fn r#type(mut self, input: crate::model::ThirdPartyType) -> Self {
+            self.r#type = Some(input);
+            self
+        }
+        pub fn set_type(
+            mut self,
+            input: std::option::Option<crate::model::ThirdPartyType>,
+        ) -> Self {
+            self.r#type = input;
+            self
+        }
+        /// <p>The name of the extension type to which this configuration applies.</p>
+        pub fn type_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.type_name = Some(input.into());
+            self
+        }
+        pub fn set_type_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.type_name = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`TypeConfigurationIdentifier`](crate::model::TypeConfigurationIdentifier)
+        pub fn build(self) -> crate::model::TypeConfigurationIdentifier {
+            crate::model::TypeConfigurationIdentifier {
+                type_arn: self.type_arn,
+                type_configuration_alias: self.type_configuration_alias,
+                type_configuration_arn: self.type_configuration_arn,
+                r#type: self.r#type,
+                type_name: self.type_name,
+            }
+        }
+    }
+}
+impl TypeConfigurationIdentifier {
+    /// Creates a new builder-style object to manufacture [`TypeConfigurationIdentifier`](crate::model::TypeConfigurationIdentifier)
+    pub fn builder() -> crate::model::type_configuration_identifier::Builder {
+        crate::model::type_configuration_identifier::Builder::default()
+    }
+}
+
+/// <p>Detailed information concerning an error generated during the setting of configuration data for a CloudFormation extension.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct BatchDescribeTypeConfigurationsError {
+    /// <p>The error code.</p>
+    pub error_code: std::option::Option<std::string::String>,
+    /// <p>The error message.</p>
+    pub error_message: std::option::Option<std::string::String>,
+    /// <p>Identifying information for the configuration of a CloudFormation extension.</p>
+    pub type_configuration_identifier:
+        std::option::Option<crate::model::TypeConfigurationIdentifier>,
+}
+impl std::fmt::Debug for BatchDescribeTypeConfigurationsError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("BatchDescribeTypeConfigurationsError");
+        formatter.field("error_code", &self.error_code);
+        formatter.field("error_message", &self.error_message);
+        formatter.field(
+            "type_configuration_identifier",
+            &self.type_configuration_identifier,
+        );
+        formatter.finish()
+    }
+}
+/// See [`BatchDescribeTypeConfigurationsError`](crate::model::BatchDescribeTypeConfigurationsError)
+pub mod batch_describe_type_configurations_error {
+    /// A builder for [`BatchDescribeTypeConfigurationsError`](crate::model::BatchDescribeTypeConfigurationsError)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) error_code: std::option::Option<std::string::String>,
+        pub(crate) error_message: std::option::Option<std::string::String>,
+        pub(crate) type_configuration_identifier:
+            std::option::Option<crate::model::TypeConfigurationIdentifier>,
+    }
+    impl Builder {
+        /// <p>The error code.</p>
+        pub fn error_code(mut self, input: impl Into<std::string::String>) -> Self {
+            self.error_code = Some(input.into());
+            self
+        }
+        pub fn set_error_code(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.error_code = input;
+            self
+        }
+        /// <p>The error message.</p>
+        pub fn error_message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.error_message = Some(input.into());
+            self
+        }
+        pub fn set_error_message(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.error_message = input;
+            self
+        }
+        /// <p>Identifying information for the configuration of a CloudFormation extension.</p>
+        pub fn type_configuration_identifier(
+            mut self,
+            input: crate::model::TypeConfigurationIdentifier,
+        ) -> Self {
+            self.type_configuration_identifier = Some(input);
+            self
+        }
+        pub fn set_type_configuration_identifier(
+            mut self,
+            input: std::option::Option<crate::model::TypeConfigurationIdentifier>,
+        ) -> Self {
+            self.type_configuration_identifier = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`BatchDescribeTypeConfigurationsError`](crate::model::BatchDescribeTypeConfigurationsError)
+        pub fn build(self) -> crate::model::BatchDescribeTypeConfigurationsError {
+            crate::model::BatchDescribeTypeConfigurationsError {
+                error_code: self.error_code,
+                error_message: self.error_message,
+                type_configuration_identifier: self.type_configuration_identifier,
+            }
+        }
+    }
+}
+impl BatchDescribeTypeConfigurationsError {
+    /// Creates a new builder-style object to manufacture [`BatchDescribeTypeConfigurationsError`](crate::model::BatchDescribeTypeConfigurationsError)
+    pub fn builder() -> crate::model::batch_describe_type_configurations_error::Builder {
+        crate::model::batch_describe_type_configurations_error::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum VersionBump {
+    Major,
+    Minor,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for VersionBump {
+    fn from(s: &str) -> Self {
+        match s {
+            "MAJOR" => VersionBump::Major,
+            "MINOR" => VersionBump::Minor,
+            other => VersionBump::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for VersionBump {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(VersionBump::from(s))
+    }
+}
+impl VersionBump {
+    pub fn as_str(&self) -> &str {
+        match self {
+            VersionBump::Major => "MAJOR",
+            VersionBump::Minor => "MINOR",
+            VersionBump::Unknown(s) => s.as_ref(),
+        }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["MAJOR", "MINOR"]
+    }
+}
+impl AsRef<str> for VersionBump {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

@@ -88,7 +88,7 @@ impl CancelJournalKinesisStreamInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -345,7 +345,7 @@ impl CreateLedgerInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -468,7 +468,7 @@ impl DeleteLedgerInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -625,7 +625,7 @@ impl DescribeJournalKinesisStreamInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -805,7 +805,7 @@ impl DescribeJournalS3ExportInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -970,7 +970,7 @@ impl DescribeLedgerInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -1197,7 +1197,7 @@ impl ExportJournalToS3Input {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -1376,7 +1376,7 @@ impl GetBlockInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -1511,7 +1511,7 @@ impl GetDigestInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -1695,7 +1695,7 @@ impl GetRevisionInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -1864,7 +1864,7 @@ impl ListJournalKinesisStreamsForLedgerInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -2038,7 +2038,7 @@ impl ListJournalS3ExportsInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -2203,7 +2203,7 @@ impl ListJournalS3ExportsForLedgerInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -2370,7 +2370,7 @@ impl ListLedgersInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -2507,7 +2507,7 @@ impl ListTagsForResourceInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -2765,7 +2765,7 @@ impl StreamJournalToKinesisInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -2947,7 +2947,7 @@ impl TagResourceInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -3105,7 +3105,7 @@ impl UntagResourceInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -3274,7 +3274,7 @@ impl UpdateLedgerInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -3466,7 +3466,7 @@ impl UpdateLedgerPermissionsModeInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );

@@ -1289,6 +1289,7 @@ pub struct DescribeCustomKeyStoresError {
 #[derive(std::fmt::Debug)]
 pub enum DescribeCustomKeyStoresErrorKind {
     CustomKeyStoreNotFoundException(crate::error::CustomKeyStoreNotFoundException),
+    InvalidMarkerException(crate::error::InvalidMarkerException),
     KmsInternalException(crate::error::KmsInternalException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1299,6 +1300,7 @@ impl std::fmt::Display for DescribeCustomKeyStoresError {
             DescribeCustomKeyStoresErrorKind::CustomKeyStoreNotFoundException(_inner) => {
                 _inner.fmt(f)
             }
+            DescribeCustomKeyStoresErrorKind::InvalidMarkerException(_inner) => _inner.fmt(f),
             DescribeCustomKeyStoresErrorKind::KmsInternalException(_inner) => _inner.fmt(f),
             DescribeCustomKeyStoresErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
@@ -1354,6 +1356,12 @@ impl DescribeCustomKeyStoresError {
             DescribeCustomKeyStoresErrorKind::CustomKeyStoreNotFoundException(_)
         )
     }
+    pub fn is_invalid_marker_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeCustomKeyStoresErrorKind::InvalidMarkerException(_)
+        )
+    }
     pub fn is_kms_internal_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1367,6 +1375,7 @@ impl std::error::Error for DescribeCustomKeyStoresError {
             DescribeCustomKeyStoresErrorKind::CustomKeyStoreNotFoundException(_inner) => {
                 Some(_inner)
             }
+            DescribeCustomKeyStoresErrorKind::InvalidMarkerException(_inner) => Some(_inner),
             DescribeCustomKeyStoresErrorKind::KmsInternalException(_inner) => Some(_inner),
             DescribeCustomKeyStoresErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
@@ -4518,6 +4527,147 @@ impl std::error::Error for ReEncryptError {
 
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
+pub struct ReplicateKeyError {
+    pub kind: ReplicateKeyErrorKind,
+    pub(crate) meta: smithy_types::Error,
+}
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum ReplicateKeyErrorKind {
+    AlreadyExistsException(crate::error::AlreadyExistsException),
+    DisabledException(crate::error::DisabledException),
+    InvalidArnException(crate::error::InvalidArnException),
+    KmsInternalException(crate::error::KmsInternalException),
+    KmsInvalidStateException(crate::error::KmsInvalidStateException),
+    LimitExceededException(crate::error::LimitExceededException),
+    MalformedPolicyDocumentException(crate::error::MalformedPolicyDocumentException),
+    NotFoundException(crate::error::NotFoundException),
+    TagException(crate::error::TagException),
+    UnsupportedOperationException(crate::error::UnsupportedOperationException),
+    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for ReplicateKeyError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            ReplicateKeyErrorKind::AlreadyExistsException(_inner) => _inner.fmt(f),
+            ReplicateKeyErrorKind::DisabledException(_inner) => _inner.fmt(f),
+            ReplicateKeyErrorKind::InvalidArnException(_inner) => _inner.fmt(f),
+            ReplicateKeyErrorKind::KmsInternalException(_inner) => _inner.fmt(f),
+            ReplicateKeyErrorKind::KmsInvalidStateException(_inner) => _inner.fmt(f),
+            ReplicateKeyErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
+            ReplicateKeyErrorKind::MalformedPolicyDocumentException(_inner) => _inner.fmt(f),
+            ReplicateKeyErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            ReplicateKeyErrorKind::TagException(_inner) => _inner.fmt(f),
+            ReplicateKeyErrorKind::UnsupportedOperationException(_inner) => _inner.fmt(f),
+            ReplicateKeyErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl smithy_types::retry::ProvideErrorKind for ReplicateKeyError {
+    fn code(&self) -> Option<&str> {
+        ReplicateKeyError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl ReplicateKeyError {
+    pub fn new(kind: ReplicateKeyErrorKind, meta: smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: ReplicateKeyErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    pub fn generic(err: smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: ReplicateKeyErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
+    // by std::Error to generate a message in that case.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
+    }
+
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    pub fn is_already_exists_exception(&self) -> bool {
+        matches!(&self.kind, ReplicateKeyErrorKind::AlreadyExistsException(_))
+    }
+    pub fn is_disabled_exception(&self) -> bool {
+        matches!(&self.kind, ReplicateKeyErrorKind::DisabledException(_))
+    }
+    pub fn is_invalid_arn_exception(&self) -> bool {
+        matches!(&self.kind, ReplicateKeyErrorKind::InvalidArnException(_))
+    }
+    pub fn is_kms_internal_exception(&self) -> bool {
+        matches!(&self.kind, ReplicateKeyErrorKind::KmsInternalException(_))
+    }
+    pub fn is_kms_invalid_state_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ReplicateKeyErrorKind::KmsInvalidStateException(_)
+        )
+    }
+    pub fn is_limit_exceeded_exception(&self) -> bool {
+        matches!(&self.kind, ReplicateKeyErrorKind::LimitExceededException(_))
+    }
+    pub fn is_malformed_policy_document_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ReplicateKeyErrorKind::MalformedPolicyDocumentException(_)
+        )
+    }
+    pub fn is_not_found_exception(&self) -> bool {
+        matches!(&self.kind, ReplicateKeyErrorKind::NotFoundException(_))
+    }
+    pub fn is_tag_exception(&self) -> bool {
+        matches!(&self.kind, ReplicateKeyErrorKind::TagException(_))
+    }
+    pub fn is_unsupported_operation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ReplicateKeyErrorKind::UnsupportedOperationException(_)
+        )
+    }
+}
+impl std::error::Error for ReplicateKeyError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            ReplicateKeyErrorKind::AlreadyExistsException(_inner) => Some(_inner),
+            ReplicateKeyErrorKind::DisabledException(_inner) => Some(_inner),
+            ReplicateKeyErrorKind::InvalidArnException(_inner) => Some(_inner),
+            ReplicateKeyErrorKind::KmsInternalException(_inner) => Some(_inner),
+            ReplicateKeyErrorKind::KmsInvalidStateException(_inner) => Some(_inner),
+            ReplicateKeyErrorKind::LimitExceededException(_inner) => Some(_inner),
+            ReplicateKeyErrorKind::MalformedPolicyDocumentException(_inner) => Some(_inner),
+            ReplicateKeyErrorKind::NotFoundException(_inner) => Some(_inner),
+            ReplicateKeyErrorKind::TagException(_inner) => Some(_inner),
+            ReplicateKeyErrorKind::UnsupportedOperationException(_inner) => Some(_inner),
+            ReplicateKeyErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
 pub struct RetireGrantError {
     pub kind: RetireGrantErrorKind,
     pub(crate) meta: smithy_types::Error,
@@ -5599,6 +5749,132 @@ impl std::error::Error for UpdateKeyDescriptionError {
 
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
+pub struct UpdatePrimaryRegionError {
+    pub kind: UpdatePrimaryRegionErrorKind,
+    pub(crate) meta: smithy_types::Error,
+}
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum UpdatePrimaryRegionErrorKind {
+    DisabledException(crate::error::DisabledException),
+    InvalidArnException(crate::error::InvalidArnException),
+    KmsInternalException(crate::error::KmsInternalException),
+    KmsInvalidStateException(crate::error::KmsInvalidStateException),
+    NotFoundException(crate::error::NotFoundException),
+    UnsupportedOperationException(crate::error::UnsupportedOperationException),
+    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for UpdatePrimaryRegionError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            UpdatePrimaryRegionErrorKind::DisabledException(_inner) => _inner.fmt(f),
+            UpdatePrimaryRegionErrorKind::InvalidArnException(_inner) => _inner.fmt(f),
+            UpdatePrimaryRegionErrorKind::KmsInternalException(_inner) => _inner.fmt(f),
+            UpdatePrimaryRegionErrorKind::KmsInvalidStateException(_inner) => _inner.fmt(f),
+            UpdatePrimaryRegionErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            UpdatePrimaryRegionErrorKind::UnsupportedOperationException(_inner) => _inner.fmt(f),
+            UpdatePrimaryRegionErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl smithy_types::retry::ProvideErrorKind for UpdatePrimaryRegionError {
+    fn code(&self) -> Option<&str> {
+        UpdatePrimaryRegionError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl UpdatePrimaryRegionError {
+    pub fn new(kind: UpdatePrimaryRegionErrorKind, meta: smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: UpdatePrimaryRegionErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    pub fn generic(err: smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: UpdatePrimaryRegionErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
+    // by std::Error to generate a message in that case.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
+    }
+
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    pub fn is_disabled_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdatePrimaryRegionErrorKind::DisabledException(_)
+        )
+    }
+    pub fn is_invalid_arn_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdatePrimaryRegionErrorKind::InvalidArnException(_)
+        )
+    }
+    pub fn is_kms_internal_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdatePrimaryRegionErrorKind::KmsInternalException(_)
+        )
+    }
+    pub fn is_kms_invalid_state_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdatePrimaryRegionErrorKind::KmsInvalidStateException(_)
+        )
+    }
+    pub fn is_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdatePrimaryRegionErrorKind::NotFoundException(_)
+        )
+    }
+    pub fn is_unsupported_operation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdatePrimaryRegionErrorKind::UnsupportedOperationException(_)
+        )
+    }
+}
+impl std::error::Error for UpdatePrimaryRegionError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            UpdatePrimaryRegionErrorKind::DisabledException(_inner) => Some(_inner),
+            UpdatePrimaryRegionErrorKind::InvalidArnException(_inner) => Some(_inner),
+            UpdatePrimaryRegionErrorKind::KmsInternalException(_inner) => Some(_inner),
+            UpdatePrimaryRegionErrorKind::KmsInvalidStateException(_inner) => Some(_inner),
+            UpdatePrimaryRegionErrorKind::NotFoundException(_inner) => Some(_inner),
+            UpdatePrimaryRegionErrorKind::UnsupportedOperationException(_inner) => Some(_inner),
+            UpdatePrimaryRegionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
 pub struct VerifyError {
     pub kind: VerifyErrorKind,
     pub(crate) meta: smithy_types::Error,
@@ -5849,9 +6125,9 @@ impl KmsInvalidStateException {
     }
 }
 
-/// <p>The request was rejected because the signature verification failed. Signature
-/// verification fails when it cannot confirm that signature was produced by signing the specified
-/// message with the specified CMK and signing algorithm.</p>
+/// <p>The request was rejected because the signature verification failed. Signature verification
+/// fails when it cannot confirm that signature was produced by signing the specified message with
+/// the specified CMK and signing algorithm.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct KmsInvalidSignatureException {
@@ -6293,6 +6569,67 @@ impl DependencyTimeoutException {
     }
 }
 
+/// <p>The request was rejected because a specified parameter is not supported or a specified
+/// resource is not valid for this operation.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UnsupportedOperationException {
+    pub message: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for UnsupportedOperationException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("UnsupportedOperationException");
+        formatter.field("message", &self.message);
+        formatter.finish()
+    }
+}
+impl UnsupportedOperationException {
+    pub fn message(&self) -> Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for UnsupportedOperationException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "UnsupportedOperationException")?;
+        if let Some(inner_10) = &self.message {
+            write!(f, ": {}", inner_10)?;
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for UnsupportedOperationException {}
+/// See [`UnsupportedOperationException`](crate::error::UnsupportedOperationException)
+pub mod unsupported_operation_exception {
+    /// A builder for [`UnsupportedOperationException`](crate::error::UnsupportedOperationException)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`UnsupportedOperationException`](crate::error::UnsupportedOperationException)
+        pub fn build(self) -> crate::error::UnsupportedOperationException {
+            crate::error::UnsupportedOperationException {
+                message: self.message,
+            }
+        }
+    }
+}
+impl UnsupportedOperationException {
+    /// Creates a new builder-style object to manufacture [`UnsupportedOperationException`](crate::error::UnsupportedOperationException)
+    pub fn builder() -> crate::error::unsupported_operation_exception::Builder {
+        crate::error::unsupported_operation_exception::Builder::default()
+    }
+}
+
 /// <p>The request was rejected because a specified ARN, or an ARN in a key policy, is not
 /// valid.</p>
 #[non_exhaustive]
@@ -6315,8 +6652,8 @@ impl InvalidArnException {
 impl std::fmt::Display for InvalidArnException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidArnException")?;
-        if let Some(inner_10) = &self.message {
-            write!(f, ": {}", inner_10)?;
+        if let Some(inner_11) = &self.message {
+            write!(f, ": {}", inner_11)?;
         }
         Ok(())
     }
@@ -6376,8 +6713,8 @@ impl CustomKeyStoreNotFoundException {
 impl std::fmt::Display for CustomKeyStoreNotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "CustomKeyStoreNotFoundException")?;
-        if let Some(inner_11) = &self.message {
-            write!(f, ": {}", inner_11)?;
+        if let Some(inner_12) = &self.message {
+            write!(f, ": {}", inner_12)?;
         }
         Ok(())
     }
@@ -6438,8 +6775,8 @@ impl CustomKeyStoreNameInUseException {
 impl std::fmt::Display for CustomKeyStoreNameInUseException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "CustomKeyStoreNameInUseException")?;
-        if let Some(inner_12) = &self.message {
-            write!(f, ": {}", inner_12)?;
+        if let Some(inner_13) = &self.message {
+            write!(f, ": {}", inner_13)?;
         }
         Ok(())
     }
@@ -6518,8 +6855,8 @@ impl CustomKeyStoreInvalidStateException {
 impl std::fmt::Display for CustomKeyStoreInvalidStateException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "CustomKeyStoreInvalidStateException")?;
-        if let Some(inner_13) = &self.message {
-            write!(f, ": {}", inner_13)?;
+        if let Some(inner_14) = &self.message {
+            write!(f, ": {}", inner_14)?;
         }
         Ok(())
     }
@@ -6585,8 +6922,8 @@ impl CloudHsmClusterNotRelatedException {
 impl std::fmt::Display for CloudHsmClusterNotRelatedException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "CloudHsmClusterNotRelatedException")?;
-        if let Some(inner_14) = &self.message {
-            write!(f, ": {}", inner_14)?;
+        if let Some(inner_15) = &self.message {
+            write!(f, ": {}", inner_15)?;
         }
         Ok(())
     }
@@ -6646,8 +6983,8 @@ impl CloudHsmClusterNotFoundException {
 impl std::fmt::Display for CloudHsmClusterNotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "CloudHsmClusterNotFoundException")?;
-        if let Some(inner_15) = &self.message {
-            write!(f, ": {}", inner_15)?;
+        if let Some(inner_16) = &self.message {
+            write!(f, ": {}", inner_16)?;
         }
         Ok(())
     }
@@ -6708,8 +7045,8 @@ impl CloudHsmClusterNotActiveException {
 impl std::fmt::Display for CloudHsmClusterNotActiveException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "CloudHsmClusterNotActiveException")?;
-        if let Some(inner_16) = &self.message {
-            write!(f, ": {}", inner_16)?;
+        if let Some(inner_17) = &self.message {
+            write!(f, ": {}", inner_17)?;
         }
         Ok(())
     }
@@ -6799,8 +7136,8 @@ impl CloudHsmClusterInvalidConfigurationException {
 impl std::fmt::Display for CloudHsmClusterInvalidConfigurationException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "CloudHsmClusterInvalidConfigurationException")?;
-        if let Some(inner_17) = &self.message {
-            write!(f, ": {}", inner_17)?;
+        if let Some(inner_18) = &self.message {
+            write!(f, ": {}", inner_18)?;
         }
         Ok(())
     }
@@ -6860,8 +7197,8 @@ impl LimitExceededException {
 impl std::fmt::Display for LimitExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "LimitExceededException")?;
-        if let Some(inner_18) = &self.message {
-            write!(f, ": {}", inner_18)?;
+        if let Some(inner_19) = &self.message {
+            write!(f, ": {}", inner_19)?;
         }
         Ok(())
     }
@@ -6920,8 +7257,8 @@ impl TagException {
 impl std::fmt::Display for TagException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "TagException")?;
-        if let Some(inner_19) = &self.message {
-            write!(f, ": {}", inner_19)?;
+        if let Some(inner_20) = &self.message {
+            write!(f, ": {}", inner_20)?;
         }
         Ok(())
     }
@@ -6980,8 +7317,8 @@ impl InvalidGrantIdException {
 impl std::fmt::Display for InvalidGrantIdException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidGrantIdException")?;
-        if let Some(inner_20) = &self.message {
-            write!(f, ": {}", inner_20)?;
+        if let Some(inner_21) = &self.message {
+            write!(f, ": {}", inner_21)?;
         }
         Ok(())
     }
@@ -7019,6 +7356,128 @@ impl InvalidGrantIdException {
     }
 }
 
+/// <p>The request was rejected because the specified policy is not syntactically or semantically
+/// correct.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct MalformedPolicyDocumentException {
+    pub message: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for MalformedPolicyDocumentException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("MalformedPolicyDocumentException");
+        formatter.field("message", &self.message);
+        formatter.finish()
+    }
+}
+impl MalformedPolicyDocumentException {
+    pub fn message(&self) -> Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for MalformedPolicyDocumentException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "MalformedPolicyDocumentException")?;
+        if let Some(inner_22) = &self.message {
+            write!(f, ": {}", inner_22)?;
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for MalformedPolicyDocumentException {}
+/// See [`MalformedPolicyDocumentException`](crate::error::MalformedPolicyDocumentException)
+pub mod malformed_policy_document_exception {
+    /// A builder for [`MalformedPolicyDocumentException`](crate::error::MalformedPolicyDocumentException)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`MalformedPolicyDocumentException`](crate::error::MalformedPolicyDocumentException)
+        pub fn build(self) -> crate::error::MalformedPolicyDocumentException {
+            crate::error::MalformedPolicyDocumentException {
+                message: self.message,
+            }
+        }
+    }
+}
+impl MalformedPolicyDocumentException {
+    /// Creates a new builder-style object to manufacture [`MalformedPolicyDocumentException`](crate::error::MalformedPolicyDocumentException)
+    pub fn builder() -> crate::error::malformed_policy_document_exception::Builder {
+        crate::error::malformed_policy_document_exception::Builder::default()
+    }
+}
+
+/// <p>The request was rejected because it attempted to create a resource that already
+/// exists.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct AlreadyExistsException {
+    pub message: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for AlreadyExistsException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("AlreadyExistsException");
+        formatter.field("message", &self.message);
+        formatter.finish()
+    }
+}
+impl AlreadyExistsException {
+    pub fn message(&self) -> Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for AlreadyExistsException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "AlreadyExistsException")?;
+        if let Some(inner_23) = &self.message {
+            write!(f, ": {}", inner_23)?;
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for AlreadyExistsException {}
+/// See [`AlreadyExistsException`](crate::error::AlreadyExistsException)
+pub mod already_exists_exception {
+    /// A builder for [`AlreadyExistsException`](crate::error::AlreadyExistsException)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`AlreadyExistsException`](crate::error::AlreadyExistsException)
+        pub fn build(self) -> crate::error::AlreadyExistsException {
+            crate::error::AlreadyExistsException {
+                message: self.message,
+            }
+        }
+    }
+}
+impl AlreadyExistsException {
+    /// Creates a new builder-style object to manufacture [`AlreadyExistsException`](crate::error::AlreadyExistsException)
+    pub fn builder() -> crate::error::already_exists_exception::Builder {
+        crate::error::already_exists_exception::Builder::default()
+    }
+}
+
 /// <p>From the <a>Decrypt</a> or <a>ReEncrypt</a> operation, the request
 /// was rejected because the specified ciphertext, or additional authenticated data incorporated
 /// into the ciphertext, such as the encryption context, is corrupted, missing, or otherwise
@@ -7045,8 +7504,8 @@ impl InvalidCiphertextException {
 impl std::fmt::Display for InvalidCiphertextException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidCiphertextException")?;
-        if let Some(inner_21) = &self.message {
-            write!(f, ": {}", inner_21)?;
+        if let Some(inner_24) = &self.message {
+            write!(f, ": {}", inner_24)?;
         }
         Ok(())
     }
@@ -7108,8 +7567,8 @@ impl IncorrectKeyException {
 impl std::fmt::Display for IncorrectKeyException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "IncorrectKeyException")?;
-        if let Some(inner_22) = &self.message {
-            write!(f, ": {}", inner_22)?;
+        if let Some(inner_25) = &self.message {
+            write!(f, ": {}", inner_25)?;
         }
         Ok(())
     }
@@ -7147,128 +7606,6 @@ impl IncorrectKeyException {
     }
 }
 
-/// <p>The request was rejected because a specified parameter is not supported or a specified
-/// resource is not valid for this operation.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct UnsupportedOperationException {
-    pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for UnsupportedOperationException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UnsupportedOperationException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
-impl UnsupportedOperationException {
-    pub fn message(&self) -> Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for UnsupportedOperationException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "UnsupportedOperationException")?;
-        if let Some(inner_23) = &self.message {
-            write!(f, ": {}", inner_23)?;
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for UnsupportedOperationException {}
-/// See [`UnsupportedOperationException`](crate::error::UnsupportedOperationException)
-pub mod unsupported_operation_exception {
-    /// A builder for [`UnsupportedOperationException`](crate::error::UnsupportedOperationException)
-    #[non_exhaustive]
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) message: std::option::Option<std::string::String>,
-    }
-    impl Builder {
-        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-            self.message = Some(input.into());
-            self
-        }
-        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`UnsupportedOperationException`](crate::error::UnsupportedOperationException)
-        pub fn build(self) -> crate::error::UnsupportedOperationException {
-            crate::error::UnsupportedOperationException {
-                message: self.message,
-            }
-        }
-    }
-}
-impl UnsupportedOperationException {
-    /// Creates a new builder-style object to manufacture [`UnsupportedOperationException`](crate::error::UnsupportedOperationException)
-    pub fn builder() -> crate::error::unsupported_operation_exception::Builder {
-        crate::error::unsupported_operation_exception::Builder::default()
-    }
-}
-
-/// <p>The request was rejected because the specified policy is not syntactically or semantically
-/// correct.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct MalformedPolicyDocumentException {
-    pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for MalformedPolicyDocumentException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MalformedPolicyDocumentException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
-impl MalformedPolicyDocumentException {
-    pub fn message(&self) -> Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for MalformedPolicyDocumentException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "MalformedPolicyDocumentException")?;
-        if let Some(inner_24) = &self.message {
-            write!(f, ": {}", inner_24)?;
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for MalformedPolicyDocumentException {}
-/// See [`MalformedPolicyDocumentException`](crate::error::MalformedPolicyDocumentException)
-pub mod malformed_policy_document_exception {
-    /// A builder for [`MalformedPolicyDocumentException`](crate::error::MalformedPolicyDocumentException)
-    #[non_exhaustive]
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) message: std::option::Option<std::string::String>,
-    }
-    impl Builder {
-        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-            self.message = Some(input.into());
-            self
-        }
-        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`MalformedPolicyDocumentException`](crate::error::MalformedPolicyDocumentException)
-        pub fn build(self) -> crate::error::MalformedPolicyDocumentException {
-            crate::error::MalformedPolicyDocumentException {
-                message: self.message,
-            }
-        }
-    }
-}
-impl MalformedPolicyDocumentException {
-    /// Creates a new builder-style object to manufacture [`MalformedPolicyDocumentException`](crate::error::MalformedPolicyDocumentException)
-    pub fn builder() -> crate::error::malformed_policy_document_exception::Builder {
-        crate::error::malformed_policy_document_exception::Builder::default()
-    }
-}
-
 /// <p>The request was rejected because the marker that specifies where pagination should next
 /// begin is not valid.</p>
 #[non_exhaustive]
@@ -7291,8 +7628,8 @@ impl InvalidMarkerException {
 impl std::fmt::Display for InvalidMarkerException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidMarkerException")?;
-        if let Some(inner_25) = &self.message {
-            write!(f, ": {}", inner_25)?;
+        if let Some(inner_26) = &self.message {
+            write!(f, ": {}", inner_26)?;
         }
         Ok(())
     }
@@ -7352,8 +7689,8 @@ impl InvalidImportTokenException {
 impl std::fmt::Display for InvalidImportTokenException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidImportTokenException")?;
-        if let Some(inner_26) = &self.message {
-            write!(f, ": {}", inner_26)?;
+        if let Some(inner_27) = &self.message {
+            write!(f, ": {}", inner_27)?;
         }
         Ok(())
     }
@@ -7414,8 +7751,8 @@ impl IncorrectKeyMaterialException {
 impl std::fmt::Display for IncorrectKeyMaterialException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "IncorrectKeyMaterialException")?;
-        if let Some(inner_27) = &self.message {
-            write!(f, ": {}", inner_27)?;
+        if let Some(inner_28) = &self.message {
+            write!(f, ": {}", inner_28)?;
         }
         Ok(())
     }
@@ -7475,8 +7812,8 @@ impl ExpiredImportTokenException {
 impl std::fmt::Display for ExpiredImportTokenException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ExpiredImportTokenException")?;
-        if let Some(inner_28) = &self.message {
-            write!(f, ": {}", inner_28)?;
+        if let Some(inner_29) = &self.message {
+            write!(f, ": {}", inner_29)?;
         }
         Ok(())
     }
@@ -7540,8 +7877,8 @@ impl std::fmt::Display for CustomKeyStoreHasCmKsException {
             f,
             "CustomKeyStoreHasCmKsException [CustomKeyStoreHasCMKsException]"
         )?;
-        if let Some(inner_29) = &self.message {
-            write!(f, ": {}", inner_29)?;
+        if let Some(inner_30) = &self.message {
+            write!(f, ": {}", inner_30)?;
         }
         Ok(())
     }
@@ -7603,8 +7940,8 @@ impl IncorrectTrustAnchorException {
 impl std::fmt::Display for IncorrectTrustAnchorException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "IncorrectTrustAnchorException")?;
-        if let Some(inner_30) = &self.message {
-            write!(f, ": {}", inner_30)?;
+        if let Some(inner_31) = &self.message {
+            write!(f, ": {}", inner_31)?;
         }
         Ok(())
     }
@@ -7667,8 +8004,8 @@ impl CloudHsmClusterInUseException {
 impl std::fmt::Display for CloudHsmClusterInUseException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "CloudHsmClusterInUseException")?;
-        if let Some(inner_31) = &self.message {
-            write!(f, ": {}", inner_31)?;
+        if let Some(inner_32) = &self.message {
+            write!(f, ": {}", inner_32)?;
         }
         Ok(())
     }
@@ -7727,8 +8064,8 @@ impl InvalidAliasNameException {
 impl std::fmt::Display for InvalidAliasNameException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidAliasNameException")?;
-        if let Some(inner_32) = &self.message {
-            write!(f, ": {}", inner_32)?;
+        if let Some(inner_33) = &self.message {
+            write!(f, ": {}", inner_33)?;
         }
         Ok(())
     }
@@ -7763,66 +8100,5 @@ impl InvalidAliasNameException {
     /// Creates a new builder-style object to manufacture [`InvalidAliasNameException`](crate::error::InvalidAliasNameException)
     pub fn builder() -> crate::error::invalid_alias_name_exception::Builder {
         crate::error::invalid_alias_name_exception::Builder::default()
-    }
-}
-
-/// <p>The request was rejected because it attempted to create a resource that already
-/// exists.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct AlreadyExistsException {
-    pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for AlreadyExistsException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AlreadyExistsException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
-impl AlreadyExistsException {
-    pub fn message(&self) -> Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for AlreadyExistsException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "AlreadyExistsException")?;
-        if let Some(inner_33) = &self.message {
-            write!(f, ": {}", inner_33)?;
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for AlreadyExistsException {}
-/// See [`AlreadyExistsException`](crate::error::AlreadyExistsException)
-pub mod already_exists_exception {
-    /// A builder for [`AlreadyExistsException`](crate::error::AlreadyExistsException)
-    #[non_exhaustive]
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) message: std::option::Option<std::string::String>,
-    }
-    impl Builder {
-        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-            self.message = Some(input.into());
-            self
-        }
-        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`AlreadyExistsException`](crate::error::AlreadyExistsException)
-        pub fn build(self) -> crate::error::AlreadyExistsException {
-            crate::error::AlreadyExistsException {
-                message: self.message,
-            }
-        }
-    }
-}
-impl AlreadyExistsException {
-    /// Creates a new builder-style object to manufacture [`AlreadyExistsException`](crate::error::AlreadyExistsException)
-    pub fn builder() -> crate::error::already_exists_exception::Builder {
-        crate::error::already_exists_exception::Builder::default()
     }
 }

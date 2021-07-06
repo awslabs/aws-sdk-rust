@@ -15653,6 +15653,19 @@ where
                                     .map(|v| v.to_i32()),
                                 );
                             }
+                            "scte35Source" => {
+                                builder = builder.set_scte35_source(
+                                    smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| {
+                                        s.to_unescaped().map(|u| {
+                                            crate::model::HlsScte35SourceType::from(u.as_ref())
+                                        })
+                                    })
+                                    .transpose()?,
+                                );
+                            }
                             _ => smithy_json::deserialize::token::skip_value(tokens)?,
                         }
                     }
@@ -18712,6 +18725,19 @@ where
                     Some(smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                         match key.to_unescaped()?.as_ref() {
+                            "ocrLanguage" => {
+                                builder = builder.set_ocr_language(
+                                    smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| {
+                                        s.to_unescaped().map(|u| {
+                                            crate::model::DvbSubOcrLanguage::from(u.as_ref())
+                                        })
+                                    })
+                                    .transpose()?,
+                                );
+                            }
                             "pid" => {
                                 builder = builder.set_pid(
                                     smithy_json::deserialize::token::expect_number_or_null(
@@ -18891,6 +18917,19 @@ where
                     Some(smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                         match key.to_unescaped()?.as_ref() {
+                            "ocrLanguage" => {
+                                builder = builder.set_ocr_language(
+                                    smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| {
+                                        s.to_unescaped().map(|u| {
+                                            crate::model::Scte27OcrLanguage::from(u.as_ref())
+                                        })
+                                    })
+                                    .transpose()?,
+                                );
+                            }
                             "pid" => {
                                 builder = builder.set_pid(
                                     smithy_json::deserialize::token::expect_number_or_null(

@@ -117,7 +117,7 @@ impl AddPermissionInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -249,7 +249,7 @@ impl CheckIfPhoneNumberIsOptedOutInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -410,7 +410,7 @@ impl ConfirmSubscriptionInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -578,7 +578,7 @@ impl CreatePlatformApplicationInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -765,7 +765,7 @@ impl CreatePlatformEndpointInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -913,7 +913,7 @@ impl CreateSmsSandboxPhoneNumberInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -1084,7 +1084,7 @@ impl CreateTopicInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -1210,7 +1210,7 @@ impl DeleteEndpointInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -1344,7 +1344,7 @@ impl DeletePlatformApplicationInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -1476,7 +1476,7 @@ impl DeleteSmsSandboxPhoneNumberInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -1604,7 +1604,7 @@ impl DeleteTopicInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -1731,7 +1731,7 @@ impl GetEndpointAttributesInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -1868,7 +1868,7 @@ impl GetPlatformApplicationAttributesInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -2002,7 +2002,7 @@ impl GetSmsAttributesInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -2121,7 +2121,7 @@ impl GetSmsSandboxAccountStatusInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -2255,7 +2255,7 @@ impl GetSubscriptionAttributesInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -2385,7 +2385,7 @@ impl GetTopicAttributesInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -2534,7 +2534,7 @@ impl ListEndpointsByPlatformApplicationInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -2675,7 +2675,7 @@ impl ListOriginationNumbersInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -2809,7 +2809,7 @@ impl ListPhoneNumbersOptedOutInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -2941,7 +2941,7 @@ impl ListPlatformApplicationsInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -3085,7 +3085,7 @@ impl ListSmsSandboxPhoneNumbersInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -3215,7 +3215,7 @@ impl ListSubscriptionsInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -3357,7 +3357,7 @@ impl ListSubscriptionsByTopicInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -3487,7 +3487,7 @@ impl ListTagsForResourceInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -3615,7 +3615,7 @@ impl ListTopicsInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -3742,7 +3742,7 @@ impl OptInPhoneNumberInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -4081,7 +4081,7 @@ impl PublishInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -4216,7 +4216,7 @@ impl RemovePermissionInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -4369,7 +4369,7 @@ impl SetEndpointAttributesInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -4529,7 +4529,7 @@ impl SetPlatformApplicationAttributesInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -4671,7 +4671,7 @@ impl SetSmsAttributesInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -4880,7 +4880,7 @@ impl SetSubscriptionAttributesInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -5092,7 +5092,7 @@ impl SetTopicAttributesInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -5368,7 +5368,7 @@ impl SubscribeInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -5506,7 +5506,7 @@ impl TagResourceInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -5634,7 +5634,7 @@ impl UnsubscribeInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -5774,7 +5774,7 @@ impl UntagResourceInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -5921,7 +5921,7 @@ impl VerifySmsSandboxPhoneNumberInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );

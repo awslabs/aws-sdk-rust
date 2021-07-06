@@ -295,7 +295,7 @@ impl AssumeRoleInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -532,7 +532,7 @@ impl AssumeRoleWithSamlInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -794,7 +794,7 @@ impl AssumeRoleWithWebIdentityInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -929,7 +929,7 @@ impl DecodeAuthorizationMessageInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -1064,7 +1064,7 @@ impl GetAccessKeyInfoInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -1181,7 +1181,7 @@ impl GetCallerIdentityInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -1404,7 +1404,7 @@ impl GetFederationTokenInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -1577,7 +1577,7 @@ impl GetSessionTokenInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );

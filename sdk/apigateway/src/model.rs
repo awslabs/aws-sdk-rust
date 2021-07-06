@@ -45,6 +45,9 @@ impl VpcLinkStatus {
             VpcLinkStatus::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["AVAILABLE", "DELETING", "FAILED", "PENDING"]
+    }
 }
 impl AsRef<str> for VpcLinkStatus {
     fn as_ref(&self) -> &str {
@@ -194,6 +197,9 @@ impl Op {
             Op::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["add", "copy", "move", "remove", "replace", "test"]
+    }
 }
 impl AsRef<str> for Op {
     fn as_ref(&self) -> &str {
@@ -321,6 +327,9 @@ impl QuotaPeriodType {
             QuotaPeriodType::Week => "WEEK",
             QuotaPeriodType::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["DAY", "MONTH", "WEEK"]
     }
 }
 impl AsRef<str> for QuotaPeriodType {
@@ -895,6 +904,13 @@ impl UnauthorizedCacheControlHeaderStrategy {
             UnauthorizedCacheControlHeaderStrategy::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "FAIL_WITH_403",
+            "SUCCEED_WITHOUT_RESPONSE_HEADER",
+            "SUCCEED_WITH_RESPONSE_HEADER",
+        ]
+    }
 }
 impl AsRef<str> for UnauthorizedCacheControlHeaderStrategy {
     fn as_ref(&self) -> &str {
@@ -951,6 +967,15 @@ impl CacheClusterStatus {
             CacheClusterStatus::NotAvailable => "NOT_AVAILABLE",
             CacheClusterStatus::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "AVAILABLE",
+            "CREATE_IN_PROGRESS",
+            "DELETE_IN_PROGRESS",
+            "FLUSH_IN_PROGRESS",
+            "NOT_AVAILABLE",
+        ]
     }
 }
 impl AsRef<str> for CacheClusterStatus {
@@ -1017,6 +1042,9 @@ impl CacheClusterSize {
             CacheClusterSize::Size6Point1Gb => "6.1",
             CacheClusterSize::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["0.5", "1.6", "118", "13.5", "237", "28.4", "58.2", "6.1"]
     }
 }
 impl AsRef<str> for CacheClusterSize {
@@ -1138,6 +1166,9 @@ impl EndpointType {
             EndpointType::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["EDGE", "PRIVATE", "REGIONAL"]
+    }
 }
 impl AsRef<str> for EndpointType {
     fn as_ref(&self) -> &str {
@@ -1184,6 +1215,9 @@ impl ApiKeySourceType {
             ApiKeySourceType::Header => "HEADER",
             ApiKeySourceType::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["AUTHORIZER", "HEADER"]
     }
 }
 impl AsRef<str> for ApiKeySourceType {
@@ -2510,6 +2544,9 @@ impl ContentHandlingStrategy {
             ContentHandlingStrategy::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["CONVERT_TO_BINARY", "CONVERT_TO_TEXT"]
+    }
 }
 impl AsRef<str> for ContentHandlingStrategy {
     fn as_ref(&self) -> &str {
@@ -2556,6 +2593,9 @@ impl ConnectionType {
             ConnectionType::VpcLink => "VPC_LINK",
             ConnectionType::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["INTERNET", "VPC_LINK"]
     }
 }
 impl AsRef<str> for ConnectionType {
@@ -2613,6 +2653,9 @@ impl IntegrationType {
             IntegrationType::Mock => "MOCK",
             IntegrationType::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["AWS", "AWS_PROXY", "HTTP", "HTTP_PROXY", "MOCK"]
     }
 }
 impl AsRef<str> for IntegrationType {
@@ -2857,6 +2900,30 @@ impl GatewayResponseType {
             GatewayResponseType::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "ACCESS_DENIED",
+            "API_CONFIGURATION_ERROR",
+            "AUTHORIZER_CONFIGURATION_ERROR",
+            "AUTHORIZER_FAILURE",
+            "BAD_REQUEST_BODY",
+            "BAD_REQUEST_PARAMETERS",
+            "DEFAULT_4XX",
+            "DEFAULT_5XX",
+            "EXPIRED_TOKEN",
+            "INTEGRATION_FAILURE",
+            "INTEGRATION_TIMEOUT",
+            "INVALID_API_KEY",
+            "INVALID_SIGNATURE",
+            "MISSING_AUTHENTICATION_TOKEN",
+            "QUOTA_EXCEEDED",
+            "REQUEST_TOO_LARGE",
+            "RESOURCE_NOT_FOUND",
+            "THROTTLED",
+            "UNAUTHORIZED",
+            "UNSUPPORTED_MEDIA_TYPE",
+        ]
+    }
 }
 impl AsRef<str> for GatewayResponseType {
     fn as_ref(&self) -> &str {
@@ -3004,6 +3071,9 @@ impl SecurityPolicy {
             SecurityPolicy::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["TLS_1_0", "TLS_1_2"]
+    }
 }
 impl AsRef<str> for SecurityPolicy {
     fn as_ref(&self) -> &str {
@@ -3053,6 +3123,9 @@ impl DomainNameStatus {
             DomainNameStatus::Updating => "UPDATING",
             DomainNameStatus::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["AVAILABLE", "PENDING", "UPDATING"]
     }
 }
 impl AsRef<str> for DomainNameStatus {
@@ -3237,6 +3310,22 @@ impl DocumentationPartType {
             DocumentationPartType::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "API",
+            "AUTHORIZER",
+            "METHOD",
+            "MODEL",
+            "PATH_PARAMETER",
+            "QUERY_PARAMETER",
+            "REQUEST_BODY",
+            "REQUEST_HEADER",
+            "RESOURCE",
+            "RESPONSE",
+            "RESPONSE_BODY",
+            "RESPONSE_HEADER",
+        ]
+    }
 }
 impl AsRef<str> for DocumentationPartType {
     fn as_ref(&self) -> &str {
@@ -3352,6 +3441,9 @@ impl AuthorizerType {
             AuthorizerType::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["COGNITO_USER_POOLS", "REQUEST", "TOKEN"]
+    }
 }
 impl AsRef<str> for AuthorizerType {
     fn as_ref(&self) -> &str {
@@ -3399,6 +3491,9 @@ impl PutMode {
             PutMode::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["merge", "overwrite"]
+    }
 }
 impl AsRef<str> for PutMode {
     fn as_ref(&self) -> &str {
@@ -3442,6 +3537,9 @@ impl ApiKeysFormat {
             ApiKeysFormat::Csv => "csv",
             ApiKeysFormat::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["csv"]
     }
 }
 impl AsRef<str> for ApiKeysFormat {
@@ -5891,6 +5989,9 @@ impl LocationStatusType {
             LocationStatusType::Undocumented => "UNDOCUMENTED",
             LocationStatusType::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["DOCUMENTED", "UNDOCUMENTED"]
     }
 }
 impl AsRef<str> for LocationStatusType {

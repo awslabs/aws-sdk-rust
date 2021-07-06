@@ -31,23 +31,58 @@ pub(crate) fn uuid_v4(input: u128) -> String {
     out
 }
 
-pub trait MakeIdempotencyToken: Send + Sync {
-    fn make_idempotency_token(&self) -> String;
+/// IdempotencyTokenProvider generates idempotency tokens for idempotency API requests
+///
+/// Generally, customers will not need to interact with this at all. A sensible default will be
+/// provided automatically during config construction. However, if you need deterministic behavior
+/// for testing, two options are available:
+/// 1. Utilize the From<&'static str>` implementation to hard code an idempotency token
+/// 2. Seed the token provider with [`IdempotencyTokenProvider::with_seed`](IdempotencyTokenProvider::with_seed)
+pub struct IdempotencyTokenProvider {
+    inner: Inner,
 }
 
-pub fn default_provider() -> impl MakeIdempotencyToken {
-    Mutex::new(fastrand::Rng::new())
+enum Inner {
+    Static(&'static str),
+    Random(Mutex<fastrand::Rng>),
 }
 
-impl MakeIdempotencyToken for Mutex<fastrand::Rng> {
-    fn make_idempotency_token(&self) -> String {
-        let input: u128 = self.lock().unwrap().u128(..);
-        uuid_v4(input)
+pub fn default_provider() -> IdempotencyTokenProvider {
+    IdempotencyTokenProvider::random()
+}
+
+impl From<&'static str> for IdempotencyTokenProvider {
+    fn from(token: &'static str) -> Self {
+        Self::fixed(token)
     }
 }
 
-impl MakeIdempotencyToken for &'static str {
-    fn make_idempotency_token(&self) -> String {
-        self.to_string()
+impl IdempotencyTokenProvider {
+    pub fn make_idempotency_token(&self) -> String {
+        match &self.inner {
+            Inner::Static(token) => token.to_string(),
+            Inner::Random(rng) => {
+                let input: u128 = rng.lock().unwrap().u128(..);
+                uuid_v4(input)
+            }
+        }
+    }
+
+    pub fn with_seed(seed: u64) -> Self {
+        Self {
+            inner: Inner::Random(Mutex::new(fastrand::Rng::with_seed(seed))),
+        }
+    }
+
+    pub fn random() -> Self {
+        Self {
+            inner: Inner::Random(Mutex::new(fastrand::Rng::new())),
+        }
+    }
+
+    pub fn fixed(token: &'static str) -> Self {
+        Self {
+            inner: Inner::Static(token),
+        }
     }
 }

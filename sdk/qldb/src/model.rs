@@ -39,6 +39,9 @@ impl PermissionsMode {
             PermissionsMode::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["ALLOW_ALL", "STANDARD"]
+    }
 }
 impl AsRef<str> for PermissionsMode {
     fn as_ref(&self) -> &str {
@@ -91,6 +94,9 @@ impl LedgerState {
             LedgerState::Deleting => "DELETING",
             LedgerState::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["ACTIVE", "CREATING", "DELETED", "DELETING"]
     }
 }
 impl AsRef<str> for LedgerState {
@@ -711,6 +717,9 @@ impl S3ObjectEncryptionType {
             S3ObjectEncryptionType::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["NO_ENCRYPTION", "SSE_KMS", "SSE_S3"]
+    }
 }
 impl AsRef<str> for S3ObjectEncryptionType {
     fn as_ref(&self) -> &str {
@@ -760,6 +769,9 @@ impl ExportStatus {
             ExportStatus::InProgress => "IN_PROGRESS",
             ExportStatus::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["CANCELLED", "COMPLETED", "IN_PROGRESS"]
     }
 }
 impl AsRef<str> for ExportStatus {
@@ -1029,6 +1041,9 @@ impl ErrorCause {
             ErrorCause::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["IAM_PERMISSION_REVOKED", "KINESIS_STREAM_NOT_FOUND"]
+    }
 }
 impl AsRef<str> for ErrorCause {
     fn as_ref(&self) -> &str {
@@ -1084,6 +1099,9 @@ impl StreamStatus {
             StreamStatus::Impaired => "IMPAIRED",
             StreamStatus::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["ACTIVE", "CANCELED", "COMPLETED", "FAILED", "IMPAIRED"]
     }
 }
 impl AsRef<str> for StreamStatus {

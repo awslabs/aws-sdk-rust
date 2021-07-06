@@ -5,18 +5,71 @@
 
 use crate::SendOperationError;
 use pin_project::pin_project;
-use smithy_http::middleware::MapRequest;
+use smithy_http::middleware::{AsyncMapRequest, MapRequest};
 use smithy_http::operation;
 use std::future::Future;
 use std::pin::Pin;
 use std::task::{Context, Poll};
 use tower::{Layer, Service};
 
+#[derive(Debug)]
+pub struct AsyncMapRequestLayer<M> {
+    mapper: M,
+}
+
+impl<M: AsyncMapRequest + Clone> AsyncMapRequestLayer<M> {
+    pub fn for_mapper(mapper: M) -> Self {
+        AsyncMapRequestLayer { mapper }
+    }
+}
+
+impl<S, M> Layer<S> for AsyncMapRequestLayer<M>
+where
+    M: Clone,
+{
+    type Service = AsyncMapRequestService<S, M>;
+
+    fn layer(&self, inner: S) -> Self::Service {
+        AsyncMapRequestService {
+            inner,
+            mapper: self.mapper.clone(),
+        }
+    }
+}
+
+/// Tower service for [`AsyncMapRequest`](smithy_http::middleware::AsyncMapRequest)
 #[derive(Clone)]
-/// Tower service for [`MapRequest`](smithy_http::middleware::MapRequest)
-pub struct MapRequestService<S, M> {
+pub struct AsyncMapRequestService<S, M> {
     inner: S,
     mapper: M,
+}
+
+type BoxFuture<T> = Pin<Box<dyn Future<Output = T> + Send>>;
+
+impl<S, M> Service<operation::Request> for AsyncMapRequestService<S, M>
+where
+    S: Service<operation::Request, Error = SendOperationError> + Clone + Send + 'static,
+    M: AsyncMapRequest,
+    S::Future: Send + 'static,
+{
+    type Response = S::Response;
+    type Error = S::Error;
+    type Future = BoxFuture<Result<S::Response, S::Error>>;
+
+    fn poll_ready(&mut self, cx: &mut Context<'_>) -> Poll<Result<(), Self::Error>> {
+        self.inner.poll_ready(cx)
+    }
+
+    fn call(&mut self, req: operation::Request) -> Self::Future {
+        let mut inner = self.inner.clone();
+        let future = self.mapper.apply(req);
+        Box::pin(async move {
+            let mapped_request = future
+                .await
+                .map_err(|e| SendOperationError::RequestConstructionError(e.into()))?;
+            inner.call(mapped_request).await
+        })
+    }
 }
 
 #[derive(Debug)]
@@ -62,6 +115,13 @@ where
             EnumProj::Inner(f) => f.poll(cx),
         }
     }
+}
+
+#[derive(Clone)]
+/// Tower service for [`MapRequest`](smithy_http::middleware::MapRequest)
+pub struct MapRequestService<S, M> {
+    inner: S,
+    mapper: M,
 }
 
 impl<S, M> Service<operation::Request> for MapRequestService<S, M>

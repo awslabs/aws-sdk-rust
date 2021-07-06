@@ -151,7 +151,7 @@ impl AddLayerVersionPermissionInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -442,7 +442,7 @@ impl AddPermissionInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -672,7 +672,7 @@ impl CreateAliasInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -853,7 +853,7 @@ impl CreateCodeSigningConfigInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -1291,7 +1291,7 @@ impl CreateEventSourceMappingInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -1708,7 +1708,7 @@ impl CreateFunctionInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -1866,7 +1866,7 @@ impl DeleteAliasInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -2037,7 +2037,7 @@ impl DeleteCodeSigningConfigInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -2185,7 +2185,7 @@ impl DeleteEventSourceMappingInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -2367,7 +2367,7 @@ impl DeleteFunctionInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -2546,7 +2546,7 @@ impl DeleteFunctionCodeSigningConfigInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -2718,7 +2718,7 @@ impl DeleteFunctionConcurrencyInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -2901,7 +2901,7 @@ impl DeleteFunctionEventInvokeConfigInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -3068,7 +3068,7 @@ impl DeleteLayerVersionInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -3263,7 +3263,7 @@ impl DeleteProvisionedConcurrencyConfigInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -3406,7 +3406,7 @@ impl GetAccountSettingsInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -3564,7 +3564,7 @@ impl GetAliasInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -3729,7 +3729,7 @@ impl GetCodeSigningConfigInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -3876,7 +3876,7 @@ impl GetEventSourceMappingInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -4056,7 +4056,7 @@ impl GetFunctionInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -4235,7 +4235,7 @@ impl GetFunctionCodeSigningConfigInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -4406,7 +4406,7 @@ impl GetFunctionConcurrencyInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -4589,7 +4589,7 @@ impl GetFunctionConfigurationInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -4779,7 +4779,7 @@ impl GetFunctionEventInvokeConfigInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -4946,7 +4946,7 @@ impl GetLayerVersionInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -5105,7 +5105,7 @@ impl GetLayerVersionByArnInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -5251,7 +5251,7 @@ impl GetLayerVersionPolicyInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -5443,7 +5443,7 @@ impl GetPolicyInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -5628,7 +5628,7 @@ impl GetProvisionedConcurrencyConfigInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -5881,7 +5881,7 @@ impl InvokeInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -6127,7 +6127,7 @@ impl InvokeAsyncInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -6332,7 +6332,7 @@ impl ListAliasesInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -6508,7 +6508,7 @@ impl ListCodeSigningConfigsInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -6726,7 +6726,7 @@ impl ListEventSourceMappingsInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -6914,7 +6914,7 @@ impl ListFunctionEventInvokeConfigsInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -7113,7 +7113,7 @@ impl ListFunctionsInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -7285,7 +7285,7 @@ impl ListFunctionsByCodeSigningConfigInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -7467,7 +7467,7 @@ impl ListLayersInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -7646,7 +7646,7 @@ impl ListLayerVersionsInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -7856,7 +7856,7 @@ impl ListProvisionedConcurrencyConfigsInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -8014,7 +8014,7 @@ impl ListTagsInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -8198,7 +8198,7 @@ impl ListVersionsByFunctionInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -8424,7 +8424,7 @@ impl PublishLayerVersionInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -8633,7 +8633,7 @@ impl PublishVersionInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -8823,7 +8823,7 @@ impl PutFunctionCodeSigningConfigInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -9011,7 +9011,7 @@ impl PutFunctionConcurrencyInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -9255,7 +9255,7 @@ impl PutFunctionEventInvokeConfigInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -9463,7 +9463,7 @@ impl PutProvisionedConcurrencyConfigInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -9654,7 +9654,7 @@ impl RemoveLayerVersionPermissionInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -9896,7 +9896,7 @@ impl RemovePermissionInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -10097,7 +10097,7 @@ impl TagResourceInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -10255,7 +10255,7 @@ impl UntagResourceInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -10495,7 +10495,7 @@ impl UpdateAliasInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -10708,7 +10708,7 @@ impl UpdateCodeSigningConfigInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -11069,7 +11069,7 @@ impl UpdateEventSourceMappingInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -11338,7 +11338,7 @@ impl UpdateFunctionCodeInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -11718,7 +11718,7 @@ impl UpdateFunctionConfigurationInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -11964,7 +11964,7 @@ impl UpdateFunctionEventInvokeConfigInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );

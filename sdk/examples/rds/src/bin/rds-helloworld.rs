@@ -3,21 +3,17 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-use rds::{Client, Config, Region};
-
 use aws_types::region::ProvideRegion;
-
+use rds::{Client, Config, Error, Region, PKG_VERSION};
 use structopt::StructOpt;
-use tracing_subscriber::fmt::format::FmtSpan;
-use tracing_subscriber::fmt::SubscriberBuilder;
 
 #[derive(Debug, StructOpt)]
 struct Opt {
-    /// The region. Overrides environment variable AWS_DEFAULT_REGION.
+    /// The default AWS Region.
     #[structopt(short, long)]
     default_region: Option<String>,
 
-    /// Whether to display additional runtime information
+    /// Whether to display additional information.
     #[structopt(short, long)]
     verbose: bool,
 }
@@ -30,7 +26,9 @@ struct Opt {
 ///    If the environment variable is not set, defaults to **us-west-2**.
 /// * `[-v]` - Whether to display additional information.
 #[tokio::main]
-async fn main() -> Result<(), rds::Error> {
+async fn main() -> Result<(), Error> {
+    tracing_subscriber::fmt::init();
+
     let Opt {
         default_region,
         verbose,
@@ -43,13 +41,9 @@ async fn main() -> Result<(), rds::Error> {
         .unwrap_or_else(|| Region::new("us-west-2"));
 
     if verbose {
-        println!("RDS client version: {}\n", rds::PKG_VERSION);
-        println!("Region: {:?}", &region);
-
-        SubscriberBuilder::default()
-            .with_env_filter("info")
-            .with_span_events(FmtSpan::CLOSE)
-            .init();
+        println!("RDS version: {}", PKG_VERSION);
+        println!("Region:      {:?}", &region);
+        println!();
     }
 
     let conf = Config::builder().region(region).build();

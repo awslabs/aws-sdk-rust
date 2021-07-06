@@ -426,6 +426,9 @@ impl SmsSandboxPhoneNumberVerificationStatus {
             SmsSandboxPhoneNumberVerificationStatus::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["Pending", "Verified"]
+    }
 }
 impl AsRef<str> for SmsSandboxPhoneNumberVerificationStatus {
     fn as_ref(&self) -> &str {
@@ -685,6 +688,9 @@ impl NumberCapability {
             NumberCapability::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["MMS", "SMS", "VOICE"]
+    }
 }
 impl AsRef<str> for NumberCapability {
     fn as_ref(&self) -> &str {
@@ -738,6 +744,9 @@ impl RouteType {
             RouteType::Transactional => "Transactional",
             RouteType::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["Premium", "Promotional", "Transactional"]
     }
 }
 impl AsRef<str> for RouteType {
@@ -893,6 +902,12 @@ impl LanguageCodeString {
             LanguageCodeString::ZhTw => "zh-TW",
             LanguageCodeString::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "de-DE", "en-GB", "en-US", "es-419", "es-ES", "fr-CA", "fr-FR", "it-IT", "ja-JP",
+            "kr-KR", "pt-BR", "zh-CN", "zh-TW",
+        ]
     }
 }
 impl AsRef<str> for LanguageCodeString {

@@ -2,7 +2,8 @@
 pub struct Config {
     pub(crate) endpoint_resolver: ::std::sync::Arc<dyn aws_endpoint::ResolveAwsEndpoint>,
     pub(crate) region: Option<aws_types::region::Region>,
-    pub(crate) credentials_provider: std::sync::Arc<dyn aws_auth::ProvideCredentials>,
+    pub(crate) credentials_provider:
+        std::sync::Arc<dyn aws_auth::provider::AsyncProvideCredentials>,
 }
 impl std::fmt::Debug for Config {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -26,7 +27,7 @@ impl Config {
 pub struct Builder {
     endpoint_resolver: Option<::std::sync::Arc<dyn aws_endpoint::ResolveAwsEndpoint>>,
     region: Option<aws_types::region::Region>,
-    credentials_provider: Option<std::sync::Arc<dyn aws_auth::ProvideCredentials>>,
+    credentials_provider: Option<std::sync::Arc<dyn aws_auth::provider::AsyncProvideCredentials>>,
 }
 impl Builder {
     pub fn new() -> Self {
@@ -46,7 +47,7 @@ impl Builder {
     /// Set the credentials provider for this service
     pub fn credentials_provider(
         mut self,
-        credentials_provider: impl aws_auth::ProvideCredentials + 'static,
+        credentials_provider: impl aws_auth::provider::AsyncProvideCredentials + 'static,
     ) -> Self {
         self.credentials_provider = Some(std::sync::Arc::new(credentials_provider));
         self
@@ -63,7 +64,7 @@ impl Builder {
             },
             credentials_provider: self
                 .credentials_provider
-                .unwrap_or_else(|| std::sync::Arc::new(aws_auth::default_provider())),
+                .unwrap_or_else(|| std::sync::Arc::new(aws_auth::provider::default_provider())),
         }
     }
 }

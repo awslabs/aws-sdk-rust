@@ -3,19 +3,14 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-use std::process;
-
-use kms::{Client, Config, Region};
-
 use aws_types::region::ProvideRegion;
-
+use kms::{Client, Config, Error, Region, PKG_VERSION};
+use std::process;
 use structopt::StructOpt;
-use tracing_subscriber::fmt::format::FmtSpan;
-use tracing_subscriber::fmt::SubscriberBuilder;
 
 #[derive(Debug, StructOpt)]
 struct Opt {
-    /// The region. Overrides environment variable AWS_DEFAULT_REGION.
+    /// The default AWS Region.
     #[structopt(short, long)]
     default_region: Option<String>,
 
@@ -23,7 +18,7 @@ struct Opt {
     #[structopt(short, long)]
     length: i32,
 
-    /// Specifies whether additonal runtime informmation is displayed
+    /// Whether to display additonal informmation.
     #[structopt(short, long)]
     verbose: bool,
 }
@@ -32,12 +27,14 @@ struct Opt {
 /// # Arguments
 ///
 /// * `[-l LENGTH]` - The number of bytes to generate. Must be less than 1024.
-/// * `[-d DEFAULT-REGION]` - The region in which the client is created.
-///    If not supplied, uses the value of the **AWS_DEFAULT_REGION** environment variable.
+/// * `[-d DEFAULT-REGION]` - The Region in which the client is created.
+///    If not supplied, uses the value of the **AWS_REGION** environment variable.
 ///    If the environment variable is not set, defaults to **us-west-2**.
 /// * `[-v]` - Whether to display additional information.
 #[tokio::main]
-async fn main() {
+async fn main() -> Result<(), Error> {
+    tracing_subscriber::fmt::init();
+
     let Opt {
         length,
         default_region,
@@ -62,32 +59,20 @@ async fn main() {
     }
 
     if verbose {
-        println!("KMS client version: {}\n", kms::PKG_VERSION);
-        println!("Region: {:?}", &region);
-        println!("Length: {}", length);
-
-        SubscriberBuilder::default()
-            .with_env_filter("info")
-            .with_span_events(FmtSpan::CLOSE)
-            .init();
+        println!("KMS version: {}", PKG_VERSION);
+        println!("Region:      {:?}", &region);
+        println!("Length:      {}", &length);
+        println!();
     }
 
     let conf = Config::builder().region(region).build();
     let client = Client::from_conf(conf);
 
-    let resp = match client
+    let resp = client
         .generate_random()
         .number_of_bytes(length)
         .send()
-        .await
-    {
-        Ok(output) => output,
-        Err(e) => {
-            println!("Got an error calling GenerateRandom:");
-            println!("{}", e);
-            process::exit(1);
-        }
-    };
+        .await?;
 
     // Did we get an encrypted blob?
     let blob = resp.plaintext.expect("Could not get encrypted text");
@@ -95,6 +80,9 @@ async fn main() {
 
     let s = base64::encode(&bytes);
 
+    println!();
     println!("Data key:");
     println!("{}", s);
+
+    Ok(())
 }

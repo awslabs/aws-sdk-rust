@@ -4,7 +4,7 @@
  */
 
 use aws_auth::Credentials;
-use aws_sigv4_poc::{PayloadChecksumKind, SignableBody, SigningSettings, UriEncoding};
+use aws_sigv4_poc::{PayloadChecksumKind, SigningSettings, UriEncoding};
 use aws_types::region::SigningRegion;
 use aws_types::SigningService;
 use http::header::HeaderName;
@@ -12,6 +12,8 @@ use smithy_http::body::SdkBody;
 use std::error::Error;
 use std::fmt;
 use std::time::SystemTime;
+
+pub use aws_sigv4_poc::SignableBody;
 
 #[derive(Eq, PartialEq, Clone, Copy)]
 pub enum SigningAlgorithm {
@@ -77,6 +79,7 @@ pub struct RequestConfig<'a> {
     pub request_ts: SystemTime,
     pub region: &'a SigningRegion,
     pub service: &'a SigningService,
+    pub payload_override: Option<&'a SignableBody<'static>>,
 }
 
 #[derive(Clone, Default)]
@@ -135,14 +138,18 @@ impl SigV4Signer {
 
         // A body that is already in memory can be signed directly. A  body that is not in memory
         // (any sort of streaming body) will be signed via UNSIGNED-PAYLOAD.
-        // The final enhancement that will come a bit later is writing a `SignableBody::Precomputed`
-        // into the property bag when we have a sha 256 middleware that can compute a streaming checksum
-        // for replayable streams but currently even replayable streams will result in `UNSIGNED-PAYLOAD`
-        let signable_body = request
-            .body()
-            .bytes()
-            .map(SignableBody::Bytes)
-            .unwrap_or(SignableBody::UnsignedPayload);
+        let signable_body = request_config
+            .payload_override
+            // the payload_override is a cheap clone because it contains either a
+            // reference or a short checksum (we're not cloning the entire body)
+            .cloned()
+            .unwrap_or_else(|| {
+                request
+                    .body()
+                    .bytes()
+                    .map(SignableBody::Bytes)
+                    .unwrap_or(SignableBody::UnsignedPayload)
+            });
         for (key, value) in aws_sigv4_poc::sign_core(request, signable_body, &sigv4_config)? {
             request
                 .headers_mut()

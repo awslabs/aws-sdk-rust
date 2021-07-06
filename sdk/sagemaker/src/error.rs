@@ -5800,12 +5800,14 @@ pub struct DeleteModelPackageGroupError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteModelPackageGroupErrorKind {
+    ConflictException(crate::error::ConflictException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteModelPackageGroupError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
+            DeleteModelPackageGroupErrorKind::ConflictException(_inner) => _inner.fmt(f),
             DeleteModelPackageGroupErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -5854,10 +5856,17 @@ impl DeleteModelPackageGroupError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteModelPackageGroupErrorKind::ConflictException(_)
+        )
+    }
 }
 impl std::error::Error for DeleteModelPackageGroupError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
+            DeleteModelPackageGroupErrorKind::ConflictException(_inner) => Some(_inner),
             DeleteModelPackageGroupErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -6333,12 +6342,14 @@ pub struct DeleteProjectError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteProjectErrorKind {
+    ConflictException(crate::error::ConflictException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
 impl std::fmt::Display for DeleteProjectError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
+            DeleteProjectErrorKind::ConflictException(_inner) => _inner.fmt(f),
             DeleteProjectErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -6387,10 +6398,14 @@ impl DeleteProjectError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(&self.kind, DeleteProjectErrorKind::ConflictException(_))
+    }
 }
 impl std::error::Error for DeleteProjectError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
+            DeleteProjectErrorKind::ConflictException(_inner) => Some(_inner),
             DeleteProjectErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }

@@ -1553,6 +1553,78 @@ impl std::error::Error for AssociateTransitGatewayRouteTableError {
 
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
+pub struct AssociateTrunkInterfaceError {
+    pub kind: AssociateTrunkInterfaceErrorKind,
+    pub(crate) meta: smithy_types::Error,
+}
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum AssociateTrunkInterfaceErrorKind {
+    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for AssociateTrunkInterfaceError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            AssociateTrunkInterfaceErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl smithy_types::retry::ProvideErrorKind for AssociateTrunkInterfaceError {
+    fn code(&self) -> Option<&str> {
+        AssociateTrunkInterfaceError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl AssociateTrunkInterfaceError {
+    pub fn new(kind: AssociateTrunkInterfaceErrorKind, meta: smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: AssociateTrunkInterfaceErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    pub fn generic(err: smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: AssociateTrunkInterfaceErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
+    // by std::Error to generate a message in that case.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
+    }
+
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+}
+impl std::error::Error for AssociateTrunkInterfaceError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            AssociateTrunkInterfaceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
 pub struct AssociateVpcCidrBlockError {
     pub kind: AssociateVpcCidrBlockErrorKind,
     pub(crate) meta: smithy_types::Error,
@@ -19601,6 +19673,81 @@ impl std::error::Error for DescribeTransitGatewayVpcAttachmentsError {
 
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
+pub struct DescribeTrunkInterfaceAssociationsError {
+    pub kind: DescribeTrunkInterfaceAssociationsErrorKind,
+    pub(crate) meta: smithy_types::Error,
+}
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DescribeTrunkInterfaceAssociationsErrorKind {
+    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for DescribeTrunkInterfaceAssociationsError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DescribeTrunkInterfaceAssociationsErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl smithy_types::retry::ProvideErrorKind for DescribeTrunkInterfaceAssociationsError {
+    fn code(&self) -> Option<&str> {
+        DescribeTrunkInterfaceAssociationsError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DescribeTrunkInterfaceAssociationsError {
+    pub fn new(
+        kind: DescribeTrunkInterfaceAssociationsErrorKind,
+        meta: smithy_types::Error,
+    ) -> Self {
+        Self { kind, meta }
+    }
+
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DescribeTrunkInterfaceAssociationsErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    pub fn generic(err: smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DescribeTrunkInterfaceAssociationsErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
+    // by std::Error to generate a message in that case.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
+    }
+
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+}
+impl std::error::Error for DescribeTrunkInterfaceAssociationsError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DescribeTrunkInterfaceAssociationsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
 pub struct DescribeVolumeAttributeError {
     pub kind: DescribeVolumeAttributeErrorKind,
     pub(crate) meta: smithy_types::Error,
@@ -21344,6 +21491,78 @@ impl std::error::Error for DisableFastSnapshotRestoresError {
 
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
+pub struct DisableImageDeprecationError {
+    pub kind: DisableImageDeprecationErrorKind,
+    pub(crate) meta: smithy_types::Error,
+}
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DisableImageDeprecationErrorKind {
+    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for DisableImageDeprecationError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DisableImageDeprecationErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl smithy_types::retry::ProvideErrorKind for DisableImageDeprecationError {
+    fn code(&self) -> Option<&str> {
+        DisableImageDeprecationError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DisableImageDeprecationError {
+    pub fn new(kind: DisableImageDeprecationErrorKind, meta: smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DisableImageDeprecationErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    pub fn generic(err: smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DisableImageDeprecationErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
+    // by std::Error to generate a message in that case.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
+    }
+
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+}
+impl std::error::Error for DisableImageDeprecationError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DisableImageDeprecationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
 pub struct DisableSerialConsoleAccessError {
     pub kind: DisableSerialConsoleAccessErrorKind,
     pub(crate) meta: smithy_types::Error,
@@ -22303,6 +22522,78 @@ impl std::error::Error for DisassociateTransitGatewayRouteTableError {
 
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
+pub struct DisassociateTrunkInterfaceError {
+    pub kind: DisassociateTrunkInterfaceErrorKind,
+    pub(crate) meta: smithy_types::Error,
+}
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DisassociateTrunkInterfaceErrorKind {
+    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for DisassociateTrunkInterfaceError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DisassociateTrunkInterfaceErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl smithy_types::retry::ProvideErrorKind for DisassociateTrunkInterfaceError {
+    fn code(&self) -> Option<&str> {
+        DisassociateTrunkInterfaceError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DisassociateTrunkInterfaceError {
+    pub fn new(kind: DisassociateTrunkInterfaceErrorKind, meta: smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DisassociateTrunkInterfaceErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    pub fn generic(err: smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DisassociateTrunkInterfaceErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
+    // by std::Error to generate a message in that case.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
+    }
+
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+}
+impl std::error::Error for DisassociateTrunkInterfaceError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DisassociateTrunkInterfaceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
 pub struct DisassociateVpcCidrBlockError {
     pub kind: DisassociateVpcCidrBlockErrorKind,
     pub(crate) meta: smithy_types::Error,
@@ -22513,6 +22804,78 @@ impl std::error::Error for EnableFastSnapshotRestoresError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             EnableFastSnapshotRestoresErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct EnableImageDeprecationError {
+    pub kind: EnableImageDeprecationErrorKind,
+    pub(crate) meta: smithy_types::Error,
+}
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum EnableImageDeprecationErrorKind {
+    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for EnableImageDeprecationError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            EnableImageDeprecationErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl smithy_types::retry::ProvideErrorKind for EnableImageDeprecationError {
+    fn code(&self) -> Option<&str> {
+        EnableImageDeprecationError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl EnableImageDeprecationError {
+    pub fn new(kind: EnableImageDeprecationErrorKind, meta: smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: EnableImageDeprecationErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    pub fn generic(err: smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: EnableImageDeprecationErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
+    // by std::Error to generate a message in that case.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
+    }
+
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+}
+impl std::error::Error for EnableImageDeprecationError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            EnableImageDeprecationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }

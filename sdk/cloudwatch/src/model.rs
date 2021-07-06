@@ -105,6 +105,9 @@ impl StateValue {
             StateValue::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["ALARM", "INSUFFICIENT_DATA", "OK"]
+    }
 }
 impl AsRef<str> for StateValue {
     fn as_ref(&self) -> &str {
@@ -151,6 +154,9 @@ impl MetricStreamOutputFormat {
             MetricStreamOutputFormat::OpenTelemetry07 => "opentelemetry0.7",
             MetricStreamOutputFormat::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["json", "opentelemetry0.7"]
     }
 }
 impl AsRef<str> for MetricStreamOutputFormat {
@@ -523,6 +529,37 @@ impl StandardUnit {
             StandardUnit::TerabytesSecond => "Terabytes/Second",
             StandardUnit::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "Bits",
+            "Bits/Second",
+            "Bytes",
+            "Bytes/Second",
+            "Count",
+            "Count/Second",
+            "Gigabits",
+            "Gigabits/Second",
+            "Gigabytes",
+            "Gigabytes/Second",
+            "Kilobits",
+            "Kilobits/Second",
+            "Kilobytes",
+            "Kilobytes/Second",
+            "Megabits",
+            "Megabits/Second",
+            "Megabytes",
+            "Megabytes/Second",
+            "Microseconds",
+            "Milliseconds",
+            "None",
+            "Percent",
+            "Seconds",
+            "Terabits",
+            "Terabits/Second",
+            "Terabytes",
+            "Terabytes/Second",
+        ]
     }
 }
 impl AsRef<str> for StandardUnit {
@@ -1150,6 +1187,17 @@ impl ComparisonOperator {
             ComparisonOperator::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "GreaterThanOrEqualToThreshold",
+            "GreaterThanThreshold",
+            "GreaterThanUpperThreshold",
+            "LessThanLowerOrGreaterThanUpperThreshold",
+            "LessThanLowerThreshold",
+            "LessThanOrEqualToThreshold",
+            "LessThanThreshold",
+        ]
+    }
 }
 impl AsRef<str> for ComparisonOperator {
     fn as_ref(&self) -> &str {
@@ -1205,6 +1253,9 @@ impl Statistic {
             Statistic::Sum => "Sum",
             Statistic::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["Average", "Maximum", "Minimum", "SampleCount", "Sum"]
     }
 }
 impl AsRef<str> for Statistic {
@@ -1600,6 +1651,9 @@ impl RecentlyActive {
             RecentlyActive::Pt3H => "PT3H",
             RecentlyActive::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["PT3H"]
     }
 }
 impl AsRef<str> for RecentlyActive {
@@ -2173,6 +2227,9 @@ impl StatusCode {
             StatusCode::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["Complete", "InternalError", "PartialData"]
+    }
 }
 impl AsRef<str> for StatusCode {
     fn as_ref(&self) -> &str {
@@ -2280,6 +2337,9 @@ impl ScanBy {
             ScanBy::TimestampDescending => "TimestampDescending",
             ScanBy::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["TimestampAscending", "TimestampDescending"]
     }
 }
 impl AsRef<str> for ScanBy {
@@ -2988,6 +3048,9 @@ impl AnomalyDetectorStateValue {
             AnomalyDetectorStateValue::TrainedInsufficientData => "TRAINED_INSUFFICIENT_DATA",
             AnomalyDetectorStateValue::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["PENDING_TRAINING", "TRAINED", "TRAINED_INSUFFICIENT_DATA"]
     }
 }
 impl AsRef<str> for AnomalyDetectorStateValue {
@@ -3790,6 +3853,9 @@ impl AlarmType {
             AlarmType::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["CompositeAlarm", "MetricAlarm"]
+    }
 }
 impl AsRef<str> for AlarmType {
     fn as_ref(&self) -> &str {
@@ -3965,6 +4031,9 @@ impl HistoryItemType {
             HistoryItemType::StateUpdate => "StateUpdate",
             HistoryItemType::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["Action", "ConfigurationUpdate", "StateUpdate"]
     }
 }
 impl AsRef<str> for HistoryItemType {

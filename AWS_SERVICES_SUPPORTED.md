@@ -32,8 +32,14 @@ The alpha SDK for Rust currently supports the checked services below. If you wan
 - [x] [Amazon SES v2](https://github.com/awslabs/aws-sdk-rust/issues/27)
 - [x] [Amazon Cloudwatch Logs](https://github.com/awslabs/aws-sdk-rust/issues/30)
 - [x] [Amazon ECR](https://github.com/awslabs/aws-sdk-rust/issues/34)
-- [x] Amazon EKS
-- [x] Cloudwatch (metrics)
+- [x] [Amazon EKS](https://github.com/awslabs/aws-sdk-rust/issues/67)
+- [x] [Amazon Cloudwatch Metrics](https://github.com/awslabs/aws-sdk-rust/issues/20)
+- [x] [Amazon EBS](https://github.com/awslabs/aws-sdk-rust/issues/66)
+- [x] [Amazon Config](https://github.com/awslabs/aws-sdk-rust/issues/31)
+- [x] [Amazon Cognito Identity](https://github.com/awslabs/aws-sdk-rust/issues/124)
+- [x] [Amazon Cognito Identity Provider](https://github.com/awslabs/aws-sdk-rust/issues/124)
+- [x] [Amazon Cognito Sync](https://github.com/awslabs/aws-sdk-rust/issues/124)
+- [x] Amazon Snowball
 
 ------
 - [ ] Amazon Access Analyzer
@@ -77,13 +83,9 @@ The alpha SDK for Rust currently supports the checked services below. If you wan
 - [ ] Amazon Codestar
 - [ ] Amazon Codestar-Connections
 - [ ] Amazon Codestar-Notifications
-- [ ] Amazon Cognito Identity
-- [ ] Amazon Cognito Identity Provider
-- [ ] Amazon Cognito Sync
 - [ ] Amazon Comprehend
 - [ ] Amazon Comprehendmedical
 - [ ] Amazon Compute-Optimizer
-- [ ] [Amazon Config](https://github.com/awslabs/aws-sdk-rust/issues/31)
 - [ ] Amazon Connect
 - [ ] Amazon Connectparticipant
 - [ ] Amazon Cur
@@ -100,7 +102,6 @@ The alpha SDK for Rust currently supports the checked services below. If you wan
 - [ ] Amazon DMS
 - [ ] Amazon Docdb
 - [ ] Amazon DS
-- [ ] Amazon Ebs
 - [ ] Amazon Ec2-Instance-Connect
 - [ ] Amazon Elasticache
 - [ ] Amazon Elastic Beanstalk
@@ -216,7 +217,6 @@ The alpha SDK for Rust currently supports the checked services below. If you wan
 - [ ] Amazon Signer
 - [ ] Amazon SMS
 - [ ] Amazon Sms-Voice
-- [ ] Amazon Snowball
 - [ ] Amazon SSO
 - [ ] Amazon Sso-Admin
 - [ ] Amazon Sso-Oidc

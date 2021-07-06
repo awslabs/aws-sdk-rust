@@ -15892,7 +15892,7 @@ impl ResourceNotFoundFault {
     }
 }
 
-/// <p>An error occurred accessing an AWS KMS key.</p>
+/// <p>An error occurred accessing an Amazon Web Services KMS key.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct KmsKeyNotAccessibleFault {
@@ -18320,7 +18320,7 @@ impl InvalidDbParameterGroupStateFault {
     }
 }
 
-/// <p>The specified target group isn't available for a proxy owned by your AWS account in the specified AWS Region.</p>
+/// <p>The specified target group isn't available for a proxy owned by your Amazon Web Services account in the specified Amazon Web Services Region.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DbProxyTargetGroupNotFoundFault {
@@ -18383,7 +18383,7 @@ impl DbProxyTargetGroupNotFoundFault {
     }
 }
 
-/// <p>The specified proxy name doesn't correspond to a proxy owned by your AWS account in the specified AWS Region.</p>
+/// <p>The specified proxy name doesn't correspond to a proxy owned by your Amazon Web Services account in the specified Amazon Web Services Region.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DbProxyNotFoundFault {
@@ -19850,7 +19850,7 @@ impl DbProxyEndpointNotFoundFault {
     }
 }
 
-/// <p>The specified DB proxy endpoint name must be unique for all DB proxy endpoints owned by your AWS account in the specified AWS Region.</p>
+/// <p>The specified DB proxy endpoint name must be unique for all DB proxy endpoints owned by your Amazon Web Services account in the specified Amazon Web Services Region.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DbProxyEndpointAlreadyExistsFault {
@@ -19913,7 +19913,7 @@ impl DbProxyEndpointAlreadyExistsFault {
     }
 }
 
-/// <p>The specified proxy name must be unique for all proxies owned by your AWS account in the specified AWS Region.</p>
+/// <p>The specified proxy name must be unique for all proxies owned by your Amazon Web Services account in the specified Amazon Web Services Region.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DbProxyAlreadyExistsFault {
@@ -20659,7 +20659,7 @@ impl ExportTaskNotFoundFault {
     }
 }
 
-/// <p>The specified RDS DB instance or Aurora DB cluster isn't available for a proxy owned by your AWS account in the specified AWS Region.</p>
+/// <p>The specified RDS DB instance or Aurora DB cluster isn't available for a proxy owned by your Amazon Web Services account in the specified Amazon Web Services Region.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DbProxyTargetNotFoundFault {
@@ -21029,7 +21029,7 @@ impl DbClusterSnapshotAlreadyExistsFault {
     }
 }
 
-/// <p>The quota of 20 option groups was exceeded for this AWS account.</p>
+/// <p>The quota of 20 option groups was exceeded for this Amazon Web Services account.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OptionGroupQuotaExceededFault {
@@ -21714,7 +21714,7 @@ impl DbProxyEndpointQuotaExceededFault {
     }
 }
 
-/// <p>Your AWS account already has the maximum number of proxies in the specified AWS Region.</p>
+/// <p>Your Amazon Web Services account already has the maximum number of proxies in the specified Amazon Web Services Region.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DbProxyQuotaExceededFault {
@@ -22455,7 +22455,7 @@ impl AuthorizationAlreadyExistsFault {
     }
 }
 
-/// <p>You can't associate any more AWS Identity and Access Management (IAM) roles with the DB instance because the quota has been reached.</p>
+/// <p>You can't associate any more Amazon Web Services Identity and Access Management (IAM) roles with the DB instance because the quota has been reached.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DbInstanceRoleQuotaExceededFault {

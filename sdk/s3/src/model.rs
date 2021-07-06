@@ -57,6 +57,18 @@ impl StorageClass {
             StorageClass::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "DEEP_ARCHIVE",
+            "GLACIER",
+            "INTELLIGENT_TIERING",
+            "ONEZONE_IA",
+            "OUTPOSTS",
+            "REDUCED_REDUNDANCY",
+            "STANDARD",
+            "STANDARD_IA",
+        ]
+    }
 }
 impl AsRef<str> for StorageClass {
     fn as_ref(&self) -> &str {
@@ -104,6 +116,9 @@ impl ServerSideEncryption {
             ServerSideEncryption::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["AES256", "aws:kms"]
+    }
 }
 impl AsRef<str> for ServerSideEncryption {
     fn as_ref(&self) -> &str {
@@ -149,6 +164,9 @@ impl RequestCharged {
             RequestCharged::Requester => "requester",
             RequestCharged::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["requester"]
     }
 }
 impl AsRef<str> for RequestCharged {
@@ -203,6 +221,9 @@ impl ReplicationStatus {
             ReplicationStatus::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["COMPLETE", "FAILED", "PENDING", "REPLICA"]
+    }
 }
 impl AsRef<str> for ReplicationStatus {
     fn as_ref(&self) -> &str {
@@ -250,6 +271,9 @@ impl ObjectLockLegalHoldStatus {
             ObjectLockLegalHoldStatus::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["OFF", "ON"]
+    }
 }
 impl AsRef<str> for ObjectLockLegalHoldStatus {
     fn as_ref(&self) -> &str {
@@ -296,6 +320,9 @@ impl ObjectLockMode {
             ObjectLockMode::Governance => "GOVERNANCE",
             ObjectLockMode::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["COMPLIANCE", "GOVERNANCE"]
     }
 }
 impl AsRef<str> for ObjectLockMode {
@@ -408,6 +435,9 @@ impl RequestPayer {
             RequestPayer::Requester => "requester",
             RequestPayer::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["requester"]
     }
 }
 impl AsRef<str> for RequestPayer {
@@ -1060,6 +1090,9 @@ impl Permission {
             Permission::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["FULL_CONTROL", "READ", "READ_ACP", "WRITE", "WRITE_ACP"]
+    }
 }
 impl AsRef<str> for Permission {
     fn as_ref(&self) -> &str {
@@ -1276,6 +1309,9 @@ impl Type {
             Type::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["AmazonCustomerByEmail", "CanonicalUser", "Group"]
+    }
 }
 impl AsRef<str> for Type {
     fn as_ref(&self) -> &str {
@@ -1337,6 +1373,17 @@ impl ObjectCannedAcl {
             ObjectCannedAcl::PublicReadWrite => "public-read-write",
             ObjectCannedAcl::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "authenticated-read",
+            "aws-exec-read",
+            "bucket-owner-full-control",
+            "bucket-owner-read",
+            "private",
+            "public-read",
+            "public-read-write",
+        ]
     }
 }
 impl AsRef<str> for ObjectCannedAcl {
@@ -1833,6 +1880,9 @@ impl QuoteFields {
             QuoteFields::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["ALWAYS", "ASNEEDED"]
+    }
 }
 impl AsRef<str> for QuoteFields {
     fn as_ref(&self) -> &str {
@@ -1876,6 +1926,9 @@ impl ExpressionType {
             ExpressionType::Sql => "SQL",
             ExpressionType::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["SQL"]
     }
 }
 impl AsRef<str> for ExpressionType {
@@ -2098,6 +2151,9 @@ impl JsonType {
             JsonType::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["DOCUMENT", "LINES"]
+    }
 }
 impl AsRef<str> for JsonType {
     fn as_ref(&self) -> &str {
@@ -2147,6 +2203,9 @@ impl CompressionType {
             CompressionType::None => "NONE",
             CompressionType::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["BZIP2", "GZIP", "NONE"]
     }
 }
 impl AsRef<str> for CompressionType {
@@ -2415,6 +2474,9 @@ impl FileHeaderInfo {
             FileHeaderInfo::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["IGNORE", "NONE", "USE"]
+    }
 }
 impl AsRef<str> for FileHeaderInfo {
     fn as_ref(&self) -> &str {
@@ -2465,6 +2527,9 @@ impl Tier {
             Tier::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["Bulk", "Expedited", "Standard"]
+    }
 }
 impl AsRef<str> for Tier {
     fn as_ref(&self) -> &str {
@@ -2508,6 +2573,9 @@ impl RestoreRequestType {
             RestoreRequestType::Select => "SELECT",
             RestoreRequestType::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["SELECT"]
     }
 }
 impl AsRef<str> for RestoreRequestType {
@@ -2815,6 +2883,9 @@ impl ObjectLockRetentionMode {
             ObjectLockRetentionMode::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["COMPLIANCE", "GOVERNANCE"]
+    }
 }
 impl AsRef<str> for ObjectLockRetentionMode {
     fn as_ref(&self) -> &str {
@@ -3089,6 +3160,9 @@ impl ObjectLockEnabled {
             ObjectLockEnabled::Enabled => "Enabled",
             ObjectLockEnabled::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["Enabled"]
     }
 }
 impl AsRef<str> for ObjectLockEnabled {
@@ -3652,6 +3726,9 @@ impl Protocol {
             Protocol::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["http", "https"]
+    }
 }
 impl AsRef<str> for Protocol {
     fn as_ref(&self) -> &str {
@@ -4061,6 +4138,9 @@ impl BucketVersioningStatus {
             BucketVersioningStatus::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["Enabled", "Suspended"]
+    }
 }
 impl AsRef<str> for BucketVersioningStatus {
     fn as_ref(&self) -> &str {
@@ -4107,6 +4187,9 @@ impl MfaDelete {
             MfaDelete::Enabled => "Enabled",
             MfaDelete::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["Disabled", "Enabled"]
     }
 }
 impl AsRef<str> for MfaDelete {
@@ -4199,6 +4282,9 @@ impl Payer {
             Payer::Requester => "Requester",
             Payer::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["BucketOwner", "Requester"]
     }
 }
 impl AsRef<str> for Payer {
@@ -4639,6 +4725,9 @@ impl DeleteMarkerReplicationStatus {
             DeleteMarkerReplicationStatus::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["Disabled", "Enabled"]
+    }
 }
 impl AsRef<str> for DeleteMarkerReplicationStatus {
     fn as_ref(&self) -> &str {
@@ -4991,6 +5080,9 @@ impl MetricsStatus {
             MetricsStatus::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["Disabled", "Enabled"]
+    }
 }
 impl AsRef<str> for MetricsStatus {
     fn as_ref(&self) -> &str {
@@ -5108,6 +5200,9 @@ impl ReplicationTimeStatus {
             ReplicationTimeStatus::Enabled => "Enabled",
             ReplicationTimeStatus::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["Disabled", "Enabled"]
     }
 }
 impl AsRef<str> for ReplicationTimeStatus {
@@ -5262,6 +5357,9 @@ impl OwnerOverride {
             OwnerOverride::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["Destination"]
+    }
 }
 impl AsRef<str> for OwnerOverride {
     fn as_ref(&self) -> &str {
@@ -5360,6 +5458,9 @@ impl ExistingObjectReplicationStatus {
             ExistingObjectReplicationStatus::Enabled => "Enabled",
             ExistingObjectReplicationStatus::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["Disabled", "Enabled"]
     }
 }
 impl AsRef<str> for ExistingObjectReplicationStatus {
@@ -5561,6 +5662,9 @@ impl ReplicaModificationsStatus {
             ReplicaModificationsStatus::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["Disabled", "Enabled"]
+    }
 }
 impl AsRef<str> for ReplicaModificationsStatus {
     fn as_ref(&self) -> &str {
@@ -5661,6 +5765,9 @@ impl SseKmsEncryptedObjectsStatus {
             SseKmsEncryptedObjectsStatus::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["Disabled", "Enabled"]
+    }
 }
 impl AsRef<str> for SseKmsEncryptedObjectsStatus {
     fn as_ref(&self) -> &str {
@@ -5707,6 +5814,9 @@ impl ReplicationRuleStatus {
             ReplicationRuleStatus::Enabled => "Enabled",
             ReplicationRuleStatus::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["Disabled", "Enabled"]
     }
 }
 impl AsRef<str> for ReplicationRuleStatus {
@@ -6010,6 +6120,9 @@ impl ObjectOwnership {
             ObjectOwnership::ObjectWriter => "ObjectWriter",
             ObjectOwnership::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["BucketOwnerPreferred", "ObjectWriter"]
     }
 }
 impl AsRef<str> for ObjectOwnership {
@@ -6443,6 +6556,9 @@ impl FilterRuleName {
             FilterRuleName::Suffix => "suffix",
             FilterRuleName::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["prefix", "suffix"]
     }
 }
 impl AsRef<str> for FilterRuleName {
@@ -7155,6 +7271,9 @@ impl BucketLogsPermission {
             BucketLogsPermission::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["FULL_CONTROL", "READ", "WRITE"]
+    }
 }
 impl AsRef<str> for BucketLogsPermission {
     fn as_ref(&self) -> &str {
@@ -7689,6 +7808,15 @@ impl TransitionStorageClass {
             TransitionStorageClass::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "DEEP_ARCHIVE",
+            "GLACIER",
+            "INTELLIGENT_TIERING",
+            "ONEZONE_IA",
+            "STANDARD_IA",
+        ]
+    }
 }
 impl AsRef<str> for TransitionStorageClass {
     fn as_ref(&self) -> &str {
@@ -7819,6 +7947,9 @@ impl ExpirationStatus {
             ExpirationStatus::Enabled => "Enabled",
             ExpirationStatus::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["Disabled", "Enabled"]
     }
 }
 impl AsRef<str> for ExpirationStatus {
@@ -8296,6 +8427,9 @@ impl InventoryFrequency {
             InventoryFrequency::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["Daily", "Weekly"]
+    }
 }
 impl AsRef<str> for InventoryFrequency {
     fn as_ref(&self) -> &str {
@@ -8373,6 +8507,22 @@ impl InventoryOptionalField {
             InventoryOptionalField::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "BucketKeyStatus",
+            "ETag",
+            "EncryptionStatus",
+            "IntelligentTieringAccessTier",
+            "IsMultipartUploaded",
+            "LastModifiedDate",
+            "ObjectLockLegalHoldStatus",
+            "ObjectLockMode",
+            "ObjectLockRetainUntilDate",
+            "ReplicationStatus",
+            "Size",
+            "StorageClass",
+        ]
+    }
 }
 impl AsRef<str> for InventoryOptionalField {
     fn as_ref(&self) -> &str {
@@ -8419,6 +8569,9 @@ impl InventoryIncludedObjectVersions {
             InventoryIncludedObjectVersions::Current => "Current",
             InventoryIncludedObjectVersions::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["All", "Current"]
     }
 }
 impl AsRef<str> for InventoryIncludedObjectVersions {
@@ -8839,6 +8992,9 @@ impl InventoryFormat {
             InventoryFormat::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["CSV", "ORC", "Parquet"]
+    }
 }
 impl AsRef<str> for InventoryFormat {
     fn as_ref(&self) -> &str {
@@ -9065,6 +9221,9 @@ impl IntelligentTieringAccessTier {
             IntelligentTieringAccessTier::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["ARCHIVE_ACCESS", "DEEP_ARCHIVE_ACCESS"]
+    }
 }
 impl AsRef<str> for IntelligentTieringAccessTier {
     fn as_ref(&self) -> &str {
@@ -9111,6 +9270,9 @@ impl IntelligentTieringStatus {
             IntelligentTieringStatus::Enabled => "Enabled",
             IntelligentTieringStatus::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["Disabled", "Enabled"]
     }
 }
 impl AsRef<str> for IntelligentTieringStatus {
@@ -10135,6 +10297,9 @@ impl AnalyticsS3ExportFileFormat {
             AnalyticsS3ExportFileFormat::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["CSV"]
+    }
 }
 impl AsRef<str> for AnalyticsS3ExportFileFormat {
     fn as_ref(&self) -> &str {
@@ -10178,6 +10343,9 @@ impl StorageClassAnalysisSchemaVersion {
             StorageClassAnalysisSchemaVersion::V1 => "V_1",
             StorageClassAnalysisSchemaVersion::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["V_1"]
     }
 }
 impl AsRef<str> for StorageClassAnalysisSchemaVersion {
@@ -10345,6 +10513,14 @@ impl BucketCannedAcl {
             BucketCannedAcl::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "authenticated-read",
+            "private",
+            "public-read",
+            "public-read-write",
+        ]
+    }
 }
 impl AsRef<str> for BucketCannedAcl {
     fn as_ref(&self) -> &str {
@@ -10443,6 +10619,9 @@ impl BucketAccelerateStatus {
             BucketAccelerateStatus::Suspended => "Suspended",
             BucketAccelerateStatus::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["Enabled", "Suspended"]
     }
 }
 impl AsRef<str> for BucketAccelerateStatus {
@@ -10649,6 +10828,9 @@ impl EncodingType {
             EncodingType::Url => "url",
             EncodingType::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["url"]
     }
 }
 impl AsRef<str> for EncodingType {
@@ -11005,6 +11187,9 @@ impl ObjectVersionStorageClass {
             ObjectVersionStorageClass::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["STANDARD"]
+    }
 }
 impl AsRef<str> for ObjectVersionStorageClass {
     fn as_ref(&self) -> &str {
@@ -11232,6 +11417,18 @@ impl ObjectStorageClass {
             ObjectStorageClass::StandardIa => "STANDARD_IA",
             ObjectStorageClass::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "DEEP_ARCHIVE",
+            "GLACIER",
+            "INTELLIGENT_TIERING",
+            "ONEZONE_IA",
+            "OUTPOSTS",
+            "REDUCED_REDUNDANCY",
+            "STANDARD",
+            "STANDARD_IA",
+        ]
     }
 }
 impl AsRef<str> for ObjectStorageClass {
@@ -11468,6 +11665,9 @@ impl ArchiveStatus {
             ArchiveStatus::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["ARCHIVE_ACCESS", "DEEP_ARCHIVE_ACCESS"]
+    }
 }
 impl AsRef<str> for ArchiveStatus {
     fn as_ref(&self) -> &str {
@@ -11514,6 +11714,9 @@ impl MfaDeleteStatus {
             MfaDeleteStatus::Enabled => "Enabled",
             MfaDeleteStatus::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["Disabled", "Enabled"]
     }
 }
 impl AsRef<str> for MfaDeleteStatus {
@@ -11679,6 +11882,35 @@ impl BucketLocationConstraint {
             BucketLocationConstraint::UsWest2 => "us-west-2",
             BucketLocationConstraint::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "EU",
+            "af-south-1",
+            "ap-east-1",
+            "ap-northeast-1",
+            "ap-northeast-2",
+            "ap-northeast-3",
+            "ap-south-1",
+            "ap-southeast-1",
+            "ap-southeast-2",
+            "ca-central-1",
+            "cn-north-1",
+            "cn-northwest-1",
+            "eu-central-1",
+            "eu-north-1",
+            "eu-south-1",
+            "eu-west-1",
+            "eu-west-2",
+            "eu-west-3",
+            "me-south-1",
+            "sa-east-1",
+            "us-east-2",
+            "us-gov-east-1",
+            "us-gov-west-1",
+            "us-west-1",
+            "us-west-2",
+        ]
     }
 }
 impl AsRef<str> for BucketLocationConstraint {
@@ -15909,6 +16141,9 @@ impl TaggingDirective {
             TaggingDirective::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["COPY", "REPLACE"]
+    }
 }
 impl AsRef<str> for TaggingDirective {
     fn as_ref(&self) -> &str {
@@ -15955,6 +16190,9 @@ impl MetadataDirective {
             MetadataDirective::Replace => "REPLACE",
             MetadataDirective::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["COPY", "REPLACE"]
     }
 }
 impl AsRef<str> for MetadataDirective {
