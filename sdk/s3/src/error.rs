@@ -6681,21 +6681,27 @@ impl std::error::Error for WriteGetObjectResponseError {
 /// <p>This action is not allowed against this storage tier.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct ObjectAlreadyInActiveTierError {}
+pub struct ObjectAlreadyInActiveTierError {
+    pub message: std::option::Option<std::string::String>,
+}
 impl std::fmt::Debug for ObjectAlreadyInActiveTierError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ObjectAlreadyInActiveTierError");
+        formatter.field("message", &self.message);
         formatter.finish()
     }
 }
 impl ObjectAlreadyInActiveTierError {
     pub fn message(&self) -> Option<&str> {
-        None
+        self.message.as_deref()
     }
 }
 impl std::fmt::Display for ObjectAlreadyInActiveTierError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ObjectAlreadyInActiveTierError")?;
+        if let Some(inner_1) = &self.message {
+            write!(f, ": {}", inner_1)?;
+        }
         Ok(())
     }
 }
@@ -6705,11 +6711,23 @@ pub mod object_already_in_active_tier_error {
     /// A builder for [`ObjectAlreadyInActiveTierError`](crate::error::ObjectAlreadyInActiveTierError)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
     impl Builder {
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
         /// Consumes the builder and constructs a [`ObjectAlreadyInActiveTierError`](crate::error::ObjectAlreadyInActiveTierError)
         pub fn build(self) -> crate::error::ObjectAlreadyInActiveTierError {
-            crate::error::ObjectAlreadyInActiveTierError {}
+            crate::error::ObjectAlreadyInActiveTierError {
+                message: self.message,
+            }
         }
     }
 }
@@ -6723,21 +6741,27 @@ impl ObjectAlreadyInActiveTierError {
 /// <p>The specified key does not exist.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct NoSuchKey {}
+pub struct NoSuchKey {
+    pub message: std::option::Option<std::string::String>,
+}
 impl std::fmt::Debug for NoSuchKey {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("NoSuchKey");
+        formatter.field("message", &self.message);
         formatter.finish()
     }
 }
 impl NoSuchKey {
     pub fn message(&self) -> Option<&str> {
-        None
+        self.message.as_deref()
     }
 }
 impl std::fmt::Display for NoSuchKey {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "NoSuchKey")?;
+        if let Some(inner_2) = &self.message {
+            write!(f, ": {}", inner_2)?;
+        }
         Ok(())
     }
 }
@@ -6747,11 +6771,23 @@ pub mod no_such_key {
     /// A builder for [`NoSuchKey`](crate::error::NoSuchKey)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
     impl Builder {
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
         /// Consumes the builder and constructs a [`NoSuchKey`](crate::error::NoSuchKey)
         pub fn build(self) -> crate::error::NoSuchKey {
-            crate::error::NoSuchKey {}
+            crate::error::NoSuchKey {
+                message: self.message,
+            }
         }
     }
 }
@@ -6765,21 +6801,27 @@ impl NoSuchKey {
 /// <p>The specified bucket does not exist.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct NoSuchBucket {}
+pub struct NoSuchBucket {
+    pub message: std::option::Option<std::string::String>,
+}
 impl std::fmt::Debug for NoSuchBucket {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("NoSuchBucket");
+        formatter.field("message", &self.message);
         formatter.finish()
     }
 }
 impl NoSuchBucket {
     pub fn message(&self) -> Option<&str> {
-        None
+        self.message.as_deref()
     }
 }
 impl std::fmt::Display for NoSuchBucket {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "NoSuchBucket")?;
+        if let Some(inner_3) = &self.message {
+            write!(f, ": {}", inner_3)?;
+        }
         Ok(())
     }
 }
@@ -6789,11 +6831,23 @@ pub mod no_such_bucket {
     /// A builder for [`NoSuchBucket`](crate::error::NoSuchBucket)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
     impl Builder {
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
         /// Consumes the builder and constructs a [`NoSuchBucket`](crate::error::NoSuchBucket)
         pub fn build(self) -> crate::error::NoSuchBucket {
-            crate::error::NoSuchBucket {}
+            crate::error::NoSuchBucket {
+                message: self.message,
+            }
         }
     }
 }
@@ -6807,21 +6861,27 @@ impl NoSuchBucket {
 /// <p>The specified content does not exist.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct NotFound {}
+pub struct NotFound {
+    pub message: std::option::Option<std::string::String>,
+}
 impl std::fmt::Debug for NotFound {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("NotFound");
+        formatter.field("message", &self.message);
         formatter.finish()
     }
 }
 impl NotFound {
     pub fn message(&self) -> Option<&str> {
-        None
+        self.message.as_deref()
     }
 }
 impl std::fmt::Display for NotFound {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "NotFound")?;
+        if let Some(inner_4) = &self.message {
+            write!(f, ": {}", inner_4)?;
+        }
         Ok(())
     }
 }
@@ -6831,11 +6891,23 @@ pub mod not_found {
     /// A builder for [`NotFound`](crate::error::NotFound)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
     impl Builder {
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
         /// Consumes the builder and constructs a [`NotFound`](crate::error::NotFound)
         pub fn build(self) -> crate::error::NotFound {
-            crate::error::NotFound {}
+            crate::error::NotFound {
+                message: self.message,
+            }
         }
     }
 }
@@ -6852,23 +6924,28 @@ impl NotFound {
 pub struct InvalidObjectState {
     pub storage_class: std::option::Option<crate::model::StorageClass>,
     pub access_tier: std::option::Option<crate::model::IntelligentTieringAccessTier>,
+    pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidObjectState {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("InvalidObjectState");
         formatter.field("storage_class", &self.storage_class);
         formatter.field("access_tier", &self.access_tier);
+        formatter.field("message", &self.message);
         formatter.finish()
     }
 }
 impl InvalidObjectState {
     pub fn message(&self) -> Option<&str> {
-        None
+        self.message.as_deref()
     }
 }
 impl std::fmt::Display for InvalidObjectState {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidObjectState")?;
+        if let Some(inner_5) = &self.message {
+            write!(f, ": {}", inner_5)?;
+        }
         Ok(())
     }
 }
@@ -6881,6 +6958,7 @@ pub mod invalid_object_state {
     pub struct Builder {
         pub(crate) storage_class: std::option::Option<crate::model::StorageClass>,
         pub(crate) access_tier: std::option::Option<crate::model::IntelligentTieringAccessTier>,
+        pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
         pub fn storage_class(mut self, input: crate::model::StorageClass) -> Self {
@@ -6905,11 +6983,20 @@ pub mod invalid_object_state {
             self.access_tier = input;
             self
         }
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
         /// Consumes the builder and constructs a [`InvalidObjectState`](crate::error::InvalidObjectState)
         pub fn build(self) -> crate::error::InvalidObjectState {
             crate::error::InvalidObjectState {
                 storage_class: self.storage_class,
                 access_tier: self.access_tier,
+                message: self.message,
             }
         }
     }
@@ -6925,21 +7012,27 @@ impl InvalidObjectState {
 /// of the system. Select a different name and try again.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct BucketAlreadyExists {}
+pub struct BucketAlreadyExists {
+    pub message: std::option::Option<std::string::String>,
+}
 impl std::fmt::Debug for BucketAlreadyExists {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BucketAlreadyExists");
+        formatter.field("message", &self.message);
         formatter.finish()
     }
 }
 impl BucketAlreadyExists {
     pub fn message(&self) -> Option<&str> {
-        None
+        self.message.as_deref()
     }
 }
 impl std::fmt::Display for BucketAlreadyExists {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "BucketAlreadyExists")?;
+        if let Some(inner_6) = &self.message {
+            write!(f, ": {}", inner_6)?;
+        }
         Ok(())
     }
 }
@@ -6949,11 +7042,23 @@ pub mod bucket_already_exists {
     /// A builder for [`BucketAlreadyExists`](crate::error::BucketAlreadyExists)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
     impl Builder {
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
         /// Consumes the builder and constructs a [`BucketAlreadyExists`](crate::error::BucketAlreadyExists)
         pub fn build(self) -> crate::error::BucketAlreadyExists {
-            crate::error::BucketAlreadyExists {}
+            crate::error::BucketAlreadyExists {
+                message: self.message,
+            }
         }
     }
 }
@@ -6970,21 +7075,27 @@ impl BucketAlreadyExists {
 /// returns 200 OK and resets the bucket access control lists (ACLs).</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct BucketAlreadyOwnedByYou {}
+pub struct BucketAlreadyOwnedByYou {
+    pub message: std::option::Option<std::string::String>,
+}
 impl std::fmt::Debug for BucketAlreadyOwnedByYou {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BucketAlreadyOwnedByYou");
+        formatter.field("message", &self.message);
         formatter.finish()
     }
 }
 impl BucketAlreadyOwnedByYou {
     pub fn message(&self) -> Option<&str> {
-        None
+        self.message.as_deref()
     }
 }
 impl std::fmt::Display for BucketAlreadyOwnedByYou {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "BucketAlreadyOwnedByYou")?;
+        if let Some(inner_7) = &self.message {
+            write!(f, ": {}", inner_7)?;
+        }
         Ok(())
     }
 }
@@ -6994,11 +7105,23 @@ pub mod bucket_already_owned_by_you {
     /// A builder for [`BucketAlreadyOwnedByYou`](crate::error::BucketAlreadyOwnedByYou)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
     impl Builder {
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
         /// Consumes the builder and constructs a [`BucketAlreadyOwnedByYou`](crate::error::BucketAlreadyOwnedByYou)
         pub fn build(self) -> crate::error::BucketAlreadyOwnedByYou {
-            crate::error::BucketAlreadyOwnedByYou {}
+            crate::error::BucketAlreadyOwnedByYou {
+                message: self.message,
+            }
         }
     }
 }
@@ -7013,21 +7136,27 @@ impl BucketAlreadyOwnedByYou {
 /// Amazon S3 Glacier.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct ObjectNotInActiveTierError {}
+pub struct ObjectNotInActiveTierError {
+    pub message: std::option::Option<std::string::String>,
+}
 impl std::fmt::Debug for ObjectNotInActiveTierError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ObjectNotInActiveTierError");
+        formatter.field("message", &self.message);
         formatter.finish()
     }
 }
 impl ObjectNotInActiveTierError {
     pub fn message(&self) -> Option<&str> {
-        None
+        self.message.as_deref()
     }
 }
 impl std::fmt::Display for ObjectNotInActiveTierError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ObjectNotInActiveTierError")?;
+        if let Some(inner_8) = &self.message {
+            write!(f, ": {}", inner_8)?;
+        }
         Ok(())
     }
 }
@@ -7037,11 +7166,23 @@ pub mod object_not_in_active_tier_error {
     /// A builder for [`ObjectNotInActiveTierError`](crate::error::ObjectNotInActiveTierError)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
     impl Builder {
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
         /// Consumes the builder and constructs a [`ObjectNotInActiveTierError`](crate::error::ObjectNotInActiveTierError)
         pub fn build(self) -> crate::error::ObjectNotInActiveTierError {
-            crate::error::ObjectNotInActiveTierError {}
+            crate::error::ObjectNotInActiveTierError {
+                message: self.message,
+            }
         }
     }
 }
@@ -7055,21 +7196,27 @@ impl ObjectNotInActiveTierError {
 /// <p>The specified multipart upload does not exist.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct NoSuchUpload {}
+pub struct NoSuchUpload {
+    pub message: std::option::Option<std::string::String>,
+}
 impl std::fmt::Debug for NoSuchUpload {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("NoSuchUpload");
+        formatter.field("message", &self.message);
         formatter.finish()
     }
 }
 impl NoSuchUpload {
     pub fn message(&self) -> Option<&str> {
-        None
+        self.message.as_deref()
     }
 }
 impl std::fmt::Display for NoSuchUpload {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "NoSuchUpload")?;
+        if let Some(inner_9) = &self.message {
+            write!(f, ": {}", inner_9)?;
+        }
         Ok(())
     }
 }
@@ -7079,11 +7226,23 @@ pub mod no_such_upload {
     /// A builder for [`NoSuchUpload`](crate::error::NoSuchUpload)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
     impl Builder {
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
         /// Consumes the builder and constructs a [`NoSuchUpload`](crate::error::NoSuchUpload)
         pub fn build(self) -> crate::error::NoSuchUpload {
-            crate::error::NoSuchUpload {}
+            crate::error::NoSuchUpload {
+                message: self.message,
+            }
         }
     }
 }

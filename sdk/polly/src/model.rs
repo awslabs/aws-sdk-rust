@@ -222,6 +222,73 @@ impl VoiceId {
             VoiceId::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "Aditi",
+            "Amy",
+            "Astrid",
+            "Bianca",
+            "Brian",
+            "Camila",
+            "Carla",
+            "Carmen",
+            "Celine",
+            "Chantal",
+            "Conchita",
+            "Cristiano",
+            "Dora",
+            "Emma",
+            "Enrique",
+            "Ewa",
+            "Filiz",
+            "Gabrielle",
+            "Geraint",
+            "Giorgio",
+            "Gwyneth",
+            "Hans",
+            "Ines",
+            "Ivy",
+            "Jacek",
+            "Jan",
+            "Joanna",
+            "Joey",
+            "Justin",
+            "Karl",
+            "Kendra",
+            "Kevin",
+            "Kimberly",
+            "Lea",
+            "Liv",
+            "Lotte",
+            "Lucia",
+            "Lupe",
+            "Mads",
+            "Maja",
+            "Marlene",
+            "Mathieu",
+            "Matthew",
+            "Maxim",
+            "Mia",
+            "Miguel",
+            "Mizuki",
+            "Naja",
+            "Nicole",
+            "Olivia",
+            "Penelope",
+            "Raveena",
+            "Ricardo",
+            "Ruben",
+            "Russell",
+            "Salli",
+            "Seoyeon",
+            "Takumi",
+            "Tatyana",
+            "Vicki",
+            "Vitoria",
+            "Zeina",
+            "Zhiyu",
+        ]
+    }
 }
 impl AsRef<str> for VoiceId {
     fn as_ref(&self) -> &str {
@@ -268,6 +335,9 @@ impl TextType {
             TextType::Text => "text",
             TextType::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["ssml", "text"]
     }
 }
 impl AsRef<str> for TextType {
@@ -322,6 +392,9 @@ impl SpeechMarkType {
             SpeechMarkType::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["sentence", "ssml", "viseme", "word"]
+    }
 }
 impl AsRef<str> for SpeechMarkType {
     fn as_ref(&self) -> &str {
@@ -374,6 +447,9 @@ impl OutputFormat {
             OutputFormat::Pcm => "pcm",
             OutputFormat::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["json", "mp3", "ogg_vorbis", "pcm"]
     }
 }
 impl AsRef<str> for OutputFormat {
@@ -503,6 +579,39 @@ impl LanguageCode {
             LanguageCode::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "arb",
+            "cmn-CN",
+            "cy-GB",
+            "da-DK",
+            "de-DE",
+            "en-AU",
+            "en-GB",
+            "en-GB-WLS",
+            "en-IN",
+            "en-US",
+            "es-ES",
+            "es-MX",
+            "es-US",
+            "fr-CA",
+            "fr-FR",
+            "hi-IN",
+            "is-IS",
+            "it-IT",
+            "ja-JP",
+            "ko-KR",
+            "nb-NO",
+            "nl-NL",
+            "pl-PL",
+            "pt-BR",
+            "pt-PT",
+            "ro-RO",
+            "ru-RU",
+            "sv-SE",
+            "tr-TR",
+        ]
+    }
 }
 impl AsRef<str> for LanguageCode {
     fn as_ref(&self) -> &str {
@@ -549,6 +658,9 @@ impl Engine {
             Engine::Standard => "standard",
             Engine::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["neural", "standard"]
     }
 }
 impl AsRef<str> for Engine {
@@ -904,6 +1016,9 @@ impl TaskStatus {
             TaskStatus::Scheduled => "scheduled",
             TaskStatus::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["completed", "failed", "inProgress", "scheduled"]
     }
 }
 impl AsRef<str> for TaskStatus {
@@ -1367,6 +1482,9 @@ impl Gender {
             Gender::Male => "Male",
             Gender::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["Female", "Male"]
     }
 }
 impl AsRef<str> for Gender {

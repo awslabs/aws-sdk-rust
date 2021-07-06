@@ -3,132 +3,139 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-use crate::{Credentials, CredentialsError, ProvideCredentials};
-use std::collections::HashMap;
-use std::env::VarError;
+pub mod env;
 
-/// Load Credentials from Environment Variables
-pub struct EnvironmentVariableCredentialsProvider {
-    env: Box<dyn Fn(&str) -> Result<String, VarError> + Send + Sync>,
+use crate::Credentials;
+use smithy_http::property_bag::PropertyBag;
+use std::error::Error;
+use std::fmt;
+use std::fmt::{Debug, Display, Formatter};
+use std::future::{self, Future};
+use std::pin::Pin;
+use std::sync::Arc;
+
+#[derive(Debug)]
+#[non_exhaustive]
+pub enum CredentialsError {
+    CredentialsNotLoaded,
+    Unhandled(Box<dyn Error + Send + Sync + 'static>),
 }
 
-impl EnvironmentVariableCredentialsProvider {
-    pub fn new() -> Self {
-        EnvironmentVariableCredentialsProvider { env: Box::new(var) }
-    }
-
-    /// Create a EnvironmentVariable provider from a HashMap for testing
-    pub fn for_map(env: HashMap<String, String>) -> Self {
-        EnvironmentVariableCredentialsProvider {
-            env: Box::new(move |key: &str| {
-                env.get(key)
-                    .ok_or(VarError::NotPresent)
-                    .map(|k| k.to_string())
-            }),
+impl Display for CredentialsError {
+    fn fmt(&self, f: &mut Formatter<'_>) -> fmt::Result {
+        match self {
+            CredentialsError::CredentialsNotLoaded => write!(f, "CredentialsNotLoaded"),
+            CredentialsError::Unhandled(err) => write!(f, "{}", err),
         }
     }
 }
 
-impl Default for EnvironmentVariableCredentialsProvider {
-    fn default() -> Self {
-        Self::new()
+impl Error for CredentialsError {
+    fn source(&self) -> Option<&(dyn Error + 'static)> {
+        match self {
+            CredentialsError::Unhandled(e) => Some(e.as_ref() as _),
+            _ => None,
+        }
     }
 }
 
-fn var(key: &str) -> Result<String, VarError> {
-    std::env::var(key)
+pub type CredentialsResult = Result<Credentials, CredentialsError>;
+type BoxFuture<T> = Pin<Box<dyn Future<Output = T> + Send>>;
+
+/// An asynchronous credentials provider
+///
+/// If your use-case is synchronous, you should implement [`ProvideCredentials`] instead. Otherwise,
+/// consider using [`async_provide_credentials_fn`] with a closure rather than directly implementing
+/// this trait.
+pub trait AsyncProvideCredentials: Send + Sync {
+    fn provide_credentials(&self) -> BoxFuture<CredentialsResult>;
 }
 
-const ENV_PROVIDER: &str = "EnvironmentVariable";
+pub type CredentialsProvider = Arc<dyn AsyncProvideCredentials>;
 
-impl ProvideCredentials for EnvironmentVariableCredentialsProvider {
+/// A [`AsyncProvideCredentials`] implemented by a closure.
+///
+/// See [`async_provide_credentials_fn`] for more details.
+#[derive(Copy, Clone)]
+pub struct AsyncProvideCredentialsFn<T: Send + Sync> {
+    f: T,
+}
+
+impl<T, F> AsyncProvideCredentials for AsyncProvideCredentialsFn<T>
+where
+    T: Fn() -> F + Send + Sync,
+    F: Future<Output = CredentialsResult> + Send + 'static,
+{
+    fn provide_credentials(&self) -> BoxFuture<CredentialsResult> {
+        Box::pin((self.f)())
+    }
+}
+
+/// Returns a new [`AsyncProvideCredentialsFn`] with the given closure. This allows you
+/// to create an [`AsyncProvideCredentials`] implementation from an async block that returns
+/// a [`CredentialsResult`].
+///
+/// # Example
+///
+/// ```
+/// use aws_auth::Credentials;
+/// use aws_auth::provider::async_provide_credentials_fn;
+///
+/// async_provide_credentials_fn(|| async {
+///     // Async process to retrieve credentials goes here
+///     let credentials: Credentials = todo!().await?;
+///     Ok(credentials)
+/// });
+/// ```
+pub fn async_provide_credentials_fn<T, F>(f: T) -> AsyncProvideCredentialsFn<T>
+where
+    T: Fn() -> F + Send + Sync,
+    F: Future<Output = CredentialsResult> + Send + 'static,
+{
+    AsyncProvideCredentialsFn { f }
+}
+
+/// A synchronous credentials provider
+///
+/// This is offered as a convenience for credential provider implementations that don't
+/// need to be async. Otherwise, implement [`AsyncProvideCredentials`].
+pub trait ProvideCredentials: Send + Sync {
+    fn provide_credentials(&self) -> Result<Credentials, CredentialsError>;
+}
+
+impl<T> AsyncProvideCredentials for T
+where
+    T: ProvideCredentials,
+{
+    fn provide_credentials(&self) -> BoxFuture<CredentialsResult> {
+        let result = self.provide_credentials();
+        Box::pin(future::ready(result))
+    }
+}
+
+pub fn default_provider() -> impl AsyncProvideCredentials {
+    // TODO: this should be a chain based on the CRT
+    env::EnvironmentVariableCredentialsProvider::new()
+}
+
+impl ProvideCredentials for Credentials {
     fn provide_credentials(&self) -> Result<Credentials, CredentialsError> {
-        let access_key = (self.env)("AWS_ACCESS_KEY_ID").map_err(to_cred_error)?;
-        let secret_key = (self.env)("AWS_SECRET_ACCESS_KEY")
-            .or_else(|_| (self.env)("SECRET_ACCESS_KEY"))
-            .map_err(to_cred_error)?;
-        let session_token = (self.env)("AWS_SESSION_TOKEN").ok();
-        Ok(Credentials::new(
-            access_key,
-            secret_key,
-            session_token,
-            None,
-            ENV_PROVIDER,
-        ))
+        Ok(self.clone())
     }
 }
 
-fn to_cred_error(err: VarError) -> CredentialsError {
-    match err {
-        VarError::NotPresent => CredentialsError::CredentialsNotLoaded,
-        e @ VarError::NotUnicode(_) => CredentialsError::Unhandled(Box::new(e)),
-    }
+pub fn set_provider(config: &mut PropertyBag, provider: Arc<dyn AsyncProvideCredentials>) {
+    config.insert(provider);
 }
 
 #[cfg(test)]
 mod test {
-    use crate::provider::EnvironmentVariableCredentialsProvider;
-    use crate::{CredentialsError, ProvideCredentials};
-    use std::collections::HashMap;
+    use crate::Credentials;
+
+    fn assert_send_sync<T: Send + Sync>() {}
 
     #[test]
-    fn valid_no_token() {
-        let mut env = HashMap::new();
-        env.insert("AWS_ACCESS_KEY_ID".to_owned(), "access".to_owned());
-        env.insert("AWS_SECRET_ACCESS_KEY".to_owned(), "secret".to_owned());
-
-        let provider = EnvironmentVariableCredentialsProvider::for_map(env);
-        let creds = provider.provide_credentials().expect("valid credentials");
-        assert_eq!(creds.session_token(), None);
-        assert_eq!(creds.access_key_id(), "access");
-        assert_eq!(creds.secret_access_key(), "secret");
-    }
-
-    #[test]
-    fn valid_with_token() {
-        let mut env = HashMap::new();
-        env.insert("AWS_ACCESS_KEY_ID".to_owned(), "access".to_owned());
-        env.insert("AWS_SECRET_ACCESS_KEY".to_owned(), "secret".to_owned());
-        env.insert("AWS_SESSION_TOKEN".to_owned(), "token".to_owned());
-
-        let provider = EnvironmentVariableCredentialsProvider::for_map(env);
-        let creds = provider.provide_credentials().expect("valid credentials");
-        assert_eq!(creds.session_token().unwrap(), "token");
-        assert_eq!(creds.access_key_id(), "access");
-        assert_eq!(creds.secret_access_key(), "secret");
-    }
-
-    #[test]
-    fn secret_key_fallback() {
-        let mut env = HashMap::new();
-        env.insert("AWS_ACCESS_KEY_ID".to_owned(), "access".to_owned());
-        env.insert("SECRET_ACCESS_KEY".to_owned(), "secret".to_owned());
-        env.insert("AWS_SESSION_TOKEN".to_owned(), "token".to_owned());
-
-        let provider = EnvironmentVariableCredentialsProvider::for_map(env);
-        let creds = provider.provide_credentials().expect("valid credentials");
-        assert_eq!(creds.session_token().unwrap(), "token");
-        assert_eq!(creds.access_key_id(), "access");
-        assert_eq!(creds.secret_access_key(), "secret");
-    }
-
-    #[test]
-    fn missing() {
-        let env = HashMap::new();
-        let provider = EnvironmentVariableCredentialsProvider::for_map(env);
-        let err = provider
-            .provide_credentials()
-            .expect_err("no credentials defined");
-        match err {
-            CredentialsError::Unhandled(_) => panic!("wrong error type"),
-            _ => (),
-        };
-    }
-
-    #[test]
-    fn real_environment() {
-        let provider = EnvironmentVariableCredentialsProvider::new();
-        // we don't know what's in the env, just make sure it doesn't crash.
-        let _ = provider.provide_credentials();
+    fn creds_are_send_sync() {
+        assert_send_sync::<Credentials>()
     }
 }

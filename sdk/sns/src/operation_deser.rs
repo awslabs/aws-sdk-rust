@@ -9,61 +9,90 @@ pub fn parse_add_permission_error(
         Some(code) => code,
         None => return Err(crate::error::AddPermissionError::unhandled(generic)),
     };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "AuthorizationErrorException" => crate::error::AddPermissionError {
-            meta: generic,
-            kind: crate::error::AddPermissionErrorKind::AuthorizationErrorException({
-                #[allow(unused_mut)]
-                let mut output = crate::error::authorization_error_exception::Builder::default();
-                let _ = response;
-                output = crate::xml_deser::deser_structure_authorization_error_exception_xml_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::AddPermissionError::unhandled)?;
-                output.build()
-            }),
-        },
-        "InternalErrorException" => crate::error::AddPermissionError {
+        "AuthorizationError" => {
+            crate::error::AddPermissionError {
+                meta: generic,
+                kind: crate::error::AddPermissionErrorKind::AuthorizationErrorException({
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output =
+                            crate::error::authorization_error_exception::Builder::default();
+                        let _ = response;
+                        output = crate::xml_deser::deser_structure_authorization_error_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::AddPermissionError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
+        "InternalError" => crate::error::AddPermissionError {
             meta: generic,
             kind: crate::error::AddPermissionErrorKind::InternalErrorException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::internal_error_exception::Builder::default();
-                let _ = response;
-                output = crate::xml_deser::deser_structure_internal_error_exception_xml_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::AddPermissionError::unhandled)?;
-                output.build()
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_error_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_internal_error_exception_xml_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::AddPermissionError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
             }),
         },
-        "InvalidParameterException" => crate::error::AddPermissionError {
+        "InvalidParameter" => crate::error::AddPermissionError {
             meta: generic,
             kind: crate::error::AddPermissionErrorKind::InvalidParameterException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::invalid_parameter_exception::Builder::default();
-                let _ = response;
-                output = crate::xml_deser::deser_structure_invalid_parameter_exception_xml_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::AddPermissionError::unhandled)?;
-                output.build()
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_invalid_parameter_exception_xml_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::AddPermissionError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
             }),
         },
-        "NotFoundException" => crate::error::AddPermissionError {
+        "NotFound" => crate::error::AddPermissionError {
             meta: generic,
             kind: crate::error::AddPermissionErrorKind::NotFoundException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::not_found_exception::Builder::default();
-                let _ = response;
-                output = crate::xml_deser::deser_structure_not_found_exception_xml_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::AddPermissionError::unhandled)?;
-                output.build()
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_not_found_exception_xml_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::AddPermissionError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
             }),
         },
         _ => crate::error::AddPermissionError::generic(generic),
@@ -99,63 +128,90 @@ pub fn parse_check_if_phone_number_is_opted_out_error(
             ))
         }
     };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "AuthorizationErrorException" => {
-            crate::error::CheckIfPhoneNumberIsOptedOutError {
-                meta: generic,
-                kind:
-                    crate::error::CheckIfPhoneNumberIsOptedOutErrorKind::AuthorizationErrorException(
-                        {
-                            #[allow(unused_mut)]
-                            let mut output =
-                                crate::error::authorization_error_exception::Builder::default();
-                            let _ = response;
-                            output = crate::xml_deser::deser_structure_authorization_error_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CheckIfPhoneNumberIsOptedOutError::unhandled)?;
-                            output.build()
-                        },
-                    ),
-            }
-        }
-        "InternalErrorException" => crate::error::CheckIfPhoneNumberIsOptedOutError {
+        "AuthorizationError" => crate::error::CheckIfPhoneNumberIsOptedOutError {
+            meta: generic,
+            kind: crate::error::CheckIfPhoneNumberIsOptedOutErrorKind::AuthorizationErrorException(
+                {
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output =
+                            crate::error::authorization_error_exception::Builder::default();
+                        let _ = response;
+                        output = crate::xml_deser::deser_structure_authorization_error_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CheckIfPhoneNumberIsOptedOutError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                },
+            ),
+        },
+        "InternalError" => crate::error::CheckIfPhoneNumberIsOptedOutError {
             meta: generic,
             kind: crate::error::CheckIfPhoneNumberIsOptedOutErrorKind::InternalErrorException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::internal_error_exception::Builder::default();
-                let _ = response;
-                output = crate::xml_deser::deser_structure_internal_error_exception_xml_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::CheckIfPhoneNumberIsOptedOutError::unhandled)?;
-                output.build()
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_error_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_internal_error_exception_xml_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::CheckIfPhoneNumberIsOptedOutError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
             }),
         },
-        "InvalidParameterException" => crate::error::CheckIfPhoneNumberIsOptedOutError {
+        "InvalidParameter" => crate::error::CheckIfPhoneNumberIsOptedOutError {
             meta: generic,
             kind: crate::error::CheckIfPhoneNumberIsOptedOutErrorKind::InvalidParameterException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::invalid_parameter_exception::Builder::default();
-                let _ = response;
-                output = crate::xml_deser::deser_structure_invalid_parameter_exception_xml_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::CheckIfPhoneNumberIsOptedOutError::unhandled)?;
-                output.build()
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_invalid_parameter_exception_xml_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::CheckIfPhoneNumberIsOptedOutError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
             }),
         },
-        "ThrottledException" => crate::error::CheckIfPhoneNumberIsOptedOutError {
+        "Throttled" => crate::error::CheckIfPhoneNumberIsOptedOutError {
             meta: generic,
             kind: crate::error::CheckIfPhoneNumberIsOptedOutErrorKind::ThrottledException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::throttled_exception::Builder::default();
-                let _ = response;
-                output = crate::xml_deser::deser_structure_throttled_exception_xml_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::CheckIfPhoneNumberIsOptedOutError::unhandled)?;
-                output.build()
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::throttled_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_throttled_exception_xml_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::CheckIfPhoneNumberIsOptedOutError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
             }),
         },
         _ => crate::error::CheckIfPhoneNumberIsOptedOutError::generic(generic),
@@ -196,83 +252,126 @@ pub fn parse_confirm_subscription_error(
         Some(code) => code,
         None => return Err(crate::error::ConfirmSubscriptionError::unhandled(generic)),
     };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "AuthorizationErrorException" => crate::error::ConfirmSubscriptionError {
-            meta: generic,
-            kind: crate::error::ConfirmSubscriptionErrorKind::AuthorizationErrorException({
-                #[allow(unused_mut)]
-                let mut output = crate::error::authorization_error_exception::Builder::default();
-                let _ = response;
-                output = crate::xml_deser::deser_structure_authorization_error_exception_xml_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::ConfirmSubscriptionError::unhandled)?;
-                output.build()
-            }),
-        },
-        "FilterPolicyLimitExceededException" => crate::error::ConfirmSubscriptionError {
+        "AuthorizationError" => {
+            crate::error::ConfirmSubscriptionError {
+                meta: generic,
+                kind: crate::error::ConfirmSubscriptionErrorKind::AuthorizationErrorException({
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output =
+                            crate::error::authorization_error_exception::Builder::default();
+                        let _ = response;
+                        output = crate::xml_deser::deser_structure_authorization_error_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ConfirmSubscriptionError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
+        "FilterPolicyLimitExceeded" => crate::error::ConfirmSubscriptionError {
             meta: generic,
             kind: crate::error::ConfirmSubscriptionErrorKind::FilterPolicyLimitExceededException({
                 #[allow(unused_mut)]
-                let mut output =
-                    crate::error::filter_policy_limit_exceeded_exception::Builder::default();
-                let _ = response;
-                output = crate::xml_deser::deser_structure_filter_policy_limit_exceeded_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ConfirmSubscriptionError::unhandled)?;
-                output.build()
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::filter_policy_limit_exceeded_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_filter_policy_limit_exceeded_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ConfirmSubscriptionError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
             }),
         },
-        "InternalErrorException" => crate::error::ConfirmSubscriptionError {
+        "InternalError" => crate::error::ConfirmSubscriptionError {
             meta: generic,
             kind: crate::error::ConfirmSubscriptionErrorKind::InternalErrorException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::internal_error_exception::Builder::default();
-                let _ = response;
-                output = crate::xml_deser::deser_structure_internal_error_exception_xml_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::ConfirmSubscriptionError::unhandled)?;
-                output.build()
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_error_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_internal_error_exception_xml_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::ConfirmSubscriptionError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
             }),
         },
-        "InvalidParameterException" => crate::error::ConfirmSubscriptionError {
+        "InvalidParameter" => crate::error::ConfirmSubscriptionError {
             meta: generic,
             kind: crate::error::ConfirmSubscriptionErrorKind::InvalidParameterException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::invalid_parameter_exception::Builder::default();
-                let _ = response;
-                output = crate::xml_deser::deser_structure_invalid_parameter_exception_xml_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::ConfirmSubscriptionError::unhandled)?;
-                output.build()
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_invalid_parameter_exception_xml_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::ConfirmSubscriptionError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
             }),
         },
-        "NotFoundException" => crate::error::ConfirmSubscriptionError {
+        "NotFound" => crate::error::ConfirmSubscriptionError {
             meta: generic,
             kind: crate::error::ConfirmSubscriptionErrorKind::NotFoundException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::not_found_exception::Builder::default();
-                let _ = response;
-                output = crate::xml_deser::deser_structure_not_found_exception_xml_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::ConfirmSubscriptionError::unhandled)?;
-                output.build()
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_not_found_exception_xml_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::ConfirmSubscriptionError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
             }),
         },
-        "SubscriptionLimitExceededException" => crate::error::ConfirmSubscriptionError {
+        "SubscriptionLimitExceeded" => crate::error::ConfirmSubscriptionError {
             meta: generic,
             kind: crate::error::ConfirmSubscriptionErrorKind::SubscriptionLimitExceededException({
                 #[allow(unused_mut)]
-                let mut output =
-                    crate::error::subscription_limit_exceeded_exception::Builder::default();
-                let _ = response;
-                output = crate::xml_deser::deser_structure_subscription_limit_exceeded_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ConfirmSubscriptionError::unhandled)?;
-                output.build()
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::subscription_limit_exceeded_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_subscription_limit_exceeded_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ConfirmSubscriptionError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
             }),
         },
         _ => crate::error::ConfirmSubscriptionError::generic(generic),
@@ -316,47 +415,71 @@ pub fn parse_create_platform_application_error(
             ))
         }
     };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "AuthorizationErrorException" => crate::error::CreatePlatformApplicationError {
-            meta: generic,
-            kind: crate::error::CreatePlatformApplicationErrorKind::AuthorizationErrorException({
-                #[allow(unused_mut)]
-                let mut output = crate::error::authorization_error_exception::Builder::default();
-                let _ = response;
-                output = crate::xml_deser::deser_structure_authorization_error_exception_xml_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::CreatePlatformApplicationError::unhandled)?;
-                output.build()
-            }),
-        },
-        "InternalErrorException" => crate::error::CreatePlatformApplicationError {
+        "AuthorizationError" => {
+            crate::error::CreatePlatformApplicationError {
+                meta: generic,
+                kind: crate::error::CreatePlatformApplicationErrorKind::AuthorizationErrorException(
+                    {
+                        #[allow(unused_mut)]
+                        let mut tmp = {
+                            #[allow(unused_mut)]
+                            let mut output =
+                                crate::error::authorization_error_exception::Builder::default();
+                            let _ = response;
+                            output = crate::xml_deser::deser_structure_authorization_error_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreatePlatformApplicationError::unhandled)?;
+                            output.build()
+                        };
+                        if (&tmp.message).is_none() {
+                            tmp.message = _error_message;
+                        }
+                        tmp
+                    },
+                ),
+            }
+        }
+        "InternalError" => crate::error::CreatePlatformApplicationError {
             meta: generic,
             kind: crate::error::CreatePlatformApplicationErrorKind::InternalErrorException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::internal_error_exception::Builder::default();
-                let _ = response;
-                output = crate::xml_deser::deser_structure_internal_error_exception_xml_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::CreatePlatformApplicationError::unhandled)?;
-                output.build()
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_error_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_internal_error_exception_xml_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::CreatePlatformApplicationError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
             }),
         },
-        "InvalidParameterException" => crate::error::CreatePlatformApplicationError {
+        "InvalidParameter" => crate::error::CreatePlatformApplicationError {
             meta: generic,
             kind: crate::error::CreatePlatformApplicationErrorKind::InvalidParameterException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::invalid_parameter_exception::Builder::default();
-                let _ = response;
-                output = crate::xml_deser::deser_structure_invalid_parameter_exception_xml_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::CreatePlatformApplicationError::unhandled)?;
-                output.build()
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_invalid_parameter_exception_xml_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::CreatePlatformApplicationError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
             }),
         },
         _ => crate::error::CreatePlatformApplicationError::generic(generic),
@@ -400,61 +523,90 @@ pub fn parse_create_platform_endpoint_error(
             ))
         }
     };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "AuthorizationErrorException" => crate::error::CreatePlatformEndpointError {
-            meta: generic,
-            kind: crate::error::CreatePlatformEndpointErrorKind::AuthorizationErrorException({
-                #[allow(unused_mut)]
-                let mut output = crate::error::authorization_error_exception::Builder::default();
-                let _ = response;
-                output = crate::xml_deser::deser_structure_authorization_error_exception_xml_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::CreatePlatformEndpointError::unhandled)?;
-                output.build()
-            }),
-        },
-        "InternalErrorException" => crate::error::CreatePlatformEndpointError {
+        "AuthorizationError" => {
+            crate::error::CreatePlatformEndpointError {
+                meta: generic,
+                kind: crate::error::CreatePlatformEndpointErrorKind::AuthorizationErrorException({
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output =
+                            crate::error::authorization_error_exception::Builder::default();
+                        let _ = response;
+                        output = crate::xml_deser::deser_structure_authorization_error_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreatePlatformEndpointError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
+        "InternalError" => crate::error::CreatePlatformEndpointError {
             meta: generic,
             kind: crate::error::CreatePlatformEndpointErrorKind::InternalErrorException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::internal_error_exception::Builder::default();
-                let _ = response;
-                output = crate::xml_deser::deser_structure_internal_error_exception_xml_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::CreatePlatformEndpointError::unhandled)?;
-                output.build()
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_error_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_internal_error_exception_xml_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::CreatePlatformEndpointError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
             }),
         },
-        "InvalidParameterException" => crate::error::CreatePlatformEndpointError {
+        "InvalidParameter" => crate::error::CreatePlatformEndpointError {
             meta: generic,
             kind: crate::error::CreatePlatformEndpointErrorKind::InvalidParameterException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::invalid_parameter_exception::Builder::default();
-                let _ = response;
-                output = crate::xml_deser::deser_structure_invalid_parameter_exception_xml_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::CreatePlatformEndpointError::unhandled)?;
-                output.build()
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_invalid_parameter_exception_xml_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::CreatePlatformEndpointError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
             }),
         },
-        "NotFoundException" => crate::error::CreatePlatformEndpointError {
+        "NotFound" => crate::error::CreatePlatformEndpointError {
             meta: generic,
             kind: crate::error::CreatePlatformEndpointErrorKind::NotFoundException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::not_found_exception::Builder::default();
-                let _ = response;
-                output = crate::xml_deser::deser_structure_not_found_exception_xml_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::CreatePlatformEndpointError::unhandled)?;
-                output.build()
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_not_found_exception_xml_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::CreatePlatformEndpointError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
             }),
         },
         _ => crate::error::CreatePlatformEndpointError::generic(generic),
@@ -498,91 +650,132 @@ pub fn parse_create_sms_sandbox_phone_number_error(
             ))
         }
     };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "AuthorizationErrorException" => {
-            crate::error::CreateSMSSandboxPhoneNumberError {
-                meta: generic,
-                kind:
-                    crate::error::CreateSMSSandboxPhoneNumberErrorKind::AuthorizationErrorException(
-                        {
-                            #[allow(unused_mut)]
-                            let mut output =
-                                crate::error::authorization_error_exception::Builder::default();
-                            let _ = response;
-                            output = crate::xml_deser::deser_structure_authorization_error_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateSMSSandboxPhoneNumberError::unhandled)?;
-                            output.build()
-                        },
-                    ),
-            }
-        }
-        "InternalErrorException" => crate::error::CreateSMSSandboxPhoneNumberError {
+        "AuthorizationError" => crate::error::CreateSMSSandboxPhoneNumberError {
+            meta: generic,
+            kind: crate::error::CreateSMSSandboxPhoneNumberErrorKind::AuthorizationErrorException(
+                {
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output =
+                            crate::error::authorization_error_exception::Builder::default();
+                        let _ = response;
+                        output = crate::xml_deser::deser_structure_authorization_error_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateSMSSandboxPhoneNumberError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                },
+            ),
+        },
+        "InternalError" => crate::error::CreateSMSSandboxPhoneNumberError {
             meta: generic,
             kind: crate::error::CreateSMSSandboxPhoneNumberErrorKind::InternalErrorException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::internal_error_exception::Builder::default();
-                let _ = response;
-                output = crate::xml_deser::deser_structure_internal_error_exception_xml_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::CreateSMSSandboxPhoneNumberError::unhandled)?;
-                output.build()
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_error_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_internal_error_exception_xml_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::CreateSMSSandboxPhoneNumberError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
             }),
         },
-        "InvalidParameterException" => crate::error::CreateSMSSandboxPhoneNumberError {
+        "InvalidParameter" => crate::error::CreateSMSSandboxPhoneNumberError {
             meta: generic,
             kind: crate::error::CreateSMSSandboxPhoneNumberErrorKind::InvalidParameterException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::invalid_parameter_exception::Builder::default();
-                let _ = response;
-                output = crate::xml_deser::deser_structure_invalid_parameter_exception_xml_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::CreateSMSSandboxPhoneNumberError::unhandled)?;
-                output.build()
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_invalid_parameter_exception_xml_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::CreateSMSSandboxPhoneNumberError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
             }),
         },
-        "OptedOutException" => crate::error::CreateSMSSandboxPhoneNumberError {
+        "OptedOut" => crate::error::CreateSMSSandboxPhoneNumberError {
             meta: generic,
             kind: crate::error::CreateSMSSandboxPhoneNumberErrorKind::OptedOutException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::opted_out_exception::Builder::default();
-                let _ = response;
-                output = crate::xml_deser::deser_structure_opted_out_exception_xml_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::CreateSMSSandboxPhoneNumberError::unhandled)?;
-                output.build()
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::opted_out_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_opted_out_exception_xml_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::CreateSMSSandboxPhoneNumberError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
             }),
         },
-        "ThrottledException" => crate::error::CreateSMSSandboxPhoneNumberError {
+        "Throttled" => crate::error::CreateSMSSandboxPhoneNumberError {
             meta: generic,
             kind: crate::error::CreateSMSSandboxPhoneNumberErrorKind::ThrottledException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::throttled_exception::Builder::default();
-                let _ = response;
-                output = crate::xml_deser::deser_structure_throttled_exception_xml_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::CreateSMSSandboxPhoneNumberError::unhandled)?;
-                output.build()
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::throttled_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_throttled_exception_xml_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::CreateSMSSandboxPhoneNumberError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
             }),
         },
-        "UserErrorException" => crate::error::CreateSMSSandboxPhoneNumberError {
+        "UserError" => crate::error::CreateSMSSandboxPhoneNumberError {
             meta: generic,
             kind: crate::error::CreateSMSSandboxPhoneNumberErrorKind::UserErrorException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::user_error_exception::Builder::default();
-                let _ = response;
-                output = crate::xml_deser::deser_structure_user_error_exception_xml_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::CreateSMSSandboxPhoneNumberError::unhandled)?;
-                output.build()
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::user_error_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_user_error_exception_xml_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::CreateSMSSandboxPhoneNumberError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
             }),
         },
         _ => crate::error::CreateSMSSandboxPhoneNumberError::generic(generic),
@@ -614,133 +807,197 @@ pub fn parse_create_topic_error(
         Some(code) => code,
         None => return Err(crate::error::CreateTopicError::unhandled(generic)),
     };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "AuthorizationErrorException" => crate::error::CreateTopicError {
-            meta: generic,
-            kind: crate::error::CreateTopicErrorKind::AuthorizationErrorException({
-                #[allow(unused_mut)]
-                let mut output = crate::error::authorization_error_exception::Builder::default();
-                let _ = response;
-                output = crate::xml_deser::deser_structure_authorization_error_exception_xml_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::CreateTopicError::unhandled)?;
-                output.build()
-            }),
-        },
-        "ConcurrentAccessException" => crate::error::CreateTopicError {
+        "AuthorizationError" => {
+            crate::error::CreateTopicError {
+                meta: generic,
+                kind: crate::error::CreateTopicErrorKind::AuthorizationErrorException({
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output =
+                            crate::error::authorization_error_exception::Builder::default();
+                        let _ = response;
+                        output = crate::xml_deser::deser_structure_authorization_error_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateTopicError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
+        "ConcurrentAccess" => crate::error::CreateTopicError {
             meta: generic,
             kind: crate::error::CreateTopicErrorKind::ConcurrentAccessException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::concurrent_access_exception::Builder::default();
-                let _ = response;
-                output = crate::xml_deser::deser_structure_concurrent_access_exception_xml_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::CreateTopicError::unhandled)?;
-                output.build()
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::concurrent_access_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_concurrent_access_exception_xml_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::CreateTopicError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
             }),
         },
-        "InternalErrorException" => crate::error::CreateTopicError {
+        "InternalError" => crate::error::CreateTopicError {
             meta: generic,
             kind: crate::error::CreateTopicErrorKind::InternalErrorException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::internal_error_exception::Builder::default();
-                let _ = response;
-                output = crate::xml_deser::deser_structure_internal_error_exception_xml_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::CreateTopicError::unhandled)?;
-                output.build()
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_error_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_internal_error_exception_xml_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::CreateTopicError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
             }),
         },
-        "InvalidParameterException" => crate::error::CreateTopicError {
+        "InvalidParameter" => crate::error::CreateTopicError {
             meta: generic,
             kind: crate::error::CreateTopicErrorKind::InvalidParameterException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::invalid_parameter_exception::Builder::default();
-                let _ = response;
-                output = crate::xml_deser::deser_structure_invalid_parameter_exception_xml_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::CreateTopicError::unhandled)?;
-                output.build()
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_invalid_parameter_exception_xml_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::CreateTopicError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
             }),
         },
-        "InvalidSecurityException" => crate::error::CreateTopicError {
+        "InvalidSecurity" => crate::error::CreateTopicError {
             meta: generic,
             kind: crate::error::CreateTopicErrorKind::InvalidSecurityException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::invalid_security_exception::Builder::default();
-                let _ = response;
-                output = crate::xml_deser::deser_structure_invalid_security_exception_xml_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::CreateTopicError::unhandled)?;
-                output.build()
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_security_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_invalid_security_exception_xml_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::CreateTopicError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
             }),
         },
-        "StaleTagException" => crate::error::CreateTopicError {
+        "StaleTag" => crate::error::CreateTopicError {
             meta: generic,
             kind: crate::error::CreateTopicErrorKind::StaleTagException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::stale_tag_exception::Builder::default();
-                let _ = response;
-                output = crate::xml_deser::deser_structure_stale_tag_exception_xml_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::CreateTopicError::unhandled)?;
-                output.build()
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::stale_tag_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_stale_tag_exception_xml_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::CreateTopicError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
             }),
         },
-        "TagLimitExceededException" => crate::error::CreateTopicError {
+        "TagLimitExceeded" => crate::error::CreateTopicError {
             meta: generic,
             kind: crate::error::CreateTopicErrorKind::TagLimitExceededException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::tag_limit_exceeded_exception::Builder::default();
-                let _ = response;
-                output = crate::xml_deser::deser_structure_tag_limit_exceeded_exception_xml_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::CreateTopicError::unhandled)?;
-                output.build()
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::tag_limit_exceeded_exception::Builder::default();
+                    let _ = response;
+                    output =
+                        crate::xml_deser::deser_structure_tag_limit_exceeded_exception_xml_err(
+                            response.body().as_ref(),
+                            output,
+                        )
+                        .map_err(crate::error::CreateTopicError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
             }),
         },
-        "TagPolicyException" => crate::error::CreateTopicError {
+        "TagPolicy" => crate::error::CreateTopicError {
             meta: generic,
             kind: crate::error::CreateTopicErrorKind::TagPolicyException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::tag_policy_exception::Builder::default();
-                let _ = response;
-                output = crate::xml_deser::deser_structure_tag_policy_exception_xml_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::CreateTopicError::unhandled)?;
-                output.build()
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::tag_policy_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_tag_policy_exception_xml_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::CreateTopicError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
             }),
         },
-        "TopicLimitExceededException" => crate::error::CreateTopicError {
-            meta: generic,
-            kind: crate::error::CreateTopicErrorKind::TopicLimitExceededException({
-                #[allow(unused_mut)]
-                let mut output = crate::error::topic_limit_exceeded_exception::Builder::default();
-                let _ = response;
-                output = crate::xml_deser::deser_structure_topic_limit_exceeded_exception_xml_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::CreateTopicError::unhandled)?;
-                output.build()
-            }),
-        },
+        "TopicLimitExceeded" => {
+            crate::error::CreateTopicError {
+                meta: generic,
+                kind: crate::error::CreateTopicErrorKind::TopicLimitExceededException({
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output =
+                            crate::error::topic_limit_exceeded_exception::Builder::default();
+                        let _ = response;
+                        output = crate::xml_deser::deser_structure_topic_limit_exceeded_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateTopicError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
         _ => crate::error::CreateTopicError::generic(generic),
     })
 }
@@ -769,47 +1026,69 @@ pub fn parse_delete_endpoint_error(
         Some(code) => code,
         None => return Err(crate::error::DeleteEndpointError::unhandled(generic)),
     };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "AuthorizationErrorException" => crate::error::DeleteEndpointError {
-            meta: generic,
-            kind: crate::error::DeleteEndpointErrorKind::AuthorizationErrorException({
-                #[allow(unused_mut)]
-                let mut output = crate::error::authorization_error_exception::Builder::default();
-                let _ = response;
-                output = crate::xml_deser::deser_structure_authorization_error_exception_xml_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::DeleteEndpointError::unhandled)?;
-                output.build()
-            }),
-        },
-        "InternalErrorException" => crate::error::DeleteEndpointError {
+        "AuthorizationError" => {
+            crate::error::DeleteEndpointError {
+                meta: generic,
+                kind: crate::error::DeleteEndpointErrorKind::AuthorizationErrorException({
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output =
+                            crate::error::authorization_error_exception::Builder::default();
+                        let _ = response;
+                        output = crate::xml_deser::deser_structure_authorization_error_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteEndpointError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
+        "InternalError" => crate::error::DeleteEndpointError {
             meta: generic,
             kind: crate::error::DeleteEndpointErrorKind::InternalErrorException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::internal_error_exception::Builder::default();
-                let _ = response;
-                output = crate::xml_deser::deser_structure_internal_error_exception_xml_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::DeleteEndpointError::unhandled)?;
-                output.build()
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_error_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_internal_error_exception_xml_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::DeleteEndpointError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
             }),
         },
-        "InvalidParameterException" => crate::error::DeleteEndpointError {
+        "InvalidParameter" => crate::error::DeleteEndpointError {
             meta: generic,
             kind: crate::error::DeleteEndpointErrorKind::InvalidParameterException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::invalid_parameter_exception::Builder::default();
-                let _ = response;
-                output = crate::xml_deser::deser_structure_invalid_parameter_exception_xml_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::DeleteEndpointError::unhandled)?;
-                output.build()
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_invalid_parameter_exception_xml_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::DeleteEndpointError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
             }),
         },
         _ => crate::error::DeleteEndpointError::generic(generic),
@@ -845,47 +1124,71 @@ pub fn parse_delete_platform_application_error(
             ))
         }
     };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "AuthorizationErrorException" => crate::error::DeletePlatformApplicationError {
-            meta: generic,
-            kind: crate::error::DeletePlatformApplicationErrorKind::AuthorizationErrorException({
-                #[allow(unused_mut)]
-                let mut output = crate::error::authorization_error_exception::Builder::default();
-                let _ = response;
-                output = crate::xml_deser::deser_structure_authorization_error_exception_xml_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::DeletePlatformApplicationError::unhandled)?;
-                output.build()
-            }),
-        },
-        "InternalErrorException" => crate::error::DeletePlatformApplicationError {
+        "AuthorizationError" => {
+            crate::error::DeletePlatformApplicationError {
+                meta: generic,
+                kind: crate::error::DeletePlatformApplicationErrorKind::AuthorizationErrorException(
+                    {
+                        #[allow(unused_mut)]
+                        let mut tmp = {
+                            #[allow(unused_mut)]
+                            let mut output =
+                                crate::error::authorization_error_exception::Builder::default();
+                            let _ = response;
+                            output = crate::xml_deser::deser_structure_authorization_error_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeletePlatformApplicationError::unhandled)?;
+                            output.build()
+                        };
+                        if (&tmp.message).is_none() {
+                            tmp.message = _error_message;
+                        }
+                        tmp
+                    },
+                ),
+            }
+        }
+        "InternalError" => crate::error::DeletePlatformApplicationError {
             meta: generic,
             kind: crate::error::DeletePlatformApplicationErrorKind::InternalErrorException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::internal_error_exception::Builder::default();
-                let _ = response;
-                output = crate::xml_deser::deser_structure_internal_error_exception_xml_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::DeletePlatformApplicationError::unhandled)?;
-                output.build()
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_error_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_internal_error_exception_xml_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::DeletePlatformApplicationError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
             }),
         },
-        "InvalidParameterException" => crate::error::DeletePlatformApplicationError {
+        "InvalidParameter" => crate::error::DeletePlatformApplicationError {
             meta: generic,
             kind: crate::error::DeletePlatformApplicationErrorKind::InvalidParameterException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::invalid_parameter_exception::Builder::default();
-                let _ = response;
-                output = crate::xml_deser::deser_structure_invalid_parameter_exception_xml_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::DeletePlatformApplicationError::unhandled)?;
-                output.build()
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_invalid_parameter_exception_xml_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::DeletePlatformApplicationError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
             }),
         },
         _ => crate::error::DeletePlatformApplicationError::generic(generic),
@@ -924,91 +1227,133 @@ pub fn parse_delete_sms_sandbox_phone_number_error(
             ))
         }
     };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "AuthorizationErrorException" => {
-            crate::error::DeleteSMSSandboxPhoneNumberError {
-                meta: generic,
-                kind:
-                    crate::error::DeleteSMSSandboxPhoneNumberErrorKind::AuthorizationErrorException(
-                        {
-                            #[allow(unused_mut)]
-                            let mut output =
-                                crate::error::authorization_error_exception::Builder::default();
-                            let _ = response;
-                            output = crate::xml_deser::deser_structure_authorization_error_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteSMSSandboxPhoneNumberError::unhandled)?;
-                            output.build()
-                        },
-                    ),
-            }
-        }
-        "InternalErrorException" => crate::error::DeleteSMSSandboxPhoneNumberError {
+        "AuthorizationError" => crate::error::DeleteSMSSandboxPhoneNumberError {
+            meta: generic,
+            kind: crate::error::DeleteSMSSandboxPhoneNumberErrorKind::AuthorizationErrorException(
+                {
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output =
+                            crate::error::authorization_error_exception::Builder::default();
+                        let _ = response;
+                        output = crate::xml_deser::deser_structure_authorization_error_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteSMSSandboxPhoneNumberError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                },
+            ),
+        },
+        "InternalError" => crate::error::DeleteSMSSandboxPhoneNumberError {
             meta: generic,
             kind: crate::error::DeleteSMSSandboxPhoneNumberErrorKind::InternalErrorException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::internal_error_exception::Builder::default();
-                let _ = response;
-                output = crate::xml_deser::deser_structure_internal_error_exception_xml_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::DeleteSMSSandboxPhoneNumberError::unhandled)?;
-                output.build()
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_error_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_internal_error_exception_xml_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::DeleteSMSSandboxPhoneNumberError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
             }),
         },
-        "InvalidParameterException" => crate::error::DeleteSMSSandboxPhoneNumberError {
+        "InvalidParameter" => crate::error::DeleteSMSSandboxPhoneNumberError {
             meta: generic,
             kind: crate::error::DeleteSMSSandboxPhoneNumberErrorKind::InvalidParameterException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::invalid_parameter_exception::Builder::default();
-                let _ = response;
-                output = crate::xml_deser::deser_structure_invalid_parameter_exception_xml_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::DeleteSMSSandboxPhoneNumberError::unhandled)?;
-                output.build()
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_invalid_parameter_exception_xml_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::DeleteSMSSandboxPhoneNumberError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
             }),
         },
-        "ResourceNotFoundException" => crate::error::DeleteSMSSandboxPhoneNumberError {
-            meta: generic,
-            kind: crate::error::DeleteSMSSandboxPhoneNumberErrorKind::ResourceNotFoundException({
-                #[allow(unused_mut)]
-                let mut output = crate::error::resource_not_found_exception::Builder::default();
-                let _ = response;
-                output = crate::xml_deser::deser_structure_resource_not_found_exception_xml_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::DeleteSMSSandboxPhoneNumberError::unhandled)?;
-                output.build()
-            }),
-        },
-        "ThrottledException" => crate::error::DeleteSMSSandboxPhoneNumberError {
+        "ResourceNotFound" => {
+            crate::error::DeleteSMSSandboxPhoneNumberError {
+                meta: generic,
+                kind: crate::error::DeleteSMSSandboxPhoneNumberErrorKind::ResourceNotFoundException(
+                    {
+                        #[allow(unused_mut)]
+                        let mut tmp = {
+                            #[allow(unused_mut)]
+                            let mut output =
+                                crate::error::resource_not_found_exception::Builder::default();
+                            let _ = response;
+                            output = crate::xml_deser::deser_structure_resource_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteSMSSandboxPhoneNumberError::unhandled)?;
+                            output.build()
+                        };
+                        if (&tmp.message).is_none() {
+                            tmp.message = _error_message;
+                        }
+                        tmp
+                    },
+                ),
+            }
+        }
+        "Throttled" => crate::error::DeleteSMSSandboxPhoneNumberError {
             meta: generic,
             kind: crate::error::DeleteSMSSandboxPhoneNumberErrorKind::ThrottledException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::throttled_exception::Builder::default();
-                let _ = response;
-                output = crate::xml_deser::deser_structure_throttled_exception_xml_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::DeleteSMSSandboxPhoneNumberError::unhandled)?;
-                output.build()
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::throttled_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_throttled_exception_xml_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::DeleteSMSSandboxPhoneNumberError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
             }),
         },
-        "UserErrorException" => crate::error::DeleteSMSSandboxPhoneNumberError {
+        "UserError" => crate::error::DeleteSMSSandboxPhoneNumberError {
             meta: generic,
             kind: crate::error::DeleteSMSSandboxPhoneNumberErrorKind::UserErrorException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::user_error_exception::Builder::default();
-                let _ = response;
-                output = crate::xml_deser::deser_structure_user_error_exception_xml_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::DeleteSMSSandboxPhoneNumberError::unhandled)?;
-                output.build()
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::user_error_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_user_error_exception_xml_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::DeleteSMSSandboxPhoneNumberError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
             }),
         },
         _ => crate::error::DeleteSMSSandboxPhoneNumberError::generic(generic),
@@ -1040,103 +1385,153 @@ pub fn parse_delete_topic_error(
         Some(code) => code,
         None => return Err(crate::error::DeleteTopicError::unhandled(generic)),
     };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "AuthorizationErrorException" => crate::error::DeleteTopicError {
-            meta: generic,
-            kind: crate::error::DeleteTopicErrorKind::AuthorizationErrorException({
-                #[allow(unused_mut)]
-                let mut output = crate::error::authorization_error_exception::Builder::default();
-                let _ = response;
-                output = crate::xml_deser::deser_structure_authorization_error_exception_xml_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::DeleteTopicError::unhandled)?;
-                output.build()
-            }),
-        },
-        "ConcurrentAccessException" => crate::error::DeleteTopicError {
+        "AuthorizationError" => {
+            crate::error::DeleteTopicError {
+                meta: generic,
+                kind: crate::error::DeleteTopicErrorKind::AuthorizationErrorException({
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output =
+                            crate::error::authorization_error_exception::Builder::default();
+                        let _ = response;
+                        output = crate::xml_deser::deser_structure_authorization_error_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteTopicError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
+        "ConcurrentAccess" => crate::error::DeleteTopicError {
             meta: generic,
             kind: crate::error::DeleteTopicErrorKind::ConcurrentAccessException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::concurrent_access_exception::Builder::default();
-                let _ = response;
-                output = crate::xml_deser::deser_structure_concurrent_access_exception_xml_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::DeleteTopicError::unhandled)?;
-                output.build()
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::concurrent_access_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_concurrent_access_exception_xml_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::DeleteTopicError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
             }),
         },
-        "InternalErrorException" => crate::error::DeleteTopicError {
+        "InternalError" => crate::error::DeleteTopicError {
             meta: generic,
             kind: crate::error::DeleteTopicErrorKind::InternalErrorException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::internal_error_exception::Builder::default();
-                let _ = response;
-                output = crate::xml_deser::deser_structure_internal_error_exception_xml_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::DeleteTopicError::unhandled)?;
-                output.build()
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_error_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_internal_error_exception_xml_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::DeleteTopicError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
             }),
         },
-        "InvalidParameterException" => crate::error::DeleteTopicError {
+        "InvalidParameter" => crate::error::DeleteTopicError {
             meta: generic,
             kind: crate::error::DeleteTopicErrorKind::InvalidParameterException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::invalid_parameter_exception::Builder::default();
-                let _ = response;
-                output = crate::xml_deser::deser_structure_invalid_parameter_exception_xml_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::DeleteTopicError::unhandled)?;
-                output.build()
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_invalid_parameter_exception_xml_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::DeleteTopicError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
             }),
         },
-        "NotFoundException" => crate::error::DeleteTopicError {
+        "NotFound" => crate::error::DeleteTopicError {
             meta: generic,
             kind: crate::error::DeleteTopicErrorKind::NotFoundException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::not_found_exception::Builder::default();
-                let _ = response;
-                output = crate::xml_deser::deser_structure_not_found_exception_xml_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::DeleteTopicError::unhandled)?;
-                output.build()
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_not_found_exception_xml_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::DeleteTopicError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
             }),
         },
-        "StaleTagException" => crate::error::DeleteTopicError {
+        "StaleTag" => crate::error::DeleteTopicError {
             meta: generic,
             kind: crate::error::DeleteTopicErrorKind::StaleTagException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::stale_tag_exception::Builder::default();
-                let _ = response;
-                output = crate::xml_deser::deser_structure_stale_tag_exception_xml_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::DeleteTopicError::unhandled)?;
-                output.build()
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::stale_tag_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_stale_tag_exception_xml_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::DeleteTopicError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
             }),
         },
-        "TagPolicyException" => crate::error::DeleteTopicError {
+        "TagPolicy" => crate::error::DeleteTopicError {
             meta: generic,
             kind: crate::error::DeleteTopicErrorKind::TagPolicyException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::tag_policy_exception::Builder::default();
-                let _ = response;
-                output = crate::xml_deser::deser_structure_tag_policy_exception_xml_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::DeleteTopicError::unhandled)?;
-                output.build()
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::tag_policy_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_tag_policy_exception_xml_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::DeleteTopicError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
             }),
         },
         _ => crate::error::DeleteTopicError::generic(generic),
@@ -1168,61 +1563,90 @@ pub fn parse_get_endpoint_attributes_error(
         Some(code) => code,
         None => return Err(crate::error::GetEndpointAttributesError::unhandled(generic)),
     };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "AuthorizationErrorException" => crate::error::GetEndpointAttributesError {
-            meta: generic,
-            kind: crate::error::GetEndpointAttributesErrorKind::AuthorizationErrorException({
-                #[allow(unused_mut)]
-                let mut output = crate::error::authorization_error_exception::Builder::default();
-                let _ = response;
-                output = crate::xml_deser::deser_structure_authorization_error_exception_xml_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::GetEndpointAttributesError::unhandled)?;
-                output.build()
-            }),
-        },
-        "InternalErrorException" => crate::error::GetEndpointAttributesError {
+        "AuthorizationError" => {
+            crate::error::GetEndpointAttributesError {
+                meta: generic,
+                kind: crate::error::GetEndpointAttributesErrorKind::AuthorizationErrorException({
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output =
+                            crate::error::authorization_error_exception::Builder::default();
+                        let _ = response;
+                        output = crate::xml_deser::deser_structure_authorization_error_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::GetEndpointAttributesError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
+        "InternalError" => crate::error::GetEndpointAttributesError {
             meta: generic,
             kind: crate::error::GetEndpointAttributesErrorKind::InternalErrorException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::internal_error_exception::Builder::default();
-                let _ = response;
-                output = crate::xml_deser::deser_structure_internal_error_exception_xml_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::GetEndpointAttributesError::unhandled)?;
-                output.build()
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_error_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_internal_error_exception_xml_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::GetEndpointAttributesError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
             }),
         },
-        "InvalidParameterException" => crate::error::GetEndpointAttributesError {
+        "InvalidParameter" => crate::error::GetEndpointAttributesError {
             meta: generic,
             kind: crate::error::GetEndpointAttributesErrorKind::InvalidParameterException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::invalid_parameter_exception::Builder::default();
-                let _ = response;
-                output = crate::xml_deser::deser_structure_invalid_parameter_exception_xml_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::GetEndpointAttributesError::unhandled)?;
-                output.build()
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_invalid_parameter_exception_xml_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::GetEndpointAttributesError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
             }),
         },
-        "NotFoundException" => crate::error::GetEndpointAttributesError {
+        "NotFound" => crate::error::GetEndpointAttributesError {
             meta: generic,
             kind: crate::error::GetEndpointAttributesErrorKind::NotFoundException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::not_found_exception::Builder::default();
-                let _ = response;
-                output = crate::xml_deser::deser_structure_not_found_exception_xml_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::GetEndpointAttributesError::unhandled)?;
-                output.build()
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_not_found_exception_xml_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::GetEndpointAttributesError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
             }),
         },
         _ => crate::error::GetEndpointAttributesError::generic(generic),
@@ -1264,70 +1688,93 @@ pub fn parse_get_platform_application_attributes_error(
             return Err(crate::error::GetPlatformApplicationAttributesError::unhandled(generic))
         }
     };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "AuthorizationErrorException" => crate::error::GetPlatformApplicationAttributesError {
+        "AuthorizationError" => crate::error::GetPlatformApplicationAttributesError {
             meta: generic,
             kind:
                 crate::error::GetPlatformApplicationAttributesErrorKind::AuthorizationErrorException(
                     {
                         #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::authorization_error_exception::Builder::default();
-                        let _ = response;
-                        output = crate::xml_deser::deser_structure_authorization_error_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::GetPlatformApplicationAttributesError::unhandled)?;
-                        output.build()
+                        let mut tmp = {
+                            #[allow(unused_mut)]
+                            let mut output =
+                                crate::error::authorization_error_exception::Builder::default();
+                            let _ = response;
+                            output = crate::xml_deser::deser_structure_authorization_error_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::GetPlatformApplicationAttributesError::unhandled)?;
+                            output.build()
+                        };
+                        if (&tmp.message).is_none() {
+                            tmp.message = _error_message;
+                        }
+                        tmp
                     },
                 ),
         },
-        "InternalErrorException" => crate::error::GetPlatformApplicationAttributesError {
-            meta: generic,
-            kind: crate::error::GetPlatformApplicationAttributesErrorKind::InternalErrorException(
-                {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::internal_error_exception::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_internal_error_exception_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::GetPlatformApplicationAttributesError::unhandled)?;
-                    output.build()
-                },
-            ),
-        },
-        "InvalidParameterException" => crate::error::GetPlatformApplicationAttributesError {
+        "InternalError" => {
+            crate::error::GetPlatformApplicationAttributesError {
+                meta: generic,
+                kind:
+                    crate::error::GetPlatformApplicationAttributesErrorKind::InternalErrorException(
+                        {
+                            #[allow(unused_mut)]
+                            let mut tmp = {
+                                #[allow(unused_mut)]
+                                let mut output =
+                                    crate::error::internal_error_exception::Builder::default();
+                                let _ = response;
+                                output = crate::xml_deser::deser_structure_internal_error_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::GetPlatformApplicationAttributesError::unhandled)?;
+                                output.build()
+                            };
+                            if (&tmp.message).is_none() {
+                                tmp.message = _error_message;
+                            }
+                            tmp
+                        },
+                    ),
+            }
+        }
+        "InvalidParameter" => crate::error::GetPlatformApplicationAttributesError {
             meta: generic,
             kind:
                 crate::error::GetPlatformApplicationAttributesErrorKind::InvalidParameterException(
                     {
                         #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::invalid_parameter_exception::Builder::default();
-                        let _ = response;
-                        output =
-                            crate::xml_deser::deser_structure_invalid_parameter_exception_xml_err(
-                                response.body().as_ref(),
-                                output,
-                            )
-                            .map_err(
-                                crate::error::GetPlatformApplicationAttributesError::unhandled,
-                            )?;
-                        output.build()
+                        let mut tmp = {
+                            #[allow(unused_mut)]
+                            let mut output =
+                                crate::error::invalid_parameter_exception::Builder::default();
+                            let _ = response;
+                            output = crate::xml_deser::deser_structure_invalid_parameter_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::GetPlatformApplicationAttributesError::unhandled)?;
+                            output.build()
+                        };
+                        if (&tmp.message).is_none() {
+                            tmp.message = _error_message;
+                        }
+                        tmp
                     },
                 ),
         },
-        "NotFoundException" => crate::error::GetPlatformApplicationAttributesError {
+        "NotFound" => crate::error::GetPlatformApplicationAttributesError {
             meta: generic,
             kind: crate::error::GetPlatformApplicationAttributesErrorKind::NotFoundException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::not_found_exception::Builder::default();
-                let _ = response;
-                output = crate::xml_deser::deser_structure_not_found_exception_xml_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::GetPlatformApplicationAttributesError::unhandled)?;
-                output.build()
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_not_found_exception_xml_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::GetPlatformApplicationAttributesError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
             }),
         },
         _ => crate::error::GetPlatformApplicationAttributesError::generic(generic),
@@ -1366,61 +1813,90 @@ pub fn parse_get_sms_attributes_error(
         Some(code) => code,
         None => return Err(crate::error::GetSMSAttributesError::unhandled(generic)),
     };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "AuthorizationErrorException" => crate::error::GetSMSAttributesError {
-            meta: generic,
-            kind: crate::error::GetSMSAttributesErrorKind::AuthorizationErrorException({
-                #[allow(unused_mut)]
-                let mut output = crate::error::authorization_error_exception::Builder::default();
-                let _ = response;
-                output = crate::xml_deser::deser_structure_authorization_error_exception_xml_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::GetSMSAttributesError::unhandled)?;
-                output.build()
-            }),
-        },
-        "InternalErrorException" => crate::error::GetSMSAttributesError {
+        "AuthorizationError" => {
+            crate::error::GetSMSAttributesError {
+                meta: generic,
+                kind: crate::error::GetSMSAttributesErrorKind::AuthorizationErrorException({
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output =
+                            crate::error::authorization_error_exception::Builder::default();
+                        let _ = response;
+                        output = crate::xml_deser::deser_structure_authorization_error_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::GetSMSAttributesError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
+        "InternalError" => crate::error::GetSMSAttributesError {
             meta: generic,
             kind: crate::error::GetSMSAttributesErrorKind::InternalErrorException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::internal_error_exception::Builder::default();
-                let _ = response;
-                output = crate::xml_deser::deser_structure_internal_error_exception_xml_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::GetSMSAttributesError::unhandled)?;
-                output.build()
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_error_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_internal_error_exception_xml_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::GetSMSAttributesError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
             }),
         },
-        "InvalidParameterException" => crate::error::GetSMSAttributesError {
+        "InvalidParameter" => crate::error::GetSMSAttributesError {
             meta: generic,
             kind: crate::error::GetSMSAttributesErrorKind::InvalidParameterException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::invalid_parameter_exception::Builder::default();
-                let _ = response;
-                output = crate::xml_deser::deser_structure_invalid_parameter_exception_xml_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::GetSMSAttributesError::unhandled)?;
-                output.build()
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_invalid_parameter_exception_xml_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::GetSMSAttributesError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
             }),
         },
-        "ThrottledException" => crate::error::GetSMSAttributesError {
+        "Throttled" => crate::error::GetSMSAttributesError {
             meta: generic,
             kind: crate::error::GetSMSAttributesErrorKind::ThrottledException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::throttled_exception::Builder::default();
-                let _ = response;
-                output = crate::xml_deser::deser_structure_throttled_exception_xml_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::GetSMSAttributesError::unhandled)?;
-                output.build()
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::throttled_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_throttled_exception_xml_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::GetSMSAttributesError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
             }),
         },
         _ => crate::error::GetSMSAttributesError::generic(generic),
@@ -1460,47 +1936,72 @@ pub fn parse_get_sms_sandbox_account_status_error(
             ))
         }
     };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "AuthorizationErrorException" => crate::error::GetSMSSandboxAccountStatusError {
-            meta: generic,
-            kind: crate::error::GetSMSSandboxAccountStatusErrorKind::AuthorizationErrorException({
-                #[allow(unused_mut)]
-                let mut output = crate::error::authorization_error_exception::Builder::default();
-                let _ = response;
-                output = crate::xml_deser::deser_structure_authorization_error_exception_xml_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::GetSMSSandboxAccountStatusError::unhandled)?;
-                output.build()
-            }),
-        },
-        "InternalErrorException" => crate::error::GetSMSSandboxAccountStatusError {
+        "AuthorizationError" => {
+            crate::error::GetSMSSandboxAccountStatusError {
+                meta: generic,
+                kind:
+                    crate::error::GetSMSSandboxAccountStatusErrorKind::AuthorizationErrorException(
+                        {
+                            #[allow(unused_mut)]
+                            let mut tmp = {
+                                #[allow(unused_mut)]
+                                let mut output =
+                                    crate::error::authorization_error_exception::Builder::default();
+                                let _ = response;
+                                output = crate::xml_deser::deser_structure_authorization_error_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::GetSMSSandboxAccountStatusError::unhandled)?;
+                                output.build()
+                            };
+                            if (&tmp.message).is_none() {
+                                tmp.message = _error_message;
+                            }
+                            tmp
+                        },
+                    ),
+            }
+        }
+        "InternalError" => crate::error::GetSMSSandboxAccountStatusError {
             meta: generic,
             kind: crate::error::GetSMSSandboxAccountStatusErrorKind::InternalErrorException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::internal_error_exception::Builder::default();
-                let _ = response;
-                output = crate::xml_deser::deser_structure_internal_error_exception_xml_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::GetSMSSandboxAccountStatusError::unhandled)?;
-                output.build()
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_error_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_internal_error_exception_xml_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::GetSMSSandboxAccountStatusError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
             }),
         },
-        "ThrottledException" => crate::error::GetSMSSandboxAccountStatusError {
+        "Throttled" => crate::error::GetSMSSandboxAccountStatusError {
             meta: generic,
             kind: crate::error::GetSMSSandboxAccountStatusErrorKind::ThrottledException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::throttled_exception::Builder::default();
-                let _ = response;
-                output = crate::xml_deser::deser_structure_throttled_exception_xml_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::GetSMSSandboxAccountStatusError::unhandled)?;
-                output.build()
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::throttled_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_throttled_exception_xml_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::GetSMSSandboxAccountStatusError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
             }),
         },
         _ => crate::error::GetSMSSandboxAccountStatusError::generic(generic),
@@ -1544,61 +2045,92 @@ pub fn parse_get_subscription_attributes_error(
             ))
         }
     };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "AuthorizationErrorException" => crate::error::GetSubscriptionAttributesError {
-            meta: generic,
-            kind: crate::error::GetSubscriptionAttributesErrorKind::AuthorizationErrorException({
-                #[allow(unused_mut)]
-                let mut output = crate::error::authorization_error_exception::Builder::default();
-                let _ = response;
-                output = crate::xml_deser::deser_structure_authorization_error_exception_xml_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::GetSubscriptionAttributesError::unhandled)?;
-                output.build()
-            }),
-        },
-        "InternalErrorException" => crate::error::GetSubscriptionAttributesError {
+        "AuthorizationError" => {
+            crate::error::GetSubscriptionAttributesError {
+                meta: generic,
+                kind: crate::error::GetSubscriptionAttributesErrorKind::AuthorizationErrorException(
+                    {
+                        #[allow(unused_mut)]
+                        let mut tmp = {
+                            #[allow(unused_mut)]
+                            let mut output =
+                                crate::error::authorization_error_exception::Builder::default();
+                            let _ = response;
+                            output = crate::xml_deser::deser_structure_authorization_error_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::GetSubscriptionAttributesError::unhandled)?;
+                            output.build()
+                        };
+                        if (&tmp.message).is_none() {
+                            tmp.message = _error_message;
+                        }
+                        tmp
+                    },
+                ),
+            }
+        }
+        "InternalError" => crate::error::GetSubscriptionAttributesError {
             meta: generic,
             kind: crate::error::GetSubscriptionAttributesErrorKind::InternalErrorException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::internal_error_exception::Builder::default();
-                let _ = response;
-                output = crate::xml_deser::deser_structure_internal_error_exception_xml_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::GetSubscriptionAttributesError::unhandled)?;
-                output.build()
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_error_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_internal_error_exception_xml_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::GetSubscriptionAttributesError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
             }),
         },
-        "InvalidParameterException" => crate::error::GetSubscriptionAttributesError {
+        "InvalidParameter" => crate::error::GetSubscriptionAttributesError {
             meta: generic,
             kind: crate::error::GetSubscriptionAttributesErrorKind::InvalidParameterException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::invalid_parameter_exception::Builder::default();
-                let _ = response;
-                output = crate::xml_deser::deser_structure_invalid_parameter_exception_xml_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::GetSubscriptionAttributesError::unhandled)?;
-                output.build()
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_invalid_parameter_exception_xml_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::GetSubscriptionAttributesError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
             }),
         },
-        "NotFoundException" => crate::error::GetSubscriptionAttributesError {
+        "NotFound" => crate::error::GetSubscriptionAttributesError {
             meta: generic,
             kind: crate::error::GetSubscriptionAttributesErrorKind::NotFoundException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::not_found_exception::Builder::default();
-                let _ = response;
-                output = crate::xml_deser::deser_structure_not_found_exception_xml_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::GetSubscriptionAttributesError::unhandled)?;
-                output.build()
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_not_found_exception_xml_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::GetSubscriptionAttributesError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
             }),
         },
         _ => crate::error::GetSubscriptionAttributesError::generic(generic),
@@ -1638,75 +2170,111 @@ pub fn parse_get_topic_attributes_error(
         Some(code) => code,
         None => return Err(crate::error::GetTopicAttributesError::unhandled(generic)),
     };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "AuthorizationErrorException" => crate::error::GetTopicAttributesError {
-            meta: generic,
-            kind: crate::error::GetTopicAttributesErrorKind::AuthorizationErrorException({
-                #[allow(unused_mut)]
-                let mut output = crate::error::authorization_error_exception::Builder::default();
-                let _ = response;
-                output = crate::xml_deser::deser_structure_authorization_error_exception_xml_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::GetTopicAttributesError::unhandled)?;
-                output.build()
-            }),
-        },
-        "InternalErrorException" => crate::error::GetTopicAttributesError {
+        "AuthorizationError" => {
+            crate::error::GetTopicAttributesError {
+                meta: generic,
+                kind: crate::error::GetTopicAttributesErrorKind::AuthorizationErrorException({
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output =
+                            crate::error::authorization_error_exception::Builder::default();
+                        let _ = response;
+                        output = crate::xml_deser::deser_structure_authorization_error_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::GetTopicAttributesError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
+        "InternalError" => crate::error::GetTopicAttributesError {
             meta: generic,
             kind: crate::error::GetTopicAttributesErrorKind::InternalErrorException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::internal_error_exception::Builder::default();
-                let _ = response;
-                output = crate::xml_deser::deser_structure_internal_error_exception_xml_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::GetTopicAttributesError::unhandled)?;
-                output.build()
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_error_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_internal_error_exception_xml_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::GetTopicAttributesError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
             }),
         },
-        "InvalidParameterException" => crate::error::GetTopicAttributesError {
+        "InvalidParameter" => crate::error::GetTopicAttributesError {
             meta: generic,
             kind: crate::error::GetTopicAttributesErrorKind::InvalidParameterException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::invalid_parameter_exception::Builder::default();
-                let _ = response;
-                output = crate::xml_deser::deser_structure_invalid_parameter_exception_xml_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::GetTopicAttributesError::unhandled)?;
-                output.build()
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_invalid_parameter_exception_xml_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::GetTopicAttributesError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
             }),
         },
-        "InvalidSecurityException" => crate::error::GetTopicAttributesError {
+        "InvalidSecurity" => crate::error::GetTopicAttributesError {
             meta: generic,
             kind: crate::error::GetTopicAttributesErrorKind::InvalidSecurityException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::invalid_security_exception::Builder::default();
-                let _ = response;
-                output = crate::xml_deser::deser_structure_invalid_security_exception_xml_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::GetTopicAttributesError::unhandled)?;
-                output.build()
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_security_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_invalid_security_exception_xml_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::GetTopicAttributesError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
             }),
         },
-        "NotFoundException" => crate::error::GetTopicAttributesError {
+        "NotFound" => crate::error::GetTopicAttributesError {
             meta: generic,
             kind: crate::error::GetTopicAttributesErrorKind::NotFoundException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::not_found_exception::Builder::default();
-                let _ = response;
-                output = crate::xml_deser::deser_structure_not_found_exception_xml_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::GetTopicAttributesError::unhandled)?;
-                output.build()
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_not_found_exception_xml_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::GetTopicAttributesError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
             }),
         },
         _ => crate::error::GetTopicAttributesError::generic(generic),
@@ -1748,30 +2316,64 @@ pub fn parse_list_endpoints_by_platform_application_error(
             return Err(crate::error::ListEndpointsByPlatformApplicationError::unhandled(generic))
         }
     };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "AuthorizationErrorException" => crate::error::ListEndpointsByPlatformApplicationError { meta: generic, kind: crate::error::ListEndpointsByPlatformApplicationErrorKind::AuthorizationErrorException({
-            #[allow(unused_mut)]let mut output = crate::error::authorization_error_exception::Builder::default();
-            let _ = response;
-            output = crate::xml_deser::deser_structure_authorization_error_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ListEndpointsByPlatformApplicationError::unhandled)?;
-            output.build()
+        "AuthorizationError" => crate::error::ListEndpointsByPlatformApplicationError { meta: generic, kind: crate::error::ListEndpointsByPlatformApplicationErrorKind::AuthorizationErrorException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::authorization_error_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_authorization_error_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ListEndpointsByPlatformApplicationError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
         })},
-        "InternalErrorException" => crate::error::ListEndpointsByPlatformApplicationError { meta: generic, kind: crate::error::ListEndpointsByPlatformApplicationErrorKind::InternalErrorException({
-            #[allow(unused_mut)]let mut output = crate::error::internal_error_exception::Builder::default();
-            let _ = response;
-            output = crate::xml_deser::deser_structure_internal_error_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ListEndpointsByPlatformApplicationError::unhandled)?;
-            output.build()
+        "InternalError" => crate::error::ListEndpointsByPlatformApplicationError { meta: generic, kind: crate::error::ListEndpointsByPlatformApplicationErrorKind::InternalErrorException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::internal_error_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_internal_error_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ListEndpointsByPlatformApplicationError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
         })},
-        "InvalidParameterException" => crate::error::ListEndpointsByPlatformApplicationError { meta: generic, kind: crate::error::ListEndpointsByPlatformApplicationErrorKind::InvalidParameterException({
-            #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_exception::Builder::default();
-            let _ = response;
-            output = crate::xml_deser::deser_structure_invalid_parameter_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ListEndpointsByPlatformApplicationError::unhandled)?;
-            output.build()
+        "InvalidParameter" => crate::error::ListEndpointsByPlatformApplicationError { meta: generic, kind: crate::error::ListEndpointsByPlatformApplicationErrorKind::InvalidParameterException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_invalid_parameter_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ListEndpointsByPlatformApplicationError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
         })},
-        "NotFoundException" => crate::error::ListEndpointsByPlatformApplicationError { meta: generic, kind: crate::error::ListEndpointsByPlatformApplicationErrorKind::NotFoundException({
-            #[allow(unused_mut)]let mut output = crate::error::not_found_exception::Builder::default();
-            let _ = response;
-            output = crate::xml_deser::deser_structure_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ListEndpointsByPlatformApplicationError::unhandled)?;
-            output.build()
+        "NotFound" => crate::error::ListEndpointsByPlatformApplicationError { meta: generic, kind: crate::error::ListEndpointsByPlatformApplicationErrorKind::NotFoundException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ListEndpointsByPlatformApplicationError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
         })},
         _ => crate::error::ListEndpointsByPlatformApplicationError::generic(generic)
     })
@@ -1815,75 +2417,111 @@ pub fn parse_list_origination_numbers_error(
             ))
         }
     };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "AuthorizationErrorException" => crate::error::ListOriginationNumbersError {
-            meta: generic,
-            kind: crate::error::ListOriginationNumbersErrorKind::AuthorizationErrorException({
-                #[allow(unused_mut)]
-                let mut output = crate::error::authorization_error_exception::Builder::default();
-                let _ = response;
-                output = crate::xml_deser::deser_structure_authorization_error_exception_xml_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::ListOriginationNumbersError::unhandled)?;
-                output.build()
-            }),
-        },
-        "InternalErrorException" => crate::error::ListOriginationNumbersError {
+        "AuthorizationError" => {
+            crate::error::ListOriginationNumbersError {
+                meta: generic,
+                kind: crate::error::ListOriginationNumbersErrorKind::AuthorizationErrorException({
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output =
+                            crate::error::authorization_error_exception::Builder::default();
+                        let _ = response;
+                        output = crate::xml_deser::deser_structure_authorization_error_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ListOriginationNumbersError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
+        "InternalError" => crate::error::ListOriginationNumbersError {
             meta: generic,
             kind: crate::error::ListOriginationNumbersErrorKind::InternalErrorException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::internal_error_exception::Builder::default();
-                let _ = response;
-                output = crate::xml_deser::deser_structure_internal_error_exception_xml_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::ListOriginationNumbersError::unhandled)?;
-                output.build()
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_error_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_internal_error_exception_xml_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::ListOriginationNumbersError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
             }),
         },
-        "InvalidParameterException" => crate::error::ListOriginationNumbersError {
+        "InvalidParameter" => crate::error::ListOriginationNumbersError {
             meta: generic,
             kind: crate::error::ListOriginationNumbersErrorKind::InvalidParameterException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::invalid_parameter_exception::Builder::default();
-                let _ = response;
-                output = crate::xml_deser::deser_structure_invalid_parameter_exception_xml_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::ListOriginationNumbersError::unhandled)?;
-                output.build()
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_invalid_parameter_exception_xml_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::ListOriginationNumbersError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
             }),
         },
-        "ThrottledException" => crate::error::ListOriginationNumbersError {
+        "Throttled" => crate::error::ListOriginationNumbersError {
             meta: generic,
             kind: crate::error::ListOriginationNumbersErrorKind::ThrottledException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::throttled_exception::Builder::default();
-                let _ = response;
-                output = crate::xml_deser::deser_structure_throttled_exception_xml_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::ListOriginationNumbersError::unhandled)?;
-                output.build()
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::throttled_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_throttled_exception_xml_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::ListOriginationNumbersError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
             }),
         },
         "ValidationException" => crate::error::ListOriginationNumbersError {
             meta: generic,
             kind: crate::error::ListOriginationNumbersErrorKind::ValidationException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::validation_exception::Builder::default();
-                let _ = response;
-                output = crate::xml_deser::deser_structure_validation_exception_xml_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::ListOriginationNumbersError::unhandled)?;
-                output.build()
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::validation_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_validation_exception_xml_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::ListOriginationNumbersError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
             }),
         },
         _ => crate::error::ListOriginationNumbersError::generic(generic),
@@ -1927,61 +2565,92 @@ pub fn parse_list_phone_numbers_opted_out_error(
             ))
         }
     };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "AuthorizationErrorException" => crate::error::ListPhoneNumbersOptedOutError {
-            meta: generic,
-            kind: crate::error::ListPhoneNumbersOptedOutErrorKind::AuthorizationErrorException({
-                #[allow(unused_mut)]
-                let mut output = crate::error::authorization_error_exception::Builder::default();
-                let _ = response;
-                output = crate::xml_deser::deser_structure_authorization_error_exception_xml_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::ListPhoneNumbersOptedOutError::unhandled)?;
-                output.build()
-            }),
-        },
-        "InternalErrorException" => crate::error::ListPhoneNumbersOptedOutError {
+        "AuthorizationError" => {
+            crate::error::ListPhoneNumbersOptedOutError {
+                meta: generic,
+                kind: crate::error::ListPhoneNumbersOptedOutErrorKind::AuthorizationErrorException(
+                    {
+                        #[allow(unused_mut)]
+                        let mut tmp = {
+                            #[allow(unused_mut)]
+                            let mut output =
+                                crate::error::authorization_error_exception::Builder::default();
+                            let _ = response;
+                            output = crate::xml_deser::deser_structure_authorization_error_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ListPhoneNumbersOptedOutError::unhandled)?;
+                            output.build()
+                        };
+                        if (&tmp.message).is_none() {
+                            tmp.message = _error_message;
+                        }
+                        tmp
+                    },
+                ),
+            }
+        }
+        "InternalError" => crate::error::ListPhoneNumbersOptedOutError {
             meta: generic,
             kind: crate::error::ListPhoneNumbersOptedOutErrorKind::InternalErrorException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::internal_error_exception::Builder::default();
-                let _ = response;
-                output = crate::xml_deser::deser_structure_internal_error_exception_xml_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::ListPhoneNumbersOptedOutError::unhandled)?;
-                output.build()
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_error_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_internal_error_exception_xml_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::ListPhoneNumbersOptedOutError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
             }),
         },
-        "InvalidParameterException" => crate::error::ListPhoneNumbersOptedOutError {
+        "InvalidParameter" => crate::error::ListPhoneNumbersOptedOutError {
             meta: generic,
             kind: crate::error::ListPhoneNumbersOptedOutErrorKind::InvalidParameterException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::invalid_parameter_exception::Builder::default();
-                let _ = response;
-                output = crate::xml_deser::deser_structure_invalid_parameter_exception_xml_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::ListPhoneNumbersOptedOutError::unhandled)?;
-                output.build()
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_invalid_parameter_exception_xml_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::ListPhoneNumbersOptedOutError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
             }),
         },
-        "ThrottledException" => crate::error::ListPhoneNumbersOptedOutError {
+        "Throttled" => crate::error::ListPhoneNumbersOptedOutError {
             meta: generic,
             kind: crate::error::ListPhoneNumbersOptedOutErrorKind::ThrottledException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::throttled_exception::Builder::default();
-                let _ = response;
-                output = crate::xml_deser::deser_structure_throttled_exception_xml_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::ListPhoneNumbersOptedOutError::unhandled)?;
-                output.build()
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::throttled_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_throttled_exception_xml_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::ListPhoneNumbersOptedOutError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
             }),
         },
         _ => crate::error::ListPhoneNumbersOptedOutError::generic(generic),
@@ -2025,47 +2694,71 @@ pub fn parse_list_platform_applications_error(
             ))
         }
     };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "AuthorizationErrorException" => crate::error::ListPlatformApplicationsError {
-            meta: generic,
-            kind: crate::error::ListPlatformApplicationsErrorKind::AuthorizationErrorException({
-                #[allow(unused_mut)]
-                let mut output = crate::error::authorization_error_exception::Builder::default();
-                let _ = response;
-                output = crate::xml_deser::deser_structure_authorization_error_exception_xml_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::ListPlatformApplicationsError::unhandled)?;
-                output.build()
-            }),
-        },
-        "InternalErrorException" => crate::error::ListPlatformApplicationsError {
+        "AuthorizationError" => {
+            crate::error::ListPlatformApplicationsError {
+                meta: generic,
+                kind: crate::error::ListPlatformApplicationsErrorKind::AuthorizationErrorException(
+                    {
+                        #[allow(unused_mut)]
+                        let mut tmp = {
+                            #[allow(unused_mut)]
+                            let mut output =
+                                crate::error::authorization_error_exception::Builder::default();
+                            let _ = response;
+                            output = crate::xml_deser::deser_structure_authorization_error_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ListPlatformApplicationsError::unhandled)?;
+                            output.build()
+                        };
+                        if (&tmp.message).is_none() {
+                            tmp.message = _error_message;
+                        }
+                        tmp
+                    },
+                ),
+            }
+        }
+        "InternalError" => crate::error::ListPlatformApplicationsError {
             meta: generic,
             kind: crate::error::ListPlatformApplicationsErrorKind::InternalErrorException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::internal_error_exception::Builder::default();
-                let _ = response;
-                output = crate::xml_deser::deser_structure_internal_error_exception_xml_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::ListPlatformApplicationsError::unhandled)?;
-                output.build()
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_error_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_internal_error_exception_xml_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::ListPlatformApplicationsError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
             }),
         },
-        "InvalidParameterException" => crate::error::ListPlatformApplicationsError {
+        "InvalidParameter" => crate::error::ListPlatformApplicationsError {
             meta: generic,
             kind: crate::error::ListPlatformApplicationsErrorKind::InvalidParameterException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::invalid_parameter_exception::Builder::default();
-                let _ = response;
-                output = crate::xml_deser::deser_structure_invalid_parameter_exception_xml_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::ListPlatformApplicationsError::unhandled)?;
-                output.build()
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_invalid_parameter_exception_xml_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::ListPlatformApplicationsError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
             }),
         },
         _ => crate::error::ListPlatformApplicationsError::generic(generic),
@@ -2109,75 +2802,115 @@ pub fn parse_list_sms_sandbox_phone_numbers_error(
             ))
         }
     };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "AuthorizationErrorException" => crate::error::ListSMSSandboxPhoneNumbersError {
-            meta: generic,
-            kind: crate::error::ListSMSSandboxPhoneNumbersErrorKind::AuthorizationErrorException({
-                #[allow(unused_mut)]
-                let mut output = crate::error::authorization_error_exception::Builder::default();
-                let _ = response;
-                output = crate::xml_deser::deser_structure_authorization_error_exception_xml_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::ListSMSSandboxPhoneNumbersError::unhandled)?;
-                output.build()
-            }),
-        },
-        "InternalErrorException" => crate::error::ListSMSSandboxPhoneNumbersError {
+        "AuthorizationError" => {
+            crate::error::ListSMSSandboxPhoneNumbersError {
+                meta: generic,
+                kind:
+                    crate::error::ListSMSSandboxPhoneNumbersErrorKind::AuthorizationErrorException(
+                        {
+                            #[allow(unused_mut)]
+                            let mut tmp = {
+                                #[allow(unused_mut)]
+                                let mut output =
+                                    crate::error::authorization_error_exception::Builder::default();
+                                let _ = response;
+                                output = crate::xml_deser::deser_structure_authorization_error_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ListSMSSandboxPhoneNumbersError::unhandled)?;
+                                output.build()
+                            };
+                            if (&tmp.message).is_none() {
+                                tmp.message = _error_message;
+                            }
+                            tmp
+                        },
+                    ),
+            }
+        }
+        "InternalError" => crate::error::ListSMSSandboxPhoneNumbersError {
             meta: generic,
             kind: crate::error::ListSMSSandboxPhoneNumbersErrorKind::InternalErrorException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::internal_error_exception::Builder::default();
-                let _ = response;
-                output = crate::xml_deser::deser_structure_internal_error_exception_xml_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::ListSMSSandboxPhoneNumbersError::unhandled)?;
-                output.build()
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_error_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_internal_error_exception_xml_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::ListSMSSandboxPhoneNumbersError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
             }),
         },
-        "InvalidParameterException" => crate::error::ListSMSSandboxPhoneNumbersError {
+        "InvalidParameter" => crate::error::ListSMSSandboxPhoneNumbersError {
             meta: generic,
             kind: crate::error::ListSMSSandboxPhoneNumbersErrorKind::InvalidParameterException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::invalid_parameter_exception::Builder::default();
-                let _ = response;
-                output = crate::xml_deser::deser_structure_invalid_parameter_exception_xml_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::ListSMSSandboxPhoneNumbersError::unhandled)?;
-                output.build()
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_invalid_parameter_exception_xml_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::ListSMSSandboxPhoneNumbersError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
             }),
         },
-        "ResourceNotFoundException" => crate::error::ListSMSSandboxPhoneNumbersError {
-            meta: generic,
-            kind: crate::error::ListSMSSandboxPhoneNumbersErrorKind::ResourceNotFoundException({
-                #[allow(unused_mut)]
-                let mut output = crate::error::resource_not_found_exception::Builder::default();
-                let _ = response;
-                output = crate::xml_deser::deser_structure_resource_not_found_exception_xml_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::ListSMSSandboxPhoneNumbersError::unhandled)?;
-                output.build()
-            }),
-        },
-        "ThrottledException" => crate::error::ListSMSSandboxPhoneNumbersError {
+        "ResourceNotFound" => {
+            crate::error::ListSMSSandboxPhoneNumbersError {
+                meta: generic,
+                kind: crate::error::ListSMSSandboxPhoneNumbersErrorKind::ResourceNotFoundException(
+                    {
+                        #[allow(unused_mut)]
+                        let mut tmp = {
+                            #[allow(unused_mut)]
+                            let mut output =
+                                crate::error::resource_not_found_exception::Builder::default();
+                            let _ = response;
+                            output = crate::xml_deser::deser_structure_resource_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ListSMSSandboxPhoneNumbersError::unhandled)?;
+                            output.build()
+                        };
+                        if (&tmp.message).is_none() {
+                            tmp.message = _error_message;
+                        }
+                        tmp
+                    },
+                ),
+            }
+        }
+        "Throttled" => crate::error::ListSMSSandboxPhoneNumbersError {
             meta: generic,
             kind: crate::error::ListSMSSandboxPhoneNumbersErrorKind::ThrottledException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::throttled_exception::Builder::default();
-                let _ = response;
-                output = crate::xml_deser::deser_structure_throttled_exception_xml_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::ListSMSSandboxPhoneNumbersError::unhandled)?;
-                output.build()
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::throttled_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_throttled_exception_xml_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::ListSMSSandboxPhoneNumbersError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
             }),
         },
         _ => crate::error::ListSMSSandboxPhoneNumbersError::generic(generic),
@@ -2215,47 +2948,69 @@ pub fn parse_list_subscriptions_error(
         Some(code) => code,
         None => return Err(crate::error::ListSubscriptionsError::unhandled(generic)),
     };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "AuthorizationErrorException" => crate::error::ListSubscriptionsError {
-            meta: generic,
-            kind: crate::error::ListSubscriptionsErrorKind::AuthorizationErrorException({
-                #[allow(unused_mut)]
-                let mut output = crate::error::authorization_error_exception::Builder::default();
-                let _ = response;
-                output = crate::xml_deser::deser_structure_authorization_error_exception_xml_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::ListSubscriptionsError::unhandled)?;
-                output.build()
-            }),
-        },
-        "InternalErrorException" => crate::error::ListSubscriptionsError {
+        "AuthorizationError" => {
+            crate::error::ListSubscriptionsError {
+                meta: generic,
+                kind: crate::error::ListSubscriptionsErrorKind::AuthorizationErrorException({
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output =
+                            crate::error::authorization_error_exception::Builder::default();
+                        let _ = response;
+                        output = crate::xml_deser::deser_structure_authorization_error_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ListSubscriptionsError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
+        "InternalError" => crate::error::ListSubscriptionsError {
             meta: generic,
             kind: crate::error::ListSubscriptionsErrorKind::InternalErrorException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::internal_error_exception::Builder::default();
-                let _ = response;
-                output = crate::xml_deser::deser_structure_internal_error_exception_xml_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::ListSubscriptionsError::unhandled)?;
-                output.build()
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_error_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_internal_error_exception_xml_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::ListSubscriptionsError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
             }),
         },
-        "InvalidParameterException" => crate::error::ListSubscriptionsError {
+        "InvalidParameter" => crate::error::ListSubscriptionsError {
             meta: generic,
             kind: crate::error::ListSubscriptionsErrorKind::InvalidParameterException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::invalid_parameter_exception::Builder::default();
-                let _ = response;
-                output = crate::xml_deser::deser_structure_invalid_parameter_exception_xml_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::ListSubscriptionsError::unhandled)?;
-                output.build()
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_invalid_parameter_exception_xml_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::ListSubscriptionsError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
             }),
         },
         _ => crate::error::ListSubscriptionsError::generic(generic),
@@ -2295,61 +3050,92 @@ pub fn parse_list_subscriptions_by_topic_error(
             ))
         }
     };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "AuthorizationErrorException" => crate::error::ListSubscriptionsByTopicError {
-            meta: generic,
-            kind: crate::error::ListSubscriptionsByTopicErrorKind::AuthorizationErrorException({
-                #[allow(unused_mut)]
-                let mut output = crate::error::authorization_error_exception::Builder::default();
-                let _ = response;
-                output = crate::xml_deser::deser_structure_authorization_error_exception_xml_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::ListSubscriptionsByTopicError::unhandled)?;
-                output.build()
-            }),
-        },
-        "InternalErrorException" => crate::error::ListSubscriptionsByTopicError {
+        "AuthorizationError" => {
+            crate::error::ListSubscriptionsByTopicError {
+                meta: generic,
+                kind: crate::error::ListSubscriptionsByTopicErrorKind::AuthorizationErrorException(
+                    {
+                        #[allow(unused_mut)]
+                        let mut tmp = {
+                            #[allow(unused_mut)]
+                            let mut output =
+                                crate::error::authorization_error_exception::Builder::default();
+                            let _ = response;
+                            output = crate::xml_deser::deser_structure_authorization_error_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ListSubscriptionsByTopicError::unhandled)?;
+                            output.build()
+                        };
+                        if (&tmp.message).is_none() {
+                            tmp.message = _error_message;
+                        }
+                        tmp
+                    },
+                ),
+            }
+        }
+        "InternalError" => crate::error::ListSubscriptionsByTopicError {
             meta: generic,
             kind: crate::error::ListSubscriptionsByTopicErrorKind::InternalErrorException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::internal_error_exception::Builder::default();
-                let _ = response;
-                output = crate::xml_deser::deser_structure_internal_error_exception_xml_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::ListSubscriptionsByTopicError::unhandled)?;
-                output.build()
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_error_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_internal_error_exception_xml_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::ListSubscriptionsByTopicError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
             }),
         },
-        "InvalidParameterException" => crate::error::ListSubscriptionsByTopicError {
+        "InvalidParameter" => crate::error::ListSubscriptionsByTopicError {
             meta: generic,
             kind: crate::error::ListSubscriptionsByTopicErrorKind::InvalidParameterException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::invalid_parameter_exception::Builder::default();
-                let _ = response;
-                output = crate::xml_deser::deser_structure_invalid_parameter_exception_xml_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::ListSubscriptionsByTopicError::unhandled)?;
-                output.build()
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_invalid_parameter_exception_xml_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::ListSubscriptionsByTopicError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
             }),
         },
-        "NotFoundException" => crate::error::ListSubscriptionsByTopicError {
+        "NotFound" => crate::error::ListSubscriptionsByTopicError {
             meta: generic,
             kind: crate::error::ListSubscriptionsByTopicErrorKind::NotFoundException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::not_found_exception::Builder::default();
-                let _ = response;
-                output = crate::xml_deser::deser_structure_not_found_exception_xml_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::ListSubscriptionsByTopicError::unhandled)?;
-                output.build()
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_not_found_exception_xml_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::ListSubscriptionsByTopicError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
             }),
         },
         _ => crate::error::ListSubscriptionsByTopicError::generic(generic),
@@ -2389,75 +3175,112 @@ pub fn parse_list_tags_for_resource_error(
         Some(code) => code,
         None => return Err(crate::error::ListTagsForResourceError::unhandled(generic)),
     };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "AuthorizationErrorException" => crate::error::ListTagsForResourceError {
-            meta: generic,
-            kind: crate::error::ListTagsForResourceErrorKind::AuthorizationErrorException({
-                #[allow(unused_mut)]
-                let mut output = crate::error::authorization_error_exception::Builder::default();
-                let _ = response;
-                output = crate::xml_deser::deser_structure_authorization_error_exception_xml_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::ListTagsForResourceError::unhandled)?;
-                output.build()
-            }),
-        },
-        "ConcurrentAccessException" => crate::error::ListTagsForResourceError {
+        "AuthorizationError" => {
+            crate::error::ListTagsForResourceError {
+                meta: generic,
+                kind: crate::error::ListTagsForResourceErrorKind::AuthorizationErrorException({
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output =
+                            crate::error::authorization_error_exception::Builder::default();
+                        let _ = response;
+                        output = crate::xml_deser::deser_structure_authorization_error_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ListTagsForResourceError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
+        "ConcurrentAccess" => crate::error::ListTagsForResourceError {
             meta: generic,
             kind: crate::error::ListTagsForResourceErrorKind::ConcurrentAccessException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::concurrent_access_exception::Builder::default();
-                let _ = response;
-                output = crate::xml_deser::deser_structure_concurrent_access_exception_xml_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::ListTagsForResourceError::unhandled)?;
-                output.build()
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::concurrent_access_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_concurrent_access_exception_xml_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::ListTagsForResourceError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
             }),
         },
-        "InvalidParameterException" => crate::error::ListTagsForResourceError {
+        "InvalidParameter" => crate::error::ListTagsForResourceError {
             meta: generic,
             kind: crate::error::ListTagsForResourceErrorKind::InvalidParameterException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::invalid_parameter_exception::Builder::default();
-                let _ = response;
-                output = crate::xml_deser::deser_structure_invalid_parameter_exception_xml_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::ListTagsForResourceError::unhandled)?;
-                output.build()
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_invalid_parameter_exception_xml_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::ListTagsForResourceError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
             }),
         },
-        "ResourceNotFoundException" => crate::error::ListTagsForResourceError {
+        "ResourceNotFound" => crate::error::ListTagsForResourceError {
             meta: generic,
             kind: crate::error::ListTagsForResourceErrorKind::ResourceNotFoundException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::resource_not_found_exception::Builder::default();
-                let _ = response;
-                output = crate::xml_deser::deser_structure_resource_not_found_exception_xml_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::ListTagsForResourceError::unhandled)?;
-                output.build()
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let _ = response;
+                    output =
+                        crate::xml_deser::deser_structure_resource_not_found_exception_xml_err(
+                            response.body().as_ref(),
+                            output,
+                        )
+                        .map_err(crate::error::ListTagsForResourceError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
             }),
         },
-        "TagPolicyException" => crate::error::ListTagsForResourceError {
+        "TagPolicy" => crate::error::ListTagsForResourceError {
             meta: generic,
             kind: crate::error::ListTagsForResourceErrorKind::TagPolicyException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::tag_policy_exception::Builder::default();
-                let _ = response;
-                output = crate::xml_deser::deser_structure_tag_policy_exception_xml_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::ListTagsForResourceError::unhandled)?;
-                output.build()
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::tag_policy_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_tag_policy_exception_xml_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::ListTagsForResourceError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
             }),
         },
         _ => crate::error::ListTagsForResourceError::generic(generic),
@@ -2494,47 +3317,69 @@ pub fn parse_list_topics_error(
         Some(code) => code,
         None => return Err(crate::error::ListTopicsError::unhandled(generic)),
     };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "AuthorizationErrorException" => crate::error::ListTopicsError {
-            meta: generic,
-            kind: crate::error::ListTopicsErrorKind::AuthorizationErrorException({
-                #[allow(unused_mut)]
-                let mut output = crate::error::authorization_error_exception::Builder::default();
-                let _ = response;
-                output = crate::xml_deser::deser_structure_authorization_error_exception_xml_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::ListTopicsError::unhandled)?;
-                output.build()
-            }),
-        },
-        "InternalErrorException" => crate::error::ListTopicsError {
+        "AuthorizationError" => {
+            crate::error::ListTopicsError {
+                meta: generic,
+                kind: crate::error::ListTopicsErrorKind::AuthorizationErrorException({
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output =
+                            crate::error::authorization_error_exception::Builder::default();
+                        let _ = response;
+                        output = crate::xml_deser::deser_structure_authorization_error_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ListTopicsError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
+        "InternalError" => crate::error::ListTopicsError {
             meta: generic,
             kind: crate::error::ListTopicsErrorKind::InternalErrorException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::internal_error_exception::Builder::default();
-                let _ = response;
-                output = crate::xml_deser::deser_structure_internal_error_exception_xml_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::ListTopicsError::unhandled)?;
-                output.build()
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_error_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_internal_error_exception_xml_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::ListTopicsError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
             }),
         },
-        "InvalidParameterException" => crate::error::ListTopicsError {
+        "InvalidParameter" => crate::error::ListTopicsError {
             meta: generic,
             kind: crate::error::ListTopicsErrorKind::InvalidParameterException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::invalid_parameter_exception::Builder::default();
-                let _ = response;
-                output = crate::xml_deser::deser_structure_invalid_parameter_exception_xml_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::ListTopicsError::unhandled)?;
-                output.build()
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_invalid_parameter_exception_xml_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::ListTopicsError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
             }),
         },
         _ => crate::error::ListTopicsError::generic(generic),
@@ -2566,61 +3411,90 @@ pub fn parse_opt_in_phone_number_error(
         Some(code) => code,
         None => return Err(crate::error::OptInPhoneNumberError::unhandled(generic)),
     };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "AuthorizationErrorException" => crate::error::OptInPhoneNumberError {
-            meta: generic,
-            kind: crate::error::OptInPhoneNumberErrorKind::AuthorizationErrorException({
-                #[allow(unused_mut)]
-                let mut output = crate::error::authorization_error_exception::Builder::default();
-                let _ = response;
-                output = crate::xml_deser::deser_structure_authorization_error_exception_xml_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::OptInPhoneNumberError::unhandled)?;
-                output.build()
-            }),
-        },
-        "InternalErrorException" => crate::error::OptInPhoneNumberError {
+        "AuthorizationError" => {
+            crate::error::OptInPhoneNumberError {
+                meta: generic,
+                kind: crate::error::OptInPhoneNumberErrorKind::AuthorizationErrorException({
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output =
+                            crate::error::authorization_error_exception::Builder::default();
+                        let _ = response;
+                        output = crate::xml_deser::deser_structure_authorization_error_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::OptInPhoneNumberError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
+        "InternalError" => crate::error::OptInPhoneNumberError {
             meta: generic,
             kind: crate::error::OptInPhoneNumberErrorKind::InternalErrorException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::internal_error_exception::Builder::default();
-                let _ = response;
-                output = crate::xml_deser::deser_structure_internal_error_exception_xml_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::OptInPhoneNumberError::unhandled)?;
-                output.build()
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_error_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_internal_error_exception_xml_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::OptInPhoneNumberError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
             }),
         },
-        "InvalidParameterException" => crate::error::OptInPhoneNumberError {
+        "InvalidParameter" => crate::error::OptInPhoneNumberError {
             meta: generic,
             kind: crate::error::OptInPhoneNumberErrorKind::InvalidParameterException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::invalid_parameter_exception::Builder::default();
-                let _ = response;
-                output = crate::xml_deser::deser_structure_invalid_parameter_exception_xml_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::OptInPhoneNumberError::unhandled)?;
-                output.build()
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_invalid_parameter_exception_xml_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::OptInPhoneNumberError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
             }),
         },
-        "ThrottledException" => crate::error::OptInPhoneNumberError {
+        "Throttled" => crate::error::OptInPhoneNumberError {
             meta: generic,
             kind: crate::error::OptInPhoneNumberErrorKind::ThrottledException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::throttled_exception::Builder::default();
-                let _ = response;
-                output = crate::xml_deser::deser_structure_throttled_exception_xml_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::OptInPhoneNumberError::unhandled)?;
-                output.build()
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::throttled_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_throttled_exception_xml_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::OptInPhoneNumberError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
             }),
         },
         _ => crate::error::OptInPhoneNumberError::generic(generic),
@@ -2650,197 +3524,294 @@ pub fn parse_publish_error(
         Some(code) => code,
         None => return Err(crate::error::PublishError::unhandled(generic)),
     };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "AuthorizationErrorException" => crate::error::PublishError {
-            meta: generic,
-            kind: crate::error::PublishErrorKind::AuthorizationErrorException({
-                #[allow(unused_mut)]
-                let mut output = crate::error::authorization_error_exception::Builder::default();
-                let _ = response;
-                output = crate::xml_deser::deser_structure_authorization_error_exception_xml_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::PublishError::unhandled)?;
-                output.build()
-            }),
-        },
-        "EndpointDisabledException" => crate::error::PublishError {
+        "AuthorizationError" => {
+            crate::error::PublishError {
+                meta: generic,
+                kind: crate::error::PublishErrorKind::AuthorizationErrorException({
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output =
+                            crate::error::authorization_error_exception::Builder::default();
+                        let _ = response;
+                        output = crate::xml_deser::deser_structure_authorization_error_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::PublishError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
+        "EndpointDisabled" => crate::error::PublishError {
             meta: generic,
             kind: crate::error::PublishErrorKind::EndpointDisabledException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::endpoint_disabled_exception::Builder::default();
-                let _ = response;
-                output = crate::xml_deser::deser_structure_endpoint_disabled_exception_xml_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::PublishError::unhandled)?;
-                output.build()
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::endpoint_disabled_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_endpoint_disabled_exception_xml_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::PublishError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
             }),
         },
-        "InternalErrorException" => crate::error::PublishError {
+        "InternalError" => crate::error::PublishError {
             meta: generic,
             kind: crate::error::PublishErrorKind::InternalErrorException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::internal_error_exception::Builder::default();
-                let _ = response;
-                output = crate::xml_deser::deser_structure_internal_error_exception_xml_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::PublishError::unhandled)?;
-                output.build()
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_error_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_internal_error_exception_xml_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::PublishError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
             }),
         },
-        "InvalidParameterException" => crate::error::PublishError {
+        "InvalidParameter" => crate::error::PublishError {
             meta: generic,
             kind: crate::error::PublishErrorKind::InvalidParameterException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::invalid_parameter_exception::Builder::default();
-                let _ = response;
-                output = crate::xml_deser::deser_structure_invalid_parameter_exception_xml_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::PublishError::unhandled)?;
-                output.build()
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_invalid_parameter_exception_xml_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::PublishError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
             }),
         },
-        "InvalidParameterValueException" => {
-            crate::error::PublishError {
-                meta: generic,
-                kind: crate::error::PublishErrorKind::InvalidParameterValueException({
+        "ParameterValueInvalid" => crate::error::PublishError {
+            meta: generic,
+            kind: crate::error::PublishErrorKind::InvalidParameterValueException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output =
                         crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::PublishError::unhandled)?;
                     output.build()
-                }),
-            }
-        }
-        "InvalidSecurityException" => crate::error::PublishError {
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "InvalidSecurity" => crate::error::PublishError {
             meta: generic,
             kind: crate::error::PublishErrorKind::InvalidSecurityException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::invalid_security_exception::Builder::default();
-                let _ = response;
-                output = crate::xml_deser::deser_structure_invalid_security_exception_xml_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::PublishError::unhandled)?;
-                output.build()
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_security_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_invalid_security_exception_xml_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::PublishError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
             }),
         },
-        "KMSAccessDeniedException" => crate::error::PublishError {
+        "KMSAccessDenied" => crate::error::PublishError {
             meta: generic,
             kind: crate::error::PublishErrorKind::KmsAccessDeniedException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::kms_access_denied_exception::Builder::default();
-                let _ = response;
-                output = crate::xml_deser::deser_structure_kms_access_denied_exception_xml_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::PublishError::unhandled)?;
-                output.build()
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::kms_access_denied_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_kms_access_denied_exception_xml_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::PublishError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
             }),
         },
-        "KMSDisabledException" => crate::error::PublishError {
+        "KMSDisabled" => crate::error::PublishError {
             meta: generic,
             kind: crate::error::PublishErrorKind::KmsDisabledException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::kms_disabled_exception::Builder::default();
-                let _ = response;
-                output = crate::xml_deser::deser_structure_kms_disabled_exception_xml_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::PublishError::unhandled)?;
-                output.build()
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::kms_disabled_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_kms_disabled_exception_xml_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::PublishError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
             }),
         },
-        "KMSInvalidStateException" => crate::error::PublishError {
+        "KMSInvalidState" => crate::error::PublishError {
             meta: generic,
             kind: crate::error::PublishErrorKind::KmsInvalidStateException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::kms_invalid_state_exception::Builder::default();
-                let _ = response;
-                output = crate::xml_deser::deser_structure_kms_invalid_state_exception_xml_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::PublishError::unhandled)?;
-                output.build()
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::kms_invalid_state_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_kms_invalid_state_exception_xml_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::PublishError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
             }),
         },
-        "KMSNotFoundException" => crate::error::PublishError {
+        "KMSNotFound" => crate::error::PublishError {
             meta: generic,
             kind: crate::error::PublishErrorKind::KmsNotFoundException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::kms_not_found_exception::Builder::default();
-                let _ = response;
-                output = crate::xml_deser::deser_structure_kms_not_found_exception_xml_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::PublishError::unhandled)?;
-                output.build()
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::kms_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_kms_not_found_exception_xml_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::PublishError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
             }),
         },
         "KMSOptInRequired" => crate::error::PublishError {
             meta: generic,
             kind: crate::error::PublishErrorKind::KmsOptInRequired({
                 #[allow(unused_mut)]
-                let mut output = crate::error::kms_opt_in_required::Builder::default();
-                let _ = response;
-                output = crate::xml_deser::deser_structure_kms_opt_in_required_xml_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::PublishError::unhandled)?;
-                output.build()
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::kms_opt_in_required::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_kms_opt_in_required_xml_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::PublishError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
             }),
         },
-        "KMSThrottlingException" => crate::error::PublishError {
+        "KMSThrottling" => crate::error::PublishError {
             meta: generic,
             kind: crate::error::PublishErrorKind::KmsThrottlingException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::kms_throttling_exception::Builder::default();
-                let _ = response;
-                output = crate::xml_deser::deser_structure_kms_throttling_exception_xml_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::PublishError::unhandled)?;
-                output.build()
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::kms_throttling_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_kms_throttling_exception_xml_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::PublishError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
             }),
         },
-        "NotFoundException" => crate::error::PublishError {
+        "NotFound" => crate::error::PublishError {
             meta: generic,
             kind: crate::error::PublishErrorKind::NotFoundException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::not_found_exception::Builder::default();
-                let _ = response;
-                output = crate::xml_deser::deser_structure_not_found_exception_xml_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::PublishError::unhandled)?;
-                output.build()
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_not_found_exception_xml_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::PublishError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
             }),
         },
-        "PlatformApplicationDisabledException" => crate::error::PublishError {
+        "PlatformApplicationDisabled" => crate::error::PublishError {
             meta: generic,
             kind: crate::error::PublishErrorKind::PlatformApplicationDisabledException({
                 #[allow(unused_mut)]
-                let mut output =
-                    crate::error::platform_application_disabled_exception::Builder::default();
-                let _ = response;
-                output = crate::xml_deser::deser_structure_platform_application_disabled_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::PublishError::unhandled)?;
-                output.build()
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::platform_application_disabled_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_platform_application_disabled_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::PublishError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
             }),
         },
         _ => crate::error::PublishError::generic(generic),
@@ -2872,61 +3843,90 @@ pub fn parse_remove_permission_error(
         Some(code) => code,
         None => return Err(crate::error::RemovePermissionError::unhandled(generic)),
     };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "AuthorizationErrorException" => crate::error::RemovePermissionError {
-            meta: generic,
-            kind: crate::error::RemovePermissionErrorKind::AuthorizationErrorException({
-                #[allow(unused_mut)]
-                let mut output = crate::error::authorization_error_exception::Builder::default();
-                let _ = response;
-                output = crate::xml_deser::deser_structure_authorization_error_exception_xml_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::RemovePermissionError::unhandled)?;
-                output.build()
-            }),
-        },
-        "InternalErrorException" => crate::error::RemovePermissionError {
+        "AuthorizationError" => {
+            crate::error::RemovePermissionError {
+                meta: generic,
+                kind: crate::error::RemovePermissionErrorKind::AuthorizationErrorException({
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output =
+                            crate::error::authorization_error_exception::Builder::default();
+                        let _ = response;
+                        output = crate::xml_deser::deser_structure_authorization_error_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::RemovePermissionError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
+        "InternalError" => crate::error::RemovePermissionError {
             meta: generic,
             kind: crate::error::RemovePermissionErrorKind::InternalErrorException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::internal_error_exception::Builder::default();
-                let _ = response;
-                output = crate::xml_deser::deser_structure_internal_error_exception_xml_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::RemovePermissionError::unhandled)?;
-                output.build()
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_error_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_internal_error_exception_xml_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::RemovePermissionError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
             }),
         },
-        "InvalidParameterException" => crate::error::RemovePermissionError {
+        "InvalidParameter" => crate::error::RemovePermissionError {
             meta: generic,
             kind: crate::error::RemovePermissionErrorKind::InvalidParameterException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::invalid_parameter_exception::Builder::default();
-                let _ = response;
-                output = crate::xml_deser::deser_structure_invalid_parameter_exception_xml_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::RemovePermissionError::unhandled)?;
-                output.build()
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_invalid_parameter_exception_xml_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::RemovePermissionError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
             }),
         },
-        "NotFoundException" => crate::error::RemovePermissionError {
+        "NotFound" => crate::error::RemovePermissionError {
             meta: generic,
             kind: crate::error::RemovePermissionErrorKind::NotFoundException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::not_found_exception::Builder::default();
-                let _ = response;
-                output = crate::xml_deser::deser_structure_not_found_exception_xml_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::RemovePermissionError::unhandled)?;
-                output.build()
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_not_found_exception_xml_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::RemovePermissionError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
             }),
         },
         _ => crate::error::RemovePermissionError::generic(generic),
@@ -2959,61 +3959,90 @@ pub fn parse_set_endpoint_attributes_error(
         Some(code) => code,
         None => return Err(crate::error::SetEndpointAttributesError::unhandled(generic)),
     };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "AuthorizationErrorException" => crate::error::SetEndpointAttributesError {
-            meta: generic,
-            kind: crate::error::SetEndpointAttributesErrorKind::AuthorizationErrorException({
-                #[allow(unused_mut)]
-                let mut output = crate::error::authorization_error_exception::Builder::default();
-                let _ = response;
-                output = crate::xml_deser::deser_structure_authorization_error_exception_xml_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::SetEndpointAttributesError::unhandled)?;
-                output.build()
-            }),
-        },
-        "InternalErrorException" => crate::error::SetEndpointAttributesError {
+        "AuthorizationError" => {
+            crate::error::SetEndpointAttributesError {
+                meta: generic,
+                kind: crate::error::SetEndpointAttributesErrorKind::AuthorizationErrorException({
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output =
+                            crate::error::authorization_error_exception::Builder::default();
+                        let _ = response;
+                        output = crate::xml_deser::deser_structure_authorization_error_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::SetEndpointAttributesError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
+        "InternalError" => crate::error::SetEndpointAttributesError {
             meta: generic,
             kind: crate::error::SetEndpointAttributesErrorKind::InternalErrorException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::internal_error_exception::Builder::default();
-                let _ = response;
-                output = crate::xml_deser::deser_structure_internal_error_exception_xml_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::SetEndpointAttributesError::unhandled)?;
-                output.build()
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_error_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_internal_error_exception_xml_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::SetEndpointAttributesError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
             }),
         },
-        "InvalidParameterException" => crate::error::SetEndpointAttributesError {
+        "InvalidParameter" => crate::error::SetEndpointAttributesError {
             meta: generic,
             kind: crate::error::SetEndpointAttributesErrorKind::InvalidParameterException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::invalid_parameter_exception::Builder::default();
-                let _ = response;
-                output = crate::xml_deser::deser_structure_invalid_parameter_exception_xml_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::SetEndpointAttributesError::unhandled)?;
-                output.build()
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_invalid_parameter_exception_xml_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::SetEndpointAttributesError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
             }),
         },
-        "NotFoundException" => crate::error::SetEndpointAttributesError {
+        "NotFound" => crate::error::SetEndpointAttributesError {
             meta: generic,
             kind: crate::error::SetEndpointAttributesErrorKind::NotFoundException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::not_found_exception::Builder::default();
-                let _ = response;
-                output = crate::xml_deser::deser_structure_not_found_exception_xml_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::SetEndpointAttributesError::unhandled)?;
-                output.build()
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_not_found_exception_xml_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::SetEndpointAttributesError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
             }),
         },
         _ => crate::error::SetEndpointAttributesError::generic(generic),
@@ -3050,70 +4079,93 @@ pub fn parse_set_platform_application_attributes_error(
             return Err(crate::error::SetPlatformApplicationAttributesError::unhandled(generic))
         }
     };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "AuthorizationErrorException" => crate::error::SetPlatformApplicationAttributesError {
+        "AuthorizationError" => crate::error::SetPlatformApplicationAttributesError {
             meta: generic,
             kind:
                 crate::error::SetPlatformApplicationAttributesErrorKind::AuthorizationErrorException(
                     {
                         #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::authorization_error_exception::Builder::default();
-                        let _ = response;
-                        output = crate::xml_deser::deser_structure_authorization_error_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::SetPlatformApplicationAttributesError::unhandled)?;
-                        output.build()
+                        let mut tmp = {
+                            #[allow(unused_mut)]
+                            let mut output =
+                                crate::error::authorization_error_exception::Builder::default();
+                            let _ = response;
+                            output = crate::xml_deser::deser_structure_authorization_error_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::SetPlatformApplicationAttributesError::unhandled)?;
+                            output.build()
+                        };
+                        if (&tmp.message).is_none() {
+                            tmp.message = _error_message;
+                        }
+                        tmp
                     },
                 ),
         },
-        "InternalErrorException" => crate::error::SetPlatformApplicationAttributesError {
-            meta: generic,
-            kind: crate::error::SetPlatformApplicationAttributesErrorKind::InternalErrorException(
-                {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::internal_error_exception::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_internal_error_exception_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::SetPlatformApplicationAttributesError::unhandled)?;
-                    output.build()
-                },
-            ),
-        },
-        "InvalidParameterException" => crate::error::SetPlatformApplicationAttributesError {
+        "InternalError" => {
+            crate::error::SetPlatformApplicationAttributesError {
+                meta: generic,
+                kind:
+                    crate::error::SetPlatformApplicationAttributesErrorKind::InternalErrorException(
+                        {
+                            #[allow(unused_mut)]
+                            let mut tmp = {
+                                #[allow(unused_mut)]
+                                let mut output =
+                                    crate::error::internal_error_exception::Builder::default();
+                                let _ = response;
+                                output = crate::xml_deser::deser_structure_internal_error_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::SetPlatformApplicationAttributesError::unhandled)?;
+                                output.build()
+                            };
+                            if (&tmp.message).is_none() {
+                                tmp.message = _error_message;
+                            }
+                            tmp
+                        },
+                    ),
+            }
+        }
+        "InvalidParameter" => crate::error::SetPlatformApplicationAttributesError {
             meta: generic,
             kind:
                 crate::error::SetPlatformApplicationAttributesErrorKind::InvalidParameterException(
                     {
                         #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::invalid_parameter_exception::Builder::default();
-                        let _ = response;
-                        output =
-                            crate::xml_deser::deser_structure_invalid_parameter_exception_xml_err(
-                                response.body().as_ref(),
-                                output,
-                            )
-                            .map_err(
-                                crate::error::SetPlatformApplicationAttributesError::unhandled,
-                            )?;
-                        output.build()
+                        let mut tmp = {
+                            #[allow(unused_mut)]
+                            let mut output =
+                                crate::error::invalid_parameter_exception::Builder::default();
+                            let _ = response;
+                            output = crate::xml_deser::deser_structure_invalid_parameter_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::SetPlatformApplicationAttributesError::unhandled)?;
+                            output.build()
+                        };
+                        if (&tmp.message).is_none() {
+                            tmp.message = _error_message;
+                        }
+                        tmp
                     },
                 ),
         },
-        "NotFoundException" => crate::error::SetPlatformApplicationAttributesError {
+        "NotFound" => crate::error::SetPlatformApplicationAttributesError {
             meta: generic,
             kind: crate::error::SetPlatformApplicationAttributesErrorKind::NotFoundException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::not_found_exception::Builder::default();
-                let _ = response;
-                output = crate::xml_deser::deser_structure_not_found_exception_xml_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::SetPlatformApplicationAttributesError::unhandled)?;
-                output.build()
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_not_found_exception_xml_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::SetPlatformApplicationAttributesError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
             }),
         },
         _ => crate::error::SetPlatformApplicationAttributesError::generic(generic),
@@ -3147,61 +4199,90 @@ pub fn parse_set_sms_attributes_error(
         Some(code) => code,
         None => return Err(crate::error::SetSMSAttributesError::unhandled(generic)),
     };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "AuthorizationErrorException" => crate::error::SetSMSAttributesError {
-            meta: generic,
-            kind: crate::error::SetSMSAttributesErrorKind::AuthorizationErrorException({
-                #[allow(unused_mut)]
-                let mut output = crate::error::authorization_error_exception::Builder::default();
-                let _ = response;
-                output = crate::xml_deser::deser_structure_authorization_error_exception_xml_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::SetSMSAttributesError::unhandled)?;
-                output.build()
-            }),
-        },
-        "InternalErrorException" => crate::error::SetSMSAttributesError {
+        "AuthorizationError" => {
+            crate::error::SetSMSAttributesError {
+                meta: generic,
+                kind: crate::error::SetSMSAttributesErrorKind::AuthorizationErrorException({
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output =
+                            crate::error::authorization_error_exception::Builder::default();
+                        let _ = response;
+                        output = crate::xml_deser::deser_structure_authorization_error_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::SetSMSAttributesError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
+        "InternalError" => crate::error::SetSMSAttributesError {
             meta: generic,
             kind: crate::error::SetSMSAttributesErrorKind::InternalErrorException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::internal_error_exception::Builder::default();
-                let _ = response;
-                output = crate::xml_deser::deser_structure_internal_error_exception_xml_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::SetSMSAttributesError::unhandled)?;
-                output.build()
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_error_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_internal_error_exception_xml_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::SetSMSAttributesError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
             }),
         },
-        "InvalidParameterException" => crate::error::SetSMSAttributesError {
+        "InvalidParameter" => crate::error::SetSMSAttributesError {
             meta: generic,
             kind: crate::error::SetSMSAttributesErrorKind::InvalidParameterException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::invalid_parameter_exception::Builder::default();
-                let _ = response;
-                output = crate::xml_deser::deser_structure_invalid_parameter_exception_xml_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::SetSMSAttributesError::unhandled)?;
-                output.build()
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_invalid_parameter_exception_xml_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::SetSMSAttributesError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
             }),
         },
-        "ThrottledException" => crate::error::SetSMSAttributesError {
+        "Throttled" => crate::error::SetSMSAttributesError {
             meta: generic,
             kind: crate::error::SetSMSAttributesErrorKind::ThrottledException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::throttled_exception::Builder::default();
-                let _ = response;
-                output = crate::xml_deser::deser_structure_throttled_exception_xml_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::SetSMSAttributesError::unhandled)?;
-                output.build()
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::throttled_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_throttled_exception_xml_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::SetSMSAttributesError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
             }),
         },
         _ => crate::error::SetSMSAttributesError::generic(generic),
@@ -3238,76 +4319,111 @@ pub fn parse_set_subscription_attributes_error(
             ))
         }
     };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "AuthorizationErrorException" => crate::error::SetSubscriptionAttributesError {
-            meta: generic,
-            kind: crate::error::SetSubscriptionAttributesErrorKind::AuthorizationErrorException({
-                #[allow(unused_mut)]
-                let mut output = crate::error::authorization_error_exception::Builder::default();
-                let _ = response;
-                output = crate::xml_deser::deser_structure_authorization_error_exception_xml_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::SetSubscriptionAttributesError::unhandled)?;
-                output.build()
-            }),
-        },
-        "FilterPolicyLimitExceededException" => crate::error::SetSubscriptionAttributesError {
+        "AuthorizationError" => {
+            crate::error::SetSubscriptionAttributesError {
+                meta: generic,
+                kind: crate::error::SetSubscriptionAttributesErrorKind::AuthorizationErrorException(
+                    {
+                        #[allow(unused_mut)]
+                        let mut tmp = {
+                            #[allow(unused_mut)]
+                            let mut output =
+                                crate::error::authorization_error_exception::Builder::default();
+                            let _ = response;
+                            output = crate::xml_deser::deser_structure_authorization_error_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::SetSubscriptionAttributesError::unhandled)?;
+                            output.build()
+                        };
+                        if (&tmp.message).is_none() {
+                            tmp.message = _error_message;
+                        }
+                        tmp
+                    },
+                ),
+            }
+        }
+        "FilterPolicyLimitExceeded" => crate::error::SetSubscriptionAttributesError {
             meta: generic,
             kind:
                 crate::error::SetSubscriptionAttributesErrorKind::FilterPolicyLimitExceededException(
                     {
                         #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::filter_policy_limit_exceeded_exception::Builder::default(
-                            );
-                        let _ = response;
-                        output = crate::xml_deser::deser_structure_filter_policy_limit_exceeded_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::SetSubscriptionAttributesError::unhandled)?;
-                        output.build()
+                        let mut tmp = {
+                            #[allow(unused_mut)]let mut output = crate::error::filter_policy_limit_exceeded_exception::Builder::default();
+                            let _ = response;
+                            output = crate::xml_deser::deser_structure_filter_policy_limit_exceeded_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::SetSubscriptionAttributesError::unhandled)?;
+                            output.build()
+                        };
+                        if (&tmp.message).is_none() {
+                            tmp.message = _error_message;
+                        }
+                        tmp
                     },
                 ),
         },
-        "InternalErrorException" => crate::error::SetSubscriptionAttributesError {
+        "InternalError" => crate::error::SetSubscriptionAttributesError {
             meta: generic,
             kind: crate::error::SetSubscriptionAttributesErrorKind::InternalErrorException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::internal_error_exception::Builder::default();
-                let _ = response;
-                output = crate::xml_deser::deser_structure_internal_error_exception_xml_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::SetSubscriptionAttributesError::unhandled)?;
-                output.build()
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_error_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_internal_error_exception_xml_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::SetSubscriptionAttributesError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
             }),
         },
-        "InvalidParameterException" => crate::error::SetSubscriptionAttributesError {
+        "InvalidParameter" => crate::error::SetSubscriptionAttributesError {
             meta: generic,
             kind: crate::error::SetSubscriptionAttributesErrorKind::InvalidParameterException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::invalid_parameter_exception::Builder::default();
-                let _ = response;
-                output = crate::xml_deser::deser_structure_invalid_parameter_exception_xml_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::SetSubscriptionAttributesError::unhandled)?;
-                output.build()
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_invalid_parameter_exception_xml_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::SetSubscriptionAttributesError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
             }),
         },
-        "NotFoundException" => crate::error::SetSubscriptionAttributesError {
+        "NotFound" => crate::error::SetSubscriptionAttributesError {
             meta: generic,
             kind: crate::error::SetSubscriptionAttributesErrorKind::NotFoundException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::not_found_exception::Builder::default();
-                let _ = response;
-                output = crate::xml_deser::deser_structure_not_found_exception_xml_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::SetSubscriptionAttributesError::unhandled)?;
-                output.build()
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_not_found_exception_xml_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::SetSubscriptionAttributesError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
             }),
         },
         _ => crate::error::SetSubscriptionAttributesError::generic(generic),
@@ -3342,75 +4458,111 @@ pub fn parse_set_topic_attributes_error(
         Some(code) => code,
         None => return Err(crate::error::SetTopicAttributesError::unhandled(generic)),
     };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "AuthorizationErrorException" => crate::error::SetTopicAttributesError {
-            meta: generic,
-            kind: crate::error::SetTopicAttributesErrorKind::AuthorizationErrorException({
-                #[allow(unused_mut)]
-                let mut output = crate::error::authorization_error_exception::Builder::default();
-                let _ = response;
-                output = crate::xml_deser::deser_structure_authorization_error_exception_xml_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::SetTopicAttributesError::unhandled)?;
-                output.build()
-            }),
-        },
-        "InternalErrorException" => crate::error::SetTopicAttributesError {
+        "AuthorizationError" => {
+            crate::error::SetTopicAttributesError {
+                meta: generic,
+                kind: crate::error::SetTopicAttributesErrorKind::AuthorizationErrorException({
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output =
+                            crate::error::authorization_error_exception::Builder::default();
+                        let _ = response;
+                        output = crate::xml_deser::deser_structure_authorization_error_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::SetTopicAttributesError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
+        "InternalError" => crate::error::SetTopicAttributesError {
             meta: generic,
             kind: crate::error::SetTopicAttributesErrorKind::InternalErrorException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::internal_error_exception::Builder::default();
-                let _ = response;
-                output = crate::xml_deser::deser_structure_internal_error_exception_xml_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::SetTopicAttributesError::unhandled)?;
-                output.build()
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_error_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_internal_error_exception_xml_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::SetTopicAttributesError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
             }),
         },
-        "InvalidParameterException" => crate::error::SetTopicAttributesError {
+        "InvalidParameter" => crate::error::SetTopicAttributesError {
             meta: generic,
             kind: crate::error::SetTopicAttributesErrorKind::InvalidParameterException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::invalid_parameter_exception::Builder::default();
-                let _ = response;
-                output = crate::xml_deser::deser_structure_invalid_parameter_exception_xml_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::SetTopicAttributesError::unhandled)?;
-                output.build()
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_invalid_parameter_exception_xml_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::SetTopicAttributesError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
             }),
         },
-        "InvalidSecurityException" => crate::error::SetTopicAttributesError {
+        "InvalidSecurity" => crate::error::SetTopicAttributesError {
             meta: generic,
             kind: crate::error::SetTopicAttributesErrorKind::InvalidSecurityException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::invalid_security_exception::Builder::default();
-                let _ = response;
-                output = crate::xml_deser::deser_structure_invalid_security_exception_xml_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::SetTopicAttributesError::unhandled)?;
-                output.build()
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_security_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_invalid_security_exception_xml_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::SetTopicAttributesError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
             }),
         },
-        "NotFoundException" => crate::error::SetTopicAttributesError {
+        "NotFound" => crate::error::SetTopicAttributesError {
             meta: generic,
             kind: crate::error::SetTopicAttributesErrorKind::NotFoundException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::not_found_exception::Builder::default();
-                let _ = response;
-                output = crate::xml_deser::deser_structure_not_found_exception_xml_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::SetTopicAttributesError::unhandled)?;
-                output.build()
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_not_found_exception_xml_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::SetTopicAttributesError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
             }),
         },
         _ => crate::error::SetTopicAttributesError::generic(generic),
@@ -3442,97 +4594,147 @@ pub fn parse_subscribe_error(
         Some(code) => code,
         None => return Err(crate::error::SubscribeError::unhandled(generic)),
     };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "AuthorizationErrorException" => crate::error::SubscribeError {
-            meta: generic,
-            kind: crate::error::SubscribeErrorKind::AuthorizationErrorException({
-                #[allow(unused_mut)]
-                let mut output = crate::error::authorization_error_exception::Builder::default();
-                let _ = response;
-                output = crate::xml_deser::deser_structure_authorization_error_exception_xml_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::SubscribeError::unhandled)?;
-                output.build()
-            }),
-        },
-        "FilterPolicyLimitExceededException" => crate::error::SubscribeError {
+        "AuthorizationError" => {
+            crate::error::SubscribeError {
+                meta: generic,
+                kind: crate::error::SubscribeErrorKind::AuthorizationErrorException({
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output =
+                            crate::error::authorization_error_exception::Builder::default();
+                        let _ = response;
+                        output = crate::xml_deser::deser_structure_authorization_error_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::SubscribeError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
+        "FilterPolicyLimitExceeded" => crate::error::SubscribeError {
             meta: generic,
             kind: crate::error::SubscribeErrorKind::FilterPolicyLimitExceededException({
                 #[allow(unused_mut)]
-                let mut output =
-                    crate::error::filter_policy_limit_exceeded_exception::Builder::default();
-                let _ = response;
-                output = crate::xml_deser::deser_structure_filter_policy_limit_exceeded_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::SubscribeError::unhandled)?;
-                output.build()
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::filter_policy_limit_exceeded_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_filter_policy_limit_exceeded_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::SubscribeError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
             }),
         },
-        "InternalErrorException" => crate::error::SubscribeError {
+        "InternalError" => crate::error::SubscribeError {
             meta: generic,
             kind: crate::error::SubscribeErrorKind::InternalErrorException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::internal_error_exception::Builder::default();
-                let _ = response;
-                output = crate::xml_deser::deser_structure_internal_error_exception_xml_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::SubscribeError::unhandled)?;
-                output.build()
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_error_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_internal_error_exception_xml_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::SubscribeError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
             }),
         },
-        "InvalidParameterException" => crate::error::SubscribeError {
+        "InvalidParameter" => crate::error::SubscribeError {
             meta: generic,
             kind: crate::error::SubscribeErrorKind::InvalidParameterException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::invalid_parameter_exception::Builder::default();
-                let _ = response;
-                output = crate::xml_deser::deser_structure_invalid_parameter_exception_xml_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::SubscribeError::unhandled)?;
-                output.build()
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_invalid_parameter_exception_xml_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::SubscribeError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
             }),
         },
-        "InvalidSecurityException" => crate::error::SubscribeError {
+        "InvalidSecurity" => crate::error::SubscribeError {
             meta: generic,
             kind: crate::error::SubscribeErrorKind::InvalidSecurityException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::invalid_security_exception::Builder::default();
-                let _ = response;
-                output = crate::xml_deser::deser_structure_invalid_security_exception_xml_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::SubscribeError::unhandled)?;
-                output.build()
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_security_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_invalid_security_exception_xml_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::SubscribeError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
             }),
         },
-        "NotFoundException" => crate::error::SubscribeError {
+        "NotFound" => crate::error::SubscribeError {
             meta: generic,
             kind: crate::error::SubscribeErrorKind::NotFoundException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::not_found_exception::Builder::default();
-                let _ = response;
-                output = crate::xml_deser::deser_structure_not_found_exception_xml_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::SubscribeError::unhandled)?;
-                output.build()
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_not_found_exception_xml_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::SubscribeError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
             }),
         },
-        "SubscriptionLimitExceededException" => crate::error::SubscribeError {
+        "SubscriptionLimitExceeded" => crate::error::SubscribeError {
             meta: generic,
             kind: crate::error::SubscribeErrorKind::SubscriptionLimitExceededException({
                 #[allow(unused_mut)]
-                let mut output =
-                    crate::error::subscription_limit_exceeded_exception::Builder::default();
-                let _ = response;
-                output = crate::xml_deser::deser_structure_subscription_limit_exceeded_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::SubscribeError::unhandled)?;
-                output.build()
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::subscription_limit_exceeded_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_subscription_limit_exceeded_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::SubscribeError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
             }),
         },
         _ => crate::error::SubscribeError::generic(generic),
@@ -3563,103 +4765,155 @@ pub fn parse_tag_resource_error(
         Some(code) => code,
         None => return Err(crate::error::TagResourceError::unhandled(generic)),
     };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "AuthorizationErrorException" => crate::error::TagResourceError {
-            meta: generic,
-            kind: crate::error::TagResourceErrorKind::AuthorizationErrorException({
-                #[allow(unused_mut)]
-                let mut output = crate::error::authorization_error_exception::Builder::default();
-                let _ = response;
-                output = crate::xml_deser::deser_structure_authorization_error_exception_xml_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::TagResourceError::unhandled)?;
-                output.build()
-            }),
-        },
-        "ConcurrentAccessException" => crate::error::TagResourceError {
+        "AuthorizationError" => {
+            crate::error::TagResourceError {
+                meta: generic,
+                kind: crate::error::TagResourceErrorKind::AuthorizationErrorException({
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output =
+                            crate::error::authorization_error_exception::Builder::default();
+                        let _ = response;
+                        output = crate::xml_deser::deser_structure_authorization_error_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::TagResourceError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
+        "ConcurrentAccess" => crate::error::TagResourceError {
             meta: generic,
             kind: crate::error::TagResourceErrorKind::ConcurrentAccessException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::concurrent_access_exception::Builder::default();
-                let _ = response;
-                output = crate::xml_deser::deser_structure_concurrent_access_exception_xml_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::TagResourceError::unhandled)?;
-                output.build()
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::concurrent_access_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_concurrent_access_exception_xml_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::TagResourceError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
             }),
         },
-        "InvalidParameterException" => crate::error::TagResourceError {
+        "InvalidParameter" => crate::error::TagResourceError {
             meta: generic,
             kind: crate::error::TagResourceErrorKind::InvalidParameterException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::invalid_parameter_exception::Builder::default();
-                let _ = response;
-                output = crate::xml_deser::deser_structure_invalid_parameter_exception_xml_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::TagResourceError::unhandled)?;
-                output.build()
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_invalid_parameter_exception_xml_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::TagResourceError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
             }),
         },
-        "ResourceNotFoundException" => crate::error::TagResourceError {
+        "ResourceNotFound" => crate::error::TagResourceError {
             meta: generic,
             kind: crate::error::TagResourceErrorKind::ResourceNotFoundException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::resource_not_found_exception::Builder::default();
-                let _ = response;
-                output = crate::xml_deser::deser_structure_resource_not_found_exception_xml_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::TagResourceError::unhandled)?;
-                output.build()
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let _ = response;
+                    output =
+                        crate::xml_deser::deser_structure_resource_not_found_exception_xml_err(
+                            response.body().as_ref(),
+                            output,
+                        )
+                        .map_err(crate::error::TagResourceError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
             }),
         },
-        "StaleTagException" => crate::error::TagResourceError {
+        "StaleTag" => crate::error::TagResourceError {
             meta: generic,
             kind: crate::error::TagResourceErrorKind::StaleTagException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::stale_tag_exception::Builder::default();
-                let _ = response;
-                output = crate::xml_deser::deser_structure_stale_tag_exception_xml_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::TagResourceError::unhandled)?;
-                output.build()
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::stale_tag_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_stale_tag_exception_xml_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::TagResourceError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
             }),
         },
-        "TagLimitExceededException" => crate::error::TagResourceError {
+        "TagLimitExceeded" => crate::error::TagResourceError {
             meta: generic,
             kind: crate::error::TagResourceErrorKind::TagLimitExceededException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::tag_limit_exceeded_exception::Builder::default();
-                let _ = response;
-                output = crate::xml_deser::deser_structure_tag_limit_exceeded_exception_xml_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::TagResourceError::unhandled)?;
-                output.build()
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::tag_limit_exceeded_exception::Builder::default();
+                    let _ = response;
+                    output =
+                        crate::xml_deser::deser_structure_tag_limit_exceeded_exception_xml_err(
+                            response.body().as_ref(),
+                            output,
+                        )
+                        .map_err(crate::error::TagResourceError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
             }),
         },
-        "TagPolicyException" => crate::error::TagResourceError {
+        "TagPolicy" => crate::error::TagResourceError {
             meta: generic,
             kind: crate::error::TagResourceErrorKind::TagPolicyException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::tag_policy_exception::Builder::default();
-                let _ = response;
-                output = crate::xml_deser::deser_structure_tag_policy_exception_xml_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::TagResourceError::unhandled)?;
-                output.build()
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::tag_policy_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_tag_policy_exception_xml_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::TagResourceError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
             }),
         },
         _ => crate::error::TagResourceError::generic(generic),
@@ -3688,75 +4942,111 @@ pub fn parse_unsubscribe_error(
         Some(code) => code,
         None => return Err(crate::error::UnsubscribeError::unhandled(generic)),
     };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "AuthorizationErrorException" => crate::error::UnsubscribeError {
-            meta: generic,
-            kind: crate::error::UnsubscribeErrorKind::AuthorizationErrorException({
-                #[allow(unused_mut)]
-                let mut output = crate::error::authorization_error_exception::Builder::default();
-                let _ = response;
-                output = crate::xml_deser::deser_structure_authorization_error_exception_xml_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::UnsubscribeError::unhandled)?;
-                output.build()
-            }),
-        },
-        "InternalErrorException" => crate::error::UnsubscribeError {
+        "AuthorizationError" => {
+            crate::error::UnsubscribeError {
+                meta: generic,
+                kind: crate::error::UnsubscribeErrorKind::AuthorizationErrorException({
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output =
+                            crate::error::authorization_error_exception::Builder::default();
+                        let _ = response;
+                        output = crate::xml_deser::deser_structure_authorization_error_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UnsubscribeError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
+        "InternalError" => crate::error::UnsubscribeError {
             meta: generic,
             kind: crate::error::UnsubscribeErrorKind::InternalErrorException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::internal_error_exception::Builder::default();
-                let _ = response;
-                output = crate::xml_deser::deser_structure_internal_error_exception_xml_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::UnsubscribeError::unhandled)?;
-                output.build()
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_error_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_internal_error_exception_xml_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::UnsubscribeError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
             }),
         },
-        "InvalidParameterException" => crate::error::UnsubscribeError {
+        "InvalidParameter" => crate::error::UnsubscribeError {
             meta: generic,
             kind: crate::error::UnsubscribeErrorKind::InvalidParameterException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::invalid_parameter_exception::Builder::default();
-                let _ = response;
-                output = crate::xml_deser::deser_structure_invalid_parameter_exception_xml_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::UnsubscribeError::unhandled)?;
-                output.build()
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_invalid_parameter_exception_xml_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::UnsubscribeError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
             }),
         },
-        "InvalidSecurityException" => crate::error::UnsubscribeError {
+        "InvalidSecurity" => crate::error::UnsubscribeError {
             meta: generic,
             kind: crate::error::UnsubscribeErrorKind::InvalidSecurityException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::invalid_security_exception::Builder::default();
-                let _ = response;
-                output = crate::xml_deser::deser_structure_invalid_security_exception_xml_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::UnsubscribeError::unhandled)?;
-                output.build()
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_security_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_invalid_security_exception_xml_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::UnsubscribeError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
             }),
         },
-        "NotFoundException" => crate::error::UnsubscribeError {
+        "NotFound" => crate::error::UnsubscribeError {
             meta: generic,
             kind: crate::error::UnsubscribeErrorKind::NotFoundException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::not_found_exception::Builder::default();
-                let _ = response;
-                output = crate::xml_deser::deser_structure_not_found_exception_xml_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::UnsubscribeError::unhandled)?;
-                output.build()
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_not_found_exception_xml_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::UnsubscribeError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
             }),
         },
         _ => crate::error::UnsubscribeError::generic(generic),
@@ -3785,103 +5075,155 @@ pub fn parse_untag_resource_error(
         Some(code) => code,
         None => return Err(crate::error::UntagResourceError::unhandled(generic)),
     };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "AuthorizationErrorException" => crate::error::UntagResourceError {
-            meta: generic,
-            kind: crate::error::UntagResourceErrorKind::AuthorizationErrorException({
-                #[allow(unused_mut)]
-                let mut output = crate::error::authorization_error_exception::Builder::default();
-                let _ = response;
-                output = crate::xml_deser::deser_structure_authorization_error_exception_xml_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::UntagResourceError::unhandled)?;
-                output.build()
-            }),
-        },
-        "ConcurrentAccessException" => crate::error::UntagResourceError {
+        "AuthorizationError" => {
+            crate::error::UntagResourceError {
+                meta: generic,
+                kind: crate::error::UntagResourceErrorKind::AuthorizationErrorException({
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output =
+                            crate::error::authorization_error_exception::Builder::default();
+                        let _ = response;
+                        output = crate::xml_deser::deser_structure_authorization_error_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UntagResourceError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
+        "ConcurrentAccess" => crate::error::UntagResourceError {
             meta: generic,
             kind: crate::error::UntagResourceErrorKind::ConcurrentAccessException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::concurrent_access_exception::Builder::default();
-                let _ = response;
-                output = crate::xml_deser::deser_structure_concurrent_access_exception_xml_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::UntagResourceError::unhandled)?;
-                output.build()
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::concurrent_access_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_concurrent_access_exception_xml_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::UntagResourceError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
             }),
         },
-        "InvalidParameterException" => crate::error::UntagResourceError {
+        "InvalidParameter" => crate::error::UntagResourceError {
             meta: generic,
             kind: crate::error::UntagResourceErrorKind::InvalidParameterException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::invalid_parameter_exception::Builder::default();
-                let _ = response;
-                output = crate::xml_deser::deser_structure_invalid_parameter_exception_xml_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::UntagResourceError::unhandled)?;
-                output.build()
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_invalid_parameter_exception_xml_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::UntagResourceError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
             }),
         },
-        "ResourceNotFoundException" => crate::error::UntagResourceError {
+        "ResourceNotFound" => crate::error::UntagResourceError {
             meta: generic,
             kind: crate::error::UntagResourceErrorKind::ResourceNotFoundException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::resource_not_found_exception::Builder::default();
-                let _ = response;
-                output = crate::xml_deser::deser_structure_resource_not_found_exception_xml_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::UntagResourceError::unhandled)?;
-                output.build()
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let _ = response;
+                    output =
+                        crate::xml_deser::deser_structure_resource_not_found_exception_xml_err(
+                            response.body().as_ref(),
+                            output,
+                        )
+                        .map_err(crate::error::UntagResourceError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
             }),
         },
-        "StaleTagException" => crate::error::UntagResourceError {
+        "StaleTag" => crate::error::UntagResourceError {
             meta: generic,
             kind: crate::error::UntagResourceErrorKind::StaleTagException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::stale_tag_exception::Builder::default();
-                let _ = response;
-                output = crate::xml_deser::deser_structure_stale_tag_exception_xml_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::UntagResourceError::unhandled)?;
-                output.build()
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::stale_tag_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_stale_tag_exception_xml_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::UntagResourceError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
             }),
         },
-        "TagLimitExceededException" => crate::error::UntagResourceError {
+        "TagLimitExceeded" => crate::error::UntagResourceError {
             meta: generic,
             kind: crate::error::UntagResourceErrorKind::TagLimitExceededException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::tag_limit_exceeded_exception::Builder::default();
-                let _ = response;
-                output = crate::xml_deser::deser_structure_tag_limit_exceeded_exception_xml_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::UntagResourceError::unhandled)?;
-                output.build()
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::tag_limit_exceeded_exception::Builder::default();
+                    let _ = response;
+                    output =
+                        crate::xml_deser::deser_structure_tag_limit_exceeded_exception_xml_err(
+                            response.body().as_ref(),
+                            output,
+                        )
+                        .map_err(crate::error::UntagResourceError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
             }),
         },
-        "TagPolicyException" => crate::error::UntagResourceError {
+        "TagPolicy" => crate::error::UntagResourceError {
             meta: generic,
             kind: crate::error::UntagResourceErrorKind::TagPolicyException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::tag_policy_exception::Builder::default();
-                let _ = response;
-                output = crate::xml_deser::deser_structure_tag_policy_exception_xml_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::UntagResourceError::unhandled)?;
-                output.build()
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::tag_policy_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_tag_policy_exception_xml_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::UntagResourceError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
             }),
         },
         _ => crate::error::UntagResourceError::generic(generic),
@@ -3917,91 +5259,133 @@ pub fn parse_verify_sms_sandbox_phone_number_error(
             ))
         }
     };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "AuthorizationErrorException" => {
-            crate::error::VerifySMSSandboxPhoneNumberError {
-                meta: generic,
-                kind:
-                    crate::error::VerifySMSSandboxPhoneNumberErrorKind::AuthorizationErrorException(
-                        {
-                            #[allow(unused_mut)]
-                            let mut output =
-                                crate::error::authorization_error_exception::Builder::default();
-                            let _ = response;
-                            output = crate::xml_deser::deser_structure_authorization_error_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::VerifySMSSandboxPhoneNumberError::unhandled)?;
-                            output.build()
-                        },
-                    ),
-            }
-        }
-        "InternalErrorException" => crate::error::VerifySMSSandboxPhoneNumberError {
+        "AuthorizationError" => crate::error::VerifySMSSandboxPhoneNumberError {
+            meta: generic,
+            kind: crate::error::VerifySMSSandboxPhoneNumberErrorKind::AuthorizationErrorException(
+                {
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output =
+                            crate::error::authorization_error_exception::Builder::default();
+                        let _ = response;
+                        output = crate::xml_deser::deser_structure_authorization_error_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::VerifySMSSandboxPhoneNumberError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                },
+            ),
+        },
+        "InternalError" => crate::error::VerifySMSSandboxPhoneNumberError {
             meta: generic,
             kind: crate::error::VerifySMSSandboxPhoneNumberErrorKind::InternalErrorException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::internal_error_exception::Builder::default();
-                let _ = response;
-                output = crate::xml_deser::deser_structure_internal_error_exception_xml_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::VerifySMSSandboxPhoneNumberError::unhandled)?;
-                output.build()
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_error_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_internal_error_exception_xml_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::VerifySMSSandboxPhoneNumberError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
             }),
         },
-        "InvalidParameterException" => crate::error::VerifySMSSandboxPhoneNumberError {
+        "InvalidParameter" => crate::error::VerifySMSSandboxPhoneNumberError {
             meta: generic,
             kind: crate::error::VerifySMSSandboxPhoneNumberErrorKind::InvalidParameterException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::invalid_parameter_exception::Builder::default();
-                let _ = response;
-                output = crate::xml_deser::deser_structure_invalid_parameter_exception_xml_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::VerifySMSSandboxPhoneNumberError::unhandled)?;
-                output.build()
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_parameter_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_invalid_parameter_exception_xml_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::VerifySMSSandboxPhoneNumberError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
             }),
         },
-        "ResourceNotFoundException" => crate::error::VerifySMSSandboxPhoneNumberError {
-            meta: generic,
-            kind: crate::error::VerifySMSSandboxPhoneNumberErrorKind::ResourceNotFoundException({
-                #[allow(unused_mut)]
-                let mut output = crate::error::resource_not_found_exception::Builder::default();
-                let _ = response;
-                output = crate::xml_deser::deser_structure_resource_not_found_exception_xml_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::VerifySMSSandboxPhoneNumberError::unhandled)?;
-                output.build()
-            }),
-        },
-        "ThrottledException" => crate::error::VerifySMSSandboxPhoneNumberError {
+        "ResourceNotFound" => {
+            crate::error::VerifySMSSandboxPhoneNumberError {
+                meta: generic,
+                kind: crate::error::VerifySMSSandboxPhoneNumberErrorKind::ResourceNotFoundException(
+                    {
+                        #[allow(unused_mut)]
+                        let mut tmp = {
+                            #[allow(unused_mut)]
+                            let mut output =
+                                crate::error::resource_not_found_exception::Builder::default();
+                            let _ = response;
+                            output = crate::xml_deser::deser_structure_resource_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::VerifySMSSandboxPhoneNumberError::unhandled)?;
+                            output.build()
+                        };
+                        if (&tmp.message).is_none() {
+                            tmp.message = _error_message;
+                        }
+                        tmp
+                    },
+                ),
+            }
+        }
+        "Throttled" => crate::error::VerifySMSSandboxPhoneNumberError {
             meta: generic,
             kind: crate::error::VerifySMSSandboxPhoneNumberErrorKind::ThrottledException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::throttled_exception::Builder::default();
-                let _ = response;
-                output = crate::xml_deser::deser_structure_throttled_exception_xml_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::VerifySMSSandboxPhoneNumberError::unhandled)?;
-                output.build()
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::throttled_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_throttled_exception_xml_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::VerifySMSSandboxPhoneNumberError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
             }),
         },
         "VerificationException" => crate::error::VerifySMSSandboxPhoneNumberError {
             meta: generic,
             kind: crate::error::VerifySMSSandboxPhoneNumberErrorKind::VerificationException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::verification_exception::Builder::default();
-                let _ = response;
-                output = crate::xml_deser::deser_structure_verification_exception_xml_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::VerifySMSSandboxPhoneNumberError::unhandled)?;
-                output.build()
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::verification_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_verification_exception_xml_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::VerifySMSSandboxPhoneNumberError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
             }),
         },
         _ => crate::error::VerifySMSSandboxPhoneNumberError::generic(generic),

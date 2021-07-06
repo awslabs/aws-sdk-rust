@@ -665,6 +665,38 @@ pub fn parse_associate_transit_gateway_route_table_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_associate_trunk_interface_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::AssociateTrunkInterfaceOutput,
+    crate::error::AssociateTrunkInterfaceError,
+> {
+    let generic = crate::xml_deser::parse_generic_error(&response)
+        .map_err(crate::error::AssociateTrunkInterfaceError::unhandled)?;
+    Err(crate::error::AssociateTrunkInterfaceError::generic(generic))
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_associate_trunk_interface_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::AssociateTrunkInterfaceOutput,
+    crate::error::AssociateTrunkInterfaceError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::associate_trunk_interface_output::Builder::default();
+        let _ = response;
+        output = crate::xml_deser::deser_operation_associate_trunk_interface(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::AssociateTrunkInterfaceError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_associate_vpc_cidr_block_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
@@ -8275,6 +8307,39 @@ pub fn parse_describe_transit_gateway_vpc_attachments_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_describe_trunk_interface_associations_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::DescribeTrunkInterfaceAssociationsOutput,
+    crate::error::DescribeTrunkInterfaceAssociationsError,
+> {
+    let generic = crate::xml_deser::parse_generic_error(&response)
+        .map_err(crate::error::DescribeTrunkInterfaceAssociationsError::unhandled)?;
+    Err(crate::error::DescribeTrunkInterfaceAssociationsError::generic(generic))
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_describe_trunk_interface_associations_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::DescribeTrunkInterfaceAssociationsOutput,
+    crate::error::DescribeTrunkInterfaceAssociationsError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output =
+            crate::output::describe_trunk_interface_associations_output::Builder::default();
+        let _ = response;
+        output = crate::xml_deser::deser_operation_describe_trunk_interface_associations(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::DescribeTrunkInterfaceAssociationsError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_volume_attribute_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
@@ -9017,6 +9082,38 @@ pub fn parse_disable_fast_snapshot_restores_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_disable_image_deprecation_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::DisableImageDeprecationOutput,
+    crate::error::DisableImageDeprecationError,
+> {
+    let generic = crate::xml_deser::parse_generic_error(&response)
+        .map_err(crate::error::DisableImageDeprecationError::unhandled)?;
+    Err(crate::error::DisableImageDeprecationError::generic(generic))
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_disable_image_deprecation_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::DisableImageDeprecationOutput,
+    crate::error::DisableImageDeprecationError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::disable_image_deprecation_output::Builder::default();
+        let _ = response;
+        output = crate::xml_deser::deser_operation_disable_image_deprecation(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::DisableImageDeprecationError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_disable_serial_console_access_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
@@ -9436,6 +9533,40 @@ pub fn parse_disassociate_transit_gateway_route_table_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_disassociate_trunk_interface_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::DisassociateTrunkInterfaceOutput,
+    crate::error::DisassociateTrunkInterfaceError,
+> {
+    let generic = crate::xml_deser::parse_generic_error(&response)
+        .map_err(crate::error::DisassociateTrunkInterfaceError::unhandled)?;
+    Err(crate::error::DisassociateTrunkInterfaceError::generic(
+        generic,
+    ))
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_disassociate_trunk_interface_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::DisassociateTrunkInterfaceOutput,
+    crate::error::DisassociateTrunkInterfaceError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::disassociate_trunk_interface_output::Builder::default();
+        let _ = response;
+        output = crate::xml_deser::deser_operation_disassociate_trunk_interface(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::DisassociateTrunkInterfaceError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_disassociate_vpc_cidr_block_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
@@ -9533,6 +9664,38 @@ pub fn parse_enable_fast_snapshot_restores_response(
             output,
         )
         .map_err(crate::error::EnableFastSnapshotRestoresError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_enable_image_deprecation_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::EnableImageDeprecationOutput,
+    crate::error::EnableImageDeprecationError,
+> {
+    let generic = crate::xml_deser::parse_generic_error(&response)
+        .map_err(crate::error::EnableImageDeprecationError::unhandled)?;
+    Err(crate::error::EnableImageDeprecationError::generic(generic))
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_enable_image_deprecation_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::EnableImageDeprecationOutput,
+    crate::error::EnableImageDeprecationError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::enable_image_deprecation_output::Builder::default();
+        let _ = response;
+        output = crate::xml_deser::deser_operation_enable_image_deprecation(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::EnableImageDeprecationError::unhandled)?;
         output.build()
     })
 }

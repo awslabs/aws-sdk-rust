@@ -492,6 +492,9 @@ impl DecimalReturnType {
             DecimalReturnType::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["DOUBLE_OR_LONG", "STRING"]
+    }
 }
 impl AsRef<str> for DecimalReturnType {
     fn as_ref(&self) -> &str {
@@ -693,6 +696,9 @@ impl TypeHint {
             TypeHint::Uuid => "UUID",
             TypeHint::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["DATE", "DECIMAL", "JSON", "TIME", "TIMESTAMP", "UUID"]
     }
 }
 impl AsRef<str> for TypeHint {

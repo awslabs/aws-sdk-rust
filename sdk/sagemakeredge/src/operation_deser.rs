@@ -12,19 +12,28 @@ pub fn parse_get_device_registration_error(
         Some(code) => code,
         None => return Err(crate::error::GetDeviceRegistrationError::unhandled(generic)),
     };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "InternalServiceException" => crate::error::GetDeviceRegistrationError {
             meta: generic,
             kind: crate::error::GetDeviceRegistrationErrorKind::InternalServiceException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::internal_service_exception::Builder::default();
-                let _ = response;
-                output = crate::json_deser::deser_structure_internal_service_exceptionjson_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::GetDeviceRegistrationError::unhandled)?;
-                output.build()
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_service_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_internal_service_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::GetDeviceRegistrationError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
             }),
         },
         _ => crate::error::GetDeviceRegistrationError::generic(generic),
@@ -61,19 +70,28 @@ pub fn parse_send_heartbeat_error(
         Some(code) => code,
         None => return Err(crate::error::SendHeartbeatError::unhandled(generic)),
     };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "InternalServiceException" => crate::error::SendHeartbeatError {
             meta: generic,
             kind: crate::error::SendHeartbeatErrorKind::InternalServiceException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::internal_service_exception::Builder::default();
-                let _ = response;
-                output = crate::json_deser::deser_structure_internal_service_exceptionjson_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::SendHeartbeatError::unhandled)?;
-                output.build()
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_service_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_internal_service_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::SendHeartbeatError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
             }),
         },
         _ => crate::error::SendHeartbeatError::generic(generic),

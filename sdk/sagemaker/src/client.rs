@@ -947,9 +947,9 @@ pub mod fluent_builders {
             self.inner = self.inner.set_resource_arn(input);
             self
         }
-        /// <p>An array of key-value pairs. You can use tags to categorize your AWS resources in
+        /// <p>An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in
         /// different ways, for example, by purpose, owner, or environment. For more information,
-        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS
+        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services
         /// Resources</a>.</p>
         pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
             self.inner = self.inner.tags(inp);
@@ -1047,7 +1047,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of the action. Must be unique to your account in an AWS Region.</p>
+        /// <p>The name of the action. Must be unique to your account in an Amazon Web Services Region.</p>
         pub fn action_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.action_name(input);
             self
@@ -1286,7 +1286,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_validation_specification(input);
             self
         }
-        /// <p>Whether to certify the algorithm so that it can be listed in AWS Marketplace.</p>
+        /// <p>Whether to certify the algorithm so that it can be listed in Amazon Web Services Marketplace.</p>
         pub fn certify_for_marketplace(mut self, input: bool) -> Self {
             self.inner = self.inner.certify_for_marketplace(input);
             self
@@ -1295,9 +1295,9 @@ pub mod fluent_builders {
             self.inner = self.inner.set_certify_for_marketplace(input);
             self
         }
-        /// <p>An array of key-value pairs. You can use tags to categorize your AWS resources in
+        /// <p>An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in
         /// different ways, for example, by purpose, owner, or environment. For more information,
-        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS
+        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services
         /// Resources</a>.</p>
         pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
             self.inner = self.inner.tags(inp);
@@ -1510,7 +1510,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of the artifact. Must be unique to your account in an AWS Region.</p>
+        /// <p>The name of the artifact. Must be unique to your account in an Amazon Web Services Region.</p>
         pub fn artifact_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.artifact_name(input);
             self
@@ -1808,9 +1808,9 @@ pub mod fluent_builders {
             self.inner = self.inner.set_git_config(input);
             self
         }
-        /// <p>An array of key-value pairs. You can use tags to categorize your AWS resources in
+        /// <p>An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in
         /// different ways, for example, by purpose, owner, or environment. For more information,
-        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS
+        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services
         /// Resources</a>.</p>
         pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
             self.inner = self.inner.tags(inp);
@@ -1855,8 +1855,8 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>A name for the model compilation job. The name must be unique within the AWS Region
-        /// and within your AWS account. </p>
+        /// <p>A name for the model compilation job. The name must be unique within the Amazon Web Services Region
+        /// and within your Amazon Web Services account. </p>
         pub fn compilation_job_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.compilation_job_name(input);
             self
@@ -1924,6 +1924,21 @@ pub mod fluent_builders {
             self.inner = self.inner.set_output_config(input);
             self
         }
+        /// <p>A <a>VpcConfig</a> object that specifies the VPC that you want your
+        /// compilation job to connect to. Control access to your models by
+        /// configuring the VPC. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/neo-vpc.html">Protect Compilation Jobs by Using an Amazon
+        /// Virtual Private Cloud</a>.</p>
+        pub fn vpc_config(mut self, input: crate::model::NeoVpcConfig) -> Self {
+            self.inner = self.inner.vpc_config(input);
+            self
+        }
+        pub fn set_vpc_config(
+            mut self,
+            input: std::option::Option<crate::model::NeoVpcConfig>,
+        ) -> Self {
+            self.inner = self.inner.set_vpc_config(input);
+            self
+        }
         /// <p>Specifies a limit to how long a model compilation job can run. When the job reaches
         /// the time limit, Amazon SageMaker ends the compilation job. Use this API to cap model training
         /// costs.</p>
@@ -1938,9 +1953,9 @@ pub mod fluent_builders {
             self.inner = self.inner.set_stopping_condition(input);
             self
         }
-        /// <p>An array of key-value pairs. You can use tags to categorize your AWS resources in
+        /// <p>An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in
         /// different ways, for example, by purpose, owner, or environment. For more information,
-        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS
+        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services
         /// Resources</a>.</p>
         pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
             self.inner = self.inner.tags(inp);
@@ -1985,7 +2000,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of the context. Must be unique to your account in an AWS Region.</p>
+        /// <p>The name of the context. Must be unique to your account in an Amazon Web Services Region.</p>
         pub fn context_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.context_name(input);
             self
@@ -2205,7 +2220,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_stopping_condition(input);
             self
         }
-        /// <p>(Optional) An array of key-value pairs. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-whatURL">Using Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management
+        /// <p>(Optional) An array of key-value pairs. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-whatURL">Using Cost Allocation Tags</a> in the <i>Amazon Web Services Billing and Cost Management
         /// User Guide</i>.</p>
         pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
             self.inner = self.inner.tags(inp);
@@ -2262,7 +2277,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_device_fleet_name(input);
             self
         }
-        /// <p>The Amazon Resource Name (ARN) that has access to AWS Internet of Things (IoT).</p>
+        /// <p>The Amazon Resource Name (ARN) that has access to Amazon Web Services Internet of Things (IoT).</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.role_arn(input);
             self
@@ -2304,7 +2319,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_tags(input);
             self
         }
-        /// <p>Whether to create an AWS IoT Role Alias during device fleet creation.
+        /// <p>Whether to create an Amazon Web Services IoT Role Alias during device fleet creation.
         /// The name of the role alias generated will match this pattern:
         /// "SageMakerEdge-{DeviceFleetName}".</p>
         /// <p>For example, if your device fleet is called "demo-fleet", the name of
@@ -2463,7 +2478,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_home_efs_file_system_kms_key_id(input);
             self
         }
-        /// <p>SageMaker uses AWS KMS to encrypt the EFS volume attached to the domain with an AWS managed
+        /// <p>SageMaker uses Amazon Web Services KMS to encrypt the EFS volume attached to the domain with an Amazon Web Services managed
         /// customer master key (CMK) by default. For more control, specify a customer managed CMK.</p>
         pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.kms_key_id(input);
@@ -2624,7 +2639,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of the endpoint.The name must be unique within an AWS Region in your AWS
+        /// <p>The name of the endpoint.The name must be unique within an Amazon Web Services Region in your Amazon Web Services
         /// account. The name is case-insensitive in <code>CreateEndpoint</code>, but the case is
         /// preserved and must be matched in .</p>
         pub fn endpoint_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2650,9 +2665,9 @@ pub mod fluent_builders {
             self.inner = self.inner.set_endpoint_config_name(input);
             self
         }
-        /// <p>An array of key-value pairs. You can use tags to categorize your AWS resources in
+        /// <p>An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in
         /// different ways, for example, by purpose, owner, or environment. For more information,
-        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS
+        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services
         /// Resources</a>.</p>
         pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
             self.inner = self.inner.tags(inp);
@@ -2737,9 +2752,9 @@ pub mod fluent_builders {
             self.inner = self.inner.set_data_capture_config(input);
             self
         }
-        /// <p>An array of key-value pairs. You can use tags to categorize your AWS resources in
+        /// <p>An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in
         /// different ways, for example, by purpose, owner, or environment. For more information,
-        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS
+        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services
         /// Resources</a>.</p>
         pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
             self.inner = self.inner.tags(inp);
@@ -2752,7 +2767,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_tags(input);
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of a AWS Key Management Service key that Amazon SageMaker uses to encrypt data on
+        /// <p>The Amazon Resource Name (ARN) of a Amazon Web Services Key Management Service key that Amazon SageMaker uses to encrypt data on
         /// the storage volume attached to the ML compute instance that hosts the endpoint.</p>
         /// <p>The KmsKeyId can be any of the following formats: </p>
         /// <ul>
@@ -2777,8 +2792,8 @@ pub mod fluent_builders {
         /// </ul>
         /// <p>The KMS key policy must grant permission to the IAM role that you specify in your
         /// <code>CreateEndpoint</code>, <code>UpdateEndpoint</code> requests. For more
-        /// information, refer to the AWS Key Management Service section<a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html"> Using Key
-        /// Policies in AWS KMS </a>
+        /// information, refer to the Amazon Web Services Key Management Service section<a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html"> Using Key
+        /// Policies in Amazon Web Services KMS </a>
         /// </p>
         /// <note>
         /// <p>Certain Nitro-based instances include local storage, dependent on the instance
@@ -2833,7 +2848,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of the experiment. The name must be unique in your AWS account and is not
+        /// <p>The name of the experiment. The name must be unique in your Amazon Web Services account and is not
         /// case-sensitive.</p>
         pub fn experiment_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.experiment_name(input);
@@ -2911,8 +2926,8 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of the <code>FeatureGroup</code>. The name must be unique within an AWS Region
-        /// in an AWS account. The name:</p>
+        /// <p>The name of the <code>FeatureGroup</code>. The name must be unique within an Amazon Web Services Region
+        /// in an Amazon Web Services account. The name:</p>
         /// <ul>
         /// <li>
         /// <p>Must start and end with an alphanumeric character.</p>
@@ -3026,7 +3041,7 @@ pub mod fluent_builders {
         /// <p>You can turn the <code>OnlineStore</code> on or off by specifying <code>True</code> for
         /// the <code>EnableOnlineStore</code> flag in <code>OnlineStoreConfig</code>; the default
         /// value is <code>False</code>.</p>
-        /// <p>You can also include an AWS KMS key ID (<code>KMSKeyId</code>) for at-rest encryption of
+        /// <p>You can also include an Amazon Web Services KMS key ID (<code>KMSKeyId</code>) for at-rest encryption of
         /// the <code>OnlineStore</code>.</p>
         pub fn online_store_config(mut self, input: crate::model::OnlineStoreConfig) -> Self {
             self.inner = self.inner.online_store_config(input);
@@ -3047,7 +3062,7 @@ pub mod fluent_builders {
         /// <code>OfflineStore</code>.</p>
         /// </li>
         /// <li>
-        /// <p>A configuration for an AWS Glue or AWS Hive data cataolgue. </p>
+        /// <p>A configuration for an Amazon Web Services Glue or Amazon Web Services Hive data cataolgue. </p>
         /// </li>
         /// <li>
         /// <p>An KMS encryption key to encrypt the Amazon S3 location used for
@@ -3318,8 +3333,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the tuning job. This name is the prefix for the names of all training jobs
-        /// that this tuning job launches. The name must be unique within the same AWS account and
-        /// AWS Region. The name must have 1 to 32 characters. Valid characters are a-z, A-Z, 0-9,
+        /// that this tuning job launches. The name must be unique within the same Amazon Web Services account and
+        /// Amazon Web Services Region. The name must have 1 to 32 characters. Valid characters are a-z, A-Z, 0-9,
         /// and : + = @ _ % - (hyphen). The name is not case sensitive.</p>
         pub fn hyper_parameter_tuning_job_name(
             mut self,
@@ -3420,9 +3435,9 @@ pub mod fluent_builders {
             self.inner = self.inner.set_warm_start_config(input);
             self
         }
-        /// <p>An array of key-value pairs. You can use tags to categorize your AWS resources in
+        /// <p>An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in
         /// different ways, for example, by purpose, owner, or environment. For more information,
-        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS
+        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services
         /// Resources</a>.</p>
         /// <p>Tags that you specify for the tuning job are also added to all training jobs that the
         /// tuning job launches.</p>
@@ -3562,7 +3577,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_base_image(input);
             self
         }
-        /// <p>A unique ID. If not specified, the AWS CLI and AWS SDKs, such as the SDK for Python
+        /// <p>A unique ID. If not specified, the Amazon Web Services CLI and Amazon Web Services SDKs, such as the SDK for Python
         /// (Boto3), add a unique value to the call.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_token(input);
@@ -3614,7 +3629,7 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the labeling job. This name is used to identify the job in a list of
-        /// labeling jobs. Labeling job names must be unique within an AWS account and region.
+        /// labeling jobs. Labeling job names must be unique within an Amazon Web Services account and region.
         /// <code>LabelingJobName</code> is not case sensitive. For example, Example-job and
         /// example-job are considered the same labeling job name by Ground Truth.</p>
         pub fn labeling_job_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3727,7 +3742,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_input_config(input);
             self
         }
-        /// <p>The location of the output data and the AWS Key Management Service key ID for the key used to encrypt
+        /// <p>The location of the output data and the Amazon Web Services Key Management Service key ID for the key used to encrypt
         /// the output data, if any.</p>
         pub fn output_config(mut self, input: crate::model::LabelingJobOutputConfig) -> Self {
             self.inner = self.inner.output_config(input);
@@ -3852,7 +3867,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_human_task_config(input);
             self
         }
-        /// <p>An array of key/value pairs. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what">Using Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management
+        /// <p>An array of key/value pairs. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what">Using Cost Allocation Tags</a> in the <i>Amazon Web Services Billing and Cost Management
         /// User Guide</i>.</p>
         pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
             self.inner = self.inner.tags(inp);
@@ -3967,9 +3982,9 @@ pub mod fluent_builders {
             self.inner = self.inner.set_execution_role_arn(input);
             self
         }
-        /// <p>An array of key-value pairs. You can use tags to categorize your AWS resources in
+        /// <p>An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in
         /// different ways, for example, by purpose, owner, or environment. For more information,
-        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS
+        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services
         /// Resources</a>.</p>
         pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
             self.inner = self.inner.tags(inp);
@@ -4040,8 +4055,8 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of the bias job definition. The name must be unique within an AWS Region in the
-        /// AWS account.</p>
+        /// <p>The name of the bias job definition. The name must be unique within an Amazon Web Services Region in the
+        /// Amazon Web Services account.</p>
         pub fn job_definition_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.job_definition_name(input);
             self
@@ -4159,7 +4174,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_stopping_condition(input);
             self
         }
-        /// <p>(Optional) An array of key-value pairs. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-whatURL">Using Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management
+        /// <p>(Optional) An array of key-value pairs. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-whatURL">Using Cost Allocation Tags</a> in the <i>Amazon Web Services Billing and Cost Management
         /// User Guide</i>.</p>
         pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
             self.inner = self.inner.tags(inp);
@@ -4207,7 +4222,7 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p> The name of the model explainability job definition. The name must be unique within an
-        /// AWS Region in the AWS account.</p>
+        /// Amazon Web Services Region in the Amazon Web Services account.</p>
         pub fn job_definition_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.job_definition_name(input);
             self
@@ -4329,7 +4344,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_stopping_condition(input);
             self
         }
-        /// <p>(Optional) An array of key-value pairs. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-whatURL">Using Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management
+        /// <p>(Optional) An array of key-value pairs. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-whatURL">Using Cost Allocation Tags</a> in the <i>Amazon Web Services Billing and Cost Management
         /// User Guide</i>.</p>
         pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
             self.inner = self.inner.tags(inp);
@@ -4476,7 +4491,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_source_algorithm_specification(input);
             self
         }
-        /// <p>Whether to certify the model package for listing on AWS Marketplace.</p>
+        /// <p>Whether to certify the model package for listing on Amazon Web Services Marketplace.</p>
         /// <p>This parameter is optional for unversioned models, and does not apply to versioned
         /// models.</p>
         pub fn certify_for_marketplace(mut self, input: bool) -> Self {
@@ -4487,8 +4502,8 @@ pub mod fluent_builders {
             self.inner = self.inner.set_certify_for_marketplace(input);
             self
         }
-        /// <p>A list of key value pairs associated with the model. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS
-        /// resources</a> in the <i>AWS General Reference Guide</i>.</p>
+        /// <p>A list of key value pairs associated with the model. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services
+        /// resources</a> in the <i>Amazon Web Services General Reference Guide</i>.</p>
         pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
             self.inner = self.inner.tags(inp);
             self
@@ -4609,8 +4624,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A list of key value pairs associated with the model group. For more information, see
-        /// <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS
-        /// resources</a> in the <i>AWS General Reference Guide</i>.</p>
+        /// <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services
+        /// resources</a> in the <i>Amazon Web Services General Reference Guide</i>.</p>
         pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
             self.inner = self.inner.tags(inp);
             self
@@ -4775,7 +4790,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_stopping_condition(input);
             self
         }
-        /// <p>(Optional) An array of key-value pairs. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-whatURL">Using Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management
+        /// <p>(Optional) An array of key-value pairs. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-whatURL">Using Cost Allocation Tags</a> in the <i>Amazon Web Services Billing and Cost Management
         /// User Guide</i>.</p>
         pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
             self.inner = self.inner.tags(inp);
@@ -4820,8 +4835,8 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of the monitoring schedule. The name must be unique within an AWS Region within
-        /// an AWS account.</p>
+        /// <p>The name of the monitoring schedule. The name must be unique within an Amazon Web Services Region within
+        /// an Amazon Web Services account.</p>
         pub fn monitoring_schedule_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.monitoring_schedule_name(input);
             self
@@ -4849,7 +4864,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_monitoring_schedule_config(input);
             self
         }
-        /// <p>(Optional) An array of key-value pairs. For more information, see <a href=" https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-whatURL">Using Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management
+        /// <p>(Optional) An array of key-value pairs. For more information, see <a href=" https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-whatURL">Using Cost Allocation Tags</a> in the <i>Amazon Web Services Billing and Cost Management
         /// User Guide</i>.</p>
         pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
             self.inner = self.inner.tags(inp);
@@ -4941,7 +4956,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_security_group_ids(input);
             self
         }
-        /// <p> When you send any requests to AWS resources from the notebook instance, Amazon SageMaker
+        /// <p> When you send any requests to Amazon Web Services resources from the notebook instance, Amazon SageMaker
         /// assumes this role to perform tasks on your behalf. You must grant this role necessary
         /// permissions so Amazon SageMaker can perform these tasks. The policy must allow the Amazon SageMaker service
         /// principal (sagemaker.amazonaws.com) permissions to assume this role. For more
@@ -4958,10 +4973,10 @@ pub mod fluent_builders {
             self.inner = self.inner.set_role_arn(input);
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of a AWS Key Management Service key that Amazon SageMaker uses to encrypt data on
+        /// <p>The Amazon Resource Name (ARN) of a Amazon Web Services Key Management Service key that Amazon SageMaker uses to encrypt data on
         /// the storage volume attached to your notebook instance. The KMS key you provide must be
         /// enabled. For information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/enabling-keys.html">Enabling and Disabling
-        /// Keys</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
+        /// Keys</a> in the <i>Amazon Web Services Key Management Service Developer Guide</i>.</p>
         pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.kms_key_id(input);
             self
@@ -4970,9 +4985,9 @@ pub mod fluent_builders {
             self.inner = self.inner.set_kms_key_id(input);
             self
         }
-        /// <p>An array of key-value pairs. You can use tags to categorize your AWS resources in
+        /// <p>An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in
         /// different ways, for example, by purpose, owner, or environment. For more information,
-        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS
+        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services
         /// Resources</a>.</p>
         pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
             self.inner = self.inner.tags(inp);
@@ -5048,7 +5063,7 @@ pub mod fluent_builders {
         }
         /// <p>A Git repository to associate with the notebook instance as its default code
         /// repository. This can be either the name of a Git repository stored as a resource in your
-        /// account, or the URL of a Git repository in <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">AWS CodeCommit</a> or in any
+        /// account, or the URL of a Git repository in <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">Amazon Web Services CodeCommit</a> or in any
         /// other Git repository. When you open a notebook instance, it opens in the directory that
         /// contains this repository. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with Amazon SageMaker
         /// Notebook Instances</a>.</p>
@@ -5065,7 +5080,7 @@ pub mod fluent_builders {
         }
         /// <p>An array of up to three Git repositories to associate with the notebook instance.
         /// These can be either the names of Git repositories stored as resources in your account,
-        /// or the URL of Git repositories in <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">AWS CodeCommit</a> or in any
+        /// or the URL of Git repositories in <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">Amazon Web Services CodeCommit</a> or in any
         /// other Git repository. These repositories are cloned at the same level as the default
         /// repository of your notebook instance. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git
         /// Repositories with Amazon SageMaker Notebook Instances</a>.</p>
@@ -5485,8 +5500,8 @@ pub mod fluent_builders {
             self.inner = self.inner.set_processing_output_config(input);
             self
         }
-        /// <p> The name of the processing job. The name must be unique within an AWS Region in the
-        /// AWS account.</p>
+        /// <p> The name of the processing job. The name must be unique within an Amazon Web Services Region in the
+        /// Amazon Web Services account.</p>
         pub fn processing_job_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.processing_job_name(input);
             self
@@ -5581,7 +5596,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_role_arn(input);
             self
         }
-        /// <p>(Optional) An array of key-value pairs. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-whatURL">Using Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management
+        /// <p>(Optional) An array of key-value pairs. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-whatURL">Using Cost Allocation Tags</a> in the <i>Amazon Web Services Billing and Cost Management
         /// User Guide</i>.</p>
         pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
             self.inner = self.inner.tags(inp);
@@ -5678,7 +5693,7 @@ pub mod fluent_builders {
             self
         }
         /// <p>The product ID and provisioning artifact ID to provision a service catalog. For
-        /// information, see <a href="https://docs.aws.amazon.com/servicecatalog/latest/adminguide/introduction.html">What is AWS Service
+        /// information, see <a href="https://docs.aws.amazon.com/servicecatalog/latest/adminguide/introduction.html">What is Amazon Web Services Service
         /// Catalog</a>.</p>
         pub fn service_catalog_provisioning_details(
             mut self,
@@ -5694,8 +5709,8 @@ pub mod fluent_builders {
             self.inner = self.inner.set_service_catalog_provisioning_details(input);
             self
         }
-        /// <p>An array of key-value pairs that you want to use to organize and track your AWS
-        /// resource costs. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS resources</a> in the <i>AWS General Reference Guide</i>.</p>
+        /// <p>An array of key-value pairs that you want to use to organize and track your Amazon Web Services
+        /// resource costs. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a> in the <i>Amazon Web Services General Reference Guide</i>.</p>
         pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
             self.inner = self.inner.tags(inp);
             self
@@ -5739,8 +5754,8 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of the training job. The name must be unique within an AWS Region in an
-        /// AWS account. </p>
+        /// <p>The name of the training job. The name must be unique within an Amazon Web Services Region in an
+        /// Amazon Web Services account. </p>
         pub fn training_job_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.training_job_name(input);
             self
@@ -5901,9 +5916,9 @@ pub mod fluent_builders {
             self.inner = self.inner.set_stopping_condition(input);
             self
         }
-        /// <p>An array of key-value pairs. You can use tags to categorize your AWS resources in
+        /// <p>An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in
         /// different ways, for example, by purpose, owner, or environment. For more information,
-        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS
+        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services
         /// Resources</a>.</p>
         pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
             self.inner = self.inner.tags(inp);
@@ -6147,8 +6162,8 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of the transform job. The name must be unique within an AWS Region in an
-        /// AWS account. </p>
+        /// <p>The name of the transform job. The name must be unique within an Amazon Web Services Region in an
+        /// Amazon Web Services account. </p>
         pub fn transform_job_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.transform_job_name(input);
             self
@@ -6161,8 +6176,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the model that you want to use for the transform job.
-        /// <code>ModelName</code> must be the name of an existing Amazon SageMaker model within an AWS
-        /// Region in an AWS account.</p>
+        /// <code>ModelName</code> must be the name of an existing Amazon SageMaker model within an Amazon Web Services
+        /// Region in an Amazon Web Services account.</p>
         pub fn model_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.model_name(input);
             self
@@ -6322,7 +6337,7 @@ pub mod fluent_builders {
         /// <p>(Optional)
         /// An
         /// array of key-value pairs. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what">Using
-        /// Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User
+        /// Cost Allocation Tags</a> in the <i>Amazon Web Services Billing and Cost Management User
         /// Guide</i>.</p>
         pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
             self.inner = self.inner.tags(inp);
@@ -6397,7 +6412,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of the trial. The name must be unique in your AWS account and is not
+        /// <p>The name of the trial. The name must be unique in your Amazon Web Services account and is not
         /// case-sensitive.</p>
         pub fn trial_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.trial_name(input);
@@ -6486,7 +6501,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of the component. The name must be unique in your AWS account and is not
+        /// <p>The name of the component. The name must be unique in your Amazon Web Services account and is not
         /// case-sensitive.</p>
         pub fn trial_component_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.trial_component_name(input);
@@ -6711,7 +6726,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_single_sign_on_user_identifier(input);
             self
         }
-        /// <p>The username of the associated AWS Single Sign-On User for this UserProfile.  If the Domain's AuthMode is SSO, this field is
+        /// <p>The username of the associated Amazon Web Services Single Sign-On User for this UserProfile.  If the Domain's AuthMode is SSO, this field is
         /// required, and must match a valid username of a user in your directory.  If the Domain's AuthMode is not SSO, this field cannot be specified.
         /// </p>
         pub fn single_sign_on_user_value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6969,7 +6984,7 @@ pub mod fluent_builders {
         /// <p>An array of key-value pairs.</p>
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-resource-tags.html">Resource
         /// Tag</a> and <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what">Using
-        /// Cost Allocation Tags</a> in the <i> AWS Billing and Cost Management User
+        /// Cost Allocation Tags</a> in the <i> Amazon Web Services Billing and Cost Management User
         /// Guide</i>.</p>
         pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
             self.inner = self.inner.tags(inp);
@@ -7681,7 +7696,7 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the <code>FeatureGroup</code> you want to delete. The name must be unique
-        /// within an AWS Region in an AWS account. </p>
+        /// within an Amazon Web Services Region in an Amazon Web Services account. </p>
         pub fn feature_group_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.feature_group_name(input);
             self
@@ -9932,8 +9947,8 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of the model bias job definition. The name must be unique within an AWS Region
-        /// in the AWS account.</p>
+        /// <p>The name of the model bias job definition. The name must be unique within an Amazon Web Services Region
+        /// in the Amazon Web Services account.</p>
         pub fn job_definition_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.job_definition_name(input);
             self
@@ -9980,7 +9995,7 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the model explainability job definition. The name must be unique within an
-        /// AWS Region in the AWS account.</p>
+        /// Amazon Web Services Region in the Amazon Web Services account.</p>
         pub fn job_definition_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.job_definition_name(input);
             self
@@ -10114,8 +10129,8 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of the model quality job. The name must be unique within an AWS Region in the
-        /// AWS account.</p>
+        /// <p>The name of the model quality job. The name must be unique within an Amazon Web Services Region in the
+        /// Amazon Web Services account.</p>
         pub fn job_definition_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.job_definition_name(input);
             self
@@ -10432,8 +10447,8 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of the processing job. The name must be unique within an AWS Region in the
-        /// AWS account.</p>
+        /// <p>The name of the processing job. The name must be unique within an Amazon Web Services Region in the
+        /// Amazon Web Services account.</p>
         pub fn processing_job_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.processing_job_name(input);
             self
@@ -19153,7 +19168,7 @@ pub mod fluent_builders {
             self
         }
         /// <p>The configuration of the git repository, including the URL and the Amazon Resource
-        /// Name (ARN) of the AWS Secrets Manager secret that contains the credentials used to
+        /// Name (ARN) of the Amazon Web Services Secrets Manager secret that contains the credentials used to
         /// access the repository. The secret must have a staging label of <code>AWSCURRENT</code>
         /// and must be in the following format:</p>
         /// <p>
@@ -19325,7 +19340,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_output_config(input);
             self
         }
-        /// <p>Whether to create an AWS IoT Role Alias during device fleet creation.
+        /// <p>Whether to create an Amazon Web Services IoT Role Alias during device fleet creation.
         /// The name of the role alias generated will match this pattern:
         /// "SageMakerEdge-{DeviceFleetName}".</p>
         /// <p>For example, if your device fleet is called "demo-fleet", the name of
@@ -19855,8 +19870,8 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of the monitoring schedule. The name must be unique within an AWS Region within
-        /// an AWS account.</p>
+        /// <p>The name of the monitoring schedule. The name must be unique within an Amazon Web Services Region within
+        /// an Amazon Web Services account.</p>
         pub fn monitoring_schedule_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.monitoring_schedule_name(input);
             self
@@ -19999,7 +20014,7 @@ pub mod fluent_builders {
         }
         /// <p>The Git repository to associate with the notebook instance as its default code
         /// repository. This can be either the name of a Git repository stored as a resource in your
-        /// account, or the URL of a Git repository in <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">AWS CodeCommit</a> or in any
+        /// account, or the URL of a Git repository in <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">Amazon Web Services CodeCommit</a> or in any
         /// other Git repository. When you open a notebook instance, it opens in the directory that
         /// contains this repository. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with Amazon SageMaker
         /// Notebook Instances</a>.</p>
@@ -20016,7 +20031,7 @@ pub mod fluent_builders {
         }
         /// <p>An array of up to three Git repositories to associate with the notebook instance.
         /// These can be either the names of Git repositories stored as resources in your account,
-        /// or the URL of Git repositories in <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">AWS CodeCommit</a> or in any
+        /// or the URL of Git repositories in <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">Amazon Web Services CodeCommit</a> or in any
         /// other Git repository. These repositories are cloned at the same level as the default
         /// repository of your notebook instance. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git
         /// Repositories with Amazon SageMaker Notebook Instances</a>.</p>

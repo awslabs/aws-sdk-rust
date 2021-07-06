@@ -113,6 +113,9 @@ impl LifecyclePolicyPreviewStatus {
             LifecyclePolicyPreviewStatus::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["COMPLETE", "EXPIRED", "FAILED", "IN_PROGRESS"]
+    }
 }
 impl AsRef<str> for LifecyclePolicyPreviewStatus {
     fn as_ref(&self) -> &str {
@@ -223,6 +226,9 @@ impl ScanStatus {
             ScanStatus::InProgress => "IN_PROGRESS",
             ScanStatus::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["COMPLETE", "FAILED", "IN_PROGRESS"]
     }
 }
 impl AsRef<str> for ScanStatus {
@@ -501,6 +507,9 @@ impl ImageTagMutability {
             ImageTagMutability::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["IMMUTABLE", "MUTABLE"]
+    }
 }
 impl AsRef<str> for ImageTagMutability {
     fn as_ref(&self) -> &str {
@@ -773,6 +782,9 @@ impl TagStatus {
             TagStatus::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["ANY", "TAGGED", "UNTAGGED"]
+    }
 }
 impl AsRef<str> for TagStatus {
     fn as_ref(&self) -> &str {
@@ -1031,6 +1043,9 @@ impl ImageActionType {
             ImageActionType::Expire => "EXPIRE",
             ImageActionType::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["EXPIRE"]
     }
 }
 impl AsRef<str> for ImageActionType {
@@ -1509,6 +1524,9 @@ impl EncryptionType {
             EncryptionType::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["AES256", "KMS"]
+    }
 }
 impl AsRef<str> for EncryptionType {
     fn as_ref(&self) -> &str {
@@ -1681,6 +1699,16 @@ impl FindingSeverity {
             FindingSeverity::Undefined => "UNDEFINED",
             FindingSeverity::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "CRITICAL",
+            "HIGH",
+            "INFORMATIONAL",
+            "LOW",
+            "MEDIUM",
+            "UNDEFINED",
+        ]
     }
 }
 impl AsRef<str> for FindingSeverity {
@@ -2371,6 +2399,17 @@ impl ImageFailureCode {
             ImageFailureCode::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "ImageNotFound",
+            "ImageReferencedByManifestList",
+            "ImageTagDoesNotMatchDigest",
+            "InvalidImageDigest",
+            "InvalidImageTag",
+            "KmsError",
+            "MissingDigestAndTag",
+        ]
+    }
 }
 impl AsRef<str> for ImageFailureCode {
     fn as_ref(&self) -> &str {
@@ -2498,6 +2537,9 @@ impl LayerFailureCode {
             LayerFailureCode::MissingLayerDigest => "MissingLayerDigest",
             LayerFailureCode::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["InvalidLayerDigest", "MissingLayerDigest"]
     }
 }
 impl AsRef<str> for LayerFailureCode {
@@ -2641,6 +2683,9 @@ impl LayerAvailability {
             LayerAvailability::Unavailable => "UNAVAILABLE",
             LayerAvailability::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["AVAILABLE", "UNAVAILABLE"]
     }
 }
 impl AsRef<str> for LayerAvailability {

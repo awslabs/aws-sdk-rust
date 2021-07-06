@@ -321,6 +321,20 @@ impl From<smithy_http::result::SdkError<crate::error::AssociateTransitGatewayRou
         }
     }
 }
+impl From<smithy_http::result::SdkError<crate::error::AssociateTrunkInterfaceError>> for Error {
+    fn from(
+        err: smithy_http::result::SdkError<crate::error::AssociateTrunkInterfaceError>,
+    ) -> Self {
+        match err {
+            smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::AssociateTrunkInterfaceErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
 impl From<smithy_http::result::SdkError<crate::error::AssociateVpcCidrBlockError>> for Error {
     fn from(err: smithy_http::result::SdkError<crate::error::AssociateVpcCidrBlockError>) -> Self {
         match err {
@@ -3745,6 +3759,22 @@ impl From<smithy_http::result::SdkError<crate::error::DescribeTransitGatewayVpcA
         }
     }
 }
+impl From<smithy_http::result::SdkError<crate::error::DescribeTrunkInterfaceAssociationsError>>
+    for Error
+{
+    fn from(
+        err: smithy_http::result::SdkError<crate::error::DescribeTrunkInterfaceAssociationsError>,
+    ) -> Self {
+        match err {
+            smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::DescribeTrunkInterfaceAssociationsErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
 impl From<smithy_http::result::SdkError<crate::error::DescribeVolumeAttributeError>> for Error {
     fn from(
         err: smithy_http::result::SdkError<crate::error::DescribeVolumeAttributeError>,
@@ -4076,6 +4106,20 @@ impl From<smithy_http::result::SdkError<crate::error::DisableFastSnapshotRestore
         }
     }
 }
+impl From<smithy_http::result::SdkError<crate::error::DisableImageDeprecationError>> for Error {
+    fn from(
+        err: smithy_http::result::SdkError<crate::error::DisableImageDeprecationError>,
+    ) -> Self {
+        match err {
+            smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::DisableImageDeprecationErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
 impl From<smithy_http::result::SdkError<crate::error::DisableSerialConsoleAccessError>> for Error {
     fn from(
         err: smithy_http::result::SdkError<crate::error::DisableSerialConsoleAccessError>,
@@ -4278,6 +4322,20 @@ impl From<smithy_http::result::SdkError<crate::error::DisassociateTransitGateway
         }
     }
 }
+impl From<smithy_http::result::SdkError<crate::error::DisassociateTrunkInterfaceError>> for Error {
+    fn from(
+        err: smithy_http::result::SdkError<crate::error::DisassociateTrunkInterfaceError>,
+    ) -> Self {
+        match err {
+            smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::DisassociateTrunkInterfaceErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
 impl From<smithy_http::result::SdkError<crate::error::DisassociateVpcCidrBlockError>> for Error {
     fn from(
         err: smithy_http::result::SdkError<crate::error::DisassociateVpcCidrBlockError>,
@@ -4315,6 +4373,18 @@ impl From<smithy_http::result::SdkError<crate::error::EnableFastSnapshotRestores
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::EnableFastSnapshotRestoresErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl From<smithy_http::result::SdkError<crate::error::EnableImageDeprecationError>> for Error {
+    fn from(err: smithy_http::result::SdkError<crate::error::EnableImageDeprecationError>) -> Self {
+        match err {
+            smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::EnableImageDeprecationErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
                 }
             },

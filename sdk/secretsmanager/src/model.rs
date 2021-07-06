@@ -335,6 +335,9 @@ impl StatusType {
             StatusType::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["Failed", "InProgress", "InSync"]
+    }
 }
 impl AsRef<str> for StatusType {
     fn as_ref(&self) -> &str {
@@ -880,6 +883,9 @@ impl SortOrderType {
             SortOrderType::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["asc", "desc"]
+    }
 }
 impl AsRef<str> for SortOrderType {
     fn as_ref(&self) -> &str {
@@ -1007,6 +1013,16 @@ impl FilterNameStringType {
             FilterNameStringType::TagValue => "tag-value",
             FilterNameStringType::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "all",
+            "description",
+            "name",
+            "primary-region",
+            "tag-key",
+            "tag-value",
+        ]
     }
 }
 impl AsRef<str> for FilterNameStringType {

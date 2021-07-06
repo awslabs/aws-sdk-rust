@@ -39,6 +39,14 @@ impl<C> Client<C>
 where
     C: aws_hyper::SmithyConnector,
 {
+    pub fn activate_type(&self) -> fluent_builders::ActivateType<C> {
+        fluent_builders::ActivateType::new(self.handle.clone())
+    }
+    pub fn batch_describe_type_configurations(
+        &self,
+    ) -> fluent_builders::BatchDescribeTypeConfigurations<C> {
+        fluent_builders::BatchDescribeTypeConfigurations::new(self.handle.clone())
+    }
     pub fn cancel_update_stack(&self) -> fluent_builders::CancelUpdateStack<C> {
         fluent_builders::CancelUpdateStack::new(self.handle.clone())
     }
@@ -56,6 +64,9 @@ where
     }
     pub fn create_stack_set(&self) -> fluent_builders::CreateStackSet<C> {
         fluent_builders::CreateStackSet::new(self.handle.clone())
+    }
+    pub fn deactivate_type(&self) -> fluent_builders::DeactivateType<C> {
+        fluent_builders::DeactivateType::new(self.handle.clone())
     }
     pub fn delete_change_set(&self) -> fluent_builders::DeleteChangeSet<C> {
         fluent_builders::DeleteChangeSet::new(self.handle.clone())
@@ -77,6 +88,9 @@ where
     }
     pub fn describe_change_set(&self) -> fluent_builders::DescribeChangeSet<C> {
         fluent_builders::DescribeChangeSet::new(self.handle.clone())
+    }
+    pub fn describe_publisher(&self) -> fluent_builders::DescribePublisher<C> {
+        fluent_builders::DescribePublisher::new(self.handle.clone())
     }
     pub fn describe_stack_drift_detection_status(
         &self,
@@ -177,14 +191,23 @@ where
     pub fn list_type_versions(&self) -> fluent_builders::ListTypeVersions<C> {
         fluent_builders::ListTypeVersions::new(self.handle.clone())
     }
+    pub fn publish_type(&self) -> fluent_builders::PublishType<C> {
+        fluent_builders::PublishType::new(self.handle.clone())
+    }
     pub fn record_handler_progress(&self) -> fluent_builders::RecordHandlerProgress<C> {
         fluent_builders::RecordHandlerProgress::new(self.handle.clone())
+    }
+    pub fn register_publisher(&self) -> fluent_builders::RegisterPublisher<C> {
+        fluent_builders::RegisterPublisher::new(self.handle.clone())
     }
     pub fn register_type(&self) -> fluent_builders::RegisterType<C> {
         fluent_builders::RegisterType::new(self.handle.clone())
     }
     pub fn set_stack_policy(&self) -> fluent_builders::SetStackPolicy<C> {
         fluent_builders::SetStackPolicy::new(self.handle.clone())
+    }
+    pub fn set_type_configuration(&self) -> fluent_builders::SetTypeConfiguration<C> {
+        fluent_builders::SetTypeConfiguration::new(self.handle.clone())
     }
     pub fn set_type_default_version(&self) -> fluent_builders::SetTypeDefaultVersion<C> {
         fluent_builders::SetTypeDefaultVersion::new(self.handle.clone())
@@ -194,6 +217,9 @@ where
     }
     pub fn stop_stack_set_operation(&self) -> fluent_builders::StopStackSetOperation<C> {
         fluent_builders::StopStackSetOperation::new(self.handle.clone())
+    }
+    pub fn test_type(&self) -> fluent_builders::TestType<C> {
+        fluent_builders::TestType::new(self.handle.clone())
     }
     pub fn update_stack(&self) -> fluent_builders::UpdateStack<C> {
         fluent_builders::UpdateStack::new(self.handle.clone())
@@ -212,6 +238,210 @@ where
     }
 }
 pub mod fluent_builders {
+    #[derive(std::fmt::Debug)]
+    pub struct ActivateType<C = aws_hyper::DynConnector> {
+        handle: std::sync::Arc<super::Handle<C>>,
+        inner: crate::input::activate_type_input::Builder,
+    }
+    impl<C> ActivateType<C> {
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ActivateTypeOutput,
+            smithy_http::result::SdkError<crate::error::ActivateTypeError>,
+        >
+        where
+            C: aws_hyper::SmithyConnector,
+        {
+            let input = self
+                .inner
+                .build()
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The extension type.</p>
+        /// <p>Conditional: You must specify <code>PublicTypeArn</code>, or <code>TypeName</code>, <code>Type</code>, and <code>PublisherId</code>.</p>
+        pub fn r#type(mut self, input: crate::model::ThirdPartyType) -> Self {
+            self.inner = self.inner.r#type(input);
+            self
+        }
+        pub fn set_type(
+            mut self,
+            input: std::option::Option<crate::model::ThirdPartyType>,
+        ) -> Self {
+            self.inner = self.inner.set_type(input);
+            self
+        }
+        /// <p>The Amazon Resource Number (ARN) of the public extension.</p>
+        /// <p>Conditional: You must specify <code>PublicTypeArn</code>, or <code>TypeName</code>, <code>Type</code>, and <code>PublisherId</code>.</p>
+        pub fn public_type_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.public_type_arn(input);
+            self
+        }
+        pub fn set_public_type_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_public_type_arn(input);
+            self
+        }
+        /// <p>The ID of the extension publisher.</p>
+        /// <p>Conditional: You must specify <code>PublicTypeArn</code>, or <code>TypeName</code>, <code>Type</code>, and <code>PublisherId</code>.</p>
+        pub fn publisher_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.publisher_id(input);
+            self
+        }
+        pub fn set_publisher_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_publisher_id(input);
+            self
+        }
+        /// <p>The name of the extension.</p>
+        /// <p>Conditional: You must specify <code>PublicTypeArn</code>, or <code>TypeName</code>, <code>Type</code>, and <code>PublisherId</code>.</p>
+        pub fn type_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.type_name(input);
+            self
+        }
+        pub fn set_type_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_type_name(input);
+            self
+        }
+        /// <p>An alias to assign to the public extension, in this account and region. If you specify an alias for the extension, CloudFormation treats the alias as the extension type name within this account and region. You must use the alias to refer to the extension in your templates, API calls, and CloudFormation console.</p>
+        /// <p>An extension alias must be unique within a given account and region. You can activate the same public resource multiple times in the same account and region, using different type name aliases.</p>
+        pub fn type_name_alias(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.type_name_alias(input);
+            self
+        }
+        pub fn set_type_name_alias(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_type_name_alias(input);
+            self
+        }
+        /// <p>Whether to automatically update the extension in this account and region when a new <i>minor</i> version is published by the extension publisher. Major versions released by the publisher must be manually updated.</p>
+        /// <p>The default is <code>true</code>.</p>
+        pub fn auto_update(mut self, input: bool) -> Self {
+            self.inner = self.inner.auto_update(input);
+            self
+        }
+        pub fn set_auto_update(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_auto_update(input);
+            self
+        }
+        /// <p>Contains logging configuration information for an extension.</p>
+        pub fn logging_config(mut self, input: crate::model::LoggingConfig) -> Self {
+            self.inner = self.inner.logging_config(input);
+            self
+        }
+        pub fn set_logging_config(
+            mut self,
+            input: std::option::Option<crate::model::LoggingConfig>,
+        ) -> Self {
+            self.inner = self.inner.set_logging_config(input);
+            self
+        }
+        /// <p>The name of the IAM execution role to use to activate the extension.</p>
+        pub fn execution_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.execution_role_arn(input);
+            self
+        }
+        pub fn set_execution_role_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_execution_role_arn(input);
+            self
+        }
+        /// <p>Manually updates a previously-activated type to a new major or minor version, if available. You can also use this parameter to update the value of <code>AutoUpdate</code>.</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>MAJOR</code>: CloudFormation updates the extension to the newest major version, if one is available.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>MINOR</code>: CloudFormation updates the extension to the newest minor version, if one is available.</p>
+        /// </li>
+        /// </ul>
+        pub fn version_bump(mut self, input: crate::model::VersionBump) -> Self {
+            self.inner = self.inner.version_bump(input);
+            self
+        }
+        pub fn set_version_bump(
+            mut self,
+            input: std::option::Option<crate::model::VersionBump>,
+        ) -> Self {
+            self.inner = self.inner.set_version_bump(input);
+            self
+        }
+        /// <p>The major version of this extension you want to activate, if multiple major versions are available. The default is the latest major version. CloudFormation uses the latest available <i>minor</i> version of the major version selected.</p>
+        /// <p>You can specify <code>MajorVersion</code> or <code>VersionBump</code>, but not both.</p>
+        pub fn major_version(mut self, input: i64) -> Self {
+            self.inner = self.inner.major_version(input);
+            self
+        }
+        pub fn set_major_version(mut self, input: std::option::Option<i64>) -> Self {
+            self.inner = self.inner.set_major_version(input);
+            self
+        }
+    }
+    #[derive(std::fmt::Debug)]
+    pub struct BatchDescribeTypeConfigurations<C = aws_hyper::DynConnector> {
+        handle: std::sync::Arc<super::Handle<C>>,
+        inner: crate::input::batch_describe_type_configurations_input::Builder,
+    }
+    impl<C> BatchDescribeTypeConfigurations<C> {
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::BatchDescribeTypeConfigurationsOutput,
+            smithy_http::result::SdkError<crate::error::BatchDescribeTypeConfigurationsError>,
+        >
+        where
+            C: aws_hyper::SmithyConnector,
+        {
+            let input = self
+                .inner
+                .build()
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The list of identifiers for the desired extension configurations.</p>
+        pub fn type_configuration_identifiers(
+            mut self,
+            inp: impl Into<crate::model::TypeConfigurationIdentifier>,
+        ) -> Self {
+            self.inner = self.inner.type_configuration_identifiers(inp);
+            self
+        }
+        pub fn set_type_configuration_identifiers(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::TypeConfigurationIdentifier>>,
+        ) -> Self {
+            self.inner = self.inner.set_type_configuration_identifiers(input);
+            self
+        }
+    }
     #[derive(std::fmt::Debug)]
     pub struct CancelUpdateStack<C = aws_hyper::DynConnector> {
         handle: std::sync::Arc<super::Handle<C>>,
@@ -1683,6 +1913,71 @@ pub mod fluent_builders {
         }
     }
     #[derive(std::fmt::Debug)]
+    pub struct DeactivateType<C = aws_hyper::DynConnector> {
+        handle: std::sync::Arc<super::Handle<C>>,
+        inner: crate::input::deactivate_type_input::Builder,
+    }
+    impl<C> DeactivateType<C> {
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DeactivateTypeOutput,
+            smithy_http::result::SdkError<crate::error::DeactivateTypeError>,
+        >
+        where
+            C: aws_hyper::SmithyConnector,
+        {
+            let input = self
+                .inner
+                .build()
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The type name of the extension, in this account and region. If you specified a type name alias when enabling the extension, use the type name alias.</p>
+        /// <p>Conditional: You must specify either <code>Arn</code>, or <code>TypeName</code> and <code>Type</code>.</p>
+        pub fn type_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.type_name(input);
+            self
+        }
+        pub fn set_type_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_type_name(input);
+            self
+        }
+        /// <p>The extension type.</p>
+        /// <p>Conditional: You must specify either <code>Arn</code>, or <code>TypeName</code> and <code>Type</code>.</p>
+        pub fn r#type(mut self, input: crate::model::ThirdPartyType) -> Self {
+            self.inner = self.inner.r#type(input);
+            self
+        }
+        pub fn set_type(
+            mut self,
+            input: std::option::Option<crate::model::ThirdPartyType>,
+        ) -> Self {
+            self.inner = self.inner.set_type(input);
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) for the extension, in this account and region.</p>
+        /// <p>Conditional: You must specify either <code>Arn</code>, or <code>TypeName</code> and <code>Type</code>.</p>
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.arn(input);
+            self
+        }
+        pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_arn(input);
+            self
+        }
+    }
+    #[derive(std::fmt::Debug)]
     pub struct DeleteChangeSet<C = aws_hyper::DynConnector> {
         handle: std::sync::Arc<super::Handle<C>>,
         inner: crate::input::delete_change_set_input::Builder,
@@ -2217,6 +2512,48 @@ pub mod fluent_builders {
         }
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
+            self
+        }
+    }
+    #[derive(std::fmt::Debug)]
+    pub struct DescribePublisher<C = aws_hyper::DynConnector> {
+        handle: std::sync::Arc<super::Handle<C>>,
+        inner: crate::input::describe_publisher_input::Builder,
+    }
+    impl<C> DescribePublisher<C> {
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DescribePublisherOutput,
+            smithy_http::result::SdkError<crate::error::DescribePublisherError>,
+        >
+        where
+            C: aws_hyper::SmithyConnector,
+        {
+            let input = self
+                .inner
+                .build()
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The ID of the extension publisher.</p>
+        /// <p>If you do not supply a <code>PublisherId</code>, and you have registered as an extension publisher, <code>DescribePublisher</code> returns information about your own publisher account.</p>
+        pub fn publisher_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.publisher_id(input);
+            self
+        }
+        pub fn set_publisher_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_publisher_id(input);
             self
         }
     }
@@ -2934,6 +3271,28 @@ pub mod fluent_builders {
             self.inner = self.inner.set_version_id(input);
             self
         }
+        /// <p>The publisher ID of the extension publisher.</p>
+        /// <p>Extensions provided by Amazon are not assigned a publisher ID.</p>
+        pub fn publisher_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.publisher_id(input);
+            self
+        }
+        pub fn set_publisher_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_publisher_id(input);
+            self
+        }
+        /// <p>The version number of a public third-party extension.</p>
+        pub fn public_version_number(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.public_version_number(input);
+            self
+        }
+        pub fn set_public_version_number(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_public_version_number(input);
+            self
+        }
     }
     #[derive(std::fmt::Debug)]
     pub struct DescribeTypeRegistration<C = aws_hyper::DynConnector> {
@@ -3437,7 +3796,7 @@ pub mod fluent_builders {
         /// <code>Processed</code>. </p>
         /// <p>If the template doesn't include transforms, <code>Original</code> and
         /// <code>Processed</code> return the same template. By default, AWS CloudFormation
-        /// specifies <code>Original</code>. </p>
+        /// specifies <code>Processed</code>.</p>
         pub fn template_stage(mut self, input: crate::model::TemplateStage) -> Self {
             self.inner = self.inner.template_stage(input);
             self
@@ -4356,16 +4715,24 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The scope at which the extension is visible and usable in CloudFormation operations.</p>
+        /// <p>The scope at which the extensions are visible and usable in CloudFormation operations.</p>
         /// <p>Valid values include:</p>
         /// <ul>
         /// <li>
         /// <p>
-        /// <code>PRIVATE</code>: The extension is only visible and usable within the account in which it is registered. Currently, AWS CloudFormation marks any extension you create as <code>PRIVATE</code>.</p>
+        /// <code>PRIVATE</code>: Extensions that are visible and usable within this account and region. This includes:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Private extensions you have registered in this account and region.</p>
+        /// </li>
+        /// <li>
+        /// <p>Public extensions that you have activated in this account and region.</p>
+        /// </li>
+        /// </ul>
         /// </li>
         /// <li>
         /// <p>
-        /// <code>PUBLIC</code>: The extension is publically visible and usable within any Amazon account.</p>
+        /// <code>PUBLIC</code>: Extensions that are publicly visible and available to be activated within any Amazon account. This includes extensions from Amazon, as well as third-party publishers.</p>
         /// </li>
         /// </ul>
         /// <p>The default is <code>PRIVATE</code>.</p>
@@ -4380,22 +4747,23 @@ pub mod fluent_builders {
             self.inner = self.inner.set_visibility(input);
             self
         }
-        /// <p>The provisioning behavior of the type. AWS CloudFormation determines the provisioning type during registration, based on the types of handlers in the schema handler package submitted.</p>
+        /// <p>For resource types, the provisioning behavior of the resource type. AWS CloudFormation determines the provisioning type during registration, based on the types of handlers in the schema handler package submitted.</p>
         /// <p>Valid values include:</p>
         /// <ul>
         /// <li>
         /// <p>
-        /// <code>FULLY_MUTABLE</code>: The extension includes an update handler to process updates to the extension during stack update operations.</p>
+        /// <code>FULLY_MUTABLE</code>: The resource type includes an update handler to process updates to the type during stack update operations.</p>
         /// </li>
         /// <li>
         /// <p>
-        /// <code>IMMUTABLE</code>: The extension does not include an update handler, so the extension cannot be updated and must instead be replaced during stack update operations.</p>
+        /// <code>IMMUTABLE</code>: The resource type does not include an update handler, so the type cannot be updated and must instead be replaced during stack update operations.</p>
         /// </li>
         /// <li>
         /// <p>
-        /// <code>NON_PROVISIONABLE</code>: The extension does not include create, read, and delete handlers, and therefore cannot actually be provisioned.</p>
+        /// <code>NON_PROVISIONABLE</code>: The resource type does not include create, read, and delete handlers, and therefore cannot actually be provisioned.</p>
         /// </li>
         /// </ul>
+        /// <p>The default is <code>FULLY_MUTABLE</code>.</p>
         pub fn provisioning_type(mut self, input: crate::model::ProvisioningType) -> Self {
             self.inner = self.inner.provisioning_type(input);
             self
@@ -4437,6 +4805,19 @@ pub mod fluent_builders {
         }
         pub fn set_type(mut self, input: std::option::Option<crate::model::RegistryType>) -> Self {
             self.inner = self.inner.set_type(input);
+            self
+        }
+        /// <p>Filter criteria to use in determining which extensions to return.</p>
+        /// <p>If you specify a filter, CloudFormation ignores any specified <code>Visibility</code> value when returning the list of types.</p>
+        pub fn filters(mut self, input: crate::model::TypeFilters) -> Self {
+            self.inner = self.inner.filters(input);
+            self
+        }
+        pub fn set_filters(
+            mut self,
+            input: std::option::Option<crate::model::TypeFilters>,
+        ) -> Self {
+            self.inner = self.inner.set_filters(input);
             self
         }
         /// <p>The maximum number of results to be returned with a single call. If the number of available results exceeds this maximum, the response includes a <code>NextToken</code> value that you can assign to the <code>NextToken</code> request parameter to get the next set of results.</p>
@@ -4561,6 +4942,99 @@ pub mod fluent_builders {
             self.inner = self.inner.set_deprecated_status(input);
             self
         }
+        /// <p>The publisher ID of the extension publisher.</p>
+        /// <p>Extensions published by Amazon are not assigned a publisher ID.</p>
+        pub fn publisher_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.publisher_id(input);
+            self
+        }
+        pub fn set_publisher_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_publisher_id(input);
+            self
+        }
+    }
+    #[derive(std::fmt::Debug)]
+    pub struct PublishType<C = aws_hyper::DynConnector> {
+        handle: std::sync::Arc<super::Handle<C>>,
+        inner: crate::input::publish_type_input::Builder,
+    }
+    impl<C> PublishType<C> {
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::PublishTypeOutput,
+            smithy_http::result::SdkError<crate::error::PublishTypeError>,
+        >
+        where
+            C: aws_hyper::SmithyConnector,
+        {
+            let input = self
+                .inner
+                .build()
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The type of the extension.</p>
+        /// <p>Conditional: You must specify <code>Arn</code>, or <code>TypeName</code> and <code>Type</code>.</p>
+        pub fn r#type(mut self, input: crate::model::ThirdPartyType) -> Self {
+            self.inner = self.inner.r#type(input);
+            self
+        }
+        pub fn set_type(
+            mut self,
+            input: std::option::Option<crate::model::ThirdPartyType>,
+        ) -> Self {
+            self.inner = self.inner.set_type(input);
+            self
+        }
+        /// <p>The Amazon Resource Number (ARN) of the extension.</p>
+        /// <p>Conditional: You must specify <code>Arn</code>, or <code>TypeName</code> and <code>Type</code>.</p>
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.arn(input);
+            self
+        }
+        pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_arn(input);
+            self
+        }
+        /// <p>The name of the extension.</p>
+        /// <p>Conditional: You must specify <code>Arn</code>, or <code>TypeName</code> and <code>Type</code>.</p>
+        pub fn type_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.type_name(input);
+            self
+        }
+        pub fn set_type_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_type_name(input);
+            self
+        }
+        /// <p>The version number to assign to this version of the extension.</p>
+        /// <p>Use the following format, and adhere to semantic versioning when assigning a version number to your extension: </p>
+        /// <p>
+        /// <code>MAJOR.MINOR.PATCH</code>
+        /// </p>
+        /// <p>For more information, see <a href="https://semver.org/">Semantic Versioning 2.0.0</a>.</p>
+        /// <p>If you do not specify a version number, CloudFormation increments the version number by one minor version release.</p>
+        pub fn public_version_number(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.public_version_number(input);
+            self
+        }
+        pub fn set_public_version_number(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_public_version_number(input);
+            self
+        }
     }
     #[derive(std::fmt::Debug)]
     pub struct RecordHandlerProgress<C = aws_hyper::DynConnector> {
@@ -4676,6 +5150,61 @@ pub mod fluent_builders {
         }
     }
     #[derive(std::fmt::Debug)]
+    pub struct RegisterPublisher<C = aws_hyper::DynConnector> {
+        handle: std::sync::Arc<super::Handle<C>>,
+        inner: crate::input::register_publisher_input::Builder,
+    }
+    impl<C> RegisterPublisher<C> {
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::RegisterPublisherOutput,
+            smithy_http::result::SdkError<crate::error::RegisterPublisherError>,
+        >
+        where
+            C: aws_hyper::SmithyConnector,
+        {
+            let input = self
+                .inner
+                .build()
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            self.handle.client.call(op).await
+        }
+        /// <p>Whether you accept the terms and conditions for publishing extensions in the CloudFormation registry. You must accept the terms and conditions in order to  register to publish public extensions to the CloudFormation registry.</p>
+        /// <p>The default is <code>false</code>.</p>
+        pub fn accept_terms_and_conditions(mut self, input: bool) -> Self {
+            self.inner = self.inner.accept_terms_and_conditions(input);
+            self
+        }
+        pub fn set_accept_terms_and_conditions(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_accept_terms_and_conditions(input);
+            self
+        }
+        /// <p>If you are using a Bitbucket or GitHub account for identity verification, the Amazon Resource Name (ARN) for your connection to that account.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/publish-extension.html#publish-extension-prereqs">Registering your account to publish CloudFormation extensions</a> in the <i>CloudFormation CLI User Guide</i>.</p>
+        pub fn connection_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.connection_arn(input);
+            self
+        }
+        pub fn set_connection_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_connection_arn(input);
+            self
+        }
+    }
+    #[derive(std::fmt::Debug)]
     pub struct RegisterType<C = aws_hyper::DynConnector> {
         handle: std::sync::Arc<super::Handle<C>>,
         inner: crate::input::register_type_input::Builder,
@@ -4716,7 +5245,15 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the extension being registered.</p>
-        /// <p>We recommend that extension names adhere to the following pattern: <i>company_or_organization</i>::<i>service</i>::<i>type</i>.</p>
+        /// <p>We recommend that extension names adhere to the following patterns: </p>
+        /// <ul>
+        /// <li>
+        /// <p>For resource types, <i>company_or_organization</i>::<i>service</i>::<i>type</i>.</p>
+        /// </li>
+        /// <li>
+        /// <p>For modules, <i>company_or_organization</i>::<i>service</i>::<i>type</i>::MODULE.</p>
+        /// </li>
+        /// </ul>
         /// <note>
         /// <p>The following organization namespaces are reserved and cannot be used in your extension names:</p>
         /// <ul>
@@ -4792,12 +5329,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_logging_config(input);
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the IAM role for CloudFormation to assume when invoking the extension. If your extension calls AWS APIs in any of its handlers, you must create an
+        /// <p>The Amazon Resource Name (ARN) of the IAM role for CloudFormation to assume when invoking the extension.</p>
+        /// <p>For CloudFormation to assume the specified execution role, the role must contain a trust relationship with the CloudFormation service principle (<code>resources.cloudformation.amazonaws.com</code>). For more information on adding trust relationships, see <a href="IAM/latest/UserGuide/roles-managingrole-editing-console.html#roles-managingrole_edit-trust-policy">Modifying a role trust policy</a> in the <i>AWS Identity and Access Management User Guide</i>.</p>
+        /// <p>If your extension calls AWS APIs in any of its handlers, you must create an
         /// <i>
         /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html">IAM execution
         /// role</a>
         /// </i> that includes the necessary permissions to call those
-        /// AWS APIs, and provision that execution role in your account. When CloudFormation needs to invoke the extension handler, CloudFormation assumes this execution role to create a temporary session token, which it then passes to the extension handler, thereby supplying your extension with the appropriate credentials.</p>
+        /// AWS APIs, and provision that execution role in your account. When CloudFormation needs to invoke the resource type handler, CloudFormation assumes this execution role to create a temporary session token, which it then passes to the resource type handler, thereby supplying your resource type with the appropriate credentials.</p>
         pub fn execution_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.execution_role_arn(input);
             self
@@ -4890,6 +5429,98 @@ pub mod fluent_builders {
             input: std::option::Option<std::string::String>,
         ) -> Self {
             self.inner = self.inner.set_stack_policy_url(input);
+            self
+        }
+    }
+    #[derive(std::fmt::Debug)]
+    pub struct SetTypeConfiguration<C = aws_hyper::DynConnector> {
+        handle: std::sync::Arc<super::Handle<C>>,
+        inner: crate::input::set_type_configuration_input::Builder,
+    }
+    impl<C> SetTypeConfiguration<C> {
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::SetTypeConfigurationOutput,
+            smithy_http::result::SdkError<crate::error::SetTypeConfigurationError>,
+        >
+        where
+            C: aws_hyper::SmithyConnector,
+        {
+            let input = self
+                .inner
+                .build()
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The Amazon Resource Name (ARN) for the extension, in this account and region.</p>
+        /// <p>For public extensions, this will be the ARN assigned when you <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">activate the type</a> in this account and region. For private extensions, this will be the ARN assigned when you <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">register the type</a> in this account and region. </p>
+        /// <p>Do not include the extension versions suffix at the end of the ARN. You can set the configuration for an extension, but not for a specific extension version.</p>
+        pub fn type_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.type_arn(input);
+            self
+        }
+        pub fn set_type_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_type_arn(input);
+            self
+        }
+        /// <p>The configuration data for the extension, in this account and region. </p>
+        /// <p>The configuration data must be formatted as JSON, and validate against the schema returned in the <code>ConfigurationSchema</code> response element of <a href="AWSCloudFormation/latest/APIReference/API_DescribeType.html">API_DescribeType</a>. For more information, see <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-model.html#resource-type-howto-configuration">Defining account-level configuration data for an extension</a> in the <i>CloudFormation CLI User Guide</i>.</p>
+        pub fn configuration(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.configuration(input);
+            self
+        }
+        pub fn set_configuration(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_configuration(input);
+            self
+        }
+        /// <p>An alias by which to refer to this extension configuration data.</p>
+        /// <p>Conditional: Specifying a configuration alias is required when setting a configuration for a resource type extension.</p>
+        pub fn configuration_alias(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.configuration_alias(input);
+            self
+        }
+        pub fn set_configuration_alias(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_configuration_alias(input);
+            self
+        }
+        /// <p>The name of the extension.</p>
+        /// <p>Conditional: You must specify <code>ConfigurationArn</code>, or <code>Type</code> and <code>TypeName</code>.</p>
+        pub fn type_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.type_name(input);
+            self
+        }
+        pub fn set_type_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_type_name(input);
+            self
+        }
+        /// <p>The type of extension.</p>
+        /// <p>Conditional: You must specify <code>ConfigurationArn</code>, or <code>Type</code> and <code>TypeName</code>.</p>
+        pub fn r#type(mut self, input: crate::model::ThirdPartyType) -> Self {
+            self.inner = self.inner.r#type(input);
+            self
+        }
+        pub fn set_type(
+            mut self,
+            input: std::option::Option<crate::model::ThirdPartyType>,
+        ) -> Self {
+            self.inner = self.inner.set_type(input);
             self
         }
     }
@@ -5114,6 +5745,105 @@ pub mod fluent_builders {
         }
         pub fn set_call_as(mut self, input: std::option::Option<crate::model::CallAs>) -> Self {
             self.inner = self.inner.set_call_as(input);
+            self
+        }
+    }
+    #[derive(std::fmt::Debug)]
+    pub struct TestType<C = aws_hyper::DynConnector> {
+        handle: std::sync::Arc<super::Handle<C>>,
+        inner: crate::input::test_type_input::Builder,
+    }
+    impl<C> TestType<C> {
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::TestTypeOutput,
+            smithy_http::result::SdkError<crate::error::TestTypeError>,
+        >
+        where
+            C: aws_hyper::SmithyConnector,
+        {
+            let input = self
+                .inner
+                .build()
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The Amazon Resource Number (ARN) of the extension.</p>
+        /// <p>Conditional: You must specify <code>Arn</code>, or <code>TypeName</code> and <code>Type</code>.</p>
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.arn(input);
+            self
+        }
+        pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_arn(input);
+            self
+        }
+        /// <p>The type of the extension to test.</p>
+        /// <p>Conditional: You must specify <code>Arn</code>, or <code>TypeName</code> and <code>Type</code>.</p>
+        pub fn r#type(mut self, input: crate::model::ThirdPartyType) -> Self {
+            self.inner = self.inner.r#type(input);
+            self
+        }
+        pub fn set_type(
+            mut self,
+            input: std::option::Option<crate::model::ThirdPartyType>,
+        ) -> Self {
+            self.inner = self.inner.set_type(input);
+            self
+        }
+        /// <p>The name of the extension to test.</p>
+        /// <p>Conditional: You must specify <code>Arn</code>, or <code>TypeName</code> and <code>Type</code>.</p>
+        pub fn type_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.type_name(input);
+            self
+        }
+        pub fn set_type_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_type_name(input);
+            self
+        }
+        /// <p>The version of the extension to test.</p>
+        /// <p>You can specify the version id with either <code>Arn</code>, or with <code>TypeName</code> and <code>Type</code>.</p>
+        /// <p>If you do not specify a version, CloudFormation uses the default version of the extension in this account and region for testing.</p>
+        pub fn version_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.version_id(input);
+            self
+        }
+        pub fn set_version_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_version_id(input);
+            self
+        }
+        /// <p>The S3 bucket to which CloudFormation delivers the contract test execution logs.</p>
+        /// <p>CloudFormation delivers the logs by the time contract testing has completed and the extension has been assigned a test type status of <code>PASSED</code> or <code>FAILED</code>.</p>
+        /// <p>The user calling <code>TestType</code> must be able to access items in the specified S3 bucket. Specifically, the user needs the following permissions:</p>
+        /// <ul>
+        /// <li>
+        /// <p>GetObject</p>
+        /// </li>
+        /// <li>
+        /// <p>PutObject</p>
+        /// </li>
+        /// </ul>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazons3.html">Actions, Resources, and Condition Keys for Amazon S3</a> in the <i>AWS Identity and Access Management User Guide</i>.</p>
+        pub fn log_delivery_bucket(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.log_delivery_bucket(input);
+            self
+        }
+        pub fn set_log_delivery_bucket(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_log_delivery_bucket(input);
             self
         }
     }

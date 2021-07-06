@@ -12,19 +12,28 @@ pub fn parse_abort_multipart_upload_error(
         Some(code) => code,
         None => return Err(crate::error::AbortMultipartUploadError::unhandled(generic)),
     };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "NoSuchUpload" => crate::error::AbortMultipartUploadError {
             meta: generic,
             kind: crate::error::AbortMultipartUploadErrorKind::NoSuchUpload({
                 #[allow(unused_mut)]
-                let mut output = crate::error::no_such_upload::Builder::default();
-                let _ = response;
-                output = crate::xml_deser::deser_structure_no_such_upload_xml_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::AbortMultipartUploadError::unhandled)?;
-                output.build()
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::no_such_upload::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_no_such_upload_xml_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::AbortMultipartUploadError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
             }),
         },
         _ => crate::error::AbortMultipartUploadError::generic(generic),
@@ -116,21 +125,29 @@ pub fn parse_copy_object_error(
         Some(code) => code,
         None => return Err(crate::error::CopyObjectError::unhandled(generic)),
     };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ObjectNotInActiveTierError" => crate::error::CopyObjectError {
-            meta: generic,
-            kind: crate::error::CopyObjectErrorKind::ObjectNotInActiveTierError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::object_not_in_active_tier_error::Builder::default();
-                let _ = response;
-                output = crate::xml_deser::deser_structure_object_not_in_active_tier_error_xml_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::CopyObjectError::unhandled)?;
-                output.build()
-            }),
-        },
+        "ObjectNotInActiveTierError" => {
+            crate::error::CopyObjectError {
+                meta: generic,
+                kind: crate::error::CopyObjectErrorKind::ObjectNotInActiveTierError({
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output =
+                            crate::error::object_not_in_active_tier_error::Builder::default();
+                        let _ = response;
+                        output = crate::xml_deser::deser_structure_object_not_in_active_tier_error_xml_err(response.body().as_ref(), output).map_err(crate::error::CopyObjectError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
         _ => crate::error::CopyObjectError::generic(generic),
     })
 }
@@ -226,33 +243,49 @@ pub fn parse_create_bucket_error(
         Some(code) => code,
         None => return Err(crate::error::CreateBucketError::unhandled(generic)),
     };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "BucketAlreadyOwnedByYou" => crate::error::CreateBucketError {
             meta: generic,
             kind: crate::error::CreateBucketErrorKind::BucketAlreadyOwnedByYou({
                 #[allow(unused_mut)]
-                let mut output = crate::error::bucket_already_owned_by_you::Builder::default();
-                let _ = response;
-                output = crate::xml_deser::deser_structure_bucket_already_owned_by_you_xml_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::CreateBucketError::unhandled)?;
-                output.build()
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::bucket_already_owned_by_you::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_bucket_already_owned_by_you_xml_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::CreateBucketError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
             }),
         },
         "BucketAlreadyExists" => crate::error::CreateBucketError {
             meta: generic,
             kind: crate::error::CreateBucketErrorKind::BucketAlreadyExists({
                 #[allow(unused_mut)]
-                let mut output = crate::error::bucket_already_exists::Builder::default();
-                let _ = response;
-                output = crate::xml_deser::deser_structure_bucket_already_exists_xml_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::CreateBucketError::unhandled)?;
-                output.build()
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::bucket_already_exists::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_bucket_already_exists_xml_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::CreateBucketError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
             }),
         },
         _ => crate::error::CreateBucketError::generic(generic),
@@ -1719,33 +1752,49 @@ pub fn parse_get_object_error(
         Some(code) => code,
         None => return Err(crate::error::GetObjectError::unhandled(generic)),
     };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "NoSuchKey" => crate::error::GetObjectError {
             meta: generic,
             kind: crate::error::GetObjectErrorKind::NoSuchKey({
                 #[allow(unused_mut)]
-                let mut output = crate::error::no_such_key::Builder::default();
-                let _ = response;
-                output = crate::xml_deser::deser_structure_no_such_key_xml_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::GetObjectError::unhandled)?;
-                output.build()
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::no_such_key::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_no_such_key_xml_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::GetObjectError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
             }),
         },
         "InvalidObjectState" => crate::error::GetObjectError {
             meta: generic,
             kind: crate::error::GetObjectErrorKind::InvalidObjectState({
                 #[allow(unused_mut)]
-                let mut output = crate::error::invalid_object_state::Builder::default();
-                let _ = response;
-                output = crate::xml_deser::deser_structure_invalid_object_state_xml_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::GetObjectError::unhandled)?;
-                output.build()
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_object_state::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_invalid_object_state_xml_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::GetObjectError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
             }),
         },
         _ => crate::error::GetObjectError::generic(generic),
@@ -1762,19 +1811,28 @@ pub fn parse_get_object_acl_error(
         Some(code) => code,
         None => return Err(crate::error::GetObjectAclError::unhandled(generic)),
     };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "NoSuchKey" => crate::error::GetObjectAclError {
             meta: generic,
             kind: crate::error::GetObjectAclErrorKind::NoSuchKey({
                 #[allow(unused_mut)]
-                let mut output = crate::error::no_such_key::Builder::default();
-                let _ = response;
-                output = crate::xml_deser::deser_structure_no_such_key_xml_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::GetObjectAclError::unhandled)?;
-                output.build()
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::no_such_key::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_no_such_key_xml_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::GetObjectAclError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
             }),
         },
         _ => crate::error::GetObjectAclError::generic(generic),
@@ -1999,19 +2057,28 @@ pub fn parse_head_bucket_error(
         Some(code) => code,
         None => return Err(crate::error::HeadBucketError::unhandled(generic)),
     };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "NotFound" => crate::error::HeadBucketError {
             meta: generic,
             kind: crate::error::HeadBucketErrorKind::NotFound({
                 #[allow(unused_mut)]
-                let mut output = crate::error::not_found::Builder::default();
-                let _ = response;
-                output = crate::xml_deser::deser_structure_not_found_xml_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::HeadBucketError::unhandled)?;
-                output.build()
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::not_found::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_not_found_xml_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::HeadBucketError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
             }),
         },
         _ => crate::error::HeadBucketError::generic(generic),
@@ -2040,19 +2107,28 @@ pub fn parse_head_object_error(
         Some(code) => code,
         None => return Err(crate::error::HeadObjectError::unhandled(generic)),
     };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "NotFound" => crate::error::HeadObjectError {
             meta: generic,
             kind: crate::error::HeadObjectErrorKind::NotFound({
                 #[allow(unused_mut)]
-                let mut output = crate::error::not_found::Builder::default();
-                let _ = response;
-                output = crate::xml_deser::deser_structure_not_found_xml_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::HeadObjectError::unhandled)?;
-                output.build()
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::not_found::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_not_found_xml_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::HeadObjectError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
             }),
         },
         _ => crate::error::HeadObjectError::generic(generic),
@@ -2521,19 +2597,28 @@ pub fn parse_list_objects_error(
         Some(code) => code,
         None => return Err(crate::error::ListObjectsError::unhandled(generic)),
     };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "NoSuchBucket" => crate::error::ListObjectsError {
             meta: generic,
             kind: crate::error::ListObjectsErrorKind::NoSuchBucket({
                 #[allow(unused_mut)]
-                let mut output = crate::error::no_such_bucket::Builder::default();
-                let _ = response;
-                output = crate::xml_deser::deser_structure_no_such_bucket_xml_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::ListObjectsError::unhandled)?;
-                output.build()
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::no_such_bucket::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_no_such_bucket_xml_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::ListObjectsError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
             }),
         },
         _ => crate::error::ListObjectsError::generic(generic),
@@ -2564,19 +2649,28 @@ pub fn parse_list_objects_v2_error(
         Some(code) => code,
         None => return Err(crate::error::ListObjectsV2Error::unhandled(generic)),
     };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "NoSuchBucket" => crate::error::ListObjectsV2Error {
             meta: generic,
             kind: crate::error::ListObjectsV2ErrorKind::NoSuchBucket({
                 #[allow(unused_mut)]
-                let mut output = crate::error::no_such_bucket::Builder::default();
-                let _ = response;
-                output = crate::xml_deser::deser_structure_no_such_bucket_xml_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::ListObjectsV2Error::unhandled)?;
-                output.build()
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::no_such_bucket::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_no_such_bucket_xml_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::ListObjectsV2Error::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
             }),
         },
         _ => crate::error::ListObjectsV2Error::generic(generic),
@@ -3248,19 +3342,28 @@ pub fn parse_put_object_acl_error(
         Some(code) => code,
         None => return Err(crate::error::PutObjectAclError::unhandled(generic)),
     };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "NoSuchKey" => crate::error::PutObjectAclError {
             meta: generic,
             kind: crate::error::PutObjectAclErrorKind::NoSuchKey({
                 #[allow(unused_mut)]
-                let mut output = crate::error::no_such_key::Builder::default();
-                let _ = response;
-                output = crate::xml_deser::deser_structure_no_such_key_xml_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::PutObjectAclError::unhandled)?;
-                output.build()
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::no_such_key::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_no_such_key_xml_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::PutObjectAclError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
             }),
         },
         _ => crate::error::PutObjectAclError::generic(generic),
@@ -3448,20 +3551,27 @@ pub fn parse_restore_object_error(
         Some(code) => code,
         None => return Err(crate::error::RestoreObjectError::unhandled(generic)),
     };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ObjectAlreadyInActiveTierError" => {
-            crate::error::RestoreObjectError {
-                meta: generic,
-                kind: crate::error::RestoreObjectErrorKind::ObjectAlreadyInActiveTierError({
+        "ObjectAlreadyInActiveTierError" => crate::error::RestoreObjectError {
+            meta: generic,
+            kind: crate::error::RestoreObjectErrorKind::ObjectAlreadyInActiveTierError({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output =
                         crate::error::object_already_in_active_tier_error::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_object_already_in_active_tier_error_xml_err(response.body().as_ref(), output).map_err(crate::error::RestoreObjectError::unhandled)?;
                     output.build()
-                }),
-            }
-        }
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         _ => crate::error::RestoreObjectError::generic(generic),
     })
 }

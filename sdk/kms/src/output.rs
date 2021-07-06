@@ -86,6 +86,35 @@ impl VerifyOutput {
 
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UpdatePrimaryRegionOutput {}
+impl std::fmt::Debug for UpdatePrimaryRegionOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("UpdatePrimaryRegionOutput");
+        formatter.finish()
+    }
+}
+/// See [`UpdatePrimaryRegionOutput`](crate::output::UpdatePrimaryRegionOutput)
+pub mod update_primary_region_output {
+    /// A builder for [`UpdatePrimaryRegionOutput`](crate::output::UpdatePrimaryRegionOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`UpdatePrimaryRegionOutput`](crate::output::UpdatePrimaryRegionOutput)
+        pub fn build(self) -> crate::output::UpdatePrimaryRegionOutput {
+            crate::output::UpdatePrimaryRegionOutput {}
+        }
+    }
+}
+impl UpdatePrimaryRegionOutput {
+    /// Creates a new builder-style object to manufacture [`UpdatePrimaryRegionOutput`](crate::output::UpdatePrimaryRegionOutput)
+    pub fn builder() -> crate::output::update_primary_region_output::Builder {
+        crate::output::update_primary_region_output::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateKeyDescriptionOutput {}
 impl std::fmt::Debug for UpdateKeyDescriptionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -232,8 +261,7 @@ impl TagResourceOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SignOutput {
-    /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) of the asymmetric CMK that was used to sign the
-    /// message.</p>
+    /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) of the asymmetric CMK that was used to sign the message.</p>
     pub key_id: std::option::Option<std::string::String>,
     /// <p>The cryptographic signature that was generated for the message. </p>
     /// <ul>
@@ -275,8 +303,7 @@ pub mod sign_output {
         pub(crate) signing_algorithm: std::option::Option<crate::model::SigningAlgorithmSpec>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) of the asymmetric CMK that was used to sign the
-        /// message.</p>
+        /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) of the asymmetric CMK that was used to sign the message.</p>
         pub fn key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.key_id = Some(input.into());
             self
@@ -344,13 +371,26 @@ pub struct ScheduleKeyDeletionOutput {
     /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) of the CMK whose deletion is scheduled.</p>
     pub key_id: std::option::Option<std::string::String>,
     /// <p>The date and time after which AWS KMS deletes the customer master key (CMK).</p>
+    /// <p>If the CMK is a multi-Region primary key with replica keys, this field does not appear.
+    /// The deletion date for the primary key isn't known until its last replica key is
+    /// deleted.</p>
     pub deletion_date: std::option::Option<smithy_types::Instant>,
+    /// <p>The current status of the CMK.</p>
+    /// <p>For more information about how key state affects the use of a CMK, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key state: Effect on your CMK</a>
+    /// in the <i>AWS Key Management Service Developer Guide</i>.</p>
+    pub key_state: std::option::Option<crate::model::KeyState>,
+    /// <p>The waiting period before the CMK is deleted. </p>
+    /// <p>If the CMK is a multi-Region primary key with replicas, the waiting period begins when the
+    /// last of its replica keys is deleted. Otherwise, the waiting period begins immediately.</p>
+    pub pending_window_in_days: std::option::Option<i32>,
 }
 impl std::fmt::Debug for ScheduleKeyDeletionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ScheduleKeyDeletionOutput");
         formatter.field("key_id", &self.key_id);
         formatter.field("deletion_date", &self.deletion_date);
+        formatter.field("key_state", &self.key_state);
+        formatter.field("pending_window_in_days", &self.pending_window_in_days);
         formatter.finish()
     }
 }
@@ -362,6 +402,8 @@ pub mod schedule_key_deletion_output {
     pub struct Builder {
         pub(crate) key_id: std::option::Option<std::string::String>,
         pub(crate) deletion_date: std::option::Option<smithy_types::Instant>,
+        pub(crate) key_state: std::option::Option<crate::model::KeyState>,
+        pub(crate) pending_window_in_days: std::option::Option<i32>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) of the CMK whose deletion is scheduled.</p>
@@ -374,6 +416,9 @@ pub mod schedule_key_deletion_output {
             self
         }
         /// <p>The date and time after which AWS KMS deletes the customer master key (CMK).</p>
+        /// <p>If the CMK is a multi-Region primary key with replica keys, this field does not appear.
+        /// The deletion date for the primary key isn't known until its last replica key is
+        /// deleted.</p>
         pub fn deletion_date(mut self, input: smithy_types::Instant) -> Self {
             self.deletion_date = Some(input);
             self
@@ -385,11 +430,35 @@ pub mod schedule_key_deletion_output {
             self.deletion_date = input;
             self
         }
+        /// <p>The current status of the CMK.</p>
+        /// <p>For more information about how key state affects the use of a CMK, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key state: Effect on your CMK</a>
+        /// in the <i>AWS Key Management Service Developer Guide</i>.</p>
+        pub fn key_state(mut self, input: crate::model::KeyState) -> Self {
+            self.key_state = Some(input);
+            self
+        }
+        pub fn set_key_state(mut self, input: std::option::Option<crate::model::KeyState>) -> Self {
+            self.key_state = input;
+            self
+        }
+        /// <p>The waiting period before the CMK is deleted. </p>
+        /// <p>If the CMK is a multi-Region primary key with replicas, the waiting period begins when the
+        /// last of its replica keys is deleted. Otherwise, the waiting period begins immediately.</p>
+        pub fn pending_window_in_days(mut self, input: i32) -> Self {
+            self.pending_window_in_days = Some(input);
+            self
+        }
+        pub fn set_pending_window_in_days(mut self, input: std::option::Option<i32>) -> Self {
+            self.pending_window_in_days = input;
+            self
+        }
         /// Consumes the builder and constructs a [`ScheduleKeyDeletionOutput`](crate::output::ScheduleKeyDeletionOutput)
         pub fn build(self) -> crate::output::ScheduleKeyDeletionOutput {
             crate::output::ScheduleKeyDeletionOutput {
                 key_id: self.key_id,
                 deletion_date: self.deletion_date,
+                key_state: self.key_state,
+                pending_window_in_days: self.pending_window_in_days,
             }
         }
     }
@@ -456,6 +525,97 @@ impl RetireGrantOutput {
     /// Creates a new builder-style object to manufacture [`RetireGrantOutput`](crate::output::RetireGrantOutput)
     pub fn builder() -> crate::output::retire_grant_output::Builder {
         crate::output::retire_grant_output::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ReplicateKeyOutput {
+    /// <p>Displays details about the new replica CMK, including its Amazon Resource Name (<a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key
+    /// ARN</a>) and <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">key state</a>. It also includes the ARN and AWS Region of its primary key and other
+    /// replica keys.</p>
+    pub replica_key_metadata: std::option::Option<crate::model::KeyMetadata>,
+    /// <p>The key policy of the new replica key. The value is a key policy document in JSON
+    /// format.</p>
+    pub replica_policy: std::option::Option<std::string::String>,
+    /// <p>The tags on the new replica key. The value is a list of tag key and tag value
+    /// pairs.</p>
+    pub replica_tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl std::fmt::Debug for ReplicateKeyOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ReplicateKeyOutput");
+        formatter.field("replica_key_metadata", &self.replica_key_metadata);
+        formatter.field("replica_policy", &self.replica_policy);
+        formatter.field("replica_tags", &self.replica_tags);
+        formatter.finish()
+    }
+}
+/// See [`ReplicateKeyOutput`](crate::output::ReplicateKeyOutput)
+pub mod replicate_key_output {
+    /// A builder for [`ReplicateKeyOutput`](crate::output::ReplicateKeyOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) replica_key_metadata: std::option::Option<crate::model::KeyMetadata>,
+        pub(crate) replica_policy: std::option::Option<std::string::String>,
+        pub(crate) replica_tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+    }
+    impl Builder {
+        /// <p>Displays details about the new replica CMK, including its Amazon Resource Name (<a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key
+        /// ARN</a>) and <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">key state</a>. It also includes the ARN and AWS Region of its primary key and other
+        /// replica keys.</p>
+        pub fn replica_key_metadata(mut self, input: crate::model::KeyMetadata) -> Self {
+            self.replica_key_metadata = Some(input);
+            self
+        }
+        pub fn set_replica_key_metadata(
+            mut self,
+            input: std::option::Option<crate::model::KeyMetadata>,
+        ) -> Self {
+            self.replica_key_metadata = input;
+            self
+        }
+        /// <p>The key policy of the new replica key. The value is a key policy document in JSON
+        /// format.</p>
+        pub fn replica_policy(mut self, input: impl Into<std::string::String>) -> Self {
+            self.replica_policy = Some(input.into());
+            self
+        }
+        pub fn set_replica_policy(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.replica_policy = input;
+            self
+        }
+        pub fn replica_tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+            let mut v = self.replica_tags.unwrap_or_default();
+            v.push(input.into());
+            self.replica_tags = Some(v);
+            self
+        }
+        pub fn set_replica_tags(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        ) -> Self {
+            self.replica_tags = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ReplicateKeyOutput`](crate::output::ReplicateKeyOutput)
+        pub fn build(self) -> crate::output::ReplicateKeyOutput {
+            crate::output::ReplicateKeyOutput {
+                replica_key_metadata: self.replica_key_metadata,
+                replica_policy: self.replica_policy,
+                replica_tags: self.replica_tags,
+            }
+        }
+    }
+}
+impl ReplicateKeyOutput {
+    /// Creates a new builder-style object to manufacture [`ReplicateKeyOutput`](crate::output::ReplicateKeyOutput)
+    pub fn builder() -> crate::output::replicate_key_output::Builder {
+        crate::output::replicate_key_output::Builder::default()
     }
 }
 
@@ -709,6 +869,10 @@ impl ListRetirableGrantsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListResourceTagsOutput {
     /// <p>A list of tags. Each tag consists of a tag key and a tag value.</p>
+    /// <note>
+    /// <p>Tagging or untagging a CMK can allow or deny permission to the
+    /// CMK. For details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/abac.html">Using ABAC in AWS KMS</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
+    /// </note>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>When <code>Truncated</code> is true, this element is present and contains the
     /// value to use for the <code>Marker</code> parameter in a subsequent request.</p>
@@ -2507,7 +2671,7 @@ impl CreateKeyOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateGrantOutput {
     /// <p>The grant token.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant Tokens</a> in the
+    /// <p>Use a grant token when your permission to call this operation comes from a new grant that has not yet achieved <i>eventual consistency</i>. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant token</a> in the
     /// <i>AWS Key Management Service Developer Guide</i>.</p>
     pub grant_token: std::option::Option<std::string::String>,
     /// <p>The unique identifier for the grant.</p>
@@ -2533,7 +2697,7 @@ pub mod create_grant_output {
     }
     impl Builder {
         /// <p>The grant token.</p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant Tokens</a> in the
+        /// <p>Use a grant token when your permission to call this operation comes from a new grant that has not yet achieved <i>eventual consistency</i>. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant token</a> in the
         /// <i>AWS Key Management Service Developer Guide</i>.</p>
         pub fn grant_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.grant_token = Some(input.into());

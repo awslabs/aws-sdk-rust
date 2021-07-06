@@ -10,6 +10,9 @@ pub fn deser_structure_concurrent_modification_xml_err(
     inp: &[u8],
     mut builder: crate::error::concurrent_modification::Builder,
 ) -> Result<crate::error::concurrent_modification::Builder, smithy_xml::decode::XmlError> {
+    if inp.is_empty() {
+        return Ok(builder);
+    }
     use std::convert::TryFrom;
     let mut document = smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]
@@ -40,6 +43,9 @@ pub fn deser_structure_invalid_key_signing_key_status_xml_err(
     inp: &[u8],
     mut builder: crate::error::invalid_key_signing_key_status::Builder,
 ) -> Result<crate::error::invalid_key_signing_key_status::Builder, smithy_xml::decode::XmlError> {
+    if inp.is_empty() {
+        return Ok(builder);
+    }
     use std::convert::TryFrom;
     let mut document = smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]
@@ -70,6 +76,9 @@ pub fn deser_structure_invalid_kms_arn_xml_err(
     inp: &[u8],
     mut builder: crate::error::invalid_kms_arn::Builder,
 ) -> Result<crate::error::invalid_kms_arn::Builder, smithy_xml::decode::XmlError> {
+    if inp.is_empty() {
+        return Ok(builder);
+    }
     use std::convert::TryFrom;
     let mut document = smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]
@@ -100,6 +109,9 @@ pub fn deser_structure_invalid_signing_status_xml_err(
     inp: &[u8],
     mut builder: crate::error::invalid_signing_status::Builder,
 ) -> Result<crate::error::invalid_signing_status::Builder, smithy_xml::decode::XmlError> {
+    if inp.is_empty() {
+        return Ok(builder);
+    }
     use std::convert::TryFrom;
     let mut document = smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]
@@ -130,6 +142,9 @@ pub fn deser_structure_no_such_key_signing_key_xml_err(
     inp: &[u8],
     mut builder: crate::error::no_such_key_signing_key::Builder,
 ) -> Result<crate::error::no_such_key_signing_key::Builder, smithy_xml::decode::XmlError> {
+    if inp.is_empty() {
+        return Ok(builder);
+    }
     use std::convert::TryFrom;
     let mut document = smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]
@@ -195,6 +210,9 @@ pub fn deser_structure_conflicting_domain_exists_xml_err(
     inp: &[u8],
     mut builder: crate::error::conflicting_domain_exists::Builder,
 ) -> Result<crate::error::conflicting_domain_exists::Builder, smithy_xml::decode::XmlError> {
+    if inp.is_empty() {
+        return Ok(builder);
+    }
     use std::convert::TryFrom;
     let mut document = smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]
@@ -225,6 +243,9 @@ pub fn deser_structure_invalid_input_xml_err(
     inp: &[u8],
     mut builder: crate::error::invalid_input::Builder,
 ) -> Result<crate::error::invalid_input::Builder, smithy_xml::decode::XmlError> {
+    if inp.is_empty() {
+        return Ok(builder);
+    }
     use std::convert::TryFrom;
     let mut document = smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]
@@ -255,6 +276,9 @@ pub fn deser_structure_invalid_vpc_id_xml_err(
     inp: &[u8],
     mut builder: crate::error::invalid_vpc_id::Builder,
 ) -> Result<crate::error::invalid_vpc_id::Builder, smithy_xml::decode::XmlError> {
+    if inp.is_empty() {
+        return Ok(builder);
+    }
     use std::convert::TryFrom;
     let mut document = smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]
@@ -285,6 +309,9 @@ pub fn deser_structure_limits_exceeded_xml_err(
     inp: &[u8],
     mut builder: crate::error::limits_exceeded::Builder,
 ) -> Result<crate::error::limits_exceeded::Builder, smithy_xml::decode::XmlError> {
+    if inp.is_empty() {
+        return Ok(builder);
+    }
     use std::convert::TryFrom;
     let mut document = smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]
@@ -315,6 +342,9 @@ pub fn deser_structure_no_such_hosted_zone_xml_err(
     inp: &[u8],
     mut builder: crate::error::no_such_hosted_zone::Builder,
 ) -> Result<crate::error::no_such_hosted_zone::Builder, smithy_xml::decode::XmlError> {
+    if inp.is_empty() {
+        return Ok(builder);
+    }
     use std::convert::TryFrom;
     let mut document = smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]
@@ -345,6 +375,9 @@ pub fn deser_structure_not_authorized_exception_xml_err(
     inp: &[u8],
     mut builder: crate::error::not_authorized_exception::Builder,
 ) -> Result<crate::error::not_authorized_exception::Builder, smithy_xml::decode::XmlError> {
+    if inp.is_empty() {
+        return Ok(builder);
+    }
     use std::convert::TryFrom;
     let mut document = smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]
@@ -375,6 +408,9 @@ pub fn deser_structure_prior_request_not_complete_xml_err(
     inp: &[u8],
     mut builder: crate::error::prior_request_not_complete::Builder,
 ) -> Result<crate::error::prior_request_not_complete::Builder, smithy_xml::decode::XmlError> {
+    if inp.is_empty() {
+        return Ok(builder);
+    }
     use std::convert::TryFrom;
     let mut document = smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]
@@ -405,6 +441,9 @@ pub fn deser_structure_public_zone_vpc_association_xml_err(
     inp: &[u8],
     mut builder: crate::error::public_zone_vpc_association::Builder,
 ) -> Result<crate::error::public_zone_vpc_association::Builder, smithy_xml::decode::XmlError> {
+    if inp.is_empty() {
+        return Ok(builder);
+    }
     use std::convert::TryFrom;
     let mut document = smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]
@@ -473,6 +512,9 @@ pub fn deser_structure_invalid_change_batch_xml_err(
     inp: &[u8],
     mut builder: crate::error::invalid_change_batch::Builder,
 ) -> Result<crate::error::invalid_change_batch::Builder, smithy_xml::decode::XmlError> {
+    if inp.is_empty() {
+        return Ok(builder);
+    }
     use std::convert::TryFrom;
     let mut document = smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]
@@ -513,6 +555,9 @@ pub fn deser_structure_no_such_health_check_xml_err(
     inp: &[u8],
     mut builder: crate::error::no_such_health_check::Builder,
 ) -> Result<crate::error::no_such_health_check::Builder, smithy_xml::decode::XmlError> {
+    if inp.is_empty() {
+        return Ok(builder);
+    }
     use std::convert::TryFrom;
     let mut document = smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]
@@ -579,6 +624,9 @@ pub fn deser_structure_throttling_exception_xml_err(
     inp: &[u8],
     mut builder: crate::error::throttling_exception::Builder,
 ) -> Result<crate::error::throttling_exception::Builder, smithy_xml::decode::XmlError> {
+    if inp.is_empty() {
+        return Ok(builder);
+    }
     use std::convert::TryFrom;
     let mut document = smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]
@@ -609,6 +657,9 @@ pub fn deser_structure_health_check_already_exists_xml_err(
     inp: &[u8],
     mut builder: crate::error::health_check_already_exists::Builder,
 ) -> Result<crate::error::health_check_already_exists::Builder, smithy_xml::decode::XmlError> {
+    if inp.is_empty() {
+        return Ok(builder);
+    }
     use std::convert::TryFrom;
     let mut document = smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]
@@ -639,6 +690,9 @@ pub fn deser_structure_too_many_health_checks_xml_err(
     inp: &[u8],
     mut builder: crate::error::too_many_health_checks::Builder,
 ) -> Result<crate::error::too_many_health_checks::Builder, smithy_xml::decode::XmlError> {
+    if inp.is_empty() {
+        return Ok(builder);
+    }
     use std::convert::TryFrom;
     let mut document = smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]
@@ -704,6 +758,9 @@ pub fn deser_structure_delegation_set_not_available_xml_err(
     inp: &[u8],
     mut builder: crate::error::delegation_set_not_available::Builder,
 ) -> Result<crate::error::delegation_set_not_available::Builder, smithy_xml::decode::XmlError> {
+    if inp.is_empty() {
+        return Ok(builder);
+    }
     use std::convert::TryFrom;
     let mut document = smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]
@@ -734,6 +791,9 @@ pub fn deser_structure_delegation_set_not_reusable_xml_err(
     inp: &[u8],
     mut builder: crate::error::delegation_set_not_reusable::Builder,
 ) -> Result<crate::error::delegation_set_not_reusable::Builder, smithy_xml::decode::XmlError> {
+    if inp.is_empty() {
+        return Ok(builder);
+    }
     use std::convert::TryFrom;
     let mut document = smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]
@@ -764,6 +824,9 @@ pub fn deser_structure_hosted_zone_already_exists_xml_err(
     inp: &[u8],
     mut builder: crate::error::hosted_zone_already_exists::Builder,
 ) -> Result<crate::error::hosted_zone_already_exists::Builder, smithy_xml::decode::XmlError> {
+    if inp.is_empty() {
+        return Ok(builder);
+    }
     use std::convert::TryFrom;
     let mut document = smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]
@@ -794,6 +857,9 @@ pub fn deser_structure_invalid_domain_name_xml_err(
     inp: &[u8],
     mut builder: crate::error::invalid_domain_name::Builder,
 ) -> Result<crate::error::invalid_domain_name::Builder, smithy_xml::decode::XmlError> {
+    if inp.is_empty() {
+        return Ok(builder);
+    }
     use std::convert::TryFrom;
     let mut document = smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]
@@ -824,6 +890,9 @@ pub fn deser_structure_no_such_delegation_set_xml_err(
     inp: &[u8],
     mut builder: crate::error::no_such_delegation_set::Builder,
 ) -> Result<crate::error::no_such_delegation_set::Builder, smithy_xml::decode::XmlError> {
+    if inp.is_empty() {
+        return Ok(builder);
+    }
     use std::convert::TryFrom;
     let mut document = smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]
@@ -854,6 +923,9 @@ pub fn deser_structure_too_many_hosted_zones_xml_err(
     inp: &[u8],
     mut builder: crate::error::too_many_hosted_zones::Builder,
 ) -> Result<crate::error::too_many_hosted_zones::Builder, smithy_xml::decode::XmlError> {
+    if inp.is_empty() {
+        return Ok(builder);
+    }
     use std::convert::TryFrom;
     let mut document = smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]
@@ -949,6 +1021,9 @@ pub fn deser_structure_invalid_argument_xml_err(
     inp: &[u8],
     mut builder: crate::error::invalid_argument::Builder,
 ) -> Result<crate::error::invalid_argument::Builder, smithy_xml::decode::XmlError> {
+    if inp.is_empty() {
+        return Ok(builder);
+    }
     use std::convert::TryFrom;
     let mut document = smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]
@@ -979,6 +1054,9 @@ pub fn deser_structure_invalid_key_signing_key_name_xml_err(
     inp: &[u8],
     mut builder: crate::error::invalid_key_signing_key_name::Builder,
 ) -> Result<crate::error::invalid_key_signing_key_name::Builder, smithy_xml::decode::XmlError> {
+    if inp.is_empty() {
+        return Ok(builder);
+    }
     use std::convert::TryFrom;
     let mut document = smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]
@@ -1009,6 +1087,9 @@ pub fn deser_structure_key_signing_key_already_exists_xml_err(
     inp: &[u8],
     mut builder: crate::error::key_signing_key_already_exists::Builder,
 ) -> Result<crate::error::key_signing_key_already_exists::Builder, smithy_xml::decode::XmlError> {
+    if inp.is_empty() {
+        return Ok(builder);
+    }
     use std::convert::TryFrom;
     let mut document = smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]
@@ -1039,6 +1120,9 @@ pub fn deser_structure_too_many_key_signing_keys_xml_err(
     inp: &[u8],
     mut builder: crate::error::too_many_key_signing_keys::Builder,
 ) -> Result<crate::error::too_many_key_signing_keys::Builder, smithy_xml::decode::XmlError> {
+    if inp.is_empty() {
+        return Ok(builder);
+    }
     use std::convert::TryFrom;
     let mut document = smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]
@@ -1117,6 +1201,9 @@ pub fn deser_structure_insufficient_cloud_watch_logs_resource_policy_xml_err(
     crate::error::insufficient_cloud_watch_logs_resource_policy::Builder,
     smithy_xml::decode::XmlError,
 > {
+    if inp.is_empty() {
+        return Ok(builder);
+    }
     use std::convert::TryFrom;
     let mut document = smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]
@@ -1148,6 +1235,9 @@ pub fn deser_structure_no_such_cloud_watch_logs_log_group_xml_err(
     mut builder: crate::error::no_such_cloud_watch_logs_log_group::Builder,
 ) -> Result<crate::error::no_such_cloud_watch_logs_log_group::Builder, smithy_xml::decode::XmlError>
 {
+    if inp.is_empty() {
+        return Ok(builder);
+    }
     use std::convert::TryFrom;
     let mut document = smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]
@@ -1179,6 +1269,9 @@ pub fn deser_structure_query_logging_config_already_exists_xml_err(
     mut builder: crate::error::query_logging_config_already_exists::Builder,
 ) -> Result<crate::error::query_logging_config_already_exists::Builder, smithy_xml::decode::XmlError>
 {
+    if inp.is_empty() {
+        return Ok(builder);
+    }
     use std::convert::TryFrom;
     let mut document = smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]
@@ -1245,6 +1338,9 @@ pub fn deser_structure_delegation_set_already_created_xml_err(
     inp: &[u8],
     mut builder: crate::error::delegation_set_already_created::Builder,
 ) -> Result<crate::error::delegation_set_already_created::Builder, smithy_xml::decode::XmlError> {
+    if inp.is_empty() {
+        return Ok(builder);
+    }
     use std::convert::TryFrom;
     let mut document = smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]
@@ -1275,6 +1371,9 @@ pub fn deser_structure_delegation_set_already_reusable_xml_err(
     inp: &[u8],
     mut builder: crate::error::delegation_set_already_reusable::Builder,
 ) -> Result<crate::error::delegation_set_already_reusable::Builder, smithy_xml::decode::XmlError> {
+    if inp.is_empty() {
+        return Ok(builder);
+    }
     use std::convert::TryFrom;
     let mut document = smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]
@@ -1305,6 +1404,9 @@ pub fn deser_structure_hosted_zone_not_found_xml_err(
     inp: &[u8],
     mut builder: crate::error::hosted_zone_not_found::Builder,
 ) -> Result<crate::error::hosted_zone_not_found::Builder, smithy_xml::decode::XmlError> {
+    if inp.is_empty() {
+        return Ok(builder);
+    }
     use std::convert::TryFrom;
     let mut document = smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]
@@ -1373,6 +1475,9 @@ pub fn deser_structure_invalid_traffic_policy_document_xml_err(
     inp: &[u8],
     mut builder: crate::error::invalid_traffic_policy_document::Builder,
 ) -> Result<crate::error::invalid_traffic_policy_document::Builder, smithy_xml::decode::XmlError> {
+    if inp.is_empty() {
+        return Ok(builder);
+    }
     use std::convert::TryFrom;
     let mut document = smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]
@@ -1403,6 +1508,9 @@ pub fn deser_structure_too_many_traffic_policies_xml_err(
     inp: &[u8],
     mut builder: crate::error::too_many_traffic_policies::Builder,
 ) -> Result<crate::error::too_many_traffic_policies::Builder, smithy_xml::decode::XmlError> {
+    if inp.is_empty() {
+        return Ok(builder);
+    }
     use std::convert::TryFrom;
     let mut document = smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]
@@ -1433,6 +1541,9 @@ pub fn deser_structure_traffic_policy_already_exists_xml_err(
     inp: &[u8],
     mut builder: crate::error::traffic_policy_already_exists::Builder,
 ) -> Result<crate::error::traffic_policy_already_exists::Builder, smithy_xml::decode::XmlError> {
+    if inp.is_empty() {
+        return Ok(builder);
+    }
     use std::convert::TryFrom;
     let mut document = smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]
@@ -1498,6 +1609,9 @@ pub fn deser_structure_no_such_traffic_policy_xml_err(
     inp: &[u8],
     mut builder: crate::error::no_such_traffic_policy::Builder,
 ) -> Result<crate::error::no_such_traffic_policy::Builder, smithy_xml::decode::XmlError> {
+    if inp.is_empty() {
+        return Ok(builder);
+    }
     use std::convert::TryFrom;
     let mut document = smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]
@@ -1529,6 +1643,9 @@ pub fn deser_structure_too_many_traffic_policy_instances_xml_err(
     mut builder: crate::error::too_many_traffic_policy_instances::Builder,
 ) -> Result<crate::error::too_many_traffic_policy_instances::Builder, smithy_xml::decode::XmlError>
 {
+    if inp.is_empty() {
+        return Ok(builder);
+    }
     use std::convert::TryFrom;
     let mut document = smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]
@@ -1562,6 +1679,9 @@ pub fn deser_structure_traffic_policy_instance_already_exists_xml_err(
     crate::error::traffic_policy_instance_already_exists::Builder,
     smithy_xml::decode::XmlError,
 > {
+    if inp.is_empty() {
+        return Ok(builder);
+    }
     use std::convert::TryFrom;
     let mut document = smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]
@@ -1633,6 +1753,9 @@ pub fn deser_structure_too_many_traffic_policy_versions_for_current_policy_xml_e
     crate::error::too_many_traffic_policy_versions_for_current_policy::Builder,
     smithy_xml::decode::XmlError,
 > {
+    if inp.is_empty() {
+        return Ok(builder);
+    }
     use std::convert::TryFrom;
     let mut document = smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]
@@ -1704,6 +1827,9 @@ pub fn deser_structure_too_many_vpc_association_authorizations_xml_err(
     crate::error::too_many_vpc_association_authorizations::Builder,
     smithy_xml::decode::XmlError,
 > {
+    if inp.is_empty() {
+        return Ok(builder);
+    }
     use std::convert::TryFrom;
     let mut document = smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]
@@ -1786,6 +1912,9 @@ pub fn deser_structure_key_signing_key_in_parent_ds_record_xml_err(
     mut builder: crate::error::key_signing_key_in_parent_ds_record::Builder,
 ) -> Result<crate::error::key_signing_key_in_parent_ds_record::Builder, smithy_xml::decode::XmlError>
 {
+    if inp.is_empty() {
+        return Ok(builder);
+    }
     use std::convert::TryFrom;
     let mut document = smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]
@@ -1816,6 +1945,9 @@ pub fn deser_structure_key_signing_key_in_use_xml_err(
     inp: &[u8],
     mut builder: crate::error::key_signing_key_in_use::Builder,
 ) -> Result<crate::error::key_signing_key_in_use::Builder, smithy_xml::decode::XmlError> {
+    if inp.is_empty() {
+        return Ok(builder);
+    }
     use std::convert::TryFrom;
     let mut document = smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]
@@ -1882,6 +2014,9 @@ pub fn deser_structure_health_check_in_use_xml_err(
     inp: &[u8],
     mut builder: crate::error::health_check_in_use::Builder,
 ) -> Result<crate::error::health_check_in_use::Builder, smithy_xml::decode::XmlError> {
+    if inp.is_empty() {
+        return Ok(builder);
+    }
     use std::convert::TryFrom;
     let mut document = smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]
@@ -1912,6 +2047,9 @@ pub fn deser_structure_hosted_zone_not_empty_xml_err(
     inp: &[u8],
     mut builder: crate::error::hosted_zone_not_empty::Builder,
 ) -> Result<crate::error::hosted_zone_not_empty::Builder, smithy_xml::decode::XmlError> {
+    if inp.is_empty() {
+        return Ok(builder);
+    }
     use std::convert::TryFrom;
     let mut document = smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]
@@ -2012,6 +2150,9 @@ pub fn deser_structure_no_such_query_logging_config_xml_err(
     inp: &[u8],
     mut builder: crate::error::no_such_query_logging_config::Builder,
 ) -> Result<crate::error::no_such_query_logging_config::Builder, smithy_xml::decode::XmlError> {
+    if inp.is_empty() {
+        return Ok(builder);
+    }
     use std::convert::TryFrom;
     let mut document = smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]
@@ -2042,6 +2183,9 @@ pub fn deser_structure_delegation_set_in_use_xml_err(
     inp: &[u8],
     mut builder: crate::error::delegation_set_in_use::Builder,
 ) -> Result<crate::error::delegation_set_in_use::Builder, smithy_xml::decode::XmlError> {
+    if inp.is_empty() {
+        return Ok(builder);
+    }
     use std::convert::TryFrom;
     let mut document = smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]
@@ -2072,6 +2216,9 @@ pub fn deser_structure_traffic_policy_in_use_xml_err(
     inp: &[u8],
     mut builder: crate::error::traffic_policy_in_use::Builder,
 ) -> Result<crate::error::traffic_policy_in_use::Builder, smithy_xml::decode::XmlError> {
+    if inp.is_empty() {
+        return Ok(builder);
+    }
     use std::convert::TryFrom;
     let mut document = smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]
@@ -2102,6 +2249,9 @@ pub fn deser_structure_no_such_traffic_policy_instance_xml_err(
     inp: &[u8],
     mut builder: crate::error::no_such_traffic_policy_instance::Builder,
 ) -> Result<crate::error::no_such_traffic_policy_instance::Builder, smithy_xml::decode::XmlError> {
+    if inp.is_empty() {
+        return Ok(builder);
+    }
     use std::convert::TryFrom;
     let mut document = smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]
@@ -2135,6 +2285,9 @@ pub fn deser_structure_vpc_association_authorization_not_found_xml_err(
     crate::error::vpc_association_authorization_not_found::Builder,
     smithy_xml::decode::XmlError,
 > {
+    if inp.is_empty() {
+        return Ok(builder);
+    }
     use std::convert::TryFrom;
     let mut document = smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]
@@ -2165,6 +2318,9 @@ pub fn deser_structure_dnssec_not_found_xml_err(
     inp: &[u8],
     mut builder: crate::error::dnssec_not_found::Builder,
 ) -> Result<crate::error::dnssec_not_found::Builder, smithy_xml::decode::XmlError> {
+    if inp.is_empty() {
+        return Ok(builder);
+    }
     use std::convert::TryFrom;
     let mut document = smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]
@@ -2231,6 +2387,9 @@ pub fn deser_structure_last_vpc_association_xml_err(
     inp: &[u8],
     mut builder: crate::error::last_vpc_association::Builder,
 ) -> Result<crate::error::last_vpc_association::Builder, smithy_xml::decode::XmlError> {
+    if inp.is_empty() {
+        return Ok(builder);
+    }
     use std::convert::TryFrom;
     let mut document = smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]
@@ -2261,6 +2420,9 @@ pub fn deser_structure_vpc_association_not_found_xml_err(
     inp: &[u8],
     mut builder: crate::error::vpc_association_not_found::Builder,
 ) -> Result<crate::error::vpc_association_not_found::Builder, smithy_xml::decode::XmlError> {
+    if inp.is_empty() {
+        return Ok(builder);
+    }
     use std::convert::TryFrom;
     let mut document = smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]
@@ -2329,6 +2491,9 @@ pub fn deser_structure_hosted_zone_partially_delegated_xml_err(
     inp: &[u8],
     mut builder: crate::error::hosted_zone_partially_delegated::Builder,
 ) -> Result<crate::error::hosted_zone_partially_delegated::Builder, smithy_xml::decode::XmlError> {
+    if inp.is_empty() {
+        return Ok(builder);
+    }
     use std::convert::TryFrom;
     let mut document = smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]
@@ -2362,6 +2527,9 @@ pub fn deser_structure_key_signing_key_with_active_status_not_found_xml_err(
     crate::error::key_signing_key_with_active_status_not_found::Builder,
     smithy_xml::decode::XmlError,
 > {
+    if inp.is_empty() {
+        return Ok(builder);
+    }
     use std::convert::TryFrom;
     let mut document = smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]
@@ -2479,6 +2647,9 @@ pub fn deser_structure_no_such_change_xml_err(
     inp: &[u8],
     mut builder: crate::error::no_such_change::Builder,
 ) -> Result<crate::error::no_such_change::Builder, smithy_xml::decode::XmlError> {
+    if inp.is_empty() {
+        return Ok(builder);
+    }
     use std::convert::TryFrom;
     let mut document = smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]
@@ -2624,6 +2795,9 @@ pub fn deser_structure_no_such_geo_location_xml_err(
     inp: &[u8],
     mut builder: crate::error::no_such_geo_location::Builder,
 ) -> Result<crate::error::no_such_geo_location::Builder, smithy_xml::decode::XmlError> {
+    if inp.is_empty() {
+        return Ok(builder);
+    }
     use std::convert::TryFrom;
     let mut document = smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]
@@ -2689,6 +2863,9 @@ pub fn deser_structure_incompatible_version_xml_err(
     inp: &[u8],
     mut builder: crate::error::incompatible_version::Builder,
 ) -> Result<crate::error::incompatible_version::Builder, smithy_xml::decode::XmlError> {
+    if inp.is_empty() {
+        return Ok(builder);
+    }
     use std::convert::TryFrom;
     let mut document = smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]
@@ -2964,6 +3141,9 @@ pub fn deser_structure_hosted_zone_not_private_xml_err(
     inp: &[u8],
     mut builder: crate::error::hosted_zone_not_private::Builder,
 ) -> Result<crate::error::hosted_zone_not_private::Builder, smithy_xml::decode::XmlError> {
+    if inp.is_empty() {
+        return Ok(builder);
+    }
     use std::convert::TryFrom;
     let mut document = smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]
@@ -3697,6 +3877,9 @@ pub fn deser_structure_invalid_pagination_token_xml_err(
     inp: &[u8],
     mut builder: crate::error::invalid_pagination_token::Builder,
 ) -> Result<crate::error::invalid_pagination_token::Builder, smithy_xml::decode::XmlError> {
+    if inp.is_empty() {
+        return Ok(builder);
+    }
     use std::convert::TryFrom;
     let mut document = smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]
@@ -4757,6 +4940,9 @@ pub fn deser_structure_health_check_version_mismatch_xml_err(
     inp: &[u8],
     mut builder: crate::error::health_check_version_mismatch::Builder,
 ) -> Result<crate::error::health_check_version_mismatch::Builder, smithy_xml::decode::XmlError> {
+    if inp.is_empty() {
+        return Ok(builder);
+    }
     use std::convert::TryFrom;
     let mut document = smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]
@@ -4896,6 +5082,9 @@ pub fn deser_structure_conflicting_types_xml_err(
     inp: &[u8],
     mut builder: crate::error::conflicting_types::Builder,
 ) -> Result<crate::error::conflicting_types::Builder, smithy_xml::decode::XmlError> {
+    if inp.is_empty() {
+        return Ok(builder);
+    }
     use std::convert::TryFrom;
     let mut document = smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]

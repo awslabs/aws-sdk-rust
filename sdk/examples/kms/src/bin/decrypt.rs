@@ -3,32 +3,26 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-use std::fs;
-use std::process;
-
-use kms::{Blob, Client, Config, Region};
-
 use aws_types::region::ProvideRegion;
-
+use kms::{Blob, Client, Config, Error, Region, PKG_VERSION};
+use std::fs;
 use structopt::StructOpt;
-use tracing_subscriber::fmt::format::FmtSpan;
-use tracing_subscriber::fmt::SubscriberBuilder;
 
 #[derive(Debug, StructOpt)]
 struct Opt {
-    /// The region. Overrides environment variable AWS_DEFAULT_REGION.
+    /// The default AWS Region.
     #[structopt(short, long)]
     default_region: Option<String>,
 
-    /// Specifies the encryption key
+    /// The encryption key.
     #[structopt(short, long)]
     key: String,
 
-    /// The name of the input file with encrypted text to decrypt
+    /// The name of the input file with encrypted text to decrypt.
     #[structopt(short, long)]
-    input: String,
+    input_file: String,
 
-    /// Specifies whether to display additonal runtime informmation
+    /// Whether to display additonal informmation.
     #[structopt(short, long)]
     verbose: bool,
 }
@@ -37,16 +31,18 @@ struct Opt {
 /// # Arguments
 ///
 /// * `-k KEY` - The encryption key.
-/// * `-i INPUT` - The encrypted string.
-/// * `[-d DEFAULT-REGION]` - The region in which the client is created.
-///    If not supplied, uses the value of the **AWS_DEFAULT_REGION** environment variable.
+/// * `-i INPUT-FILE` - The name of the file containing the encrypted string.
+/// * `[-d DEFAULT-REGION]` - The Region in which the client is created.
+///    If not supplied, uses the value of the **AWS_REGION** environment variable.
 ///    If the environment variable is not set, defaults to **us-west-2**.
 /// * `[-v]` - Whether to display additional information.
 #[tokio::main]
-async fn main() {
+async fn main() -> Result<(), Error> {
+    tracing_subscriber::fmt::init();
+
     let Opt {
         key,
-        input,
+        input_file,
         default_region,
         verbose,
     } = Opt::from_args();
@@ -57,16 +53,14 @@ async fn main() {
         .or_else(|| aws_types::region::default_provider().region())
         .unwrap_or_else(|| Region::new("us-west-2"));
 
-    if verbose {
-        println!("KMS client version: {}\n", kms::PKG_VERSION);
-        println!("Region: {:?}", &region);
-        println!("Key:    {}", key);
-        println!("Input:  {}", input);
+    println!();
 
-        SubscriberBuilder::default()
-            .with_env_filter("info")
-            .with_span_events(FmtSpan::CLOSE)
-            .init();
+    if verbose {
+        println!("KMS version: {}", PKG_VERSION);
+        println!("Region:      {:?}", &region);
+        println!("Key:         {}", &key);
+        println!("Input:       {}", &input_file);
+        println!();
     }
 
     let conf = Config::builder().region(region).build();
@@ -74,35 +68,27 @@ async fn main() {
 
     // Open input text file and get contents as a string
     // input is a base-64 encoded string, so decode it:
-    let data = fs::read_to_string(input)
+    let data = fs::read_to_string(input_file)
         .map(|input| {
             base64::decode(input).expect("Input file does not contain valid base 64 characters.")
         })
         .map(Blob::new);
 
-    let resp = match client
+    let resp = client
         .decrypt()
         .key_id(key)
         .ciphertext_blob(data.unwrap())
         .send()
-        .await
-    {
-        Ok(output) => output,
-        Err(e) => {
-            eprintln!("Encryption failure: {}", e);
-            process::exit(1);
-        }
-    };
+        .await?;
 
     let inner = resp.plaintext.unwrap();
     let bytes = inner.as_ref();
 
-    let s = match String::from_utf8(bytes.to_vec()) {
-        Ok(v) => v,
-        Err(e) => panic!("Invalid UTF-8 sequence: {}", e),
-    };
+    let s = String::from_utf8(bytes.to_vec()).expect("Could not convert to UTF-8");
 
     println!();
     println!("Decoded string:");
     println!("{}", s);
+
+    Ok(())
 }

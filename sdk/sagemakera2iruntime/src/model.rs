@@ -99,6 +99,12 @@ impl ContentClassifier {
             ContentClassifier::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "FreeOfAdultContent",
+            "FreeOfPersonallyIdentifiableInformation",
+        ]
+    }
 }
 impl AsRef<str> for ContentClassifier {
     fn as_ref(&self) -> &str {
@@ -327,6 +333,9 @@ impl HumanLoopStatus {
             HumanLoopStatus::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["Completed", "Failed", "InProgress", "Stopped", "Stopping"]
+    }
 }
 impl AsRef<str> for HumanLoopStatus {
     fn as_ref(&self) -> &str {
@@ -373,6 +382,9 @@ impl SortOrder {
             SortOrder::Descending => "Descending",
             SortOrder::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["Ascending", "Descending"]
     }
 }
 impl AsRef<str> for SortOrder {

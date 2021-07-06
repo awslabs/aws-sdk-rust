@@ -1145,6 +1145,9 @@ impl From<smithy_http::result::SdkError<crate::error::DeleteModelPackageGroupErr
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::DeleteModelPackageGroupErrorKind::ConflictException(inner) => {
+                    Error::ConflictException(inner)
+                }
                 crate::error::DeleteModelPackageGroupErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
                 }
@@ -1252,6 +1255,9 @@ impl From<smithy_http::result::SdkError<crate::error::DeleteProjectError>> for E
     fn from(err: smithy_http::result::SdkError<crate::error::DeleteProjectError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::DeleteProjectErrorKind::ConflictException(inner) => {
+                    Error::ConflictException(inner)
+                }
                 crate::error::DeleteProjectErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
             _ => Error::Unhandled(err.into()),

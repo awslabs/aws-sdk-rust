@@ -101,6 +101,30 @@ impl QueueAttributeName {
             QueueAttributeName::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "All",
+            "ApproximateNumberOfMessages",
+            "ApproximateNumberOfMessagesDelayed",
+            "ApproximateNumberOfMessagesNotVisible",
+            "ContentBasedDeduplication",
+            "CreatedTimestamp",
+            "DeduplicationScope",
+            "DelaySeconds",
+            "FifoQueue",
+            "FifoThroughputLimit",
+            "KmsDataKeyReusePeriodSeconds",
+            "KmsMasterKeyId",
+            "LastModifiedTimestamp",
+            "MaximumMessageSize",
+            "MessageRetentionPeriod",
+            "Policy",
+            "QueueArn",
+            "ReceiveMessageWaitTimeSeconds",
+            "RedrivePolicy",
+            "VisibilityTimeout",
+        ]
+    }
 }
 impl AsRef<str> for QueueAttributeName {
     fn as_ref(&self) -> &str {
@@ -212,7 +236,8 @@ pub struct SendMessageBatchResultEntry {
     pub md5_of_message_body: std::option::Option<std::string::String>,
     /// <p>An MD5 digest of the non-URL-encoded message attribute string. You can use this attribute to verify that Amazon SQS received the message correctly. Amazon SQS URL-decodes the message before creating the MD5 digest. For information about MD5, see <a href="https://www.ietf.org/rfc/rfc1321.txt">RFC1321</a>.</p>
     pub md5_of_message_attributes: std::option::Option<std::string::String>,
-    /// <p>An MD5 digest of the non-URL-encoded message system attribute string. You can use this attribute to verify that Amazon SQS received the message correctly. Amazon SQS URL-decodes the message before creating the MD5 digest. For information about MD5, see <a href="https://www.ietf.org/rfc/rfc1321.txt">RFC1321</a>.</p>
+    /// <p>An MD5 digest of the non-URL-encoded message system attribute string. You can use this
+    /// attribute to verify that Amazon SQS received the message correctly. Amazon SQS URL-decodes the message before creating the MD5 digest. For information about MD5, see <a href="https://www.ietf.org/rfc/rfc1321.txt">RFC1321</a>.</p>
     pub md5_of_message_system_attributes: std::option::Option<std::string::String>,
     /// <p>This parameter applies only to FIFO (first-in-first-out) queues.</p>
     /// <p>The large, non-consecutive number that Amazon SQS assigns to each message.</p>
@@ -290,7 +315,8 @@ pub mod send_message_batch_result_entry {
             self.md5_of_message_attributes = input;
             self
         }
-        /// <p>An MD5 digest of the non-URL-encoded message system attribute string. You can use this attribute to verify that Amazon SQS received the message correctly. Amazon SQS URL-decodes the message before creating the MD5 digest. For information about MD5, see <a href="https://www.ietf.org/rfc/rfc1321.txt">RFC1321</a>.</p>
+        /// <p>An MD5 digest of the non-URL-encoded message system attribute string. You can use this
+        /// attribute to verify that Amazon SQS received the message correctly. Amazon SQS URL-decodes the message before creating the MD5 digest. For information about MD5, see <a href="https://www.ietf.org/rfc/rfc1321.txt">RFC1321</a>.</p>
         pub fn md5_of_message_system_attributes(
             mut self,
             input: impl Into<std::string::String>,
@@ -358,7 +384,10 @@ pub struct SendMessageBatchRequestEntry {
     /// <p>When you set <code>FifoQueue</code>, you can't set <code>DelaySeconds</code> per message. You can set this parameter only on a queue level.</p>
     /// </note>
     pub delay_seconds: i32,
-    /// <p>Each message attribute consists of a <code>Name</code>, <code>Type</code>, and <code>Value</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-metadata.html#sqs-message-attributes">Amazon SQS Message Attributes</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.</p>
+    /// <p>Each message attribute consists of a <code>Name</code>, <code>Type</code>,
+    /// and <code>Value</code>. For more information, see
+    /// <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-metadata.html#sqs-message-attributes">Amazon SQS
+    /// message attributes</a> in the <i>Amazon SQS Developer Guide</i>.</p>
     pub message_attributes: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::MessageAttributeValue>,
     >,
@@ -368,7 +397,7 @@ pub struct SendMessageBatchRequestEntry {
     /// <li>
     /// <p>Currently, the only supported message system attribute is <code>AWSTraceHeader</code>.
     /// Its type must be <code>String</code> and its value must be a correctly formatted
-    /// AWS X-Ray trace header string.</p>
+    /// X-Ray trace header string.</p>
     /// </li>
     /// <li>
     /// <p>The size of a message system attribute doesn't count towards the total size of a message.</p>
@@ -385,7 +414,7 @@ pub struct SendMessageBatchRequestEntry {
     /// <p>The token used for deduplication of messages within a 5-minute minimum deduplication interval. If a message with a particular
     /// <code>MessageDeduplicationId</code> is sent successfully, subsequent messages with the same <code>MessageDeduplicationId</code> are
     /// accepted successfully but aren't delivered. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues-exactly-once-processing.html">
-    /// Exactly-once processing</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.</p>
+    /// Exactly-once processing</a> in the <i>Amazon SQS Developer Guide</i>.</p>
     /// <ul>
     /// <li>
     /// <p>Every message must have a unique <code>MessageDeduplicationId</code>,</p>
@@ -428,7 +457,7 @@ pub struct SendMessageBatchRequestEntry {
     /// punctuation (<code>!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~</code>).</p>
     /// <p>For best practices of using <code>MessageDeduplicationId</code>, see
     /// <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/using-messagededuplicationid-property.html">Using the MessageDeduplicationId Property</a>
-    /// in the <i>Amazon Simple Queue Service Developer Guide</i>.</p>
+    /// in the <i>Amazon SQS Developer Guide</i>.</p>
     pub message_deduplication_id: std::option::Option<std::string::String>,
     /// <p>This parameter applies only to FIFO (first-in-first-out) queues.</p>
     /// <p>The tag that specifies that a message belongs to a specific message group. Messages
@@ -451,7 +480,7 @@ pub struct SendMessageBatchRequestEntry {
     /// <p>The length of <code>MessageGroupId</code> is 128 characters. Valid values: alphanumeric characters and punctuation <code>(!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~)</code>.</p>
     /// <p>For best practices of using <code>MessageGroupId</code>, see
     /// <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/using-messagegroupid-property.html">Using the MessageGroupId Property</a>
-    /// in the <i>Amazon Simple Queue Service Developer Guide</i>.</p>
+    /// in the <i>Amazon SQS Developer Guide</i>.</p>
     /// <important>
     /// <p>
     /// <code>MessageGroupId</code> is required for FIFO queues. You can't use it for Standard queues.</p>
@@ -574,7 +603,7 @@ pub mod send_message_batch_request_entry {
         /// <p>The token used for deduplication of messages within a 5-minute minimum deduplication interval. If a message with a particular
         /// <code>MessageDeduplicationId</code> is sent successfully, subsequent messages with the same <code>MessageDeduplicationId</code> are
         /// accepted successfully but aren't delivered. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues-exactly-once-processing.html">
-        /// Exactly-once processing</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.</p>
+        /// Exactly-once processing</a> in the <i>Amazon SQS Developer Guide</i>.</p>
         /// <ul>
         /// <li>
         /// <p>Every message must have a unique <code>MessageDeduplicationId</code>,</p>
@@ -617,7 +646,7 @@ pub mod send_message_batch_request_entry {
         /// punctuation (<code>!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~</code>).</p>
         /// <p>For best practices of using <code>MessageDeduplicationId</code>, see
         /// <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/using-messagededuplicationid-property.html">Using the MessageDeduplicationId Property</a>
-        /// in the <i>Amazon Simple Queue Service Developer Guide</i>.</p>
+        /// in the <i>Amazon SQS Developer Guide</i>.</p>
         pub fn message_deduplication_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.message_deduplication_id = Some(input.into());
             self
@@ -650,7 +679,7 @@ pub mod send_message_batch_request_entry {
         /// <p>The length of <code>MessageGroupId</code> is 128 characters. Valid values: alphanumeric characters and punctuation <code>(!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~)</code>.</p>
         /// <p>For best practices of using <code>MessageGroupId</code>, see
         /// <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/using-messagegroupid-property.html">Using the MessageGroupId Property</a>
-        /// in the <i>Amazon Simple Queue Service Developer Guide</i>.</p>
+        /// in the <i>Amazon SQS Developer Guide</i>.</p>
         /// <important>
         /// <p>
         /// <code>MessageGroupId</code> is required for FIFO queues. You can't use it for Standard queues.</p>
@@ -704,7 +733,7 @@ pub struct MessageSystemAttributeValue {
     /// <p>Not implemented. Reserved for future use.</p>
     pub binary_list_values: std::option::Option<std::vec::Vec<smithy_types::Blob>>,
     /// <p>Amazon SQS supports the following logical data types: <code>String</code>, <code>Number</code>, and <code>Binary</code>. For the <code>Number</code> data type, you must use <code>StringValue</code>.</p>
-    /// <p>You can also append custom labels. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-metadata.html#sqs-message-attributes">Amazon SQS Message Attributes</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.</p>
+    /// <p>You can also append custom labels. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-metadata.html#sqs-message-attributes">Amazon SQS Message Attributes</a> in the <i>Amazon SQS Developer Guide</i>.</p>
     pub data_type: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for MessageSystemAttributeValue {
@@ -776,7 +805,7 @@ pub mod message_system_attribute_value {
             self
         }
         /// <p>Amazon SQS supports the following logical data types: <code>String</code>, <code>Number</code>, and <code>Binary</code>. For the <code>Number</code> data type, you must use <code>StringValue</code>.</p>
-        /// <p>You can also append custom labels. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-metadata.html#sqs-message-attributes">Amazon SQS Message Attributes</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.</p>
+        /// <p>You can also append custom labels. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-metadata.html#sqs-message-attributes">Amazon SQS Message Attributes</a> in the <i>Amazon SQS Developer Guide</i>.</p>
         pub fn data_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.data_type = Some(input.into());
             self
@@ -841,6 +870,9 @@ impl MessageSystemAttributeNameForSends {
             MessageSystemAttributeNameForSends::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["AWSTraceHeader"]
+    }
 }
 impl AsRef<str> for MessageSystemAttributeNameForSends {
     fn as_ref(&self) -> &str {
@@ -865,7 +897,7 @@ pub struct MessageAttributeValue {
     /// <p>Not implemented. Reserved for future use.</p>
     pub binary_list_values: std::option::Option<std::vec::Vec<smithy_types::Blob>>,
     /// <p>Amazon SQS supports the following logical data types: <code>String</code>, <code>Number</code>, and <code>Binary</code>. For the <code>Number</code> data type, you must use <code>StringValue</code>.</p>
-    /// <p>You can also append custom labels. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-metadata.html#sqs-message-attributes">Amazon SQS Message Attributes</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.</p>
+    /// <p>You can also append custom labels. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-metadata.html#sqs-message-attributes">Amazon SQS Message Attributes</a> in the <i>Amazon SQS Developer Guide</i>.</p>
     pub data_type: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for MessageAttributeValue {
@@ -937,7 +969,7 @@ pub mod message_attribute_value {
             self
         }
         /// <p>Amazon SQS supports the following logical data types: <code>String</code>, <code>Number</code>, and <code>Binary</code>. For the <code>Number</code> data type, you must use <code>StringValue</code>.</p>
-        /// <p>You can also append custom labels. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-metadata.html#sqs-message-attributes">Amazon SQS Message Attributes</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.</p>
+        /// <p>You can also append custom labels. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-metadata.html#sqs-message-attributes">Amazon SQS Message Attributes</a> in the <i>Amazon SQS Developer Guide</i>.</p>
         pub fn data_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.data_type = Some(input.into());
             self
@@ -969,7 +1001,7 @@ impl MessageAttributeValue {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Message {
-    /// <p>A unique identifier for the message. A <code>MessageId</code>is considered unique across all AWS accounts for an extended period of time.</p>
+    /// <p>A unique identifier for the message. A <code>MessageId</code>is considered unique across all accounts for an extended period of time.</p>
     pub message_id: std::option::Option<std::string::String>,
     /// <p>An identifier associated with the act of receiving the message. A new receipt handle is returned every time you receive a message. When deleting a message, you provide the last received receipt handle to delete the message.</p>
     pub receipt_handle: std::option::Option<std::string::String>,
@@ -1026,7 +1058,10 @@ pub struct Message {
     >,
     /// <p>An MD5 digest of the non-URL-encoded message attribute string. You can use this attribute to verify that Amazon SQS received the message correctly. Amazon SQS URL-decodes the message before creating the MD5 digest. For information about MD5, see <a href="https://www.ietf.org/rfc/rfc1321.txt">RFC1321</a>.</p>
     pub md5_of_message_attributes: std::option::Option<std::string::String>,
-    /// <p>Each message attribute consists of a <code>Name</code>, <code>Type</code>, and <code>Value</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-metadata.html#sqs-message-attributes">Amazon SQS Message Attributes</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.</p>
+    /// <p>Each message attribute consists of a <code>Name</code>, <code>Type</code>,
+    /// and <code>Value</code>. For more information, see
+    /// <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-metadata.html#sqs-message-attributes">Amazon SQS
+    /// message attributes</a> in the <i>Amazon SQS Developer Guide</i>.</p>
     pub message_attributes: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::MessageAttributeValue>,
     >,
@@ -1066,7 +1101,7 @@ pub mod message {
         >,
     }
     impl Builder {
-        /// <p>A unique identifier for the message. A <code>MessageId</code>is considered unique across all AWS accounts for an extended period of time.</p>
+        /// <p>A unique identifier for the message. A <code>MessageId</code>is considered unique across all accounts for an extended period of time.</p>
         pub fn message_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.message_id = Some(input.into());
             self
@@ -1240,6 +1275,18 @@ impl MessageSystemAttributeName {
             MessageSystemAttributeName::SequenceNumber => "SequenceNumber",
             MessageSystemAttributeName::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "AWSTraceHeader",
+            "ApproximateFirstReceiveTimestamp",
+            "ApproximateReceiveCount",
+            "MessageDeduplicationId",
+            "MessageGroupId",
+            "SenderId",
+            "SentTimestamp",
+            "SequenceNumber",
+        ]
     }
 }
 impl AsRef<str> for MessageSystemAttributeName {

@@ -48,7 +48,7 @@ impl UpdateWorkteamOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateWorkforceOutput {
-    /// <p>A single private workforce. You can create one private work force in each AWS Region. By default,
+    /// <p>A single private workforce. You can create one private work force in each Amazon Web Services Region. By default,
     /// any workforce-related API operation used in a specific region will apply to the
     /// workforce created in that region. To learn how to create a private workforce, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-workforce-create-private.html">Create a Private Workforce</a>.</p>
     pub workforce: std::option::Option<crate::model::Workforce>,
@@ -69,7 +69,7 @@ pub mod update_workforce_output {
         pub(crate) workforce: std::option::Option<crate::model::Workforce>,
     }
     impl Builder {
-        /// <p>A single private workforce. You can create one private work force in each AWS Region. By default,
+        /// <p>A single private workforce. You can create one private work force in each Amazon Web Services Region. By default,
         /// any workforce-related API operation used in a specific region will apply to the
         /// workforce created in that region. To learn how to create a private workforce, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-workforce-create-private.html">Create a Private Workforce</a>.</p>
         pub fn workforce(mut self, input: crate::model::Workforce) -> Self {
@@ -3466,7 +3466,7 @@ impl ListModelPackagesOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListModelPackageGroupsOutput {
-    /// <p>A list of summaries of the model groups in your AWS account.</p>
+    /// <p>A list of summaries of the model groups in your Amazon Web Services account.</p>
     pub model_package_group_summary_list:
         std::option::Option<std::vec::Vec<crate::model::ModelPackageGroupSummary>>,
     /// <p>If the response is truncated, SageMaker returns this token. To retrieve the next set
@@ -4945,7 +4945,7 @@ pub struct ListCodeRepositoriesOutput {
     /// </li>
     /// <li>
     /// <p>Configuration information, including the URL location of the repository and
-    /// the ARN of the AWS Secrets Manager secret that contains the credentials used
+    /// the ARN of the Amazon Web Services Secrets Manager secret that contains the credentials used
     /// to access the repository.</p>
     /// </li>
     /// </ul>
@@ -6058,7 +6058,7 @@ impl DescribeWorkteamOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeWorkforceOutput {
     /// <p>A single private workforce, which is automatically created when you create your first
-    /// private work team. You can create one private work force in each AWS Region. By default,
+    /// private work team. You can create one private work force in each Amazon Web Services Region. By default,
     /// any workforce-related API operation used in a specific region will apply to the
     /// workforce created in that region. To learn how to create a private workforce, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-workforce-create-private.html">Create a Private Workforce</a>.</p>
     pub workforce: std::option::Option<crate::model::Workforce>,
@@ -6080,7 +6080,7 @@ pub mod describe_workforce_output {
     }
     impl Builder {
         /// <p>A single private workforce, which is automatically created when you create your first
-        /// private work team. You can create one private work force in each AWS Region. By default,
+        /// private work team. You can create one private work force in each Amazon Web Services Region. By default,
         /// any workforce-related API operation used in a specific region will apply to the
         /// workforce created in that region. To learn how to create a private workforce, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-workforce-create-private.html">Create a Private Workforce</a>.</p>
         pub fn workforce(mut self, input: crate::model::Workforce) -> Self {
@@ -7547,7 +7547,7 @@ pub struct DescribeTrainingJobOutput {
     /// <p>Information about the algorithm used for training, and algorithm metadata.
     /// </p>
     pub algorithm_specification: std::option::Option<crate::model::AlgorithmSpecification>,
-    /// <p>The AWS Identity and Access Management (IAM) role configured for the training job. </p>
+    /// <p>The Amazon Web Services Identity and Access Management (IAM) role configured for the training job. </p>
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>An array of <code>Channel</code> objects that describes each data input channel.
     /// </p>
@@ -8082,7 +8082,7 @@ pub mod describe_training_job_output {
             self.algorithm_specification = input;
             self
         }
-        /// <p>The AWS Identity and Access Management (IAM) role configured for the training job. </p>
+        /// <p>The Amazon Web Services Identity and Access Management (IAM) role configured for the training job. </p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.role_arn = Some(input.into());
             self
@@ -8628,7 +8628,7 @@ pub struct DescribeProjectOutput {
     pub project_id: std::option::Option<std::string::String>,
     /// <p>The description of the project.</p>
     pub project_description: std::option::Option<std::string::String>,
-    /// <p>Information used to provision a service catalog product. For information, see <a href="https://docs.aws.amazon.com/servicecatalog/latest/adminguide/introduction.html">What is AWS Service
+    /// <p>Information used to provision a service catalog product. For information, see <a href="https://docs.aws.amazon.com/servicecatalog/latest/adminguide/introduction.html">What is Amazon Web Services Service
     /// Catalog</a>.</p>
     pub service_catalog_provisioning_details:
         std::option::Option<crate::model::ServiceCatalogProvisioningDetails>,
@@ -8722,7 +8722,7 @@ pub mod describe_project_output {
             self.project_description = input;
             self
         }
-        /// <p>Information used to provision a service catalog product. For information, see <a href="https://docs.aws.amazon.com/servicecatalog/latest/adminguide/introduction.html">What is AWS Service
+        /// <p>Information used to provision a service catalog product. For information, see <a href="https://docs.aws.amazon.com/servicecatalog/latest/adminguide/introduction.html">What is Amazon Web Services Service
         /// Catalog</a>.</p>
         pub fn service_catalog_provisioning_details(
             mut self,
@@ -8821,8 +8821,8 @@ pub struct DescribeProcessingJobOutput {
     pub processing_inputs: std::option::Option<std::vec::Vec<crate::model::ProcessingInput>>,
     /// <p>Output configuration for the processing job.</p>
     pub processing_output_config: std::option::Option<crate::model::ProcessingOutputConfig>,
-    /// <p>The name of the processing job. The name must be unique within an AWS Region in the
-    /// AWS account.</p>
+    /// <p>The name of the processing job. The name must be unique within an Amazon Web Services Region in the
+    /// Amazon Web Services account.</p>
     pub processing_job_name: std::option::Option<std::string::String>,
     /// <p>Identifies the resources, ML compute instances, and ML storage volumes to deploy for a
     /// processing job. In distributed training, you specify more than one instance.</p>
@@ -8959,8 +8959,8 @@ pub mod describe_processing_job_output {
             self.processing_output_config = input;
             self
         }
-        /// <p>The name of the processing job. The name must be unique within an AWS Region in the
-        /// AWS account.</p>
+        /// <p>The name of the processing job. The name must be unique within an Amazon Web Services Region in the
+        /// Amazon Web Services account.</p>
         pub fn processing_job_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.processing_job_name = Some(input.into());
             self
@@ -9957,7 +9957,7 @@ pub struct DescribeNotebookInstanceOutput {
     /// <p>The Amazon Resource Name (ARN) of the IAM role associated with the instance.
     /// </p>
     pub role_arn: std::option::Option<std::string::String>,
-    /// <p>The AWS KMS key ID Amazon SageMaker uses to encrypt data when storing it on the ML storage
+    /// <p>The Amazon Web Services KMS key ID Amazon SageMaker uses to encrypt data when storing it on the ML storage
     /// volume attached to the instance. </p>
     pub kms_key_id: std::option::Option<std::string::String>,
     /// <p>The network interface IDs that Amazon SageMaker created at the time of creating the instance.
@@ -9989,14 +9989,14 @@ pub struct DescribeNotebookInstanceOutput {
         std::option::Option<std::vec::Vec<crate::model::NotebookInstanceAcceleratorType>>,
     /// <p>The Git repository associated with the notebook instance as its default code
     /// repository. This can be either the name of a Git repository stored as a resource in your
-    /// account, or the URL of a Git repository in <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">AWS CodeCommit</a> or in any
+    /// account, or the URL of a Git repository in <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">Amazon Web Services CodeCommit</a> or in any
     /// other Git repository. When you open a notebook instance, it opens in the directory that
     /// contains this repository. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with Amazon SageMaker
     /// Notebook Instances</a>.</p>
     pub default_code_repository: std::option::Option<std::string::String>,
     /// <p>An array of up to three Git repositories associated with the notebook instance. These
     /// can be either the names of Git repositories stored as resources in your account, or the
-    /// URL of Git repositories in <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">AWS CodeCommit</a> or in any
+    /// URL of Git repositories in <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">Amazon Web Services CodeCommit</a> or in any
     /// other Git repository. These repositories are cloned at the same level as the default
     /// repository of your notebook instance. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git
     /// Repositories with Amazon SageMaker Notebook Instances</a>.</p>
@@ -10179,7 +10179,7 @@ pub mod describe_notebook_instance_output {
             self.role_arn = input;
             self
         }
-        /// <p>The AWS KMS key ID Amazon SageMaker uses to encrypt data when storing it on the ML storage
+        /// <p>The Amazon Web Services KMS key ID Amazon SageMaker uses to encrypt data when storing it on the ML storage
         /// volume attached to the instance. </p>
         pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_key_id = Some(input.into());
@@ -10290,7 +10290,7 @@ pub mod describe_notebook_instance_output {
         }
         /// <p>The Git repository associated with the notebook instance as its default code
         /// repository. This can be either the name of a Git repository stored as a resource in your
-        /// account, or the URL of a Git repository in <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">AWS CodeCommit</a> or in any
+        /// account, or the URL of a Git repository in <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">Amazon Web Services CodeCommit</a> or in any
         /// other Git repository. When you open a notebook instance, it opens in the directory that
         /// contains this repository. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with Amazon SageMaker
         /// Notebook Instances</a>.</p>
@@ -10647,8 +10647,8 @@ impl DescribeMonitoringScheduleOutput {
 pub struct DescribeModelQualityJobDefinitionOutput {
     /// <p>The Amazon Resource Name (ARN) of the model quality job.</p>
     pub job_definition_arn: std::option::Option<std::string::String>,
-    /// <p>The name of the quality job definition. The name must be unique within an AWS Region in
-    /// the AWS account.</p>
+    /// <p>The name of the quality job definition. The name must be unique within an Amazon Web Services Region in
+    /// the Amazon Web Services account.</p>
     pub job_definition_name: std::option::Option<std::string::String>,
     /// <p>The time at which the model quality job was created.</p>
     pub creation_time: std::option::Option<smithy_types::Instant>,
@@ -10733,8 +10733,8 @@ pub mod describe_model_quality_job_definition_output {
             self.job_definition_arn = input;
             self
         }
-        /// <p>The name of the quality job definition. The name must be unique within an AWS Region in
-        /// the AWS account.</p>
+        /// <p>The name of the quality job definition. The name must be unique within an Amazon Web Services Region in
+        /// the Amazon Web Services account.</p>
         pub fn job_definition_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.job_definition_name = Some(input.into());
             self
@@ -11071,7 +11071,7 @@ pub struct DescribeModelPackageOutput {
     pub model_package_status: std::option::Option<crate::model::ModelPackageStatus>,
     /// <p>Details about the current status of the model package.</p>
     pub model_package_status_details: std::option::Option<crate::model::ModelPackageStatusDetails>,
-    /// <p>Whether the model package is certified for listing on AWS Marketplace.</p>
+    /// <p>Whether the model package is certified for listing on Amazon Web Services Marketplace.</p>
     pub certify_for_marketplace: bool,
     /// <p>The approval status of the model package.</p>
     pub model_approval_status: std::option::Option<crate::model::ModelApprovalStatus>,
@@ -11296,7 +11296,7 @@ pub mod describe_model_package_output {
             self.model_package_status_details = input;
             self
         }
-        /// <p>Whether the model package is certified for listing on AWS Marketplace.</p>
+        /// <p>Whether the model package is certified for listing on Amazon Web Services Marketplace.</p>
         pub fn certify_for_marketplace(mut self, input: bool) -> Self {
             self.certify_for_marketplace = Some(input);
             self
@@ -11429,8 +11429,8 @@ impl DescribeModelPackageOutput {
 pub struct DescribeModelExplainabilityJobDefinitionOutput {
     /// <p>The Amazon Resource Name (ARN) of the model explainability job.</p>
     pub job_definition_arn: std::option::Option<std::string::String>,
-    /// <p>The name of the explainability job definition. The name must be unique within an AWS
-    /// Region in the AWS account.</p>
+    /// <p>The name of the explainability job definition. The name must be unique within an Amazon Web Services
+    /// Region in the Amazon Web Services account.</p>
     pub job_definition_name: std::option::Option<std::string::String>,
     /// <p>The time at which the model explainability job was created.</p>
     pub creation_time: std::option::Option<smithy_types::Instant>,
@@ -11451,7 +11451,7 @@ pub struct DescribeModelExplainabilityJobDefinitionOutput {
     pub job_resources: std::option::Option<crate::model::MonitoringResources>,
     /// <p>Networking options for a model explainability job.</p>
     pub network_config: std::option::Option<crate::model::MonitoringNetworkConfig>,
-    /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that
+    /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services Identity and Access Management (IAM) role that
     /// has read permission to the input data location and write permission to the output data
     /// location in Amazon S3.</p>
     pub role_arn: std::option::Option<std::string::String>,
@@ -11523,8 +11523,8 @@ pub mod describe_model_explainability_job_definition_output {
             self.job_definition_arn = input;
             self
         }
-        /// <p>The name of the explainability job definition. The name must be unique within an AWS
-        /// Region in the AWS account.</p>
+        /// <p>The name of the explainability job definition. The name must be unique within an Amazon Web Services
+        /// Region in the Amazon Web Services account.</p>
         pub fn job_definition_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.job_definition_name = Some(input.into());
             self
@@ -11633,7 +11633,7 @@ pub mod describe_model_explainability_job_definition_output {
             self.network_config = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that
+        /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services Identity and Access Management (IAM) role that
         /// has read permission to the input data location and write permission to the output data
         /// location in Amazon S3.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -11690,8 +11690,8 @@ impl DescribeModelExplainabilityJobDefinitionOutput {
 pub struct DescribeModelBiasJobDefinitionOutput {
     /// <p>The Amazon Resource Name (ARN) of the model bias job.</p>
     pub job_definition_arn: std::option::Option<std::string::String>,
-    /// <p>The name of the bias job definition. The name must be unique within an AWS Region in the
-    /// AWS account.</p>
+    /// <p>The name of the bias job definition. The name must be unique within an Amazon Web Services Region in the
+    /// Amazon Web Services account.</p>
     pub job_definition_name: std::option::Option<std::string::String>,
     /// <p>The time at which the model bias job was created.</p>
     pub creation_time: std::option::Option<smithy_types::Instant>,
@@ -11707,7 +11707,7 @@ pub struct DescribeModelBiasJobDefinitionOutput {
     pub job_resources: std::option::Option<crate::model::MonitoringResources>,
     /// <p>Networking options for a model bias job.</p>
     pub network_config: std::option::Option<crate::model::MonitoringNetworkConfig>,
-    /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that
+    /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services Identity and Access Management (IAM) role that
     /// has read permission to the input data location and write permission to the output data
     /// location in Amazon S3.</p>
     pub role_arn: std::option::Option<std::string::String>,
@@ -11775,8 +11775,8 @@ pub mod describe_model_bias_job_definition_output {
             self.job_definition_arn = input;
             self
         }
-        /// <p>The name of the bias job definition. The name must be unique within an AWS Region in the
-        /// AWS account.</p>
+        /// <p>The name of the bias job definition. The name must be unique within an Amazon Web Services Region in the
+        /// Amazon Web Services account.</p>
         pub fn job_definition_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.job_definition_name = Some(input.into());
             self
@@ -11881,7 +11881,7 @@ pub mod describe_model_bias_job_definition_output {
             self.network_config = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that
+        /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services Identity and Access Management (IAM) role that
         /// has read permission to the input data location and write permission to the output data
         /// location in Amazon S3.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -12158,7 +12158,7 @@ pub struct DescribeLabelingJobOutput {
     /// data objects and the location of the manifest file that describes the data
     /// objects.</p>
     pub input_config: std::option::Option<crate::model::LabelingJobInputConfig>,
-    /// <p>The location of the job's output data and the AWS Key Management Service key ID for the key used to
+    /// <p>The location of the job's output data and the Amazon Web Services Key Management Service key ID for the key used to
     /// encrypt the output data, if any.</p>
     pub output_config: std::option::Option<crate::model::LabelingJobOutputConfig>,
     /// <p>The Amazon Resource Name (ARN) that Amazon SageMaker assumes to perform tasks on your behalf
@@ -12230,9 +12230,9 @@ pub struct DescribeLabelingJobOutput {
     /// <p>Configuration information required for human workers to complete a labeling
     /// task.</p>
     pub human_task_config: std::option::Option<crate::model::HumanTaskConfig>,
-    /// <p>An array of key-value pairs. You can use tags to categorize your AWS resources in
+    /// <p>An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in
     /// different ways, for example, by purpose, owner, or environment. For more information,
-    /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS
+    /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services
     /// Resources</a>.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>The location of the output produced by the labeling job.</p>
@@ -12420,7 +12420,7 @@ pub mod describe_labeling_job_output {
             self.input_config = input;
             self
         }
-        /// <p>The location of the job's output data and the AWS Key Management Service key ID for the key used to
+        /// <p>The location of the job's output data and the Amazon Web Services Key Management Service key ID for the key used to
         /// encrypt the output data, if any.</p>
         pub fn output_config(mut self, input: crate::model::LabelingJobOutputConfig) -> Self {
             self.output_config = Some(input);
@@ -13484,7 +13484,7 @@ pub struct DescribeFlowDefinitionOutput {
     pub human_loop_config: std::option::Option<crate::model::HumanLoopConfig>,
     /// <p>An object containing information about the output file.</p>
     pub output_config: std::option::Option<crate::model::FlowDefinitionOutputConfig>,
-    /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) execution role for the flow definition.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services Identity and Access Management (IAM) execution role for the flow definition.</p>
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>The reason your flow definition failed.</p>
     pub failure_reason: std::option::Option<std::string::String>,
@@ -13631,7 +13631,7 @@ pub mod describe_flow_definition_output {
             self.output_config = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) execution role for the flow definition.</p>
+        /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services Identity and Access Management (IAM) execution role for the flow definition.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.role_arn = Some(input.into());
             self
@@ -13701,7 +13701,7 @@ pub struct DescribeFeatureGroupOutput {
     /// <p>The configuration for the <code>OnlineStore</code>.</p>
     pub online_store_config: std::option::Option<crate::model::OnlineStoreConfig>,
     /// <p>The configuration of the <code>OfflineStore</code>, inducing the S3 location of the
-    /// <code>OfflineStore</code>, AWS Glue or AWS Hive data catalogue configurations, and the
+    /// <code>OfflineStore</code>, Amazon Web Services Glue or Amazon Web Services Hive data catalogue configurations, and the
     /// security configuration.</p>
     pub offline_store_config: std::option::Option<crate::model::OfflineStoreConfig>,
     /// <p>The Amazon Resource Name (ARN) of the IAM execution role used to persist data into the
@@ -13877,7 +13877,7 @@ pub mod describe_feature_group_output {
             self
         }
         /// <p>The configuration of the <code>OfflineStore</code>, inducing the S3 location of the
-        /// <code>OfflineStore</code>, AWS Glue or AWS Hive data catalogue configurations, and the
+        /// <code>OfflineStore</code>, Amazon Web Services Glue or Amazon Web Services Hive data catalogue configurations, and the
         /// security configuration.</p>
         pub fn offline_store_config(mut self, input: crate::model::OfflineStoreConfig) -> Self {
             self.offline_store_config = Some(input);
@@ -14190,7 +14190,7 @@ pub struct DescribeEndpointConfigOutput {
     pub production_variants: std::option::Option<std::vec::Vec<crate::model::ProductionVariant>>,
     /// <p></p>
     pub data_capture_config: std::option::Option<crate::model::DataCaptureConfig>,
-    /// <p>AWS KMS key ID Amazon SageMaker uses to encrypt data when storing it on the ML storage
+    /// <p>Amazon Web Services KMS key ID Amazon SageMaker uses to encrypt data when storing it on the ML storage
     /// volume attached to the instance.</p>
     pub kms_key_id: std::option::Option<std::string::String>,
     /// <p>A timestamp that shows when the endpoint configuration was created.</p>
@@ -14275,7 +14275,7 @@ pub mod describe_endpoint_config_output {
             self.data_capture_config = input;
             self
         }
-        /// <p>AWS KMS key ID Amazon SageMaker uses to encrypt data when storing it on the ML storage
+        /// <p>Amazon Web Services KMS key ID Amazon SageMaker uses to encrypt data when storing it on the ML storage
         /// volume attached to the instance.</p>
         pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_key_id = Some(input.into());
@@ -14965,7 +14965,7 @@ pub struct DescribeDomainOutput {
     pub url: std::option::Option<std::string::String>,
     /// <p>The ID of the Amazon Virtual Private Cloud (VPC) that Studio uses for communication.</p>
     pub vpc_id: std::option::Option<std::string::String>,
-    /// <p>The AWS KMS customer managed CMK used to encrypt
+    /// <p>The Amazon Web Services KMS customer managed CMK used to encrypt
     /// the EFS volume attached to the domain.</p>
     pub kms_key_id: std::option::Option<std::string::String>,
 }
@@ -15222,7 +15222,7 @@ pub mod describe_domain_output {
             self.vpc_id = input;
             self
         }
-        /// <p>The AWS KMS customer managed CMK used to encrypt
+        /// <p>The Amazon Web Services KMS customer managed CMK used to encrypt
         /// the EFS volume attached to the domain.</p>
         pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_key_id = Some(input.into());
@@ -15279,9 +15279,9 @@ pub struct DescribeDeviceFleetOutput {
     pub creation_time: std::option::Option<smithy_types::Instant>,
     /// <p>Timestamp of when the device fleet was last updated.</p>
     pub last_modified_time: std::option::Option<smithy_types::Instant>,
-    /// <p>The Amazon Resource Name (ARN) that has access to AWS Internet of Things (IoT).</p>
+    /// <p>The Amazon Resource Name (ARN) that has access to Amazon Web Services Internet of Things (IoT).</p>
     pub role_arn: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) alias created in AWS Internet of Things (IoT).</p>
+    /// <p>The Amazon Resource Name (ARN) alias created in Amazon Web Services Internet of Things (IoT).</p>
     pub iot_role_alias: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DescribeDeviceFleetOutput {
@@ -15383,7 +15383,7 @@ pub mod describe_device_fleet_output {
             self.last_modified_time = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) that has access to AWS Internet of Things (IoT).</p>
+        /// <p>The Amazon Resource Name (ARN) that has access to Amazon Web Services Internet of Things (IoT).</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.role_arn = Some(input.into());
             self
@@ -15392,7 +15392,7 @@ pub mod describe_device_fleet_output {
             self.role_arn = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) alias created in AWS Internet of Things (IoT).</p>
+        /// <p>The Amazon Resource Name (ARN) alias created in Amazon Web Services Internet of Things (IoT).</p>
         pub fn iot_role_alias(mut self, input: impl Into<std::string::String>) -> Self {
             self.iot_role_alias = Some(input.into());
             self
@@ -15437,7 +15437,7 @@ pub struct DescribeDeviceOutput {
     pub description: std::option::Option<std::string::String>,
     /// <p>The name of the fleet the device belongs to.</p>
     pub device_fleet_name: std::option::Option<std::string::String>,
-    /// <p>The AWS Internet of Things (IoT) object thing name associated with the device.</p>
+    /// <p>The Amazon Web Services Internet of Things (IoT) object thing name associated with the device.</p>
     pub iot_thing_name: std::option::Option<std::string::String>,
     /// <p>The timestamp of the last registration or de-reregistration.</p>
     pub registration_time: std::option::Option<smithy_types::Instant>,
@@ -15523,7 +15523,7 @@ pub mod describe_device_output {
             self.device_fleet_name = input;
             self
         }
-        /// <p>The AWS Internet of Things (IoT) object thing name associated with the device.</p>
+        /// <p>The Amazon Web Services Internet of Things (IoT) object thing name associated with the device.</p>
         pub fn iot_thing_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.iot_thing_name = Some(input.into());
             self
@@ -16087,6 +16087,9 @@ pub struct DescribeCompilationJobOutput {
     /// the time limit, Amazon SageMaker ends the compilation job. Use this API to cap model training
     /// costs.</p>
     pub stopping_condition: std::option::Option<crate::model::StoppingCondition>,
+    /// <p>The inference image to use when compiling a model.
+    /// Specify an image only if the target device is a cloud instance.</p>
+    pub inference_image: std::option::Option<std::string::String>,
     /// <p>The time that the model compilation job was created.</p>
     pub creation_time: std::option::Option<smithy_types::Instant>,
     /// <p>The time that the status
@@ -16110,6 +16113,11 @@ pub struct DescribeCompilationJobOutput {
     /// <p>Information about the output location for the compiled model and the target device
     /// that the model runs on.</p>
     pub output_config: std::option::Option<crate::model::OutputConfig>,
+    /// <p>A <a>VpcConfig</a> object that specifies the VPC that you want your
+    /// compilation job to connect to. Control access to your models by
+    /// configuring the VPC. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/neo-vpc.html">Protect Compilation Jobs by Using an Amazon
+    /// Virtual Private Cloud</a>.</p>
+    pub vpc_config: std::option::Option<crate::model::NeoVpcConfig>,
 }
 impl std::fmt::Debug for DescribeCompilationJobOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -16120,6 +16128,7 @@ impl std::fmt::Debug for DescribeCompilationJobOutput {
         formatter.field("compilation_start_time", &self.compilation_start_time);
         formatter.field("compilation_end_time", &self.compilation_end_time);
         formatter.field("stopping_condition", &self.stopping_condition);
+        formatter.field("inference_image", &self.inference_image);
         formatter.field("creation_time", &self.creation_time);
         formatter.field("last_modified_time", &self.last_modified_time);
         formatter.field("failure_reason", &self.failure_reason);
@@ -16128,6 +16137,7 @@ impl std::fmt::Debug for DescribeCompilationJobOutput {
         formatter.field("role_arn", &self.role_arn);
         formatter.field("input_config", &self.input_config);
         formatter.field("output_config", &self.output_config);
+        formatter.field("vpc_config", &self.vpc_config);
         formatter.finish()
     }
 }
@@ -16143,6 +16153,7 @@ pub mod describe_compilation_job_output {
         pub(crate) compilation_start_time: std::option::Option<smithy_types::Instant>,
         pub(crate) compilation_end_time: std::option::Option<smithy_types::Instant>,
         pub(crate) stopping_condition: std::option::Option<crate::model::StoppingCondition>,
+        pub(crate) inference_image: std::option::Option<std::string::String>,
         pub(crate) creation_time: std::option::Option<smithy_types::Instant>,
         pub(crate) last_modified_time: std::option::Option<smithy_types::Instant>,
         pub(crate) failure_reason: std::option::Option<std::string::String>,
@@ -16151,6 +16162,7 @@ pub mod describe_compilation_job_output {
         pub(crate) role_arn: std::option::Option<std::string::String>,
         pub(crate) input_config: std::option::Option<crate::model::InputConfig>,
         pub(crate) output_config: std::option::Option<crate::model::OutputConfig>,
+        pub(crate) vpc_config: std::option::Option<crate::model::NeoVpcConfig>,
     }
     impl Builder {
         /// <p>The name of the model compilation job.</p>
@@ -16231,6 +16243,19 @@ pub mod describe_compilation_job_output {
             input: std::option::Option<crate::model::StoppingCondition>,
         ) -> Self {
             self.stopping_condition = input;
+            self
+        }
+        /// <p>The inference image to use when compiling a model.
+        /// Specify an image only if the target device is a cloud instance.</p>
+        pub fn inference_image(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inference_image = Some(input.into());
+            self
+        }
+        pub fn set_inference_image(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inference_image = input;
             self
         }
         /// <p>The time that the model compilation job was created.</p>
@@ -16333,6 +16358,21 @@ pub mod describe_compilation_job_output {
             self.output_config = input;
             self
         }
+        /// <p>A <a>VpcConfig</a> object that specifies the VPC that you want your
+        /// compilation job to connect to. Control access to your models by
+        /// configuring the VPC. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/neo-vpc.html">Protect Compilation Jobs by Using an Amazon
+        /// Virtual Private Cloud</a>.</p>
+        pub fn vpc_config(mut self, input: crate::model::NeoVpcConfig) -> Self {
+            self.vpc_config = Some(input);
+            self
+        }
+        pub fn set_vpc_config(
+            mut self,
+            input: std::option::Option<crate::model::NeoVpcConfig>,
+        ) -> Self {
+            self.vpc_config = input;
+            self
+        }
         /// Consumes the builder and constructs a [`DescribeCompilationJobOutput`](crate::output::DescribeCompilationJobOutput)
         pub fn build(self) -> crate::output::DescribeCompilationJobOutput {
             crate::output::DescribeCompilationJobOutput {
@@ -16342,6 +16382,7 @@ pub mod describe_compilation_job_output {
                 compilation_start_time: self.compilation_start_time,
                 compilation_end_time: self.compilation_end_time,
                 stopping_condition: self.stopping_condition,
+                inference_image: self.inference_image,
                 creation_time: self.creation_time,
                 last_modified_time: self.last_modified_time,
                 failure_reason: self.failure_reason,
@@ -16350,6 +16391,7 @@ pub mod describe_compilation_job_output {
                 role_arn: self.role_arn,
                 input_config: self.input_config,
                 output_config: self.output_config,
+                vpc_config: self.vpc_config,
             }
         }
     }
@@ -16373,7 +16415,7 @@ pub struct DescribeCodeRepositoryOutput {
     /// <p>The date and time that the repository was last changed.</p>
     pub last_modified_time: std::option::Option<smithy_types::Instant>,
     /// <p>Configuration details about the repository, including the URL where the repository is
-    /// located, the default branch, and the Amazon Resource Name (ARN) of the AWS Secrets
+    /// located, the default branch, and the Amazon Resource Name (ARN) of the Amazon Web Services Secrets
     /// Manager secret that contains the credentials used to access the repository.</p>
     pub git_config: std::option::Option<crate::model::GitConfig>,
 }
@@ -16450,7 +16492,7 @@ pub mod describe_code_repository_output {
             self
         }
         /// <p>Configuration details about the repository, including the URL where the repository is
-        /// located, the default branch, and the Amazon Resource Name (ARN) of the AWS Secrets
+        /// located, the default branch, and the Amazon Resource Name (ARN) of the Amazon Web Services Secrets
         /// Manager secret that contains the credentials used to access the repository.</p>
         pub fn git_config(mut self, input: crate::model::GitConfig) -> Self {
             self.git_config = Some(input);
@@ -16493,7 +16535,7 @@ pub struct DescribeAutoMlJobOutput {
     pub input_data_config: std::option::Option<std::vec::Vec<crate::model::AutoMlChannel>>,
     /// <p>Returns the job's output data config.</p>
     pub output_data_config: std::option::Option<crate::model::AutoMlOutputDataConfig>,
-    /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that has read permission to
+    /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services Identity and Access Management (IAM) role that has read permission to
     /// the input data location and write permission to the output data location in Amazon S3.</p>
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>Returns the job's objective.</p>
@@ -16649,7 +16691,7 @@ pub mod describe_auto_ml_job_output {
             self.output_data_config = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that has read permission to
+        /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services Identity and Access Management (IAM) role that has read permission to
         /// the input data location and write permission to the output data location in Amazon S3.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.role_arn = Some(input.into());
@@ -17469,7 +17511,7 @@ pub struct DescribeAlgorithmOutput {
     pub algorithm_status_details: std::option::Option<crate::model::AlgorithmStatusDetails>,
     /// <p>The product identifier of the algorithm.</p>
     pub product_id: std::option::Option<std::string::String>,
-    /// <p>Whether the algorithm is certified to be listed in AWS Marketplace.</p>
+    /// <p>Whether the algorithm is certified to be listed in Amazon Web Services Marketplace.</p>
     pub certify_for_marketplace: bool,
 }
 impl std::fmt::Debug for DescribeAlgorithmOutput {
@@ -17641,7 +17683,7 @@ pub mod describe_algorithm_output {
             self.product_id = input;
             self
         }
-        /// <p>Whether the algorithm is certified to be listed in AWS Marketplace.</p>
+        /// <p>Whether the algorithm is certified to be listed in Amazon Web Services Marketplace.</p>
         pub fn certify_for_marketplace(mut self, input: bool) -> Self {
             self.certify_for_marketplace = Some(input);
             self

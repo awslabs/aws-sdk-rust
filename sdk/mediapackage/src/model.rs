@@ -39,6 +39,9 @@ impl Origination {
             Origination::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["ALLOW", "DENY"]
+    }
 }
 impl AsRef<str> for Origination {
     fn as_ref(&self) -> &str {
@@ -261,6 +264,13 @@ impl StreamOrder {
             StreamOrder::VideoBitrateDescending => "VIDEO_BITRATE_DESCENDING",
             StreamOrder::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "ORIGINAL",
+            "VIDEO_BITRATE_ASCENDING",
+            "VIDEO_BITRATE_DESCENDING",
+        ]
     }
 }
 impl AsRef<str> for StreamOrder {
@@ -579,6 +589,9 @@ impl PresetSpeke20Video {
             PresetSpeke20Video::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["PRESET-VIDEO-1"]
+    }
 }
 impl AsRef<str> for PresetSpeke20Video {
     fn as_ref(&self) -> &str {
@@ -622,6 +635,9 @@ impl PresetSpeke20Audio {
             PresetSpeke20Audio::PresetAudio1 => "PRESET-AUDIO-1",
             PresetSpeke20Audio::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["PRESET-AUDIO-1"]
     }
 }
 impl AsRef<str> for PresetSpeke20Audio {
@@ -951,6 +967,9 @@ impl PlaylistType {
             PlaylistType::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["EVENT", "NONE", "VOD"]
+    }
 }
 impl AsRef<str> for PlaylistType {
     fn as_ref(&self) -> &str {
@@ -1126,6 +1145,9 @@ impl EncryptionMethod {
             EncryptionMethod::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["AES_128", "SAMPLE_AES"]
+    }
 }
 impl AsRef<str> for EncryptionMethod {
     fn as_ref(&self) -> &str {
@@ -1186,6 +1208,9 @@ impl AdsOnDeliveryRestrictions {
             AdsOnDeliveryRestrictions::Unrestricted => "UNRESTRICTED",
             AdsOnDeliveryRestrictions::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["BOTH", "NONE", "RESTRICTED", "UNRESTRICTED"]
     }
 }
 impl AsRef<str> for AdsOnDeliveryRestrictions {
@@ -1264,6 +1289,18 @@ impl AdTriggersElement {
             AdTriggersElement::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "BREAK",
+            "DISTRIBUTOR_ADVERTISEMENT",
+            "DISTRIBUTOR_OVERLAY_PLACEMENT_OPPORTUNITY",
+            "DISTRIBUTOR_PLACEMENT_OPPORTUNITY",
+            "PROVIDER_ADVERTISEMENT",
+            "PROVIDER_OVERLAY_PLACEMENT_OPPORTUNITY",
+            "PROVIDER_PLACEMENT_OPPORTUNITY",
+            "SPLICE_INSERT",
+        ]
+    }
 }
 impl AsRef<str> for AdTriggersElement {
     fn as_ref(&self) -> &str {
@@ -1316,6 +1353,9 @@ impl AdMarkers {
             AdMarkers::Scte35Enhanced => "SCTE35_ENHANCED",
             AdMarkers::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["DATERANGE", "NONE", "PASSTHROUGH", "SCTE35_ENHANCED"]
     }
 }
 impl AsRef<str> for AdMarkers {
@@ -1683,6 +1723,9 @@ impl UtcTiming {
             UtcTiming::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["HTTP-HEAD", "HTTP-ISO", "NONE"]
+    }
 }
 impl AsRef<str> for UtcTiming {
     fn as_ref(&self) -> &str {
@@ -1733,6 +1776,13 @@ impl SegmentTemplateFormat {
             SegmentTemplateFormat::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "NUMBER_WITH_DURATION",
+            "NUMBER_WITH_TIMELINE",
+            "TIME_WITH_TIMELINE",
+        ]
+    }
 }
 impl AsRef<str> for SegmentTemplateFormat {
     fn as_ref(&self) -> &str {
@@ -1780,6 +1830,9 @@ impl Profile {
             Profile::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["HBBTV_1_5", "NONE"]
+    }
 }
 impl AsRef<str> for Profile {
     fn as_ref(&self) -> &str {
@@ -1823,6 +1876,9 @@ impl PeriodTriggersElement {
             PeriodTriggersElement::Ads => "ADS",
             PeriodTriggersElement::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["ADS"]
     }
 }
 impl AsRef<str> for PeriodTriggersElement {
@@ -1870,6 +1926,9 @@ impl ManifestLayout {
             ManifestLayout::Full => "FULL",
             ManifestLayout::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["COMPACT", "FULL"]
     }
 }
 impl AsRef<str> for ManifestLayout {
@@ -3560,6 +3619,9 @@ impl Status {
             Status::Succeeded => "SUCCEEDED",
             Status::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["FAILED", "IN_PROGRESS", "SUCCEEDED"]
     }
 }
 impl AsRef<str> for Status {

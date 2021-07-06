@@ -3,33 +3,29 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-use rdsdata::{Client, Config, Region};
-
 use aws_types::region::ProvideRegion;
-
+use rdsdata::{Client, Config, Error, Region, PKG_VERSION};
 use structopt::StructOpt;
-use tracing_subscriber::fmt::format::FmtSpan;
-use tracing_subscriber::fmt::SubscriberBuilder;
 
 #[derive(Debug, StructOpt)]
 struct Opt {
-    /// The region. Overrides environment variable AWS_DEFAULT_REGION.
+    /// The default AWS Region.
     #[structopt(short, long)]
     default_region: Option<String>,
 
-    /// The SQL query string
+    /// The SQL query string.
     #[structopt(short, long)]
     query: String,
 
-    /// The ARN of your Aurora serverless DB cluster
+    /// The ARN of your Aurora serverless DB cluster.
     #[structopt(short, long)]
     resource_arn: String,
 
-    /// The ARN of the Secrets Manager secret
+    /// The ARN of the Secrets Manager secret.
     #[structopt(short, long)]
     secret_arn: String,
 
-    /// Whether to display additional runtime information
+    /// Whether to display additional information.
     #[structopt(short, long)]
     verbose: bool,
 }
@@ -44,12 +40,14 @@ struct Opt {
 ///    It should look something like __arn:aws:rds:us-west-2:AWS_ACCOUNT:cluster:database-2__.
 /// * `-s SECRET_ARN` - The ARN of the Secrets Manager secret.
 ///    It should look something like: __arn:aws:secretsmanager:us-west-2:AWS_ACCOUNT:secret:database2/test/postgres-b8maVb__.
-/// * `[-d DEFAULT-REGION]` - The region in which the client is created.
-///    If not supplied, uses the value of the **AWS_DEFAULT_REGION** environment variable.
+/// * `[-d DEFAULT-REGION]` - The Region in which the client is created.
+///    If not supplied, uses the value of the **AWS_REGION** environment variable.
 ///    If the environment variable is not set, defaults to **us-west-2**.
 /// * `[-v]` - Whether to display additional information.
 #[tokio::main]
-async fn main() -> Result<(), rdsdata::Error> {
+async fn main() -> Result<(), Error> {
+    tracing_subscriber::fmt::init();
+
     let Opt {
         default_region,
         query,
@@ -64,18 +62,16 @@ async fn main() -> Result<(), rdsdata::Error> {
         .or_else(|| aws_types::region::default_provider().region())
         .unwrap_or_else(|| Region::new("us-west-2"));
 
-    if verbose {
-        println!("RDS data client version: {}\n", rdsdata::PKG_VERSION);
-        println!("Region:                  {:?}", &region);
-        println!("Resource ARN:            {}", resource_arn);
-        println!("Secrets ARN:             {}", secret_arn);
-        println!("Query:");
-        println!("  {}", query);
+    println!();
 
-        SubscriberBuilder::default()
-            .with_env_filter("info")
-            .with_span_events(FmtSpan::CLOSE)
-            .init();
+    if verbose {
+        println!("RDS data version: {}", PKG_VERSION);
+        println!("Region:           {:?}", &region);
+        println!("Resource ARN:     {}", &resource_arn);
+        println!("Secrets ARN:      {}", &secret_arn);
+        println!("Query:");
+        println!("  {}", &query);
+        println!();
     }
 
     let conf = Config::builder().region(region).build();
@@ -91,5 +87,7 @@ async fn main() -> Result<(), rdsdata::Error> {
     let result = st.send().await?;
 
     println!("{:?}", result);
+    println!();
+
     Ok(())
 }

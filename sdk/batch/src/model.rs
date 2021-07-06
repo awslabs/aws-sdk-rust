@@ -116,6 +116,9 @@ impl JqState {
             JqState::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["DISABLED", "ENABLED"]
+    }
 }
 impl AsRef<str> for JqState {
     fn as_ref(&self) -> &str {
@@ -305,6 +308,9 @@ impl CeState {
             CeState::Enabled => "ENABLED",
             CeState::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["DISABLED", "ENABLED"]
     }
 }
 impl AsRef<str> for CeState {
@@ -585,6 +591,9 @@ impl RetryAction {
             RetryAction::Retry => "RETRY",
             RetryAction::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["EXIT", "RETRY"]
     }
 }
 impl AsRef<str> for RetryAction {
@@ -1293,6 +1302,9 @@ impl ResourceType {
             ResourceType::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["GPU", "MEMORY", "VCPU"]
+    }
 }
 impl AsRef<str> for ResourceType {
     fn as_ref(&self) -> &str {
@@ -1467,6 +1479,9 @@ impl ArrayJobDependency {
             ArrayJobDependency::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["N_TO_N", "SEQUENTIAL"]
+    }
 }
 impl AsRef<str> for ArrayJobDependency {
     fn as_ref(&self) -> &str {
@@ -1560,6 +1575,9 @@ impl PlatformCapability {
             PlatformCapability::Fargate => "FARGATE",
             PlatformCapability::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["EC2", "FARGATE"]
     }
 }
 impl AsRef<str> for PlatformCapability {
@@ -2465,6 +2483,9 @@ impl AssignPublicIp {
             AssignPublicIp::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["DISABLED", "ENABLED"]
+    }
 }
 impl AsRef<str> for AssignPublicIp {
     fn as_ref(&self) -> &str {
@@ -2825,6 +2846,17 @@ impl LogDriver {
             LogDriver::Syslog => "syslog",
             LogDriver::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "awslogs",
+            "fluentd",
+            "gelf",
+            "journald",
+            "json-file",
+            "splunk",
+            "syslog",
+        ]
     }
 }
 impl AsRef<str> for LogDriver {
@@ -3291,6 +3323,9 @@ impl DeviceCgroupPermission {
             DeviceCgroupPermission::Write => "WRITE",
             DeviceCgroupPermission::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["MKNOD", "READ", "WRITE"]
     }
 }
 impl AsRef<str> for DeviceCgroupPermission {
@@ -3826,6 +3861,9 @@ impl EfsAuthorizationConfigIam {
             EfsAuthorizationConfigIam::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["DISABLED", "ENABLED"]
+    }
 }
 impl AsRef<str> for EfsAuthorizationConfigIam {
     fn as_ref(&self) -> &str {
@@ -3872,6 +3910,9 @@ impl EfsTransitEncryption {
             EfsTransitEncryption::Enabled => "ENABLED",
             EfsTransitEncryption::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["DISABLED", "ENABLED"]
     }
 }
 impl AsRef<str> for EfsTransitEncryption {
@@ -3982,6 +4023,9 @@ impl JobDefinitionType {
             JobDefinitionType::Multinode => "multinode",
             JobDefinitionType::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["container", "multinode"]
     }
 }
 impl AsRef<str> for JobDefinitionType {
@@ -4460,6 +4504,17 @@ impl JobStatus {
             JobStatus::Succeeded => "SUCCEEDED",
             JobStatus::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "FAILED",
+            "PENDING",
+            "RUNNABLE",
+            "RUNNING",
+            "STARTING",
+            "SUBMITTED",
+            "SUCCEEDED",
+        ]
     }
 }
 impl AsRef<str> for JobStatus {
@@ -6211,6 +6266,11 @@ impl JqStatus {
             JqStatus::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "CREATING", "DELETED", "DELETING", "INVALID", "UPDATING", "VALID",
+        ]
+    }
 }
 impl AsRef<str> for JqStatus {
     fn as_ref(&self) -> &str {
@@ -7584,6 +7644,13 @@ impl CrAllocationStrategy {
             CrAllocationStrategy::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "BEST_FIT",
+            "BEST_FIT_PROGRESSIVE",
+            "SPOT_CAPACITY_OPTIMIZED",
+        ]
+    }
 }
 impl AsRef<str> for CrAllocationStrategy {
     fn as_ref(&self) -> &str {
@@ -7636,6 +7703,9 @@ impl CrType {
             CrType::Spot => "SPOT",
             CrType::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["EC2", "FARGATE", "FARGATE_SPOT", "SPOT"]
     }
 }
 impl AsRef<str> for CrType {
@@ -7696,6 +7766,11 @@ impl CeStatus {
             CeStatus::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "CREATING", "DELETED", "DELETING", "INVALID", "UPDATING", "VALID",
+        ]
+    }
 }
 impl AsRef<str> for CeStatus {
     fn as_ref(&self) -> &str {
@@ -7742,6 +7817,9 @@ impl CeType {
             CeType::Unmanaged => "UNMANAGED",
             CeType::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["MANAGED", "UNMANAGED"]
     }
 }
 impl AsRef<str> for CeType {

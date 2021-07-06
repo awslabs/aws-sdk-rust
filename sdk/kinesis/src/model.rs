@@ -36,6 +36,9 @@ impl ScalingType {
             ScalingType::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["UNIFORM_SCALING"]
+    }
 }
 impl AsRef<str> for ScalingType {
     fn as_ref(&self) -> &str {
@@ -82,6 +85,9 @@ impl EncryptionType {
             EncryptionType::None => "NONE",
             EncryptionType::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["KMS", "NONE"]
     }
 }
 impl AsRef<str> for EncryptionType {
@@ -246,6 +252,9 @@ impl ConsumerStatus {
             ConsumerStatus::Deleting => "DELETING",
             ConsumerStatus::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["ACTIVE", "CREATING", "DELETING"]
     }
 }
 impl AsRef<str> for ConsumerStatus {
@@ -910,6 +919,16 @@ impl ShardFilterType {
             ShardFilterType::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "AFTER_SHARD_ID",
+            "AT_LATEST",
+            "AT_TIMESTAMP",
+            "AT_TRIM_HORIZON",
+            "FROM_TIMESTAMP",
+            "FROM_TRIM_HORIZON",
+        ]
+    }
 }
 impl AsRef<str> for ShardFilterType {
     fn as_ref(&self) -> &str {
@@ -965,6 +984,15 @@ impl ShardIteratorType {
             ShardIteratorType::TrimHorizon => "TRIM_HORIZON",
             ShardIteratorType::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "AFTER_SEQUENCE_NUMBER",
+            "AT_SEQUENCE_NUMBER",
+            "AT_TIMESTAMP",
+            "LATEST",
+            "TRIM_HORIZON",
+        ]
     }
 }
 impl AsRef<str> for ShardIteratorType {
@@ -1259,6 +1287,18 @@ impl MetricsName {
             MetricsName::WriteProvisionedThroughputExceeded => "WriteProvisionedThroughputExceeded",
             MetricsName::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "ALL",
+            "IncomingBytes",
+            "IncomingRecords",
+            "IteratorAgeMilliseconds",
+            "OutgoingBytes",
+            "OutgoingRecords",
+            "ReadProvisionedThroughputExceeded",
+            "WriteProvisionedThroughputExceeded",
+        ]
     }
 }
 impl AsRef<str> for MetricsName {
@@ -1738,6 +1778,9 @@ impl StreamStatus {
             StreamStatus::Updating => "UPDATING",
             StreamStatus::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["ACTIVE", "CREATING", "DELETING", "UPDATING"]
     }
 }
 impl AsRef<str> for StreamStatus {
