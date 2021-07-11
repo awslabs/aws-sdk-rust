@@ -110,6 +110,7 @@ impl Builder {
     /// Returns `None` if:
     /// - DefaultEndpoint is not set
     /// - DefaultEndpoint has an empty list of supported signature versions
+    /// - RegionRegex is not set
     pub fn build(self) -> Option<Partition> {
         let default_endpoint = self.default_endpoint?;
         let endpoints = self.endpoints.into_iter().collect();
