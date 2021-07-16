@@ -140,13 +140,25 @@ impl BatchGetAggregateResourceConfigInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-amz-json-1.1");
-        let builder = builder.header(
-            "x-amz-target",
-            "StarlingDoveService.BatchGetAggregateResourceConfig",
-        );
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-amz-json-1.1");
+        }
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("x-amz-target"))
+            .unwrap_or(false)
+        {
+            builder = builder.header(
+                "x-amz-target",
+                "StarlingDoveService.BatchGetAggregateResourceConfig",
+            );
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -278,10 +290,22 @@ impl BatchGetResourceConfigInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-amz-json-1.1");
-        let builder = builder.header("x-amz-target", "StarlingDoveService.BatchGetResourceConfig");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-amz-json-1.1");
+        }
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("x-amz-target"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("x-amz-target", "StarlingDoveService.BatchGetResourceConfig");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -429,13 +453,25 @@ impl DeleteAggregationAuthorizationInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-amz-json-1.1");
-        let builder = builder.header(
-            "x-amz-target",
-            "StarlingDoveService.DeleteAggregationAuthorization",
-        );
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-amz-json-1.1");
+        }
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("x-amz-target"))
+            .unwrap_or(false)
+        {
+            builder = builder.header(
+                "x-amz-target",
+                "StarlingDoveService.DeleteAggregationAuthorization",
+            );
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -567,10 +603,22 @@ impl DeleteConfigRuleInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-amz-json-1.1");
-        let builder = builder.header("x-amz-target", "StarlingDoveService.DeleteConfigRule");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-amz-json-1.1");
+        }
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("x-amz-target"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("x-amz-target", "StarlingDoveService.DeleteConfigRule");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -706,13 +754,25 @@ impl DeleteConfigurationAggregatorInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-amz-json-1.1");
-        let builder = builder.header(
-            "x-amz-target",
-            "StarlingDoveService.DeleteConfigurationAggregator",
-        );
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-amz-json-1.1");
+        }
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("x-amz-target"))
+            .unwrap_or(false)
+        {
+            builder = builder.header(
+                "x-amz-target",
+                "StarlingDoveService.DeleteConfigurationAggregator",
+            );
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -850,13 +910,25 @@ impl DeleteConfigurationRecorderInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-amz-json-1.1");
-        let builder = builder.header(
-            "x-amz-target",
-            "StarlingDoveService.DeleteConfigurationRecorder",
-        );
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-amz-json-1.1");
+        }
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("x-amz-target"))
+            .unwrap_or(false)
+        {
+            builder = builder.header(
+                "x-amz-target",
+                "StarlingDoveService.DeleteConfigurationRecorder",
+            );
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -987,10 +1059,22 @@ impl DeleteConformancePackInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-amz-json-1.1");
-        let builder = builder.header("x-amz-target", "StarlingDoveService.DeleteConformancePack");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-amz-json-1.1");
+        }
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("x-amz-target"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("x-amz-target", "StarlingDoveService.DeleteConformancePack");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -1121,10 +1205,22 @@ impl DeleteDeliveryChannelInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-amz-json-1.1");
-        let builder = builder.header("x-amz-target", "StarlingDoveService.DeleteDeliveryChannel");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-amz-json-1.1");
+        }
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("x-amz-target"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("x-amz-target", "StarlingDoveService.DeleteDeliveryChannel");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -1257,13 +1353,25 @@ impl DeleteEvaluationResultsInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-amz-json-1.1");
-        let builder = builder.header(
-            "x-amz-target",
-            "StarlingDoveService.DeleteEvaluationResults",
-        );
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-amz-json-1.1");
+        }
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("x-amz-target"))
+            .unwrap_or(false)
+        {
+            builder = builder.header(
+                "x-amz-target",
+                "StarlingDoveService.DeleteEvaluationResults",
+            );
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -1399,13 +1507,25 @@ impl DeleteOrganizationConfigRuleInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-amz-json-1.1");
-        let builder = builder.header(
-            "x-amz-target",
-            "StarlingDoveService.DeleteOrganizationConfigRule",
-        );
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-amz-json-1.1");
+        }
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("x-amz-target"))
+            .unwrap_or(false)
+        {
+            builder = builder.header(
+                "x-amz-target",
+                "StarlingDoveService.DeleteOrganizationConfigRule",
+            );
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -1543,13 +1663,25 @@ impl DeleteOrganizationConformancePackInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-amz-json-1.1");
-        let builder = builder.header(
-            "x-amz-target",
-            "StarlingDoveService.DeleteOrganizationConformancePack",
-        );
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-amz-json-1.1");
+        }
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("x-amz-target"))
+            .unwrap_or(false)
+        {
+            builder = builder.header(
+                "x-amz-target",
+                "StarlingDoveService.DeleteOrganizationConformancePack",
+            );
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -1697,13 +1829,25 @@ impl DeletePendingAggregationRequestInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-amz-json-1.1");
-        let builder = builder.header(
-            "x-amz-target",
-            "StarlingDoveService.DeletePendingAggregationRequest",
-        );
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-amz-json-1.1");
+        }
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("x-amz-target"))
+            .unwrap_or(false)
+        {
+            builder = builder.header(
+                "x-amz-target",
+                "StarlingDoveService.DeletePendingAggregationRequest",
+            );
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -1850,13 +1994,25 @@ impl DeleteRemediationConfigurationInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-amz-json-1.1");
-        let builder = builder.header(
-            "x-amz-target",
-            "StarlingDoveService.DeleteRemediationConfiguration",
-        );
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-amz-json-1.1");
+        }
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("x-amz-target"))
+            .unwrap_or(false)
+        {
+            builder = builder.header(
+                "x-amz-target",
+                "StarlingDoveService.DeleteRemediationConfiguration",
+            );
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -2010,13 +2166,25 @@ impl DeleteRemediationExceptionsInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-amz-json-1.1");
-        let builder = builder.header(
-            "x-amz-target",
-            "StarlingDoveService.DeleteRemediationExceptions",
-        );
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-amz-json-1.1");
+        }
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("x-amz-target"))
+            .unwrap_or(false)
+        {
+            builder = builder.header(
+                "x-amz-target",
+                "StarlingDoveService.DeleteRemediationExceptions",
+            );
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -2158,10 +2326,22 @@ impl DeleteResourceConfigInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-amz-json-1.1");
-        let builder = builder.header("x-amz-target", "StarlingDoveService.DeleteResourceConfig");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-amz-json-1.1");
+        }
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("x-amz-target"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("x-amz-target", "StarlingDoveService.DeleteResourceConfig");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -2297,13 +2477,25 @@ impl DeleteRetentionConfigurationInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-amz-json-1.1");
-        let builder = builder.header(
-            "x-amz-target",
-            "StarlingDoveService.DeleteRetentionConfiguration",
-        );
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-amz-json-1.1");
+        }
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("x-amz-target"))
+            .unwrap_or(false)
+        {
+            builder = builder.header(
+                "x-amz-target",
+                "StarlingDoveService.DeleteRetentionConfiguration",
+            );
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -2431,10 +2623,22 @@ impl DeleteStoredQueryInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-amz-json-1.1");
-        let builder = builder.header("x-amz-target", "StarlingDoveService.DeleteStoredQuery");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-amz-json-1.1");
+        }
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("x-amz-target"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("x-amz-target", "StarlingDoveService.DeleteStoredQuery");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -2566,10 +2770,22 @@ impl DeliverConfigSnapshotInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-amz-json-1.1");
-        let builder = builder.header("x-amz-target", "StarlingDoveService.DeliverConfigSnapshot");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-amz-json-1.1");
+        }
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("x-amz-target"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("x-amz-target", "StarlingDoveService.DeliverConfigSnapshot");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -2747,13 +2963,25 @@ impl DescribeAggregateComplianceByConfigRulesInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-amz-json-1.1");
-        let builder = builder.header(
-            "x-amz-target",
-            "StarlingDoveService.DescribeAggregateComplianceByConfigRules",
-        );
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-amz-json-1.1");
+        }
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("x-amz-target"))
+            .unwrap_or(false)
+        {
+            builder = builder.header(
+                "x-amz-target",
+                "StarlingDoveService.DescribeAggregateComplianceByConfigRules",
+            );
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -2930,13 +3158,25 @@ impl DescribeAggregateComplianceByConformancePacksInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-amz-json-1.1");
-        let builder = builder.header(
-            "x-amz-target",
-            "StarlingDoveService.DescribeAggregateComplianceByConformancePacks",
-        );
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-amz-json-1.1");
+        }
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("x-amz-target"))
+            .unwrap_or(false)
+        {
+            builder = builder.header(
+                "x-amz-target",
+                "StarlingDoveService.DescribeAggregateComplianceByConformancePacks",
+            );
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -3083,13 +3323,25 @@ impl DescribeAggregationAuthorizationsInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-amz-json-1.1");
-        let builder = builder.header(
-            "x-amz-target",
-            "StarlingDoveService.DescribeAggregationAuthorizations",
-        );
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-amz-json-1.1");
+        }
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("x-amz-target"))
+            .unwrap_or(false)
+        {
+            builder = builder.header(
+                "x-amz-target",
+                "StarlingDoveService.DescribeAggregationAuthorizations",
+            );
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -3252,13 +3504,25 @@ impl DescribeComplianceByConfigRuleInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-amz-json-1.1");
-        let builder = builder.header(
-            "x-amz-target",
-            "StarlingDoveService.DescribeComplianceByConfigRule",
-        );
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-amz-json-1.1");
+        }
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("x-amz-target"))
+            .unwrap_or(false)
+        {
+            builder = builder.header(
+                "x-amz-target",
+                "StarlingDoveService.DescribeComplianceByConfigRule",
+            );
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -3450,13 +3714,25 @@ impl DescribeComplianceByResourceInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-amz-json-1.1");
-        let builder = builder.header(
-            "x-amz-target",
-            "StarlingDoveService.DescribeComplianceByResource",
-        );
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-amz-json-1.1");
+        }
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("x-amz-target"))
+            .unwrap_or(false)
+        {
+            builder = builder.header(
+                "x-amz-target",
+                "StarlingDoveService.DescribeComplianceByResource",
+            );
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -3622,13 +3898,25 @@ impl DescribeConfigRuleEvaluationStatusInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-amz-json-1.1");
-        let builder = builder.header(
-            "x-amz-target",
-            "StarlingDoveService.DescribeConfigRuleEvaluationStatus",
-        );
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-amz-json-1.1");
+        }
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("x-amz-target"))
+            .unwrap_or(false)
+        {
+            builder = builder.header(
+                "x-amz-target",
+                "StarlingDoveService.DescribeConfigRuleEvaluationStatus",
+            );
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -3773,10 +4061,22 @@ impl DescribeConfigRulesInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-amz-json-1.1");
-        let builder = builder.header("x-amz-target", "StarlingDoveService.DescribeConfigRules");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-amz-json-1.1");
+        }
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("x-amz-target"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("x-amz-target", "StarlingDoveService.DescribeConfigRules");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -3939,13 +4239,25 @@ impl DescribeConfigurationAggregatorsInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-amz-json-1.1");
-        let builder = builder.header(
-            "x-amz-target",
-            "StarlingDoveService.DescribeConfigurationAggregators",
-        );
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-amz-json-1.1");
+        }
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("x-amz-target"))
+            .unwrap_or(false)
+        {
+            builder = builder.header(
+                "x-amz-target",
+                "StarlingDoveService.DescribeConfigurationAggregators",
+            );
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -4126,13 +4438,25 @@ impl DescribeConfigurationAggregatorSourcesStatusInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-amz-json-1.1");
-        let builder = builder.header(
-            "x-amz-target",
-            "StarlingDoveService.DescribeConfigurationAggregatorSourcesStatus",
-        );
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-amz-json-1.1");
+        }
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("x-amz-target"))
+            .unwrap_or(false)
+        {
+            builder = builder.header(
+                "x-amz-target",
+                "StarlingDoveService.DescribeConfigurationAggregatorSourcesStatus",
+            );
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -4271,13 +4595,25 @@ impl DescribeConfigurationRecordersInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-amz-json-1.1");
-        let builder = builder.header(
-            "x-amz-target",
-            "StarlingDoveService.DescribeConfigurationRecorders",
-        );
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-amz-json-1.1");
+        }
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("x-amz-target"))
+            .unwrap_or(false)
+        {
+            builder = builder.header(
+                "x-amz-target",
+                "StarlingDoveService.DescribeConfigurationRecorders",
+            );
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -4418,13 +4754,25 @@ impl DescribeConfigurationRecorderStatusInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-amz-json-1.1");
-        let builder = builder.header(
-            "x-amz-target",
-            "StarlingDoveService.DescribeConfigurationRecorderStatus",
-        );
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-amz-json-1.1");
+        }
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("x-amz-target"))
+            .unwrap_or(false)
+        {
+            builder = builder.header(
+                "x-amz-target",
+                "StarlingDoveService.DescribeConfigurationRecorderStatus",
+            );
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -4595,13 +4943,25 @@ impl DescribeConformancePackComplianceInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-amz-json-1.1");
-        let builder = builder.header(
-            "x-amz-target",
-            "StarlingDoveService.DescribeConformancePackCompliance",
-        );
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-amz-json-1.1");
+        }
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("x-amz-target"))
+            .unwrap_or(false)
+        {
+            builder = builder.header(
+                "x-amz-target",
+                "StarlingDoveService.DescribeConformancePackCompliance",
+            );
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -4756,13 +5116,25 @@ impl DescribeConformancePacksInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-amz-json-1.1");
-        let builder = builder.header(
-            "x-amz-target",
-            "StarlingDoveService.DescribeConformancePacks",
-        );
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-amz-json-1.1");
+        }
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("x-amz-target"))
+            .unwrap_or(false)
+        {
+            builder = builder.header(
+                "x-amz-target",
+                "StarlingDoveService.DescribeConformancePacks",
+            );
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -4918,13 +5290,25 @@ impl DescribeConformancePackStatusInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-amz-json-1.1");
-        let builder = builder.header(
-            "x-amz-target",
-            "StarlingDoveService.DescribeConformancePackStatus",
-        );
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-amz-json-1.1");
+        }
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("x-amz-target"))
+            .unwrap_or(false)
+        {
+            builder = builder.header(
+                "x-amz-target",
+                "StarlingDoveService.DescribeConformancePackStatus",
+            );
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -5057,13 +5441,25 @@ impl DescribeDeliveryChannelsInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-amz-json-1.1");
-        let builder = builder.header(
-            "x-amz-target",
-            "StarlingDoveService.DescribeDeliveryChannels",
-        );
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-amz-json-1.1");
+        }
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("x-amz-target"))
+            .unwrap_or(false)
+        {
+            builder = builder.header(
+                "x-amz-target",
+                "StarlingDoveService.DescribeDeliveryChannels",
+            );
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -5197,13 +5593,25 @@ impl DescribeDeliveryChannelStatusInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-amz-json-1.1");
-        let builder = builder.header(
-            "x-amz-target",
-            "StarlingDoveService.DescribeDeliveryChannelStatus",
-        );
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-amz-json-1.1");
+        }
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("x-amz-target"))
+            .unwrap_or(false)
+        {
+            builder = builder.header(
+                "x-amz-target",
+                "StarlingDoveService.DescribeDeliveryChannelStatus",
+            );
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -5363,13 +5771,25 @@ impl DescribeOrganizationConfigRulesInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-amz-json-1.1");
-        let builder = builder.header(
-            "x-amz-target",
-            "StarlingDoveService.DescribeOrganizationConfigRules",
-        );
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-amz-json-1.1");
+        }
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("x-amz-target"))
+            .unwrap_or(false)
+        {
+            builder = builder.header(
+                "x-amz-target",
+                "StarlingDoveService.DescribeOrganizationConfigRules",
+            );
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -5528,13 +5948,25 @@ impl DescribeOrganizationConfigRuleStatusesInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-amz-json-1.1");
-        let builder = builder.header(
-            "x-amz-target",
-            "StarlingDoveService.DescribeOrganizationConfigRuleStatuses",
-        );
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-amz-json-1.1");
+        }
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("x-amz-target"))
+            .unwrap_or(false)
+        {
+            builder = builder.header(
+                "x-amz-target",
+                "StarlingDoveService.DescribeOrganizationConfigRuleStatuses",
+            );
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -5699,13 +6131,25 @@ impl DescribeOrganizationConformancePacksInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-amz-json-1.1");
-        let builder = builder.header(
-            "x-amz-target",
-            "StarlingDoveService.DescribeOrganizationConformancePacks",
-        );
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-amz-json-1.1");
+        }
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("x-amz-target"))
+            .unwrap_or(false)
+        {
+            builder = builder.header(
+                "x-amz-target",
+                "StarlingDoveService.DescribeOrganizationConformancePacks",
+            );
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -5867,13 +6311,25 @@ impl DescribeOrganizationConformancePackStatusesInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-amz-json-1.1");
-        let builder = builder.header(
-            "x-amz-target",
-            "StarlingDoveService.DescribeOrganizationConformancePackStatuses",
-        );
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-amz-json-1.1");
+        }
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("x-amz-target"))
+            .unwrap_or(false)
+        {
+            builder = builder.header(
+                "x-amz-target",
+                "StarlingDoveService.DescribeOrganizationConformancePackStatuses",
+            );
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -6020,13 +6476,25 @@ impl DescribePendingAggregationRequestsInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-amz-json-1.1");
-        let builder = builder.header(
-            "x-amz-target",
-            "StarlingDoveService.DescribePendingAggregationRequests",
-        );
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-amz-json-1.1");
+        }
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("x-amz-target"))
+            .unwrap_or(false)
+        {
+            builder = builder.header(
+                "x-amz-target",
+                "StarlingDoveService.DescribePendingAggregationRequests",
+            );
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -6162,13 +6630,25 @@ impl DescribeRemediationConfigurationsInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-amz-json-1.1");
-        let builder = builder.header(
-            "x-amz-target",
-            "StarlingDoveService.DescribeRemediationConfigurations",
-        );
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-amz-json-1.1");
+        }
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("x-amz-target"))
+            .unwrap_or(false)
+        {
+            builder = builder.header(
+                "x-amz-target",
+                "StarlingDoveService.DescribeRemediationConfigurations",
+            );
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -6344,13 +6824,25 @@ impl DescribeRemediationExceptionsInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-amz-json-1.1");
-        let builder = builder.header(
-            "x-amz-target",
-            "StarlingDoveService.DescribeRemediationExceptions",
-        );
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-amz-json-1.1");
+        }
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("x-amz-target"))
+            .unwrap_or(false)
+        {
+            builder = builder.header(
+                "x-amz-target",
+                "StarlingDoveService.DescribeRemediationExceptions",
+            );
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -6522,13 +7014,25 @@ impl DescribeRemediationExecutionStatusInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-amz-json-1.1");
-        let builder = builder.header(
-            "x-amz-target",
-            "StarlingDoveService.DescribeRemediationExecutionStatus",
-        );
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-amz-json-1.1");
+        }
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("x-amz-target"))
+            .unwrap_or(false)
+        {
+            builder = builder.header(
+                "x-amz-target",
+                "StarlingDoveService.DescribeRemediationExecutionStatus",
+            );
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -6679,13 +7183,25 @@ impl DescribeRetentionConfigurationsInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-amz-json-1.1");
-        let builder = builder.header(
-            "x-amz-target",
-            "StarlingDoveService.DescribeRetentionConfigurations",
-        );
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-amz-json-1.1");
+        }
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("x-amz-target"))
+            .unwrap_or(false)
+        {
+            builder = builder.header(
+                "x-amz-target",
+                "StarlingDoveService.DescribeRetentionConfigurations",
+            );
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -6906,13 +7422,25 @@ impl GetAggregateComplianceDetailsByConfigRuleInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-amz-json-1.1");
-        let builder = builder.header(
-            "x-amz-target",
-            "StarlingDoveService.GetAggregateComplianceDetailsByConfigRule",
-        );
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-amz-json-1.1");
+        }
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("x-amz-target"))
+            .unwrap_or(false)
+        {
+            builder = builder.header(
+                "x-amz-target",
+                "StarlingDoveService.GetAggregateComplianceDetailsByConfigRule",
+            );
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -7106,13 +7634,25 @@ impl GetAggregateConfigRuleComplianceSummaryInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-amz-json-1.1");
-        let builder = builder.header(
-            "x-amz-target",
-            "StarlingDoveService.GetAggregateConfigRuleComplianceSummary",
-        );
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-amz-json-1.1");
+        }
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("x-amz-target"))
+            .unwrap_or(false)
+        {
+            builder = builder.header(
+                "x-amz-target",
+                "StarlingDoveService.GetAggregateConfigRuleComplianceSummary",
+            );
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -7311,13 +7851,25 @@ impl GetAggregateConformancePackComplianceSummaryInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-amz-json-1.1");
-        let builder = builder.header(
-            "x-amz-target",
-            "StarlingDoveService.GetAggregateConformancePackComplianceSummary",
-        );
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-amz-json-1.1");
+        }
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("x-amz-target"))
+            .unwrap_or(false)
+        {
+            builder = builder.header(
+                "x-amz-target",
+                "StarlingDoveService.GetAggregateConformancePackComplianceSummary",
+            );
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -7507,13 +8059,25 @@ impl GetAggregateDiscoveredResourceCountsInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-amz-json-1.1");
-        let builder = builder.header(
-            "x-amz-target",
-            "StarlingDoveService.GetAggregateDiscoveredResourceCounts",
-        );
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-amz-json-1.1");
+        }
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("x-amz-target"))
+            .unwrap_or(false)
+        {
+            builder = builder.header(
+                "x-amz-target",
+                "StarlingDoveService.GetAggregateDiscoveredResourceCounts",
+            );
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -7667,13 +8231,25 @@ impl GetAggregateResourceConfigInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-amz-json-1.1");
-        let builder = builder.header(
-            "x-amz-target",
-            "StarlingDoveService.GetAggregateResourceConfig",
-        );
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-amz-json-1.1");
+        }
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("x-amz-target"))
+            .unwrap_or(false)
+        {
+            builder = builder.header(
+                "x-amz-target",
+                "StarlingDoveService.GetAggregateResourceConfig",
+            );
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -7851,13 +8427,25 @@ impl GetComplianceDetailsByConfigRuleInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-amz-json-1.1");
-        let builder = builder.header(
-            "x-amz-target",
-            "StarlingDoveService.GetComplianceDetailsByConfigRule",
-        );
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-amz-json-1.1");
+        }
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("x-amz-target"))
+            .unwrap_or(false)
+        {
+            builder = builder.header(
+                "x-amz-target",
+                "StarlingDoveService.GetComplianceDetailsByConfigRule",
+            );
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -8032,13 +8620,25 @@ impl GetComplianceDetailsByResourceInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-amz-json-1.1");
-        let builder = builder.header(
-            "x-amz-target",
-            "StarlingDoveService.GetComplianceDetailsByResource",
-        );
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-amz-json-1.1");
+        }
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("x-amz-target"))
+            .unwrap_or(false)
+        {
+            builder = builder.header(
+                "x-amz-target",
+                "StarlingDoveService.GetComplianceDetailsByResource",
+            );
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -8157,13 +8757,25 @@ impl GetComplianceSummaryByConfigRuleInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-amz-json-1.1");
-        let builder = builder.header(
-            "x-amz-target",
-            "StarlingDoveService.GetComplianceSummaryByConfigRule",
-        );
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-amz-json-1.1");
+        }
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("x-amz-target"))
+            .unwrap_or(false)
+        {
+            builder = builder.header(
+                "x-amz-target",
+                "StarlingDoveService.GetComplianceSummaryByConfigRule",
+            );
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -8299,13 +8911,25 @@ impl GetComplianceSummaryByResourceTypeInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-amz-json-1.1");
-        let builder = builder.header(
-            "x-amz-target",
-            "StarlingDoveService.GetComplianceSummaryByResourceType",
-        );
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-amz-json-1.1");
+        }
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("x-amz-target"))
+            .unwrap_or(false)
+        {
+            builder = builder.header(
+                "x-amz-target",
+                "StarlingDoveService.GetComplianceSummaryByResourceType",
+            );
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -8477,13 +9101,25 @@ impl GetConformancePackComplianceDetailsInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-amz-json-1.1");
-        let builder = builder.header(
-            "x-amz-target",
-            "StarlingDoveService.GetConformancePackComplianceDetails",
-        );
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-amz-json-1.1");
+        }
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("x-amz-target"))
+            .unwrap_or(false)
+        {
+            builder = builder.header(
+                "x-amz-target",
+                "StarlingDoveService.GetConformancePackComplianceDetails",
+            );
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -8642,13 +9278,25 @@ impl GetConformancePackComplianceSummaryInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-amz-json-1.1");
-        let builder = builder.header(
-            "x-amz-target",
-            "StarlingDoveService.GetConformancePackComplianceSummary",
-        );
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-amz-json-1.1");
+        }
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("x-amz-target"))
+            .unwrap_or(false)
+        {
+            builder = builder.header(
+                "x-amz-target",
+                "StarlingDoveService.GetConformancePackComplianceSummary",
+            );
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -8809,13 +9457,25 @@ impl GetDiscoveredResourceCountsInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-amz-json-1.1");
-        let builder = builder.header(
-            "x-amz-target",
-            "StarlingDoveService.GetDiscoveredResourceCounts",
-        );
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-amz-json-1.1");
+        }
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("x-amz-target"))
+            .unwrap_or(false)
+        {
+            builder = builder.header(
+                "x-amz-target",
+                "StarlingDoveService.GetDiscoveredResourceCounts",
+            );
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -8986,13 +9646,25 @@ impl GetOrganizationConfigRuleDetailedStatusInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-amz-json-1.1");
-        let builder = builder.header(
-            "x-amz-target",
-            "StarlingDoveService.GetOrganizationConfigRuleDetailedStatus",
-        );
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-amz-json-1.1");
+        }
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("x-amz-target"))
+            .unwrap_or(false)
+        {
+            builder = builder.header(
+                "x-amz-target",
+                "StarlingDoveService.GetOrganizationConfigRuleDetailedStatus",
+            );
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -9170,13 +9842,25 @@ impl GetOrganizationConformancePackDetailedStatusInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-amz-json-1.1");
-        let builder = builder.header(
-            "x-amz-target",
-            "StarlingDoveService.GetOrganizationConformancePackDetailedStatus",
-        );
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-amz-json-1.1");
+        }
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("x-amz-target"))
+            .unwrap_or(false)
+        {
+            builder = builder.header(
+                "x-amz-target",
+                "StarlingDoveService.GetOrganizationConformancePackDetailedStatus",
+            );
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -9392,13 +10076,25 @@ impl GetResourceConfigHistoryInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-amz-json-1.1");
-        let builder = builder.header(
-            "x-amz-target",
-            "StarlingDoveService.GetResourceConfigHistory",
-        );
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-amz-json-1.1");
+        }
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("x-amz-target"))
+            .unwrap_or(false)
+        {
+            builder = builder.header(
+                "x-amz-target",
+                "StarlingDoveService.GetResourceConfigHistory",
+            );
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -9525,10 +10221,22 @@ impl GetStoredQueryInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-amz-json-1.1");
-        let builder = builder.header("x-amz-target", "StarlingDoveService.GetStoredQuery");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-amz-json-1.1");
+        }
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("x-amz-target"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("x-amz-target", "StarlingDoveService.GetStoredQuery");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -9716,13 +10424,25 @@ impl ListAggregateDiscoveredResourcesInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-amz-json-1.1");
-        let builder = builder.header(
-            "x-amz-target",
-            "StarlingDoveService.ListAggregateDiscoveredResources",
-        );
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-amz-json-1.1");
+        }
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("x-amz-target"))
+            .unwrap_or(false)
+        {
+            builder = builder.header(
+                "x-amz-target",
+                "StarlingDoveService.ListAggregateDiscoveredResources",
+            );
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -9925,13 +10645,25 @@ impl ListDiscoveredResourcesInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-amz-json-1.1");
-        let builder = builder.header(
-            "x-amz-target",
-            "StarlingDoveService.ListDiscoveredResources",
-        );
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-amz-json-1.1");
+        }
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("x-amz-target"))
+            .unwrap_or(false)
+        {
+            builder = builder.header(
+                "x-amz-target",
+                "StarlingDoveService.ListDiscoveredResources",
+            );
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -10070,10 +10802,22 @@ impl ListStoredQueriesInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-amz-json-1.1");
-        let builder = builder.header("x-amz-target", "StarlingDoveService.ListStoredQueries");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-amz-json-1.1");
+        }
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("x-amz-target"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("x-amz-target", "StarlingDoveService.ListStoredQueries");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -10223,10 +10967,22 @@ impl ListTagsForResourceInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-amz-json-1.1");
-        let builder = builder.header("x-amz-target", "StarlingDoveService.ListTagsForResource");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-amz-json-1.1");
+        }
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("x-amz-target"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("x-amz-target", "StarlingDoveService.ListTagsForResource");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -10388,13 +11144,25 @@ impl PutAggregationAuthorizationInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-amz-json-1.1");
-        let builder = builder.header(
-            "x-amz-target",
-            "StarlingDoveService.PutAggregationAuthorization",
-        );
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-amz-json-1.1");
+        }
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("x-amz-target"))
+            .unwrap_or(false)
+        {
+            builder = builder.header(
+                "x-amz-target",
+                "StarlingDoveService.PutAggregationAuthorization",
+            );
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -10537,10 +11305,22 @@ impl PutConfigRuleInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-amz-json-1.1");
-        let builder = builder.header("x-amz-target", "StarlingDoveService.PutConfigRule");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-amz-json-1.1");
+        }
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("x-amz-target"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("x-amz-target", "StarlingDoveService.PutConfigRule");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -10728,13 +11508,25 @@ impl PutConfigurationAggregatorInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-amz-json-1.1");
-        let builder = builder.header(
-            "x-amz-target",
-            "StarlingDoveService.PutConfigurationAggregator",
-        );
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-amz-json-1.1");
+        }
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("x-amz-target"))
+            .unwrap_or(false)
+        {
+            builder = builder.header(
+                "x-amz-target",
+                "StarlingDoveService.PutConfigurationAggregator",
+            );
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -10870,13 +11662,25 @@ impl PutConfigurationRecorderInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-amz-json-1.1");
-        let builder = builder.header(
-            "x-amz-target",
-            "StarlingDoveService.PutConfigurationRecorder",
-        );
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-amz-json-1.1");
+        }
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("x-amz-target"))
+            .unwrap_or(false)
+        {
+            builder = builder.header(
+                "x-amz-target",
+                "StarlingDoveService.PutConfigurationRecorder",
+            );
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -11094,10 +11898,22 @@ impl PutConformancePackInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-amz-json-1.1");
-        let builder = builder.header("x-amz-target", "StarlingDoveService.PutConformancePack");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-amz-json-1.1");
+        }
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("x-amz-target"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("x-amz-target", "StarlingDoveService.PutConformancePack");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -11230,10 +12046,22 @@ impl PutDeliveryChannelInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-amz-json-1.1");
-        let builder = builder.header("x-amz-target", "StarlingDoveService.PutDeliveryChannel");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-amz-json-1.1");
+        }
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("x-amz-target"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("x-amz-target", "StarlingDoveService.PutDeliveryChannel");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -11398,10 +12226,22 @@ impl PutEvaluationsInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-amz-json-1.1");
-        let builder = builder.header("x-amz-target", "StarlingDoveService.PutEvaluations");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-amz-json-1.1");
+        }
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("x-amz-target"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("x-amz-target", "StarlingDoveService.PutEvaluations");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -11546,10 +12386,22 @@ impl PutExternalEvaluationInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-amz-json-1.1");
-        let builder = builder.header("x-amz-target", "StarlingDoveService.PutExternalEvaluation");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-amz-json-1.1");
+        }
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("x-amz-target"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("x-amz-target", "StarlingDoveService.PutExternalEvaluation");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -11736,13 +12588,25 @@ impl PutOrganizationConfigRuleInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-amz-json-1.1");
-        let builder = builder.header(
-            "x-amz-target",
-            "StarlingDoveService.PutOrganizationConfigRule",
-        );
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-amz-json-1.1");
+        }
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("x-amz-target"))
+            .unwrap_or(false)
+        {
+            builder = builder.header(
+                "x-amz-target",
+                "StarlingDoveService.PutOrganizationConfigRule",
+            );
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -11979,13 +12843,25 @@ impl PutOrganizationConformancePackInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-amz-json-1.1");
-        let builder = builder.header(
-            "x-amz-target",
-            "StarlingDoveService.PutOrganizationConformancePack",
-        );
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-amz-json-1.1");
+        }
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("x-amz-target"))
+            .unwrap_or(false)
+        {
+            builder = builder.header(
+                "x-amz-target",
+                "StarlingDoveService.PutOrganizationConformancePack",
+            );
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -12123,13 +12999,25 @@ impl PutRemediationConfigurationsInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-amz-json-1.1");
-        let builder = builder.header(
-            "x-amz-target",
-            "StarlingDoveService.PutRemediationConfigurations",
-        );
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-amz-json-1.1");
+        }
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("x-amz-target"))
+            .unwrap_or(false)
+        {
+            builder = builder.header(
+                "x-amz-target",
+                "StarlingDoveService.PutRemediationConfigurations",
+            );
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -12307,13 +13195,25 @@ impl PutRemediationExceptionsInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-amz-json-1.1");
-        let builder = builder.header(
-            "x-amz-target",
-            "StarlingDoveService.PutRemediationExceptions",
-        );
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-amz-json-1.1");
+        }
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("x-amz-target"))
+            .unwrap_or(false)
+        {
+            builder = builder.header(
+                "x-amz-target",
+                "StarlingDoveService.PutRemediationExceptions",
+            );
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -12526,10 +13426,22 @@ impl PutResourceConfigInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-amz-json-1.1");
-        let builder = builder.header("x-amz-target", "StarlingDoveService.PutResourceConfig");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-amz-json-1.1");
+        }
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("x-amz-target"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("x-amz-target", "StarlingDoveService.PutResourceConfig");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -12663,13 +13575,25 @@ impl PutRetentionConfigurationInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-amz-json-1.1");
-        let builder = builder.header(
-            "x-amz-target",
-            "StarlingDoveService.PutRetentionConfiguration",
-        );
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-amz-json-1.1");
+        }
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("x-amz-target"))
+            .unwrap_or(false)
+        {
+            builder = builder.header(
+                "x-amz-target",
+                "StarlingDoveService.PutRetentionConfiguration",
+            );
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -12819,10 +13743,22 @@ impl PutStoredQueryInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-amz-json-1.1");
-        let builder = builder.header("x-amz-target", "StarlingDoveService.PutStoredQuery");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-amz-json-1.1");
+        }
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("x-amz-target"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("x-amz-target", "StarlingDoveService.PutStoredQuery");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -13002,13 +13938,25 @@ impl SelectAggregateResourceConfigInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-amz-json-1.1");
-        let builder = builder.header(
-            "x-amz-target",
-            "StarlingDoveService.SelectAggregateResourceConfig",
-        );
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-amz-json-1.1");
+        }
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("x-amz-target"))
+            .unwrap_or(false)
+        {
+            builder = builder.header(
+                "x-amz-target",
+                "StarlingDoveService.SelectAggregateResourceConfig",
+            );
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -13158,10 +14106,22 @@ impl SelectResourceConfigInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-amz-json-1.1");
-        let builder = builder.header("x-amz-target", "StarlingDoveService.SelectResourceConfig");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-amz-json-1.1");
+        }
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("x-amz-target"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("x-amz-target", "StarlingDoveService.SelectResourceConfig");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -13295,13 +14255,25 @@ impl StartConfigRulesEvaluationInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-amz-json-1.1");
-        let builder = builder.header(
-            "x-amz-target",
-            "StarlingDoveService.StartConfigRulesEvaluation",
-        );
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-amz-json-1.1");
+        }
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("x-amz-target"))
+            .unwrap_or(false)
+        {
+            builder = builder.header(
+                "x-amz-target",
+                "StarlingDoveService.StartConfigRulesEvaluation",
+            );
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -13438,13 +14410,25 @@ impl StartConfigurationRecorderInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-amz-json-1.1");
-        let builder = builder.header(
-            "x-amz-target",
-            "StarlingDoveService.StartConfigurationRecorder",
-        );
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-amz-json-1.1");
+        }
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("x-amz-target"))
+            .unwrap_or(false)
+        {
+            builder = builder.header(
+                "x-amz-target",
+                "StarlingDoveService.StartConfigurationRecorder",
+            );
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -13591,13 +14575,25 @@ impl StartRemediationExecutionInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-amz-json-1.1");
-        let builder = builder.header(
-            "x-amz-target",
-            "StarlingDoveService.StartRemediationExecution",
-        );
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-amz-json-1.1");
+        }
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("x-amz-target"))
+            .unwrap_or(false)
+        {
+            builder = builder.header(
+                "x-amz-target",
+                "StarlingDoveService.StartRemediationExecution",
+            );
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -13732,13 +14728,25 @@ impl StopConfigurationRecorderInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-amz-json-1.1");
-        let builder = builder.header(
-            "x-amz-target",
-            "StarlingDoveService.StopConfigurationRecorder",
-        );
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-amz-json-1.1");
+        }
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("x-amz-target"))
+            .unwrap_or(false)
+        {
+            builder = builder.header(
+                "x-amz-target",
+                "StarlingDoveService.StopConfigurationRecorder",
+            );
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -13879,10 +14887,22 @@ impl TagResourceInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-amz-json-1.1");
-        let builder = builder.header("x-amz-target", "StarlingDoveService.TagResource");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-amz-json-1.1");
+        }
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("x-amz-target"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("x-amz-target", "StarlingDoveService.TagResource");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -14023,10 +15043,22 @@ impl UntagResourceInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-amz-json-1.1");
-        let builder = builder.header("x-amz-target", "StarlingDoveService.UntagResource");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-amz-json-1.1");
+        }
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("x-amz-target"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("x-amz-target", "StarlingDoveService.UntagResource");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,

@@ -113,9 +113,15 @@ impl DeleteAlarmsInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-www-form-urlencoded");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -280,9 +286,15 @@ impl DeleteAnomalyDetectorInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-www-form-urlencoded");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -413,9 +425,15 @@ impl DeleteDashboardsInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-www-form-urlencoded");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -547,9 +565,15 @@ impl DeleteInsightRulesInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-www-form-urlencoded");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -675,9 +699,15 @@ impl DeleteMetricStreamInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-www-form-urlencoded");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -891,9 +921,15 @@ impl DescribeAlarmHistoryInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-www-form-urlencoded");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -1166,9 +1202,15 @@ impl DescribeAlarmsInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-www-form-urlencoded");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -1375,9 +1417,15 @@ impl DescribeAlarmsForMetricInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-www-form-urlencoded");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -1560,9 +1608,15 @@ impl DescribeAnomalyDetectorsInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-www-form-urlencoded");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -1702,9 +1756,15 @@ impl DescribeInsightRulesInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-www-form-urlencoded");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -1836,9 +1896,15 @@ impl DisableAlarmActionsInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-www-form-urlencoded");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -1970,9 +2036,15 @@ impl DisableInsightRulesInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-www-form-urlencoded");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -2104,9 +2176,15 @@ impl EnableAlarmActionsInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-www-form-urlencoded");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -2238,9 +2316,15 @@ impl EnableInsightRulesInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-www-form-urlencoded");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -2369,9 +2453,15 @@ impl GetDashboardInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-www-form-urlencoded");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -2573,9 +2663,15 @@ impl GetInsightRuleReportInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-www-form-urlencoded");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -2819,9 +2915,15 @@ impl GetMetricDataInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-www-form-urlencoded");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -3096,9 +3198,15 @@ impl GetMetricStatisticsInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-www-form-urlencoded");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -3223,9 +3331,15 @@ impl GetMetricStreamInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-www-form-urlencoded");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -3414,9 +3528,15 @@ impl GetMetricWidgetImageInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-www-form-urlencoded");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -3560,9 +3680,15 @@ impl ListDashboardsInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-www-form-urlencoded");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -3748,9 +3874,15 @@ impl ListMetricsInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-www-form-urlencoded");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -3889,9 +4021,15 @@ impl ListMetricStreamsInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-www-form-urlencoded");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -4030,9 +4168,15 @@ impl ListTagsForResourceInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-www-form-urlencoded");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -4216,9 +4360,15 @@ impl PutAnomalyDetectorInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-www-form-urlencoded");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -4506,9 +4656,15 @@ impl PutCompositeAlarmInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-www-form-urlencoded");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -4656,9 +4812,15 @@ impl PutDashboardInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-www-form-urlencoded");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -4827,9 +4989,15 @@ impl PutInsightRuleInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-www-form-urlencoded");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -5304,9 +5472,15 @@ impl PutMetricAlarmInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-www-form-urlencoded");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -5449,9 +5623,15 @@ impl PutMetricDataInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-www-form-urlencoded");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -5686,9 +5866,15 @@ impl PutMetricStreamInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-www-form-urlencoded");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -5854,9 +6040,15 @@ impl SetAlarmStateInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-www-form-urlencoded");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -5986,9 +6178,15 @@ impl StartMetricStreamsInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-www-form-urlencoded");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -6118,9 +6316,15 @@ impl StopMetricStreamsInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-www-form-urlencoded");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -6272,9 +6476,15 @@ impl TagResourceInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-www-form-urlencoded");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -6426,9 +6636,15 @@ impl UntagResourceInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-www-form-urlencoded");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,

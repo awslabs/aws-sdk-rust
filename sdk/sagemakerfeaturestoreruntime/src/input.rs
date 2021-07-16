@@ -118,9 +118,15 @@ impl BatchGetRecordInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/json");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/json");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -311,9 +317,15 @@ impl DeleteRecordInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/json");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/json");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -507,9 +519,15 @@ impl GetRecordInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/json");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/json");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -673,9 +691,15 @@ impl PutRecordInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/json");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/json");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,

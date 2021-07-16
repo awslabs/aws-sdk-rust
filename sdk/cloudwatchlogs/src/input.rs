@@ -125,10 +125,22 @@ impl AssociateKmsKeyInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-amz-json-1.1");
-        let builder = builder.header("x-amz-target", "Logs_20140328.AssociateKmsKey");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-amz-json-1.1");
+        }
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("x-amz-target"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("x-amz-target", "Logs_20140328.AssociateKmsKey");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -256,10 +268,22 @@ impl CancelExportTaskInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-amz-json-1.1");
-        let builder = builder.header("x-amz-target", "Logs_20140328.CancelExportTask");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-amz-json-1.1");
+        }
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("x-amz-target"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("x-amz-target", "Logs_20140328.CancelExportTask");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -468,10 +492,22 @@ impl CreateExportTaskInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-amz-json-1.1");
-        let builder = builder.header("x-amz-target", "Logs_20140328.CreateExportTask");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-amz-json-1.1");
+        }
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("x-amz-target"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("x-amz-target", "Logs_20140328.CreateExportTask");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -636,10 +672,22 @@ impl CreateLogGroupInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-amz-json-1.1");
-        let builder = builder.header("x-amz-target", "Logs_20140328.CreateLogGroup");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-amz-json-1.1");
+        }
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("x-amz-target"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("x-amz-target", "Logs_20140328.CreateLogGroup");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -783,10 +831,22 @@ impl CreateLogStreamInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-amz-json-1.1");
-        let builder = builder.header("x-amz-target", "Logs_20140328.CreateLogStream");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-amz-json-1.1");
+        }
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("x-amz-target"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("x-amz-target", "Logs_20140328.CreateLogStream");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -917,10 +977,22 @@ impl DeleteDestinationInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-amz-json-1.1");
-        let builder = builder.header("x-amz-target", "Logs_20140328.DeleteDestination");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-amz-json-1.1");
+        }
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("x-amz-target"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("x-amz-target", "Logs_20140328.DeleteDestination");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -1050,10 +1122,22 @@ impl DeleteLogGroupInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-amz-json-1.1");
-        let builder = builder.header("x-amz-target", "Logs_20140328.DeleteLogGroup");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-amz-json-1.1");
+        }
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("x-amz-target"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("x-amz-target", "Logs_20140328.DeleteLogGroup");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -1197,10 +1281,22 @@ impl DeleteLogStreamInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-amz-json-1.1");
-        let builder = builder.header("x-amz-target", "Logs_20140328.DeleteLogStream");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-amz-json-1.1");
+        }
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("x-amz-target"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("x-amz-target", "Logs_20140328.DeleteLogStream");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -1342,10 +1438,22 @@ impl DeleteMetricFilterInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-amz-json-1.1");
-        let builder = builder.header("x-amz-target", "Logs_20140328.DeleteMetricFilter");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-amz-json-1.1");
+        }
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("x-amz-target"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("x-amz-target", "Logs_20140328.DeleteMetricFilter");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -1477,10 +1585,22 @@ impl DeleteQueryDefinitionInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-amz-json-1.1");
-        let builder = builder.header("x-amz-target", "Logs_20140328.DeleteQueryDefinition");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-amz-json-1.1");
+        }
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("x-amz-target"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("x-amz-target", "Logs_20140328.DeleteQueryDefinition");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -1608,10 +1728,22 @@ impl DeleteResourcePolicyInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-amz-json-1.1");
-        let builder = builder.header("x-amz-target", "Logs_20140328.DeleteResourcePolicy");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-amz-json-1.1");
+        }
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("x-amz-target"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("x-amz-target", "Logs_20140328.DeleteResourcePolicy");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -1742,10 +1874,22 @@ impl DeleteRetentionPolicyInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-amz-json-1.1");
-        let builder = builder.header("x-amz-target", "Logs_20140328.DeleteRetentionPolicy");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-amz-json-1.1");
+        }
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("x-amz-target"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("x-amz-target", "Logs_20140328.DeleteRetentionPolicy");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -1888,10 +2032,22 @@ impl DeleteSubscriptionFilterInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-amz-json-1.1");
-        let builder = builder.header("x-amz-target", "Logs_20140328.DeleteSubscriptionFilter");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-amz-json-1.1");
+        }
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("x-amz-target"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("x-amz-target", "Logs_20140328.DeleteSubscriptionFilter");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -2044,10 +2200,22 @@ impl DescribeDestinationsInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-amz-json-1.1");
-        let builder = builder.header("x-amz-target", "Logs_20140328.DescribeDestinations");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-amz-json-1.1");
+        }
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("x-amz-target"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("x-amz-target", "Logs_20140328.DescribeDestinations");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -2211,10 +2379,22 @@ impl DescribeExportTasksInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-amz-json-1.1");
-        let builder = builder.header("x-amz-target", "Logs_20140328.DescribeExportTasks");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-amz-json-1.1");
+        }
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("x-amz-target"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("x-amz-target", "Logs_20140328.DescribeExportTasks");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -2367,10 +2547,22 @@ impl DescribeLogGroupsInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-amz-json-1.1");
-        let builder = builder.header("x-amz-target", "Logs_20140328.DescribeLogGroups");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-amz-json-1.1");
+        }
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("x-amz-target"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("x-amz-target", "Logs_20140328.DescribeLogGroups");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -2572,10 +2764,22 @@ impl DescribeLogStreamsInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-amz-json-1.1");
-        let builder = builder.header("x-amz-target", "Logs_20140328.DescribeLogStreams");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-amz-json-1.1");
+        }
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("x-amz-target"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("x-amz-target", "Logs_20140328.DescribeLogStreams");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -2770,10 +2974,22 @@ impl DescribeMetricFiltersInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-amz-json-1.1");
-        let builder = builder.header("x-amz-target", "Logs_20140328.DescribeMetricFilters");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-amz-json-1.1");
+        }
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("x-amz-target"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("x-amz-target", "Logs_20140328.DescribeMetricFilters");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -2937,10 +3153,22 @@ impl DescribeQueriesInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-amz-json-1.1");
-        let builder = builder.header("x-amz-target", "Logs_20140328.DescribeQueries");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-amz-json-1.1");
+        }
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("x-amz-target"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("x-amz-target", "Logs_20140328.DescribeQueries");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -3097,10 +3325,22 @@ impl DescribeQueryDefinitionsInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-amz-json-1.1");
-        let builder = builder.header("x-amz-target", "Logs_20140328.DescribeQueryDefinitions");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-amz-json-1.1");
+        }
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("x-amz-target"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("x-amz-target", "Logs_20140328.DescribeQueryDefinitions");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -3240,10 +3480,22 @@ impl DescribeResourcePoliciesInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-amz-json-1.1");
-        let builder = builder.header("x-amz-target", "Logs_20140328.DescribeResourcePolicies");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-amz-json-1.1");
+        }
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("x-amz-target"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("x-amz-target", "Logs_20140328.DescribeResourcePolicies");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -3412,10 +3664,22 @@ impl DescribeSubscriptionFiltersInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-amz-json-1.1");
-        let builder = builder.header("x-amz-target", "Logs_20140328.DescribeSubscriptionFilters");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-amz-json-1.1");
+        }
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("x-amz-target"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("x-amz-target", "Logs_20140328.DescribeSubscriptionFilters");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -3546,10 +3810,22 @@ impl DisassociateKmsKeyInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-amz-json-1.1");
-        let builder = builder.header("x-amz-target", "Logs_20140328.DisassociateKmsKey");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-amz-json-1.1");
+        }
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("x-amz-target"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("x-amz-target", "Logs_20140328.DisassociateKmsKey");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -3790,10 +4066,22 @@ impl FilterLogEventsInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-amz-json-1.1");
-        let builder = builder.header("x-amz-target", "Logs_20140328.FilterLogEvents");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-amz-json-1.1");
+        }
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("x-amz-target"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("x-amz-target", "Logs_20140328.FilterLogEvents");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -4000,10 +4288,22 @@ impl GetLogEventsInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-amz-json-1.1");
-        let builder = builder.header("x-amz-target", "Logs_20140328.GetLogEvents");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-amz-json-1.1");
+        }
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("x-amz-target"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("x-amz-target", "Logs_20140328.GetLogEvents");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -4149,10 +4449,22 @@ impl GetLogGroupFieldsInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-amz-json-1.1");
-        let builder = builder.header("x-amz-target", "Logs_20140328.GetLogGroupFields");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-amz-json-1.1");
+        }
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("x-amz-target"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("x-amz-target", "Logs_20140328.GetLogGroupFields");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -4284,10 +4596,22 @@ impl GetLogRecordInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-amz-json-1.1");
-        let builder = builder.header("x-amz-target", "Logs_20140328.GetLogRecord");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-amz-json-1.1");
+        }
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("x-amz-target"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("x-amz-target", "Logs_20140328.GetLogRecord");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -4414,10 +4738,22 @@ impl GetQueryResultsInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-amz-json-1.1");
-        let builder = builder.header("x-amz-target", "Logs_20140328.GetQueryResults");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-amz-json-1.1");
+        }
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("x-amz-target"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("x-amz-target", "Logs_20140328.GetQueryResults");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -4548,10 +4884,22 @@ impl ListTagsLogGroupInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-amz-json-1.1");
-        let builder = builder.header("x-amz-target", "Logs_20140328.ListTagsLogGroup");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-amz-json-1.1");
+        }
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("x-amz-target"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("x-amz-target", "Logs_20140328.ListTagsLogGroup");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -4704,10 +5052,22 @@ impl PutDestinationInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-amz-json-1.1");
-        let builder = builder.header("x-amz-target", "Logs_20140328.PutDestination");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-amz-json-1.1");
+        }
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("x-amz-target"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("x-amz-target", "Logs_20140328.PutDestination");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -4853,10 +5213,22 @@ impl PutDestinationPolicyInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-amz-json-1.1");
-        let builder = builder.header("x-amz-target", "Logs_20140328.PutDestinationPolicy");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-amz-json-1.1");
+        }
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("x-amz-target"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("x-amz-target", "Logs_20140328.PutDestinationPolicy");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -5032,10 +5404,22 @@ impl PutLogEventsInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-amz-json-1.1");
-        let builder = builder.header("x-amz-target", "Logs_20140328.PutLogEvents");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-amz-json-1.1");
+        }
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("x-amz-target"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("x-amz-target", "Logs_20140328.PutLogEvents");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -5209,10 +5593,22 @@ impl PutMetricFilterInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-amz-json-1.1");
-        let builder = builder.header("x-amz-target", "Logs_20140328.PutMetricFilter");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-amz-json-1.1");
+        }
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("x-amz-target"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("x-amz-target", "Logs_20140328.PutMetricFilter");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -5388,10 +5784,22 @@ impl PutQueryDefinitionInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-amz-json-1.1");
-        let builder = builder.header("x-amz-target", "Logs_20140328.PutQueryDefinition");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-amz-json-1.1");
+        }
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("x-amz-target"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("x-amz-target", "Logs_20140328.PutQueryDefinition");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -5554,10 +5962,22 @@ impl PutResourcePolicyInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-amz-json-1.1");
-        let builder = builder.header("x-amz-target", "Logs_20140328.PutResourcePolicy");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-amz-json-1.1");
+        }
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("x-amz-target"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("x-amz-target", "Logs_20140328.PutResourcePolicy");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -5702,10 +6122,22 @@ impl PutRetentionPolicyInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-amz-json-1.1");
-        let builder = builder.header("x-amz-target", "Logs_20140328.PutRetentionPolicy");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-amz-json-1.1");
+        }
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("x-amz-target"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("x-amz-target", "Logs_20140328.PutRetentionPolicy");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -5928,10 +6360,22 @@ impl PutSubscriptionFilterInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-amz-json-1.1");
-        let builder = builder.header("x-amz-target", "Logs_20140328.PutSubscriptionFilter");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-amz-json-1.1");
+        }
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("x-amz-target"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("x-amz-target", "Logs_20140328.PutSubscriptionFilter");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -6127,10 +6571,22 @@ impl StartQueryInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-amz-json-1.1");
-        let builder = builder.header("x-amz-target", "Logs_20140328.StartQuery");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-amz-json-1.1");
+        }
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("x-amz-target"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("x-amz-target", "Logs_20140328.StartQuery");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -6255,10 +6711,22 @@ impl StopQueryInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-amz-json-1.1");
-        let builder = builder.header("x-amz-target", "Logs_20140328.StopQuery");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-amz-json-1.1");
+        }
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("x-amz-target"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("x-amz-target", "Logs_20140328.StopQuery");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -6410,10 +6878,22 @@ impl TagLogGroupInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-amz-json-1.1");
-        let builder = builder.header("x-amz-target", "Logs_20140328.TagLogGroup");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-amz-json-1.1");
+        }
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("x-amz-target"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("x-amz-target", "Logs_20140328.TagLogGroup");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -6561,10 +7041,22 @@ impl TestMetricFilterInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-amz-json-1.1");
-        let builder = builder.header("x-amz-target", "Logs_20140328.TestMetricFilter");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-amz-json-1.1");
+        }
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("x-amz-target"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("x-amz-target", "Logs_20140328.TestMetricFilter");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -6707,10 +7199,22 @@ impl UntagLogGroupInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-amz-json-1.1");
-        let builder = builder.header("x-amz-target", "Logs_20140328.UntagLogGroup");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-amz-json-1.1");
+        }
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("x-amz-target"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("x-amz-target", "Logs_20140328.UntagLogGroup");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,

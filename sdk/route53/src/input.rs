@@ -163,9 +163,15 @@ impl ActivateKeySigningKeyInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/xml");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/xml");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -344,9 +350,15 @@ impl AssociateVpcWithHostedZoneInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/xml");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/xml");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -514,9 +526,15 @@ impl ChangeResourceRecordSetsInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/xml");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/xml");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -736,9 +754,15 @@ impl ChangeTagsForResourceInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/xml");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/xml");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -903,9 +927,15 @@ impl CreateHealthCheckInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/xml");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/xml");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -1108,9 +1138,15 @@ impl CreateHostedZoneInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/xml");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/xml");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -1336,9 +1372,15 @@ impl CreateKeySigningKeyInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/xml");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/xml");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -1494,9 +1536,15 @@ impl CreateQueryLoggingConfigInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/xml");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/xml");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -1648,9 +1696,15 @@ impl CreateReusableDelegationSetInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/xml");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/xml");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -1801,9 +1855,15 @@ impl CreateTrafficPolicyInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/xml");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/xml");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -1984,9 +2044,15 @@ impl CreateTrafficPolicyInstanceInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/xml");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/xml");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -2158,9 +2224,15 @@ impl CreateTrafficPolicyVersionInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/xml");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/xml");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -2329,9 +2401,15 @@ impl CreateVpcAssociationAuthorizationInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/xml");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/xml");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -2511,9 +2589,15 @@ impl DeactivateKeySigningKeyInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/xml");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/xml");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -2663,9 +2747,15 @@ impl DeleteHealthCheckInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/xml");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/xml");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -2805,9 +2895,15 @@ impl DeleteHostedZoneInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/xml");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/xml");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -2986,9 +3082,15 @@ impl DeleteKeySigningKeyInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/xml");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/xml");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -3130,9 +3232,15 @@ impl DeleteQueryLoggingConfigInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/xml");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/xml");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -3274,9 +3382,15 @@ impl DeleteReusableDelegationSetInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/xml");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/xml");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -3452,9 +3566,15 @@ impl DeleteTrafficPolicyInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/xml");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/xml");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -3600,9 +3720,15 @@ impl DeleteTrafficPolicyInstanceInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/xml");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/xml");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -3772,9 +3898,15 @@ impl DeleteVpcAssociationAuthorizationInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/xml");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/xml");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -3925,9 +4057,15 @@ impl DisableHostedZoneDnssecInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/xml");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/xml");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -4106,9 +4244,15 @@ impl DisassociateVpcFromHostedZoneInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/xml");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/xml");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -4258,9 +4402,15 @@ impl EnableHostedZoneDnssecInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/xml");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/xml");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -4434,9 +4584,15 @@ impl GetAccountLimitInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/xml");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/xml");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -4573,9 +4729,15 @@ impl GetChangeInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/xml");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/xml");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -4687,9 +4849,15 @@ impl GetCheckerIpRangesInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/xml");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/xml");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -4835,9 +5003,15 @@ impl GetDnssecInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/xml");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/xml");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -5034,9 +5208,15 @@ impl GetGeoLocationInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/xml");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/xml");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -5187,9 +5367,15 @@ impl GetHealthCheckInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/xml");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/xml");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -5301,9 +5487,15 @@ impl GetHealthCheckCountInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/xml");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/xml");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -5459,9 +5651,15 @@ impl GetHealthCheckLastFailureReasonInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/xml");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/xml");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -5616,9 +5814,15 @@ impl GetHealthCheckStatusInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/xml");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/xml");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -5756,9 +5960,15 @@ impl GetHostedZoneInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/xml");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/xml");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -5870,9 +6080,15 @@ impl GetHostedZoneCountInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/xml");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/xml");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -6066,9 +6282,15 @@ impl GetHostedZoneLimitInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/xml");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/xml");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -6209,9 +6431,15 @@ impl GetQueryLoggingConfigInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/xml");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/xml");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -6353,9 +6581,15 @@ impl GetReusableDelegationSetInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/xml");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/xml");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -6539,9 +6773,15 @@ impl GetReusableDelegationSetLimitInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/xml");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/xml");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -6717,9 +6957,15 @@ impl GetTrafficPolicyInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/xml");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/xml");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -6861,9 +7107,15 @@ impl GetTrafficPolicyInstanceInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/xml");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/xml");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -6977,9 +7229,15 @@ impl GetTrafficPolicyInstanceCountInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/xml");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/xml");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -7182,9 +7440,15 @@ impl ListGeoLocationsInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/xml");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/xml");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -7335,9 +7599,15 @@ impl ListHealthChecksInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/xml");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/xml");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -7510,9 +7780,15 @@ impl ListHostedZonesInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/xml");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/xml");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -7684,9 +7960,15 @@ impl ListHostedZonesByNameInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/xml");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/xml");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -7868,9 +8150,15 @@ impl ListHostedZonesByVpcInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/xml");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/xml");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -8045,9 +8333,15 @@ impl ListQueryLoggingConfigsInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/xml");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/xml");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -8313,9 +8607,15 @@ impl ListResourceRecordSetsInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/xml");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/xml");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -8467,9 +8767,15 @@ impl ListReusableDelegationSetsInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/xml");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/xml");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -8656,9 +8962,15 @@ impl ListTagsForResourceInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/xml");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/xml");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -8834,9 +9146,15 @@ impl ListTagsForResourcesInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/xml");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/xml");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -8995,9 +9313,15 @@ impl ListTrafficPoliciesInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/xml");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/xml");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -9206,9 +9530,15 @@ impl ListTrafficPolicyInstancesInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/xml");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/xml");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -9414,9 +9744,15 @@ impl ListTrafficPolicyInstancesByHostedZoneInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/xml");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/xml");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -9657,9 +9993,15 @@ impl ListTrafficPolicyInstancesByPolicyInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/xml");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/xml");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -9851,9 +10193,15 @@ impl ListTrafficPolicyVersionsInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/xml");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/xml");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -10042,9 +10390,15 @@ impl ListVpcAssociationAuthorizationsInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/xml");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/xml");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -10276,9 +10630,15 @@ impl TestDnsAnswerInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/xml");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/xml");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -10846,9 +11206,15 @@ impl UpdateHealthCheckInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/xml");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/xml");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -11006,9 +11372,15 @@ impl UpdateHostedZoneCommentInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/xml");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/xml");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -11200,9 +11572,15 @@ impl UpdateTrafficPolicyCommentInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/xml");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/xml");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -11386,9 +11764,15 @@ impl UpdateTrafficPolicyInstanceInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/xml");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/xml");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,

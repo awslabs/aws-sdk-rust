@@ -143,13 +143,25 @@ impl BatchCheckLayerAvailabilityInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-amz-json-1.1");
-        let builder = builder.header(
-            "x-amz-target",
-            "AmazonEC2ContainerRegistry_V20150921.BatchCheckLayerAvailability",
-        );
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-amz-json-1.1");
+        }
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("x-amz-target"))
+            .unwrap_or(false)
+        {
+            builder = builder.header(
+                "x-amz-target",
+                "AmazonEC2ContainerRegistry_V20150921.BatchCheckLayerAvailability",
+            );
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -307,13 +319,25 @@ impl BatchDeleteImageInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-amz-json-1.1");
-        let builder = builder.header(
-            "x-amz-target",
-            "AmazonEC2ContainerRegistry_V20150921.BatchDeleteImage",
-        );
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-amz-json-1.1");
+        }
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("x-amz-target"))
+            .unwrap_or(false)
+        {
+            builder = builder.header(
+                "x-amz-target",
+                "AmazonEC2ContainerRegistry_V20150921.BatchDeleteImage",
+            );
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -483,13 +507,25 @@ impl BatchGetImageInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-amz-json-1.1");
-        let builder = builder.header(
-            "x-amz-target",
-            "AmazonEC2ContainerRegistry_V20150921.BatchGetImage",
-        );
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-amz-json-1.1");
+        }
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("x-amz-target"))
+            .unwrap_or(false)
+        {
+            builder = builder.header(
+                "x-amz-target",
+                "AmazonEC2ContainerRegistry_V20150921.BatchGetImage",
+            );
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -659,13 +695,25 @@ impl CompleteLayerUploadInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-amz-json-1.1");
-        let builder = builder.header(
-            "x-amz-target",
-            "AmazonEC2ContainerRegistry_V20150921.CompleteLayerUpload",
-        );
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-amz-json-1.1");
+        }
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("x-amz-target"))
+            .unwrap_or(false)
+        {
+            builder = builder.header(
+                "x-amz-target",
+                "AmazonEC2ContainerRegistry_V20150921.CompleteLayerUpload",
+            );
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -867,13 +915,25 @@ impl CreateRepositoryInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-amz-json-1.1");
-        let builder = builder.header(
-            "x-amz-target",
-            "AmazonEC2ContainerRegistry_V20150921.CreateRepository",
-        );
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-amz-json-1.1");
+        }
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("x-amz-target"))
+            .unwrap_or(false)
+        {
+            builder = builder.header(
+                "x-amz-target",
+                "AmazonEC2ContainerRegistry_V20150921.CreateRepository",
+            );
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -1016,13 +1076,25 @@ impl DeleteLifecyclePolicyInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-amz-json-1.1");
-        let builder = builder.header(
-            "x-amz-target",
-            "AmazonEC2ContainerRegistry_V20150921.DeleteLifecyclePolicy",
-        );
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-amz-json-1.1");
+        }
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("x-amz-target"))
+            .unwrap_or(false)
+        {
+            builder = builder.header(
+                "x-amz-target",
+                "AmazonEC2ContainerRegistry_V20150921.DeleteLifecyclePolicy",
+            );
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -1137,13 +1209,25 @@ impl DeleteRegistryPolicyInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-amz-json-1.1");
-        let builder = builder.header(
-            "x-amz-target",
-            "AmazonEC2ContainerRegistry_V20150921.DeleteRegistryPolicy",
-        );
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-amz-json-1.1");
+        }
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("x-amz-target"))
+            .unwrap_or(false)
+        {
+            builder = builder.header(
+                "x-amz-target",
+                "AmazonEC2ContainerRegistry_V20150921.DeleteRegistryPolicy",
+            );
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -1296,13 +1380,25 @@ impl DeleteRepositoryInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-amz-json-1.1");
-        let builder = builder.header(
-            "x-amz-target",
-            "AmazonEC2ContainerRegistry_V20150921.DeleteRepository",
-        );
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-amz-json-1.1");
+        }
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("x-amz-target"))
+            .unwrap_or(false)
+        {
+            builder = builder.header(
+                "x-amz-target",
+                "AmazonEC2ContainerRegistry_V20150921.DeleteRepository",
+            );
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -1446,13 +1542,25 @@ impl DeleteRepositoryPolicyInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-amz-json-1.1");
-        let builder = builder.header(
-            "x-amz-target",
-            "AmazonEC2ContainerRegistry_V20150921.DeleteRepositoryPolicy",
-        );
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-amz-json-1.1");
+        }
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("x-amz-target"))
+            .unwrap_or(false)
+        {
+            builder = builder.header(
+                "x-amz-target",
+                "AmazonEC2ContainerRegistry_V20150921.DeleteRepositoryPolicy",
+            );
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -1659,13 +1767,25 @@ impl DescribeImagesInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-amz-json-1.1");
-        let builder = builder.header(
-            "x-amz-target",
-            "AmazonEC2ContainerRegistry_V20150921.DescribeImages",
-        );
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-amz-json-1.1");
+        }
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("x-amz-target"))
+            .unwrap_or(false)
+        {
+            builder = builder.header(
+                "x-amz-target",
+                "AmazonEC2ContainerRegistry_V20150921.DescribeImages",
+            );
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -1859,13 +1979,25 @@ impl DescribeImageScanFindingsInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-amz-json-1.1");
-        let builder = builder.header(
-            "x-amz-target",
-            "AmazonEC2ContainerRegistry_V20150921.DescribeImageScanFindings",
-        );
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-amz-json-1.1");
+        }
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("x-amz-target"))
+            .unwrap_or(false)
+        {
+            builder = builder.header(
+                "x-amz-target",
+                "AmazonEC2ContainerRegistry_V20150921.DescribeImageScanFindings",
+            );
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -1979,13 +2111,25 @@ impl DescribeRegistryInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-amz-json-1.1");
-        let builder = builder.header(
-            "x-amz-target",
-            "AmazonEC2ContainerRegistry_V20150921.DescribeRegistry",
-        );
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-amz-json-1.1");
+        }
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("x-amz-target"))
+            .unwrap_or(false)
+        {
+            builder = builder.header(
+                "x-amz-target",
+                "AmazonEC2ContainerRegistry_V20150921.DescribeRegistry",
+            );
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -2169,13 +2313,25 @@ impl DescribeRepositoriesInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-amz-json-1.1");
-        let builder = builder.header(
-            "x-amz-target",
-            "AmazonEC2ContainerRegistry_V20150921.DescribeRepositories",
-        );
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-amz-json-1.1");
+        }
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("x-amz-target"))
+            .unwrap_or(false)
+        {
+            builder = builder.header(
+                "x-amz-target",
+                "AmazonEC2ContainerRegistry_V20150921.DescribeRepositories",
+            );
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -2307,13 +2463,25 @@ impl GetAuthorizationTokenInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-amz-json-1.1");
-        let builder = builder.header(
-            "x-amz-target",
-            "AmazonEC2ContainerRegistry_V20150921.GetAuthorizationToken",
-        );
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-amz-json-1.1");
+        }
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("x-amz-target"))
+            .unwrap_or(false)
+        {
+            builder = builder.header(
+                "x-amz-target",
+                "AmazonEC2ContainerRegistry_V20150921.GetAuthorizationToken",
+            );
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -2467,13 +2635,25 @@ impl GetDownloadUrlForLayerInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-amz-json-1.1");
-        let builder = builder.header(
-            "x-amz-target",
-            "AmazonEC2ContainerRegistry_V20150921.GetDownloadUrlForLayer",
-        );
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-amz-json-1.1");
+        }
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("x-amz-target"))
+            .unwrap_or(false)
+        {
+            builder = builder.header(
+                "x-amz-target",
+                "AmazonEC2ContainerRegistry_V20150921.GetDownloadUrlForLayer",
+            );
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -2616,13 +2796,25 @@ impl GetLifecyclePolicyInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-amz-json-1.1");
-        let builder = builder.header(
-            "x-amz-target",
-            "AmazonEC2ContainerRegistry_V20150921.GetLifecyclePolicy",
-        );
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-amz-json-1.1");
+        }
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("x-amz-target"))
+            .unwrap_or(false)
+        {
+            builder = builder.header(
+                "x-amz-target",
+                "AmazonEC2ContainerRegistry_V20150921.GetLifecyclePolicy",
+            );
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -2834,13 +3026,25 @@ impl GetLifecyclePolicyPreviewInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-amz-json-1.1");
-        let builder = builder.header(
-            "x-amz-target",
-            "AmazonEC2ContainerRegistry_V20150921.GetLifecyclePolicyPreview",
-        );
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-amz-json-1.1");
+        }
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("x-amz-target"))
+            .unwrap_or(false)
+        {
+            builder = builder.header(
+                "x-amz-target",
+                "AmazonEC2ContainerRegistry_V20150921.GetLifecyclePolicyPreview",
+            );
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -2955,13 +3159,25 @@ impl GetRegistryPolicyInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-amz-json-1.1");
-        let builder = builder.header(
-            "x-amz-target",
-            "AmazonEC2ContainerRegistry_V20150921.GetRegistryPolicy",
-        );
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-amz-json-1.1");
+        }
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("x-amz-target"))
+            .unwrap_or(false)
+        {
+            builder = builder.header(
+                "x-amz-target",
+                "AmazonEC2ContainerRegistry_V20150921.GetRegistryPolicy",
+            );
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -3104,13 +3320,25 @@ impl GetRepositoryPolicyInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-amz-json-1.1");
-        let builder = builder.header(
-            "x-amz-target",
-            "AmazonEC2ContainerRegistry_V20150921.GetRepositoryPolicy",
-        );
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-amz-json-1.1");
+        }
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("x-amz-target"))
+            .unwrap_or(false)
+        {
+            builder = builder.header(
+                "x-amz-target",
+                "AmazonEC2ContainerRegistry_V20150921.GetRepositoryPolicy",
+            );
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -3253,13 +3481,25 @@ impl InitiateLayerUploadInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-amz-json-1.1");
-        let builder = builder.header(
-            "x-amz-target",
-            "AmazonEC2ContainerRegistry_V20150921.InitiateLayerUpload",
-        );
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-amz-json-1.1");
+        }
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("x-amz-target"))
+            .unwrap_or(false)
+        {
+            builder = builder.header(
+                "x-amz-target",
+                "AmazonEC2ContainerRegistry_V20150921.InitiateLayerUpload",
+            );
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -3449,13 +3689,25 @@ impl ListImagesInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-amz-json-1.1");
-        let builder = builder.header(
-            "x-amz-target",
-            "AmazonEC2ContainerRegistry_V20150921.ListImages",
-        );
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-amz-json-1.1");
+        }
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("x-amz-target"))
+            .unwrap_or(false)
+        {
+            builder = builder.header(
+                "x-amz-target",
+                "AmazonEC2ContainerRegistry_V20150921.ListImages",
+            );
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -3584,13 +3836,25 @@ impl ListTagsForResourceInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-amz-json-1.1");
-        let builder = builder.header(
-            "x-amz-target",
-            "AmazonEC2ContainerRegistry_V20150921.ListTagsForResource",
-        );
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-amz-json-1.1");
+        }
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("x-amz-target"))
+            .unwrap_or(false)
+        {
+            builder = builder.header(
+                "x-amz-target",
+                "AmazonEC2ContainerRegistry_V20150921.ListTagsForResource",
+            );
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -3779,13 +4043,25 @@ impl PutImageInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-amz-json-1.1");
-        let builder = builder.header(
-            "x-amz-target",
-            "AmazonEC2ContainerRegistry_V20150921.PutImage",
-        );
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-amz-json-1.1");
+        }
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("x-amz-target"))
+            .unwrap_or(false)
+        {
+            builder = builder.header(
+                "x-amz-target",
+                "AmazonEC2ContainerRegistry_V20150921.PutImage",
+            );
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -3952,13 +4228,25 @@ impl PutImageScanningConfigurationInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-amz-json-1.1");
-        let builder = builder.header(
-            "x-amz-target",
-            "AmazonEC2ContainerRegistry_V20150921.PutImageScanningConfiguration",
-        );
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-amz-json-1.1");
+        }
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("x-amz-target"))
+            .unwrap_or(false)
+        {
+            builder = builder.header(
+                "x-amz-target",
+                "AmazonEC2ContainerRegistry_V20150921.PutImageScanningConfiguration",
+            );
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -4119,13 +4407,25 @@ impl PutImageTagMutabilityInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-amz-json-1.1");
-        let builder = builder.header(
-            "x-amz-target",
-            "AmazonEC2ContainerRegistry_V20150921.PutImageTagMutability",
-        );
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-amz-json-1.1");
+        }
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("x-amz-target"))
+            .unwrap_or(false)
+        {
+            builder = builder.header(
+                "x-amz-target",
+                "AmazonEC2ContainerRegistry_V20150921.PutImageTagMutability",
+            );
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -4282,13 +4582,25 @@ impl PutLifecyclePolicyInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-amz-json-1.1");
-        let builder = builder.header(
-            "x-amz-target",
-            "AmazonEC2ContainerRegistry_V20150921.PutLifecyclePolicy",
-        );
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-amz-json-1.1");
+        }
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("x-amz-target"))
+            .unwrap_or(false)
+        {
+            builder = builder.header(
+                "x-amz-target",
+                "AmazonEC2ContainerRegistry_V20150921.PutLifecyclePolicy",
+            );
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -4418,13 +4730,25 @@ impl PutRegistryPolicyInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-amz-json-1.1");
-        let builder = builder.header(
-            "x-amz-target",
-            "AmazonEC2ContainerRegistry_V20150921.PutRegistryPolicy",
-        );
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-amz-json-1.1");
+        }
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("x-amz-target"))
+            .unwrap_or(false)
+        {
+            builder = builder.header(
+                "x-amz-target",
+                "AmazonEC2ContainerRegistry_V20150921.PutRegistryPolicy",
+            );
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -4561,13 +4885,25 @@ impl PutReplicationConfigurationInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-amz-json-1.1");
-        let builder = builder.header(
-            "x-amz-target",
-            "AmazonEC2ContainerRegistry_V20150921.PutReplicationConfiguration",
-        );
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-amz-json-1.1");
+        }
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("x-amz-target"))
+            .unwrap_or(false)
+        {
+            builder = builder.header(
+                "x-amz-target",
+                "AmazonEC2ContainerRegistry_V20150921.PutReplicationConfiguration",
+            );
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -4736,13 +5072,25 @@ impl SetRepositoryPolicyInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-amz-json-1.1");
-        let builder = builder.header(
-            "x-amz-target",
-            "AmazonEC2ContainerRegistry_V20150921.SetRepositoryPolicy",
-        );
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-amz-json-1.1");
+        }
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("x-amz-target"))
+            .unwrap_or(false)
+        {
+            builder = builder.header(
+                "x-amz-target",
+                "AmazonEC2ContainerRegistry_V20150921.SetRepositoryPolicy",
+            );
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -4898,13 +5246,25 @@ impl StartImageScanInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-amz-json-1.1");
-        let builder = builder.header(
-            "x-amz-target",
-            "AmazonEC2ContainerRegistry_V20150921.StartImageScan",
-        );
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-amz-json-1.1");
+        }
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("x-amz-target"))
+            .unwrap_or(false)
+        {
+            builder = builder.header(
+                "x-amz-target",
+                "AmazonEC2ContainerRegistry_V20150921.StartImageScan",
+            );
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -5064,13 +5424,25 @@ impl StartLifecyclePolicyPreviewInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-amz-json-1.1");
-        let builder = builder.header(
-            "x-amz-target",
-            "AmazonEC2ContainerRegistry_V20150921.StartLifecyclePolicyPreview",
-        );
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-amz-json-1.1");
+        }
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("x-amz-target"))
+            .unwrap_or(false)
+        {
+            builder = builder.header(
+                "x-amz-target",
+                "AmazonEC2ContainerRegistry_V20150921.StartLifecyclePolicyPreview",
+            );
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -5209,13 +5581,25 @@ impl TagResourceInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-amz-json-1.1");
-        let builder = builder.header(
-            "x-amz-target",
-            "AmazonEC2ContainerRegistry_V20150921.TagResource",
-        );
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-amz-json-1.1");
+        }
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("x-amz-target"))
+            .unwrap_or(false)
+        {
+            builder = builder.header(
+                "x-amz-target",
+                "AmazonEC2ContainerRegistry_V20150921.TagResource",
+            );
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -5357,13 +5741,25 @@ impl UntagResourceInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-amz-json-1.1");
-        let builder = builder.header(
-            "x-amz-target",
-            "AmazonEC2ContainerRegistry_V20150921.UntagResource",
-        );
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-amz-json-1.1");
+        }
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("x-amz-target"))
+            .unwrap_or(false)
+        {
+            builder = builder.header(
+                "x-amz-target",
+                "AmazonEC2ContainerRegistry_V20150921.UntagResource",
+            );
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -5553,13 +5949,25 @@ impl UploadLayerPartInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-amz-json-1.1");
-        let builder = builder.header(
-            "x-amz-target",
-            "AmazonEC2ContainerRegistry_V20150921.UploadLayerPart",
-        );
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-amz-json-1.1");
+        }
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("x-amz-target"))
+            .unwrap_or(false)
+        {
+            builder = builder.header(
+                "x-amz-target",
+                "AmazonEC2ContainerRegistry_V20150921.UploadLayerPart",
+            );
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,

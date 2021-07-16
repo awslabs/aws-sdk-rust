@@ -110,13 +110,25 @@ impl CancelClusterInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-amz-json-1.1");
-        let builder = builder.header(
-            "x-amz-target",
-            "AWSIESnowballJobManagementService.CancelCluster",
-        );
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-amz-json-1.1");
+        }
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("x-amz-target"))
+            .unwrap_or(false)
+        {
+            builder = builder.header(
+                "x-amz-target",
+                "AWSIESnowballJobManagementService.CancelCluster",
+            );
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -241,13 +253,25 @@ impl CancelJobInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-amz-json-1.1");
-        let builder = builder.header(
-            "x-amz-target",
-            "AWSIESnowballJobManagementService.CancelJob",
-        );
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-amz-json-1.1");
+        }
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("x-amz-target"))
+            .unwrap_or(false)
+        {
+            builder = builder.header(
+                "x-amz-target",
+                "AWSIESnowballJobManagementService.CancelJob",
+            );
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -373,13 +397,25 @@ impl CreateAddressInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-amz-json-1.1");
-        let builder = builder.header(
-            "x-amz-target",
-            "AWSIESnowballJobManagementService.CreateAddress",
-        );
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-amz-json-1.1");
+        }
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("x-amz-target"))
+            .unwrap_or(false)
+        {
+            builder = builder.header(
+                "x-amz-target",
+                "AWSIESnowballJobManagementService.CreateAddress",
+            );
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -732,13 +768,25 @@ impl CreateClusterInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-amz-json-1.1");
-        let builder = builder.header(
-            "x-amz-target",
-            "AWSIESnowballJobManagementService.CreateCluster",
-        );
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-amz-json-1.1");
+        }
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("x-amz-target"))
+            .unwrap_or(false)
+        {
+            builder = builder.header(
+                "x-amz-target",
+                "AWSIESnowballJobManagementService.CreateCluster",
+            );
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -1145,13 +1193,25 @@ impl CreateJobInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-amz-json-1.1");
-        let builder = builder.header(
-            "x-amz-target",
-            "AWSIESnowballJobManagementService.CreateJob",
-        );
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-amz-json-1.1");
+        }
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("x-amz-target"))
+            .unwrap_or(false)
+        {
+            builder = builder.header(
+                "x-amz-target",
+                "AWSIESnowballJobManagementService.CreateJob",
+            );
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -1311,13 +1371,25 @@ impl CreateLongTermPricingInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-amz-json-1.1");
-        let builder = builder.header(
-            "x-amz-target",
-            "AWSIESnowballJobManagementService.CreateLongTermPricing",
-        );
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-amz-json-1.1");
+        }
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("x-amz-target"))
+            .unwrap_or(false)
+        {
+            builder = builder.header(
+                "x-amz-target",
+                "AWSIESnowballJobManagementService.CreateLongTermPricing",
+            );
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -1464,13 +1536,25 @@ impl CreateReturnShippingLabelInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-amz-json-1.1");
-        let builder = builder.header(
-            "x-amz-target",
-            "AWSIESnowballJobManagementService.CreateReturnShippingLabel",
-        );
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-amz-json-1.1");
+        }
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("x-amz-target"))
+            .unwrap_or(false)
+        {
+            builder = builder.header(
+                "x-amz-target",
+                "AWSIESnowballJobManagementService.CreateReturnShippingLabel",
+            );
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -1597,13 +1681,25 @@ impl DescribeAddressInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-amz-json-1.1");
-        let builder = builder.header(
-            "x-amz-target",
-            "AWSIESnowballJobManagementService.DescribeAddress",
-        );
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-amz-json-1.1");
+        }
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("x-amz-target"))
+            .unwrap_or(false)
+        {
+            builder = builder.header(
+                "x-amz-target",
+                "AWSIESnowballJobManagementService.DescribeAddress",
+            );
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -1744,13 +1840,25 @@ impl DescribeAddressesInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-amz-json-1.1");
-        let builder = builder.header(
-            "x-amz-target",
-            "AWSIESnowballJobManagementService.DescribeAddresses",
-        );
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-amz-json-1.1");
+        }
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("x-amz-target"))
+            .unwrap_or(false)
+        {
+            builder = builder.header(
+                "x-amz-target",
+                "AWSIESnowballJobManagementService.DescribeAddresses",
+            );
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -1877,13 +1985,25 @@ impl DescribeClusterInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-amz-json-1.1");
-        let builder = builder.header(
-            "x-amz-target",
-            "AWSIESnowballJobManagementService.DescribeCluster",
-        );
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-amz-json-1.1");
+        }
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("x-amz-target"))
+            .unwrap_or(false)
+        {
+            builder = builder.header(
+                "x-amz-target",
+                "AWSIESnowballJobManagementService.DescribeCluster",
+            );
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -2010,13 +2130,25 @@ impl DescribeJobInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-amz-json-1.1");
-        let builder = builder.header(
-            "x-amz-target",
-            "AWSIESnowballJobManagementService.DescribeJob",
-        );
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-amz-json-1.1");
+        }
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("x-amz-target"))
+            .unwrap_or(false)
+        {
+            builder = builder.header(
+                "x-amz-target",
+                "AWSIESnowballJobManagementService.DescribeJob",
+            );
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -2147,13 +2279,25 @@ impl DescribeReturnShippingLabelInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-amz-json-1.1");
-        let builder = builder.header(
-            "x-amz-target",
-            "AWSIESnowballJobManagementService.DescribeReturnShippingLabel",
-        );
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-amz-json-1.1");
+        }
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("x-amz-target"))
+            .unwrap_or(false)
+        {
+            builder = builder.header(
+                "x-amz-target",
+                "AWSIESnowballJobManagementService.DescribeReturnShippingLabel",
+            );
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -2281,13 +2425,25 @@ impl GetJobManifestInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-amz-json-1.1");
-        let builder = builder.header(
-            "x-amz-target",
-            "AWSIESnowballJobManagementService.GetJobManifest",
-        );
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-amz-json-1.1");
+        }
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("x-amz-target"))
+            .unwrap_or(false)
+        {
+            builder = builder.header(
+                "x-amz-target",
+                "AWSIESnowballJobManagementService.GetJobManifest",
+            );
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -2416,13 +2572,25 @@ impl GetJobUnlockCodeInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-amz-json-1.1");
-        let builder = builder.header(
-            "x-amz-target",
-            "AWSIESnowballJobManagementService.GetJobUnlockCode",
-        );
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-amz-json-1.1");
+        }
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("x-amz-target"))
+            .unwrap_or(false)
+        {
+            builder = builder.header(
+                "x-amz-target",
+                "AWSIESnowballJobManagementService.GetJobUnlockCode",
+            );
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -2537,13 +2705,25 @@ impl GetSnowballUsageInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-amz-json-1.1");
-        let builder = builder.header(
-            "x-amz-target",
-            "AWSIESnowballJobManagementService.GetSnowballUsage",
-        );
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-amz-json-1.1");
+        }
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("x-amz-target"))
+            .unwrap_or(false)
+        {
+            builder = builder.header(
+                "x-amz-target",
+                "AWSIESnowballJobManagementService.GetSnowballUsage",
+            );
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -2672,13 +2852,25 @@ impl GetSoftwareUpdatesInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-amz-json-1.1");
-        let builder = builder.header(
-            "x-amz-target",
-            "AWSIESnowballJobManagementService.GetSoftwareUpdates",
-        );
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-amz-json-1.1");
+        }
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("x-amz-target"))
+            .unwrap_or(false)
+        {
+            builder = builder.header(
+                "x-amz-target",
+                "AWSIESnowballJobManagementService.GetSoftwareUpdates",
+            );
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -2830,13 +3022,25 @@ impl ListClusterJobsInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-amz-json-1.1");
-        let builder = builder.header(
-            "x-amz-target",
-            "AWSIESnowballJobManagementService.ListClusterJobs",
-        );
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-amz-json-1.1");
+        }
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("x-amz-target"))
+            .unwrap_or(false)
+        {
+            builder = builder.header(
+                "x-amz-target",
+                "AWSIESnowballJobManagementService.ListClusterJobs",
+            );
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -2975,13 +3179,25 @@ impl ListClustersInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-amz-json-1.1");
-        let builder = builder.header(
-            "x-amz-target",
-            "AWSIESnowballJobManagementService.ListClusters",
-        );
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-amz-json-1.1");
+        }
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("x-amz-target"))
+            .unwrap_or(false)
+        {
+            builder = builder.header(
+                "x-amz-target",
+                "AWSIESnowballJobManagementService.ListClusters",
+            );
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -3123,13 +3339,25 @@ impl ListCompatibleImagesInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-amz-json-1.1");
-        let builder = builder.header(
-            "x-amz-target",
-            "AWSIESnowballJobManagementService.ListCompatibleImages",
-        );
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-amz-json-1.1");
+        }
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("x-amz-target"))
+            .unwrap_or(false)
+        {
+            builder = builder.header(
+                "x-amz-target",
+                "AWSIESnowballJobManagementService.ListCompatibleImages",
+            );
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -3265,10 +3493,22 @@ impl ListJobsInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-amz-json-1.1");
-        let builder = builder.header("x-amz-target", "AWSIESnowballJobManagementService.ListJobs");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-amz-json-1.1");
+        }
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("x-amz-target"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("x-amz-target", "AWSIESnowballJobManagementService.ListJobs");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -3408,13 +3648,25 @@ impl ListLongTermPricingInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-amz-json-1.1");
-        let builder = builder.header(
-            "x-amz-target",
-            "AWSIESnowballJobManagementService.ListLongTermPricing",
-        );
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-amz-json-1.1");
+        }
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("x-amz-target"))
+            .unwrap_or(false)
+        {
+            builder = builder.header(
+                "x-amz-target",
+                "AWSIESnowballJobManagementService.ListLongTermPricing",
+            );
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -3654,13 +3906,25 @@ impl UpdateClusterInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-amz-json-1.1");
-        let builder = builder.header(
-            "x-amz-target",
-            "AWSIESnowballJobManagementService.UpdateCluster",
-        );
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-amz-json-1.1");
+        }
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("x-amz-target"))
+            .unwrap_or(false)
+        {
+            builder = builder.header(
+                "x-amz-target",
+                "AWSIESnowballJobManagementService.UpdateCluster",
+            );
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -3921,13 +4185,25 @@ impl UpdateJobInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-amz-json-1.1");
-        let builder = builder.header(
-            "x-amz-target",
-            "AWSIESnowballJobManagementService.UpdateJob",
-        );
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-amz-json-1.1");
+        }
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("x-amz-target"))
+            .unwrap_or(false)
+        {
+            builder = builder.header(
+                "x-amz-target",
+                "AWSIESnowballJobManagementService.UpdateJob",
+            );
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -4072,13 +4348,25 @@ impl UpdateJobShipmentStateInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-amz-json-1.1");
-        let builder = builder.header(
-            "x-amz-target",
-            "AWSIESnowballJobManagementService.UpdateJobShipmentState",
-        );
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-amz-json-1.1");
+        }
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("x-amz-target"))
+            .unwrap_or(false)
+        {
+            builder = builder.header(
+                "x-amz-target",
+                "AWSIESnowballJobManagementService.UpdateJobShipmentState",
+            );
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -4238,13 +4526,25 @@ impl UpdateLongTermPricingInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-amz-json-1.1");
-        let builder = builder.header(
-            "x-amz-target",
-            "AWSIESnowballJobManagementService.UpdateLongTermPricing",
-        );
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-amz-json-1.1");
+        }
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("x-amz-target"))
+            .unwrap_or(false)
+        {
+            builder = builder.header(
+                "x-amz-target",
+                "AWSIESnowballJobManagementService.UpdateLongTermPricing",
+            );
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,

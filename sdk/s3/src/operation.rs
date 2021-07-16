@@ -5942,6 +5942,32 @@ impl smithy_http::response::ParseStrictResponse for PutObject {
         }
     }
 }
+#[cfg(test)]
+#[allow(unreachable_code, unused_variables)]
+mod put_object_request_test {
+    /// This test validates that if a content-type is specified, that only one content-type header is sent
+    /// Test ID: DontSendMultipleContentTypeHeaders
+    #[tokio::test]
+    async fn dont_send_multiple_content_type_headers_request() {
+        let config = crate::config::Config::builder().build();
+        let input = crate::input::PutObjectInput::builder()
+            .set_bucket(Some("test-bucket".to_string()))
+            .set_key(Some("test-key".to_string()))
+            .set_content_type(Some("text/html".to_string()))
+            .build()
+            .unwrap()
+            .make_operation(&config)
+            .expect("operation failed to build");
+        let (http_request, parts) = input.into_request_response().0.into_parts();
+        assert_eq!(http_request.method(), "PUT");
+        assert_eq!(http_request.uri().path(), "/test-bucket/test-key");
+        let expected_headers = &[("content-type", "text/html")];
+        protocol_test_helpers::assert_ok(protocol_test_helpers::validate_headers(
+            &http_request,
+            expected_headers,
+        ));
+    }
+}
 
 /// <p>Uses the <code>acl</code> subresource to set the access control list (ACL) permissions
 /// for a new or existing object in an S3 bucket. You must have <code>WRITE_ACP</code>

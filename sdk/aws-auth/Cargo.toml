@@ -14,3 +14,4 @@ zeroize = "1.2.0"
 [dev-dependencies]
 http = "0.2.3"
 tokio = { version = "1.0", features = ["rt", "macros"] }
+async-trait = "0.1.50"

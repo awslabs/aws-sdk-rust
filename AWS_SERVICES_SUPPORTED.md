@@ -40,6 +40,9 @@ The alpha SDK for Rust currently supports the checked services below. If you wan
 - [x] [Amazon Cognito Identity Provider](https://github.com/awslabs/aws-sdk-rust/issues/124)
 - [x] [Amazon Cognito Sync](https://github.com/awslabs/aws-sdk-rust/issues/124)
 - [x] Amazon Snowball
+- [x] [Amazon Auto Scaling](https://github.com/awslabs/aws-sdk-rust/issues/33)
+- [x] Amazon Autoscaling
+- [x] Amazon Autoscaling-Plans
 
 ------
 - [ ] Amazon Access Analyzer
@@ -51,14 +54,11 @@ The alpha SDK for Rust currently supports the checked services below. If you wan
 - [ ] Amazon API Gateway v2
 - [ ] Amazon App Config
 - [ ] Amazon App Flow
-- [ ] [Amazon Auto Scaling](https://github.com/awslabs/aws-sdk-rust/issues/33)
 - [ ] Amazon Application-Insights
 - [ ] Amazon Appmesh
 - [ ] Amazon Appstream
 - [ ] Amazon App Sync
 - [ ] Amazon Athena
-- [ ] Amazon Autoscaling
-- [ ] Amazon Autoscaling-Plans
 - [ ] Amazon Awsmigrationhub
 - [ ] Amazon Backup
 - [ ] Amazon Braket

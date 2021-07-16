@@ -116,10 +116,22 @@ impl BatchExecuteStatementInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-amz-json-1.0");
-        let builder = builder.header("x-amz-target", "DynamoDB_20120810.BatchExecuteStatement");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-amz-json-1.0");
+        }
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("x-amz-target"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("x-amz-target", "DynamoDB_20120810.BatchExecuteStatement");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -290,10 +302,22 @@ impl BatchGetItemInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-amz-json-1.0");
-        let builder = builder.header("x-amz-target", "DynamoDB_20120810.BatchGetItem");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-amz-json-1.0");
+        }
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("x-amz-target"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("x-amz-target", "DynamoDB_20120810.BatchGetItem");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -490,10 +514,22 @@ impl BatchWriteItemInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-amz-json-1.0");
-        let builder = builder.header("x-amz-target", "DynamoDB_20120810.BatchWriteItem");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-amz-json-1.0");
+        }
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("x-amz-target"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("x-amz-target", "DynamoDB_20120810.BatchWriteItem");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -630,10 +666,22 @@ impl CreateBackupInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-amz-json-1.0");
-        let builder = builder.header("x-amz-target", "DynamoDB_20120810.CreateBackup");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-amz-json-1.0");
+        }
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("x-amz-target"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("x-amz-target", "DynamoDB_20120810.CreateBackup");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -779,10 +827,22 @@ impl CreateGlobalTableInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-amz-json-1.0");
-        let builder = builder.header("x-amz-target", "DynamoDB_20120810.CreateGlobalTable");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-amz-json-1.0");
+        }
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("x-amz-target"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("x-amz-target", "DynamoDB_20120810.CreateGlobalTable");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -1107,10 +1167,22 @@ impl CreateTableInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-amz-json-1.0");
-        let builder = builder.header("x-amz-target", "DynamoDB_20120810.CreateTable");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-amz-json-1.0");
+        }
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("x-amz-target"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("x-amz-target", "DynamoDB_20120810.CreateTable");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -1236,10 +1308,22 @@ impl DeleteBackupInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-amz-json-1.0");
-        let builder = builder.header("x-amz-target", "DynamoDB_20120810.DeleteBackup");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-amz-json-1.0");
+        }
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("x-amz-target"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("x-amz-target", "DynamoDB_20120810.DeleteBackup");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -1594,10 +1678,22 @@ impl DeleteItemInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-amz-json-1.0");
-        let builder = builder.header("x-amz-target", "DynamoDB_20120810.DeleteItem");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-amz-json-1.0");
+        }
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("x-amz-target"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("x-amz-target", "DynamoDB_20120810.DeleteItem");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -1723,10 +1819,22 @@ impl DeleteTableInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-amz-json-1.0");
-        let builder = builder.header("x-amz-target", "DynamoDB_20120810.DeleteTable");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-amz-json-1.0");
+        }
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("x-amz-target"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("x-amz-target", "DynamoDB_20120810.DeleteTable");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -1853,10 +1961,22 @@ impl DescribeBackupInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-amz-json-1.0");
-        let builder = builder.header("x-amz-target", "DynamoDB_20120810.DescribeBackup");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-amz-json-1.0");
+        }
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("x-amz-target"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("x-amz-target", "DynamoDB_20120810.DescribeBackup");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -1985,13 +2105,25 @@ impl DescribeContinuousBackupsInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-amz-json-1.0");
-        let builder = builder.header(
-            "x-amz-target",
-            "DynamoDB_20120810.DescribeContinuousBackups",
-        );
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-amz-json-1.0");
+        }
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("x-amz-target"))
+            .unwrap_or(false)
+        {
+            builder = builder.header(
+                "x-amz-target",
+                "DynamoDB_20120810.DescribeContinuousBackups",
+            );
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -2132,13 +2264,25 @@ impl DescribeContributorInsightsInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-amz-json-1.0");
-        let builder = builder.header(
-            "x-amz-target",
-            "DynamoDB_20120810.DescribeContributorInsights",
-        );
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-amz-json-1.0");
+        }
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("x-amz-target"))
+            .unwrap_or(false)
+        {
+            builder = builder.header(
+                "x-amz-target",
+                "DynamoDB_20120810.DescribeContributorInsights",
+            );
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -2253,10 +2397,22 @@ impl DescribeEndpointsInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-amz-json-1.0");
-        let builder = builder.header("x-amz-target", "DynamoDB_20120810.DescribeEndpoints");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-amz-json-1.0");
+        }
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("x-amz-target"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("x-amz-target", "DynamoDB_20120810.DescribeEndpoints");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -2383,10 +2539,22 @@ impl DescribeExportInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-amz-json-1.0");
-        let builder = builder.header("x-amz-target", "DynamoDB_20120810.DescribeExport");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-amz-json-1.0");
+        }
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("x-amz-target"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("x-amz-target", "DynamoDB_20120810.DescribeExport");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -2517,10 +2685,22 @@ impl DescribeGlobalTableInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-amz-json-1.0");
-        let builder = builder.header("x-amz-target", "DynamoDB_20120810.DescribeGlobalTable");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-amz-json-1.0");
+        }
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("x-amz-target"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("x-amz-target", "DynamoDB_20120810.DescribeGlobalTable");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -2653,13 +2833,25 @@ impl DescribeGlobalTableSettingsInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-amz-json-1.0");
-        let builder = builder.header(
-            "x-amz-target",
-            "DynamoDB_20120810.DescribeGlobalTableSettings",
-        );
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-amz-json-1.0");
+        }
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("x-amz-target"))
+            .unwrap_or(false)
+        {
+            builder = builder.header(
+                "x-amz-target",
+                "DynamoDB_20120810.DescribeGlobalTableSettings",
+            );
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -2792,13 +2984,25 @@ impl DescribeKinesisStreamingDestinationInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-amz-json-1.0");
-        let builder = builder.header(
-            "x-amz-target",
-            "DynamoDB_20120810.DescribeKinesisStreamingDestination",
-        );
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-amz-json-1.0");
+        }
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("x-amz-target"))
+            .unwrap_or(false)
+        {
+            builder = builder.header(
+                "x-amz-target",
+                "DynamoDB_20120810.DescribeKinesisStreamingDestination",
+            );
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -2912,10 +3116,22 @@ impl DescribeLimitsInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-amz-json-1.0");
-        let builder = builder.header("x-amz-target", "DynamoDB_20120810.DescribeLimits");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-amz-json-1.0");
+        }
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("x-amz-target"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("x-amz-target", "DynamoDB_20120810.DescribeLimits");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -3041,10 +3257,22 @@ impl DescribeTableInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-amz-json-1.0");
-        let builder = builder.header("x-amz-target", "DynamoDB_20120810.DescribeTable");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-amz-json-1.0");
+        }
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("x-amz-target"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("x-amz-target", "DynamoDB_20120810.DescribeTable");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -3176,13 +3404,25 @@ impl DescribeTableReplicaAutoScalingInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-amz-json-1.0");
-        let builder = builder.header(
-            "x-amz-target",
-            "DynamoDB_20120810.DescribeTableReplicaAutoScaling",
-        );
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-amz-json-1.0");
+        }
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("x-amz-target"))
+            .unwrap_or(false)
+        {
+            builder = builder.header(
+                "x-amz-target",
+                "DynamoDB_20120810.DescribeTableReplicaAutoScaling",
+            );
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -3310,10 +3550,22 @@ impl DescribeTimeToLiveInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-amz-json-1.0");
-        let builder = builder.header("x-amz-target", "DynamoDB_20120810.DescribeTimeToLive");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-amz-json-1.0");
+        }
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("x-amz-target"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("x-amz-target", "DynamoDB_20120810.DescribeTimeToLive");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -3456,13 +3708,25 @@ impl DisableKinesisStreamingDestinationInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-amz-json-1.0");
-        let builder = builder.header(
-            "x-amz-target",
-            "DynamoDB_20120810.DisableKinesisStreamingDestination",
-        );
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-amz-json-1.0");
+        }
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("x-amz-target"))
+            .unwrap_or(false)
+        {
+            builder = builder.header(
+                "x-amz-target",
+                "DynamoDB_20120810.DisableKinesisStreamingDestination",
+            );
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -3605,13 +3869,25 @@ impl EnableKinesisStreamingDestinationInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-amz-json-1.0");
-        let builder = builder.header(
-            "x-amz-target",
-            "DynamoDB_20120810.EnableKinesisStreamingDestination",
-        );
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-amz-json-1.0");
+        }
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("x-amz-target"))
+            .unwrap_or(false)
+        {
+            builder = builder.header(
+                "x-amz-target",
+                "DynamoDB_20120810.EnableKinesisStreamingDestination",
+            );
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -3781,10 +4057,22 @@ impl ExecuteStatementInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-amz-json-1.0");
-        let builder = builder.header("x-amz-target", "DynamoDB_20120810.ExecuteStatement");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-amz-json-1.0");
+        }
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("x-amz-target"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("x-amz-target", "DynamoDB_20120810.ExecuteStatement");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -3939,10 +4227,22 @@ impl ExecuteTransactionInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-amz-json-1.0");
-        let builder = builder.header("x-amz-target", "DynamoDB_20120810.ExecuteTransaction");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-amz-json-1.0");
+        }
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("x-amz-target"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("x-amz-target", "DynamoDB_20120810.ExecuteTransaction");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -4202,10 +4502,22 @@ impl ExportTableToPointInTimeInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-amz-json-1.0");
-        let builder = builder.header("x-amz-target", "DynamoDB_20120810.ExportTableToPointInTime");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-amz-json-1.0");
+        }
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("x-amz-target"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("x-amz-target", "DynamoDB_20120810.ExportTableToPointInTime");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -4446,10 +4758,22 @@ impl GetItemInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-amz-json-1.0");
-        let builder = builder.header("x-amz-target", "DynamoDB_20120810.GetItem");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-amz-json-1.0");
+        }
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("x-amz-target"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("x-amz-target", "DynamoDB_20120810.GetItem");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -4662,10 +4986,22 @@ impl ListBackupsInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-amz-json-1.0");
-        let builder = builder.header("x-amz-target", "DynamoDB_20120810.ListBackups");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-amz-json-1.0");
+        }
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("x-amz-target"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("x-amz-target", "DynamoDB_20120810.ListBackups");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -4816,10 +5152,22 @@ impl ListContributorInsightsInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-amz-json-1.0");
-        let builder = builder.header("x-amz-target", "DynamoDB_20120810.ListContributorInsights");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-amz-json-1.0");
+        }
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("x-amz-target"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("x-amz-target", "DynamoDB_20120810.ListContributorInsights");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -4969,10 +5317,22 @@ impl ListExportsInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-amz-json-1.0");
-        let builder = builder.header("x-amz-target", "DynamoDB_20120810.ListExports");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-amz-json-1.0");
+        }
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("x-amz-target"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("x-amz-target", "DynamoDB_20120810.ListExports");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -5130,10 +5490,22 @@ impl ListGlobalTablesInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-amz-json-1.0");
-        let builder = builder.header("x-amz-target", "DynamoDB_20120810.ListGlobalTables");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-amz-json-1.0");
+        }
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("x-amz-target"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("x-amz-target", "DynamoDB_20120810.ListGlobalTables");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -5275,10 +5647,22 @@ impl ListTablesInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-amz-json-1.0");
-        let builder = builder.header("x-amz-target", "DynamoDB_20120810.ListTables");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-amz-json-1.0");
+        }
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("x-amz-target"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("x-amz-target", "DynamoDB_20120810.ListTables");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -5418,10 +5802,22 @@ impl ListTagsOfResourceInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-amz-json-1.0");
-        let builder = builder.header("x-amz-target", "DynamoDB_20120810.ListTagsOfResource");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-amz-json-1.0");
+        }
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("x-amz-target"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("x-amz-target", "DynamoDB_20120810.ListTagsOfResource");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -5769,10 +6165,22 @@ impl PutItemInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-amz-json-1.0");
-        let builder = builder.header("x-amz-target", "DynamoDB_20120810.PutItem");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-amz-json-1.0");
+        }
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("x-amz-target"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("x-amz-target", "DynamoDB_20120810.PutItem");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -6349,10 +6757,22 @@ impl QueryInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-amz-json-1.0");
-        let builder = builder.header("x-amz-target", "DynamoDB_20120810.Query");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-amz-json-1.0");
+        }
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("x-amz-target"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("x-amz-target", "DynamoDB_20120810.Query");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -6578,10 +6998,22 @@ impl RestoreTableFromBackupInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-amz-json-1.0");
-        let builder = builder.header("x-amz-target", "DynamoDB_20120810.RestoreTableFromBackup");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-amz-json-1.0");
+        }
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("x-amz-target"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("x-amz-target", "DynamoDB_20120810.RestoreTableFromBackup");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -6853,13 +7285,25 @@ impl RestoreTableToPointInTimeInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-amz-json-1.0");
-        let builder = builder.header(
-            "x-amz-target",
-            "DynamoDB_20120810.RestoreTableToPointInTime",
-        );
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-amz-json-1.0");
+        }
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("x-amz-target"))
+            .unwrap_or(false)
+        {
+            builder = builder.header(
+                "x-amz-target",
+                "DynamoDB_20120810.RestoreTableToPointInTime",
+            );
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -7330,10 +7774,22 @@ impl ScanInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-amz-json-1.0");
-        let builder = builder.header("x-amz-target", "DynamoDB_20120810.Scan");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-amz-json-1.0");
+        }
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("x-amz-target"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("x-amz-target", "DynamoDB_20120810.Scan");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -7474,10 +7930,22 @@ impl TagResourceInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-amz-json-1.0");
-        let builder = builder.header("x-amz-target", "DynamoDB_20120810.TagResource");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-amz-json-1.0");
+        }
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("x-amz-target"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("x-amz-target", "DynamoDB_20120810.TagResource");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -7630,10 +8098,22 @@ impl TransactGetItemsInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-amz-json-1.0");
-        let builder = builder.header("x-amz-target", "DynamoDB_20120810.TransactGetItems");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-amz-json-1.0");
+        }
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("x-amz-target"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("x-amz-target", "DynamoDB_20120810.TransactGetItems");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -7853,10 +8333,22 @@ impl TransactWriteItemsInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-amz-json-1.0");
-        let builder = builder.header("x-amz-target", "DynamoDB_20120810.TransactWriteItems");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-amz-json-1.0");
+        }
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("x-amz-target"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("x-amz-target", "DynamoDB_20120810.TransactWriteItems");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -7998,10 +8490,22 @@ impl UntagResourceInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-amz-json-1.0");
-        let builder = builder.header("x-amz-target", "DynamoDB_20120810.UntagResource");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-amz-json-1.0");
+        }
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("x-amz-target"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("x-amz-target", "DynamoDB_20120810.UntagResource");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -8148,10 +8652,22 @@ impl UpdateContinuousBackupsInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-amz-json-1.0");
-        let builder = builder.header("x-amz-target", "DynamoDB_20120810.UpdateContinuousBackups");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-amz-json-1.0");
+        }
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("x-amz-target"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("x-amz-target", "DynamoDB_20120810.UpdateContinuousBackups");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -8309,13 +8825,25 @@ impl UpdateContributorInsightsInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-amz-json-1.0");
-        let builder = builder.header(
-            "x-amz-target",
-            "DynamoDB_20120810.UpdateContributorInsights",
-        );
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-amz-json-1.0");
+        }
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("x-amz-target"))
+            .unwrap_or(false)
+        {
+            builder = builder.header(
+                "x-amz-target",
+                "DynamoDB_20120810.UpdateContributorInsights",
+            );
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -8461,10 +8989,22 @@ impl UpdateGlobalTableInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-amz-json-1.0");
-        let builder = builder.header("x-amz-target", "DynamoDB_20120810.UpdateGlobalTable");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-amz-json-1.0");
+        }
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("x-amz-target"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("x-amz-target", "DynamoDB_20120810.UpdateGlobalTable");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -8702,13 +9242,25 @@ impl UpdateGlobalTableSettingsInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-amz-json-1.0");
-        let builder = builder.header(
-            "x-amz-target",
-            "DynamoDB_20120810.UpdateGlobalTableSettings",
-        );
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-amz-json-1.0");
+        }
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("x-amz-target"))
+            .unwrap_or(false)
+        {
+            builder = builder.header(
+                "x-amz-target",
+                "DynamoDB_20120810.UpdateGlobalTableSettings",
+            );
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -9198,10 +9750,22 @@ impl UpdateItemInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-amz-json-1.0");
-        let builder = builder.header("x-amz-target", "DynamoDB_20120810.UpdateItem");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-amz-json-1.0");
+        }
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("x-amz-target"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("x-amz-target", "DynamoDB_20120810.UpdateItem");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -9462,10 +10026,22 @@ impl UpdateTableInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-amz-json-1.0");
-        let builder = builder.header("x-amz-target", "DynamoDB_20120810.UpdateTable");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-amz-json-1.0");
+        }
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("x-amz-target"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("x-amz-target", "DynamoDB_20120810.UpdateTable");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -9655,13 +10231,25 @@ impl UpdateTableReplicaAutoScalingInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-amz-json-1.0");
-        let builder = builder.header(
-            "x-amz-target",
-            "DynamoDB_20120810.UpdateTableReplicaAutoScaling",
-        );
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-amz-json-1.0");
+        }
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("x-amz-target"))
+            .unwrap_or(false)
+        {
+            builder = builder.header(
+                "x-amz-target",
+                "DynamoDB_20120810.UpdateTableReplicaAutoScaling",
+            );
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -9807,10 +10395,22 @@ impl UpdateTimeToLiveInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-amz-json-1.0");
-        let builder = builder.header("x-amz-target", "DynamoDB_20120810.UpdateTimeToLive");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-amz-json-1.0");
+        }
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("x-amz-target"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("x-amz-target", "DynamoDB_20120810.UpdateTimeToLive");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
