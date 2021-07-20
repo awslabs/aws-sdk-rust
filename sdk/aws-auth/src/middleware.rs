@@ -72,13 +72,16 @@ impl AsyncMapRequest for CredentialsStage {
 
     fn apply(&self, mut request: Request) -> BoxFuture<Result<Request, Self::Error>> {
         Box::pin(async move {
-            let cred_future = {
+            let provider = {
                 let config = request.config();
                 let credential_provider = config
                     .get::<CredentialsProvider>()
                     .ok_or(CredentialsStageError::MissingCredentialsProvider)?;
-                credential_provider.provide_credentials()
+                // we need to enable releasing the config lock so that we don't hold the config
+                // lock across an await point
+                credential_provider.clone()
             };
+            let cred_future = { provider.provide_credentials() };
             let credentials = cred_future.await?;
             request.config_mut().insert(credentials);
             Ok(request)
