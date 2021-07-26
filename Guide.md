@@ -54,8 +54,8 @@ You can also specify the default AWS Region in which your client is created by u
 The AWS SDK for Rust recognizes the following environment variables:
 
 - **AWS_ACCESS_KEY_ID** is the AWS access key used as part of the credentials to authenticate you.
-- **AWS_REGION** is the AWS Region to which requests are sent.
 - **AWS_SECRET_ACCESS_KEY** is the AWS secret key used as part of the credentials to authenticate you.
+- **AWS_REGION** is the AWS Region to which requests are sent.
 
 To set an environment variable on Linux or MacOS, use the following command, where *VARIABLE* is the name of the environment variable and *VALUE* is the value to which it is set.:
 
@@ -86,7 +86,7 @@ You can find the API reference for the AWS SDK for Rust at [https://awslabs.gith
 
 The AWS SDK for Rust examples can help you write your own Rust applications that use Amazon Web Services. The examples assume you have already set up and configured the SDK (that is, you have imported all required packages and set your credentials and region).
 
-You can find the source code for these examples and others in the [sdk/examples](sdk-examples) section of this repository. To propose a new code example, create an  issue and describe what you want the cod example to do. 
+You can find the source code for these examples and others in the [sdk/examples](sdk/examples) section of this repository. To propose a new code example, create an  issue and describe what you want the cod example to do. 
 The **sdk/examples** section contains code examples for the following services:
 
 [AWS Batch](sdk/examples/batch)
