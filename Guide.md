@@ -22,16 +22,14 @@ Before you can use the AWS SDK for Rust, you must have an Amazon account. See [H
 Once you have an Amazon account, you need access keys to call any service API using the AWS SDK for Rust. 
 For instructions on creating an access key for an existing IAM user, see [Programmatic access](https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys) in the [IAM User Guide](https://docs.aws.amazon.com/IAM/latest/UserGuide/).
 
-### Installing the SDK
-
-During the early development stage of the SDK, you can install the SDK by unzipping the asset from any of the [releases](https://github.com/awslabs/aws-sdk-rust/releases).
+### Supported Rust versions
 
 The SDK currently requires a minimum of Rust 1.52.1, and is not guaranteed to build on compiler versions earlier than that. 
 
 ### Using packages
 
-To access an Amazon or AWS service using the AWS SDK for Rust you must specify the service’s crate in your Cargo.toml file. 
-For example, to access Amazon Simple Storage Service (Amazon S3) APIs, you must include the following entry in the `dependencies `section:
+To access an Amazon or AWS service using the AWS SDK for Rust you must specify the service’s crate in your **Cargo.toml** file. 
+For example, to access Amazon Simple Storage Service (Amazon S3) APIs using the v1.0 version of the Rust SDK, you must include the following entry in the `dependencies `section:
 
 ```
 s3 = { git = "https://github.com/awslabs/aws-sdk-rust", tag = "v1.0", package = "aws-sdk-s3" }
@@ -47,19 +45,19 @@ This section describes:
 
 ### Specifying your credentials and region
 
-Currently the recommended way to specify your credentials is through environment variables. See the following section for information on setting the __AWS_ACCESS_KEY_ID__ and __AWS_SECRET_ACCESS_KEY__ environment variables.
+Currently the recommended way to specify your credentials is through environment variables. See the following section for information on setting the **AWS_ACCESS_KEY_ID** and **AWS_SECRET_ACCESS_KEY** environment variables.
 
-You can also specify the default AWS Region in which your client is created by using the __AWS_REGION__ environment variable. 
+You can also specify the default AWS Region in which your client is created by using the **AWS_REGION** environment variable. 
 
 ### Environment variables
 
 The AWS SDK for Rust recognizes the following environment variables:
 
-- __AWS_ACCESS_KEY_ID__ is the AWS access key used as part of the credentials to authenticate you.
-- __AWS_REGION__ is the AWS Region to send requests to for commands requested using your profile.
-- __AWS_SECRET_ACCESS_KEY__ is the AWS secret key used as part of the credentials to authenticate you.
+- **AWS_ACCESS_KEY_ID** is the AWS access key used as part of the credentials to authenticate you.
+- **AWS_REGION** is the AWS Region to which requests are sent.
+- **AWS_SECRET_ACCESS_KEY** is the AWS secret key used as part of the credentials to authenticate you.
 
-To set an environment variable on Linux or MacOS, use the following command, where _VARIABLE_ is the name of the environment variable and _VALUE_ is the value to which it is set.:
+To set an environment variable on Linux or MacOS, use the following command, where *VARIABLE* is the name of the environment variable and *VALUE* is the value to which it is set.:
 
 ```
 export VARIABLE=VALUE
@@ -73,10 +71,10 @@ set VARIABLE=VALUE
 
 ### Creating a client
 
-To create a client that uses values specified through environment variables, use the Client's __from_env__ function. 
+  To create a client that uses values specified through environment variables, use the Client's `from_env` function. 
 The following example creates a client for Amazon S3:
 
-```
+```rust
  let client = s3::Client::from_env();
 ```
 
@@ -88,9 +86,8 @@ You can find the API reference for the AWS SDK for Rust at [https://awslabs.gith
 
 The AWS SDK for Rust examples can help you write your own Rust applications that use Amazon Web Services. The examples assume you have already set up and configured the SDK (that is, you have imported all required packages and set your credentials and region).
 
-You can find the source code for these examples and others in the [AWS documentation code examples repository](https://github.com/awsdocs/aws-doc-sdk-examples) on GitHub. To propose a new code example for the AWS documentation team to consider producing, create a new request. The team is looking to produce code examples that cover broader scenarios and use cases, versus simple code snippets that cover only individual API calls. For instructions, see the "Proposing new code examples" section in the Readme on GitHub.
-
-This section contains code examples for the following services:
+You can find the source code for these examples and others in the [sdk/examples](sdk-examples) section of this repository. To propose a new code example, create an  issue and describe what you want the cod example to do. 
+The **sdk/examples** section contains code examples for the following services:
 
 [AWS Batch](sdk/examples/batch)
 [AWS CloudFormation](sdk/examples/cloudformation)
