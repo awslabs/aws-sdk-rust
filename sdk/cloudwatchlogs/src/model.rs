@@ -257,6 +257,9 @@ impl Distribution {
             Distribution::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["ByLogStream", "Random"]
+    }
 }
 impl AsRef<str> for Distribution {
     fn as_ref(&self) -> &str {
@@ -614,6 +617,37 @@ impl StandardUnit {
             StandardUnit::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "Bits",
+            "Bits/Second",
+            "Bytes",
+            "Bytes/Second",
+            "Count",
+            "Count/Second",
+            "Gigabits",
+            "Gigabits/Second",
+            "Gigabytes",
+            "Gigabytes/Second",
+            "Kilobits",
+            "Kilobits/Second",
+            "Kilobytes",
+            "Kilobytes/Second",
+            "Megabits",
+            "Megabits/Second",
+            "Megabytes",
+            "Megabytes/Second",
+            "Microseconds",
+            "Milliseconds",
+            "None",
+            "Percent",
+            "Seconds",
+            "Terabits",
+            "Terabits/Second",
+            "Terabytes",
+            "Terabytes/Second",
+        ]
+    }
 }
 impl AsRef<str> for StandardUnit {
     fn as_ref(&self) -> &str {
@@ -957,6 +991,17 @@ impl QueryStatus {
             QueryStatus::UnknownValue => "Unknown",
             QueryStatus::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "Cancelled",
+            "Complete",
+            "Failed",
+            "Running",
+            "Scheduled",
+            "Timeout",
+            "Unknown",
+        ]
     }
 }
 impl AsRef<str> for QueryStatus {
@@ -2130,6 +2175,9 @@ impl OrderBy {
             OrderBy::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["LastEventTime", "LogStreamName"]
+    }
 }
 impl AsRef<str> for OrderBy {
     fn as_ref(&self) -> &str {
@@ -2634,6 +2682,16 @@ impl ExportTaskStatusCode {
             ExportTaskStatusCode::Running => "RUNNING",
             ExportTaskStatusCode::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "CANCELLED",
+            "COMPLETED",
+            "FAILED",
+            "PENDING",
+            "PENDING_CANCEL",
+            "RUNNING",
+        ]
     }
 }
 impl AsRef<str> for ExportTaskStatusCode {

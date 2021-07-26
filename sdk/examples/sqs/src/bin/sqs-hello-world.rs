@@ -5,7 +5,7 @@
 
 use std::process::exit;
 
-/// Sends a message to and receives the message from a queue.
+/// Sends a message to and receives the message from a FIFO queue.
 #[tokio::main]
 async fn main() -> Result<(), sqs::Error> {
     tracing_subscriber::fmt::init();
@@ -29,6 +29,8 @@ async fn main() -> Result<(), sqs::Error> {
         .send_message()
         .queue_url(&queue_url)
         .message_body("hello from my queue")
+        // message group id required for FIFO Queue
+        // comment out ".message_group_id("MyGroup")" for standard queues
         .message_group_id("MyGroup")
         .send()
         .await?;

@@ -9,19 +9,28 @@ pub fn parse_delete_alarms_error(
         Some(code) => code,
         None => return Err(crate::error::DeleteAlarmsError::unhandled(generic)),
     };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "ResourceNotFound" => crate::error::DeleteAlarmsError {
             meta: generic,
             kind: crate::error::DeleteAlarmsErrorKind::ResourceNotFound({
                 #[allow(unused_mut)]
-                let mut output = crate::error::resource_not_found::Builder::default();
-                let _ = response;
-                output = crate::xml_deser::deser_structure_resource_not_found_xml_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::DeleteAlarmsError::unhandled)?;
-                output.build()
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_resource_not_found_xml_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::DeleteAlarmsError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
             }),
         },
         _ => crate::error::DeleteAlarmsError::generic(generic),
@@ -53,46 +62,65 @@ pub fn parse_delete_anomaly_detector_error(
         Some(code) => code,
         None => return Err(crate::error::DeleteAnomalyDetectorError::unhandled(generic)),
     };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InternalServiceFault" => crate::error::DeleteAnomalyDetectorError {
+        "InternalServiceError" => crate::error::DeleteAnomalyDetectorError {
             meta: generic,
             kind: crate::error::DeleteAnomalyDetectorErrorKind::InternalServiceFault({
                 #[allow(unused_mut)]
-                let mut output = crate::error::internal_service_fault::Builder::default();
-                let _ = response;
-                output = crate::xml_deser::deser_structure_internal_service_fault_xml_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::DeleteAnomalyDetectorError::unhandled)?;
-                output.build()
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_service_fault::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_internal_service_fault_xml_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::DeleteAnomalyDetectorError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
             }),
         },
-        "InvalidParameterValueException" => {
-            crate::error::DeleteAnomalyDetectorError {
-                meta: generic,
-                kind: crate::error::DeleteAnomalyDetectorErrorKind::InvalidParameterValueException(
-                    {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::invalid_parameter_value_exception::Builder::default();
-                        let _ = response;
-                        output = crate::xml_deser::deser_structure_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteAnomalyDetectorError::unhandled)?;
-                        output.build()
-                    },
-                ),
-            }
-        }
-        "MissingRequiredParameterException" => crate::error::DeleteAnomalyDetectorError {
+        "InvalidParameterValue" => crate::error::DeleteAnomalyDetectorError {
+            meta: generic,
+            kind: crate::error::DeleteAnomalyDetectorErrorKind::InvalidParameterValueException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::invalid_parameter_value_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteAnomalyDetectorError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "MissingParameter" => crate::error::DeleteAnomalyDetectorError {
             meta: generic,
             kind: crate::error::DeleteAnomalyDetectorErrorKind::MissingRequiredParameterException(
                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::missing_required_parameter_exception::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_missing_required_parameter_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteAnomalyDetectorError::unhandled)?;
-                    output.build()
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output =
+                            crate::error::missing_required_parameter_exception::Builder::default();
+                        let _ = response;
+                        output = crate::xml_deser::deser_structure_missing_required_parameter_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteAnomalyDetectorError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
                 },
             ),
         },
@@ -100,14 +128,22 @@ pub fn parse_delete_anomaly_detector_error(
             meta: generic,
             kind: crate::error::DeleteAnomalyDetectorErrorKind::ResourceNotFoundException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::resource_not_found_exception::Builder::default();
-                let _ = response;
-                output = crate::xml_deser::deser_structure_resource_not_found_exception_xml_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::DeleteAnomalyDetectorError::unhandled)?;
-                output.build()
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let _ = response;
+                    output =
+                        crate::xml_deser::deser_structure_resource_not_found_exception_xml_err(
+                            response.body().as_ref(),
+                            output,
+                        )
+                        .map_err(crate::error::DeleteAnomalyDetectorError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
             }),
         },
         _ => crate::error::DeleteAnomalyDetectorError::generic(generic),
@@ -140,48 +176,69 @@ pub fn parse_delete_dashboards_error(
         Some(code) => code,
         None => return Err(crate::error::DeleteDashboardsError::unhandled(generic)),
     };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "DashboardNotFoundError" => crate::error::DeleteDashboardsError {
+        "ResourceNotFound" => crate::error::DeleteDashboardsError {
             meta: generic,
             kind: crate::error::DeleteDashboardsErrorKind::DashboardNotFoundError({
                 #[allow(unused_mut)]
-                let mut output = crate::error::dashboard_not_found_error::Builder::default();
-                let _ = response;
-                output = crate::xml_deser::deser_structure_dashboard_not_found_error_xml_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::DeleteDashboardsError::unhandled)?;
-                output.build()
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::dashboard_not_found_error::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_dashboard_not_found_error_xml_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::DeleteDashboardsError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
             }),
         },
-        "InternalServiceFault" => crate::error::DeleteDashboardsError {
+        "InternalServiceError" => crate::error::DeleteDashboardsError {
             meta: generic,
             kind: crate::error::DeleteDashboardsErrorKind::InternalServiceFault({
                 #[allow(unused_mut)]
-                let mut output = crate::error::internal_service_fault::Builder::default();
-                let _ = response;
-                output = crate::xml_deser::deser_structure_internal_service_fault_xml_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::DeleteDashboardsError::unhandled)?;
-                output.build()
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_service_fault::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_internal_service_fault_xml_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::DeleteDashboardsError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
             }),
         },
-        "InvalidParameterValueException" => {
-            crate::error::DeleteDashboardsError {
-                meta: generic,
-                kind: crate::error::DeleteDashboardsErrorKind::InvalidParameterValueException({
+        "InvalidParameterValue" => crate::error::DeleteDashboardsError {
+            meta: generic,
+            kind: crate::error::DeleteDashboardsErrorKind::InvalidParameterValueException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output =
                         crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteDashboardsError::unhandled)?;
                     output.build()
-                }),
-            }
-        }
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         _ => crate::error::DeleteDashboardsError::generic(generic),
     })
 }
@@ -212,35 +269,45 @@ pub fn parse_delete_insight_rules_error(
         Some(code) => code,
         None => return Err(crate::error::DeleteInsightRulesError::unhandled(generic)),
     };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidParameterValueException" => {
-            crate::error::DeleteInsightRulesError {
-                meta: generic,
-                kind: crate::error::DeleteInsightRulesErrorKind::InvalidParameterValueException({
+        "InvalidParameterValue" => crate::error::DeleteInsightRulesError {
+            meta: generic,
+            kind: crate::error::DeleteInsightRulesErrorKind::InvalidParameterValueException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output =
                         crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteInsightRulesError::unhandled)?;
                     output.build()
-                }),
-            }
-        }
-        "MissingRequiredParameterException" => {
-            crate::error::DeleteInsightRulesError {
-                meta: generic,
-                kind: crate::error::DeleteInsightRulesErrorKind::MissingRequiredParameterException(
-                    {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::missing_required_parameter_exception::Builder::default();
-                        let _ = response;
-                        output = crate::xml_deser::deser_structure_missing_required_parameter_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteInsightRulesError::unhandled)?;
-                        output.build()
-                    },
-                ),
-            }
-        }
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "MissingParameter" => crate::error::DeleteInsightRulesError {
+            meta: generic,
+            kind: crate::error::DeleteInsightRulesErrorKind::MissingRequiredParameterException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::missing_required_parameter_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_missing_required_parameter_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteInsightRulesError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         _ => crate::error::DeleteInsightRulesError::generic(generic),
     })
 }
@@ -278,49 +345,66 @@ pub fn parse_delete_metric_stream_error(
         Some(code) => code,
         None => return Err(crate::error::DeleteMetricStreamError::unhandled(generic)),
     };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InternalServiceFault" => crate::error::DeleteMetricStreamError {
+        "InternalServiceError" => crate::error::DeleteMetricStreamError {
             meta: generic,
             kind: crate::error::DeleteMetricStreamErrorKind::InternalServiceFault({
                 #[allow(unused_mut)]
-                let mut output = crate::error::internal_service_fault::Builder::default();
-                let _ = response;
-                output = crate::xml_deser::deser_structure_internal_service_fault_xml_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::DeleteMetricStreamError::unhandled)?;
-                output.build()
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_service_fault::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_internal_service_fault_xml_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::DeleteMetricStreamError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
             }),
         },
-        "InvalidParameterValueException" => {
-            crate::error::DeleteMetricStreamError {
-                meta: generic,
-                kind: crate::error::DeleteMetricStreamErrorKind::InvalidParameterValueException({
+        "InvalidParameterValue" => crate::error::DeleteMetricStreamError {
+            meta: generic,
+            kind: crate::error::DeleteMetricStreamErrorKind::InvalidParameterValueException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output =
                         crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteMetricStreamError::unhandled)?;
                     output.build()
-                }),
-            }
-        }
-        "MissingRequiredParameterException" => {
-            crate::error::DeleteMetricStreamError {
-                meta: generic,
-                kind: crate::error::DeleteMetricStreamErrorKind::MissingRequiredParameterException(
-                    {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::missing_required_parameter_exception::Builder::default();
-                        let _ = response;
-                        output = crate::xml_deser::deser_structure_missing_required_parameter_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteMetricStreamError::unhandled)?;
-                        output.build()
-                    },
-                ),
-            }
-        }
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "MissingParameter" => crate::error::DeleteMetricStreamError {
+            meta: generic,
+            kind: crate::error::DeleteMetricStreamErrorKind::MissingRequiredParameterException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::missing_required_parameter_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_missing_required_parameter_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteMetricStreamError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         _ => crate::error::DeleteMetricStreamError::generic(generic),
     })
 }
@@ -353,19 +437,28 @@ pub fn parse_describe_alarm_history_error(
         Some(code) => code,
         None => return Err(crate::error::DescribeAlarmHistoryError::unhandled(generic)),
     };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "InvalidNextToken" => crate::error::DescribeAlarmHistoryError {
             meta: generic,
             kind: crate::error::DescribeAlarmHistoryErrorKind::InvalidNextToken({
                 #[allow(unused_mut)]
-                let mut output = crate::error::invalid_next_token::Builder::default();
-                let _ = response;
-                output = crate::xml_deser::deser_structure_invalid_next_token_xml_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::DescribeAlarmHistoryError::unhandled)?;
-                output.build()
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_next_token::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_invalid_next_token_xml_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::DescribeAlarmHistoryError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
             }),
         },
         _ => crate::error::DescribeAlarmHistoryError::generic(generic),
@@ -402,19 +495,28 @@ pub fn parse_describe_alarms_error(
         Some(code) => code,
         None => return Err(crate::error::DescribeAlarmsError::unhandled(generic)),
     };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "InvalidNextToken" => crate::error::DescribeAlarmsError {
             meta: generic,
             kind: crate::error::DescribeAlarmsErrorKind::InvalidNextToken({
                 #[allow(unused_mut)]
-                let mut output = crate::error::invalid_next_token::Builder::default();
-                let _ = response;
-                output = crate::xml_deser::deser_structure_invalid_next_token_xml_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::DescribeAlarmsError::unhandled)?;
-                output.build()
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_next_token::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_invalid_next_token_xml_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::DescribeAlarmsError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
             }),
         },
         _ => crate::error::DescribeAlarmsError::generic(generic),
@@ -485,45 +587,68 @@ pub fn parse_describe_anomaly_detectors_error(
             ))
         }
     };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InternalServiceFault" => crate::error::DescribeAnomalyDetectorsError {
+        "InternalServiceError" => crate::error::DescribeAnomalyDetectorsError {
             meta: generic,
             kind: crate::error::DescribeAnomalyDetectorsErrorKind::InternalServiceFault({
                 #[allow(unused_mut)]
-                let mut output = crate::error::internal_service_fault::Builder::default();
-                let _ = response;
-                output = crate::xml_deser::deser_structure_internal_service_fault_xml_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::DescribeAnomalyDetectorsError::unhandled)?;
-                output.build()
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_service_fault::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_internal_service_fault_xml_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::DescribeAnomalyDetectorsError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
             }),
         },
         "InvalidNextToken" => crate::error::DescribeAnomalyDetectorsError {
             meta: generic,
             kind: crate::error::DescribeAnomalyDetectorsErrorKind::InvalidNextToken({
                 #[allow(unused_mut)]
-                let mut output = crate::error::invalid_next_token::Builder::default();
-                let _ = response;
-                output = crate::xml_deser::deser_structure_invalid_next_token_xml_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::DescribeAnomalyDetectorsError::unhandled)?;
-                output.build()
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_next_token::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_invalid_next_token_xml_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::DescribeAnomalyDetectorsError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
             }),
         },
-        "InvalidParameterValueException" => crate::error::DescribeAnomalyDetectorsError {
+        "InvalidParameterValue" => crate::error::DescribeAnomalyDetectorsError {
             meta: generic,
             kind: crate::error::DescribeAnomalyDetectorsErrorKind::InvalidParameterValueException(
                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::invalid_parameter_value_exception::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeAnomalyDetectorsError::unhandled)?;
-                    output.build()
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output =
+                            crate::error::invalid_parameter_value_exception::Builder::default();
+                        let _ = response;
+                        output = crate::xml_deser::deser_structure_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeAnomalyDetectorsError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
                 },
             ),
         },
@@ -564,19 +689,28 @@ pub fn parse_describe_insight_rules_error(
         Some(code) => code,
         None => return Err(crate::error::DescribeInsightRulesError::unhandled(generic)),
     };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "InvalidNextToken" => crate::error::DescribeInsightRulesError {
             meta: generic,
             kind: crate::error::DescribeInsightRulesErrorKind::InvalidNextToken({
                 #[allow(unused_mut)]
-                let mut output = crate::error::invalid_next_token::Builder::default();
-                let _ = response;
-                output = crate::xml_deser::deser_structure_invalid_next_token_xml_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::DescribeInsightRulesError::unhandled)?;
-                output.build()
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_next_token::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_invalid_next_token_xml_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::DescribeInsightRulesError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
             }),
         },
         _ => crate::error::DescribeInsightRulesError::generic(generic),
@@ -643,35 +777,45 @@ pub fn parse_disable_insight_rules_error(
         Some(code) => code,
         None => return Err(crate::error::DisableInsightRulesError::unhandled(generic)),
     };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidParameterValueException" => {
-            crate::error::DisableInsightRulesError {
-                meta: generic,
-                kind: crate::error::DisableInsightRulesErrorKind::InvalidParameterValueException({
+        "InvalidParameterValue" => crate::error::DisableInsightRulesError {
+            meta: generic,
+            kind: crate::error::DisableInsightRulesErrorKind::InvalidParameterValueException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output =
                         crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DisableInsightRulesError::unhandled)?;
                     output.build()
-                }),
-            }
-        }
-        "MissingRequiredParameterException" => {
-            crate::error::DisableInsightRulesError {
-                meta: generic,
-                kind: crate::error::DisableInsightRulesErrorKind::MissingRequiredParameterException(
-                    {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::missing_required_parameter_exception::Builder::default();
-                        let _ = response;
-                        output = crate::xml_deser::deser_structure_missing_required_parameter_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DisableInsightRulesError::unhandled)?;
-                        output.build()
-                    },
-                ),
-            }
-        }
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "MissingParameter" => crate::error::DisableInsightRulesError {
+            meta: generic,
+            kind: crate::error::DisableInsightRulesErrorKind::MissingRequiredParameterException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::missing_required_parameter_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_missing_required_parameter_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DisableInsightRulesError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         _ => crate::error::DisableInsightRulesError::generic(generic),
     })
 }
@@ -736,49 +880,66 @@ pub fn parse_enable_insight_rules_error(
         Some(code) => code,
         None => return Err(crate::error::EnableInsightRulesError::unhandled(generic)),
     };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidParameterValueException" => {
-            crate::error::EnableInsightRulesError {
-                meta: generic,
-                kind: crate::error::EnableInsightRulesErrorKind::InvalidParameterValueException({
+        "InvalidParameterValue" => crate::error::EnableInsightRulesError {
+            meta: generic,
+            kind: crate::error::EnableInsightRulesErrorKind::InvalidParameterValueException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output =
                         crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::EnableInsightRulesError::unhandled)?;
                     output.build()
-                }),
-            }
-        }
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "LimitExceededException" => crate::error::EnableInsightRulesError {
             meta: generic,
             kind: crate::error::EnableInsightRulesErrorKind::LimitExceededException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::limit_exceeded_exception::Builder::default();
-                let _ = response;
-                output = crate::xml_deser::deser_structure_limit_exceeded_exception_xml_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::EnableInsightRulesError::unhandled)?;
-                output.build()
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::limit_exceeded_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_limit_exceeded_exception_xml_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::EnableInsightRulesError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
             }),
         },
-        "MissingRequiredParameterException" => {
-            crate::error::EnableInsightRulesError {
-                meta: generic,
-                kind: crate::error::EnableInsightRulesErrorKind::MissingRequiredParameterException(
-                    {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::missing_required_parameter_exception::Builder::default();
-                        let _ = response;
-                        output = crate::xml_deser::deser_structure_missing_required_parameter_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::EnableInsightRulesError::unhandled)?;
-                        output.build()
-                    },
-                ),
-            }
-        }
+        "MissingParameter" => crate::error::EnableInsightRulesError {
+            meta: generic,
+            kind: crate::error::EnableInsightRulesErrorKind::MissingRequiredParameterException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::missing_required_parameter_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_missing_required_parameter_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::EnableInsightRulesError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         _ => crate::error::EnableInsightRulesError::generic(generic),
     })
 }
@@ -813,48 +974,69 @@ pub fn parse_get_dashboard_error(
         Some(code) => code,
         None => return Err(crate::error::GetDashboardError::unhandled(generic)),
     };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "DashboardNotFoundError" => crate::error::GetDashboardError {
+        "ResourceNotFound" => crate::error::GetDashboardError {
             meta: generic,
             kind: crate::error::GetDashboardErrorKind::DashboardNotFoundError({
                 #[allow(unused_mut)]
-                let mut output = crate::error::dashboard_not_found_error::Builder::default();
-                let _ = response;
-                output = crate::xml_deser::deser_structure_dashboard_not_found_error_xml_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::GetDashboardError::unhandled)?;
-                output.build()
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::dashboard_not_found_error::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_dashboard_not_found_error_xml_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::GetDashboardError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
             }),
         },
-        "InternalServiceFault" => crate::error::GetDashboardError {
+        "InternalServiceError" => crate::error::GetDashboardError {
             meta: generic,
             kind: crate::error::GetDashboardErrorKind::InternalServiceFault({
                 #[allow(unused_mut)]
-                let mut output = crate::error::internal_service_fault::Builder::default();
-                let _ = response;
-                output = crate::xml_deser::deser_structure_internal_service_fault_xml_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::GetDashboardError::unhandled)?;
-                output.build()
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_service_fault::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_internal_service_fault_xml_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::GetDashboardError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
             }),
         },
-        "InvalidParameterValueException" => {
-            crate::error::GetDashboardError {
-                meta: generic,
-                kind: crate::error::GetDashboardErrorKind::InvalidParameterValueException({
+        "InvalidParameterValue" => crate::error::GetDashboardError {
+            meta: generic,
+            kind: crate::error::GetDashboardErrorKind::InvalidParameterValueException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output =
                         crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::GetDashboardError::unhandled)?;
                     output.build()
-                }),
-            }
-        }
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         _ => crate::error::GetDashboardError::generic(generic),
     })
 }
@@ -886,48 +1068,65 @@ pub fn parse_get_insight_rule_report_error(
         Some(code) => code,
         None => return Err(crate::error::GetInsightRuleReportError::unhandled(generic)),
     };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidParameterValueException" => {
-            crate::error::GetInsightRuleReportError {
-                meta: generic,
-                kind: crate::error::GetInsightRuleReportErrorKind::InvalidParameterValueException(
-                    {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::invalid_parameter_value_exception::Builder::default();
-                        let _ = response;
-                        output = crate::xml_deser::deser_structure_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::GetInsightRuleReportError::unhandled)?;
-                        output.build()
-                    },
-                ),
-            }
-        }
-        "MissingRequiredParameterException" => {
-            crate::error::GetInsightRuleReportError {
-                meta: generic,
-                kind:
-                    crate::error::GetInsightRuleReportErrorKind::MissingRequiredParameterException(
-                        {
-                            #[allow(unused_mut)]let mut output = crate::error::missing_required_parameter_exception::Builder::default();
-                            let _ = response;
-                            output = crate::xml_deser::deser_structure_missing_required_parameter_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::GetInsightRuleReportError::unhandled)?;
-                            output.build()
-                        },
-                    ),
-            }
-        }
+        "InvalidParameterValue" => crate::error::GetInsightRuleReportError {
+            meta: generic,
+            kind: crate::error::GetInsightRuleReportErrorKind::InvalidParameterValueException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::invalid_parameter_value_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::GetInsightRuleReportError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "MissingParameter" => crate::error::GetInsightRuleReportError {
+            meta: generic,
+            kind: crate::error::GetInsightRuleReportErrorKind::MissingRequiredParameterException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::missing_required_parameter_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_missing_required_parameter_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::GetInsightRuleReportError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "ResourceNotFoundException" => crate::error::GetInsightRuleReportError {
             meta: generic,
             kind: crate::error::GetInsightRuleReportErrorKind::ResourceNotFoundException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::resource_not_found_exception::Builder::default();
-                let _ = response;
-                output = crate::xml_deser::deser_structure_resource_not_found_exception_xml_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::GetInsightRuleReportError::unhandled)?;
-                output.build()
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let _ = response;
+                    output =
+                        crate::xml_deser::deser_structure_resource_not_found_exception_xml_err(
+                            response.body().as_ref(),
+                            output,
+                        )
+                        .map_err(crate::error::GetInsightRuleReportError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
             }),
         },
         _ => crate::error::GetInsightRuleReportError::generic(generic),
@@ -964,19 +1163,28 @@ pub fn parse_get_metric_data_error(
         Some(code) => code,
         None => return Err(crate::error::GetMetricDataError::unhandled(generic)),
     };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "InvalidNextToken" => crate::error::GetMetricDataError {
             meta: generic,
             kind: crate::error::GetMetricDataErrorKind::InvalidNextToken({
                 #[allow(unused_mut)]
-                let mut output = crate::error::invalid_next_token::Builder::default();
-                let _ = response;
-                output = crate::xml_deser::deser_structure_invalid_next_token_xml_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::GetMetricDataError::unhandled)?;
-                output.build()
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_next_token::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_invalid_next_token_xml_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::GetMetricDataError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
             }),
         },
         _ => crate::error::GetMetricDataError::generic(generic),
@@ -1011,62 +1219,87 @@ pub fn parse_get_metric_statistics_error(
         Some(code) => code,
         None => return Err(crate::error::GetMetricStatisticsError::unhandled(generic)),
     };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InternalServiceFault" => crate::error::GetMetricStatisticsError {
+        "InternalServiceError" => crate::error::GetMetricStatisticsError {
             meta: generic,
             kind: crate::error::GetMetricStatisticsErrorKind::InternalServiceFault({
                 #[allow(unused_mut)]
-                let mut output = crate::error::internal_service_fault::Builder::default();
-                let _ = response;
-                output = crate::xml_deser::deser_structure_internal_service_fault_xml_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::GetMetricStatisticsError::unhandled)?;
-                output.build()
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_service_fault::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_internal_service_fault_xml_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::GetMetricStatisticsError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
             }),
         },
-        "InvalidParameterCombinationException" => crate::error::GetMetricStatisticsError {
-            meta: generic,
-            kind: crate::error::GetMetricStatisticsErrorKind::InvalidParameterCombinationException(
-                {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::invalid_parameter_combination_exception::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_invalid_parameter_combination_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::GetMetricStatisticsError::unhandled)?;
-                    output.build()
-                },
-            ),
-        },
-        "InvalidParameterValueException" => {
+        "InvalidParameterCombination" => {
             crate::error::GetMetricStatisticsError {
                 meta: generic,
-                kind: crate::error::GetMetricStatisticsErrorKind::InvalidParameterValueException({
+                kind:
+                    crate::error::GetMetricStatisticsErrorKind::InvalidParameterCombinationException(
+                        {
+                            #[allow(unused_mut)]
+                            let mut tmp = {
+                                #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_combination_exception::Builder::default();
+                                let _ = response;
+                                output = crate::xml_deser::deser_structure_invalid_parameter_combination_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::GetMetricStatisticsError::unhandled)?;
+                                output.build()
+                            };
+                            if (&tmp.message).is_none() {
+                                tmp.message = _error_message;
+                            }
+                            tmp
+                        },
+                    ),
+            }
+        }
+        "InvalidParameterValue" => crate::error::GetMetricStatisticsError {
+            meta: generic,
+            kind: crate::error::GetMetricStatisticsErrorKind::InvalidParameterValueException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output =
                         crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::GetMetricStatisticsError::unhandled)?;
                     output.build()
-                }),
-            }
-        }
-        "MissingRequiredParameterException" => {
-            crate::error::GetMetricStatisticsError {
-                meta: generic,
-                kind: crate::error::GetMetricStatisticsErrorKind::MissingRequiredParameterException(
-                    {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::missing_required_parameter_exception::Builder::default();
-                        let _ = response;
-                        output = crate::xml_deser::deser_structure_missing_required_parameter_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::GetMetricStatisticsError::unhandled)?;
-                        output.build()
-                    },
-                ),
-            }
-        }
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "MissingParameter" => crate::error::GetMetricStatisticsError {
+            meta: generic,
+            kind: crate::error::GetMetricStatisticsErrorKind::MissingRequiredParameterException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::missing_required_parameter_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_missing_required_parameter_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::GetMetricStatisticsError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         _ => crate::error::GetMetricStatisticsError::generic(generic),
     })
 }
@@ -1101,70 +1334,104 @@ pub fn parse_get_metric_stream_error(
         Some(code) => code,
         None => return Err(crate::error::GetMetricStreamError::unhandled(generic)),
     };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InternalServiceFault" => crate::error::GetMetricStreamError {
+        "InternalServiceError" => crate::error::GetMetricStreamError {
             meta: generic,
             kind: crate::error::GetMetricStreamErrorKind::InternalServiceFault({
                 #[allow(unused_mut)]
-                let mut output = crate::error::internal_service_fault::Builder::default();
-                let _ = response;
-                output = crate::xml_deser::deser_structure_internal_service_fault_xml_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::GetMetricStreamError::unhandled)?;
-                output.build()
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_service_fault::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_internal_service_fault_xml_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::GetMetricStreamError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
             }),
         },
-        "InvalidParameterCombinationException" => crate::error::GetMetricStreamError {
+        "InvalidParameterCombination" => crate::error::GetMetricStreamError {
             meta: generic,
             kind: crate::error::GetMetricStreamErrorKind::InvalidParameterCombinationException({
                 #[allow(unused_mut)]
-                let mut output =
-                    crate::error::invalid_parameter_combination_exception::Builder::default();
-                let _ = response;
-                output = crate::xml_deser::deser_structure_invalid_parameter_combination_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::GetMetricStreamError::unhandled)?;
-                output.build()
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::invalid_parameter_combination_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_invalid_parameter_combination_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::GetMetricStreamError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
             }),
         },
-        "InvalidParameterValueException" => {
-            crate::error::GetMetricStreamError {
-                meta: generic,
-                kind: crate::error::GetMetricStreamErrorKind::InvalidParameterValueException({
+        "InvalidParameterValue" => crate::error::GetMetricStreamError {
+            meta: generic,
+            kind: crate::error::GetMetricStreamErrorKind::InvalidParameterValueException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output =
                         crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::GetMetricStreamError::unhandled)?;
                     output.build()
-                }),
-            }
-        }
-        "MissingRequiredParameterException" => {
-            crate::error::GetMetricStreamError {
-                meta: generic,
-                kind: crate::error::GetMetricStreamErrorKind::MissingRequiredParameterException({
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "MissingParameter" => crate::error::GetMetricStreamError {
+            meta: generic,
+            kind: crate::error::GetMetricStreamErrorKind::MissingRequiredParameterException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output =
                         crate::error::missing_required_parameter_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_missing_required_parameter_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::GetMetricStreamError::unhandled)?;
                     output.build()
-                }),
-            }
-        }
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "ResourceNotFoundException" => crate::error::GetMetricStreamError {
             meta: generic,
             kind: crate::error::GetMetricStreamErrorKind::ResourceNotFoundException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::resource_not_found_exception::Builder::default();
-                let _ = response;
-                output = crate::xml_deser::deser_structure_resource_not_found_exception_xml_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::GetMetricStreamError::unhandled)?;
-                output.build()
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let _ = response;
+                    output =
+                        crate::xml_deser::deser_structure_resource_not_found_exception_xml_err(
+                            response.body().as_ref(),
+                            output,
+                        )
+                        .map_err(crate::error::GetMetricStreamError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
             }),
         },
         _ => crate::error::GetMetricStreamError::generic(generic),
@@ -1228,34 +1495,48 @@ pub fn parse_list_dashboards_error(
         Some(code) => code,
         None => return Err(crate::error::ListDashboardsError::unhandled(generic)),
     };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InternalServiceFault" => crate::error::ListDashboardsError {
+        "InternalServiceError" => crate::error::ListDashboardsError {
             meta: generic,
             kind: crate::error::ListDashboardsErrorKind::InternalServiceFault({
                 #[allow(unused_mut)]
-                let mut output = crate::error::internal_service_fault::Builder::default();
-                let _ = response;
-                output = crate::xml_deser::deser_structure_internal_service_fault_xml_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::ListDashboardsError::unhandled)?;
-                output.build()
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_service_fault::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_internal_service_fault_xml_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::ListDashboardsError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
             }),
         },
-        "InvalidParameterValueException" => {
-            crate::error::ListDashboardsError {
-                meta: generic,
-                kind: crate::error::ListDashboardsErrorKind::InvalidParameterValueException({
+        "InvalidParameterValue" => crate::error::ListDashboardsError {
+            meta: generic,
+            kind: crate::error::ListDashboardsErrorKind::InvalidParameterValueException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output =
                         crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ListDashboardsError::unhandled)?;
                     output.build()
-                }),
-            }
-        }
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         _ => crate::error::ListDashboardsError::generic(generic),
     })
 }
@@ -1285,34 +1566,48 @@ pub fn parse_list_metrics_error(
         Some(code) => code,
         None => return Err(crate::error::ListMetricsError::unhandled(generic)),
     };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InternalServiceFault" => crate::error::ListMetricsError {
+        "InternalServiceError" => crate::error::ListMetricsError {
             meta: generic,
             kind: crate::error::ListMetricsErrorKind::InternalServiceFault({
                 #[allow(unused_mut)]
-                let mut output = crate::error::internal_service_fault::Builder::default();
-                let _ = response;
-                output = crate::xml_deser::deser_structure_internal_service_fault_xml_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::ListMetricsError::unhandled)?;
-                output.build()
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_service_fault::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_internal_service_fault_xml_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::ListMetricsError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
             }),
         },
-        "InvalidParameterValueException" => {
-            crate::error::ListMetricsError {
-                meta: generic,
-                kind: crate::error::ListMetricsErrorKind::InvalidParameterValueException({
+        "InvalidParameterValue" => crate::error::ListMetricsError {
+            meta: generic,
+            kind: crate::error::ListMetricsErrorKind::InvalidParameterValueException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output =
                         crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ListMetricsError::unhandled)?;
                     output.build()
-                }),
-            }
-        }
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         _ => crate::error::ListMetricsError::generic(generic),
     })
 }
@@ -1342,63 +1637,87 @@ pub fn parse_list_metric_streams_error(
         Some(code) => code,
         None => return Err(crate::error::ListMetricStreamsError::unhandled(generic)),
     };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InternalServiceFault" => crate::error::ListMetricStreamsError {
+        "InternalServiceError" => crate::error::ListMetricStreamsError {
             meta: generic,
             kind: crate::error::ListMetricStreamsErrorKind::InternalServiceFault({
                 #[allow(unused_mut)]
-                let mut output = crate::error::internal_service_fault::Builder::default();
-                let _ = response;
-                output = crate::xml_deser::deser_structure_internal_service_fault_xml_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::ListMetricStreamsError::unhandled)?;
-                output.build()
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_service_fault::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_internal_service_fault_xml_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::ListMetricStreamsError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
             }),
         },
         "InvalidNextToken" => crate::error::ListMetricStreamsError {
             meta: generic,
             kind: crate::error::ListMetricStreamsErrorKind::InvalidNextToken({
                 #[allow(unused_mut)]
-                let mut output = crate::error::invalid_next_token::Builder::default();
-                let _ = response;
-                output = crate::xml_deser::deser_structure_invalid_next_token_xml_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::ListMetricStreamsError::unhandled)?;
-                output.build()
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_next_token::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_invalid_next_token_xml_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::ListMetricStreamsError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
             }),
         },
-        "InvalidParameterValueException" => {
-            crate::error::ListMetricStreamsError {
-                meta: generic,
-                kind: crate::error::ListMetricStreamsErrorKind::InvalidParameterValueException({
+        "InvalidParameterValue" => crate::error::ListMetricStreamsError {
+            meta: generic,
+            kind: crate::error::ListMetricStreamsErrorKind::InvalidParameterValueException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output =
                         crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ListMetricStreamsError::unhandled)?;
                     output.build()
-                }),
-            }
-        }
-        "MissingRequiredParameterException" => {
-            crate::error::ListMetricStreamsError {
-                meta: generic,
-                kind: crate::error::ListMetricStreamsErrorKind::MissingRequiredParameterException(
-                    {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::missing_required_parameter_exception::Builder::default();
-                        let _ = response;
-                        output = crate::xml_deser::deser_structure_missing_required_parameter_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ListMetricStreamsError::unhandled)?;
-                        output.build()
-                    },
-                ),
-            }
-        }
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "MissingParameter" => crate::error::ListMetricStreamsError {
+            meta: generic,
+            kind: crate::error::ListMetricStreamsErrorKind::MissingRequiredParameterException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::missing_required_parameter_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_missing_required_parameter_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ListMetricStreamsError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         _ => crate::error::ListMetricStreamsError::generic(generic),
     })
 }
@@ -1432,46 +1751,68 @@ pub fn parse_list_tags_for_resource_error(
         Some(code) => code,
         None => return Err(crate::error::ListTagsForResourceError::unhandled(generic)),
     };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InternalServiceFault" => crate::error::ListTagsForResourceError {
+        "InternalServiceError" => crate::error::ListTagsForResourceError {
             meta: generic,
             kind: crate::error::ListTagsForResourceErrorKind::InternalServiceFault({
                 #[allow(unused_mut)]
-                let mut output = crate::error::internal_service_fault::Builder::default();
-                let _ = response;
-                output = crate::xml_deser::deser_structure_internal_service_fault_xml_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::ListTagsForResourceError::unhandled)?;
-                output.build()
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_service_fault::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_internal_service_fault_xml_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::ListTagsForResourceError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
             }),
         },
-        "InvalidParameterValueException" => {
-            crate::error::ListTagsForResourceError {
-                meta: generic,
-                kind: crate::error::ListTagsForResourceErrorKind::InvalidParameterValueException({
+        "InvalidParameterValue" => crate::error::ListTagsForResourceError {
+            meta: generic,
+            kind: crate::error::ListTagsForResourceErrorKind::InvalidParameterValueException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output =
                         crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ListTagsForResourceError::unhandled)?;
                     output.build()
-                }),
-            }
-        }
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "ResourceNotFoundException" => crate::error::ListTagsForResourceError {
             meta: generic,
             kind: crate::error::ListTagsForResourceErrorKind::ResourceNotFoundException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::resource_not_found_exception::Builder::default();
-                let _ = response;
-                output = crate::xml_deser::deser_structure_resource_not_found_exception_xml_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::ListTagsForResourceError::unhandled)?;
-                output.build()
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let _ = response;
+                    output =
+                        crate::xml_deser::deser_structure_resource_not_found_exception_xml_err(
+                            response.body().as_ref(),
+                            output,
+                        )
+                        .map_err(crate::error::ListTagsForResourceError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
             }),
         },
         _ => crate::error::ListTagsForResourceError::generic(generic),
@@ -1511,63 +1852,87 @@ pub fn parse_put_anomaly_detector_error(
         Some(code) => code,
         None => return Err(crate::error::PutAnomalyDetectorError::unhandled(generic)),
     };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InternalServiceFault" => crate::error::PutAnomalyDetectorError {
+        "InternalServiceError" => crate::error::PutAnomalyDetectorError {
             meta: generic,
             kind: crate::error::PutAnomalyDetectorErrorKind::InternalServiceFault({
                 #[allow(unused_mut)]
-                let mut output = crate::error::internal_service_fault::Builder::default();
-                let _ = response;
-                output = crate::xml_deser::deser_structure_internal_service_fault_xml_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::PutAnomalyDetectorError::unhandled)?;
-                output.build()
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_service_fault::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_internal_service_fault_xml_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::PutAnomalyDetectorError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
             }),
         },
-        "InvalidParameterValueException" => {
-            crate::error::PutAnomalyDetectorError {
-                meta: generic,
-                kind: crate::error::PutAnomalyDetectorErrorKind::InvalidParameterValueException({
+        "InvalidParameterValue" => crate::error::PutAnomalyDetectorError {
+            meta: generic,
+            kind: crate::error::PutAnomalyDetectorErrorKind::InvalidParameterValueException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output =
                         crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::PutAnomalyDetectorError::unhandled)?;
                     output.build()
-                }),
-            }
-        }
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "LimitExceededException" => crate::error::PutAnomalyDetectorError {
             meta: generic,
             kind: crate::error::PutAnomalyDetectorErrorKind::LimitExceededException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::limit_exceeded_exception::Builder::default();
-                let _ = response;
-                output = crate::xml_deser::deser_structure_limit_exceeded_exception_xml_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::PutAnomalyDetectorError::unhandled)?;
-                output.build()
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::limit_exceeded_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_limit_exceeded_exception_xml_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::PutAnomalyDetectorError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
             }),
         },
-        "MissingRequiredParameterException" => {
-            crate::error::PutAnomalyDetectorError {
-                meta: generic,
-                kind: crate::error::PutAnomalyDetectorErrorKind::MissingRequiredParameterException(
-                    {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::missing_required_parameter_exception::Builder::default();
-                        let _ = response;
-                        output = crate::xml_deser::deser_structure_missing_required_parameter_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::PutAnomalyDetectorError::unhandled)?;
-                        output.build()
-                    },
-                ),
-            }
-        }
+        "MissingParameter" => crate::error::PutAnomalyDetectorError {
+            meta: generic,
+            kind: crate::error::PutAnomalyDetectorErrorKind::MissingRequiredParameterException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::missing_required_parameter_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_missing_required_parameter_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::PutAnomalyDetectorError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         _ => crate::error::PutAnomalyDetectorError::generic(generic),
     })
 }
@@ -1598,19 +1963,28 @@ pub fn parse_put_composite_alarm_error(
         Some(code) => code,
         None => return Err(crate::error::PutCompositeAlarmError::unhandled(generic)),
     };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "LimitExceededFault" => crate::error::PutCompositeAlarmError {
+        "LimitExceeded" => crate::error::PutCompositeAlarmError {
             meta: generic,
             kind: crate::error::PutCompositeAlarmErrorKind::LimitExceededFault({
                 #[allow(unused_mut)]
-                let mut output = crate::error::limit_exceeded_fault::Builder::default();
-                let _ = response;
-                output = crate::xml_deser::deser_structure_limit_exceeded_fault_xml_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::PutCompositeAlarmError::unhandled)?;
-                output.build()
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::limit_exceeded_fault::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_limit_exceeded_fault_xml_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::PutCompositeAlarmError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
             }),
         },
         _ => crate::error::PutCompositeAlarmError::generic(generic),
@@ -1640,33 +2014,48 @@ pub fn parse_put_dashboard_error(
         Some(code) => code,
         None => return Err(crate::error::PutDashboardError::unhandled(generic)),
     };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "DashboardInvalidInputError" => crate::error::PutDashboardError {
-            meta: generic,
-            kind: crate::error::PutDashboardErrorKind::DashboardInvalidInputError({
-                #[allow(unused_mut)]
-                let mut output = crate::error::dashboard_invalid_input_error::Builder::default();
-                let _ = response;
-                output = crate::xml_deser::deser_structure_dashboard_invalid_input_error_xml_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::PutDashboardError::unhandled)?;
-                output.build()
-            }),
-        },
-        "InternalServiceFault" => crate::error::PutDashboardError {
+        "InvalidParameterInput" => {
+            crate::error::PutDashboardError {
+                meta: generic,
+                kind: crate::error::PutDashboardErrorKind::DashboardInvalidInputError({
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output =
+                            crate::error::dashboard_invalid_input_error::Builder::default();
+                        let _ = response;
+                        output = crate::xml_deser::deser_structure_dashboard_invalid_input_error_xml_err(response.body().as_ref(), output).map_err(crate::error::PutDashboardError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
+        "InternalServiceError" => crate::error::PutDashboardError {
             meta: generic,
             kind: crate::error::PutDashboardErrorKind::InternalServiceFault({
                 #[allow(unused_mut)]
-                let mut output = crate::error::internal_service_fault::Builder::default();
-                let _ = response;
-                output = crate::xml_deser::deser_structure_internal_service_fault_xml_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::PutDashboardError::unhandled)?;
-                output.build()
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_service_fault::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_internal_service_fault_xml_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::PutDashboardError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
             }),
         },
         _ => crate::error::PutDashboardError::generic(generic),
@@ -1697,47 +2086,66 @@ pub fn parse_put_insight_rule_error(
         Some(code) => code,
         None => return Err(crate::error::PutInsightRuleError::unhandled(generic)),
     };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidParameterValueException" => {
-            crate::error::PutInsightRuleError {
-                meta: generic,
-                kind: crate::error::PutInsightRuleErrorKind::InvalidParameterValueException({
+        "InvalidParameterValue" => crate::error::PutInsightRuleError {
+            meta: generic,
+            kind: crate::error::PutInsightRuleErrorKind::InvalidParameterValueException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output =
                         crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::PutInsightRuleError::unhandled)?;
                     output.build()
-                }),
-            }
-        }
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "LimitExceededException" => crate::error::PutInsightRuleError {
             meta: generic,
             kind: crate::error::PutInsightRuleErrorKind::LimitExceededException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::limit_exceeded_exception::Builder::default();
-                let _ = response;
-                output = crate::xml_deser::deser_structure_limit_exceeded_exception_xml_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::PutInsightRuleError::unhandled)?;
-                output.build()
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::limit_exceeded_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_limit_exceeded_exception_xml_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::PutInsightRuleError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
             }),
         },
-        "MissingRequiredParameterException" => {
-            crate::error::PutInsightRuleError {
-                meta: generic,
-                kind: crate::error::PutInsightRuleErrorKind::MissingRequiredParameterException({
+        "MissingParameter" => crate::error::PutInsightRuleError {
+            meta: generic,
+            kind: crate::error::PutInsightRuleErrorKind::MissingRequiredParameterException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output =
                         crate::error::missing_required_parameter_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_missing_required_parameter_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::PutInsightRuleError::unhandled)?;
                     output.build()
-                }),
-            }
-        }
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         _ => crate::error::PutInsightRuleError::generic(generic),
     })
 }
@@ -1764,19 +2172,28 @@ pub fn parse_put_metric_alarm_error(
         Some(code) => code,
         None => return Err(crate::error::PutMetricAlarmError::unhandled(generic)),
     };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "LimitExceededFault" => crate::error::PutMetricAlarmError {
+        "LimitExceeded" => crate::error::PutMetricAlarmError {
             meta: generic,
             kind: crate::error::PutMetricAlarmErrorKind::LimitExceededFault({
                 #[allow(unused_mut)]
-                let mut output = crate::error::limit_exceeded_fault::Builder::default();
-                let _ = response;
-                output = crate::xml_deser::deser_structure_limit_exceeded_fault_xml_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::PutMetricAlarmError::unhandled)?;
-                output.build()
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::limit_exceeded_fault::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_limit_exceeded_fault_xml_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::PutMetricAlarmError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
             }),
         },
         _ => crate::error::PutMetricAlarmError::generic(generic),
@@ -1805,58 +2222,84 @@ pub fn parse_put_metric_data_error(
         Some(code) => code,
         None => return Err(crate::error::PutMetricDataError::unhandled(generic)),
     };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InternalServiceFault" => crate::error::PutMetricDataError {
+        "InternalServiceError" => crate::error::PutMetricDataError {
             meta: generic,
             kind: crate::error::PutMetricDataErrorKind::InternalServiceFault({
                 #[allow(unused_mut)]
-                let mut output = crate::error::internal_service_fault::Builder::default();
-                let _ = response;
-                output = crate::xml_deser::deser_structure_internal_service_fault_xml_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::PutMetricDataError::unhandled)?;
-                output.build()
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_service_fault::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_internal_service_fault_xml_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::PutMetricDataError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
             }),
         },
-        "InvalidParameterCombinationException" => crate::error::PutMetricDataError {
+        "InvalidParameterCombination" => crate::error::PutMetricDataError {
             meta: generic,
             kind: crate::error::PutMetricDataErrorKind::InvalidParameterCombinationException({
                 #[allow(unused_mut)]
-                let mut output =
-                    crate::error::invalid_parameter_combination_exception::Builder::default();
-                let _ = response;
-                output = crate::xml_deser::deser_structure_invalid_parameter_combination_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::PutMetricDataError::unhandled)?;
-                output.build()
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::invalid_parameter_combination_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_invalid_parameter_combination_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::PutMetricDataError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
             }),
         },
-        "InvalidParameterValueException" => {
-            crate::error::PutMetricDataError {
-                meta: generic,
-                kind: crate::error::PutMetricDataErrorKind::InvalidParameterValueException({
+        "InvalidParameterValue" => crate::error::PutMetricDataError {
+            meta: generic,
+            kind: crate::error::PutMetricDataErrorKind::InvalidParameterValueException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output =
                         crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::PutMetricDataError::unhandled)?;
                     output.build()
-                }),
-            }
-        }
-        "MissingRequiredParameterException" => {
-            crate::error::PutMetricDataError {
-                meta: generic,
-                kind: crate::error::PutMetricDataErrorKind::MissingRequiredParameterException({
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "MissingParameter" => crate::error::PutMetricDataError {
+            meta: generic,
+            kind: crate::error::PutMetricDataErrorKind::MissingRequiredParameterException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output =
                         crate::error::missing_required_parameter_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_missing_required_parameter_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::PutMetricDataError::unhandled)?;
                     output.build()
-                }),
-            }
-        }
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         _ => crate::error::PutMetricDataError::generic(generic),
     })
 }
@@ -1883,71 +2326,102 @@ pub fn parse_put_metric_stream_error(
         Some(code) => code,
         None => return Err(crate::error::PutMetricStreamError::unhandled(generic)),
     };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ConcurrentModificationException" => {
-            crate::error::PutMetricStreamError {
-                meta: generic,
-                kind: crate::error::PutMetricStreamErrorKind::ConcurrentModificationException({
+        "ConcurrentModificationException" => crate::error::PutMetricStreamError {
+            meta: generic,
+            kind: crate::error::PutMetricStreamErrorKind::ConcurrentModificationException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output =
                         crate::error::concurrent_modification_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_concurrent_modification_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::PutMetricStreamError::unhandled)?;
                     output.build()
-                }),
-            }
-        }
-        "InternalServiceFault" => crate::error::PutMetricStreamError {
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "InternalServiceError" => crate::error::PutMetricStreamError {
             meta: generic,
             kind: crate::error::PutMetricStreamErrorKind::InternalServiceFault({
                 #[allow(unused_mut)]
-                let mut output = crate::error::internal_service_fault::Builder::default();
-                let _ = response;
-                output = crate::xml_deser::deser_structure_internal_service_fault_xml_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::PutMetricStreamError::unhandled)?;
-                output.build()
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_service_fault::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_internal_service_fault_xml_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::PutMetricStreamError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
             }),
         },
-        "InvalidParameterCombinationException" => crate::error::PutMetricStreamError {
+        "InvalidParameterCombination" => crate::error::PutMetricStreamError {
             meta: generic,
             kind: crate::error::PutMetricStreamErrorKind::InvalidParameterCombinationException({
                 #[allow(unused_mut)]
-                let mut output =
-                    crate::error::invalid_parameter_combination_exception::Builder::default();
-                let _ = response;
-                output = crate::xml_deser::deser_structure_invalid_parameter_combination_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::PutMetricStreamError::unhandled)?;
-                output.build()
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::invalid_parameter_combination_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_invalid_parameter_combination_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::PutMetricStreamError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
             }),
         },
-        "InvalidParameterValueException" => {
-            crate::error::PutMetricStreamError {
-                meta: generic,
-                kind: crate::error::PutMetricStreamErrorKind::InvalidParameterValueException({
+        "InvalidParameterValue" => crate::error::PutMetricStreamError {
+            meta: generic,
+            kind: crate::error::PutMetricStreamErrorKind::InvalidParameterValueException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output =
                         crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::PutMetricStreamError::unhandled)?;
                     output.build()
-                }),
-            }
-        }
-        "MissingRequiredParameterException" => {
-            crate::error::PutMetricStreamError {
-                meta: generic,
-                kind: crate::error::PutMetricStreamErrorKind::MissingRequiredParameterException({
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "MissingParameter" => crate::error::PutMetricStreamError {
+            meta: generic,
+            kind: crate::error::PutMetricStreamErrorKind::MissingRequiredParameterException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output =
                         crate::error::missing_required_parameter_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_missing_required_parameter_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::PutMetricStreamError::unhandled)?;
                     output.build()
-                }),
-            }
-        }
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         _ => crate::error::PutMetricStreamError::generic(generic),
     })
 }
@@ -1977,33 +2451,49 @@ pub fn parse_set_alarm_state_error(
         Some(code) => code,
         None => return Err(crate::error::SetAlarmStateError::unhandled(generic)),
     };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidFormatFault" => crate::error::SetAlarmStateError {
+        "InvalidFormat" => crate::error::SetAlarmStateError {
             meta: generic,
             kind: crate::error::SetAlarmStateErrorKind::InvalidFormatFault({
                 #[allow(unused_mut)]
-                let mut output = crate::error::invalid_format_fault::Builder::default();
-                let _ = response;
-                output = crate::xml_deser::deser_structure_invalid_format_fault_xml_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::SetAlarmStateError::unhandled)?;
-                output.build()
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_format_fault::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_invalid_format_fault_xml_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::SetAlarmStateError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
             }),
         },
         "ResourceNotFound" => crate::error::SetAlarmStateError {
             meta: generic,
             kind: crate::error::SetAlarmStateErrorKind::ResourceNotFound({
                 #[allow(unused_mut)]
-                let mut output = crate::error::resource_not_found::Builder::default();
-                let _ = response;
-                output = crate::xml_deser::deser_structure_resource_not_found_xml_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::SetAlarmStateError::unhandled)?;
-                output.build()
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_resource_not_found_xml_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::SetAlarmStateError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
             }),
         },
         _ => crate::error::SetAlarmStateError::generic(generic),
@@ -2035,49 +2525,66 @@ pub fn parse_start_metric_streams_error(
         Some(code) => code,
         None => return Err(crate::error::StartMetricStreamsError::unhandled(generic)),
     };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InternalServiceFault" => crate::error::StartMetricStreamsError {
+        "InternalServiceError" => crate::error::StartMetricStreamsError {
             meta: generic,
             kind: crate::error::StartMetricStreamsErrorKind::InternalServiceFault({
                 #[allow(unused_mut)]
-                let mut output = crate::error::internal_service_fault::Builder::default();
-                let _ = response;
-                output = crate::xml_deser::deser_structure_internal_service_fault_xml_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::StartMetricStreamsError::unhandled)?;
-                output.build()
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_service_fault::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_internal_service_fault_xml_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::StartMetricStreamsError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
             }),
         },
-        "InvalidParameterValueException" => {
-            crate::error::StartMetricStreamsError {
-                meta: generic,
-                kind: crate::error::StartMetricStreamsErrorKind::InvalidParameterValueException({
+        "InvalidParameterValue" => crate::error::StartMetricStreamsError {
+            meta: generic,
+            kind: crate::error::StartMetricStreamsErrorKind::InvalidParameterValueException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output =
                         crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::StartMetricStreamsError::unhandled)?;
                     output.build()
-                }),
-            }
-        }
-        "MissingRequiredParameterException" => {
-            crate::error::StartMetricStreamsError {
-                meta: generic,
-                kind: crate::error::StartMetricStreamsErrorKind::MissingRequiredParameterException(
-                    {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::missing_required_parameter_exception::Builder::default();
-                        let _ = response;
-                        output = crate::xml_deser::deser_structure_missing_required_parameter_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::StartMetricStreamsError::unhandled)?;
-                        output.build()
-                    },
-                ),
-            }
-        }
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "MissingParameter" => crate::error::StartMetricStreamsError {
+            meta: generic,
+            kind: crate::error::StartMetricStreamsErrorKind::MissingRequiredParameterException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::missing_required_parameter_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_missing_required_parameter_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::StartMetricStreamsError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         _ => crate::error::StartMetricStreamsError::generic(generic),
     })
 }
@@ -2108,49 +2615,66 @@ pub fn parse_stop_metric_streams_error(
         Some(code) => code,
         None => return Err(crate::error::StopMetricStreamsError::unhandled(generic)),
     };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InternalServiceFault" => crate::error::StopMetricStreamsError {
+        "InternalServiceError" => crate::error::StopMetricStreamsError {
             meta: generic,
             kind: crate::error::StopMetricStreamsErrorKind::InternalServiceFault({
                 #[allow(unused_mut)]
-                let mut output = crate::error::internal_service_fault::Builder::default();
-                let _ = response;
-                output = crate::xml_deser::deser_structure_internal_service_fault_xml_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::StopMetricStreamsError::unhandled)?;
-                output.build()
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_service_fault::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_internal_service_fault_xml_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::StopMetricStreamsError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
             }),
         },
-        "InvalidParameterValueException" => {
-            crate::error::StopMetricStreamsError {
-                meta: generic,
-                kind: crate::error::StopMetricStreamsErrorKind::InvalidParameterValueException({
+        "InvalidParameterValue" => crate::error::StopMetricStreamsError {
+            meta: generic,
+            kind: crate::error::StopMetricStreamsErrorKind::InvalidParameterValueException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output =
                         crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::StopMetricStreamsError::unhandled)?;
                     output.build()
-                }),
-            }
-        }
-        "MissingRequiredParameterException" => {
-            crate::error::StopMetricStreamsError {
-                meta: generic,
-                kind: crate::error::StopMetricStreamsErrorKind::MissingRequiredParameterException(
-                    {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::missing_required_parameter_exception::Builder::default();
-                        let _ = response;
-                        output = crate::xml_deser::deser_structure_missing_required_parameter_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::StopMetricStreamsError::unhandled)?;
-                        output.build()
-                    },
-                ),
-            }
-        }
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "MissingParameter" => crate::error::StopMetricStreamsError {
+            meta: generic,
+            kind: crate::error::StopMetricStreamsErrorKind::MissingRequiredParameterException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::missing_required_parameter_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_missing_required_parameter_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::StopMetricStreamsError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         _ => crate::error::StopMetricStreamsError::generic(generic),
     })
 }
@@ -2178,59 +2702,86 @@ pub fn parse_tag_resource_error(
         Some(code) => code,
         None => return Err(crate::error::TagResourceError::unhandled(generic)),
     };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ConcurrentModificationException" => {
-            crate::error::TagResourceError {
-                meta: generic,
-                kind: crate::error::TagResourceErrorKind::ConcurrentModificationException({
+        "ConcurrentModificationException" => crate::error::TagResourceError {
+            meta: generic,
+            kind: crate::error::TagResourceErrorKind::ConcurrentModificationException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output =
                         crate::error::concurrent_modification_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_concurrent_modification_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::TagResourceError::unhandled)?;
                     output.build()
-                }),
-            }
-        }
-        "InternalServiceFault" => crate::error::TagResourceError {
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "InternalServiceError" => crate::error::TagResourceError {
             meta: generic,
             kind: crate::error::TagResourceErrorKind::InternalServiceFault({
                 #[allow(unused_mut)]
-                let mut output = crate::error::internal_service_fault::Builder::default();
-                let _ = response;
-                output = crate::xml_deser::deser_structure_internal_service_fault_xml_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::TagResourceError::unhandled)?;
-                output.build()
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_service_fault::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_internal_service_fault_xml_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::TagResourceError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
             }),
         },
-        "InvalidParameterValueException" => {
-            crate::error::TagResourceError {
-                meta: generic,
-                kind: crate::error::TagResourceErrorKind::InvalidParameterValueException({
+        "InvalidParameterValue" => crate::error::TagResourceError {
+            meta: generic,
+            kind: crate::error::TagResourceErrorKind::InvalidParameterValueException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output =
                         crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::TagResourceError::unhandled)?;
                     output.build()
-                }),
-            }
-        }
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "ResourceNotFoundException" => crate::error::TagResourceError {
             meta: generic,
             kind: crate::error::TagResourceErrorKind::ResourceNotFoundException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::resource_not_found_exception::Builder::default();
-                let _ = response;
-                output = crate::xml_deser::deser_structure_resource_not_found_exception_xml_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::TagResourceError::unhandled)?;
-                output.build()
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let _ = response;
+                    output =
+                        crate::xml_deser::deser_structure_resource_not_found_exception_xml_err(
+                            response.body().as_ref(),
+                            output,
+                        )
+                        .map_err(crate::error::TagResourceError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
             }),
         },
         _ => crate::error::TagResourceError::generic(generic),
@@ -2259,59 +2810,86 @@ pub fn parse_untag_resource_error(
         Some(code) => code,
         None => return Err(crate::error::UntagResourceError::unhandled(generic)),
     };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ConcurrentModificationException" => {
-            crate::error::UntagResourceError {
-                meta: generic,
-                kind: crate::error::UntagResourceErrorKind::ConcurrentModificationException({
+        "ConcurrentModificationException" => crate::error::UntagResourceError {
+            meta: generic,
+            kind: crate::error::UntagResourceErrorKind::ConcurrentModificationException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output =
                         crate::error::concurrent_modification_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_concurrent_modification_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UntagResourceError::unhandled)?;
                     output.build()
-                }),
-            }
-        }
-        "InternalServiceFault" => crate::error::UntagResourceError {
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "InternalServiceError" => crate::error::UntagResourceError {
             meta: generic,
             kind: crate::error::UntagResourceErrorKind::InternalServiceFault({
                 #[allow(unused_mut)]
-                let mut output = crate::error::internal_service_fault::Builder::default();
-                let _ = response;
-                output = crate::xml_deser::deser_structure_internal_service_fault_xml_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::UntagResourceError::unhandled)?;
-                output.build()
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_service_fault::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_internal_service_fault_xml_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::UntagResourceError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
             }),
         },
-        "InvalidParameterValueException" => {
-            crate::error::UntagResourceError {
-                meta: generic,
-                kind: crate::error::UntagResourceErrorKind::InvalidParameterValueException({
+        "InvalidParameterValue" => crate::error::UntagResourceError {
+            meta: generic,
+            kind: crate::error::UntagResourceErrorKind::InvalidParameterValueException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output =
                         crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UntagResourceError::unhandled)?;
                     output.build()
-                }),
-            }
-        }
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "ResourceNotFoundException" => crate::error::UntagResourceError {
             meta: generic,
             kind: crate::error::UntagResourceErrorKind::ResourceNotFoundException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::resource_not_found_exception::Builder::default();
-                let _ = response;
-                output = crate::xml_deser::deser_structure_resource_not_found_exception_xml_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::UntagResourceError::unhandled)?;
-                output.build()
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let _ = response;
+                    output =
+                        crate::xml_deser::deser_structure_resource_not_found_exception_xml_err(
+                            response.body().as_ref(),
+                            output,
+                        )
+                        .map_err(crate::error::UntagResourceError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
             }),
         },
         _ => crate::error::UntagResourceError::generic(generic),

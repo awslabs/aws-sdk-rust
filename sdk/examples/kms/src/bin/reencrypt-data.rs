@@ -3,38 +3,36 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
+use aws_types::region::ProvideRegion;
+use kms::{Blob, Client, Config, Error, Region, PKG_VERSION};
 use std::fs;
 use std::fs::File;
 use std::io::Write;
-use std::process;
-
-use kms::{Blob, Client, Config, Region};
-
-use aws_types::region::ProvideRegion;
-
 use structopt::StructOpt;
-use tracing_subscriber::fmt::format::FmtSpan;
-use tracing_subscriber::fmt::SubscriberBuilder;
 
 #[derive(Debug, StructOpt)]
 struct Opt {
-    /// The region. Overrides environment variable AWS_DEFAULT_REGION.
+    /// The default AWS Region.
     #[structopt(short, long)]
     default_region: Option<String>,
 
-    /// The original encryption key
+    /// The original encryption key.
     #[structopt(short, long)]
     first_key: String,
-    /// The new encryption key
+
+    /// The new encryption key.
     #[structopt(short, long)]
     new_key: String,
-    /// The name of the input file containing the text to reencrypt
+
+    /// The name of the input file containing the text to reencrypt.
     #[structopt(short, long)]
     input_file: String,
-    /// The name of the output file containing the reencrypted text
+
+    /// The name of the output file containing the reencrypted text.
     #[structopt(short, long)]
     output_file: String,
-    /// Whether to display additonal runtime information
+
+    /// Whether to display additonal runtime information.
     #[structopt(short, long)]
     verbose: bool,
 }
@@ -51,7 +49,9 @@ struct Opt {
 ///    If the environment variable is not set, defaults to **us-west-2**.
 /// * `[-v]` - Whether to display additional information.
 #[tokio::main]
-async fn main() {
+async fn main() -> Result<(), Error> {
+    tracing_subscriber::fmt::init();
+
     let Opt {
         first_key,
         new_key,
@@ -67,18 +67,16 @@ async fn main() {
         .or_else(|| aws_types::region::default_provider().region())
         .unwrap_or_else(|| Region::new("us-west-2"));
 
-    if verbose {
-        println!("Running ReEncryptData with args:");
-        println!("Region:          {:?}", &region);
-        println!("Input key:       {}", first_key);
-        println!("Output key:      {}", new_key);
-        println!("Input filename:  {}", input_file);
-        println!("Output filename: {}", output_file);
+    println!();
 
-        SubscriberBuilder::default()
-            .with_env_filter("info")
-            .with_span_events(FmtSpan::CLOSE)
-            .init();
+    if verbose {
+        println!("KMS version:     {}", PKG_VERSION);
+        println!("Region:          {:?}", &region);
+        println!("Input key:       {}", &first_key);
+        println!("Output key:      {}", &new_key);
+        println!("Input filename:  {}", &input_file);
+        println!("Output filename: {}", &output_file);
+        println!();
     }
 
     let conf = Config::builder().region(region).build();
@@ -91,20 +89,13 @@ async fn main() {
         .map(|input_file| base64::decode(input_file).expect("invalid base 64"))
         .map(Blob::new);
 
-    let resp = match client
+    let resp = client
         .re_encrypt()
         .ciphertext_blob(data.unwrap())
         .source_key_id(first_key)
         .destination_key_id(new_key)
         .send()
-        .await
-    {
-        Ok(output) => output,
-        Err(e) => {
-            eprintln!("Encryption failure: {}", e);
-            process::exit(1);
-        }
-    };
+        .await?;
 
     // Did we get an encrypted blob?
     let blob = resp.ciphertext_blob.expect("Could not get encrypted text");
@@ -122,4 +113,6 @@ async fn main() {
     } else {
         println!("Wrote base64-encoded output to {}", output_file);
     }
+
+    Ok(())
 }

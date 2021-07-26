@@ -105,7 +105,7 @@ impl AddRoleToDbClusterInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -138,9 +138,15 @@ impl AddRoleToDbClusterInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-www-form-urlencoded");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -263,7 +269,7 @@ impl AddRoleToDbInstanceInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -296,9 +302,15 @@ impl AddRoleToDbInstanceInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-www-form-urlencoded");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -435,7 +447,7 @@ impl AddSourceIdentifierToSubscriptionInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -468,9 +480,15 @@ impl AddSourceIdentifierToSubscriptionInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-www-form-urlencoded");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -586,7 +604,7 @@ impl AddTagsToResourceInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -619,9 +637,15 @@ impl AddTagsToResourceInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-www-form-urlencoded");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -768,7 +792,7 @@ impl ApplyPendingMaintenanceActionInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -801,9 +825,15 @@ impl ApplyPendingMaintenanceActionInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-www-form-urlencoded");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -888,9 +918,9 @@ pub mod authorize_db_security_group_ingress_input {
             self
         }
         /// <p>
-        /// AWS account number of the owner of the EC2 security group
+        /// Amazon Web Services account number of the owner of the EC2 security group
         /// specified in the <code>EC2SecurityGroupName</code> parameter.
-        /// The AWS access key ID isn't an acceptable value.
+        /// The Amazon Web Services access key ID isn't an acceptable value.
         /// For VPC DB security groups, <code>EC2SecurityGroupId</code> must be provided.
         /// Otherwise, <code>EC2SecurityGroupOwnerId</code> and either <code>EC2SecurityGroupName</code> or <code>EC2SecurityGroupId</code> must be provided.
         /// </p>
@@ -976,7 +1006,7 @@ impl AuthorizeDbSecurityGroupIngressInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -1009,9 +1039,15 @@ impl AuthorizeDbSecurityGroupIngressInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-www-form-urlencoded");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -1186,7 +1222,7 @@ impl BacktrackDbClusterInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -1219,9 +1255,15 @@ impl BacktrackDbClusterInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-www-form-urlencoded");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -1319,7 +1361,7 @@ impl CancelExportTaskInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -1352,9 +1394,15 @@ impl CancelExportTaskInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-www-form-urlencoded");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -1540,7 +1588,7 @@ impl CopyDbClusterParameterGroupInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -1573,9 +1621,15 @@ impl CopyDbClusterParameterGroupInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-www-form-urlencoded");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -1607,20 +1661,20 @@ pub mod copy_db_cluster_snapshot_input {
     }
     impl Builder {
         /// <p>The identifier of the DB cluster snapshot to copy. This parameter isn't case-sensitive.</p>
-        /// <p>You can't copy an encrypted, shared DB cluster snapshot from one AWS Region to another.</p>
+        /// <p>You can't copy an encrypted, shared DB cluster snapshot from one Amazon Web Services Region to another.</p>
         /// <p>Constraints:</p>
         /// <ul>
         /// <li>
         /// <p>Must specify a valid system snapshot in the "available" state.</p>
         /// </li>
         /// <li>
-        /// <p>If the source snapshot is in the same AWS Region as the copy, specify a valid DB snapshot identifier.</p>
+        /// <p>If the source snapshot is in the same Amazon Web Services Region as the copy, specify a valid DB snapshot identifier.</p>
         /// </li>
         /// <li>
-        /// <p>If the source snapshot is in a different AWS Region than the copy,
+        /// <p>If the source snapshot is in a different Amazon Web Services Region than the copy,
         /// specify a valid DB cluster snapshot ARN. For more information, go to
         /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_CopySnapshot.html#USER_CopySnapshot.AcrossRegions">
-        /// Copying Snapshots Across AWS Regions</a> in the <i>Amazon Aurora User Guide.</i>
+        /// Copying Snapshots Across Amazon Web Services Regions</a> in the <i>Amazon Aurora User Guide.</i>
         /// </p>
         /// </li>
         /// </ul>
@@ -1669,15 +1723,15 @@ pub mod copy_db_cluster_snapshot_input {
             self.target_db_cluster_snapshot_identifier = input;
             self
         }
-        /// <p>The AWS KMS key identifier for an encrypted DB cluster snapshot.
-        /// The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer master key (CMK).</p>             
-        /// <p>If you copy an encrypted DB cluster snapshot from your AWS account, you can specify a value for <code>KmsKeyId</code> to encrypt the copy with a new AWS KMS CMK.
-        /// If you don't specify a value for <code>KmsKeyId</code>, then the copy of the DB cluster snapshot is encrypted with the same AWS KMS key as the source DB cluster snapshot.
+        /// <p>The Amazon Web Services KMS key identifier for an encrypted DB cluster snapshot.
+        /// The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon Web Services KMS customer master key (CMK).</p>             
+        /// <p>If you copy an encrypted DB cluster snapshot from your Amazon Web Services account, you can specify a value for <code>KmsKeyId</code> to encrypt the copy with a new Amazon Web Services KMS CMK.
+        /// If you don't specify a value for <code>KmsKeyId</code>, then the copy of the DB cluster snapshot is encrypted with the same Amazon Web Services KMS key as the source DB cluster snapshot.
         /// </p>
-        /// <p>If you copy an encrypted DB cluster snapshot that is shared from another AWS account, then you must specify a value for <code>KmsKeyId</code>. </p>
-        /// <p>To copy an encrypted DB cluster snapshot to another AWS Region, you must set <code>KmsKeyId</code> to the AWS KMS key identifier you want to use to encrypt the copy of the DB cluster snapshot
-        /// in the destination AWS Region. AWS KMS CMKs are specific to the AWS Region that they are created in, and you can't use CMKs from one AWS Region
-        /// in another AWS Region.</p>
+        /// <p>If you copy an encrypted DB cluster snapshot that is shared from another Amazon Web Services account, then you must specify a value for <code>KmsKeyId</code>. </p>
+        /// <p>To copy an encrypted DB cluster snapshot to another Amazon Web Services Region, you must set <code>KmsKeyId</code> to the Amazon Web Services KMS key identifier you want to use to encrypt the copy of the DB cluster snapshot
+        /// in the destination Amazon Web Services Region. Amazon Web Services KMS CMKs are specific to the Amazon Web Services Region that they are created in, and you can't use CMKs from one Amazon Web Services Region
+        /// in another Amazon Web Services Region.</p>
         /// <p>If you copy an unencrypted DB cluster snapshot and specify a value for the <code>KmsKeyId</code> parameter,
         /// an error is returned.</p>
         pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1688,40 +1742,40 @@ pub mod copy_db_cluster_snapshot_input {
             self.kms_key_id = input;
             self
         }
-        /// <p>The URL that contains a Signature Version 4 signed request for the <code>CopyDBClusterSnapshot</code> API action in the AWS Region that contains the
-        /// source DB cluster snapshot to copy. The <code>PreSignedUrl</code> parameter must be used when copying an encrypted DB cluster snapshot from another AWS Region.
-        /// Don't specify <code>PreSignedUrl</code> when you are copying an encrypted DB cluster snapshot in the same AWS Region.</p>
+        /// <p>The URL that contains a Signature Version 4 signed request for the <code>CopyDBClusterSnapshot</code> API action in the Amazon Web Services Region that contains the
+        /// source DB cluster snapshot to copy. The <code>PreSignedUrl</code> parameter must be used when copying an encrypted DB cluster snapshot from another Amazon Web Services Region.
+        /// Don't specify <code>PreSignedUrl</code> when you are copying an encrypted DB cluster snapshot in the same Amazon Web Services Region.</p>
         /// <p>The pre-signed URL must be a valid request for the <code>CopyDBClusterSnapshot</code> API action that can be
-        /// executed in the source AWS Region that contains the encrypted DB cluster snapshot to be copied.
+        /// executed in the source Amazon Web Services Region that contains the encrypted DB cluster snapshot to be copied.
         /// The pre-signed URL request must contain the following parameter values:</p>
         /// <ul>
         /// <li>
         /// <p>
-        /// <code>KmsKeyId</code> - The AWS KMS key identifier for the customer master key (CMK) to use to encrypt the copy of the DB
-        /// cluster snapshot in the destination AWS Region. This is the same identifier for both the <code>CopyDBClusterSnapshot</code>
-        /// action that is called in the destination AWS Region, and the action contained in the pre-signed URL.</p>
+        /// <code>KmsKeyId</code> - The Amazon Web Services KMS key identifier for the customer master key (CMK) to use to encrypt the copy of the DB
+        /// cluster snapshot in the destination Amazon Web Services Region. This is the same identifier for both the <code>CopyDBClusterSnapshot</code>
+        /// action that is called in the destination Amazon Web Services Region, and the action contained in the pre-signed URL.</p>
         /// </li>
         /// <li>
         /// <p>
-        /// <code>DestinationRegion</code> - The name of the AWS Region that the DB cluster snapshot is to be created in.</p>
+        /// <code>DestinationRegion</code> - The name of the Amazon Web Services Region that the DB cluster snapshot is to be created in.</p>
         /// </li>
         /// <li>
         /// <p>
         /// <code>SourceDBClusterSnapshotIdentifier</code> - The DB cluster snapshot identifier for the encrypted DB cluster
-        /// snapshot to be copied. This identifier must be in the Amazon Resource Name (ARN) format for the source AWS Region. For example,
-        /// if you are copying an encrypted DB cluster snapshot from the us-west-2 AWS Region, then your <code>SourceDBClusterSnapshotIdentifier</code>
+        /// snapshot to be copied. This identifier must be in the Amazon Resource Name (ARN) format for the source Amazon Web Services Region. For example,
+        /// if you are copying an encrypted DB cluster snapshot from the us-west-2 Amazon Web Services Region, then your <code>SourceDBClusterSnapshotIdentifier</code>
         /// looks like the following example: <code>arn:aws:rds:us-west-2:123456789012:cluster-snapshot:aurora-cluster1-snapshot-20161115</code>.</p>
         /// </li>
         /// </ul>
         /// <p>To learn how to generate a Signature Version 4 signed request, see
         /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html">
-        /// Authenticating Requests: Using Query Parameters (AWS Signature Version 4)</a> and
+        /// Authenticating Requests: Using Query Parameters (Amazon Web Services Signature Version 4)</a> and
         /// <a href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">
         /// Signature Version 4 Signing Process</a>.</p>
         /// <note>
-        /// <p>If you are using an AWS SDK tool or the AWS CLI, you can specify <code>SourceRegion</code> (or <code>--source-region</code> for the AWS CLI)
+        /// <p>If you are using an Amazon Web Services SDK tool or the CLI, you can specify <code>SourceRegion</code> (or <code>--source-region</code> for the CLI)
         /// instead of specifying <code>PreSignedUrl</code> manually. Specifying <code>SourceRegion</code> autogenerates a pre-signed URL that is a valid
-        /// request for the operation that can be executed in the source AWS Region.</p>
+        /// request for the operation that can be executed in the source Amazon Web Services Region.</p>
         /// </note>
         pub fn pre_signed_url(mut self, input: impl Into<std::string::String>) -> Self {
             self.pre_signed_url = Some(input.into());
@@ -1822,7 +1876,7 @@ impl CopyDbClusterSnapshotInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -1855,9 +1909,15 @@ impl CopyDbClusterSnapshotInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-www-form-urlencoded");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -2036,7 +2096,7 @@ impl CopyDbParameterGroupInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -2069,9 +2129,15 @@ impl CopyDbParameterGroupInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-www-form-urlencoded");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -2105,17 +2171,17 @@ pub mod copy_db_snapshot_input {
     }
     impl Builder {
         /// <p>The identifier for the source DB snapshot.</p>
-        /// <p>If the source snapshot is in the same AWS Region as the copy, specify a valid DB
+        /// <p>If the source snapshot is in the same Amazon Web Services Region as the copy, specify a valid DB
         /// snapshot identifier. For example, you might specify
         /// <code>rds:mysql-instance1-snapshot-20130805</code>. </p>
-        /// <p>If the source snapshot is in a different AWS Region than the copy, specify a valid DB
+        /// <p>If the source snapshot is in a different Amazon Web Services Region than the copy, specify a valid DB
         /// snapshot ARN. For example, you might specify
         /// <code>arn:aws:rds:us-west-2:123456789012:snapshot:mysql-instance1-snapshot-20130805</code>. </p>
         /// <p>If you are copying from a shared manual DB snapshot,
         /// this parameter must be the Amazon Resource Name (ARN) of the shared DB snapshot.
         /// </p>
         /// <p>If you are copying an encrypted snapshot
-        /// this parameter must be in the ARN format for the source AWS Region,
+        /// this parameter must be in the ARN format for the source Amazon Web Services Region,
         /// and must match the <code>SourceDBSnapshotIdentifier</code> in the <code>PreSignedUrl</code> parameter.
         /// </p>
         /// <p>Constraints:</p>
@@ -2175,24 +2241,24 @@ pub mod copy_db_snapshot_input {
             self.target_db_snapshot_identifier = input;
             self
         }
-        /// <p>The AWS KMS key identifier for an encrypted DB snapshot.
-        /// The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer master key (CMK).
+        /// <p>The Amazon Web Services KMS key identifier for an encrypted DB snapshot.
+        /// The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon Web Services KMS customer master key (CMK).
         /// </p>
-        /// <p>If you copy an encrypted DB snapshot from your AWS account,
-        /// you can specify a value for this parameter to encrypt the copy with a new AWS KMS CMK.
+        /// <p>If you copy an encrypted DB snapshot from your Amazon Web Services account,
+        /// you can specify a value for this parameter to encrypt the copy with a new Amazon Web Services KMS CMK.
         /// If you don't specify a value for this parameter,
-        /// then the copy of the DB snapshot is encrypted with the same AWS KMS key as the source DB snapshot.
+        /// then the copy of the DB snapshot is encrypted with the same Amazon Web Services KMS key as the source DB snapshot.
         /// </p>
-        /// <p>If you copy an encrypted DB snapshot that is shared from another AWS account,
+        /// <p>If you copy an encrypted DB snapshot that is shared from another Amazon Web Services account,
         /// then you must specify a value for this parameter.
         /// </p>
         /// <p>If you specify this parameter when you copy an unencrypted snapshot,
         /// the copy is encrypted.
         /// </p>
-        /// <p>If you copy an encrypted snapshot to a different AWS Region, then you must specify
-        /// a AWS KMS key identifier for the destination AWS Region. AWS KMS CMKs are specific to the AWS Region
-        /// that they are created in, and you can't use CMKs from one AWS Region in another
-        /// AWS Region.
+        /// <p>If you copy an encrypted snapshot to a different Amazon Web Services Region, then you must specify
+        /// a Amazon Web Services KMS key identifier for the destination Amazon Web Services Region. Amazon Web Services KMS CMKs are specific to the Amazon Web Services Region
+        /// that they are created in, and you can't use CMKs from one Amazon Web Services Region in another
+        /// Amazon Web Services Region.
         /// </p>
         pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_key_id = Some(input.into());
@@ -2225,52 +2291,52 @@ pub mod copy_db_snapshot_input {
             self
         }
         /// <p>The URL that contains a Signature Version 4 signed request for the
-        /// <code>CopyDBSnapshot</code> API action in the source AWS Region that contains the
+        /// <code>CopyDBSnapshot</code> API action in the source Amazon Web Services Region that contains the
         /// source DB snapshot to copy. </p>
         /// <p>You must specify this parameter when you copy an encrypted DB snapshot from another
-        /// AWS Region by using the Amazon RDS API. Don't specify <code>PreSignedUrl</code> when you are
-        /// copying an encrypted DB snapshot in the same AWS Region.</p>
+        /// Amazon Web Services Region by using the Amazon RDS API. Don't specify <code>PreSignedUrl</code> when you are
+        /// copying an encrypted DB snapshot in the same Amazon Web Services Region.</p>
         /// <p>The presigned URL must be a valid request for the <code>CopyDBSnapshot</code> API action
-        /// that can be executed in the source AWS Region that contains the encrypted DB snapshot to be copied.
+        /// that can be executed in the source Amazon Web Services Region that contains the encrypted DB snapshot to be copied.
         /// The presigned URL request must contain the following parameter values:
         /// </p>
         /// <ul>
         /// <li>
         /// <p>
-        /// <code>DestinationRegion</code> - The AWS Region that the encrypted DB snapshot is copied to.
-        /// This AWS Region is the same one where the <code>CopyDBSnapshot</code> action is called that contains this presigned URL.
+        /// <code>DestinationRegion</code> - The Amazon Web Services Region that the encrypted DB snapshot is copied to.
+        /// This Amazon Web Services Region is the same one where the <code>CopyDBSnapshot</code> action is called that contains this presigned URL.
         /// </p>
-        /// <p>For example, if you copy an encrypted DB snapshot from the us-west-2 AWS Region
-        /// to the us-east-1 AWS Region, then you call the <code>CopyDBSnapshot</code> action in
-        /// the us-east-1 AWS Region and provide a presigned URL that contains a call to the
-        /// <code>CopyDBSnapshot</code> action in the us-west-2 AWS Region. For this
+        /// <p>For example, if you copy an encrypted DB snapshot from the us-west-2 Amazon Web Services Region
+        /// to the us-east-1 Amazon Web Services Region, then you call the <code>CopyDBSnapshot</code> action in
+        /// the us-east-1 Amazon Web Services Region and provide a presigned URL that contains a call to the
+        /// <code>CopyDBSnapshot</code> action in the us-west-2 Amazon Web Services Region. For this
         /// example, the <code>DestinationRegion</code> in the presigned URL must be set to
-        /// the us-east-1 AWS Region. </p>
+        /// the us-east-1 Amazon Web Services Region. </p>
         /// </li>
         /// <li>
         /// <p>
-        /// <code>KmsKeyId</code> - The AWS KMS key identifier for the customer master key (CMK) to use to encrypt the copy of the DB snapshot in the destination AWS Region.
-        /// This is the same identifier for both the <code>CopyDBSnapshot</code> action that is called in the destination AWS Region,
+        /// <code>KmsKeyId</code> - The Amazon Web Services KMS key identifier for the customer master key (CMK) to use to encrypt the copy of the DB snapshot in the destination Amazon Web Services Region.
+        /// This is the same identifier for both the <code>CopyDBSnapshot</code> action that is called in the destination Amazon Web Services Region,
         /// and the action contained in the presigned URL.
         /// </p>
         /// </li>
         /// <li>
         /// <p>
         /// <code>SourceDBSnapshotIdentifier</code> - The DB snapshot identifier for the encrypted snapshot to be copied.
-        /// This identifier must be in the Amazon Resource Name (ARN) format for the source AWS Region.
-        /// For example, if you are copying an encrypted DB snapshot from the us-west-2 AWS Region, then your <code>SourceDBSnapshotIdentifier</code> looks like
+        /// This identifier must be in the Amazon Resource Name (ARN) format for the source Amazon Web Services Region.
+        /// For example, if you are copying an encrypted DB snapshot from the us-west-2 Amazon Web Services Region, then your <code>SourceDBSnapshotIdentifier</code> looks like
         /// the following example: <code>arn:aws:rds:us-west-2:123456789012:snapshot:mysql-instance1-snapshot-20161115</code>.
         /// </p>
         /// </li>
         /// </ul>
         /// <p>To learn how to generate a Signature Version 4 signed request, see
-        /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html">Authenticating Requests: Using Query Parameters (AWS Signature Version 4)</a> and
+        /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html">Authenticating Requests: Using Query Parameters (Amazon Web Services Signature Version 4)</a> and
         /// <a href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature Version 4 Signing Process</a>.
         /// </p>
         /// <note>
-        /// <p>If you are using an AWS SDK tool or the AWS CLI, you can specify <code>SourceRegion</code> (or <code>--source-region</code> for the AWS CLI)
+        /// <p>If you are using an Amazon Web Services SDK tool or the CLI, you can specify <code>SourceRegion</code> (or <code>--source-region</code> for the CLI)
         /// instead of specifying <code>PreSignedUrl</code> manually. Specifying <code>SourceRegion</code> autogenerates a pre-signed URL that is a valid
-        /// request for the operation that can be executed in the source AWS Region.</p>
+        /// request for the operation that can be executed in the source Amazon Web Services Region.</p>
         /// </note>
         pub fn pre_signed_url(mut self, input: impl Into<std::string::String>) -> Self {
             self.pre_signed_url = Some(input.into());
@@ -2284,10 +2350,10 @@ pub mod copy_db_snapshot_input {
             self
         }
         /// <p>The name of an option group to associate with the copy of the snapshot.</p>
-        /// <p>Specify this option if you are copying a snapshot from one AWS Region to another,
+        /// <p>Specify this option if you are copying a snapshot from one Amazon Web Services Region to another,
         /// and your DB instance uses a nondefault option group.
         /// If your source DB instance uses Transparent Data Encryption for Oracle or Microsoft SQL Server,
-        /// you must specify this option when copying across AWS Regions.
+        /// you must specify this option when copying across Amazon Web Services Regions.
         /// For more information, see
         /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CopySnapshot.html#USER_CopySnapshot.Options">Option group considerations</a> in the <i>Amazon RDS User Guide.</i>
         /// </p>
@@ -2384,7 +2450,7 @@ impl CopyDbSnapshotInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -2417,9 +2483,15 @@ impl CopyDbSnapshotInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-www-form-urlencoded");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -2592,7 +2664,7 @@ impl CopyOptionGroupInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -2625,9 +2697,15 @@ impl CopyOptionGroupInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-www-form-urlencoded");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -2775,7 +2853,7 @@ impl CreateCustomAvailabilityZoneInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -2808,9 +2886,15 @@ impl CreateCustomAvailabilityZoneInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-www-form-urlencoded");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -3115,7 +3199,7 @@ pub mod create_db_cluster_input {
         /// using the <code>BackupRetentionPeriod</code> parameter.
         /// </p>
         /// <p>The default is a 30-minute window selected at random from an
-        /// 8-hour block of time for each AWS Region.
+        /// 8-hour block of time for each Amazon Web Services Region.
         /// To view the time blocks available, see
         /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Managing.Backups.html#Aurora.Managing.Backups.BackupWindow">
         /// Backup window</a> in the <i>Amazon Aurora User Guide.</i>
@@ -3150,7 +3234,7 @@ pub mod create_db_cluster_input {
         /// <p>Format: <code>ddd:hh24:mi-ddd:hh24:mi</code>
         /// </p>
         /// <p>The default is a 30-minute window selected at random from an
-        /// 8-hour block of time for each AWS Region, occurring on a random day of the
+        /// 8-hour block of time for each Amazon Web Services Region, occurring on a random day of the
         /// week. To see the time blocks available, see
         /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_UpgradeDBInstance.Maintenance.html#AdjustingTheMaintenanceWindow.Aurora">
         /// Adjusting the Preferred DB Cluster Maintenance Window</a> in the <i>Amazon Aurora User Guide.</i>
@@ -3209,9 +3293,9 @@ pub mod create_db_cluster_input {
             self.storage_encrypted = input;
             self
         }
-        /// <p>The AWS KMS key identifier for an encrypted DB cluster.</p>
-        /// <p>The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer master key (CMK).
-        /// To use a CMK in a different AWS account, specify the key ARN or alias ARN.</p>
+        /// <p>The Amazon Web Services KMS key identifier for an encrypted DB cluster.</p>
+        /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon Web Services KMS customer master key (CMK).
+        /// To use a CMK in a different Amazon Web Services account, specify the key ARN or alias ARN.</p>
         /// <p>When a CMK isn't specified in <code>KmsKeyId</code>:</p>
         /// <ul>
         /// <li>
@@ -3225,11 +3309,11 @@ pub mod create_db_cluster_input {
         /// will use your default CMK.</p>
         /// </li>
         /// </ul>
-        /// <p>There is a default CMK for your AWS account. Your AWS account
-        /// has a different default CMK for each AWS Region.</p>
-        /// <p>If you create a read replica of an encrypted DB cluster in another AWS Region, you
-        /// must set <code>KmsKeyId</code> to a AWS KMS key identifier that is valid in the destination AWS
-        /// Region. This CMK is used to encrypt the read replica in that AWS Region.</p>
+        /// <p>There is a default CMK for your Amazon Web Services account. Your Amazon Web Services account
+        /// has a different default CMK for each Amazon Web Services Region.</p>
+        /// <p>If you create a read replica of an encrypted DB cluster in another Amazon Web Services Region, you
+        /// must set <code>KmsKeyId</code> to a Amazon Web Services KMS key identifier that is valid in the destination Amazon Web Services
+        /// Region. This CMK is used to encrypt the read replica in that Amazon Web Services Region.</p>
         pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_key_id = Some(input.into());
             self
@@ -3239,40 +3323,40 @@ pub mod create_db_cluster_input {
             self
         }
         /// <p>A URL that contains a Signature Version 4 signed request for
-        /// the <code>CreateDBCluster</code> action to be called in the source AWS Region where the DB cluster is replicated from.
+        /// the <code>CreateDBCluster</code> action to be called in the source Amazon Web Services Region where the DB cluster is replicated from.
         /// You only need to specify <code>PreSignedUrl</code> when you are performing cross-region replication from an encrypted DB cluster.</p>
         /// <p>The pre-signed URL must be a valid request for the <code>CreateDBCluster</code> API action
-        /// that can be executed in the source AWS Region that contains the encrypted DB cluster to be copied.</p>
+        /// that can be executed in the source Amazon Web Services Region that contains the encrypted DB cluster to be copied.</p>
         /// <p>The pre-signed URL request must contain the following parameter values:</p>
         /// <ul>
         /// <li>
         /// <p>
-        /// <code>KmsKeyId</code> - The AWS KMS key identifier for the key to use to encrypt the copy of
-        /// the DB cluster in the destination AWS Region. This should refer to the same AWS KMS CMK for both the <code>CreateDBCluster</code>
-        /// action that is called in the destination AWS Region, and the action contained in the pre-signed URL.</p>
+        /// <code>KmsKeyId</code> - The Amazon Web Services KMS key identifier for the key to use to encrypt the copy of
+        /// the DB cluster in the destination Amazon Web Services Region. This should refer to the same Amazon Web Services KMS CMK for both the <code>CreateDBCluster</code>
+        /// action that is called in the destination Amazon Web Services Region, and the action contained in the pre-signed URL.</p>
         /// </li>
         /// <li>
         /// <p>
-        /// <code>DestinationRegion</code> - The name of the AWS Region that Aurora read replica will
+        /// <code>DestinationRegion</code> - The name of the Amazon Web Services Region that Aurora read replica will
         /// be created in.</p>
         /// </li>
         /// <li>
         /// <p>
         /// <code>ReplicationSourceIdentifier</code> - The DB cluster identifier for the encrypted DB cluster to be copied.
-        /// This identifier must be in the Amazon Resource Name (ARN) format for the source AWS Region. For example, if you are copying an
-        /// encrypted DB cluster from the us-west-2 AWS Region, then your <code>ReplicationSourceIdentifier</code> would look like
+        /// This identifier must be in the Amazon Resource Name (ARN) format for the source Amazon Web Services Region. For example, if you are copying an
+        /// encrypted DB cluster from the us-west-2 Amazon Web Services Region, then your <code>ReplicationSourceIdentifier</code> would look like
         /// Example: <code>arn:aws:rds:us-west-2:123456789012:cluster:aurora-cluster1</code>.</p>
         /// </li>
         /// </ul>
         /// <p>To learn how to generate a Signature Version 4 signed request, see
         /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html">
-        /// Authenticating Requests: Using Query Parameters (AWS Signature Version 4)</a> and
+        /// Authenticating Requests: Using Query Parameters (Amazon Web Services Signature Version 4)</a> and
         /// <a href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">
         /// Signature Version 4 Signing Process</a>.</p>
         /// <note>
-        /// <p>If you are using an AWS SDK tool or the AWS CLI, you can specify <code>SourceRegion</code> (or <code>--source-region</code> for the AWS CLI)
+        /// <p>If you are using an Amazon Web Services SDK tool or the CLI, you can specify <code>SourceRegion</code> (or <code>--source-region</code> for the CLI)
         /// instead of specifying <code>PreSignedUrl</code> manually. Specifying <code>SourceRegion</code> autogenerates a pre-signed URL that is a valid
-        /// request for the operation that can be executed in the source AWS Region.</p>
+        /// request for the operation that can be executed in the source Amazon Web Services Region.</p>
         /// </note>
         pub fn pre_signed_url(mut self, input: impl Into<std::string::String>) -> Self {
             self.pre_signed_url = Some(input.into());
@@ -3285,7 +3369,7 @@ pub mod create_db_cluster_input {
             self.pre_signed_url = input;
             self
         }
-        /// <p>A value that indicates whether to enable mapping of AWS Identity and Access
+        /// <p>A value that indicates whether to enable mapping of Amazon Web Services Identity and Access
         /// Management (IAM) accounts to database accounts. By default, mapping is disabled.</p>
         /// <p>For more information, see
         /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.IAMDBAuth.html">
@@ -3582,7 +3666,7 @@ impl CreateDbClusterInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -3615,9 +3699,15 @@ impl CreateDbClusterInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-www-form-urlencoded");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -3793,7 +3883,7 @@ impl CreateDbClusterEndpointInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -3826,9 +3916,15 @@ impl CreateDbClusterEndpointInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-www-form-urlencoded");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -4018,7 +4114,7 @@ impl CreateDbClusterParameterGroupInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -4051,9 +4147,15 @@ impl CreateDbClusterParameterGroupInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-www-form-urlencoded");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -4206,7 +4308,7 @@ impl CreateDbClusterSnapshotInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -4239,9 +4341,15 @@ impl CreateDbClusterSnapshotInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-www-form-urlencoded");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -4575,7 +4683,7 @@ pub mod create_db_instance_input {
             self
         }
         /// <p>The compute and memory capacity of the DB instance, for example, <code>db.m4.large</code>.
-        /// Not all DB instance classes are available in all AWS Regions, or for all database engines.
+        /// Not all DB instance classes are available in all Amazon Web Services Regions, or for all database engines.
         /// For the full list of DB instance classes,
         /// and availability for your engine, see
         /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB Instance Class</a> in the <i>Amazon RDS User Guide.</i>
@@ -4593,7 +4701,7 @@ pub mod create_db_instance_input {
         }
         /// <p>The name of the database engine to be used for this instance.
         /// </p>
-        /// <p>Not every database engine is available for every AWS Region.
+        /// <p>Not every database engine is available for every Amazon Web Services Region.
         /// </p>
         /// <p>Valid Values:
         /// </p>
@@ -4628,17 +4736,17 @@ pub mod create_db_instance_input {
         /// </li>
         /// <li>
         /// <p>
+        /// <code>oracle-ee-cdb</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
         /// <code>oracle-se2</code>
         /// </p>
         /// </li>
         /// <li>
         /// <p>
-        /// <code>oracle-se1</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>oracle-se</code>
+        /// <code>oracle-se2-cdb</code>
         /// </p>
         /// </li>
         /// <li>
@@ -4844,17 +4952,17 @@ pub mod create_db_instance_input {
         }
         /// <p>
         /// The Availability Zone (AZ) where the database will be created. For information on
-        /// AWS Regions and Availability Zones, see
+        /// Amazon Web Services Regions and Availability Zones, see
         /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html">Regions
         /// and Availability Zones</a>.
         /// </p>
-        /// <p>Default: A random, system-chosen Availability Zone in the endpoint's AWS Region.</p>
+        /// <p>Default: A random, system-chosen Availability Zone in the endpoint's Amazon Web Services Region.</p>
         /// <p>
         /// Example: <code>us-east-1d</code>
         /// </p>
         /// <p>
         /// Constraint: The <code>AvailabilityZone</code> parameter can't be specified if the DB instance is a Multi-AZ deployment.
-        /// The specified Availability Zone must be in the same AWS Region as the current endpoint.
+        /// The specified Availability Zone must be in the same Amazon Web Services Region as the current endpoint.
         /// </p>
         /// <note>
         /// <p>If you're creating a DB instance in an RDS on VMware environment,
@@ -4897,7 +5005,7 @@ pub mod create_db_instance_input {
         /// Format: <code>ddd:hh24:mi-ddd:hh24:mi</code>
         /// </p>
         /// <p>The default is a 30-minute window selected at random from an
-        /// 8-hour block of time for each AWS Region, occurring on a random day of the
+        /// 8-hour block of time for each Amazon Web Services Region, occurring on a random day of the
         /// week.
         /// </p>
         /// <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.</p>
@@ -4970,7 +5078,7 @@ pub mod create_db_instance_input {
         /// if automated backups are enabled,
         /// using the <code>BackupRetentionPeriod</code> parameter.
         /// The default is a 30-minute window selected at random from an
-        /// 8-hour block of time for each AWS Region. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html#USER_WorkingWithAutomatedBackups.BackupWindow">Backup window</a> in the <i>Amazon RDS User Guide</i>.
+        /// 8-hour block of time for each Amazon Web Services Region. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html#USER_WorkingWithAutomatedBackups.BackupWindow">Backup window</a> in the <i>Amazon RDS User Guide</i>.
         /// </p>
         /// <p>
         /// <b>Amazon Aurora</b>
@@ -5078,7 +5186,7 @@ pub mod create_db_instance_input {
         /// <p>The version number of the database engine to use.</p>
         /// <p>For a list of valid engine versions, use the  <code>DescribeDBEngineVersions</code> action.</p>
         /// <p>The following are the database engines and links to information about the major and minor versions that are available with
-        /// Amazon RDS. Not every database engine is available for every AWS Region.</p>
+        /// Amazon RDS. Not every database engine is available for every Amazon Web Services Region.</p>
         /// <p>
         /// <b>Amazon Aurora</b>
         /// </p>
@@ -5321,19 +5429,19 @@ pub mod create_db_instance_input {
             self.storage_encrypted = input;
             self
         }
-        /// <p>The AWS KMS key identifier for an encrypted DB instance.</p>
-        /// <p>The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer master key (CMK).
-        /// To use a CMK in a different AWS account, specify the key ARN or alias ARN.</p>
+        /// <p>The Amazon Web Services KMS key identifier for an encrypted DB instance.</p>
+        /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon Web Services KMS customer master key (CMK).
+        /// To use a CMK in a different Amazon Web Services account, specify the key ARN or alias ARN.</p>
         /// <p>
         /// <b>Amazon Aurora</b>
         /// </p>
-        /// <p>Not applicable. The AWS KMS key identifier is managed by
+        /// <p>Not applicable. The Amazon Web Services KMS key identifier is managed by
         /// the DB cluster. For more information, see <code>CreateDBCluster</code>.</p>     
         /// <p>If <code>StorageEncrypted</code> is enabled, and you do
         /// not specify a value for the <code>KmsKeyId</code> parameter, then
         /// Amazon RDS uses your default CMK. There is a  
-        /// default CMK for your AWS account. Your AWS account has a different
-        /// default CMK for each AWS Region.</p>
+        /// default CMK for your Amazon Web Services account. Your Amazon Web Services account has a different
+        /// default CMK for each Amazon Web Services Region.</p>
         pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_key_id = Some(input.into());
             self
@@ -5436,9 +5544,9 @@ pub mod create_db_instance_input {
             self.timezone = input;
             self
         }
-        /// <p>A value that indicates whether to enable mapping of AWS Identity and Access
+        /// <p>A value that indicates whether to enable mapping of Amazon Web Services Identity and Access
         /// Management (IAM) accounts to database accounts. By default, mapping is disabled.</p>
-        /// <p>This setting doesn't apply to Amazon Aurora. Mapping AWS IAM accounts to database accounts is managed by the DB
+        /// <p>This setting doesn't apply to Amazon Aurora. Mapping Amazon Web Services IAM accounts to database accounts is managed by the DB
         /// cluster.</p>
         /// <p>For more information, see
         /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.html">
@@ -5469,11 +5577,11 @@ pub mod create_db_instance_input {
             self.enable_performance_insights = input;
             self
         }
-        /// <p>The AWS KMS key identifier for encryption of Performance Insights data.</p>
-        /// <p>The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer master key (CMK).</p>
+        /// <p>The Amazon Web Services KMS key identifier for encryption of Performance Insights data.</p>
+        /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon Web Services KMS customer master key (CMK).</p>
         /// <p>If you do not specify a value for <code>PerformanceInsightsKMSKeyId</code>, then Amazon RDS
-        /// uses your default CMK. There is a default CMK for your AWS account.
-        /// Your AWS account has a different default CMK for each AWS Region.</p>
+        /// uses your default CMK. There is a default CMK for your Amazon Web Services account.
+        /// Your Amazon Web Services account has a different default CMK for each Amazon Web Services Region.</p>
         pub fn performance_insights_kms_key_id(
             mut self,
             input: impl Into<std::string::String>,
@@ -5572,10 +5680,10 @@ pub mod create_db_instance_input {
         /// your Outpost subnets through your on-premises network. For some use cases, a CoIP can
         /// provide lower latency for connections to the DB instance from outside of its virtual
         /// private cloud (VPC) on your local network.</p>
-        /// <p>For more information about RDS on Outposts, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working with Amazon RDS on AWS Outposts</a>
+        /// <p>For more information about RDS on Outposts, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working with Amazon RDS on Amazon Web Services Outposts</a>
         /// in the <i>Amazon RDS User Guide</i>.</p>
         /// <p>For more information about CoIPs, see <a href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-networking-components.html#ip-addressing">Customer-owned IP addresses</a>
-        /// in the <i>AWS Outposts User Guide</i>.</p>
+        /// in the <i>Amazon Web Services Outposts User Guide</i>.</p>
         pub fn enable_customer_owned_ip(mut self, input: bool) -> Self {
             self.enable_customer_owned_ip = Some(input);
             self
@@ -5691,7 +5799,7 @@ impl CreateDbInstanceInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -5724,9 +5832,15 @@ impl CreateDbInstanceInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-www-form-urlencoded");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -5827,11 +5941,11 @@ pub mod create_db_instance_read_replica_input {
         /// retention period must be greater than 0.</p>
         /// </li>
         /// <li>
-        /// <p>If the source DB instance is in the same AWS Region as the read replica, specify a valid DB
+        /// <p>If the source DB instance is in the same Amazon Web Services Region as the read replica, specify a valid DB
         /// instance identifier.</p>
         /// </li>
         /// <li>
-        /// <p>If the source DB instance is in a different AWS Region from the read replica, specify a valid DB instance ARN.
+        /// <p>If the source DB instance is in a different Amazon Web Services Region from the read replica, specify a valid DB instance ARN.
         /// For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing">Constructing an ARN for Amazon RDS</a>
         /// in the <i>Amazon RDS User Guide</i>. This doesn't apply to SQL Server, which doesn't support cross-region replicas.</p>
         /// </li>
@@ -5851,7 +5965,7 @@ pub mod create_db_instance_read_replica_input {
             self
         }
         /// <p>The compute and memory capacity of the read replica, for example,
-        /// <code>db.m4.large</code>. Not all DB instance classes are available in all AWS
+        /// <code>db.m4.large</code>. Not all DB instance classes are available in all Amazon Web Services
         /// Regions, or for all database engines. For the full list of DB instance classes, and
         /// availability for your engine, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB Instance
         /// Class</a> in the <i>Amazon RDS User Guide.</i>
@@ -5869,7 +5983,7 @@ pub mod create_db_instance_read_replica_input {
             self
         }
         /// <p>The Availability Zone (AZ) where the read replica will be created.</p>
-        /// <p>Default: A random, system-chosen Availability Zone in the endpoint's AWS Region.</p>
+        /// <p>Default: A random, system-chosen Availability Zone in the endpoint's Amazon Web Services Region.</p>
         /// <p>
         /// Example: <code>us-east-1d</code>
         /// </p>
@@ -6007,16 +6121,16 @@ pub mod create_db_instance_read_replica_input {
         /// <p>Constraints:</p>
         /// <ul>
         /// <li>
-        /// <p>Can only be specified if the source DB instance identifier specifies a DB instance in another AWS Region.</p>
+        /// <p>Can only be specified if the source DB instance identifier specifies a DB instance in another Amazon Web Services Region.</p>
         /// </li>
         /// <li>
         /// <p>If supplied, must match the name of an existing DBSubnetGroup.</p>
         /// </li>
         /// <li>
-        /// <p>The specified DB subnet group must be in the same AWS Region in which the operation is running.</p>
+        /// <p>The specified DB subnet group must be in the same Amazon Web Services Region in which the operation is running.</p>
         /// </li>
         /// <li>
-        /// <p>All read replicas in one AWS Region that are created from the same source DB
+        /// <p>All read replicas in one Amazon Web Services Region that are created from the same source DB
         /// instance must either:></p>
         /// <ul>
         /// <li>
@@ -6117,15 +6231,15 @@ pub mod create_db_instance_read_replica_input {
             self.monitoring_role_arn = input;
             self
         }
-        /// <p>The AWS KMS key identifier for an encrypted read replica.</p>
-        /// <p>The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS CMK.</p>
-        /// <p>If you create an encrypted read replica in the same AWS Region as the source DB
+        /// <p>The Amazon Web Services KMS key identifier for an encrypted read replica.</p>
+        /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon Web Services KMS CMK.</p>
+        /// <p>If you create an encrypted read replica in the same Amazon Web Services Region as the source DB
         /// instance, then do not specify a value for this parameter. A read replica in the same Region
-        /// is always encrypted with the same AWS KMS CMK as the source DB instance.</p>       
-        /// <p>If you create an encrypted read replica in a different AWS Region, then you must
-        /// specify a AWS KMS key identifier for the destination AWS Region. AWS KMS CMKs are specific to
-        /// the AWS Region that they are created in, and you can't use CMKs from one
-        /// AWS Region in another AWS Region.</p>       
+        /// is always encrypted with the same Amazon Web Services KMS CMK as the source DB instance.</p>       
+        /// <p>If you create an encrypted read replica in a different Amazon Web Services Region, then you must
+        /// specify a Amazon Web Services KMS key identifier for the destination Amazon Web Services Region. Amazon Web Services KMS CMKs are specific to
+        /// the Amazon Web Services Region that they are created in, and you can't use CMKs from one
+        /// Amazon Web Services Region in another Amazon Web Services Region.</p>       
         /// <p>You can't create an encrypted read replica from an unencrypted DB instance.</p>
         pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_key_id = Some(input.into());
@@ -6136,60 +6250,60 @@ pub mod create_db_instance_read_replica_input {
             self
         }
         /// <p>The URL that contains a Signature Version 4 signed request for the <code>CreateDBInstanceReadReplica</code> API action
-        /// in the source AWS Region that contains the source DB instance.
+        /// in the source Amazon Web Services Region that contains the source DB instance.
         /// </p>
         /// <p>You must specify this parameter when you create an encrypted read replica from
-        /// another AWS Region by using the Amazon RDS API. Don't specify
+        /// another Amazon Web Services Region by using the Amazon RDS API. Don't specify
         /// <code>PreSignedUrl</code> when you are creating an encrypted read replica in the
-        /// same AWS Region.</p>
+        /// same Amazon Web Services Region.</p>
         /// <p>The presigned URL must be a valid request for the <code>CreateDBInstanceReadReplica</code> API action
-        /// that can be executed in the source AWS Region that contains the encrypted source DB instance.
+        /// that can be executed in the source Amazon Web Services Region that contains the encrypted source DB instance.
         /// The presigned URL request must contain the following parameter values:
         /// </p>
         /// <ul>
         /// <li>
         /// <p>
-        /// <code>DestinationRegion</code> - The AWS Region that the encrypted read
-        /// replica is created in. This AWS Region is the same one where the
+        /// <code>DestinationRegion</code> - The Amazon Web Services Region that the encrypted read
+        /// replica is created in. This Amazon Web Services Region is the same one where the
         /// <code>CreateDBInstanceReadReplica</code> action is called that contains this presigned URL.</p>
-        /// <p>For example, if you create an encrypted DB instance in the us-west-1 AWS Region,
-        /// from a source DB instance in the us-east-2 AWS Region,
+        /// <p>For example, if you create an encrypted DB instance in the us-west-1 Amazon Web Services Region,
+        /// from a source DB instance in the us-east-2 Amazon Web Services Region,
         /// then you call the <code>CreateDBInstanceReadReplica</code> action in
-        /// the us-east-1 AWS Region and provide a presigned URL that contains a call to the
-        /// <code>CreateDBInstanceReadReplica</code> action in the us-west-2 AWS Region. For this
+        /// the us-east-1 Amazon Web Services Region and provide a presigned URL that contains a call to the
+        /// <code>CreateDBInstanceReadReplica</code> action in the us-west-2 Amazon Web Services Region. For this
         /// example, the <code>DestinationRegion</code> in the presigned URL must be set to
-        /// the us-east-1 AWS Region.
+        /// the us-east-1 Amazon Web Services Region.
         /// </p>
         /// </li>
         /// <li>
         /// <p>
-        /// <code>KmsKeyId</code> - The AWS KMS key identifier for the key to use to
-        /// encrypt the read replica in the destination AWS Region. This is the same
+        /// <code>KmsKeyId</code> - The Amazon Web Services KMS key identifier for the key to use to
+        /// encrypt the read replica in the destination Amazon Web Services Region. This is the same
         /// identifier for both the <code>CreateDBInstanceReadReplica</code> action that is
-        /// called in the destination AWS Region, and the action contained in the presigned
+        /// called in the destination Amazon Web Services Region, and the action contained in the presigned
         /// URL. </p>
         /// </li>
         /// <li>
         /// <p>
         /// <code>SourceDBInstanceIdentifier</code> - The DB instance identifier for
         /// the encrypted DB instance to be replicated. This identifier must be in the
-        /// Amazon Resource Name (ARN) format for the source AWS Region. For example, if you
-        /// are creating an encrypted read replica from a DB instance in the us-west-2 AWS
+        /// Amazon Resource Name (ARN) format for the source Amazon Web Services Region. For example, if you
+        /// are creating an encrypted read replica from a DB instance in the us-west-2 Amazon Web Services
         /// Region, then your <code>SourceDBInstanceIdentifier</code> looks like the
         /// following example:
         /// <code>arn:aws:rds:us-west-2:123456789012:instance:mysql-instance1-20161115</code>. </p>
         /// </li>
         /// </ul>
         /// <p>To learn how to generate a Signature Version 4 signed request, see
-        /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html">Authenticating Requests: Using Query Parameters (AWS Signature Version 4)</a> and
+        /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html">Authenticating Requests: Using Query Parameters (Amazon Web Services Signature Version 4)</a> and
         /// <a href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature Version 4 Signing Process</a>.
         /// </p>
         /// <note>
-        /// <p>If you are using an AWS SDK tool or the AWS CLI, you can specify
-        /// <code>SourceRegion</code> (or <code>--source-region</code> for the AWS CLI)
+        /// <p>If you are using an Amazon Web Services SDK tool or the CLI, you can specify
+        /// <code>SourceRegion</code> (or <code>--source-region</code> for the CLI)
         /// instead of specifying <code>PreSignedUrl</code> manually. Specifying
         /// <code>SourceRegion</code> autogenerates a presigned URL that is a valid request
-        /// for the operation that can be executed in the source AWS Region.</p>
+        /// for the operation that can be executed in the source Amazon Web Services Region.</p>
         /// <p>
         /// <code>SourceRegion</code> isn't supported for SQL Server, because SQL Server on Amazon RDS
         /// doesn't support cross-region read replicas.</p>
@@ -6205,7 +6319,7 @@ pub mod create_db_instance_read_replica_input {
             self.pre_signed_url = input;
             self
         }
-        /// <p>A value that indicates whether to enable mapping of AWS Identity and Access
+        /// <p>A value that indicates whether to enable mapping of Amazon Web Services Identity and Access
         /// Management (IAM) accounts to database accounts. By default, mapping is disabled.</p>
         /// <p>For more information about IAM database authentication, see
         /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.html">
@@ -6234,11 +6348,11 @@ pub mod create_db_instance_read_replica_input {
             self.enable_performance_insights = input;
             self
         }
-        /// <p>The AWS KMS key identifier for encryption of Performance Insights data.</p>
-        /// <p>The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer master key (CMK).</p>
+        /// <p>The Amazon Web Services KMS key identifier for encryption of Performance Insights data.</p>
+        /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon Web Services KMS customer master key (CMK).</p>
         /// <p>If you do not specify a value for <code>PerformanceInsightsKMSKeyId</code>, then Amazon RDS
-        /// uses your default CMK. There is a default CMK for your AWS account.
-        /// Your AWS account has a different default CMK for each AWS Region.</p>
+        /// uses your default CMK. There is a default CMK for your Amazon Web Services account.
+        /// Your Amazon Web Services account has a different default CMK for each Amazon Web Services Region.</p>
         pub fn performance_insights_kms_key_id(
             mut self,
             input: impl Into<std::string::String>,
@@ -6476,7 +6590,7 @@ impl CreateDbInstanceReadReplicaInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -6509,9 +6623,15 @@ impl CreateDbInstanceReadReplicaInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-www-form-urlencoded");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -6611,17 +6731,17 @@ pub mod create_db_parameter_group_input {
         /// </li>
         /// <li>
         /// <p>
+        /// <code>oracle-ee-cdb</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
         /// <code>oracle-se2</code>
         /// </p>
         /// </li>
         /// <li>
         /// <p>
-        /// <code>oracle-se1</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>oracle-se</code>
+        /// <code>oracle-se2-cdb</code>
         /// </p>
         /// </li>
         /// <li>
@@ -6746,7 +6866,7 @@ impl CreateDbParameterGroupInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -6779,9 +6899,15 @@ impl CreateDbParameterGroupInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-www-form-urlencoded");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -6816,7 +6942,7 @@ pub mod create_db_proxy_input {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
     impl Builder {
-        /// <p>The identifier for the proxy. This name must be unique for all proxies owned by your AWS account in the specified AWS Region. An identifier must begin with a letter and must contain only ASCII letters, digits, and hyphens; it can't end with a hyphen or contain two consecutive hyphens.</p>
+        /// <p>The identifier for the proxy. This name must be unique for all proxies owned by your Amazon Web Services account in the specified Amazon Web Services Region. An identifier must begin with a letter and must contain only ASCII letters, digits, and hyphens; it can't end with a hyphen or contain two consecutive hyphens.</p>
         pub fn db_proxy_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.db_proxy_name = Some(input.into());
             self
@@ -6856,7 +6982,7 @@ pub mod create_db_proxy_input {
             self.auth = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the IAM role that the proxy uses to access secrets in AWS Secrets Manager.</p>
+        /// <p>The Amazon Resource Name (ARN) of the IAM role that the proxy uses to access secrets in Amazon Web Services Secrets Manager.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.role_arn = Some(input.into());
             self
@@ -7004,7 +7130,7 @@ impl CreateDbProxyInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -7037,9 +7163,15 @@ impl CreateDbProxyInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-www-form-urlencoded");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -7211,7 +7343,7 @@ impl CreateDbProxyEndpointInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -7244,9 +7376,15 @@ impl CreateDbProxyEndpointInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-www-form-urlencoded");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -7393,7 +7531,7 @@ impl CreateDbSecurityGroupInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -7426,9 +7564,15 @@ impl CreateDbSecurityGroupInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-www-form-urlencoded");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -7578,7 +7722,7 @@ impl CreateDbSnapshotInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -7611,9 +7755,15 @@ impl CreateDbSnapshotInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-www-form-urlencoded");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -7761,7 +7911,7 @@ impl CreateDbSubnetGroupInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -7794,9 +7944,15 @@ impl CreateDbSubnetGroupInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-www-form-urlencoded");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -7984,7 +8140,7 @@ impl CreateEventSubscriptionInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -8017,9 +8173,15 @@ impl CreateEventSubscriptionInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-www-form-urlencoded");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -8206,7 +8368,7 @@ impl CreateGlobalClusterInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -8239,9 +8401,15 @@ impl CreateGlobalClusterInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-www-form-urlencoded");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -8318,17 +8486,17 @@ pub mod create_option_group_input {
         /// </li>
         /// <li>
         /// <p>
+        /// <code>oracle-ee-cdb</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
         /// <code>oracle-se2</code>
         /// </p>
         /// </li>
         /// <li>
         /// <p>
-        /// <code>oracle-se1</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>oracle-se</code>
+        /// <code>oracle-se2-cdb</code>
         /// </p>
         /// </li>
         /// <li>
@@ -8466,7 +8634,7 @@ impl CreateOptionGroupInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -8499,9 +8667,15 @@ impl CreateOptionGroupInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-www-form-urlencoded");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -8604,7 +8778,7 @@ impl DeleteCustomAvailabilityZoneInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -8637,9 +8811,15 @@ impl DeleteCustomAvailabilityZoneInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-www-form-urlencoded");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -8796,7 +8976,7 @@ impl DeleteDbClusterInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -8829,9 +9009,15 @@ impl DeleteDbClusterInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-www-form-urlencoded");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -8933,7 +9119,7 @@ impl DeleteDbClusterEndpointInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -8966,9 +9152,15 @@ impl DeleteDbClusterEndpointInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-www-form-urlencoded");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -9083,7 +9275,7 @@ impl DeleteDbClusterParameterGroupInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -9116,9 +9308,15 @@ impl DeleteDbClusterParameterGroupInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-www-form-urlencoded");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -9221,7 +9419,7 @@ impl DeleteDbClusterSnapshotInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -9254,9 +9452,15 @@ impl DeleteDbClusterSnapshotInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-www-form-urlencoded");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -9429,7 +9633,7 @@ impl DeleteDbInstanceInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -9462,9 +9666,15 @@ impl DeleteDbInstanceInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-www-form-urlencoded");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -9491,7 +9701,7 @@ pub mod delete_db_instance_automated_backup_input {
         pub(crate) db_instance_automated_backups_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The identifier for the source DB instance, which can't be changed and which is unique to an AWS Region.</p>
+        /// <p>The identifier for the source DB instance, which can't be changed and which is unique to an Amazon Web Services Region.</p>
         pub fn dbi_resource_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.dbi_resource_id = Some(input.into());
             self
@@ -9584,7 +9794,7 @@ impl DeleteDbInstanceAutomatedBackupInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -9617,9 +9827,15 @@ impl DeleteDbInstanceAutomatedBackupInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-www-form-urlencoded");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -9729,7 +9945,7 @@ impl DeleteDbParameterGroupInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -9762,9 +9978,15 @@ impl DeleteDbParameterGroupInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-www-form-urlencoded");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -9859,7 +10081,7 @@ impl DeleteDbProxyInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -9892,9 +10114,15 @@ impl DeleteDbProxyInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-www-form-urlencoded");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -9992,7 +10220,7 @@ impl DeleteDbProxyEndpointInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -10025,9 +10253,15 @@ impl DeleteDbProxyEndpointInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-www-form-urlencoded");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -10143,7 +10377,7 @@ impl DeleteDbSecurityGroupInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -10176,9 +10410,15 @@ impl DeleteDbSecurityGroupInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-www-form-urlencoded");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -10277,7 +10517,7 @@ impl DeleteDbSnapshotInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -10310,9 +10550,15 @@ impl DeleteDbSnapshotInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-www-form-urlencoded");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -10417,7 +10663,7 @@ impl DeleteDbSubnetGroupInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -10450,9 +10696,15 @@ impl DeleteDbSubnetGroupInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-www-form-urlencoded");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -10551,7 +10803,7 @@ impl DeleteEventSubscriptionInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -10584,9 +10836,15 @@ impl DeleteEventSubscriptionInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-www-form-urlencoded");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -10686,7 +10944,7 @@ impl DeleteGlobalClusterInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -10719,9 +10977,15 @@ impl DeleteGlobalClusterInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-www-form-urlencoded");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -10820,7 +11084,7 @@ impl DeleteInstallationMediaInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -10853,9 +11117,15 @@ impl DeleteInstallationMediaInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-www-form-urlencoded");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -10956,7 +11226,7 @@ impl DeleteOptionGroupInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -10989,9 +11259,15 @@ impl DeleteOptionGroupInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-www-form-urlencoded");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -11134,7 +11410,7 @@ impl DeregisterDbProxyTargetsInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -11167,9 +11443,15 @@ impl DeregisterDbProxyTargetsInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-www-form-urlencoded");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -11252,7 +11534,7 @@ impl DescribeAccountAttributesInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -11285,9 +11567,15 @@ impl DescribeAccountAttributesInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-www-form-urlencoded");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -11440,7 +11728,7 @@ impl DescribeCertificatesInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -11473,9 +11761,15 @@ impl DescribeCertificatesInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-www-form-urlencoded");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -11623,7 +11917,7 @@ impl DescribeCustomAvailabilityZonesInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -11656,9 +11950,15 @@ impl DescribeCustomAvailabilityZonesInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-www-form-urlencoded");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -11845,7 +12145,7 @@ impl DescribeDbClusterBacktracksInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -11878,9 +12178,15 @@ impl DescribeDbClusterBacktracksInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-www-form-urlencoded");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -12045,7 +12351,7 @@ impl DescribeDbClusterEndpointsInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -12078,9 +12384,15 @@ impl DescribeDbClusterEndpointsInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-www-form-urlencoded");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -12240,7 +12552,7 @@ impl DescribeDbClusterParameterGroupsInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -12273,9 +12585,15 @@ impl DescribeDbClusterParameterGroupsInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-www-form-urlencoded");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -12448,7 +12766,7 @@ impl DescribeDbClusterParametersInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -12481,9 +12799,15 @@ impl DescribeDbClusterParametersInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-www-form-urlencoded");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -12573,7 +12897,7 @@ pub mod describe_db_clusters_input {
             self
         }
         /// <p>Optional Boolean parameter that specifies whether the output includes information about clusters
-        /// shared from other AWS accounts.</p>
+        /// shared from other Amazon Web Services accounts.</p>
         pub fn include_shared(mut self, input: bool) -> Self {
             self.include_shared = Some(input);
             self
@@ -12646,7 +12970,7 @@ impl DescribeDbClustersInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -12679,9 +13003,15 @@ impl DescribeDbClustersInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-www-form-urlencoded");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -12787,7 +13117,7 @@ impl DescribeDbClusterSnapshotAttributesInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -12820,9 +13150,15 @@ impl DescribeDbClusterSnapshotAttributesInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-www-form-urlencoded");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -12910,15 +13246,15 @@ pub mod describe_db_cluster_snapshots_input {
         /// <li>
         /// <p>
         /// <code>automated</code> - Return all DB cluster snapshots that have been automatically taken by
-        /// Amazon RDS for my AWS account.</p>
+        /// Amazon RDS for my Amazon Web Services account.</p>
         /// </li>
         /// <li>
         /// <p>
-        /// <code>manual</code> - Return all DB cluster snapshots that have been taken by my AWS account.</p>
+        /// <code>manual</code> - Return all DB cluster snapshots that have been taken by my Amazon Web Services account.</p>
         /// </li>
         /// <li>
         /// <p>
-        /// <code>shared</code> - Return all manual DB cluster snapshots that have been shared to my AWS account.</p>
+        /// <code>shared</code> - Return all manual DB cluster snapshots that have been shared to my Amazon Web Services account.</p>
         /// </li>
         /// <li>
         /// <p>
@@ -12986,10 +13322,10 @@ pub mod describe_db_cluster_snapshots_input {
             self
         }
         /// <p>A value that indicates whether to include shared manual DB cluster snapshots
-        /// from other AWS accounts that this AWS account has been given
+        /// from other Amazon Web Services accounts that this Amazon Web Services account has been given
         /// permission to copy or restore. By default, these snapshots are not included.</p>
-        /// <p>You can give an AWS account permission to restore a manual DB cluster snapshot from
-        /// another AWS account by the <code>ModifyDBClusterSnapshotAttribute</code> API action.</p>
+        /// <p>You can give an Amazon Web Services account permission to restore a manual DB cluster snapshot from
+        /// another Amazon Web Services account by the <code>ModifyDBClusterSnapshotAttribute</code> API action.</p>
         pub fn include_shared(mut self, input: bool) -> Self {
             self.include_shared = Some(input);
             self
@@ -12999,7 +13335,7 @@ pub mod describe_db_cluster_snapshots_input {
             self
         }
         /// <p>A value that indicates whether to include manual DB cluster snapshots that are public and can be copied
-        /// or restored by any AWS account. By default, the public snapshots are not included.</p>
+        /// or restored by any Amazon Web Services account. By default, the public snapshots are not included.</p>
         /// <p>You can share a manual DB cluster snapshot  as public by using the <a>ModifyDBClusterSnapshotAttribute</a> API action.</p>
         pub fn include_public(mut self, input: bool) -> Self {
             self.include_public = Some(input);
@@ -13078,7 +13414,7 @@ impl DescribeDbClusterSnapshotsInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -13111,9 +13447,15 @@ impl DescribeDbClusterSnapshotsInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-www-form-urlencoded");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -13182,17 +13524,17 @@ pub mod describe_db_engine_versions_input {
         /// </li>
         /// <li>
         /// <p>
+        /// <code>oracle-ee-cdb</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
         /// <code>oracle-se2</code>
         /// </p>
         /// </li>
         /// <li>
         /// <p>
-        /// <code>oracle-se1</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>oracle-se</code>
+        /// <code>oracle-se2-cdb</code>
         /// </p>
         /// </li>
         /// <li>
@@ -13418,7 +13760,7 @@ impl DescribeDbEngineVersionsInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -13451,9 +13793,15 @@ impl DescribeDbEngineVersionsInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-www-form-urlencoded");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -13630,7 +13978,7 @@ impl DescribeDbInstanceAutomatedBackupsInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -13663,9 +14011,15 @@ impl DescribeDbInstanceAutomatedBackupsInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-www-form-urlencoded");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -13819,7 +14173,7 @@ impl DescribeDbInstancesInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -13852,9 +14206,15 @@ impl DescribeDbInstancesInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-www-form-urlencoded");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -14031,7 +14391,7 @@ impl DescribeDbLogFilesInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -14064,9 +14424,15 @@ impl DescribeDbLogFilesInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-www-form-urlencoded");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -14222,7 +14588,7 @@ impl DescribeDbParameterGroupsInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -14255,9 +14621,15 @@ impl DescribeDbParameterGroupsInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-www-form-urlencoded");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -14425,7 +14797,7 @@ impl DescribeDbParametersInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -14458,9 +14830,15 @@ impl DescribeDbParametersInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-www-form-urlencoded");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -14491,7 +14869,7 @@ pub mod describe_db_proxies_input {
     impl Builder {
         /// <p>The name of the DB proxy. If you omit this parameter,
         /// the output includes information about all DB proxies owned by
-        /// your AWS account ID.</p>
+        /// your Amazon Web Services account ID.</p>
         pub fn db_proxy_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.db_proxy_name = Some(input.into());
             self
@@ -14605,7 +14983,7 @@ impl DescribeDbProxiesInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -14638,9 +15016,15 @@ impl DescribeDbProxiesInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-www-form-urlencoded");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -14802,7 +15186,7 @@ impl DescribeDbProxyEndpointsInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -14835,9 +15219,15 @@ impl DescribeDbProxyEndpointsInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-www-form-urlencoded");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -14999,7 +15389,7 @@ impl DescribeDbProxyTargetGroupsInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -15032,9 +15422,15 @@ impl DescribeDbProxyTargetGroupsInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-www-form-urlencoded");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -15194,7 +15590,7 @@ impl DescribeDbProxyTargetsInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -15227,9 +15623,15 @@ impl DescribeDbProxyTargetsInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-www-form-urlencoded");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -15378,7 +15780,7 @@ impl DescribeDbSecurityGroupsInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -15411,9 +15813,15 @@ impl DescribeDbSecurityGroupsInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-www-form-urlencoded");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -15513,7 +15921,7 @@ impl DescribeDbSnapshotAttributesInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -15546,9 +15954,15 @@ impl DescribeDbSnapshotAttributesInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-www-form-urlencoded");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -15632,15 +16046,15 @@ pub mod describe_db_snapshots_input {
         /// <li>
         /// <p>
         /// <code>automated</code> - Return all DB snapshots that have been automatically taken by
-        /// Amazon RDS for my AWS account.</p>
+        /// Amazon RDS for my Amazon Web Services account.</p>
         /// </li>
         /// <li>
         /// <p>
-        /// <code>manual</code> - Return all DB snapshots that have been taken by my AWS account.</p>
+        /// <code>manual</code> - Return all DB snapshots that have been taken by my Amazon Web Services account.</p>
         /// </li>
         /// <li>
         /// <p>
-        /// <code>shared</code> - Return all manual DB snapshots that have been shared to my AWS account.</p>
+        /// <code>shared</code> - Return all manual DB snapshots that have been shared to my Amazon Web Services account.</p>
         /// </li>
         /// <li>
         /// <p>
@@ -15648,10 +16062,10 @@ pub mod describe_db_snapshots_input {
         /// </li>
         /// <li>
         /// <p>
-        /// <code>awsbackup</code> - Return the DB snapshots managed by the AWS Backup service.</p>
-        /// <p>For information about AWS Backup, see the
+        /// <code>awsbackup</code> - Return the DB snapshots managed by the Amazon Web Services Backup service.</p>
+        /// <p>For information about Amazon Web Services Backup, see the
         /// <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/whatisbackup.html">
-        /// <i>AWS Backup Developer Guide.</i>
+        /// <i>Amazon Web Services Backup Developer Guide.</i>
         /// </a>
         /// </p>
         /// <p>The <code>awsbackup</code> type does not apply to Aurora.</p>
@@ -15722,10 +16136,10 @@ pub mod describe_db_snapshots_input {
             self
         }
         /// <p>A value that indicates whether to include shared manual DB cluster snapshots
-        /// from other AWS accounts that this AWS account has been given
+        /// from other Amazon Web Services accounts that this Amazon Web Services account has been given
         /// permission to copy or restore. By default, these snapshots are not included.</p>
-        /// <p>You can give an AWS account permission to restore a manual DB snapshot from
-        /// another AWS account by using the <code>ModifyDBSnapshotAttribute</code> API action.</p>
+        /// <p>You can give an Amazon Web Services account permission to restore a manual DB snapshot from
+        /// another Amazon Web Services account by using the <code>ModifyDBSnapshotAttribute</code> API action.</p>
         pub fn include_shared(mut self, input: bool) -> Self {
             self.include_shared = Some(input);
             self
@@ -15735,7 +16149,7 @@ pub mod describe_db_snapshots_input {
             self
         }
         /// <p>A value that indicates whether to include manual DB cluster snapshots that are public and can be copied
-        /// or restored by any AWS account. By default, the public snapshots are not included.</p>
+        /// or restored by any Amazon Web Services account. By default, the public snapshots are not included.</p>
         /// <p>You can share a manual DB snapshot as public by using the <a>ModifyDBSnapshotAttribute</a> API.</p>
         pub fn include_public(mut self, input: bool) -> Self {
             self.include_public = Some(input);
@@ -15825,7 +16239,7 @@ impl DescribeDbSnapshotsInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -15858,9 +16272,15 @@ impl DescribeDbSnapshotsInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-www-form-urlencoded");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -16007,7 +16427,7 @@ impl DescribeDbSubnetGroupsInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -16040,9 +16460,15 @@ impl DescribeDbSubnetGroupsInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-www-form-urlencoded");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -16190,7 +16616,7 @@ impl DescribeEngineDefaultClusterParametersInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -16223,9 +16649,15 @@ impl DescribeEngineDefaultClusterParametersInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-www-form-urlencoded");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -16374,7 +16806,7 @@ impl DescribeEngineDefaultParametersInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -16407,9 +16839,15 @@ impl DescribeEngineDefaultParametersInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-www-form-urlencoded");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -16522,7 +16960,7 @@ impl DescribeEventCategoriesInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -16555,9 +16993,15 @@ impl DescribeEventCategoriesInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-www-form-urlencoded");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -16804,7 +17248,7 @@ impl DescribeEventsInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -16837,9 +17281,15 @@ impl DescribeEventsInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-www-form-urlencoded");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -16989,7 +17439,7 @@ impl DescribeEventSubscriptionsInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -17022,9 +17472,15 @@ impl DescribeEventSubscriptionsInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-www-form-urlencoded");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -17181,7 +17637,7 @@ impl DescribeExportTasksInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -17214,9 +17670,15 @@ impl DescribeExportTasksInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-www-form-urlencoded");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -17369,7 +17831,7 @@ impl DescribeGlobalClustersInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -17402,9 +17864,15 @@ impl DescribeGlobalClustersInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-www-form-urlencoded");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -17545,7 +18013,7 @@ impl DescribeInstallationMediaInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -17578,9 +18046,15 @@ impl DescribeInstallationMediaInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-www-form-urlencoded");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -17631,17 +18105,17 @@ pub mod describe_option_group_options_input {
         /// </li>
         /// <li>
         /// <p>
+        /// <code>oracle-ee-cdb</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
         /// <code>oracle-se2</code>
         /// </p>
         /// </li>
         /// <li>
         /// <p>
-        /// <code>oracle-se1</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>oracle-se</code>
+        /// <code>oracle-se2-cdb</code>
         /// </p>
         /// </li>
         /// <li>
@@ -17797,7 +18271,7 @@ impl DescribeOptionGroupOptionsInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -17830,9 +18304,15 @@ impl DescribeOptionGroupOptionsInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-www-form-urlencoded");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -17939,17 +18419,17 @@ pub mod describe_option_groups_input {
         /// </li>
         /// <li>
         /// <p>
+        /// <code>oracle-ee-cdb</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
         /// <code>oracle-se2</code>
         /// </p>
         /// </li>
         /// <li>
         /// <p>
-        /// <code>oracle-se1</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>oracle-se</code>
+        /// <code>oracle-se2-cdb</code>
         /// </p>
         /// </li>
         /// <li>
@@ -18063,7 +18543,7 @@ impl DescribeOptionGroupsInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -18096,9 +18576,15 @@ impl DescribeOptionGroupsInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-www-form-urlencoded");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -18166,17 +18652,17 @@ pub mod describe_orderable_db_instance_options_input {
         /// </li>
         /// <li>
         /// <p>
+        /// <code>oracle-ee-cdb</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
         /// <code>oracle-se2</code>
         /// </p>
         /// </li>
         /// <li>
         /// <p>
-        /// <code>oracle-se1</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>oracle-se</code>
+        /// <code>oracle-se2-cdb</code>
         /// </p>
         /// </li>
         /// <li>
@@ -18250,7 +18736,7 @@ pub mod describe_orderable_db_instance_options_input {
             self
         }
         /// <p>The Availability Zone group associated with a Local Zone. Specify this parameter to retrieve available offerings for the Local Zones in the group.</p>
-        /// <p>Omit this parameter to show the available offerings in the specified AWS Region.</p>
+        /// <p>Omit this parameter to show the available offerings in the specified Amazon Web Services Region.</p>
         pub fn availability_zone_group(mut self, input: impl Into<std::string::String>) -> Self {
             self.availability_zone_group = Some(input.into());
             self
@@ -18387,7 +18873,7 @@ impl DescribeOrderableDbInstanceOptionsInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -18420,9 +18906,15 @@ impl DescribeOrderableDbInstanceOptionsInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-www-form-urlencoded");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -18574,7 +19066,7 @@ impl DescribePendingMaintenanceActionsInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -18607,9 +19099,15 @@ impl DescribePendingMaintenanceActionsInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-www-form-urlencoded");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -18732,7 +19230,7 @@ pub mod describe_reserved_db_instances_input {
         }
         /// <p>The lease identifier filter value. Specify this parameter to show only the reservation that matches the specified lease ID.</p>
         /// <note>
-        /// <p>AWS Support might request the lease ID for an issue related to a reserved DB instance.</p>
+        /// <p>Amazon Web Services Support might request the lease ID for an issue related to a reserved DB instance.</p>
         /// </note>
         pub fn lease_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.lease_id = Some(input.into());
@@ -18856,7 +19354,7 @@ impl DescribeReservedDbInstancesInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -18889,9 +19387,15 @@ impl DescribeReservedDbInstancesInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-www-form-urlencoded");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -19118,7 +19622,7 @@ impl DescribeReservedDbInstancesOfferingsInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -19151,9 +19655,15 @@ impl DescribeReservedDbInstancesOfferingsInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-www-form-urlencoded");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -19182,11 +19692,11 @@ pub mod describe_source_regions_input {
         pub(crate) filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
     }
     impl Builder {
-        /// <p>The source AWS Region name. For example, <code>us-east-1</code>.</p>
+        /// <p>The source Amazon Web Services Region name. For example, <code>us-east-1</code>.</p>
         /// <p>Constraints:</p>
         /// <ul>
         /// <li>
-        /// <p>Must specify a valid AWS Region name.</p>
+        /// <p>Must specify a valid Amazon Web Services Region name.</p>
         /// </li>
         /// </ul>
         pub fn region_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -19297,7 +19807,7 @@ impl DescribeSourceRegionsInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -19330,9 +19840,15 @@ impl DescribeSourceRegionsInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-www-form-urlencoded");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -19436,7 +19952,7 @@ impl DescribeValidDbInstanceModificationsInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -19469,9 +19985,15 @@ impl DescribeValidDbInstanceModificationsInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-www-form-urlencoded");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -19637,7 +20159,7 @@ impl DownloadDbLogFilePortionInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -19670,9 +20192,15 @@ impl DownloadDbLogFilePortionInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-www-form-urlencoded");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -19795,7 +20323,7 @@ impl FailoverDbClusterInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -19828,9 +20356,15 @@ impl FailoverDbClusterInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-www-form-urlencoded");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -19881,7 +20415,7 @@ pub mod failover_global_cluster_input {
         }
         /// <p>Identifier of the secondary Aurora DB cluster that you want to promote to primary for the Aurora
         /// global database (<a>GlobalCluster</a>.) Use the Amazon Resource Name (ARN) for the identifier so that
-        /// Aurora can locate the cluster in its AWS Region.      
+        /// Aurora can locate the cluster in its Amazon Web Services Region.      
         /// </p>
         pub fn target_db_cluster_identifier(
             mut self,
@@ -19958,7 +20492,7 @@ impl FailoverGlobalClusterInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -19991,9 +20525,15 @@ impl FailoverGlobalClusterInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-www-form-urlencoded");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -20193,7 +20733,7 @@ impl ImportInstallationMediaInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -20226,9 +20766,15 @@ impl ImportInstallationMediaInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-www-form-urlencoded");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -20344,7 +20890,7 @@ impl ListTagsForResourceInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -20377,9 +20923,15 @@ impl ListTagsForResourceInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-www-form-urlencoded");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -20407,7 +20959,7 @@ pub mod modify_certificates_input {
     }
     impl Builder {
         /// <p>The new default certificate identifier to override the current one with.</p>
-        /// <p>To determine the valid values, use the <code>describe-certificates</code> AWS CLI
+        /// <p>To determine the valid values, use the <code>describe-certificates</code> CLI
         /// command or the <code>DescribeCertificates</code> API operation.</p>
         pub fn certificate_identifier(mut self, input: impl Into<std::string::String>) -> Self {
             self.certificate_identifier = Some(input.into());
@@ -20492,7 +21044,7 @@ impl ModifyCertificatesInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -20525,9 +21077,15 @@ impl ModifyCertificatesInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-www-form-urlencoded");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -20690,7 +21248,7 @@ impl ModifyCurrentDbClusterCapacityInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -20723,9 +21281,15 @@ impl ModifyCurrentDbClusterCapacityInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-www-form-urlencoded");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -20928,7 +21492,7 @@ pub mod modify_db_cluster_input {
         /// using the <code>BackupRetentionPeriod</code> parameter.
         /// </p>
         /// <p>The default is a 30-minute window selected at random from an
-        /// 8-hour block of time for each AWS Region.
+        /// 8-hour block of time for each Amazon Web Services Region.
         /// To view the time blocks available, see
         /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Managing.Backups.html#Aurora.Managing.Backups.BackupWindow">
         /// Backup window</a> in the <i>Amazon Aurora User Guide.</i>
@@ -20963,7 +21527,7 @@ pub mod modify_db_cluster_input {
         /// <p>Format: <code>ddd:hh24:mi-ddd:hh24:mi</code>
         /// </p>
         /// <p>The default is a 30-minute window selected at random from an
-        /// 8-hour block of time for each AWS Region, occurring on a random day of the
+        /// 8-hour block of time for each Amazon Web Services Region, occurring on a random day of the
         /// week. To see the time blocks available, see
         /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_UpgradeDBInstance.Maintenance.html#AdjustingTheMaintenanceWindow.Aurora">
         /// Adjusting the Preferred DB Cluster Maintenance Window</a> in the <i>Amazon Aurora User Guide.</i>
@@ -20984,7 +21548,7 @@ pub mod modify_db_cluster_input {
             self.preferred_maintenance_window = input;
             self
         }
-        /// <p>A value that indicates whether to enable mapping of AWS Identity and Access
+        /// <p>A value that indicates whether to enable mapping of Amazon Web Services Identity and Access
         /// Management (IAM) accounts to database accounts. By default, mapping is disabled.</p>
         /// <p>For more information, see
         /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.IAMDBAuth.html">
@@ -21282,7 +21846,7 @@ impl ModifyDbClusterInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -21315,9 +21879,15 @@ impl ModifyDbClusterInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-www-form-urlencoded");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -21463,7 +22033,7 @@ impl ModifyDbClusterEndpointInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -21496,9 +22066,15 @@ impl ModifyDbClusterEndpointInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-www-form-urlencoded");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -21616,7 +22192,7 @@ impl ModifyDbClusterParameterGroupInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -21649,9 +22225,15 @@ impl ModifyDbClusterParameterGroupInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-www-form-urlencoded");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -21696,7 +22278,7 @@ pub mod modify_db_cluster_snapshot_attribute_input {
             self
         }
         /// <p>The name of the DB cluster snapshot attribute to modify.</p>
-        /// <p>To manage authorization for other AWS accounts to copy or restore a manual DB cluster snapshot,
+        /// <p>To manage authorization for other Amazon Web Services accounts to copy or restore a manual DB cluster snapshot,
         /// set this value to <code>restore</code>.</p>
         /// <note>
         /// <p>To view the list of attributes available to modify, use the
@@ -21806,7 +22388,7 @@ impl ModifyDbClusterSnapshotAttributeInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -21839,9 +22421,15 @@ impl ModifyDbClusterSnapshotAttributeInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-www-form-urlencoded");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -21950,7 +22538,7 @@ pub mod modify_db_instance_input {
             self
         }
         /// <p>The new compute and memory capacity of the DB instance, for example, <code>db.m4.large</code>.
-        /// Not all DB instance classes are available in all AWS Regions, or for all database engines.
+        /// Not all DB instance classes are available in all Amazon Web Services Regions, or for all database engines.
         /// For the full list of DB instance classes,
         /// and availability for your engine, see
         /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB Instance Class</a> in the <i>Amazon RDS User Guide.</i>
@@ -22157,7 +22745,7 @@ pub mod modify_db_instance_input {
         /// as determined by the <code>BackupRetentionPeriod</code> parameter.
         /// Changing this parameter doesn't result in an outage and the change is asynchronously applied as soon as possible.
         /// The default is a 30-minute window selected at random from an
-        /// 8-hour block of time for each AWS Region. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html#USER_WorkingWithAutomatedBackups.BackupWindow">Backup window</a> in the <i>Amazon RDS User Guide.</i>
+        /// 8-hour block of time for each Amazon Web Services Region. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html#USER_WorkingWithAutomatedBackups.BackupWindow">Backup window</a> in the <i>Amazon RDS User Guide.</i>
         /// </p>
         /// <p>
         /// <b>Amazon Aurora</b>
@@ -22619,9 +23207,9 @@ pub mod modify_db_instance_input {
             self.promotion_tier = input;
             self
         }
-        /// <p>A value that indicates whether to enable mapping of AWS Identity and Access
+        /// <p>A value that indicates whether to enable mapping of Amazon Web Services Identity and Access
         /// Management (IAM) accounts to database accounts. By default, mapping is disabled.</p>
-        /// <p>This setting doesn't apply to Amazon Aurora. Mapping AWS IAM accounts to database accounts is managed by the DB
+        /// <p>This setting doesn't apply to Amazon Aurora. Mapping Amazon Web Services IAM accounts to database accounts is managed by the DB
         /// cluster.</p>
         /// <p>For more information about IAM database authentication, see
         /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.html">
@@ -22651,11 +23239,11 @@ pub mod modify_db_instance_input {
             self.enable_performance_insights = input;
             self
         }
-        /// <p>The AWS KMS key identifier for encryption of Performance Insights data.</p>
-        /// <p>The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer master key (CMK).</p>
+        /// <p>The Amazon Web Services KMS key identifier for encryption of Performance Insights data.</p>
+        /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon Web Services KMS customer master key (CMK).</p>
         /// <p>If you do not specify a value for <code>PerformanceInsightsKMSKeyId</code>, then Amazon RDS
-        /// uses your default CMK. There is a default CMK for your AWS account.
-        /// Your AWS account has a different default CMK for each AWS Region.</p>
+        /// uses your default CMK. There is a default CMK for your Amazon Web Services account.
+        /// Your Amazon Web Services account has a different default CMK for each Amazon Web Services Region.</p>
         pub fn performance_insights_kms_key_id(
             mut self,
             input: impl Into<std::string::String>,
@@ -22815,10 +23403,10 @@ pub mod modify_db_instance_input {
         /// your Outpost subnets through your on-premises network. For some use cases, a CoIP can
         /// provide lower latency for connections to the DB instance from outside of its virtual
         /// private cloud (VPC) on your local network.</p>
-        /// <p>For more information about RDS on Outposts, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working with Amazon RDS on AWS Outposts</a>
+        /// <p>For more information about RDS on Outposts, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working with Amazon RDS on Amazon Web Services Outposts</a>
         /// in the <i>Amazon RDS User Guide</i>.</p>
         /// <p>For more information about CoIPs, see <a href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-networking-components.html#ip-addressing">Customer-owned IP addresses</a>
-        /// in the <i>AWS Outposts User Guide</i>.</p>
+        /// in the <i>Amazon Web Services Outposts User Guide</i>.</p>
         pub fn enable_customer_owned_ip(mut self, input: bool) -> Self {
             self.enable_customer_owned_ip = Some(input);
             self
@@ -22827,7 +23415,7 @@ pub mod modify_db_instance_input {
             self.enable_customer_owned_ip = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the recovery point in AWS Backup.</p>
+        /// <p>The Amazon Resource Name (ARN) of the recovery point in Amazon Web Services Backup.</p>
         pub fn aws_backup_recovery_point_arn(
             mut self,
             input: impl Into<std::string::String>,
@@ -22946,7 +23534,7 @@ impl ModifyDbInstanceInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -22979,9 +23567,15 @@ impl ModifyDbInstanceInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-www-form-urlencoded");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -23100,7 +23694,7 @@ impl ModifyDbParameterGroupInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -23133,9 +23727,15 @@ impl ModifyDbParameterGroupInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-www-form-urlencoded");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -23240,7 +23840,7 @@ pub mod modify_db_proxy_input {
             self.debug_logging = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the IAM role that the proxy uses to access secrets in AWS Secrets Manager.</p>
+        /// <p>The Amazon Resource Name (ARN) of the IAM role that the proxy uses to access secrets in Amazon Web Services Secrets Manager.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.role_arn = Some(input.into());
             self
@@ -23326,7 +23926,7 @@ impl ModifyDbProxyInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -23359,9 +23959,15 @@ impl ModifyDbProxyInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-www-form-urlencoded");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -23490,7 +24096,7 @@ impl ModifyDbProxyEndpointInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -23523,9 +24129,15 @@ impl ModifyDbProxyEndpointInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-www-form-urlencoded");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -23668,7 +24280,7 @@ impl ModifyDbProxyTargetGroupInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -23701,9 +24313,15 @@ impl ModifyDbProxyTargetGroupInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-www-form-urlencoded");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -23871,7 +24489,7 @@ impl ModifyDbSnapshotInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -23904,9 +24522,15 @@ impl ModifyDbSnapshotInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-www-form-urlencoded");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -23948,7 +24572,7 @@ pub mod modify_db_snapshot_attribute_input {
             self
         }
         /// <p>The name of the DB snapshot attribute to modify.</p>
-        /// <p>To manage authorization for other AWS accounts to copy or restore a manual DB snapshot,
+        /// <p>To manage authorization for other Amazon Web Services accounts to copy or restore a manual DB snapshot,
         /// set this value to <code>restore</code>.</p>
         /// <note>
         /// <p>To view the list of attributes available to modify, use the
@@ -24056,7 +24680,7 @@ impl ModifyDbSnapshotAttributeInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -24089,9 +24713,15 @@ impl ModifyDbSnapshotAttributeInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-www-form-urlencoded");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -24226,7 +24856,7 @@ impl ModifyDbSubnetGroupInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -24259,9 +24889,15 @@ impl ModifyDbSubnetGroupInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-www-form-urlencoded");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -24415,7 +25051,7 @@ impl ModifyEventSubscriptionInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -24448,9 +25084,15 @@ impl ModifyEventSubscriptionInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-www-form-urlencoded");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -24649,7 +25291,7 @@ impl ModifyGlobalClusterInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -24682,9 +25324,15 @@ impl ModifyGlobalClusterInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-www-form-urlencoded");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -24828,7 +25476,7 @@ impl ModifyOptionGroupInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -24861,9 +25509,15 @@ impl ModifyOptionGroupInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-www-form-urlencoded");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -24937,7 +25591,7 @@ pub mod promote_read_replica_input {
         /// </p>
         /// <p>
         /// The default is a 30-minute window selected at random from an
-        /// 8-hour block of time for each AWS Region.
+        /// 8-hour block of time for each Amazon Web Services Region.
         /// To see the time blocks available, see
         /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html">
         /// Adjusting the Preferred Maintenance Window</a> in the <i>Amazon RDS User Guide.</i>
@@ -25030,7 +25684,7 @@ impl PromoteReadReplicaInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -25063,9 +25717,15 @@ impl PromoteReadReplicaInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-www-form-urlencoded");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -25174,7 +25834,7 @@ impl PromoteReadReplicaDbClusterInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -25207,9 +25867,15 @@ impl PromoteReadReplicaDbClusterInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-www-form-urlencoded");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -25359,7 +26025,7 @@ impl PurchaseReservedDbInstancesOfferingInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -25392,9 +26058,15 @@ impl PurchaseReservedDbInstancesOfferingInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-www-form-urlencoded");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -25512,7 +26184,7 @@ impl RebootDbInstanceInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -25545,9 +26217,15 @@ impl RebootDbInstanceInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-www-form-urlencoded");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -25689,7 +26367,7 @@ impl RegisterDbProxyTargetsInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -25722,9 +26400,15 @@ impl RegisterDbProxyTargetsInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-www-form-urlencoded");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -25841,7 +26525,7 @@ impl RemoveFromGlobalClusterInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -25874,9 +26558,15 @@ impl RemoveFromGlobalClusterInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-www-form-urlencoded");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -25999,7 +26689,7 @@ impl RemoveRoleFromDbClusterInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -26032,9 +26722,15 @@ impl RemoveRoleFromDbClusterInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-www-form-urlencoded");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -26159,7 +26855,7 @@ impl RemoveRoleFromDbInstanceInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -26192,9 +26888,15 @@ impl RemoveRoleFromDbInstanceInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-www-form-urlencoded");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -26310,7 +27012,7 @@ impl RemoveSourceIdentifierFromSubscriptionInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -26343,9 +27045,15 @@ impl RemoveSourceIdentifierFromSubscriptionInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-www-form-urlencoded");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -26462,7 +27170,7 @@ impl RemoveTagsFromResourceInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -26495,9 +27203,15 @@ impl RemoveTagsFromResourceInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-www-form-urlencoded");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -26628,7 +27342,7 @@ impl ResetDbClusterParameterGroupInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -26661,9 +27375,15 @@ impl ResetDbClusterParameterGroupInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-www-form-urlencoded");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -26796,7 +27516,7 @@ impl ResetDbParameterGroupInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -26829,9 +27549,15 @@ impl ResetDbParameterGroupInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-www-form-urlencoded");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -27132,7 +27858,7 @@ pub mod restore_db_cluster_from_s3_input {
         /// using the <code>BackupRetentionPeriod</code> parameter.
         /// </p>
         /// <p>The default is a 30-minute window selected at random from an
-        /// 8-hour block of time for each AWS Region.
+        /// 8-hour block of time for each Amazon Web Services Region.
         /// To view the time blocks available, see
         /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Managing.Backups.html#Aurora.Managing.Backups.BackupWindow">
         /// Backup window</a> in the <i>Amazon Aurora User Guide.</i>
@@ -27167,7 +27893,7 @@ pub mod restore_db_cluster_from_s3_input {
         /// <p>Format: <code>ddd:hh24:mi-ddd:hh24:mi</code>
         /// </p>
         /// <p>The default is a 30-minute window selected at random from an
-        /// 8-hour block of time for each AWS Region, occurring on a random day of the
+        /// 8-hour block of time for each Amazon Web Services Region, occurring on a random day of the
         /// week. To see the time blocks available, see
         /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_UpgradeDBInstance.Maintenance.html#AdjustingTheMaintenanceWindow.Aurora">
         /// Adjusting the Preferred Maintenance Window</a> in the <i>Amazon Aurora User Guide.</i>
@@ -27210,14 +27936,14 @@ pub mod restore_db_cluster_from_s3_input {
             self.storage_encrypted = input;
             self
         }
-        /// <p>The AWS KMS key identifier for an encrypted DB cluster.</p>
-        /// <p>The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer master key (CMK).
-        /// To use a CMK in a different AWS account, specify the key ARN or alias ARN.</p>
+        /// <p>The Amazon Web Services KMS key identifier for an encrypted DB cluster.</p>
+        /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon Web Services KMS customer master key (CMK).
+        /// To use a CMK in a different Amazon Web Services account, specify the key ARN or alias ARN.</p>
         /// <p>If the StorageEncrypted parameter is enabled, and you do
         /// not specify a value for the <code>KmsKeyId</code> parameter, then
         /// Amazon RDS will use your default CMK. There is a  
-        /// default CMK for your AWS account. Your AWS account has a different
-        /// default CMK for each AWS Region.</p>
+        /// default CMK for your Amazon Web Services account. Your Amazon Web Services account has a different
+        /// default CMK for each Amazon Web Services Region.</p>
         pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_key_id = Some(input.into());
             self
@@ -27226,7 +27952,7 @@ pub mod restore_db_cluster_from_s3_input {
             self.kms_key_id = input;
             self
         }
-        /// <p>A value that indicates whether to enable mapping of AWS Identity and Access
+        /// <p>A value that indicates whether to enable mapping of Amazon Web Services Identity and Access
         /// Management (IAM) accounts to database accounts. By default, mapping is disabled.</p>
         /// <p>For more information, see
         /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.IAMDBAuth.html">
@@ -27298,7 +28024,7 @@ pub mod restore_db_cluster_from_s3_input {
             self.s3_prefix = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that authorizes
+        /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services Identity and Access Management (IAM) role that authorizes
         /// Amazon RDS to access the Amazon S3 bucket on your behalf.</p>
         pub fn s3_ingestion_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.s3_ingestion_role_arn = Some(input.into());
@@ -27486,7 +28212,7 @@ impl RestoreDbClusterFromS3Input {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -27519,9 +28245,15 @@ impl RestoreDbClusterFromS3Input {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-www-form-urlencoded");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -27754,17 +28486,17 @@ pub mod restore_db_cluster_from_snapshot_input {
             self.tags = input;
             self
         }
-        /// <p>The AWS KMS key identifier to use when restoring an encrypted DB cluster from a DB
+        /// <p>The Amazon Web Services KMS key identifier to use when restoring an encrypted DB cluster from a DB
         /// snapshot or DB cluster snapshot.</p>
-        /// <p>The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer master key (CMK).
-        /// To use a CMK in a different AWS account, specify the key ARN or alias ARN.</p>    
+        /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon Web Services KMS customer master key (CMK).
+        /// To use a CMK in a different Amazon Web Services account, specify the key ARN or alias ARN.</p>    
         /// <p>When you don't specify a value for the <code>KmsKeyId</code> parameter, then the
         /// following occurs:</p>
         /// <ul>
         /// <li>
         /// <p>If the DB snapshot or DB cluster snapshot in
         /// <code>SnapshotIdentifier</code> is encrypted, then the restored DB cluster
-        /// is encrypted using the AWS KMS CMK that was used to encrypt the DB snapshot or DB
+        /// is encrypted using the Amazon Web Services KMS CMK that was used to encrypt the DB snapshot or DB
         /// cluster snapshot.</p>
         /// </li>
         /// <li>
@@ -27781,7 +28513,7 @@ pub mod restore_db_cluster_from_snapshot_input {
             self.kms_key_id = input;
             self
         }
-        /// <p>A value that indicates whether to enable mapping of AWS Identity and Access
+        /// <p>A value that indicates whether to enable mapping of Amazon Web Services Identity and Access
         /// Management (IAM) accounts to database accounts. By default, mapping is disabled.</p>
         /// <p>For more information, see
         /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.IAMDBAuth.html">
@@ -28020,7 +28752,7 @@ impl RestoreDbClusterFromSnapshotInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -28053,9 +28785,15 @@ impl RestoreDbClusterFromSnapshotInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-www-form-urlencoded");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -28098,6 +28836,8 @@ pub mod restore_db_cluster_to_point_in_time_input {
         pub(crate) copy_tags_to_snapshot: std::option::Option<bool>,
         pub(crate) domain: std::option::Option<std::string::String>,
         pub(crate) domain_iam_role_name: std::option::Option<std::string::String>,
+        pub(crate) scaling_configuration: std::option::Option<crate::model::ScalingConfiguration>,
+        pub(crate) engine_mode: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The name of the new DB cluster to be created.</p>
@@ -28278,16 +29018,16 @@ pub mod restore_db_cluster_to_point_in_time_input {
             self.tags = input;
             self
         }
-        /// <p>The AWS KMS key identifier to use when restoring an encrypted DB cluster from an encrypted DB cluster.</p>
-        /// <p>The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer master key (CMK).
-        /// To use a CMK in a different AWS account, specify the key ARN or alias ARN.</p>
-        /// <p>You can restore to a new DB cluster and encrypt the new DB cluster with a AWS KMS CMK that is different than the
-        /// AWS KMS key used to encrypt the source DB cluster. The new DB cluster is encrypted with the AWS KMS CMK
+        /// <p>The Amazon Web Services KMS key identifier to use when restoring an encrypted DB cluster from an encrypted DB cluster.</p>
+        /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon Web Services KMS customer master key (CMK).
+        /// To use a CMK in a different Amazon Web Services account, specify the key ARN or alias ARN.</p>
+        /// <p>You can restore to a new DB cluster and encrypt the new DB cluster with a Amazon Web Services KMS CMK that is different than the
+        /// Amazon Web Services KMS key used to encrypt the source DB cluster. The new DB cluster is encrypted with the Amazon Web Services KMS CMK
         /// identified by the <code>KmsKeyId</code> parameter.</p>
         /// <p>If you don't specify a value for the <code>KmsKeyId</code> parameter, then the following occurs:</p>
         /// <ul>
         /// <li>
-        /// <p>If the DB cluster is encrypted, then the restored DB cluster is encrypted using the AWS KMS CMK that was used to encrypt the source DB cluster.</p>
+        /// <p>If the DB cluster is encrypted, then the restored DB cluster is encrypted using the Amazon Web Services KMS CMK that was used to encrypt the source DB cluster.</p>
         /// </li>
         /// <li>
         /// <p>If the DB cluster isn't encrypted, then the restored DB cluster isn't encrypted.</p>
@@ -28303,7 +29043,7 @@ pub mod restore_db_cluster_to_point_in_time_input {
             self.kms_key_id = input;
             self
         }
-        /// <p>A value that indicates whether to enable mapping of AWS Identity and Access
+        /// <p>A value that indicates whether to enable mapping of Amazon Web Services Identity and Access
         /// Management (IAM) accounts to database accounts. By default, mapping is disabled.</p>
         /// <p>For more information, see
         /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.IAMDBAuth.html">
@@ -28436,6 +29176,31 @@ pub mod restore_db_cluster_to_point_in_time_input {
             self.domain_iam_role_name = input;
             self
         }
+        /// <p>For DB clusters in <code>serverless</code> DB engine mode, the scaling properties of the DB cluster.</p>
+        pub fn scaling_configuration(mut self, input: crate::model::ScalingConfiguration) -> Self {
+            self.scaling_configuration = Some(input);
+            self
+        }
+        pub fn set_scaling_configuration(
+            mut self,
+            input: std::option::Option<crate::model::ScalingConfiguration>,
+        ) -> Self {
+            self.scaling_configuration = input;
+            self
+        }
+        /// <p>The engine mode of the new cluster. Specify <code>provisioned</code> or <code>serverless</code>,
+        /// depending on the type of the cluster you are creating. You can create an Aurora Serverless clone
+        /// from a provisioned cluster, or a provisioned clone from an Aurora Serverless cluster. To create a clone
+        /// that is an Aurora Serverless cluster, the original cluster must be an Aurora Serverless cluster or
+        /// an encrypted provisioned cluster.</p>
+        pub fn engine_mode(mut self, input: impl Into<std::string::String>) -> Self {
+            self.engine_mode = Some(input.into());
+            self
+        }
+        pub fn set_engine_mode(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.engine_mode = input;
+            self
+        }
         /// Consumes the builder and constructs a [`RestoreDbClusterToPointInTimeInput`](crate::input::RestoreDbClusterToPointInTimeInput)
         pub fn build(
             self,
@@ -28463,6 +29228,8 @@ pub mod restore_db_cluster_to_point_in_time_input {
                 copy_tags_to_snapshot: self.copy_tags_to_snapshot,
                 domain: self.domain,
                 domain_iam_role_name: self.domain_iam_role_name,
+                scaling_configuration: self.scaling_configuration,
+                engine_mode: self.engine_mode,
             })
         }
     }
@@ -28518,7 +29285,7 @@ impl RestoreDbClusterToPointInTimeInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -28551,9 +29318,15 @@ impl RestoreDbClusterToPointInTimeInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-www-form-urlencoded");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -28658,7 +29431,7 @@ pub mod restore_db_instance_from_db_snapshot_input {
             self
         }
         /// <p>The compute and memory capacity of the Amazon RDS DB instance, for example, <code>db.m4.large</code>.
-        /// Not all DB instance classes are available in all AWS Regions, or for all database engines.
+        /// Not all DB instance classes are available in all Amazon Web Services Regions, or for all database engines.
         /// For the full list of DB instance classes,
         /// and availability for your engine, see
         /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB Instance Class</a> in the <i>Amazon RDS User Guide.</i>
@@ -28801,17 +29574,17 @@ pub mod restore_db_instance_from_db_snapshot_input {
         /// </li>
         /// <li>
         /// <p>
+        /// <code>oracle-ee-cdb</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
         /// <code>oracle-se2</code>
         /// </p>
         /// </li>
         /// <li>
         /// <p>
-        /// <code>oracle-se1</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>oracle-se</code>
+        /// <code>oracle-se2-cdb</code>
         /// </p>
         /// </li>
         /// <li>
@@ -28984,7 +29757,7 @@ pub mod restore_db_instance_from_db_snapshot_input {
             self.domain_iam_role_name = input;
             self
         }
-        /// <p>A value that indicates whether to enable mapping of AWS Identity and Access
+        /// <p>A value that indicates whether to enable mapping of Amazon Web Services Identity and Access
         /// Management (IAM) accounts to database accounts. By default, mapping is disabled.</p>
         /// <p>For more information about IAM database authentication, see
         /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.html">
@@ -29094,10 +29867,10 @@ pub mod restore_db_instance_from_db_snapshot_input {
         /// your Outpost subnets through your on-premises network. For some use cases, a CoIP can
         /// provide lower latency for connections to the DB instance from outside of its virtual
         /// private cloud (VPC) on your local network.</p>
-        /// <p>For more information about RDS on Outposts, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working with Amazon RDS on AWS Outposts</a>
+        /// <p>For more information about RDS on Outposts, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working with Amazon RDS on Amazon Web Services Outposts</a>
         /// in the <i>Amazon RDS User Guide</i>.</p>
         /// <p>For more information about CoIPs, see <a href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-networking-components.html#ip-addressing">Customer-owned IP addresses</a>
-        /// in the <i>AWS Outposts User Guide</i>.</p>
+        /// in the <i>Amazon Web Services Outposts User Guide</i>.</p>
         pub fn enable_customer_owned_ip(mut self, input: bool) -> Self {
             self.enable_customer_owned_ip = Some(input);
             self
@@ -29198,7 +29971,7 @@ impl RestoreDbInstanceFromDbSnapshotInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -29231,9 +30004,15 @@ impl RestoreDbInstanceFromDbSnapshotInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-www-form-urlencoded");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -29361,7 +30140,7 @@ pub mod restore_db_instance_from_s3_input {
         }
         /// <p>The compute and memory capacity of the DB instance,
         /// for example, <code>db.m4.large</code>.
-        /// Not all DB instance classes are available in all AWS Regions,
+        /// Not all DB instance classes are available in all Amazon Web Services Regions,
         /// or for all database engines.
         /// For the full list of DB instance classes,
         /// and availability for your engine, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB Instance Class</a> in the <i>Amazon RDS User Guide.</i>
@@ -29459,15 +30238,15 @@ pub mod restore_db_instance_from_s3_input {
             self
         }
         /// <p>The Availability Zone that the DB instance is created in.
-        /// For information about AWS Regions and Availability Zones, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html">Regions and Availability Zones</a> in the <i>Amazon RDS User Guide.</i>
+        /// For information about Amazon Web Services Regions and Availability Zones, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html">Regions and Availability Zones</a> in the <i>Amazon RDS User Guide.</i>
         /// </p>
-        /// <p>Default: A random, system-chosen Availability Zone in the endpoint's AWS Region.
+        /// <p>Default: A random, system-chosen Availability Zone in the endpoint's Amazon Web Services Region.
         /// </p>
         /// <p>
         /// Example: <code>us-east-1d</code>
         /// </p>
         /// <p>Constraint: The <code>AvailabilityZone</code> parameter can't be specified if the DB instance is a Multi-AZ deployment.
-        /// The specified Availability Zone must be in the same AWS Region as the current endpoint.
+        /// The specified Availability Zone must be in the same Amazon Web Services Region as the current endpoint.
         /// </p>
         pub fn availability_zone(mut self, input: impl Into<std::string::String>) -> Self {
             self.availability_zone = Some(input.into());
@@ -29736,15 +30515,15 @@ pub mod restore_db_instance_from_s3_input {
             self.storage_encrypted = input;
             self
         }
-        /// <p>The AWS KMS key identifier for an encrypted DB instance.
+        /// <p>The Amazon Web Services KMS key identifier for an encrypted DB instance.
         /// </p>
-        /// <p>The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer master key (CMK).
-        /// To use a CMK in a different AWS account, specify the key ARN or alias ARN.</p>
+        /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon Web Services KMS customer master key (CMK).
+        /// To use a CMK in a different Amazon Web Services account, specify the key ARN or alias ARN.</p>
         /// <p>If the <code>StorageEncrypted</code> parameter is enabled,
         /// and you do not specify a value for the <code>KmsKeyId</code> parameter,
         /// then Amazon RDS will use your default CMK.
-        /// There is a default CMK for your AWS account.
-        /// Your AWS account has a different default CMK for each AWS Region.
+        /// There is a default CMK for your Amazon Web Services account.
+        /// Your Amazon Web Services account has a different default CMK for each Amazon Web Services Region.
         /// </p>
         pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_key_id = Some(input.into());
@@ -29803,7 +30582,7 @@ pub mod restore_db_instance_from_s3_input {
             self.monitoring_role_arn = input;
             self
         }
-        /// <p>A value that indicates whether to enable mapping of AWS Identity and Access
+        /// <p>A value that indicates whether to enable mapping of Amazon Web Services Identity and Access
         /// Management (IAM) accounts to database accounts. By default, mapping is disabled.</p>
         /// <p>For more information about IAM database authentication, see
         /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.html">
@@ -29875,7 +30654,7 @@ pub mod restore_db_instance_from_s3_input {
             self.s3_prefix = input;
             self
         }
-        /// <p>An AWS Identity and Access Management (IAM) role to allow Amazon RDS to access your Amazon S3 bucket.
+        /// <p>An Amazon Web Services Identity and Access Management (IAM) role to allow Amazon RDS to access your Amazon S3 bucket.
         /// </p>
         pub fn s3_ingestion_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.s3_ingestion_role_arn = Some(input.into());
@@ -29902,11 +30681,11 @@ pub mod restore_db_instance_from_s3_input {
             self.enable_performance_insights = input;
             self
         }
-        /// <p>The AWS KMS key identifier for encryption of Performance Insights data.</p>
-        /// <p>The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer master key (CMK).</p>
+        /// <p>The Amazon Web Services KMS key identifier for encryption of Performance Insights data.</p>
+        /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon Web Services KMS customer master key (CMK).</p>
         /// <p>If you do not specify a value for <code>PerformanceInsightsKMSKeyId</code>, then Amazon RDS
-        /// uses your default CMK. There is a default CMK for your AWS account.
-        /// Your AWS account has a different default CMK for each AWS Region.</p>
+        /// uses your default CMK. There is a default CMK for your Amazon Web Services account.
+        /// Your Amazon Web Services account has a different default CMK for each Amazon Web Services Region.</p>
         pub fn performance_insights_kms_key_id(
             mut self,
             input: impl Into<std::string::String>,
@@ -30109,7 +30888,7 @@ impl RestoreDbInstanceFromS3Input {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -30142,9 +30921,15 @@ impl RestoreDbInstanceFromS3Input {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-www-form-urlencoded");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -30292,7 +31077,7 @@ pub mod restore_db_instance_to_point_in_time_input {
             self
         }
         /// <p>The compute and memory capacity of the Amazon RDS DB instance, for example, <code>db.m4.large</code>.
-        /// Not all DB instance classes are available in all AWS Regions, or for all database engines.
+        /// Not all DB instance classes are available in all Amazon Web Services Regions, or for all database engines.
         /// For the full list of DB instance classes,
         /// and availability for your engine, see
         /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB Instance Class</a> in the <i>Amazon RDS User Guide.</i>
@@ -30435,17 +31220,17 @@ pub mod restore_db_instance_to_point_in_time_input {
         /// </li>
         /// <li>
         /// <p>
+        /// <code>oracle-ee-cdb</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
         /// <code>oracle-se2</code>
         /// </p>
         /// </li>
         /// <li>
         /// <p>
-        /// <code>oracle-se1</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>oracle-se</code>
+        /// <code>oracle-se2-cdb</code>
         /// </p>
         /// </li>
         /// <li>
@@ -30613,7 +31398,7 @@ pub mod restore_db_instance_to_point_in_time_input {
             self.domain_iam_role_name = input;
             self
         }
-        /// <p>A value that indicates whether to enable mapping of AWS Identity and Access
+        /// <p>A value that indicates whether to enable mapping of Amazon Web Services Identity and Access
         /// Management (IAM) accounts to database accounts. By default, mapping is disabled.</p>
         /// <p>For more information about IAM database authentication, see
         /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.html">
@@ -30763,10 +31548,10 @@ pub mod restore_db_instance_to_point_in_time_input {
         /// your Outpost subnets through your on-premises network. For some use cases, a CoIP can
         /// provide lower latency for connections to the DB instance from outside of its virtual
         /// private cloud (VPC) on your local network.</p>
-        /// <p>For more information about RDS on Outposts, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working with Amazon RDS on AWS Outposts</a>
+        /// <p>For more information about RDS on Outposts, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working with Amazon RDS on Amazon Web Services Outposts</a>
         /// in the <i>Amazon RDS User Guide</i>.</p>
         /// <p>For more information about CoIPs, see <a href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-networking-components.html#ip-addressing">Customer-owned IP addresses</a>
-        /// in the <i>AWS Outposts User Guide</i>.</p>
+        /// in the <i>Amazon Web Services Outposts User Guide</i>.</p>
         pub fn enable_customer_owned_ip(mut self, input: bool) -> Self {
             self.enable_customer_owned_ip = Some(input);
             self
@@ -30873,7 +31658,7 @@ impl RestoreDbInstanceToPointInTimeInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -30906,9 +31691,15 @@ impl RestoreDbInstanceToPointInTimeInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-www-form-urlencoded");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -30997,9 +31788,9 @@ pub mod revoke_db_security_group_ingress_input {
             self
         }
         /// <p>
-        /// The AWS account number of the owner of the EC2 security group
+        /// The Amazon Web Services account number of the owner of the EC2 security group
         /// specified in the <code>EC2SecurityGroupName</code> parameter.
-        /// The AWS access key ID isn't an acceptable value.
+        /// The Amazon Web Services access key ID isn't an acceptable value.
         /// For VPC DB security groups, <code>EC2SecurityGroupId</code> must be provided.
         /// Otherwise, EC2SecurityGroupOwnerId and either <code>EC2SecurityGroupName</code> or <code>EC2SecurityGroupId</code> must be provided.
         /// </p>
@@ -31083,7 +31874,7 @@ impl RevokeDbSecurityGroupIngressInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -31116,9 +31907,15 @@ impl RevokeDbSecurityGroupIngressInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-www-form-urlencoded");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -31145,6 +31942,7 @@ pub mod start_activity_stream_input {
         pub(crate) mode: std::option::Option<crate::model::ActivityStreamMode>,
         pub(crate) kms_key_id: std::option::Option<std::string::String>,
         pub(crate) apply_immediately: std::option::Option<bool>,
+        pub(crate) engine_native_audit_fields_included: std::option::Option<bool>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the DB cluster,
@@ -31172,8 +31970,8 @@ pub mod start_activity_stream_input {
             self.mode = input;
             self
         }
-        /// <p>The AWS KMS key identifier for encrypting messages in the database activity stream.
-        /// The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer master key (CMK).</p>
+        /// <p>The Amazon Web Services KMS key identifier for encrypting messages in the database activity stream.
+        /// The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon Web Services KMS customer master key (CMK).</p>
         pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_key_id = Some(input.into());
             self
@@ -31192,6 +31990,19 @@ pub mod start_activity_stream_input {
             self.apply_immediately = input;
             self
         }
+        /// <p>Specifies whether the database activity stream includes engine-native audit fields. This option only applies
+        /// to an Oracle DB instance. By default, no engine-native audit fields are included.</p>
+        pub fn engine_native_audit_fields_included(mut self, input: bool) -> Self {
+            self.engine_native_audit_fields_included = Some(input);
+            self
+        }
+        pub fn set_engine_native_audit_fields_included(
+            mut self,
+            input: std::option::Option<bool>,
+        ) -> Self {
+            self.engine_native_audit_fields_included = input;
+            self
+        }
         /// Consumes the builder and constructs a [`StartActivityStreamInput`](crate::input::StartActivityStreamInput)
         pub fn build(
             self,
@@ -31204,6 +32015,7 @@ pub mod start_activity_stream_input {
                 mode: self.mode,
                 kms_key_id: self.kms_key_id,
                 apply_immediately: self.apply_immediately,
+                engine_native_audit_fields_included: self.engine_native_audit_fields_included,
             })
         }
     }
@@ -31255,7 +32067,7 @@ impl StartActivityStreamInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -31288,9 +32100,15 @@ impl StartActivityStreamInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-www-form-urlencoded");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -31388,7 +32206,7 @@ impl StartDbClusterInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -31421,9 +32239,15 @@ impl StartDbClusterInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-www-form-urlencoded");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -31522,7 +32346,7 @@ impl StartDbInstanceInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -31555,9 +32379,15 @@ impl StartDbInstanceInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-www-form-urlencoded");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -31608,8 +32438,8 @@ pub mod start_db_instance_automated_backups_replication_input {
             self.backup_retention_period = input;
             self
         }
-        /// <p>The AWS KMS key identifier for encryption of the replicated automated backups. The KMS key ID is the
-        /// Amazon Resource Name (ARN) for the KMS encryption key in the destination AWS Region, for example,
+        /// <p>The Amazon Web Services KMS key identifier for encryption of the replicated automated backups. The KMS key ID is the
+        /// Amazon Resource Name (ARN) for the KMS encryption key in the destination Amazon Web Services Region, for example,
         /// <code>arn:aws:kms:us-east-1:123456789012:key/AKIAIOSFODNN7EXAMPLE</code>.</p>
         pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_key_id = Some(input.into());
@@ -31620,8 +32450,8 @@ pub mod start_db_instance_automated_backups_replication_input {
             self
         }
         /// <p>A URL that contains a Signature Version 4 signed request for the StartDBInstanceAutomatedBackupsReplication action to be
-        /// called in the AWS Region of the source DB instance. The presigned URL must be a valid request for the
-        /// StartDBInstanceAutomatedBackupsReplication API action that can be executed in the AWS Region that contains
+        /// called in the Amazon Web Services Region of the source DB instance. The presigned URL must be a valid request for the
+        /// StartDBInstanceAutomatedBackupsReplication API action that can be executed in the Amazon Web Services Region that contains
         /// the source DB instance.</p>
         pub fn pre_signed_url(mut self, input: impl Into<std::string::String>) -> Self {
             self.pre_signed_url = Some(input.into());
@@ -31700,7 +32530,7 @@ impl StartDbInstanceAutomatedBackupsReplicationInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -31733,9 +32563,15 @@ impl StartDbInstanceAutomatedBackupsReplicationInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-www-form-urlencoded");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -31812,10 +32648,10 @@ pub mod start_export_task_input {
             self.iam_role_arn = input;
             self
         }
-        /// <p>The ID of the AWS KMS customer master key (CMK) to use to encrypt the snapshot exported to Amazon S3. The AWS KMS
-        /// key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer master key (CMK).
+        /// <p>The ID of the Amazon Web Services KMS customer master key (CMK) to use to encrypt the snapshot exported to Amazon S3. The Amazon Web Services KMS
+        /// key identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon Web Services KMS customer master key (CMK).
         /// The caller of this operation must be authorized to
-        /// execute the following operations. These can be set in the AWS KMS key policy: </p>
+        /// execute the following operations. These can be set in the Amazon Web Services KMS key policy: </p>
         /// <ul>
         /// <li>
         /// <p>GrantOperation.Encrypt</p>
@@ -31940,7 +32776,7 @@ impl StartExportTaskInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -31973,9 +32809,15 @@ impl StartExportTaskInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-www-form-urlencoded");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -32084,7 +32926,7 @@ impl StopActivityStreamInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -32117,9 +32959,15 @@ impl StopActivityStreamInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-www-form-urlencoded");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -32215,7 +33063,7 @@ impl StopDbClusterInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -32248,9 +33096,15 @@ impl StopDbClusterInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-www-form-urlencoded");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -32365,7 +33219,7 @@ impl StopDbInstanceInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -32398,9 +33252,15 @@ impl StopDbInstanceInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-www-form-urlencoded");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -32502,7 +33362,7 @@ impl StopDbInstanceAutomatedBackupsReplicationInput {
             if let Some(region) = &_config.region {
                 request.config_mut().insert(region.clone());
             }
-            aws_auth::set_provider(
+            aws_auth::provider::set_provider(
                 &mut request.config_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -32535,9 +33395,15 @@ impl StopDbInstanceAutomatedBackupsReplicationInput {
     fn request_builder_base(
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        let builder = http::request::Builder::new();
-        let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
-        self.update_http_builder(builder)
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        if !builder
+            .headers_ref()
+            .map(|h| h.contains_key("content-type"))
+            .unwrap_or(false)
+        {
+            builder = builder.header("content-type", "application/x-www-form-urlencoded");
+        }
+        Ok(builder)
     }
     fn assemble(
         mut builder: http::request::Builder,
@@ -32639,10 +33505,10 @@ pub struct StartExportTaskInput {
     /// <p>The name of the IAM role to use for writing to the Amazon S3 bucket
     /// when exporting a snapshot. </p>
     pub iam_role_arn: std::option::Option<std::string::String>,
-    /// <p>The ID of the AWS KMS customer master key (CMK) to use to encrypt the snapshot exported to Amazon S3. The AWS KMS
-    /// key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer master key (CMK).
+    /// <p>The ID of the Amazon Web Services KMS customer master key (CMK) to use to encrypt the snapshot exported to Amazon S3. The Amazon Web Services KMS
+    /// key identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon Web Services KMS customer master key (CMK).
     /// The caller of this operation must be authorized to
-    /// execute the following operations. These can be set in the AWS KMS key policy: </p>
+    /// execute the following operations. These can be set in the Amazon Web Services KMS key policy: </p>
     /// <ul>
     /// <li>
     /// <p>GrantOperation.Encrypt</p>
@@ -32726,13 +33592,13 @@ pub struct StartDbInstanceAutomatedBackupsReplicationInput {
     pub source_db_instance_arn: std::option::Option<std::string::String>,
     /// <p>The retention period for the replicated automated backups.</p>
     pub backup_retention_period: std::option::Option<i32>,
-    /// <p>The AWS KMS key identifier for encryption of the replicated automated backups. The KMS key ID is the
-    /// Amazon Resource Name (ARN) for the KMS encryption key in the destination AWS Region, for example,
+    /// <p>The Amazon Web Services KMS key identifier for encryption of the replicated automated backups. The KMS key ID is the
+    /// Amazon Resource Name (ARN) for the KMS encryption key in the destination Amazon Web Services Region, for example,
     /// <code>arn:aws:kms:us-east-1:123456789012:key/AKIAIOSFODNN7EXAMPLE</code>.</p>
     pub kms_key_id: std::option::Option<std::string::String>,
     /// <p>A URL that contains a Signature Version 4 signed request for the StartDBInstanceAutomatedBackupsReplication action to be
-    /// called in the AWS Region of the source DB instance. The presigned URL must be a valid request for the
-    /// StartDBInstanceAutomatedBackupsReplication API action that can be executed in the AWS Region that contains
+    /// called in the Amazon Web Services Region of the source DB instance. The presigned URL must be a valid request for the
+    /// StartDBInstanceAutomatedBackupsReplication API action that can be executed in the Amazon Web Services Region that contains
     /// the source DB instance.</p>
     pub pre_signed_url: std::option::Option<std::string::String>,
 }
@@ -32789,12 +33655,15 @@ pub struct StartActivityStreamInput {
     /// The database session can handle these events either synchronously or asynchronously.
     /// </p>
     pub mode: std::option::Option<crate::model::ActivityStreamMode>,
-    /// <p>The AWS KMS key identifier for encrypting messages in the database activity stream.
-    /// The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer master key (CMK).</p>
+    /// <p>The Amazon Web Services KMS key identifier for encrypting messages in the database activity stream.
+    /// The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon Web Services KMS customer master key (CMK).</p>
     pub kms_key_id: std::option::Option<std::string::String>,
     /// <p>Specifies whether or not the database activity stream is to start as soon as possible,
     /// regardless of the maintenance window for the database.</p>
     pub apply_immediately: std::option::Option<bool>,
+    /// <p>Specifies whether the database activity stream includes engine-native audit fields. This option only applies
+    /// to an Oracle DB instance. By default, no engine-native audit fields are included.</p>
+    pub engine_native_audit_fields_included: std::option::Option<bool>,
 }
 impl std::fmt::Debug for StartActivityStreamInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -32803,6 +33672,10 @@ impl std::fmt::Debug for StartActivityStreamInput {
         formatter.field("mode", &self.mode);
         formatter.field("kms_key_id", &self.kms_key_id);
         formatter.field("apply_immediately", &self.apply_immediately);
+        formatter.field(
+            "engine_native_audit_fields_included",
+            &self.engine_native_audit_fields_included,
+        );
         formatter.finish()
     }
 }
@@ -32833,9 +33706,9 @@ pub struct RevokeDbSecurityGroupIngressInput {
     /// </p>
     pub ec2_security_group_id: std::option::Option<std::string::String>,
     /// <p>
-    /// The AWS account number of the owner of the EC2 security group
+    /// The Amazon Web Services account number of the owner of the EC2 security group
     /// specified in the <code>EC2SecurityGroupName</code> parameter.
-    /// The AWS access key ID isn't an acceptable value.
+    /// The Amazon Web Services access key ID isn't an acceptable value.
     /// For VPC DB security groups, <code>EC2SecurityGroupId</code> must be provided.
     /// Otherwise, EC2SecurityGroupOwnerId and either <code>EC2SecurityGroupName</code> or <code>EC2SecurityGroupId</code> must be provided.
     /// </p>
@@ -32903,7 +33776,7 @@ pub struct RestoreDbInstanceToPointInTimeInput {
     /// <p>Constraints: Can't be specified if the <code>RestoreTime</code> parameter is provided.</p>
     pub use_latest_restorable_time: bool,
     /// <p>The compute and memory capacity of the Amazon RDS DB instance, for example, <code>db.m4.large</code>.
-    /// Not all DB instance classes are available in all AWS Regions, or for all database engines.
+    /// Not all DB instance classes are available in all Amazon Web Services Regions, or for all database engines.
     /// For the full list of DB instance classes,
     /// and availability for your engine, see
     /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB Instance Class</a> in the <i>Amazon RDS User Guide.</i>
@@ -32971,17 +33844,17 @@ pub struct RestoreDbInstanceToPointInTimeInput {
     /// </li>
     /// <li>
     /// <p>
+    /// <code>oracle-ee-cdb</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
     /// <code>oracle-se2</code>
     /// </p>
     /// </li>
     /// <li>
     /// <p>
-    /// <code>oracle-se1</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>oracle-se</code>
+    /// <code>oracle-se2-cdb</code>
     /// </p>
     /// </li>
     /// <li>
@@ -33059,7 +33932,7 @@ pub struct RestoreDbInstanceToPointInTimeInput {
     pub domain: std::option::Option<std::string::String>,
     /// <p>Specify the name of the IAM role to be used when making API calls to the Directory Service.</p>
     pub domain_iam_role_name: std::option::Option<std::string::String>,
-    /// <p>A value that indicates whether to enable mapping of AWS Identity and Access
+    /// <p>A value that indicates whether to enable mapping of Amazon Web Services Identity and Access
     /// Management (IAM) accounts to database accounts. By default, mapping is disabled.</p>
     /// <p>For more information about IAM database authentication, see
     /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.html">
@@ -33116,10 +33989,10 @@ pub struct RestoreDbInstanceToPointInTimeInput {
     /// your Outpost subnets through your on-premises network. For some use cases, a CoIP can
     /// provide lower latency for connections to the DB instance from outside of its virtual
     /// private cloud (VPC) on your local network.</p>
-    /// <p>For more information about RDS on Outposts, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working with Amazon RDS on AWS Outposts</a>
+    /// <p>For more information about RDS on Outposts, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working with Amazon RDS on Amazon Web Services Outposts</a>
     /// in the <i>Amazon RDS User Guide</i>.</p>
     /// <p>For more information about CoIPs, see <a href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-networking-components.html#ip-addressing">Customer-owned IP addresses</a>
-    /// in the <i>AWS Outposts User Guide</i>.</p>
+    /// in the <i>Amazon Web Services Outposts User Guide</i>.</p>
     pub enable_customer_owned_ip: std::option::Option<bool>,
 }
 impl std::fmt::Debug for RestoreDbInstanceToPointInTimeInput {
@@ -33223,7 +34096,7 @@ pub struct RestoreDbInstanceFromS3Input {
     pub allocated_storage: std::option::Option<i32>,
     /// <p>The compute and memory capacity of the DB instance,
     /// for example, <code>db.m4.large</code>.
-    /// Not all DB instance classes are available in all AWS Regions,
+    /// Not all DB instance classes are available in all Amazon Web Services Regions,
     /// or for all database engines.
     /// For the full list of DB instance classes,
     /// and availability for your engine, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB Instance Class</a> in the <i>Amazon RDS User Guide.</i>
@@ -33264,15 +34137,15 @@ pub struct RestoreDbInstanceFromS3Input {
     /// </p>
     pub vpc_security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The Availability Zone that the DB instance is created in.
-    /// For information about AWS Regions and Availability Zones, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html">Regions and Availability Zones</a> in the <i>Amazon RDS User Guide.</i>
+    /// For information about Amazon Web Services Regions and Availability Zones, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html">Regions and Availability Zones</a> in the <i>Amazon RDS User Guide.</i>
     /// </p>
-    /// <p>Default: A random, system-chosen Availability Zone in the endpoint's AWS Region.
+    /// <p>Default: A random, system-chosen Availability Zone in the endpoint's Amazon Web Services Region.
     /// </p>
     /// <p>
     /// Example: <code>us-east-1d</code>
     /// </p>
     /// <p>Constraint: The <code>AvailabilityZone</code> parameter can't be specified if the DB instance is a Multi-AZ deployment.
-    /// The specified Availability Zone must be in the same AWS Region as the current endpoint.
+    /// The specified Availability Zone must be in the same Amazon Web Services Region as the current endpoint.
     /// </p>
     pub availability_zone: std::option::Option<std::string::String>,
     /// <p>A DB subnet group to associate with this DB instance.</p>
@@ -33393,15 +34266,15 @@ pub struct RestoreDbInstanceFromS3Input {
     /// <p>A value that indicates whether the new DB instance is encrypted or not.
     /// </p>
     pub storage_encrypted: std::option::Option<bool>,
-    /// <p>The AWS KMS key identifier for an encrypted DB instance.
+    /// <p>The Amazon Web Services KMS key identifier for an encrypted DB instance.
     /// </p>
-    /// <p>The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer master key (CMK).
-    /// To use a CMK in a different AWS account, specify the key ARN or alias ARN.</p>
+    /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon Web Services KMS customer master key (CMK).
+    /// To use a CMK in a different Amazon Web Services account, specify the key ARN or alias ARN.</p>
     /// <p>If the <code>StorageEncrypted</code> parameter is enabled,
     /// and you do not specify a value for the <code>KmsKeyId</code> parameter,
     /// then Amazon RDS will use your default CMK.
-    /// There is a default CMK for your AWS account.
-    /// Your AWS account has a different default CMK for each AWS Region.
+    /// There is a default CMK for your Amazon Web Services account.
+    /// Your Amazon Web Services account has a different default CMK for each Amazon Web Services Region.
     /// </p>
     pub kms_key_id: std::option::Option<std::string::String>,
     /// <p>A value that indicates whether to copy all tags from the DB instance to snapshots of the DB instance. By default, tags are not copied.
@@ -33429,7 +34302,7 @@ pub struct RestoreDbInstanceFromS3Input {
     /// then you must supply a <code>MonitoringRoleArn</code> value.
     /// </p>
     pub monitoring_role_arn: std::option::Option<std::string::String>,
-    /// <p>A value that indicates whether to enable mapping of AWS Identity and Access
+    /// <p>A value that indicates whether to enable mapping of Amazon Web Services Identity and Access
     /// Management (IAM) accounts to database accounts. By default, mapping is disabled.</p>
     /// <p>For more information about IAM database authentication, see
     /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.html">
@@ -33454,7 +34327,7 @@ pub struct RestoreDbInstanceFromS3Input {
     /// <p>The prefix of your Amazon S3 bucket.
     /// </p>
     pub s3_prefix: std::option::Option<std::string::String>,
-    /// <p>An AWS Identity and Access Management (IAM) role to allow Amazon RDS to access your Amazon S3 bucket.
+    /// <p>An Amazon Web Services Identity and Access Management (IAM) role to allow Amazon RDS to access your Amazon S3 bucket.
     /// </p>
     pub s3_ingestion_role_arn: std::option::Option<std::string::String>,
     /// <p>A value that indicates whether to enable Performance Insights for the DB instance.
@@ -33464,11 +34337,11 @@ pub struct RestoreDbInstanceFromS3Input {
     /// User Guide</i>.
     /// </p>
     pub enable_performance_insights: std::option::Option<bool>,
-    /// <p>The AWS KMS key identifier for encryption of Performance Insights data.</p>
-    /// <p>The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer master key (CMK).</p>
+    /// <p>The Amazon Web Services KMS key identifier for encryption of Performance Insights data.</p>
+    /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon Web Services KMS customer master key (CMK).</p>
     /// <p>If you do not specify a value for <code>PerformanceInsightsKMSKeyId</code>, then Amazon RDS
-    /// uses your default CMK. There is a default CMK for your AWS account.
-    /// Your AWS account has a different default CMK for each AWS Region.</p>
+    /// uses your default CMK. There is a default CMK for your Amazon Web Services account.
+    /// Your Amazon Web Services account has a different default CMK for each Amazon Web Services Region.</p>
     pub performance_insights_kms_key_id: std::option::Option<std::string::String>,
     /// <p>The amount of time, in days, to retain Performance Insights data. Valid values are 7 or 731 (2 years). </p>
     pub performance_insights_retention_period: std::option::Option<i32>,
@@ -33603,7 +34476,7 @@ pub struct RestoreDbInstanceFromDbSnapshotInput {
     /// </ul>
     pub db_snapshot_identifier: std::option::Option<std::string::String>,
     /// <p>The compute and memory capacity of the Amazon RDS DB instance, for example, <code>db.m4.large</code>.
-    /// Not all DB instance classes are available in all AWS Regions, or for all database engines.
+    /// Not all DB instance classes are available in all Amazon Web Services Regions, or for all database engines.
     /// For the full list of DB instance classes,
     /// and availability for your engine, see
     /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB Instance Class</a> in the <i>Amazon RDS User Guide.</i>
@@ -33671,17 +34544,17 @@ pub struct RestoreDbInstanceFromDbSnapshotInput {
     /// </li>
     /// <li>
     /// <p>
+    /// <code>oracle-ee-cdb</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
     /// <code>oracle-se2</code>
     /// </p>
     /// </li>
     /// <li>
     /// <p>
-    /// <code>oracle-se1</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>oracle-se</code>
+    /// <code>oracle-se2-cdb</code>
     /// </p>
     /// </li>
     /// <li>
@@ -33764,7 +34637,7 @@ pub struct RestoreDbInstanceFromDbSnapshotInput {
     pub copy_tags_to_snapshot: std::option::Option<bool>,
     /// <p>Specify the name of the IAM role to be used when making API calls to the Directory Service.</p>
     pub domain_iam_role_name: std::option::Option<std::string::String>,
-    /// <p>A value that indicates whether to enable mapping of AWS Identity and Access
+    /// <p>A value that indicates whether to enable mapping of Amazon Web Services Identity and Access
     /// Management (IAM) accounts to database accounts. By default, mapping is disabled.</p>
     /// <p>For more information about IAM database authentication, see
     /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.html">
@@ -33811,10 +34684,10 @@ pub struct RestoreDbInstanceFromDbSnapshotInput {
     /// your Outpost subnets through your on-premises network. For some use cases, a CoIP can
     /// provide lower latency for connections to the DB instance from outside of its virtual
     /// private cloud (VPC) on your local network.</p>
-    /// <p>For more information about RDS on Outposts, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working with Amazon RDS on AWS Outposts</a>
+    /// <p>For more information about RDS on Outposts, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working with Amazon RDS on Amazon Web Services Outposts</a>
     /// in the <i>Amazon RDS User Guide</i>.</p>
     /// <p>For more information about CoIPs, see <a href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-networking-components.html#ip-addressing">Customer-owned IP addresses</a>
-    /// in the <i>AWS Outposts User Guide</i>.</p>
+    /// in the <i>Amazon Web Services Outposts User Guide</i>.</p>
     pub enable_customer_owned_ip: std::option::Option<bool>,
 }
 impl std::fmt::Debug for RestoreDbInstanceFromDbSnapshotInput {
@@ -33953,16 +34826,16 @@ pub struct RestoreDbClusterToPointInTimeInput {
     /// For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i>           
     /// </p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-    /// <p>The AWS KMS key identifier to use when restoring an encrypted DB cluster from an encrypted DB cluster.</p>
-    /// <p>The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer master key (CMK).
-    /// To use a CMK in a different AWS account, specify the key ARN or alias ARN.</p>
-    /// <p>You can restore to a new DB cluster and encrypt the new DB cluster with a AWS KMS CMK that is different than the
-    /// AWS KMS key used to encrypt the source DB cluster. The new DB cluster is encrypted with the AWS KMS CMK
+    /// <p>The Amazon Web Services KMS key identifier to use when restoring an encrypted DB cluster from an encrypted DB cluster.</p>
+    /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon Web Services KMS customer master key (CMK).
+    /// To use a CMK in a different Amazon Web Services account, specify the key ARN or alias ARN.</p>
+    /// <p>You can restore to a new DB cluster and encrypt the new DB cluster with a Amazon Web Services KMS CMK that is different than the
+    /// Amazon Web Services KMS key used to encrypt the source DB cluster. The new DB cluster is encrypted with the Amazon Web Services KMS CMK
     /// identified by the <code>KmsKeyId</code> parameter.</p>
     /// <p>If you don't specify a value for the <code>KmsKeyId</code> parameter, then the following occurs:</p>
     /// <ul>
     /// <li>
-    /// <p>If the DB cluster is encrypted, then the restored DB cluster is encrypted using the AWS KMS CMK that was used to encrypt the source DB cluster.</p>
+    /// <p>If the DB cluster is encrypted, then the restored DB cluster is encrypted using the Amazon Web Services KMS CMK that was used to encrypt the source DB cluster.</p>
     /// </li>
     /// <li>
     /// <p>If the DB cluster isn't encrypted, then the restored DB cluster isn't encrypted.</p>
@@ -33971,7 +34844,7 @@ pub struct RestoreDbClusterToPointInTimeInput {
     /// <p>If <code>DBClusterIdentifier</code> refers to a DB cluster that isn't encrypted, then the restore request
     /// is rejected.</p>
     pub kms_key_id: std::option::Option<std::string::String>,
-    /// <p>A value that indicates whether to enable mapping of AWS Identity and Access
+    /// <p>A value that indicates whether to enable mapping of Amazon Web Services Identity and Access
     /// Management (IAM) accounts to database accounts. By default, mapping is disabled.</p>
     /// <p>For more information, see
     /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.IAMDBAuth.html">
@@ -34031,6 +34904,14 @@ pub struct RestoreDbClusterToPointInTimeInput {
     pub domain: std::option::Option<std::string::String>,
     /// <p>Specify the name of the IAM role to be used when making API calls to the Directory Service.</p>
     pub domain_iam_role_name: std::option::Option<std::string::String>,
+    /// <p>For DB clusters in <code>serverless</code> DB engine mode, the scaling properties of the DB cluster.</p>
+    pub scaling_configuration: std::option::Option<crate::model::ScalingConfiguration>,
+    /// <p>The engine mode of the new cluster. Specify <code>provisioned</code> or <code>serverless</code>,
+    /// depending on the type of the cluster you are creating. You can create an Aurora Serverless clone
+    /// from a provisioned cluster, or a provisioned clone from an Aurora Serverless cluster. To create a clone
+    /// that is an Aurora Serverless cluster, the original cluster must be an Aurora Serverless cluster or
+    /// an encrypted provisioned cluster.</p>
+    pub engine_mode: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for RestoreDbClusterToPointInTimeInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -34069,6 +34950,8 @@ impl std::fmt::Debug for RestoreDbClusterToPointInTimeInput {
         formatter.field("copy_tags_to_snapshot", &self.copy_tags_to_snapshot);
         formatter.field("domain", &self.domain);
         formatter.field("domain_iam_role_name", &self.domain_iam_role_name);
+        formatter.field("scaling_configuration", &self.scaling_configuration);
+        formatter.field("engine_mode", &self.engine_mode);
         formatter.finish()
     }
 }
@@ -34156,17 +35039,17 @@ pub struct RestoreDbClusterFromSnapshotInput {
     pub vpc_security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The tags to be assigned to the restored DB cluster.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-    /// <p>The AWS KMS key identifier to use when restoring an encrypted DB cluster from a DB
+    /// <p>The Amazon Web Services KMS key identifier to use when restoring an encrypted DB cluster from a DB
     /// snapshot or DB cluster snapshot.</p>
-    /// <p>The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer master key (CMK).
-    /// To use a CMK in a different AWS account, specify the key ARN or alias ARN.</p>    
+    /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon Web Services KMS customer master key (CMK).
+    /// To use a CMK in a different Amazon Web Services account, specify the key ARN or alias ARN.</p>    
     /// <p>When you don't specify a value for the <code>KmsKeyId</code> parameter, then the
     /// following occurs:</p>
     /// <ul>
     /// <li>
     /// <p>If the DB snapshot or DB cluster snapshot in
     /// <code>SnapshotIdentifier</code> is encrypted, then the restored DB cluster
-    /// is encrypted using the AWS KMS CMK that was used to encrypt the DB snapshot or DB
+    /// is encrypted using the Amazon Web Services KMS CMK that was used to encrypt the DB snapshot or DB
     /// cluster snapshot.</p>
     /// </li>
     /// <li>
@@ -34176,7 +35059,7 @@ pub struct RestoreDbClusterFromSnapshotInput {
     /// </li>
     /// </ul>
     pub kms_key_id: std::option::Option<std::string::String>,
-    /// <p>A value that indicates whether to enable mapping of AWS Identity and Access
+    /// <p>A value that indicates whether to enable mapping of Amazon Web Services Identity and Access
     /// Management (IAM) accounts to database accounts. By default, mapping is disabled.</p>
     /// <p>For more information, see
     /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.IAMDBAuth.html">
@@ -34393,7 +35276,7 @@ pub struct RestoreDbClusterFromS3Input {
     /// using the <code>BackupRetentionPeriod</code> parameter.
     /// </p>
     /// <p>The default is a 30-minute window selected at random from an
-    /// 8-hour block of time for each AWS Region.
+    /// 8-hour block of time for each Amazon Web Services Region.
     /// To view the time blocks available, see
     /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Managing.Backups.html#Aurora.Managing.Backups.BackupWindow">
     /// Backup window</a> in the <i>Amazon Aurora User Guide.</i>
@@ -34418,7 +35301,7 @@ pub struct RestoreDbClusterFromS3Input {
     /// <p>Format: <code>ddd:hh24:mi-ddd:hh24:mi</code>
     /// </p>
     /// <p>The default is a 30-minute window selected at random from an
-    /// 8-hour block of time for each AWS Region, occurring on a random day of the
+    /// 8-hour block of time for each Amazon Web Services Region, occurring on a random day of the
     /// week. To see the time blocks available, see
     /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_UpgradeDBInstance.Maintenance.html#AdjustingTheMaintenanceWindow.Aurora">
     /// Adjusting the Preferred Maintenance Window</a> in the <i>Amazon Aurora User Guide.</i>
@@ -34432,16 +35315,16 @@ pub struct RestoreDbClusterFromS3Input {
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>A value that indicates whether the restored DB cluster is encrypted.</p>
     pub storage_encrypted: std::option::Option<bool>,
-    /// <p>The AWS KMS key identifier for an encrypted DB cluster.</p>
-    /// <p>The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer master key (CMK).
-    /// To use a CMK in a different AWS account, specify the key ARN or alias ARN.</p>
+    /// <p>The Amazon Web Services KMS key identifier for an encrypted DB cluster.</p>
+    /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon Web Services KMS customer master key (CMK).
+    /// To use a CMK in a different Amazon Web Services account, specify the key ARN or alias ARN.</p>
     /// <p>If the StorageEncrypted parameter is enabled, and you do
     /// not specify a value for the <code>KmsKeyId</code> parameter, then
     /// Amazon RDS will use your default CMK. There is a  
-    /// default CMK for your AWS account. Your AWS account has a different
-    /// default CMK for each AWS Region.</p>
+    /// default CMK for your Amazon Web Services account. Your Amazon Web Services account has a different
+    /// default CMK for each Amazon Web Services Region.</p>
     pub kms_key_id: std::option::Option<std::string::String>,
-    /// <p>A value that indicates whether to enable mapping of AWS Identity and Access
+    /// <p>A value that indicates whether to enable mapping of Amazon Web Services Identity and Access
     /// Management (IAM) accounts to database accounts. By default, mapping is disabled.</p>
     /// <p>For more information, see
     /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.IAMDBAuth.html">
@@ -34466,7 +35349,7 @@ pub struct RestoreDbClusterFromS3Input {
     /// If you do not specify a <b>SourceS3Prefix</b> value, then the Amazon Aurora DB cluster is
     /// created by using all of the files in the Amazon S3 bucket.</p>
     pub s3_prefix: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that authorizes
+    /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services Identity and Access Management (IAM) role that authorizes
     /// Amazon RDS to access the Amazon S3 bucket on your behalf.</p>
     pub s3_ingestion_role_arn: std::option::Option<std::string::String>,
     /// <p>The target backtrack window, in seconds. To disable backtracking, set this value to
@@ -34886,7 +35769,7 @@ pub struct PromoteReadReplicaInput {
     /// </p>
     /// <p>
     /// The default is a 30-minute window selected at random from an
-    /// 8-hour block of time for each AWS Region.
+    /// 8-hour block of time for each Amazon Web Services Region.
     /// To see the time blocks available, see
     /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html">
     /// Adjusting the Preferred Maintenance Window</a> in the <i>Amazon RDS User Guide.</i>
@@ -35095,7 +35978,7 @@ pub struct ModifyDbSnapshotAttributeInput {
     /// <p>The identifier for the DB snapshot to modify the attributes for.</p>
     pub db_snapshot_identifier: std::option::Option<std::string::String>,
     /// <p>The name of the DB snapshot attribute to modify.</p>
-    /// <p>To manage authorization for other AWS accounts to copy or restore a manual DB snapshot,
+    /// <p>To manage authorization for other Amazon Web Services accounts to copy or restore a manual DB snapshot,
     /// set this value to <code>restore</code>.</p>
     /// <note>
     /// <p>To view the list of attributes available to modify, use the
@@ -35103,17 +35986,17 @@ pub struct ModifyDbSnapshotAttributeInput {
     /// </note>
     pub attribute_name: std::option::Option<std::string::String>,
     /// <p>A list of DB snapshot attributes to add to the attribute specified by <code>AttributeName</code>.</p>
-    /// <p>To authorize other AWS accounts to copy or restore a manual snapshot, set this list to include one or more AWS account
+    /// <p>To authorize other Amazon Web Services accounts to copy or restore a manual snapshot, set this list to include one or more Amazon Web Services account
     /// IDs, or <code>all</code> to make the manual DB snapshot restorable by
-    /// any AWS account. Do not add the <code>all</code> value for any
+    /// any Amazon Web Services account. Do not add the <code>all</code> value for any
     /// manual DB snapshots that contain private information that you don't want available
-    /// to all AWS accounts.</p>
+    /// to all Amazon Web Services accounts.</p>
     pub values_to_add: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A list of DB snapshot attributes to remove from the attribute specified by <code>AttributeName</code>.</p>
-    /// <p>To remove authorization for other AWS accounts to copy or restore a manual snapshot, set this list to include
-    /// one or more AWS account
-    /// identifiers, or <code>all</code> to remove authorization for any AWS account to copy or
-    /// restore the DB snapshot. If you specify <code>all</code>, an AWS account whose
+    /// <p>To remove authorization for other Amazon Web Services accounts to copy or restore a manual snapshot, set this list to include
+    /// one or more Amazon Web Services account
+    /// identifiers, or <code>all</code> to remove authorization for any Amazon Web Services account to copy or
+    /// restore the DB snapshot. If you specify <code>all</code>, an Amazon Web Services account whose
     /// account ID is explicitly added to the <code>restore</code> attribute
     /// can still copy or restore the manual DB snapshot.</p>
     pub values_to_remove: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -35264,7 +36147,7 @@ pub struct ModifyDbProxyInput {
     /// when needed for debugging, and only when you have security measures in place to
     /// safeguard any sensitive information that appears in the logs.</p>
     pub debug_logging: std::option::Option<bool>,
-    /// <p>The Amazon Resource Name (ARN) of the IAM role that the proxy uses to access secrets in AWS Secrets Manager.</p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM role that the proxy uses to access secrets in Amazon Web Services Secrets Manager.</p>
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>The new list of security groups for the <code>DBProxy</code>.</p>
     pub security_groups: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -35343,7 +36226,7 @@ pub struct ModifyDbInstanceInput {
     /// </p>
     pub allocated_storage: std::option::Option<i32>,
     /// <p>The new compute and memory capacity of the DB instance, for example, <code>db.m4.large</code>.
-    /// Not all DB instance classes are available in all AWS Regions, or for all database engines.
+    /// Not all DB instance classes are available in all Amazon Web Services Regions, or for all database engines.
     /// For the full list of DB instance classes,
     /// and availability for your engine, see
     /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB Instance Class</a> in the <i>Amazon RDS User Guide.</i>
@@ -35491,7 +36374,7 @@ pub struct ModifyDbInstanceInput {
     /// as determined by the <code>BackupRetentionPeriod</code> parameter.
     /// Changing this parameter doesn't result in an outage and the change is asynchronously applied as soon as possible.
     /// The default is a 30-minute window selected at random from an
-    /// 8-hour block of time for each AWS Region. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html#USER_WorkingWithAutomatedBackups.BackupWindow">Backup window</a> in the <i>Amazon RDS User Guide.</i>
+    /// 8-hour block of time for each Amazon Web Services Region. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html#USER_WorkingWithAutomatedBackups.BackupWindow">Backup window</a> in the <i>Amazon RDS User Guide.</i>
     /// </p>
     /// <p>
     /// <b>Amazon Aurora</b>
@@ -35763,9 +36646,9 @@ pub struct ModifyDbInstanceInput {
     /// <p>Default: 1</p>
     /// <p>Valid Values: 0 - 15</p>
     pub promotion_tier: std::option::Option<i32>,
-    /// <p>A value that indicates whether to enable mapping of AWS Identity and Access
+    /// <p>A value that indicates whether to enable mapping of Amazon Web Services Identity and Access
     /// Management (IAM) accounts to database accounts. By default, mapping is disabled.</p>
-    /// <p>This setting doesn't apply to Amazon Aurora. Mapping AWS IAM accounts to database accounts is managed by the DB
+    /// <p>This setting doesn't apply to Amazon Aurora. Mapping Amazon Web Services IAM accounts to database accounts is managed by the DB
     /// cluster.</p>
     /// <p>For more information about IAM database authentication, see
     /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.html">
@@ -35778,11 +36661,11 @@ pub struct ModifyDbInstanceInput {
     /// User Guide</i>.
     /// </p>
     pub enable_performance_insights: std::option::Option<bool>,
-    /// <p>The AWS KMS key identifier for encryption of Performance Insights data.</p>
-    /// <p>The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer master key (CMK).</p>
+    /// <p>The Amazon Web Services KMS key identifier for encryption of Performance Insights data.</p>
+    /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon Web Services KMS customer master key (CMK).</p>
     /// <p>If you do not specify a value for <code>PerformanceInsightsKMSKeyId</code>, then Amazon RDS
-    /// uses your default CMK. There is a default CMK for your AWS account.
-    /// Your AWS account has a different default CMK for each AWS Region.</p>
+    /// uses your default CMK. There is a default CMK for your Amazon Web Services account.
+    /// Your Amazon Web Services account has a different default CMK for each Amazon Web Services Region.</p>
     pub performance_insights_kms_key_id: std::option::Option<std::string::String>,
     /// <p>The amount of time, in days, to retain Performance Insights data. Valid values are 7 or 731 (2 years). </p>
     pub performance_insights_retention_period: std::option::Option<i32>,
@@ -35849,12 +36732,12 @@ pub struct ModifyDbInstanceInput {
     /// your Outpost subnets through your on-premises network. For some use cases, a CoIP can
     /// provide lower latency for connections to the DB instance from outside of its virtual
     /// private cloud (VPC) on your local network.</p>
-    /// <p>For more information about RDS on Outposts, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working with Amazon RDS on AWS Outposts</a>
+    /// <p>For more information about RDS on Outposts, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working with Amazon RDS on Amazon Web Services Outposts</a>
     /// in the <i>Amazon RDS User Guide</i>.</p>
     /// <p>For more information about CoIPs, see <a href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-networking-components.html#ip-addressing">Customer-owned IP addresses</a>
-    /// in the <i>AWS Outposts User Guide</i>.</p>
+    /// in the <i>Amazon Web Services Outposts User Guide</i>.</p>
     pub enable_customer_owned_ip: std::option::Option<bool>,
-    /// <p>The Amazon Resource Name (ARN) of the recovery point in AWS Backup.</p>
+    /// <p>The Amazon Resource Name (ARN) of the recovery point in Amazon Web Services Backup.</p>
     pub aws_backup_recovery_point_arn: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ModifyDbInstanceInput {
@@ -35952,7 +36835,7 @@ pub struct ModifyDbClusterSnapshotAttributeInput {
     /// <p>The identifier for the DB cluster snapshot to modify the attributes for.</p>
     pub db_cluster_snapshot_identifier: std::option::Option<std::string::String>,
     /// <p>The name of the DB cluster snapshot attribute to modify.</p>
-    /// <p>To manage authorization for other AWS accounts to copy or restore a manual DB cluster snapshot,
+    /// <p>To manage authorization for other Amazon Web Services accounts to copy or restore a manual DB cluster snapshot,
     /// set this value to <code>restore</code>.</p>
     /// <note>
     /// <p>To view the list of attributes available to modify, use the
@@ -35960,17 +36843,17 @@ pub struct ModifyDbClusterSnapshotAttributeInput {
     /// </note>
     pub attribute_name: std::option::Option<std::string::String>,
     /// <p>A list of DB cluster snapshot attributes to add to the attribute specified by <code>AttributeName</code>.</p>
-    /// <p>To authorize other AWS accounts to copy or restore a manual DB cluster snapshot, set this list to include one or more AWS account
+    /// <p>To authorize other Amazon Web Services accounts to copy or restore a manual DB cluster snapshot, set this list to include one or more Amazon Web Services account
     /// IDs, or <code>all</code> to make the manual DB cluster snapshot restorable by
-    /// any AWS account. Do not add the <code>all</code> value for any
+    /// any Amazon Web Services account. Do not add the <code>all</code> value for any
     /// manual DB cluster snapshots that contain private information that you don't want available
-    /// to all AWS accounts.</p>
+    /// to all Amazon Web Services accounts.</p>
     pub values_to_add: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A list of DB cluster snapshot attributes to remove from the attribute specified by <code>AttributeName</code>.</p>
-    /// <p>To remove authorization for other AWS accounts to copy or restore a manual DB cluster snapshot, set this list to include
-    /// one or more AWS account
-    /// identifiers, or <code>all</code> to remove authorization for any AWS account to copy or
-    /// restore the DB cluster snapshot. If you specify <code>all</code>, an AWS account whose account ID is
+    /// <p>To remove authorization for other Amazon Web Services accounts to copy or restore a manual DB cluster snapshot, set this list to include
+    /// one or more Amazon Web Services account
+    /// identifiers, or <code>all</code> to remove authorization for any Amazon Web Services account to copy or
+    /// restore the DB cluster snapshot. If you specify <code>all</code>, an Amazon Web Services account whose account ID is
     /// explicitly added to the <code>restore</code> attribute
     /// can still copy or restore a manual DB cluster snapshot.</p>
     pub values_to_remove: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -36120,7 +37003,7 @@ pub struct ModifyDbClusterInput {
     /// using the <code>BackupRetentionPeriod</code> parameter.
     /// </p>
     /// <p>The default is a 30-minute window selected at random from an
-    /// 8-hour block of time for each AWS Region.
+    /// 8-hour block of time for each Amazon Web Services Region.
     /// To view the time blocks available, see
     /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Managing.Backups.html#Aurora.Managing.Backups.BackupWindow">
     /// Backup window</a> in the <i>Amazon Aurora User Guide.</i>
@@ -36145,7 +37028,7 @@ pub struct ModifyDbClusterInput {
     /// <p>Format: <code>ddd:hh24:mi-ddd:hh24:mi</code>
     /// </p>
     /// <p>The default is a 30-minute window selected at random from an
-    /// 8-hour block of time for each AWS Region, occurring on a random day of the
+    /// 8-hour block of time for each Amazon Web Services Region, occurring on a random day of the
     /// week. To see the time blocks available, see
     /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_UpgradeDBInstance.Maintenance.html#AdjustingTheMaintenanceWindow.Aurora">
     /// Adjusting the Preferred DB Cluster Maintenance Window</a> in the <i>Amazon Aurora User Guide.</i>
@@ -36153,7 +37036,7 @@ pub struct ModifyDbClusterInput {
     /// <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.</p>
     /// <p>Constraints: Minimum 30-minute window.</p>
     pub preferred_maintenance_window: std::option::Option<std::string::String>,
-    /// <p>A value that indicates whether to enable mapping of AWS Identity and Access
+    /// <p>A value that indicates whether to enable mapping of Amazon Web Services Identity and Access
     /// Management (IAM) accounts to database accounts. By default, mapping is disabled.</p>
     /// <p>For more information, see
     /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.IAMDBAuth.html">
@@ -36359,7 +37242,7 @@ impl std::fmt::Debug for ModifyCurrentDbClusterCapacityInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ModifyCertificatesInput {
     /// <p>The new default certificate identifier to override the current one with.</p>
-    /// <p>To determine the valid values, use the <code>describe-certificates</code> AWS CLI
+    /// <p>To determine the valid values, use the <code>describe-certificates</code> CLI
     /// command or the <code>DescribeCertificates</code> API operation.</p>
     pub certificate_identifier: std::option::Option<std::string::String>,
     /// <p>A value that indicates whether to remove the override for the default certificate.
@@ -36491,7 +37374,7 @@ pub struct FailoverGlobalClusterInput {
     pub global_cluster_identifier: std::option::Option<std::string::String>,
     /// <p>Identifier of the secondary Aurora DB cluster that you want to promote to primary for the Aurora
     /// global database (<a>GlobalCluster</a>.) Use the Amazon Resource Name (ARN) for the identifier so that
-    /// Aurora can locate the cluster in its AWS Region.      
+    /// Aurora can locate the cluster in its Amazon Web Services Region.      
     /// </p>
     pub target_db_cluster_identifier: std::option::Option<std::string::String>,
 }
@@ -36610,11 +37493,11 @@ impl std::fmt::Debug for DescribeValidDbInstanceModificationsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeSourceRegionsInput {
-    /// <p>The source AWS Region name. For example, <code>us-east-1</code>.</p>
+    /// <p>The source Amazon Web Services Region name. For example, <code>us-east-1</code>.</p>
     /// <p>Constraints:</p>
     /// <ul>
     /// <li>
-    /// <p>Must specify a valid AWS Region name.</p>
+    /// <p>Must specify a valid Amazon Web Services Region name.</p>
     /// </li>
     /// </ul>
     pub region_name: std::option::Option<std::string::String>,
@@ -36728,7 +37611,7 @@ pub struct DescribeReservedDbInstancesInput {
     pub multi_az: std::option::Option<bool>,
     /// <p>The lease identifier filter value. Specify this parameter to show only the reservation that matches the specified lease ID.</p>
     /// <note>
-    /// <p>AWS Support might request the lease ID for an issue related to a reserved DB instance.</p>
+    /// <p>Amazon Web Services Support might request the lease ID for an issue related to a reserved DB instance.</p>
     /// </note>
     pub lease_id: std::option::Option<std::string::String>,
     /// <p>This parameter isn't currently supported.</p>
@@ -36860,17 +37743,17 @@ pub struct DescribeOrderableDbInstanceOptionsInput {
     /// </li>
     /// <li>
     /// <p>
+    /// <code>oracle-ee-cdb</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
     /// <code>oracle-se2</code>
     /// </p>
     /// </li>
     /// <li>
     /// <p>
-    /// <code>oracle-se1</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>oracle-se</code>
+    /// <code>oracle-se2-cdb</code>
     /// </p>
     /// </li>
     /// <li>
@@ -36907,7 +37790,7 @@ pub struct DescribeOrderableDbInstanceOptionsInput {
     /// <p>The license model filter value. Specify this parameter to show only the available offerings matching the specified license model.</p>
     pub license_model: std::option::Option<std::string::String>,
     /// <p>The Availability Zone group associated with a Local Zone. Specify this parameter to retrieve available offerings for the Local Zones in the group.</p>
-    /// <p>Omit this parameter to show the available offerings in the specified AWS Region.</p>
+    /// <p>Omit this parameter to show the available offerings in the specified Amazon Web Services Region.</p>
     pub availability_zone_group: std::option::Option<std::string::String>,
     /// <p>A value that indicates whether to show only VPC or non-VPC offerings.</p>
     pub vpc: std::option::Option<bool>,
@@ -36992,17 +37875,17 @@ pub struct DescribeOptionGroupsInput {
     /// </li>
     /// <li>
     /// <p>
+    /// <code>oracle-ee-cdb</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
     /// <code>oracle-se2</code>
     /// </p>
     /// </li>
     /// <li>
     /// <p>
-    /// <code>oracle-se1</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>oracle-se</code>
+    /// <code>oracle-se2-cdb</code>
     /// </p>
     /// </li>
     /// <li>
@@ -37073,17 +37956,17 @@ pub struct DescribeOptionGroupOptionsInput {
     /// </li>
     /// <li>
     /// <p>
+    /// <code>oracle-ee-cdb</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
     /// <code>oracle-se2</code>
     /// </p>
     /// </li>
     /// <li>
     /// <p>
-    /// <code>oracle-se1</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>oracle-se</code>
+    /// <code>oracle-se2-cdb</code>
     /// </p>
     /// </li>
     /// <li>
@@ -37583,15 +38466,15 @@ pub struct DescribeDbSnapshotsInput {
     /// <li>
     /// <p>
     /// <code>automated</code> - Return all DB snapshots that have been automatically taken by
-    /// Amazon RDS for my AWS account.</p>
+    /// Amazon RDS for my Amazon Web Services account.</p>
     /// </li>
     /// <li>
     /// <p>
-    /// <code>manual</code> - Return all DB snapshots that have been taken by my AWS account.</p>
+    /// <code>manual</code> - Return all DB snapshots that have been taken by my Amazon Web Services account.</p>
     /// </li>
     /// <li>
     /// <p>
-    /// <code>shared</code> - Return all manual DB snapshots that have been shared to my AWS account.</p>
+    /// <code>shared</code> - Return all manual DB snapshots that have been shared to my Amazon Web Services account.</p>
     /// </li>
     /// <li>
     /// <p>
@@ -37599,10 +38482,10 @@ pub struct DescribeDbSnapshotsInput {
     /// </li>
     /// <li>
     /// <p>
-    /// <code>awsbackup</code> - Return the DB snapshots managed by the AWS Backup service.</p>
-    /// <p>For information about AWS Backup, see the
+    /// <code>awsbackup</code> - Return the DB snapshots managed by the Amazon Web Services Backup service.</p>
+    /// <p>For information about Amazon Web Services Backup, see the
     /// <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/whatisbackup.html">
-    /// <i>AWS Backup Developer Guide.</i>
+    /// <i>Amazon Web Services Backup Developer Guide.</i>
     /// </a>
     /// </p>
     /// <p>The <code>awsbackup</code> type does not apply to Aurora.</p>
@@ -37662,13 +38545,13 @@ pub struct DescribeDbSnapshotsInput {
     /// </p>
     pub marker: std::option::Option<std::string::String>,
     /// <p>A value that indicates whether to include shared manual DB cluster snapshots
-    /// from other AWS accounts that this AWS account has been given
+    /// from other Amazon Web Services accounts that this Amazon Web Services account has been given
     /// permission to copy or restore. By default, these snapshots are not included.</p>
-    /// <p>You can give an AWS account permission to restore a manual DB snapshot from
-    /// another AWS account by using the <code>ModifyDBSnapshotAttribute</code> API action.</p>
+    /// <p>You can give an Amazon Web Services account permission to restore a manual DB snapshot from
+    /// another Amazon Web Services account by using the <code>ModifyDBSnapshotAttribute</code> API action.</p>
     pub include_shared: bool,
     /// <p>A value that indicates whether to include manual DB cluster snapshots that are public and can be copied
-    /// or restored by any AWS account. By default, the public snapshots are not included.</p>
+    /// or restored by any Amazon Web Services account. By default, the public snapshots are not included.</p>
     /// <p>You can share a manual DB snapshot as public by using the <a>ModifyDBSnapshotAttribute</a> API.</p>
     pub include_public: bool,
     /// <p>A specific DB resource ID to describe.</p>
@@ -37859,7 +38742,7 @@ impl std::fmt::Debug for DescribeDbProxyEndpointsInput {
 pub struct DescribeDbProxiesInput {
     /// <p>The name of the DB proxy. If you omit this parameter,
     /// the output includes information about all DB proxies owned by
-    /// your AWS account ID.</p>
+    /// your Amazon Web Services account ID.</p>
     pub db_proxy_name: std::option::Option<std::string::String>,
     /// <p>This parameter is not currently supported.</p>
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
@@ -38200,17 +39083,17 @@ pub struct DescribeDbEngineVersionsInput {
     /// </li>
     /// <li>
     /// <p>
+    /// <code>oracle-ee-cdb</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
     /// <code>oracle-se2</code>
     /// </p>
     /// </li>
     /// <li>
     /// <p>
-    /// <code>oracle-se1</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>oracle-se</code>
+    /// <code>oracle-se2-cdb</code>
     /// </p>
     /// </li>
     /// <li>
@@ -38340,15 +39223,15 @@ pub struct DescribeDbClusterSnapshotsInput {
     /// <li>
     /// <p>
     /// <code>automated</code> - Return all DB cluster snapshots that have been automatically taken by
-    /// Amazon RDS for my AWS account.</p>
+    /// Amazon RDS for my Amazon Web Services account.</p>
     /// </li>
     /// <li>
     /// <p>
-    /// <code>manual</code> - Return all DB cluster snapshots that have been taken by my AWS account.</p>
+    /// <code>manual</code> - Return all DB cluster snapshots that have been taken by my Amazon Web Services account.</p>
     /// </li>
     /// <li>
     /// <p>
-    /// <code>shared</code> - Return all manual DB cluster snapshots that have been shared to my AWS account.</p>
+    /// <code>shared</code> - Return all manual DB cluster snapshots that have been shared to my Amazon Web Services account.</p>
     /// </li>
     /// <li>
     /// <p>
@@ -38401,13 +39284,13 @@ pub struct DescribeDbClusterSnapshotsInput {
     /// </p>
     pub marker: std::option::Option<std::string::String>,
     /// <p>A value that indicates whether to include shared manual DB cluster snapshots
-    /// from other AWS accounts that this AWS account has been given
+    /// from other Amazon Web Services accounts that this Amazon Web Services account has been given
     /// permission to copy or restore. By default, these snapshots are not included.</p>
-    /// <p>You can give an AWS account permission to restore a manual DB cluster snapshot from
-    /// another AWS account by the <code>ModifyDBClusterSnapshotAttribute</code> API action.</p>
+    /// <p>You can give an Amazon Web Services account permission to restore a manual DB cluster snapshot from
+    /// another Amazon Web Services account by the <code>ModifyDBClusterSnapshotAttribute</code> API action.</p>
     pub include_shared: bool,
     /// <p>A value that indicates whether to include manual DB cluster snapshots that are public and can be copied
-    /// or restored by any AWS account. By default, the public snapshots are not included.</p>
+    /// or restored by any Amazon Web Services account. By default, the public snapshots are not included.</p>
     /// <p>You can share a manual DB cluster snapshot  as public by using the <a>ModifyDBClusterSnapshotAttribute</a> API action.</p>
     pub include_public: bool,
 }
@@ -38485,7 +39368,7 @@ pub struct DescribeDbClustersInput {
     /// </p>
     pub marker: std::option::Option<std::string::String>,
     /// <p>Optional Boolean parameter that specifies whether the output includes information about clusters
-    /// shared from other AWS accounts.</p>
+    /// shared from other Amazon Web Services accounts.</p>
     pub include_shared: bool,
 }
 impl std::fmt::Debug for DescribeDbClustersInput {
@@ -39047,7 +39930,7 @@ impl std::fmt::Debug for DeleteDbParameterGroupInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteDbInstanceAutomatedBackupInput {
-    /// <p>The identifier for the source DB instance, which can't be changed and which is unique to an AWS Region.</p>
+    /// <p>The identifier for the source DB instance, which can't be changed and which is unique to an Amazon Web Services Region.</p>
     pub dbi_resource_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the automated backups to delete, for example,
     /// <code>arn:aws:rds:us-east-1:123456789012:auto-backup:ab-L2IJCEXJP7XQ7HOJ4SIEXAMPLE</code>.</p>
@@ -39308,17 +40191,17 @@ pub struct CreateOptionGroupInput {
     /// </li>
     /// <li>
     /// <p>
+    /// <code>oracle-ee-cdb</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
     /// <code>oracle-se2</code>
     /// </p>
     /// </li>
     /// <li>
     /// <p>
-    /// <code>oracle-se1</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>oracle-se</code>
+    /// <code>oracle-se2-cdb</code>
     /// </p>
     /// </li>
     /// <li>
@@ -39639,7 +40522,7 @@ impl std::fmt::Debug for CreateDbProxyEndpointInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateDbProxyInput {
-    /// <p>The identifier for the proxy. This name must be unique for all proxies owned by your AWS account in the specified AWS Region. An identifier must begin with a letter and must contain only ASCII letters, digits, and hyphens; it can't end with a hyphen or contain two consecutive hyphens.</p>
+    /// <p>The identifier for the proxy. This name must be unique for all proxies owned by your Amazon Web Services account in the specified Amazon Web Services Region. An identifier must begin with a letter and must contain only ASCII letters, digits, and hyphens; it can't end with a hyphen or contain two consecutive hyphens.</p>
     pub db_proxy_name: std::option::Option<std::string::String>,
     /// <p>The kinds of databases that the proxy can connect to.
     /// This value determines which database network protocol the proxy recognizes when it interprets
@@ -39648,7 +40531,7 @@ pub struct CreateDbProxyInput {
     pub engine_family: std::option::Option<crate::model::EngineFamily>,
     /// <p>The authorization mechanism that the proxy uses.</p>
     pub auth: std::option::Option<std::vec::Vec<crate::model::UserAuthConfig>>,
-    /// <p>The Amazon Resource Name (ARN) of the IAM role that the proxy uses to access secrets in AWS Secrets Manager.</p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM role that the proxy uses to access secrets in Amazon Web Services Secrets Manager.</p>
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>One or more VPC subnet IDs to associate with the new proxy.</p>
     pub vpc_subnet_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -39752,17 +40635,17 @@ pub struct CreateDbParameterGroupInput {
     /// </li>
     /// <li>
     /// <p>
+    /// <code>oracle-ee-cdb</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
     /// <code>oracle-se2</code>
     /// </p>
     /// </li>
     /// <li>
     /// <p>
-    /// <code>oracle-se1</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>oracle-se</code>
+    /// <code>oracle-se2-cdb</code>
     /// </p>
     /// </li>
     /// <li>
@@ -39843,18 +40726,18 @@ pub struct CreateDbInstanceReadReplicaInput {
     /// retention period must be greater than 0.</p>
     /// </li>
     /// <li>
-    /// <p>If the source DB instance is in the same AWS Region as the read replica, specify a valid DB
+    /// <p>If the source DB instance is in the same Amazon Web Services Region as the read replica, specify a valid DB
     /// instance identifier.</p>
     /// </li>
     /// <li>
-    /// <p>If the source DB instance is in a different AWS Region from the read replica, specify a valid DB instance ARN.
+    /// <p>If the source DB instance is in a different Amazon Web Services Region from the read replica, specify a valid DB instance ARN.
     /// For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing">Constructing an ARN for Amazon RDS</a>
     /// in the <i>Amazon RDS User Guide</i>. This doesn't apply to SQL Server, which doesn't support cross-region replicas.</p>
     /// </li>
     /// </ul>
     pub source_db_instance_identifier: std::option::Option<std::string::String>,
     /// <p>The compute and memory capacity of the read replica, for example,
-    /// <code>db.m4.large</code>. Not all DB instance classes are available in all AWS
+    /// <code>db.m4.large</code>. Not all DB instance classes are available in all Amazon Web Services
     /// Regions, or for all database engines. For the full list of DB instance classes, and
     /// availability for your engine, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB Instance
     /// Class</a> in the <i>Amazon RDS User Guide.</i>
@@ -39862,7 +40745,7 @@ pub struct CreateDbInstanceReadReplicaInput {
     /// <p>Default: Inherits from the source DB instance.</p>
     pub db_instance_class: std::option::Option<std::string::String>,
     /// <p>The Availability Zone (AZ) where the read replica will be created.</p>
-    /// <p>Default: A random, system-chosen Availability Zone in the endpoint's AWS Region.</p>
+    /// <p>Default: A random, system-chosen Availability Zone in the endpoint's Amazon Web Services Region.</p>
     /// <p>
     /// Example: <code>us-east-1d</code>
     /// </p>
@@ -39926,16 +40809,16 @@ pub struct CreateDbInstanceReadReplicaInput {
     /// <p>Constraints:</p>
     /// <ul>
     /// <li>
-    /// <p>Can only be specified if the source DB instance identifier specifies a DB instance in another AWS Region.</p>
+    /// <p>Can only be specified if the source DB instance identifier specifies a DB instance in another Amazon Web Services Region.</p>
     /// </li>
     /// <li>
     /// <p>If supplied, must match the name of an existing DBSubnetGroup.</p>
     /// </li>
     /// <li>
-    /// <p>The specified DB subnet group must be in the same AWS Region in which the operation is running.</p>
+    /// <p>The specified DB subnet group must be in the same Amazon Web Services Region in which the operation is running.</p>
     /// </li>
     /// <li>
-    /// <p>All read replicas in one AWS Region that are created from the same source DB
+    /// <p>All read replicas in one Amazon Web Services Region that are created from the same source DB
     /// instance must either:></p>
     /// <ul>
     /// <li>
@@ -39987,78 +40870,78 @@ pub struct CreateDbInstanceReadReplicaInput {
     /// create an IAM role for Amazon RDS Enhanced Monitoring</a> in the <i>Amazon RDS User Guide</i>.</p>
     /// <p>If <code>MonitoringInterval</code> is set to a value other than 0, then you must supply a <code>MonitoringRoleArn</code> value.</p>
     pub monitoring_role_arn: std::option::Option<std::string::String>,
-    /// <p>The AWS KMS key identifier for an encrypted read replica.</p>
-    /// <p>The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS CMK.</p>
-    /// <p>If you create an encrypted read replica in the same AWS Region as the source DB
+    /// <p>The Amazon Web Services KMS key identifier for an encrypted read replica.</p>
+    /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon Web Services KMS CMK.</p>
+    /// <p>If you create an encrypted read replica in the same Amazon Web Services Region as the source DB
     /// instance, then do not specify a value for this parameter. A read replica in the same Region
-    /// is always encrypted with the same AWS KMS CMK as the source DB instance.</p>       
-    /// <p>If you create an encrypted read replica in a different AWS Region, then you must
-    /// specify a AWS KMS key identifier for the destination AWS Region. AWS KMS CMKs are specific to
-    /// the AWS Region that they are created in, and you can't use CMKs from one
-    /// AWS Region in another AWS Region.</p>       
+    /// is always encrypted with the same Amazon Web Services KMS CMK as the source DB instance.</p>       
+    /// <p>If you create an encrypted read replica in a different Amazon Web Services Region, then you must
+    /// specify a Amazon Web Services KMS key identifier for the destination Amazon Web Services Region. Amazon Web Services KMS CMKs are specific to
+    /// the Amazon Web Services Region that they are created in, and you can't use CMKs from one
+    /// Amazon Web Services Region in another Amazon Web Services Region.</p>       
     /// <p>You can't create an encrypted read replica from an unencrypted DB instance.</p>
     pub kms_key_id: std::option::Option<std::string::String>,
     /// <p>The URL that contains a Signature Version 4 signed request for the <code>CreateDBInstanceReadReplica</code> API action
-    /// in the source AWS Region that contains the source DB instance.
+    /// in the source Amazon Web Services Region that contains the source DB instance.
     /// </p>
     /// <p>You must specify this parameter when you create an encrypted read replica from
-    /// another AWS Region by using the Amazon RDS API. Don't specify
+    /// another Amazon Web Services Region by using the Amazon RDS API. Don't specify
     /// <code>PreSignedUrl</code> when you are creating an encrypted read replica in the
-    /// same AWS Region.</p>
+    /// same Amazon Web Services Region.</p>
     /// <p>The presigned URL must be a valid request for the <code>CreateDBInstanceReadReplica</code> API action
-    /// that can be executed in the source AWS Region that contains the encrypted source DB instance.
+    /// that can be executed in the source Amazon Web Services Region that contains the encrypted source DB instance.
     /// The presigned URL request must contain the following parameter values:
     /// </p>
     /// <ul>
     /// <li>
     /// <p>
-    /// <code>DestinationRegion</code> - The AWS Region that the encrypted read
-    /// replica is created in. This AWS Region is the same one where the
+    /// <code>DestinationRegion</code> - The Amazon Web Services Region that the encrypted read
+    /// replica is created in. This Amazon Web Services Region is the same one where the
     /// <code>CreateDBInstanceReadReplica</code> action is called that contains this presigned URL.</p>
-    /// <p>For example, if you create an encrypted DB instance in the us-west-1 AWS Region,
-    /// from a source DB instance in the us-east-2 AWS Region,
+    /// <p>For example, if you create an encrypted DB instance in the us-west-1 Amazon Web Services Region,
+    /// from a source DB instance in the us-east-2 Amazon Web Services Region,
     /// then you call the <code>CreateDBInstanceReadReplica</code> action in
-    /// the us-east-1 AWS Region and provide a presigned URL that contains a call to the
-    /// <code>CreateDBInstanceReadReplica</code> action in the us-west-2 AWS Region. For this
+    /// the us-east-1 Amazon Web Services Region and provide a presigned URL that contains a call to the
+    /// <code>CreateDBInstanceReadReplica</code> action in the us-west-2 Amazon Web Services Region. For this
     /// example, the <code>DestinationRegion</code> in the presigned URL must be set to
-    /// the us-east-1 AWS Region.
+    /// the us-east-1 Amazon Web Services Region.
     /// </p>
     /// </li>
     /// <li>
     /// <p>
-    /// <code>KmsKeyId</code> - The AWS KMS key identifier for the key to use to
-    /// encrypt the read replica in the destination AWS Region. This is the same
+    /// <code>KmsKeyId</code> - The Amazon Web Services KMS key identifier for the key to use to
+    /// encrypt the read replica in the destination Amazon Web Services Region. This is the same
     /// identifier for both the <code>CreateDBInstanceReadReplica</code> action that is
-    /// called in the destination AWS Region, and the action contained in the presigned
+    /// called in the destination Amazon Web Services Region, and the action contained in the presigned
     /// URL. </p>
     /// </li>
     /// <li>
     /// <p>
     /// <code>SourceDBInstanceIdentifier</code> - The DB instance identifier for
     /// the encrypted DB instance to be replicated. This identifier must be in the
-    /// Amazon Resource Name (ARN) format for the source AWS Region. For example, if you
-    /// are creating an encrypted read replica from a DB instance in the us-west-2 AWS
+    /// Amazon Resource Name (ARN) format for the source Amazon Web Services Region. For example, if you
+    /// are creating an encrypted read replica from a DB instance in the us-west-2 Amazon Web Services
     /// Region, then your <code>SourceDBInstanceIdentifier</code> looks like the
     /// following example:
     /// <code>arn:aws:rds:us-west-2:123456789012:instance:mysql-instance1-20161115</code>. </p>
     /// </li>
     /// </ul>
     /// <p>To learn how to generate a Signature Version 4 signed request, see
-    /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html">Authenticating Requests: Using Query Parameters (AWS Signature Version 4)</a> and
+    /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html">Authenticating Requests: Using Query Parameters (Amazon Web Services Signature Version 4)</a> and
     /// <a href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature Version 4 Signing Process</a>.
     /// </p>
     /// <note>
-    /// <p>If you are using an AWS SDK tool or the AWS CLI, you can specify
-    /// <code>SourceRegion</code> (or <code>--source-region</code> for the AWS CLI)
+    /// <p>If you are using an Amazon Web Services SDK tool or the CLI, you can specify
+    /// <code>SourceRegion</code> (or <code>--source-region</code> for the CLI)
     /// instead of specifying <code>PreSignedUrl</code> manually. Specifying
     /// <code>SourceRegion</code> autogenerates a presigned URL that is a valid request
-    /// for the operation that can be executed in the source AWS Region.</p>
+    /// for the operation that can be executed in the source Amazon Web Services Region.</p>
     /// <p>
     /// <code>SourceRegion</code> isn't supported for SQL Server, because SQL Server on Amazon RDS
     /// doesn't support cross-region read replicas.</p>
     /// </note>
     pub pre_signed_url: std::option::Option<std::string::String>,
-    /// <p>A value that indicates whether to enable mapping of AWS Identity and Access
+    /// <p>A value that indicates whether to enable mapping of Amazon Web Services Identity and Access
     /// Management (IAM) accounts to database accounts. By default, mapping is disabled.</p>
     /// <p>For more information about IAM database authentication, see
     /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.html">
@@ -40070,11 +40953,11 @@ pub struct CreateDbInstanceReadReplicaInput {
     /// Amazon Performance Insights</a> in the <i>Amazon RDS User Guide</i>.
     /// </p>
     pub enable_performance_insights: std::option::Option<bool>,
-    /// <p>The AWS KMS key identifier for encryption of Performance Insights data.</p>
-    /// <p>The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer master key (CMK).</p>
+    /// <p>The Amazon Web Services KMS key identifier for encryption of Performance Insights data.</p>
+    /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon Web Services KMS customer master key (CMK).</p>
     /// <p>If you do not specify a value for <code>PerformanceInsightsKMSKeyId</code>, then Amazon RDS
-    /// uses your default CMK. There is a default CMK for your AWS account.
-    /// Your AWS account has a different default CMK for each AWS Region.</p>
+    /// uses your default CMK. There is a default CMK for your Amazon Web Services account.
+    /// Your Amazon Web Services account has a different default CMK for each Amazon Web Services Region.</p>
     pub performance_insights_kms_key_id: std::option::Option<std::string::String>,
     /// <p>The amount of time, in days, to retain Performance Insights data. Valid values are 7 or 731 (2 years). </p>
     pub performance_insights_retention_period: std::option::Option<i32>,
@@ -40423,7 +41306,7 @@ pub struct CreateDbInstanceInput {
     /// </ul>
     pub allocated_storage: std::option::Option<i32>,
     /// <p>The compute and memory capacity of the DB instance, for example, <code>db.m4.large</code>.
-    /// Not all DB instance classes are available in all AWS Regions, or for all database engines.
+    /// Not all DB instance classes are available in all Amazon Web Services Regions, or for all database engines.
     /// For the full list of DB instance classes,
     /// and availability for your engine, see
     /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB Instance Class</a> in the <i>Amazon RDS User Guide.</i>
@@ -40431,7 +41314,7 @@ pub struct CreateDbInstanceInput {
     pub db_instance_class: std::option::Option<std::string::String>,
     /// <p>The name of the database engine to be used for this instance.
     /// </p>
-    /// <p>Not every database engine is available for every AWS Region.
+    /// <p>Not every database engine is available for every Amazon Web Services Region.
     /// </p>
     /// <p>Valid Values:
     /// </p>
@@ -40466,17 +41349,17 @@ pub struct CreateDbInstanceInput {
     /// </li>
     /// <li>
     /// <p>
+    /// <code>oracle-ee-cdb</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
     /// <code>oracle-se2</code>
     /// </p>
     /// </li>
     /// <li>
     /// <p>
-    /// <code>oracle-se1</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>oracle-se</code>
+    /// <code>oracle-se2-cdb</code>
     /// </p>
     /// </li>
     /// <li>
@@ -40640,17 +41523,17 @@ pub struct CreateDbInstanceInput {
     pub vpc_security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>
     /// The Availability Zone (AZ) where the database will be created. For information on
-    /// AWS Regions and Availability Zones, see
+    /// Amazon Web Services Regions and Availability Zones, see
     /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html">Regions
     /// and Availability Zones</a>.
     /// </p>
-    /// <p>Default: A random, system-chosen Availability Zone in the endpoint's AWS Region.</p>
+    /// <p>Default: A random, system-chosen Availability Zone in the endpoint's Amazon Web Services Region.</p>
     /// <p>
     /// Example: <code>us-east-1d</code>
     /// </p>
     /// <p>
     /// Constraint: The <code>AvailabilityZone</code> parameter can't be specified if the DB instance is a Multi-AZ deployment.
-    /// The specified Availability Zone must be in the same AWS Region as the current endpoint.
+    /// The specified Availability Zone must be in the same Amazon Web Services Region as the current endpoint.
     /// </p>
     /// <note>
     /// <p>If you're creating a DB instance in an RDS on VMware environment,
@@ -40673,7 +41556,7 @@ pub struct CreateDbInstanceInput {
     /// Format: <code>ddd:hh24:mi-ddd:hh24:mi</code>
     /// </p>
     /// <p>The default is a 30-minute window selected at random from an
-    /// 8-hour block of time for each AWS Region, occurring on a random day of the
+    /// 8-hour block of time for each Amazon Web Services Region, occurring on a random day of the
     /// week.
     /// </p>
     /// <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.</p>
@@ -40716,7 +41599,7 @@ pub struct CreateDbInstanceInput {
     /// if automated backups are enabled,
     /// using the <code>BackupRetentionPeriod</code> parameter.
     /// The default is a 30-minute window selected at random from an
-    /// 8-hour block of time for each AWS Region. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html#USER_WorkingWithAutomatedBackups.BackupWindow">Backup window</a> in the <i>Amazon RDS User Guide</i>.
+    /// 8-hour block of time for each Amazon Web Services Region. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html#USER_WorkingWithAutomatedBackups.BackupWindow">Backup window</a> in the <i>Amazon RDS User Guide</i>.
     /// </p>
     /// <p>
     /// <b>Amazon Aurora</b>
@@ -40800,7 +41683,7 @@ pub struct CreateDbInstanceInput {
     /// <p>The version number of the database engine to use.</p>
     /// <p>For a list of valid engine versions, use the  <code>DescribeDBEngineVersions</code> action.</p>
     /// <p>The following are the database engines and links to information about the major and minor versions that are available with
-    /// Amazon RDS. Not every database engine is available for every AWS Region.</p>
+    /// Amazon RDS. Not every database engine is available for every Amazon Web Services Region.</p>
     /// <p>
     /// <b>Amazon Aurora</b>
     /// </p>
@@ -40917,19 +41800,19 @@ pub struct CreateDbInstanceInput {
     /// <p>Not applicable. The encryption for DB instances is managed by
     /// the DB cluster.</p>
     pub storage_encrypted: std::option::Option<bool>,
-    /// <p>The AWS KMS key identifier for an encrypted DB instance.</p>
-    /// <p>The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer master key (CMK).
-    /// To use a CMK in a different AWS account, specify the key ARN or alias ARN.</p>
+    /// <p>The Amazon Web Services KMS key identifier for an encrypted DB instance.</p>
+    /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon Web Services KMS customer master key (CMK).
+    /// To use a CMK in a different Amazon Web Services account, specify the key ARN or alias ARN.</p>
     /// <p>
     /// <b>Amazon Aurora</b>
     /// </p>
-    /// <p>Not applicable. The AWS KMS key identifier is managed by
+    /// <p>Not applicable. The Amazon Web Services KMS key identifier is managed by
     /// the DB cluster. For more information, see <code>CreateDBCluster</code>.</p>     
     /// <p>If <code>StorageEncrypted</code> is enabled, and you do
     /// not specify a value for the <code>KmsKeyId</code> parameter, then
     /// Amazon RDS uses your default CMK. There is a  
-    /// default CMK for your AWS account. Your AWS account has a different
-    /// default CMK for each AWS Region.</p>
+    /// default CMK for your Amazon Web Services account. Your Amazon Web Services account has a different
+    /// default CMK for each Amazon Web Services Region.</p>
     pub kms_key_id: std::option::Option<std::string::String>,
     /// <p>The Active Directory directory ID to create the DB instance in. Currently, only MySQL, Microsoft SQL
     /// Server, Oracle, and PostgreSQL DB instances can be created in an Active Directory Domain.</p>
@@ -40970,9 +41853,9 @@ pub struct CreateDbInstanceInput {
     /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html#SQLServer.Concepts.General.TimeZone">Microsoft SQL Server</a>.
     /// </p>
     pub timezone: std::option::Option<std::string::String>,
-    /// <p>A value that indicates whether to enable mapping of AWS Identity and Access
+    /// <p>A value that indicates whether to enable mapping of Amazon Web Services Identity and Access
     /// Management (IAM) accounts to database accounts. By default, mapping is disabled.</p>
-    /// <p>This setting doesn't apply to Amazon Aurora. Mapping AWS IAM accounts to database accounts is managed by the DB
+    /// <p>This setting doesn't apply to Amazon Aurora. Mapping Amazon Web Services IAM accounts to database accounts is managed by the DB
     /// cluster.</p>
     /// <p>For more information, see
     /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.html">
@@ -40986,11 +41869,11 @@ pub struct CreateDbInstanceInput {
     /// User Guide</i>.
     /// </p>
     pub enable_performance_insights: std::option::Option<bool>,
-    /// <p>The AWS KMS key identifier for encryption of Performance Insights data.</p>
-    /// <p>The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer master key (CMK).</p>
+    /// <p>The Amazon Web Services KMS key identifier for encryption of Performance Insights data.</p>
+    /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon Web Services KMS customer master key (CMK).</p>
     /// <p>If you do not specify a value for <code>PerformanceInsightsKMSKeyId</code>, then Amazon RDS
-    /// uses your default CMK. There is a default CMK for your AWS account.
-    /// Your AWS account has a different default CMK for each AWS Region.</p>
+    /// uses your default CMK. There is a default CMK for your Amazon Web Services account.
+    /// Your Amazon Web Services account has a different default CMK for each Amazon Web Services Region.</p>
     pub performance_insights_kms_key_id: std::option::Option<std::string::String>,
     /// <p>The amount of time, in days, to retain Performance Insights data. Valid values are 7 or 731 (2 years). </p>
     pub performance_insights_retention_period: std::option::Option<i32>,
@@ -41058,10 +41941,10 @@ pub struct CreateDbInstanceInput {
     /// your Outpost subnets through your on-premises network. For some use cases, a CoIP can
     /// provide lower latency for connections to the DB instance from outside of its virtual
     /// private cloud (VPC) on your local network.</p>
-    /// <p>For more information about RDS on Outposts, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working with Amazon RDS on AWS Outposts</a>
+    /// <p>For more information about RDS on Outposts, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working with Amazon RDS on Amazon Web Services Outposts</a>
     /// in the <i>Amazon RDS User Guide</i>.</p>
     /// <p>For more information about CoIPs, see <a href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-networking-components.html#ip-addressing">Customer-owned IP addresses</a>
-    /// in the <i>AWS Outposts User Guide</i>.</p>
+    /// in the <i>Amazon Web Services Outposts User Guide</i>.</p>
     pub enable_customer_owned_ip: std::option::Option<bool>,
 }
 impl std::fmt::Debug for CreateDbInstanceInput {
@@ -41300,7 +42183,7 @@ impl std::fmt::Debug for CreateDbClusterEndpointInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateDbClusterInput {
     /// <p>A list of Availability Zones (AZs) where instances in the DB cluster can be created. For information on
-    /// AWS Regions and Availability Zones, see
+    /// Amazon Web Services Regions and Availability Zones, see
     /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Concepts.RegionsAndAvailabilityZones.html">Choosing the Regions and
     /// Availability Zones</a> in the <i>Amazon Aurora User Guide</i>.
     /// </p>
@@ -41413,7 +42296,7 @@ pub struct CreateDbClusterInput {
     /// using the <code>BackupRetentionPeriod</code> parameter.
     /// </p>
     /// <p>The default is a 30-minute window selected at random from an
-    /// 8-hour block of time for each AWS Region.
+    /// 8-hour block of time for each Amazon Web Services Region.
     /// To view the time blocks available, see
     /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Managing.Backups.html#Aurora.Managing.Backups.BackupWindow">
     /// Backup window</a> in the <i>Amazon Aurora User Guide.</i>
@@ -41438,7 +42321,7 @@ pub struct CreateDbClusterInput {
     /// <p>Format: <code>ddd:hh24:mi-ddd:hh24:mi</code>
     /// </p>
     /// <p>The default is a 30-minute window selected at random from an
-    /// 8-hour block of time for each AWS Region, occurring on a random day of the
+    /// 8-hour block of time for each Amazon Web Services Region, occurring on a random day of the
     /// week. To see the time blocks available, see
     /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_UpgradeDBInstance.Maintenance.html#AdjustingTheMaintenanceWindow.Aurora">
     /// Adjusting the Preferred DB Cluster Maintenance Window</a> in the <i>Amazon Aurora User Guide.</i>
@@ -41453,9 +42336,9 @@ pub struct CreateDbClusterInput {
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>A value that indicates whether the DB cluster is encrypted.</p>
     pub storage_encrypted: std::option::Option<bool>,
-    /// <p>The AWS KMS key identifier for an encrypted DB cluster.</p>
-    /// <p>The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer master key (CMK).
-    /// To use a CMK in a different AWS account, specify the key ARN or alias ARN.</p>
+    /// <p>The Amazon Web Services KMS key identifier for an encrypted DB cluster.</p>
+    /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon Web Services KMS customer master key (CMK).
+    /// To use a CMK in a different Amazon Web Services account, specify the key ARN or alias ARN.</p>
     /// <p>When a CMK isn't specified in <code>KmsKeyId</code>:</p>
     /// <ul>
     /// <li>
@@ -41469,50 +42352,50 @@ pub struct CreateDbClusterInput {
     /// will use your default CMK.</p>
     /// </li>
     /// </ul>
-    /// <p>There is a default CMK for your AWS account. Your AWS account
-    /// has a different default CMK for each AWS Region.</p>
-    /// <p>If you create a read replica of an encrypted DB cluster in another AWS Region, you
-    /// must set <code>KmsKeyId</code> to a AWS KMS key identifier that is valid in the destination AWS
-    /// Region. This CMK is used to encrypt the read replica in that AWS Region.</p>
+    /// <p>There is a default CMK for your Amazon Web Services account. Your Amazon Web Services account
+    /// has a different default CMK for each Amazon Web Services Region.</p>
+    /// <p>If you create a read replica of an encrypted DB cluster in another Amazon Web Services Region, you
+    /// must set <code>KmsKeyId</code> to a Amazon Web Services KMS key identifier that is valid in the destination Amazon Web Services
+    /// Region. This CMK is used to encrypt the read replica in that Amazon Web Services Region.</p>
     pub kms_key_id: std::option::Option<std::string::String>,
     /// <p>A URL that contains a Signature Version 4 signed request for
-    /// the <code>CreateDBCluster</code> action to be called in the source AWS Region where the DB cluster is replicated from.
+    /// the <code>CreateDBCluster</code> action to be called in the source Amazon Web Services Region where the DB cluster is replicated from.
     /// You only need to specify <code>PreSignedUrl</code> when you are performing cross-region replication from an encrypted DB cluster.</p>
     /// <p>The pre-signed URL must be a valid request for the <code>CreateDBCluster</code> API action
-    /// that can be executed in the source AWS Region that contains the encrypted DB cluster to be copied.</p>
+    /// that can be executed in the source Amazon Web Services Region that contains the encrypted DB cluster to be copied.</p>
     /// <p>The pre-signed URL request must contain the following parameter values:</p>
     /// <ul>
     /// <li>
     /// <p>
-    /// <code>KmsKeyId</code> - The AWS KMS key identifier for the key to use to encrypt the copy of
-    /// the DB cluster in the destination AWS Region. This should refer to the same AWS KMS CMK for both the <code>CreateDBCluster</code>
-    /// action that is called in the destination AWS Region, and the action contained in the pre-signed URL.</p>
+    /// <code>KmsKeyId</code> - The Amazon Web Services KMS key identifier for the key to use to encrypt the copy of
+    /// the DB cluster in the destination Amazon Web Services Region. This should refer to the same Amazon Web Services KMS CMK for both the <code>CreateDBCluster</code>
+    /// action that is called in the destination Amazon Web Services Region, and the action contained in the pre-signed URL.</p>
     /// </li>
     /// <li>
     /// <p>
-    /// <code>DestinationRegion</code> - The name of the AWS Region that Aurora read replica will
+    /// <code>DestinationRegion</code> - The name of the Amazon Web Services Region that Aurora read replica will
     /// be created in.</p>
     /// </li>
     /// <li>
     /// <p>
     /// <code>ReplicationSourceIdentifier</code> - The DB cluster identifier for the encrypted DB cluster to be copied.
-    /// This identifier must be in the Amazon Resource Name (ARN) format for the source AWS Region. For example, if you are copying an
-    /// encrypted DB cluster from the us-west-2 AWS Region, then your <code>ReplicationSourceIdentifier</code> would look like
+    /// This identifier must be in the Amazon Resource Name (ARN) format for the source Amazon Web Services Region. For example, if you are copying an
+    /// encrypted DB cluster from the us-west-2 Amazon Web Services Region, then your <code>ReplicationSourceIdentifier</code> would look like
     /// Example: <code>arn:aws:rds:us-west-2:123456789012:cluster:aurora-cluster1</code>.</p>
     /// </li>
     /// </ul>
     /// <p>To learn how to generate a Signature Version 4 signed request, see
     /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html">
-    /// Authenticating Requests: Using Query Parameters (AWS Signature Version 4)</a> and
+    /// Authenticating Requests: Using Query Parameters (Amazon Web Services Signature Version 4)</a> and
     /// <a href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">
     /// Signature Version 4 Signing Process</a>.</p>
     /// <note>
-    /// <p>If you are using an AWS SDK tool or the AWS CLI, you can specify <code>SourceRegion</code> (or <code>--source-region</code> for the AWS CLI)
+    /// <p>If you are using an Amazon Web Services SDK tool or the CLI, you can specify <code>SourceRegion</code> (or <code>--source-region</code> for the CLI)
     /// instead of specifying <code>PreSignedUrl</code> manually. Specifying <code>SourceRegion</code> autogenerates a pre-signed URL that is a valid
-    /// request for the operation that can be executed in the source AWS Region.</p>
+    /// request for the operation that can be executed in the source Amazon Web Services Region.</p>
     /// </note>
     pub pre_signed_url: std::option::Option<std::string::String>,
-    /// <p>A value that indicates whether to enable mapping of AWS Identity and Access
+    /// <p>A value that indicates whether to enable mapping of Amazon Web Services Identity and Access
     /// Management (IAM) accounts to database accounts. By default, mapping is disabled.</p>
     /// <p>For more information, see
     /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.IAMDBAuth.html">
@@ -41777,17 +42660,17 @@ impl std::fmt::Debug for CopyOptionGroupInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CopyDbSnapshotInput {
     /// <p>The identifier for the source DB snapshot.</p>
-    /// <p>If the source snapshot is in the same AWS Region as the copy, specify a valid DB
+    /// <p>If the source snapshot is in the same Amazon Web Services Region as the copy, specify a valid DB
     /// snapshot identifier. For example, you might specify
     /// <code>rds:mysql-instance1-snapshot-20130805</code>. </p>
-    /// <p>If the source snapshot is in a different AWS Region than the copy, specify a valid DB
+    /// <p>If the source snapshot is in a different Amazon Web Services Region than the copy, specify a valid DB
     /// snapshot ARN. For example, you might specify
     /// <code>arn:aws:rds:us-west-2:123456789012:snapshot:mysql-instance1-snapshot-20130805</code>. </p>
     /// <p>If you are copying from a shared manual DB snapshot,
     /// this parameter must be the Amazon Resource Name (ARN) of the shared DB snapshot.
     /// </p>
     /// <p>If you are copying an encrypted snapshot
-    /// this parameter must be in the ARN format for the source AWS Region,
+    /// this parameter must be in the ARN format for the source Amazon Web Services Region,
     /// and must match the <code>SourceDBSnapshotIdentifier</code> in the <code>PreSignedUrl</code> parameter.
     /// </p>
     /// <p>Constraints:</p>
@@ -41821,24 +42704,24 @@ pub struct CopyDbSnapshotInput {
     /// <p>Example: <code>my-db-snapshot</code>
     /// </p>
     pub target_db_snapshot_identifier: std::option::Option<std::string::String>,
-    /// <p>The AWS KMS key identifier for an encrypted DB snapshot.
-    /// The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer master key (CMK).
+    /// <p>The Amazon Web Services KMS key identifier for an encrypted DB snapshot.
+    /// The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon Web Services KMS customer master key (CMK).
     /// </p>
-    /// <p>If you copy an encrypted DB snapshot from your AWS account,
-    /// you can specify a value for this parameter to encrypt the copy with a new AWS KMS CMK.
+    /// <p>If you copy an encrypted DB snapshot from your Amazon Web Services account,
+    /// you can specify a value for this parameter to encrypt the copy with a new Amazon Web Services KMS CMK.
     /// If you don't specify a value for this parameter,
-    /// then the copy of the DB snapshot is encrypted with the same AWS KMS key as the source DB snapshot.
+    /// then the copy of the DB snapshot is encrypted with the same Amazon Web Services KMS key as the source DB snapshot.
     /// </p>
-    /// <p>If you copy an encrypted DB snapshot that is shared from another AWS account,
+    /// <p>If you copy an encrypted DB snapshot that is shared from another Amazon Web Services account,
     /// then you must specify a value for this parameter.
     /// </p>
     /// <p>If you specify this parameter when you copy an unencrypted snapshot,
     /// the copy is encrypted.
     /// </p>
-    /// <p>If you copy an encrypted snapshot to a different AWS Region, then you must specify
-    /// a AWS KMS key identifier for the destination AWS Region. AWS KMS CMKs are specific to the AWS Region
-    /// that they are created in, and you can't use CMKs from one AWS Region in another
-    /// AWS Region.
+    /// <p>If you copy an encrypted snapshot to a different Amazon Web Services Region, then you must specify
+    /// a Amazon Web Services KMS key identifier for the destination Amazon Web Services Region. Amazon Web Services KMS CMKs are specific to the Amazon Web Services Region
+    /// that they are created in, and you can't use CMKs from one Amazon Web Services Region in another
+    /// Amazon Web Services Region.
     /// </p>
     pub kms_key_id: std::option::Option<std::string::String>,
     /// <p>A list of tags.
@@ -41848,59 +42731,59 @@ pub struct CopyDbSnapshotInput {
     /// <p>A value that indicates whether to copy all tags from the source DB snapshot to the target DB snapshot. By default, tags are not copied.</p>
     pub copy_tags: std::option::Option<bool>,
     /// <p>The URL that contains a Signature Version 4 signed request for the
-    /// <code>CopyDBSnapshot</code> API action in the source AWS Region that contains the
+    /// <code>CopyDBSnapshot</code> API action in the source Amazon Web Services Region that contains the
     /// source DB snapshot to copy. </p>
     /// <p>You must specify this parameter when you copy an encrypted DB snapshot from another
-    /// AWS Region by using the Amazon RDS API. Don't specify <code>PreSignedUrl</code> when you are
-    /// copying an encrypted DB snapshot in the same AWS Region.</p>
+    /// Amazon Web Services Region by using the Amazon RDS API. Don't specify <code>PreSignedUrl</code> when you are
+    /// copying an encrypted DB snapshot in the same Amazon Web Services Region.</p>
     /// <p>The presigned URL must be a valid request for the <code>CopyDBSnapshot</code> API action
-    /// that can be executed in the source AWS Region that contains the encrypted DB snapshot to be copied.
+    /// that can be executed in the source Amazon Web Services Region that contains the encrypted DB snapshot to be copied.
     /// The presigned URL request must contain the following parameter values:
     /// </p>
     /// <ul>
     /// <li>
     /// <p>
-    /// <code>DestinationRegion</code> - The AWS Region that the encrypted DB snapshot is copied to.
-    /// This AWS Region is the same one where the <code>CopyDBSnapshot</code> action is called that contains this presigned URL.
+    /// <code>DestinationRegion</code> - The Amazon Web Services Region that the encrypted DB snapshot is copied to.
+    /// This Amazon Web Services Region is the same one where the <code>CopyDBSnapshot</code> action is called that contains this presigned URL.
     /// </p>
-    /// <p>For example, if you copy an encrypted DB snapshot from the us-west-2 AWS Region
-    /// to the us-east-1 AWS Region, then you call the <code>CopyDBSnapshot</code> action in
-    /// the us-east-1 AWS Region and provide a presigned URL that contains a call to the
-    /// <code>CopyDBSnapshot</code> action in the us-west-2 AWS Region. For this
+    /// <p>For example, if you copy an encrypted DB snapshot from the us-west-2 Amazon Web Services Region
+    /// to the us-east-1 Amazon Web Services Region, then you call the <code>CopyDBSnapshot</code> action in
+    /// the us-east-1 Amazon Web Services Region and provide a presigned URL that contains a call to the
+    /// <code>CopyDBSnapshot</code> action in the us-west-2 Amazon Web Services Region. For this
     /// example, the <code>DestinationRegion</code> in the presigned URL must be set to
-    /// the us-east-1 AWS Region. </p>
+    /// the us-east-1 Amazon Web Services Region. </p>
     /// </li>
     /// <li>
     /// <p>
-    /// <code>KmsKeyId</code> - The AWS KMS key identifier for the customer master key (CMK) to use to encrypt the copy of the DB snapshot in the destination AWS Region.
-    /// This is the same identifier for both the <code>CopyDBSnapshot</code> action that is called in the destination AWS Region,
+    /// <code>KmsKeyId</code> - The Amazon Web Services KMS key identifier for the customer master key (CMK) to use to encrypt the copy of the DB snapshot in the destination Amazon Web Services Region.
+    /// This is the same identifier for both the <code>CopyDBSnapshot</code> action that is called in the destination Amazon Web Services Region,
     /// and the action contained in the presigned URL.
     /// </p>
     /// </li>
     /// <li>
     /// <p>
     /// <code>SourceDBSnapshotIdentifier</code> - The DB snapshot identifier for the encrypted snapshot to be copied.
-    /// This identifier must be in the Amazon Resource Name (ARN) format for the source AWS Region.
-    /// For example, if you are copying an encrypted DB snapshot from the us-west-2 AWS Region, then your <code>SourceDBSnapshotIdentifier</code> looks like
+    /// This identifier must be in the Amazon Resource Name (ARN) format for the source Amazon Web Services Region.
+    /// For example, if you are copying an encrypted DB snapshot from the us-west-2 Amazon Web Services Region, then your <code>SourceDBSnapshotIdentifier</code> looks like
     /// the following example: <code>arn:aws:rds:us-west-2:123456789012:snapshot:mysql-instance1-snapshot-20161115</code>.
     /// </p>
     /// </li>
     /// </ul>
     /// <p>To learn how to generate a Signature Version 4 signed request, see
-    /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html">Authenticating Requests: Using Query Parameters (AWS Signature Version 4)</a> and
+    /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html">Authenticating Requests: Using Query Parameters (Amazon Web Services Signature Version 4)</a> and
     /// <a href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature Version 4 Signing Process</a>.
     /// </p>
     /// <note>
-    /// <p>If you are using an AWS SDK tool or the AWS CLI, you can specify <code>SourceRegion</code> (or <code>--source-region</code> for the AWS CLI)
+    /// <p>If you are using an Amazon Web Services SDK tool or the CLI, you can specify <code>SourceRegion</code> (or <code>--source-region</code> for the CLI)
     /// instead of specifying <code>PreSignedUrl</code> manually. Specifying <code>SourceRegion</code> autogenerates a pre-signed URL that is a valid
-    /// request for the operation that can be executed in the source AWS Region.</p>
+    /// request for the operation that can be executed in the source Amazon Web Services Region.</p>
     /// </note>
     pub pre_signed_url: std::option::Option<std::string::String>,
     /// <p>The name of an option group to associate with the copy of the snapshot.</p>
-    /// <p>Specify this option if you are copying a snapshot from one AWS Region to another,
+    /// <p>Specify this option if you are copying a snapshot from one Amazon Web Services Region to another,
     /// and your DB instance uses a nondefault option group.
     /// If your source DB instance uses Transparent Data Encryption for Oracle or Microsoft SQL Server,
-    /// you must specify this option when copying across AWS Regions.
+    /// you must specify this option when copying across Amazon Web Services Regions.
     /// For more information, see
     /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CopySnapshot.html#USER_CopySnapshot.Options">Option group considerations</a> in the <i>Amazon RDS User Guide.</i>
     /// </p>
@@ -42002,20 +42885,20 @@ impl std::fmt::Debug for CopyDbParameterGroupInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CopyDbClusterSnapshotInput {
     /// <p>The identifier of the DB cluster snapshot to copy. This parameter isn't case-sensitive.</p>
-    /// <p>You can't copy an encrypted, shared DB cluster snapshot from one AWS Region to another.</p>
+    /// <p>You can't copy an encrypted, shared DB cluster snapshot from one Amazon Web Services Region to another.</p>
     /// <p>Constraints:</p>
     /// <ul>
     /// <li>
     /// <p>Must specify a valid system snapshot in the "available" state.</p>
     /// </li>
     /// <li>
-    /// <p>If the source snapshot is in the same AWS Region as the copy, specify a valid DB snapshot identifier.</p>
+    /// <p>If the source snapshot is in the same Amazon Web Services Region as the copy, specify a valid DB snapshot identifier.</p>
     /// </li>
     /// <li>
-    /// <p>If the source snapshot is in a different AWS Region than the copy,
+    /// <p>If the source snapshot is in a different Amazon Web Services Region than the copy,
     /// specify a valid DB cluster snapshot ARN. For more information, go to
     /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_CopySnapshot.html#USER_CopySnapshot.AcrossRegions">
-    /// Copying Snapshots Across AWS Regions</a> in the <i>Amazon Aurora User Guide.</i>
+    /// Copying Snapshots Across Amazon Web Services Regions</a> in the <i>Amazon Aurora User Guide.</i>
     /// </p>
     /// </li>
     /// </ul>
@@ -42038,52 +42921,52 @@ pub struct CopyDbClusterSnapshotInput {
     /// <p>Example: <code>my-cluster-snapshot2</code>
     /// </p>
     pub target_db_cluster_snapshot_identifier: std::option::Option<std::string::String>,
-    /// <p>The AWS KMS key identifier for an encrypted DB cluster snapshot.
-    /// The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer master key (CMK).</p>             
-    /// <p>If you copy an encrypted DB cluster snapshot from your AWS account, you can specify a value for <code>KmsKeyId</code> to encrypt the copy with a new AWS KMS CMK.
-    /// If you don't specify a value for <code>KmsKeyId</code>, then the copy of the DB cluster snapshot is encrypted with the same AWS KMS key as the source DB cluster snapshot.
+    /// <p>The Amazon Web Services KMS key identifier for an encrypted DB cluster snapshot.
+    /// The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon Web Services KMS customer master key (CMK).</p>             
+    /// <p>If you copy an encrypted DB cluster snapshot from your Amazon Web Services account, you can specify a value for <code>KmsKeyId</code> to encrypt the copy with a new Amazon Web Services KMS CMK.
+    /// If you don't specify a value for <code>KmsKeyId</code>, then the copy of the DB cluster snapshot is encrypted with the same Amazon Web Services KMS key as the source DB cluster snapshot.
     /// </p>
-    /// <p>If you copy an encrypted DB cluster snapshot that is shared from another AWS account, then you must specify a value for <code>KmsKeyId</code>. </p>
-    /// <p>To copy an encrypted DB cluster snapshot to another AWS Region, you must set <code>KmsKeyId</code> to the AWS KMS key identifier you want to use to encrypt the copy of the DB cluster snapshot
-    /// in the destination AWS Region. AWS KMS CMKs are specific to the AWS Region that they are created in, and you can't use CMKs from one AWS Region
-    /// in another AWS Region.</p>
+    /// <p>If you copy an encrypted DB cluster snapshot that is shared from another Amazon Web Services account, then you must specify a value for <code>KmsKeyId</code>. </p>
+    /// <p>To copy an encrypted DB cluster snapshot to another Amazon Web Services Region, you must set <code>KmsKeyId</code> to the Amazon Web Services KMS key identifier you want to use to encrypt the copy of the DB cluster snapshot
+    /// in the destination Amazon Web Services Region. Amazon Web Services KMS CMKs are specific to the Amazon Web Services Region that they are created in, and you can't use CMKs from one Amazon Web Services Region
+    /// in another Amazon Web Services Region.</p>
     /// <p>If you copy an unencrypted DB cluster snapshot and specify a value for the <code>KmsKeyId</code> parameter,
     /// an error is returned.</p>
     pub kms_key_id: std::option::Option<std::string::String>,
-    /// <p>The URL that contains a Signature Version 4 signed request for the <code>CopyDBClusterSnapshot</code> API action in the AWS Region that contains the
-    /// source DB cluster snapshot to copy. The <code>PreSignedUrl</code> parameter must be used when copying an encrypted DB cluster snapshot from another AWS Region.
-    /// Don't specify <code>PreSignedUrl</code> when you are copying an encrypted DB cluster snapshot in the same AWS Region.</p>
+    /// <p>The URL that contains a Signature Version 4 signed request for the <code>CopyDBClusterSnapshot</code> API action in the Amazon Web Services Region that contains the
+    /// source DB cluster snapshot to copy. The <code>PreSignedUrl</code> parameter must be used when copying an encrypted DB cluster snapshot from another Amazon Web Services Region.
+    /// Don't specify <code>PreSignedUrl</code> when you are copying an encrypted DB cluster snapshot in the same Amazon Web Services Region.</p>
     /// <p>The pre-signed URL must be a valid request for the <code>CopyDBClusterSnapshot</code> API action that can be
-    /// executed in the source AWS Region that contains the encrypted DB cluster snapshot to be copied.
+    /// executed in the source Amazon Web Services Region that contains the encrypted DB cluster snapshot to be copied.
     /// The pre-signed URL request must contain the following parameter values:</p>
     /// <ul>
     /// <li>
     /// <p>
-    /// <code>KmsKeyId</code> - The AWS KMS key identifier for the customer master key (CMK) to use to encrypt the copy of the DB
-    /// cluster snapshot in the destination AWS Region. This is the same identifier for both the <code>CopyDBClusterSnapshot</code>
-    /// action that is called in the destination AWS Region, and the action contained in the pre-signed URL.</p>
+    /// <code>KmsKeyId</code> - The Amazon Web Services KMS key identifier for the customer master key (CMK) to use to encrypt the copy of the DB
+    /// cluster snapshot in the destination Amazon Web Services Region. This is the same identifier for both the <code>CopyDBClusterSnapshot</code>
+    /// action that is called in the destination Amazon Web Services Region, and the action contained in the pre-signed URL.</p>
     /// </li>
     /// <li>
     /// <p>
-    /// <code>DestinationRegion</code> - The name of the AWS Region that the DB cluster snapshot is to be created in.</p>
+    /// <code>DestinationRegion</code> - The name of the Amazon Web Services Region that the DB cluster snapshot is to be created in.</p>
     /// </li>
     /// <li>
     /// <p>
     /// <code>SourceDBClusterSnapshotIdentifier</code> - The DB cluster snapshot identifier for the encrypted DB cluster
-    /// snapshot to be copied. This identifier must be in the Amazon Resource Name (ARN) format for the source AWS Region. For example,
-    /// if you are copying an encrypted DB cluster snapshot from the us-west-2 AWS Region, then your <code>SourceDBClusterSnapshotIdentifier</code>
+    /// snapshot to be copied. This identifier must be in the Amazon Resource Name (ARN) format for the source Amazon Web Services Region. For example,
+    /// if you are copying an encrypted DB cluster snapshot from the us-west-2 Amazon Web Services Region, then your <code>SourceDBClusterSnapshotIdentifier</code>
     /// looks like the following example: <code>arn:aws:rds:us-west-2:123456789012:cluster-snapshot:aurora-cluster1-snapshot-20161115</code>.</p>
     /// </li>
     /// </ul>
     /// <p>To learn how to generate a Signature Version 4 signed request, see
     /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html">
-    /// Authenticating Requests: Using Query Parameters (AWS Signature Version 4)</a> and
+    /// Authenticating Requests: Using Query Parameters (Amazon Web Services Signature Version 4)</a> and
     /// <a href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">
     /// Signature Version 4 Signing Process</a>.</p>
     /// <note>
-    /// <p>If you are using an AWS SDK tool or the AWS CLI, you can specify <code>SourceRegion</code> (or <code>--source-region</code> for the AWS CLI)
+    /// <p>If you are using an Amazon Web Services SDK tool or the CLI, you can specify <code>SourceRegion</code> (or <code>--source-region</code> for the CLI)
     /// instead of specifying <code>PreSignedUrl</code> manually. Specifying <code>SourceRegion</code> autogenerates a pre-signed URL that is a valid
-    /// request for the operation that can be executed in the source AWS Region.</p>
+    /// request for the operation that can be executed in the source Amazon Web Services Region.</p>
     /// </note>
     pub pre_signed_url: std::option::Option<std::string::String>,
     /// <p>A value that indicates whether to copy all tags from the source DB cluster snapshot to the target DB cluster snapshot.
@@ -42275,9 +43158,9 @@ pub struct AuthorizeDbSecurityGroupIngressInput {
     /// </p>
     pub ec2_security_group_id: std::option::Option<std::string::String>,
     /// <p>
-    /// AWS account number of the owner of the EC2 security group
+    /// Amazon Web Services account number of the owner of the EC2 security group
     /// specified in the <code>EC2SecurityGroupName</code> parameter.
-    /// The AWS access key ID isn't an acceptable value.
+    /// The Amazon Web Services access key ID isn't an acceptable value.
     /// For VPC DB security groups, <code>EC2SecurityGroupId</code> must be provided.
     /// Otherwise, <code>EC2SecurityGroupOwnerId</code> and either <code>EC2SecurityGroupName</code> or <code>EC2SecurityGroupId</code> must be provided.
     /// </p>

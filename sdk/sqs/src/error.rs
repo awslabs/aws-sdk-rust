@@ -1685,21 +1685,27 @@ impl std::error::Error for UntagQueueError {
 /// <p>The specified attribute doesn't exist.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct InvalidAttributeName {}
+pub struct InvalidAttributeName {
+    pub message: std::option::Option<std::string::String>,
+}
 impl std::fmt::Debug for InvalidAttributeName {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("InvalidAttributeName");
+        formatter.field("message", &self.message);
         formatter.finish()
     }
 }
 impl InvalidAttributeName {
     pub fn message(&self) -> Option<&str> {
-        None
+        self.message.as_deref()
     }
 }
 impl std::fmt::Display for InvalidAttributeName {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidAttributeName")?;
+        if let Some(inner_1) = &self.message {
+            write!(f, ": {}", inner_1)?;
+        }
         Ok(())
     }
 }
@@ -1709,11 +1715,23 @@ pub mod invalid_attribute_name {
     /// A builder for [`InvalidAttributeName`](crate::error::InvalidAttributeName)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
     impl Builder {
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
         /// Consumes the builder and constructs a [`InvalidAttributeName`](crate::error::InvalidAttributeName)
         pub fn build(self) -> crate::error::InvalidAttributeName {
-            crate::error::InvalidAttributeName {}
+            crate::error::InvalidAttributeName {
+                message: self.message,
+            }
         }
     }
 }
@@ -1727,21 +1745,27 @@ impl InvalidAttributeName {
 /// <p>Error code 400. Unsupported operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct UnsupportedOperation {}
+pub struct UnsupportedOperation {
+    pub message: std::option::Option<std::string::String>,
+}
 impl std::fmt::Debug for UnsupportedOperation {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UnsupportedOperation");
+        formatter.field("message", &self.message);
         formatter.finish()
     }
 }
 impl UnsupportedOperation {
     pub fn message(&self) -> Option<&str> {
-        None
+        self.message.as_deref()
     }
 }
 impl std::fmt::Display for UnsupportedOperation {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "UnsupportedOperation")?;
+        if let Some(inner_2) = &self.message {
+            write!(f, ": {}", inner_2)?;
+        }
         Ok(())
     }
 }
@@ -1751,11 +1775,23 @@ pub mod unsupported_operation {
     /// A builder for [`UnsupportedOperation`](crate::error::UnsupportedOperation)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
     impl Builder {
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
         /// Consumes the builder and constructs a [`UnsupportedOperation`](crate::error::UnsupportedOperation)
         pub fn build(self) -> crate::error::UnsupportedOperation {
-            crate::error::UnsupportedOperation {}
+            crate::error::UnsupportedOperation {
+                message: self.message,
+            }
         }
     }
 }
@@ -1769,21 +1805,27 @@ impl UnsupportedOperation {
 /// <p>The batch request contains more entries than permissible.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct TooManyEntriesInBatchRequest {}
+pub struct TooManyEntriesInBatchRequest {
+    pub message: std::option::Option<std::string::String>,
+}
 impl std::fmt::Debug for TooManyEntriesInBatchRequest {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TooManyEntriesInBatchRequest");
+        formatter.field("message", &self.message);
         formatter.finish()
     }
 }
 impl TooManyEntriesInBatchRequest {
     pub fn message(&self) -> Option<&str> {
-        None
+        self.message.as_deref()
     }
 }
 impl std::fmt::Display for TooManyEntriesInBatchRequest {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "TooManyEntriesInBatchRequest")?;
+        if let Some(inner_3) = &self.message {
+            write!(f, ": {}", inner_3)?;
+        }
         Ok(())
     }
 }
@@ -1793,11 +1835,23 @@ pub mod too_many_entries_in_batch_request {
     /// A builder for [`TooManyEntriesInBatchRequest`](crate::error::TooManyEntriesInBatchRequest)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
     impl Builder {
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
         /// Consumes the builder and constructs a [`TooManyEntriesInBatchRequest`](crate::error::TooManyEntriesInBatchRequest)
         pub fn build(self) -> crate::error::TooManyEntriesInBatchRequest {
-            crate::error::TooManyEntriesInBatchRequest {}
+            crate::error::TooManyEntriesInBatchRequest {
+                message: self.message,
+            }
         }
     }
 }
@@ -1811,21 +1865,27 @@ impl TooManyEntriesInBatchRequest {
 /// <p>The <code>Id</code> of a batch entry in a batch request doesn't abide by the specification.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct InvalidBatchEntryId {}
+pub struct InvalidBatchEntryId {
+    pub message: std::option::Option<std::string::String>,
+}
 impl std::fmt::Debug for InvalidBatchEntryId {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("InvalidBatchEntryId");
+        formatter.field("message", &self.message);
         formatter.finish()
     }
 }
 impl InvalidBatchEntryId {
     pub fn message(&self) -> Option<&str> {
-        None
+        self.message.as_deref()
     }
 }
 impl std::fmt::Display for InvalidBatchEntryId {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidBatchEntryId")?;
+        if let Some(inner_4) = &self.message {
+            write!(f, ": {}", inner_4)?;
+        }
         Ok(())
     }
 }
@@ -1835,11 +1895,23 @@ pub mod invalid_batch_entry_id {
     /// A builder for [`InvalidBatchEntryId`](crate::error::InvalidBatchEntryId)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
     impl Builder {
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
         /// Consumes the builder and constructs a [`InvalidBatchEntryId`](crate::error::InvalidBatchEntryId)
         pub fn build(self) -> crate::error::InvalidBatchEntryId {
-            crate::error::InvalidBatchEntryId {}
+            crate::error::InvalidBatchEntryId {
+                message: self.message,
+            }
         }
     }
 }
@@ -1853,21 +1925,27 @@ impl InvalidBatchEntryId {
 /// <p>The batch request doesn't contain any entries.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct EmptyBatchRequest {}
+pub struct EmptyBatchRequest {
+    pub message: std::option::Option<std::string::String>,
+}
 impl std::fmt::Debug for EmptyBatchRequest {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("EmptyBatchRequest");
+        formatter.field("message", &self.message);
         formatter.finish()
     }
 }
 impl EmptyBatchRequest {
     pub fn message(&self) -> Option<&str> {
-        None
+        self.message.as_deref()
     }
 }
 impl std::fmt::Display for EmptyBatchRequest {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "EmptyBatchRequest")?;
+        if let Some(inner_5) = &self.message {
+            write!(f, ": {}", inner_5)?;
+        }
         Ok(())
     }
 }
@@ -1877,11 +1955,23 @@ pub mod empty_batch_request {
     /// A builder for [`EmptyBatchRequest`](crate::error::EmptyBatchRequest)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
     impl Builder {
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
         /// Consumes the builder and constructs a [`EmptyBatchRequest`](crate::error::EmptyBatchRequest)
         pub fn build(self) -> crate::error::EmptyBatchRequest {
-            crate::error::EmptyBatchRequest {}
+            crate::error::EmptyBatchRequest {
+                message: self.message,
+            }
         }
     }
 }
@@ -1895,21 +1985,27 @@ impl EmptyBatchRequest {
 /// <p>The length of all the messages put together is more than the limit.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct BatchRequestTooLong {}
+pub struct BatchRequestTooLong {
+    pub message: std::option::Option<std::string::String>,
+}
 impl std::fmt::Debug for BatchRequestTooLong {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BatchRequestTooLong");
+        formatter.field("message", &self.message);
         formatter.finish()
     }
 }
 impl BatchRequestTooLong {
     pub fn message(&self) -> Option<&str> {
-        None
+        self.message.as_deref()
     }
 }
 impl std::fmt::Display for BatchRequestTooLong {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "BatchRequestTooLong")?;
+        if let Some(inner_6) = &self.message {
+            write!(f, ": {}", inner_6)?;
+        }
         Ok(())
     }
 }
@@ -1919,11 +2015,23 @@ pub mod batch_request_too_long {
     /// A builder for [`BatchRequestTooLong`](crate::error::BatchRequestTooLong)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
     impl Builder {
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
         /// Consumes the builder and constructs a [`BatchRequestTooLong`](crate::error::BatchRequestTooLong)
         pub fn build(self) -> crate::error::BatchRequestTooLong {
-            crate::error::BatchRequestTooLong {}
+            crate::error::BatchRequestTooLong {
+                message: self.message,
+            }
         }
     }
 }
@@ -1937,21 +2045,27 @@ impl BatchRequestTooLong {
 /// <p>Two or more batch entries in the request have the same <code>Id</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct BatchEntryIdsNotDistinct {}
+pub struct BatchEntryIdsNotDistinct {
+    pub message: std::option::Option<std::string::String>,
+}
 impl std::fmt::Debug for BatchEntryIdsNotDistinct {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BatchEntryIdsNotDistinct");
+        formatter.field("message", &self.message);
         formatter.finish()
     }
 }
 impl BatchEntryIdsNotDistinct {
     pub fn message(&self) -> Option<&str> {
-        None
+        self.message.as_deref()
     }
 }
 impl std::fmt::Display for BatchEntryIdsNotDistinct {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "BatchEntryIdsNotDistinct")?;
+        if let Some(inner_7) = &self.message {
+            write!(f, ": {}", inner_7)?;
+        }
         Ok(())
     }
 }
@@ -1961,11 +2075,23 @@ pub mod batch_entry_ids_not_distinct {
     /// A builder for [`BatchEntryIdsNotDistinct`](crate::error::BatchEntryIdsNotDistinct)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
     impl Builder {
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
         /// Consumes the builder and constructs a [`BatchEntryIdsNotDistinct`](crate::error::BatchEntryIdsNotDistinct)
         pub fn build(self) -> crate::error::BatchEntryIdsNotDistinct {
-            crate::error::BatchEntryIdsNotDistinct {}
+            crate::error::BatchEntryIdsNotDistinct {
+                message: self.message,
+            }
         }
     }
 }
@@ -1979,21 +2105,27 @@ impl BatchEntryIdsNotDistinct {
 /// <p>The message contains characters outside the allowed set.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct InvalidMessageContents {}
+pub struct InvalidMessageContents {
+    pub message: std::option::Option<std::string::String>,
+}
 impl std::fmt::Debug for InvalidMessageContents {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("InvalidMessageContents");
+        formatter.field("message", &self.message);
         formatter.finish()
     }
 }
 impl InvalidMessageContents {
     pub fn message(&self) -> Option<&str> {
-        None
+        self.message.as_deref()
     }
 }
 impl std::fmt::Display for InvalidMessageContents {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidMessageContents")?;
+        if let Some(inner_8) = &self.message {
+            write!(f, ": {}", inner_8)?;
+        }
         Ok(())
     }
 }
@@ -2003,11 +2135,23 @@ pub mod invalid_message_contents {
     /// A builder for [`InvalidMessageContents`](crate::error::InvalidMessageContents)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
     impl Builder {
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
         /// Consumes the builder and constructs a [`InvalidMessageContents`](crate::error::InvalidMessageContents)
         pub fn build(self) -> crate::error::InvalidMessageContents {
-            crate::error::InvalidMessageContents {}
+            crate::error::InvalidMessageContents {
+                message: self.message,
+            }
         }
     }
 }
@@ -2024,21 +2168,27 @@ impl InvalidMessageContents {
 /// for the queue is reached.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct OverLimit {}
+pub struct OverLimit {
+    pub message: std::option::Option<std::string::String>,
+}
 impl std::fmt::Debug for OverLimit {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("OverLimit");
+        formatter.field("message", &self.message);
         formatter.finish()
     }
 }
 impl OverLimit {
     pub fn message(&self) -> Option<&str> {
-        None
+        self.message.as_deref()
     }
 }
 impl std::fmt::Display for OverLimit {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "OverLimit")?;
+        if let Some(inner_9) = &self.message {
+            write!(f, ": {}", inner_9)?;
+        }
         Ok(())
     }
 }
@@ -2048,11 +2198,23 @@ pub mod over_limit {
     /// A builder for [`OverLimit`](crate::error::OverLimit)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
     impl Builder {
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
         /// Consumes the builder and constructs a [`OverLimit`](crate::error::OverLimit)
         pub fn build(self) -> crate::error::OverLimit {
-            crate::error::OverLimit {}
+            crate::error::OverLimit {
+                message: self.message,
+            }
         }
     }
 }
@@ -2066,21 +2228,27 @@ impl OverLimit {
 /// <p>The specified queue doesn't exist.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct QueueDoesNotExist {}
+pub struct QueueDoesNotExist {
+    pub message: std::option::Option<std::string::String>,
+}
 impl std::fmt::Debug for QueueDoesNotExist {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("QueueDoesNotExist");
+        formatter.field("message", &self.message);
         formatter.finish()
     }
 }
 impl QueueDoesNotExist {
     pub fn message(&self) -> Option<&str> {
-        None
+        self.message.as_deref()
     }
 }
 impl std::fmt::Display for QueueDoesNotExist {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "QueueDoesNotExist")?;
+        if let Some(inner_10) = &self.message {
+            write!(f, ": {}", inner_10)?;
+        }
         Ok(())
     }
 }
@@ -2090,11 +2258,23 @@ pub mod queue_does_not_exist {
     /// A builder for [`QueueDoesNotExist`](crate::error::QueueDoesNotExist)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
     impl Builder {
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
         /// Consumes the builder and constructs a [`QueueDoesNotExist`](crate::error::QueueDoesNotExist)
         pub fn build(self) -> crate::error::QueueDoesNotExist {
-            crate::error::QueueDoesNotExist {}
+            crate::error::QueueDoesNotExist {
+                message: self.message,
+            }
         }
     }
 }
@@ -2108,21 +2288,27 @@ impl QueueDoesNotExist {
 /// <p>Indicates that the specified queue previously received a <code>PurgeQueue</code> request within the last 60 seconds (the time it can take to delete the messages in the queue).</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct PurgeQueueInProgress {}
+pub struct PurgeQueueInProgress {
+    pub message: std::option::Option<std::string::String>,
+}
 impl std::fmt::Debug for PurgeQueueInProgress {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PurgeQueueInProgress");
+        formatter.field("message", &self.message);
         formatter.finish()
     }
 }
 impl PurgeQueueInProgress {
     pub fn message(&self) -> Option<&str> {
-        None
+        self.message.as_deref()
     }
 }
 impl std::fmt::Display for PurgeQueueInProgress {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "PurgeQueueInProgress")?;
+        if let Some(inner_11) = &self.message {
+            write!(f, ": {}", inner_11)?;
+        }
         Ok(())
     }
 }
@@ -2132,11 +2318,23 @@ pub mod purge_queue_in_progress {
     /// A builder for [`PurgeQueueInProgress`](crate::error::PurgeQueueInProgress)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
     impl Builder {
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
         /// Consumes the builder and constructs a [`PurgeQueueInProgress`](crate::error::PurgeQueueInProgress)
         pub fn build(self) -> crate::error::PurgeQueueInProgress {
-            crate::error::PurgeQueueInProgress {}
+            crate::error::PurgeQueueInProgress {
+                message: self.message,
+            }
         }
     }
 }
@@ -2150,21 +2348,27 @@ impl PurgeQueueInProgress {
 /// <p>The specified receipt handle isn't valid.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct ReceiptHandleIsInvalid {}
+pub struct ReceiptHandleIsInvalid {
+    pub message: std::option::Option<std::string::String>,
+}
 impl std::fmt::Debug for ReceiptHandleIsInvalid {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ReceiptHandleIsInvalid");
+        formatter.field("message", &self.message);
         formatter.finish()
     }
 }
 impl ReceiptHandleIsInvalid {
     pub fn message(&self) -> Option<&str> {
-        None
+        self.message.as_deref()
     }
 }
 impl std::fmt::Display for ReceiptHandleIsInvalid {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ReceiptHandleIsInvalid")?;
+        if let Some(inner_12) = &self.message {
+            write!(f, ": {}", inner_12)?;
+        }
         Ok(())
     }
 }
@@ -2174,11 +2378,23 @@ pub mod receipt_handle_is_invalid {
     /// A builder for [`ReceiptHandleIsInvalid`](crate::error::ReceiptHandleIsInvalid)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
     impl Builder {
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
         /// Consumes the builder and constructs a [`ReceiptHandleIsInvalid`](crate::error::ReceiptHandleIsInvalid)
         pub fn build(self) -> crate::error::ReceiptHandleIsInvalid {
-            crate::error::ReceiptHandleIsInvalid {}
+            crate::error::ReceiptHandleIsInvalid {
+                message: self.message,
+            }
         }
     }
 }
@@ -2192,21 +2408,27 @@ impl ReceiptHandleIsInvalid {
 /// <p>The specified receipt handle isn't valid for the current version.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct InvalidIdFormat {}
+pub struct InvalidIdFormat {
+    pub message: std::option::Option<std::string::String>,
+}
 impl std::fmt::Debug for InvalidIdFormat {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("InvalidIdFormat");
+        formatter.field("message", &self.message);
         formatter.finish()
     }
 }
 impl InvalidIdFormat {
     pub fn message(&self) -> Option<&str> {
-        None
+        self.message.as_deref()
     }
 }
 impl std::fmt::Display for InvalidIdFormat {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidIdFormat")?;
+        if let Some(inner_13) = &self.message {
+            write!(f, ": {}", inner_13)?;
+        }
         Ok(())
     }
 }
@@ -2216,11 +2438,23 @@ pub mod invalid_id_format {
     /// A builder for [`InvalidIdFormat`](crate::error::InvalidIdFormat)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
     impl Builder {
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
         /// Consumes the builder and constructs a [`InvalidIdFormat`](crate::error::InvalidIdFormat)
         pub fn build(self) -> crate::error::InvalidIdFormat {
-            crate::error::InvalidIdFormat {}
+            crate::error::InvalidIdFormat {
+                message: self.message,
+            }
         }
     }
 }
@@ -2235,21 +2469,27 @@ impl InvalidIdFormat {
 /// includes attributes whose values differ from those of the existing queue.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct QueueNameExists {}
+pub struct QueueNameExists {
+    pub message: std::option::Option<std::string::String>,
+}
 impl std::fmt::Debug for QueueNameExists {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("QueueNameExists");
+        formatter.field("message", &self.message);
         formatter.finish()
     }
 }
 impl QueueNameExists {
     pub fn message(&self) -> Option<&str> {
-        None
+        self.message.as_deref()
     }
 }
 impl std::fmt::Display for QueueNameExists {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "QueueNameExists")?;
+        if let Some(inner_14) = &self.message {
+            write!(f, ": {}", inner_14)?;
+        }
         Ok(())
     }
 }
@@ -2259,11 +2499,23 @@ pub mod queue_name_exists {
     /// A builder for [`QueueNameExists`](crate::error::QueueNameExists)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
     impl Builder {
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
         /// Consumes the builder and constructs a [`QueueNameExists`](crate::error::QueueNameExists)
         pub fn build(self) -> crate::error::QueueNameExists {
-            crate::error::QueueNameExists {}
+            crate::error::QueueNameExists {
+                message: self.message,
+            }
         }
     }
 }
@@ -2278,21 +2530,27 @@ impl QueueNameExists {
 /// with the same name.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct QueueDeletedRecently {}
+pub struct QueueDeletedRecently {
+    pub message: std::option::Option<std::string::String>,
+}
 impl std::fmt::Debug for QueueDeletedRecently {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("QueueDeletedRecently");
+        formatter.field("message", &self.message);
         formatter.finish()
     }
 }
 impl QueueDeletedRecently {
     pub fn message(&self) -> Option<&str> {
-        None
+        self.message.as_deref()
     }
 }
 impl std::fmt::Display for QueueDeletedRecently {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "QueueDeletedRecently")?;
+        if let Some(inner_15) = &self.message {
+            write!(f, ": {}", inner_15)?;
+        }
         Ok(())
     }
 }
@@ -2302,11 +2560,23 @@ pub mod queue_deleted_recently {
     /// A builder for [`QueueDeletedRecently`](crate::error::QueueDeletedRecently)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
     impl Builder {
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
         /// Consumes the builder and constructs a [`QueueDeletedRecently`](crate::error::QueueDeletedRecently)
         pub fn build(self) -> crate::error::QueueDeletedRecently {
-            crate::error::QueueDeletedRecently {}
+            crate::error::QueueDeletedRecently {
+                message: self.message,
+            }
         }
     }
 }
@@ -2320,21 +2590,27 @@ impl QueueDeletedRecently {
 /// <p>The specified message isn't in flight.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct MessageNotInflight {}
+pub struct MessageNotInflight {
+    pub message: std::option::Option<std::string::String>,
+}
 impl std::fmt::Debug for MessageNotInflight {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("MessageNotInflight");
+        formatter.field("message", &self.message);
         formatter.finish()
     }
 }
 impl MessageNotInflight {
     pub fn message(&self) -> Option<&str> {
-        None
+        self.message.as_deref()
     }
 }
 impl std::fmt::Display for MessageNotInflight {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "MessageNotInflight")?;
+        if let Some(inner_16) = &self.message {
+            write!(f, ": {}", inner_16)?;
+        }
         Ok(())
     }
 }
@@ -2344,11 +2620,23 @@ pub mod message_not_inflight {
     /// A builder for [`MessageNotInflight`](crate::error::MessageNotInflight)
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
     impl Builder {
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
         /// Consumes the builder and constructs a [`MessageNotInflight`](crate::error::MessageNotInflight)
         pub fn build(self) -> crate::error::MessageNotInflight {
-            crate::error::MessageNotInflight {}
+            crate::error::MessageNotInflight {
+                message: self.message,
+            }
         }
     }
 }

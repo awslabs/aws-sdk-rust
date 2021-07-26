@@ -369,6 +369,25 @@ impl ErrorCode {
             ErrorCode::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "AccessDenied",
+            "AdmissionRequestDenied",
+            "ClusterUnreachable",
+            "ConfigurationConflict",
+            "EniLimitReached",
+            "InsufficientFreeAddresses",
+            "InsufficientNumberOfReplicas",
+            "IpNotAvailable",
+            "NodeCreationFailure",
+            "OperationNotPermitted",
+            "PodEvictionFailure",
+            "SecurityGroupNotFound",
+            "SubnetNotFound",
+            "Unknown",
+            "VpcIdNotFound",
+        ]
+    }
 }
 impl AsRef<str> for ErrorCode {
     fn as_ref(&self) -> &str {
@@ -543,6 +562,33 @@ impl UpdateParamType {
             UpdateParamType::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "AddonVersion",
+            "ClusterLogging",
+            "DesiredSize",
+            "EncryptionConfig",
+            "EndpointPrivateAccess",
+            "EndpointPublicAccess",
+            "IdentityProviderConfig",
+            "LabelsToAdd",
+            "LabelsToRemove",
+            "LaunchTemplateName",
+            "LaunchTemplateVersion",
+            "MaxSize",
+            "MaxUnavailable",
+            "MaxUnavailablePercentage",
+            "MinSize",
+            "PlatformVersion",
+            "PublicAccessCidrs",
+            "ReleaseVersion",
+            "ResolveConflicts",
+            "ServiceAccountRoleArn",
+            "TaintsToAdd",
+            "TaintsToRemove",
+            "Version",
+        ]
+    }
 }
 impl AsRef<str> for UpdateParamType {
     fn as_ref(&self) -> &str {
@@ -608,6 +654,18 @@ impl UpdateType {
             UpdateType::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "AddonUpdate",
+            "AssociateEncryptionConfig",
+            "AssociateIdentityProviderConfig",
+            "ConfigUpdate",
+            "DisassociateIdentityProviderConfig",
+            "EndpointAccessUpdate",
+            "LoggingUpdate",
+            "VersionUpdate",
+        ]
+    }
 }
 impl AsRef<str> for UpdateType {
     fn as_ref(&self) -> &str {
@@ -660,6 +718,9 @@ impl UpdateStatus {
             UpdateStatus::Successful => "Successful",
             UpdateStatus::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["Cancelled", "Failed", "InProgress", "Successful"]
     }
 }
 impl AsRef<str> for UpdateStatus {
@@ -1091,6 +1152,9 @@ impl TaintEffect {
             TaintEffect::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["NO_EXECUTE", "NO_SCHEDULE", "PREFER_NO_SCHEDULE"]
+    }
 }
 impl AsRef<str> for TaintEffect {
     fn as_ref(&self) -> &str {
@@ -1346,6 +1410,15 @@ impl LogType {
             LogType::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "api",
+            "audit",
+            "authenticator",
+            "controllerManager",
+            "scheduler",
+        ]
+    }
 }
 impl AsRef<str> for LogType {
     fn as_ref(&self) -> &str {
@@ -1563,6 +1636,9 @@ impl ResolveConflicts {
             ResolveConflicts::Overwrite => "OVERWRITE",
             ResolveConflicts::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["NONE", "OVERWRITE"]
     }
 }
 impl AsRef<str> for ResolveConflicts {
@@ -2533,6 +2609,28 @@ impl NodegroupIssueCode {
             NodegroupIssueCode::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "AccessDenied",
+            "AsgInstanceLaunchFailures",
+            "AutoScalingGroupInvalidConfiguration",
+            "AutoScalingGroupNotFound",
+            "ClusterUnreachable",
+            "Ec2LaunchTemplateNotFound",
+            "Ec2LaunchTemplateVersionMismatch",
+            "Ec2SecurityGroupDeletionFailure",
+            "Ec2SecurityGroupNotFound",
+            "Ec2SubnetInvalidConfiguration",
+            "Ec2SubnetNotFound",
+            "IamInstanceProfileNotFound",
+            "IamLimitExceeded",
+            "IamNodeRoleNotFound",
+            "InstanceLimitExceeded",
+            "InsufficientFreeAddresses",
+            "InternalFailure",
+            "NodeCreationFailure",
+        ]
+    }
 }
 impl AsRef<str> for NodegroupIssueCode {
     fn as_ref(&self) -> &str {
@@ -2712,6 +2810,9 @@ impl AmiTypes {
             AmiTypes::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["AL2_ARM_64", "AL2_x86_64", "AL2_x86_64_GPU", "CUSTOM"]
+    }
 }
 impl AsRef<str> for AmiTypes {
     fn as_ref(&self) -> &str {
@@ -2833,6 +2934,9 @@ impl CapacityTypes {
             CapacityTypes::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["ON_DEMAND", "SPOT"]
+    }
 }
 impl AsRef<str> for CapacityTypes {
     fn as_ref(&self) -> &str {
@@ -2894,6 +2998,17 @@ impl NodegroupStatus {
             NodegroupStatus::Updating => "UPDATING",
             NodegroupStatus::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "ACTIVE",
+            "CREATE_FAILED",
+            "CREATING",
+            "DEGRADED",
+            "DELETE_FAILED",
+            "DELETING",
+            "UPDATING",
+        ]
     }
 }
 impl AsRef<str> for NodegroupStatus {
@@ -3272,6 +3387,9 @@ impl ConfigStatus {
             ConfigStatus::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["ACTIVE", "CREATING", "DELETING"]
+    }
 }
 impl AsRef<str> for ConfigStatus {
     fn as_ref(&self) -> &str {
@@ -3527,6 +3645,15 @@ impl FargateProfileStatus {
             FargateProfileStatus::Deleting => "DELETING",
             FargateProfileStatus::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "ACTIVE",
+            "CREATE_FAILED",
+            "CREATING",
+            "DELETE_FAILED",
+            "DELETING",
+        ]
     }
 }
 impl AsRef<str> for FargateProfileStatus {
@@ -4148,6 +4275,9 @@ impl ClusterStatus {
             ClusterStatus::Updating => "UPDATING",
             ClusterStatus::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["ACTIVE", "CREATING", "DELETING", "FAILED", "UPDATING"]
     }
 }
 impl AsRef<str> for ClusterStatus {
@@ -5118,6 +5248,16 @@ impl AddonIssueCode {
             AddonIssueCode::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "AccessDenied",
+            "AdmissionRequestDenied",
+            "ClusterUnreachable",
+            "ConfigurationConflict",
+            "InsufficientNumberOfReplicas",
+            "InternalFailure",
+        ]
+    }
 }
 impl AsRef<str> for AddonIssueCode {
     fn as_ref(&self) -> &str {
@@ -5179,6 +5319,17 @@ impl AddonStatus {
             AddonStatus::Updating => "UPDATING",
             AddonStatus::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "ACTIVE",
+            "CREATE_FAILED",
+            "CREATING",
+            "DEGRADED",
+            "DELETE_FAILED",
+            "DELETING",
+            "UPDATING",
+        ]
     }
 }
 impl AsRef<str> for AddonStatus {

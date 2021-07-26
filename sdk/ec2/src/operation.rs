@@ -186,15 +186,15 @@ impl smithy_http::response::ParseStrictResponse for AcceptVpcPeeringConnection {
     }
 }
 
-/// <p>Advertises an IPv4 or IPv6 address range that is provisioned for use with your AWS resources through
+/// <p>Advertises an IPv4 or IPv6 address range that is provisioned for use with your Amazon Web Services resources through
 /// bring your own IP addresses (BYOIP).</p>
 /// <p>You can perform this operation at most once every 10 seconds, even if you specify different
 /// address ranges each time.</p>
 /// <p>We recommend that you stop advertising the BYOIP CIDR from other locations when you advertise
-/// it from AWS. To minimize down time, you can configure your AWS resources to use an address from a
+/// it from Amazon Web Services. To minimize down time, you can configure your Amazon Web Services resources to use an address from a
 /// BYOIP CIDR before it is advertised, and then simultaneously stop advertising it from the current
-/// location and start advertising it through AWS.</p>
-/// <p>It can take a few minutes before traffic to the specified addresses starts routing to AWS
+/// location and start advertising it through Amazon Web Services.</p>
+/// <p>It can take a few minutes before traffic to the specified addresses starts routing to Amazon Web Services
 /// because of BGP propagation delays.</p>
 /// <p>To stop advertising the BYOIP CIDR, use <a>WithdrawByoipCidr</a>.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
@@ -224,14 +224,14 @@ impl smithy_http::response::ParseStrictResponse for AdvertiseByoipCidr {
     }
 }
 
-/// <p>Allocates an Elastic IP address to your AWS account. After you allocate the Elastic IP address you can associate  
+/// <p>Allocates an Elastic IP address to your account. After you allocate the Elastic IP address you can associate  
 /// it with an instance or network interface. After you release an Elastic IP address, it is released to the IP address
-/// pool and can be allocated to a different AWS account.</p>
-/// <p>You can allocate an Elastic IP address from an address pool owned by AWS or from an address pool created
-/// from a public IPv4 address range that you have brought to AWS for use with your AWS resources using bring your own
+/// pool and can be allocated to a different account.</p>
+/// <p>You can allocate an Elastic IP address from an address pool owned by Amazon Web Services or from an address pool created
+/// from a public IPv4 address range that you have brought to Amazon Web Services for use with your Amazon Web Services resources using bring your own
 /// IP addresses (BYOIP). For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-byoip.html">Bring Your Own IP Addresses (BYOIP)</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
 /// <p>[EC2-VPC] If you release an Elastic IP address, you might be able to recover it. You cannot recover an
-/// Elastic IP address that you released after it is allocated to another AWS account. You cannot recover an Elastic IP
+/// Elastic IP address that you released after it is allocated to another account. You cannot recover an Elastic IP
 /// address for EC2-Classic. To attempt to recover an Elastic IP address that you released, specify it in this operation.</p>
 /// <p>An Elastic IP address is for use either in the EC2-Classic platform or in a VPC. By default, you can allocate
 /// 5 Elastic IP addresses for EC2-Classic per Region and 5 Elastic IP addresses for EC2-VPC per Region.</p>
@@ -697,6 +697,38 @@ impl smithy_http::response::ParseStrictResponse for AssociateTransitGatewayRoute
             crate::operation_deser::parse_associate_transit_gateway_route_table_error(response)
         } else {
             crate::operation_deser::parse_associate_transit_gateway_route_table_response(response)
+        }
+    }
+}
+
+/// <p>Associates a branch network interface with a trunk network interface.</p>
+/// <p>Before you create the association, run the <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateNetworkInterface.html">create-network-interface</a> command and set
+/// <code>--interface-type</code> to <code>trunk</code>. You must also create a network interface for each branch network interface that you want to associate with the trunk network interface.</p>
+/// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/eni-trunking.html">
+/// Network interface trunking</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct AssociateTrunkInterface {
+    _private: (),
+}
+impl AssociateTrunkInterface {
+    /// Creates a new builder-style object to manufacture [`AssociateTrunkInterfaceInput`](crate::input::AssociateTrunkInterfaceInput)
+    pub fn builder() -> crate::input::associate_trunk_interface_input::Builder {
+        crate::input::associate_trunk_interface_input::Builder::default()
+    }
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl smithy_http::response::ParseStrictResponse for AssociateTrunkInterface {
+    type Output = std::result::Result<
+        crate::output::AssociateTrunkInterfaceOutput,
+        crate::error::AssociateTrunkInterfaceError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_associate_trunk_interface_error(response)
+        } else {
+            crate::operation_deser::parse_associate_trunk_interface_response(response)
         }
     }
 }
@@ -1225,10 +1257,11 @@ impl smithy_http::response::ParseStrictResponse for CancelReservedInstancesListi
 
 /// <p>Cancels the specified Spot Fleet requests.</p>
 /// <p>After you cancel a Spot Fleet request, the Spot Fleet launches no new Spot Instances.
-/// You must specify whether the Spot Fleet should also terminate its Spot Instances.
-/// If you terminate the instances, the Spot Fleet request enters the <code>cancelled_terminating</code> state.
-/// Otherwise, the Spot Fleet request enters the <code>cancelled_running</code> state and the instances
-/// continue to run until they are interrupted or you terminate them manually.</p>
+/// You must specify whether the Spot Fleet should also terminate its Spot Instances. If you
+/// terminate the instances, the Spot Fleet request enters the
+/// <code>cancelled_terminating</code> state. Otherwise, the Spot Fleet request enters
+/// the <code>cancelled_running</code> state and the instances continue to run until they
+/// are interrupted or you terminate them manually.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct CancelSpotFleetRequests {
     _private: (),
@@ -1258,7 +1291,8 @@ impl smithy_http::response::ParseStrictResponse for CancelSpotFleetRequests {
 
 /// <p>Cancels one or more Spot Instance requests.</p>
 /// <important>
-/// <p>Canceling a Spot Instance request does not terminate running Spot Instances associated with the request.</p>
+/// <p>Canceling a Spot Instance request does not terminate running Spot Instances
+/// associated with the request.</p>
 /// </important>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct CancelSpotInstanceRequests {
@@ -2348,9 +2382,9 @@ impl smithy_http::response::ParseStrictResponse for CreateNetworkInterface {
     }
 }
 
-/// <p>Grants an AWS-authorized account permission to attach the specified network interface to
+/// <p>Grants an Amazon Web Services-authorized account permission to attach the specified network interface to
 /// an instance in their account.</p>
-/// <p>You can grant permission to a single AWS account only, and only one account at a time.</p>
+/// <p>You can grant permission to a single account only, and only one account at a time.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct CreateNetworkInterfacePermission {
     _private: (),
@@ -2728,7 +2762,7 @@ impl smithy_http::response::ParseStrictResponse for CreateSnapshots {
 }
 
 /// <p>Creates a data feed for Spot Instances, enabling you to view Spot Instance usage logs.
-/// You can create one data feed per AWS account. For more information, see
+/// You can create one data feed per account. For more information, see
 /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-data-feeds.html">Spot Instance data feed</a>
 /// in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
@@ -5228,7 +5262,7 @@ impl smithy_http::response::ParseStrictResponse for DeleteVpnGateway {
     }
 }
 
-/// <p>Releases the specified address range that you provisioned for use with your AWS resources
+/// <p>Releases the specified address range that you provisioned for use with your Amazon Web Services resources
 /// through bring your own IP addresses (BYOIP) and deletes the corresponding address pool.</p>
 /// <p>Before you can release an address range, you must stop advertising it using <a>WithdrawByoipCidr</a> and you must not have any IP addresses allocated from its
 /// address range.</p>
@@ -5648,7 +5682,7 @@ impl smithy_http::response::ParseStrictResponse for DescribeByoipCidrs {
     }
 }
 
-/// <p>Describes one or more of your Capacity Reservations. The results describe only the Capacity Reservations in the AWS
+/// <p>Describes one or more of your Capacity Reservations. The results describe only the Capacity Reservations in the
 /// Region that you're currently using.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeCapacityReservations {
@@ -6555,9 +6589,10 @@ impl smithy_http::response::ParseStrictResponse for DescribeImageAttribute {
 
 /// <p>Describes the specified images (AMIs, AKIs, and ARIs) available to you or all of the images available to you.</p>
 /// <p>The images available to you include public images, private images that you own, and private images owned by other AWS accounts for which you have explicit launch permissions.</p>
-/// <p>Recently deregistered images appear in the returned results for a short interval and then return empty results.
-/// After all instances that reference a deregistered AMI are terminated, specifying the ID of the image results
-/// in an error indicating that the AMI ID cannot be found.</p>
+/// <p>Recently deregistered images appear in the returned results for a short interval and then
+/// return empty results. After all instances that reference a deregistered AMI are terminated,
+/// specifying the ID of the image will eventually return an error indicating that the AMI ID
+/// cannot be found.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeImages {
     _private: (),
@@ -7236,7 +7271,7 @@ impl smithy_http::response::ParseStrictResponse for DescribeLocalGatewayVirtualI
     }
 }
 
-/// <p>Describes your managed prefix lists and any AWS-managed prefix lists.</p>
+/// <p>Describes your managed prefix lists and any Amazon Web Services-managed prefix lists.</p>
 /// <p>To view the entries for your prefix list, use <a>GetManagedPrefixListEntries</a>.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeManagedPrefixLists {
@@ -7521,7 +7556,7 @@ impl smithy_http::response::ParseStrictResponse for DescribePlacementGroups {
     }
 }
 
-/// <p>Describes available AWS services in a prefix list format, which includes the prefix list
+/// <p>Describes available Amazon Web Services services in a prefix list format, which includes the prefix list
 /// name and prefix list ID of the service and the IP address range for the service.</p>
 /// <p>We recommend that you use <a>DescribeManagedPrefixLists</a> instead.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
@@ -8125,9 +8160,11 @@ impl smithy_http::response::ParseStrictResponse for DescribeSpotFleetInstances {
     }
 }
 
-/// <p>Describes the events for the specified Spot Fleet request during the specified time.</p>
-/// <p>Spot Fleet events are delayed by up to 30 seconds before they can be described. This ensures that you can query
-/// by the last evaluated time and not miss a recorded event. Spot Fleet events are available for 48 hours.</p>
+/// <p>Describes the events for the specified Spot Fleet request during the specified
+/// time.</p>
+/// <p>Spot Fleet events are delayed by up to 30 seconds before they can be described. This
+/// ensures that you can query by the last evaluated time and not miss a recorded event.
+/// Spot Fleet events are available for 48 hours.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeSpotFleetRequestHistory {
     _private: (),
@@ -8156,7 +8193,8 @@ impl smithy_http::response::ParseStrictResponse for DescribeSpotFleetRequestHist
 }
 
 /// <p>Describes your Spot Fleet requests.</p>
-/// <p>Spot Fleet requests are deleted 48 hours after they are canceled and their instances are terminated.</p>
+/// <p>Spot Fleet requests are deleted 48 hours after they are canceled and their instances
+/// are terminated.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeSpotFleetRequests {
     _private: (),
@@ -8185,12 +8223,12 @@ impl smithy_http::response::ParseStrictResponse for DescribeSpotFleetRequests {
 }
 
 /// <p>Describes the specified Spot Instance requests.</p>
-/// <p>You can use <code>DescribeSpotInstanceRequests</code> to find a
-/// running Spot Instance by examining the response. If the status of
-/// the Spot Instance is <code>fulfilled</code>, the instance ID
-/// appears in the response and contains the identifier of the instance.
-/// Alternatively, you can use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstances">DescribeInstances</a> with a filter to
-/// look for instances where the instance lifecycle is <code>spot</code>.</p>
+/// <p>You can use <code>DescribeSpotInstanceRequests</code> to find a running Spot Instance by
+/// examining the response. If the status of the Spot Instance is <code>fulfilled</code>, the
+/// instance ID appears in the response and contains the identifier of the instance.
+/// Alternatively, you can use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstances">DescribeInstances</a>
+/// with a filter to look for instances where the instance lifecycle is
+/// <code>spot</code>.</p>
 /// <p>We recommend that you set <code>MaxResults</code> to a value between 5 and 1000 to
 /// limit the number of results returned. This paginates the output, which makes the list
 /// more manageable and returns the results faster. If the list of results exceeds your
@@ -8198,8 +8236,8 @@ impl smithy_http::response::ParseStrictResponse for DescribeSpotFleetRequests {
 /// <code>NextToken</code> value that can be passed to a subsequent
 /// <code>DescribeSpotInstanceRequests</code> request to retrieve the remaining
 /// results.</p>
-/// <p>Spot Instance requests are deleted four hours after they are canceled and their instances
-/// are terminated.</p>
+/// <p>Spot Instance requests are deleted four hours after they are canceled and their instances are
+/// terminated.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeSpotInstanceRequests {
     _private: (),
@@ -8227,9 +8265,8 @@ impl smithy_http::response::ParseStrictResponse for DescribeSpotInstanceRequests
     }
 }
 
-/// <p>Describes the Spot price history. For more information, see
-/// <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances-history.html">Spot Instance pricing history</a>
-/// in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
+/// <p>Describes the Spot price history. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances-history.html">Spot Instance pricing history</a> in the
+/// <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
 /// <p>When you specify a start and end time, the operation returns the prices of the
 /// instance types within that time range. It also returns the last price change before the
 /// start time, which is the effective price as of the start time.</p>
@@ -8701,6 +8738,34 @@ impl smithy_http::response::ParseStrictResponse for DescribeTransitGatewayVpcAtt
             crate::operation_deser::parse_describe_transit_gateway_vpc_attachments_response(
                 response,
             )
+        }
+    }
+}
+
+/// <p>Describes one or more network interface trunk associations.</p>
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct DescribeTrunkInterfaceAssociations {
+    _private: (),
+}
+impl DescribeTrunkInterfaceAssociations {
+    /// Creates a new builder-style object to manufacture [`DescribeTrunkInterfaceAssociationsInput`](crate::input::DescribeTrunkInterfaceAssociationsInput)
+    pub fn builder() -> crate::input::describe_trunk_interface_associations_input::Builder {
+        crate::input::describe_trunk_interface_associations_input::Builder::default()
+    }
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl smithy_http::response::ParseStrictResponse for DescribeTrunkInterfaceAssociations {
+    type Output = std::result::Result<
+        crate::output::DescribeTrunkInterfaceAssociationsOutput,
+        crate::error::DescribeTrunkInterfaceAssociationsError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_describe_trunk_interface_associations_error(response)
+        } else {
+            crate::operation_deser::parse_describe_trunk_interface_associations_response(response)
         }
     }
 }
@@ -9469,6 +9534,36 @@ impl smithy_http::response::ParseStrictResponse for DisableFastSnapshotRestores 
     }
 }
 
+/// <p>Cancels the deprecation of the specified AMI.</p>
+/// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-deprecate.html">Deprecate an AMI</a> in the
+/// <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct DisableImageDeprecation {
+    _private: (),
+}
+impl DisableImageDeprecation {
+    /// Creates a new builder-style object to manufacture [`DisableImageDeprecationInput`](crate::input::DisableImageDeprecationInput)
+    pub fn builder() -> crate::input::disable_image_deprecation_input::Builder {
+        crate::input::disable_image_deprecation_input::Builder::default()
+    }
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl smithy_http::response::ParseStrictResponse for DisableImageDeprecation {
+    type Output = std::result::Result<
+        crate::output::DisableImageDeprecationOutput,
+        crate::error::DisableImageDeprecationError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_disable_image_deprecation_error(response)
+        } else {
+            crate::operation_deser::parse_disable_image_deprecation_response(response)
+        }
+    }
+}
+
 /// <p>Disables access to the EC2 serial console of all instances for your account. By default,
 /// access to the EC2 serial console is disabled for your account. For more information, see
 /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configure-access-to-serial-console.html#serial-console-account-access">Manage account access to the EC2 serial console</a> in the <i>Amazon EC2
@@ -9884,6 +9979,34 @@ impl smithy_http::response::ParseStrictResponse for DisassociateTransitGatewayRo
     }
 }
 
+/// <p>Removes an association between a branch network interface with a trunk network interface.</p>
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct DisassociateTrunkInterface {
+    _private: (),
+}
+impl DisassociateTrunkInterface {
+    /// Creates a new builder-style object to manufacture [`DisassociateTrunkInterfaceInput`](crate::input::DisassociateTrunkInterfaceInput)
+    pub fn builder() -> crate::input::disassociate_trunk_interface_input::Builder {
+        crate::input::disassociate_trunk_interface_input::Builder::default()
+    }
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl smithy_http::response::ParseStrictResponse for DisassociateTrunkInterface {
+    type Output = std::result::Result<
+        crate::output::DisassociateTrunkInterfaceOutput,
+        crate::error::DisassociateTrunkInterfaceError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_disassociate_trunk_interface_error(response)
+        } else {
+            crate::operation_deser::parse_disassociate_trunk_interface_response(response)
+        }
+    }
+}
+
 /// <p>Disassociates a CIDR block from a VPC. To disassociate the CIDR block, you must
 /// specify its association ID. You can get the association ID by using
 /// <a>DescribeVpcs</a>. You must detach or delete all gateways and resources that
@@ -9985,6 +10108,35 @@ impl smithy_http::response::ParseStrictResponse for EnableFastSnapshotRestores {
             crate::operation_deser::parse_enable_fast_snapshot_restores_error(response)
         } else {
             crate::operation_deser::parse_enable_fast_snapshot_restores_response(response)
+        }
+    }
+}
+
+/// <p>Enables deprecation of the specified AMI at the specified date and time.</p>
+/// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-deprecate.html">Deprecate an AMI</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct EnableImageDeprecation {
+    _private: (),
+}
+impl EnableImageDeprecation {
+    /// Creates a new builder-style object to manufacture [`EnableImageDeprecationInput`](crate::input::EnableImageDeprecationInput)
+    pub fn builder() -> crate::input::enable_image_deprecation_input::Builder {
+        crate::input::enable_image_deprecation_input::Builder::default()
+    }
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl smithy_http::response::ParseStrictResponse for EnableImageDeprecation {
+    type Output = std::result::Result<
+        crate::output::EnableImageDeprecationOutput,
+        crate::error::EnableImageDeprecationError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_enable_image_deprecation_error(response)
+        } else {
+            crate::operation_deser::parse_enable_image_deprecation_response(response)
         }
     }
 }
@@ -10361,7 +10513,7 @@ impl smithy_http::response::ParseStrictResponse for GetAssociatedIpv6PoolCidrs {
 }
 
 /// <p>Gets usage information about a Capacity Reservation. If the Capacity Reservation is shared, it shows usage information for the Capacity Reservation owner
-/// and each AWS account that is currently using the shared capacity. If the Capacity Reservation is not shared, it shows only
+/// and each account that is currently using the shared capacity. If the Capacity Reservation is not shared, it shows only
 /// the Capacity Reservation owner's usage.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct GetCapacityReservationUsage {
@@ -11337,12 +11489,12 @@ impl smithy_http::response::ParseStrictResponse for ModifyClientVpnEndpoint {
 }
 
 /// <p>Modifies the default credit option for CPU usage of burstable performance instances.
-/// The default credit option is set at the account level per AWS Region, and is specified
+/// The default credit option is set at the account level per Region, and is specified
 /// per instance family. All new burstable performance instances in the account launch using
 /// the default credit option.</p>
 /// <p>
-/// <code>ModifyDefaultCreditSpecification</code> is an asynchronous operation, which works at an AWS
-/// Region level and modifies the credit option for each Availability Zone. All zones in a
+/// <code>ModifyDefaultCreditSpecification</code> is an asynchronous operation, which works at an Region
+/// level and modifies the credit option for each Availability Zone. All zones in a
 /// Region are updated within five minutes. But if instances are launched during this
 /// operation, they might not get the new credit option until the zone is updated. To verify
 /// whether the update has occurred, you can call <code>GetDefaultCreditSpecification</code> and check
@@ -12033,7 +12185,8 @@ impl smithy_http::response::ParseStrictResponse for ModifySnapshotAttribute {
 
 /// <p>Modifies the specified Spot Fleet request.</p>
 /// <p>You can only modify a Spot Fleet request of type <code>maintain</code>.</p>
-/// <p>While the Spot Fleet request is being modified, it is in the <code>modifying</code> state.</p>
+/// <p>While the Spot Fleet request is being modified, it is in the <code>modifying</code>
+/// state.</p>
 /// <p>To scale up your Spot Fleet, increase its target capacity. The Spot Fleet launches the
 /// additional Spot Instances according to the allocation strategy for the Spot Fleet
 /// request. If the allocation strategy is <code>lowestPrice</code>, the Spot Fleet launches
@@ -12053,8 +12206,8 @@ impl smithy_http::response::ParseStrictResponse for ModifySnapshotAttribute {
 /// Spot Instance pools. Alternatively, you can request that the Spot Fleet keep the fleet
 /// at its current size, but not replace any Spot Instances that are interrupted or that you
 /// terminate manually.</p>
-/// <p>If you are finished with your Spot Fleet for now, but will use it again later, you can set the
-/// target capacity to 0.</p>
+/// <p>If you are finished with your Spot Fleet for now, but will use it again later, you can
+/// set the target capacity to 0.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct ModifySpotFleetRequest {
     _private: (),
@@ -12829,13 +12982,13 @@ impl smithy_http::response::ParseStrictResponse for MoveAddressToVpc {
     }
 }
 
-/// <p>Provisions an IPv4 or IPv6 address range for use with your AWS resources through bring your own IP
+/// <p>Provisions an IPv4 or IPv6 address range for use with your Amazon Web Services resources through bring your own IP
 /// addresses (BYOIP) and creates a corresponding address pool. After the address range is
 /// provisioned, it is ready to be advertised using <a>AdvertiseByoipCidr</a>.</p>
-/// <p>AWS verifies that you own the address range and are authorized to advertise it.
+/// <p>Amazon Web Services verifies that you own the address range and are authorized to advertise it.
 /// You must ensure that the address range is registered to you and that you created an
 /// RPKI ROA to authorize Amazon ASNs 16509 and 14618 to advertise the address range.
-/// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-byoip.html">Bring Your Own IP Addresses (BYOIP)</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+/// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-byoip.html">Bring your own IP addresses (BYOIP)</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
 /// <p>Provisioning an address range is an asynchronous operation, so the call returns immediately,
 /// but the address range is not ready to use until its status changes from <code>pending-provision</code>
 /// to <code>provisioned</code>. To monitor the status of an address range, use <a>DescribeByoipCidrs</a>.
@@ -13350,7 +13503,7 @@ impl smithy_http::response::ParseStrictResponse for RejectVpcPeeringConnection {
 /// <p>After releasing an Elastic IP address, it is released to the IP address pool.
 /// Be sure to update your DNS records and any servers or devices that communicate with the address.
 /// If you attempt to release an Elastic IP address that you already released, you'll get an
-/// <code>AuthFailure</code> error if the address is already allocated to another AWS account.</p>
+/// <code>AuthFailure</code> error if the address is already allocated to another account.</p>
 /// <p>[EC2-VPC] After you release an Elastic IP address for use in a VPC, you might be able to recover it.
 /// For more information, see <a>AllocateAddress</a>.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
@@ -13634,14 +13787,18 @@ impl smithy_http::response::ParseStrictResponse for ReportInstanceStatus {
 /// <p>The Spot Fleet request specifies the total target capacity and the On-Demand target
 /// capacity. Amazon EC2 calculates the difference between the total capacity and On-Demand
 /// capacity, and launches the difference as Spot capacity.</p>
-/// <p>You can submit a single request that includes multiple launch specifications that vary by instance type, AMI, Availability Zone, or subnet.</p>
+/// <p>You can submit a single request that includes multiple launch specifications that vary
+/// by instance type, AMI, Availability Zone, or subnet.</p>
 /// <p>By default, the Spot Fleet requests Spot Instances in the Spot Instance pool where the
 /// price per unit is the lowest. Each launch specification can include its own instance
 /// weighting that reflects the value of the instance type to your application
-/// workload.</p>       
-/// <p>Alternatively, you can specify that the Spot Fleet distribute the target capacity across the Spot pools included in its launch specifications. By ensuring that the Spot Instances in your Spot Fleet are in different Spot pools, you can improve the availability of your fleet.</p>
-/// <p>You can specify tags for the Spot Fleet request and instances launched by the fleet. You
-/// cannot tag other resource types in a Spot Fleet request because only the
+/// workload.</p>
+/// <p>Alternatively, you can specify that the Spot Fleet distribute the target capacity
+/// across the Spot pools included in its launch specifications. By ensuring that the Spot
+/// Instances in your Spot Fleet are in different Spot pools, you can improve the
+/// availability of your fleet.</p>
+/// <p>You can specify tags for the Spot Fleet request and instances launched by the fleet.
+/// You cannot tag other resource types in a Spot Fleet request because only the
 /// <code>spot-fleet-request</code> and <code>instance</code> resource types are
 /// supported.</p>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-fleet-requests.html">Spot Fleet requests</a>
@@ -13674,7 +13831,8 @@ impl smithy_http::response::ParseStrictResponse for RequestSpotFleet {
 }
 
 /// <p>Creates a Spot Instance request.</p>
-/// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-requests.html">Spot Instance requests</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
+/// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-requests.html">Spot Instance requests</a> in
+/// the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct RequestSpotInstances {
     _private: (),
@@ -14325,12 +14483,9 @@ impl smithy_http::response::ParseStrictResponse for SendDiagnosticInterrupt {
 /// started. When an instance is stopped, the compute resources are released and you are not
 /// billed for instance usage. However, your root partition Amazon EBS volume remains and
 /// continues to persist your data, and you are charged for Amazon EBS volume usage. You can
-/// restart your instance at any time. Every time you start your Windows instance, Amazon
-/// EC2 charges you for a full instance hour. If you stop and restart your Windows instance,
-/// a new instance hour begins and Amazon EC2 charges you for another full instance hour
-/// even if you are still within the same 60-minute period when it was stopped. Every time
-/// you start your Linux instance, Amazon EC2 charges a one-minute minimum for instance
-/// usage, and thereafter charges per second for instance usage.</p>
+/// restart your instance at any time. Every time you start your instance, Amazon EC2
+/// charges a one-minute minimum for instance usage, and thereafter charges per second for
+/// instance usage.</p>
 /// <p>Before stopping an instance, make sure it is in a state from which it can be
 /// restarted. Stopping an instance does not preserve data stored in RAM.</p>
 /// <p>Performing this operation on an instance that uses an instance store as its root
@@ -14432,12 +14587,9 @@ impl smithy_http::response::ParseStrictResponse for StartVpcEndpointServicePriva
 /// <i>Amazon EC2 User Guide</i>.</p>
 /// <p>We don't charge usage for a stopped instance, or data transfer fees; however, your
 /// root partition Amazon EBS volume remains and continues to persist your data, and you are
-/// charged for Amazon EBS volume usage. Every time you start your Windows instance, Amazon
-/// EC2 charges you for a full instance hour. If you stop and restart your Windows instance,
-/// a new instance hour begins and Amazon EC2 charges you for another full instance hour
-/// even if you are still within the same 60-minute period when it was stopped. Every time
-/// you start your Linux instance, Amazon EC2 charges a one-minute minimum for instance
-/// usage, and thereafter charges per second for instance usage.</p>
+/// charged for Amazon EBS volume usage. Every time you start your instance, Amazon EC2
+/// charges a one-minute minimum for instance usage, and thereafter charges per second for
+/// instance usage.</p>
 /// <p>You can't stop or hibernate instance store-backed instances. You can't use the Stop
 /// action to hibernate Spot Instances, but you can specify that Amazon EC2 should hibernate
 /// Spot Instances when they are interrupted. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-interruptions.html#hibernate-spot-instances">Hibernating interrupted Spot Instances</a> in the <i>Amazon EC2 User Guide</i>.</p>
@@ -14514,6 +14666,46 @@ impl smithy_http::response::ParseStrictResponse for TerminateClientVpnConnection
 /// instance more than once, each call succeeds. </p>
 /// <p>If you specify multiple instances and the request fails (for example, because of a
 /// single incorrect instance ID), none of the instances are terminated.</p>
+/// <p>If you terminate multiple instances across multiple Availability Zones, and one or more
+/// of the specified instances are enabled for termination protection, the request fails with
+/// the following results:</p>
+/// <ul>
+/// <li>
+/// <p>The specified instances that are in the same Availability Zone as the protected
+/// instance are not terminated.</p>
+/// </li>
+/// <li>
+/// <p>The specified instances that are in different Availability Zones, where no other
+/// specified instances are protected, are successfully terminated.</p>
+/// </li>
+/// </ul>
+/// <p>For example, say you have the following instances:</p>
+/// <ul>
+/// <li>
+/// <p>Instance A: <code>us-east-1a</code>; Not protected</p>
+/// </li>
+/// <li>
+/// <p>Instance B: <code>us-east-1a</code>; Not protected</p>
+/// </li>
+/// <li>
+/// <p>Instance C: <code>us-east-1b</code>; Protected</p>
+/// </li>
+/// <li>
+/// <p>Instance D: <code>us-east-1b</code>; not protected</p>
+/// </li>
+/// </ul>
+/// <p>If you attempt to terminate all of these instances in the same request, the request reports
+/// failure with the following results:</p>
+/// <ul>
+/// <li>
+/// <p>Instance A and Instance B are successfully terminated because none of the specified
+/// instances in <code>us-east-1a</code> are enabled for termination protection.</p>
+/// </li>
+/// <li>
+/// <p>Instance C and Instance D fail to terminate because at least one of the specified
+/// instances in <code>us-east-1b</code> (Instance C) is enabled for termination protection.</p>
+/// </li>
+/// </ul>
 /// <p>Terminated instances remain visible after termination (for approximately one
 /// hour).</p>
 /// <p>By default, Amazon EC2 deletes all EBS volumes that were attached when the instance
@@ -14718,7 +14910,7 @@ impl smithy_http::response::ParseStrictResponse for UpdateSecurityGroupRuleDescr
 /// <p>Stops advertising an address range that is provisioned as an address pool.</p>
 /// <p>You can perform this operation at most once every 10 seconds, even if you specify different
 /// address ranges each time.</p>
-/// <p>It can take a few minutes before traffic to the specified addresses stops routing to AWS
+/// <p>It can take a few minutes before traffic to the specified addresses stops routing to Amazon Web Services
 /// because of BGP propagation delays.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct WithdrawByoipCidr {

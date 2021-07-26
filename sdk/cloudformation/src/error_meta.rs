@@ -21,6 +21,7 @@ pub enum Error {
     StackSetNotFoundException(crate::error::StackSetNotFoundException),
     StaleRequestException(crate::error::StaleRequestException),
     TokenAlreadyExistsException(crate::error::TokenAlreadyExistsException),
+    TypeConfigurationNotFoundException(crate::error::TypeConfigurationNotFoundException),
     TypeNotFoundException(crate::error::TypeNotFoundException),
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
@@ -46,8 +47,41 @@ impl std::fmt::Display for Error {
             Error::StackSetNotFoundException(inner) => inner.fmt(f),
             Error::StaleRequestException(inner) => inner.fmt(f),
             Error::TokenAlreadyExistsException(inner) => inner.fmt(f),
+            Error::TypeConfigurationNotFoundException(inner) => inner.fmt(f),
             Error::TypeNotFoundException(inner) => inner.fmt(f),
             Error::Unhandled(inner) => inner.fmt(f),
+        }
+    }
+}
+impl From<smithy_http::result::SdkError<crate::error::ActivateTypeError>> for Error {
+    fn from(err: smithy_http::result::SdkError<crate::error::ActivateTypeError>) -> Self {
+        match err {
+            smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::ActivateTypeErrorKind::CfnRegistryException(inner) => {
+                    Error::CfnRegistryException(inner)
+                }
+                crate::error::ActivateTypeErrorKind::TypeNotFoundException(inner) => {
+                    Error::TypeNotFoundException(inner)
+                }
+                crate::error::ActivateTypeErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl From<smithy_http::result::SdkError<crate::error::BatchDescribeTypeConfigurationsError>>
+    for Error
+{
+    fn from(
+        err: smithy_http::result::SdkError<crate::error::BatchDescribeTypeConfigurationsError>,
+    ) -> Self {
+        match err {
+            smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+                crate::error::BatchDescribeTypeConfigurationsErrorKind::CfnRegistryException(inner) => Error::CfnRegistryException(inner),
+                crate::error::BatchDescribeTypeConfigurationsErrorKind::TypeConfigurationNotFoundException(inner) => Error::TypeConfigurationNotFoundException(inner),
+                crate::error::BatchDescribeTypeConfigurationsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            }
+            _ => Error::Unhandled(err.into()),
         }
     }
 }
@@ -171,6 +205,22 @@ impl From<smithy_http::result::SdkError<crate::error::CreateStackSetError>> for 
         }
     }
 }
+impl From<smithy_http::result::SdkError<crate::error::DeactivateTypeError>> for Error {
+    fn from(err: smithy_http::result::SdkError<crate::error::DeactivateTypeError>) -> Self {
+        match err {
+            smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::DeactivateTypeErrorKind::CfnRegistryException(inner) => {
+                    Error::CfnRegistryException(inner)
+                }
+                crate::error::DeactivateTypeErrorKind::TypeNotFoundException(inner) => {
+                    Error::TypeNotFoundException(inner)
+                }
+                crate::error::DeactivateTypeErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
 impl From<smithy_http::result::SdkError<crate::error::DeleteChangeSetError>> for Error {
     fn from(err: smithy_http::result::SdkError<crate::error::DeleteChangeSetError>) -> Self {
         match err {
@@ -276,6 +326,21 @@ impl From<smithy_http::result::SdkError<crate::error::DescribeChangeSetError>> f
                     Error::ChangeSetNotFoundException(inner)
                 }
                 crate::error::DescribeChangeSetErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl From<smithy_http::result::SdkError<crate::error::DescribePublisherError>> for Error {
+    fn from(err: smithy_http::result::SdkError<crate::error::DescribePublisherError>) -> Self {
+        match err {
+            smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::DescribePublisherErrorKind::CfnRegistryException(inner) => {
+                    Error::CfnRegistryException(inner)
+                }
+                crate::error::DescribePublisherErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
                 }
             },
@@ -723,6 +788,22 @@ impl From<smithy_http::result::SdkError<crate::error::ListTypeVersionsError>> fo
         }
     }
 }
+impl From<smithy_http::result::SdkError<crate::error::PublishTypeError>> for Error {
+    fn from(err: smithy_http::result::SdkError<crate::error::PublishTypeError>) -> Self {
+        match err {
+            smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::PublishTypeErrorKind::CfnRegistryException(inner) => {
+                    Error::CfnRegistryException(inner)
+                }
+                crate::error::PublishTypeErrorKind::TypeNotFoundException(inner) => {
+                    Error::TypeNotFoundException(inner)
+                }
+                crate::error::PublishTypeErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
 impl From<smithy_http::result::SdkError<crate::error::RecordHandlerProgressError>> for Error {
     fn from(err: smithy_http::result::SdkError<crate::error::RecordHandlerProgressError>) -> Self {
         match err {
@@ -731,6 +812,21 @@ impl From<smithy_http::result::SdkError<crate::error::RecordHandlerProgressError
                 crate::error::RecordHandlerProgressErrorKind::OperationStatusCheckFailedException(inner) => Error::OperationStatusCheckFailedException(inner),
                 crate::error::RecordHandlerProgressErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             }
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl From<smithy_http::result::SdkError<crate::error::RegisterPublisherError>> for Error {
+    fn from(err: smithy_http::result::SdkError<crate::error::RegisterPublisherError>) -> Self {
+        match err {
+            smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::RegisterPublisherErrorKind::CfnRegistryException(inner) => {
+                    Error::CfnRegistryException(inner)
+                }
+                crate::error::RegisterPublisherErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
             _ => Error::Unhandled(err.into()),
         }
     }
@@ -753,6 +849,24 @@ impl From<smithy_http::result::SdkError<crate::error::SetStackPolicyError>> for 
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::SetStackPolicyErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl From<smithy_http::result::SdkError<crate::error::SetTypeConfigurationError>> for Error {
+    fn from(err: smithy_http::result::SdkError<crate::error::SetTypeConfigurationError>) -> Self {
+        match err {
+            smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::SetTypeConfigurationErrorKind::CfnRegistryException(inner) => {
+                    Error::CfnRegistryException(inner)
+                }
+                crate::error::SetTypeConfigurationErrorKind::TypeNotFoundException(inner) => {
+                    Error::TypeNotFoundException(inner)
+                }
+                crate::error::SetTypeConfigurationErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
             },
             _ => Error::Unhandled(err.into()),
         }
@@ -802,6 +916,22 @@ impl From<smithy_http::result::SdkError<crate::error::StopStackSetOperationError
                 crate::error::StopStackSetOperationErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
                 }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl From<smithy_http::result::SdkError<crate::error::TestTypeError>> for Error {
+    fn from(err: smithy_http::result::SdkError<crate::error::TestTypeError>) -> Self {
+        match err {
+            smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::TestTypeErrorKind::CfnRegistryException(inner) => {
+                    Error::CfnRegistryException(inner)
+                }
+                crate::error::TestTypeErrorKind::TypeNotFoundException(inner) => {
+                    Error::TypeNotFoundException(inner)
+                }
+                crate::error::TestTypeErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
             _ => Error::Unhandled(err.into()),
         }

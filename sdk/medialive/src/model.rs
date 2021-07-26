@@ -369,6 +369,9 @@ impl ReservationState {
             ReservationState::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["ACTIVE", "CANCELED", "DELETED", "EXPIRED"]
+    }
 }
 impl AsRef<str> for ReservationState {
     fn as_ref(&self) -> &str {
@@ -593,6 +596,9 @@ impl ReservationVideoQuality {
             ReservationVideoQuality::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["ENHANCED", "PREMIUM", "STANDARD"]
+    }
 }
 impl AsRef<str> for ReservationVideoQuality {
     fn as_ref(&self) -> &str {
@@ -600,7 +606,7 @@ impl AsRef<str> for ReservationVideoQuality {
     }
 }
 
-/// Special features, 'ADVANCED_AUDIO' or 'AUDIO_NORMALIZATION'
+/// Special features, 'ADVANCED_AUDIO' 'AUDIO_NORMALIZATION' 'MGHD' or 'MGUHD'
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -614,6 +620,8 @@ impl AsRef<str> for ReservationVideoQuality {
 pub enum ReservationSpecialFeature {
     AdvancedAudio,
     AudioNormalization,
+    Mghd,
+    Mguhd,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
@@ -622,6 +630,8 @@ impl std::convert::From<&str> for ReservationSpecialFeature {
         match s {
             "ADVANCED_AUDIO" => ReservationSpecialFeature::AdvancedAudio,
             "AUDIO_NORMALIZATION" => ReservationSpecialFeature::AudioNormalization,
+            "MGHD" => ReservationSpecialFeature::Mghd,
+            "MGUHD" => ReservationSpecialFeature::Mguhd,
             other => ReservationSpecialFeature::Unknown(other.to_owned()),
         }
     }
@@ -638,8 +648,13 @@ impl ReservationSpecialFeature {
         match self {
             ReservationSpecialFeature::AdvancedAudio => "ADVANCED_AUDIO",
             ReservationSpecialFeature::AudioNormalization => "AUDIO_NORMALIZATION",
+            ReservationSpecialFeature::Mghd => "MGHD",
+            ReservationSpecialFeature::Mguhd => "MGUHD",
             ReservationSpecialFeature::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["ADVANCED_AUDIO", "AUDIO_NORMALIZATION", "MGHD", "MGUHD"]
     }
 }
 impl AsRef<str> for ReservationSpecialFeature {
@@ -695,6 +710,9 @@ impl ReservationResourceType {
             ReservationResourceType::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["CHANNEL", "INPUT", "MULTIPLEX", "OUTPUT"]
+    }
 }
 impl AsRef<str> for ReservationResourceType {
     fn as_ref(&self) -> &str {
@@ -749,6 +767,9 @@ impl ReservationResolution {
             ReservationResolution::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["FHD", "HD", "SD", "UHD"]
+    }
 }
 impl AsRef<str> for ReservationResolution {
     fn as_ref(&self) -> &str {
@@ -796,6 +817,9 @@ impl ReservationMaximumFramerate {
             ReservationMaximumFramerate::Max60Fps => "MAX_60_FPS",
             ReservationMaximumFramerate::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["MAX_30_FPS", "MAX_60_FPS"]
     }
 }
 impl AsRef<str> for ReservationMaximumFramerate {
@@ -847,6 +871,9 @@ impl ReservationMaximumBitrate {
             ReservationMaximumBitrate::Max50Mbps => "MAX_50_MBPS",
             ReservationMaximumBitrate::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["MAX_10_MBPS", "MAX_20_MBPS", "MAX_50_MBPS"]
     }
 }
 impl AsRef<str> for ReservationMaximumBitrate {
@@ -905,6 +932,9 @@ impl ReservationCodec {
             ReservationCodec::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["AUDIO", "AVC", "HEVC", "LINK", "MPEG2"]
+    }
 }
 impl AsRef<str> for ReservationCodec {
     fn as_ref(&self) -> &str {
@@ -953,6 +983,9 @@ impl ChannelClass {
             ChannelClass::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["SINGLE_PIPELINE", "STANDARD"]
+    }
 }
 impl AsRef<str> for ChannelClass {
     fn as_ref(&self) -> &str {
@@ -998,6 +1031,9 @@ impl OfferingType {
             OfferingType::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["NO_UPFRONT"]
+    }
 }
 impl AsRef<str> for OfferingType {
     fn as_ref(&self) -> &str {
@@ -1042,6 +1078,9 @@ impl OfferingDurationUnits {
             OfferingDurationUnits::Months => "MONTHS",
             OfferingDurationUnits::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["MONTHS"]
     }
 }
 impl AsRef<str> for OfferingDurationUnits {
@@ -1895,6 +1934,9 @@ impl PreferredChannelPipeline {
             PreferredChannelPipeline::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["CURRENTLY_ACTIVE", "PIPELINE_0", "PIPELINE_1"]
+    }
 }
 impl AsRef<str> for PreferredChannelPipeline {
     fn as_ref(&self) -> &str {
@@ -2167,6 +2209,19 @@ impl MultiplexState {
             MultiplexState::Stopping => "STOPPING",
             MultiplexState::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "CREATE_FAILED",
+            "CREATING",
+            "DELETED",
+            "DELETING",
+            "IDLE",
+            "RECOVERING",
+            "RUNNING",
+            "STARTING",
+            "STOPPING",
+        ]
     }
 }
 impl AsRef<str> for MultiplexState {
@@ -2624,6 +2679,9 @@ impl InputSecurityGroupState {
             InputSecurityGroupState::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["DELETED", "IDLE", "IN_USE", "UPDATING"]
+    }
 }
 impl AsRef<str> for InputSecurityGroupState {
     fn as_ref(&self) -> &str {
@@ -2874,6 +2932,9 @@ impl InputDeviceScanType {
             InputDeviceScanType::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["INTERLACED", "PROGRESSIVE"]
+    }
 }
 impl AsRef<str> for InputDeviceScanType {
     fn as_ref(&self) -> &str {
@@ -2921,6 +2982,9 @@ impl InputDeviceState {
             InputDeviceState::Streaming => "STREAMING",
             InputDeviceState::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["IDLE", "STREAMING"]
     }
 }
 impl AsRef<str> for InputDeviceState {
@@ -2973,6 +3037,9 @@ impl InputDeviceConfiguredInput {
             InputDeviceConfiguredInput::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["AUTO", "HDMI", "SDI"]
+    }
 }
 impl AsRef<str> for InputDeviceConfiguredInput {
     fn as_ref(&self) -> &str {
@@ -3021,6 +3088,9 @@ impl InputDeviceActiveInput {
             InputDeviceActiveInput::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["HDMI", "SDI"]
+    }
 }
 impl AsRef<str> for InputDeviceActiveInput {
     fn as_ref(&self) -> &str {
@@ -3065,6 +3135,9 @@ impl InputDeviceType {
             InputDeviceType::Hd => "HD",
             InputDeviceType::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["HD"]
     }
 }
 impl AsRef<str> for InputDeviceType {
@@ -3223,6 +3296,9 @@ impl InputDeviceIpScheme {
             InputDeviceIpScheme::Static => "STATIC",
             InputDeviceIpScheme::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["DHCP", "STATIC"]
     }
 }
 impl AsRef<str> for InputDeviceIpScheme {
@@ -3429,6 +3505,9 @@ impl DeviceUpdateStatus {
             DeviceUpdateStatus::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["NOT_UP_TO_DATE", "UP_TO_DATE"]
+    }
 }
 impl AsRef<str> for DeviceUpdateStatus {
     fn as_ref(&self) -> &str {
@@ -3477,6 +3556,9 @@ impl DeviceSettingsSyncState {
             DeviceSettingsSyncState::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["SYNCED", "SYNCING"]
+    }
 }
 impl AsRef<str> for DeviceSettingsSyncState {
     fn as_ref(&self) -> &str {
@@ -3524,6 +3606,9 @@ impl InputDeviceConnectionState {
             InputDeviceConnectionState::Disconnected => "DISCONNECTED",
             InputDeviceConnectionState::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["CONNECTED", "DISCONNECTED"]
     }
 }
 impl AsRef<str> for InputDeviceConnectionState {
@@ -3974,6 +4059,19 @@ impl InputType {
             InputType::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "AWS_CDI",
+            "INPUT_DEVICE",
+            "MEDIACONNECT",
+            "MP4_FILE",
+            "RTMP_PULL",
+            "RTMP_PUSH",
+            "RTP_PUSH",
+            "UDP_PUSH",
+            "URL_PULL",
+        ]
+    }
 }
 impl AsRef<str> for InputType {
     fn as_ref(&self) -> &str {
@@ -4030,6 +4128,9 @@ impl InputState {
             InputState::Detached => "DETACHED",
             InputState::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["ATTACHED", "CREATING", "DELETED", "DELETING", "DETACHED"]
     }
 }
 impl AsRef<str> for InputState {
@@ -4208,6 +4309,9 @@ impl InputSourceType {
             InputSourceType::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["DYNAMIC", "STATIC"]
+    }
 }
 impl AsRef<str> for InputSourceType {
     fn as_ref(&self) -> &str {
@@ -4300,6 +4404,9 @@ impl InputClass {
             InputClass::Standard => "STANDARD",
             InputClass::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["SINGLE_PIPELINE", "STANDARD"]
     }
 }
 impl AsRef<str> for InputClass {
@@ -5199,6 +5306,21 @@ impl ChannelState {
             ChannelState::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "CREATE_FAILED",
+            "CREATING",
+            "DELETED",
+            "DELETING",
+            "IDLE",
+            "RECOVERING",
+            "RUNNING",
+            "STARTING",
+            "STOPPING",
+            "UPDATE_FAILED",
+            "UPDATING",
+        ]
+    }
 }
 impl AsRef<str> for ChannelState {
     fn as_ref(&self) -> &str {
@@ -5392,6 +5514,9 @@ impl LogLevel {
             LogLevel::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["DEBUG", "DISABLED", "ERROR", "INFO", "WARNING"]
+    }
 }
 impl AsRef<str> for LogLevel {
     fn as_ref(&self) -> &str {
@@ -5524,6 +5649,9 @@ impl InputResolution {
             InputResolution::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["HD", "SD", "UHD"]
+    }
 }
 impl AsRef<str> for InputResolution {
     fn as_ref(&self) -> &str {
@@ -5575,6 +5703,9 @@ impl InputMaximumBitrate {
             InputMaximumBitrate::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["MAX_10_MBPS", "MAX_20_MBPS", "MAX_50_MBPS"]
+    }
 }
 impl AsRef<str> for InputMaximumBitrate {
     fn as_ref(&self) -> &str {
@@ -5625,6 +5756,9 @@ impl InputCodec {
             InputCodec::Mpeg2 => "MPEG2",
             InputCodec::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["AVC", "HEVC", "MPEG2"]
     }
 }
 impl AsRef<str> for InputCodec {
@@ -6274,6 +6408,9 @@ impl VideoSelectorColorSpaceUsage {
             VideoSelectorColorSpaceUsage::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["FALLBACK", "FORCE"]
+    }
 }
 impl AsRef<str> for VideoSelectorColorSpaceUsage {
     fn as_ref(&self) -> &str {
@@ -6450,6 +6587,9 @@ impl VideoSelectorColorSpace {
             VideoSelectorColorSpace::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["FOLLOW", "HDR10", "HLG_2020", "REC_601", "REC_709"]
+    }
 }
 impl AsRef<str> for VideoSelectorColorSpace {
     fn as_ref(&self) -> &str {
@@ -6498,6 +6638,9 @@ impl InputSourceEndBehavior {
             InputSourceEndBehavior::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["CONTINUE", "LOOP"]
+    }
 }
 impl AsRef<str> for InputSourceEndBehavior {
     fn as_ref(&self) -> &str {
@@ -6545,6 +6688,9 @@ impl Smpte2038DataPreference {
             Smpte2038DataPreference::Prefer => "PREFER",
             Smpte2038DataPreference::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["IGNORE", "PREFER"]
     }
 }
 impl AsRef<str> for Smpte2038DataPreference {
@@ -6669,6 +6815,12 @@ impl NetworkInputServerValidation {
             NetworkInputServerValidation::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "CHECK_CRYPTOGRAPHY_AND_VALIDATE_NAME",
+            "CHECK_CRYPTOGRAPHY_ONLY",
+        ]
+    }
 }
 impl AsRef<str> for NetworkInputServerValidation {
     fn as_ref(&self) -> &str {
@@ -6688,6 +6840,8 @@ pub struct HlsInputSettings {
     pub retries: i32,
     /// The number of seconds between retries when an attempt to read a manifest or segment fails.
     pub retry_interval: i32,
+    /// Identifies the source for the SCTE-35 messages that MediaLive will ingest. Messages can be ingested from the content segments (in the stream) or from tags in the playlist (the HLS manifest). MediaLive ignores SCTE-35 information in the source that is not selected.
+    pub scte35_source: std::option::Option<crate::model::HlsScte35SourceType>,
 }
 impl std::fmt::Debug for HlsInputSettings {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6696,6 +6850,7 @@ impl std::fmt::Debug for HlsInputSettings {
         formatter.field("buffer_segments", &self.buffer_segments);
         formatter.field("retries", &self.retries);
         formatter.field("retry_interval", &self.retry_interval);
+        formatter.field("scte35_source", &self.scte35_source);
         formatter.finish()
     }
 }
@@ -6709,6 +6864,7 @@ pub mod hls_input_settings {
         pub(crate) buffer_segments: std::option::Option<i32>,
         pub(crate) retries: std::option::Option<i32>,
         pub(crate) retry_interval: std::option::Option<i32>,
+        pub(crate) scte35_source: std::option::Option<crate::model::HlsScte35SourceType>,
     }
     impl Builder {
         /// When specified the HLS stream with the m3u8 BANDWIDTH that most closely matches this value will be chosen, otherwise the highest bandwidth stream in the m3u8 will be chosen.  The bitrate is specified in bits per second, as in an HLS manifest.
@@ -6747,6 +6903,18 @@ pub mod hls_input_settings {
             self.retry_interval = input;
             self
         }
+        /// Identifies the source for the SCTE-35 messages that MediaLive will ingest. Messages can be ingested from the content segments (in the stream) or from tags in the playlist (the HLS manifest). MediaLive ignores SCTE-35 information in the source that is not selected.
+        pub fn scte35_source(mut self, input: crate::model::HlsScte35SourceType) -> Self {
+            self.scte35_source = Some(input);
+            self
+        }
+        pub fn set_scte35_source(
+            mut self,
+            input: std::option::Option<crate::model::HlsScte35SourceType>,
+        ) -> Self {
+            self.scte35_source = input;
+            self
+        }
         /// Consumes the builder and constructs a [`HlsInputSettings`](crate::model::HlsInputSettings)
         pub fn build(self) -> crate::model::HlsInputSettings {
             crate::model::HlsInputSettings {
@@ -6754,6 +6922,7 @@ pub mod hls_input_settings {
                 buffer_segments: self.buffer_segments.unwrap_or_default(),
                 retries: self.retries.unwrap_or_default(),
                 retry_interval: self.retry_interval.unwrap_or_default(),
+                scte35_source: self.scte35_source,
             }
         }
     }
@@ -6762,6 +6931,57 @@ impl HlsInputSettings {
     /// Creates a new builder-style object to manufacture [`HlsInputSettings`](crate::model::HlsInputSettings)
     pub fn builder() -> crate::model::hls_input_settings::Builder {
         crate::model::hls_input_settings::Builder::default()
+    }
+}
+
+/// Hls Scte35 Source Type
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum HlsScte35SourceType {
+    Manifest,
+    Segments,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for HlsScte35SourceType {
+    fn from(s: &str) -> Self {
+        match s {
+            "MANIFEST" => HlsScte35SourceType::Manifest,
+            "SEGMENTS" => HlsScte35SourceType::Segments,
+            other => HlsScte35SourceType::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for HlsScte35SourceType {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(HlsScte35SourceType::from(s))
+    }
+}
+impl HlsScte35SourceType {
+    pub fn as_str(&self) -> &str {
+        match self {
+            HlsScte35SourceType::Manifest => "MANIFEST",
+            HlsScte35SourceType::Segments => "SEGMENTS",
+            HlsScte35SourceType::Unknown(s) => s.as_ref(),
+        }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["MANIFEST", "SEGMENTS"]
+    }
+}
+impl AsRef<str> for HlsScte35SourceType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
     }
 }
 
@@ -6808,6 +7028,9 @@ impl InputFilter {
             InputFilter::Forced => "FORCED",
             InputFilter::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["AUTO", "DISABLED", "FORCED"]
     }
 }
 impl AsRef<str> for InputFilter {
@@ -6857,6 +7080,9 @@ impl InputDenoiseFilter {
             InputDenoiseFilter::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["DISABLED", "ENABLED"]
+    }
 }
 impl AsRef<str> for InputDenoiseFilter {
     fn as_ref(&self) -> &str {
@@ -6904,6 +7130,9 @@ impl InputDeblockFilter {
             InputDeblockFilter::Enabled => "ENABLED",
             InputDeblockFilter::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["DISABLED", "ENABLED"]
     }
 }
 impl AsRef<str> for InputDeblockFilter {
@@ -7335,6 +7564,9 @@ impl CaptionRectangle {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Scte27SourceSettings {
+    /// If you will configure a WebVTT caption description that references this caption selector, use this field to
+    /// provide the language to consider when translating the image-based source to text.
+    pub ocr_language: std::option::Option<crate::model::Scte27OcrLanguage>,
     /// The pid field is used in conjunction with the caption selector languageCode field as follows:
     /// - Specify PID and Language: Extracts captions from that PID; the language is "informational".
     /// - Specify PID and omit Language: Extracts the specified PID.
@@ -7345,6 +7577,7 @@ pub struct Scte27SourceSettings {
 impl std::fmt::Debug for Scte27SourceSettings {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Scte27SourceSettings");
+        formatter.field("ocr_language", &self.ocr_language);
         formatter.field("pid", &self.pid);
         formatter.finish()
     }
@@ -7355,9 +7588,23 @@ pub mod scte27_source_settings {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
+        pub(crate) ocr_language: std::option::Option<crate::model::Scte27OcrLanguage>,
         pub(crate) pid: std::option::Option<i32>,
     }
     impl Builder {
+        /// If you will configure a WebVTT caption description that references this caption selector, use this field to
+        /// provide the language to consider when translating the image-based source to text.
+        pub fn ocr_language(mut self, input: crate::model::Scte27OcrLanguage) -> Self {
+            self.ocr_language = Some(input);
+            self
+        }
+        pub fn set_ocr_language(
+            mut self,
+            input: std::option::Option<crate::model::Scte27OcrLanguage>,
+        ) -> Self {
+            self.ocr_language = input;
+            self
+        }
         /// The pid field is used in conjunction with the caption selector languageCode field as follows:
         /// - Specify PID and Language: Extracts captions from that PID; the language is "informational".
         /// - Specify PID and omit Language: Extracts the specified PID.
@@ -7374,6 +7621,7 @@ pub mod scte27_source_settings {
         /// Consumes the builder and constructs a [`Scte27SourceSettings`](crate::model::Scte27SourceSettings)
         pub fn build(self) -> crate::model::Scte27SourceSettings {
             crate::model::Scte27SourceSettings {
+                ocr_language: self.ocr_language,
                 pid: self.pid.unwrap_or_default(),
             }
         }
@@ -7383,6 +7631,69 @@ impl Scte27SourceSettings {
     /// Creates a new builder-style object to manufacture [`Scte27SourceSettings`](crate::model::Scte27SourceSettings)
     pub fn builder() -> crate::model::scte27_source_settings::Builder {
         crate::model::scte27_source_settings::Builder::default()
+    }
+}
+
+/// Scte27 Ocr Language
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum Scte27OcrLanguage {
+    Deu,
+    Eng,
+    Fra,
+    Nld,
+    Por,
+    Spa,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for Scte27OcrLanguage {
+    fn from(s: &str) -> Self {
+        match s {
+            "DEU" => Scte27OcrLanguage::Deu,
+            "ENG" => Scte27OcrLanguage::Eng,
+            "FRA" => Scte27OcrLanguage::Fra,
+            "NLD" => Scte27OcrLanguage::Nld,
+            "POR" => Scte27OcrLanguage::Por,
+            "SPA" => Scte27OcrLanguage::Spa,
+            other => Scte27OcrLanguage::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for Scte27OcrLanguage {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(Scte27OcrLanguage::from(s))
+    }
+}
+impl Scte27OcrLanguage {
+    pub fn as_str(&self) -> &str {
+        match self {
+            Scte27OcrLanguage::Deu => "DEU",
+            Scte27OcrLanguage::Eng => "ENG",
+            Scte27OcrLanguage::Fra => "FRA",
+            Scte27OcrLanguage::Nld => "NLD",
+            Scte27OcrLanguage::Por => "POR",
+            Scte27OcrLanguage::Spa => "SPA",
+            Scte27OcrLanguage::Unknown(s) => s.as_ref(),
+        }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["DEU", "ENG", "FRA", "NLD", "POR", "SPA"]
+    }
+}
+impl AsRef<str> for Scte27OcrLanguage {
+    fn as_ref(&self) -> &str {
+        self.as_str()
     }
 }
 
@@ -7490,6 +7801,9 @@ impl Scte20Convert608To708 {
             Scte20Convert608To708::Upconvert => "UPCONVERT",
             Scte20Convert608To708::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["DISABLED", "UPCONVERT"]
     }
 }
 impl AsRef<str> for Scte20Convert608To708 {
@@ -7634,6 +7948,9 @@ impl EmbeddedScte20Detection {
             EmbeddedScte20Detection::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["AUTO", "OFF"]
+    }
 }
 impl AsRef<str> for EmbeddedScte20Detection {
     fn as_ref(&self) -> &str {
@@ -7682,6 +7999,9 @@ impl EmbeddedConvert608To708 {
             EmbeddedConvert608To708::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["DISABLED", "UPCONVERT"]
+    }
 }
 impl AsRef<str> for EmbeddedConvert608To708 {
     fn as_ref(&self) -> &str {
@@ -7693,12 +8013,16 @@ impl AsRef<str> for EmbeddedConvert608To708 {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DvbSubSourceSettings {
+    /// If you will configure a WebVTT caption description that references this caption selector, use this field to
+    /// provide the language to consider when translating the image-based source to text.
+    pub ocr_language: std::option::Option<crate::model::DvbSubOcrLanguage>,
     /// When using DVB-Sub with Burn-In or SMPTE-TT, use this PID for the source content. Unused for DVB-Sub passthrough. All DVB-Sub content is passed through, regardless of selectors.
     pub pid: i32,
 }
 impl std::fmt::Debug for DvbSubSourceSettings {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DvbSubSourceSettings");
+        formatter.field("ocr_language", &self.ocr_language);
         formatter.field("pid", &self.pid);
         formatter.finish()
     }
@@ -7709,9 +8033,23 @@ pub mod dvb_sub_source_settings {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
+        pub(crate) ocr_language: std::option::Option<crate::model::DvbSubOcrLanguage>,
         pub(crate) pid: std::option::Option<i32>,
     }
     impl Builder {
+        /// If you will configure a WebVTT caption description that references this caption selector, use this field to
+        /// provide the language to consider when translating the image-based source to text.
+        pub fn ocr_language(mut self, input: crate::model::DvbSubOcrLanguage) -> Self {
+            self.ocr_language = Some(input);
+            self
+        }
+        pub fn set_ocr_language(
+            mut self,
+            input: std::option::Option<crate::model::DvbSubOcrLanguage>,
+        ) -> Self {
+            self.ocr_language = input;
+            self
+        }
         /// When using DVB-Sub with Burn-In or SMPTE-TT, use this PID for the source content. Unused for DVB-Sub passthrough. All DVB-Sub content is passed through, regardless of selectors.
         pub fn pid(mut self, input: i32) -> Self {
             self.pid = Some(input);
@@ -7724,6 +8062,7 @@ pub mod dvb_sub_source_settings {
         /// Consumes the builder and constructs a [`DvbSubSourceSettings`](crate::model::DvbSubSourceSettings)
         pub fn build(self) -> crate::model::DvbSubSourceSettings {
             crate::model::DvbSubSourceSettings {
+                ocr_language: self.ocr_language,
                 pid: self.pid.unwrap_or_default(),
             }
         }
@@ -7733,6 +8072,69 @@ impl DvbSubSourceSettings {
     /// Creates a new builder-style object to manufacture [`DvbSubSourceSettings`](crate::model::DvbSubSourceSettings)
     pub fn builder() -> crate::model::dvb_sub_source_settings::Builder {
         crate::model::dvb_sub_source_settings::Builder::default()
+    }
+}
+
+/// Dvb Sub Ocr Language
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum DvbSubOcrLanguage {
+    Deu,
+    Eng,
+    Fra,
+    Nld,
+    Por,
+    Spa,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for DvbSubOcrLanguage {
+    fn from(s: &str) -> Self {
+        match s {
+            "DEU" => DvbSubOcrLanguage::Deu,
+            "ENG" => DvbSubOcrLanguage::Eng,
+            "FRA" => DvbSubOcrLanguage::Fra,
+            "NLD" => DvbSubOcrLanguage::Nld,
+            "POR" => DvbSubOcrLanguage::Por,
+            "SPA" => DvbSubOcrLanguage::Spa,
+            other => DvbSubOcrLanguage::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for DvbSubOcrLanguage {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(DvbSubOcrLanguage::from(s))
+    }
+}
+impl DvbSubOcrLanguage {
+    pub fn as_str(&self) -> &str {
+        match self {
+            DvbSubOcrLanguage::Deu => "DEU",
+            DvbSubOcrLanguage::Eng => "ENG",
+            DvbSubOcrLanguage::Fra => "FRA",
+            DvbSubOcrLanguage::Nld => "NLD",
+            DvbSubOcrLanguage::Por => "POR",
+            DvbSubOcrLanguage::Spa => "SPA",
+            DvbSubOcrLanguage::Unknown(s) => s.as_ref(),
+        }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["DEU", "ENG", "FRA", "NLD", "POR", "SPA"]
+    }
+}
+impl AsRef<str> for DvbSubOcrLanguage {
+    fn as_ref(&self) -> &str {
+        self.as_str()
     }
 }
 
@@ -8230,6 +8632,9 @@ impl AudioLanguageSelectionPolicy {
             AudioLanguageSelectionPolicy::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["LOOSE", "STRICT"]
+    }
 }
 impl AsRef<str> for AudioLanguageSelectionPolicy {
     fn as_ref(&self) -> &str {
@@ -8382,6 +8787,9 @@ impl InputPreference {
             InputPreference::PrimaryInputPreferred => "PRIMARY_INPUT_PREFERRED",
             InputPreference::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["EQUAL_INPUT_PREFERENCE", "PRIMARY_INPUT_PREFERRED"]
     }
 }
 impl AsRef<str> for InputPreference {
@@ -9173,6 +9581,9 @@ impl VideoDescriptionScalingBehavior {
             VideoDescriptionScalingBehavior::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["DEFAULT", "STRETCH_TO_OUTPUT"]
+    }
 }
 impl AsRef<str> for VideoDescriptionScalingBehavior {
     fn as_ref(&self) -> &str {
@@ -9223,6 +9634,9 @@ impl VideoDescriptionRespondToAfd {
             VideoDescriptionRespondToAfd::Respond => "RESPOND",
             VideoDescriptionRespondToAfd::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["NONE", "PASSTHROUGH", "RESPOND"]
     }
 }
 impl AsRef<str> for VideoDescriptionRespondToAfd {
@@ -9694,6 +10108,9 @@ impl Mpeg2TimecodeInsertionBehavior {
             Mpeg2TimecodeInsertionBehavior::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["DISABLED", "GOP_TIMECODE"]
+    }
 }
 impl AsRef<str> for Mpeg2TimecodeInsertionBehavior {
     fn as_ref(&self) -> &str {
@@ -9741,6 +10158,9 @@ impl Mpeg2SubGopLength {
             Mpeg2SubGopLength::Fixed => "FIXED",
             Mpeg2SubGopLength::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["DYNAMIC", "FIXED"]
     }
 }
 impl AsRef<str> for Mpeg2SubGopLength {
@@ -9790,6 +10210,9 @@ impl Mpeg2ScanType {
             Mpeg2ScanType::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["INTERLACED", "PROGRESSIVE"]
+    }
 }
 impl AsRef<str> for Mpeg2ScanType {
     fn as_ref(&self) -> &str {
@@ -9837,6 +10260,9 @@ impl Mpeg2GopSizeUnits {
             Mpeg2GopSizeUnits::Seconds => "SECONDS",
             Mpeg2GopSizeUnits::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["FRAMES", "SECONDS"]
     }
 }
 impl AsRef<str> for Mpeg2GopSizeUnits {
@@ -9912,6 +10338,12 @@ impl FixedAfd {
             FixedAfd::Afd1111 => "AFD_1111",
             FixedAfd::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "AFD_0000", "AFD_0010", "AFD_0011", "AFD_0100", "AFD_1000", "AFD_1001", "AFD_1010",
+            "AFD_1011", "AFD_1101", "AFD_1110", "AFD_1111",
+        ]
     }
 }
 impl AsRef<str> for FixedAfd {
@@ -10136,6 +10568,27 @@ impl TemporalFilterStrength {
             TemporalFilterStrength::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "AUTO",
+            "STRENGTH_1",
+            "STRENGTH_10",
+            "STRENGTH_11",
+            "STRENGTH_12",
+            "STRENGTH_13",
+            "STRENGTH_14",
+            "STRENGTH_15",
+            "STRENGTH_16",
+            "STRENGTH_2",
+            "STRENGTH_3",
+            "STRENGTH_4",
+            "STRENGTH_5",
+            "STRENGTH_6",
+            "STRENGTH_7",
+            "STRENGTH_8",
+            "STRENGTH_9",
+        ]
+    }
 }
 impl AsRef<str> for TemporalFilterStrength {
     fn as_ref(&self) -> &str {
@@ -10187,6 +10640,9 @@ impl TemporalFilterPostFilterSharpening {
             TemporalFilterPostFilterSharpening::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["AUTO", "DISABLED", "ENABLED"]
+    }
 }
 impl AsRef<str> for TemporalFilterPostFilterSharpening {
     fn as_ref(&self) -> &str {
@@ -10234,6 +10690,9 @@ impl Mpeg2DisplayRatio {
             Mpeg2DisplayRatio::Displayratio4X3 => "DISPLAYRATIO4X3",
             Mpeg2DisplayRatio::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["DISPLAYRATIO16X9", "DISPLAYRATIO4X3"]
     }
 }
 impl AsRef<str> for Mpeg2DisplayRatio {
@@ -10283,6 +10742,9 @@ impl Mpeg2ColorSpace {
             Mpeg2ColorSpace::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["AUTO", "PASSTHROUGH"]
+    }
 }
 impl AsRef<str> for Mpeg2ColorSpace {
     fn as_ref(&self) -> &str {
@@ -10330,6 +10792,9 @@ impl Mpeg2ColorMetadata {
             Mpeg2ColorMetadata::Insert => "INSERT",
             Mpeg2ColorMetadata::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["IGNORE", "INSERT"]
     }
 }
 impl AsRef<str> for Mpeg2ColorMetadata {
@@ -10381,6 +10846,9 @@ impl AfdSignaling {
             AfdSignaling::None => "NONE",
             AfdSignaling::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["AUTO", "FIXED", "NONE"]
     }
 }
 impl AsRef<str> for AfdSignaling {
@@ -10438,6 +10906,9 @@ impl Mpeg2AdaptiveQuantization {
             Mpeg2AdaptiveQuantization::Off => "OFF",
             Mpeg2AdaptiveQuantization::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["AUTO", "HIGH", "LOW", "MEDIUM", "OFF"]
     }
 }
 impl AsRef<str> for Mpeg2AdaptiveQuantization {
@@ -11018,6 +11489,9 @@ impl H265TimecodeInsertionBehavior {
             H265TimecodeInsertionBehavior::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["DISABLED", "PIC_TIMING_SEI"]
+    }
 }
 impl AsRef<str> for H265TimecodeInsertionBehavior {
     fn as_ref(&self) -> &str {
@@ -11065,6 +11539,9 @@ impl H265Tier {
             H265Tier::Main => "MAIN",
             H265Tier::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["HIGH", "MAIN"]
     }
 }
 impl AsRef<str> for H265Tier {
@@ -11114,6 +11591,9 @@ impl H265SceneChangeDetect {
             H265SceneChangeDetect::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["DISABLED", "ENABLED"]
+    }
 }
 impl AsRef<str> for H265SceneChangeDetect {
     fn as_ref(&self) -> &str {
@@ -11161,6 +11641,9 @@ impl H265ScanType {
             H265ScanType::Progressive => "PROGRESSIVE",
             H265ScanType::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["INTERLACED", "PROGRESSIVE"]
     }
 }
 impl AsRef<str> for H265ScanType {
@@ -11213,6 +11696,9 @@ impl H265RateControlMode {
             H265RateControlMode::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["CBR", "MULTIPLEX", "QVBR"]
+    }
 }
 impl AsRef<str> for H265RateControlMode {
     fn as_ref(&self) -> &str {
@@ -11260,6 +11746,9 @@ impl H265Profile {
             H265Profile::Main10Bit => "MAIN_10BIT",
             H265Profile::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["MAIN", "MAIN_10BIT"]
     }
 }
 impl AsRef<str> for H265Profile {
@@ -11311,6 +11800,9 @@ impl H265LookAheadRateControl {
             H265LookAheadRateControl::Medium => "MEDIUM",
             H265LookAheadRateControl::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["HIGH", "LOW", "MEDIUM"]
     }
 }
 impl AsRef<str> for H265LookAheadRateControl {
@@ -11396,6 +11888,24 @@ impl H265Level {
             H265Level::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "H265_LEVEL_1",
+            "H265_LEVEL_2",
+            "H265_LEVEL_2_1",
+            "H265_LEVEL_3",
+            "H265_LEVEL_3_1",
+            "H265_LEVEL_4",
+            "H265_LEVEL_4_1",
+            "H265_LEVEL_5",
+            "H265_LEVEL_5_1",
+            "H265_LEVEL_5_2",
+            "H265_LEVEL_6",
+            "H265_LEVEL_6_1",
+            "H265_LEVEL_6_2",
+            "H265_LEVEL_AUTO",
+        ]
+    }
 }
 impl AsRef<str> for H265Level {
     fn as_ref(&self) -> &str {
@@ -11444,6 +11954,9 @@ impl H265GopSizeUnits {
             H265GopSizeUnits::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["FRAMES", "SECONDS"]
+    }
 }
 impl AsRef<str> for H265GopSizeUnits {
     fn as_ref(&self) -> &str {
@@ -11491,6 +12004,9 @@ impl H265FlickerAq {
             H265FlickerAq::Enabled => "ENABLED",
             H265FlickerAq::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["DISABLED", "ENABLED"]
     }
 }
 impl AsRef<str> for H265FlickerAq {
@@ -11793,6 +12309,9 @@ impl H265ColorMetadata {
             H265ColorMetadata::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["IGNORE", "INSERT"]
+    }
 }
 impl AsRef<str> for H265ColorMetadata {
     fn as_ref(&self) -> &str {
@@ -11840,6 +12359,9 @@ impl H265AlternativeTransferFunction {
             H265AlternativeTransferFunction::Omit => "OMIT",
             H265AlternativeTransferFunction::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["INSERT", "OMIT"]
     }
 }
 impl AsRef<str> for H265AlternativeTransferFunction {
@@ -11903,6 +12425,9 @@ impl H265AdaptiveQuantization {
             H265AdaptiveQuantization::Off => "OFF",
             H265AdaptiveQuantization::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["AUTO", "HIGH", "HIGHER", "LOW", "MAX", "MEDIUM", "OFF"]
     }
 }
 impl AsRef<str> for H265AdaptiveQuantization {
@@ -12687,6 +13212,9 @@ impl H264TimecodeInsertionBehavior {
             H264TimecodeInsertionBehavior::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["DISABLED", "PIC_TIMING_SEI"]
+    }
 }
 impl AsRef<str> for H264TimecodeInsertionBehavior {
     fn as_ref(&self) -> &str {
@@ -12734,6 +13262,9 @@ impl H264TemporalAq {
             H264TemporalAq::Enabled => "ENABLED",
             H264TemporalAq::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["DISABLED", "ENABLED"]
     }
 }
 impl AsRef<str> for H264TemporalAq {
@@ -12783,6 +13314,9 @@ impl H264Syntax {
             H264Syntax::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["DEFAULT", "RP2027"]
+    }
 }
 impl AsRef<str> for H264Syntax {
     fn as_ref(&self) -> &str {
@@ -12830,6 +13364,9 @@ impl H264SubGopLength {
             H264SubGopLength::Fixed => "FIXED",
             H264SubGopLength::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["DYNAMIC", "FIXED"]
     }
 }
 impl AsRef<str> for H264SubGopLength {
@@ -12879,6 +13416,9 @@ impl H264SpatialAq {
             H264SpatialAq::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["DISABLED", "ENABLED"]
+    }
 }
 impl AsRef<str> for H264SpatialAq {
     fn as_ref(&self) -> &str {
@@ -12927,6 +13467,9 @@ impl H264SceneChangeDetect {
             H264SceneChangeDetect::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["DISABLED", "ENABLED"]
+    }
 }
 impl AsRef<str> for H264SceneChangeDetect {
     fn as_ref(&self) -> &str {
@@ -12974,6 +13517,9 @@ impl H264ScanType {
             H264ScanType::Progressive => "PROGRESSIVE",
             H264ScanType::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["INTERLACED", "PROGRESSIVE"]
     }
 }
 impl AsRef<str> for H264ScanType {
@@ -13029,6 +13575,9 @@ impl H264RateControlMode {
             H264RateControlMode::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["CBR", "MULTIPLEX", "QVBR", "VBR"]
+    }
 }
 impl AsRef<str> for H264RateControlMode {
     fn as_ref(&self) -> &str {
@@ -13076,6 +13625,9 @@ impl H264QualityLevel {
             H264QualityLevel::StandardQuality => "STANDARD_QUALITY",
             H264QualityLevel::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["ENHANCED_QUALITY", "STANDARD_QUALITY"]
     }
 }
 impl AsRef<str> for H264QualityLevel {
@@ -13137,6 +13689,16 @@ impl H264Profile {
             H264Profile::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "BASELINE",
+            "HIGH",
+            "HIGH_10BIT",
+            "HIGH_422",
+            "HIGH_422_10BIT",
+            "MAIN",
+        ]
+    }
 }
 impl AsRef<str> for H264Profile {
     fn as_ref(&self) -> &str {
@@ -13184,6 +13746,9 @@ impl H264ParControl {
             H264ParControl::Specified => "SPECIFIED",
             H264ParControl::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["INITIALIZE_FROM_SOURCE", "SPECIFIED"]
     }
 }
 impl AsRef<str> for H264ParControl {
@@ -13235,6 +13800,9 @@ impl H264LookAheadRateControl {
             H264LookAheadRateControl::Medium => "MEDIUM",
             H264LookAheadRateControl::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["HIGH", "LOW", "MEDIUM"]
     }
 }
 impl AsRef<str> for H264LookAheadRateControl {
@@ -13329,6 +13897,27 @@ impl H264Level {
             H264Level::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "H264_LEVEL_1",
+            "H264_LEVEL_1_1",
+            "H264_LEVEL_1_2",
+            "H264_LEVEL_1_3",
+            "H264_LEVEL_2",
+            "H264_LEVEL_2_1",
+            "H264_LEVEL_2_2",
+            "H264_LEVEL_3",
+            "H264_LEVEL_3_1",
+            "H264_LEVEL_3_2",
+            "H264_LEVEL_4",
+            "H264_LEVEL_4_1",
+            "H264_LEVEL_4_2",
+            "H264_LEVEL_5",
+            "H264_LEVEL_5_1",
+            "H264_LEVEL_5_2",
+            "H264_LEVEL_AUTO",
+        ]
+    }
 }
 impl AsRef<str> for H264Level {
     fn as_ref(&self) -> &str {
@@ -13376,6 +13965,9 @@ impl H264GopSizeUnits {
             H264GopSizeUnits::Seconds => "SECONDS",
             H264GopSizeUnits::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["FRAMES", "SECONDS"]
     }
 }
 impl AsRef<str> for H264GopSizeUnits {
@@ -13425,6 +14017,9 @@ impl H264GopBReference {
             H264GopBReference::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["DISABLED", "ENABLED"]
+    }
 }
 impl AsRef<str> for H264GopBReference {
     fn as_ref(&self) -> &str {
@@ -13472,6 +14067,9 @@ impl H264FramerateControl {
             H264FramerateControl::Specified => "SPECIFIED",
             H264FramerateControl::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["INITIALIZE_FROM_SOURCE", "SPECIFIED"]
     }
 }
 impl AsRef<str> for H264FramerateControl {
@@ -13521,6 +14119,9 @@ impl H264ForceFieldPictures {
             H264ForceFieldPictures::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["DISABLED", "ENABLED"]
+    }
 }
 impl AsRef<str> for H264ForceFieldPictures {
     fn as_ref(&self) -> &str {
@@ -13568,6 +14169,9 @@ impl H264FlickerAq {
             H264FlickerAq::Enabled => "ENABLED",
             H264FlickerAq::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["DISABLED", "ENABLED"]
     }
 }
 impl AsRef<str> for H264FlickerAq {
@@ -13670,6 +14274,9 @@ impl H264EntropyEncoding {
             H264EntropyEncoding::Cavlc => "CAVLC",
             H264EntropyEncoding::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["CABAC", "CAVLC"]
     }
 }
 impl AsRef<str> for H264EntropyEncoding {
@@ -13811,6 +14418,9 @@ impl H264ColorMetadata {
             H264ColorMetadata::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["IGNORE", "INSERT"]
+    }
 }
 impl AsRef<str> for H264ColorMetadata {
     fn as_ref(&self) -> &str {
@@ -13873,6 +14483,9 @@ impl H264AdaptiveQuantization {
             H264AdaptiveQuantization::Off => "OFF",
             H264AdaptiveQuantization::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["AUTO", "HIGH", "HIGHER", "LOW", "MAX", "MEDIUM", "OFF"]
     }
 }
 impl AsRef<str> for H264AdaptiveQuantization {
@@ -13989,6 +14602,9 @@ impl FrameCaptureIntervalUnit {
             FrameCaptureIntervalUnit::Seconds => "SECONDS",
             FrameCaptureIntervalUnit::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["MILLISECONDS", "SECONDS"]
     }
 }
 impl AsRef<str> for FrameCaptureIntervalUnit {
@@ -14110,6 +14726,9 @@ impl TimecodeConfigSource {
             TimecodeConfigSource::Zerobased => "ZEROBASED",
             TimecodeConfigSource::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["EMBEDDED", "SYSTEMCLOCK", "ZEROBASED"]
     }
 }
 impl AsRef<str> for TimecodeConfigSource {
@@ -14731,6 +15350,9 @@ impl FecOutputIncludeFec {
             FecOutputIncludeFec::ColumnAndRow => "COLUMN_AND_ROW",
             FecOutputIncludeFec::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["COLUMN", "COLUMN_AND_ROW"]
     }
 }
 impl AsRef<str> for FecOutputIncludeFec {
@@ -15672,6 +16294,9 @@ impl M2tsTimedMetadataBehavior {
             M2tsTimedMetadataBehavior::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["NO_PASSTHROUGH", "PASSTHROUGH"]
+    }
 }
 impl AsRef<str> for M2tsTimedMetadataBehavior {
     fn as_ref(&self) -> &str {
@@ -15719,6 +16344,9 @@ impl M2tsSegmentationStyle {
             M2tsSegmentationStyle::ResetCadence => "RESET_CADENCE",
             M2tsSegmentationStyle::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["MAINTAIN_CADENCE", "RESET_CADENCE"]
     }
 }
 impl AsRef<str> for M2tsSegmentationStyle {
@@ -15780,6 +16408,16 @@ impl M2tsSegmentationMarkers {
             M2tsSegmentationMarkers::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "EBP",
+            "EBP_LEGACY",
+            "NONE",
+            "PSI_SEGSTART",
+            "RAI_ADAPT",
+            "RAI_SEGSTART",
+        ]
+    }
 }
 impl AsRef<str> for M2tsSegmentationMarkers {
     fn as_ref(&self) -> &str {
@@ -15827,6 +16465,9 @@ impl M2tsScte35Control {
             M2tsScte35Control::Passthrough => "PASSTHROUGH",
             M2tsScte35Control::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["NONE", "PASSTHROUGH"]
     }
 }
 impl AsRef<str> for M2tsScte35Control {
@@ -15876,6 +16517,9 @@ impl M2tsRateMode {
             M2tsRateMode::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["CBR", "VBR"]
+    }
 }
 impl AsRef<str> for M2tsRateMode {
     fn as_ref(&self) -> &str {
@@ -15923,6 +16567,9 @@ impl M2tsPcrControl {
             M2tsPcrControl::PcrEveryPesPacket => "PCR_EVERY_PES_PACKET",
             M2tsPcrControl::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["CONFIGURED_PCR_PERIOD", "PCR_EVERY_PES_PACKET"]
     }
 }
 impl AsRef<str> for M2tsPcrControl {
@@ -15972,6 +16619,9 @@ impl M2tsNielsenId3Behavior {
             M2tsNielsenId3Behavior::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["NO_PASSTHROUGH", "PASSTHROUGH"]
+    }
 }
 impl AsRef<str> for M2tsNielsenId3Behavior {
     fn as_ref(&self) -> &str {
@@ -16019,6 +16669,9 @@ impl M2tsKlv {
             M2tsKlv::Passthrough => "PASSTHROUGH",
             M2tsKlv::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["NONE", "PASSTHROUGH"]
     }
 }
 impl AsRef<str> for M2tsKlv {
@@ -16068,6 +16721,9 @@ impl M2tsEsRateInPes {
             M2tsEsRateInPes::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["EXCLUDE", "INCLUDE"]
+    }
 }
 impl AsRef<str> for M2tsEsRateInPes {
     fn as_ref(&self) -> &str {
@@ -16115,6 +16771,9 @@ impl M2tsEbpPlacement {
             M2tsEbpPlacement::VideoPid => "VIDEO_PID",
             M2tsEbpPlacement::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["VIDEO_AND_AUDIO_PIDS", "VIDEO_PID"]
     }
 }
 impl AsRef<str> for M2tsEbpPlacement {
@@ -16164,6 +16823,9 @@ impl M2tsAudioInterval {
             M2tsAudioInterval::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["VIDEO_AND_FIXED_INTERVALS", "VIDEO_INTERVAL"]
+    }
 }
 impl AsRef<str> for M2tsAudioInterval {
     fn as_ref(&self) -> &str {
@@ -16211,6 +16873,9 @@ impl M2tsEbifControl {
             M2tsEbifControl::Passthrough => "PASSTHROUGH",
             M2tsEbifControl::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["NONE", "PASSTHROUGH"]
     }
 }
 impl AsRef<str> for M2tsEbifControl {
@@ -16408,6 +17073,14 @@ impl DvbSdtOutputSdt {
             DvbSdtOutputSdt::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "SDT_FOLLOW",
+            "SDT_FOLLOW_IF_PRESENT",
+            "SDT_MANUAL",
+            "SDT_NONE",
+        ]
+    }
 }
 impl AsRef<str> for DvbSdtOutputSdt {
     fn as_ref(&self) -> &str {
@@ -16531,6 +17204,9 @@ impl M2tsCcDescriptor {
             M2tsCcDescriptor::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["DISABLED", "ENABLED"]
+    }
 }
 impl AsRef<str> for M2tsCcDescriptor {
     fn as_ref(&self) -> &str {
@@ -16578,6 +17254,9 @@ impl M2tsBufferModel {
             M2tsBufferModel::None => "NONE",
             M2tsBufferModel::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["MULTIPLEX", "NONE"]
     }
 }
 impl AsRef<str> for M2tsBufferModel {
@@ -16627,6 +17306,9 @@ impl M2tsAudioStreamType {
             M2tsAudioStreamType::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["ATSC", "DVB"]
+    }
 }
 impl AsRef<str> for M2tsAudioStreamType {
     fn as_ref(&self) -> &str {
@@ -16674,6 +17356,9 @@ impl M2tsAudioBufferModel {
             M2tsAudioBufferModel::Dvb => "DVB",
             M2tsAudioBufferModel::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["ATSC", "DVB"]
     }
 }
 impl AsRef<str> for M2tsAudioBufferModel {
@@ -16723,6 +17408,9 @@ impl M2tsAribCaptionsPidControl {
             M2tsAribCaptionsPidControl::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["AUTO", "USE_CONFIGURED"]
+    }
 }
 impl AsRef<str> for M2tsAribCaptionsPidControl {
     fn as_ref(&self) -> &str {
@@ -16771,6 +17459,9 @@ impl M2tsArib {
             M2tsArib::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["DISABLED", "ENABLED"]
+    }
 }
 impl AsRef<str> for M2tsArib {
     fn as_ref(&self) -> &str {
@@ -16818,6 +17509,9 @@ impl M2tsAbsentInputAudioBehavior {
             M2tsAbsentInputAudioBehavior::EncodeSilence => "ENCODE_SILENCE",
             M2tsAbsentInputAudioBehavior::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["DROP", "ENCODE_SILENCE"]
     }
 }
 impl AsRef<str> for M2tsAbsentInputAudioBehavior {
@@ -16961,6 +17655,9 @@ impl RtmpOutputCertificateMode {
             RtmpOutputCertificateMode::VerifyAuthenticity => "VERIFY_AUTHENTICITY",
             RtmpOutputCertificateMode::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["SELF_SIGNED", "VERIFY_AUTHENTICITY"]
     }
 }
 impl AsRef<str> for RtmpOutputCertificateMode {
@@ -17132,6 +17829,9 @@ impl MsSmoothH265PackagingType {
             MsSmoothH265PackagingType::Hvc1 => "HVC1",
             MsSmoothH265PackagingType::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["HEV1", "HVC1"]
     }
 }
 impl AsRef<str> for MsSmoothH265PackagingType {
@@ -17782,6 +18482,9 @@ impl M3u8TimedMetadataBehavior {
             M3u8TimedMetadataBehavior::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["NO_PASSTHROUGH", "PASSTHROUGH"]
+    }
 }
 impl AsRef<str> for M3u8TimedMetadataBehavior {
     fn as_ref(&self) -> &str {
@@ -17829,6 +18532,9 @@ impl M3u8Scte35Behavior {
             M3u8Scte35Behavior::Passthrough => "PASSTHROUGH",
             M3u8Scte35Behavior::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["NO_PASSTHROUGH", "PASSTHROUGH"]
     }
 }
 impl AsRef<str> for M3u8Scte35Behavior {
@@ -17878,6 +18584,9 @@ impl M3u8PcrControl {
             M3u8PcrControl::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["CONFIGURED_PCR_PERIOD", "PCR_EVERY_PES_PACKET"]
+    }
 }
 impl AsRef<str> for M3u8PcrControl {
     fn as_ref(&self) -> &str {
@@ -17925,6 +18634,9 @@ impl M3u8NielsenId3Behavior {
             M3u8NielsenId3Behavior::Passthrough => "PASSTHROUGH",
             M3u8NielsenId3Behavior::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["NO_PASSTHROUGH", "PASSTHROUGH"]
     }
 }
 impl AsRef<str> for M3u8NielsenId3Behavior {
@@ -18092,6 +18804,9 @@ impl Fmp4TimedMetadataBehavior {
             Fmp4TimedMetadataBehavior::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["NO_PASSTHROUGH", "PASSTHROUGH"]
+    }
 }
 impl AsRef<str> for Fmp4TimedMetadataBehavior {
     fn as_ref(&self) -> &str {
@@ -18139,6 +18854,9 @@ impl Fmp4NielsenId3Behavior {
             Fmp4NielsenId3Behavior::Passthrough => "PASSTHROUGH",
             Fmp4NielsenId3Behavior::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["NO_PASSTHROUGH", "PASSTHROUGH"]
     }
 }
 impl AsRef<str> for Fmp4NielsenId3Behavior {
@@ -18307,6 +19025,9 @@ impl AudioOnlyHlsSegmentType {
             AudioOnlyHlsSegmentType::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["AAC", "FMP4"]
+    }
 }
 impl AsRef<str> for AudioOnlyHlsSegmentType {
     fn as_ref(&self) -> &str {
@@ -18364,6 +19085,14 @@ impl AudioOnlyHlsTrackType {
             AudioOnlyHlsTrackType::AudioOnlyVariantStream => "AUDIO_ONLY_VARIANT_STREAM",
             AudioOnlyHlsTrackType::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "ALTERNATE_AUDIO_AUTO_SELECT",
+            "ALTERNATE_AUDIO_AUTO_SELECT_DEFAULT",
+            "ALTERNATE_AUDIO_NOT_AUTO_SELECT",
+            "AUDIO_ONLY_VARIANT_STREAM",
+        ]
     }
 }
 impl AsRef<str> for AudioOnlyHlsTrackType {
@@ -18490,6 +19219,9 @@ impl HlsH265PackagingType {
             HlsH265PackagingType::Hvc1 => "HVC1",
             HlsH265PackagingType::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["HEV1", "HVC1"]
     }
 }
 impl AsRef<str> for HlsH265PackagingType {
@@ -19046,6 +19778,9 @@ impl UdpTimedMetadataId3Frame {
             UdpTimedMetadataId3Frame::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["NONE", "PRIV", "TDRL"]
+    }
 }
 impl AsRef<str> for UdpTimedMetadataId3Frame {
     fn as_ref(&self) -> &str {
@@ -19096,6 +19831,9 @@ impl InputLossActionForUdpOut {
             InputLossActionForUdpOut::EmitProgram => "EMIT_PROGRAM",
             InputLossActionForUdpOut::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["DROP_PROGRAM", "DROP_TS", "EMIT_PROGRAM"]
     }
 }
 impl AsRef<str> for InputLossActionForUdpOut {
@@ -19296,6 +20034,9 @@ impl InputLossActionForRtmpOut {
             InputLossActionForRtmpOut::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["EMIT_OUTPUT", "PAUSE_OUTPUT"]
+    }
 }
 impl AsRef<str> for InputLossActionForRtmpOut {
     fn as_ref(&self) -> &str {
@@ -19347,6 +20088,9 @@ impl RtmpCaptionData {
             RtmpCaptionData::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["ALL", "FIELD1_608", "FIELD1_AND_FIELD2_608"]
+    }
 }
 impl AsRef<str> for RtmpCaptionData {
     fn as_ref(&self) -> &str {
@@ -19394,6 +20138,9 @@ impl RtmpCacheFullBehavior {
             RtmpCacheFullBehavior::WaitForServer => "WAIT_FOR_SERVER",
             RtmpCacheFullBehavior::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["DISCONNECT_IMMEDIATELY", "WAIT_FOR_SERVER"]
     }
 }
 impl AsRef<str> for RtmpCacheFullBehavior {
@@ -19443,6 +20190,9 @@ impl AuthenticationScheme {
             AuthenticationScheme::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["AKAMAI", "COMMON"]
+    }
 }
 impl AsRef<str> for AuthenticationScheme {
     fn as_ref(&self) -> &str {
@@ -19487,6 +20237,9 @@ impl RtmpAdMarkers {
             RtmpAdMarkers::OnCuePointScte35 => "ON_CUE_POINT_SCTE35",
             RtmpAdMarkers::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["ON_CUE_POINT_SCTE35"]
     }
 }
 impl AsRef<str> for RtmpAdMarkers {
@@ -19953,6 +20706,9 @@ impl SmoothGroupTimestampOffsetMode {
             SmoothGroupTimestampOffsetMode::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["USE_CONFIGURED_OFFSET", "USE_EVENT_START_DATE"]
+    }
 }
 impl AsRef<str> for SmoothGroupTimestampOffsetMode {
     fn as_ref(&self) -> &str {
@@ -20000,6 +20756,9 @@ impl SmoothGroupStreamManifestBehavior {
             SmoothGroupStreamManifestBehavior::Send => "SEND",
             SmoothGroupStreamManifestBehavior::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["DO_NOT_SEND", "SEND"]
     }
 }
 impl AsRef<str> for SmoothGroupStreamManifestBehavior {
@@ -20052,6 +20811,9 @@ impl SmoothGroupSparseTrackType {
             SmoothGroupSparseTrackType::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["NONE", "SCTE_35", "SCTE_35_WITHOUT_SEGMENTATION"]
+    }
 }
 impl AsRef<str> for SmoothGroupSparseTrackType {
     fn as_ref(&self) -> &str {
@@ -20099,6 +20861,9 @@ impl SmoothGroupSegmentationMode {
             SmoothGroupSegmentationMode::UseSegmentDuration => "USE_SEGMENT_DURATION",
             SmoothGroupSegmentationMode::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["USE_INPUT_SEGMENTATION", "USE_SEGMENT_DURATION"]
     }
 }
 impl AsRef<str> for SmoothGroupSegmentationMode {
@@ -20148,6 +20913,9 @@ impl InputLossActionForMsSmoothOut {
             InputLossActionForMsSmoothOut::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["EMIT_OUTPUT", "PAUSE_OUTPUT"]
+    }
 }
 impl AsRef<str> for InputLossActionForMsSmoothOut {
     fn as_ref(&self) -> &str {
@@ -20195,6 +20963,9 @@ impl SmoothGroupEventStopBehavior {
             SmoothGroupEventStopBehavior::SendEos => "SEND_EOS",
             SmoothGroupEventStopBehavior::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["NONE", "SEND_EOS"]
     }
 }
 impl AsRef<str> for SmoothGroupEventStopBehavior {
@@ -20247,6 +21018,9 @@ impl SmoothGroupEventIdMode {
             SmoothGroupEventIdMode::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["NO_EVENT_ID", "USE_CONFIGURED", "USE_TIMESTAMP"]
+    }
 }
 impl AsRef<str> for SmoothGroupEventIdMode {
     fn as_ref(&self) -> &str {
@@ -20295,6 +21069,9 @@ impl SmoothGroupCertificateMode {
             SmoothGroupCertificateMode::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["SELF_SIGNED", "VERIFY_AUTHENTICITY"]
+    }
 }
 impl AsRef<str> for SmoothGroupCertificateMode {
     fn as_ref(&self) -> &str {
@@ -20342,6 +21119,9 @@ impl SmoothGroupAudioOnlyTimecodeControl {
             SmoothGroupAudioOnlyTimecodeControl::UseConfiguredClock => "USE_CONFIGURED_CLOCK",
             SmoothGroupAudioOnlyTimecodeControl::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["PASSTHROUGH", "USE_CONFIGURED_CLOCK"]
     }
 }
 impl AsRef<str> for SmoothGroupAudioOnlyTimecodeControl {
@@ -21234,6 +22014,9 @@ impl HlsTsFileMode {
             HlsTsFileMode::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["SEGMENTED_FILES", "SINGLE_FILE"]
+    }
 }
 impl AsRef<str> for HlsTsFileMode {
     fn as_ref(&self) -> &str {
@@ -21285,6 +22068,9 @@ impl HlsTimedMetadataId3Frame {
             HlsTimedMetadataId3Frame::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["NONE", "PRIV", "TDRL"]
+    }
 }
 impl AsRef<str> for HlsTimedMetadataId3Frame {
     fn as_ref(&self) -> &str {
@@ -21332,6 +22118,9 @@ impl HlsStreamInfResolution {
             HlsStreamInfResolution::Include => "INCLUDE",
             HlsStreamInfResolution::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["EXCLUDE", "INCLUDE"]
     }
 }
 impl AsRef<str> for HlsStreamInfResolution {
@@ -21381,6 +22170,9 @@ impl HlsSegmentationMode {
             HlsSegmentationMode::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["USE_INPUT_SEGMENTATION", "USE_SEGMENT_DURATION"]
+    }
 }
 impl AsRef<str> for HlsSegmentationMode {
     fn as_ref(&self) -> &str {
@@ -21429,6 +22221,9 @@ impl HlsRedundantManifest {
             HlsRedundantManifest::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["DISABLED", "ENABLED"]
+    }
 }
 impl AsRef<str> for HlsRedundantManifest {
     fn as_ref(&self) -> &str {
@@ -21476,6 +22271,9 @@ impl HlsProgramDateTime {
             HlsProgramDateTime::Include => "INCLUDE",
             HlsProgramDateTime::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["EXCLUDE", "INCLUDE"]
     }
 }
 impl AsRef<str> for HlsProgramDateTime {
@@ -21528,6 +22326,13 @@ impl HlsOutputSelection {
             HlsOutputSelection::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "MANIFESTS_AND_SEGMENTS",
+            "SEGMENTS_ONLY",
+            "VARIANT_MANIFESTS_AND_SEGMENTS",
+        ]
+    }
 }
 impl AsRef<str> for HlsOutputSelection {
     fn as_ref(&self) -> &str {
@@ -21575,6 +22380,9 @@ impl HlsMode {
             HlsMode::Vod => "VOD",
             HlsMode::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["LIVE", "VOD"]
     }
 }
 impl AsRef<str> for HlsMode {
@@ -21624,6 +22432,9 @@ impl HlsManifestDurationFormat {
             HlsManifestDurationFormat::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["FLOATING_POINT", "INTEGER"]
+    }
 }
 impl AsRef<str> for HlsManifestDurationFormat {
     fn as_ref(&self) -> &str {
@@ -21671,6 +22482,9 @@ impl HlsManifestCompression {
             HlsManifestCompression::None => "NONE",
             HlsManifestCompression::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["GZIP", "NONE"]
     }
 }
 impl AsRef<str> for HlsManifestCompression {
@@ -21837,6 +22651,9 @@ impl HlsIvSource {
             HlsIvSource::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["EXPLICIT", "FOLLOWS_SEGMENT_NUMBER"]
+    }
 }
 impl AsRef<str> for HlsIvSource {
     fn as_ref(&self) -> &str {
@@ -21884,6 +22701,9 @@ impl HlsIvInManifest {
             HlsIvInManifest::Include => "INCLUDE",
             HlsIvInManifest::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["EXCLUDE", "INCLUDE"]
     }
 }
 impl AsRef<str> for HlsIvInManifest {
@@ -21933,6 +22753,9 @@ impl InputLossActionForHlsOut {
             InputLossActionForHlsOut::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["EMIT_OUTPUT", "PAUSE_OUTPUT"]
+    }
 }
 impl AsRef<str> for InputLossActionForHlsOut {
     fn as_ref(&self) -> &str {
@@ -21980,6 +22803,9 @@ impl HlsIncompleteSegmentBehavior {
             HlsIncompleteSegmentBehavior::Suppress => "SUPPRESS",
             HlsIncompleteSegmentBehavior::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["AUTO", "SUPPRESS"]
     }
 }
 impl AsRef<str> for HlsIncompleteSegmentBehavior {
@@ -22029,6 +22855,9 @@ impl IFrameOnlyPlaylistType {
             IFrameOnlyPlaylistType::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["DISABLED", "STANDARD"]
+    }
 }
 impl AsRef<str> for IFrameOnlyPlaylistType {
     fn as_ref(&self) -> &str {
@@ -22076,6 +22905,9 @@ impl HlsId3SegmentTaggingState {
             HlsId3SegmentTaggingState::Enabled => "ENABLED",
             HlsId3SegmentTaggingState::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["DISABLED", "ENABLED"]
     }
 }
 impl AsRef<str> for HlsId3SegmentTaggingState {
@@ -22356,6 +23188,9 @@ impl HlsWebdavHttpTransferMode {
             HlsWebdavHttpTransferMode::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["CHUNKED", "NON_CHUNKED"]
+    }
 }
 impl AsRef<str> for HlsWebdavHttpTransferMode {
     fn as_ref(&self) -> &str {
@@ -22459,6 +23294,14 @@ impl S3CannedAcl {
             S3CannedAcl::PublicRead => "PUBLIC_READ",
             S3CannedAcl::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "AUTHENTICATED_READ",
+            "BUCKET_OWNER_FULL_CONTROL",
+            "BUCKET_OWNER_READ",
+            "PUBLIC_READ",
+        ]
     }
 }
 impl AsRef<str> for S3CannedAcl {
@@ -22614,6 +23457,9 @@ impl HlsMediaStoreStorageClass {
             HlsMediaStoreStorageClass::Temporal => "TEMPORAL",
             HlsMediaStoreStorageClass::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["TEMPORAL"]
     }
 }
 impl AsRef<str> for HlsMediaStoreStorageClass {
@@ -22889,6 +23735,9 @@ impl HlsAkamaiHttpTransferMode {
             HlsAkamaiHttpTransferMode::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["CHUNKED", "NON_CHUNKED"]
+    }
 }
 impl AsRef<str> for HlsAkamaiHttpTransferMode {
     fn as_ref(&self) -> &str {
@@ -22936,6 +23785,9 @@ impl HlsEncryptionType {
             HlsEncryptionType::SampleAes => "SAMPLE_AES",
             HlsEncryptionType::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["AES128", "SAMPLE_AES"]
     }
 }
 impl AsRef<str> for HlsEncryptionType {
@@ -22985,6 +23837,9 @@ impl HlsDiscontinuityTags {
             HlsDiscontinuityTags::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["INSERT", "NEVER_INSERT"]
+    }
 }
 impl AsRef<str> for HlsDiscontinuityTags {
     fn as_ref(&self) -> &str {
@@ -23032,6 +23887,9 @@ impl HlsDirectoryStructure {
             HlsDirectoryStructure::SubdirectoryPerStream => "SUBDIRECTORY_PER_STREAM",
             HlsDirectoryStructure::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["SINGLE_DIRECTORY", "SUBDIRECTORY_PER_STREAM"]
     }
 }
 impl AsRef<str> for HlsDirectoryStructure {
@@ -23081,6 +23939,9 @@ impl HlsCodecSpecification {
             HlsCodecSpecification::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["RFC_4281", "RFC_6381"]
+    }
 }
 impl AsRef<str> for HlsCodecSpecification {
     fn as_ref(&self) -> &str {
@@ -23128,6 +23989,9 @@ impl HlsClientCache {
             HlsClientCache::Enabled => "ENABLED",
             HlsClientCache::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["DISABLED", "ENABLED"]
     }
 }
 impl AsRef<str> for HlsClientCache {
@@ -23179,6 +24043,9 @@ impl HlsCaptionLanguageSetting {
             HlsCaptionLanguageSetting::Omit => "OMIT",
             HlsCaptionLanguageSetting::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["INSERT", "NONE", "OMIT"]
     }
 }
 impl AsRef<str> for HlsCaptionLanguageSetting {
@@ -23311,6 +24178,9 @@ impl HlsAdMarkers {
             HlsAdMarkers::ElementalScte35 => "ELEMENTAL_SCTE35",
             HlsAdMarkers::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["ADOBE", "ELEMENTAL", "ELEMENTAL_SCTE35"]
     }
 }
 impl AsRef<str> for HlsAdMarkers {
@@ -23793,6 +24663,9 @@ impl NielsenPcmToId3TaggingState {
             NielsenPcmToId3TaggingState::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["DISABLED", "ENABLED"]
+    }
 }
 impl AsRef<str> for NielsenPcmToId3TaggingState {
     fn as_ref(&self) -> &str {
@@ -24004,6 +24877,9 @@ impl MotionGraphicsInsertion {
             MotionGraphicsInsertion::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["DISABLED", "ENABLED"]
+    }
 }
 impl AsRef<str> for MotionGraphicsInsertion {
     fn as_ref(&self) -> &str {
@@ -24210,6 +25086,9 @@ impl GlobalConfigurationLowFramerateInputs {
             GlobalConfigurationLowFramerateInputs::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["DISABLED", "ENABLED"]
+    }
 }
 impl AsRef<str> for GlobalConfigurationLowFramerateInputs {
     fn as_ref(&self) -> &str {
@@ -24258,6 +25137,9 @@ impl GlobalConfigurationOutputTimingSource {
             GlobalConfigurationOutputTimingSource::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["INPUT_CLOCK", "SYSTEM_CLOCK"]
+    }
 }
 impl AsRef<str> for GlobalConfigurationOutputTimingSource {
     fn as_ref(&self) -> &str {
@@ -24305,6 +25187,9 @@ impl GlobalConfigurationOutputLockingMode {
             GlobalConfigurationOutputLockingMode::PipelineLocking => "PIPELINE_LOCKING",
             GlobalConfigurationOutputLockingMode::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["EPOCH_LOCKING", "PIPELINE_LOCKING"]
     }
 }
 impl AsRef<str> for GlobalConfigurationOutputLockingMode {
@@ -24466,6 +25351,9 @@ impl InputLossImageType {
             InputLossImageType::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["COLOR", "SLATE"]
+    }
 }
 impl AsRef<str> for InputLossImageType {
     fn as_ref(&self) -> &str {
@@ -24513,6 +25401,9 @@ impl GlobalConfigurationInputEndAction {
             GlobalConfigurationInputEndAction::SwitchAndLoopInputs => "SWITCH_AND_LOOP_INPUTS",
             GlobalConfigurationInputEndAction::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["NONE", "SWITCH_AND_LOOP_INPUTS"]
     }
 }
 impl AsRef<str> for GlobalConfigurationInputEndAction {
@@ -24621,6 +25512,9 @@ impl FeatureActivationsInputPrepareScheduleActions {
             FeatureActivationsInputPrepareScheduleActions::Enabled => "ENABLED",
             FeatureActivationsInputPrepareScheduleActions::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["DISABLED", "ENABLED"]
     }
 }
 impl AsRef<str> for FeatureActivationsInputPrepareScheduleActions {
@@ -25216,6 +26110,9 @@ impl TtmlDestinationStyleControl {
             TtmlDestinationStyleControl::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["PASSTHROUGH", "USE_CONFIGURED"]
+    }
 }
 impl AsRef<str> for TtmlDestinationStyleControl {
     fn as_ref(&self) -> &str {
@@ -25586,6 +26483,9 @@ impl EbuTtDDestinationStyleControl {
             EbuTtDDestinationStyleControl::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["EXCLUDE", "INCLUDE"]
+    }
 }
 impl AsRef<str> for EbuTtDDestinationStyleControl {
     fn as_ref(&self) -> &str {
@@ -25633,6 +26533,9 @@ impl EbuTtDFillLineGapControl {
             EbuTtDFillLineGapControl::Enabled => "ENABLED",
             EbuTtDFillLineGapControl::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["DISABLED", "ENABLED"]
     }
 }
 impl AsRef<str> for EbuTtDFillLineGapControl {
@@ -25980,6 +26883,9 @@ impl DvbSubDestinationTeletextGridControl {
             DvbSubDestinationTeletextGridControl::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["FIXED", "SCALED"]
+    }
 }
 impl AsRef<str> for DvbSubDestinationTeletextGridControl {
     fn as_ref(&self) -> &str {
@@ -26030,6 +26936,9 @@ impl DvbSubDestinationShadowColor {
             DvbSubDestinationShadowColor::White => "WHITE",
             DvbSubDestinationShadowColor::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["BLACK", "NONE", "WHITE"]
     }
 }
 impl AsRef<str> for DvbSubDestinationShadowColor {
@@ -26091,6 +27000,9 @@ impl DvbSubDestinationOutlineColor {
             DvbSubDestinationOutlineColor::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["BLACK", "BLUE", "GREEN", "RED", "WHITE", "YELLOW"]
+    }
 }
 impl AsRef<str> for DvbSubDestinationOutlineColor {
     fn as_ref(&self) -> &str {
@@ -26151,6 +27063,9 @@ impl DvbSubDestinationFontColor {
             DvbSubDestinationFontColor::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["BLACK", "BLUE", "GREEN", "RED", "WHITE", "YELLOW"]
+    }
 }
 impl AsRef<str> for DvbSubDestinationFontColor {
     fn as_ref(&self) -> &str {
@@ -26202,6 +27117,9 @@ impl DvbSubDestinationBackgroundColor {
             DvbSubDestinationBackgroundColor::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["BLACK", "NONE", "WHITE"]
+    }
 }
 impl AsRef<str> for DvbSubDestinationBackgroundColor {
     fn as_ref(&self) -> &str {
@@ -26252,6 +27170,9 @@ impl DvbSubDestinationAlignment {
             DvbSubDestinationAlignment::Smart => "SMART",
             DvbSubDestinationAlignment::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["CENTERED", "LEFT", "SMART"]
     }
 }
 impl AsRef<str> for DvbSubDestinationAlignment {
@@ -26594,6 +27515,9 @@ impl BurnInTeletextGridControl {
             BurnInTeletextGridControl::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["FIXED", "SCALED"]
+    }
 }
 impl AsRef<str> for BurnInTeletextGridControl {
     fn as_ref(&self) -> &str {
@@ -26644,6 +27568,9 @@ impl BurnInShadowColor {
             BurnInShadowColor::White => "WHITE",
             BurnInShadowColor::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["BLACK", "NONE", "WHITE"]
     }
 }
 impl AsRef<str> for BurnInShadowColor {
@@ -26705,6 +27632,9 @@ impl BurnInOutlineColor {
             BurnInOutlineColor::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["BLACK", "BLUE", "GREEN", "RED", "WHITE", "YELLOW"]
+    }
 }
 impl AsRef<str> for BurnInOutlineColor {
     fn as_ref(&self) -> &str {
@@ -26765,6 +27695,9 @@ impl BurnInFontColor {
             BurnInFontColor::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["BLACK", "BLUE", "GREEN", "RED", "WHITE", "YELLOW"]
+    }
 }
 impl AsRef<str> for BurnInFontColor {
     fn as_ref(&self) -> &str {
@@ -26816,6 +27749,9 @@ impl BurnInBackgroundColor {
             BurnInBackgroundColor::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["BLACK", "NONE", "WHITE"]
+    }
 }
 impl AsRef<str> for BurnInBackgroundColor {
     fn as_ref(&self) -> &str {
@@ -26866,6 +27802,9 @@ impl BurnInAlignment {
             BurnInAlignment::Smart => "SMART",
             BurnInAlignment::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["CENTERED", "LEFT", "SMART"]
     }
 }
 impl AsRef<str> for BurnInAlignment {
@@ -27067,6 +28006,9 @@ impl BlackoutSlateState {
             BlackoutSlateState::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["DISABLED", "ENABLED"]
+    }
 }
 impl AsRef<str> for BlackoutSlateState {
     fn as_ref(&self) -> &str {
@@ -27114,6 +28056,9 @@ impl BlackoutSlateNetworkEndBlackout {
             BlackoutSlateNetworkEndBlackout::Enabled => "ENABLED",
             BlackoutSlateNetworkEndBlackout::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["DISABLED", "ENABLED"]
     }
 }
 impl AsRef<str> for BlackoutSlateNetworkEndBlackout {
@@ -27374,6 +28319,9 @@ impl Scte35AposWebDeliveryAllowedBehavior {
             Scte35AposWebDeliveryAllowedBehavior::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["FOLLOW", "IGNORE"]
+    }
 }
 impl AsRef<str> for Scte35AposWebDeliveryAllowedBehavior {
     fn as_ref(&self) -> &str {
@@ -27421,6 +28369,9 @@ impl Scte35AposNoRegionalBlackoutBehavior {
             Scte35AposNoRegionalBlackoutBehavior::Ignore => "IGNORE",
             Scte35AposNoRegionalBlackoutBehavior::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["FOLLOW", "IGNORE"]
     }
 }
 impl AsRef<str> for Scte35AposNoRegionalBlackoutBehavior {
@@ -27561,6 +28512,9 @@ impl Scte35SpliceInsertWebDeliveryAllowedBehavior {
             Scte35SpliceInsertWebDeliveryAllowedBehavior::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["FOLLOW", "IGNORE"]
+    }
 }
 impl AsRef<str> for Scte35SpliceInsertWebDeliveryAllowedBehavior {
     fn as_ref(&self) -> &str {
@@ -27608,6 +28562,9 @@ impl Scte35SpliceInsertNoRegionalBlackoutBehavior {
             Scte35SpliceInsertNoRegionalBlackoutBehavior::Ignore => "IGNORE",
             Scte35SpliceInsertNoRegionalBlackoutBehavior::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["FOLLOW", "IGNORE"]
     }
 }
 impl AsRef<str> for Scte35SpliceInsertNoRegionalBlackoutBehavior {
@@ -27723,6 +28680,9 @@ impl AvailBlankingState {
             AvailBlankingState::Enabled => "ENABLED",
             AvailBlankingState::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["DISABLED", "ENABLED"]
     }
 }
 impl AsRef<str> for AvailBlankingState {
@@ -28206,6 +29166,9 @@ impl AudioDescriptionLanguageCodeControl {
             AudioDescriptionLanguageCodeControl::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["FOLLOW_INPUT", "USE_CONFIGURED"]
+    }
 }
 impl AsRef<str> for AudioDescriptionLanguageCodeControl {
     fn as_ref(&self) -> &str {
@@ -28473,6 +29436,14 @@ impl WavCodingMode {
             WavCodingMode::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "CODING_MODE_1_0",
+            "CODING_MODE_2_0",
+            "CODING_MODE_4_0",
+            "CODING_MODE_8_0",
+        ]
+    }
 }
 impl AsRef<str> for WavCodingMode {
     fn as_ref(&self) -> &str {
@@ -28628,6 +29599,9 @@ impl Mp2CodingMode {
             Mp2CodingMode::CodingMode20 => "CODING_MODE_2_0",
             Mp2CodingMode::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["CODING_MODE_1_0", "CODING_MODE_2_0"]
     }
 }
 impl AsRef<str> for Mp2CodingMode {
@@ -29032,6 +30006,9 @@ impl Eac3SurroundMode {
             Eac3SurroundMode::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["DISABLED", "ENABLED", "NOT_INDICATED"]
+    }
 }
 impl AsRef<str> for Eac3SurroundMode {
     fn as_ref(&self) -> &str {
@@ -29082,6 +30059,9 @@ impl Eac3SurroundExMode {
             Eac3SurroundExMode::NotIndicated => "NOT_INDICATED",
             Eac3SurroundExMode::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["DISABLED", "ENABLED", "NOT_INDICATED"]
     }
 }
 impl AsRef<str> for Eac3SurroundExMode {
@@ -29137,6 +30117,9 @@ impl Eac3StereoDownmix {
             Eac3StereoDownmix::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["DPL2", "LO_RO", "LT_RT", "NOT_INDICATED"]
+    }
 }
 impl AsRef<str> for Eac3StereoDownmix {
     fn as_ref(&self) -> &str {
@@ -29184,6 +30167,9 @@ impl Eac3PhaseControl {
             Eac3PhaseControl::Shift90Degrees => "SHIFT_90_DEGREES",
             Eac3PhaseControl::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["NO_SHIFT", "SHIFT_90_DEGREES"]
     }
 }
 impl AsRef<str> for Eac3PhaseControl {
@@ -29233,6 +30219,9 @@ impl Eac3PassthroughControl {
             Eac3PassthroughControl::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["NO_PASSTHROUGH", "WHEN_POSSIBLE"]
+    }
 }
 impl AsRef<str> for Eac3PassthroughControl {
     fn as_ref(&self) -> &str {
@@ -29280,6 +30269,9 @@ impl Eac3MetadataControl {
             Eac3MetadataControl::UseConfigured => "USE_CONFIGURED",
             Eac3MetadataControl::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["FOLLOW_INPUT", "USE_CONFIGURED"]
     }
 }
 impl AsRef<str> for Eac3MetadataControl {
@@ -29329,6 +30321,9 @@ impl Eac3LfeFilter {
             Eac3LfeFilter::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["DISABLED", "ENABLED"]
+    }
 }
 impl AsRef<str> for Eac3LfeFilter {
     fn as_ref(&self) -> &str {
@@ -29376,6 +30371,9 @@ impl Eac3LfeControl {
             Eac3LfeControl::NoLfe => "NO_LFE",
             Eac3LfeControl::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["LFE", "NO_LFE"]
     }
 }
 impl AsRef<str> for Eac3LfeControl {
@@ -29437,6 +30435,16 @@ impl Eac3DrcRf {
             Eac3DrcRf::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "FILM_LIGHT",
+            "FILM_STANDARD",
+            "MUSIC_LIGHT",
+            "MUSIC_STANDARD",
+            "NONE",
+            "SPEECH",
+        ]
+    }
 }
 impl AsRef<str> for Eac3DrcRf {
     fn as_ref(&self) -> &str {
@@ -29497,6 +30505,16 @@ impl Eac3DrcLine {
             Eac3DrcLine::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "FILM_LIGHT",
+            "FILM_STANDARD",
+            "MUSIC_LIGHT",
+            "MUSIC_STANDARD",
+            "NONE",
+            "SPEECH",
+        ]
+    }
 }
 impl AsRef<str> for Eac3DrcLine {
     fn as_ref(&self) -> &str {
@@ -29544,6 +30562,9 @@ impl Eac3DcFilter {
             Eac3DcFilter::Enabled => "ENABLED",
             Eac3DcFilter::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["DISABLED", "ENABLED"]
     }
 }
 impl AsRef<str> for Eac3DcFilter {
@@ -29595,6 +30616,9 @@ impl Eac3CodingMode {
             Eac3CodingMode::CodingMode32 => "CODING_MODE_3_2",
             Eac3CodingMode::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["CODING_MODE_1_0", "CODING_MODE_2_0", "CODING_MODE_3_2"]
     }
 }
 impl AsRef<str> for Eac3CodingMode {
@@ -29653,6 +30677,15 @@ impl Eac3BitstreamMode {
             Eac3BitstreamMode::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "COMMENTARY",
+            "COMPLETE_MAIN",
+            "EMERGENCY",
+            "HEARING_IMPAIRED",
+            "VISUALLY_IMPAIRED",
+        ]
+    }
 }
 impl AsRef<str> for Eac3BitstreamMode {
     fn as_ref(&self) -> &str {
@@ -29700,6 +30733,9 @@ impl Eac3AttenuationControl {
             Eac3AttenuationControl::None => "NONE",
             Eac3AttenuationControl::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["ATTENUATE_3_DB", "NONE"]
     }
 }
 impl AsRef<str> for Eac3AttenuationControl {
@@ -29895,6 +30931,9 @@ impl Ac3MetadataControl {
             Ac3MetadataControl::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["FOLLOW_INPUT", "USE_CONFIGURED"]
+    }
 }
 impl AsRef<str> for Ac3MetadataControl {
     fn as_ref(&self) -> &str {
@@ -29943,6 +30982,9 @@ impl Ac3LfeFilter {
             Ac3LfeFilter::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["DISABLED", "ENABLED"]
+    }
 }
 impl AsRef<str> for Ac3LfeFilter {
     fn as_ref(&self) -> &str {
@@ -29990,6 +31032,9 @@ impl Ac3DrcProfile {
             Ac3DrcProfile::None => "NONE",
             Ac3DrcProfile::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["FILM_STANDARD", "NONE"]
     }
 }
 impl AsRef<str> for Ac3DrcProfile {
@@ -30044,6 +31089,14 @@ impl Ac3CodingMode {
             Ac3CodingMode::CodingMode32Lfe => "CODING_MODE_3_2_LFE",
             Ac3CodingMode::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "CODING_MODE_1_0",
+            "CODING_MODE_1_1",
+            "CODING_MODE_2_0",
+            "CODING_MODE_3_2_LFE",
+        ]
     }
 }
 impl AsRef<str> for Ac3CodingMode {
@@ -30110,6 +31163,18 @@ impl Ac3BitstreamMode {
             Ac3BitstreamMode::VoiceOver => "VOICE_OVER",
             Ac3BitstreamMode::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "COMMENTARY",
+            "COMPLETE_MAIN",
+            "DIALOGUE",
+            "EMERGENCY",
+            "HEARING_IMPAIRED",
+            "MUSIC_AND_EFFECTS",
+            "VISUALLY_IMPAIRED",
+            "VOICE_OVER",
+        ]
     }
 }
 impl AsRef<str> for Ac3BitstreamMode {
@@ -30341,6 +31406,9 @@ impl AacVbrQuality {
             AacVbrQuality::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["HIGH", "LOW", "MEDIUM_HIGH", "MEDIUM_LOW"]
+    }
 }
 impl AsRef<str> for AacVbrQuality {
     fn as_ref(&self) -> &str {
@@ -30388,6 +31456,9 @@ impl AacSpec {
             AacSpec::Mpeg4 => "MPEG4",
             AacSpec::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["MPEG2", "MPEG4"]
     }
 }
 impl AsRef<str> for AacSpec {
@@ -30437,6 +31508,9 @@ impl AacRawFormat {
             AacRawFormat::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["LATM_LOAS", "NONE"]
+    }
 }
 impl AsRef<str> for AacRawFormat {
     fn as_ref(&self) -> &str {
@@ -30484,6 +31558,9 @@ impl AacRateControlMode {
             AacRateControlMode::Vbr => "VBR",
             AacRateControlMode::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["CBR", "VBR"]
     }
 }
 impl AsRef<str> for AacRateControlMode {
@@ -30536,6 +31613,9 @@ impl AacProfile {
             AacProfile::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["HEV1", "HEV2", "LC"]
+    }
 }
 impl AsRef<str> for AacProfile {
     fn as_ref(&self) -> &str {
@@ -30583,6 +31663,9 @@ impl AacInputType {
             AacInputType::Normal => "NORMAL",
             AacInputType::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["BROADCASTER_MIXED_AD", "NORMAL"]
     }
 }
 impl AsRef<str> for AacInputType {
@@ -30641,6 +31724,15 @@ impl AacCodingMode {
             AacCodingMode::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "AD_RECEIVER_MIX",
+            "CODING_MODE_1_0",
+            "CODING_MODE_1_1",
+            "CODING_MODE_2_0",
+            "CODING_MODE_5_1",
+        ]
+    }
 }
 impl AsRef<str> for AacCodingMode {
     fn as_ref(&self) -> &str {
@@ -30688,6 +31780,9 @@ impl AudioDescriptionAudioTypeControl {
             AudioDescriptionAudioTypeControl::UseConfigured => "USE_CONFIGURED",
             AudioDescriptionAudioTypeControl::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["FOLLOW_INPUT", "USE_CONFIGURED"]
     }
 }
 impl AsRef<str> for AudioDescriptionAudioTypeControl {
@@ -30742,6 +31837,14 @@ impl AudioType {
             AudioType::VisualImpairedCommentary => "VISUAL_IMPAIRED_COMMENTARY",
             AudioType::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "CLEAN_EFFECTS",
+            "HEARING_IMPAIRED",
+            "UNDEFINED",
+            "VISUAL_IMPAIRED_COMMENTARY",
+        ]
     }
 }
 impl AsRef<str> for AudioType {
@@ -30873,6 +31976,9 @@ impl AudioNormalizationAlgorithmControl {
             AudioNormalizationAlgorithmControl::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["CORRECT_AUDIO"]
+    }
 }
 impl AsRef<str> for AudioNormalizationAlgorithmControl {
     fn as_ref(&self) -> &str {
@@ -30920,6 +32026,9 @@ impl AudioNormalizationAlgorithm {
             AudioNormalizationAlgorithm::Itu17702 => "ITU_1770_2",
             AudioNormalizationAlgorithm::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["ITU_1770_1", "ITU_1770_2"]
     }
 }
 impl AsRef<str> for AudioNormalizationAlgorithm {
@@ -31389,6 +32498,9 @@ impl CdiInputResolution {
             CdiInputResolution::Uhd => "UHD",
             CdiInputResolution::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["FHD", "HD", "SD", "UHD"]
     }
 }
 impl AsRef<str> for CdiInputResolution {
@@ -32028,6 +33140,9 @@ impl InputDeviceTransferType {
             InputDeviceTransferType::Outgoing => "OUTGOING",
             InputDeviceTransferType::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["INCOMING", "OUTGOING"]
     }
 }
 impl AsRef<str> for InputDeviceTransferType {
@@ -32904,6 +34019,9 @@ impl FollowPoint {
             FollowPoint::Start => "START",
             FollowPoint::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["END", "START"]
     }
 }
 impl AsRef<str> for FollowPoint {
@@ -33948,6 +35066,12 @@ impl Scte35SegmentationCancelIndicator {
             Scte35SegmentationCancelIndicator::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "SEGMENTATION_EVENT_CANCELED",
+            "SEGMENTATION_EVENT_NOT_CANCELED",
+        ]
+    }
 }
 impl AsRef<str> for Scte35SegmentationCancelIndicator {
     fn as_ref(&self) -> &str {
@@ -34112,6 +35236,9 @@ impl Scte35WebDeliveryAllowedFlag {
             Scte35WebDeliveryAllowedFlag::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["WEB_DELIVERY_ALLOWED", "WEB_DELIVERY_NOT_ALLOWED"]
+    }
 }
 impl AsRef<str> for Scte35WebDeliveryAllowedFlag {
     fn as_ref(&self) -> &str {
@@ -34159,6 +35286,9 @@ impl Scte35NoRegionalBlackoutFlag {
             Scte35NoRegionalBlackoutFlag::RegionalBlackout => "REGIONAL_BLACKOUT",
             Scte35NoRegionalBlackoutFlag::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["NO_REGIONAL_BLACKOUT", "REGIONAL_BLACKOUT"]
     }
 }
 impl AsRef<str> for Scte35NoRegionalBlackoutFlag {
@@ -34214,6 +35344,14 @@ impl Scte35DeviceRestrictions {
             Scte35DeviceRestrictions::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "NONE",
+            "RESTRICT_GROUP0",
+            "RESTRICT_GROUP1",
+            "RESTRICT_GROUP2",
+        ]
+    }
 }
 impl AsRef<str> for Scte35DeviceRestrictions {
     fn as_ref(&self) -> &str {
@@ -34261,6 +35399,9 @@ impl Scte35ArchiveAllowedFlag {
             Scte35ArchiveAllowedFlag::ArchiveNotAllowed => "ARCHIVE_NOT_ALLOWED",
             Scte35ArchiveAllowedFlag::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["ARCHIVE_ALLOWED", "ARCHIVE_NOT_ALLOWED"]
     }
 }
 impl AsRef<str> for Scte35ArchiveAllowedFlag {
@@ -34522,6 +35663,9 @@ impl PipelineId {
             PipelineId::Pipeline1 => "PIPELINE_1",
             PipelineId::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["PIPELINE_0", "PIPELINE_1"]
     }
 }
 impl AsRef<str> for PipelineId {
@@ -34943,6 +36087,9 @@ impl LastFrameClippingBehavior {
             LastFrameClippingBehavior::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["EXCLUDE_LAST_FRAME", "INCLUDE_LAST_FRAME"]
+    }
 }
 impl AsRef<str> for LastFrameClippingBehavior {
     fn as_ref(&self) -> &str {
@@ -35037,6 +36184,9 @@ impl InputTimecodeSource {
             InputTimecodeSource::Zerobased => "ZEROBASED",
             InputTimecodeSource::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["EMBEDDED", "ZEROBASED"]
     }
 }
 impl AsRef<str> for InputTimecodeSource {
@@ -35268,6 +36418,9 @@ impl ContentType {
             ContentType::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["image/jpeg"]
+    }
 }
 impl AsRef<str> for ContentType {
     fn as_ref(&self) -> &str {
@@ -35312,6 +36465,9 @@ impl AcceptHeader {
             AcceptHeader::ImageJpeg => "image/jpeg",
             AcceptHeader::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["image/jpeg"]
     }
 }
 impl AsRef<str> for AcceptHeader {

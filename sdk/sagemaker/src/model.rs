@@ -483,7 +483,7 @@ impl CognitoMemberDefinition {
 }
 
 /// <p>A single private workforce, which is automatically created when you create your first
-/// private work team. You can create one private work force in each AWS Region. By default,
+/// private work team. You can create one private work force in each Amazon Web Services Region. By default,
 /// any workforce-related API operation used in a specific region will apply to the
 /// workforce created in that region. To learn how to create a private workforce, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-workforce-create-private.html">Create a Private Workforce</a>.</p>
 #[non_exhaustive]
@@ -1531,6 +1531,42 @@ impl AppInstanceType {
             AppInstanceType::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "ml.c5.12xlarge",
+            "ml.c5.18xlarge",
+            "ml.c5.24xlarge",
+            "ml.c5.2xlarge",
+            "ml.c5.4xlarge",
+            "ml.c5.9xlarge",
+            "ml.c5.large",
+            "ml.c5.xlarge",
+            "ml.g4dn.12xlarge",
+            "ml.g4dn.16xlarge",
+            "ml.g4dn.2xlarge",
+            "ml.g4dn.4xlarge",
+            "ml.g4dn.8xlarge",
+            "ml.g4dn.xlarge",
+            "ml.m5.12xlarge",
+            "ml.m5.16xlarge",
+            "ml.m5.24xlarge",
+            "ml.m5.2xlarge",
+            "ml.m5.4xlarge",
+            "ml.m5.8xlarge",
+            "ml.m5.large",
+            "ml.m5.xlarge",
+            "ml.p3.16xlarge",
+            "ml.p3.2xlarge",
+            "ml.p3.8xlarge",
+            "ml.t3.2xlarge",
+            "ml.t3.large",
+            "ml.t3.medium",
+            "ml.t3.micro",
+            "ml.t3.small",
+            "ml.t3.xlarge",
+            "system",
+        ]
+    }
 }
 impl AsRef<str> for AppInstanceType {
     fn as_ref(&self) -> &str {
@@ -1749,7 +1785,7 @@ pub struct SharingSettings {
     /// <p>When <code>NotebookOutputOption</code> is <code>Allowed</code>, the Amazon S3 bucket used
     /// to store the shared notebook snapshots.</p>
     pub s3_output_path: std::option::Option<std::string::String>,
-    /// <p>When <code>NotebookOutputOption</code> is <code>Allowed</code>, the AWS Key Management Service (KMS)
+    /// <p>When <code>NotebookOutputOption</code> is <code>Allowed</code>, the Amazon Web Services Key Management Service (KMS)
     /// encryption key ID used to encrypt the notebook cell output in the Amazon S3 bucket.</p>
     pub s3_kms_key_id: std::option::Option<std::string::String>,
 }
@@ -1799,7 +1835,7 @@ pub mod sharing_settings {
             self.s3_output_path = input;
             self
         }
-        /// <p>When <code>NotebookOutputOption</code> is <code>Allowed</code>, the AWS Key Management Service (KMS)
+        /// <p>When <code>NotebookOutputOption</code> is <code>Allowed</code>, the Amazon Web Services Key Management Service (KMS)
         /// encryption key ID used to encrypt the notebook cell output in the Amazon S3 bucket.</p>
         pub fn s3_kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.s3_kms_key_id = Some(input.into());
@@ -1868,6 +1904,9 @@ impl NotebookOutputOption {
             NotebookOutputOption::Disabled => "Disabled",
             NotebookOutputOption::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["Allowed", "Disabled"]
     }
 }
 impl AsRef<str> for NotebookOutputOption {
@@ -2094,6 +2133,9 @@ impl TrialComponentPrimaryStatus {
             TrialComponentPrimaryStatus::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["Completed", "Failed", "InProgress", "Stopped", "Stopping"]
+    }
 }
 impl AsRef<str> for TrialComponentPrimaryStatus {
     fn as_ref(&self) -> &str {
@@ -2277,6 +2319,12 @@ pub enum ProcessingInstanceType {
     MlC54Xlarge,
     MlC59Xlarge,
     MlC5Xlarge,
+    MlG4Dn12Xlarge,
+    MlG4Dn16Xlarge,
+    MlG4Dn2Xlarge,
+    MlG4Dn4Xlarge,
+    MlG4Dn8Xlarge,
+    MlG4DnXlarge,
     MlM410Xlarge,
     MlM416Xlarge,
     MlM42Xlarge,
@@ -2321,6 +2369,12 @@ impl std::convert::From<&str> for ProcessingInstanceType {
             "ml.c5.4xlarge" => ProcessingInstanceType::MlC54Xlarge,
             "ml.c5.9xlarge" => ProcessingInstanceType::MlC59Xlarge,
             "ml.c5.xlarge" => ProcessingInstanceType::MlC5Xlarge,
+            "ml.g4dn.12xlarge" => ProcessingInstanceType::MlG4Dn12Xlarge,
+            "ml.g4dn.16xlarge" => ProcessingInstanceType::MlG4Dn16Xlarge,
+            "ml.g4dn.2xlarge" => ProcessingInstanceType::MlG4Dn2Xlarge,
+            "ml.g4dn.4xlarge" => ProcessingInstanceType::MlG4Dn4Xlarge,
+            "ml.g4dn.8xlarge" => ProcessingInstanceType::MlG4Dn8Xlarge,
+            "ml.g4dn.xlarge" => ProcessingInstanceType::MlG4DnXlarge,
             "ml.m4.10xlarge" => ProcessingInstanceType::MlM410Xlarge,
             "ml.m4.16xlarge" => ProcessingInstanceType::MlM416Xlarge,
             "ml.m4.2xlarge" => ProcessingInstanceType::MlM42Xlarge,
@@ -2373,6 +2427,12 @@ impl ProcessingInstanceType {
             ProcessingInstanceType::MlC54Xlarge => "ml.c5.4xlarge",
             ProcessingInstanceType::MlC59Xlarge => "ml.c5.9xlarge",
             ProcessingInstanceType::MlC5Xlarge => "ml.c5.xlarge",
+            ProcessingInstanceType::MlG4Dn12Xlarge => "ml.g4dn.12xlarge",
+            ProcessingInstanceType::MlG4Dn16Xlarge => "ml.g4dn.16xlarge",
+            ProcessingInstanceType::MlG4Dn2Xlarge => "ml.g4dn.2xlarge",
+            ProcessingInstanceType::MlG4Dn4Xlarge => "ml.g4dn.4xlarge",
+            ProcessingInstanceType::MlG4Dn8Xlarge => "ml.g4dn.8xlarge",
+            ProcessingInstanceType::MlG4DnXlarge => "ml.g4dn.xlarge",
             ProcessingInstanceType::MlM410Xlarge => "ml.m4.10xlarge",
             ProcessingInstanceType::MlM416Xlarge => "ml.m4.16xlarge",
             ProcessingInstanceType::MlM42Xlarge => "ml.m4.2xlarge",
@@ -2404,6 +2464,54 @@ impl ProcessingInstanceType {
             ProcessingInstanceType::MlT3Xlarge => "ml.t3.xlarge",
             ProcessingInstanceType::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "ml.c4.2xlarge",
+            "ml.c4.4xlarge",
+            "ml.c4.8xlarge",
+            "ml.c4.xlarge",
+            "ml.c5.18xlarge",
+            "ml.c5.2xlarge",
+            "ml.c5.4xlarge",
+            "ml.c5.9xlarge",
+            "ml.c5.xlarge",
+            "ml.g4dn.12xlarge",
+            "ml.g4dn.16xlarge",
+            "ml.g4dn.2xlarge",
+            "ml.g4dn.4xlarge",
+            "ml.g4dn.8xlarge",
+            "ml.g4dn.xlarge",
+            "ml.m4.10xlarge",
+            "ml.m4.16xlarge",
+            "ml.m4.2xlarge",
+            "ml.m4.4xlarge",
+            "ml.m4.xlarge",
+            "ml.m5.12xlarge",
+            "ml.m5.24xlarge",
+            "ml.m5.2xlarge",
+            "ml.m5.4xlarge",
+            "ml.m5.large",
+            "ml.m5.xlarge",
+            "ml.p2.16xlarge",
+            "ml.p2.8xlarge",
+            "ml.p2.xlarge",
+            "ml.p3.16xlarge",
+            "ml.p3.2xlarge",
+            "ml.p3.8xlarge",
+            "ml.r5.12xlarge",
+            "ml.r5.16xlarge",
+            "ml.r5.24xlarge",
+            "ml.r5.2xlarge",
+            "ml.r5.4xlarge",
+            "ml.r5.8xlarge",
+            "ml.r5.large",
+            "ml.r5.xlarge",
+            "ml.t3.2xlarge",
+            "ml.t3.large",
+            "ml.t3.medium",
+            "ml.t3.xlarge",
+        ]
     }
 }
 impl AsRef<str> for ProcessingInstanceType {
@@ -2631,6 +2739,9 @@ impl RootAccess {
             RootAccess::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["Disabled", "Enabled"]
+    }
 }
 impl AsRef<str> for RootAccess {
     fn as_ref(&self) -> &str {
@@ -2689,6 +2800,16 @@ impl NotebookInstanceAcceleratorType {
             NotebookInstanceAcceleratorType::MlEia2Xlarge => "ml.eia2.xlarge",
             NotebookInstanceAcceleratorType::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "ml.eia1.large",
+            "ml.eia1.medium",
+            "ml.eia1.xlarge",
+            "ml.eia2.large",
+            "ml.eia2.medium",
+            "ml.eia2.xlarge",
+        ]
     }
 }
 impl AsRef<str> for NotebookInstanceAcceleratorType {
@@ -2844,6 +2965,48 @@ impl InstanceType {
             InstanceType::MlT3Xlarge => "ml.t3.xlarge",
             InstanceType::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "ml.c4.2xlarge",
+            "ml.c4.4xlarge",
+            "ml.c4.8xlarge",
+            "ml.c4.xlarge",
+            "ml.c5.18xlarge",
+            "ml.c5.2xlarge",
+            "ml.c5.4xlarge",
+            "ml.c5.9xlarge",
+            "ml.c5.xlarge",
+            "ml.c5d.18xlarge",
+            "ml.c5d.2xlarge",
+            "ml.c5d.4xlarge",
+            "ml.c5d.9xlarge",
+            "ml.c5d.xlarge",
+            "ml.m4.10xlarge",
+            "ml.m4.16xlarge",
+            "ml.m4.2xlarge",
+            "ml.m4.4xlarge",
+            "ml.m4.xlarge",
+            "ml.m5.12xlarge",
+            "ml.m5.24xlarge",
+            "ml.m5.2xlarge",
+            "ml.m5.4xlarge",
+            "ml.m5.xlarge",
+            "ml.p2.16xlarge",
+            "ml.p2.8xlarge",
+            "ml.p2.xlarge",
+            "ml.p3.16xlarge",
+            "ml.p3.2xlarge",
+            "ml.p3.8xlarge",
+            "ml.t2.2xlarge",
+            "ml.t2.large",
+            "ml.t2.medium",
+            "ml.t2.xlarge",
+            "ml.t3.2xlarge",
+            "ml.t3.large",
+            "ml.t3.medium",
+            "ml.t3.xlarge",
+        ]
     }
 }
 impl AsRef<str> for InstanceType {
@@ -3008,6 +3171,14 @@ impl MonitoringType {
             MonitoringType::ModelQuality => "ModelQuality",
             MonitoringType::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "DataQuality",
+            "ModelBias",
+            "ModelExplainability",
+            "ModelQuality",
+        ]
     }
 }
 impl AsRef<str> for MonitoringType {
@@ -3669,7 +3840,7 @@ pub struct MonitoringClusterConfig {
     /// <p>The size of the ML storage volume, in gigabytes, that you want to provision. You must
     /// specify sufficient ML storage for your scenario.</p>
     pub volume_size_in_gb: std::option::Option<i32>,
-    /// <p>The AWS Key Management Service (AWS KMS) key that Amazon SageMaker uses to encrypt data
+    /// <p>The Amazon Web Services Key Management Service (Amazon Web Services KMS) key that Amazon SageMaker uses to encrypt data
     /// on the storage volume attached to the ML compute instance(s) that run the model monitoring
     /// job.</p>
     pub volume_kms_key_id: std::option::Option<std::string::String>,
@@ -3728,7 +3899,7 @@ pub mod monitoring_cluster_config {
             self.volume_size_in_gb = input;
             self
         }
-        /// <p>The AWS Key Management Service (AWS KMS) key that Amazon SageMaker uses to encrypt data
+        /// <p>The Amazon Web Services Key Management Service (Amazon Web Services KMS) key that Amazon SageMaker uses to encrypt data
         /// on the storage volume attached to the ML compute instance(s) that run the model monitoring
         /// job.</p>
         pub fn volume_kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3767,7 +3938,7 @@ pub struct MonitoringOutputConfig {
     /// <p>Monitoring outputs for monitoring jobs. This is where the output of the periodic
     /// monitoring jobs is uploaded.</p>
     pub monitoring_outputs: std::option::Option<std::vec::Vec<crate::model::MonitoringOutput>>,
-    /// <p>The AWS Key Management Service (AWS KMS) key that Amazon SageMaker uses to encrypt the model
+    /// <p>The Amazon Web Services Key Management Service (Amazon Web Services KMS) key that Amazon SageMaker uses to encrypt the model
     /// artifacts at rest using Amazon S3 server-side encryption.</p>
     pub kms_key_id: std::option::Option<std::string::String>,
 }
@@ -3806,7 +3977,7 @@ pub mod monitoring_output_config {
             self.monitoring_outputs = input;
             self
         }
-        /// <p>The AWS Key Management Service (AWS KMS) key that Amazon SageMaker uses to encrypt the model
+        /// <p>The Amazon Web Services Key Management Service (Amazon Web Services KMS) key that Amazon SageMaker uses to encrypt the model
         /// artifacts at rest using Amazon S3 server-side encryption.</p>
         pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_key_id = Some(input.into());
@@ -4006,6 +4177,9 @@ impl ProcessingS3UploadMode {
             ProcessingS3UploadMode::EndOfJob => "EndOfJob",
             ProcessingS3UploadMode::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["Continuous", "EndOfJob"]
     }
 }
 impl AsRef<str> for ProcessingS3UploadMode {
@@ -4332,6 +4506,9 @@ impl ProcessingS3DataDistributionType {
             ProcessingS3DataDistributionType::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["FullyReplicated", "ShardedByS3Key"]
+    }
 }
 impl AsRef<str> for ProcessingS3DataDistributionType {
     fn as_ref(&self) -> &str {
@@ -4378,6 +4555,9 @@ impl ProcessingS3InputMode {
             ProcessingS3InputMode::Pipe => "Pipe",
             ProcessingS3InputMode::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["File", "Pipe"]
     }
 }
 impl AsRef<str> for ProcessingS3InputMode {
@@ -4778,6 +4958,9 @@ impl ModelApprovalStatus {
             ModelApprovalStatus::Rejected => "Rejected",
             ModelApprovalStatus::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["Approved", "PendingManualApproval", "Rejected"]
     }
 }
 impl AsRef<str> for ModelApprovalStatus {
@@ -5320,6 +5503,9 @@ impl CapacitySizeType {
             CapacitySizeType::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["CAPACITY_PERCENT", "INSTANCE_COUNT"]
+    }
 }
 impl AsRef<str> for CapacitySizeType {
     fn as_ref(&self) -> &str {
@@ -5366,6 +5552,9 @@ impl TrafficRoutingConfigType {
             TrafficRoutingConfigType::Canary => "CANARY",
             TrafficRoutingConfigType::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["ALL_AT_ONCE", "CANARY"]
     }
 }
 impl AsRef<str> for TrafficRoutingConfigType {
@@ -5504,6 +5693,9 @@ impl VariantPropertyType {
             VariantPropertyType::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["DataCaptureConfig", "DesiredInstanceCount", "DesiredWeight"]
+    }
 }
 impl AsRef<str> for VariantPropertyType {
     fn as_ref(&self) -> &str {
@@ -5519,7 +5711,7 @@ pub struct Device {
     pub device_name: std::option::Option<std::string::String>,
     /// <p>Description of the device.</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>AWS Internet of Things (IoT) object name.</p>
+    /// <p>Amazon Web Services Internet of Things (IoT) object name.</p>
     pub iot_thing_name: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for Device {
@@ -5560,7 +5752,7 @@ pub mod device {
             self.description = input;
             self
         }
-        /// <p>AWS Internet of Things (IoT) object name.</p>
+        /// <p>Amazon Web Services Internet of Things (IoT) object name.</p>
         pub fn iot_thing_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.iot_thing_name = Some(input.into());
             self
@@ -5595,10 +5787,11 @@ impl Device {
 pub struct EdgeOutputConfig {
     /// <p>The Amazon Simple Storage (S3) bucker URI.</p>
     pub s3_output_location: std::option::Option<std::string::String>,
-    /// <p>The AWS Key Management Service (AWS KMS) key that Amazon SageMaker uses to encrypt data on the storage volume after compilation job. If you don't provide a KMS key ID, Amazon SageMaker uses the default KMS key for Amazon S3 for your role's account.</p>
+    /// <p>The Amazon Web Services Key Management Service (Amazon Web Services KMS) key that Amazon SageMaker uses to encrypt data on the storage volume after compilation job.
+    /// If you don't provide a KMS key ID, Amazon SageMaker uses the default KMS key for Amazon S3 for your role's account.</p>
     pub kms_key_id: std::option::Option<std::string::String>,
     /// <p>The deployment type SageMaker Edge Manager will create.
-    /// Currently only supports AWS IoT Greengrass Version 2 components.</p>
+    /// Currently only supports Amazon Web Services IoT Greengrass Version 2 components.</p>
     pub preset_deployment_type: std::option::Option<crate::model::EdgePresetDeploymentType>,
     /// <p>The configuration used to create deployment artifacts.
     /// Specify configuration options with a JSON string. The available configuration options for each type are:</p>
@@ -5617,7 +5810,7 @@ pub struct EdgeOutputConfig {
     /// <p>
     /// <code>ComponentVersion</code> (optional) - The version of the component.</p>
     /// <note>
-    /// <p>AWS IoT Greengrass uses semantic versions for components. Semantic versions follow a<i>
+    /// <p>Amazon Web Services IoT Greengrass uses semantic versions for components. Semantic versions follow a<i>
     /// major.minor.patch</i> number system. For example, version 1.0.0 represents the first
     /// major release for a component. For more information, see the <a href="https://semver.org/">semantic version specification</a>.</p>
     /// </note>
@@ -5671,7 +5864,8 @@ pub mod edge_output_config {
             self.s3_output_location = input;
             self
         }
-        /// <p>The AWS Key Management Service (AWS KMS) key that Amazon SageMaker uses to encrypt data on the storage volume after compilation job. If you don't provide a KMS key ID, Amazon SageMaker uses the default KMS key for Amazon S3 for your role's account.</p>
+        /// <p>The Amazon Web Services Key Management Service (Amazon Web Services KMS) key that Amazon SageMaker uses to encrypt data on the storage volume after compilation job.
+        /// If you don't provide a KMS key ID, Amazon SageMaker uses the default KMS key for Amazon S3 for your role's account.</p>
         pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_key_id = Some(input.into());
             self
@@ -5681,7 +5875,7 @@ pub mod edge_output_config {
             self
         }
         /// <p>The deployment type SageMaker Edge Manager will create.
-        /// Currently only supports AWS IoT Greengrass Version 2 components.</p>
+        /// Currently only supports Amazon Web Services IoT Greengrass Version 2 components.</p>
         pub fn preset_deployment_type(
             mut self,
             input: crate::model::EdgePresetDeploymentType,
@@ -5713,7 +5907,7 @@ pub mod edge_output_config {
         /// <p>
         /// <code>ComponentVersion</code> (optional) - The version of the component.</p>
         /// <note>
-        /// <p>AWS IoT Greengrass uses semantic versions for components. Semantic versions follow a<i>
+        /// <p>Amazon Web Services IoT Greengrass uses semantic versions for components. Semantic versions follow a<i>
         /// major.minor.patch</i> number system. For example, version 1.0.0 represents the first
         /// major release for a component. For more information, see the <a href="https://semver.org/">semantic version specification</a>.</p>
         /// </note>
@@ -5796,6 +5990,9 @@ impl EdgePresetDeploymentType {
             EdgePresetDeploymentType::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["GreengrassV2Component"]
+    }
 }
 impl AsRef<str> for EdgePresetDeploymentType {
     fn as_ref(&self) -> &str {
@@ -5808,7 +6005,7 @@ impl AsRef<str> for EdgePresetDeploymentType {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GitConfigForUpdate {
-    /// <p>The Amazon Resource Name (ARN) of the AWS Secrets Manager secret that contains the
+    /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services Secrets Manager secret that contains the
     /// credentials used to access the git repository. The secret must have a staging label of
     /// <code>AWSCURRENT</code> and must be in the following format:</p>
     /// <p>
@@ -5833,7 +6030,7 @@ pub mod git_config_for_update {
         pub(crate) secret_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the AWS Secrets Manager secret that contains the
+        /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services Secrets Manager secret that contains the
         /// credentials used to access the git repository. The secret must have a staging label of
         /// <code>AWSCURRENT</code> and must be in the following format:</p>
         /// <p>
@@ -6123,6 +6320,16 @@ impl ActionStatus {
             ActionStatus::UnknownValue => "Unknown",
             ActionStatus::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "Completed",
+            "Failed",
+            "InProgress",
+            "Stopped",
+            "Stopping",
+            "Unknown",
+        ]
     }
 }
 impl AsRef<str> for ActionStatus {
@@ -6487,7 +6694,7 @@ pub struct FeatureGroup {
     pub feature_definitions: std::option::Option<std::vec::Vec<crate::model::FeatureDefinition>>,
     /// <p>The time a <code>FeatureGroup</code> was created.</p>
     pub creation_time: std::option::Option<smithy_types::Instant>,
-    /// <p>Use this to specify the AWS Key Management Service (KMS) Key ID, or
+    /// <p>Use this to specify the Amazon Web Services Key Management Service (KMS) Key ID, or
     /// <code>KMSKeyId</code>, for at rest data encryption. You can turn
     /// <code>OnlineStore</code> on or off by specifying the <code>EnableOnlineStore</code> flag
     /// at General Assembly; the default value is <code>False</code>.</p>
@@ -6495,7 +6702,7 @@ pub struct FeatureGroup {
     /// <p>The configuration of an <code>OfflineStore</code>.</p>
     /// <p>Provide an <code>OfflineStoreConfig</code> in a request to
     /// <code>CreateFeatureGroup</code> to create an <code>OfflineStore</code>.</p>
-    /// <p>To encrypt an <code>OfflineStore</code> using at rest data encryption, specify AWS Key
+    /// <p>To encrypt an <code>OfflineStore</code> using at rest data encryption, specify Amazon Web Services Key
     /// Management Service (KMS) key ID, or <code>KMSKeyId</code>, in
     /// <code>S3StorageConfig</code>.</p>
     pub offline_store_config: std::option::Option<crate::model::OfflineStoreConfig>,
@@ -6648,7 +6855,7 @@ pub mod feature_group {
             self.creation_time = input;
             self
         }
-        /// <p>Use this to specify the AWS Key Management Service (KMS) Key ID, or
+        /// <p>Use this to specify the Amazon Web Services Key Management Service (KMS) Key ID, or
         /// <code>KMSKeyId</code>, for at rest data encryption. You can turn
         /// <code>OnlineStore</code> on or off by specifying the <code>EnableOnlineStore</code> flag
         /// at General Assembly; the default value is <code>False</code>.</p>
@@ -6666,7 +6873,7 @@ pub mod feature_group {
         /// <p>The configuration of an <code>OfflineStore</code>.</p>
         /// <p>Provide an <code>OfflineStoreConfig</code> in a request to
         /// <code>CreateFeatureGroup</code> to create an <code>OfflineStore</code>.</p>
-        /// <p>To encrypt an <code>OfflineStore</code> using at rest data encryption, specify AWS Key
+        /// <p>To encrypt an <code>OfflineStore</code> using at rest data encryption, specify Amazon Web Services Key
         /// Management Service (KMS) key ID, or <code>KMSKeyId</code>, in
         /// <code>S3StorageConfig</code>.</p>
         pub fn offline_store_config(mut self, input: crate::model::OfflineStoreConfig) -> Self {
@@ -6780,15 +6987,15 @@ impl FeatureGroup {
 }
 
 /// <p>A tag object that consists of a key and an optional value, used to manage metadata
-/// for Amazon SageMaker AWS resources.</p>
+/// for Amazon SageMaker Amazon Web Services resources.</p>
 /// <p>You can add tags to notebook instances, training jobs, hyperparameter tuning jobs,
 /// batch transform jobs, models, labeling jobs, work teams, endpoint configurations, and
 /// endpoints. For more information on adding tags to Amazon SageMaker resources, see <a>AddTags</a>.</p>
-/// <p>For more information on adding metadata to your AWS resources with tagging, see
-/// <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS
-/// resources</a>. For advice on best practices for managing AWS resources with
+/// <p>For more information on adding metadata to your Amazon Web Services resources with tagging, see
+/// <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services
+/// resources</a>. For advice on best practices for managing Amazon Web Services resources with
 /// tagging, see <a href="https://d1.awsstatic.com/whitepapers/aws-tagging-best-practices.pdf">Tagging
-/// Best Practices: Implement an Effective AWS Resource Tagging Strategy</a>.</p>
+/// Best Practices: Implement an Effective Amazon Web Services Resource Tagging Strategy</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Tag {
@@ -6959,6 +7166,9 @@ impl OfflineStoreStatusValue {
             OfflineStoreStatusValue::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["Active", "Blocked", "Disabled"]
+    }
 }
 impl AsRef<str> for OfflineStoreStatusValue {
     fn as_ref(&self) -> &str {
@@ -7015,6 +7225,15 @@ impl FeatureGroupStatus {
             FeatureGroupStatus::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "CreateFailed",
+            "Created",
+            "Creating",
+            "DeleteFailed",
+            "Deleting",
+        ]
+    }
 }
 impl AsRef<str> for FeatureGroupStatus {
     fn as_ref(&self) -> &str {
@@ -7025,7 +7244,7 @@ impl AsRef<str> for FeatureGroupStatus {
 /// <p>The configuration of an <code>OfflineStore</code>.</p>
 /// <p>Provide an <code>OfflineStoreConfig</code> in a request to
 /// <code>CreateFeatureGroup</code> to create an <code>OfflineStore</code>.</p>
-/// <p>To encrypt an <code>OfflineStore</code> using at rest data encryption, specify AWS Key
+/// <p>To encrypt an <code>OfflineStore</code> using at rest data encryption, specify Amazon Web Services Key
 /// Management Service (KMS) key ID, or <code>KMSKeyId</code>, in
 /// <code>S3StorageConfig</code>.</p>
 #[non_exhaustive]
@@ -7033,7 +7252,7 @@ impl AsRef<str> for FeatureGroupStatus {
 pub struct OfflineStoreConfig {
     /// <p>The Amazon Simple Storage (Amazon S3) location of <code>OfflineStore</code>.</p>
     pub s3_storage_config: std::option::Option<crate::model::S3StorageConfig>,
-    /// <p>Set to <code>True</code> to disable the automatic creation of an AWS Glue table when
+    /// <p>Set to <code>True</code> to disable the automatic creation of an Amazon Web Services Glue table when
     /// configuring an <code>OfflineStore</code>.</p>
     pub disable_glue_table_creation: bool,
     /// <p>The meta data of the Glue table that is autogenerated when an <code>OfflineStore</code>
@@ -7075,7 +7294,7 @@ pub mod offline_store_config {
             self.s3_storage_config = input;
             self
         }
-        /// <p>Set to <code>True</code> to disable the automatic creation of an AWS Glue table when
+        /// <p>Set to <code>True</code> to disable the automatic creation of an Amazon Web Services Glue table when
         /// configuring an <code>OfflineStore</code>.</p>
         pub fn disable_glue_table_creation(mut self, input: bool) -> Self {
             self.disable_glue_table_creation = Some(input);
@@ -7198,7 +7417,7 @@ pub struct S3StorageConfig {
     /// <p>The S3 URI, or location in Amazon S3, of <code>OfflineStore</code>.</p>
     /// <p>S3 URIs have a format similar to the following: <code>s3://example-bucket/prefix/</code>.</p>
     pub s3_uri: std::option::Option<std::string::String>,
-    /// <p>The AWS Key Management Service (KMS) key ID of the key used to encrypt any objects
+    /// <p>The Amazon Web Services Key Management Service (KMS) key ID of the key used to encrypt any objects
     /// written into the <code>OfflineStore</code> S3 location.</p>
     /// <p>The IAM <code>roleARN</code> that is passed as a parameter to
     /// <code>CreateFeatureGroup</code> must have below permissions to the
@@ -7244,7 +7463,7 @@ pub mod s3_storage_config {
             self.s3_uri = input;
             self
         }
-        /// <p>The AWS Key Management Service (KMS) key ID of the key used to encrypt any objects
+        /// <p>The Amazon Web Services Key Management Service (KMS) key ID of the key used to encrypt any objects
         /// written into the <code>OfflineStore</code> S3 location.</p>
         /// <p>The IAM <code>roleARN</code> that is passed as a parameter to
         /// <code>CreateFeatureGroup</code> must have below permissions to the
@@ -7293,7 +7512,7 @@ impl S3StorageConfig {
     }
 }
 
-/// <p>Use this to specify the AWS Key Management Service (KMS) Key ID, or
+/// <p>Use this to specify the Amazon Web Services Key Management Service (KMS) Key ID, or
 /// <code>KMSKeyId</code>, for at rest data encryption. You can turn
 /// <code>OnlineStore</code> on or off by specifying the <code>EnableOnlineStore</code> flag
 /// at General Assembly; the default value is <code>False</code>.</p>
@@ -7374,7 +7593,7 @@ impl OnlineStoreConfig {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OnlineStoreSecurityConfig {
-    /// <p>The ID of the AWS Key Management Service (AWS KMS) key that SageMaker Feature Store uses
+    /// <p>The ID of the Amazon Web Services Key Management Service (Amazon Web Services KMS) key that SageMaker Feature Store uses
     /// to encrypt the Amazon S3 objects at rest using Amazon S3 server-side encryption.</p>
     /// <p>The caller (either IAM user or IAM role) of <code>CreateFeatureGroup</code> must have
     /// below permissions to the <code>OnlineStore</code>
@@ -7464,7 +7683,7 @@ pub mod online_store_security_config {
         pub(crate) kms_key_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The ID of the AWS Key Management Service (AWS KMS) key that SageMaker Feature Store uses
+        /// <p>The ID of the Amazon Web Services Key Management Service (Amazon Web Services KMS) key that SageMaker Feature Store uses
         /// to encrypt the Amazon S3 objects at rest using Amazon S3 server-side encryption.</p>
         /// <p>The caller (either IAM user or IAM role) of <code>CreateFeatureGroup</code> must have
         /// below permissions to the <code>OnlineStore</code>
@@ -7671,6 +7890,9 @@ impl FeatureType {
             FeatureType::String => "String",
             FeatureType::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["Fractional", "Integral", "String"]
     }
 }
 impl AsRef<str> for FeatureType {
@@ -8136,6 +8358,9 @@ impl PipelineExecutionStatus {
             PipelineExecutionStatus::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["Executing", "Failed", "Stopped", "Stopping", "Succeeded"]
+    }
 }
 impl AsRef<str> for PipelineExecutionStatus {
     fn as_ref(&self) -> &str {
@@ -8416,6 +8641,9 @@ impl PipelineStatus {
             PipelineStatus::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["Active"]
+    }
 }
 impl AsRef<str> for PipelineStatus {
     fn as_ref(&self) -> &str {
@@ -8467,8 +8695,8 @@ pub struct ModelPackageGroup {
     /// </li>
     /// </ul>
     pub model_package_group_status: std::option::Option<crate::model::ModelPackageGroupStatus>,
-    /// <p>A list of the tags associated with the model group. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS
-    /// resources</a> in the <i>AWS General Reference Guide</i>.</p>
+    /// <p>A list of the tags associated with the model group. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services
+    /// resources</a> in the <i>Amazon Web Services General Reference Guide</i>.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl std::fmt::Debug for ModelPackageGroup {
@@ -8698,6 +8926,16 @@ impl ModelPackageGroupStatus {
             ModelPackageGroupStatus::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "Completed",
+            "DeleteFailed",
+            "Deleting",
+            "Failed",
+            "InProgress",
+            "Pending",
+        ]
+    }
 }
 impl AsRef<str> for ModelPackageGroupStatus {
     fn as_ref(&self) -> &str {
@@ -8756,9 +8994,9 @@ pub struct ModelPackage {
     pub model_package_status: std::option::Option<crate::model::ModelPackageStatus>,
     /// <p>Specifies the validation and image scan statuses of the model package.</p>
     pub model_package_status_details: std::option::Option<crate::model::ModelPackageStatusDetails>,
-    /// <p>Whether the model package is to be certified to be listed on AWS Marketplace. For
-    /// information about listing model packages on AWS Marketplace, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-mkt-list.html">List Your
-    /// Algorithm or Model Package on AWS Marketplace</a>.</p>
+    /// <p>Whether the model package is to be certified to be listed on Amazon Web Services Marketplace. For
+    /// information about listing model packages on Amazon Web Services Marketplace, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-mkt-list.html">List Your
+    /// Algorithm or Model Package on Amazon Web Services Marketplace</a>.</p>
     pub certify_for_marketplace: bool,
     /// <p>The approval status of the model. This can be one of the following values.</p>
     /// <ul>
@@ -8791,8 +9029,8 @@ pub struct ModelPackage {
     pub last_modified_by: std::option::Option<crate::model::UserContext>,
     /// <p>A description provided when the model approval is set.</p>
     pub approval_description: std::option::Option<std::string::String>,
-    /// <p>A list of the tags associated with the model package. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS
-    /// resources</a> in the <i>AWS General Reference Guide</i>.</p>
+    /// <p>A list of the tags associated with the model package. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services
+    /// resources</a> in the <i>Amazon Web Services General Reference Guide</i>.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl std::fmt::Debug for ModelPackage {
@@ -9023,9 +9261,9 @@ pub mod model_package {
             self.model_package_status_details = input;
             self
         }
-        /// <p>Whether the model package is to be certified to be listed on AWS Marketplace. For
-        /// information about listing model packages on AWS Marketplace, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-mkt-list.html">List Your
-        /// Algorithm or Model Package on AWS Marketplace</a>.</p>
+        /// <p>Whether the model package is to be certified to be listed on Amazon Web Services Marketplace. For
+        /// information about listing model packages on Amazon Web Services Marketplace, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-mkt-list.html">List Your
+        /// Algorithm or Model Package on Amazon Web Services Marketplace</a>.</p>
         pub fn certify_for_marketplace(mut self, input: bool) -> Self {
             self.certify_for_marketplace = Some(input);
             self
@@ -9887,6 +10125,9 @@ impl DetailedModelPackageStatus {
             DetailedModelPackageStatus::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["Completed", "Failed", "InProgress", "NotStarted"]
+    }
 }
 impl AsRef<str> for DetailedModelPackageStatus {
     fn as_ref(&self) -> &str {
@@ -9942,6 +10183,9 @@ impl ModelPackageStatus {
             ModelPackageStatus::Pending => "Pending",
             ModelPackageStatus::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["Completed", "Deleting", "Failed", "InProgress", "Pending"]
     }
 }
 impl AsRef<str> for ModelPackageStatus {
@@ -10026,7 +10270,7 @@ impl ModelPackageValidationSpecification {
 
 /// <p>Contains data, such as the inputs and targeted instance types that are used in the
 /// process of validating the model package.</p>
-/// <p>The data provided in the validation profile is made available to your buyers on AWS
+/// <p>The data provided in the validation profile is made available to your buyers on Amazon Web Services
 /// Marketplace.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -10278,8 +10522,7 @@ pub struct TransformResources {
     /// algorithms to
     /// transform
     /// moderately sized datasets, we recommend using ml.m4.xlarge or
-    /// <code>ml.m5.large</code>
-    /// instance types.</p>
+    /// <code>ml.m5.large</code>instance types.</p>
     pub instance_type: std::option::Option<crate::model::TransformInstanceType>,
     /// <p>The number of
     /// ML
@@ -10287,9 +10530,19 @@ pub struct TransformResources {
     /// transform jobs, specify a value greater than 1. The default value is
     /// <code>1</code>.</p>
     pub instance_count: std::option::Option<i32>,
-    /// <p>The AWS Key Management Service (AWS KMS) key that Amazon SageMaker uses to encrypt model data on the storage volume
-    /// attached to the ML compute instance(s) that run the batch transform job. The
-    /// <code>VolumeKmsKeyId</code> can be any of the following formats:</p>
+    /// <p>The Amazon Web Services Key Management Service (Amazon Web Services KMS) key that Amazon SageMaker uses to encrypt model data on the storage volume
+    /// attached to the ML compute instance(s) that run the batch transform job.</p>
+    /// <note>
+    /// <p>Certain Nitro-based instances include local storage, dependent on the instance
+    /// type. Local storage volumes are encrypted using a hardware module on the instance.
+    /// You can't request a <code>VolumeKmsKeyId</code> when using an instance type with
+    /// local storage.</p>
+    /// <p>For a list of instance types that support local instance storage, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/InstanceStorage.html#instance-store-volumes">Instance Store Volumes</a>.</p>
+    /// <p>For more information about local instance storage encryption, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ssd-instance-store.html">SSD
+    /// Instance Store Volumes</a>.</p>
+    /// </note>
+    /// <p>
+    /// The <code>VolumeKmsKeyId</code> can be any of the following formats:</p>
     /// <ul>
     /// <li>
     /// <p>Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>
@@ -10336,8 +10589,7 @@ pub mod transform_resources {
         /// algorithms to
         /// transform
         /// moderately sized datasets, we recommend using ml.m4.xlarge or
-        /// <code>ml.m5.large</code>
-        /// instance types.</p>
+        /// <code>ml.m5.large</code>instance types.</p>
         pub fn instance_type(mut self, input: crate::model::TransformInstanceType) -> Self {
             self.instance_type = Some(input);
             self
@@ -10362,9 +10614,19 @@ pub mod transform_resources {
             self.instance_count = input;
             self
         }
-        /// <p>The AWS Key Management Service (AWS KMS) key that Amazon SageMaker uses to encrypt model data on the storage volume
-        /// attached to the ML compute instance(s) that run the batch transform job. The
-        /// <code>VolumeKmsKeyId</code> can be any of the following formats:</p>
+        /// <p>The Amazon Web Services Key Management Service (Amazon Web Services KMS) key that Amazon SageMaker uses to encrypt model data on the storage volume
+        /// attached to the ML compute instance(s) that run the batch transform job.</p>
+        /// <note>
+        /// <p>Certain Nitro-based instances include local storage, dependent on the instance
+        /// type. Local storage volumes are encrypted using a hardware module on the instance.
+        /// You can't request a <code>VolumeKmsKeyId</code> when using an instance type with
+        /// local storage.</p>
+        /// <p>For a list of instance types that support local instance storage, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/InstanceStorage.html#instance-store-volumes">Instance Store Volumes</a>.</p>
+        /// <p>For more information about local instance storage encryption, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ssd-instance-store.html">SSD
+        /// Instance Store Volumes</a>.</p>
+        /// </note>
+        /// <p>
+        /// The <code>VolumeKmsKeyId</code> can be any of the following formats:</p>
         /// <ul>
         /// <li>
         /// <p>Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>
@@ -10433,6 +10695,12 @@ pub enum TransformInstanceType {
     MlC54Xlarge,
     MlC59Xlarge,
     MlC5Xlarge,
+    MlG4Dn12Xlarge,
+    MlG4Dn16Xlarge,
+    MlG4Dn2Xlarge,
+    MlG4Dn4Xlarge,
+    MlG4Dn8Xlarge,
+    MlG4DnXlarge,
     MlM410Xlarge,
     MlM416Xlarge,
     MlM42Xlarge,
@@ -10465,6 +10733,12 @@ impl std::convert::From<&str> for TransformInstanceType {
             "ml.c5.4xlarge" => TransformInstanceType::MlC54Xlarge,
             "ml.c5.9xlarge" => TransformInstanceType::MlC59Xlarge,
             "ml.c5.xlarge" => TransformInstanceType::MlC5Xlarge,
+            "ml.g4dn.12xlarge" => TransformInstanceType::MlG4Dn12Xlarge,
+            "ml.g4dn.16xlarge" => TransformInstanceType::MlG4Dn16Xlarge,
+            "ml.g4dn.2xlarge" => TransformInstanceType::MlG4Dn2Xlarge,
+            "ml.g4dn.4xlarge" => TransformInstanceType::MlG4Dn4Xlarge,
+            "ml.g4dn.8xlarge" => TransformInstanceType::MlG4Dn8Xlarge,
+            "ml.g4dn.xlarge" => TransformInstanceType::MlG4DnXlarge,
             "ml.m4.10xlarge" => TransformInstanceType::MlM410Xlarge,
             "ml.m4.16xlarge" => TransformInstanceType::MlM416Xlarge,
             "ml.m4.2xlarge" => TransformInstanceType::MlM42Xlarge,
@@ -10505,6 +10779,12 @@ impl TransformInstanceType {
             TransformInstanceType::MlC54Xlarge => "ml.c5.4xlarge",
             TransformInstanceType::MlC59Xlarge => "ml.c5.9xlarge",
             TransformInstanceType::MlC5Xlarge => "ml.c5.xlarge",
+            TransformInstanceType::MlG4Dn12Xlarge => "ml.g4dn.12xlarge",
+            TransformInstanceType::MlG4Dn16Xlarge => "ml.g4dn.16xlarge",
+            TransformInstanceType::MlG4Dn2Xlarge => "ml.g4dn.2xlarge",
+            TransformInstanceType::MlG4Dn4Xlarge => "ml.g4dn.4xlarge",
+            TransformInstanceType::MlG4Dn8Xlarge => "ml.g4dn.8xlarge",
+            TransformInstanceType::MlG4DnXlarge => "ml.g4dn.xlarge",
             TransformInstanceType::MlM410Xlarge => "ml.m4.10xlarge",
             TransformInstanceType::MlM416Xlarge => "ml.m4.16xlarge",
             TransformInstanceType::MlM42Xlarge => "ml.m4.2xlarge",
@@ -10524,6 +10804,42 @@ impl TransformInstanceType {
             TransformInstanceType::MlP38Xlarge => "ml.p3.8xlarge",
             TransformInstanceType::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "ml.c4.2xlarge",
+            "ml.c4.4xlarge",
+            "ml.c4.8xlarge",
+            "ml.c4.xlarge",
+            "ml.c5.18xlarge",
+            "ml.c5.2xlarge",
+            "ml.c5.4xlarge",
+            "ml.c5.9xlarge",
+            "ml.c5.xlarge",
+            "ml.g4dn.12xlarge",
+            "ml.g4dn.16xlarge",
+            "ml.g4dn.2xlarge",
+            "ml.g4dn.4xlarge",
+            "ml.g4dn.8xlarge",
+            "ml.g4dn.xlarge",
+            "ml.m4.10xlarge",
+            "ml.m4.16xlarge",
+            "ml.m4.2xlarge",
+            "ml.m4.4xlarge",
+            "ml.m4.xlarge",
+            "ml.m5.12xlarge",
+            "ml.m5.24xlarge",
+            "ml.m5.2xlarge",
+            "ml.m5.4xlarge",
+            "ml.m5.large",
+            "ml.m5.xlarge",
+            "ml.p2.16xlarge",
+            "ml.p2.8xlarge",
+            "ml.p2.xlarge",
+            "ml.p3.16xlarge",
+            "ml.p3.2xlarge",
+            "ml.p3.8xlarge",
+        ]
     }
 }
 impl AsRef<str> for TransformInstanceType {
@@ -10560,7 +10876,7 @@ pub struct TransformOutput {
     /// record, specify
     /// <code>Line</code>.</p>
     pub assemble_with: std::option::Option<crate::model::AssemblyType>,
-    /// <p>The AWS Key Management Service (AWS KMS) key that Amazon SageMaker uses to encrypt the model artifacts at rest using
+    /// <p>The Amazon Web Services Key Management Service (Amazon Web Services KMS) key that Amazon SageMaker uses to encrypt the model artifacts at rest using
     /// Amazon S3 server-side encryption. The <code>KmsKeyId</code> can be any of the following
     /// formats: </p>
     /// <ul>
@@ -10590,7 +10906,7 @@ pub struct TransformOutput {
     /// </p>
     /// <p>The KMS key policy must grant permission to the IAM role that you specify in your
     /// <a>CreateModel</a> request. For more information, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Using
-    /// Key Policies in AWS KMS</a> in the <i>AWS Key Management Service Developer
+    /// Key Policies in Amazon Web Services KMS</a> in the <i>Amazon Web Services Key Management Service Developer
     /// Guide</i>.</p>
     pub kms_key_id: std::option::Option<std::string::String>,
 }
@@ -10667,7 +10983,7 @@ pub mod transform_output {
             self.assemble_with = input;
             self
         }
-        /// <p>The AWS Key Management Service (AWS KMS) key that Amazon SageMaker uses to encrypt the model artifacts at rest using
+        /// <p>The Amazon Web Services Key Management Service (Amazon Web Services KMS) key that Amazon SageMaker uses to encrypt the model artifacts at rest using
         /// Amazon S3 server-side encryption. The <code>KmsKeyId</code> can be any of the following
         /// formats: </p>
         /// <ul>
@@ -10697,7 +11013,7 @@ pub mod transform_output {
         /// </p>
         /// <p>The KMS key policy must grant permission to the IAM role that you specify in your
         /// <a>CreateModel</a> request. For more information, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Using
-        /// Key Policies in AWS KMS</a> in the <i>AWS Key Management Service Developer
+        /// Key Policies in Amazon Web Services KMS</a> in the <i>Amazon Web Services Key Management Service Developer
         /// Guide</i>.</p>
         pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_key_id = Some(input.into());
@@ -10764,6 +11080,9 @@ impl AssemblyType {
             AssemblyType::None => "None",
             AssemblyType::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["Line", "None"]
     }
 }
 impl AsRef<str> for AssemblyType {
@@ -11001,6 +11320,9 @@ impl SplitType {
             SplitType::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["Line", "None", "RecordIO", "TFRecord"]
+    }
 }
 impl AsRef<str> for SplitType {
     fn as_ref(&self) -> &str {
@@ -11047,6 +11369,9 @@ impl CompressionType {
             CompressionType::None => "None",
             CompressionType::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["Gzip", "None"]
     }
 }
 impl AsRef<str> for CompressionType {
@@ -11326,6 +11651,9 @@ impl S3DataType {
             S3DataType::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["AugmentedManifestFile", "ManifestFile", "S3Prefix"]
+    }
 }
 impl AsRef<str> for S3DataType {
     fn as_ref(&self) -> &str {
@@ -11372,6 +11700,9 @@ impl BatchStrategy {
             BatchStrategy::SingleRecord => "SingleRecord",
             BatchStrategy::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["MultiRecord", "SingleRecord"]
     }
 }
 impl AsRef<str> for BatchStrategy {
@@ -11436,7 +11767,7 @@ impl SourceAlgorithmSpecification {
 }
 
 /// <p>Specifies an algorithm that was used to create the model package. The algorithm must
-/// be either an algorithm resource in your Amazon SageMaker account or an algorithm in AWS Marketplace that you
+/// be either an algorithm resource in your Amazon SageMaker account or an algorithm in Amazon Web Services Marketplace that you
 /// are subscribed to.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -11450,7 +11781,7 @@ pub struct SourceAlgorithm {
     /// </note>
     pub model_data_url: std::option::Option<std::string::String>,
     /// <p>The name of an algorithm that was used to create the model package. The algorithm must
-    /// be either an algorithm resource in your Amazon SageMaker account or an algorithm in AWS Marketplace that you
+    /// be either an algorithm resource in your Amazon SageMaker account or an algorithm in Amazon Web Services Marketplace that you
     /// are subscribed to.</p>
     pub algorithm_name: std::option::Option<std::string::String>,
 }
@@ -11491,7 +11822,7 @@ pub mod source_algorithm {
             self
         }
         /// <p>The name of an algorithm that was used to create the model package. The algorithm must
-        /// be either an algorithm resource in your Amazon SageMaker account or an algorithm in AWS Marketplace that you
+        /// be either an algorithm resource in your Amazon SageMaker account or an algorithm in Amazon Web Services Marketplace that you
         /// are subscribed to.</p>
         pub fn algorithm_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.algorithm_name = Some(input.into());
@@ -11913,6 +12244,76 @@ impl ProductionVariantInstanceType {
             ProductionVariantInstanceType::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "ml.c4.2xlarge",
+            "ml.c4.4xlarge",
+            "ml.c4.8xlarge",
+            "ml.c4.large",
+            "ml.c4.xlarge",
+            "ml.c5.18xlarge",
+            "ml.c5.2xlarge",
+            "ml.c5.4xlarge",
+            "ml.c5.9xlarge",
+            "ml.c5.large",
+            "ml.c5.xlarge",
+            "ml.c5d.18xlarge",
+            "ml.c5d.2xlarge",
+            "ml.c5d.4xlarge",
+            "ml.c5d.9xlarge",
+            "ml.c5d.large",
+            "ml.c5d.xlarge",
+            "ml.g4dn.12xlarge",
+            "ml.g4dn.16xlarge",
+            "ml.g4dn.2xlarge",
+            "ml.g4dn.4xlarge",
+            "ml.g4dn.8xlarge",
+            "ml.g4dn.xlarge",
+            "ml.inf1.24xlarge",
+            "ml.inf1.2xlarge",
+            "ml.inf1.6xlarge",
+            "ml.inf1.xlarge",
+            "ml.m4.10xlarge",
+            "ml.m4.16xlarge",
+            "ml.m4.2xlarge",
+            "ml.m4.4xlarge",
+            "ml.m4.xlarge",
+            "ml.m5.12xlarge",
+            "ml.m5.24xlarge",
+            "ml.m5.2xlarge",
+            "ml.m5.4xlarge",
+            "ml.m5.large",
+            "ml.m5.xlarge",
+            "ml.m5d.12xlarge",
+            "ml.m5d.24xlarge",
+            "ml.m5d.2xlarge",
+            "ml.m5d.4xlarge",
+            "ml.m5d.large",
+            "ml.m5d.xlarge",
+            "ml.p2.16xlarge",
+            "ml.p2.8xlarge",
+            "ml.p2.xlarge",
+            "ml.p3.16xlarge",
+            "ml.p3.2xlarge",
+            "ml.p3.8xlarge",
+            "ml.r5.12xlarge",
+            "ml.r5.24xlarge",
+            "ml.r5.2xlarge",
+            "ml.r5.4xlarge",
+            "ml.r5.large",
+            "ml.r5.xlarge",
+            "ml.r5d.12xlarge",
+            "ml.r5d.24xlarge",
+            "ml.r5d.2xlarge",
+            "ml.r5d.4xlarge",
+            "ml.r5d.large",
+            "ml.r5d.xlarge",
+            "ml.t2.2xlarge",
+            "ml.t2.large",
+            "ml.t2.medium",
+            "ml.t2.xlarge",
+        ]
+    }
 }
 impl AsRef<str> for ProductionVariantInstanceType {
     fn as_ref(&self) -> &str {
@@ -11944,8 +12345,13 @@ pub struct ModelPackageContainerDefinition {
     /// model package.</p>
     /// </note>
     pub model_data_url: std::option::Option<std::string::String>,
-    /// <p>The AWS Marketplace product ID of the model package.</p>
+    /// <p>The Amazon Web Services Marketplace product ID of the model package.</p>
     pub product_id: std::option::Option<std::string::String>,
+    /// <p>The environment variables to set in the Docker container. Each key and value in the
+    /// <code>Environment</code> string to string map can have length of up to 1024. We
+    /// support up to 16 entries in the map.</p>
+    pub environment:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl std::fmt::Debug for ModelPackageContainerDefinition {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11955,6 +12361,7 @@ impl std::fmt::Debug for ModelPackageContainerDefinition {
         formatter.field("image_digest", &self.image_digest);
         formatter.field("model_data_url", &self.model_data_url);
         formatter.field("product_id", &self.product_id);
+        formatter.field("environment", &self.environment);
         formatter.finish()
     }
 }
@@ -11969,6 +12376,9 @@ pub mod model_package_container_definition {
         pub(crate) image_digest: std::option::Option<std::string::String>,
         pub(crate) model_data_url: std::option::Option<std::string::String>,
         pub(crate) product_id: std::option::Option<std::string::String>,
+        pub(crate) environment: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
     }
     impl Builder {
         /// <p>The DNS host name for the Docker container.</p>
@@ -12025,13 +12435,32 @@ pub mod model_package_container_definition {
             self.model_data_url = input;
             self
         }
-        /// <p>The AWS Marketplace product ID of the model package.</p>
+        /// <p>The Amazon Web Services Marketplace product ID of the model package.</p>
         pub fn product_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.product_id = Some(input.into());
             self
         }
         pub fn set_product_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.product_id = input;
+            self
+        }
+        pub fn environment(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
+            let mut hash_map = self.environment.unwrap_or_default();
+            hash_map.insert(k.into(), v.into());
+            self.environment = Some(hash_map);
+            self
+        }
+        pub fn set_environment(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.environment = input;
             self
         }
         /// Consumes the builder and constructs a [`ModelPackageContainerDefinition`](crate::model::ModelPackageContainerDefinition)
@@ -12042,6 +12471,7 @@ pub mod model_package_container_definition {
                 image_digest: self.image_digest,
                 model_data_url: self.model_data_url,
                 product_id: self.product_id,
+                environment: self.environment,
             }
         }
     }
@@ -12080,8 +12510,8 @@ pub struct Endpoint {
     /// <p>A list of monitoring schedules for the endpoint. For information about model
     /// monitoring, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-monitor.html">Amazon SageMaker Model Monitor</a>.</p>
     pub monitoring_schedules: std::option::Option<std::vec::Vec<crate::model::MonitoringSchedule>>,
-    /// <p>A list of the tags associated with the endpoint. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS
-    /// resources</a> in the <i>AWS General Reference Guide</i>.</p>
+    /// <p>A list of the tags associated with the endpoint. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services
+    /// resources</a> in the <i>Amazon Web Services General Reference Guide</i>.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl std::fmt::Debug for Endpoint {
@@ -12333,8 +12763,8 @@ pub struct MonitoringSchedule {
     /// <p>Summary of information about the last monitoring job to run.</p>
     pub last_monitoring_execution_summary:
         std::option::Option<crate::model::MonitoringExecutionSummary>,
-    /// <p>A list of the tags associated with the monitoring schedlue. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS
-    /// resources</a> in the <i>AWS General Reference Guide</i>.</p>
+    /// <p>A list of the tags associated with the monitoring schedlue. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services
+    /// resources</a> in the <i>Amazon Web Services General Reference Guide</i>.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl std::fmt::Debug for MonitoringSchedule {
@@ -12833,6 +13263,17 @@ impl ExecutionStatus {
             ExecutionStatus::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "Completed",
+            "CompletedWithViolations",
+            "Failed",
+            "InProgress",
+            "Pending",
+            "Stopped",
+            "Stopping",
+        ]
+    }
 }
 impl AsRef<str> for ExecutionStatus {
     fn as_ref(&self) -> &str {
@@ -12885,6 +13326,9 @@ impl ScheduleStatus {
             ScheduleStatus::Stopped => "Stopped",
             ScheduleStatus::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["Failed", "Pending", "Scheduled", "Stopped"]
     }
 }
 impl AsRef<str> for ScheduleStatus {
@@ -12950,6 +13394,18 @@ impl EndpointStatus {
             EndpointStatus::Updating => "Updating",
             EndpointStatus::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "Creating",
+            "Deleting",
+            "Failed",
+            "InService",
+            "OutOfService",
+            "RollingBack",
+            "SystemUpdating",
+            "Updating",
+        ]
     }
 }
 impl AsRef<str> for EndpointStatus {
@@ -13109,6 +13565,9 @@ impl CaptureStatus {
             CaptureStatus::Stopped => "Stopped",
             CaptureStatus::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["Started", "Stopped"]
     }
 }
 impl AsRef<str> for CaptureStatus {
@@ -14737,6 +15196,9 @@ impl JoinSource {
             JoinSource::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["Input", "None"]
+    }
 }
 impl AsRef<str> for JoinSource {
     fn as_ref(&self) -> &str {
@@ -14861,6 +15323,9 @@ impl TransformJobStatus {
             TransformJobStatus::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["Completed", "Failed", "InProgress", "Stopped", "Stopping"]
+    }
 }
 impl AsRef<str> for TransformJobStatus {
     fn as_ref(&self) -> &str {
@@ -14942,7 +15407,7 @@ pub struct ProcessingJob {
     pub auto_ml_job_arn: std::option::Option<std::string::String>,
     /// <p>The ARN of the training job associated with this processing job.</p>
     pub training_job_arn: std::option::Option<std::string::String>,
-    /// <p>An array of key-value pairs. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-whatURL">Using Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management
+    /// <p>An array of key-value pairs. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-whatURL">Using Cost Allocation Tags</a> in the <i>Amazon Web Services Billing and Cost Management
     /// User Guide</i>.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
@@ -15395,6 +15860,9 @@ impl ProcessingJobStatus {
             ProcessingJobStatus::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["Completed", "Failed", "InProgress", "Stopped", "Stopping"]
+    }
 }
 impl AsRef<str> for ProcessingJobStatus {
     fn as_ref(&self) -> &str {
@@ -15597,10 +16065,28 @@ pub struct ProcessingClusterConfig {
     pub instance_type: std::option::Option<crate::model::ProcessingInstanceType>,
     /// <p>The size of the ML storage volume in gigabytes that you want to provision. You must
     /// specify sufficient ML storage for your scenario.</p>
+    /// <note>
+    /// <p>Certain Nitro-based instances include local storage with a fixed total size,
+    /// dependent on the instance type. When using these instances for processing, Amazon SageMaker mounts
+    /// the local instance storage instead of Amazon EBS gp2 storage. You can't request a
+    /// <code>VolumeSizeInGB</code> greater than the total size of the local instance
+    /// storage.</p>
+    /// <p>For a list of instance types that support local instance storage, including the
+    /// total size per instance type, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/InstanceStorage.html#instance-store-volumes">Instance Store Volumes</a>.</p>
+    /// </note>
     pub volume_size_in_gb: std::option::Option<i32>,
-    /// <p>The AWS Key Management Service (AWS KMS) key that Amazon SageMaker uses to encrypt data on the
+    /// <p>The Amazon Web Services Key Management Service (Amazon Web Services KMS) key that Amazon SageMaker uses to encrypt data on the
     /// storage volume attached to the ML compute instance(s) that run the processing job.
     /// </p>
+    /// <note>
+    /// <p>Certain Nitro-based instances include local storage, dependent on the instance
+    /// type. Local storage volumes are encrypted using a hardware module on the instance.
+    /// You can't request a <code>VolumeKmsKeyId</code> when using an instance type with
+    /// local storage.</p>
+    /// <p>For a list of instance types that support local instance storage, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/InstanceStorage.html#instance-store-volumes">Instance Store Volumes</a>.</p>
+    /// <p>For more information about local instance storage encryption, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ssd-instance-store.html">SSD
+    /// Instance Store Volumes</a>.</p>
+    /// </note>
     pub volume_kms_key_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ProcessingClusterConfig {
@@ -15649,6 +16135,15 @@ pub mod processing_cluster_config {
         }
         /// <p>The size of the ML storage volume in gigabytes that you want to provision. You must
         /// specify sufficient ML storage for your scenario.</p>
+        /// <note>
+        /// <p>Certain Nitro-based instances include local storage with a fixed total size,
+        /// dependent on the instance type. When using these instances for processing, Amazon SageMaker mounts
+        /// the local instance storage instead of Amazon EBS gp2 storage. You can't request a
+        /// <code>VolumeSizeInGB</code> greater than the total size of the local instance
+        /// storage.</p>
+        /// <p>For a list of instance types that support local instance storage, including the
+        /// total size per instance type, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/InstanceStorage.html#instance-store-volumes">Instance Store Volumes</a>.</p>
+        /// </note>
         pub fn volume_size_in_gb(mut self, input: i32) -> Self {
             self.volume_size_in_gb = Some(input);
             self
@@ -15657,9 +16152,18 @@ pub mod processing_cluster_config {
             self.volume_size_in_gb = input;
             self
         }
-        /// <p>The AWS Key Management Service (AWS KMS) key that Amazon SageMaker uses to encrypt data on the
+        /// <p>The Amazon Web Services Key Management Service (Amazon Web Services KMS) key that Amazon SageMaker uses to encrypt data on the
         /// storage volume attached to the ML compute instance(s) that run the processing job.
         /// </p>
+        /// <note>
+        /// <p>Certain Nitro-based instances include local storage, dependent on the instance
+        /// type. Local storage volumes are encrypted using a hardware module on the instance.
+        /// You can't request a <code>VolumeKmsKeyId</code> when using an instance type with
+        /// local storage.</p>
+        /// <p>For a list of instance types that support local instance storage, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/InstanceStorage.html#instance-store-volumes">Instance Store Volumes</a>.</p>
+        /// <p>For more information about local instance storage encryption, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ssd-instance-store.html">SSD
+        /// Instance Store Volumes</a>.</p>
+        /// </note>
         pub fn volume_kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.volume_kms_key_id = Some(input.into());
             self
@@ -15695,7 +16199,7 @@ impl ProcessingClusterConfig {
 pub struct ProcessingOutputConfig {
     /// <p>An array of outputs configuring the data to upload from the processing container.</p>
     pub outputs: std::option::Option<std::vec::Vec<crate::model::ProcessingOutput>>,
-    /// <p>The AWS Key Management Service (AWS KMS) key that Amazon SageMaker uses to encrypt the processing
+    /// <p>The Amazon Web Services Key Management Service (Amazon Web Services KMS) key that Amazon SageMaker uses to encrypt the processing
     /// job output. <code>KmsKeyId</code> can be an ID of a KMS key, ARN of a KMS key, alias of
     /// a KMS key, or alias of a KMS key. The <code>KmsKeyId</code> is applied to all
     /// outputs.</p>
@@ -15732,7 +16236,7 @@ pub mod processing_output_config {
             self.outputs = input;
             self
         }
-        /// <p>The AWS Key Management Service (AWS KMS) key that Amazon SageMaker uses to encrypt the processing
+        /// <p>The Amazon Web Services Key Management Service (Amazon Web Services KMS) key that Amazon SageMaker uses to encrypt the processing
         /// job output. <code>KmsKeyId</code> can be an ID of a KMS key, ARN of a KMS key, alias of
         /// a KMS key, or alias of a KMS key. The <code>KmsKeyId</code> is applied to all
         /// outputs.</p>
@@ -16286,6 +16790,9 @@ impl InputMode {
             InputMode::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["File", "Pipe"]
+    }
 }
 impl AsRef<str> for InputMode {
     fn as_ref(&self) -> &str {
@@ -16333,6 +16840,9 @@ impl DataDistributionType {
             DataDistributionType::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["FullyReplicated", "ShardedByS3Key"]
+    }
 }
 impl AsRef<str> for DataDistributionType {
     fn as_ref(&self) -> &str {
@@ -16356,7 +16866,7 @@ pub struct RedshiftDatasetDefinition {
     pub cluster_role_arn: std::option::Option<std::string::String>,
     /// <p>The location in Amazon S3 where the Redshift query results are stored.</p>
     pub output_s3_uri: std::option::Option<std::string::String>,
-    /// <p>The AWS Key Management Service (AWS KMS) key that Amazon SageMaker uses to encrypt data from a
+    /// <p>The Amazon Web Services Key Management Service (Amazon Web Services KMS) key that Amazon SageMaker uses to encrypt data from a
     /// Redshift execution.</p>
     pub kms_key_id: std::option::Option<std::string::String>,
     /// <p>The data storage format for Redshift query results.</p>
@@ -16457,7 +16967,7 @@ pub mod redshift_dataset_definition {
             self.output_s3_uri = input;
             self
         }
-        /// <p>The AWS Key Management Service (AWS KMS) key that Amazon SageMaker uses to encrypt data from a
+        /// <p>The Amazon Web Services Key Management Service (Amazon Web Services KMS) key that Amazon SageMaker uses to encrypt data from a
         /// Redshift execution.</p>
         pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_key_id = Some(input.into());
@@ -16567,6 +17077,9 @@ impl RedshiftResultCompressionType {
             RedshiftResultCompressionType::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["BZIP2", "GZIP", "None", "SNAPPY", "ZSTD"]
+    }
 }
 impl AsRef<str> for RedshiftResultCompressionType {
     fn as_ref(&self) -> &str {
@@ -16615,6 +17128,9 @@ impl RedshiftResultFormat {
             RedshiftResultFormat::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["CSV", "PARQUET"]
+    }
 }
 impl AsRef<str> for RedshiftResultFormat {
     fn as_ref(&self) -> &str {
@@ -16636,7 +17152,7 @@ pub struct AthenaDatasetDefinition {
     pub work_group: std::option::Option<std::string::String>,
     /// <p>The location in Amazon S3 where Athena query results are stored.</p>
     pub output_s3_uri: std::option::Option<std::string::String>,
-    /// <p>The AWS Key Management Service (AWS KMS) key that Amazon SageMaker uses to encrypt data generated from
+    /// <p>The Amazon Web Services Key Management Service (Amazon Web Services KMS) key that Amazon SageMaker uses to encrypt data generated from
     /// an Athena query execution.</p>
     pub kms_key_id: std::option::Option<std::string::String>,
     /// <p>The data storage format for Athena query results.</p>
@@ -16723,7 +17239,7 @@ pub mod athena_dataset_definition {
             self.output_s3_uri = input;
             self
         }
-        /// <p>The AWS Key Management Service (AWS KMS) key that Amazon SageMaker uses to encrypt data generated from
+        /// <p>The Amazon Web Services Key Management Service (Amazon Web Services KMS) key that Amazon SageMaker uses to encrypt data generated from
         /// an Athena query execution.</p>
         pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_key_id = Some(input.into());
@@ -16826,6 +17342,9 @@ impl AthenaResultCompressionType {
             AthenaResultCompressionType::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["GZIP", "SNAPPY", "ZLIB"]
+    }
 }
 impl AsRef<str> for AthenaResultCompressionType {
     fn as_ref(&self) -> &str {
@@ -16882,6 +17401,9 @@ impl AthenaResultFormat {
             AthenaResultFormat::Textfile => "TEXTFILE",
             AthenaResultFormat::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["AVRO", "JSON", "ORC", "PARQUET", "TEXTFILE"]
     }
 }
 impl AsRef<str> for AthenaResultFormat {
@@ -17102,6 +17624,9 @@ impl ProcessingS3CompressionType {
             ProcessingS3CompressionType::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["Gzip", "None"]
+    }
 }
 impl AsRef<str> for ProcessingS3CompressionType {
     fn as_ref(&self) -> &str {
@@ -17148,6 +17673,9 @@ impl ProcessingS3DataType {
             ProcessingS3DataType::S3Prefix => "S3Prefix",
             ProcessingS3DataType::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["ManifestFile", "S3Prefix"]
     }
 }
 impl AsRef<str> for ProcessingS3DataType {
@@ -17309,7 +17837,7 @@ pub struct TrainingJob {
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>Information about the algorithm used for training, and algorithm metadata.</p>
     pub algorithm_specification: std::option::Option<crate::model::AlgorithmSpecification>,
-    /// <p>The AWS Identity and Access Management (IAM) role configured for the training job.</p>
+    /// <p>The Amazon Web Services Identity and Access Management (IAM) role configured for the training job.</p>
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>An array of <code>Channel</code> objects that describes each data input
     /// channel.</p>
@@ -17412,9 +17940,9 @@ pub struct TrainingJob {
     /// <p>The number of times to retry the job when the job fails due to an
     /// <code>InternalServerError</code>.</p>
     pub retry_strategy: std::option::Option<crate::model::RetryStrategy>,
-    /// <p>An array of key-value pairs. You can use tags to categorize your AWS resources in
+    /// <p>An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in
     /// different ways, for example, by purpose, owner, or environment. For more information,
-    /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS
+    /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services
     /// Resources</a>.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
@@ -17799,7 +18327,7 @@ pub mod training_job {
             self.algorithm_specification = input;
             self
         }
-        /// <p>The AWS Identity and Access Management (IAM) role configured for the training job.</p>
+        /// <p>The Amazon Web Services Identity and Access Management (IAM) role configured for the training job.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.role_arn = Some(input.into());
             self
@@ -18448,6 +18976,16 @@ impl RuleEvaluationStatus {
             RuleEvaluationStatus::Stopping => "Stopping",
             RuleEvaluationStatus::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "Error",
+            "InProgress",
+            "IssuesFound",
+            "NoIssuesFound",
+            "Stopped",
+            "Stopping",
+        ]
     }
 }
 impl AsRef<str> for RuleEvaluationStatus {
@@ -19525,6 +20063,26 @@ impl SecondaryStatus {
             SecondaryStatus::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "Completed",
+            "Downloading",
+            "DownloadingTrainingImage",
+            "Failed",
+            "Interrupted",
+            "LaunchingMLInstances",
+            "MaxRuntimeExceeded",
+            "MaxWaitTimeExceeded",
+            "PreparingTrainingStack",
+            "Restarting",
+            "Starting",
+            "Stopped",
+            "Stopping",
+            "Training",
+            "Updating",
+            "Uploading",
+        ]
+    }
 }
 impl AsRef<str> for SecondaryStatus {
     fn as_ref(&self) -> &str {
@@ -19664,7 +20222,7 @@ pub struct ResourceConfig {
     /// total size per instance type, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/InstanceStorage.html#instance-store-volumes">Instance Store Volumes</a>.</p>
     /// </note>
     pub volume_size_in_gb: i32,
-    /// <p>The AWS KMS key that Amazon SageMaker uses to encrypt data on the storage volume attached to the ML
+    /// <p>The Amazon Web Services KMS key that Amazon SageMaker uses to encrypt data on the storage volume attached to the ML
     /// compute instance(s) that run the training job.</p>
     /// <note>
     /// <p>Certain Nitro-based instances include local storage, dependent on the instance
@@ -19763,7 +20321,7 @@ pub mod resource_config {
             self.volume_size_in_gb = input;
             self
         }
-        /// <p>The AWS KMS key that Amazon SageMaker uses to encrypt data on the storage volume attached to the ML
+        /// <p>The Amazon Web Services KMS key that Amazon SageMaker uses to encrypt data on the storage volume attached to the ML
         /// compute instance(s) that run the training job.</p>
         /// <note>
         /// <p>Certain Nitro-based instances include local storage, dependent on the instance
@@ -19969,6 +20527,49 @@ impl TrainingInstanceType {
             TrainingInstanceType::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "ml.c4.2xlarge",
+            "ml.c4.4xlarge",
+            "ml.c4.8xlarge",
+            "ml.c4.xlarge",
+            "ml.c5.18xlarge",
+            "ml.c5.2xlarge",
+            "ml.c5.4xlarge",
+            "ml.c5.9xlarge",
+            "ml.c5.xlarge",
+            "ml.c5n.18xlarge",
+            "ml.c5n.2xlarge",
+            "ml.c5n.4xlarge",
+            "ml.c5n.9xlarge",
+            "ml.c5n.xlarge",
+            "ml.g4dn.12xlarge",
+            "ml.g4dn.16xlarge",
+            "ml.g4dn.2xlarge",
+            "ml.g4dn.4xlarge",
+            "ml.g4dn.8xlarge",
+            "ml.g4dn.xlarge",
+            "ml.m4.10xlarge",
+            "ml.m4.16xlarge",
+            "ml.m4.2xlarge",
+            "ml.m4.4xlarge",
+            "ml.m4.xlarge",
+            "ml.m5.12xlarge",
+            "ml.m5.24xlarge",
+            "ml.m5.2xlarge",
+            "ml.m5.4xlarge",
+            "ml.m5.large",
+            "ml.m5.xlarge",
+            "ml.p2.16xlarge",
+            "ml.p2.8xlarge",
+            "ml.p2.xlarge",
+            "ml.p3.16xlarge",
+            "ml.p3.2xlarge",
+            "ml.p3.8xlarge",
+            "ml.p3dn.24xlarge",
+            "ml.p4d.24xlarge",
+        ]
+    }
 }
 impl AsRef<str> for TrainingInstanceType {
     fn as_ref(&self) -> &str {
@@ -19981,7 +20582,7 @@ impl AsRef<str> for TrainingInstanceType {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OutputDataConfig {
-    /// <p>The AWS Key Management Service (AWS KMS) key that Amazon SageMaker uses to encrypt the model artifacts at rest using
+    /// <p>The Amazon Web Services Key Management Service (Amazon Web Services KMS) key that Amazon SageMaker uses to encrypt the model artifacts at rest using
     /// Amazon S3 server-side encryption. The <code>KmsKeyId</code> can be any of the following
     /// formats: </p>
     /// <ul>
@@ -20024,7 +20625,7 @@ pub struct OutputDataConfig {
     /// <code>CreateTrainingJob</code>, <code>CreateTransformJob</code>, or
     /// <code>CreateHyperParameterTuningJob</code> requests. For more information, see
     /// <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Using
-    /// Key Policies in AWS KMS</a> in the <i>AWS Key Management Service Developer
+    /// Key Policies in Amazon Web Services KMS</a> in the <i>Amazon Web Services Key Management Service Developer
     /// Guide</i>.</p>
     pub kms_key_id: std::option::Option<std::string::String>,
     /// <p>Identifies the S3 path where you want Amazon SageMaker to store the model artifacts. For
@@ -20049,7 +20650,7 @@ pub mod output_data_config {
         pub(crate) s3_output_path: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The AWS Key Management Service (AWS KMS) key that Amazon SageMaker uses to encrypt the model artifacts at rest using
+        /// <p>The Amazon Web Services Key Management Service (Amazon Web Services KMS) key that Amazon SageMaker uses to encrypt the model artifacts at rest using
         /// Amazon S3 server-side encryption. The <code>KmsKeyId</code> can be any of the following
         /// formats: </p>
         /// <ul>
@@ -20092,7 +20693,7 @@ pub mod output_data_config {
         /// <code>CreateTrainingJob</code>, <code>CreateTransformJob</code>, or
         /// <code>CreateHyperParameterTuningJob</code> requests. For more information, see
         /// <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Using
-        /// Key Policies in AWS KMS</a> in the <i>AWS Key Management Service Developer
+        /// Key Policies in Amazon Web Services KMS</a> in the <i>Amazon Web Services Key Management Service Developer
         /// Guide</i>.</p>
         pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_key_id = Some(input.into());
@@ -20437,6 +21038,9 @@ impl TrainingInputMode {
             TrainingInputMode::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["File", "Pipe"]
+    }
 }
 impl AsRef<str> for TrainingInputMode {
     fn as_ref(&self) -> &str {
@@ -20483,6 +21087,9 @@ impl RecordWrapper {
             RecordWrapper::Recordio => "RecordIO",
             RecordWrapper::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["None", "RecordIO"]
     }
 }
 impl AsRef<str> for RecordWrapper {
@@ -20709,6 +21316,9 @@ impl FileSystemType {
             FileSystemType::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["EFS", "FSxLustre"]
+    }
 }
 impl AsRef<str> for FileSystemType {
     fn as_ref(&self) -> &str {
@@ -20755,6 +21365,9 @@ impl FileSystemAccessMode {
             FileSystemAccessMode::Rw => "rw",
             FileSystemAccessMode::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["ro", "rw"]
     }
 }
 impl AsRef<str> for FileSystemAccessMode {
@@ -21062,6 +21675,9 @@ impl S3DataDistribution {
             S3DataDistribution::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["FullyReplicated", "ShardedByS3Key"]
+    }
 }
 impl AsRef<str> for S3DataDistribution {
     fn as_ref(&self) -> &str {
@@ -21086,7 +21702,7 @@ pub struct AlgorithmSpecification {
     /// SageMaker</a>.</p>
     pub training_image: std::option::Option<std::string::String>,
     /// <p>The name of the algorithm resource to use for the training job. This must be an
-    /// algorithm resource that you created or subscribe to on AWS Marketplace. If you specify a value for
+    /// algorithm resource that you created or subscribe to on Amazon Web Services Marketplace. If you specify a value for
     /// this parameter, you can't specify a value for <code>TrainingImage</code>.</p>
     pub algorithm_name: std::option::Option<std::string::String>,
     /// <p>The input mode that the algorithm supports. For the input modes that Amazon SageMaker
@@ -21183,7 +21799,7 @@ pub mod algorithm_specification {
             self
         }
         /// <p>The name of the algorithm resource to use for the training job. This must be an
-        /// algorithm resource that you created or subscribe to on AWS Marketplace. If you specify a value for
+        /// algorithm resource that you created or subscribe to on Amazon Web Services Marketplace. If you specify a value for
         /// this parameter, you can't specify a value for <code>TrainingImage</code>.</p>
         pub fn algorithm_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.algorithm_name = Some(input.into());
@@ -21298,8 +21914,7 @@ impl AlgorithmSpecification {
 
 /// <p>Specifies a metric that the training algorithm
 /// writes
-/// to <code>stderr</code> or <code>stdout</code>
-/// . Amazon SageMakerhyperparameter
+/// to <code>stderr</code> or <code>stdout</code>. Amazon SageMakerhyperparameter
 /// tuning captures
 /// all
 /// defined metrics.
@@ -21420,6 +22035,9 @@ impl TrainingJobStatus {
             TrainingJobStatus::Stopping => "Stopping",
             TrainingJobStatus::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["Completed", "Failed", "InProgress", "Stopped", "Stopping"]
     }
 }
 impl AsRef<str> for TrainingJobStatus {
@@ -22430,6 +23048,9 @@ impl SearchSortOrder {
             SearchSortOrder::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["Ascending", "Descending"]
+    }
 }
 impl AsRef<str> for SearchSortOrder {
     fn as_ref(&self) -> &str {
@@ -22613,6 +23234,9 @@ impl BooleanOperator {
             BooleanOperator::Or => "Or",
             BooleanOperator::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["And", "Or"]
     }
 }
 impl AsRef<str> for BooleanOperator {
@@ -23149,6 +23773,20 @@ impl Operator {
             Operator::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "Contains",
+            "Equals",
+            "Exists",
+            "GreaterThan",
+            "GreaterThanOrEqualTo",
+            "In",
+            "LessThan",
+            "LessThanOrEqualTo",
+            "NotEquals",
+            "NotExists",
+        ]
+    }
 }
 impl AsRef<str> for Operator {
     fn as_ref(&self) -> &str {
@@ -23219,6 +23857,20 @@ impl ResourceType {
             ResourceType::TrainingJob => "TrainingJob",
             ResourceType::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "Endpoint",
+            "Experiment",
+            "ExperimentTrial",
+            "ExperimentTrialComponent",
+            "FeatureGroup",
+            "ModelPackage",
+            "ModelPackageGroup",
+            "Pipeline",
+            "PipelineExecution",
+            "TrainingJob",
+        ]
     }
 }
 impl AsRef<str> for ResourceType {
@@ -23426,6 +24078,9 @@ impl SortOrder {
             SortOrder::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["Ascending", "Descending"]
+    }
 }
 impl AsRef<str> for SortOrder {
     fn as_ref(&self) -> &str {
@@ -23473,6 +24128,9 @@ impl ListWorkteamsSortByOptions {
             ListWorkteamsSortByOptions::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["CreateDate", "Name"]
+    }
 }
 impl AsRef<str> for ListWorkteamsSortByOptions {
     fn as_ref(&self) -> &str {
@@ -23519,6 +24177,9 @@ impl ListWorkforcesSortByOptions {
             ListWorkforcesSortByOptions::Name => "Name",
             ListWorkforcesSortByOptions::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["CreateDate", "Name"]
     }
 }
 impl AsRef<str> for ListWorkforcesSortByOptions {
@@ -23697,6 +24358,17 @@ impl UserProfileStatus {
             UserProfileStatus::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "Delete_Failed",
+            "Deleting",
+            "Failed",
+            "InService",
+            "Pending",
+            "Update_Failed",
+            "Updating",
+        ]
+    }
 }
 impl AsRef<str> for UserProfileStatus {
     fn as_ref(&self) -> &str {
@@ -23743,6 +24415,9 @@ impl UserProfileSortKey {
             UserProfileSortKey::LastModifiedTime => "LastModifiedTime",
             UserProfileSortKey::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["CreationTime", "LastModifiedTime"]
     }
 }
 impl AsRef<str> for UserProfileSortKey {
@@ -23919,6 +24594,9 @@ impl SortTrialsBy {
             SortTrialsBy::Name => "Name",
             SortTrialsBy::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["CreationTime", "Name"]
     }
 }
 impl AsRef<str> for SortTrialsBy {
@@ -24204,6 +24882,9 @@ impl SortTrialComponentsBy {
             SortTrialComponentsBy::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["CreationTime", "Name"]
+    }
 }
 impl AsRef<str> for SortTrialComponentsBy {
     fn as_ref(&self) -> &str {
@@ -24424,6 +25105,9 @@ impl SortBy {
             SortBy::Status => "Status",
             SortBy::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["CreationTime", "Name", "Status"]
     }
 }
 impl AsRef<str> for SortBy {
@@ -24818,6 +25502,9 @@ impl ObjectiveStatus {
             ObjectiveStatus::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["Failed", "Pending", "Succeeded"]
+    }
 }
 impl AsRef<str> for ObjectiveStatus {
     fn as_ref(&self) -> &str {
@@ -24957,6 +25644,9 @@ impl HyperParameterTuningJobObjectiveType {
             HyperParameterTuningJobObjectiveType::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["Maximize", "Minimize"]
+    }
 }
 impl AsRef<str> for HyperParameterTuningJobObjectiveType {
     fn as_ref(&self) -> &str {
@@ -25009,6 +25699,14 @@ impl TrainingJobSortByOptions {
             TrainingJobSortByOptions::Status => "Status",
             TrainingJobSortByOptions::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "CreationTime",
+            "FinalObjectiveMetricValue",
+            "Name",
+            "Status",
+        ]
     }
 }
 impl AsRef<str> for TrainingJobSortByOptions {
@@ -25446,6 +26144,17 @@ impl ProjectStatus {
             ProjectStatus::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "CreateCompleted",
+            "CreateFailed",
+            "CreateInProgress",
+            "DeleteCompleted",
+            "DeleteFailed",
+            "DeleteInProgress",
+            "Pending",
+        ]
+    }
 }
 impl AsRef<str> for ProjectStatus {
     fn as_ref(&self) -> &str {
@@ -25493,6 +26202,9 @@ impl ProjectSortOrder {
             ProjectSortOrder::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["Ascending", "Descending"]
+    }
 }
 impl AsRef<str> for ProjectSortOrder {
     fn as_ref(&self) -> &str {
@@ -25539,6 +26251,9 @@ impl ProjectSortBy {
             ProjectSortBy::Name => "Name",
             ProjectSortBy::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["CreationTime", "Name"]
     }
 }
 impl AsRef<str> for ProjectSortBy {
@@ -25919,6 +26634,9 @@ impl SortPipelinesBy {
             SortPipelinesBy::Name => "Name",
             SortPipelinesBy::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["CreationTime", "Name"]
     }
 }
 impl AsRef<str> for SortPipelinesBy {
@@ -26401,6 +27119,9 @@ impl ConditionOutcome {
             ConditionOutcome::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["False", "True"]
+    }
 }
 impl AsRef<str> for ConditionOutcome {
     fn as_ref(&self) -> &str {
@@ -26741,6 +27462,16 @@ impl StepStatus {
             StepStatus::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "Executing",
+            "Failed",
+            "Starting",
+            "Stopped",
+            "Stopping",
+            "Succeeded",
+        ]
+    }
 }
 impl AsRef<str> for StepStatus {
     fn as_ref(&self) -> &str {
@@ -26919,6 +27650,9 @@ impl SortPipelineExecutionsBy {
             SortPipelineExecutionsBy::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["CreationTime", "PipelineExecutionArn"]
+    }
 }
 impl AsRef<str> for SortPipelineExecutionsBy {
     fn as_ref(&self) -> &str {
@@ -26953,14 +27687,14 @@ pub struct NotebookInstanceSummary {
     pub notebook_instance_lifecycle_config_name: std::option::Option<std::string::String>,
     /// <p>The Git repository associated with the notebook instance as its default code
     /// repository. This can be either the name of a Git repository stored as a resource in your
-    /// account, or the URL of a Git repository in <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">AWS CodeCommit</a> or in any
+    /// account, or the URL of a Git repository in <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">Amazon Web Services CodeCommit</a> or in any
     /// other Git repository. When you open a notebook instance, it opens in the directory that
     /// contains this repository. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with Amazon SageMaker
     /// Notebook Instances</a>.</p>
     pub default_code_repository: std::option::Option<std::string::String>,
     /// <p>An array of up to three Git repositories associated with the notebook instance. These
     /// can be either the names of Git repositories stored as resources in your account, or the
-    /// URL of Git repositories in <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">AWS CodeCommit</a> or in any
+    /// URL of Git repositories in <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">Amazon Web Services CodeCommit</a> or in any
     /// other Git repository. These repositories are cloned at the same level as the default
     /// repository of your notebook instance. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git
     /// Repositories with Amazon SageMaker Notebook Instances</a>.</p>
@@ -27115,7 +27849,7 @@ pub mod notebook_instance_summary {
         }
         /// <p>The Git repository associated with the notebook instance as its default code
         /// repository. This can be either the name of a Git repository stored as a resource in your
-        /// account, or the URL of a Git repository in <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">AWS CodeCommit</a> or in any
+        /// account, or the URL of a Git repository in <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">Amazon Web Services CodeCommit</a> or in any
         /// other Git repository. When you open a notebook instance, it opens in the directory that
         /// contains this repository. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with Amazon SageMaker
         /// Notebook Instances</a>.</p>
@@ -27226,6 +27960,17 @@ impl NotebookInstanceStatus {
             NotebookInstanceStatus::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "Deleting",
+            "Failed",
+            "InService",
+            "Pending",
+            "Stopped",
+            "Stopping",
+            "Updating",
+        ]
+    }
 }
 impl AsRef<str> for NotebookInstanceStatus {
     fn as_ref(&self) -> &str {
@@ -27272,6 +28017,9 @@ impl NotebookInstanceSortOrder {
             NotebookInstanceSortOrder::Descending => "Descending",
             NotebookInstanceSortOrder::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["Ascending", "Descending"]
     }
 }
 impl AsRef<str> for NotebookInstanceSortOrder {
@@ -27322,6 +28070,9 @@ impl NotebookInstanceSortKey {
             NotebookInstanceSortKey::Status => "Status",
             NotebookInstanceSortKey::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["CreationTime", "Name", "Status"]
     }
 }
 impl AsRef<str> for NotebookInstanceSortKey {
@@ -27485,6 +28236,9 @@ impl NotebookInstanceLifecycleConfigSortOrder {
             NotebookInstanceLifecycleConfigSortOrder::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["Ascending", "Descending"]
+    }
 }
 impl AsRef<str> for NotebookInstanceLifecycleConfigSortOrder {
     fn as_ref(&self) -> &str {
@@ -27534,6 +28288,9 @@ impl NotebookInstanceLifecycleConfigSortKey {
             NotebookInstanceLifecycleConfigSortKey::Name => "Name",
             NotebookInstanceLifecycleConfigSortKey::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["CreationTime", "LastModifiedTime", "Name"]
     }
 }
 impl AsRef<str> for NotebookInstanceLifecycleConfigSortKey {
@@ -27763,6 +28520,9 @@ impl MonitoringScheduleSortKey {
             MonitoringScheduleSortKey::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["CreationTime", "Name", "Status"]
+    }
 }
 impl AsRef<str> for MonitoringScheduleSortKey {
     fn as_ref(&self) -> &str {
@@ -27812,6 +28572,9 @@ impl MonitoringExecutionSortKey {
             MonitoringExecutionSortKey::Status => "Status",
             MonitoringExecutionSortKey::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["CreationTime", "ScheduledTime", "Status"]
     }
 }
 impl AsRef<str> for MonitoringExecutionSortKey {
@@ -27938,6 +28701,9 @@ impl OrderKey {
             OrderKey::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["Ascending", "Descending"]
+    }
 }
 impl AsRef<str> for OrderKey {
     fn as_ref(&self) -> &str {
@@ -27984,6 +28750,9 @@ impl ModelSortKey {
             ModelSortKey::Name => "Name",
             ModelSortKey::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["CreationTime", "Name"]
     }
 }
 impl AsRef<str> for ModelSortKey {
@@ -28144,6 +28913,9 @@ impl MonitoringJobDefinitionSortKey {
             MonitoringJobDefinitionSortKey::Name => "Name",
             MonitoringJobDefinitionSortKey::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["CreationTime", "Name"]
     }
 }
 impl AsRef<str> for MonitoringJobDefinitionSortKey {
@@ -28390,6 +29162,9 @@ impl ModelPackageSortBy {
             ModelPackageSortBy::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["CreationTime", "Name"]
+    }
 }
 impl AsRef<str> for ModelPackageSortBy {
     fn as_ref(&self) -> &str {
@@ -28439,6 +29214,9 @@ impl ModelPackageType {
             ModelPackageType::Versioned => "Versioned",
             ModelPackageType::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["Both", "Unversioned", "Versioned"]
     }
 }
 impl AsRef<str> for ModelPackageType {
@@ -28618,6 +29396,9 @@ impl ModelPackageGroupSortBy {
             ModelPackageGroupSortBy::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["CreationTime", "Name"]
+    }
 }
 impl AsRef<str> for ModelPackageGroupSortBy {
     fn as_ref(&self) -> &str {
@@ -28634,7 +29415,7 @@ pub struct LabelingJobForWorkteamSummary {
     /// <p>A unique identifier for a labeling job. You can use this to refer to a specific
     /// labeling job.</p>
     pub job_reference_code: std::option::Option<std::string::String>,
-    /// <p>The AWS account ID of the account used to start the labeling job.</p>
+    /// <p>The Amazon Web Services account ID of the account used to start the labeling job.</p>
     pub work_requester_account_id: std::option::Option<std::string::String>,
     /// <p>The date and time that the labeling job was created.</p>
     pub creation_time: std::option::Option<smithy_types::Instant>,
@@ -28697,7 +29478,7 @@ pub mod labeling_job_for_workteam_summary {
             self.job_reference_code = input;
             self
         }
-        /// <p>The AWS account ID of the account used to start the labeling job.</p>
+        /// <p>The Amazon Web Services account ID of the account used to start the labeling job.</p>
         pub fn work_requester_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.work_requester_account_id = Some(input.into());
             self
@@ -28877,6 +29658,9 @@ impl ListLabelingJobsForWorkteamSortByOptions {
             ListLabelingJobsForWorkteamSortByOptions::CreationTime => "CreationTime",
             ListLabelingJobsForWorkteamSortByOptions::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["CreationTime"]
     }
 }
 impl AsRef<str> for ListLabelingJobsForWorkteamSortByOptions {
@@ -29305,6 +30089,12 @@ impl ContentClassifier {
             }
             ContentClassifier::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "FreeOfAdultContent",
+            "FreeOfPersonallyIdentifiableInformation",
+        ]
     }
 }
 impl AsRef<str> for ContentClassifier {
@@ -29758,6 +30548,16 @@ impl LabelingJobStatus {
             LabelingJobStatus::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "Completed",
+            "Failed",
+            "InProgress",
+            "Initializing",
+            "Stopped",
+            "Stopping",
+        ]
+    }
 }
 impl AsRef<str> for LabelingJobStatus {
     fn as_ref(&self) -> &str {
@@ -29961,6 +30761,15 @@ impl ImageVersionStatus {
             ImageVersionStatus::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "CREATED",
+            "CREATE_FAILED",
+            "CREATING",
+            "DELETE_FAILED",
+            "DELETING",
+        ]
+    }
 }
 impl AsRef<str> for ImageVersionStatus {
     fn as_ref(&self) -> &str {
@@ -30007,6 +30816,9 @@ impl ImageVersionSortOrder {
             ImageVersionSortOrder::Descending => "DESCENDING",
             ImageVersionSortOrder::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["ASCENDING", "DESCENDING"]
     }
 }
 impl AsRef<str> for ImageVersionSortOrder {
@@ -30057,6 +30869,9 @@ impl ImageVersionSortBy {
             ImageVersionSortBy::Version => "VERSION",
             ImageVersionSortBy::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["CREATION_TIME", "LAST_MODIFIED_TIME", "VERSION"]
     }
 }
 impl AsRef<str> for ImageVersionSortBy {
@@ -30279,6 +31094,17 @@ impl ImageStatus {
             ImageStatus::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "CREATED",
+            "CREATE_FAILED",
+            "CREATING",
+            "DELETE_FAILED",
+            "DELETING",
+            "UPDATE_FAILED",
+            "UPDATING",
+        ]
+    }
 }
 impl AsRef<str> for ImageStatus {
     fn as_ref(&self) -> &str {
@@ -30325,6 +31151,9 @@ impl ImageSortOrder {
             ImageSortOrder::Descending => "DESCENDING",
             ImageSortOrder::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["ASCENDING", "DESCENDING"]
     }
 }
 impl AsRef<str> for ImageSortOrder {
@@ -30375,6 +31204,9 @@ impl ImageSortBy {
             ImageSortBy::LastModifiedTime => "LAST_MODIFIED_TIME",
             ImageSortBy::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["CREATION_TIME", "IMAGE_NAME", "LAST_MODIFIED_TIME"]
     }
 }
 impl AsRef<str> for ImageSortBy {
@@ -30981,6 +31813,9 @@ impl HyperParameterTuningJobStrategyType {
             HyperParameterTuningJobStrategyType::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["Bayesian", "Random"]
+    }
 }
 impl AsRef<str> for HyperParameterTuningJobStrategyType {
     fn as_ref(&self) -> &str {
@@ -31037,6 +31872,9 @@ impl HyperParameterTuningJobStatus {
             HyperParameterTuningJobStatus::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["Completed", "Failed", "InProgress", "Stopped", "Stopping"]
+    }
 }
 impl AsRef<str> for HyperParameterTuningJobStatus {
     fn as_ref(&self) -> &str {
@@ -31086,6 +31924,9 @@ impl HyperParameterTuningJobSortByOptions {
             HyperParameterTuningJobSortByOptions::Status => "Status",
             HyperParameterTuningJobSortByOptions::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["CreationTime", "Name", "Status"]
     }
 }
 impl AsRef<str> for HyperParameterTuningJobSortByOptions {
@@ -31342,6 +32183,9 @@ impl FlowDefinitionStatus {
             FlowDefinitionStatus::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["Active", "Deleting", "Failed", "Initializing"]
+    }
 }
 impl AsRef<str> for FlowDefinitionStatus {
     fn as_ref(&self) -> &str {
@@ -31521,6 +32365,14 @@ impl FeatureGroupSortBy {
             FeatureGroupSortBy::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "CreationTime",
+            "FeatureGroupStatus",
+            "Name",
+            "OfflineStoreStatus",
+        ]
+    }
 }
 impl AsRef<str> for FeatureGroupSortBy {
     fn as_ref(&self) -> &str {
@@ -31567,6 +32419,9 @@ impl FeatureGroupSortOrder {
             FeatureGroupSortOrder::Descending => "Descending",
             FeatureGroupSortOrder::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["Ascending", "Descending"]
     }
 }
 impl AsRef<str> for FeatureGroupSortOrder {
@@ -31750,6 +32605,9 @@ impl SortExperimentsBy {
             SortExperimentsBy::Name => "Name",
             SortExperimentsBy::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["CreationTime", "Name"]
     }
 }
 impl AsRef<str> for SortExperimentsBy {
@@ -32014,6 +32872,9 @@ impl EndpointSortKey {
             EndpointSortKey::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["CreationTime", "Name", "Status"]
+    }
 }
 impl AsRef<str> for EndpointSortKey {
     fn as_ref(&self) -> &str {
@@ -32144,6 +33005,9 @@ impl EndpointConfigSortKey {
             EndpointConfigSortKey::Name => "Name",
             EndpointConfigSortKey::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["CreationTime", "Name"]
     }
 }
 impl AsRef<str> for EndpointConfigSortKey {
@@ -32374,6 +33238,16 @@ impl EdgePackagingJobStatus {
             EdgePackagingJobStatus::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "COMPLETED",
+            "FAILED",
+            "INPROGRESS",
+            "STARTING",
+            "STOPPED",
+            "STOPPING",
+        ]
+    }
 }
 impl AsRef<str> for EdgePackagingJobStatus {
     fn as_ref(&self) -> &str {
@@ -32429,6 +33303,15 @@ impl ListEdgePackagingJobsSortBy {
             ListEdgePackagingJobsSortBy::EdgePackagingJobStatus => "STATUS",
             ListEdgePackagingJobsSortBy::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "CREATION_TIME",
+            "LAST_MODIFIED_TIME",
+            "MODEL_NAME",
+            "NAME",
+            "STATUS",
+        ]
     }
 }
 impl AsRef<str> for ListEdgePackagingJobsSortBy {
@@ -32632,6 +33515,17 @@ impl DomainStatus {
             DomainStatus::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "Delete_Failed",
+            "Deleting",
+            "Failed",
+            "InService",
+            "Pending",
+            "Update_Failed",
+            "Updating",
+        ]
+    }
 }
 impl AsRef<str> for DomainStatus {
     fn as_ref(&self) -> &str {
@@ -32651,7 +33545,7 @@ pub struct DeviceSummary {
     pub description: std::option::Option<std::string::String>,
     /// <p>The name of the fleet the device belongs to.</p>
     pub device_fleet_name: std::option::Option<std::string::String>,
-    /// <p>The AWS Internet of Things (IoT) object thing name associated with the device..</p>
+    /// <p>The Amazon Web Services Internet of Things (IoT) object thing name associated with the device..</p>
     pub iot_thing_name: std::option::Option<std::string::String>,
     /// <p>The timestamp of the last registration or de-reregistration.</p>
     pub registration_time: std::option::Option<smithy_types::Instant>,
@@ -32729,7 +33623,7 @@ pub mod device_summary {
             self.device_fleet_name = input;
             self
         }
-        /// <p>The AWS Internet of Things (IoT) object thing name associated with the device..</p>
+        /// <p>The Amazon Web Services Internet of Things (IoT) object thing name associated with the device..</p>
         pub fn iot_thing_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.iot_thing_name = Some(input.into());
             self
@@ -33008,6 +33902,9 @@ impl ListDeviceFleetsSortBy {
             ListDeviceFleetsSortBy::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["CREATION_TIME", "LAST_MODIFIED_TIME", "NAME"]
+    }
 }
 impl AsRef<str> for ListDeviceFleetsSortBy {
     fn as_ref(&self) -> &str {
@@ -33256,6 +34153,9 @@ impl SortContextsBy {
             SortContextsBy::Name => "Name",
             SortContextsBy::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["CreationTime", "Name"]
     }
 }
 impl AsRef<str> for SortContextsBy {
@@ -33567,6 +34467,16 @@ impl CompilationJobStatus {
             CompilationJobStatus::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "COMPLETED",
+            "FAILED",
+            "INPROGRESS",
+            "STARTING",
+            "STOPPED",
+            "STOPPING",
+        ]
+    }
 }
 impl AsRef<str> for CompilationJobStatus {
     fn as_ref(&self) -> &str {
@@ -33616,6 +34526,9 @@ impl TargetPlatformAccelerator {
             TargetPlatformAccelerator::Nvidia => "NVIDIA",
             TargetPlatformAccelerator::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["INTEL_GRAPHICS", "MALI", "NVIDIA"]
     }
 }
 impl AsRef<str> for TargetPlatformAccelerator {
@@ -33673,6 +34586,9 @@ impl TargetPlatformArch {
             TargetPlatformArch::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["ARM64", "ARM_EABI", "ARM_EABIHF", "X86", "X86_64"]
+    }
 }
 impl AsRef<str> for TargetPlatformArch {
     fn as_ref(&self) -> &str {
@@ -33720,6 +34636,9 @@ impl TargetPlatformOs {
             TargetPlatformOs::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["ANDROID", "LINUX"]
+    }
 }
 impl AsRef<str> for TargetPlatformOs {
     fn as_ref(&self) -> &str {
@@ -33740,6 +34659,7 @@ impl AsRef<str> for TargetPlatformOs {
 pub enum TargetDevice {
     Aisage,
     AmbaCv22,
+    AmbaCv25,
     Coreml,
     Deeplens,
     Imx8Qm,
@@ -33775,6 +34695,7 @@ impl std::convert::From<&str> for TargetDevice {
         match s {
             "aisage" => TargetDevice::Aisage,
             "amba_cv22" => TargetDevice::AmbaCv22,
+            "amba_cv25" => TargetDevice::AmbaCv25,
             "coreml" => TargetDevice::Coreml,
             "deeplens" => TargetDevice::Deeplens,
             "imx8qm" => TargetDevice::Imx8Qm,
@@ -33818,6 +34739,7 @@ impl TargetDevice {
         match self {
             TargetDevice::Aisage => "aisage",
             TargetDevice::AmbaCv22 => "amba_cv22",
+            TargetDevice::AmbaCv25 => "amba_cv25",
             TargetDevice::Coreml => "coreml",
             TargetDevice::Deeplens => "deeplens",
             TargetDevice::Imx8Qm => "imx8qm",
@@ -33847,6 +34769,40 @@ impl TargetDevice {
             TargetDevice::X86Win64 => "x86_win64",
             TargetDevice::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "aisage",
+            "amba_cv22",
+            "amba_cv25",
+            "coreml",
+            "deeplens",
+            "imx8qm",
+            "jacinto_tda4vm",
+            "jetson_nano",
+            "jetson_tx1",
+            "jetson_tx2",
+            "jetson_xavier",
+            "lambda",
+            "ml_c4",
+            "ml_c5",
+            "ml_eia2",
+            "ml_g4dn",
+            "ml_inf1",
+            "ml_m4",
+            "ml_m5",
+            "ml_p2",
+            "ml_p3",
+            "qcs603",
+            "qcs605",
+            "rasp3b",
+            "rk3288",
+            "rk3399",
+            "sbe_c",
+            "sitara_am57x",
+            "x86_win32",
+            "x86_win64",
+        ]
     }
 }
 impl AsRef<str> for TargetDevice {
@@ -33898,6 +34854,9 @@ impl ListCompilationJobsSortBy {
             ListCompilationJobsSortBy::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["CreationTime", "Name", "Status"]
+    }
 }
 impl AsRef<str> for ListCompilationJobsSortBy {
     fn as_ref(&self) -> &str {
@@ -33918,7 +34877,7 @@ pub struct CodeRepositorySummary {
     /// <p>The date and time that the Git repository was last modified.</p>
     pub last_modified_time: std::option::Option<smithy_types::Instant>,
     /// <p>Configuration details for the Git repository, including the URL where it is located
-    /// and the ARN of the AWS Secrets Manager secret that contains the credentials used to
+    /// and the ARN of the Amazon Web Services Secrets Manager secret that contains the credentials used to
     /// access the repository.</p>
     pub git_config: std::option::Option<crate::model::GitConfig>,
 }
@@ -33995,7 +34954,7 @@ pub mod code_repository_summary {
             self
         }
         /// <p>Configuration details for the Git repository, including the URL where it is located
-        /// and the ARN of the AWS Secrets Manager secret that contains the credentials used to
+        /// and the ARN of the Amazon Web Services Secrets Manager secret that contains the credentials used to
         /// access the repository.</p>
         pub fn git_config(mut self, input: crate::model::GitConfig) -> Self {
             self.git_config = Some(input);
@@ -34027,7 +34986,7 @@ impl CodeRepositorySummary {
     }
 }
 
-/// <p>Specifies configuration details for a Git repository in your AWS account.</p>
+/// <p>Specifies configuration details for a Git repository in your Amazon Web Services account.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GitConfig {
@@ -34035,7 +34994,7 @@ pub struct GitConfig {
     pub repository_url: std::option::Option<std::string::String>,
     /// <p>The default branch for the Git repository.</p>
     pub branch: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the AWS Secrets Manager secret that contains the
+    /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services Secrets Manager secret that contains the
     /// credentials used to access the git repository. The secret must have a staging label of
     /// <code>AWSCURRENT</code> and must be in the following format:</p>
     /// <p>
@@ -34085,7 +35044,7 @@ pub mod git_config {
             self.branch = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the AWS Secrets Manager secret that contains the
+        /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services Secrets Manager secret that contains the
         /// credentials used to access the git repository. The secret must have a staging label of
         /// <code>AWSCURRENT</code> and must be in the following format:</p>
         /// <p>
@@ -34157,6 +35116,9 @@ impl CodeRepositorySortOrder {
             CodeRepositorySortOrder::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["Ascending", "Descending"]
+    }
 }
 impl AsRef<str> for CodeRepositorySortOrder {
     fn as_ref(&self) -> &str {
@@ -34206,6 +35168,9 @@ impl CodeRepositorySortBy {
             CodeRepositorySortBy::Name => "Name",
             CodeRepositorySortBy::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["CreationTime", "LastModifiedTime", "Name"]
     }
 }
 impl AsRef<str> for CodeRepositorySortBy {
@@ -34701,6 +35666,9 @@ impl CandidateStatus {
             CandidateStatus::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["Completed", "Failed", "InProgress", "Stopped", "Stopping"]
+    }
 }
 impl AsRef<str> for CandidateStatus {
     fn as_ref(&self) -> &str {
@@ -34834,6 +35802,13 @@ impl CandidateStepType {
             CandidateStepType::Transform => "AWS::SageMaker::TransformJob",
             CandidateStepType::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "AWS::SageMaker::ProcessingJob",
+            "AWS::SageMaker::TrainingJob",
+            "AWS::SageMaker::TransformJob",
+        ]
     }
 }
 impl AsRef<str> for CandidateStepType {
@@ -34974,6 +35949,9 @@ impl AutoMlMetricEnum {
             AutoMlMetricEnum::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["AUC", "Accuracy", "F1", "F1macro", "MSE"]
+    }
 }
 impl AsRef<str> for AutoMlMetricEnum {
     fn as_ref(&self) -> &str {
@@ -35020,6 +35998,9 @@ impl AutoMlJobObjectiveType {
             AutoMlJobObjectiveType::Minimize => "Minimize",
             AutoMlJobObjectiveType::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["Maximize", "Minimize"]
     }
 }
 impl AsRef<str> for AutoMlJobObjectiveType {
@@ -35071,6 +36052,9 @@ impl CandidateSortBy {
             CandidateSortBy::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["CreationTime", "FinalObjectiveMetricValue", "Status"]
+    }
 }
 impl AsRef<str> for CandidateSortBy {
     fn as_ref(&self) -> &str {
@@ -35117,6 +36101,9 @@ impl AutoMlSortOrder {
             AutoMlSortOrder::Descending => "Descending",
             AutoMlSortOrder::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["Ascending", "Descending"]
     }
 }
 impl AsRef<str> for AutoMlSortOrder {
@@ -35458,6 +36445,25 @@ impl AutoMlJobSecondaryStatus {
             AutoMlJobSecondaryStatus::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "AnalyzingData",
+            "CandidateDefinitionsGenerated",
+            "Completed",
+            "DeployingModel",
+            "ExplainabilityError",
+            "Failed",
+            "FeatureEngineering",
+            "GeneratingExplainabilityReport",
+            "MaxAutoMLJobRuntimeReached",
+            "MaxCandidatesReached",
+            "ModelDeploymentError",
+            "ModelTuning",
+            "Starting",
+            "Stopped",
+            "Stopping",
+        ]
+    }
 }
 impl AsRef<str> for AutoMlJobSecondaryStatus {
     fn as_ref(&self) -> &str {
@@ -35514,6 +36520,9 @@ impl AutoMlJobStatus {
             AutoMlJobStatus::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["Completed", "Failed", "InProgress", "Stopped", "Stopping"]
+    }
 }
 impl AsRef<str> for AutoMlJobStatus {
     fn as_ref(&self) -> &str {
@@ -35563,6 +36572,9 @@ impl AutoMlSortBy {
             AutoMlSortBy::Status => "Status",
             AutoMlSortBy::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["CreationTime", "Name", "Status"]
     }
 }
 impl AsRef<str> for AutoMlSortBy {
@@ -35798,6 +36810,9 @@ impl AssociationEdgeType {
             AssociationEdgeType::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["AssociatedWith", "ContributedTo", "DerivedFrom", "Produced"]
+    }
 }
 impl AsRef<str> for AssociationEdgeType {
     fn as_ref(&self) -> &str {
@@ -35853,6 +36868,15 @@ impl SortAssociationsBy {
             SortAssociationsBy::SourceType => "SourceType",
             SortAssociationsBy::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "CreationTime",
+            "DestinationArn",
+            "DestinationType",
+            "SourceArn",
+            "SourceType",
+        ]
     }
 }
 impl AsRef<str> for SortAssociationsBy {
@@ -36170,6 +37194,9 @@ impl ArtifactSourceIdType {
             ArtifactSourceIdType::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["Custom", "MD5Hash", "S3ETag", "S3Version"]
+    }
 }
 impl AsRef<str> for ArtifactSourceIdType {
     fn as_ref(&self) -> &str {
@@ -36213,6 +37240,9 @@ impl SortArtifactsBy {
             SortArtifactsBy::CreationTime => "CreationTime",
             SortArtifactsBy::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["CreationTime"]
     }
 }
 impl AsRef<str> for SortArtifactsBy {
@@ -36393,6 +37423,9 @@ impl AppStatus {
             AppStatus::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["Deleted", "Deleting", "Failed", "InService", "Pending"]
+    }
 }
 impl AsRef<str> for AppStatus {
     fn as_ref(&self) -> &str {
@@ -36443,6 +37476,9 @@ impl AppType {
             AppType::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["JupyterServer", "KernelGateway", "TensorBoard"]
+    }
 }
 impl AsRef<str> for AppType {
     fn as_ref(&self) -> &str {
@@ -36486,6 +37522,9 @@ impl AppSortKey {
             AppSortKey::CreationTime => "CreationTime",
             AppSortKey::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["CreationTime"]
     }
 }
 impl AsRef<str> for AppSortKey {
@@ -36662,6 +37701,9 @@ impl AppImageConfigSortKey {
             AppImageConfigSortKey::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["CreationTime", "LastModifiedTime", "Name"]
+    }
 }
 impl AsRef<str> for AppImageConfigSortKey {
     fn as_ref(&self) -> &str {
@@ -36836,6 +37878,9 @@ impl AlgorithmStatus {
             AlgorithmStatus::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["Completed", "Deleting", "Failed", "InProgress", "Pending"]
+    }
 }
 impl AsRef<str> for AlgorithmStatus {
     fn as_ref(&self) -> &str {
@@ -36882,6 +37927,9 @@ impl AlgorithmSortBy {
             AlgorithmSortBy::Name => "Name",
             AlgorithmSortBy::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["CreationTime", "Name"]
     }
 }
 impl AsRef<str> for AlgorithmSortBy {
@@ -37150,6 +38198,9 @@ impl SortActionsBy {
             SortActionsBy::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["CreationTime", "Name"]
+    }
 }
 impl AsRef<str> for SortActionsBy {
     fn as_ref(&self) -> &str {
@@ -37353,6 +38404,9 @@ impl SagemakerServicecatalogStatus {
             SagemakerServicecatalogStatus::Enabled => "Enabled",
             SagemakerServicecatalogStatus::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["Disabled", "Enabled"]
     }
 }
 impl AsRef<str> for SagemakerServicecatalogStatus {
@@ -37643,6 +38697,9 @@ impl ProfilingStatus {
             ProfilingStatus::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["Disabled", "Enabled"]
+    }
 }
 impl AsRef<str> for ProfilingStatus {
     fn as_ref(&self) -> &str {
@@ -37874,7 +38931,7 @@ impl ProfilerConfig {
 }
 
 /// <p>Details of a provisioned service catalog product. For information about service catalog,
-/// see <a href="https://docs.aws.amazon.com/servicecatalog/latest/adminguide/introduction.html">What is AWS Service
+/// see <a href="https://docs.aws.amazon.com/servicecatalog/latest/adminguide/introduction.html">What is Amazon Web Services Service
 /// Catalog</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -37993,7 +39050,7 @@ impl ServiceCatalogProvisionedProductDetails {
 }
 
 /// <p>Details that you specify to provision a service catalog product. For information about
-/// service catalog, see .<a href="https://docs.aws.amazon.com/servicecatalog/latest/adminguide/introduction.html">What is AWS Service
+/// service catalog, see .<a href="https://docs.aws.amazon.com/servicecatalog/latest/adminguide/introduction.html">What is Amazon Web Services Service
 /// Catalog</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -38096,7 +39153,7 @@ impl ServiceCatalogProvisioningDetails {
 }
 
 /// <p>A key value pair used when you provision a project as a service catalog product. For
-/// information, see <a href="https://docs.aws.amazon.com/servicecatalog/latest/adminguide/introduction.html">What is AWS Service
+/// information, see <a href="https://docs.aws.amazon.com/servicecatalog/latest/adminguide/introduction.html">What is Amazon Web Services Service
 /// Catalog</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -38197,6 +39254,9 @@ impl DirectInternetAccess {
             DirectInternetAccess::Enabled => "Enabled",
             DirectInternetAccess::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["Disabled", "Enabled"]
     }
 }
 impl AsRef<str> for DirectInternetAccess {
@@ -38645,6 +39705,13 @@ impl MonitoringProblemType {
             MonitoringProblemType::Regression => "Regression",
             MonitoringProblemType::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "BinaryClassification",
+            "MulticlassClassification",
+            "Regression",
+        ]
     }
 }
 impl AsRef<str> for MonitoringProblemType {
@@ -39283,6 +40350,9 @@ impl InferenceExecutionMode {
             InferenceExecutionMode::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["Direct", "Serial"]
+    }
 }
 impl AsRef<str> for InferenceExecutionMode {
     fn as_ref(&self) -> &str {
@@ -39334,11 +40404,11 @@ pub struct ContainerDefinition {
     /// <p>The model artifacts must be in an S3 bucket that is in the same region as the
     /// model or endpoint you are creating.</p>
     /// </note>
-    /// <p>If you provide a value for this parameter, Amazon SageMaker uses AWS Security Token Service to
-    /// download model artifacts from the S3 path you provide. AWS STS is activated in your
-    /// IAM user account by default. If you previously deactivated AWS STS for a region, you
-    /// need to reactivate AWS STS for that region. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating and
-    /// Deactivating AWS STS in an AWS Region</a> in the <i>AWS Identity and Access Management User
+    /// <p>If you provide a value for this parameter, Amazon SageMaker uses Amazon Web Services Security Token Service to
+    /// download model artifacts from the S3 path you provide. Amazon Web Services STS is activated in your
+    /// IAM user account by default. If you previously deactivated Amazon Web Services STS for a region, you
+    /// need to reactivate Amazon Web Services STS for that region. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating and
+    /// Deactivating Amazon Web Services STS in an Amazon Web Services Region</a> in the <i>Amazon Web Services Identity and Access Management User
     /// Guide</i>.</p>
     /// <important>
     /// <p>If you use a built-in algorithm to create a model, Amazon SageMaker requires that you provide
@@ -39462,11 +40532,11 @@ pub mod container_definition {
         /// <p>The model artifacts must be in an S3 bucket that is in the same region as the
         /// model or endpoint you are creating.</p>
         /// </note>
-        /// <p>If you provide a value for this parameter, Amazon SageMaker uses AWS Security Token Service to
-        /// download model artifacts from the S3 path you provide. AWS STS is activated in your
-        /// IAM user account by default. If you previously deactivated AWS STS for a region, you
-        /// need to reactivate AWS STS for that region. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating and
-        /// Deactivating AWS STS in an AWS Region</a> in the <i>AWS Identity and Access Management User
+        /// <p>If you provide a value for this parameter, Amazon SageMaker uses Amazon Web Services Security Token Service to
+        /// download model artifacts from the S3 path you provide. Amazon Web Services STS is activated in your
+        /// IAM user account by default. If you previously deactivated Amazon Web Services STS for a region, you
+        /// need to reactivate Amazon Web Services STS for that region. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating and
+        /// Deactivating Amazon Web Services STS in an Amazon Web Services Region</a> in the <i>Amazon Web Services Identity and Access Management User
         /// Guide</i>.</p>
         /// <important>
         /// <p>If you use a built-in algorithm to create a model, Amazon SageMaker requires that you provide
@@ -39649,6 +40719,9 @@ impl ModelCacheSetting {
             ModelCacheSetting::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["Disabled", "Enabled"]
+    }
 }
 impl AsRef<str> for ModelCacheSetting {
     fn as_ref(&self) -> &str {
@@ -39695,6 +40768,9 @@ impl ContainerMode {
             ContainerMode::SingleModel => "SingleModel",
             ContainerMode::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["MultiModel", "SingleModel"]
     }
 }
 impl AsRef<str> for ContainerMode {
@@ -39809,10 +40885,10 @@ impl ImageConfig {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RepositoryAuthConfig {
-    /// <p>The Amazon Resource Name (ARN) of an AWS Lambda function that provides credentials to
+    /// <p>The Amazon Resource Name (ARN) of an Amazon Web Services Lambda function that provides credentials to
     /// authenticate to the private Docker registry where your model image is hosted. For
-    /// information about how to create an AWS Lambda function, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/getting-started-create-function.html">Create a Lambda function
-    /// with the console</a> in the <i>AWS Lambda Developer
+    /// information about how to create an Amazon Web Services Lambda function, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/getting-started-create-function.html">Create a Lambda function
+    /// with the console</a> in the <i>Amazon Web Services Lambda Developer
     /// Guide</i>.</p>
     pub repository_credentials_provider_arn: std::option::Option<std::string::String>,
 }
@@ -39835,10 +40911,10 @@ pub mod repository_auth_config {
         pub(crate) repository_credentials_provider_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of an AWS Lambda function that provides credentials to
+        /// <p>The Amazon Resource Name (ARN) of an Amazon Web Services Lambda function that provides credentials to
         /// authenticate to the private Docker registry where your model image is hosted. For
-        /// information about how to create an AWS Lambda function, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/getting-started-create-function.html">Create a Lambda function
-        /// with the console</a> in the <i>AWS Lambda Developer
+        /// information about how to create an Amazon Web Services Lambda function, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/getting-started-create-function.html">Create a Lambda function
+        /// with the console</a> in the <i>Amazon Web Services Lambda Developer
         /// Guide</i>.</p>
         pub fn repository_credentials_provider_arn(
             mut self,
@@ -39908,6 +40984,9 @@ impl RepositoryAccessMode {
             RepositoryAccessMode::Vpc => "Vpc",
             RepositoryAccessMode::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["Platform", "Vpc"]
     }
 }
 impl AsRef<str> for RepositoryAccessMode {
@@ -41423,7 +42502,7 @@ pub struct HumanTaskConfig {
     /// <li>
     /// <p>For <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-point-cloud.html">3D point cloud</a> and <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-video.html">video frame</a> labeling jobs,
     /// the maximum is 7 days (604,800 seconds). If you want to change these limits,
-    /// contact AWS Support.</p>
+    /// contact Amazon Web Services Support.</p>
     /// </li>
     /// </ul>
     pub task_time_limit_in_seconds: std::option::Option<i32>,
@@ -41438,7 +42517,7 @@ pub struct HumanTaskConfig {
     /// <li>
     /// <p>If you choose a private or vendor workforce, the default value is 10 days
     /// (864,000 seconds). For most users, the maximum is also 10 days. If you want to
-    /// change this limit, contact AWS Support.</p>
+    /// change this limit, contact Amazon Web Services Support.</p>
     /// </li>
     /// </ul>
     pub task_availability_lifetime_in_seconds: std::option::Option<i32>,
@@ -43071,7 +44150,7 @@ pub mod human_task_config {
         /// <li>
         /// <p>For <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-point-cloud.html">3D point cloud</a> and <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-video.html">video frame</a> labeling jobs,
         /// the maximum is 7 days (604,800 seconds). If you want to change these limits,
-        /// contact AWS Support.</p>
+        /// contact Amazon Web Services Support.</p>
         /// </li>
         /// </ul>
         pub fn task_time_limit_in_seconds(mut self, input: i32) -> Self {
@@ -43093,7 +44172,7 @@ pub mod human_task_config {
         /// <li>
         /// <p>If you choose a private or vendor workforce, the default value is 10 days
         /// (864,000 seconds). For most users, the maximum is also 10 days. If you want to
-        /// change this limit, contact AWS Support.</p>
+        /// change this limit, contact Amazon Web Services Support.</p>
         /// </li>
         /// </ul>
         pub fn task_availability_lifetime_in_seconds(mut self, input: i32) -> Self {
@@ -46609,7 +47688,7 @@ pub struct UiConfig {
     /// <p>Use this parameter when you are creating a labeling job for 3D point cloud and video
     /// fram labeling jobs. Use your labeling job task type to select one of the following ARNs
     /// and use it with this parameter when you create a labeling job. Replace
-    /// <code>aws-region</code> with the AWS region you are creating your labeling job
+    /// <code>aws-region</code> with the Amazon Web Services region you are creating your labeling job
     /// in.</p>
     /// <p>
     /// <b>3D Point Cloud HumanTaskUiArns</b>
@@ -46702,7 +47781,7 @@ pub mod ui_config {
         /// <p>Use this parameter when you are creating a labeling job for 3D point cloud and video
         /// fram labeling jobs. Use your labeling job task type to select one of the following ARNs
         /// and use it with this parameter when you create a labeling job. Replace
-        /// <code>aws-region</code> with the AWS region you are creating your labeling job
+        /// <code>aws-region</code> with the Amazon Web Services region you are creating your labeling job
         /// in.</p>
         /// <p>
         /// <b>3D Point Cloud HumanTaskUiArns</b>
@@ -46968,12 +48047,12 @@ impl LabelingJobAlgorithmsConfig {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LabelingJobResourceConfig {
-    /// <p>The AWS Key Management Service (AWS KMS) key that Amazon SageMaker uses to encrypt data on the storage volume
+    /// <p>The Amazon Web Services Key Management Service (Amazon Web Services KMS) key that Amazon SageMaker uses to encrypt data on the storage volume
     /// attached to the ML compute instance(s) that run the training and inference jobs used for
     /// automated data labeling. </p>
     /// <p>You can only specify a <code>VolumeKmsKeyId</code> when you create a labeling job with
     /// automated data labeling enabled using the API operation <code>CreateLabelingJob</code>.
-    /// You cannot specify an AWS KMS customer managed CMK to encrypt the storage volume used for
+    /// You cannot specify an Amazon Web Services KMS customer managed CMK to encrypt the storage volume used for
     /// automated data labeling model training and inference when you create a labeling job
     /// using the console. To learn more, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-security.html">Output Data and Storage Volume
     /// Encryption</a>.</p>
@@ -47010,12 +48089,12 @@ pub mod labeling_job_resource_config {
         pub(crate) volume_kms_key_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The AWS Key Management Service (AWS KMS) key that Amazon SageMaker uses to encrypt data on the storage volume
+        /// <p>The Amazon Web Services Key Management Service (Amazon Web Services KMS) key that Amazon SageMaker uses to encrypt data on the storage volume
         /// attached to the ML compute instance(s) that run the training and inference jobs used for
         /// automated data labeling. </p>
         /// <p>You can only specify a <code>VolumeKmsKeyId</code> when you create a labeling job with
         /// automated data labeling enabled using the API operation <code>CreateLabelingJob</code>.
-        /// You cannot specify an AWS KMS customer managed CMK to encrypt the storage volume used for
+        /// You cannot specify an Amazon Web Services KMS customer managed CMK to encrypt the storage volume used for
         /// automated data labeling model training and inference when you create a labeling job
         /// using the console. To learn more, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-security.html">Output Data and Storage Volume
         /// Encryption</a>.</p>
@@ -47145,10 +48224,10 @@ impl LabelingJobStoppingConditions {
 pub struct LabelingJobOutputConfig {
     /// <p>The Amazon S3 location to write output data.</p>
     pub s3_output_path: std::option::Option<std::string::String>,
-    /// <p>The AWS Key Management Service ID of the key used to encrypt the output data, if any.</p>
+    /// <p>The Amazon Web Services Key Management Service ID of the key used to encrypt the output data, if any.</p>
     /// <p>If you provide your own KMS key ID, you must add the required permissions to your KMS
-    /// key described in <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-security-permission.html#sms-security-kms-permissions">Encrypt Output Data and Storage Volume with AWS KMS</a>.</p>
-    /// <p>If you don't provide a KMS key ID, Amazon SageMaker uses the default AWS KMS key for Amazon S3 for your
+    /// key described in <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-security-permission.html#sms-security-kms-permissions">Encrypt Output Data and Storage Volume with Amazon Web Services KMS</a>.</p>
+    /// <p>If you don't provide a KMS key ID, Amazon SageMaker uses the default Amazon Web Services KMS key for Amazon S3 for your
     /// role's account to encrypt your output data.</p>
     /// <p>If you use a bucket policy with an <code>s3:PutObject</code> permission that only
     /// allows objects with server-side encryption, set the condition key of
@@ -47199,10 +48278,10 @@ pub mod labeling_job_output_config {
             self.s3_output_path = input;
             self
         }
-        /// <p>The AWS Key Management Service ID of the key used to encrypt the output data, if any.</p>
+        /// <p>The Amazon Web Services Key Management Service ID of the key used to encrypt the output data, if any.</p>
         /// <p>If you provide your own KMS key ID, you must add the required permissions to your KMS
-        /// key described in <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-security-permission.html#sms-security-kms-permissions">Encrypt Output Data and Storage Volume with AWS KMS</a>.</p>
-        /// <p>If you don't provide a KMS key ID, Amazon SageMaker uses the default AWS KMS key for Amazon S3 for your
+        /// key described in <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-security-permission.html#sms-security-kms-permissions">Encrypt Output Data and Storage Volume with Amazon Web Services KMS</a>.</p>
+        /// <p>If you don't provide a KMS key ID, Amazon SageMaker uses the default Amazon Web Services KMS key for Amazon S3 for your
         /// role's account to encrypt your output data.</p>
         /// <p>If you use a bucket policy with an <code>s3:PutObject</code> permission that only
         /// allows objects with server-side encryption, set the condition key of
@@ -47451,6 +48530,9 @@ impl HyperParameterTuningJobWarmStartType {
             HyperParameterTuningJobWarmStartType::TransferLearning => "TransferLearning",
             HyperParameterTuningJobWarmStartType::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["IdenticalDataAndAlgorithm", "TransferLearning"]
     }
 }
 impl AsRef<str> for HyperParameterTuningJobWarmStartType {
@@ -48500,6 +49582,9 @@ impl HyperParameterScalingType {
             HyperParameterScalingType::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["Auto", "Linear", "Logarithmic", "ReverseLogarithmic"]
+    }
 }
 impl AsRef<str> for HyperParameterScalingType {
     fn as_ref(&self) -> &str {
@@ -49031,6 +50116,9 @@ impl TrainingJobEarlyStoppingType {
             TrainingJobEarlyStoppingType::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["Auto", "Off"]
+    }
 }
 impl AsRef<str> for TrainingJobEarlyStoppingType {
     fn as_ref(&self) -> &str {
@@ -49141,6 +50229,9 @@ impl HumanTaskUiStatus {
             HumanTaskUiStatus::Deleting => "Deleting",
             HumanTaskUiStatus::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["Active", "Deleting"]
     }
 }
 impl AsRef<str> for HumanTaskUiStatus {
@@ -50263,6 +51354,12 @@ impl AwsManagedHumanLoopRequestSource {
             AwsManagedHumanLoopRequestSource::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "AWS/Rekognition/DetectModerationLabels/Image/V3",
+            "AWS/Textract/AnalyzeDocument/Forms/V1",
+        ]
+    }
 }
 impl AsRef<str> for AwsManagedHumanLoopRequestSource {
     fn as_ref(&self) -> &str {
@@ -50566,6 +51663,9 @@ impl CaptureMode {
             CaptureMode::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["Input", "Output"]
+    }
 }
 impl AsRef<str> for CaptureMode {
     fn as_ref(&self) -> &str {
@@ -50748,7 +51848,7 @@ impl ProductionVariant {
 pub struct ProductionVariantCoreDumpConfig {
     /// <p>The Amazon S3 bucket to send the core dump to.</p>
     pub destination_s3_uri: std::option::Option<std::string::String>,
-    /// <p>The AWS Key Management Service (AWS KMS) key that Amazon SageMaker uses to encrypt the core dump data at rest using
+    /// <p>The Amazon Web Services Key Management Service (Amazon Web Services KMS) key that Amazon SageMaker uses to encrypt the core dump data at rest using
     /// Amazon S3 server-side encryption. The <code>KmsKeyId</code> can be any of the following
     /// formats: </p>
     /// <ul>
@@ -50789,8 +51889,8 @@ pub struct ProductionVariantCoreDumpConfig {
     /// </p>
     /// <p>The KMS key policy must grant permission to the IAM role that you specify in your
     /// <code>CreateEndpoint</code> and <code>UpdateEndpoint</code> requests. For more
-    /// information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Using Key Policies in AWS
-    /// KMS</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
+    /// information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Using Key Policies in Amazon Web Services
+    /// KMS</a> in the <i>Amazon Web Services Key Management Service Developer Guide</i>.</p>
     pub kms_key_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ProductionVariantCoreDumpConfig {
@@ -50823,7 +51923,7 @@ pub mod production_variant_core_dump_config {
             self.destination_s3_uri = input;
             self
         }
-        /// <p>The AWS Key Management Service (AWS KMS) key that Amazon SageMaker uses to encrypt the core dump data at rest using
+        /// <p>The Amazon Web Services Key Management Service (Amazon Web Services KMS) key that Amazon SageMaker uses to encrypt the core dump data at rest using
         /// Amazon S3 server-side encryption. The <code>KmsKeyId</code> can be any of the following
         /// formats: </p>
         /// <ul>
@@ -50864,8 +51964,8 @@ pub mod production_variant_core_dump_config {
         /// </p>
         /// <p>The KMS key policy must grant permission to the IAM role that you specify in your
         /// <code>CreateEndpoint</code> and <code>UpdateEndpoint</code> requests. For more
-        /// information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Using Key Policies in AWS
-        /// KMS</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
+        /// information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Using Key Policies in Amazon Web Services
+        /// KMS</a> in the <i>Amazon Web Services Key Management Service Developer Guide</i>.</p>
         pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_key_id = Some(input.into());
             self
@@ -50942,6 +52042,16 @@ impl ProductionVariantAcceleratorType {
             ProductionVariantAcceleratorType::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "ml.eia1.large",
+            "ml.eia1.medium",
+            "ml.eia1.xlarge",
+            "ml.eia2.large",
+            "ml.eia2.medium",
+            "ml.eia2.xlarge",
+        ]
+    }
 }
 impl AsRef<str> for ProductionVariantAcceleratorType {
     fn as_ref(&self) -> &str {
@@ -50954,7 +52064,7 @@ impl AsRef<str> for ProductionVariantAcceleratorType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EdgePresetDeploymentOutput {
     /// <p>The deployment type created by SageMaker Edge Manager. Currently only
-    /// supports AWS IoT Greengrass Version 2 components.</p>
+    /// supports Amazon Web Services IoT Greengrass Version 2 components.</p>
     pub r#type: std::option::Option<crate::model::EdgePresetDeploymentType>,
     /// <p>The Amazon Resource Name (ARN) of the generated deployable resource.</p>
     pub artifact: std::option::Option<std::string::String>,
@@ -50986,7 +52096,7 @@ pub mod edge_preset_deployment_output {
     }
     impl Builder {
         /// <p>The deployment type created by SageMaker Edge Manager. Currently only
-        /// supports AWS IoT Greengrass Version 2 components.</p>
+        /// supports Amazon Web Services IoT Greengrass Version 2 components.</p>
         pub fn r#type(mut self, input: crate::model::EdgePresetDeploymentType) -> Self {
             self.r#type = Some(input);
             self
@@ -51089,6 +52199,9 @@ impl EdgePresetDeploymentStatus {
             EdgePresetDeploymentStatus::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["COMPLETED", "FAILED"]
+    }
 }
 impl AsRef<str> for EdgePresetDeploymentStatus {
     fn as_ref(&self) -> &str {
@@ -51136,6 +52249,9 @@ impl AppNetworkAccessType {
             AppNetworkAccessType::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["PublicInternetOnly", "VpcOnly"]
+    }
 }
 impl AsRef<str> for AppNetworkAccessType {
     fn as_ref(&self) -> &str {
@@ -51182,6 +52298,9 @@ impl AuthMode {
             AuthMode::Sso => "SSO",
             AuthMode::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["IAM", "SSO"]
     }
 }
 impl AsRef<str> for AuthMode {
@@ -51597,6 +52716,80 @@ impl DataQualityBaselineConfig {
     }
 }
 
+/// <p>The <a>VpcConfig</a> configuration object that specifies the VPC that you
+/// want the compilation jobs to connect to. For more information on
+/// controlling access to your Amazon S3 buckets used for compilation job, see
+/// <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/neo-vpc.html">Give Amazon SageMaker Compilation Jobs Access to Resources in Your Amazon VPC</a>.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct NeoVpcConfig {
+    /// <p>The VPC security group IDs. IDs have the form of <code>sg-xxxxxxxx</code>.
+    /// Specify the security groups for the VPC that is specified in the <code>Subnets</code> field.</p>
+    pub security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>The ID of the subnets in the VPC that you want to connect the
+    /// compilation job to for accessing the model in Amazon S3.</p>
+    pub subnets: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl std::fmt::Debug for NeoVpcConfig {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("NeoVpcConfig");
+        formatter.field("security_group_ids", &self.security_group_ids);
+        formatter.field("subnets", &self.subnets);
+        formatter.finish()
+    }
+}
+/// See [`NeoVpcConfig`](crate::model::NeoVpcConfig)
+pub mod neo_vpc_config {
+    /// A builder for [`NeoVpcConfig`](crate::model::NeoVpcConfig)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) subnets: std::option::Option<std::vec::Vec<std::string::String>>,
+    }
+    impl Builder {
+        pub fn security_group_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.security_group_ids.unwrap_or_default();
+            v.push(input.into());
+            self.security_group_ids = Some(v);
+            self
+        }
+        pub fn set_security_group_ids(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.security_group_ids = input;
+            self
+        }
+        pub fn subnets(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.subnets.unwrap_or_default();
+            v.push(input.into());
+            self.subnets = Some(v);
+            self
+        }
+        pub fn set_subnets(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.subnets = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`NeoVpcConfig`](crate::model::NeoVpcConfig)
+        pub fn build(self) -> crate::model::NeoVpcConfig {
+            crate::model::NeoVpcConfig {
+                security_group_ids: self.security_group_ids,
+                subnets: self.subnets,
+            }
+        }
+    }
+}
+impl NeoVpcConfig {
+    /// Creates a new builder-style object to manufacture [`NeoVpcConfig`](crate::model::NeoVpcConfig)
+    pub fn builder() -> crate::model::neo_vpc_config::Builder {
+        crate::model::neo_vpc_config::Builder::default()
+    }
+}
+
 /// <p>Contains information about the output location for the compiled model and the target
 /// device that the model runs on. <code>TargetDevice</code> and <code>TargetPlatform</code>
 /// are mutually exclusive, so you need to choose one between the two to specify your target
@@ -51830,8 +53023,12 @@ pub struct OutputConfig {
     /// </li>
     /// </ul>
     pub compiler_options: std::option::Option<std::string::String>,
-    /// <p>The AWS Key Management Service (AWS KMS) key that Amazon SageMaker uses to encrypt data on the storage volume
-    /// after compilation job. If you don't provide a KMS key ID, Amazon SageMaker uses the default KMS key for Amazon S3 for your role's account</p>
+    /// <p>The Amazon Web Services Key Management Service key (Amazon Web Services KMS) that Amazon SageMaker uses to encrypt your output models with Amazon S3 server-side encryption
+    /// after compilation job. If you don't provide a KMS key ID, Amazon SageMaker uses the default KMS key for Amazon S3 for your role's account.
+    /// For more information, see
+    /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/UsingKMSEncryption.html">KMS-Managed Encryption
+    /// Keys</a> in the <i>Amazon Simple Storage Service Developer Guide.</i>
+    /// </p>    
     /// <p>The KmsKeyId can be any of the following formats: </p>
     /// <ul>
     /// <li>
@@ -52142,8 +53339,12 @@ pub mod output_config {
             self.compiler_options = input;
             self
         }
-        /// <p>The AWS Key Management Service (AWS KMS) key that Amazon SageMaker uses to encrypt data on the storage volume
-        /// after compilation job. If you don't provide a KMS key ID, Amazon SageMaker uses the default KMS key for Amazon S3 for your role's account</p>
+        /// <p>The Amazon Web Services Key Management Service key (Amazon Web Services KMS) that Amazon SageMaker uses to encrypt your output models with Amazon S3 server-side encryption
+        /// after compilation job. If you don't provide a KMS key ID, Amazon SageMaker uses the default KMS key for Amazon S3 for your role's account.
+        /// For more information, see
+        /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/UsingKMSEncryption.html">KMS-Managed Encryption
+        /// Keys</a> in the <i>Amazon Simple Storage Service Developer Guide.</i>
+        /// </p>    
         /// <p>The KmsKeyId can be any of the following formats: </p>
         /// <ul>
         /// <li>
@@ -53209,6 +54410,19 @@ impl Framework {
             Framework::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "DARKNET",
+            "KERAS",
+            "MXNET",
+            "ONNX",
+            "PYTORCH",
+            "SKLEARN",
+            "TENSORFLOW",
+            "TFLITE",
+            "XGBOOST",
+        ]
+    }
 }
 impl AsRef<str> for Framework {
     fn as_ref(&self) -> &str {
@@ -53637,6 +54851,13 @@ impl ProblemType {
             ProblemType::Regression => "Regression",
             ProblemType::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "BinaryClassification",
+            "MulticlassClassification",
+            "Regression",
+        ]
     }
 }
 impl AsRef<str> for ProblemType {
@@ -54100,7 +55321,7 @@ impl AutoMlSecurityConfig {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AutoMlOutputDataConfig {
-    /// <p>The AWS KMS encryption key ID.</p>
+    /// <p>The Amazon Web Services KMS encryption key ID.</p>
     pub kms_key_id: std::option::Option<std::string::String>,
     /// <p>The Amazon S3 output path. Must be 128 characters or less.</p>
     pub s3_output_path: std::option::Option<std::string::String>,
@@ -54123,7 +55344,7 @@ pub mod auto_ml_output_data_config {
         pub(crate) s3_output_path: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The AWS KMS encryption key ID.</p>
+        /// <p>The Amazon Web Services KMS encryption key ID.</p>
         pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_key_id = Some(input.into());
             self
@@ -54409,6 +55630,9 @@ impl AutoMls3DataType {
             AutoMls3DataType::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["ManifestFile", "S3Prefix"]
+    }
 }
 impl AsRef<str> for AutoMls3DataType {
     fn as_ref(&self) -> &str {
@@ -54620,6 +55844,9 @@ impl DetailedAlgorithmStatus {
             DetailedAlgorithmStatus::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["Completed", "Failed", "InProgress", "NotStarted"]
+    }
 }
 impl AsRef<str> for DetailedAlgorithmStatus {
     fn as_ref(&self) -> &str {
@@ -54704,7 +55931,7 @@ impl AlgorithmValidationSpecification {
 
 /// <p>Defines a training job and a batch transform job that Amazon SageMaker runs to validate your
 /// algorithm.</p>
-/// <p>The data provided in the validation profile is made available to your buyers on AWS
+/// <p>The data provided in the validation profile is made available to your buyers on Amazon Web Services
 /// Marketplace.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -55822,6 +57049,9 @@ impl ParameterType {
             ParameterType::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["Categorical", "Continuous", "FreeText", "Integer"]
+    }
 }
 impl AsRef<str> for ParameterType {
     fn as_ref(&self) -> &str {
@@ -55920,6 +57150,9 @@ impl RetentionType {
             RetentionType::Retain => "Retain",
             RetentionType::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["Delete", "Retain"]
     }
 }
 impl AsRef<str> for RetentionType {

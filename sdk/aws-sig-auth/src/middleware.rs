@@ -4,11 +4,15 @@
  */
 
 use crate::signer::{OperationSigningConfig, RequestConfig, SigV4Signer, SigningError};
-use aws_auth::{Credentials, CredentialsError, CredentialsProvider};
+use aws_auth::Credentials;
+use aws_sigv4_poc::SignableBody;
+use aws_types::region::SigningRegion;
+use aws_types::SigningService;
 use smithy_http::middleware::MapRequest;
 use smithy_http::operation::Request;
 use smithy_http::property_bag::PropertyBag;
 use std::time::SystemTime;
+use thiserror::Error;
 
 /// Middleware stage to sign requests with SigV4
 ///
@@ -18,7 +22,7 @@ use std::time::SystemTime;
 /// Prior to signing, the following fields MUST be present in the property bag:
 /// - [`SigningRegion`](SigningRegion): The region used when signing the request, eg. `us-east-1`
 /// - [`SigningService`](SigningService): The name of the service to use when signing the request, eg. `dynamodb`
-/// - [`CredentialsProvider`](CredentialsProvider): A credentials provider to retrieve credentials
+/// - [`Credentials`](Credentials): Credentials to sign with
 /// - [`OperationSigningConfig`](OperationSigningConfig): Operation specific signing configuration, eg.
 ///   changes to URL encoding behavior, or headers that must be omitted.
 /// If any of these fields are missing, the middleware will return an error.
@@ -37,14 +41,10 @@ impl SigV4SigningStage {
     }
 }
 
-use aws_types::region::SigningRegion;
-use aws_types::SigningService;
-use thiserror::Error;
-
 #[derive(Debug, Error)]
 pub enum SigningStageError {
-    #[error("No credentials provider in the property bag")]
-    MissingCredentialsProvider,
+    #[error("No credentials in the property bag")]
+    MissingCredentials,
     #[error("No signing region in the property bag")]
     MissingSigningRegion,
     #[error("No signing service in the property bag")]
@@ -55,8 +55,6 @@ pub enum SigningStageError {
     InvalidBodyType,
     #[error("Signing failed")]
     SigningFailure(#[from] SigningError),
-    #[error("Failed to load credentials from the credentials provider")]
-    CredentialsLoadingError(#[from] CredentialsError),
 }
 
 /// Extract a signing config from a [`PropertyBag`](smithy_http::property_bag::PropertyBag)
@@ -66,25 +64,27 @@ fn signing_config(
     let operation_config = config
         .get::<OperationSigningConfig>()
         .ok_or(SigningStageError::MissingSigningConfig)?;
-    let cred_provider = config
-        .get::<CredentialsProvider>()
-        .ok_or(SigningStageError::MissingCredentialsProvider)?;
-    let creds = cred_provider.provide_credentials()?;
+    let credentials = config
+        .get::<Credentials>()
+        .ok_or(SigningStageError::MissingCredentials)?
+        .clone();
     let region = config
         .get::<SigningRegion>()
         .ok_or(SigningStageError::MissingSigningRegion)?;
     let signing_service = config
         .get::<SigningService>()
         .ok_or(SigningStageError::MissingSigningService)?;
+    let payload_override = config.get::<SignableBody<'static>>();
     let request_config = RequestConfig {
         request_ts: config
             .get::<SystemTime>()
             .copied()
             .unwrap_or_else(SystemTime::now),
         region,
+        payload_override,
         service: signing_service,
     };
-    Ok((operation_config, request_config, creds))
+    Ok((operation_config, request_config, credentials))
 }
 
 impl MapRequest for SigV4SigningStage {
@@ -106,7 +106,7 @@ impl MapRequest for SigV4SigningStage {
 mod test {
     use crate::middleware::{SigV4SigningStage, SigningStageError};
     use crate::signer::{OperationSigningConfig, SigV4Signer};
-    use aws_auth::CredentialsProvider;
+    use aws_auth::Credentials;
     use aws_endpoint::partition::endpoint::{Protocol, SignatureVersion};
     use aws_endpoint::{set_endpoint_resolver, AwsEndpointStage};
     use aws_types::region::Region;
@@ -157,14 +157,13 @@ mod test {
                 .apply(req.try_clone().expect("can clone"))
                 .expect_err("no cred provider"),
         );
-        let cred_provider: CredentialsProvider =
-            Arc::new(aws_auth::Credentials::from_keys("AKIAfoo", "bar", None));
-        req.config_mut().insert(cred_provider);
+        req.config_mut()
+            .insert(Credentials::from_keys("AKIAfoo", "bar", None));
         let req = signer.apply(req).expect("signing succeeded");
         // make sure we got the correct error types in any order
         assert!(errs.iter().all(|el| matches!(
             el,
-            SigningStageError::MissingCredentialsProvider | SigningStageError::MissingSigningConfig
+            SigningStageError::MissingCredentials | SigningStageError::MissingSigningConfig
         )));
 
         let (req, _) = req.into_parts();

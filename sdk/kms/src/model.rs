@@ -60,6 +60,19 @@ impl SigningAlgorithmSpec {
             SigningAlgorithmSpec::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "ECDSA_SHA_256",
+            "ECDSA_SHA_384",
+            "ECDSA_SHA_512",
+            "RSASSA_PKCS1_V1_5_SHA_256",
+            "RSASSA_PKCS1_V1_5_SHA_384",
+            "RSASSA_PKCS1_V1_5_SHA_512",
+            "RSASSA_PSS_SHA_256",
+            "RSASSA_PSS_SHA_384",
+            "RSASSA_PSS_SHA_512",
+        ]
+    }
 }
 impl AsRef<str> for SigningAlgorithmSpec {
     fn as_ref(&self) -> &str {
@@ -106,6 +119,9 @@ impl MessageType {
             MessageType::Raw => "RAW",
             MessageType::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["DIGEST", "RAW"]
     }
 }
 impl AsRef<str> for MessageType {
@@ -188,6 +204,799 @@ impl Tag {
     std::fmt::Debug,
     std::hash::Hash,
 )]
+pub enum KeyState {
+    Creating,
+    Disabled,
+    Enabled,
+    PendingDeletion,
+    PendingImport,
+    PendingReplicaDeletion,
+    Unavailable,
+    Updating,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for KeyState {
+    fn from(s: &str) -> Self {
+        match s {
+            "Creating" => KeyState::Creating,
+            "Disabled" => KeyState::Disabled,
+            "Enabled" => KeyState::Enabled,
+            "PendingDeletion" => KeyState::PendingDeletion,
+            "PendingImport" => KeyState::PendingImport,
+            "PendingReplicaDeletion" => KeyState::PendingReplicaDeletion,
+            "Unavailable" => KeyState::Unavailable,
+            "Updating" => KeyState::Updating,
+            other => KeyState::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for KeyState {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(KeyState::from(s))
+    }
+}
+impl KeyState {
+    pub fn as_str(&self) -> &str {
+        match self {
+            KeyState::Creating => "Creating",
+            KeyState::Disabled => "Disabled",
+            KeyState::Enabled => "Enabled",
+            KeyState::PendingDeletion => "PendingDeletion",
+            KeyState::PendingImport => "PendingImport",
+            KeyState::PendingReplicaDeletion => "PendingReplicaDeletion",
+            KeyState::Unavailable => "Unavailable",
+            KeyState::Updating => "Updating",
+            KeyState::Unknown(s) => s.as_ref(),
+        }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "Creating",
+            "Disabled",
+            "Enabled",
+            "PendingDeletion",
+            "PendingImport",
+            "PendingReplicaDeletion",
+            "Unavailable",
+            "Updating",
+        ]
+    }
+}
+impl AsRef<str> for KeyState {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// <p>Contains metadata about a customer master key (CMK).</p>
+/// <p>This data type is used as a response element for the <a>CreateKey</a> and <a>DescribeKey</a> operations.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct KeyMetadata {
+    /// <p>The twelve-digit account ID of the AWS account that owns the CMK.</p>
+    pub aws_account_id: std::option::Option<std::string::String>,
+    /// <p>The globally unique identifier for the CMK.</p>
+    pub key_id: std::option::Option<std::string::String>,
+    /// <p>The Amazon Resource Name (ARN) of the CMK. For examples, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms">AWS Key Management Service
+    /// (AWS KMS)</a> in the Example ARNs section of the <i>AWS General
+    /// Reference</i>.</p>
+    pub arn: std::option::Option<std::string::String>,
+    /// <p>The date and time when the CMK was created.</p>
+    pub creation_date: std::option::Option<smithy_types::Instant>,
+    /// <p>Specifies whether the CMK is enabled. When <code>KeyState</code> is <code>Enabled</code>
+    /// this value is true, otherwise it is false.</p>
+    pub enabled: bool,
+    /// <p>The description of the CMK.</p>
+    pub description: std::option::Option<std::string::String>,
+    /// <p>The <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic operations</a> for which you can use the CMK.</p>
+    pub key_usage: std::option::Option<crate::model::KeyUsageType>,
+    /// <p>The current status of the CMK.</p>
+    /// <p>For more information about how key state affects the use of a CMK, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key state: Effect on your CMK</a>
+    /// in the <i>AWS Key Management Service Developer Guide</i>.</p>
+    pub key_state: std::option::Option<crate::model::KeyState>,
+    /// <p>The date and time after which AWS KMS deletes this CMK. This value is present only when the
+    /// CMK is scheduled for deletion, that is, when its <code>KeyState</code> is
+    /// <code>PendingDeletion</code>.</p>
+    /// <p>When the primary key in a multi-Region key is scheduled for deletion but still has replica
+    /// keys, its key state is <code>PendingReplicaDeletion</code> and the length of its waiting
+    /// period is displayed in the <code>PendingDeletionWindowInDays</code> field.</p>
+    pub deletion_date: std::option::Option<smithy_types::Instant>,
+    /// <p>The time at which the imported key material expires. When the key material expires, AWS KMS
+    /// deletes the key material and the CMK becomes unusable. This value is present only for CMKs
+    /// whose <code>Origin</code> is <code>EXTERNAL</code> and whose <code>ExpirationModel</code> is
+    /// <code>KEY_MATERIAL_EXPIRES</code>, otherwise this value is omitted.</p>
+    pub valid_to: std::option::Option<smithy_types::Instant>,
+    /// <p>The source of the CMK's key material. When this value is <code>AWS_KMS</code>, AWS KMS
+    /// created the key material. When this value is <code>EXTERNAL</code>, the key material was
+    /// imported from your existing key management infrastructure or the CMK lacks key material. When
+    /// this value is <code>AWS_CLOUDHSM</code>, the key material was created in the AWS CloudHSM cluster
+    /// associated with a custom key store.</p>
+    pub origin: std::option::Option<crate::model::OriginType>,
+    /// <p>A unique identifier for the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom key store</a> that contains the CMK. This value is present
+    /// only when the CMK is created in a custom key store.</p>
+    pub custom_key_store_id: std::option::Option<std::string::String>,
+    /// <p>The cluster ID of the AWS CloudHSM cluster that contains the key material for the CMK. When you
+    /// create a CMK in a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom key store</a>, AWS KMS creates the key material for the CMK in the
+    /// associated AWS CloudHSM cluster. This value is present only when the CMK is created in a custom key
+    /// store.</p>
+    pub cloud_hsm_cluster_id: std::option::Option<std::string::String>,
+    /// <p>Specifies whether the CMK's key material expires. This value is present only when
+    /// <code>Origin</code> is <code>EXTERNAL</code>, otherwise this value is omitted.</p>
+    pub expiration_model: std::option::Option<crate::model::ExpirationModelType>,
+    /// <p>The manager of the CMK. CMKs in your AWS account are either customer managed or AWS
+    /// managed. For more information about the difference, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys">Customer Master Keys</a> in the
+    /// <i>AWS Key Management Service Developer Guide</i>.</p>
+    pub key_manager: std::option::Option<crate::model::KeyManagerType>,
+    /// <p>Describes the type of key material in the CMK.</p>
+    pub customer_master_key_spec: std::option::Option<crate::model::CustomerMasterKeySpec>,
+    /// <p>The encryption algorithms that the CMK supports. You cannot use the CMK with other
+    /// encryption algorithms within AWS KMS.</p>
+    /// <p>This value is present only when the <code>KeyUsage</code> of the CMK is
+    /// <code>ENCRYPT_DECRYPT</code>.</p>
+    pub encryption_algorithms:
+        std::option::Option<std::vec::Vec<crate::model::EncryptionAlgorithmSpec>>,
+    /// <p>The signing algorithms that the CMK supports. You cannot use the CMK with other signing
+    /// algorithms within AWS KMS.</p>
+    /// <p>This field appears only when the <code>KeyUsage</code> of the CMK is
+    /// <code>SIGN_VERIFY</code>.</p>
+    pub signing_algorithms: std::option::Option<std::vec::Vec<crate::model::SigningAlgorithmSpec>>,
+    /// <p>Indicates whether the CMK is a multi-Region (<code>True</code>) or regional
+    /// (<code>False</code>) key. This value is <code>True</code> for multi-Region primary and
+    /// replica CMKs and <code>False</code> for regional CMKs.</p>
+    /// <p>For more information about multi-Region keys, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-overview.html">Using multi-Region keys</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
+    pub multi_region: std::option::Option<bool>,
+    /// <p>Lists the primary and replica CMKs in same multi-Region CMK. This field is present only
+    /// when the value of the <code>MultiRegion</code> field is <code>True</code>.</p>
+    /// <p>For more information about any listed CMK, use the <a>DescribeKey</a>
+    /// operation.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>MultiRegionKeyType</code> indicates whether the CMK is a <code>PRIMARY</code> or
+    /// <code>REPLICA</code> key.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>PrimaryKey</code> displays the key ARN and Region of the primary key. This field
+    /// displays the current CMK if it is the primary key.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>ReplicaKeys</code> displays the key ARNs and Regions of all replica keys. This
+    /// field includes the current CMK if it is a replica key.</p>
+    /// </li>
+    /// </ul>
+    pub multi_region_configuration: std::option::Option<crate::model::MultiRegionConfiguration>,
+    /// <p>The waiting period before the primary key in a multi-Region key is deleted. This waiting
+    /// period begins when the last of its replica keys is deleted. This value is present only when
+    /// the <code>KeyState</code> of the CMK is <code>PendingReplicaDeletion</code>. That indicates
+    /// that the CMK is the primary key in a multi-Region key, it is scheduled for deletion, and it
+    /// still has existing replica keys.</p>
+    /// <p>When a regional CMK or a replica key in a multi-Region key is scheduled for deletion, its
+    /// deletion date is displayed in the <code>DeletionDate</code> field. However, when the primary
+    /// key in a multi-Region key is scheduled for deletion, its waiting period doesn't begin until
+    /// all of its replica keys are deleted. This value displays that waiting period. When the last
+    /// replica key in the multi-Region key is deleted, the <code>KeyState</code> of the scheduled
+    /// primary key changes from <code>PendingReplicaDeletion</code> to <code>PendingDeletion</code>
+    /// and the deletion date appears in the <code>DeletionDate</code> field.</p>
+    pub pending_deletion_window_in_days: std::option::Option<i32>,
+}
+impl std::fmt::Debug for KeyMetadata {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("KeyMetadata");
+        formatter.field("aws_account_id", &self.aws_account_id);
+        formatter.field("key_id", &self.key_id);
+        formatter.field("arn", &self.arn);
+        formatter.field("creation_date", &self.creation_date);
+        formatter.field("enabled", &self.enabled);
+        formatter.field("description", &self.description);
+        formatter.field("key_usage", &self.key_usage);
+        formatter.field("key_state", &self.key_state);
+        formatter.field("deletion_date", &self.deletion_date);
+        formatter.field("valid_to", &self.valid_to);
+        formatter.field("origin", &self.origin);
+        formatter.field("custom_key_store_id", &self.custom_key_store_id);
+        formatter.field("cloud_hsm_cluster_id", &self.cloud_hsm_cluster_id);
+        formatter.field("expiration_model", &self.expiration_model);
+        formatter.field("key_manager", &self.key_manager);
+        formatter.field("customer_master_key_spec", &self.customer_master_key_spec);
+        formatter.field("encryption_algorithms", &self.encryption_algorithms);
+        formatter.field("signing_algorithms", &self.signing_algorithms);
+        formatter.field("multi_region", &self.multi_region);
+        formatter.field(
+            "multi_region_configuration",
+            &self.multi_region_configuration,
+        );
+        formatter.field(
+            "pending_deletion_window_in_days",
+            &self.pending_deletion_window_in_days,
+        );
+        formatter.finish()
+    }
+}
+/// See [`KeyMetadata`](crate::model::KeyMetadata)
+pub mod key_metadata {
+    /// A builder for [`KeyMetadata`](crate::model::KeyMetadata)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) aws_account_id: std::option::Option<std::string::String>,
+        pub(crate) key_id: std::option::Option<std::string::String>,
+        pub(crate) arn: std::option::Option<std::string::String>,
+        pub(crate) creation_date: std::option::Option<smithy_types::Instant>,
+        pub(crate) enabled: std::option::Option<bool>,
+        pub(crate) description: std::option::Option<std::string::String>,
+        pub(crate) key_usage: std::option::Option<crate::model::KeyUsageType>,
+        pub(crate) key_state: std::option::Option<crate::model::KeyState>,
+        pub(crate) deletion_date: std::option::Option<smithy_types::Instant>,
+        pub(crate) valid_to: std::option::Option<smithy_types::Instant>,
+        pub(crate) origin: std::option::Option<crate::model::OriginType>,
+        pub(crate) custom_key_store_id: std::option::Option<std::string::String>,
+        pub(crate) cloud_hsm_cluster_id: std::option::Option<std::string::String>,
+        pub(crate) expiration_model: std::option::Option<crate::model::ExpirationModelType>,
+        pub(crate) key_manager: std::option::Option<crate::model::KeyManagerType>,
+        pub(crate) customer_master_key_spec:
+            std::option::Option<crate::model::CustomerMasterKeySpec>,
+        pub(crate) encryption_algorithms:
+            std::option::Option<std::vec::Vec<crate::model::EncryptionAlgorithmSpec>>,
+        pub(crate) signing_algorithms:
+            std::option::Option<std::vec::Vec<crate::model::SigningAlgorithmSpec>>,
+        pub(crate) multi_region: std::option::Option<bool>,
+        pub(crate) multi_region_configuration:
+            std::option::Option<crate::model::MultiRegionConfiguration>,
+        pub(crate) pending_deletion_window_in_days: std::option::Option<i32>,
+    }
+    impl Builder {
+        /// <p>The twelve-digit account ID of the AWS account that owns the CMK.</p>
+        pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.aws_account_id = Some(input.into());
+            self
+        }
+        pub fn set_aws_account_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.aws_account_id = input;
+            self
+        }
+        /// <p>The globally unique identifier for the CMK.</p>
+        pub fn key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.key_id = Some(input.into());
+            self
+        }
+        pub fn set_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.key_id = input;
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the CMK. For examples, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms">AWS Key Management Service
+        /// (AWS KMS)</a> in the Example ARNs section of the <i>AWS General
+        /// Reference</i>.</p>
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.arn = Some(input.into());
+            self
+        }
+        pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.arn = input;
+            self
+        }
+        /// <p>The date and time when the CMK was created.</p>
+        pub fn creation_date(mut self, input: smithy_types::Instant) -> Self {
+            self.creation_date = Some(input);
+            self
+        }
+        pub fn set_creation_date(
+            mut self,
+            input: std::option::Option<smithy_types::Instant>,
+        ) -> Self {
+            self.creation_date = input;
+            self
+        }
+        /// <p>Specifies whether the CMK is enabled. When <code>KeyState</code> is <code>Enabled</code>
+        /// this value is true, otherwise it is false.</p>
+        pub fn enabled(mut self, input: bool) -> Self {
+            self.enabled = Some(input);
+            self
+        }
+        pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
+            self.enabled = input;
+            self
+        }
+        /// <p>The description of the CMK.</p>
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
+            self
+        }
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
+            self
+        }
+        /// <p>The <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic operations</a> for which you can use the CMK.</p>
+        pub fn key_usage(mut self, input: crate::model::KeyUsageType) -> Self {
+            self.key_usage = Some(input);
+            self
+        }
+        pub fn set_key_usage(
+            mut self,
+            input: std::option::Option<crate::model::KeyUsageType>,
+        ) -> Self {
+            self.key_usage = input;
+            self
+        }
+        /// <p>The current status of the CMK.</p>
+        /// <p>For more information about how key state affects the use of a CMK, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key state: Effect on your CMK</a>
+        /// in the <i>AWS Key Management Service Developer Guide</i>.</p>
+        pub fn key_state(mut self, input: crate::model::KeyState) -> Self {
+            self.key_state = Some(input);
+            self
+        }
+        pub fn set_key_state(mut self, input: std::option::Option<crate::model::KeyState>) -> Self {
+            self.key_state = input;
+            self
+        }
+        /// <p>The date and time after which AWS KMS deletes this CMK. This value is present only when the
+        /// CMK is scheduled for deletion, that is, when its <code>KeyState</code> is
+        /// <code>PendingDeletion</code>.</p>
+        /// <p>When the primary key in a multi-Region key is scheduled for deletion but still has replica
+        /// keys, its key state is <code>PendingReplicaDeletion</code> and the length of its waiting
+        /// period is displayed in the <code>PendingDeletionWindowInDays</code> field.</p>
+        pub fn deletion_date(mut self, input: smithy_types::Instant) -> Self {
+            self.deletion_date = Some(input);
+            self
+        }
+        pub fn set_deletion_date(
+            mut self,
+            input: std::option::Option<smithy_types::Instant>,
+        ) -> Self {
+            self.deletion_date = input;
+            self
+        }
+        /// <p>The time at which the imported key material expires. When the key material expires, AWS KMS
+        /// deletes the key material and the CMK becomes unusable. This value is present only for CMKs
+        /// whose <code>Origin</code> is <code>EXTERNAL</code> and whose <code>ExpirationModel</code> is
+        /// <code>KEY_MATERIAL_EXPIRES</code>, otherwise this value is omitted.</p>
+        pub fn valid_to(mut self, input: smithy_types::Instant) -> Self {
+            self.valid_to = Some(input);
+            self
+        }
+        pub fn set_valid_to(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+            self.valid_to = input;
+            self
+        }
+        /// <p>The source of the CMK's key material. When this value is <code>AWS_KMS</code>, AWS KMS
+        /// created the key material. When this value is <code>EXTERNAL</code>, the key material was
+        /// imported from your existing key management infrastructure or the CMK lacks key material. When
+        /// this value is <code>AWS_CLOUDHSM</code>, the key material was created in the AWS CloudHSM cluster
+        /// associated with a custom key store.</p>
+        pub fn origin(mut self, input: crate::model::OriginType) -> Self {
+            self.origin = Some(input);
+            self
+        }
+        pub fn set_origin(mut self, input: std::option::Option<crate::model::OriginType>) -> Self {
+            self.origin = input;
+            self
+        }
+        /// <p>A unique identifier for the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom key store</a> that contains the CMK. This value is present
+        /// only when the CMK is created in a custom key store.</p>
+        pub fn custom_key_store_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.custom_key_store_id = Some(input.into());
+            self
+        }
+        pub fn set_custom_key_store_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.custom_key_store_id = input;
+            self
+        }
+        /// <p>The cluster ID of the AWS CloudHSM cluster that contains the key material for the CMK. When you
+        /// create a CMK in a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom key store</a>, AWS KMS creates the key material for the CMK in the
+        /// associated AWS CloudHSM cluster. This value is present only when the CMK is created in a custom key
+        /// store.</p>
+        pub fn cloud_hsm_cluster_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.cloud_hsm_cluster_id = Some(input.into());
+            self
+        }
+        pub fn set_cloud_hsm_cluster_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.cloud_hsm_cluster_id = input;
+            self
+        }
+        /// <p>Specifies whether the CMK's key material expires. This value is present only when
+        /// <code>Origin</code> is <code>EXTERNAL</code>, otherwise this value is omitted.</p>
+        pub fn expiration_model(mut self, input: crate::model::ExpirationModelType) -> Self {
+            self.expiration_model = Some(input);
+            self
+        }
+        pub fn set_expiration_model(
+            mut self,
+            input: std::option::Option<crate::model::ExpirationModelType>,
+        ) -> Self {
+            self.expiration_model = input;
+            self
+        }
+        /// <p>The manager of the CMK. CMKs in your AWS account are either customer managed or AWS
+        /// managed. For more information about the difference, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys">Customer Master Keys</a> in the
+        /// <i>AWS Key Management Service Developer Guide</i>.</p>
+        pub fn key_manager(mut self, input: crate::model::KeyManagerType) -> Self {
+            self.key_manager = Some(input);
+            self
+        }
+        pub fn set_key_manager(
+            mut self,
+            input: std::option::Option<crate::model::KeyManagerType>,
+        ) -> Self {
+            self.key_manager = input;
+            self
+        }
+        /// <p>Describes the type of key material in the CMK.</p>
+        pub fn customer_master_key_spec(
+            mut self,
+            input: crate::model::CustomerMasterKeySpec,
+        ) -> Self {
+            self.customer_master_key_spec = Some(input);
+            self
+        }
+        pub fn set_customer_master_key_spec(
+            mut self,
+            input: std::option::Option<crate::model::CustomerMasterKeySpec>,
+        ) -> Self {
+            self.customer_master_key_spec = input;
+            self
+        }
+        pub fn encryption_algorithms(
+            mut self,
+            input: impl Into<crate::model::EncryptionAlgorithmSpec>,
+        ) -> Self {
+            let mut v = self.encryption_algorithms.unwrap_or_default();
+            v.push(input.into());
+            self.encryption_algorithms = Some(v);
+            self
+        }
+        pub fn set_encryption_algorithms(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::EncryptionAlgorithmSpec>>,
+        ) -> Self {
+            self.encryption_algorithms = input;
+            self
+        }
+        pub fn signing_algorithms(
+            mut self,
+            input: impl Into<crate::model::SigningAlgorithmSpec>,
+        ) -> Self {
+            let mut v = self.signing_algorithms.unwrap_or_default();
+            v.push(input.into());
+            self.signing_algorithms = Some(v);
+            self
+        }
+        pub fn set_signing_algorithms(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::SigningAlgorithmSpec>>,
+        ) -> Self {
+            self.signing_algorithms = input;
+            self
+        }
+        /// <p>Indicates whether the CMK is a multi-Region (<code>True</code>) or regional
+        /// (<code>False</code>) key. This value is <code>True</code> for multi-Region primary and
+        /// replica CMKs and <code>False</code> for regional CMKs.</p>
+        /// <p>For more information about multi-Region keys, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-overview.html">Using multi-Region keys</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
+        pub fn multi_region(mut self, input: bool) -> Self {
+            self.multi_region = Some(input);
+            self
+        }
+        pub fn set_multi_region(mut self, input: std::option::Option<bool>) -> Self {
+            self.multi_region = input;
+            self
+        }
+        /// <p>Lists the primary and replica CMKs in same multi-Region CMK. This field is present only
+        /// when the value of the <code>MultiRegion</code> field is <code>True</code>.</p>
+        /// <p>For more information about any listed CMK, use the <a>DescribeKey</a>
+        /// operation.</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>MultiRegionKeyType</code> indicates whether the CMK is a <code>PRIMARY</code> or
+        /// <code>REPLICA</code> key.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>PrimaryKey</code> displays the key ARN and Region of the primary key. This field
+        /// displays the current CMK if it is the primary key.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>ReplicaKeys</code> displays the key ARNs and Regions of all replica keys. This
+        /// field includes the current CMK if it is a replica key.</p>
+        /// </li>
+        /// </ul>
+        pub fn multi_region_configuration(
+            mut self,
+            input: crate::model::MultiRegionConfiguration,
+        ) -> Self {
+            self.multi_region_configuration = Some(input);
+            self
+        }
+        pub fn set_multi_region_configuration(
+            mut self,
+            input: std::option::Option<crate::model::MultiRegionConfiguration>,
+        ) -> Self {
+            self.multi_region_configuration = input;
+            self
+        }
+        /// <p>The waiting period before the primary key in a multi-Region key is deleted. This waiting
+        /// period begins when the last of its replica keys is deleted. This value is present only when
+        /// the <code>KeyState</code> of the CMK is <code>PendingReplicaDeletion</code>. That indicates
+        /// that the CMK is the primary key in a multi-Region key, it is scheduled for deletion, and it
+        /// still has existing replica keys.</p>
+        /// <p>When a regional CMK or a replica key in a multi-Region key is scheduled for deletion, its
+        /// deletion date is displayed in the <code>DeletionDate</code> field. However, when the primary
+        /// key in a multi-Region key is scheduled for deletion, its waiting period doesn't begin until
+        /// all of its replica keys are deleted. This value displays that waiting period. When the last
+        /// replica key in the multi-Region key is deleted, the <code>KeyState</code> of the scheduled
+        /// primary key changes from <code>PendingReplicaDeletion</code> to <code>PendingDeletion</code>
+        /// and the deletion date appears in the <code>DeletionDate</code> field.</p>
+        pub fn pending_deletion_window_in_days(mut self, input: i32) -> Self {
+            self.pending_deletion_window_in_days = Some(input);
+            self
+        }
+        pub fn set_pending_deletion_window_in_days(
+            mut self,
+            input: std::option::Option<i32>,
+        ) -> Self {
+            self.pending_deletion_window_in_days = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`KeyMetadata`](crate::model::KeyMetadata)
+        pub fn build(self) -> crate::model::KeyMetadata {
+            crate::model::KeyMetadata {
+                aws_account_id: self.aws_account_id,
+                key_id: self.key_id,
+                arn: self.arn,
+                creation_date: self.creation_date,
+                enabled: self.enabled.unwrap_or_default(),
+                description: self.description,
+                key_usage: self.key_usage,
+                key_state: self.key_state,
+                deletion_date: self.deletion_date,
+                valid_to: self.valid_to,
+                origin: self.origin,
+                custom_key_store_id: self.custom_key_store_id,
+                cloud_hsm_cluster_id: self.cloud_hsm_cluster_id,
+                expiration_model: self.expiration_model,
+                key_manager: self.key_manager,
+                customer_master_key_spec: self.customer_master_key_spec,
+                encryption_algorithms: self.encryption_algorithms,
+                signing_algorithms: self.signing_algorithms,
+                multi_region: self.multi_region,
+                multi_region_configuration: self.multi_region_configuration,
+                pending_deletion_window_in_days: self.pending_deletion_window_in_days,
+            }
+        }
+    }
+}
+impl KeyMetadata {
+    /// Creates a new builder-style object to manufacture [`KeyMetadata`](crate::model::KeyMetadata)
+    pub fn builder() -> crate::model::key_metadata::Builder {
+        crate::model::key_metadata::Builder::default()
+    }
+}
+
+/// <p>Describes the configuration of this multi-Region CMK. This field appears only when the CMK
+/// is a primary or replica of a multi-Region CMK.</p>
+/// <p>For more information about any listed CMK, use the <a>DescribeKey</a>
+/// operation.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct MultiRegionConfiguration {
+    /// <p>Indicates whether the CMK is a <code>PRIMARY</code> or <code>REPLICA</code> key.</p>
+    pub multi_region_key_type: std::option::Option<crate::model::MultiRegionKeyType>,
+    /// <p>Displays the key ARN and Region of the primary key. This field includes the current CMK if
+    /// it is the primary key.</p>
+    pub primary_key: std::option::Option<crate::model::MultiRegionKey>,
+    /// <p>displays the key ARNs and Regions of all replica keys. This field includes the current CMK
+    /// if it is a replica key.</p>
+    pub replica_keys: std::option::Option<std::vec::Vec<crate::model::MultiRegionKey>>,
+}
+impl std::fmt::Debug for MultiRegionConfiguration {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("MultiRegionConfiguration");
+        formatter.field("multi_region_key_type", &self.multi_region_key_type);
+        formatter.field("primary_key", &self.primary_key);
+        formatter.field("replica_keys", &self.replica_keys);
+        formatter.finish()
+    }
+}
+/// See [`MultiRegionConfiguration`](crate::model::MultiRegionConfiguration)
+pub mod multi_region_configuration {
+    /// A builder for [`MultiRegionConfiguration`](crate::model::MultiRegionConfiguration)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) multi_region_key_type: std::option::Option<crate::model::MultiRegionKeyType>,
+        pub(crate) primary_key: std::option::Option<crate::model::MultiRegionKey>,
+        pub(crate) replica_keys: std::option::Option<std::vec::Vec<crate::model::MultiRegionKey>>,
+    }
+    impl Builder {
+        /// <p>Indicates whether the CMK is a <code>PRIMARY</code> or <code>REPLICA</code> key.</p>
+        pub fn multi_region_key_type(mut self, input: crate::model::MultiRegionKeyType) -> Self {
+            self.multi_region_key_type = Some(input);
+            self
+        }
+        pub fn set_multi_region_key_type(
+            mut self,
+            input: std::option::Option<crate::model::MultiRegionKeyType>,
+        ) -> Self {
+            self.multi_region_key_type = input;
+            self
+        }
+        /// <p>Displays the key ARN and Region of the primary key. This field includes the current CMK if
+        /// it is the primary key.</p>
+        pub fn primary_key(mut self, input: crate::model::MultiRegionKey) -> Self {
+            self.primary_key = Some(input);
+            self
+        }
+        pub fn set_primary_key(
+            mut self,
+            input: std::option::Option<crate::model::MultiRegionKey>,
+        ) -> Self {
+            self.primary_key = input;
+            self
+        }
+        pub fn replica_keys(mut self, input: impl Into<crate::model::MultiRegionKey>) -> Self {
+            let mut v = self.replica_keys.unwrap_or_default();
+            v.push(input.into());
+            self.replica_keys = Some(v);
+            self
+        }
+        pub fn set_replica_keys(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::MultiRegionKey>>,
+        ) -> Self {
+            self.replica_keys = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`MultiRegionConfiguration`](crate::model::MultiRegionConfiguration)
+        pub fn build(self) -> crate::model::MultiRegionConfiguration {
+            crate::model::MultiRegionConfiguration {
+                multi_region_key_type: self.multi_region_key_type,
+                primary_key: self.primary_key,
+                replica_keys: self.replica_keys,
+            }
+        }
+    }
+}
+impl MultiRegionConfiguration {
+    /// Creates a new builder-style object to manufacture [`MultiRegionConfiguration`](crate::model::MultiRegionConfiguration)
+    pub fn builder() -> crate::model::multi_region_configuration::Builder {
+        crate::model::multi_region_configuration::Builder::default()
+    }
+}
+
+/// <p>Describes the primary or replica key in a multi-Region key.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct MultiRegionKey {
+    /// <p>Displays the key ARN of a primary or replica key of a multi-Region key.</p>
+    pub arn: std::option::Option<std::string::String>,
+    /// <p>Displays the AWS Region of a primary or replica key in a multi-Region key.</p>
+    pub region: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for MultiRegionKey {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("MultiRegionKey");
+        formatter.field("arn", &self.arn);
+        formatter.field("region", &self.region);
+        formatter.finish()
+    }
+}
+/// See [`MultiRegionKey`](crate::model::MultiRegionKey)
+pub mod multi_region_key {
+    /// A builder for [`MultiRegionKey`](crate::model::MultiRegionKey)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) arn: std::option::Option<std::string::String>,
+        pub(crate) region: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>Displays the key ARN of a primary or replica key of a multi-Region key.</p>
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.arn = Some(input.into());
+            self
+        }
+        pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.arn = input;
+            self
+        }
+        /// <p>Displays the AWS Region of a primary or replica key in a multi-Region key.</p>
+        pub fn region(mut self, input: impl Into<std::string::String>) -> Self {
+            self.region = Some(input.into());
+            self
+        }
+        pub fn set_region(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.region = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`MultiRegionKey`](crate::model::MultiRegionKey)
+        pub fn build(self) -> crate::model::MultiRegionKey {
+            crate::model::MultiRegionKey {
+                arn: self.arn,
+                region: self.region,
+            }
+        }
+    }
+}
+impl MultiRegionKey {
+    /// Creates a new builder-style object to manufacture [`MultiRegionKey`](crate::model::MultiRegionKey)
+    pub fn builder() -> crate::model::multi_region_key::Builder {
+        crate::model::multi_region_key::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum MultiRegionKeyType {
+    Primary,
+    Replica,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for MultiRegionKeyType {
+    fn from(s: &str) -> Self {
+        match s {
+            "PRIMARY" => MultiRegionKeyType::Primary,
+            "REPLICA" => MultiRegionKeyType::Replica,
+            other => MultiRegionKeyType::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for MultiRegionKeyType {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(MultiRegionKeyType::from(s))
+    }
+}
+impl MultiRegionKeyType {
+    pub fn as_str(&self) -> &str {
+        match self {
+            MultiRegionKeyType::Primary => "PRIMARY",
+            MultiRegionKeyType::Replica => "REPLICA",
+            MultiRegionKeyType::Unknown(s) => s.as_ref(),
+        }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["PRIMARY", "REPLICA"]
+    }
+}
+impl AsRef<str> for MultiRegionKeyType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
 pub enum EncryptionAlgorithmSpec {
     RsaesOaepSha1,
     RsaesOaepSha256,
@@ -221,8 +1030,295 @@ impl EncryptionAlgorithmSpec {
             EncryptionAlgorithmSpec::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "RSAES_OAEP_SHA_1",
+            "RSAES_OAEP_SHA_256",
+            "SYMMETRIC_DEFAULT",
+        ]
+    }
 }
 impl AsRef<str> for EncryptionAlgorithmSpec {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum CustomerMasterKeySpec {
+    EccNistP256,
+    EccNistP384,
+    EccNistP521,
+    EccSecgP256K1,
+    Rsa2048,
+    Rsa3072,
+    Rsa4096,
+    SymmetricDefault,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for CustomerMasterKeySpec {
+    fn from(s: &str) -> Self {
+        match s {
+            "ECC_NIST_P256" => CustomerMasterKeySpec::EccNistP256,
+            "ECC_NIST_P384" => CustomerMasterKeySpec::EccNistP384,
+            "ECC_NIST_P521" => CustomerMasterKeySpec::EccNistP521,
+            "ECC_SECG_P256K1" => CustomerMasterKeySpec::EccSecgP256K1,
+            "RSA_2048" => CustomerMasterKeySpec::Rsa2048,
+            "RSA_3072" => CustomerMasterKeySpec::Rsa3072,
+            "RSA_4096" => CustomerMasterKeySpec::Rsa4096,
+            "SYMMETRIC_DEFAULT" => CustomerMasterKeySpec::SymmetricDefault,
+            other => CustomerMasterKeySpec::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for CustomerMasterKeySpec {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(CustomerMasterKeySpec::from(s))
+    }
+}
+impl CustomerMasterKeySpec {
+    pub fn as_str(&self) -> &str {
+        match self {
+            CustomerMasterKeySpec::EccNistP256 => "ECC_NIST_P256",
+            CustomerMasterKeySpec::EccNistP384 => "ECC_NIST_P384",
+            CustomerMasterKeySpec::EccNistP521 => "ECC_NIST_P521",
+            CustomerMasterKeySpec::EccSecgP256K1 => "ECC_SECG_P256K1",
+            CustomerMasterKeySpec::Rsa2048 => "RSA_2048",
+            CustomerMasterKeySpec::Rsa3072 => "RSA_3072",
+            CustomerMasterKeySpec::Rsa4096 => "RSA_4096",
+            CustomerMasterKeySpec::SymmetricDefault => "SYMMETRIC_DEFAULT",
+            CustomerMasterKeySpec::Unknown(s) => s.as_ref(),
+        }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "ECC_NIST_P256",
+            "ECC_NIST_P384",
+            "ECC_NIST_P521",
+            "ECC_SECG_P256K1",
+            "RSA_2048",
+            "RSA_3072",
+            "RSA_4096",
+            "SYMMETRIC_DEFAULT",
+        ]
+    }
+}
+impl AsRef<str> for CustomerMasterKeySpec {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum KeyManagerType {
+    Aws,
+    Customer,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for KeyManagerType {
+    fn from(s: &str) -> Self {
+        match s {
+            "AWS" => KeyManagerType::Aws,
+            "CUSTOMER" => KeyManagerType::Customer,
+            other => KeyManagerType::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for KeyManagerType {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(KeyManagerType::from(s))
+    }
+}
+impl KeyManagerType {
+    pub fn as_str(&self) -> &str {
+        match self {
+            KeyManagerType::Aws => "AWS",
+            KeyManagerType::Customer => "CUSTOMER",
+            KeyManagerType::Unknown(s) => s.as_ref(),
+        }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["AWS", "CUSTOMER"]
+    }
+}
+impl AsRef<str> for KeyManagerType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum ExpirationModelType {
+    KeyMaterialDoesNotExpire,
+    KeyMaterialExpires,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for ExpirationModelType {
+    fn from(s: &str) -> Self {
+        match s {
+            "KEY_MATERIAL_DOES_NOT_EXPIRE" => ExpirationModelType::KeyMaterialDoesNotExpire,
+            "KEY_MATERIAL_EXPIRES" => ExpirationModelType::KeyMaterialExpires,
+            other => ExpirationModelType::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for ExpirationModelType {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(ExpirationModelType::from(s))
+    }
+}
+impl ExpirationModelType {
+    pub fn as_str(&self) -> &str {
+        match self {
+            ExpirationModelType::KeyMaterialDoesNotExpire => "KEY_MATERIAL_DOES_NOT_EXPIRE",
+            ExpirationModelType::KeyMaterialExpires => "KEY_MATERIAL_EXPIRES",
+            ExpirationModelType::Unknown(s) => s.as_ref(),
+        }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["KEY_MATERIAL_DOES_NOT_EXPIRE", "KEY_MATERIAL_EXPIRES"]
+    }
+}
+impl AsRef<str> for ExpirationModelType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum OriginType {
+    AwsCloudhsm,
+    AwsKms,
+    External,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for OriginType {
+    fn from(s: &str) -> Self {
+        match s {
+            "AWS_CLOUDHSM" => OriginType::AwsCloudhsm,
+            "AWS_KMS" => OriginType::AwsKms,
+            "EXTERNAL" => OriginType::External,
+            other => OriginType::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for OriginType {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(OriginType::from(s))
+    }
+}
+impl OriginType {
+    pub fn as_str(&self) -> &str {
+        match self {
+            OriginType::AwsCloudhsm => "AWS_CLOUDHSM",
+            OriginType::AwsKms => "AWS_KMS",
+            OriginType::External => "EXTERNAL",
+            OriginType::Unknown(s) => s.as_ref(),
+        }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["AWS_CLOUDHSM", "AWS_KMS", "EXTERNAL"]
+    }
+}
+impl AsRef<str> for OriginType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum KeyUsageType {
+    EncryptDecrypt,
+    SignVerify,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for KeyUsageType {
+    fn from(s: &str) -> Self {
+        match s {
+            "ENCRYPT_DECRYPT" => KeyUsageType::EncryptDecrypt,
+            "SIGN_VERIFY" => KeyUsageType::SignVerify,
+            other => KeyUsageType::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for KeyUsageType {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(KeyUsageType::from(s))
+    }
+}
+impl KeyUsageType {
+    pub fn as_str(&self) -> &str {
+        match self {
+            KeyUsageType::EncryptDecrypt => "ENCRYPT_DECRYPT",
+            KeyUsageType::SignVerify => "SIGN_VERIFY",
+            KeyUsageType::Unknown(s) => s.as_ref(),
+        }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["ENCRYPT_DECRYPT", "SIGN_VERIFY"]
+    }
+}
+impl AsRef<str> for KeyUsageType {
     fn as_ref(&self) -> &str {
         self.as_str()
     }
@@ -441,13 +1537,14 @@ impl GrantListEntry {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GrantConstraints {
     /// <p>A list of key-value pairs that must be included in the encryption context of the
-    /// <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic operation</a> request. The grant allows the cryptographic operation only when the
-    /// encryption context in the request includes the key-value pairs specified in this constraint,
-    /// although it can include additional key-value pairs.</p>
+    /// <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic operation</a> request. The grant allows the cryptographic operation only when the encryption
+    /// context in the request includes the key-value pairs specified in this constraint, although it
+    /// can include additional key-value pairs.</p>
     pub encryption_context_subset:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    /// <p>A list of key-value pairs that must match the encryption context in the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic operation</a> request. The grant allows the operation only when the encryption context in the
-    /// request is the same as the encryption context specified in this constraint.</p>
+    /// <p>A list of key-value pairs that must match the encryption context in the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic operation</a>
+    /// request. The grant allows the operation only when the encryption context in the request is the
+    /// same as the encryption context specified in this constraint.</p>
     pub encryption_context_equals:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -607,6 +1704,24 @@ impl GrantOperation {
             GrantOperation::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "CreateGrant",
+            "Decrypt",
+            "DescribeKey",
+            "Encrypt",
+            "GenerateDataKey",
+            "GenerateDataKeyPair",
+            "GenerateDataKeyPairWithoutPlaintext",
+            "GenerateDataKeyWithoutPlaintext",
+            "GetPublicKey",
+            "ReEncryptFrom",
+            "ReEncryptTo",
+            "RetireGrant",
+            "Sign",
+            "Verify",
+        ]
+    }
 }
 impl AsRef<str> for GrantOperation {
     fn as_ref(&self) -> &str {
@@ -683,9 +1798,11 @@ pub struct AliasListEntry {
     pub alias_name: std::option::Option<std::string::String>,
     /// <p>String that contains the key ARN.</p>
     pub alias_arn: std::option::Option<std::string::String>,
-    /// <p>String that contains the key identifier referred to by the alias.</p>
+    /// <p>String that contains the key identifier of the CMK associated with the alias.</p>
     pub target_key_id: std::option::Option<std::string::String>,
+    /// <p>Date and time that the alias was most recently created in the account and Region. Formatted as Unix time.</p>
     pub creation_date: std::option::Option<smithy_types::Instant>,
+    /// <p>Date and time that the alias was most recently associated with a CMK in the account and Region. Formatted as Unix time.</p>
     pub last_updated_date: std::option::Option<smithy_types::Instant>,
 }
 impl std::fmt::Debug for AliasListEntry {
@@ -730,7 +1847,7 @@ pub mod alias_list_entry {
             self.alias_arn = input;
             self
         }
-        /// <p>String that contains the key identifier referred to by the alias.</p>
+        /// <p>String that contains the key identifier of the CMK associated with the alias.</p>
         pub fn target_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.target_key_id = Some(input.into());
             self
@@ -742,6 +1859,7 @@ pub mod alias_list_entry {
             self.target_key_id = input;
             self
         }
+        /// <p>Date and time that the alias was most recently created in the account and Region. Formatted as Unix time.</p>
         pub fn creation_date(mut self, input: smithy_types::Instant) -> Self {
             self.creation_date = Some(input);
             self
@@ -753,6 +1871,7 @@ pub mod alias_list_entry {
             self.creation_date = input;
             self
         }
+        /// <p>Date and time that the alias was most recently associated with a CMK in the account and Region. Formatted as Unix time.</p>
         pub fn last_updated_date(mut self, input: smithy_types::Instant) -> Self {
             self.last_updated_date = Some(input);
             self
@@ -793,165 +1912,6 @@ impl AliasListEntry {
     std::fmt::Debug,
     std::hash::Hash,
 )]
-pub enum ExpirationModelType {
-    KeyMaterialDoesNotExpire,
-    KeyMaterialExpires,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
-}
-impl std::convert::From<&str> for ExpirationModelType {
-    fn from(s: &str) -> Self {
-        match s {
-            "KEY_MATERIAL_DOES_NOT_EXPIRE" => ExpirationModelType::KeyMaterialDoesNotExpire,
-            "KEY_MATERIAL_EXPIRES" => ExpirationModelType::KeyMaterialExpires,
-            other => ExpirationModelType::Unknown(other.to_owned()),
-        }
-    }
-}
-impl std::str::FromStr for ExpirationModelType {
-    type Err = std::convert::Infallible;
-
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ExpirationModelType::from(s))
-    }
-}
-impl ExpirationModelType {
-    pub fn as_str(&self) -> &str {
-        match self {
-            ExpirationModelType::KeyMaterialDoesNotExpire => "KEY_MATERIAL_DOES_NOT_EXPIRE",
-            ExpirationModelType::KeyMaterialExpires => "KEY_MATERIAL_EXPIRES",
-            ExpirationModelType::Unknown(s) => s.as_ref(),
-        }
-    }
-}
-impl AsRef<str> for ExpirationModelType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
-
-#[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
-pub enum KeyUsageType {
-    EncryptDecrypt,
-    SignVerify,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
-}
-impl std::convert::From<&str> for KeyUsageType {
-    fn from(s: &str) -> Self {
-        match s {
-            "ENCRYPT_DECRYPT" => KeyUsageType::EncryptDecrypt,
-            "SIGN_VERIFY" => KeyUsageType::SignVerify,
-            other => KeyUsageType::Unknown(other.to_owned()),
-        }
-    }
-}
-impl std::str::FromStr for KeyUsageType {
-    type Err = std::convert::Infallible;
-
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(KeyUsageType::from(s))
-    }
-}
-impl KeyUsageType {
-    pub fn as_str(&self) -> &str {
-        match self {
-            KeyUsageType::EncryptDecrypt => "ENCRYPT_DECRYPT",
-            KeyUsageType::SignVerify => "SIGN_VERIFY",
-            KeyUsageType::Unknown(s) => s.as_ref(),
-        }
-    }
-}
-impl AsRef<str> for KeyUsageType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
-
-#[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
-pub enum CustomerMasterKeySpec {
-    EccNistP256,
-    EccNistP384,
-    EccNistP521,
-    EccSecgP256K1,
-    Rsa2048,
-    Rsa3072,
-    Rsa4096,
-    SymmetricDefault,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
-}
-impl std::convert::From<&str> for CustomerMasterKeySpec {
-    fn from(s: &str) -> Self {
-        match s {
-            "ECC_NIST_P256" => CustomerMasterKeySpec::EccNistP256,
-            "ECC_NIST_P384" => CustomerMasterKeySpec::EccNistP384,
-            "ECC_NIST_P521" => CustomerMasterKeySpec::EccNistP521,
-            "ECC_SECG_P256K1" => CustomerMasterKeySpec::EccSecgP256K1,
-            "RSA_2048" => CustomerMasterKeySpec::Rsa2048,
-            "RSA_3072" => CustomerMasterKeySpec::Rsa3072,
-            "RSA_4096" => CustomerMasterKeySpec::Rsa4096,
-            "SYMMETRIC_DEFAULT" => CustomerMasterKeySpec::SymmetricDefault,
-            other => CustomerMasterKeySpec::Unknown(other.to_owned()),
-        }
-    }
-}
-impl std::str::FromStr for CustomerMasterKeySpec {
-    type Err = std::convert::Infallible;
-
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(CustomerMasterKeySpec::from(s))
-    }
-}
-impl CustomerMasterKeySpec {
-    pub fn as_str(&self) -> &str {
-        match self {
-            CustomerMasterKeySpec::EccNistP256 => "ECC_NIST_P256",
-            CustomerMasterKeySpec::EccNistP384 => "ECC_NIST_P384",
-            CustomerMasterKeySpec::EccNistP521 => "ECC_NIST_P521",
-            CustomerMasterKeySpec::EccSecgP256K1 => "ECC_SECG_P256K1",
-            CustomerMasterKeySpec::Rsa2048 => "RSA_2048",
-            CustomerMasterKeySpec::Rsa3072 => "RSA_3072",
-            CustomerMasterKeySpec::Rsa4096 => "RSA_4096",
-            CustomerMasterKeySpec::SymmetricDefault => "SYMMETRIC_DEFAULT",
-            CustomerMasterKeySpec::Unknown(s) => s.as_ref(),
-        }
-    }
-}
-impl AsRef<str> for CustomerMasterKeySpec {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
-
-#[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
 pub enum WrappingKeySpec {
     Rsa2048,
     /// Unknown contains new variants that have been added since this code was generated.
@@ -978,6 +1938,9 @@ impl WrappingKeySpec {
             WrappingKeySpec::Rsa2048 => "RSA_2048",
             WrappingKeySpec::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["RSA_2048"]
     }
 }
 impl AsRef<str> for WrappingKeySpec {
@@ -1029,6 +1992,9 @@ impl AlgorithmSpec {
             AlgorithmSpec::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["RSAES_OAEP_SHA_1", "RSAES_OAEP_SHA_256", "RSAES_PKCS1_V1_5"]
+    }
 }
 impl AsRef<str> for AlgorithmSpec {
     fn as_ref(&self) -> &str {
@@ -1075,6 +2041,9 @@ impl DataKeySpec {
             DataKeySpec::Aes256 => "AES_256",
             DataKeySpec::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["AES_128", "AES_256"]
     }
 }
 impl AsRef<str> for DataKeySpec {
@@ -1138,539 +2107,19 @@ impl DataKeyPairSpec {
             DataKeyPairSpec::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "ECC_NIST_P256",
+            "ECC_NIST_P384",
+            "ECC_NIST_P521",
+            "ECC_SECG_P256K1",
+            "RSA_2048",
+            "RSA_3072",
+            "RSA_4096",
+        ]
+    }
 }
 impl AsRef<str> for DataKeyPairSpec {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
-
-/// <p>Contains metadata about a customer master key (CMK).</p>
-/// <p>This data type is used as a response element for the <a>CreateKey</a> and <a>DescribeKey</a> operations.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct KeyMetadata {
-    /// <p>The twelve-digit account ID of the AWS account that owns the CMK.</p>
-    pub aws_account_id: std::option::Option<std::string::String>,
-    /// <p>The globally unique identifier for the CMK.</p>
-    pub key_id: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the CMK. For examples, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms">AWS Key Management Service
-    /// (AWS KMS)</a> in the Example ARNs section of the <i>AWS General
-    /// Reference</i>.</p>
-    pub arn: std::option::Option<std::string::String>,
-    /// <p>The date and time when the CMK was created.</p>
-    pub creation_date: std::option::Option<smithy_types::Instant>,
-    /// <p>Specifies whether the CMK is enabled. When <code>KeyState</code> is <code>Enabled</code>
-    /// this value is true, otherwise it is false.</p>
-    pub enabled: bool,
-    /// <p>The description of the CMK.</p>
-    pub description: std::option::Option<std::string::String>,
-    /// <p>The <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic operations</a> for which you can use the CMK.</p>
-    pub key_usage: std::option::Option<crate::model::KeyUsageType>,
-    /// <p>The current status of the CMK.</p>
-    /// <p>For more information about how key state affects the use of a CMK, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key state: Effect on your CMK</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
-    pub key_state: std::option::Option<crate::model::KeyState>,
-    /// <p>The date and time after which AWS KMS deletes the CMK. This value is present only when
-    /// <code>KeyState</code> is <code>PendingDeletion</code>.</p>
-    pub deletion_date: std::option::Option<smithy_types::Instant>,
-    /// <p>The time at which the imported key material expires. When the key material expires, AWS KMS
-    /// deletes the key material and the CMK becomes unusable. This value is present only for CMKs
-    /// whose <code>Origin</code> is <code>EXTERNAL</code> and whose <code>ExpirationModel</code> is
-    /// <code>KEY_MATERIAL_EXPIRES</code>, otherwise this value is omitted.</p>
-    pub valid_to: std::option::Option<smithy_types::Instant>,
-    /// <p>The source of the CMK's key material. When this value is <code>AWS_KMS</code>, AWS KMS
-    /// created the key material. When this value is <code>EXTERNAL</code>, the key material was
-    /// imported from your existing key management infrastructure or the CMK lacks key material. When
-    /// this value is <code>AWS_CLOUDHSM</code>, the key material was created in the AWS CloudHSM cluster
-    /// associated with a custom key store.</p>
-    pub origin: std::option::Option<crate::model::OriginType>,
-    /// <p>A unique identifier for the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom key store</a> that contains the CMK. This value is present
-    /// only when the CMK is created in a custom key store.</p>
-    pub custom_key_store_id: std::option::Option<std::string::String>,
-    /// <p>The cluster ID of the AWS CloudHSM cluster that contains the key material for the CMK. When you
-    /// create a CMK in a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom key store</a>, AWS KMS creates the key material for the CMK in the
-    /// associated AWS CloudHSM cluster. This value is present only when the CMK is created in a custom key
-    /// store.</p>
-    pub cloud_hsm_cluster_id: std::option::Option<std::string::String>,
-    /// <p>Specifies whether the CMK's key material expires. This value is present only when
-    /// <code>Origin</code> is <code>EXTERNAL</code>, otherwise this value is omitted.</p>
-    pub expiration_model: std::option::Option<crate::model::ExpirationModelType>,
-    /// <p>The manager of the CMK. CMKs in your AWS account are either customer managed or AWS
-    /// managed. For more information about the difference, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys">Customer Master Keys</a> in the
-    /// <i>AWS Key Management Service Developer Guide</i>.</p>
-    pub key_manager: std::option::Option<crate::model::KeyManagerType>,
-    /// <p>Describes the type of key material in the CMK.</p>
-    pub customer_master_key_spec: std::option::Option<crate::model::CustomerMasterKeySpec>,
-    /// <p>The encryption algorithms that the CMK supports. You cannot use the CMK with other
-    /// encryption algorithms within AWS KMS.</p>
-    /// <p>This field appears only when the <code>KeyUsage</code> of the CMK is
-    /// <code>ENCRYPT_DECRYPT</code>.</p>
-    pub encryption_algorithms:
-        std::option::Option<std::vec::Vec<crate::model::EncryptionAlgorithmSpec>>,
-    /// <p>The signing algorithms that the CMK supports. You cannot use the CMK with other
-    /// signing algorithms within AWS KMS.</p>
-    /// <p>This field appears only when the <code>KeyUsage</code> of the CMK is
-    /// <code>SIGN_VERIFY</code>.</p>
-    pub signing_algorithms: std::option::Option<std::vec::Vec<crate::model::SigningAlgorithmSpec>>,
-}
-impl std::fmt::Debug for KeyMetadata {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("KeyMetadata");
-        formatter.field("aws_account_id", &self.aws_account_id);
-        formatter.field("key_id", &self.key_id);
-        formatter.field("arn", &self.arn);
-        formatter.field("creation_date", &self.creation_date);
-        formatter.field("enabled", &self.enabled);
-        formatter.field("description", &self.description);
-        formatter.field("key_usage", &self.key_usage);
-        formatter.field("key_state", &self.key_state);
-        formatter.field("deletion_date", &self.deletion_date);
-        formatter.field("valid_to", &self.valid_to);
-        formatter.field("origin", &self.origin);
-        formatter.field("custom_key_store_id", &self.custom_key_store_id);
-        formatter.field("cloud_hsm_cluster_id", &self.cloud_hsm_cluster_id);
-        formatter.field("expiration_model", &self.expiration_model);
-        formatter.field("key_manager", &self.key_manager);
-        formatter.field("customer_master_key_spec", &self.customer_master_key_spec);
-        formatter.field("encryption_algorithms", &self.encryption_algorithms);
-        formatter.field("signing_algorithms", &self.signing_algorithms);
-        formatter.finish()
-    }
-}
-/// See [`KeyMetadata`](crate::model::KeyMetadata)
-pub mod key_metadata {
-    /// A builder for [`KeyMetadata`](crate::model::KeyMetadata)
-    #[non_exhaustive]
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) aws_account_id: std::option::Option<std::string::String>,
-        pub(crate) key_id: std::option::Option<std::string::String>,
-        pub(crate) arn: std::option::Option<std::string::String>,
-        pub(crate) creation_date: std::option::Option<smithy_types::Instant>,
-        pub(crate) enabled: std::option::Option<bool>,
-        pub(crate) description: std::option::Option<std::string::String>,
-        pub(crate) key_usage: std::option::Option<crate::model::KeyUsageType>,
-        pub(crate) key_state: std::option::Option<crate::model::KeyState>,
-        pub(crate) deletion_date: std::option::Option<smithy_types::Instant>,
-        pub(crate) valid_to: std::option::Option<smithy_types::Instant>,
-        pub(crate) origin: std::option::Option<crate::model::OriginType>,
-        pub(crate) custom_key_store_id: std::option::Option<std::string::String>,
-        pub(crate) cloud_hsm_cluster_id: std::option::Option<std::string::String>,
-        pub(crate) expiration_model: std::option::Option<crate::model::ExpirationModelType>,
-        pub(crate) key_manager: std::option::Option<crate::model::KeyManagerType>,
-        pub(crate) customer_master_key_spec:
-            std::option::Option<crate::model::CustomerMasterKeySpec>,
-        pub(crate) encryption_algorithms:
-            std::option::Option<std::vec::Vec<crate::model::EncryptionAlgorithmSpec>>,
-        pub(crate) signing_algorithms:
-            std::option::Option<std::vec::Vec<crate::model::SigningAlgorithmSpec>>,
-    }
-    impl Builder {
-        /// <p>The twelve-digit account ID of the AWS account that owns the CMK.</p>
-        pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.aws_account_id = Some(input.into());
-            self
-        }
-        pub fn set_aws_account_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.aws_account_id = input;
-            self
-        }
-        /// <p>The globally unique identifier for the CMK.</p>
-        pub fn key_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.key_id = Some(input.into());
-            self
-        }
-        pub fn set_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.key_id = input;
-            self
-        }
-        /// <p>The Amazon Resource Name (ARN) of the CMK. For examples, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms">AWS Key Management Service
-        /// (AWS KMS)</a> in the Example ARNs section of the <i>AWS General
-        /// Reference</i>.</p>
-        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.arn = Some(input.into());
-            self
-        }
-        pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
-        }
-        /// <p>The date and time when the CMK was created.</p>
-        pub fn creation_date(mut self, input: smithy_types::Instant) -> Self {
-            self.creation_date = Some(input);
-            self
-        }
-        pub fn set_creation_date(
-            mut self,
-            input: std::option::Option<smithy_types::Instant>,
-        ) -> Self {
-            self.creation_date = input;
-            self
-        }
-        /// <p>Specifies whether the CMK is enabled. When <code>KeyState</code> is <code>Enabled</code>
-        /// this value is true, otherwise it is false.</p>
-        pub fn enabled(mut self, input: bool) -> Self {
-            self.enabled = Some(input);
-            self
-        }
-        pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
-            self.enabled = input;
-            self
-        }
-        /// <p>The description of the CMK.</p>
-        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
-            self.description = Some(input.into());
-            self
-        }
-        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
-        }
-        /// <p>The <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic operations</a> for which you can use the CMK.</p>
-        pub fn key_usage(mut self, input: crate::model::KeyUsageType) -> Self {
-            self.key_usage = Some(input);
-            self
-        }
-        pub fn set_key_usage(
-            mut self,
-            input: std::option::Option<crate::model::KeyUsageType>,
-        ) -> Self {
-            self.key_usage = input;
-            self
-        }
-        /// <p>The current status of the CMK.</p>
-        /// <p>For more information about how key state affects the use of a CMK, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key state: Effect on your CMK</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
-        pub fn key_state(mut self, input: crate::model::KeyState) -> Self {
-            self.key_state = Some(input);
-            self
-        }
-        pub fn set_key_state(mut self, input: std::option::Option<crate::model::KeyState>) -> Self {
-            self.key_state = input;
-            self
-        }
-        /// <p>The date and time after which AWS KMS deletes the CMK. This value is present only when
-        /// <code>KeyState</code> is <code>PendingDeletion</code>.</p>
-        pub fn deletion_date(mut self, input: smithy_types::Instant) -> Self {
-            self.deletion_date = Some(input);
-            self
-        }
-        pub fn set_deletion_date(
-            mut self,
-            input: std::option::Option<smithy_types::Instant>,
-        ) -> Self {
-            self.deletion_date = input;
-            self
-        }
-        /// <p>The time at which the imported key material expires. When the key material expires, AWS KMS
-        /// deletes the key material and the CMK becomes unusable. This value is present only for CMKs
-        /// whose <code>Origin</code> is <code>EXTERNAL</code> and whose <code>ExpirationModel</code> is
-        /// <code>KEY_MATERIAL_EXPIRES</code>, otherwise this value is omitted.</p>
-        pub fn valid_to(mut self, input: smithy_types::Instant) -> Self {
-            self.valid_to = Some(input);
-            self
-        }
-        pub fn set_valid_to(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
-            self.valid_to = input;
-            self
-        }
-        /// <p>The source of the CMK's key material. When this value is <code>AWS_KMS</code>, AWS KMS
-        /// created the key material. When this value is <code>EXTERNAL</code>, the key material was
-        /// imported from your existing key management infrastructure or the CMK lacks key material. When
-        /// this value is <code>AWS_CLOUDHSM</code>, the key material was created in the AWS CloudHSM cluster
-        /// associated with a custom key store.</p>
-        pub fn origin(mut self, input: crate::model::OriginType) -> Self {
-            self.origin = Some(input);
-            self
-        }
-        pub fn set_origin(mut self, input: std::option::Option<crate::model::OriginType>) -> Self {
-            self.origin = input;
-            self
-        }
-        /// <p>A unique identifier for the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom key store</a> that contains the CMK. This value is present
-        /// only when the CMK is created in a custom key store.</p>
-        pub fn custom_key_store_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.custom_key_store_id = Some(input.into());
-            self
-        }
-        pub fn set_custom_key_store_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.custom_key_store_id = input;
-            self
-        }
-        /// <p>The cluster ID of the AWS CloudHSM cluster that contains the key material for the CMK. When you
-        /// create a CMK in a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom key store</a>, AWS KMS creates the key material for the CMK in the
-        /// associated AWS CloudHSM cluster. This value is present only when the CMK is created in a custom key
-        /// store.</p>
-        pub fn cloud_hsm_cluster_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.cloud_hsm_cluster_id = Some(input.into());
-            self
-        }
-        pub fn set_cloud_hsm_cluster_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.cloud_hsm_cluster_id = input;
-            self
-        }
-        /// <p>Specifies whether the CMK's key material expires. This value is present only when
-        /// <code>Origin</code> is <code>EXTERNAL</code>, otherwise this value is omitted.</p>
-        pub fn expiration_model(mut self, input: crate::model::ExpirationModelType) -> Self {
-            self.expiration_model = Some(input);
-            self
-        }
-        pub fn set_expiration_model(
-            mut self,
-            input: std::option::Option<crate::model::ExpirationModelType>,
-        ) -> Self {
-            self.expiration_model = input;
-            self
-        }
-        /// <p>The manager of the CMK. CMKs in your AWS account are either customer managed or AWS
-        /// managed. For more information about the difference, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys">Customer Master Keys</a> in the
-        /// <i>AWS Key Management Service Developer Guide</i>.</p>
-        pub fn key_manager(mut self, input: crate::model::KeyManagerType) -> Self {
-            self.key_manager = Some(input);
-            self
-        }
-        pub fn set_key_manager(
-            mut self,
-            input: std::option::Option<crate::model::KeyManagerType>,
-        ) -> Self {
-            self.key_manager = input;
-            self
-        }
-        /// <p>Describes the type of key material in the CMK.</p>
-        pub fn customer_master_key_spec(
-            mut self,
-            input: crate::model::CustomerMasterKeySpec,
-        ) -> Self {
-            self.customer_master_key_spec = Some(input);
-            self
-        }
-        pub fn set_customer_master_key_spec(
-            mut self,
-            input: std::option::Option<crate::model::CustomerMasterKeySpec>,
-        ) -> Self {
-            self.customer_master_key_spec = input;
-            self
-        }
-        pub fn encryption_algorithms(
-            mut self,
-            input: impl Into<crate::model::EncryptionAlgorithmSpec>,
-        ) -> Self {
-            let mut v = self.encryption_algorithms.unwrap_or_default();
-            v.push(input.into());
-            self.encryption_algorithms = Some(v);
-            self
-        }
-        pub fn set_encryption_algorithms(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::EncryptionAlgorithmSpec>>,
-        ) -> Self {
-            self.encryption_algorithms = input;
-            self
-        }
-        pub fn signing_algorithms(
-            mut self,
-            input: impl Into<crate::model::SigningAlgorithmSpec>,
-        ) -> Self {
-            let mut v = self.signing_algorithms.unwrap_or_default();
-            v.push(input.into());
-            self.signing_algorithms = Some(v);
-            self
-        }
-        pub fn set_signing_algorithms(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::SigningAlgorithmSpec>>,
-        ) -> Self {
-            self.signing_algorithms = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`KeyMetadata`](crate::model::KeyMetadata)
-        pub fn build(self) -> crate::model::KeyMetadata {
-            crate::model::KeyMetadata {
-                aws_account_id: self.aws_account_id,
-                key_id: self.key_id,
-                arn: self.arn,
-                creation_date: self.creation_date,
-                enabled: self.enabled.unwrap_or_default(),
-                description: self.description,
-                key_usage: self.key_usage,
-                key_state: self.key_state,
-                deletion_date: self.deletion_date,
-                valid_to: self.valid_to,
-                origin: self.origin,
-                custom_key_store_id: self.custom_key_store_id,
-                cloud_hsm_cluster_id: self.cloud_hsm_cluster_id,
-                expiration_model: self.expiration_model,
-                key_manager: self.key_manager,
-                customer_master_key_spec: self.customer_master_key_spec,
-                encryption_algorithms: self.encryption_algorithms,
-                signing_algorithms: self.signing_algorithms,
-            }
-        }
-    }
-}
-impl KeyMetadata {
-    /// Creates a new builder-style object to manufacture [`KeyMetadata`](crate::model::KeyMetadata)
-    pub fn builder() -> crate::model::key_metadata::Builder {
-        crate::model::key_metadata::Builder::default()
-    }
-}
-
-#[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
-pub enum KeyManagerType {
-    Aws,
-    Customer,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
-}
-impl std::convert::From<&str> for KeyManagerType {
-    fn from(s: &str) -> Self {
-        match s {
-            "AWS" => KeyManagerType::Aws,
-            "CUSTOMER" => KeyManagerType::Customer,
-            other => KeyManagerType::Unknown(other.to_owned()),
-        }
-    }
-}
-impl std::str::FromStr for KeyManagerType {
-    type Err = std::convert::Infallible;
-
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(KeyManagerType::from(s))
-    }
-}
-impl KeyManagerType {
-    pub fn as_str(&self) -> &str {
-        match self {
-            KeyManagerType::Aws => "AWS",
-            KeyManagerType::Customer => "CUSTOMER",
-            KeyManagerType::Unknown(s) => s.as_ref(),
-        }
-    }
-}
-impl AsRef<str> for KeyManagerType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
-
-#[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
-pub enum OriginType {
-    AwsCloudhsm,
-    AwsKms,
-    External,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
-}
-impl std::convert::From<&str> for OriginType {
-    fn from(s: &str) -> Self {
-        match s {
-            "AWS_CLOUDHSM" => OriginType::AwsCloudhsm,
-            "AWS_KMS" => OriginType::AwsKms,
-            "EXTERNAL" => OriginType::External,
-            other => OriginType::Unknown(other.to_owned()),
-        }
-    }
-}
-impl std::str::FromStr for OriginType {
-    type Err = std::convert::Infallible;
-
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(OriginType::from(s))
-    }
-}
-impl OriginType {
-    pub fn as_str(&self) -> &str {
-        match self {
-            OriginType::AwsCloudhsm => "AWS_CLOUDHSM",
-            OriginType::AwsKms => "AWS_KMS",
-            OriginType::External => "EXTERNAL",
-            OriginType::Unknown(s) => s.as_ref(),
-        }
-    }
-}
-impl AsRef<str> for OriginType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
-
-#[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
-pub enum KeyState {
-    Disabled,
-    Enabled,
-    PendingDeletion,
-    PendingImport,
-    Unavailable,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
-}
-impl std::convert::From<&str> for KeyState {
-    fn from(s: &str) -> Self {
-        match s {
-            "Disabled" => KeyState::Disabled,
-            "Enabled" => KeyState::Enabled,
-            "PendingDeletion" => KeyState::PendingDeletion,
-            "PendingImport" => KeyState::PendingImport,
-            "Unavailable" => KeyState::Unavailable,
-            other => KeyState::Unknown(other.to_owned()),
-        }
-    }
-}
-impl std::str::FromStr for KeyState {
-    type Err = std::convert::Infallible;
-
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(KeyState::from(s))
-    }
-}
-impl KeyState {
-    pub fn as_str(&self) -> &str {
-        match self {
-            KeyState::Disabled => "Disabled",
-            KeyState::Enabled => "Enabled",
-            KeyState::PendingDeletion => "PendingDeletion",
-            KeyState::PendingImport => "PendingImport",
-            KeyState::Unavailable => "Unavailable",
-            KeyState::Unknown(s) => s.as_ref(),
-        }
-    }
-}
-impl AsRef<str> for KeyState {
     fn as_ref(&self) -> &str {
         self.as_str()
     }
@@ -1698,11 +2147,15 @@ pub struct CustomKeyStoresListEntry {
     /// use the <a>DisconnectCustomKeyStore</a> operation to disconnect it. If the value is
     /// <code>CONNECTED</code> but you are having trouble using the custom key store, make sure that
     /// its associated AWS CloudHSM cluster is active and contains at least one active HSM.</p>
-    /// <p>A value of <code>FAILED</code> indicates that an attempt to connect was unsuccessful. The <code>ConnectionErrorCode</code> field in the response indicates the cause of the failure. For
-    /// help resolving a connection failure, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/fix-keystore.html">Troubleshooting a Custom Key Store</a> in the
+    /// <p>A value of <code>FAILED</code> indicates that an attempt to connect was unsuccessful. The
+    /// <code>ConnectionErrorCode</code> field in the response indicates the cause of the failure.
+    /// For help resolving a connection failure, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/fix-keystore.html">Troubleshooting a Custom Key Store</a> in the
     /// <i>AWS Key Management Service Developer Guide</i>.</p>
     pub connection_state: std::option::Option<crate::model::ConnectionStateType>,
-    /// <p>Describes the connection error. This field appears in the response only when the <code>ConnectionState</code> is <code>FAILED</code>. For help resolving these errors, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/fix-keystore.html#fix-keystore-failed">How to Fix a Connection Failure</a> in <i>AWS Key Management Service Developer Guide</i>.</p>
+    /// <p>Describes the connection error. This field appears in the response only when the
+    /// <code>ConnectionState</code> is <code>FAILED</code>. For help resolving these errors, see
+    /// <a href="https://docs.aws.amazon.com/kms/latest/developerguide/fix-keystore.html#fix-keystore-failed">How to
+    /// Fix a Connection Failure</a> in <i>AWS Key Management Service Developer Guide</i>.</p>
     /// <p>Valid values are:</p>
     /// <ul>
     /// <li>
@@ -1736,30 +2189,38 @@ pub struct CustomKeyStoresListEntry {
     /// </li>
     /// <li>
     /// <p>
-    /// <code>SUBNET_NOT_FOUND</code> - A subnet in the AWS CloudHSM cluster
-    /// configuration was deleted. If AWS KMS cannot find all of the subnets in the cluster configuration, attempts to connect the custom key store to the AWS CloudHSM cluster fail. To fix this error, create a cluster from a recent backup and associate it with your custom key store. (This process creates a new cluster configuration with a VPC and private subnets.) For details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/fix-keystore.html#fix-keystore-failed">How to Fix a Connection Failure</a> in the
-    /// <i>AWS Key Management Service Developer Guide</i>.</p>
+    /// <code>SUBNET_NOT_FOUND</code> - A subnet in the AWS CloudHSM cluster configuration was
+    /// deleted. If AWS KMS cannot find all of the subnets in the cluster configuration, attempts to
+    /// connect the custom key store to the AWS CloudHSM cluster fail. To fix this error, create a
+    /// cluster from a recent backup and associate it with your custom key store. (This process
+    /// creates a new cluster configuration with a VPC and private subnets.) For details, see
+    /// <a href="https://docs.aws.amazon.com/kms/latest/developerguide/fix-keystore.html#fix-keystore-failed">How
+    /// to Fix a Connection Failure</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
     /// </li>
     /// <li>
     /// <p>
     /// <code>USER_LOCKED_OUT</code> - The <code>kmsuser</code> CU account is locked out of
     /// the associated AWS CloudHSM cluster due to too many failed password attempts. Before you can
     /// connect your custom key store to its AWS CloudHSM cluster, you must change the
-    /// <code>kmsuser</code> account password and update the key store password value for the custom key
-    /// store.</p>
+    /// <code>kmsuser</code> account password and update the key store password value for the
+    /// custom key store.</p>
     /// </li>
     /// <li>
     /// <p>
     /// <code>USER_LOGGED_IN</code> - The <code>kmsuser</code> CU account is logged into the
-    /// the associated AWS CloudHSM cluster. This prevents AWS KMS from rotating the <code>kmsuser</code> account password and logging into the cluster. Before you can
-    /// connect your custom key store to its AWS CloudHSM cluster, you must log the <code>kmsuser</code> CU out of the cluster. If you changed the <code>kmsuser</code> password to log into the cluster, you must also and update the key store password value for the custom key
-    /// store. For help, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/fix-keystore.html#login-kmsuser-2">How to Log Out and Reconnect</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
+    /// the associated AWS CloudHSM cluster. This prevents AWS KMS from rotating the <code>kmsuser</code>
+    /// account password and logging into the cluster. Before you can connect your custom key
+    /// store to its AWS CloudHSM cluster, you must log the <code>kmsuser</code> CU out of the cluster.
+    /// If you changed the <code>kmsuser</code> password to log into the cluster, you must also
+    /// and update the key store password value for the custom key store. For help, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/fix-keystore.html#login-kmsuser-2">How to Log Out
+    /// and Reconnect</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
     /// </li>
     /// <li>
     /// <p>
-    /// <code>USER_NOT_FOUND</code> - AWS KMS cannot find a <code>kmsuser</code> CU account in the associated AWS CloudHSM cluster. Before you can
-    /// connect your custom key store to its AWS CloudHSM cluster, you must create a <code>kmsuser</code> CU account in the cluster, and then update the key store password value for the custom key
-    /// store.</p>
+    /// <code>USER_NOT_FOUND</code> - AWS KMS cannot find a <code>kmsuser</code> CU account in
+    /// the associated AWS CloudHSM cluster. Before you can connect your custom key store to its AWS CloudHSM
+    /// cluster, you must create a <code>kmsuser</code> CU account in the cluster, and then update
+    /// the key store password value for the custom key store.</p>
     /// </li>
     /// </ul>
     pub connection_error_code: std::option::Option<crate::model::ConnectionErrorCodeType>,
@@ -1853,8 +2314,9 @@ pub mod custom_key_stores_list_entry {
         /// use the <a>DisconnectCustomKeyStore</a> operation to disconnect it. If the value is
         /// <code>CONNECTED</code> but you are having trouble using the custom key store, make sure that
         /// its associated AWS CloudHSM cluster is active and contains at least one active HSM.</p>
-        /// <p>A value of <code>FAILED</code> indicates that an attempt to connect was unsuccessful. The <code>ConnectionErrorCode</code> field in the response indicates the cause of the failure. For
-        /// help resolving a connection failure, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/fix-keystore.html">Troubleshooting a Custom Key Store</a> in the
+        /// <p>A value of <code>FAILED</code> indicates that an attempt to connect was unsuccessful. The
+        /// <code>ConnectionErrorCode</code> field in the response indicates the cause of the failure.
+        /// For help resolving a connection failure, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/fix-keystore.html">Troubleshooting a Custom Key Store</a> in the
         /// <i>AWS Key Management Service Developer Guide</i>.</p>
         pub fn connection_state(mut self, input: crate::model::ConnectionStateType) -> Self {
             self.connection_state = Some(input);
@@ -1867,7 +2329,10 @@ pub mod custom_key_stores_list_entry {
             self.connection_state = input;
             self
         }
-        /// <p>Describes the connection error. This field appears in the response only when the <code>ConnectionState</code> is <code>FAILED</code>. For help resolving these errors, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/fix-keystore.html#fix-keystore-failed">How to Fix a Connection Failure</a> in <i>AWS Key Management Service Developer Guide</i>.</p>
+        /// <p>Describes the connection error. This field appears in the response only when the
+        /// <code>ConnectionState</code> is <code>FAILED</code>. For help resolving these errors, see
+        /// <a href="https://docs.aws.amazon.com/kms/latest/developerguide/fix-keystore.html#fix-keystore-failed">How to
+        /// Fix a Connection Failure</a> in <i>AWS Key Management Service Developer Guide</i>.</p>
         /// <p>Valid values are:</p>
         /// <ul>
         /// <li>
@@ -1901,30 +2366,38 @@ pub mod custom_key_stores_list_entry {
         /// </li>
         /// <li>
         /// <p>
-        /// <code>SUBNET_NOT_FOUND</code> - A subnet in the AWS CloudHSM cluster
-        /// configuration was deleted. If AWS KMS cannot find all of the subnets in the cluster configuration, attempts to connect the custom key store to the AWS CloudHSM cluster fail. To fix this error, create a cluster from a recent backup and associate it with your custom key store. (This process creates a new cluster configuration with a VPC and private subnets.) For details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/fix-keystore.html#fix-keystore-failed">How to Fix a Connection Failure</a> in the
-        /// <i>AWS Key Management Service Developer Guide</i>.</p>
+        /// <code>SUBNET_NOT_FOUND</code> - A subnet in the AWS CloudHSM cluster configuration was
+        /// deleted. If AWS KMS cannot find all of the subnets in the cluster configuration, attempts to
+        /// connect the custom key store to the AWS CloudHSM cluster fail. To fix this error, create a
+        /// cluster from a recent backup and associate it with your custom key store. (This process
+        /// creates a new cluster configuration with a VPC and private subnets.) For details, see
+        /// <a href="https://docs.aws.amazon.com/kms/latest/developerguide/fix-keystore.html#fix-keystore-failed">How
+        /// to Fix a Connection Failure</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
         /// </li>
         /// <li>
         /// <p>
         /// <code>USER_LOCKED_OUT</code> - The <code>kmsuser</code> CU account is locked out of
         /// the associated AWS CloudHSM cluster due to too many failed password attempts. Before you can
         /// connect your custom key store to its AWS CloudHSM cluster, you must change the
-        /// <code>kmsuser</code> account password and update the key store password value for the custom key
-        /// store.</p>
+        /// <code>kmsuser</code> account password and update the key store password value for the
+        /// custom key store.</p>
         /// </li>
         /// <li>
         /// <p>
         /// <code>USER_LOGGED_IN</code> - The <code>kmsuser</code> CU account is logged into the
-        /// the associated AWS CloudHSM cluster. This prevents AWS KMS from rotating the <code>kmsuser</code> account password and logging into the cluster. Before you can
-        /// connect your custom key store to its AWS CloudHSM cluster, you must log the <code>kmsuser</code> CU out of the cluster. If you changed the <code>kmsuser</code> password to log into the cluster, you must also and update the key store password value for the custom key
-        /// store. For help, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/fix-keystore.html#login-kmsuser-2">How to Log Out and Reconnect</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
+        /// the associated AWS CloudHSM cluster. This prevents AWS KMS from rotating the <code>kmsuser</code>
+        /// account password and logging into the cluster. Before you can connect your custom key
+        /// store to its AWS CloudHSM cluster, you must log the <code>kmsuser</code> CU out of the cluster.
+        /// If you changed the <code>kmsuser</code> password to log into the cluster, you must also
+        /// and update the key store password value for the custom key store. For help, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/fix-keystore.html#login-kmsuser-2">How to Log Out
+        /// and Reconnect</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
         /// </li>
         /// <li>
         /// <p>
-        /// <code>USER_NOT_FOUND</code> - AWS KMS cannot find a <code>kmsuser</code> CU account in the associated AWS CloudHSM cluster. Before you can
-        /// connect your custom key store to its AWS CloudHSM cluster, you must create a <code>kmsuser</code> CU account in the cluster, and then update the key store password value for the custom key
-        /// store.</p>
+        /// <code>USER_NOT_FOUND</code> - AWS KMS cannot find a <code>kmsuser</code> CU account in
+        /// the associated AWS CloudHSM cluster. Before you can connect your custom key store to its AWS CloudHSM
+        /// cluster, you must create a <code>kmsuser</code> CU account in the cluster, and then update
+        /// the key store password value for the custom key store.</p>
         /// </li>
         /// </ul>
         pub fn connection_error_code(
@@ -2035,6 +2508,19 @@ impl ConnectionErrorCodeType {
             ConnectionErrorCodeType::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "CLUSTER_NOT_FOUND",
+            "INSUFFICIENT_CLOUDHSM_HSMS",
+            "INTERNAL_ERROR",
+            "INVALID_CREDENTIALS",
+            "NETWORK_ERRORS",
+            "SUBNET_NOT_FOUND",
+            "USER_LOCKED_OUT",
+            "USER_LOGGED_IN",
+            "USER_NOT_FOUND",
+        ]
+    }
 }
 impl AsRef<str> for ConnectionErrorCodeType {
     fn as_ref(&self) -> &str {
@@ -2090,6 +2576,15 @@ impl ConnectionStateType {
             ConnectionStateType::Failed => "FAILED",
             ConnectionStateType::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "CONNECTED",
+            "CONNECTING",
+            "DISCONNECTED",
+            "DISCONNECTING",
+            "FAILED",
+        ]
     }
 }
 impl AsRef<str> for ConnectionStateType {

@@ -8,19 +8,23 @@ pub use smithy_client::test_connection;
 
 pub use smithy_client::retry::Config as RetryConfig;
 
+use aws_auth::middleware::CredentialsStage;
 use aws_endpoint::AwsEndpointStage;
 use aws_http::user_agent::UserAgentStage;
 use aws_sig_auth::middleware::SigV4SigningStage;
 use aws_sig_auth::signer::SigV4Signer;
 pub use smithy_http::result::{SdkError, SdkSuccess};
-use smithy_http_tower::map_request::MapRequestLayer;
+use smithy_http_tower::map_request::{AsyncMapRequestLayer, MapRequestLayer};
 use std::fmt::Debug;
 use tower::layer::util::Stack;
 use tower::ServiceBuilder;
 
 type AwsMiddlewareStack = Stack<
     MapRequestLayer<SigV4SigningStage>,
-    Stack<MapRequestLayer<UserAgentStage>, MapRequestLayer<AwsEndpointStage>>,
+    Stack<
+        AsyncMapRequestLayer<CredentialsStage>,
+        Stack<MapRequestLayer<UserAgentStage>, MapRequestLayer<AwsEndpointStage>>,
+    >,
 >;
 
 #[derive(Debug, Default)]
@@ -30,17 +34,20 @@ impl<S> tower::Layer<S> for AwsMiddleware {
     type Service = <AwsMiddlewareStack as tower::Layer<S>>::Service;
 
     fn layer(&self, inner: S) -> Self::Service {
+        let credential_provider = AsyncMapRequestLayer::for_mapper(CredentialsStage::new());
         let signer = MapRequestLayer::for_mapper(SigV4SigningStage::new(SigV4Signer::new()));
         let endpoint_resolver = MapRequestLayer::for_mapper(AwsEndpointStage);
         let user_agent = MapRequestLayer::for_mapper(UserAgentStage::new());
-        // These layers can be considered as occuring in order, that is:
+        // These layers can be considered as occurring in order, that is:
         // 1. Resolve an endpoint
         // 2. Add a user agent
-        // 3. Sign
-        // (4. Dispatch over the wire)
+        // 3. Acquire credentials
+        // 4. Sign with credentials
+        // (5. Dispatch over the wire)
         ServiceBuilder::new()
             .layer(endpoint_resolver)
             .layer(user_agent)
+            .layer(credential_provider)
             .layer(signer)
             .service(inner)
     }

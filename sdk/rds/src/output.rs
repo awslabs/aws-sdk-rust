@@ -173,8 +173,8 @@ impl StopDbClusterOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StopActivityStreamOutput {
-    /// <p>The AWS KMS key identifier used for encrypting messages in the database activity stream.</p>
-    /// <p>The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer master key (CMK).</p>
+    /// <p>The Amazon Web Services KMS key identifier used for encrypting messages in the database activity stream.</p>
+    /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon Web Services KMS customer master key (CMK).</p>
     pub kms_key_id: std::option::Option<std::string::String>,
     /// <p>The name of the Amazon Kinesis data stream used for the database activity stream.</p>
     pub kinesis_stream_name: std::option::Option<std::string::String>,
@@ -201,8 +201,8 @@ pub mod stop_activity_stream_output {
         pub(crate) status: std::option::Option<crate::model::ActivityStreamStatus>,
     }
     impl Builder {
-        /// <p>The AWS KMS key identifier used for encrypting messages in the database activity stream.</p>
-        /// <p>The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer master key (CMK).</p>
+        /// <p>The Amazon Web Services KMS key identifier used for encrypting messages in the database activity stream.</p>
+        /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon Web Services KMS customer master key (CMK).</p>
         pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_key_id = Some(input.into());
             self
@@ -302,9 +302,9 @@ pub struct StartExportTaskOutput {
     pub s3_prefix: std::option::Option<std::string::String>,
     /// <p>The name of the IAM role that is used to write to Amazon S3 when exporting a snapshot. </p>
     pub iam_role_arn: std::option::Option<std::string::String>,
-    /// <p>The key identifier of the AWS KMS customer master key (CMK) that is used to encrypt the snapshot when it's exported to
-    /// Amazon S3. The AWS KMS CMK identifier is its key ARN, key ID, alias ARN, or alias name. The IAM role used for the snapshot export
-    /// must have encryption and decryption permissions to use this AWS KMS CMK. </p>
+    /// <p>The key identifier of the Amazon Web Services KMS customer master key (CMK) that is used to encrypt the snapshot when it's exported to
+    /// Amazon S3. The Amazon Web Services KMS CMK identifier is its key ARN, key ID, alias ARN, or alias name. The IAM role used for the snapshot export
+    /// must have encryption and decryption permissions to use this Amazon Web Services KMS CMK. </p>
     pub kms_key_id: std::option::Option<std::string::String>,
     /// <p>The progress status of the export task.</p>
     pub status: std::option::Option<std::string::String>,
@@ -462,9 +462,9 @@ pub mod start_export_task_output {
             self.iam_role_arn = input;
             self
         }
-        /// <p>The key identifier of the AWS KMS customer master key (CMK) that is used to encrypt the snapshot when it's exported to
-        /// Amazon S3. The AWS KMS CMK identifier is its key ARN, key ID, alias ARN, or alias name. The IAM role used for the snapshot export
-        /// must have encryption and decryption permissions to use this AWS KMS CMK. </p>
+        /// <p>The key identifier of the Amazon Web Services KMS customer master key (CMK) that is used to encrypt the snapshot when it's exported to
+        /// Amazon S3. The Amazon Web Services KMS CMK identifier is its key ARN, key ID, alias ARN, or alias name. The IAM role used for the snapshot export
+        /// must have encryption and decryption permissions to use this Amazon Web Services KMS CMK. </p>
         pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_key_id = Some(input.into());
             self
@@ -727,7 +727,7 @@ impl StartDbClusterOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartActivityStreamOutput {
-    /// <p>The AWS KMS key identifier for encryption of messages in the database activity stream.</p>
+    /// <p>The Amazon Web Services KMS key identifier for encryption of messages in the database activity stream.</p>
     pub kms_key_id: std::option::Option<std::string::String>,
     /// <p>The name of the Amazon Kinesis data stream to be used for the database activity stream.</p>
     pub kinesis_stream_name: std::option::Option<std::string::String>,
@@ -738,6 +738,8 @@ pub struct StartActivityStreamOutput {
     /// <p>Indicates whether or not the database activity stream will start as soon as possible,
     /// regardless of the maintenance window for the database.</p>
     pub apply_immediately: bool,
+    /// <p>Indicates whether engine-native audit fields are included in the database activity stream.</p>
+    pub engine_native_audit_fields_included: std::option::Option<bool>,
 }
 impl std::fmt::Debug for StartActivityStreamOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -747,6 +749,10 @@ impl std::fmt::Debug for StartActivityStreamOutput {
         formatter.field("status", &self.status);
         formatter.field("mode", &self.mode);
         formatter.field("apply_immediately", &self.apply_immediately);
+        formatter.field(
+            "engine_native_audit_fields_included",
+            &self.engine_native_audit_fields_included,
+        );
         formatter.finish()
     }
 }
@@ -761,9 +767,10 @@ pub mod start_activity_stream_output {
         pub(crate) status: std::option::Option<crate::model::ActivityStreamStatus>,
         pub(crate) mode: std::option::Option<crate::model::ActivityStreamMode>,
         pub(crate) apply_immediately: std::option::Option<bool>,
+        pub(crate) engine_native_audit_fields_included: std::option::Option<bool>,
     }
     impl Builder {
-        /// <p>The AWS KMS key identifier for encryption of messages in the database activity stream.</p>
+        /// <p>The Amazon Web Services KMS key identifier for encryption of messages in the database activity stream.</p>
         pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_key_id = Some(input.into());
             self
@@ -818,6 +825,18 @@ pub mod start_activity_stream_output {
             self.apply_immediately = input;
             self
         }
+        /// <p>Indicates whether engine-native audit fields are included in the database activity stream.</p>
+        pub fn engine_native_audit_fields_included(mut self, input: bool) -> Self {
+            self.engine_native_audit_fields_included = Some(input);
+            self
+        }
+        pub fn set_engine_native_audit_fields_included(
+            mut self,
+            input: std::option::Option<bool>,
+        ) -> Self {
+            self.engine_native_audit_fields_included = input;
+            self
+        }
         /// Consumes the builder and constructs a [`StartActivityStreamOutput`](crate::output::StartActivityStreamOutput)
         pub fn build(self) -> crate::output::StartActivityStreamOutput {
             crate::output::StartActivityStreamOutput {
@@ -826,6 +845,7 @@ pub mod start_activity_stream_output {
                 status: self.status,
                 mode: self.mode,
                 apply_immediately: self.apply_immediately.unwrap_or_default(),
+                engine_native_audit_fields_included: self.engine_native_audit_fields_included,
             }
         }
     }
@@ -2038,7 +2058,7 @@ impl ModifyDbSubnetGroupOutput {
 pub struct ModifyDbSnapshotAttributeOutput {
     /// <p>Contains the results of a successful call to the <code>DescribeDBSnapshotAttributes</code>
     /// API action.</p>
-    /// <p>Manual DB snapshot attributes are used to authorize other AWS accounts
+    /// <p>Manual DB snapshot attributes are used to authorize other Amazon Web Services accounts
     /// to copy or restore a manual DB snapshot. For more information, see the <code>ModifyDBSnapshotAttribute</code>
     /// API action.</p>
     pub db_snapshot_attributes_result:
@@ -2066,7 +2086,7 @@ pub mod modify_db_snapshot_attribute_output {
     impl Builder {
         /// <p>Contains the results of a successful call to the <code>DescribeDBSnapshotAttributes</code>
         /// API action.</p>
-        /// <p>Manual DB snapshot attributes are used to authorize other AWS accounts
+        /// <p>Manual DB snapshot attributes are used to authorize other Amazon Web Services accounts
         /// to copy or restore a manual DB snapshot. For more information, see the <code>ModifyDBSnapshotAttribute</code>
         /// API action.</p>
         pub fn db_snapshot_attributes_result(
@@ -2412,7 +2432,7 @@ impl ModifyDbInstanceOutput {
 pub struct ModifyDbClusterSnapshotAttributeOutput {
     /// <p>Contains the results of a successful call to the <code>DescribeDBClusterSnapshotAttributes</code>
     /// API action.</p>
-    /// <p>Manual DB cluster snapshot attributes are used to authorize other AWS accounts
+    /// <p>Manual DB cluster snapshot attributes are used to authorize other Amazon Web Services accounts
     /// to copy or restore a manual DB cluster snapshot. For more information, see the <code>ModifyDBClusterSnapshotAttribute</code>
     /// API action.</p>
     pub db_cluster_snapshot_attributes_result:
@@ -2440,7 +2460,7 @@ pub mod modify_db_cluster_snapshot_attribute_output {
     impl Builder {
         /// <p>Contains the results of a successful call to the <code>DescribeDBClusterSnapshotAttributes</code>
         /// API action.</p>
-        /// <p>Manual DB cluster snapshot attributes are used to authorize other AWS accounts
+        /// <p>Manual DB cluster snapshot attributes are used to authorize other Amazon Web Services accounts
         /// to copy or restore a manual DB cluster snapshot. For more information, see the <code>ModifyDBClusterSnapshotAttribute</code>
         /// API action.</p>
         pub fn db_cluster_snapshot_attributes_result(
@@ -2976,7 +2996,7 @@ impl ModifyCurrentDbClusterCapacityOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ModifyCertificatesOutput {
-    /// <p>A CA certificate for an AWS account.</p>
+    /// <p>A CA certificate for an Amazon Web Services account.</p>
     pub certificate: std::option::Option<crate::model::Certificate>,
 }
 impl std::fmt::Debug for ModifyCertificatesOutput {
@@ -2995,7 +3015,7 @@ pub mod modify_certificates_output {
         pub(crate) certificate: std::option::Option<crate::model::Certificate>,
     }
     impl Builder {
-        /// <p>A CA certificate for an AWS account.</p>
+        /// <p>A CA certificate for an Amazon Web Services account.</p>
         pub fn certificate(mut self, input: crate::model::Certificate) -> Self {
             self.certificate = Some(input);
             self
@@ -3515,8 +3535,8 @@ pub struct DescribeSourceRegionsOutput {
     /// up to the value specified by <code>MaxRecords</code>.
     /// </p>
     pub marker: std::option::Option<std::string::String>,
-    /// <p>A list of SourceRegion instances that contains each source AWS Region that the
-    /// current AWS Region can get a read replica or a DB snapshot from.</p>
+    /// <p>A list of SourceRegion instances that contains each source Amazon Web Services Region that the
+    /// current Amazon Web Services Region can get a read replica or a DB snapshot from.</p>
     pub source_regions: std::option::Option<std::vec::Vec<crate::model::SourceRegion>>,
 }
 impl std::fmt::Debug for DescribeSourceRegionsOutput {
@@ -4078,7 +4098,7 @@ pub struct DescribeInstallationMediaOutput {
     /// only records beyond the marker,
     /// up to the value specified by <code>MaxRecords</code>.</p>
     pub marker: std::option::Option<std::string::String>,
-    /// <p>The list of <a>InstallationMedia</a> objects for the AWS account.</p>
+    /// <p>The list of <a>InstallationMedia</a> objects for the Amazon Web Services account.</p>
     pub installation_media: std::option::Option<std::vec::Vec<crate::model::InstallationMedia>>,
 }
 impl std::fmt::Debug for DescribeInstallationMediaOutput {
@@ -4776,7 +4796,7 @@ impl DescribeDbSnapshotsOutput {
 pub struct DescribeDbSnapshotAttributesOutput {
     /// <p>Contains the results of a successful call to the <code>DescribeDBSnapshotAttributes</code>
     /// API action.</p>
-    /// <p>Manual DB snapshot attributes are used to authorize other AWS accounts
+    /// <p>Manual DB snapshot attributes are used to authorize other Amazon Web Services accounts
     /// to copy or restore a manual DB snapshot. For more information, see the <code>ModifyDBSnapshotAttribute</code>
     /// API action.</p>
     pub db_snapshot_attributes_result:
@@ -4804,7 +4824,7 @@ pub mod describe_db_snapshot_attributes_output {
     impl Builder {
         /// <p>Contains the results of a successful call to the <code>DescribeDBSnapshotAttributes</code>
         /// API action.</p>
-        /// <p>Manual DB snapshot attributes are used to authorize other AWS accounts
+        /// <p>Manual DB snapshot attributes are used to authorize other Amazon Web Services accounts
         /// to copy or restore a manual DB snapshot. For more information, see the <code>ModifyDBSnapshotAttribute</code>
         /// API action.</p>
         pub fn db_snapshot_attributes_result(
@@ -5783,7 +5803,7 @@ impl DescribeDbClusterSnapshotsOutput {
 pub struct DescribeDbClusterSnapshotAttributesOutput {
     /// <p>Contains the results of a successful call to the <code>DescribeDBClusterSnapshotAttributes</code>
     /// API action.</p>
-    /// <p>Manual DB cluster snapshot attributes are used to authorize other AWS accounts
+    /// <p>Manual DB cluster snapshot attributes are used to authorize other Amazon Web Services accounts
     /// to copy or restore a manual DB cluster snapshot. For more information, see the <code>ModifyDBClusterSnapshotAttribute</code>
     /// API action.</p>
     pub db_cluster_snapshot_attributes_result:
@@ -5811,7 +5831,7 @@ pub mod describe_db_cluster_snapshot_attributes_output {
     impl Builder {
         /// <p>Contains the results of a successful call to the <code>DescribeDBClusterSnapshotAttributes</code>
         /// API action.</p>
-        /// <p>Manual DB cluster snapshot attributes are used to authorize other AWS accounts
+        /// <p>Manual DB cluster snapshot attributes are used to authorize other Amazon Web Services accounts
         /// to copy or restore a manual DB cluster snapshot. For more information, see the <code>ModifyDBClusterSnapshotAttribute</code>
         /// API action.</p>
         pub fn db_cluster_snapshot_attributes_result(
@@ -6227,7 +6247,7 @@ pub struct DescribeCustomAvailabilityZonesOutput {
     /// only records beyond the marker,
     /// up to the value specified by <code>MaxRecords</code>.</p>
     pub marker: std::option::Option<std::string::String>,
-    /// <p>The list of <a>CustomAvailabilityZone</a> objects for the AWS account.</p>
+    /// <p>The list of <a>CustomAvailabilityZone</a> objects for the Amazon Web Services account.</p>
     pub custom_availability_zones:
         std::option::Option<std::vec::Vec<crate::model::CustomAvailabilityZone>>,
 }
@@ -6299,7 +6319,7 @@ impl DescribeCustomAvailabilityZonesOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeCertificatesOutput {
-    /// <p>The list of <code>Certificate</code> objects for the AWS account.</p>
+    /// <p>The list of <code>Certificate</code> objects for the Amazon Web Services account.</p>
     pub certificates: std::option::Option<std::vec::Vec<crate::model::Certificate>>,
     /// <p>
     /// An optional pagination token provided by a previous
@@ -8956,9 +8976,9 @@ pub struct CancelExportTaskOutput {
     pub s3_prefix: std::option::Option<std::string::String>,
     /// <p>The name of the IAM role that is used to write to Amazon S3 when exporting a snapshot. </p>
     pub iam_role_arn: std::option::Option<std::string::String>,
-    /// <p>The key identifier of the AWS KMS customer master key (CMK) that is used to encrypt the snapshot when it's exported to
-    /// Amazon S3. The AWS KMS CMK identifier is its key ARN, key ID, alias ARN, or alias name. The IAM role used for the snapshot export
-    /// must have encryption and decryption permissions to use this AWS KMS CMK. </p>
+    /// <p>The key identifier of the Amazon Web Services KMS customer master key (CMK) that is used to encrypt the snapshot when it's exported to
+    /// Amazon S3. The Amazon Web Services KMS CMK identifier is its key ARN, key ID, alias ARN, or alias name. The IAM role used for the snapshot export
+    /// must have encryption and decryption permissions to use this Amazon Web Services KMS CMK. </p>
     pub kms_key_id: std::option::Option<std::string::String>,
     /// <p>The progress status of the export task.</p>
     pub status: std::option::Option<std::string::String>,
@@ -9116,9 +9136,9 @@ pub mod cancel_export_task_output {
             self.iam_role_arn = input;
             self
         }
-        /// <p>The key identifier of the AWS KMS customer master key (CMK) that is used to encrypt the snapshot when it's exported to
-        /// Amazon S3. The AWS KMS CMK identifier is its key ARN, key ID, alias ARN, or alias name. The IAM role used for the snapshot export
-        /// must have encryption and decryption permissions to use this AWS KMS CMK. </p>
+        /// <p>The key identifier of the Amazon Web Services KMS customer master key (CMK) that is used to encrypt the snapshot when it's exported to
+        /// Amazon S3. The Amazon Web Services KMS CMK identifier is its key ARN, key ID, alias ARN, or alias name. The IAM role used for the snapshot export
+        /// must have encryption and decryption permissions to use this Amazon Web Services KMS CMK. </p>
         pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_key_id = Some(input.into());
             self

@@ -6,7 +6,7 @@
 /// Only you, the owner of the queue, can grant or deny permissions to the queue.
 /// For more information about these permissions, see
 /// <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-writing-an-sqs-policy.html#write-messages-to-shared-queue">Allow
-/// Developers to Write Messages to a Shared Queue</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.</p>
+/// Developers to Write Messages to a Shared Queue</a> in the <i>Amazon SQS Developer Guide</i>.</p>
 /// <note>
 /// <ul>
 /// <li>
@@ -17,7 +17,7 @@
 /// </code> to
 /// upload your policy. For more information, see
 /// <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-creating-custom-policies.html">Using Custom Policies with the Amazon SQS Access Policy Language</a> in
-/// the <i>Amazon Simple Queue Service Developer Guide</i>.</p>
+/// the <i>Amazon SQS Developer Guide</i>.</p>
 /// </li>
 /// <li>
 /// <p>An Amazon SQS policy can have a maximum of 7 actions.</p>
@@ -35,7 +35,9 @@
 /// <code>&AttributeName.2=second</code>
 /// </p>
 /// <note>
-/// <p>Cross-account permissions don't apply to this action. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name">Grant cross-account permissions to a role and a user name</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.</p>
+/// <p>Cross-account permissions don't apply to this action. For more information,
+/// see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name">Grant
+/// cross-account permissions to a role and a user name</a> in the <i>Amazon SQS Developer Guide</i>.</p>
 /// </note>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct AddPermission {
@@ -64,7 +66,7 @@ impl smithy_http::response::ParseStrictResponse for AddPermission {
 
 /// <p>Changes the visibility timeout of a specified message in a queue to a new value. The
 /// default visibility timeout for a message is 30 seconds. The minimum is 0 seconds. The
-/// maximum is 12 hours. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility Timeout</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.</p>
+/// maximum is 12 hours. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility Timeout</a> in the <i>Amazon SQS Developer Guide</i>.</p>
 /// <p>For example, you have a message with a visibility timeout of 5 minutes. After 3
 /// minutes, you call <code>ChangeMessageVisibility</code> with a timeout of 10 minutes. You
 /// can continue to call <code>ChangeMessageVisibility</code> to extend the visibility
@@ -199,7 +201,7 @@ impl smithy_http::response::ParseStrictResponse for ChangeMessageVisibilityBatch
 /// an existing standard queue into a FIFO queue. You must either create a new
 /// FIFO queue for your application or delete your existing standard queue and
 /// recreate it as a FIFO queue. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-moving">Moving From a Standard Queue to a FIFO Queue</a> in the
-/// <i>Amazon Simple Queue Service Developer Guide</i>. </p>
+/// <i>Amazon SQS Developer Guide</i>. </p>
 /// </note>
 /// </li>
 /// <li>
@@ -236,7 +238,9 @@ impl smithy_http::response::ParseStrictResponse for ChangeMessageVisibilityBatch
 /// <code>&AttributeName.2=second</code>
 /// </p>
 /// <note>
-/// <p>Cross-account permissions don't apply to this action. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name">Grant cross-account permissions to a role and a user name</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.</p>
+/// <p>Cross-account permissions don't apply to this action. For more information,
+/// see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name">Grant
+/// cross-account permissions to a role and a user name</a> in the <i>Amazon SQS Developer Guide</i>.</p>
 /// </note>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct CreateQueue {
@@ -358,7 +362,9 @@ impl smithy_http::response::ParseStrictResponse for DeleteMessageBatch {
 /// </code> request might succeed, but after 60 seconds the queue and the message you sent no longer exist.</p>
 /// <p>When you delete a queue, you must wait at least 60 seconds before creating a queue with the same name.</p>
 /// <note>
-/// <p>Cross-account permissions don't apply to this action. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name">Grant cross-account permissions to a role and a user name</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.</p>
+/// <p>Cross-account permissions don't apply to this action. For more information,
+/// see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name">Grant
+/// cross-account permissions to a role and a user name</a> in the <i>Amazon SQS Developer Guide</i>.</p>
 /// </note>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteQueue {
@@ -420,7 +426,7 @@ impl smithy_http::response::ParseStrictResponse for GetQueueAttributes {
 /// <p>To access a queue that belongs to another AWS account, use the <code>QueueOwnerAWSAccountId</code> parameter to specify the account ID of the queue's owner. The queue's owner must grant you permission to access the queue.
 /// For more information about shared queue access, see <code>
 /// <a>AddPermission</a>
-/// </code> or see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-writing-an-sqs-policy.html#write-messages-to-shared-queue">Allow Developers to Write Messages to a Shared Queue</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
+/// </code> or see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-writing-an-sqs-policy.html#write-messages-to-shared-queue">Allow Developers to Write Messages to a Shared Queue</a> in the <i>Amazon SQS Developer Guide</i>.
 /// </p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct GetQueueUrl {
@@ -456,7 +462,7 @@ impl smithy_http::response::ParseStrictResponse for GetQueueUrl {
 /// <code>NextToken</code> as a parameter in your next request to
 /// <code>ListDeadLetterSourceQueues</code> to receive the next page of results.   </p>
 /// <p>For more information about using dead-letter queues, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html">Using Amazon SQS Dead-Letter Queues</a>
-/// in the <i>Amazon Simple Queue Service Developer Guide</i>.</p>
+/// in the <i>Amazon SQS Developer Guide</i>.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct ListDeadLetterSourceQueues {
     _private: (),
@@ -494,7 +500,9 @@ impl smithy_http::response::ParseStrictResponse for ListDeadLetterSourceQueues {
 /// <code>NextToken</code> as a parameter in your next request to
 /// <code>listQueues</code> to receive the next page of results.  </p>
 /// <note>
-/// <p>Cross-account permissions don't apply to this action. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name">Grant cross-account permissions to a role and a user name</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.</p>
+/// <p>Cross-account permissions don't apply to this action. For more information,
+/// see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name">Grant
+/// cross-account permissions to a role and a user name</a> in the <i>Amazon SQS Developer Guide</i>.</p>
 /// </note>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct ListQueues {
@@ -521,9 +529,12 @@ impl smithy_http::response::ParseStrictResponse for ListQueues {
     }
 }
 
-/// <p>List all cost allocation tags added to the specified Amazon SQS queue. For an overview, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-queue-tags.html">Tagging Your Amazon SQS Queues</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.</p>
+/// <p>List all cost allocation tags added to the specified Amazon SQS queue. For an overview, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-queue-tags.html">Tagging
+/// Your Amazon SQS Queues</a> in the <i>Amazon SQS Developer Guide</i>.</p>
 /// <note>
-/// <p>Cross-account permissions don't apply to this action. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name">Grant cross-account permissions to a role and a user name</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.</p>
+/// <p>Cross-account permissions don't apply to this action. For more information,
+/// see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name">Grant
+/// cross-account permissions to a role and a user name</a> in the <i>Amazon SQS Developer Guide</i>.</p>
 /// </note>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct ListQueueTags {
@@ -589,7 +600,7 @@ impl smithy_http::response::ParseStrictResponse for PurgeQueue {
 }
 
 /// <p>Retrieves one or more messages (up to 10), from the specified queue. Using the <code>WaitTimeSeconds</code> parameter enables long-poll support.
-/// For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-long-polling.html">Amazon SQS Long Polling</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
+/// For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-long-polling.html">Amazon SQS Long Polling</a> in the <i>Amazon SQS Developer Guide</i>.
 /// </p>
 /// <p>Short poll is the default behavior where a weighted random set of machines is sampled on a <code>ReceiveMessage</code> call. Thus, only the messages on the sampled machines are returned.
 /// If the number of messages in the queue is small (fewer than 1,000), you most likely get fewer messages than you requested per <code>ReceiveMessage</code> call. If the number of messages in the queue is extremely small,
@@ -617,9 +628,9 @@ impl smithy_http::response::ParseStrictResponse for PurgeQueue {
 /// </li>
 /// </ul>
 /// <p>The receipt handle is the identifier you must provide when deleting the message. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-queue-message-identifiers.html">Queue
-/// and Message Identifiers</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.</p>
+/// and Message Identifiers</a> in the <i>Amazon SQS Developer Guide</i>.</p>
 /// <p>You can provide the <code>VisibilityTimeout</code> parameter in your request. The parameter is applied to the messages that Amazon SQS returns in the response. If you don't include the parameter, the overall visibility timeout for the queue
-/// is used for the returned messages. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility Timeout</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.</p>
+/// is used for the returned messages. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility Timeout</a> in the <i>Amazon SQS Developer Guide</i>.</p>
 /// <p>A message that isn't deleted or a message whose visibility isn't extended before the visibility timeout expires counts as a failed receive. Depending on the configuration of the queue, the message might be sent to the dead-letter queue.</p>
 /// <note>
 /// <p>In the future, new attributes might be added. If you write code that calls this action, we recommend that you structure your code so that it can handle new attributes gracefully.</p>
@@ -656,7 +667,9 @@ impl smithy_http::response::ParseStrictResponse for ReceiveMessage {
 /// <p>Only the owner of a queue can remove permissions from it.</p>
 /// </li>
 /// <li>
-/// <p>Cross-account permissions don't apply to this action. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name">Grant cross-account permissions to a role and a user name</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.</p>
+/// <p>Cross-account permissions don't apply to this action. For more information,
+/// see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name">Grant
+/// cross-account permissions to a role and a user name</a> in the <i>Amazon SQS Developer Guide</i>.</p>
 /// </li>
 /// <li>
 /// <p>To remove the ability to change queue permissions, you must deny permission to the <code>AddPermission</code>, <code>RemovePermission</code>, and <code>SetQueueAttributes</code> actions in your IAM policy.</p>
@@ -777,7 +790,9 @@ impl smithy_http::response::ParseStrictResponse for SendMessageBatch {
 /// <p>In the future, new attributes might be added. If you write code that calls this action, we recommend that you structure your code so that it can handle new attributes gracefully.</p>
 /// </li>
 /// <li>
-/// <p>Cross-account permissions don't apply to this action. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name">Grant cross-account permissions to a role and a user name</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.</p>
+/// <p>Cross-account permissions don't apply to this action. For more information,
+/// see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name">Grant
+/// cross-account permissions to a role and a user name</a> in the <i>Amazon SQS Developer Guide</i>.</p>
 /// </li>
 /// <li>
 /// <p>To remove the ability to change queue permissions, you must deny permission to the <code>AddPermission</code>, <code>RemovePermission</code>, and <code>SetQueueAttributes</code> actions in your IAM policy.</p>
@@ -811,7 +826,8 @@ impl smithy_http::response::ParseStrictResponse for SetQueueAttributes {
     }
 }
 
-/// <p>Add cost allocation tags to the specified Amazon SQS queue. For an overview, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-queue-tags.html">Tagging Your Amazon SQS Queues</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.</p>
+/// <p>Add cost allocation tags to the specified Amazon SQS queue. For an overview, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-queue-tags.html">Tagging
+/// Your Amazon SQS Queues</a> in the <i>Amazon SQS Developer Guide</i>.</p>
 /// <p>When you use queue tags, keep the following guidelines in mind:</p>
 /// <ul>
 /// <li>
@@ -827,9 +843,13 @@ impl smithy_http::response::ParseStrictResponse for SetQueueAttributes {
 /// <p>A new tag with a key identical to that of an existing tag overwrites the existing tag.</p>
 /// </li>
 /// </ul>
-/// <p>For a full list of tag restrictions, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-limits.html#limits-queues">Limits Related to Queues</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.</p>
+/// <p>For a full list of tag restrictions, see
+/// <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-limits.html#limits-queues">Quotas related to queues</a>
+/// in the <i>Amazon SQS Developer Guide</i>.</p>
 /// <note>
-/// <p>Cross-account permissions don't apply to this action. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name">Grant cross-account permissions to a role and a user name</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.</p>
+/// <p>Cross-account permissions don't apply to this action. For more information,
+/// see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name">Grant
+/// cross-account permissions to a role and a user name</a> in the <i>Amazon SQS Developer Guide</i>.</p>
 /// </note>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct TagQueue {
@@ -855,9 +875,12 @@ impl smithy_http::response::ParseStrictResponse for TagQueue {
     }
 }
 
-/// <p>Remove cost allocation tags from the specified Amazon SQS queue. For an overview, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-queue-tags.html">Tagging Your Amazon SQS Queues</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.</p>
+/// <p>Remove cost allocation tags from the specified Amazon SQS queue. For an overview, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-queue-tags.html">Tagging
+/// Your Amazon SQS Queues</a> in the <i>Amazon SQS Developer Guide</i>.</p>
 /// <note>
-/// <p>Cross-account permissions don't apply to this action. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name">Grant cross-account permissions to a role and a user name</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.</p>
+/// <p>Cross-account permissions don't apply to this action. For more information,
+/// see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name">Grant
+/// cross-account permissions to a role and a user name</a> in the <i>Amazon SQS Developer Guide</i>.</p>
 /// </note>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct UntagQueue {

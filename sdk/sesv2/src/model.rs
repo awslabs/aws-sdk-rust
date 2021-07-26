@@ -219,6 +219,9 @@ impl SubscriptionStatus {
             SubscriptionStatus::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["OPT_IN", "OPT_OUT"]
+    }
 }
 impl AsRef<str> for SubscriptionStatus {
     fn as_ref(&self) -> &str {
@@ -814,6 +817,9 @@ impl DimensionValueSource {
             DimensionValueSource::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["EMAIL_HEADER", "LINK_TAG", "MESSAGE_TAG"]
+    }
 }
 impl AsRef<str> for DimensionValueSource {
     fn as_ref(&self) -> &str {
@@ -955,6 +961,20 @@ impl EventType {
             EventType::Subscription => "SUBSCRIPTION",
             EventType::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "BOUNCE",
+            "CLICK",
+            "COMPLAINT",
+            "DELIVERY",
+            "DELIVERY_DELAY",
+            "OPEN",
+            "REJECT",
+            "RENDERING_FAILURE",
+            "SEND",
+            "SUBSCRIPTION",
+        ]
     }
 }
 impl AsRef<str> for EventType {
@@ -2134,6 +2154,24 @@ impl BulkEmailStatus {
             BulkEmailStatus::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "ACCOUNT_DAILY_QUOTA_EXCEEDED",
+            "ACCOUNT_SENDING_PAUSED",
+            "ACCOUNT_SUSPENDED",
+            "ACCOUNT_THROTTLED",
+            "CONFIGURATION_SET_NOT_FOUND",
+            "CONFIGURATION_SET_SENDING_PAUSED",
+            "FAILED",
+            "INVALID_PARAMETER",
+            "INVALID_SENDING_POOL_NAME",
+            "MAIL_FROM_DOMAIN_NOT_VERIFIED",
+            "MESSAGE_REJECTED",
+            "SUCCESS",
+            "TEMPLATE_NOT_FOUND",
+            "TRANSIENT_FAILURE",
+        ]
+    }
 }
 impl AsRef<str> for BulkEmailStatus {
     fn as_ref(&self) -> &str {
@@ -2465,6 +2503,9 @@ impl SuppressionListReason {
             SuppressionListReason::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["BOUNCE", "COMPLAINT"]
+    }
 }
 impl AsRef<str> for SuppressionListReason {
     fn as_ref(&self) -> &str {
@@ -2520,6 +2561,9 @@ impl BehaviorOnMxFailure {
             BehaviorOnMxFailure::UseDefaultValue => "USE_DEFAULT_VALUE",
             BehaviorOnMxFailure::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["REJECT_MESSAGE", "USE_DEFAULT_VALUE"]
     }
 }
 impl AsRef<str> for BehaviorOnMxFailure {
@@ -2607,6 +2651,15 @@ impl DkimStatus {
             DkimStatus::TemporaryFailure => "TEMPORARY_FAILURE",
             DkimStatus::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "FAILED",
+            "NOT_STARTED",
+            "PENDING",
+            "SUCCESS",
+            "TEMPORARY_FAILURE",
+        ]
     }
 }
 impl AsRef<str> for DkimStatus {
@@ -2731,6 +2784,9 @@ impl DkimSigningAttributesOrigin {
             DkimSigningAttributesOrigin::External => "EXTERNAL",
             DkimSigningAttributesOrigin::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["AWS_SES", "EXTERNAL"]
     }
 }
 impl AsRef<str> for DkimSigningAttributesOrigin {
@@ -2949,6 +3005,9 @@ impl TlsPolicy {
             TlsPolicy::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["OPTIONAL", "REQUIRE"]
+    }
 }
 impl AsRef<str> for TlsPolicy {
     fn as_ref(&self) -> &str {
@@ -2996,6 +3055,9 @@ impl ContactLanguage {
             ContactLanguage::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["EN", "JA"]
+    }
 }
 impl AsRef<str> for ContactLanguage {
     fn as_ref(&self) -> &str {
@@ -3042,6 +3104,9 @@ impl MailType {
             MailType::Transactional => "TRANSACTIONAL",
             MailType::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["MARKETING", "TRANSACTIONAL"]
     }
 }
 impl AsRef<str> for MailType {
@@ -3283,6 +3348,9 @@ impl JobStatus {
             JobStatus::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["COMPLETED", "CREATED", "FAILED", "PROCESSING"]
+    }
 }
 impl AsRef<str> for JobStatus {
     fn as_ref(&self) -> &str {
@@ -3503,6 +3571,9 @@ impl ContactListImportAction {
             ContactListImportAction::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["DELETE", "PUT"]
+    }
 }
 impl AsRef<str> for ContactListImportAction {
     fn as_ref(&self) -> &str {
@@ -3635,6 +3706,9 @@ impl SuppressionListImportAction {
             SuppressionListImportAction::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["DELETE", "PUT"]
+    }
 }
 impl AsRef<str> for SuppressionListImportAction {
     fn as_ref(&self) -> &str {
@@ -3683,6 +3757,9 @@ impl ImportDestinationType {
             ImportDestinationType::SuppressionList => "SUPPRESSION_LIST",
             ImportDestinationType::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["CONTACT_LIST", "SUPPRESSION_LIST"]
     }
 }
 impl AsRef<str> for ImportDestinationType {
@@ -3928,6 +4005,9 @@ impl IdentityType {
             IdentityType::ManagedDomain => "MANAGED_DOMAIN",
             IdentityType::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["DOMAIN", "EMAIL_ADDRESS", "MANAGED_DOMAIN"]
     }
 }
 impl AsRef<str> for IdentityType {
@@ -4391,6 +4471,9 @@ impl DeliverabilityTestStatus {
             DeliverabilityTestStatus::InProgress => "IN_PROGRESS",
             DeliverabilityTestStatus::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["COMPLETED", "IN_PROGRESS"]
     }
 }
 impl AsRef<str> for DeliverabilityTestStatus {
@@ -5205,6 +5288,9 @@ impl DataFormat {
             DataFormat::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["CSV", "JSON"]
+    }
 }
 impl AsRef<str> for DataFormat {
     fn as_ref(&self) -> &str {
@@ -5427,6 +5513,9 @@ impl MailFromDomainStatus {
             MailFromDomainStatus::TemporaryFailure => "TEMPORARY_FAILURE",
             MailFromDomainStatus::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["FAILED", "PENDING", "SUCCESS", "TEMPORARY_FAILURE"]
     }
 }
 impl AsRef<str> for MailFromDomainStatus {
@@ -6253,6 +6342,9 @@ impl DeliverabilityDashboardAccountStatus {
             DeliverabilityDashboardAccountStatus::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["ACTIVE", "DISABLED", "PENDING_EXPIRATION"]
+    }
 }
 impl AsRef<str> for DeliverabilityDashboardAccountStatus {
     fn as_ref(&self) -> &str {
@@ -6424,6 +6516,9 @@ impl WarmupStatus {
             WarmupStatus::InProgress => "IN_PROGRESS",
             WarmupStatus::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["DONE", "IN_PROGRESS"]
     }
 }
 impl AsRef<str> for WarmupStatus {
@@ -7348,6 +7443,9 @@ impl ReviewStatus {
             ReviewStatus::Pending => "PENDING",
             ReviewStatus::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["DENIED", "FAILED", "GRANTED", "PENDING"]
     }
 }
 impl AsRef<str> for ReviewStatus {

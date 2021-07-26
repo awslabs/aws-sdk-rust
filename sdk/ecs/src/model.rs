@@ -689,6 +689,9 @@ impl StabilityStatus {
             StabilityStatus::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["STABILIZING", "STEADY_STATE"]
+    }
 }
 impl AsRef<str> for StabilityStatus {
     fn as_ref(&self) -> &str {
@@ -796,6 +799,9 @@ impl ScaleUnit {
             ScaleUnit::Percent => "PERCENT",
             ScaleUnit::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["PERCENT"]
     }
 }
 impl AsRef<str> for ScaleUnit {
@@ -1272,6 +1278,9 @@ impl AssignPublicIp {
             AssignPublicIp::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["DISABLED", "ENABLED"]
+    }
 }
 impl AsRef<str> for AssignPublicIp {
     fn as_ref(&self) -> &str {
@@ -1454,6 +1463,9 @@ impl LaunchType {
             LaunchType::Fargate => "FARGATE",
             LaunchType::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["EC2", "EXTERNAL", "FARGATE"]
     }
 }
 impl AsRef<str> for LaunchType {
@@ -2175,6 +2187,9 @@ impl PropagateTags {
             PropagateTags::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["SERVICE", "TASK_DEFINITION"]
+    }
 }
 impl AsRef<str> for PropagateTags {
     fn as_ref(&self) -> &str {
@@ -2321,6 +2336,9 @@ impl DeploymentControllerType {
             DeploymentControllerType::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["CODE_DEPLOY", "ECS", "EXTERNAL"]
+    }
 }
 impl AsRef<str> for DeploymentControllerType {
     fn as_ref(&self) -> &str {
@@ -2367,6 +2385,9 @@ impl SchedulingStrategy {
             SchedulingStrategy::Replica => "REPLICA",
             SchedulingStrategy::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["DAEMON", "REPLICA"]
     }
 }
 impl AsRef<str> for SchedulingStrategy {
@@ -2507,6 +2528,9 @@ impl PlacementStrategyType {
             PlacementStrategyType::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["binpack", "random", "spread"]
+    }
 }
 impl AsRef<str> for PlacementStrategyType {
     fn as_ref(&self) -> &str {
@@ -2635,6 +2659,9 @@ impl PlacementConstraintType {
             PlacementConstraintType::MemberOf => "memberOf",
             PlacementConstraintType::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["distinctInstance", "memberOf"]
     }
 }
 impl AsRef<str> for PlacementConstraintType {
@@ -3118,6 +3145,9 @@ impl DeploymentRolloutState {
             DeploymentRolloutState::InProgress => "IN_PROGRESS",
             DeploymentRolloutState::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["COMPLETED", "FAILED", "IN_PROGRESS"]
     }
 }
 impl AsRef<str> for DeploymentRolloutState {
@@ -4184,6 +4214,9 @@ impl TargetType {
             TargetType::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["container-instance"]
+    }
 }
 impl AsRef<str> for TargetType {
     fn as_ref(&self) -> &str {
@@ -4242,6 +4275,11 @@ impl AgentUpdateStatus {
             AgentUpdateStatus::Updating => "UPDATING",
             AgentUpdateStatus::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "FAILED", "PENDING", "STAGED", "STAGING", "UPDATED", "UPDATING",
+        ]
     }
 }
 impl AsRef<str> for AgentUpdateStatus {
@@ -4514,6 +4552,15 @@ impl ContainerInstanceStatus {
             ContainerInstanceStatus::RegistrationFailed => "REGISTRATION_FAILED",
             ContainerInstanceStatus::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "ACTIVE",
+            "DEREGISTERING",
+            "DRAINING",
+            "REGISTERING",
+            "REGISTRATION_FAILED",
+        ]
     }
 }
 impl AsRef<str> for ContainerInstanceStatus {
@@ -5087,6 +5134,9 @@ impl ClusterSettingName {
             ClusterSettingName::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["containerInsights"]
+    }
 }
 impl AsRef<str> for ClusterSettingName {
     fn as_ref(&self) -> &str {
@@ -5466,6 +5516,9 @@ impl ExecuteCommandLogging {
             ExecuteCommandLogging::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["DEFAULT", "NONE", "OVERRIDE"]
+    }
 }
 impl AsRef<str> for ExecuteCommandLogging {
     fn as_ref(&self) -> &str {
@@ -5755,6 +5808,16 @@ impl CapacityProviderUpdateStatus {
             CapacityProviderUpdateStatus::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "DELETE_COMPLETE",
+            "DELETE_FAILED",
+            "DELETE_IN_PROGRESS",
+            "UPDATE_COMPLETE",
+            "UPDATE_FAILED",
+            "UPDATE_IN_PROGRESS",
+        ]
+    }
 }
 impl AsRef<str> for CapacityProviderUpdateStatus {
     fn as_ref(&self) -> &str {
@@ -5917,6 +5980,9 @@ impl ManagedTerminationProtection {
             ManagedTerminationProtection::Enabled => "ENABLED",
             ManagedTerminationProtection::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["DISABLED", "ENABLED"]
     }
 }
 impl AsRef<str> for ManagedTerminationProtection {
@@ -6093,6 +6159,9 @@ impl ManagedScalingStatus {
             ManagedScalingStatus::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["DISABLED", "ENABLED"]
+    }
 }
 impl AsRef<str> for ManagedScalingStatus {
     fn as_ref(&self) -> &str {
@@ -6139,6 +6208,9 @@ impl CapacityProviderStatus {
             CapacityProviderStatus::Inactive => "INACTIVE",
             CapacityProviderStatus::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["ACTIVE", "INACTIVE"]
     }
 }
 impl AsRef<str> for CapacityProviderStatus {
@@ -6377,6 +6449,9 @@ impl ManagedAgentName {
             ManagedAgentName::ExecuteCommandAgent => "ExecuteCommandAgent",
             ManagedAgentName::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["ExecuteCommandAgent"]
     }
 }
 impl AsRef<str> for ManagedAgentName {
@@ -6724,6 +6799,9 @@ impl TransportProtocol {
             TransportProtocol::Udp => "udp",
             TransportProtocol::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["tcp", "udp"]
     }
 }
 impl AsRef<str> for TransportProtocol {
@@ -7640,6 +7718,13 @@ impl TaskStopCode {
             TaskStopCode::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "EssentialContainerExited",
+            "TaskFailedToStart",
+            "UserInitiated",
+        ]
+    }
 }
 impl AsRef<str> for TaskStopCode {
     fn as_ref(&self) -> &str {
@@ -8193,6 +8278,9 @@ impl ResourceType {
             ResourceType::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["GPU", "InferenceAccelerator"]
+    }
 }
 impl AsRef<str> for ResourceType {
     fn as_ref(&self) -> &str {
@@ -8317,6 +8405,9 @@ impl EnvironmentFileType {
             EnvironmentFileType::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["s3"]
+    }
 }
 impl AsRef<str> for EnvironmentFileType {
     fn as_ref(&self) -> &str {
@@ -8433,6 +8524,9 @@ impl HealthStatus {
             HealthStatus::UnknownValue => "UNKNOWN",
             HealthStatus::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["HEALTHY", "UNHEALTHY", "UNKNOWN"]
     }
 }
 impl AsRef<str> for HealthStatus {
@@ -8978,6 +9072,9 @@ impl Connectivity {
             Connectivity::Disconnected => "DISCONNECTED",
             Connectivity::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["CONNECTED", "DISCONNECTED"]
     }
 }
 impl AsRef<str> for Connectivity {
@@ -9919,6 +10016,9 @@ impl ProxyConfigurationType {
             ProxyConfigurationType::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["APPMESH"]
+    }
 }
 impl AsRef<str> for ProxyConfigurationType {
     fn as_ref(&self) -> &str {
@@ -9969,6 +10069,9 @@ impl IpcMode {
             IpcMode::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["host", "none", "task"]
+    }
 }
 impl AsRef<str> for IpcMode {
     fn as_ref(&self) -> &str {
@@ -10015,6 +10118,9 @@ impl PidMode {
             PidMode::Task => "task",
             PidMode::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["host", "task"]
     }
 }
 impl AsRef<str> for PidMode {
@@ -10065,6 +10171,9 @@ impl Compatibility {
             Compatibility::Fargate => "FARGATE",
             Compatibility::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["EC2", "EXTERNAL", "FARGATE"]
     }
 }
 impl AsRef<str> for Compatibility {
@@ -10188,6 +10297,9 @@ impl TaskDefinitionPlacementConstraintType {
             TaskDefinitionPlacementConstraintType::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["memberOf"]
+    }
 }
 impl AsRef<str> for TaskDefinitionPlacementConstraintType {
     fn as_ref(&self) -> &str {
@@ -10234,6 +10346,9 @@ impl TaskDefinitionStatus {
             TaskDefinitionStatus::Inactive => "INACTIVE",
             TaskDefinitionStatus::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["ACTIVE", "INACTIVE"]
     }
 }
 impl AsRef<str> for TaskDefinitionStatus {
@@ -10859,6 +10974,9 @@ impl EfsAuthorizationConfigIam {
             EfsAuthorizationConfigIam::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["DISABLED", "ENABLED"]
+    }
 }
 impl AsRef<str> for EfsAuthorizationConfigIam {
     fn as_ref(&self) -> &str {
@@ -10905,6 +11023,9 @@ impl EfsTransitEncryption {
             EfsTransitEncryption::Enabled => "ENABLED",
             EfsTransitEncryption::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["DISABLED", "ENABLED"]
     }
 }
 impl AsRef<str> for EfsTransitEncryption {
@@ -11121,6 +11242,9 @@ impl Scope {
             Scope::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["shared", "task"]
+    }
 }
 impl AsRef<str> for Scope {
     fn as_ref(&self) -> &str {
@@ -11238,6 +11362,9 @@ impl NetworkMode {
             NetworkMode::None => "none",
             NetworkMode::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["awsvpc", "bridge", "host", "none"]
     }
 }
 impl AsRef<str> for NetworkMode {
@@ -12811,6 +12938,9 @@ impl FirelensConfigurationType {
             FirelensConfigurationType::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["fluentbit", "fluentd"]
+    }
 }
 impl AsRef<str> for FirelensConfigurationType {
     fn as_ref(&self) -> &str {
@@ -13419,6 +13549,18 @@ impl LogDriver {
             LogDriver::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "awsfirelens",
+            "awslogs",
+            "fluentd",
+            "gelf",
+            "journald",
+            "json-file",
+            "splunk",
+            "syslog",
+        ]
+    }
 }
 impl AsRef<str> for LogDriver {
     fn as_ref(&self) -> &str {
@@ -13586,6 +13728,25 @@ impl UlimitName {
             UlimitName::Stack => "stack",
             UlimitName::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "core",
+            "cpu",
+            "data",
+            "fsize",
+            "locks",
+            "memlock",
+            "msgqueue",
+            "nice",
+            "nofile",
+            "nproc",
+            "rss",
+            "rtprio",
+            "rttime",
+            "sigpending",
+            "stack",
+        ]
     }
 }
 impl AsRef<str> for UlimitName {
@@ -13843,6 +14004,9 @@ impl ContainerCondition {
             ContainerCondition::Success => "SUCCESS",
             ContainerCondition::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["COMPLETE", "HEALTHY", "START", "SUCCESS"]
     }
 }
 impl AsRef<str> for ContainerCondition {
@@ -14297,6 +14461,9 @@ impl DeviceCgroupPermission {
             DeviceCgroupPermission::Write => "write",
             DeviceCgroupPermission::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["mknod", "read", "write"]
     }
 }
 impl AsRef<str> for DeviceCgroupPermission {
@@ -14902,6 +15069,9 @@ impl PlatformDeviceType {
             PlatformDeviceType::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["GPU"]
+    }
 }
 impl AsRef<str> for PlatformDeviceType {
     fn as_ref(&self) -> &str {
@@ -15038,6 +15208,15 @@ impl SettingName {
             SettingName::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "awsvpcTrunking",
+            "containerInsights",
+            "containerInstanceLongArnFormat",
+            "serviceLongArnFormat",
+            "taskLongArnFormat",
+        ]
+    }
 }
 impl AsRef<str> for SettingName {
     fn as_ref(&self) -> &str {
@@ -15088,6 +15267,9 @@ impl DesiredStatus {
             DesiredStatus::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["PENDING", "RUNNING", "STOPPED"]
+    }
 }
 impl AsRef<str> for DesiredStatus {
     fn as_ref(&self) -> &str {
@@ -15134,6 +15316,9 @@ impl SortOrder {
             SortOrder::Desc => "DESC",
             SortOrder::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["ASC", "DESC"]
     }
 }
 impl AsRef<str> for SortOrder {
@@ -15184,6 +15369,9 @@ impl TaskDefinitionFamilyStatus {
             TaskDefinitionFamilyStatus::Inactive => "INACTIVE",
             TaskDefinitionFamilyStatus::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["ACTIVE", "ALL", "INACTIVE"]
     }
 }
 impl AsRef<str> for TaskDefinitionFamilyStatus {
@@ -15308,6 +15496,9 @@ impl TaskSetField {
             TaskSetField::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["TAGS"]
+    }
 }
 impl AsRef<str> for TaskSetField {
     fn as_ref(&self) -> &str {
@@ -15351,6 +15542,9 @@ impl TaskField {
             TaskField::Tags => "TAGS",
             TaskField::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["TAGS"]
     }
 }
 impl AsRef<str> for TaskField {
@@ -15396,6 +15590,9 @@ impl TaskDefinitionField {
             TaskDefinitionField::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["TAGS"]
+    }
 }
 impl AsRef<str> for TaskDefinitionField {
     fn as_ref(&self) -> &str {
@@ -15440,6 +15637,9 @@ impl ServiceField {
             ServiceField::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["TAGS"]
+    }
 }
 impl AsRef<str> for ServiceField {
     fn as_ref(&self) -> &str {
@@ -15483,6 +15683,9 @@ impl ContainerInstanceField {
             ContainerInstanceField::Tags => "TAGS",
             ContainerInstanceField::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["TAGS"]
     }
 }
 impl AsRef<str> for ContainerInstanceField {
@@ -15540,6 +15743,15 @@ impl ClusterField {
             ClusterField::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "ATTACHMENTS",
+            "CONFIGURATIONS",
+            "SETTINGS",
+            "STATISTICS",
+            "TAGS",
+        ]
+    }
 }
 impl AsRef<str> for ClusterField {
     fn as_ref(&self) -> &str {
@@ -15583,6 +15795,9 @@ impl CapacityProviderField {
             CapacityProviderField::Tags => "TAGS",
             CapacityProviderField::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["TAGS"]
     }
 }
 impl AsRef<str> for CapacityProviderField {

@@ -430,6 +430,17 @@ impl ReplicaStatus {
             ReplicaStatus::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "ACTIVE",
+            "CREATING",
+            "CREATION_FAILED",
+            "DELETING",
+            "INACCESSIBLE_ENCRYPTION_CREDENTIALS",
+            "REGION_DISABLED",
+            "UPDATING",
+        ]
+    }
 }
 impl AsRef<str> for ReplicaStatus {
     fn as_ref(&self) -> &str {
@@ -951,6 +962,9 @@ impl IndexStatus {
             IndexStatus::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["ACTIVE", "CREATING", "DELETING", "UPDATING"]
+    }
 }
 impl AsRef<str> for IndexStatus {
     fn as_ref(&self) -> &str {
@@ -1012,6 +1026,17 @@ impl TableStatus {
             TableStatus::Updating => "UPDATING",
             TableStatus::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "ACTIVE",
+            "ARCHIVED",
+            "ARCHIVING",
+            "CREATING",
+            "DELETING",
+            "INACCESSIBLE_ENCRYPTION_CREDENTIALS",
+            "UPDATING",
+        ]
     }
 }
 impl AsRef<str> for TableStatus {
@@ -2599,6 +2624,9 @@ impl SseType {
             SseType::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["AES256", "KMS"]
+    }
 }
 impl AsRef<str> for SseType {
     fn as_ref(&self) -> &str {
@@ -2654,6 +2682,9 @@ impl SseStatus {
             SseStatus::Updating => "UPDATING",
             SseStatus::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["DISABLED", "DISABLING", "ENABLED", "ENABLING", "UPDATING"]
     }
 }
 impl AsRef<str> for SseStatus {
@@ -3305,6 +3336,9 @@ impl StreamViewType {
             StreamViewType::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["KEYS_ONLY", "NEW_AND_OLD_IMAGES", "NEW_IMAGE", "OLD_IMAGE"]
+    }
 }
 impl AsRef<str> for StreamViewType {
     fn as_ref(&self) -> &str {
@@ -3831,6 +3865,9 @@ impl ProjectionType {
             ProjectionType::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["ALL", "INCLUDE", "KEYS_ONLY"]
+    }
 }
 impl AsRef<str> for ProjectionType {
     fn as_ref(&self) -> &str {
@@ -3983,6 +4020,9 @@ impl KeyType {
             KeyType::Range => "RANGE",
             KeyType::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["HASH", "RANGE"]
     }
 }
 impl AsRef<str> for KeyType {
@@ -4274,6 +4314,9 @@ impl BillingMode {
             BillingMode::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["PAY_PER_REQUEST", "PROVISIONED"]
+    }
 }
 impl AsRef<str> for BillingMode {
     fn as_ref(&self) -> &str {
@@ -4418,6 +4461,9 @@ impl ScalarAttributeType {
             ScalarAttributeType::S => "S",
             ScalarAttributeType::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["B", "N", "S"]
     }
 }
 impl AsRef<str> for ScalarAttributeType {
@@ -5959,6 +6005,9 @@ impl ReturnItemCollectionMetrics {
             ReturnItemCollectionMetrics::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["NONE", "SIZE"]
+    }
 }
 impl AsRef<str> for ReturnItemCollectionMetrics {
     fn as_ref(&self) -> &str {
@@ -6025,6 +6074,9 @@ impl ReturnConsumedCapacity {
             ReturnConsumedCapacity::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["INDEXES", "NONE", "TOTAL"]
+    }
 }
 impl AsRef<str> for ReturnConsumedCapacity {
     fn as_ref(&self) -> &str {
@@ -6081,6 +6133,9 @@ impl ReturnValue {
             ReturnValue::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["ALL_NEW", "ALL_OLD", "NONE", "UPDATED_NEW", "UPDATED_OLD"]
+    }
 }
 impl AsRef<str> for ReturnValue {
     fn as_ref(&self) -> &str {
@@ -6127,6 +6182,9 @@ impl ConditionalOperator {
             ConditionalOperator::Or => "OR",
             ConditionalOperator::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["AND", "OR"]
     }
 }
 impl AsRef<str> for ConditionalOperator {
@@ -6695,6 +6753,23 @@ impl ComparisonOperator {
             ComparisonOperator::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "BEGINS_WITH",
+            "BETWEEN",
+            "CONTAINS",
+            "EQ",
+            "GE",
+            "GT",
+            "IN",
+            "LE",
+            "LT",
+            "NE",
+            "NOT_CONTAINS",
+            "NOT_NULL",
+            "NULL",
+        ]
+    }
 }
 impl AsRef<str> for ComparisonOperator {
     fn as_ref(&self) -> &str {
@@ -6990,6 +7065,9 @@ impl AttributeAction {
             AttributeAction::Put => "PUT",
             AttributeAction::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["ADD", "DELETE", "PUT"]
     }
 }
 impl AsRef<str> for AttributeAction {
@@ -7984,6 +8062,9 @@ impl GlobalTableStatus {
             GlobalTableStatus::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["ACTIVE", "CREATING", "DELETING", "UPDATING"]
+    }
 }
 impl AsRef<str> for GlobalTableStatus {
     fn as_ref(&self) -> &str {
@@ -8212,6 +8293,9 @@ impl ContributorInsightsStatus {
             ContributorInsightsStatus::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["DISABLED", "DISABLING", "ENABLED", "ENABLING", "FAILED"]
+    }
 }
 impl AsRef<str> for ContributorInsightsStatus {
     fn as_ref(&self) -> &str {
@@ -8258,6 +8342,9 @@ impl ContributorInsightsAction {
             ContributorInsightsAction::Enable => "ENABLE",
             ContributorInsightsAction::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["DISABLE", "ENABLE"]
     }
 }
 impl AsRef<str> for ContributorInsightsAction {
@@ -8520,6 +8607,9 @@ impl PointInTimeRecoveryStatus {
             PointInTimeRecoveryStatus::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["DISABLED", "ENABLED"]
+    }
 }
 impl AsRef<str> for PointInTimeRecoveryStatus {
     fn as_ref(&self) -> &str {
@@ -8566,6 +8656,9 @@ impl ContinuousBackupsStatus {
             ContinuousBackupsStatus::Enabled => "ENABLED",
             ContinuousBackupsStatus::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["DISABLED", "ENABLED"]
     }
 }
 impl AsRef<str> for ContinuousBackupsStatus {
@@ -9058,6 +9151,9 @@ impl ReturnValuesOnConditionCheckFailure {
             ReturnValuesOnConditionCheckFailure::None => "NONE",
             ReturnValuesOnConditionCheckFailure::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["ALL_OLD", "NONE"]
     }
 }
 impl AsRef<str> for ReturnValuesOnConditionCheckFailure {
@@ -10377,6 +10473,14 @@ impl Select {
             Select::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "ALL_ATTRIBUTES",
+            "ALL_PROJECTED_ATTRIBUTES",
+            "COUNT",
+            "SPECIFIC_ATTRIBUTES",
+        ]
+    }
 }
 impl AsRef<str> for Select {
     fn as_ref(&self) -> &str {
@@ -10836,6 +10940,9 @@ impl ExportStatus {
             ExportStatus::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["COMPLETED", "FAILED", "IN_PROGRESS"]
+    }
 }
 impl AsRef<str> for ExportStatus {
     fn as_ref(&self) -> &str {
@@ -11194,6 +11301,9 @@ impl BackupType {
             BackupType::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["AWS_BACKUP", "SYSTEM", "USER"]
+    }
 }
 impl AsRef<str> for BackupType {
     fn as_ref(&self) -> &str {
@@ -11243,6 +11353,9 @@ impl BackupStatus {
             BackupStatus::Deleted => "DELETED",
             BackupStatus::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["AVAILABLE", "CREATING", "DELETED"]
     }
 }
 impl AsRef<str> for BackupStatus {
@@ -11296,6 +11409,9 @@ impl BackupTypeFilter {
             BackupTypeFilter::User => "USER",
             BackupTypeFilter::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["ALL", "AWS_BACKUP", "SYSTEM", "USER"]
     }
 }
 impl AsRef<str> for BackupTypeFilter {
@@ -11699,6 +11815,9 @@ impl ExportFormat {
             ExportFormat::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["DYNAMODB_JSON", "ION"]
+    }
 }
 impl AsRef<str> for ExportFormat {
     fn as_ref(&self) -> &str {
@@ -11745,6 +11864,9 @@ impl S3SseAlgorithm {
             S3SseAlgorithm::Kms => "KMS",
             S3SseAlgorithm::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["AES256", "KMS"]
     }
 }
 impl AsRef<str> for S3SseAlgorithm {
@@ -11875,6 +11997,15 @@ impl DestinationStatus {
             DestinationStatus::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "ACTIVE",
+            "DISABLED",
+            "DISABLING",
+            "ENABLE_FAILED",
+            "ENABLING",
+        ]
+    }
 }
 impl AsRef<str> for DestinationStatus {
     fn as_ref(&self) -> &str {
@@ -11994,6 +12125,9 @@ impl TimeToLiveStatus {
             TimeToLiveStatus::Enabling => "ENABLING",
             TimeToLiveStatus::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["DISABLED", "DISABLING", "ENABLED", "ENABLING"]
     }
 }
 impl AsRef<str> for TimeToLiveStatus {
@@ -13690,6 +13824,21 @@ impl BatchStatementErrorCodeEnum {
             BatchStatementErrorCodeEnum::ValidationError => "ValidationError",
             BatchStatementErrorCodeEnum::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "AccessDenied",
+            "ConditionalCheckFailed",
+            "DuplicateItem",
+            "InternalServerError",
+            "ItemCollectionSizeLimitExceeded",
+            "ProvisionedThroughputExceeded",
+            "RequestLimitExceeded",
+            "ResourceNotFound",
+            "ThrottlingError",
+            "TransactionConflict",
+            "ValidationError",
+        ]
     }
 }
 impl AsRef<str> for BatchStatementErrorCodeEnum {

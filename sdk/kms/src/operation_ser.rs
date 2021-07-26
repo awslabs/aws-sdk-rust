@@ -365,6 +365,16 @@ pub fn serialize_operation_re_encrypt(
     Ok(smithy_http::body::SdkBody::from(out))
 }
 
+pub fn serialize_operation_replicate_key(
+    input: &crate::input::ReplicateKeyInput,
+) -> Result<smithy_http::body::SdkBody, smithy_types::Error> {
+    let mut out = String::new();
+    let mut object = smithy_json::serialize::JsonObjectWriter::new(&mut out);
+    crate::json_ser::serialize_structure_replicate_key_input(&mut object, input);
+    object.finish();
+    Ok(smithy_http::body::SdkBody::from(out))
+}
+
 pub fn serialize_operation_retire_grant(
     input: &crate::input::RetireGrantInput,
 ) -> Result<smithy_http::body::SdkBody, smithy_types::Error> {
@@ -451,6 +461,16 @@ pub fn serialize_operation_update_key_description(
     let mut out = String::new();
     let mut object = smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::json_ser::serialize_structure_update_key_description_input(&mut object, input);
+    object.finish();
+    Ok(smithy_http::body::SdkBody::from(out))
+}
+
+pub fn serialize_operation_update_primary_region(
+    input: &crate::input::UpdatePrimaryRegionInput,
+) -> Result<smithy_http::body::SdkBody, smithy_types::Error> {
+    let mut out = String::new();
+    let mut object = smithy_json::serialize::JsonObjectWriter::new(&mut out);
+    crate::json_ser::serialize_structure_update_primary_region_input(&mut object, input);
     object.finish();
     Ok(smithy_http::body::SdkBody::from(out))
 }

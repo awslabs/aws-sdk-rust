@@ -6,9 +6,9 @@
 pub struct DbInstanceAutomatedBackup {
     /// <p>The Amazon Resource Name (ARN) for the automated backups.</p>
     pub db_instance_arn: std::option::Option<std::string::String>,
-    /// <p>The identifier for the source DB instance, which can't be changed and which is unique to an AWS Region.</p>
+    /// <p>The identifier for the source DB instance, which can't be changed and which is unique to an Amazon Web Services Region.</p>
     pub dbi_resource_id: std::option::Option<std::string::String>,
-    /// <p>The AWS Region associated with the automated backup.</p>
+    /// <p>The Amazon Web Services Region associated with the automated backup.</p>
     pub region: std::option::Option<std::string::String>,
     /// <p>The customer id of the instance that is/was associated with the automated backup.
     /// </p>
@@ -40,7 +40,7 @@ pub struct DbInstanceAutomatedBackup {
     /// </p>
     pub port: i32,
     /// <p>The Availability Zone that the automated backup was created in. For information on
-    /// AWS Regions and Availability Zones, see
+    /// Amazon Web Services Regions and Availability Zones, see
     /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html">Regions
     /// and Availability Zones</a>.</p>
     pub availability_zone: std::option::Option<std::string::String>,
@@ -67,21 +67,21 @@ pub struct DbInstanceAutomatedBackup {
     pub encrypted: bool,
     /// <p>Specifies the storage type associated with the automated backup.</p>
     pub storage_type: std::option::Option<std::string::String>,
-    /// <p>The AWS KMS key ID for an automated backup.</p>
-    /// <p>The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer master key (CMK).</p>
+    /// <p>The Amazon Web Services KMS key ID for an automated backup.</p>
+    /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon Web Services KMS customer master key (CMK).</p>
     pub kms_key_id: std::option::Option<std::string::String>,
     /// <p>The time zone of the automated backup. In most cases, the <code>Timezone</code> element is empty.
     /// <code>Timezone</code> content appears only for Microsoft SQL Server DB instances
     /// that were created with a time zone specified.</p>
     pub timezone: std::option::Option<std::string::String>,
-    /// <p>True if mapping of AWS Identity and Access Management (IAM) accounts to database accounts is enabled,
+    /// <p>True if mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database accounts is enabled,
     /// and otherwise false.</p>
     pub iam_database_authentication_enabled: bool,
     /// <p>The retention period for the automated backups.</p>
     pub backup_retention_period: std::option::Option<i32>,
     /// <p>The Amazon Resource Name (ARN) for the replicated automated backups.</p>
     pub db_instance_automated_backups_arn: std::option::Option<std::string::String>,
-    /// <p>The list of replications to different AWS Regions associated with the automated backup.</p>
+    /// <p>The list of replications to different Amazon Web Services Regions associated with the automated backup.</p>
     pub db_instance_automated_backups_replications:
         std::option::Option<std::vec::Vec<crate::model::DbInstanceAutomatedBackupsReplication>>,
 }
@@ -173,7 +173,7 @@ pub mod db_instance_automated_backup {
             self.db_instance_arn = input;
             self
         }
-        /// <p>The identifier for the source DB instance, which can't be changed and which is unique to an AWS Region.</p>
+        /// <p>The identifier for the source DB instance, which can't be changed and which is unique to an Amazon Web Services Region.</p>
         pub fn dbi_resource_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.dbi_resource_id = Some(input.into());
             self
@@ -185,7 +185,7 @@ pub mod db_instance_automated_backup {
             self.dbi_resource_id = input;
             self
         }
-        /// <p>The AWS Region associated with the automated backup.</p>
+        /// <p>The Amazon Web Services Region associated with the automated backup.</p>
         pub fn region(mut self, input: impl Into<std::string::String>) -> Self {
             self.region = Some(input.into());
             self
@@ -265,7 +265,7 @@ pub mod db_instance_automated_backup {
             self
         }
         /// <p>The Availability Zone that the automated backup was created in. For information on
-        /// AWS Regions and Availability Zones, see
+        /// Amazon Web Services Regions and Availability Zones, see
         /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html">Regions
         /// and Availability Zones</a>.</p>
         pub fn availability_zone(mut self, input: impl Into<std::string::String>) -> Self {
@@ -397,8 +397,8 @@ pub mod db_instance_automated_backup {
             self.storage_type = input;
             self
         }
-        /// <p>The AWS KMS key ID for an automated backup.</p>
-        /// <p>The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer master key (CMK).</p>
+        /// <p>The Amazon Web Services KMS key ID for an automated backup.</p>
+        /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon Web Services KMS customer master key (CMK).</p>
         pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_key_id = Some(input.into());
             self
@@ -418,7 +418,7 @@ pub mod db_instance_automated_backup {
             self.timezone = input;
             self
         }
-        /// <p>True if mapping of AWS Identity and Access Management (IAM) accounts to database accounts is enabled,
+        /// <p>True if mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database accounts is enabled,
         /// and otherwise false.</p>
         pub fn iam_database_authentication_enabled(mut self, input: bool) -> Self {
             self.iam_database_authentication_enabled = Some(input);
@@ -518,7 +518,7 @@ impl DbInstanceAutomatedBackup {
     }
 }
 
-/// <p>Automated backups of a DB instance replicated to another AWS Region. They consist of system backups, transaction logs, and database instance properties.</p>
+/// <p>Automated backups of a DB instance replicated to another Amazon Web Services Region. They consist of system backups, transaction logs, and database instance properties.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DbInstanceAutomatedBackupsReplication {
@@ -775,13 +775,13 @@ pub struct DbInstance {
     /// <p>Specifies whether the DB instance is encrypted.</p>
     pub storage_encrypted: bool,
     /// <p>
-    /// If <code>StorageEncrypted</code> is true, the AWS KMS key identifier
+    /// If <code>StorageEncrypted</code> is true, the Amazon Web Services KMS key identifier
     /// for the encrypted DB instance.
     /// </p>
-    /// <p>The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer master key (CMK).</p>
+    /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon Web Services KMS customer master key (CMK).</p>
     pub kms_key_id: std::option::Option<std::string::String>,
-    /// <p>The AWS Region-unique, immutable identifier for the DB instance. This identifier is found in AWS CloudTrail log
-    /// entries whenever the AWS KMS customer master key (CMK) for the DB instance is accessed.</p>
+    /// <p>The Amazon Web Services Region-unique, immutable identifier for the DB instance. This identifier is found in Amazon Web Services CloudTrail log
+    /// entries whenever the Amazon Web Services KMS customer master key (CMK) for the DB instance is accessed.</p>
     pub dbi_resource_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the CA certificate for this DB instance.</p>
     pub ca_certificate_identifier: std::option::Option<std::string::String>,
@@ -816,7 +816,7 @@ pub struct DbInstance {
     /// that were created with a time zone specified.
     /// </p>
     pub timezone: std::option::Option<std::string::String>,
-    /// <p>True if mapping of AWS Identity and Access Management (IAM) accounts to database accounts is enabled, and otherwise false.</p>
+    /// <p>True if mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database accounts is enabled, and otherwise false.</p>
     /// <p>IAM database authentication can be enabled for the following database engines</p>
     /// <ul>
     /// <li>
@@ -832,8 +832,8 @@ pub struct DbInstance {
     pub iam_database_authentication_enabled: bool,
     /// <p>True if Performance Insights is enabled for the DB instance, and otherwise false.</p>
     pub performance_insights_enabled: std::option::Option<bool>,
-    /// <p>The AWS KMS key identifier for encryption of Performance Insights data.</p>
-    /// <p>The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer master key (CMK).</p>
+    /// <p>The Amazon Web Services KMS key identifier for encryption of Performance Insights data.</p>
+    /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon Web Services KMS customer master key (CMK).</p>
     pub performance_insights_kms_key_id: std::option::Option<std::string::String>,
     /// <p>The amount of time, in days, to retain Performance Insights data. Valid values are 7 or 731 (2 years). </p>
     pub performance_insights_retention_period: std::option::Option<i32>,
@@ -852,7 +852,7 @@ pub struct DbInstance {
     /// </p>
     pub deletion_protection: bool,
     /// <p>
-    /// The AWS Identity and Access Management (IAM) roles associated with the DB instance.
+    /// The Amazon Web Services Identity and Access Management (IAM) roles associated with the DB instance.
     /// </p>
     pub associated_roles: std::option::Option<std::vec::Vec<crate::model::DbInstanceRole>>,
     /// <p>Specifies the listener connection endpoint for SQL Server Always On.</p>
@@ -871,13 +871,26 @@ pub struct DbInstance {
     /// your Outpost subnets through your on-premises network. For some use cases, a CoIP can
     /// provide lower latency for connections to the DB instance from outside of its virtual
     /// private cloud (VPC) on your local network.</p>
-    /// <p>For more information about RDS on Outposts, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working with Amazon RDS on AWS Outposts</a>
+    /// <p>For more information about RDS on Outposts, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working with Amazon RDS on Amazon Web Services Outposts</a>
     /// in the <i>Amazon RDS User Guide</i>.</p>
     /// <p>For more information about CoIPs, see <a href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-networking-components.html#ip-addressing">Customer-owned IP addresses</a>
-    /// in the <i>AWS Outposts User Guide</i>.</p>
+    /// in the <i>Amazon Web Services Outposts User Guide</i>.</p>
     pub customer_owned_ip_enabled: std::option::Option<bool>,
-    /// <p>The Amazon Resource Name (ARN) of the recovery point in AWS Backup.</p>
+    /// <p>The Amazon Resource Name (ARN) of the recovery point in Amazon Web Services Backup.</p>
     pub aws_backup_recovery_point_arn: std::option::Option<std::string::String>,
+    /// <p>The status of the database activity stream.</p>
+    pub activity_stream_status: std::option::Option<crate::model::ActivityStreamStatus>,
+    /// <p>The Amazon Web Services KMS key identifier used for encrypting messages in the database activity stream.
+    /// The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon Web Services KMS
+    /// customer master key (CMK).</p>
+    pub activity_stream_kms_key_id: std::option::Option<std::string::String>,
+    /// <p>The name of the Amazon Kinesis data stream used for the database activity stream.</p>
+    pub activity_stream_kinesis_stream_name: std::option::Option<std::string::String>,
+    /// <p>The mode of the database activity stream. Database events such as a change or access generate
+    /// an activity stream event. RDS for Oracle always handles these events asynchronously.</p>
+    pub activity_stream_mode: std::option::Option<crate::model::ActivityStreamMode>,
+    /// <p>Indicates whether engine-native audit fields are included in the database activity stream.</p>
+    pub activity_stream_engine_native_audit_fields_included: std::option::Option<bool>,
 }
 impl std::fmt::Debug for DbInstance {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -988,6 +1001,20 @@ impl std::fmt::Debug for DbInstance {
             "aws_backup_recovery_point_arn",
             &self.aws_backup_recovery_point_arn,
         );
+        formatter.field("activity_stream_status", &self.activity_stream_status);
+        formatter.field(
+            "activity_stream_kms_key_id",
+            &self.activity_stream_kms_key_id,
+        );
+        formatter.field(
+            "activity_stream_kinesis_stream_name",
+            &self.activity_stream_kinesis_stream_name,
+        );
+        formatter.field("activity_stream_mode", &self.activity_stream_mode);
+        formatter.field(
+            "activity_stream_engine_native_audit_fields_included",
+            &self.activity_stream_engine_native_audit_fields_included,
+        );
         formatter.finish()
     }
 }
@@ -1075,6 +1102,11 @@ pub mod db_instance {
             std::option::Option<std::vec::Vec<crate::model::DbInstanceAutomatedBackupsReplication>>,
         pub(crate) customer_owned_ip_enabled: std::option::Option<bool>,
         pub(crate) aws_backup_recovery_point_arn: std::option::Option<std::string::String>,
+        pub(crate) activity_stream_status: std::option::Option<crate::model::ActivityStreamStatus>,
+        pub(crate) activity_stream_kms_key_id: std::option::Option<std::string::String>,
+        pub(crate) activity_stream_kinesis_stream_name: std::option::Option<std::string::String>,
+        pub(crate) activity_stream_mode: std::option::Option<crate::model::ActivityStreamMode>,
+        pub(crate) activity_stream_engine_native_audit_fields_included: std::option::Option<bool>,
     }
     impl Builder {
         /// <p>Contains a user-supplied database identifier. This identifier is the unique key that identifies a DB instance.</p>
@@ -1582,10 +1614,10 @@ pub mod db_instance {
             self
         }
         /// <p>
-        /// If <code>StorageEncrypted</code> is true, the AWS KMS key identifier
+        /// If <code>StorageEncrypted</code> is true, the Amazon Web Services KMS key identifier
         /// for the encrypted DB instance.
         /// </p>
-        /// <p>The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer master key (CMK).</p>
+        /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon Web Services KMS customer master key (CMK).</p>
         pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_key_id = Some(input.into());
             self
@@ -1594,8 +1626,8 @@ pub mod db_instance {
             self.kms_key_id = input;
             self
         }
-        /// <p>The AWS Region-unique, immutable identifier for the DB instance. This identifier is found in AWS CloudTrail log
-        /// entries whenever the AWS KMS customer master key (CMK) for the DB instance is accessed.</p>
+        /// <p>The Amazon Web Services Region-unique, immutable identifier for the DB instance. This identifier is found in Amazon Web Services CloudTrail log
+        /// entries whenever the Amazon Web Services KMS customer master key (CMK) for the DB instance is accessed.</p>
         pub fn dbi_resource_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.dbi_resource_id = Some(input.into());
             self
@@ -1725,7 +1757,7 @@ pub mod db_instance {
             self.timezone = input;
             self
         }
-        /// <p>True if mapping of AWS Identity and Access Management (IAM) accounts to database accounts is enabled, and otherwise false.</p>
+        /// <p>True if mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database accounts is enabled, and otherwise false.</p>
         /// <p>IAM database authentication can be enabled for the following database engines</p>
         /// <ul>
         /// <li>
@@ -1761,8 +1793,8 @@ pub mod db_instance {
             self.performance_insights_enabled = input;
             self
         }
-        /// <p>The AWS KMS key identifier for encryption of Performance Insights data.</p>
-        /// <p>The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer master key (CMK).</p>
+        /// <p>The Amazon Web Services KMS key identifier for encryption of Performance Insights data.</p>
+        /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon Web Services KMS customer master key (CMK).</p>
         pub fn performance_insights_kms_key_id(
             mut self,
             input: impl Into<std::string::String>,
@@ -1907,10 +1939,10 @@ pub mod db_instance {
         /// your Outpost subnets through your on-premises network. For some use cases, a CoIP can
         /// provide lower latency for connections to the DB instance from outside of its virtual
         /// private cloud (VPC) on your local network.</p>
-        /// <p>For more information about RDS on Outposts, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working with Amazon RDS on AWS Outposts</a>
+        /// <p>For more information about RDS on Outposts, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working with Amazon RDS on Amazon Web Services Outposts</a>
         /// in the <i>Amazon RDS User Guide</i>.</p>
         /// <p>For more information about CoIPs, see <a href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-networking-components.html#ip-addressing">Customer-owned IP addresses</a>
-        /// in the <i>AWS Outposts User Guide</i>.</p>
+        /// in the <i>Amazon Web Services Outposts User Guide</i>.</p>
         pub fn customer_owned_ip_enabled(mut self, input: bool) -> Self {
             self.customer_owned_ip_enabled = Some(input);
             self
@@ -1919,7 +1951,7 @@ pub mod db_instance {
             self.customer_owned_ip_enabled = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the recovery point in AWS Backup.</p>
+        /// <p>The Amazon Resource Name (ARN) of the recovery point in Amazon Web Services Backup.</p>
         pub fn aws_backup_recovery_point_arn(
             mut self,
             input: impl Into<std::string::String>,
@@ -1932,6 +1964,72 @@ pub mod db_instance {
             input: std::option::Option<std::string::String>,
         ) -> Self {
             self.aws_backup_recovery_point_arn = input;
+            self
+        }
+        /// <p>The status of the database activity stream.</p>
+        pub fn activity_stream_status(mut self, input: crate::model::ActivityStreamStatus) -> Self {
+            self.activity_stream_status = Some(input);
+            self
+        }
+        pub fn set_activity_stream_status(
+            mut self,
+            input: std::option::Option<crate::model::ActivityStreamStatus>,
+        ) -> Self {
+            self.activity_stream_status = input;
+            self
+        }
+        /// <p>The Amazon Web Services KMS key identifier used for encrypting messages in the database activity stream.
+        /// The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon Web Services KMS
+        /// customer master key (CMK).</p>
+        pub fn activity_stream_kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.activity_stream_kms_key_id = Some(input.into());
+            self
+        }
+        pub fn set_activity_stream_kms_key_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.activity_stream_kms_key_id = input;
+            self
+        }
+        /// <p>The name of the Amazon Kinesis data stream used for the database activity stream.</p>
+        pub fn activity_stream_kinesis_stream_name(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.activity_stream_kinesis_stream_name = Some(input.into());
+            self
+        }
+        pub fn set_activity_stream_kinesis_stream_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.activity_stream_kinesis_stream_name = input;
+            self
+        }
+        /// <p>The mode of the database activity stream. Database events such as a change or access generate
+        /// an activity stream event. RDS for Oracle always handles these events asynchronously.</p>
+        pub fn activity_stream_mode(mut self, input: crate::model::ActivityStreamMode) -> Self {
+            self.activity_stream_mode = Some(input);
+            self
+        }
+        pub fn set_activity_stream_mode(
+            mut self,
+            input: std::option::Option<crate::model::ActivityStreamMode>,
+        ) -> Self {
+            self.activity_stream_mode = input;
+            self
+        }
+        /// <p>Indicates whether engine-native audit fields are included in the database activity stream.</p>
+        pub fn activity_stream_engine_native_audit_fields_included(mut self, input: bool) -> Self {
+            self.activity_stream_engine_native_audit_fields_included = Some(input);
+            self
+        }
+        pub fn set_activity_stream_engine_native_audit_fields_included(
+            mut self,
+            input: std::option::Option<bool>,
+        ) -> Self {
+            self.activity_stream_engine_native_audit_fields_included = input;
             self
         }
         /// Consumes the builder and constructs a [`DbInstance`](crate::model::DbInstance)
@@ -2005,6 +2103,12 @@ pub mod db_instance {
                     .db_instance_automated_backups_replications,
                 customer_owned_ip_enabled: self.customer_owned_ip_enabled,
                 aws_backup_recovery_point_arn: self.aws_backup_recovery_point_arn,
+                activity_stream_status: self.activity_stream_status,
+                activity_stream_kms_key_id: self.activity_stream_kms_key_id,
+                activity_stream_kinesis_stream_name: self.activity_stream_kinesis_stream_name,
+                activity_stream_mode: self.activity_stream_mode,
+                activity_stream_engine_native_audit_fields_included: self
+                    .activity_stream_engine_native_audit_fields_included,
             }
         }
     }
@@ -2016,13 +2120,119 @@ impl DbInstance {
     }
 }
 
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum ActivityStreamMode {
+    Async,
+    Sync,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for ActivityStreamMode {
+    fn from(s: &str) -> Self {
+        match s {
+            "async" => ActivityStreamMode::Async,
+            "sync" => ActivityStreamMode::Sync,
+            other => ActivityStreamMode::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for ActivityStreamMode {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(ActivityStreamMode::from(s))
+    }
+}
+impl ActivityStreamMode {
+    pub fn as_str(&self) -> &str {
+        match self {
+            ActivityStreamMode::Async => "async",
+            ActivityStreamMode::Sync => "sync",
+            ActivityStreamMode::Unknown(s) => s.as_ref(),
+        }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["async", "sync"]
+    }
+}
+impl AsRef<str> for ActivityStreamMode {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum ActivityStreamStatus {
+    Started,
+    Starting,
+    Stopped,
+    Stopping,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for ActivityStreamStatus {
+    fn from(s: &str) -> Self {
+        match s {
+            "started" => ActivityStreamStatus::Started,
+            "starting" => ActivityStreamStatus::Starting,
+            "stopped" => ActivityStreamStatus::Stopped,
+            "stopping" => ActivityStreamStatus::Stopping,
+            other => ActivityStreamStatus::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for ActivityStreamStatus {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(ActivityStreamStatus::from(s))
+    }
+}
+impl ActivityStreamStatus {
+    pub fn as_str(&self) -> &str {
+        match self {
+            ActivityStreamStatus::Started => "started",
+            ActivityStreamStatus::Starting => "starting",
+            ActivityStreamStatus::Stopped => "stopped",
+            ActivityStreamStatus::Stopping => "stopping",
+            ActivityStreamStatus::Unknown(s) => s.as_ref(),
+        }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["started", "starting", "stopped", "stopping"]
+    }
+}
+impl AsRef<str> for ActivityStreamStatus {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
 /// <p>Metadata assigned to an Amazon RDS resource consisting of a key-value pair.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Tag {
-    /// <p>A key is the required name of the tag. The string value can be from 1 to 128 Unicode characters in length and can't be prefixed with "aws:" or "rds:". The string can only contain only the set of Unicode letters, digits, white-space, '_', '.', ':', '/', '=', '+', '-', '@' (Java regex: "^([\\p{L}\\p{Z}\\p{N}_.:/=+\\-@]*)$").</p>
+    /// <p>A key is the required name of the tag. The string value can be from 1 to 128 Unicode characters in length and can't be prefixed with <code>aws:</code> or <code>rds:</code>. The string can only contain only the set of Unicode letters, digits, white-space, '_', '.', ':', '/', '=', '+', '-', '@' (Java regex: "^([\\p{L}\\p{Z}\\p{N}_.:/=+\\-@]*)$").</p>
     pub key: std::option::Option<std::string::String>,
-    /// <p>A value is the optional value of the tag. The string value can be from 1 to 256 Unicode characters in length and can't be prefixed with "aws:" or "rds:". The string can only contain only the set of Unicode letters, digits, white-space, '_', '.', ':', '/', '=', '+', '-', '@' (Java regex: "^([\\p{L}\\p{Z}\\p{N}_.:/=+\\-@]*)$").</p>
+    /// <p>A value is the optional value of the tag. The string value can be from 1 to 256 Unicode characters in length and can't be prefixed with <code>aws:</code> or <code>rds:</code>. The string can only contain only the set of Unicode letters, digits, white-space, '_', '.', ':', '/', '=', '+', '-', '@' (Java regex: "^([\\p{L}\\p{Z}\\p{N}_.:/=+\\-@]*)$").</p>
     pub value: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for Tag {
@@ -2043,7 +2253,7 @@ pub mod tag {
         pub(crate) value: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>A key is the required name of the tag. The string value can be from 1 to 128 Unicode characters in length and can't be prefixed with "aws:" or "rds:". The string can only contain only the set of Unicode letters, digits, white-space, '_', '.', ':', '/', '=', '+', '-', '@' (Java regex: "^([\\p{L}\\p{Z}\\p{N}_.:/=+\\-@]*)$").</p>
+        /// <p>A key is the required name of the tag. The string value can be from 1 to 128 Unicode characters in length and can't be prefixed with <code>aws:</code> or <code>rds:</code>. The string can only contain only the set of Unicode letters, digits, white-space, '_', '.', ':', '/', '=', '+', '-', '@' (Java regex: "^([\\p{L}\\p{Z}\\p{N}_.:/=+\\-@]*)$").</p>
         pub fn key(mut self, input: impl Into<std::string::String>) -> Self {
             self.key = Some(input.into());
             self
@@ -2052,7 +2262,7 @@ pub mod tag {
             self.key = input;
             self
         }
-        /// <p>A value is the optional value of the tag. The string value can be from 1 to 256 Unicode characters in length and can't be prefixed with "aws:" or "rds:". The string can only contain only the set of Unicode letters, digits, white-space, '_', '.', ':', '/', '=', '+', '-', '@' (Java regex: "^([\\p{L}\\p{Z}\\p{N}_.:/=+\\-@]*)$").</p>
+        /// <p>A value is the optional value of the tag. The string value can be from 1 to 256 Unicode characters in length and can't be prefixed with <code>aws:</code> or <code>rds:</code>. The string can only contain only the set of Unicode letters, digits, white-space, '_', '.', ':', '/', '=', '+', '-', '@' (Java regex: "^([\\p{L}\\p{Z}\\p{N}_.:/=+\\-@]*)$").</p>
         pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
             self.value = Some(input.into());
             self
@@ -2175,14 +2385,14 @@ impl Endpoint {
     }
 }
 
-/// <p>Describes an AWS Identity and Access Management (IAM) role that is associated with a DB instance.</p>
+/// <p>Describes an Amazon Web Services Identity and Access Management (IAM) role that is associated with a DB instance.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DbInstanceRole {
     /// <p>The Amazon Resource Name (ARN) of the IAM role that is associated with the DB
     /// instance.</p>
     pub role_arn: std::option::Option<std::string::String>,
-    /// <p>The name of the feature associated with the AWS Identity and Access Management (IAM) role.
+    /// <p>The name of the feature associated with the Amazon Web Services Identity and Access Management (IAM) role.
     /// For the list of supported feature names, see <code>DBEngineVersion</code>.
     /// </p>
     pub feature_name: std::option::Option<std::string::String>,
@@ -2192,7 +2402,7 @@ pub struct DbInstanceRole {
     /// <li>
     /// <p>
     /// <code>ACTIVE</code> - the IAM role ARN is associated with the DB instance and can be used to
-    /// access other AWS services on your behalf.</p>
+    /// access other Amazon Web Services services on your behalf.</p>
     /// </li>
     /// <li>
     /// <p>
@@ -2201,7 +2411,7 @@ pub struct DbInstanceRole {
     /// <li>
     /// <p>
     /// <code>INVALID</code> - the IAM role ARN is associated with the DB instance, but the DB instance is unable
-    /// to assume the IAM role in order to access other AWS services on your behalf.</p>
+    /// to assume the IAM role in order to access other Amazon Web Services services on your behalf.</p>
     /// </li>
     /// </ul>
     pub status: std::option::Option<std::string::String>,
@@ -2236,7 +2446,7 @@ pub mod db_instance_role {
             self.role_arn = input;
             self
         }
-        /// <p>The name of the feature associated with the AWS Identity and Access Management (IAM) role.
+        /// <p>The name of the feature associated with the Amazon Web Services Identity and Access Management (IAM) role.
         /// For the list of supported feature names, see <code>DBEngineVersion</code>.
         /// </p>
         pub fn feature_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2253,7 +2463,7 @@ pub mod db_instance_role {
         /// <li>
         /// <p>
         /// <code>ACTIVE</code> - the IAM role ARN is associated with the DB instance and can be used to
-        /// access other AWS services on your behalf.</p>
+        /// access other Amazon Web Services services on your behalf.</p>
         /// </li>
         /// <li>
         /// <p>
@@ -2262,7 +2472,7 @@ pub mod db_instance_role {
         /// <li>
         /// <p>
         /// <code>INVALID</code> - the IAM role ARN is associated with the DB instance, but the DB instance is unable
-        /// to assume the IAM role in order to access other AWS services on your behalf.</p>
+        /// to assume the IAM role in order to access other Amazon Web Services services on your behalf.</p>
         /// </li>
         /// </ul>
         pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2728,6 +2938,9 @@ impl ReplicaMode {
             ReplicaMode::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["mounted", "open-read-only"]
+    }
 }
 impl AsRef<str> for ReplicaMode {
     fn as_ref(&self) -> &str {
@@ -2777,7 +2990,7 @@ pub struct PendingModifiedValues {
     /// <p>The number of CPU cores and the number of threads per core for the DB instance class
     /// of the DB instance.</p>
     pub processor_features: std::option::Option<std::vec::Vec<crate::model::ProcessorFeature>>,
-    /// <p>Whether mapping of AWS Identity and Access Management (IAM) accounts to database accounts is enabled.</p>
+    /// <p>Whether mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database accounts is enabled.</p>
     pub iam_database_authentication_enabled: std::option::Option<bool>,
 }
 impl std::fmt::Debug for PendingModifiedValues {
@@ -3006,7 +3219,7 @@ pub mod pending_modified_values {
             self.processor_features = input;
             self
         }
-        /// <p>Whether mapping of AWS Identity and Access Management (IAM) accounts to database accounts is enabled.</p>
+        /// <p>Whether mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database accounts is enabled.</p>
         pub fn iam_database_authentication_enabled(mut self, input: bool) -> Self {
             self.iam_database_authentication_enabled = Some(input);
             self
@@ -3275,7 +3488,7 @@ pub struct Subnet {
     /// data type.</p>
     pub subnet_availability_zone: std::option::Option<crate::model::AvailabilityZone>,
     /// <p>If the subnet is associated with an Outpost, this value specifies the Outpost.</p>
-    /// <p>For more information about RDS on Outposts, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Amazon RDS on AWS Outposts</a>
+    /// <p>For more information about RDS on Outposts, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Amazon RDS on Amazon Web Services Outposts</a>
     /// in the <i>Amazon RDS User Guide.</i>
     /// </p>
     pub subnet_outpost: std::option::Option<crate::model::Outpost>,
@@ -3331,7 +3544,7 @@ pub mod subnet {
             self
         }
         /// <p>If the subnet is associated with an Outpost, this value specifies the Outpost.</p>
-        /// <p>For more information about RDS on Outposts, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Amazon RDS on AWS Outposts</a>
+        /// <p>For more information about RDS on Outposts, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Amazon RDS on Amazon Web Services Outposts</a>
         /// in the <i>Amazon RDS User Guide.</i>
         /// </p>
         pub fn subnet_outpost(mut self, input: crate::model::Outpost) -> Self {
@@ -3376,7 +3589,7 @@ impl Subnet {
 }
 
 /// <p>A data type that represents an Outpost.</p>
-/// <p>For more information about RDS on Outposts, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Amazon RDS on AWS Outposts</a>
+/// <p>For more information about RDS on Outposts, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Amazon RDS on Amazon Web Services Outposts</a>
 /// in the <i>Amazon RDS User Guide.</i>
 /// </p>
 #[non_exhaustive]
@@ -3803,19 +4016,19 @@ pub struct DbCluster {
     pub hosted_zone_id: std::option::Option<std::string::String>,
     /// <p>Specifies whether the DB cluster is encrypted.</p>
     pub storage_encrypted: bool,
-    /// <p>If <code>StorageEncrypted</code> is enabled, the AWS KMS key identifier for the encrypted DB cluster.</p>
-    /// <p>The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer master key (CMK).</p>
+    /// <p>If <code>StorageEncrypted</code> is enabled, the Amazon Web Services KMS key identifier for the encrypted DB cluster.</p>
+    /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon Web Services KMS customer master key (CMK).</p>
     pub kms_key_id: std::option::Option<std::string::String>,
-    /// <p>The AWS Region-unique, immutable identifier for the DB cluster. This identifier is found in AWS CloudTrail log entries whenever
-    /// the AWS KMS CMK for the DB cluster is accessed.</p>
+    /// <p>The Amazon Web Services Region-unique, immutable identifier for the DB cluster. This identifier is found in Amazon Web Services CloudTrail log entries whenever
+    /// the Amazon Web Services KMS CMK for the DB cluster is accessed.</p>
     pub db_cluster_resource_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) for the DB cluster.</p>
     pub db_cluster_arn: std::option::Option<std::string::String>,
-    /// <p>Provides a list of the AWS Identity and Access Management (IAM) roles that are associated with the DB cluster.
-    /// IAM roles that are associated with a DB cluster grant permission for the DB cluster to access other AWS services
+    /// <p>Provides a list of the Amazon Web Services Identity and Access Management (IAM) roles that are associated with the DB cluster.
+    /// IAM roles that are associated with a DB cluster grant permission for the DB cluster to access other Amazon Web Services
     /// on your behalf.</p>
     pub associated_roles: std::option::Option<std::vec::Vec<crate::model::DbClusterRole>>,
-    /// <p>A value that indicates whether the mapping of AWS Identity and Access Management (IAM) accounts to database accounts is enabled.</p>
+    /// <p>A value that indicates whether the mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database accounts is enabled.</p>
     pub iam_database_authentication_enabled: std::option::Option<bool>,
     /// <p>Identifies the clone group to which the DB cluster is associated.</p>
     pub clone_group_id: std::option::Option<std::string::String>,
@@ -3865,14 +4078,14 @@ pub struct DbCluster {
     pub activity_stream_mode: std::option::Option<crate::model::ActivityStreamMode>,
     /// <p>The status of the database activity stream.</p>
     pub activity_stream_status: std::option::Option<crate::model::ActivityStreamStatus>,
-    /// <p>The AWS KMS key identifier used for encrypting messages in the database activity stream.</p>
-    /// <p>The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer master key (CMK).</p>
+    /// <p>The Amazon Web Services KMS key identifier used for encrypting messages in the database activity stream.</p>
+    /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon Web Services KMS customer master key (CMK).</p>
     pub activity_stream_kms_key_id: std::option::Option<std::string::String>,
     /// <p>The name of the Amazon Kinesis data stream used for the database activity stream.</p>
     pub activity_stream_kinesis_stream_name: std::option::Option<std::string::String>,
     /// <p>Specifies whether tags are copied from the DB cluster to snapshots of the DB cluster.</p>
     pub copy_tags_to_snapshot: std::option::Option<bool>,
-    /// <p>Specifies whether the DB cluster is a clone of a DB cluster owned by a different AWS account.</p>
+    /// <p>Specifies whether the DB cluster is a clone of a DB cluster owned by a different Amazon Web Services account.</p>
     pub cross_account_clone: std::option::Option<bool>,
     /// <p>The Active Directory Domain membership records associated with the DB cluster.</p>
     pub domain_memberships: std::option::Option<std::vec::Vec<crate::model::DomainMembership>>,
@@ -4423,8 +4636,8 @@ pub mod db_cluster {
             self.storage_encrypted = input;
             self
         }
-        /// <p>If <code>StorageEncrypted</code> is enabled, the AWS KMS key identifier for the encrypted DB cluster.</p>
-        /// <p>The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer master key (CMK).</p>
+        /// <p>If <code>StorageEncrypted</code> is enabled, the Amazon Web Services KMS key identifier for the encrypted DB cluster.</p>
+        /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon Web Services KMS customer master key (CMK).</p>
         pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_key_id = Some(input.into());
             self
@@ -4433,8 +4646,8 @@ pub mod db_cluster {
             self.kms_key_id = input;
             self
         }
-        /// <p>The AWS Region-unique, immutable identifier for the DB cluster. This identifier is found in AWS CloudTrail log entries whenever
-        /// the AWS KMS CMK for the DB cluster is accessed.</p>
+        /// <p>The Amazon Web Services Region-unique, immutable identifier for the DB cluster. This identifier is found in Amazon Web Services CloudTrail log entries whenever
+        /// the Amazon Web Services KMS CMK for the DB cluster is accessed.</p>
         pub fn db_cluster_resource_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.db_cluster_resource_id = Some(input.into());
             self
@@ -4471,7 +4684,7 @@ pub mod db_cluster {
             self.associated_roles = input;
             self
         }
-        /// <p>A value that indicates whether the mapping of AWS Identity and Access Management (IAM) accounts to database accounts is enabled.</p>
+        /// <p>A value that indicates whether the mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database accounts is enabled.</p>
         pub fn iam_database_authentication_enabled(mut self, input: bool) -> Self {
             self.iam_database_authentication_enabled = Some(input);
             self
@@ -4650,8 +4863,8 @@ pub mod db_cluster {
             self.activity_stream_status = input;
             self
         }
-        /// <p>The AWS KMS key identifier used for encrypting messages in the database activity stream.</p>
-        /// <p>The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer master key (CMK).</p>
+        /// <p>The Amazon Web Services KMS key identifier used for encrypting messages in the database activity stream.</p>
+        /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon Web Services KMS customer master key (CMK).</p>
         pub fn activity_stream_kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.activity_stream_kms_key_id = Some(input.into());
             self
@@ -4687,7 +4900,7 @@ pub mod db_cluster {
             self.copy_tags_to_snapshot = input;
             self
         }
-        /// <p>Specifies whether the DB cluster is a clone of a DB cluster owned by a different AWS account.</p>
+        /// <p>Specifies whether the DB cluster is a clone of a DB cluster owned by a different Amazon Web Services account.</p>
         pub fn cross_account_clone(mut self, input: bool) -> Self {
             self.cross_account_clone = Some(input);
             self
@@ -4854,7 +5067,7 @@ pub struct ClusterPendingModifiedValues {
     pub db_cluster_identifier: std::option::Option<std::string::String>,
     /// <p>The master credentials for the DB cluster.</p>
     pub master_user_password: std::option::Option<std::string::String>,
-    /// <p>A value that indicates whether mapping of AWS Identity and Access Management (IAM) accounts to database accounts is enabled.</p>
+    /// <p>A value that indicates whether mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database accounts is enabled.</p>
     pub iam_database_authentication_enabled: std::option::Option<bool>,
     /// <p>The database engine version.</p>
     pub engine_version: std::option::Option<std::string::String>,
@@ -4929,7 +5142,7 @@ pub mod cluster_pending_modified_values {
             self.master_user_password = input;
             self
         }
-        /// <p>A value that indicates whether mapping of AWS Identity and Access Management (IAM) accounts to database accounts is enabled.</p>
+        /// <p>A value that indicates whether mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database accounts is enabled.</p>
         pub fn iam_database_authentication_enabled(mut self, input: bool) -> Self {
             self.iam_database_authentication_enabled = Some(input);
             self
@@ -5023,108 +5236,11 @@ impl WriteForwardingStatus {
             WriteForwardingStatus::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["disabled", "disabling", "enabled", "enabling", "unknown"]
+    }
 }
 impl AsRef<str> for WriteForwardingStatus {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
-
-#[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
-pub enum ActivityStreamStatus {
-    Started,
-    Starting,
-    Stopped,
-    Stopping,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
-}
-impl std::convert::From<&str> for ActivityStreamStatus {
-    fn from(s: &str) -> Self {
-        match s {
-            "started" => ActivityStreamStatus::Started,
-            "starting" => ActivityStreamStatus::Starting,
-            "stopped" => ActivityStreamStatus::Stopped,
-            "stopping" => ActivityStreamStatus::Stopping,
-            other => ActivityStreamStatus::Unknown(other.to_owned()),
-        }
-    }
-}
-impl std::str::FromStr for ActivityStreamStatus {
-    type Err = std::convert::Infallible;
-
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ActivityStreamStatus::from(s))
-    }
-}
-impl ActivityStreamStatus {
-    pub fn as_str(&self) -> &str {
-        match self {
-            ActivityStreamStatus::Started => "started",
-            ActivityStreamStatus::Starting => "starting",
-            ActivityStreamStatus::Stopped => "stopped",
-            ActivityStreamStatus::Stopping => "stopping",
-            ActivityStreamStatus::Unknown(s) => s.as_ref(),
-        }
-    }
-}
-impl AsRef<str> for ActivityStreamStatus {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
-
-#[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
-pub enum ActivityStreamMode {
-    Async,
-    Sync,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
-}
-impl std::convert::From<&str> for ActivityStreamMode {
-    fn from(s: &str) -> Self {
-        match s {
-            "async" => ActivityStreamMode::Async,
-            "sync" => ActivityStreamMode::Sync,
-            other => ActivityStreamMode::Unknown(other.to_owned()),
-        }
-    }
-}
-impl std::str::FromStr for ActivityStreamMode {
-    type Err = std::convert::Infallible;
-
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ActivityStreamMode::from(s))
-    }
-}
-impl ActivityStreamMode {
-    pub fn as_str(&self) -> &str {
-        match self {
-            ActivityStreamMode::Async => "async",
-            ActivityStreamMode::Sync => "sync",
-            ActivityStreamMode::Unknown(s) => s.as_ref(),
-        }
-    }
-}
-impl AsRef<str> for ActivityStreamMode {
     fn as_ref(&self) -> &str {
         self.as_str()
     }
@@ -5250,7 +5366,7 @@ impl ScalingConfigurationInfo {
     }
 }
 
-/// <p>Describes an AWS Identity and Access Management (IAM) role that is associated with a DB cluster.</p>
+/// <p>Describes an Amazon Web Services Identity and Access Management (IAM) role that is associated with a DB cluster.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DbClusterRole {
@@ -5262,7 +5378,7 @@ pub struct DbClusterRole {
     /// <li>
     /// <p>
     /// <code>ACTIVE</code> - the IAM role ARN is associated with the DB cluster and can be used to
-    /// access other AWS services on your behalf.</p>
+    /// access other Amazon Web Services on your behalf.</p>
     /// </li>
     /// <li>
     /// <p>
@@ -5271,11 +5387,11 @@ pub struct DbClusterRole {
     /// <li>
     /// <p>
     /// <code>INVALID</code> - the IAM role ARN is associated with the DB cluster, but the DB cluster is unable
-    /// to assume the IAM role in order to access other AWS services on your behalf.</p>
+    /// to assume the IAM role in order to access other Amazon Web Services on your behalf.</p>
     /// </li>
     /// </ul>
     pub status: std::option::Option<std::string::String>,
-    /// <p>The name of the feature associated with the AWS Identity and Access Management (IAM) role.
+    /// <p>The name of the feature associated with the Amazon Web Services Identity and Access Management (IAM) role.
     /// For the list of supported feature names, see <a>DBEngineVersion</a>.
     /// </p>
     pub feature_name: std::option::Option<std::string::String>,
@@ -5315,7 +5431,7 @@ pub mod db_cluster_role {
         /// <li>
         /// <p>
         /// <code>ACTIVE</code> - the IAM role ARN is associated with the DB cluster and can be used to
-        /// access other AWS services on your behalf.</p>
+        /// access other Amazon Web Services on your behalf.</p>
         /// </li>
         /// <li>
         /// <p>
@@ -5324,7 +5440,7 @@ pub mod db_cluster_role {
         /// <li>
         /// <p>
         /// <code>INVALID</code> - the IAM role ARN is associated with the DB cluster, but the DB cluster is unable
-        /// to assume the IAM role in order to access other AWS services on your behalf.</p>
+        /// to assume the IAM role in order to access other Amazon Web Services on your behalf.</p>
         /// </li>
         /// </ul>
         pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5335,7 +5451,7 @@ pub mod db_cluster_role {
             self.status = input;
             self
         }
-        /// <p>The name of the feature associated with the AWS Identity and Access Management (IAM) role.
+        /// <p>The name of the feature associated with the Amazon Web Services Identity and Access Management (IAM) role.
         /// For the list of supported feature names, see <a>DBEngineVersion</a>.
         /// </p>
         pub fn feature_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5550,7 +5666,7 @@ impl DbClusterOptionGroupStatus {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DbSecurityGroup {
-    /// <p>Provides the AWS ID of the owner of a specific DB security group.</p>
+    /// <p>Provides the Amazon Web Services ID of the owner of a specific DB security group.</p>
     pub owner_id: std::option::Option<std::string::String>,
     /// <p>Specifies the name of the DB security group.</p>
     pub db_security_group_name: std::option::Option<std::string::String>,
@@ -5601,7 +5717,7 @@ pub mod db_security_group {
         pub(crate) db_security_group_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Provides the AWS ID of the owner of a specific DB security group.</p>
+        /// <p>Provides the Amazon Web Services ID of the owner of a specific DB security group.</p>
         pub fn owner_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.owner_id = Some(input.into());
             self
@@ -5799,7 +5915,7 @@ pub struct Ec2SecurityGroup {
     /// <p>Specifies the id of the EC2 security group.</p>
     pub ec2_security_group_id: std::option::Option<std::string::String>,
     /// <p>
-    /// Specifies the AWS ID of the owner of the EC2 security group
+    /// Specifies the Amazon Web Services ID of the owner of the EC2 security group
     /// specified in the <code>EC2SecurityGroupName</code> field.
     /// </p>
     pub ec2_security_group_owner_id: std::option::Option<std::string::String>,
@@ -5863,7 +5979,7 @@ pub mod ec2_security_group {
             self
         }
         /// <p>
-        /// Specifies the AWS ID of the owner of the EC2 security group
+        /// Specifies the Amazon Web Services ID of the owner of the EC2 security group
         /// specified in the <code>EC2SecurityGroupName</code> field.
         /// </p>
         pub fn ec2_security_group_owner_id(
@@ -6309,6 +6425,9 @@ impl ApplyMethod {
             ApplyMethod::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["immediate", "pending-reboot"]
+    }
 }
 impl AsRef<str> for ApplyMethod {
     fn as_ref(&self) -> &str {
@@ -6320,7 +6439,7 @@ impl AsRef<str> for ApplyMethod {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EventSubscription {
-    /// <p>The AWS customer account associated with the RDS event notification subscription.</p>
+    /// <p>The Amazon Web Services customer account associated with the RDS event notification subscription.</p>
     pub customer_aws_id: std::option::Option<std::string::String>,
     /// <p>The RDS event notification subscription Id.</p>
     pub cust_subscription_id: std::option::Option<std::string::String>,
@@ -6381,7 +6500,7 @@ pub mod event_subscription {
         pub(crate) event_subscription_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The AWS customer account associated with the RDS event notification subscription.</p>
+        /// <p>The Amazon Web Services customer account associated with the RDS event notification subscription.</p>
         pub fn customer_aws_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.customer_aws_id = Some(input.into());
             self
@@ -6531,8 +6650,8 @@ pub struct GlobalCluster {
     /// </p>
     pub global_cluster_identifier: std::option::Option<std::string::String>,
     /// <p>
-    /// The AWS Region-unique, immutable identifier for the global database cluster. This identifier is found in
-    /// AWS CloudTrail log entries whenever the AWS KMS customer master key (CMK) for the DB cluster is accessed.
+    /// The Amazon Web Services Region-unique, immutable identifier for the global database cluster. This identifier is found in
+    /// Amazon Web Services CloudTrail log entries whenever the Amazon Web Services KMS customer master key (CMK) for the DB cluster is accessed.
     /// </p>
     pub global_cluster_resource_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) for the global database cluster.</p>
@@ -6624,8 +6743,8 @@ pub mod global_cluster {
             self
         }
         /// <p>
-        /// The AWS Region-unique, immutable identifier for the global database cluster. This identifier is found in
-        /// AWS CloudTrail log entries whenever the AWS KMS customer master key (CMK) for the DB cluster is accessed.
+        /// The Amazon Web Services Region-unique, immutable identifier for the global database cluster. This identifier is found in
+        /// Amazon Web Services CloudTrail log entries whenever the Amazon Web Services KMS customer master key (CMK) for the DB cluster is accessed.
         /// </p>
         pub fn global_cluster_resource_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.global_cluster_resource_id = Some(input.into());
@@ -6939,6 +7058,9 @@ impl FailoverStatus {
             FailoverStatus::Pending => "pending",
             FailoverStatus::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["cancelling", "failing-over", "pending"]
     }
 }
 impl AsRef<str> for FailoverStatus {
@@ -7370,6 +7492,15 @@ impl TargetHealthReason {
             TargetHealthReason::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "AUTH_FAILURE",
+            "CONNECTION_FAILED",
+            "INVALID_REPLICATION_STATE",
+            "PENDING_PROXY_CAPACITY",
+            "UNREACHABLE",
+        ]
+    }
 }
 impl AsRef<str> for TargetHealthReason {
     fn as_ref(&self) -> &str {
@@ -7419,6 +7550,9 @@ impl TargetState {
             TargetState::Unavailable => "UNAVAILABLE",
             TargetState::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["AVAILABLE", "REGISTERING", "UNAVAILABLE"]
     }
 }
 impl AsRef<str> for TargetState {
@@ -7472,6 +7606,9 @@ impl TargetRole {
             TargetRole::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["READ_ONLY", "READ_WRITE", "UNKNOWN"]
+    }
 }
 impl AsRef<str> for TargetRole {
     fn as_ref(&self) -> &str {
@@ -7522,6 +7659,9 @@ impl TargetType {
             TargetType::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["RDS_INSTANCE", "RDS_SERVERLESS_ENDPOINT", "TRACKED_CLUSTER"]
+    }
 }
 impl AsRef<str> for TargetType {
     fn as_ref(&self) -> &str {
@@ -7569,7 +7709,7 @@ pub struct ReservedDbInstance {
     pub reserved_db_instance_arn: std::option::Option<std::string::String>,
     /// <p>The unique identifier for the lease associated with the reserved DB instance.</p>
     /// <note>
-    /// <p>AWS Support might request the lease ID for an issue related to a reserved DB instance.</p>
+    /// <p>Amazon Web Services Support might request the lease ID for an issue related to a reserved DB instance.</p>
     /// </note>
     pub lease_id: std::option::Option<std::string::String>,
 }
@@ -7791,7 +7931,7 @@ pub mod reserved_db_instance {
         }
         /// <p>The unique identifier for the lease associated with the reserved DB instance.</p>
         /// <note>
-        /// <p>AWS Support might request the lease ID for an issue related to a reserved DB instance.</p>
+        /// <p>Amazon Web Services Support might request the lease ID for an issue related to a reserved DB instance.</p>
         /// </note>
         pub fn lease_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.lease_id = Some(input.into());
@@ -8592,7 +8732,7 @@ impl OptionConfiguration {
 
 /// <p>Contains the results of a successful call to the <code>DescribeDBSnapshotAttributes</code>
 /// API action.</p>
-/// <p>Manual DB snapshot attributes are used to authorize other AWS accounts
+/// <p>Manual DB snapshot attributes are used to authorize other Amazon Web Services accounts
 /// to copy or restore a manual DB snapshot. For more information, see the <code>ModifyDBSnapshotAttribute</code>
 /// API action.</p>
 #[non_exhaustive]
@@ -8668,23 +8808,23 @@ impl DbSnapshotAttributesResult {
 }
 
 /// <p>Contains the name and values of a manual DB snapshot attribute</p>
-/// <p>Manual DB snapshot attributes are used to authorize other AWS accounts
+/// <p>Manual DB snapshot attributes are used to authorize other Amazon Web Services accounts
 /// to restore a manual DB snapshot. For more information, see the <code>ModifyDBSnapshotAttribute</code>
 /// API.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DbSnapshotAttribute {
     /// <p>The name of the manual DB snapshot attribute.</p>
-    /// <p>The attribute named <code>restore</code> refers to the list of AWS accounts that
+    /// <p>The attribute named <code>restore</code> refers to the list of Amazon Web Services accounts that
     /// have permission to copy or restore the manual DB cluster snapshot. For more information,
     /// see the <code>ModifyDBSnapshotAttribute</code>
     /// API action.</p>
     pub attribute_name: std::option::Option<std::string::String>,
     /// <p>The value or values for the manual DB snapshot attribute.</p>
     /// <p>If the <code>AttributeName</code> field is set to <code>restore</code>, then this element
-    /// returns a list of IDs of the AWS accounts that are authorized to copy or restore the manual
+    /// returns a list of IDs of the Amazon Web Services accounts that are authorized to copy or restore the manual
     /// DB snapshot. If a value of <code>all</code> is in the list, then the manual DB snapshot
-    /// is public and available for any AWS account to copy or restore.</p>
+    /// is public and available for any Amazon Web Services account to copy or restore.</p>
     pub attribute_values: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl std::fmt::Debug for DbSnapshotAttribute {
@@ -8706,7 +8846,7 @@ pub mod db_snapshot_attribute {
     }
     impl Builder {
         /// <p>The name of the manual DB snapshot attribute.</p>
-        /// <p>The attribute named <code>restore</code> refers to the list of AWS accounts that
+        /// <p>The attribute named <code>restore</code> refers to the list of Amazon Web Services accounts that
         /// have permission to copy or restore the manual DB cluster snapshot. For more information,
         /// see the <code>ModifyDBSnapshotAttribute</code>
         /// API action.</p>
@@ -8793,7 +8933,7 @@ pub struct DbSnapshot {
     pub option_group_name: std::option::Option<std::string::String>,
     /// <p>The percentage of the estimated data that has been transferred.</p>
     pub percent_progress: i32,
-    /// <p>The AWS Region that the DB snapshot was created in or copied from.</p>
+    /// <p>The Amazon Web Services Region that the DB snapshot was created in or copied from.</p>
     pub source_region: std::option::Option<std::string::String>,
     /// <p>The DB snapshot Amazon Resource Name (ARN) that the DB snapshot was copied from. It only has value in case of cross-customer or cross-region copy.</p>
     pub source_db_snapshot_identifier: std::option::Option<std::string::String>,
@@ -8804,10 +8944,10 @@ pub struct DbSnapshot {
     /// <p>Specifies whether the DB snapshot is encrypted.</p>
     pub encrypted: bool,
     /// <p>
-    /// If <code>Encrypted</code> is true, the AWS KMS key identifier
+    /// If <code>Encrypted</code> is true, the Amazon Web Services KMS key identifier
     /// for the encrypted DB snapshot.
     /// </p>
-    /// <p>The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer master key (CMK).</p>
+    /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon Web Services KMS customer master key (CMK).</p>
     pub kms_key_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) for the DB snapshot.</p>
     pub db_snapshot_arn: std::option::Option<std::string::String>,
@@ -8819,12 +8959,12 @@ pub struct DbSnapshot {
     /// that were created with a time zone specified.
     /// </p>
     pub timezone: std::option::Option<std::string::String>,
-    /// <p>True if mapping of AWS Identity and Access Management (IAM) accounts to database accounts is enabled, and otherwise false.</p>
+    /// <p>True if mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database accounts is enabled, and otherwise false.</p>
     pub iam_database_authentication_enabled: bool,
     /// <p>The number of CPU cores and the number of threads per core for the DB instance class
     /// of the DB instance when the DB snapshot was created.</p>
     pub processor_features: std::option::Option<std::vec::Vec<crate::model::ProcessorFeature>>,
-    /// <p>The identifier for the source DB instance, which can't be changed and which is unique to an AWS Region.</p>
+    /// <p>The identifier for the source DB instance, which can't be changed and which is unique to an Amazon Web Services Region.</p>
     pub dbi_resource_id: std::option::Option<std::string::String>,
     /// <p>A list of tags.
     /// For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i>           
@@ -9094,7 +9234,7 @@ pub mod db_snapshot {
             self.percent_progress = input;
             self
         }
-        /// <p>The AWS Region that the DB snapshot was created in or copied from.</p>
+        /// <p>The Amazon Web Services Region that the DB snapshot was created in or copied from.</p>
         pub fn source_region(mut self, input: impl Into<std::string::String>) -> Self {
             self.source_region = Some(input.into());
             self
@@ -9152,10 +9292,10 @@ pub mod db_snapshot {
             self
         }
         /// <p>
-        /// If <code>Encrypted</code> is true, the AWS KMS key identifier
+        /// If <code>Encrypted</code> is true, the Amazon Web Services KMS key identifier
         /// for the encrypted DB snapshot.
         /// </p>
-        /// <p>The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer master key (CMK).</p>
+        /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon Web Services KMS customer master key (CMK).</p>
         pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_key_id = Some(input.into());
             self
@@ -9191,7 +9331,7 @@ pub mod db_snapshot {
             self.timezone = input;
             self
         }
-        /// <p>True if mapping of AWS Identity and Access Management (IAM) accounts to database accounts is enabled, and otherwise false.</p>
+        /// <p>True if mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database accounts is enabled, and otherwise false.</p>
         pub fn iam_database_authentication_enabled(mut self, input: bool) -> Self {
             self.iam_database_authentication_enabled = Some(input);
             self
@@ -9219,7 +9359,7 @@ pub mod db_snapshot {
             self.processor_features = input;
             self
         }
-        /// <p>The identifier for the source DB instance, which can't be changed and which is unique to an AWS Region.</p>
+        /// <p>The identifier for the source DB instance, which can't be changed and which is unique to an Amazon Web Services Region.</p>
         pub fn dbi_resource_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.dbi_resource_id = Some(input.into());
             self
@@ -9297,7 +9437,7 @@ impl DbSnapshot {
 pub struct DbProxyTargetGroup {
     /// <p>The identifier for the RDS proxy associated with this target group.</p>
     pub db_proxy_name: std::option::Option<std::string::String>,
-    /// <p>The identifier for the target group. This name must be unique for all target groups owned by your AWS account in the specified AWS Region.</p>
+    /// <p>The identifier for the target group. This name must be unique for all target groups owned by your Amazon Web Services account in the specified Amazon Web Services Region.</p>
     pub target_group_name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) representing the target group.</p>
     pub target_group_arn: std::option::Option<std::string::String>,
@@ -9359,7 +9499,7 @@ pub mod db_proxy_target_group {
             self.db_proxy_name = input;
             self
         }
-        /// <p>The identifier for the target group. This name must be unique for all target groups owned by your AWS account in the specified AWS Region.</p>
+        /// <p>The identifier for the target group. This name must be unique for all target groups owned by your Amazon Web Services account in the specified Amazon Web Services Region.</p>
         pub fn target_group_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.target_group_name = Some(input.into());
             self
@@ -10035,6 +10175,9 @@ impl DbProxyEndpointTargetRole {
             DbProxyEndpointTargetRole::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["READ_ONLY", "READ_WRITE"]
+    }
 }
 impl AsRef<str> for DbProxyEndpointTargetRole {
     fn as_ref(&self) -> &str {
@@ -10094,6 +10237,16 @@ impl DbProxyEndpointStatus {
             DbProxyEndpointStatus::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "available",
+            "creating",
+            "deleting",
+            "incompatible-network",
+            "insufficient-resource-limits",
+            "modifying",
+        ]
+    }
 }
 impl AsRef<str> for DbProxyEndpointStatus {
     fn as_ref(&self) -> &str {
@@ -10106,7 +10259,7 @@ impl AsRef<str> for DbProxyEndpointStatus {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DbProxy {
-    /// <p>The identifier for the proxy. This name must be unique for all proxies owned by your AWS account in the specified AWS Region.</p>
+    /// <p>The identifier for the proxy. This name must be unique for all proxies owned by your Amazon Web Services account in the specified Amazon Web Services Region.</p>
     pub db_proxy_name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) for the proxy.</p>
     pub db_proxy_arn: std::option::Option<std::string::String>,
@@ -10194,7 +10347,7 @@ pub mod db_proxy {
         pub(crate) updated_date: std::option::Option<smithy_types::Instant>,
     }
     impl Builder {
-        /// <p>The identifier for the proxy. This name must be unique for all proxies owned by your AWS account in the specified AWS Region.</p>
+        /// <p>The identifier for the proxy. This name must be unique for all proxies owned by your Amazon Web Services account in the specified Amazon Web Services Region.</p>
         pub fn db_proxy_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.db_proxy_name = Some(input.into());
             self
@@ -10410,7 +10563,7 @@ pub struct UserAuthConfigInfo {
     /// <p>The Amazon Resource Name (ARN) representing the secret that the proxy uses to authenticate
     /// to the RDS DB instance or Aurora DB cluster. These secrets are stored within Amazon Secrets Manager.</p>
     pub secret_arn: std::option::Option<std::string::String>,
-    /// <p>Whether to require or disallow AWS Identity and Access Management (IAM) authentication for connections to the proxy.</p>
+    /// <p>Whether to require or disallow Amazon Web Services Identity and Access Management (IAM) authentication for connections to the proxy.</p>
     pub iam_auth: std::option::Option<crate::model::IamAuthMode>,
 }
 impl std::fmt::Debug for UserAuthConfigInfo {
@@ -10477,7 +10630,7 @@ pub mod user_auth_config_info {
             self.secret_arn = input;
             self
         }
-        /// <p>Whether to require or disallow AWS Identity and Access Management (IAM) authentication for connections to the proxy.</p>
+        /// <p>Whether to require or disallow Amazon Web Services Identity and Access Management (IAM) authentication for connections to the proxy.</p>
         pub fn iam_auth(mut self, input: crate::model::IamAuthMode) -> Self {
             self.iam_auth = Some(input);
             self
@@ -10548,6 +10701,9 @@ impl IamAuthMode {
             IamAuthMode::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["DISABLED", "REQUIRED"]
+    }
 }
 impl AsRef<str> for IamAuthMode {
     fn as_ref(&self) -> &str {
@@ -10591,6 +10747,9 @@ impl AuthScheme {
             AuthScheme::Secrets => "SECRETS",
             AuthScheme::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["SECRETS"]
     }
 }
 impl AsRef<str> for AuthScheme {
@@ -10660,6 +10819,19 @@ impl DbProxyStatus {
             DbProxyStatus::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "available",
+            "creating",
+            "deleting",
+            "incompatible-network",
+            "insufficient-resource-limits",
+            "modifying",
+            "reactivating",
+            "suspended",
+            "suspending",
+        ]
+    }
 }
 impl AsRef<str> for DbProxyStatus {
     fn as_ref(&self) -> &str {
@@ -10680,7 +10852,7 @@ pub struct UserAuthConfig {
     /// <p>The Amazon Resource Name (ARN) representing the secret that the proxy uses to authenticate
     /// to the RDS DB instance or Aurora DB cluster. These secrets are stored within Amazon Secrets Manager.</p>
     pub secret_arn: std::option::Option<std::string::String>,
-    /// <p>Whether to require or disallow AWS Identity and Access Management (IAM) authentication for connections to the proxy.</p>
+    /// <p>Whether to require or disallow Amazon Web Services Identity and Access Management (IAM) authentication for connections to the proxy.</p>
     pub iam_auth: std::option::Option<crate::model::IamAuthMode>,
 }
 impl std::fmt::Debug for UserAuthConfig {
@@ -10747,7 +10919,7 @@ pub mod user_auth_config {
             self.secret_arn = input;
             self
         }
-        /// <p>Whether to require or disallow AWS Identity and Access Management (IAM) authentication for connections to the proxy.</p>
+        /// <p>Whether to require or disallow Amazon Web Services Identity and Access Management (IAM) authentication for connections to the proxy.</p>
         pub fn iam_auth(mut self, input: crate::model::IamAuthMode) -> Self {
             self.iam_auth = Some(input);
             self
@@ -10855,7 +11027,7 @@ impl CloudwatchLogsExportConfiguration {
 
 /// <p>Contains the results of a successful call to the <code>DescribeDBClusterSnapshotAttributes</code>
 /// API action.</p>
-/// <p>Manual DB cluster snapshot attributes are used to authorize other AWS accounts
+/// <p>Manual DB cluster snapshot attributes are used to authorize other Amazon Web Services accounts
 /// to copy or restore a manual DB cluster snapshot. For more information, see the <code>ModifyDBClusterSnapshotAttribute</code>
 /// API action.</p>
 #[non_exhaustive]
@@ -10940,23 +11112,23 @@ impl DbClusterSnapshotAttributesResult {
 }
 
 /// <p>Contains the name and values of a manual DB cluster snapshot attribute.</p>
-/// <p>Manual DB cluster snapshot attributes are used to authorize other AWS accounts
+/// <p>Manual DB cluster snapshot attributes are used to authorize other Amazon Web Services accounts
 /// to restore a manual DB cluster snapshot. For more information, see the <code>ModifyDBClusterSnapshotAttribute</code>
 /// API action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DbClusterSnapshotAttribute {
     /// <p>The name of the manual DB cluster snapshot attribute.</p>
-    /// <p>The attribute named <code>restore</code> refers to the list of AWS accounts that
+    /// <p>The attribute named <code>restore</code> refers to the list of Amazon Web Services accounts that
     /// have permission to copy or restore the manual DB cluster snapshot. For more information,
     /// see the <code>ModifyDBClusterSnapshotAttribute</code>
     /// API action.</p>
     pub attribute_name: std::option::Option<std::string::String>,
     /// <p>The value(s) for the manual DB cluster snapshot attribute.</p>
     /// <p>If the <code>AttributeName</code> field is set to <code>restore</code>, then this element
-    /// returns a list of IDs of the AWS accounts that are authorized to copy or restore the manual
+    /// returns a list of IDs of the Amazon Web Services accounts that are authorized to copy or restore the manual
     /// DB cluster snapshot. If a value of <code>all</code> is in the list, then the manual DB cluster snapshot
-    /// is public and available for any AWS account to copy or restore.</p>
+    /// is public and available for any Amazon Web Services account to copy or restore.</p>
     pub attribute_values: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl std::fmt::Debug for DbClusterSnapshotAttribute {
@@ -10978,7 +11150,7 @@ pub mod db_cluster_snapshot_attribute {
     }
     impl Builder {
         /// <p>The name of the manual DB cluster snapshot attribute.</p>
-        /// <p>The attribute named <code>restore</code> refers to the list of AWS accounts that
+        /// <p>The attribute named <code>restore</code> refers to the list of Amazon Web Services accounts that
         /// have permission to copy or restore the manual DB cluster snapshot. For more information,
         /// see the <code>ModifyDBClusterSnapshotAttribute</code>
         /// API action.</p>
@@ -11022,7 +11194,7 @@ impl DbClusterSnapshotAttribute {
     }
 }
 
-/// <p>A CA certificate for an AWS account.</p>
+/// <p>A CA certificate for an Amazon Web Services account.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Certificate {
@@ -11789,17 +11961,17 @@ impl Range {
     }
 }
 
-/// <p>Contains an AWS Region name as the result of a successful call to the <code>DescribeSourceRegions</code> action.</p>
+/// <p>Contains an Amazon Web Services Region name as the result of a successful call to the <code>DescribeSourceRegions</code> action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SourceRegion {
-    /// <p>The name of the source AWS Region.</p>
+    /// <p>The name of the source Amazon Web Services Region.</p>
     pub region_name: std::option::Option<std::string::String>,
-    /// <p>The endpoint for the source AWS Region endpoint.</p>
+    /// <p>The endpoint for the source Amazon Web Services Region endpoint.</p>
     pub endpoint: std::option::Option<std::string::String>,
-    /// <p>The status of the source AWS Region.</p>
+    /// <p>The status of the source Amazon Web Services Region.</p>
     pub status: std::option::Option<std::string::String>,
-    /// <p>Whether the source AWS Region supports replicating automated backups to the current AWS Region.</p>
+    /// <p>Whether the source Amazon Web Services Region supports replicating automated backups to the current Amazon Web Services Region.</p>
     pub supports_db_instance_automated_backups_replication: bool,
 }
 impl std::fmt::Debug for SourceRegion {
@@ -11827,7 +11999,7 @@ pub mod source_region {
         pub(crate) supports_db_instance_automated_backups_replication: std::option::Option<bool>,
     }
     impl Builder {
-        /// <p>The name of the source AWS Region.</p>
+        /// <p>The name of the source Amazon Web Services Region.</p>
         pub fn region_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.region_name = Some(input.into());
             self
@@ -11836,7 +12008,7 @@ pub mod source_region {
             self.region_name = input;
             self
         }
-        /// <p>The endpoint for the source AWS Region endpoint.</p>
+        /// <p>The endpoint for the source Amazon Web Services Region endpoint.</p>
         pub fn endpoint(mut self, input: impl Into<std::string::String>) -> Self {
             self.endpoint = Some(input.into());
             self
@@ -11845,7 +12017,7 @@ pub mod source_region {
             self.endpoint = input;
             self
         }
-        /// <p>The status of the source AWS Region.</p>
+        /// <p>The status of the source Amazon Web Services Region.</p>
         pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
             self.status = Some(input.into());
             self
@@ -11854,7 +12026,7 @@ pub mod source_region {
             self.status = input;
             self
         }
-        /// <p>Whether the source AWS Region supports replicating automated backups to the current AWS Region.</p>
+        /// <p>Whether the source Amazon Web Services Region supports replicating automated backups to the current Amazon Web Services Region.</p>
         pub fn supports_db_instance_automated_backups_replication(mut self, input: bool) -> Self {
             self.supports_db_instance_automated_backups_replication = Some(input);
             self
@@ -12378,10 +12550,14 @@ pub struct OrderableDbInstanceOption {
     /// <p>Whether a DB instance supports Kerberos Authentication.</p>
     pub supports_kerberos_authentication: std::option::Option<bool>,
     /// <p>Whether a DB instance supports RDS on Outposts.</p>
-    /// <p>For more information about RDS on Outposts, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Amazon RDS on AWS Outposts</a>
+    /// <p>For more information about RDS on Outposts, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Amazon RDS on Amazon Web Services Outposts</a>
     /// in the <i>Amazon RDS User Guide.</i>
     /// </p>
     pub outpost_capable: bool,
+    /// <p>The list of supported modes for Database Activity Streams. Aurora PostgreSQL returns the value <code>[sync,
+    /// async]</code>. Aurora MySQL and RDS for Oracle return <code>[async]</code> only. If Database Activity Streams
+    /// isn't supported, the return value is an empty list.</p>
+    pub supported_activity_stream_modes: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A value that indicates whether you can use Aurora global databases with a specific combination of other DB engine attributes.</p>
     pub supports_global_databases: bool,
 }
@@ -12435,6 +12611,10 @@ impl std::fmt::Debug for OrderableDbInstanceOption {
             &self.supports_kerberos_authentication,
         );
         formatter.field("outpost_capable", &self.outpost_capable);
+        formatter.field(
+            "supported_activity_stream_modes",
+            &self.supported_activity_stream_modes,
+        );
         formatter.field("supports_global_databases", &self.supports_global_databases);
         formatter.finish()
     }
@@ -12473,6 +12653,8 @@ pub mod orderable_db_instance_option {
         pub(crate) supports_storage_autoscaling: std::option::Option<bool>,
         pub(crate) supports_kerberos_authentication: std::option::Option<bool>,
         pub(crate) outpost_capable: std::option::Option<bool>,
+        pub(crate) supported_activity_stream_modes:
+            std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) supports_global_databases: std::option::Option<bool>,
     }
     impl Builder {
@@ -12747,7 +12929,7 @@ pub mod orderable_db_instance_option {
             self
         }
         /// <p>Whether a DB instance supports RDS on Outposts.</p>
-        /// <p>For more information about RDS on Outposts, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Amazon RDS on AWS Outposts</a>
+        /// <p>For more information about RDS on Outposts, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Amazon RDS on Amazon Web Services Outposts</a>
         /// in the <i>Amazon RDS User Guide.</i>
         /// </p>
         pub fn outpost_capable(mut self, input: bool) -> Self {
@@ -12756,6 +12938,22 @@ pub mod orderable_db_instance_option {
         }
         pub fn set_outpost_capable(mut self, input: std::option::Option<bool>) -> Self {
             self.outpost_capable = input;
+            self
+        }
+        pub fn supported_activity_stream_modes(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            let mut v = self.supported_activity_stream_modes.unwrap_or_default();
+            v.push(input.into());
+            self.supported_activity_stream_modes = Some(v);
+            self
+        }
+        pub fn set_supported_activity_stream_modes(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.supported_activity_stream_modes = input;
             self
         }
         /// <p>A value that indicates whether you can use Aurora global databases with a specific combination of other DB engine attributes.</p>
@@ -12800,6 +12998,7 @@ pub mod orderable_db_instance_option {
                 supports_storage_autoscaling: self.supports_storage_autoscaling,
                 supports_kerberos_authentication: self.supports_kerberos_authentication,
                 outpost_capable: self.outpost_capable.unwrap_or_default(),
+                supported_activity_stream_modes: self.supported_activity_stream_modes,
                 supports_global_databases: self.supports_global_databases.unwrap_or_default(),
             }
         }
@@ -13670,9 +13869,9 @@ pub struct ExportTask {
     pub s3_prefix: std::option::Option<std::string::String>,
     /// <p>The name of the IAM role that is used to write to Amazon S3 when exporting a snapshot. </p>
     pub iam_role_arn: std::option::Option<std::string::String>,
-    /// <p>The key identifier of the AWS KMS customer master key (CMK) that is used to encrypt the snapshot when it's exported to
-    /// Amazon S3. The AWS KMS CMK identifier is its key ARN, key ID, alias ARN, or alias name. The IAM role used for the snapshot export
-    /// must have encryption and decryption permissions to use this AWS KMS CMK. </p>
+    /// <p>The key identifier of the Amazon Web Services KMS customer master key (CMK) that is used to encrypt the snapshot when it's exported to
+    /// Amazon S3. The Amazon Web Services KMS CMK identifier is its key ARN, key ID, alias ARN, or alias name. The IAM role used for the snapshot export
+    /// must have encryption and decryption permissions to use this Amazon Web Services KMS CMK. </p>
     pub kms_key_id: std::option::Option<std::string::String>,
     /// <p>The progress status of the export task.</p>
     pub status: std::option::Option<std::string::String>,
@@ -13830,9 +14029,9 @@ pub mod export_task {
             self.iam_role_arn = input;
             self
         }
-        /// <p>The key identifier of the AWS KMS customer master key (CMK) that is used to encrypt the snapshot when it's exported to
-        /// Amazon S3. The AWS KMS CMK identifier is its key ARN, key ID, alias ARN, or alias name. The IAM role used for the snapshot export
-        /// must have encryption and decryption permissions to use this AWS KMS CMK. </p>
+        /// <p>The key identifier of the Amazon Web Services KMS customer master key (CMK) that is used to encrypt the snapshot when it's exported to
+        /// Amazon S3. The Amazon Web Services KMS CMK identifier is its key ARN, key ID, alias ARN, or alias name. The IAM role used for the snapshot export
+        /// must have encryption and decryption permissions to use this Amazon Web Services KMS CMK. </p>
         pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_key_id = Some(input.into());
             self
@@ -14101,6 +14300,16 @@ impl SourceType {
             SourceType::DbSnapshot => "db-snapshot",
             SourceType::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "db-cluster",
+            "db-cluster-snapshot",
+            "db-instance",
+            "db-parameter-group",
+            "db-security-group",
+            "db-snapshot",
+        ]
     }
 }
 impl AsRef<str> for SourceType {
@@ -15149,15 +15358,15 @@ pub struct DbClusterSnapshot {
     pub percent_progress: i32,
     /// <p>Specifies whether the DB cluster snapshot is encrypted.</p>
     pub storage_encrypted: bool,
-    /// <p>If <code>StorageEncrypted</code> is true, the AWS KMS key identifier for the encrypted DB cluster snapshot.</p>
-    /// <p>The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer master key (CMK).</p>
+    /// <p>If <code>StorageEncrypted</code> is true, the Amazon Web Services KMS key identifier for the encrypted DB cluster snapshot.</p>
+    /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon Web Services KMS customer master key (CMK).</p>
     pub kms_key_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) for the DB cluster snapshot.</p>
     pub db_cluster_snapshot_arn: std::option::Option<std::string::String>,
     /// <p>If the DB cluster snapshot was copied from a source DB cluster snapshot, the Amazon
     /// Resource Name (ARN) for the source DB cluster snapshot, otherwise, a null value.</p>
     pub source_db_cluster_snapshot_arn: std::option::Option<std::string::String>,
-    /// <p>True if mapping of AWS Identity and Access Management (IAM) accounts to database accounts is enabled, and otherwise false.</p>
+    /// <p>True if mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database accounts is enabled, and otherwise false.</p>
     pub iam_database_authentication_enabled: bool,
     /// <p>A list of tags.
     /// For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i>           
@@ -15415,8 +15624,8 @@ pub mod db_cluster_snapshot {
             self.storage_encrypted = input;
             self
         }
-        /// <p>If <code>StorageEncrypted</code> is true, the AWS KMS key identifier for the encrypted DB cluster snapshot.</p>
-        /// <p>The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer master key (CMK).</p>
+        /// <p>If <code>StorageEncrypted</code> is true, the Amazon Web Services KMS key identifier for the encrypted DB cluster snapshot.</p>
+        /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon Web Services KMS customer master key (CMK).</p>
         pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_key_id = Some(input.into());
             self
@@ -15453,7 +15662,7 @@ pub mod db_cluster_snapshot {
             self.source_db_cluster_snapshot_arn = input;
             self
         }
-        /// <p>True if mapping of AWS Identity and Access Management (IAM) accounts to database accounts is enabled, and otherwise false.</p>
+        /// <p>True if mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database accounts is enabled, and otherwise false.</p>
         pub fn iam_database_authentication_enabled(mut self, input: bool) -> Self {
             self.iam_database_authentication_enabled = Some(input);
             self
@@ -16064,7 +16273,7 @@ pub struct CustomAvailabilityZone {
     /// <p>The status of the custom AZ.</p>
     pub custom_availability_zone_status: std::option::Option<std::string::String>,
     /// <p>Information about the virtual private network (VPN) between the VMware vSphere cluster
-    /// and the AWS website.</p>
+    /// and the Amazon Web Services website.</p>
     pub vpn_details: std::option::Option<crate::model::VpnDetails>,
 }
 impl std::fmt::Debug for CustomAvailabilityZone {
@@ -16145,7 +16354,7 @@ pub mod custom_availability_zone {
             self
         }
         /// <p>Information about the virtual private network (VPN) between the VMware vSphere cluster
-        /// and the AWS website.</p>
+        /// and the Amazon Web Services website.</p>
         pub fn vpn_details(mut self, input: crate::model::VpnDetails) -> Self {
             self.vpn_details = Some(input);
             self
@@ -16175,7 +16384,7 @@ impl CustomAvailabilityZone {
     }
 }
 
-/// <p>Information about the virtual private network (VPN) between the VMware vSphere cluster and the AWS website.</p>
+/// <p>Information about the virtual private network (VPN) between the VMware vSphere cluster and the Amazon Web Services website.</p>
 /// <p>For more information about RDS on VMware, see the
 /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/RDSonVMwareUserGuide/rds-on-vmware.html">
 /// RDS on VMware User Guide.</a>
@@ -16187,7 +16396,7 @@ pub struct VpnDetails {
     pub vpn_id: std::option::Option<std::string::String>,
     /// <p>The IP address of network traffic from your on-premises data center. A custom AZ receives the network traffic.</p>
     pub vpn_tunnel_originator_ip: std::option::Option<std::string::String>,
-    /// <p>The IP address of network traffic from AWS to your on-premises data center.</p>
+    /// <p>The IP address of network traffic from Amazon Web Services to your on-premises data center.</p>
     pub vpn_gateway_ip: std::option::Option<std::string::String>,
     /// <p>The preshared key (PSK) for the VPN.</p>
     pub vpn_psk: std::option::Option<std::string::String>,
@@ -16243,7 +16452,7 @@ pub mod vpn_details {
             self.vpn_tunnel_originator_ip = input;
             self
         }
-        /// <p>The IP address of network traffic from AWS to your on-premises data center.</p>
+        /// <p>The IP address of network traffic from Amazon Web Services to your on-premises data center.</p>
         pub fn vpn_gateway_ip(mut self, input: impl Into<std::string::String>) -> Self {
             self.vpn_gateway_ip = Some(input.into());
             self
@@ -16302,7 +16511,7 @@ impl VpnDetails {
     }
 }
 
-/// <p>Describes a quota for an AWS account.</p>
+/// <p>Describes a quota for an Amazon Web Services account.</p>
 /// <p>The following are account quotas:</p>
 /// <ul>
 /// <li>
@@ -16330,7 +16539,7 @@ impl VpnDetails {
 /// </li>
 /// <li>
 /// <p>
-/// <code>DBClusterRoles</code> - The number of associated AWS Identity and Access Management (IAM) roles per DB cluster.
+/// <code>DBClusterRoles</code> - The number of associated Amazon Web Services Identity and Access Management (IAM) roles per DB cluster.
 /// The used value is the highest number of associated IAM roles for a DB cluster in the account. Other
 /// DB clusters in the account might have a lower number of associated IAM roles.</p>
 /// </li>
@@ -16415,7 +16624,7 @@ impl VpnDetails {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AccountQuota {
-    /// <p>The name of the Amazon RDS quota for this AWS account.</p>
+    /// <p>The name of the Amazon RDS quota for this Amazon Web Services account.</p>
     pub account_quota_name: std::option::Option<std::string::String>,
     /// <p>The amount currently used toward the quota maximum.</p>
     pub used: i64,
@@ -16442,7 +16651,7 @@ pub mod account_quota {
         pub(crate) max: std::option::Option<i64>,
     }
     impl Builder {
-        /// <p>The name of the Amazon RDS quota for this AWS account.</p>
+        /// <p>The name of the Amazon RDS quota for this Amazon Web Services account.</p>
         pub fn account_quota_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.account_quota_name = Some(input.into());
             self
@@ -16528,6 +16737,9 @@ impl EngineFamily {
             EngineFamily::Postgresql => "POSTGRESQL",
             EngineFamily::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["MYSQL", "POSTGRESQL"]
     }
 }
 impl AsRef<str> for EngineFamily {

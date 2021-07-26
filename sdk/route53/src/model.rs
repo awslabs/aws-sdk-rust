@@ -276,6 +276,12 @@ impl RrType {
             RrType::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "A", "AAAA", "CAA", "CNAME", "DS", "MX", "NAPTR", "NS", "PTR", "SOA", "SPF", "SRV",
+            "TXT",
+        ]
+    }
 }
 impl AsRef<str> for RrType {
     fn as_ref(&self) -> &str {
@@ -1099,6 +1105,9 @@ impl Statistic {
             Statistic::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["Average", "Maximum", "Minimum", "SampleCount", "Sum"]
+    }
 }
 impl AsRef<str> for Statistic {
     fn as_ref(&self) -> &str {
@@ -1151,6 +1160,14 @@ impl ComparisonOperator {
             ComparisonOperator::LessThanThreshold => "LessThanThreshold",
             ComparisonOperator::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "GreaterThanOrEqualToThreshold",
+            "GreaterThanThreshold",
+            "LessThanOrEqualToThreshold",
+            "LessThanThreshold",
+        ]
     }
 }
 impl AsRef<str> for ComparisonOperator {
@@ -1968,6 +1985,9 @@ impl InsufficientDataHealthStatus {
             InsufficientDataHealthStatus::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["Healthy", "LastKnownStatus", "Unhealthy"]
+    }
 }
 impl AsRef<str> for InsufficientDataHealthStatus {
     fn as_ref(&self) -> &str {
@@ -2187,6 +2207,37 @@ impl CloudWatchRegion {
             CloudWatchRegion::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "af-south-1",
+            "ap-east-1",
+            "ap-northeast-1",
+            "ap-northeast-2",
+            "ap-northeast-3",
+            "ap-south-1",
+            "ap-southeast-1",
+            "ap-southeast-2",
+            "ca-central-1",
+            "cn-north-1",
+            "cn-northwest-1",
+            "eu-central-1",
+            "eu-north-1",
+            "eu-south-1",
+            "eu-west-1",
+            "eu-west-2",
+            "eu-west-3",
+            "me-south-1",
+            "sa-east-1",
+            "us-east-1",
+            "us-east-2",
+            "us-gov-east-1",
+            "us-gov-west-1",
+            "us-iso-east-1",
+            "us-isob-east-1",
+            "us-west-1",
+            "us-west-2",
+        ]
+    }
 }
 impl AsRef<str> for CloudWatchRegion {
     fn as_ref(&self) -> &str {
@@ -2252,6 +2303,18 @@ impl HealthCheckRegion {
             HealthCheckRegion::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "ap-northeast-1",
+            "ap-southeast-1",
+            "ap-southeast-2",
+            "eu-west-1",
+            "sa-east-1",
+            "us-east-1",
+            "us-west-1",
+            "us-west-2",
+        ]
+    }
 }
 impl AsRef<str> for HealthCheckRegion {
     fn as_ref(&self) -> &str {
@@ -2314,6 +2377,17 @@ impl HealthCheckType {
             HealthCheckType::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "CALCULATED",
+            "CLOUDWATCH_METRIC",
+            "HTTP",
+            "HTTPS",
+            "HTTPS_STR_MATCH",
+            "HTTP_STR_MATCH",
+            "TCP",
+        ]
+    }
 }
 impl AsRef<str> for HealthCheckType {
     fn as_ref(&self) -> &str {
@@ -2366,6 +2440,14 @@ impl ResettableElementName {
             ResettableElementName::ResourcePath => "ResourcePath",
             ResettableElementName::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "ChildHealthChecks",
+            "FullyQualifiedDomainName",
+            "Regions",
+            "ResourcePath",
+        ]
     }
 }
 impl AsRef<str> for ResettableElementName {
@@ -2549,6 +2631,36 @@ impl VpcRegion {
             VpcRegion::UsWest2 => "us-west-2",
             VpcRegion::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "af-south-1",
+            "ap-east-1",
+            "ap-northeast-1",
+            "ap-northeast-2",
+            "ap-northeast-3",
+            "ap-south-1",
+            "ap-southeast-1",
+            "ap-southeast-2",
+            "ca-central-1",
+            "cn-north-1",
+            "eu-central-1",
+            "eu-north-1",
+            "eu-south-1",
+            "eu-west-1",
+            "eu-west-2",
+            "eu-west-3",
+            "me-south-1",
+            "sa-east-1",
+            "us-east-1",
+            "us-east-2",
+            "us-gov-east-1",
+            "us-gov-west-1",
+            "us-iso-east-1",
+            "us-isob-east-1",
+            "us-west-1",
+            "us-west-2",
+        ]
     }
 }
 impl AsRef<str> for VpcRegion {
@@ -2923,6 +3035,9 @@ impl TagResourceType {
             TagResourceType::Hostedzone => "hostedzone",
             TagResourceType::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["healthcheck", "hostedzone"]
     }
 }
 impl AsRef<str> for TagResourceType {
@@ -4974,6 +5089,9 @@ impl ResourceRecordSetFailover {
             ResourceRecordSetFailover::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["PRIMARY", "SECONDARY"]
+    }
 }
 impl AsRef<str> for ResourceRecordSetFailover {
     fn as_ref(&self) -> &str {
@@ -5242,6 +5360,33 @@ impl ResourceRecordSetRegion {
             ResourceRecordSetRegion::UsWest2 => "us-west-2",
             ResourceRecordSetRegion::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "af-south-1",
+            "ap-east-1",
+            "ap-northeast-1",
+            "ap-northeast-2",
+            "ap-northeast-3",
+            "ap-south-1",
+            "ap-southeast-1",
+            "ap-southeast-2",
+            "ca-central-1",
+            "cn-north-1",
+            "cn-northwest-1",
+            "eu-central-1",
+            "eu-north-1",
+            "eu-south-1",
+            "eu-west-1",
+            "eu-west-2",
+            "eu-west-3",
+            "me-south-1",
+            "sa-east-1",
+            "us-east-1",
+            "us-east-2",
+            "us-west-1",
+            "us-west-2",
+        ]
     }
 }
 impl AsRef<str> for ResourceRecordSetRegion {
@@ -5734,6 +5879,9 @@ impl ReusableDelegationSetLimitType {
             ReusableDelegationSetLimitType::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["MAX_ZONES_BY_REUSABLE_DELEGATION_SET"]
+    }
 }
 impl AsRef<str> for ReusableDelegationSetLimitType {
     fn as_ref(&self) -> &str {
@@ -5868,6 +6016,9 @@ impl HostedZoneLimitType {
             HostedZoneLimitType::MaxVpcsAssociatedByZone => "MAX_VPCS_ASSOCIATED_BY_ZONE",
             HostedZoneLimitType::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["MAX_RRSETS_BY_ZONE", "MAX_VPCS_ASSOCIATED_BY_ZONE"]
     }
 }
 impl AsRef<str> for HostedZoneLimitType {
@@ -6742,6 +6893,9 @@ impl ChangeStatus {
             ChangeStatus::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["INSYNC", "PENDING"]
+    }
 }
 impl AsRef<str> for ChangeStatus {
     fn as_ref(&self) -> &str {
@@ -6927,6 +7081,15 @@ impl AccountLimitType {
             }
             AccountLimitType::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "MAX_HEALTH_CHECKS_BY_OWNER",
+            "MAX_HOSTED_ZONES_BY_OWNER",
+            "MAX_REUSABLE_DELEGATION_SETS_BY_OWNER",
+            "MAX_TRAFFIC_POLICIES_BY_OWNER",
+            "MAX_TRAFFIC_POLICY_INSTANCES_BY_OWNER",
+        ]
     }
 }
 impl AsRef<str> for AccountLimitType {
@@ -7157,6 +7320,9 @@ impl ChangeAction {
             ChangeAction::Upsert => "UPSERT",
             ChangeAction::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["CREATE", "DELETE", "UPSERT"]
     }
 }
 impl AsRef<str> for ChangeAction {

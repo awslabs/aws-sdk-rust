@@ -9,33 +9,49 @@ pub fn parse_cancel_job_error(
         Some(code) => code,
         None => return Err(crate::error::CancelJobError::unhandled(generic)),
     };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "ClientException" => crate::error::CancelJobError {
             meta: generic,
             kind: crate::error::CancelJobErrorKind::ClientException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::client_exception::Builder::default();
-                let _ = response;
-                output = crate::json_deser::deser_structure_client_exceptionjson_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::CancelJobError::unhandled)?;
-                output.build()
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::client_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_client_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::CancelJobError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
             }),
         },
         "ServerException" => crate::error::CancelJobError {
             meta: generic,
             kind: crate::error::CancelJobErrorKind::ServerException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::server_exception::Builder::default();
-                let _ = response;
-                output = crate::json_deser::deser_structure_server_exceptionjson_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::CancelJobError::unhandled)?;
-                output.build()
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::server_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_server_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::CancelJobError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
             }),
         },
         _ => crate::error::CancelJobError::generic(generic),
@@ -71,33 +87,49 @@ pub fn parse_create_compute_environment_error(
             ))
         }
     };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "ClientException" => crate::error::CreateComputeEnvironmentError {
             meta: generic,
             kind: crate::error::CreateComputeEnvironmentErrorKind::ClientException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::client_exception::Builder::default();
-                let _ = response;
-                output = crate::json_deser::deser_structure_client_exceptionjson_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::CreateComputeEnvironmentError::unhandled)?;
-                output.build()
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::client_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_client_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::CreateComputeEnvironmentError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
             }),
         },
         "ServerException" => crate::error::CreateComputeEnvironmentError {
             meta: generic,
             kind: crate::error::CreateComputeEnvironmentErrorKind::ServerException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::server_exception::Builder::default();
-                let _ = response;
-                output = crate::json_deser::deser_structure_server_exceptionjson_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::CreateComputeEnvironmentError::unhandled)?;
-                output.build()
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::server_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_server_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::CreateComputeEnvironmentError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
             }),
         },
         _ => crate::error::CreateComputeEnvironmentError::generic(generic),
@@ -134,33 +166,49 @@ pub fn parse_create_job_queue_error(
         Some(code) => code,
         None => return Err(crate::error::CreateJobQueueError::unhandled(generic)),
     };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "ClientException" => crate::error::CreateJobQueueError {
             meta: generic,
             kind: crate::error::CreateJobQueueErrorKind::ClientException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::client_exception::Builder::default();
-                let _ = response;
-                output = crate::json_deser::deser_structure_client_exceptionjson_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::CreateJobQueueError::unhandled)?;
-                output.build()
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::client_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_client_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::CreateJobQueueError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
             }),
         },
         "ServerException" => crate::error::CreateJobQueueError {
             meta: generic,
             kind: crate::error::CreateJobQueueErrorKind::ServerException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::server_exception::Builder::default();
-                let _ = response;
-                output = crate::json_deser::deser_structure_server_exceptionjson_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::CreateJobQueueError::unhandled)?;
-                output.build()
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::server_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_server_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::CreateJobQueueError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
             }),
         },
         _ => crate::error::CreateJobQueueError::generic(generic),
@@ -199,33 +247,49 @@ pub fn parse_delete_compute_environment_error(
             ))
         }
     };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "ClientException" => crate::error::DeleteComputeEnvironmentError {
             meta: generic,
             kind: crate::error::DeleteComputeEnvironmentErrorKind::ClientException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::client_exception::Builder::default();
-                let _ = response;
-                output = crate::json_deser::deser_structure_client_exceptionjson_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::DeleteComputeEnvironmentError::unhandled)?;
-                output.build()
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::client_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_client_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::DeleteComputeEnvironmentError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
             }),
         },
         "ServerException" => crate::error::DeleteComputeEnvironmentError {
             meta: generic,
             kind: crate::error::DeleteComputeEnvironmentErrorKind::ServerException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::server_exception::Builder::default();
-                let _ = response;
-                output = crate::json_deser::deser_structure_server_exceptionjson_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::DeleteComputeEnvironmentError::unhandled)?;
-                output.build()
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::server_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_server_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::DeleteComputeEnvironmentError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
             }),
         },
         _ => crate::error::DeleteComputeEnvironmentError::generic(generic),
@@ -257,33 +321,49 @@ pub fn parse_delete_job_queue_error(
         Some(code) => code,
         None => return Err(crate::error::DeleteJobQueueError::unhandled(generic)),
     };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "ClientException" => crate::error::DeleteJobQueueError {
             meta: generic,
             kind: crate::error::DeleteJobQueueErrorKind::ClientException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::client_exception::Builder::default();
-                let _ = response;
-                output = crate::json_deser::deser_structure_client_exceptionjson_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::DeleteJobQueueError::unhandled)?;
-                output.build()
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::client_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_client_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::DeleteJobQueueError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
             }),
         },
         "ServerException" => crate::error::DeleteJobQueueError {
             meta: generic,
             kind: crate::error::DeleteJobQueueErrorKind::ServerException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::server_exception::Builder::default();
-                let _ = response;
-                output = crate::json_deser::deser_structure_server_exceptionjson_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::DeleteJobQueueError::unhandled)?;
-                output.build()
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::server_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_server_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::DeleteJobQueueError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
             }),
         },
         _ => crate::error::DeleteJobQueueError::generic(generic),
@@ -319,33 +399,49 @@ pub fn parse_deregister_job_definition_error(
             ))
         }
     };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "ClientException" => crate::error::DeregisterJobDefinitionError {
             meta: generic,
             kind: crate::error::DeregisterJobDefinitionErrorKind::ClientException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::client_exception::Builder::default();
-                let _ = response;
-                output = crate::json_deser::deser_structure_client_exceptionjson_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::DeregisterJobDefinitionError::unhandled)?;
-                output.build()
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::client_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_client_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::DeregisterJobDefinitionError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
             }),
         },
         "ServerException" => crate::error::DeregisterJobDefinitionError {
             meta: generic,
             kind: crate::error::DeregisterJobDefinitionErrorKind::ServerException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::server_exception::Builder::default();
-                let _ = response;
-                output = crate::json_deser::deser_structure_server_exceptionjson_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::DeregisterJobDefinitionError::unhandled)?;
-                output.build()
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::server_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_server_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::DeregisterJobDefinitionError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
             }),
         },
         _ => crate::error::DeregisterJobDefinitionError::generic(generic),
@@ -384,33 +480,49 @@ pub fn parse_describe_compute_environments_error(
             ))
         }
     };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "ClientException" => crate::error::DescribeComputeEnvironmentsError {
             meta: generic,
             kind: crate::error::DescribeComputeEnvironmentsErrorKind::ClientException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::client_exception::Builder::default();
-                let _ = response;
-                output = crate::json_deser::deser_structure_client_exceptionjson_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::DescribeComputeEnvironmentsError::unhandled)?;
-                output.build()
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::client_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_client_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::DescribeComputeEnvironmentsError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
             }),
         },
         "ServerException" => crate::error::DescribeComputeEnvironmentsError {
             meta: generic,
             kind: crate::error::DescribeComputeEnvironmentsErrorKind::ServerException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::server_exception::Builder::default();
-                let _ = response;
-                output = crate::json_deser::deser_structure_server_exceptionjson_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::DescribeComputeEnvironmentsError::unhandled)?;
-                output.build()
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::server_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_server_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::DescribeComputeEnvironmentsError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
             }),
         },
         _ => crate::error::DescribeComputeEnvironmentsError::generic(generic),
@@ -454,33 +566,49 @@ pub fn parse_describe_job_definitions_error(
             ))
         }
     };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "ClientException" => crate::error::DescribeJobDefinitionsError {
             meta: generic,
             kind: crate::error::DescribeJobDefinitionsErrorKind::ClientException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::client_exception::Builder::default();
-                let _ = response;
-                output = crate::json_deser::deser_structure_client_exceptionjson_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::DescribeJobDefinitionsError::unhandled)?;
-                output.build()
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::client_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_client_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::DescribeJobDefinitionsError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
             }),
         },
         "ServerException" => crate::error::DescribeJobDefinitionsError {
             meta: generic,
             kind: crate::error::DescribeJobDefinitionsErrorKind::ServerException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::server_exception::Builder::default();
-                let _ = response;
-                output = crate::json_deser::deser_structure_server_exceptionjson_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::DescribeJobDefinitionsError::unhandled)?;
-                output.build()
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::server_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_server_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::DescribeJobDefinitionsError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
             }),
         },
         _ => crate::error::DescribeJobDefinitionsError::generic(generic),
@@ -518,33 +646,49 @@ pub fn parse_describe_job_queues_error(
         Some(code) => code,
         None => return Err(crate::error::DescribeJobQueuesError::unhandled(generic)),
     };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "ClientException" => crate::error::DescribeJobQueuesError {
             meta: generic,
             kind: crate::error::DescribeJobQueuesErrorKind::ClientException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::client_exception::Builder::default();
-                let _ = response;
-                output = crate::json_deser::deser_structure_client_exceptionjson_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::DescribeJobQueuesError::unhandled)?;
-                output.build()
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::client_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_client_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::DescribeJobQueuesError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
             }),
         },
         "ServerException" => crate::error::DescribeJobQueuesError {
             meta: generic,
             kind: crate::error::DescribeJobQueuesErrorKind::ServerException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::server_exception::Builder::default();
-                let _ = response;
-                output = crate::json_deser::deser_structure_server_exceptionjson_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::DescribeJobQueuesError::unhandled)?;
-                output.build()
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::server_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_server_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::DescribeJobQueuesError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
             }),
         },
         _ => crate::error::DescribeJobQueuesError::generic(generic),
@@ -579,33 +723,49 @@ pub fn parse_describe_jobs_error(
         Some(code) => code,
         None => return Err(crate::error::DescribeJobsError::unhandled(generic)),
     };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "ClientException" => crate::error::DescribeJobsError {
             meta: generic,
             kind: crate::error::DescribeJobsErrorKind::ClientException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::client_exception::Builder::default();
-                let _ = response;
-                output = crate::json_deser::deser_structure_client_exceptionjson_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::DescribeJobsError::unhandled)?;
-                output.build()
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::client_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_client_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::DescribeJobsError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
             }),
         },
         "ServerException" => crate::error::DescribeJobsError {
             meta: generic,
             kind: crate::error::DescribeJobsErrorKind::ServerException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::server_exception::Builder::default();
-                let _ = response;
-                output = crate::json_deser::deser_structure_server_exceptionjson_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::DescribeJobsError::unhandled)?;
-                output.build()
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::server_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_server_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::DescribeJobsError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
             }),
         },
         _ => crate::error::DescribeJobsError::generic(generic),
@@ -636,33 +796,49 @@ pub fn parse_list_jobs_error(
         Some(code) => code,
         None => return Err(crate::error::ListJobsError::unhandled(generic)),
     };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "ClientException" => crate::error::ListJobsError {
             meta: generic,
             kind: crate::error::ListJobsErrorKind::ClientException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::client_exception::Builder::default();
-                let _ = response;
-                output = crate::json_deser::deser_structure_client_exceptionjson_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::ListJobsError::unhandled)?;
-                output.build()
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::client_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_client_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::ListJobsError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
             }),
         },
         "ServerException" => crate::error::ListJobsError {
             meta: generic,
             kind: crate::error::ListJobsErrorKind::ServerException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::server_exception::Builder::default();
-                let _ = response;
-                output = crate::json_deser::deser_structure_server_exceptionjson_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::ListJobsError::unhandled)?;
-                output.build()
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::server_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_server_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::ListJobsError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
             }),
         },
         _ => crate::error::ListJobsError::generic(generic),
@@ -696,33 +872,49 @@ pub fn parse_list_tags_for_resource_error(
         Some(code) => code,
         None => return Err(crate::error::ListTagsForResourceError::unhandled(generic)),
     };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "ClientException" => crate::error::ListTagsForResourceError {
             meta: generic,
             kind: crate::error::ListTagsForResourceErrorKind::ClientException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::client_exception::Builder::default();
-                let _ = response;
-                output = crate::json_deser::deser_structure_client_exceptionjson_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::ListTagsForResourceError::unhandled)?;
-                output.build()
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::client_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_client_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::ListTagsForResourceError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
             }),
         },
         "ServerException" => crate::error::ListTagsForResourceError {
             meta: generic,
             kind: crate::error::ListTagsForResourceErrorKind::ServerException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::server_exception::Builder::default();
-                let _ = response;
-                output = crate::json_deser::deser_structure_server_exceptionjson_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::ListTagsForResourceError::unhandled)?;
-                output.build()
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::server_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_server_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::ListTagsForResourceError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
             }),
         },
         _ => crate::error::ListTagsForResourceError::generic(generic),
@@ -762,33 +954,49 @@ pub fn parse_register_job_definition_error(
         Some(code) => code,
         None => return Err(crate::error::RegisterJobDefinitionError::unhandled(generic)),
     };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "ClientException" => crate::error::RegisterJobDefinitionError {
             meta: generic,
             kind: crate::error::RegisterJobDefinitionErrorKind::ClientException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::client_exception::Builder::default();
-                let _ = response;
-                output = crate::json_deser::deser_structure_client_exceptionjson_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::RegisterJobDefinitionError::unhandled)?;
-                output.build()
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::client_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_client_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::RegisterJobDefinitionError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
             }),
         },
         "ServerException" => crate::error::RegisterJobDefinitionError {
             meta: generic,
             kind: crate::error::RegisterJobDefinitionErrorKind::ServerException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::server_exception::Builder::default();
-                let _ = response;
-                output = crate::json_deser::deser_structure_server_exceptionjson_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::RegisterJobDefinitionError::unhandled)?;
-                output.build()
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::server_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_server_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::RegisterJobDefinitionError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
             }),
         },
         _ => crate::error::RegisterJobDefinitionError::generic(generic),
@@ -825,33 +1033,49 @@ pub fn parse_submit_job_error(
         Some(code) => code,
         None => return Err(crate::error::SubmitJobError::unhandled(generic)),
     };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "ClientException" => crate::error::SubmitJobError {
             meta: generic,
             kind: crate::error::SubmitJobErrorKind::ClientException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::client_exception::Builder::default();
-                let _ = response;
-                output = crate::json_deser::deser_structure_client_exceptionjson_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::SubmitJobError::unhandled)?;
-                output.build()
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::client_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_client_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::SubmitJobError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
             }),
         },
         "ServerException" => crate::error::SubmitJobError {
             meta: generic,
             kind: crate::error::SubmitJobErrorKind::ServerException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::server_exception::Builder::default();
-                let _ = response;
-                output = crate::json_deser::deser_structure_server_exceptionjson_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::SubmitJobError::unhandled)?;
-                output.build()
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::server_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_server_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::SubmitJobError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
             }),
         },
         _ => crate::error::SubmitJobError::generic(generic),
@@ -882,33 +1106,49 @@ pub fn parse_tag_resource_error(
         Some(code) => code,
         None => return Err(crate::error::TagResourceError::unhandled(generic)),
     };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "ClientException" => crate::error::TagResourceError {
             meta: generic,
             kind: crate::error::TagResourceErrorKind::ClientException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::client_exception::Builder::default();
-                let _ = response;
-                output = crate::json_deser::deser_structure_client_exceptionjson_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::TagResourceError::unhandled)?;
-                output.build()
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::client_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_client_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::TagResourceError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
             }),
         },
         "ServerException" => crate::error::TagResourceError {
             meta: generic,
             kind: crate::error::TagResourceErrorKind::ServerException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::server_exception::Builder::default();
-                let _ = response;
-                output = crate::json_deser::deser_structure_server_exceptionjson_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::TagResourceError::unhandled)?;
-                output.build()
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::server_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_server_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::TagResourceError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
             }),
         },
         _ => crate::error::TagResourceError::generic(generic),
@@ -937,33 +1177,49 @@ pub fn parse_terminate_job_error(
         Some(code) => code,
         None => return Err(crate::error::TerminateJobError::unhandled(generic)),
     };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "ClientException" => crate::error::TerminateJobError {
             meta: generic,
             kind: crate::error::TerminateJobErrorKind::ClientException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::client_exception::Builder::default();
-                let _ = response;
-                output = crate::json_deser::deser_structure_client_exceptionjson_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::TerminateJobError::unhandled)?;
-                output.build()
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::client_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_client_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::TerminateJobError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
             }),
         },
         "ServerException" => crate::error::TerminateJobError {
             meta: generic,
             kind: crate::error::TerminateJobErrorKind::ServerException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::server_exception::Builder::default();
-                let _ = response;
-                output = crate::json_deser::deser_structure_server_exceptionjson_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::TerminateJobError::unhandled)?;
-                output.build()
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::server_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_server_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::TerminateJobError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
             }),
         },
         _ => crate::error::TerminateJobError::generic(generic),
@@ -992,33 +1248,49 @@ pub fn parse_untag_resource_error(
         Some(code) => code,
         None => return Err(crate::error::UntagResourceError::unhandled(generic)),
     };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "ClientException" => crate::error::UntagResourceError {
             meta: generic,
             kind: crate::error::UntagResourceErrorKind::ClientException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::client_exception::Builder::default();
-                let _ = response;
-                output = crate::json_deser::deser_structure_client_exceptionjson_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::UntagResourceError::unhandled)?;
-                output.build()
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::client_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_client_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::UntagResourceError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
             }),
         },
         "ServerException" => crate::error::UntagResourceError {
             meta: generic,
             kind: crate::error::UntagResourceErrorKind::ServerException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::server_exception::Builder::default();
-                let _ = response;
-                output = crate::json_deser::deser_structure_server_exceptionjson_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::UntagResourceError::unhandled)?;
-                output.build()
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::server_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_server_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::UntagResourceError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
             }),
         },
         _ => crate::error::UntagResourceError::generic(generic),
@@ -1054,33 +1326,49 @@ pub fn parse_update_compute_environment_error(
             ))
         }
     };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "ClientException" => crate::error::UpdateComputeEnvironmentError {
             meta: generic,
             kind: crate::error::UpdateComputeEnvironmentErrorKind::ClientException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::client_exception::Builder::default();
-                let _ = response;
-                output = crate::json_deser::deser_structure_client_exceptionjson_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::UpdateComputeEnvironmentError::unhandled)?;
-                output.build()
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::client_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_client_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::UpdateComputeEnvironmentError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
             }),
         },
         "ServerException" => crate::error::UpdateComputeEnvironmentError {
             meta: generic,
             kind: crate::error::UpdateComputeEnvironmentErrorKind::ServerException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::server_exception::Builder::default();
-                let _ = response;
-                output = crate::json_deser::deser_structure_server_exceptionjson_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::UpdateComputeEnvironmentError::unhandled)?;
-                output.build()
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::server_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_server_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::UpdateComputeEnvironmentError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
             }),
         },
         _ => crate::error::UpdateComputeEnvironmentError::generic(generic),
@@ -1117,33 +1405,49 @@ pub fn parse_update_job_queue_error(
         Some(code) => code,
         None => return Err(crate::error::UpdateJobQueueError::unhandled(generic)),
     };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "ClientException" => crate::error::UpdateJobQueueError {
             meta: generic,
             kind: crate::error::UpdateJobQueueErrorKind::ClientException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::client_exception::Builder::default();
-                let _ = response;
-                output = crate::json_deser::deser_structure_client_exceptionjson_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::UpdateJobQueueError::unhandled)?;
-                output.build()
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::client_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_client_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::UpdateJobQueueError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
             }),
         },
         "ServerException" => crate::error::UpdateJobQueueError {
             meta: generic,
             kind: crate::error::UpdateJobQueueErrorKind::ServerException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::server_exception::Builder::default();
-                let _ = response;
-                output = crate::json_deser::deser_structure_server_exceptionjson_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::UpdateJobQueueError::unhandled)?;
-                output.build()
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::server_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_server_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::UpdateJobQueueError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
             }),
         },
         _ => crate::error::UpdateJobQueueError::generic(generic),

@@ -173,6 +173,9 @@ impl StatusType {
             StatusType::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["Active", "Inactive"]
+    }
 }
 impl AsRef<str> for StatusType {
     fn as_ref(&self) -> &str {
@@ -959,6 +962,9 @@ impl PermissionsBoundaryAttachmentType {
             PermissionsBoundaryAttachmentType::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["PermissionsBoundaryPolicy"]
+    }
 }
 impl AsRef<str> for PermissionsBoundaryAttachmentType {
     fn as_ref(&self) -> &str {
@@ -1524,6 +1530,9 @@ impl PolicyEvaluationDecisionType {
             PolicyEvaluationDecisionType::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["allowed", "explicitDeny", "implicitDeny"]
+    }
 }
 impl AsRef<str> for PolicyEvaluationDecisionType {
     fn as_ref(&self) -> &str {
@@ -1758,6 +1767,17 @@ impl PolicySourceType {
             PolicySourceType::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "aws-managed",
+            "group",
+            "none",
+            "resource",
+            "role",
+            "user",
+            "user-managed",
+        ]
+    }
 }
 impl AsRef<str> for PolicySourceType {
     fn as_ref(&self) -> &str {
@@ -1979,6 +1999,22 @@ impl ContextKeyTypeEnum {
             ContextKeyTypeEnum::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "binary",
+            "binaryList",
+            "boolean",
+            "booleanList",
+            "date",
+            "dateList",
+            "ip",
+            "ipList",
+            "numeric",
+            "numericList",
+            "string",
+            "stringList",
+        ]
+    }
 }
 impl AsRef<str> for ContextKeyTypeEnum {
     fn as_ref(&self) -> &str {
@@ -2025,6 +2061,9 @@ impl GlobalEndpointTokenVersion {
             GlobalEndpointTokenVersion::V2Token => "v2Token",
             GlobalEndpointTokenVersion::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["v1Token", "v2Token"]
     }
 }
 impl AsRef<str> for GlobalEndpointTokenVersion {
@@ -2610,6 +2649,9 @@ impl AssignmentStatusType {
             AssignmentStatusType::Unassigned => "Unassigned",
             AssignmentStatusType::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["Any", "Assigned", "Unassigned"]
     }
 }
 impl AsRef<str> for AssignmentStatusType {
@@ -3315,6 +3357,9 @@ impl PolicyOwnerEntityType {
             PolicyOwnerEntityType::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["GROUP", "ROLE", "USER"]
+    }
 }
 impl AsRef<str> for PolicyOwnerEntityType {
     fn as_ref(&self) -> &str {
@@ -3361,6 +3406,9 @@ impl PolicyType {
             PolicyType::Managed => "MANAGED",
             PolicyType::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["INLINE", "MANAGED"]
     }
 }
 impl AsRef<str> for PolicyType {
@@ -3670,6 +3718,9 @@ impl PolicyUsageType {
             PolicyUsageType::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["PermissionsBoundary", "PermissionsPolicy"]
+    }
 }
 impl AsRef<str> for PolicyUsageType {
     fn as_ref(&self) -> &str {
@@ -3719,6 +3770,9 @@ impl PolicyScopeType {
             PolicyScopeType::Local => "Local",
             PolicyScopeType::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["AWS", "All", "Local"]
     }
 }
 impl AsRef<str> for PolicyScopeType {
@@ -4430,6 +4484,15 @@ impl EntityType {
             EntityType::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "AWSManagedPolicy",
+            "Group",
+            "LocalManagedPolicy",
+            "Role",
+            "User",
+        ]
+    }
 }
 impl AsRef<str> for EntityType {
     fn as_ref(&self) -> &str {
@@ -4645,6 +4708,9 @@ impl EncodingType {
             EncodingType::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["PEM", "SSH"]
+    }
 }
 impl AsRef<str> for EncodingType {
     fn as_ref(&self) -> &str {
@@ -4835,6 +4901,9 @@ impl DeletionTaskStatusType {
             DeletionTaskStatusType::Succeeded => "SUCCEEDED",
             DeletionTaskStatusType::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["FAILED", "IN_PROGRESS", "NOT_STARTED", "SUCCEEDED"]
     }
 }
 impl AsRef<str> for DeletionTaskStatusType {
@@ -5139,6 +5208,9 @@ impl JobStatusType {
             JobStatusType::InProgress => "IN_PROGRESS",
             JobStatusType::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["COMPLETED", "FAILED", "IN_PROGRESS"]
     }
 }
 impl AsRef<str> for JobStatusType {
@@ -5506,6 +5578,9 @@ impl AccessAdvisorUsageGranularityType {
             AccessAdvisorUsageGranularityType::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["ACTION_LEVEL", "SERVICE_LEVEL"]
+    }
 }
 impl AsRef<str> for AccessAdvisorUsageGranularityType {
     fn as_ref(&self) -> &str {
@@ -5835,6 +5910,14 @@ impl SortKeyType {
             SortKeyType::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "LAST_AUTHENTICATED_TIME_ASCENDING",
+            "LAST_AUTHENTICATED_TIME_DESCENDING",
+            "SERVICE_NAMESPACE_ASCENDING",
+            "SERVICE_NAMESPACE_DESCENDING",
+        ]
+    }
 }
 impl AsRef<str> for SortKeyType {
     fn as_ref(&self) -> &str {
@@ -5960,6 +6043,9 @@ impl ReportFormatType {
             ReportFormatType::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["text/csv"]
+    }
 }
 impl AsRef<str> for ReportFormatType {
     fn as_ref(&self) -> &str {
@@ -6082,6 +6168,36 @@ impl SummaryKeyType {
             SummaryKeyType::VersionsPerPolicyQuota => "VersionsPerPolicyQuota",
             SummaryKeyType::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "AccessKeysPerUserQuota",
+            "AccountAccessKeysPresent",
+            "AccountMFAEnabled",
+            "AccountSigningCertificatesPresent",
+            "AttachedPoliciesPerGroupQuota",
+            "AttachedPoliciesPerRoleQuota",
+            "AttachedPoliciesPerUserQuota",
+            "GlobalEndpointTokenVersion",
+            "GroupPolicySizeQuota",
+            "Groups",
+            "GroupsPerUserQuota",
+            "GroupsQuota",
+            "MFADevices",
+            "MFADevicesInUse",
+            "Policies",
+            "PoliciesQuota",
+            "PolicySizeQuota",
+            "PolicyVersionsInUse",
+            "PolicyVersionsInUseQuota",
+            "ServerCertificates",
+            "ServerCertificatesQuota",
+            "SigningCertificatesPerUserQuota",
+            "UserPolicySizeQuota",
+            "Users",
+            "UsersQuota",
+            "VersionsPerPolicyQuota",
+        ]
     }
 }
 impl AsRef<str> for SummaryKeyType {
@@ -7489,6 +7605,9 @@ impl ReportStateType {
             ReportStateType::Started => "STARTED",
             ReportStateType::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["COMPLETE", "INPROGRESS", "STARTED"]
     }
 }
 impl AsRef<str> for ReportStateType {

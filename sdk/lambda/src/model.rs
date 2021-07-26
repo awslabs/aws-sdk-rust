@@ -64,6 +64,15 @@ impl ThrottleReason {
             ThrottleReason::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "CallerRateLimitExceeded",
+            "ConcurrentInvocationLimitExceeded",
+            "FunctionInvocationRateLimitExceeded",
+            "ReservedFunctionConcurrentInvocationLimitExceeded",
+            "ReservedFunctionInvocationRateLimitExceeded",
+        ]
+    }
 }
 impl AsRef<str> for ThrottleReason {
     fn as_ref(&self) -> &str {
@@ -488,6 +497,9 @@ impl PackageType {
             PackageType::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["Image", "Zip"]
+    }
 }
 impl AsRef<str> for PackageType {
     fn as_ref(&self) -> &str {
@@ -627,6 +639,20 @@ impl LastUpdateStatusReasonCode {
             LastUpdateStatusReasonCode::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "EniLimitExceeded",
+            "ImageAccessDenied",
+            "ImageDeleted",
+            "InsufficientRolePermissions",
+            "InternalError",
+            "InvalidConfiguration",
+            "InvalidImage",
+            "InvalidSecurityGroup",
+            "InvalidSubnet",
+            "SubnetOutOfIPAddresses",
+        ]
+    }
 }
 impl AsRef<str> for LastUpdateStatusReasonCode {
     fn as_ref(&self) -> &str {
@@ -676,6 +702,9 @@ impl LastUpdateStatus {
             LastUpdateStatus::Successful => "Successful",
             LastUpdateStatus::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["Failed", "InProgress", "Successful"]
     }
 }
 impl AsRef<str> for LastUpdateStatus {
@@ -757,6 +786,23 @@ impl StateReasonCode {
             StateReasonCode::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "Creating",
+            "EniLimitExceeded",
+            "Idle",
+            "ImageAccessDenied",
+            "ImageDeleted",
+            "InsufficientRolePermissions",
+            "InternalError",
+            "InvalidConfiguration",
+            "InvalidImage",
+            "InvalidSecurityGroup",
+            "InvalidSubnet",
+            "Restoring",
+            "SubnetOutOfIPAddresses",
+        ]
+    }
 }
 impl AsRef<str> for StateReasonCode {
     fn as_ref(&self) -> &str {
@@ -809,6 +855,9 @@ impl State {
             State::Pending => "Pending",
             State::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["Active", "Failed", "Inactive", "Pending"]
     }
 }
 impl AsRef<str> for State {
@@ -1003,6 +1052,9 @@ impl TracingMode {
             TracingMode::PassThrough => "PassThrough",
             TracingMode::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["Active", "PassThrough"]
     }
 }
 impl AsRef<str> for TracingMode {
@@ -1387,6 +1439,34 @@ impl Runtime {
             Runtime::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "dotnetcore1.0",
+            "dotnetcore2.0",
+            "dotnetcore2.1",
+            "dotnetcore3.1",
+            "go1.x",
+            "java11",
+            "java8",
+            "java8.al2",
+            "nodejs",
+            "nodejs10.x",
+            "nodejs12.x",
+            "nodejs14.x",
+            "nodejs4.3",
+            "nodejs4.3-edge",
+            "nodejs6.10",
+            "nodejs8.10",
+            "provided",
+            "provided.al2",
+            "python2.7",
+            "python3.6",
+            "python3.7",
+            "python3.8",
+            "ruby2.5",
+            "ruby2.7",
+        ]
+    }
 }
 impl AsRef<str> for Runtime {
     fn as_ref(&self) -> &str {
@@ -1606,6 +1686,9 @@ impl FunctionResponseType {
             FunctionResponseType::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["ReportBatchItemFailures"]
+    }
 }
 impl AsRef<str> for FunctionResponseType {
     fn as_ref(&self) -> &str {
@@ -1716,6 +1799,9 @@ impl EndPointType {
             EndPointType::KafkaBootstrapServers => "KAFKA_BOOTSTRAP_SERVERS",
             EndPointType::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["KAFKA_BOOTSTRAP_SERVERS"]
     }
 }
 impl AsRef<str> for EndPointType {
@@ -1881,6 +1967,15 @@ impl SourceAccessType {
             SourceAccessType::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "BASIC_AUTH",
+            "SASL_SCRAM_256_AUTH",
+            "SASL_SCRAM_512_AUTH",
+            "VPC_SECURITY_GROUP",
+            "VPC_SUBNET",
+        ]
+    }
 }
 impl AsRef<str> for SourceAccessType {
     fn as_ref(&self) -> &str {
@@ -1930,6 +2025,9 @@ impl EventSourcePosition {
             EventSourcePosition::TrimHorizon => "TRIM_HORIZON",
             EventSourcePosition::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["AT_TIMESTAMP", "LATEST", "TRIM_HORIZON"]
     }
 }
 impl AsRef<str> for EventSourcePosition {
@@ -2176,6 +2274,9 @@ impl CodeSigningPolicy {
             CodeSigningPolicy::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["Enforce", "Warn"]
+    }
 }
 impl AsRef<str> for CodeSigningPolicy {
     fn as_ref(&self) -> &str {
@@ -2344,6 +2445,9 @@ impl ProvisionedConcurrencyStatusEnum {
             ProvisionedConcurrencyStatusEnum::Ready => "READY",
             ProvisionedConcurrencyStatusEnum::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["FAILED", "IN_PROGRESS", "READY"]
     }
 }
 impl AsRef<str> for ProvisionedConcurrencyStatusEnum {
@@ -3514,6 +3618,9 @@ impl FunctionVersion {
             FunctionVersion::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["ALL"]
+    }
 }
 impl AsRef<str> for FunctionVersion {
     fn as_ref(&self) -> &str {
@@ -4273,6 +4380,9 @@ impl LogType {
             LogType::Unknown(s) => s.as_ref(),
         }
     }
+    pub fn values() -> &'static [&'static str] {
+        &["None", "Tail"]
+    }
 }
 impl AsRef<str> for LogType {
     fn as_ref(&self) -> &str {
@@ -4322,6 +4432,9 @@ impl InvocationType {
             InvocationType::RequestResponse => "RequestResponse",
             InvocationType::Unknown(s) => s.as_ref(),
         }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["DryRun", "Event", "RequestResponse"]
     }
 }
 impl AsRef<str> for InvocationType {
