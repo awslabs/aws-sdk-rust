@@ -1,0 +1,3 @@
+(function() {var implementors = {};
+implementors["smithy_http"] = [{"text":"impl <a class=\"trait\" href=\"https://docs.rs/bytes/1.0.1/bytes/buf/buf_impl/trait.Buf.html\" title=\"trait bytes::buf::buf_impl::Buf\">Buf</a> for <a class=\"struct\" href=\"smithy_http/byte_stream/struct.AggregatedBytes.html\" title=\"struct smithy_http::byte_stream::AggregatedBytes\">AggregatedBytes</a>","synthetic":false,"types":["smithy_http::byte_stream::AggregatedBytes"]}];
+if (window.register_implementors) {window.register_implementors(implementors);} else {window.pending_implementors = implementors;}})()

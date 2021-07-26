@@ -1,0 +1,1 @@
+initSidebarItems({"enum":[["ErrorKind",""],["RetryKind","`RetryKind` describes how a request MAY be retried for a given response"]],"trait":[["ProvideErrorKind",""]]});

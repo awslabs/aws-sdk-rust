@@ -1,0 +1,3 @@
+(function() {var implementors = {};
+implementors["aws_types"] = [{"text":"impl <a class=\"trait\" href=\"https://doc.rust-lang.org/nightly/core/ops/deref/trait.Deref.html\" title=\"trait core::ops::deref::Deref\">Deref</a> for <a class=\"struct\" href=\"aws_types/build_metadata/struct.BUILD_METADATA.html\" title=\"struct aws_types::build_metadata::BUILD_METADATA\">BUILD_METADATA</a>","synthetic":false,"types":["aws_types::build_metadata::BUILD_METADATA"]}];
+if (window.register_implementors) {window.register_implementors(implementors);} else {window.pending_implementors = implementors;}})()

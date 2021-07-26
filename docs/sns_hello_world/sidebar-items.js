@@ -1,0 +1,1 @@
+initSidebarItems({"fn":[["main","Subscribes an email address and publishes a message to a topic. If the email address has not been confirmed for the topic, a confirmation request is also sent to the email address."]],"struct":[["Opt",""]]});

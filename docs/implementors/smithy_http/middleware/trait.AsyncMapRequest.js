@@ -1,0 +1,3 @@
+(function() {var implementors = {};
+implementors["aws_auth"] = [{"text":"impl <a class=\"trait\" href=\"smithy_http/middleware/trait.AsyncMapRequest.html\" title=\"trait smithy_http::middleware::AsyncMapRequest\">AsyncMapRequest</a> for <a class=\"struct\" href=\"aws_auth/middleware/struct.CredentialsStage.html\" title=\"struct aws_auth::middleware::CredentialsStage\">CredentialsStage</a>","synthetic":false,"types":["aws_auth::middleware::CredentialsStage"]}];
+if (window.register_implementors) {window.register_implementors(implementors);} else {window.pending_implementors = implementors;}})()

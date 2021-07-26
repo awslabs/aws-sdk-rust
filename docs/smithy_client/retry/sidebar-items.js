@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["Config","Retry Policy Configuration"],["RetryHandler","RetryHandler"],["Standard","Manage retries for a service"]],"trait":[["NewRequestPolicy","A policy instantiator."]]});

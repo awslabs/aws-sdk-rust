@@ -1,0 +1,382 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content=""><meta name="keywords" content="rust, rustlang, rust-lang, AliasTarget"><title>AliasTarget in aws_sdk_route53::model - Rust</title><link rel="stylesheet" type="text/css" href="../../normalize.css"><link rel="stylesheet" type="text/css" href="../../rustdoc.css" id="mainThemeStyle"><link rel="stylesheet" type="text/css" href="../../light.css"  id="themeStyle"><link rel="stylesheet" type="text/css" href="../../dark.css" disabled ><link rel="stylesheet" type="text/css" href="../../ayu.css" disabled ><script id="default-settings" ></script><script src="../../storage.js"></script><script src="../../crates.js"></script><noscript><link rel="stylesheet" href="../../noscript.css"></noscript><link rel="icon" type="image/svg+xml" href="../../favicon.svg"><link rel="alternate icon" type="image/png" href="../../favicon-16x16.png"><link rel="alternate icon" type="image/png" href="../../favicon-32x32.png"><style type="text/css">#crate-search{background-image:url("../../down-arrow.svg");}</style></head><body class="rustdoc struct"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]--><nav class="sidebar"><div class="sidebar-menu" role="button">&#9776;</div><a href='../../aws_sdk_route53/index.html'><div class='logo-container rust-logo'><img src='../../rust-logo.png' alt='logo'></div></a><h2 class="location">Struct AliasTarget</h2><div class="sidebar-elems"><div class="block items"><h3 class="sidebar-title"><a href="#fields">Fields</a></h3><div class="sidebar-links"><a href="#structfield.dns_name">dns_name</a><a href="#structfield.evaluate_target_health">evaluate_target_health</a><a href="#structfield.hosted_zone_id">hosted_zone_id</a></div><h3 class="sidebar-title"><a href="#implementations">Methods</a></h3><div class="sidebar-links"><a href="#method.builder">builder</a></div><h3 class="sidebar-title"><a href="#trait-implementations">Trait Implementations</a></h3><div class="sidebar-links"><a href="#impl-Clone">Clone</a><a href="#impl-Debug">Debug</a><a href="#impl-PartialEq%3CAliasTarget%3E">PartialEq&lt;AliasTarget&gt;</a><a href="#impl-StructuralPartialEq">StructuralPartialEq</a></div><h3 class="sidebar-title"><a href="#synthetic-implementations">Auto Trait Implementations</a></h3><div class="sidebar-links"><a href="#impl-RefUnwindSafe">RefUnwindSafe</a><a href="#impl-Send">Send</a><a href="#impl-Sync">Sync</a><a href="#impl-Unpin">Unpin</a><a href="#impl-UnwindSafe">UnwindSafe</a></div><h3 class="sidebar-title"><a href="#blanket-implementations">Blanket Implementations</a></h3><div class="sidebar-links"><a href="#impl-Any">Any</a><a href="#impl-Borrow%3CT%3E">Borrow&lt;T&gt;</a><a href="#impl-BorrowMut%3CT%3E">BorrowMut&lt;T&gt;</a><a href="#impl-From%3CT%3E">From&lt;T&gt;</a><a href="#impl-Instrument">Instrument</a><a href="#impl-Into%3CU%3E">Into&lt;U&gt;</a><a href="#impl-ToOwned">ToOwned</a><a href="#impl-TryFrom%3CU%3E">TryFrom&lt;U&gt;</a><a href="#impl-TryInto%3CU%3E">TryInto&lt;U&gt;</a></div></div><h2 class="location">Other items in<br><a href="../index.html">aws_sdk_route53</a>::<wbr><a href="index.html">model</a></h2><div id="sidebar-vars" data-name="AliasTarget" data-ty="struct" data-relpath=""></div><script defer src="sidebar-items.js"></script></div></nav><div class="theme-picker"><button id="theme-picker" aria-label="Pick another theme!" aria-haspopup="menu" title="themes"><img width="18" height="18" alt="Pick another theme!" src="../../brush.svg"></button><div id="theme-choices" role="menu"></div></div><nav class="sub"><form class="search-form"><div class="search-container"><div><select id="crate-search"><option value="All crates">All crates</option></select><input class="search-input"name="search" disabled autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"></div><button type="button" id="help-button" title="help">?</button><a id="settings-menu" href="../../settings.html" title="settings"><img width="18" height="18" alt="Change settings" src="../../wheel.svg"></a></div></form></nav><section id="main" class="content"><h1 class="fqn"><span class="in-band">Struct <a href="../index.html">aws_sdk_route53</a>::<wbr><a href="index.html">model</a>::<wbr><a class="struct" href="#">AliasTarget</a><button id="copy-path" onclick="copy_path(this)" title="copy path"><img src="../../clipboard.svg" width="19" height="18" alt="Copy item import" title="Copy item import to clipboard"></button></span><span class="out-of-band"><span id="render-detail"><a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">[<span class="inner">&#x2212;</span>]</a></span><a class="srclink" href="../../src/aws_sdk_route53/model.rs.html#4237-4582" title="goto source code">[src]</a></span></h1><div class="docblock type-decl"><pre class="rust struct"><div class="code-attribute">#[non_exhaustive]</div>pub struct AliasTarget {
+    pub hosted_zone_id: <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="struct" href="https://doc.rust-lang.org/nightly/alloc/string/struct.String.html" title="struct alloc::string::String">String</a>&gt;,
+    pub dns_name: <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="struct" href="https://doc.rust-lang.org/nightly/alloc/string/struct.String.html" title="struct alloc::string::String">String</a>&gt;,
+    pub evaluate_target_health: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a>,
+}</pre></div><details class="rustdoc-toggle top-doc" open><summary class="hideme"><span>Expand description</span></summary><div class="docblock"><p>
+<i>Alias resource record sets only:</i> Information about the AWS resource, such as a CloudFront distribution or
+an Amazon S3 bucket, that you want to route traffic to.</p>
+<p>When creating resource record sets for a private hosted zone, note the following:</p>
+<ul>
+<li>
+<p>Creating geolocation alias resource record sets or latency alias resource record sets in a private hosted zone
+is unsupported.</p>
+</li>
+<li>
+<p>For information about creating failover resource record sets in a private hosted zone, see
+<a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-private-hosted-zones.html">Configuring Failover in a Private Hosted Zone</a>.</p>
+</li>
+</ul></div></details><h2 id="fields" class="fields small-section-header">Fields (Non-exhaustive)<a href="#fields" class="anchor"></a></h2><details class="rustdoc-toggle non-exhaustive"><summary class="hideme"><span>This struct is marked as non-exhaustive</span></summary><div class="docblock">Non-exhaustive structs could have additional fields added in future. Therefore, non-exhaustive structs cannot be constructed in external crates using the traditional <code>Struct { .. }</code> syntax; cannot be matched against without a wildcard <code>..</code>; and struct update syntax will not work.</div></details><span id="structfield.hosted_zone_id" class="structfield small-section-header"><a href="#structfield.hosted_zone_id" class="anchor field"></a><code>hosted_zone_id: <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="struct" href="https://doc.rust-lang.org/nightly/alloc/string/struct.String.html" title="struct alloc::string::String">String</a>&gt;</code></span><div class="docblock"><p>
+<i>Alias resource records sets only</i>: The value used depends on where you want to route traffic:</p>
+<dl>
+<dt>Amazon API Gateway custom regional APIs and edge-optimized APIs</dt>
+<dd>
+<p>Specify the hosted zone ID for your API. You can get the applicable value using the AWS CLI command
+<a href="https://docs.aws.amazon.com/cli/latest/reference/apigateway/get-domain-names.html">get-domain-names</a>:</p>
+<ul>
+<li>
+<p>For regional APIs, specify the value of <code>regionalHostedZoneId</code>.</p>
+</li>
+<li>
+<p>For edge-optimized APIs, specify the value of <code>distributionHostedZoneId</code>.</p>
+</li>
+</ul>
+</dd>
+<dt>Amazon Virtual Private Cloud interface VPC endpoint</dt>
+<dd>
+<p>Specify the hosted zone ID for your interface endpoint. You can get the value of <code>HostedZoneId</code>
+using the AWS CLI command
+<a href="https://docs.aws.amazon.com/cli/latest/reference/ec2/describe-vpc-endpoints.html">describe-vpc-endpoints</a>.</p>
+</dd>
+<dt>CloudFront distribution</dt>
+<dd>
+<p>Specify <code>Z2FDTNDATAQYW2</code>.</p>
+<note>
+<p>Alias resource record sets for CloudFront can't be created in a private zone.</p>
+</note>
+</dd>
+<dt>Elastic Beanstalk environment</dt>
+<dd>
+<p>Specify the hosted zone ID for the region that you created the environment in. The environment
+must have a regionalized subdomain. For a list of regions and the corresponding hosted zone IDs, see
+<a href="https://docs.aws.amazon.com/general/latest/gr/elasticbeanstalk.html">AWS Elastic Beanstalk endpoints and quotas</a> in the
+the <i>Amazon Web Services General Reference</i>.</p>
+</dd>
+<dt>ELB load balancer</dt>
+<dd>
+<p>Specify the value of the hosted zone ID for the load balancer. Use the following methods to get the
+hosted zone ID:</p>
+<ul>
+<li>
+<p>
+<a href="https://docs.aws.amazon.com/general/latest/gr/elb.html">Elastic Load Balancing endpoints and quotas</a> topic in the <i>Amazon Web Services General Reference</i>:
+Use the value that corresponds with the region that you created your load balancer in. Note that there are
+separate columns for Application and Classic Load Balancers and for Network Load Balancers.</p>
+</li>
+<li>
+<p>
+<b>AWS Management Console</b>: Go to the Amazon EC2 page, choose
+<b>Load Balancers</b> in the navigation pane, select the load balancer, and get the value of the
+<b>Hosted zone</b> field on the <b>Description</b> tab.</p>
+</li>
+<li>
+<p>
+<b>Elastic Load Balancing API</b>: Use <code>DescribeLoadBalancers</code> to get the
+applicable value. For more information, see the applicable guide:</p>
+<ul>
+<li>
+<p>Classic Load Balancers: Use
+<a href="https://docs.aws.amazon.com/elasticloadbalancing/2012-06-01/APIReference/API_DescribeLoadBalancers.html">DescribeLoadBalancers</a>
+to get the value of <code>CanonicalHostedZoneNameId</code>.</p>
+</li>
+<li>
+<p>Application and Network Load Balancers: Use
+<a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeLoadBalancers.html">DescribeLoadBalancers</a>
+to get the value of <code>CanonicalHostedZoneId</code>.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>
+<b>AWS CLI</b>: Use <code>describe-load-balancers</code> to get the applicable value.
+For more information, see the applicable guide:</p>
+<ul>
+<li>
+<p>Classic Load Balancers: Use
+<a href="http://docs.aws.amazon.com/cli/latest/reference/elb/describe-load-balancers.html">describe-load-balancers</a>
+to get the value of <code>CanonicalHostedZoneNameId</code>.</p>
+</li>
+<li>
+<p>Application and Network Load Balancers: Use
+<a href="http://docs.aws.amazon.com/cli/latest/reference/elbv2/describe-load-balancers.html">describe-load-balancers</a>
+to get the value of <code>CanonicalHostedZoneId</code>.</p>
+</li>
+</ul>
+</li>
+</ul>
+</dd>
+<dt>AWS Global Accelerator accelerator</dt>
+<dd>
+<p>Specify <code>Z2BJ6XQ5FK7U4H</code>.</p>
+</dd>
+<dt>An Amazon S3 bucket configured as a static website</dt>
+<dd>
+<p>Specify the hosted zone ID for the region that you created the bucket in. For more information about
+valid values, see the table
+<a href="https://docs.aws.amazon.com/general/latest/gr/s3.html#s3_website_region_endpoints">Amazon S3 Website Endpoints</a>
+in the <i>Amazon Web Services General Reference</i>.</p>
+</dd>
+<dt>Another Route 53 resource record set in your hosted zone</dt>
+<dd>
+<p>Specify the hosted zone ID of your hosted zone. (An alias resource record set
+can't reference a resource record set in a different hosted zone.)</p>
+</dd>
+</dl></div><span id="structfield.dns_name" class="structfield small-section-header"><a href="#structfield.dns_name" class="anchor field"></a><code>dns_name: <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="struct" href="https://doc.rust-lang.org/nightly/alloc/string/struct.String.html" title="struct alloc::string::String">String</a>&gt;</code></span><div class="docblock"><p>
+<i>Alias resource record sets only:</i> The value that you specify depends on where you want to route queries:</p>
+<dl>
+<dt>Amazon API Gateway custom regional APIs and edge-optimized APIs</dt>
+<dd>
+<p>Specify the applicable domain name for your API. You can get the applicable value using the AWS CLI command
+<a href="https://docs.aws.amazon.com/cli/latest/reference/apigateway/get-domain-names.html">get-domain-names</a>:</p>
+<ul>
+<li>
+<p>For regional APIs, specify the value of <code>regionalDomainName</code>.</p>
+</li>
+<li>
+<p>For edge-optimized APIs, specify the value of <code>distributionDomainName</code>. This is the name of the
+associated CloudFront distribution, such as <code>da1b2c3d4e5.cloudfront.net</code>.</p>
+</li>
+</ul>
+<note>
+<p>The name of the record that you're creating must match a custom domain name for your API, such as
+<code>api.example.com</code>.</p>
+</note>
+</dd>
+<dt>Amazon Virtual Private Cloud interface VPC endpoint</dt>
+<dd>
+<p>Enter the API endpoint for the interface endpoint, such as
+<code>vpce-123456789abcdef01-example-us-east-1a.elasticloadbalancing.us-east-1.vpce.amazonaws.com</code>. For edge-optimized APIs,
+this is the domain name for the corresponding CloudFront distribution. You can get the value of <code>DnsName</code> using the AWS CLI command
+<a href="https://docs.aws.amazon.com/cli/latest/reference/ec2/describe-vpc-endpoints.html">describe-vpc-endpoints</a>.</p>
+</dd>
+<dt>CloudFront distribution</dt>
+<dd>
+<p>Specify the domain name that CloudFront assigned when you created your distribution.</p>
+<p>Your CloudFront distribution must include an alternate domain name that matches the name of the resource record set.
+For example, if the name of the resource record set is <i>acme.example.com</i>, your CloudFront distribution must
+include <i>acme.example.com</i> as one of the alternate domain names. For more information, see
+<a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/CNAMEs.html">Using Alternate Domain Names (CNAMEs)</a> in the
+<i>Amazon CloudFront Developer Guide</i>.</p>
+<p>You can't create a resource record set in a private hosted zone to route traffic to a CloudFront distribution.</p>
+<note>
+<p>For failover alias records, you can't specify a CloudFront distribution for both the primary and secondary records.
+A distribution must include an alternate domain name that matches the name of the record. However, the primary and secondary records
+have the same name, and you can't include the same alternate domain name in more than one distribution. </p>
+</note>
+</dd>
+<dt>Elastic Beanstalk environment</dt>
+<dd>
+<p>If the domain name for your Elastic Beanstalk environment includes the region that you deployed the environment in,
+you can create an alias record that routes traffic to the environment. For example, the domain name
+<code>my-environment.<i>us-west-2</i>.elasticbeanstalk.com</code> is a regionalized domain name. </p>
+<important>
+<p>For environments that were created before early 2016, the domain name doesn't include the region. To route traffic
+to these environments, you must create a CNAME record instead of an alias record. Note that you can't create a
+CNAME record for the root domain name. For example, if your domain name is example.com, you can create a record
+that routes traffic for acme.example.com to your Elastic Beanstalk environment, but you can't create a record
+that routes traffic for example.com to your Elastic Beanstalk environment.</p>
+</important>
+<p>For Elastic Beanstalk environments that have regionalized subdomains, specify the <code>CNAME</code> attribute for the environment.
+You can use the following methods to get the value of the CNAME attribute:</p>
+<ul>
+<li>
+<p>
+<i>AWS Management Console</i>: For information about how to get the value by using the console,
+see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/customdomains.html">Using Custom Domains with AWS Elastic Beanstalk</a> in the
+<i>AWS Elastic Beanstalk Developer Guide</i>.</p>
+</li>
+<li>
+<p>
+<i>Elastic Beanstalk API</i>: Use the <code>DescribeEnvironments</code> action to get
+the value of the <code>CNAME</code> attribute. For more information, see
+<a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_DescribeEnvironments.html">DescribeEnvironments</a>
+in the <i>AWS Elastic Beanstalk API Reference</i>.</p>
+</li>
+<li>
+<p>
+<i>AWS CLI</i>: Use the <code>describe-environments</code> command to get the value of the
+<code>CNAME</code> attribute. For more information, see
+<a href="https://docs.aws.amazon.com/cli/latest/reference/elasticbeanstalk/describe-environments.html">describe-environments</a> in the
+<i>AWS CLI Command Reference</i>.</p>
+</li>
+</ul>
+</dd>
+<dt>ELB load balancer</dt>
+<dd>
+<p>Specify the DNS name that is associated with the load balancer. Get the DNS name by using the AWS Management Console,
+the ELB API, or the AWS CLI. </p>
+<ul>
+<li>
+<p>
+<b>AWS Management Console</b>: Go to the EC2 page, choose <b>Load Balancers</b>
+in the navigation pane, choose the load balancer, choose the <b>Description</b> tab, and get the value
+of the <b>DNS name</b> field. </p>
+<p>If you're routing traffic to a Classic Load Balancer, get the value that begins with <b>dualstack</b>.
+If you're routing traffic to another type of load balancer, get the value that applies to the record type, A or AAAA.</p>
+</li>
+<li>
+<p>
+<b>Elastic Load Balancing API</b>: Use <code>DescribeLoadBalancers</code> to get the value
+of <code>DNSName</code>. For more information, see the applicable guide:</p>
+<ul>
+<li>
+<p>Classic Load Balancers:
+<a href="https://docs.aws.amazon.com/elasticloadbalancing/2012-06-01/APIReference/API_DescribeLoadBalancers.html">DescribeLoadBalancers</a>
+</p>
+</li>
+<li>
+<p>Application and Network Load Balancers:
+<a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeLoadBalancers.html">DescribeLoadBalancers</a>
+</p>
+</li>
+</ul>
+</li>
+<li>
+<p>
+<b>AWS CLI</b>: Use <code>describe-load-balancers</code> to get the value of <code>DNSName</code>.
+For more information, see the applicable guide:</p>
+<ul>
+<li>
+<p>Classic Load Balancers:
+<a href="http://docs.aws.amazon.com/cli/latest/reference/elb/describe-load-balancers.html">describe-load-balancers</a>
+</p>
+</li>
+<li>
+<p>Application and Network Load Balancers:
+<a href="http://docs.aws.amazon.com/cli/latest/reference/elbv2/describe-load-balancers.html">describe-load-balancers</a>
+</p>
+</li>
+</ul>
+</li>
+</ul>
+</dd>
+<dt>AWS Global Accelerator accelerator</dt>
+<dd>
+<p>Specify the DNS name for your accelerator:</p>
+<ul>
+<li>
+<p>
+<b>Global Accelerator API:</b> To get the DNS name, use  
+<a href="https://docs.aws.amazon.com/global-accelerator/latest/api/API_DescribeAccelerator.html">DescribeAccelerator</a>.</p>
+</li>
+<li>
+<p>
+<b>AWS CLI:</b> To get the DNS name, use
+<a href="https://docs.aws.amazon.com/cli/latest/reference/globalaccelerator/describe-accelerator.html">describe-accelerator</a>.</p>
+</li>
+</ul>
+</dd>
+<dt>Amazon S3 bucket that is configured as a static website</dt>
+<dd>
+<p>Specify the domain name of the Amazon S3 website endpoint that you created the bucket in, for example,
+<code>s3-website.us-east-2.amazonaws.com</code>. For more information about valid values, see the table
+<a href="https://docs.aws.amazon.com/general/latest/gr/s3.html#s3_website_region_endpoints">Amazon S3 Website Endpoints</a>
+in the <i>Amazon Web Services General Reference</i>. For more information about using S3 buckets for websites,
+see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/getting-started.html">Getting Started with Amazon Route 53</a>
+in the <i>Amazon Route 53 Developer Guide.</i>
+</p>
+</dd>
+<dt>Another Route 53 resource record set</dt>
+<dd>
+<p>Specify the value of the <code>Name</code> element for a resource record set in the current hosted zone.</p>
+<note>
+<p>If you're creating an alias record that has the same name as the hosted zone (known as the zone apex),
+you can't specify the domain name for a record for which the value of <code>Type</code> is <code>CNAME</code>. This is because
+the alias record must have the same type as the record that you're routing traffic to, and creating a CNAME record for the
+zone apex isn't supported even for an alias record.</p>
+</note>
+</dd>
+</dl></div><span id="structfield.evaluate_target_health" class="structfield small-section-header"><a href="#structfield.evaluate_target_health" class="anchor field"></a><code>evaluate_target_health: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span><div class="docblock"><p>
+<i>Applies only to alias, failover alias, geolocation alias, latency alias, and weighted alias resource record sets:</i>
+When <code>EvaluateTargetHealth</code> is <code>true</code>, an alias resource record set inherits the health of the referenced AWS resource,
+such as an ELB load balancer or another resource record set in the hosted zone.</p>
+<p>Note the following:</p>
+<dl>
+<dt>CloudFront distributions</dt>
+<dd>
+<p>You can't set <code>EvaluateTargetHealth</code> to <code>true</code> when the alias target is a
+CloudFront distribution.</p>
+</dd>
+<dt>Elastic Beanstalk environments that have regionalized subdomains</dt>
+<dd>
+<p>If you specify an Elastic Beanstalk environment in <code>DNSName</code> and the environment contains an ELB load balancer,
+Elastic Load Balancing routes queries only to the healthy Amazon EC2 instances that are registered with the load balancer. (An environment automatically
+contains an ELB load balancer if it includes more than one Amazon EC2 instance.) If you set <code>EvaluateTargetHealth</code> to
+<code>true</code> and either no Amazon EC2 instances are healthy or the load balancer itself is unhealthy,
+Route 53 routes queries to other available resources that are healthy, if any. </p>
+<p>If the environment contains a single Amazon EC2 instance, there are no special requirements.</p>
+</dd>
+<dt>ELB load balancers</dt>
+<dd>
+<p>Health checking behavior depends on the type of load balancer:</p>
+<ul>
+<li>
+<p>
+<b>Classic Load Balancers</b>: If you specify an ELB Classic Load Balancer in
+<code>DNSName</code>, Elastic Load Balancing routes queries only to the healthy Amazon EC2 instances that are registered with the load balancer.
+If you set <code>EvaluateTargetHealth</code> to <code>true</code> and either no EC2 instances are healthy or the
+load balancer itself is unhealthy, Route 53 routes queries to other resources.</p>
+</li>
+<li>
+<p>
+<b>Application and Network Load Balancers</b>: If you specify an ELB
+Application or Network Load Balancer and you set <code>EvaluateTargetHealth</code> to <code>true</code>,
+Route 53 routes queries to the load balancer based on the health of the target groups that are associated with the load balancer:</p>
+<ul>
+<li>
+<p>For an Application or Network Load Balancer to be considered healthy, every target group that contains targets
+must contain at least one healthy target. If any target group contains only unhealthy targets, the load balancer is considered
+unhealthy, and Route 53 routes queries to other resources.</p>
+</li>
+<li>
+<p>A target group that has no registered targets is considered unhealthy.</p>
+</li>
+</ul>
+</li>
+</ul>
+<note>
+<p>When you create a load balancer, you configure settings for Elastic Load Balancing health checks; they're not Route 53 health checks, but
+they perform a similar function. Do not create Route 53 health checks for the EC2 instances that you register with an ELB load balancer. </p>
+</note>
+</dd>
+<dt>S3 buckets</dt>
+<dd>
+<p>There are no special requirements for setting <code>EvaluateTargetHealth</code> to <code>true</code>
+when the alias target is an S3 bucket.</p>
+</dd>
+<dt>Other records in the same hosted zone</dt>
+<dd>
+<p>If the AWS resource that you specify in <code>DNSName</code> is a record or a group of records
+(for example, a group of weighted records) but is not another alias record, we recommend that you associate a health check
+with all of the records in the alias target. For more information, see
+<a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-complex-configs.html#dns-failover-complex-configs-hc-omitting">What Happens When You Omit Health Checks?</a>
+in the <i>Amazon Route 53 Developer Guide</i>.</p>
+</dd>
+</dl>
+<p>For more information and examples, see
+<a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover.html">Amazon Route 53 Health Checks and DNS Failover</a> in the <i>Amazon Route 53 Developer Guide</i>.</p></div><h2 id="implementations" class="small-section-header">Implementations<a href="#implementations" class="anchor"></a></h2><details class="rustdoc-toggle implementors-toggle" open><summary><div id="impl" class="impl has-srclink"><div class="rightside"><a class="srclink" href="../../src/aws_sdk_route53/model.rs.html#4981-4986" title="goto source code">[src]</a></div><a href="#impl" class="anchor"></a><code class="in-band">impl <a class="struct" href="struct.AliasTarget.html" title="struct aws_sdk_route53::model::AliasTarget">AliasTarget</a></code></div></summary><div class="impl-items"><details class="rustdoc-toggle method-toggle" open><summary><div id="method.builder" class="method has-srclink"><div class="rightside"><a class="srclink" href="../../src/aws_sdk_route53/model.rs.html#4983-4985" title="goto source code">[src]</a></div><a href="#method.builder" class="anchor"></a><code>pub fn <a href="#method.builder" class="fnname">builder</a>() -&gt; <a class="struct" href="alias_target/struct.Builder.html" title="struct aws_sdk_route53::model::alias_target::Builder">Builder</a></code></div></summary><div class="docblock"><p>Creates a new builder-style object to manufacture <a href="struct.AliasTarget.html"><code>AliasTarget</code></a></p>
+</div></details></div></details><h2 id="trait-implementations" class="small-section-header">Trait Implementations<a href="#trait-implementations" class="anchor"></a></h2><div id="trait-implementations-list"><details class="rustdoc-toggle implementors-toggle" open><summary><div id="impl-Clone" class="impl has-srclink"><div class="rightside"><a class="srclink" href="../../src/aws_sdk_route53/model.rs.html#4236" title="goto source code">[src]</a></div><a href="#impl-Clone" class="anchor"></a><code class="in-band">impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html" title="trait core::clone::Clone">Clone</a> for <a class="struct" href="struct.AliasTarget.html" title="struct aws_sdk_route53::model::AliasTarget">AliasTarget</a></code></div></summary><div class="impl-items"><details class="rustdoc-toggle method-toggle" open><summary><div id="method.clone" class="method trait-impl has-srclink"><div class="rightside"><a class="srclink" href="../../src/aws_sdk_route53/model.rs.html#4236" title="goto source code">[src]</a></div><a href="#method.clone" class="anchor"></a><code>fn <a href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone" class="fnname">clone</a>(&amp;self) -&gt; <a class="struct" href="struct.AliasTarget.html" title="struct aws_sdk_route53::model::AliasTarget">AliasTarget</a></code></div></summary><div class='docblock'><p>Returns a copy of the value. <a href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone">Read more</a></p>
+</div></details><details class="rustdoc-toggle method-toggle" open><summary><div id="method.clone_from" class="method trait-impl has-srclink"><div class="rightside"><span class="since" title="Stable since Rust version 1.0.0">1.0.0</span><a class="srclink" href="https://doc.rust-lang.org/nightly/src/core/clone.rs.html#130" title="goto source code">[src]</a></div><a href="#method.clone_from" class="anchor"></a><code>fn <a href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone_from" class="fnname">clone_from</a>(&amp;mut self, source: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;</a>Self)</code></div></summary><div class='docblock'><p>Performs copy-assignment from <code>source</code>. <a href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone_from">Read more</a></p>
+</div></details></div></details><details class="rustdoc-toggle implementors-toggle" open><summary><div id="impl-Debug" class="impl has-srclink"><div class="rightside"><a class="srclink" href="../../src/aws_sdk_route53/model.rs.html#4583-4591" title="goto source code">[src]</a></div><a href="#impl-Debug" class="anchor"></a><code class="in-band">impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html" title="trait core::fmt::Debug">Debug</a> for <a class="struct" href="struct.AliasTarget.html" title="struct aws_sdk_route53::model::AliasTarget">AliasTarget</a></code></div></summary><div class="impl-items"><details class="rustdoc-toggle method-toggle" open><summary><div id="method.fmt" class="method trait-impl has-srclink"><div class="rightside"><a class="srclink" href="../../src/aws_sdk_route53/model.rs.html#4584-4590" title="goto source code">[src]</a></div><a href="#method.fmt" class="anchor"></a><code>fn <a href="https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html#tymethod.fmt" class="fnname">fmt</a>(&amp;self, f: &amp;mut <a class="struct" href="https://doc.rust-lang.org/nightly/core/fmt/struct.Formatter.html" title="struct core::fmt::Formatter">Formatter</a>&lt;'_&gt;) -&gt; <a class="type" href="https://doc.rust-lang.org/nightly/core/fmt/type.Result.html" title="type core::fmt::Result">Result</a></code></div></summary><div class='docblock'><p>Formats the value using the given formatter. <a href="https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html#tymethod.fmt">Read more</a></p>
+</div></details></div></details><details class="rustdoc-toggle implementors-toggle" open><summary><div id="impl-PartialEq%3CAliasTarget%3E" class="impl has-srclink"><div class="rightside"><a class="srclink" href="../../src/aws_sdk_route53/model.rs.html#4236" title="goto source code">[src]</a></div><a href="#impl-PartialEq%3CAliasTarget%3E" class="anchor"></a><code class="in-band">impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html" title="trait core::cmp::PartialEq">PartialEq</a>&lt;<a class="struct" href="struct.AliasTarget.html" title="struct aws_sdk_route53::model::AliasTarget">AliasTarget</a>&gt; for <a class="struct" href="struct.AliasTarget.html" title="struct aws_sdk_route53::model::AliasTarget">AliasTarget</a></code></div></summary><div class="impl-items"><details class="rustdoc-toggle method-toggle" open><summary><div id="method.eq" class="method trait-impl has-srclink"><div class="rightside"><a class="srclink" href="../../src/aws_sdk_route53/model.rs.html#4236" title="goto source code">[src]</a></div><a href="#method.eq" class="anchor"></a><code>fn <a href="https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html#tymethod.eq" class="fnname">eq</a>(&amp;self, other: &amp;<a class="struct" href="struct.AliasTarget.html" title="struct aws_sdk_route53::model::AliasTarget">AliasTarget</a>) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></div></summary><div class='docblock'><p>This method tests for <code>self</code> and <code>other</code> values to be equal, and is used
+by <code>==</code>. <a href="https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html#tymethod.eq">Read more</a></p>
+</div></details><details class="rustdoc-toggle method-toggle" open><summary><div id="method.ne" class="method trait-impl has-srclink"><div class="rightside"><a class="srclink" href="../../src/aws_sdk_route53/model.rs.html#4236" title="goto source code">[src]</a></div><a href="#method.ne" class="anchor"></a><code>fn <a href="https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html#method.ne" class="fnname">ne</a>(&amp;self, other: &amp;<a class="struct" href="struct.AliasTarget.html" title="struct aws_sdk_route53::model::AliasTarget">AliasTarget</a>) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></div></summary><div class='docblock'><p>This method tests for <code>!=</code>.</p>
+</div></details></div></details><div id="impl-StructuralPartialEq" class="impl has-srclink"><div class="rightside"><a class="srclink" href="../../src/aws_sdk_route53/model.rs.html#4236" title="goto source code">[src]</a></div><a href="#impl-StructuralPartialEq" class="anchor"></a><code class="in-band">impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.StructuralPartialEq.html" title="trait core::marker::StructuralPartialEq">StructuralPartialEq</a> for <a class="struct" href="struct.AliasTarget.html" title="struct aws_sdk_route53::model::AliasTarget">AliasTarget</a></code></div></div><h2 id="synthetic-implementations" class="small-section-header">Auto Trait Implementations<a href="#synthetic-implementations" class="anchor"></a></h2><div id="synthetic-implementations-list"><div id="impl-RefUnwindSafe" class="impl has-srclink"><div class="rightside"></div><a href="#impl-RefUnwindSafe" class="anchor"></a><code class="in-band">impl <a class="trait" href="https://doc.rust-lang.org/nightly/std/panic/trait.RefUnwindSafe.html" title="trait std::panic::RefUnwindSafe">RefUnwindSafe</a> for <a class="struct" href="struct.AliasTarget.html" title="struct aws_sdk_route53::model::AliasTarget">AliasTarget</a></code></div><div id="impl-Send" class="impl has-srclink"><div class="rightside"></div><a href="#impl-Send" class="anchor"></a><code class="in-band">impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Send.html" title="trait core::marker::Send">Send</a> for <a class="struct" href="struct.AliasTarget.html" title="struct aws_sdk_route53::model::AliasTarget">AliasTarget</a></code></div><div id="impl-Sync" class="impl has-srclink"><div class="rightside"></div><a href="#impl-Sync" class="anchor"></a><code class="in-band">impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Sync.html" title="trait core::marker::Sync">Sync</a> for <a class="struct" href="struct.AliasTarget.html" title="struct aws_sdk_route53::model::AliasTarget">AliasTarget</a></code></div><div id="impl-Unpin" class="impl has-srclink"><div class="rightside"></div><a href="#impl-Unpin" class="anchor"></a><code class="in-band">impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Unpin.html" title="trait core::marker::Unpin">Unpin</a> for <a class="struct" href="struct.AliasTarget.html" title="struct aws_sdk_route53::model::AliasTarget">AliasTarget</a></code></div><div id="impl-UnwindSafe" class="impl has-srclink"><div class="rightside"></div><a href="#impl-UnwindSafe" class="anchor"></a><code class="in-band">impl <a class="trait" href="https://doc.rust-lang.org/nightly/std/panic/trait.UnwindSafe.html" title="trait std::panic::UnwindSafe">UnwindSafe</a> for <a class="struct" href="struct.AliasTarget.html" title="struct aws_sdk_route53::model::AliasTarget">AliasTarget</a></code></div></div><h2 id="blanket-implementations" class="small-section-header">Blanket Implementations<a href="#blanket-implementations" class="anchor"></a></h2><div id="blanket-implementations-list"><details class="rustdoc-toggle implementors-toggle" open><summary><div id="impl-Any" class="impl has-srclink"><div class="rightside"><a class="srclink" href="https://doc.rust-lang.org/nightly/src/core/any.rs.html#132-136" title="goto source code">[src]</a></div><a href="#impl-Any" class="anchor"></a><code class="in-band">impl&lt;T&gt; <a class="trait" href="https://doc.rust-lang.org/nightly/core/any/trait.Any.html" title="trait core::any::Any">Any</a> for T <span class="where fmt-newline">where<br>&nbsp;&nbsp;&nbsp;&nbsp;T: 'static + ?<a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Sized.html" title="trait core::marker::Sized">Sized</a>,&nbsp;</span></code></div></summary><div class="impl-items"><details class="rustdoc-toggle method-toggle" open><summary><div id="method.type_id" class="method trait-impl has-srclink"><div class="rightside"><a class="srclink" href="https://doc.rust-lang.org/nightly/src/core/any.rs.html#133" title="goto source code">[src]</a></div><a href="#method.type_id" class="anchor"></a><code>pub fn <a href="https://doc.rust-lang.org/nightly/core/any/trait.Any.html#tymethod.type_id" class="fnname">type_id</a>(&amp;self) -&gt; <a class="struct" href="https://doc.rust-lang.org/nightly/core/any/struct.TypeId.html" title="struct core::any::TypeId">TypeId</a></code></div></summary><div class='docblock'><p>Gets the <code>TypeId</code> of <code>self</code>. <a href="https://doc.rust-lang.org/nightly/core/any/trait.Any.html#tymethod.type_id">Read more</a></p>
+</div></details></div></details><details class="rustdoc-toggle implementors-toggle" open><summary><div id="impl-Borrow%3CT%3E" class="impl has-srclink"><div class="rightside"><a class="srclink" href="https://doc.rust-lang.org/nightly/src/core/borrow.rs.html#208-213" title="goto source code">[src]</a></div><a href="#impl-Borrow%3CT%3E" class="anchor"></a><code class="in-band">impl&lt;T&gt; <a class="trait" href="https://doc.rust-lang.org/nightly/core/borrow/trait.Borrow.html" title="trait core::borrow::Borrow">Borrow</a>&lt;T&gt; for T <span class="where fmt-newline">where<br>&nbsp;&nbsp;&nbsp;&nbsp;T: ?<a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Sized.html" title="trait core::marker::Sized">Sized</a>,&nbsp;</span></code></div></summary><div class="impl-items"><details class="rustdoc-toggle method-toggle" open><summary><div id="method.borrow" class="method trait-impl has-srclink"><div class="rightside"><a class="srclink" href="https://doc.rust-lang.org/nightly/src/core/borrow.rs.html#210" title="goto source code">[src]</a></div><a href="#method.borrow" class="anchor"></a><code>pub fn <a href="https://doc.rust-lang.org/nightly/core/borrow/trait.Borrow.html#tymethod.borrow" class="fnname">borrow</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;</a>T</code></div></summary><div class='docblock'><p>Immutably borrows from an owned value. <a href="https://doc.rust-lang.org/nightly/core/borrow/trait.Borrow.html#tymethod.borrow">Read more</a></p>
+</div></details></div></details><details class="rustdoc-toggle implementors-toggle" open><summary><div id="impl-BorrowMut%3CT%3E" class="impl has-srclink"><div class="rightside"><a class="srclink" href="https://doc.rust-lang.org/nightly/src/core/borrow.rs.html#216-220" title="goto source code">[src]</a></div><a href="#impl-BorrowMut%3CT%3E" class="anchor"></a><code class="in-band">impl&lt;T&gt; <a class="trait" href="https://doc.rust-lang.org/nightly/core/borrow/trait.BorrowMut.html" title="trait core::borrow::BorrowMut">BorrowMut</a>&lt;T&gt; for T <span class="where fmt-newline">where<br>&nbsp;&nbsp;&nbsp;&nbsp;T: ?<a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Sized.html" title="trait core::marker::Sized">Sized</a>,&nbsp;</span></code></div></summary><div class="impl-items"><details class="rustdoc-toggle method-toggle" open><summary><div id="method.borrow_mut" class="method trait-impl has-srclink"><div class="rightside"><a class="srclink" href="https://doc.rust-lang.org/nightly/src/core/borrow.rs.html#217" title="goto source code">[src]</a></div><a href="#method.borrow_mut" class="anchor"></a><code>pub fn <a href="https://doc.rust-lang.org/nightly/core/borrow/trait.BorrowMut.html#tymethod.borrow_mut" class="fnname">borrow_mut</a>(&amp;mut self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;mut </a>T</code></div></summary><div class='docblock'><p>Mutably borrows from an owned value. <a href="https://doc.rust-lang.org/nightly/core/borrow/trait.BorrowMut.html#tymethod.borrow_mut">Read more</a></p>
+</div></details></div></details><details class="rustdoc-toggle implementors-toggle" open><summary><div id="impl-From%3CT%3E" class="impl has-srclink"><div class="rightside"><a class="srclink" href="https://doc.rust-lang.org/nightly/src/core/convert/mod.rs.html#546-550" title="goto source code">[src]</a></div><a href="#impl-From%3CT%3E" class="anchor"></a><code class="in-band">impl&lt;T&gt; <a class="trait" href="https://doc.rust-lang.org/nightly/core/convert/trait.From.html" title="trait core::convert::From">From</a>&lt;T&gt; for T</code></div></summary><div class="impl-items"><details class="rustdoc-toggle method-toggle" open><summary><div id="method.from" class="method trait-impl has-srclink"><div class="rightside"><a class="srclink" href="https://doc.rust-lang.org/nightly/src/core/convert/mod.rs.html#547" title="goto source code">[src]</a></div><a href="#method.from" class="anchor"></a><code>pub fn <a href="https://doc.rust-lang.org/nightly/core/convert/trait.From.html#tymethod.from" class="fnname">from</a>(t: T) -&gt; T</code></div></summary><div class='docblock'><p>Performs the conversion.</p>
+</div></details></div></details><details class="rustdoc-toggle implementors-toggle" open><summary><div id="impl-Instrument" class="impl has-srclink"><div class="rightside"><a class="srclink" href="https://docs.rs/tracing/0.1.26/src/tracing/instrument.rs.html#155" title="goto source code">[src]</a></div><a href="#impl-Instrument" class="anchor"></a><code class="in-band">impl&lt;T&gt; <a class="trait" href="https://docs.rs/tracing/0.1.26/tracing/instrument/trait.Instrument.html" title="trait tracing::instrument::Instrument">Instrument</a> for T</code></div></summary><div class="impl-items"><details class="rustdoc-toggle method-toggle" open><summary><div id="method.instrument" class="method trait-impl has-srclink"><div class="rightside"><a class="srclink" href="https://docs.rs/tracing/0.1.26/src/tracing/instrument.rs.html#38" title="goto source code">[src]</a></div><a href="#method.instrument" class="anchor"></a><code>fn <a href="https://docs.rs/tracing/0.1.26/tracing/instrument/trait.Instrument.html#method.instrument" class="fnname">instrument</a>(self, span: <a class="struct" href="https://docs.rs/tracing/0.1.26/tracing/span/struct.Span.html" title="struct tracing::span::Span">Span</a>) -&gt; <a class="struct" href="https://docs.rs/tracing/0.1.26/tracing/instrument/struct.Instrumented.html" title="struct tracing::instrument::Instrumented">Instrumented</a>&lt;Self&gt;</code></div></summary><div class='docblock'><p>Instruments this type with the provided <code>Span</code>, returning an
+<code>Instrumented</code> wrapper. <a href="https://docs.rs/tracing/0.1.26/tracing/instrument/trait.Instrument.html#method.instrument">Read more</a></p>
+</div></details><details class="rustdoc-toggle method-toggle" open><summary><div id="method.in_current_span" class="method trait-impl has-srclink"><div class="rightside"><a class="srclink" href="https://docs.rs/tracing/0.1.26/src/tracing/instrument.rs.html#74" title="goto source code">[src]</a></div><a href="#method.in_current_span" class="anchor"></a><code>fn <a href="https://docs.rs/tracing/0.1.26/tracing/instrument/trait.Instrument.html#method.in_current_span" class="fnname">in_current_span</a>(self) -&gt; <a class="struct" href="https://docs.rs/tracing/0.1.26/tracing/instrument/struct.Instrumented.html" title="struct tracing::instrument::Instrumented">Instrumented</a>&lt;Self&gt;</code></div></summary><div class='docblock'><p>Instruments this type with the <a href="../struct.Span.html#method.current">current</a> <code>Span</code>, returning an
+<code>Instrumented</code> wrapper. <a href="https://docs.rs/tracing/0.1.26/tracing/instrument/trait.Instrument.html#method.in_current_span">Read more</a></p>
+</div></details></div></details><details class="rustdoc-toggle implementors-toggle" open><summary><div id="impl-Into%3CU%3E" class="impl has-srclink"><div class="rightside"><a class="srclink" href="https://doc.rust-lang.org/nightly/src/core/convert/mod.rs.html#535-542" title="goto source code">[src]</a></div><a href="#impl-Into%3CU%3E" class="anchor"></a><code class="in-band">impl&lt;T, U&gt; <a class="trait" href="https://doc.rust-lang.org/nightly/core/convert/trait.Into.html" title="trait core::convert::Into">Into</a>&lt;U&gt; for T <span class="where fmt-newline">where<br>&nbsp;&nbsp;&nbsp;&nbsp;U: <a class="trait" href="https://doc.rust-lang.org/nightly/core/convert/trait.From.html" title="trait core::convert::From">From</a>&lt;T&gt;,&nbsp;</span></code></div></summary><div class="impl-items"><details class="rustdoc-toggle method-toggle" open><summary><div id="method.into" class="method trait-impl has-srclink"><div class="rightside"><a class="srclink" href="https://doc.rust-lang.org/nightly/src/core/convert/mod.rs.html#539" title="goto source code">[src]</a></div><a href="#method.into" class="anchor"></a><code>pub fn <a href="https://doc.rust-lang.org/nightly/core/convert/trait.Into.html#tymethod.into" class="fnname">into</a>(self) -&gt; U</code></div></summary><div class='docblock'><p>Performs the conversion.</p>
+</div></details></div></details><details class="rustdoc-toggle implementors-toggle" open><summary><div id="impl-ToOwned" class="impl has-srclink"><div class="rightside"><a class="srclink" href="https://doc.rust-lang.org/nightly/src/alloc/borrow.rs.html#84-96" title="goto source code">[src]</a></div><a href="#impl-ToOwned" class="anchor"></a><code class="in-band">impl&lt;T&gt; <a class="trait" href="https://doc.rust-lang.org/nightly/alloc/borrow/trait.ToOwned.html" title="trait alloc::borrow::ToOwned">ToOwned</a> for T <span class="where fmt-newline">where<br>&nbsp;&nbsp;&nbsp;&nbsp;T: <a class="trait" href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html" title="trait core::clone::Clone">Clone</a>,&nbsp;</span></code></div></summary><div class="impl-items"><details class="rustdoc-toggle" open><summary><div id="associatedtype.Owned" class="type trait-impl has-srclink"><a href="#associatedtype.Owned" class="anchor"></a><code>type <a href="https://doc.rust-lang.org/nightly/alloc/borrow/trait.ToOwned.html#associatedtype.Owned" class="type">Owned</a> = T</code></div></summary><div class='docblock'><p>The resulting type after obtaining ownership.</p>
+</div></details><details class="rustdoc-toggle method-toggle" open><summary><div id="method.to_owned" class="method trait-impl has-srclink"><div class="rightside"><a class="srclink" href="https://doc.rust-lang.org/nightly/src/alloc/borrow.rs.html#89" title="goto source code">[src]</a></div><a href="#method.to_owned" class="anchor"></a><code>pub fn <a href="https://doc.rust-lang.org/nightly/alloc/borrow/trait.ToOwned.html#tymethod.to_owned" class="fnname">to_owned</a>(&amp;self) -&gt; T</code></div></summary><div class='docblock'><p>Creates owned data from borrowed data, usually by cloning. <a href="https://doc.rust-lang.org/nightly/alloc/borrow/trait.ToOwned.html#tymethod.to_owned">Read more</a></p>
+</div></details><details class="rustdoc-toggle method-toggle" open><summary><div id="method.clone_into" class="method trait-impl has-srclink"><div class="rightside"><a class="srclink" href="https://doc.rust-lang.org/nightly/src/alloc/borrow.rs.html#93" title="goto source code">[src]</a></div><a href="#method.clone_into" class="anchor"></a><code>pub fn <a href="https://doc.rust-lang.org/nightly/alloc/borrow/trait.ToOwned.html#method.clone_into" class="fnname">clone_into</a>(&amp;self, target: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;mut </a>T)</code></div></summary><div class="item-info"><div class="stab unstable"><details><summary><span class="emoji">🔬</span> This is a nightly-only experimental API. (<code>toowned_clone_into</code>)</summary><p>recently added</p>
+</details></div></div><div class='docblock'><p>Uses borrowed data to replace owned data, usually by cloning. <a href="https://doc.rust-lang.org/nightly/alloc/borrow/trait.ToOwned.html#method.clone_into">Read more</a></p>
+</div></details></div></details><details class="rustdoc-toggle implementors-toggle" open><summary><div id="impl-TryFrom%3CU%3E" class="impl has-srclink"><div class="rightside"><a class="srclink" href="https://doc.rust-lang.org/nightly/src/core/convert/mod.rs.html#583-592" title="goto source code">[src]</a></div><a href="#impl-TryFrom%3CU%3E" class="anchor"></a><code class="in-band">impl&lt;T, U&gt; <a class="trait" href="https://doc.rust-lang.org/nightly/core/convert/trait.TryFrom.html" title="trait core::convert::TryFrom">TryFrom</a>&lt;U&gt; for T <span class="where fmt-newline">where<br>&nbsp;&nbsp;&nbsp;&nbsp;U: <a class="trait" href="https://doc.rust-lang.org/nightly/core/convert/trait.Into.html" title="trait core::convert::Into">Into</a>&lt;T&gt;,&nbsp;</span></code></div></summary><div class="impl-items"><details class="rustdoc-toggle" open><summary><div id="associatedtype.Error" class="type trait-impl has-srclink"><a href="#associatedtype.Error" class="anchor"></a><code>type <a href="https://doc.rust-lang.org/nightly/core/convert/trait.TryFrom.html#associatedtype.Error" class="type">Error</a> = <a class="enum" href="https://doc.rust-lang.org/nightly/core/convert/enum.Infallible.html" title="enum core::convert::Infallible">Infallible</a></code></div></summary><div class='docblock'><p>The type returned in the event of a conversion error.</p>
+</div></details><details class="rustdoc-toggle method-toggle" open><summary><div id="method.try_from" class="method trait-impl has-srclink"><div class="rightside"><a class="srclink" href="https://doc.rust-lang.org/nightly/src/core/convert/mod.rs.html#589" title="goto source code">[src]</a></div><a href="#method.try_from" class="anchor"></a><code>pub fn <a href="https://doc.rust-lang.org/nightly/core/convert/trait.TryFrom.html#tymethod.try_from" class="fnname">try_from</a>(value: U) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/result/enum.Result.html" title="enum core::result::Result">Result</a>&lt;T, &lt;T as <a class="trait" href="https://doc.rust-lang.org/nightly/core/convert/trait.TryFrom.html" title="trait core::convert::TryFrom">TryFrom</a>&lt;U&gt;&gt;::<a class="type" href="https://doc.rust-lang.org/nightly/core/convert/trait.TryFrom.html#associatedtype.Error" title="type core::convert::TryFrom::Error">Error</a>&gt;</code></div></summary><div class='docblock'><p>Performs the conversion.</p>
+</div></details></div></details><details class="rustdoc-toggle implementors-toggle" open><summary><div id="impl-TryInto%3CU%3E" class="impl has-srclink"><div class="rightside"><a class="srclink" href="https://doc.rust-lang.org/nightly/src/core/convert/mod.rs.html#569-578" title="goto source code">[src]</a></div><a href="#impl-TryInto%3CU%3E" class="anchor"></a><code class="in-band">impl&lt;T, U&gt; <a class="trait" href="https://doc.rust-lang.org/nightly/core/convert/trait.TryInto.html" title="trait core::convert::TryInto">TryInto</a>&lt;U&gt; for T <span class="where fmt-newline">where<br>&nbsp;&nbsp;&nbsp;&nbsp;U: <a class="trait" href="https://doc.rust-lang.org/nightly/core/convert/trait.TryFrom.html" title="trait core::convert::TryFrom">TryFrom</a>&lt;T&gt;,&nbsp;</span></code></div></summary><div class="impl-items"><details class="rustdoc-toggle" open><summary><div id="associatedtype.Error-1" class="type trait-impl has-srclink"><a href="#associatedtype.Error-1" class="anchor"></a><code>type <a href="https://doc.rust-lang.org/nightly/core/convert/trait.TryInto.html#associatedtype.Error" class="type">Error</a> = &lt;U as <a class="trait" href="https://doc.rust-lang.org/nightly/core/convert/trait.TryFrom.html" title="trait core::convert::TryFrom">TryFrom</a>&lt;T&gt;&gt;::<a class="type" href="https://doc.rust-lang.org/nightly/core/convert/trait.TryFrom.html#associatedtype.Error" title="type core::convert::TryFrom::Error">Error</a></code></div></summary><div class='docblock'><p>The type returned in the event of a conversion error.</p>
+</div></details><details class="rustdoc-toggle method-toggle" open><summary><div id="method.try_into" class="method trait-impl has-srclink"><div class="rightside"><a class="srclink" href="https://doc.rust-lang.org/nightly/src/core/convert/mod.rs.html#575" title="goto source code">[src]</a></div><a href="#method.try_into" class="anchor"></a><code>pub fn <a href="https://doc.rust-lang.org/nightly/core/convert/trait.TryInto.html#tymethod.try_into" class="fnname">try_into</a>(self) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/result/enum.Result.html" title="enum core::result::Result">Result</a>&lt;U, &lt;U as <a class="trait" href="https://doc.rust-lang.org/nightly/core/convert/trait.TryFrom.html" title="trait core::convert::TryFrom">TryFrom</a>&lt;T&gt;&gt;::<a class="type" href="https://doc.rust-lang.org/nightly/core/convert/trait.TryFrom.html#associatedtype.Error" title="type core::convert::TryFrom::Error">Error</a>&gt;</code></div></summary><div class='docblock'><p>Performs the conversion.</p>
+</div></details></div></details></div></section><section id="search" class="content hidden"></section><div id="rustdoc-vars" data-root-path="../../" data-current-crate="aws_sdk_route53" data-search-index-js="../../search-index.js" data-search-js="../../search.js"></div>
+    <script src="../../main.js"></script>
+</body></html>

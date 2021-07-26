@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["ParseResponseLayer",""],["ParseResponseService","`ParseResponseService` dispatches `Operation`s and parses them."]]});

@@ -1,0 +1,1 @@
+initSidebarItems({"fn":[["main","Sends a message to and receives the message from a FIFO queue."]]});

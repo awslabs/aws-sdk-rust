@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["AggregatedBytes","Non-contiguous Binary Data Storage"],["ByteStream","Stream of binary data"],["Error",""]]});

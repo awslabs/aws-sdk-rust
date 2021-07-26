@@ -1,0 +1,3 @@
+(function() {var implementors = {};
+implementors["smithy_http"] = [{"text":"impl Stream for <a class=\"struct\" href=\"smithy_http/byte_stream/struct.ByteStream.html\" title=\"struct smithy_http::byte_stream::ByteStream\">ByteStream</a>","synthetic":false,"types":["smithy_http::byte_stream::ByteStream"]}];
+if (window.register_implementors) {window.register_implementors(implementors);} else {window.pending_implementors = implementors;}})()

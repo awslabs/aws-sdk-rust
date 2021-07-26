@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["DeleteLexicon",""],["DescribeVoices",""],["GetLexicon",""],["GetSpeechSynthesisTask",""],["ListLexicons",""],["ListSpeechSynthesisTasks",""],["PutLexicon",""],["StartSpeechSynthesisTask",""],["SynthesizeSpeech",""]]});

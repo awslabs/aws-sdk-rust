@@ -1,0 +1,1 @@
+initSidebarItems({"fn":[["main","Creates an Amazon QLDB ledger."]],"struct":[["Opt",""]]});

@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["DeleteScalingPolicy",""],["DeleteScheduledAction",""],["DeregisterScalableTarget",""],["DescribeScalableTargets",""],["DescribeScalingActivities",""],["DescribeScalingPolicies",""],["DescribeScheduledActions",""],["PutScalingPolicy",""],["PutScheduledAction",""],["RegisterScalableTarget",""]]});

@@ -1,0 +1,1 @@
+initSidebarItems({"mod":[["batch_get_record_output","See `BatchGetRecordOutput`"],["delete_record_output","See `DeleteRecordOutput`"],["get_record_output","See `GetRecordOutput`"],["put_record_output","See `PutRecordOutput`"]],"struct":[["BatchGetRecordOutput",""],["DeleteRecordOutput",""],["GetRecordOutput",""],["PutRecordOutput",""]]});

@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["AssumeRole",""],["AssumeRoleWithSAML",""],["AssumeRoleWithWebIdentity",""],["DecodeAuthorizationMessage",""],["GetAccessKeyInfo",""],["GetCallerIdentity",""],["GetFederationToken",""],["GetSessionToken",""]]});

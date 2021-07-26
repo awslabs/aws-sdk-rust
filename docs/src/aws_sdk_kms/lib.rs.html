@@ -1,0 +1,259 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Source of the Rust file `kms&#x2F;src&#x2F;lib.rs`."><meta name="keywords" content="rust, rustlang, rust-lang"><title>lib.rs - source</title><link rel="stylesheet" type="text/css" href="../../normalize.css"><link rel="stylesheet" type="text/css" href="../../rustdoc.css" id="mainThemeStyle"><link rel="stylesheet" type="text/css" href="../../light.css"  id="themeStyle"><link rel="stylesheet" type="text/css" href="../../dark.css" disabled ><link rel="stylesheet" type="text/css" href="../../ayu.css" disabled ><script id="default-settings" ></script><script src="../../storage.js"></script><script src="../../crates.js"></script><noscript><link rel="stylesheet" href="../../noscript.css"></noscript><link rel="icon" type="image/svg+xml" href="../../favicon.svg"><link rel="alternate icon" type="image/png" href="../../favicon-16x16.png"><link rel="alternate icon" type="image/png" href="../../favicon-32x32.png"><style type="text/css">#crate-search{background-image:url("../../down-arrow.svg");}</style></head><body class="rustdoc source"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]--><nav class="sidebar"><div class="sidebar-menu" role="button">&#9776;</div><a href='../../aws_sdk_kms/index.html'><div class='logo-container rust-logo'><img src='../../rust-logo.png' alt='logo'></div></a></nav><div class="theme-picker"><button id="theme-picker" aria-label="Pick another theme!" aria-haspopup="menu" title="themes"><img width="18" height="18" alt="Pick another theme!" src="../../brush.svg"></button><div id="theme-choices" role="menu"></div></div><nav class="sub"><form class="search-form"><div class="search-container"><div><select id="crate-search"><option value="All crates">All crates</option></select><input class="search-input"name="search" disabled autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"></div><button type="button" id="help-button" title="help">?</button><a id="settings-menu" href="../../settings.html" title="settings"><img width="18" height="18" alt="Change settings" src="../../wheel.svg"></a></div></form></nav><section id="main" class="content"><div class="example-wrap"><pre class="line-numbers"><span id="1">  1</span>
+<span id="2">  2</span>
+<span id="3">  3</span>
+<span id="4">  4</span>
+<span id="5">  5</span>
+<span id="6">  6</span>
+<span id="7">  7</span>
+<span id="8">  8</span>
+<span id="9">  9</span>
+<span id="10"> 10</span>
+<span id="11"> 11</span>
+<span id="12"> 12</span>
+<span id="13"> 13</span>
+<span id="14"> 14</span>
+<span id="15"> 15</span>
+<span id="16"> 16</span>
+<span id="17"> 17</span>
+<span id="18"> 18</span>
+<span id="19"> 19</span>
+<span id="20"> 20</span>
+<span id="21"> 21</span>
+<span id="22"> 22</span>
+<span id="23"> 23</span>
+<span id="24"> 24</span>
+<span id="25"> 25</span>
+<span id="26"> 26</span>
+<span id="27"> 27</span>
+<span id="28"> 28</span>
+<span id="29"> 29</span>
+<span id="30"> 30</span>
+<span id="31"> 31</span>
+<span id="32"> 32</span>
+<span id="33"> 33</span>
+<span id="34"> 34</span>
+<span id="35"> 35</span>
+<span id="36"> 36</span>
+<span id="37"> 37</span>
+<span id="38"> 38</span>
+<span id="39"> 39</span>
+<span id="40"> 40</span>
+<span id="41"> 41</span>
+<span id="42"> 42</span>
+<span id="43"> 43</span>
+<span id="44"> 44</span>
+<span id="45"> 45</span>
+<span id="46"> 46</span>
+<span id="47"> 47</span>
+<span id="48"> 48</span>
+<span id="49"> 49</span>
+<span id="50"> 50</span>
+<span id="51"> 51</span>
+<span id="52"> 52</span>
+<span id="53"> 53</span>
+<span id="54"> 54</span>
+<span id="55"> 55</span>
+<span id="56"> 56</span>
+<span id="57"> 57</span>
+<span id="58"> 58</span>
+<span id="59"> 59</span>
+<span id="60"> 60</span>
+<span id="61"> 61</span>
+<span id="62"> 62</span>
+<span id="63"> 63</span>
+<span id="64"> 64</span>
+<span id="65"> 65</span>
+<span id="66"> 66</span>
+<span id="67"> 67</span>
+<span id="68"> 68</span>
+<span id="69"> 69</span>
+<span id="70"> 70</span>
+<span id="71"> 71</span>
+<span id="72"> 72</span>
+<span id="73"> 73</span>
+<span id="74"> 74</span>
+<span id="75"> 75</span>
+<span id="76"> 76</span>
+<span id="77"> 77</span>
+<span id="78"> 78</span>
+<span id="79"> 79</span>
+<span id="80"> 80</span>
+<span id="81"> 81</span>
+<span id="82"> 82</span>
+<span id="83"> 83</span>
+<span id="84"> 84</span>
+<span id="85"> 85</span>
+<span id="86"> 86</span>
+<span id="87"> 87</span>
+<span id="88"> 88</span>
+<span id="89"> 89</span>
+<span id="90"> 90</span>
+<span id="91"> 91</span>
+<span id="92"> 92</span>
+<span id="93"> 93</span>
+<span id="94"> 94</span>
+<span id="95"> 95</span>
+<span id="96"> 96</span>
+<span id="97"> 97</span>
+<span id="98"> 98</span>
+<span id="99"> 99</span>
+<span id="100">100</span>
+<span id="101">101</span>
+<span id="102">102</span>
+<span id="103">103</span>
+<span id="104">104</span>
+<span id="105">105</span>
+<span id="106">106</span>
+<span id="107">107</span>
+<span id="108">108</span>
+<span id="109">109</span>
+<span id="110">110</span>
+<span id="111">111</span>
+<span id="112">112</span>
+<span id="113">113</span>
+<span id="114">114</span>
+<span id="115">115</span>
+<span id="116">116</span>
+<span id="117">117</span>
+<span id="118">118</span>
+<span id="119">119</span>
+<span id="120">120</span>
+<span id="121">121</span>
+<span id="122">122</span>
+<span id="123">123</span>
+<span id="124">124</span>
+<span id="125">125</span>
+<span id="126">126</span>
+<span id="127">127</span>
+</pre><pre class="rust">
+<span class="attribute">#![<span class="ident">allow</span>(<span class="ident">clippy::module_inception</span>)]</span>
+<span class="attribute">#![<span class="ident">allow</span>(<span class="ident">clippy::upper_case_acronyms</span>)]</span>
+<span class="attribute">#![<span class="ident">allow</span>(<span class="ident">clippy::large_enum_variant</span>)]</span>
+<span class="attribute">#![<span class="ident">allow</span>(<span class="ident">clippy::wrong_self_convention</span>)]</span>
+<span class="attribute">#![<span class="ident">allow</span>(<span class="ident">clippy::should_implement_trait</span>)]</span>
+<span class="attribute">#![<span class="ident">allow</span>(<span class="ident">clippy::blacklisted_name</span>)]</span>
+<span class="doccomment">//! &lt;fullname&gt;AWS Key Management Service&lt;/fullname&gt;</span>
+<span class="doccomment">//! &lt;p&gt;AWS Key Management Service (AWS KMS) is an encryption and key management web service. This guide describes</span>
+<span class="doccomment">//! the AWS KMS operations that you can call programmatically. For general information about AWS KMS,</span>
+<span class="doccomment">//! see the &lt;a href=&quot;https://docs.aws.amazon.com/kms/latest/developerguide/&quot;&gt;</span>
+<span class="doccomment">//! &lt;i&gt;AWS Key Management Service Developer Guide&lt;/i&gt;</span>
+<span class="doccomment">//! &lt;/a&gt;.&lt;/p&gt;</span>
+<span class="doccomment">//! &lt;note&gt;</span>
+<span class="doccomment">//! &lt;p&gt;AWS provides SDKs that consist of libraries and sample code for various programming</span>
+<span class="doccomment">//! languages and platforms (Java, Ruby, .Net, macOS, Android, etc.). The SDKs provide a</span>
+<span class="doccomment">//! convenient way to create programmatic access to AWS KMS and other AWS services. For example,</span>
+<span class="doccomment">//! the SDKs take care of tasks such as signing requests (see below), managing errors, and</span>
+<span class="doccomment">//! retrying requests automatically. For more information about the AWS SDKs, including how to</span>
+<span class="doccomment">//! download and install them, see &lt;a href=&quot;http://aws.amazon.com/tools/&quot;&gt;Tools for Amazon Web</span>
+<span class="doccomment">//! Services&lt;/a&gt;.&lt;/p&gt;</span>
+<span class="doccomment">//! &lt;/note&gt;</span>
+<span class="doccomment">//! &lt;p&gt;We recommend that you use the AWS SDKs to make programmatic API calls to AWS KMS.&lt;/p&gt;</span>
+<span class="doccomment">//! &lt;p&gt;Clients must support TLS (Transport Layer Security) 1.0. We recommend TLS 1.2. Clients</span>
+<span class="doccomment">//! must also support cipher suites with Perfect Forward Secrecy (PFS) such as Ephemeral</span>
+<span class="doccomment">//! Diffie-Hellman (DHE) or Elliptic Curve Ephemeral Diffie-Hellman (ECDHE). Most modern systems</span>
+<span class="doccomment">//! such as Java 7 and later support these modes.&lt;/p&gt;</span>
+<span class="doccomment">//! &lt;p&gt;</span>
+<span class="doccomment">//! &lt;b&gt;Signing Requests&lt;/b&gt;</span>
+<span class="doccomment">//! &lt;/p&gt;</span>
+<span class="doccomment">//! &lt;p&gt;Requests must be signed by using an access key ID and a secret access key. We strongly</span>
+<span class="doccomment">//! recommend that you &lt;i&gt;do not&lt;/i&gt; use your AWS account (root) access key ID and</span>
+<span class="doccomment">//! secret key for everyday work with AWS KMS. Instead, use the access key ID and secret access key</span>
+<span class="doccomment">//! for an IAM user. You can also use the AWS Security Token Service to generate temporary</span>
+<span class="doccomment">//! security credentials that you can use to sign requests.&lt;/p&gt;</span>
+<span class="doccomment">//! &lt;p&gt;All AWS KMS operations require &lt;a href=&quot;https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html&quot;&gt;Signature Version 4&lt;/a&gt;.&lt;/p&gt;</span>
+<span class="doccomment">//! &lt;p&gt;</span>
+<span class="doccomment">//! &lt;b&gt;Logging API Requests&lt;/b&gt;</span>
+<span class="doccomment">//! &lt;/p&gt;</span>
+<span class="doccomment">//! &lt;p&gt;AWS KMS supports AWS CloudTrail, a service that logs AWS API calls and related events for your AWS</span>
+<span class="doccomment">//! account and delivers them to an Amazon S3 bucket that you specify. By using the information</span>
+<span class="doccomment">//! collected by CloudTrail, you can determine what requests were made to AWS KMS, who made the request,</span>
+<span class="doccomment">//! when it was made, and so on. To learn more about CloudTrail, including how to turn it on and find</span>
+<span class="doccomment">//! your log files, see the &lt;a href=&quot;https://docs.aws.amazon.com/awscloudtrail/latest/userguide/&quot;&gt;AWS CloudTrail User Guide&lt;/a&gt;.&lt;/p&gt;</span>
+<span class="doccomment">//! &lt;p&gt;</span>
+<span class="doccomment">//! &lt;b&gt;Additional Resources&lt;/b&gt;</span>
+<span class="doccomment">//! &lt;/p&gt;</span>
+<span class="doccomment">//! &lt;p&gt;For more information about credentials and request signing, see the following:&lt;/p&gt;</span>
+<span class="doccomment">//! &lt;ul&gt;</span>
+<span class="doccomment">//! &lt;li&gt;</span>
+<span class="doccomment">//! &lt;p&gt;</span>
+<span class="doccomment">//! &lt;a href=&quot;https://docs.aws.amazon.com/general/latest/gr/aws-security-credentials.html&quot;&gt;AWS Security</span>
+<span class="doccomment">//! Credentials&lt;/a&gt; - This topic provides general information about the types of</span>
+<span class="doccomment">//! credentials used for accessing AWS.&lt;/p&gt;</span>
+<span class="doccomment">//! &lt;/li&gt;</span>
+<span class="doccomment">//! &lt;li&gt;</span>
+<span class="doccomment">//! &lt;p&gt;</span>
+<span class="doccomment">//! &lt;a href=&quot;https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp.html&quot;&gt;Temporary</span>
+<span class="doccomment">//! Security Credentials&lt;/a&gt; - This section of the &lt;i&gt;IAM User Guide&lt;/i&gt;</span>
+<span class="doccomment">//! describes how to create and use temporary security credentials.&lt;/p&gt;</span>
+<span class="doccomment">//! &lt;/li&gt;</span>
+<span class="doccomment">//! &lt;li&gt;</span>
+<span class="doccomment">//! &lt;p&gt;</span>
+<span class="doccomment">//! &lt;a href=&quot;https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html&quot;&gt;Signature Version</span>
+<span class="doccomment">//! 4 Signing Process&lt;/a&gt; - This set of topics walks you through the process of signing</span>
+<span class="doccomment">//! a request using an access key ID and a secret access key.&lt;/p&gt;</span>
+<span class="doccomment">//! &lt;/li&gt;</span>
+<span class="doccomment">//! &lt;/ul&gt;</span>
+<span class="doccomment">//! &lt;p&gt;</span>
+<span class="doccomment">//! &lt;b&gt;Commonly Used API Operations&lt;/b&gt;</span>
+<span class="doccomment">//! &lt;/p&gt;</span>
+<span class="doccomment">//! &lt;p&gt;Of the API operations discussed in this guide, the following will prove the most useful</span>
+<span class="doccomment">//! for most applications. You will likely perform operations other than these, such as creating</span>
+<span class="doccomment">//! keys and assigning policies, by using the console.&lt;/p&gt;</span>
+<span class="doccomment">//! &lt;ul&gt;</span>
+<span class="doccomment">//! &lt;li&gt;</span>
+<span class="doccomment">//! &lt;p&gt;</span>
+<span class="doccomment">//! &lt;a&gt;Encrypt&lt;/a&gt;</span>
+<span class="doccomment">//! &lt;/p&gt;</span>
+<span class="doccomment">//! &lt;/li&gt;</span>
+<span class="doccomment">//! &lt;li&gt;</span>
+<span class="doccomment">//! &lt;p&gt;</span>
+<span class="doccomment">//! &lt;a&gt;Decrypt&lt;/a&gt;</span>
+<span class="doccomment">//! &lt;/p&gt;</span>
+<span class="doccomment">//! &lt;/li&gt;</span>
+<span class="doccomment">//! &lt;li&gt;</span>
+<span class="doccomment">//! &lt;p&gt;</span>
+<span class="doccomment">//! &lt;a&gt;GenerateDataKey&lt;/a&gt;</span>
+<span class="doccomment">//! &lt;/p&gt;</span>
+<span class="doccomment">//! &lt;/li&gt;</span>
+<span class="doccomment">//! &lt;li&gt;</span>
+<span class="doccomment">//! &lt;p&gt;</span>
+<span class="doccomment">//! &lt;a&gt;GenerateDataKeyWithoutPlaintext&lt;/a&gt;</span>
+<span class="doccomment">//! &lt;/p&gt;</span>
+<span class="doccomment">//! &lt;/li&gt;</span>
+<span class="doccomment">//! &lt;/ul&gt;</span>
+
+<span class="comment">// Code generated by software.amazon.smithy.rust.codegen.smithy-rs. DO NOT EDIT.</span>
+<span class="kw">pub</span> <span class="kw">use</span> <span class="ident">error_meta::Error</span>;
+
+<span class="kw">pub</span> <span class="kw">use</span> <span class="ident">config::Config</span>;
+
+<span class="kw">mod</span> <span class="ident">aws_endpoint</span>;
+<span class="attribute">#[<span class="ident">cfg</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;client&quot;</span>)]</span>
+<span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">client</span>;
+<span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">config</span>;
+<span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">error</span>;
+<span class="kw">mod</span> <span class="ident">error_meta</span>;
+<span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">input</span>;
+<span class="kw">mod</span> <span class="ident">json_deser</span>;
+<span class="kw">mod</span> <span class="ident">json_errors</span>;
+<span class="kw">mod</span> <span class="ident">json_ser</span>;
+<span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">model</span>;
+<span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">operation</span>;
+<span class="kw">mod</span> <span class="ident">operation_deser</span>;
+<span class="kw">mod</span> <span class="ident">operation_ser</span>;
+<span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">output</span>;
+<span class="kw">pub</span> <span class="kw">static</span> <span class="ident">PKG_VERSION</span>: <span class="kw-2">&amp;</span><span class="ident">str</span> <span class="op">=</span> <span class="macro">env!</span>(<span class="string">&quot;CARGO_PKG_VERSION&quot;</span>);
+<span class="kw">pub</span> <span class="kw">use</span> <span class="ident">smithy_http::byte_stream::ByteStream</span>;
+<span class="kw">pub</span> <span class="kw">use</span> <span class="ident">smithy_http::result::SdkError</span>;
+<span class="kw">pub</span> <span class="kw">use</span> <span class="ident">smithy_types::Blob</span>;
+<span class="kw">static</span> <span class="ident">API_METADATA</span>: <span class="ident">aws_http::user_agent::ApiMetadata</span> <span class="op">=</span>
+    <span class="ident">aws_http::user_agent::ApiMetadata::new</span>(<span class="string">&quot;kms&quot;</span>, <span class="ident">PKG_VERSION</span>);
+<span class="kw">pub</span> <span class="kw">use</span> <span class="ident">aws_auth::Credentials</span>;
+<span class="kw">pub</span> <span class="kw">use</span> <span class="ident">aws_types::region::Region</span>;
+<span class="attribute">#[<span class="ident">cfg</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;client&quot;</span>)]</span>
+<span class="kw">pub</span> <span class="kw">use</span> <span class="ident">client::Client</span>;
+<span class="kw">pub</span> <span class="kw">use</span> <span class="ident">smithy_http::endpoint::Endpoint</span>;
+</pre></div>
+</section><section id="search" class="content hidden"></section><div id="rustdoc-vars" data-root-path="../../" data-current-crate="aws_sdk_kms" data-search-index-js="../../search-index.js" data-search-js="../../search.js"></div>
+    <script src="../../main.js"></script><script src="../../source-script.js"></script><script src="../../source-files.js"></script>
+</body></html>

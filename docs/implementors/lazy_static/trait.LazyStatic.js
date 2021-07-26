@@ -1,0 +1,3 @@
+(function() {var implementors = {};
+implementors["aws_types"] = [{"text":"impl <a class=\"trait\" href=\"https://docs.rs/lazy_static/1.4.0/lazy_static/trait.LazyStatic.html\" title=\"trait lazy_static::LazyStatic\">LazyStatic</a> for <a class=\"struct\" href=\"aws_types/build_metadata/struct.BUILD_METADATA.html\" title=\"struct aws_types::build_metadata::BUILD_METADATA\">BUILD_METADATA</a>","synthetic":false,"types":["aws_types::build_metadata::BUILD_METADATA"]}];
+if (window.register_implementors) {window.register_implementors(implementors);} else {window.pending_implementors = implementors;}})()

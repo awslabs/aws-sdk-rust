@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["BatchExecuteStatement",""],["BeginTransaction",""],["CommitTransaction",""],["ExecuteSql",""],["ExecuteStatement",""],["RollbackTransaction",""]]});

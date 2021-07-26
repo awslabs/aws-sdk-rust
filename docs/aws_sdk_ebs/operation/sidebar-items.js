@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["CompleteSnapshot",""],["GetSnapshotBlock",""],["ListChangedBlocks",""],["ListSnapshotBlocks",""],["PutSnapshotBlock",""],["StartSnapshot",""]]});

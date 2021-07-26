@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["CreateScalingPlan",""],["DeleteScalingPlan",""],["DescribeScalingPlanResources",""],["DescribeScalingPlans",""],["GetScalingPlanResourceForecastData",""],["UpdateScalingPlan",""]]});

@@ -1,0 +1,1 @@
+initSidebarItems({"fn":[["main","Lists your AWS Elemental MediaLive input names and ARNs in the Region."]],"struct":[["Opt",""]]});

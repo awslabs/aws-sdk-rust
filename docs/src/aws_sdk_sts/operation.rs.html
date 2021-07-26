@@ -1,0 +1,1643 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Source of the Rust file `sts&#x2F;src&#x2F;operation.rs`."><meta name="keywords" content="rust, rustlang, rust-lang"><title>operation.rs - source</title><link rel="stylesheet" type="text/css" href="../../normalize.css"><link rel="stylesheet" type="text/css" href="../../rustdoc.css" id="mainThemeStyle"><link rel="stylesheet" type="text/css" href="../../light.css"  id="themeStyle"><link rel="stylesheet" type="text/css" href="../../dark.css" disabled ><link rel="stylesheet" type="text/css" href="../../ayu.css" disabled ><script id="default-settings" ></script><script src="../../storage.js"></script><script src="../../crates.js"></script><noscript><link rel="stylesheet" href="../../noscript.css"></noscript><link rel="icon" type="image/svg+xml" href="../../favicon.svg"><link rel="alternate icon" type="image/png" href="../../favicon-16x16.png"><link rel="alternate icon" type="image/png" href="../../favicon-32x32.png"><style type="text/css">#crate-search{background-image:url("../../down-arrow.svg");}</style></head><body class="rustdoc source"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]--><nav class="sidebar"><div class="sidebar-menu" role="button">&#9776;</div><a href='../../aws_sdk_sts/index.html'><div class='logo-container rust-logo'><img src='../../rust-logo.png' alt='logo'></div></a></nav><div class="theme-picker"><button id="theme-picker" aria-label="Pick another theme!" aria-haspopup="menu" title="themes"><img width="18" height="18" alt="Pick another theme!" src="../../brush.svg"></button><div id="theme-choices" role="menu"></div></div><nav class="sub"><form class="search-form"><div class="search-container"><div><select id="crate-search"><option value="All crates">All crates</option></select><input class="search-input"name="search" disabled autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"></div><button type="button" id="help-button" title="help">?</button><a id="settings-menu" href="../../settings.html" title="settings"><img width="18" height="18" alt="Change settings" src="../../wheel.svg"></a></div></form></nav><section id="main" class="content"><div class="example-wrap"><pre class="line-numbers"><span id="1">  1</span>
+<span id="2">  2</span>
+<span id="3">  3</span>
+<span id="4">  4</span>
+<span id="5">  5</span>
+<span id="6">  6</span>
+<span id="7">  7</span>
+<span id="8">  8</span>
+<span id="9">  9</span>
+<span id="10"> 10</span>
+<span id="11"> 11</span>
+<span id="12"> 12</span>
+<span id="13"> 13</span>
+<span id="14"> 14</span>
+<span id="15"> 15</span>
+<span id="16"> 16</span>
+<span id="17"> 17</span>
+<span id="18"> 18</span>
+<span id="19"> 19</span>
+<span id="20"> 20</span>
+<span id="21"> 21</span>
+<span id="22"> 22</span>
+<span id="23"> 23</span>
+<span id="24"> 24</span>
+<span id="25"> 25</span>
+<span id="26"> 26</span>
+<span id="27"> 27</span>
+<span id="28"> 28</span>
+<span id="29"> 29</span>
+<span id="30"> 30</span>
+<span id="31"> 31</span>
+<span id="32"> 32</span>
+<span id="33"> 33</span>
+<span id="34"> 34</span>
+<span id="35"> 35</span>
+<span id="36"> 36</span>
+<span id="37"> 37</span>
+<span id="38"> 38</span>
+<span id="39"> 39</span>
+<span id="40"> 40</span>
+<span id="41"> 41</span>
+<span id="42"> 42</span>
+<span id="43"> 43</span>
+<span id="44"> 44</span>
+<span id="45"> 45</span>
+<span id="46"> 46</span>
+<span id="47"> 47</span>
+<span id="48"> 48</span>
+<span id="49"> 49</span>
+<span id="50"> 50</span>
+<span id="51"> 51</span>
+<span id="52"> 52</span>
+<span id="53"> 53</span>
+<span id="54"> 54</span>
+<span id="55"> 55</span>
+<span id="56"> 56</span>
+<span id="57"> 57</span>
+<span id="58"> 58</span>
+<span id="59"> 59</span>
+<span id="60"> 60</span>
+<span id="61"> 61</span>
+<span id="62"> 62</span>
+<span id="63"> 63</span>
+<span id="64"> 64</span>
+<span id="65"> 65</span>
+<span id="66"> 66</span>
+<span id="67"> 67</span>
+<span id="68"> 68</span>
+<span id="69"> 69</span>
+<span id="70"> 70</span>
+<span id="71"> 71</span>
+<span id="72"> 72</span>
+<span id="73"> 73</span>
+<span id="74"> 74</span>
+<span id="75"> 75</span>
+<span id="76"> 76</span>
+<span id="77"> 77</span>
+<span id="78"> 78</span>
+<span id="79"> 79</span>
+<span id="80"> 80</span>
+<span id="81"> 81</span>
+<span id="82"> 82</span>
+<span id="83"> 83</span>
+<span id="84"> 84</span>
+<span id="85"> 85</span>
+<span id="86"> 86</span>
+<span id="87"> 87</span>
+<span id="88"> 88</span>
+<span id="89"> 89</span>
+<span id="90"> 90</span>
+<span id="91"> 91</span>
+<span id="92"> 92</span>
+<span id="93"> 93</span>
+<span id="94"> 94</span>
+<span id="95"> 95</span>
+<span id="96"> 96</span>
+<span id="97"> 97</span>
+<span id="98"> 98</span>
+<span id="99"> 99</span>
+<span id="100">100</span>
+<span id="101">101</span>
+<span id="102">102</span>
+<span id="103">103</span>
+<span id="104">104</span>
+<span id="105">105</span>
+<span id="106">106</span>
+<span id="107">107</span>
+<span id="108">108</span>
+<span id="109">109</span>
+<span id="110">110</span>
+<span id="111">111</span>
+<span id="112">112</span>
+<span id="113">113</span>
+<span id="114">114</span>
+<span id="115">115</span>
+<span id="116">116</span>
+<span id="117">117</span>
+<span id="118">118</span>
+<span id="119">119</span>
+<span id="120">120</span>
+<span id="121">121</span>
+<span id="122">122</span>
+<span id="123">123</span>
+<span id="124">124</span>
+<span id="125">125</span>
+<span id="126">126</span>
+<span id="127">127</span>
+<span id="128">128</span>
+<span id="129">129</span>
+<span id="130">130</span>
+<span id="131">131</span>
+<span id="132">132</span>
+<span id="133">133</span>
+<span id="134">134</span>
+<span id="135">135</span>
+<span id="136">136</span>
+<span id="137">137</span>
+<span id="138">138</span>
+<span id="139">139</span>
+<span id="140">140</span>
+<span id="141">141</span>
+<span id="142">142</span>
+<span id="143">143</span>
+<span id="144">144</span>
+<span id="145">145</span>
+<span id="146">146</span>
+<span id="147">147</span>
+<span id="148">148</span>
+<span id="149">149</span>
+<span id="150">150</span>
+<span id="151">151</span>
+<span id="152">152</span>
+<span id="153">153</span>
+<span id="154">154</span>
+<span id="155">155</span>
+<span id="156">156</span>
+<span id="157">157</span>
+<span id="158">158</span>
+<span id="159">159</span>
+<span id="160">160</span>
+<span id="161">161</span>
+<span id="162">162</span>
+<span id="163">163</span>
+<span id="164">164</span>
+<span id="165">165</span>
+<span id="166">166</span>
+<span id="167">167</span>
+<span id="168">168</span>
+<span id="169">169</span>
+<span id="170">170</span>
+<span id="171">171</span>
+<span id="172">172</span>
+<span id="173">173</span>
+<span id="174">174</span>
+<span id="175">175</span>
+<span id="176">176</span>
+<span id="177">177</span>
+<span id="178">178</span>
+<span id="179">179</span>
+<span id="180">180</span>
+<span id="181">181</span>
+<span id="182">182</span>
+<span id="183">183</span>
+<span id="184">184</span>
+<span id="185">185</span>
+<span id="186">186</span>
+<span id="187">187</span>
+<span id="188">188</span>
+<span id="189">189</span>
+<span id="190">190</span>
+<span id="191">191</span>
+<span id="192">192</span>
+<span id="193">193</span>
+<span id="194">194</span>
+<span id="195">195</span>
+<span id="196">196</span>
+<span id="197">197</span>
+<span id="198">198</span>
+<span id="199">199</span>
+<span id="200">200</span>
+<span id="201">201</span>
+<span id="202">202</span>
+<span id="203">203</span>
+<span id="204">204</span>
+<span id="205">205</span>
+<span id="206">206</span>
+<span id="207">207</span>
+<span id="208">208</span>
+<span id="209">209</span>
+<span id="210">210</span>
+<span id="211">211</span>
+<span id="212">212</span>
+<span id="213">213</span>
+<span id="214">214</span>
+<span id="215">215</span>
+<span id="216">216</span>
+<span id="217">217</span>
+<span id="218">218</span>
+<span id="219">219</span>
+<span id="220">220</span>
+<span id="221">221</span>
+<span id="222">222</span>
+<span id="223">223</span>
+<span id="224">224</span>
+<span id="225">225</span>
+<span id="226">226</span>
+<span id="227">227</span>
+<span id="228">228</span>
+<span id="229">229</span>
+<span id="230">230</span>
+<span id="231">231</span>
+<span id="232">232</span>
+<span id="233">233</span>
+<span id="234">234</span>
+<span id="235">235</span>
+<span id="236">236</span>
+<span id="237">237</span>
+<span id="238">238</span>
+<span id="239">239</span>
+<span id="240">240</span>
+<span id="241">241</span>
+<span id="242">242</span>
+<span id="243">243</span>
+<span id="244">244</span>
+<span id="245">245</span>
+<span id="246">246</span>
+<span id="247">247</span>
+<span id="248">248</span>
+<span id="249">249</span>
+<span id="250">250</span>
+<span id="251">251</span>
+<span id="252">252</span>
+<span id="253">253</span>
+<span id="254">254</span>
+<span id="255">255</span>
+<span id="256">256</span>
+<span id="257">257</span>
+<span id="258">258</span>
+<span id="259">259</span>
+<span id="260">260</span>
+<span id="261">261</span>
+<span id="262">262</span>
+<span id="263">263</span>
+<span id="264">264</span>
+<span id="265">265</span>
+<span id="266">266</span>
+<span id="267">267</span>
+<span id="268">268</span>
+<span id="269">269</span>
+<span id="270">270</span>
+<span id="271">271</span>
+<span id="272">272</span>
+<span id="273">273</span>
+<span id="274">274</span>
+<span id="275">275</span>
+<span id="276">276</span>
+<span id="277">277</span>
+<span id="278">278</span>
+<span id="279">279</span>
+<span id="280">280</span>
+<span id="281">281</span>
+<span id="282">282</span>
+<span id="283">283</span>
+<span id="284">284</span>
+<span id="285">285</span>
+<span id="286">286</span>
+<span id="287">287</span>
+<span id="288">288</span>
+<span id="289">289</span>
+<span id="290">290</span>
+<span id="291">291</span>
+<span id="292">292</span>
+<span id="293">293</span>
+<span id="294">294</span>
+<span id="295">295</span>
+<span id="296">296</span>
+<span id="297">297</span>
+<span id="298">298</span>
+<span id="299">299</span>
+<span id="300">300</span>
+<span id="301">301</span>
+<span id="302">302</span>
+<span id="303">303</span>
+<span id="304">304</span>
+<span id="305">305</span>
+<span id="306">306</span>
+<span id="307">307</span>
+<span id="308">308</span>
+<span id="309">309</span>
+<span id="310">310</span>
+<span id="311">311</span>
+<span id="312">312</span>
+<span id="313">313</span>
+<span id="314">314</span>
+<span id="315">315</span>
+<span id="316">316</span>
+<span id="317">317</span>
+<span id="318">318</span>
+<span id="319">319</span>
+<span id="320">320</span>
+<span id="321">321</span>
+<span id="322">322</span>
+<span id="323">323</span>
+<span id="324">324</span>
+<span id="325">325</span>
+<span id="326">326</span>
+<span id="327">327</span>
+<span id="328">328</span>
+<span id="329">329</span>
+<span id="330">330</span>
+<span id="331">331</span>
+<span id="332">332</span>
+<span id="333">333</span>
+<span id="334">334</span>
+<span id="335">335</span>
+<span id="336">336</span>
+<span id="337">337</span>
+<span id="338">338</span>
+<span id="339">339</span>
+<span id="340">340</span>
+<span id="341">341</span>
+<span id="342">342</span>
+<span id="343">343</span>
+<span id="344">344</span>
+<span id="345">345</span>
+<span id="346">346</span>
+<span id="347">347</span>
+<span id="348">348</span>
+<span id="349">349</span>
+<span id="350">350</span>
+<span id="351">351</span>
+<span id="352">352</span>
+<span id="353">353</span>
+<span id="354">354</span>
+<span id="355">355</span>
+<span id="356">356</span>
+<span id="357">357</span>
+<span id="358">358</span>
+<span id="359">359</span>
+<span id="360">360</span>
+<span id="361">361</span>
+<span id="362">362</span>
+<span id="363">363</span>
+<span id="364">364</span>
+<span id="365">365</span>
+<span id="366">366</span>
+<span id="367">367</span>
+<span id="368">368</span>
+<span id="369">369</span>
+<span id="370">370</span>
+<span id="371">371</span>
+<span id="372">372</span>
+<span id="373">373</span>
+<span id="374">374</span>
+<span id="375">375</span>
+<span id="376">376</span>
+<span id="377">377</span>
+<span id="378">378</span>
+<span id="379">379</span>
+<span id="380">380</span>
+<span id="381">381</span>
+<span id="382">382</span>
+<span id="383">383</span>
+<span id="384">384</span>
+<span id="385">385</span>
+<span id="386">386</span>
+<span id="387">387</span>
+<span id="388">388</span>
+<span id="389">389</span>
+<span id="390">390</span>
+<span id="391">391</span>
+<span id="392">392</span>
+<span id="393">393</span>
+<span id="394">394</span>
+<span id="395">395</span>
+<span id="396">396</span>
+<span id="397">397</span>
+<span id="398">398</span>
+<span id="399">399</span>
+<span id="400">400</span>
+<span id="401">401</span>
+<span id="402">402</span>
+<span id="403">403</span>
+<span id="404">404</span>
+<span id="405">405</span>
+<span id="406">406</span>
+<span id="407">407</span>
+<span id="408">408</span>
+<span id="409">409</span>
+<span id="410">410</span>
+<span id="411">411</span>
+<span id="412">412</span>
+<span id="413">413</span>
+<span id="414">414</span>
+<span id="415">415</span>
+<span id="416">416</span>
+<span id="417">417</span>
+<span id="418">418</span>
+<span id="419">419</span>
+<span id="420">420</span>
+<span id="421">421</span>
+<span id="422">422</span>
+<span id="423">423</span>
+<span id="424">424</span>
+<span id="425">425</span>
+<span id="426">426</span>
+<span id="427">427</span>
+<span id="428">428</span>
+<span id="429">429</span>
+<span id="430">430</span>
+<span id="431">431</span>
+<span id="432">432</span>
+<span id="433">433</span>
+<span id="434">434</span>
+<span id="435">435</span>
+<span id="436">436</span>
+<span id="437">437</span>
+<span id="438">438</span>
+<span id="439">439</span>
+<span id="440">440</span>
+<span id="441">441</span>
+<span id="442">442</span>
+<span id="443">443</span>
+<span id="444">444</span>
+<span id="445">445</span>
+<span id="446">446</span>
+<span id="447">447</span>
+<span id="448">448</span>
+<span id="449">449</span>
+<span id="450">450</span>
+<span id="451">451</span>
+<span id="452">452</span>
+<span id="453">453</span>
+<span id="454">454</span>
+<span id="455">455</span>
+<span id="456">456</span>
+<span id="457">457</span>
+<span id="458">458</span>
+<span id="459">459</span>
+<span id="460">460</span>
+<span id="461">461</span>
+<span id="462">462</span>
+<span id="463">463</span>
+<span id="464">464</span>
+<span id="465">465</span>
+<span id="466">466</span>
+<span id="467">467</span>
+<span id="468">468</span>
+<span id="469">469</span>
+<span id="470">470</span>
+<span id="471">471</span>
+<span id="472">472</span>
+<span id="473">473</span>
+<span id="474">474</span>
+<span id="475">475</span>
+<span id="476">476</span>
+<span id="477">477</span>
+<span id="478">478</span>
+<span id="479">479</span>
+<span id="480">480</span>
+<span id="481">481</span>
+<span id="482">482</span>
+<span id="483">483</span>
+<span id="484">484</span>
+<span id="485">485</span>
+<span id="486">486</span>
+<span id="487">487</span>
+<span id="488">488</span>
+<span id="489">489</span>
+<span id="490">490</span>
+<span id="491">491</span>
+<span id="492">492</span>
+<span id="493">493</span>
+<span id="494">494</span>
+<span id="495">495</span>
+<span id="496">496</span>
+<span id="497">497</span>
+<span id="498">498</span>
+<span id="499">499</span>
+<span id="500">500</span>
+<span id="501">501</span>
+<span id="502">502</span>
+<span id="503">503</span>
+<span id="504">504</span>
+<span id="505">505</span>
+<span id="506">506</span>
+<span id="507">507</span>
+<span id="508">508</span>
+<span id="509">509</span>
+<span id="510">510</span>
+<span id="511">511</span>
+<span id="512">512</span>
+<span id="513">513</span>
+<span id="514">514</span>
+<span id="515">515</span>
+<span id="516">516</span>
+<span id="517">517</span>
+<span id="518">518</span>
+<span id="519">519</span>
+<span id="520">520</span>
+<span id="521">521</span>
+<span id="522">522</span>
+<span id="523">523</span>
+<span id="524">524</span>
+<span id="525">525</span>
+<span id="526">526</span>
+<span id="527">527</span>
+<span id="528">528</span>
+<span id="529">529</span>
+<span id="530">530</span>
+<span id="531">531</span>
+<span id="532">532</span>
+<span id="533">533</span>
+<span id="534">534</span>
+<span id="535">535</span>
+<span id="536">536</span>
+<span id="537">537</span>
+<span id="538">538</span>
+<span id="539">539</span>
+<span id="540">540</span>
+<span id="541">541</span>
+<span id="542">542</span>
+<span id="543">543</span>
+<span id="544">544</span>
+<span id="545">545</span>
+<span id="546">546</span>
+<span id="547">547</span>
+<span id="548">548</span>
+<span id="549">549</span>
+<span id="550">550</span>
+<span id="551">551</span>
+<span id="552">552</span>
+<span id="553">553</span>
+<span id="554">554</span>
+<span id="555">555</span>
+<span id="556">556</span>
+<span id="557">557</span>
+<span id="558">558</span>
+<span id="559">559</span>
+<span id="560">560</span>
+<span id="561">561</span>
+<span id="562">562</span>
+<span id="563">563</span>
+<span id="564">564</span>
+<span id="565">565</span>
+<span id="566">566</span>
+<span id="567">567</span>
+<span id="568">568</span>
+<span id="569">569</span>
+<span id="570">570</span>
+<span id="571">571</span>
+<span id="572">572</span>
+<span id="573">573</span>
+<span id="574">574</span>
+<span id="575">575</span>
+<span id="576">576</span>
+<span id="577">577</span>
+<span id="578">578</span>
+<span id="579">579</span>
+<span id="580">580</span>
+<span id="581">581</span>
+<span id="582">582</span>
+<span id="583">583</span>
+<span id="584">584</span>
+<span id="585">585</span>
+<span id="586">586</span>
+<span id="587">587</span>
+<span id="588">588</span>
+<span id="589">589</span>
+<span id="590">590</span>
+<span id="591">591</span>
+<span id="592">592</span>
+<span id="593">593</span>
+<span id="594">594</span>
+<span id="595">595</span>
+<span id="596">596</span>
+<span id="597">597</span>
+<span id="598">598</span>
+<span id="599">599</span>
+<span id="600">600</span>
+<span id="601">601</span>
+<span id="602">602</span>
+<span id="603">603</span>
+<span id="604">604</span>
+<span id="605">605</span>
+<span id="606">606</span>
+<span id="607">607</span>
+<span id="608">608</span>
+<span id="609">609</span>
+<span id="610">610</span>
+<span id="611">611</span>
+<span id="612">612</span>
+<span id="613">613</span>
+<span id="614">614</span>
+<span id="615">615</span>
+<span id="616">616</span>
+<span id="617">617</span>
+<span id="618">618</span>
+<span id="619">619</span>
+<span id="620">620</span>
+<span id="621">621</span>
+<span id="622">622</span>
+<span id="623">623</span>
+<span id="624">624</span>
+<span id="625">625</span>
+<span id="626">626</span>
+<span id="627">627</span>
+<span id="628">628</span>
+<span id="629">629</span>
+<span id="630">630</span>
+<span id="631">631</span>
+<span id="632">632</span>
+<span id="633">633</span>
+<span id="634">634</span>
+<span id="635">635</span>
+<span id="636">636</span>
+<span id="637">637</span>
+<span id="638">638</span>
+<span id="639">639</span>
+<span id="640">640</span>
+<span id="641">641</span>
+<span id="642">642</span>
+<span id="643">643</span>
+<span id="644">644</span>
+<span id="645">645</span>
+<span id="646">646</span>
+<span id="647">647</span>
+<span id="648">648</span>
+<span id="649">649</span>
+<span id="650">650</span>
+<span id="651">651</span>
+<span id="652">652</span>
+<span id="653">653</span>
+<span id="654">654</span>
+<span id="655">655</span>
+<span id="656">656</span>
+<span id="657">657</span>
+<span id="658">658</span>
+<span id="659">659</span>
+<span id="660">660</span>
+<span id="661">661</span>
+<span id="662">662</span>
+<span id="663">663</span>
+<span id="664">664</span>
+<span id="665">665</span>
+<span id="666">666</span>
+<span id="667">667</span>
+<span id="668">668</span>
+<span id="669">669</span>
+<span id="670">670</span>
+<span id="671">671</span>
+<span id="672">672</span>
+<span id="673">673</span>
+<span id="674">674</span>
+<span id="675">675</span>
+<span id="676">676</span>
+<span id="677">677</span>
+<span id="678">678</span>
+<span id="679">679</span>
+<span id="680">680</span>
+<span id="681">681</span>
+<span id="682">682</span>
+<span id="683">683</span>
+<span id="684">684</span>
+<span id="685">685</span>
+<span id="686">686</span>
+<span id="687">687</span>
+<span id="688">688</span>
+<span id="689">689</span>
+<span id="690">690</span>
+<span id="691">691</span>
+<span id="692">692</span>
+<span id="693">693</span>
+<span id="694">694</span>
+<span id="695">695</span>
+<span id="696">696</span>
+<span id="697">697</span>
+<span id="698">698</span>
+<span id="699">699</span>
+<span id="700">700</span>
+<span id="701">701</span>
+<span id="702">702</span>
+<span id="703">703</span>
+<span id="704">704</span>
+<span id="705">705</span>
+<span id="706">706</span>
+<span id="707">707</span>
+<span id="708">708</span>
+<span id="709">709</span>
+<span id="710">710</span>
+<span id="711">711</span>
+<span id="712">712</span>
+<span id="713">713</span>
+<span id="714">714</span>
+<span id="715">715</span>
+<span id="716">716</span>
+<span id="717">717</span>
+<span id="718">718</span>
+<span id="719">719</span>
+<span id="720">720</span>
+<span id="721">721</span>
+<span id="722">722</span>
+<span id="723">723</span>
+<span id="724">724</span>
+<span id="725">725</span>
+<span id="726">726</span>
+<span id="727">727</span>
+<span id="728">728</span>
+<span id="729">729</span>
+<span id="730">730</span>
+<span id="731">731</span>
+<span id="732">732</span>
+<span id="733">733</span>
+<span id="734">734</span>
+<span id="735">735</span>
+<span id="736">736</span>
+<span id="737">737</span>
+<span id="738">738</span>
+<span id="739">739</span>
+<span id="740">740</span>
+<span id="741">741</span>
+<span id="742">742</span>
+<span id="743">743</span>
+<span id="744">744</span>
+<span id="745">745</span>
+<span id="746">746</span>
+<span id="747">747</span>
+<span id="748">748</span>
+<span id="749">749</span>
+<span id="750">750</span>
+<span id="751">751</span>
+<span id="752">752</span>
+<span id="753">753</span>
+<span id="754">754</span>
+<span id="755">755</span>
+<span id="756">756</span>
+<span id="757">757</span>
+<span id="758">758</span>
+<span id="759">759</span>
+<span id="760">760</span>
+<span id="761">761</span>
+<span id="762">762</span>
+<span id="763">763</span>
+<span id="764">764</span>
+<span id="765">765</span>
+<span id="766">766</span>
+<span id="767">767</span>
+<span id="768">768</span>
+<span id="769">769</span>
+<span id="770">770</span>
+<span id="771">771</span>
+<span id="772">772</span>
+<span id="773">773</span>
+<span id="774">774</span>
+<span id="775">775</span>
+<span id="776">776</span>
+<span id="777">777</span>
+<span id="778">778</span>
+<span id="779">779</span>
+<span id="780">780</span>
+<span id="781">781</span>
+<span id="782">782</span>
+<span id="783">783</span>
+<span id="784">784</span>
+<span id="785">785</span>
+<span id="786">786</span>
+<span id="787">787</span>
+<span id="788">788</span>
+<span id="789">789</span>
+<span id="790">790</span>
+<span id="791">791</span>
+<span id="792">792</span>
+<span id="793">793</span>
+<span id="794">794</span>
+<span id="795">795</span>
+<span id="796">796</span>
+<span id="797">797</span>
+<span id="798">798</span>
+<span id="799">799</span>
+<span id="800">800</span>
+<span id="801">801</span>
+<span id="802">802</span>
+<span id="803">803</span>
+<span id="804">804</span>
+<span id="805">805</span>
+<span id="806">806</span>
+<span id="807">807</span>
+<span id="808">808</span>
+<span id="809">809</span>
+<span id="810">810</span>
+<span id="811">811</span>
+<span id="812">812</span>
+<span id="813">813</span>
+<span id="814">814</span>
+<span id="815">815</span>
+<span id="816">816</span>
+<span id="817">817</span>
+<span id="818">818</span>
+<span id="819">819</span>
+</pre><pre class="rust">
+<span class="comment">// Code generated by software.amazon.smithy.rust.codegen.smithy-rs. DO NOT EDIT.</span>
+<span class="doccomment">/// &lt;p&gt;Returns a set of temporary security credentials that you can use to access AWS</span>
+<span class="doccomment">/// resources that you might not normally have access to. These temporary credentials</span>
+<span class="doccomment">/// consist of an access key ID, a secret access key, and a security token. Typically, you</span>
+<span class="doccomment">/// use &lt;code&gt;AssumeRole&lt;/code&gt; within your account or for cross-account access. For a</span>
+<span class="doccomment">/// comparison of &lt;code&gt;AssumeRole&lt;/code&gt; with other API operations that produce temporary</span>
+<span class="doccomment">/// credentials, see &lt;a href=&quot;https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html&quot;&gt;Requesting Temporary Security</span>
+<span class="doccomment">/// Credentials&lt;/a&gt; and &lt;a href=&quot;https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html#stsapi_comparison&quot;&gt;Comparing</span>
+<span class="doccomment">/// the AWS STS API operations&lt;/a&gt; in the</span>
+<span class="doccomment">/// &lt;i&gt;IAM User Guide&lt;/i&gt;.&lt;/p&gt;</span>
+<span class="doccomment">/// &lt;p&gt;</span>
+<span class="doccomment">/// &lt;b&gt;Permissions&lt;/b&gt;</span>
+<span class="doccomment">/// &lt;/p&gt;</span>
+<span class="doccomment">/// &lt;p&gt;The temporary security credentials created by &lt;code&gt;AssumeRole&lt;/code&gt; can be used to</span>
+<span class="doccomment">/// make API calls to any AWS service with the following exception: You cannot call the</span>
+<span class="doccomment">/// AWS STS &lt;code&gt;GetFederationToken&lt;/code&gt; or &lt;code&gt;GetSessionToken&lt;/code&gt; API</span>
+<span class="doccomment">/// operations.&lt;/p&gt;</span>
+<span class="doccomment">/// &lt;p&gt;(Optional) You can pass inline or managed &lt;a href=&quot;https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session&quot;&gt;session policies&lt;/a&gt; to</span>
+<span class="doccomment">/// this operation. You can pass a single JSON policy document to use as an inline session</span>
+<span class="doccomment">/// policy. You can also specify up to 10 managed policies to use as managed session policies.</span>
+<span class="doccomment">/// The plaintext that you use for both inline and managed session policies can&#39;t exceed 2,048</span>
+<span class="doccomment">/// characters. Passing policies to this operation returns new</span>
+<span class="doccomment">/// temporary credentials. The resulting session&#39;s permissions are the intersection of the</span>
+<span class="doccomment">/// role&#39;s identity-based policy and the session policies. You can use the role&#39;s temporary</span>
+<span class="doccomment">/// credentials in subsequent AWS API calls to access resources in the account that owns</span>
+<span class="doccomment">/// the role. You cannot use session policies to grant more permissions than those allowed</span>
+<span class="doccomment">/// by the identity-based policy of the role that is being assumed. For more information, see</span>
+<span class="doccomment">/// &lt;a href=&quot;https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session&quot;&gt;Session</span>
+<span class="doccomment">/// Policies&lt;/a&gt; in the &lt;i&gt;IAM User Guide&lt;/i&gt;.&lt;/p&gt;</span>
+<span class="doccomment">/// &lt;p&gt;To assume a role from a different account, your AWS account must be trusted by the</span>
+<span class="doccomment">/// role. The trust relationship is defined in the role&#39;s trust policy when the role is</span>
+<span class="doccomment">/// created. That trust policy states which accounts are allowed to delegate that access to</span>
+<span class="doccomment">/// users in the account. &lt;/p&gt;</span>
+<span class="doccomment">/// &lt;p&gt;A user who wants to access a role in a different account must also have permissions that</span>
+<span class="doccomment">/// are delegated from the user account administrator. The administrator must attach a policy</span>
+<span class="doccomment">/// that allows the user to call &lt;code&gt;AssumeRole&lt;/code&gt; for the ARN of the role in the other</span>
+<span class="doccomment">/// account. If the user is in the same account as the role, then you can do either of the</span>
+<span class="doccomment">/// following:&lt;/p&gt;</span>
+<span class="doccomment">/// &lt;ul&gt;</span>
+<span class="doccomment">/// &lt;li&gt;</span>
+<span class="doccomment">/// &lt;p&gt;Attach a policy to the user (identical to the previous user in a different</span>
+<span class="doccomment">/// account).&lt;/p&gt;</span>
+<span class="doccomment">/// &lt;/li&gt;</span>
+<span class="doccomment">/// &lt;li&gt;</span>
+<span class="doccomment">/// &lt;p&gt;Add the user as a principal directly in the role&#39;s trust policy.&lt;/p&gt;</span>
+<span class="doccomment">/// &lt;/li&gt;</span>
+<span class="doccomment">/// &lt;/ul&gt;</span>
+<span class="doccomment">/// &lt;p&gt;In this case, the trust policy acts as an IAM resource-based policy. Users in the same</span>
+<span class="doccomment">/// account as the role do not need explicit permission to assume the role. For more</span>
+<span class="doccomment">/// information about trust policies and resource-based policies, see &lt;a href=&quot;https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html&quot;&gt;IAM Policies&lt;/a&gt; in</span>
+<span class="doccomment">/// the &lt;i&gt;IAM User Guide&lt;/i&gt;.&lt;/p&gt;</span>
+<span class="doccomment">/// &lt;p&gt;</span>
+<span class="doccomment">/// &lt;b&gt;Tags&lt;/b&gt;</span>
+<span class="doccomment">/// &lt;/p&gt;</span>
+<span class="doccomment">/// &lt;p&gt;(Optional) You can pass tag key-value pairs to your session. These tags are called</span>
+<span class="doccomment">/// session tags. For more information about session tags, see &lt;a href=&quot;https://docs.aws.amazon.com/IAM/latest/UserGuide/id_session-tags.html&quot;&gt;Passing Session Tags in STS&lt;/a&gt; in the</span>
+<span class="doccomment">/// &lt;i&gt;IAM User Guide&lt;/i&gt;.&lt;/p&gt;</span>
+<span class="doccomment">/// &lt;p&gt;An administrator must grant you the permissions necessary to pass session tags. The</span>
+<span class="doccomment">/// administrator can also create granular permissions to allow you to pass only specific</span>
+<span class="doccomment">/// session tags. For more information, see &lt;a href=&quot;https://docs.aws.amazon.com/IAM/latest/UserGuide/tutorial_attribute-based-access-control.html&quot;&gt;Tutorial: Using Tags</span>
+<span class="doccomment">/// for Attribute-Based Access Control&lt;/a&gt; in the</span>
+<span class="doccomment">/// &lt;i&gt;IAM User Guide&lt;/i&gt;.&lt;/p&gt;</span>
+<span class="doccomment">/// &lt;p&gt;You can set the session tags as transitive. Transitive tags persist during role</span>
+<span class="doccomment">/// chaining. For more information, see &lt;a href=&quot;https://docs.aws.amazon.com/IAM/latest/UserGuide/id_session-tags.html#id_session-tags_role-chaining&quot;&gt;Chaining Roles</span>
+<span class="doccomment">/// with Session Tags&lt;/a&gt; in the &lt;i&gt;IAM User Guide&lt;/i&gt;.&lt;/p&gt;</span>
+<span class="doccomment">/// &lt;p&gt;</span>
+<span class="doccomment">/// &lt;b&gt;Using MFA with AssumeRole&lt;/b&gt;</span>
+<span class="doccomment">/// &lt;/p&gt;</span>
+<span class="doccomment">/// &lt;p&gt;(Optional) You can include multi-factor authentication (MFA) information when you call</span>
+<span class="doccomment">/// &lt;code&gt;AssumeRole&lt;/code&gt;. This is useful for cross-account scenarios to ensure that the</span>
+<span class="doccomment">/// user that assumes the role has been authenticated with an AWS MFA device. In that</span>
+<span class="doccomment">/// scenario, the trust policy of the role being assumed includes a condition that tests for</span>
+<span class="doccomment">/// MFA authentication. If the caller does not include valid MFA information, the request to</span>
+<span class="doccomment">/// assume the role is denied. The condition in a trust policy that tests for MFA</span>
+<span class="doccomment">/// authentication might look like the following example.&lt;/p&gt;</span>
+<span class="doccomment">/// &lt;p&gt;</span>
+<span class="doccomment">/// &lt;code&gt;&quot;Condition&quot;: {&quot;Bool&quot;: {&quot;aws:MultiFactorAuthPresent&quot;: true}}&lt;/code&gt;</span>
+<span class="doccomment">/// &lt;/p&gt;</span>
+<span class="doccomment">/// &lt;p&gt;For more information, see &lt;a href=&quot;https://docs.aws.amazon.com/IAM/latest/UserGuide/MFAProtectedAPI.html&quot;&gt;Configuring MFA-Protected API Access&lt;/a&gt;</span>
+<span class="doccomment">/// in the &lt;i&gt;IAM User Guide&lt;/i&gt; guide.&lt;/p&gt;</span>
+<span class="doccomment">/// &lt;p&gt;To use MFA with &lt;code&gt;AssumeRole&lt;/code&gt;, you pass values for the</span>
+<span class="doccomment">/// &lt;code&gt;SerialNumber&lt;/code&gt; and &lt;code&gt;TokenCode&lt;/code&gt; parameters. The</span>
+<span class="doccomment">/// &lt;code&gt;SerialNumber&lt;/code&gt; value identifies the user&#39;s hardware or virtual MFA device.</span>
+<span class="doccomment">/// The &lt;code&gt;TokenCode&lt;/code&gt; is the time-based one-time password (TOTP) that the MFA device</span>
+<span class="doccomment">/// produces. &lt;/p&gt;</span>
+<span class="attribute">#[<span class="ident">derive</span>(<span class="ident">std::default::Default</span>, <span class="ident">std::clone::Clone</span>, <span class="ident">std::fmt::Debug</span>)]</span>
+<span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">AssumeRole</span> {
+    <span class="ident">_private</span>: (),
+}
+<span class="kw">impl</span> <span class="ident">AssumeRole</span> {
+    <span class="doccomment">/// Creates a new builder-style object to manufacture [`AssumeRoleInput`](crate::input::AssumeRoleInput)</span>
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">builder</span>() <span class="op">-</span><span class="op">&gt;</span> <span class="kw">crate</span><span class="ident">::input::assume_role_input::Builder</span> {
+        <span class="kw">crate</span><span class="ident">::input::assume_role_input::Builder::default</span>()
+    }
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">new</span>() <span class="op">-</span><span class="op">&gt;</span> <span class="self">Self</span> {
+        <span class="self">Self</span> { <span class="ident">_private</span>: () }
+    }
+}
+<span class="kw">impl</span> <span class="ident">smithy_http::response::ParseStrictResponse</span> <span class="kw">for</span> <span class="ident">AssumeRole</span> {
+    <span class="kw">type</span> <span class="ident">Output</span> <span class="op">=</span>
+        <span class="ident">std::result::Result</span><span class="op">&lt;</span><span class="kw">crate</span><span class="ident">::output::AssumeRoleOutput</span>, <span class="kw">crate</span><span class="ident">::error::AssumeRoleError</span><span class="op">&gt;</span>;
+    <span class="kw">fn</span> <span class="ident">parse</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">response</span>: <span class="kw-2">&amp;</span><span class="ident">http::Response</span><span class="op">&lt;</span><span class="ident">bytes::Bytes</span><span class="op">&gt;</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="self">Self</span><span class="ident">::Output</span> {
+        <span class="kw">if</span> <span class="op">!</span><span class="ident">response</span>.<span class="ident">status</span>().<span class="ident">is_success</span>() <span class="op">&amp;&amp;</span> <span class="ident">response</span>.<span class="ident">status</span>().<span class="ident">as_u16</span>() <span class="op">!</span><span class="op">=</span> <span class="number">200</span> {
+            <span class="kw">crate</span><span class="ident">::operation_deser::parse_assume_role_error</span>(<span class="ident">response</span>)
+        } <span class="kw">else</span> {
+            <span class="kw">crate</span><span class="ident">::operation_deser::parse_assume_role_response</span>(<span class="ident">response</span>)
+        }
+    }
+}
+
+<span class="doccomment">/// &lt;p&gt;Returns a set of temporary security credentials for users who have been authenticated</span>
+<span class="doccomment">/// via a SAML authentication response. This operation provides a mechanism for tying an</span>
+<span class="doccomment">/// enterprise identity store or directory to role-based AWS access without user-specific</span>
+<span class="doccomment">/// credentials or configuration. For a comparison of &lt;code&gt;AssumeRoleWithSAML&lt;/code&gt; with the</span>
+<span class="doccomment">/// other API operations that produce temporary credentials, see &lt;a href=&quot;https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html&quot;&gt;Requesting Temporary Security</span>
+<span class="doccomment">/// Credentials&lt;/a&gt; and &lt;a href=&quot;https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html#stsapi_comparison&quot;&gt;Comparing the</span>
+<span class="doccomment">/// AWS STS API operations&lt;/a&gt; in the &lt;i&gt;IAM User Guide&lt;/i&gt;.&lt;/p&gt;</span>
+<span class="doccomment">/// &lt;p&gt;The temporary security credentials returned by this operation consist of an access key</span>
+<span class="doccomment">/// ID, a secret access key, and a security token. Applications can use these temporary</span>
+<span class="doccomment">/// security credentials to sign calls to AWS services.&lt;/p&gt;</span>
+<span class="doccomment">/// &lt;p&gt;</span>
+<span class="doccomment">/// &lt;b&gt;Session Duration&lt;/b&gt;</span>
+<span class="doccomment">/// &lt;/p&gt;</span>
+<span class="doccomment">/// &lt;p&gt;By default, the temporary security credentials created by</span>
+<span class="doccomment">/// &lt;code&gt;AssumeRoleWithSAML&lt;/code&gt; last for one hour. However, you can use the optional</span>
+<span class="doccomment">/// &lt;code&gt;DurationSeconds&lt;/code&gt; parameter to specify the duration of your session. Your</span>
+<span class="doccomment">/// role session lasts for the duration that you specify, or until the time specified in the</span>
+<span class="doccomment">/// SAML authentication response&#39;s &lt;code&gt;SessionNotOnOrAfter&lt;/code&gt; value, whichever is</span>
+<span class="doccomment">/// shorter. You can provide a &lt;code&gt;DurationSeconds&lt;/code&gt; value from 900 seconds (15 minutes)</span>
+<span class="doccomment">/// up to the maximum session duration setting for the role. This setting can have a value from</span>
+<span class="doccomment">/// 1 hour to 12 hours. To learn how to view the maximum value for your role, see &lt;a href=&quot;https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html#id_roles_use_view-role-max-session&quot;&gt;View the</span>
+<span class="doccomment">/// Maximum Session Duration Setting for a Role&lt;/a&gt; in the</span>
+<span class="doccomment">/// &lt;i&gt;IAM User Guide&lt;/i&gt;. The maximum session duration limit applies when</span>
+<span class="doccomment">/// you use the &lt;code&gt;AssumeRole*&lt;/code&gt; API operations or the &lt;code&gt;assume-role*&lt;/code&gt; CLI</span>
+<span class="doccomment">/// commands. However the limit does not apply when you use those operations to create a</span>
+<span class="doccomment">/// console URL. For more information, see &lt;a href=&quot;https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html&quot;&gt;Using IAM Roles&lt;/a&gt; in the</span>
+<span class="doccomment">/// &lt;i&gt;IAM User Guide&lt;/i&gt;.&lt;/p&gt;</span>
+<span class="doccomment">/// &lt;note&gt;</span>
+<span class="doccomment">/// &lt;p&gt;</span>
+<span class="doccomment">/// &lt;a href=&quot;https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_terms-and-concepts.html#iam-term-role-chaining&quot;&gt;Role chaining&lt;/a&gt; limits your AWS CLI or AWS API</span>
+<span class="doccomment">/// role session to a maximum of one hour. When you use the &lt;code&gt;AssumeRole&lt;/code&gt; API</span>
+<span class="doccomment">/// operation to assume a role, you can specify the duration of your role session with</span>
+<span class="doccomment">/// the &lt;code&gt;DurationSeconds&lt;/code&gt; parameter. You can specify a parameter value of up</span>
+<span class="doccomment">/// to 43200 seconds (12 hours), depending on the maximum session duration setting for</span>
+<span class="doccomment">/// your role. However, if you assume a role using role chaining and provide a</span>
+<span class="doccomment">/// &lt;code&gt;DurationSeconds&lt;/code&gt; parameter value greater than one hour, the</span>
+<span class="doccomment">/// operation fails.&lt;/p&gt;</span>
+<span class="doccomment">/// &lt;/note&gt;</span>
+<span class="doccomment">/// &lt;p&gt;</span>
+<span class="doccomment">/// &lt;b&gt;Permissions&lt;/b&gt;</span>
+<span class="doccomment">/// &lt;/p&gt;</span>
+<span class="doccomment">/// &lt;p&gt;The temporary security credentials created by &lt;code&gt;AssumeRoleWithSAML&lt;/code&gt; can be</span>
+<span class="doccomment">/// used to make API calls to any AWS service with the following exception: you cannot call</span>
+<span class="doccomment">/// the STS &lt;code&gt;GetFederationToken&lt;/code&gt; or &lt;code&gt;GetSessionToken&lt;/code&gt; API</span>
+<span class="doccomment">/// operations.&lt;/p&gt;</span>
+<span class="doccomment">/// &lt;p&gt;(Optional) You can pass inline or managed &lt;a href=&quot;https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session&quot;&gt;session policies&lt;/a&gt; to</span>
+<span class="doccomment">/// this operation. You can pass a single JSON policy document to use as an inline session</span>
+<span class="doccomment">/// policy. You can also specify up to 10 managed policies to use as managed session policies.</span>
+<span class="doccomment">/// The plaintext that you use for both inline and managed session policies can&#39;t exceed 2,048</span>
+<span class="doccomment">/// characters. Passing policies to this operation returns new</span>
+<span class="doccomment">/// temporary credentials. The resulting session&#39;s permissions are the intersection of the</span>
+<span class="doccomment">/// role&#39;s identity-based policy and the session policies. You can use the role&#39;s temporary</span>
+<span class="doccomment">/// credentials in subsequent AWS API calls to access resources in the account that owns</span>
+<span class="doccomment">/// the role. You cannot use session policies to grant more permissions than those allowed</span>
+<span class="doccomment">/// by the identity-based policy of the role that is being assumed. For more information, see</span>
+<span class="doccomment">/// &lt;a href=&quot;https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session&quot;&gt;Session</span>
+<span class="doccomment">/// Policies&lt;/a&gt; in the &lt;i&gt;IAM User Guide&lt;/i&gt;.&lt;/p&gt;</span>
+<span class="doccomment">/// &lt;p&gt;Calling &lt;code&gt;AssumeRoleWithSAML&lt;/code&gt; does not require the use of AWS security</span>
+<span class="doccomment">/// credentials. The identity of the caller is validated by using keys in the metadata document</span>
+<span class="doccomment">/// that is uploaded for the SAML provider entity for your identity provider. &lt;/p&gt;</span>
+<span class="doccomment">/// &lt;important&gt;</span>
+<span class="doccomment">/// &lt;p&gt;Calling &lt;code&gt;AssumeRoleWithSAML&lt;/code&gt; can result in an entry in your AWS CloudTrail logs.</span>
+<span class="doccomment">/// The entry includes the value in the &lt;code&gt;NameID&lt;/code&gt; element of the SAML assertion.</span>
+<span class="doccomment">/// We recommend that you use a &lt;code&gt;NameIDType&lt;/code&gt; that is not associated with any</span>
+<span class="doccomment">/// personally identifiable information (PII). For example, you could instead use the</span>
+<span class="doccomment">/// persistent identifier</span>
+<span class="doccomment">/// (&lt;code&gt;urn:oasis:names:tc:SAML:2.0:nameid-format:persistent&lt;/code&gt;).&lt;/p&gt;</span>
+<span class="doccomment">/// &lt;/important&gt;</span>
+<span class="doccomment">/// &lt;p&gt;</span>
+<span class="doccomment">/// &lt;b&gt;Tags&lt;/b&gt;</span>
+<span class="doccomment">/// &lt;/p&gt;</span>
+<span class="doccomment">/// &lt;p&gt;(Optional) You can configure your IdP to pass attributes into your SAML assertion as</span>
+<span class="doccomment">/// session tags. Each session tag consists of a key name and an associated value. For more</span>
+<span class="doccomment">/// information about session tags, see &lt;a href=&quot;https://docs.aws.amazon.com/IAM/latest/UserGuide/id_session-tags.html&quot;&gt;Passing Session Tags in STS&lt;/a&gt; in the</span>
+<span class="doccomment">/// &lt;i&gt;IAM User Guide&lt;/i&gt;.&lt;/p&gt;</span>
+<span class="doccomment">/// &lt;p&gt;You can pass up to 50 session tags. The plaintext session tag keys can’t exceed 128</span>
+<span class="doccomment">/// characters and the values can’t exceed 256 characters. For these and additional limits, see</span>
+<span class="doccomment">/// &lt;a href=&quot;https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-limits.html#reference_iam-limits-entity-length&quot;&gt;IAM</span>
+<span class="doccomment">/// and STS Character Limits&lt;/a&gt; in the &lt;i&gt;IAM User Guide&lt;/i&gt;.&lt;/p&gt;</span>
+<span class="doccomment">/// &lt;note&gt;</span>
+<span class="doccomment">/// &lt;p&gt;An AWS conversion compresses the passed session policies and session tags into a</span>
+<span class="doccomment">/// packed binary format that has a separate limit. Your request can fail for this limit</span>
+<span class="doccomment">/// even if your plaintext meets the other requirements. The &lt;code&gt;PackedPolicySize&lt;/code&gt;</span>
+<span class="doccomment">/// response element indicates by percentage how close the policies and tags for your</span>
+<span class="doccomment">/// request are to the upper size limit.</span>
+<span class="doccomment">/// &lt;/p&gt;</span>
+<span class="doccomment">/// &lt;/note&gt;</span>
+<span class="doccomment">/// &lt;p&gt;You can pass a session tag with the same key as a tag that is</span>
+<span class="doccomment">/// attached to the role. When you do, session tags override the role&#39;s tags with the same</span>
+<span class="doccomment">/// key.&lt;/p&gt;</span>
+<span class="doccomment">/// &lt;p&gt;An administrator must grant you the permissions necessary to pass session tags. The</span>
+<span class="doccomment">/// administrator can also create granular permissions to allow you to pass only specific</span>
+<span class="doccomment">/// session tags. For more information, see &lt;a href=&quot;https://docs.aws.amazon.com/IAM/latest/UserGuide/tutorial_attribute-based-access-control.html&quot;&gt;Tutorial: Using Tags</span>
+<span class="doccomment">/// for Attribute-Based Access Control&lt;/a&gt; in the</span>
+<span class="doccomment">/// &lt;i&gt;IAM User Guide&lt;/i&gt;.&lt;/p&gt;</span>
+<span class="doccomment">/// &lt;p&gt;You can set the session tags as transitive. Transitive tags persist during role</span>
+<span class="doccomment">/// chaining. For more information, see &lt;a href=&quot;https://docs.aws.amazon.com/IAM/latest/UserGuide/id_session-tags.html#id_session-tags_role-chaining&quot;&gt;Chaining Roles</span>
+<span class="doccomment">/// with Session Tags&lt;/a&gt; in the &lt;i&gt;IAM User Guide&lt;/i&gt;.&lt;/p&gt;</span>
+<span class="doccomment">/// &lt;p&gt;</span>
+<span class="doccomment">/// &lt;b&gt;SAML Configuration&lt;/b&gt;</span>
+<span class="doccomment">/// &lt;/p&gt;</span>
+<span class="doccomment">/// &lt;p&gt;Before your application can call &lt;code&gt;AssumeRoleWithSAML&lt;/code&gt;, you must configure</span>
+<span class="doccomment">/// your SAML identity provider (IdP) to issue the claims required by AWS. Additionally, you</span>
+<span class="doccomment">/// must use AWS Identity and Access Management (IAM) to create a SAML provider entity in your AWS account that</span>
+<span class="doccomment">/// represents your identity provider. You must also create an IAM role that specifies this</span>
+<span class="doccomment">/// SAML provider in its trust policy. &lt;/p&gt;</span>
+<span class="doccomment">/// &lt;p&gt;For more information, see the following resources:&lt;/p&gt;</span>
+<span class="doccomment">/// &lt;ul&gt;</span>
+<span class="doccomment">/// &lt;li&gt;</span>
+<span class="doccomment">/// &lt;p&gt;</span>
+<span class="doccomment">/// &lt;a href=&quot;https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_saml.html&quot;&gt;About</span>
+<span class="doccomment">/// SAML 2.0-based Federation&lt;/a&gt; in the &lt;i&gt;IAM User Guide&lt;/i&gt;.</span>
+<span class="doccomment">/// &lt;/p&gt;</span>
+<span class="doccomment">/// &lt;/li&gt;</span>
+<span class="doccomment">/// &lt;li&gt;</span>
+<span class="doccomment">/// &lt;p&gt;</span>
+<span class="doccomment">/// &lt;a href=&quot;https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_create_saml.html&quot;&gt;Creating SAML Identity Providers&lt;/a&gt; in the</span>
+<span class="doccomment">/// &lt;i&gt;IAM User Guide&lt;/i&gt;. &lt;/p&gt;</span>
+<span class="doccomment">/// &lt;/li&gt;</span>
+<span class="doccomment">/// &lt;li&gt;</span>
+<span class="doccomment">/// &lt;p&gt;</span>
+<span class="doccomment">/// &lt;a href=&quot;https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_create_saml_relying-party.html&quot;&gt;Configuring</span>
+<span class="doccomment">/// a Relying Party and Claims&lt;/a&gt; in the &lt;i&gt;IAM User Guide&lt;/i&gt;.</span>
+<span class="doccomment">/// &lt;/p&gt;</span>
+<span class="doccomment">/// &lt;/li&gt;</span>
+<span class="doccomment">/// &lt;li&gt;</span>
+<span class="doccomment">/// &lt;p&gt;</span>
+<span class="doccomment">/// &lt;a href=&quot;https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-idp_saml.html&quot;&gt;Creating a Role for SAML 2.0 Federation&lt;/a&gt; in the</span>
+<span class="doccomment">/// &lt;i&gt;IAM User Guide&lt;/i&gt;. &lt;/p&gt;</span>
+<span class="doccomment">/// &lt;/li&gt;</span>
+<span class="doccomment">/// &lt;/ul&gt;</span>
+<span class="attribute">#[<span class="ident">derive</span>(<span class="ident">std::default::Default</span>, <span class="ident">std::clone::Clone</span>, <span class="ident">std::fmt::Debug</span>)]</span>
+<span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">AssumeRoleWithSAML</span> {
+    <span class="ident">_private</span>: (),
+}
+<span class="kw">impl</span> <span class="ident">AssumeRoleWithSAML</span> {
+    <span class="doccomment">/// Creates a new builder-style object to manufacture [`AssumeRoleWithSamlInput`](crate::input::AssumeRoleWithSamlInput)</span>
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">builder</span>() <span class="op">-</span><span class="op">&gt;</span> <span class="kw">crate</span><span class="ident">::input::assume_role_with_saml_input::Builder</span> {
+        <span class="kw">crate</span><span class="ident">::input::assume_role_with_saml_input::Builder::default</span>()
+    }
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">new</span>() <span class="op">-</span><span class="op">&gt;</span> <span class="self">Self</span> {
+        <span class="self">Self</span> { <span class="ident">_private</span>: () }
+    }
+}
+<span class="kw">impl</span> <span class="ident">smithy_http::response::ParseStrictResponse</span> <span class="kw">for</span> <span class="ident">AssumeRoleWithSAML</span> {
+    <span class="kw">type</span> <span class="ident">Output</span> <span class="op">=</span> <span class="ident">std::result::Result</span><span class="op">&lt;</span>
+        <span class="kw">crate</span><span class="ident">::output::AssumeRoleWithSamlOutput</span>,
+        <span class="kw">crate</span><span class="ident">::error::AssumeRoleWithSAMLError</span>,
+    <span class="op">&gt;</span>;
+    <span class="kw">fn</span> <span class="ident">parse</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">response</span>: <span class="kw-2">&amp;</span><span class="ident">http::Response</span><span class="op">&lt;</span><span class="ident">bytes::Bytes</span><span class="op">&gt;</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="self">Self</span><span class="ident">::Output</span> {
+        <span class="kw">if</span> <span class="op">!</span><span class="ident">response</span>.<span class="ident">status</span>().<span class="ident">is_success</span>() <span class="op">&amp;&amp;</span> <span class="ident">response</span>.<span class="ident">status</span>().<span class="ident">as_u16</span>() <span class="op">!</span><span class="op">=</span> <span class="number">200</span> {
+            <span class="kw">crate</span><span class="ident">::operation_deser::parse_assume_role_with_saml_error</span>(<span class="ident">response</span>)
+        } <span class="kw">else</span> {
+            <span class="kw">crate</span><span class="ident">::operation_deser::parse_assume_role_with_saml_response</span>(<span class="ident">response</span>)
+        }
+    }
+}
+
+<span class="doccomment">/// &lt;p&gt;Returns a set of temporary security credentials for users who have been authenticated in</span>
+<span class="doccomment">/// a mobile or web application with a web identity provider. Example providers include Amazon Cognito,</span>
+<span class="doccomment">/// Login with Amazon, Facebook, Google, or any OpenID Connect-compatible identity</span>
+<span class="doccomment">/// provider.&lt;/p&gt;</span>
+<span class="doccomment">/// &lt;note&gt;</span>
+<span class="doccomment">/// &lt;p&gt;For mobile applications, we recommend that you use Amazon Cognito. You can use Amazon Cognito with the</span>
+<span class="doccomment">/// &lt;a href=&quot;http://aws.amazon.com/sdkforios/&quot;&gt;AWS SDK for iOS Developer Guide&lt;/a&gt; and the &lt;a href=&quot;http://aws.amazon.com/sdkforandroid/&quot;&gt;AWS SDK for Android Developer Guide&lt;/a&gt; to uniquely</span>
+<span class="doccomment">/// identify a user. You can also supply the user with a consistent identity throughout the</span>
+<span class="doccomment">/// lifetime of an application.&lt;/p&gt;</span>
+<span class="doccomment">/// &lt;p&gt;To learn more about Amazon Cognito, see &lt;a href=&quot;https://docs.aws.amazon.com/mobile/sdkforandroid/developerguide/cognito-auth.html#d0e840&quot;&gt;Amazon Cognito Overview&lt;/a&gt; in</span>
+<span class="doccomment">/// &lt;i&gt;AWS SDK for Android Developer Guide&lt;/i&gt; and &lt;a href=&quot;https://docs.aws.amazon.com/mobile/sdkforios/developerguide/cognito-auth.html#d0e664&quot;&gt;Amazon Cognito Overview&lt;/a&gt; in the</span>
+<span class="doccomment">/// &lt;i&gt;AWS SDK for iOS Developer Guide&lt;/i&gt;.&lt;/p&gt;</span>
+<span class="doccomment">/// &lt;/note&gt;</span>
+<span class="doccomment">/// &lt;p&gt;Calling &lt;code&gt;AssumeRoleWithWebIdentity&lt;/code&gt; does not require the use of AWS</span>
+<span class="doccomment">/// security credentials. Therefore, you can distribute an application (for example, on mobile</span>
+<span class="doccomment">/// devices) that requests temporary security credentials without including long-term AWS</span>
+<span class="doccomment">/// credentials in the application. You also don&#39;t need to deploy server-based proxy services</span>
+<span class="doccomment">/// that use long-term AWS credentials. Instead, the identity of the caller is validated by</span>
+<span class="doccomment">/// using a token from the web identity provider. For a comparison of</span>
+<span class="doccomment">/// &lt;code&gt;AssumeRoleWithWebIdentity&lt;/code&gt; with the other API operations that produce</span>
+<span class="doccomment">/// temporary credentials, see &lt;a href=&quot;https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html&quot;&gt;Requesting Temporary Security</span>
+<span class="doccomment">/// Credentials&lt;/a&gt; and &lt;a href=&quot;https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html#stsapi_comparison&quot;&gt;Comparing the</span>
+<span class="doccomment">/// AWS STS API operations&lt;/a&gt; in the &lt;i&gt;IAM User Guide&lt;/i&gt;.&lt;/p&gt;</span>
+<span class="doccomment">/// &lt;p&gt;The temporary security credentials returned by this API consist of an access key ID, a</span>
+<span class="doccomment">/// secret access key, and a security token. Applications can use these temporary security</span>
+<span class="doccomment">/// credentials to sign calls to AWS service API operations.&lt;/p&gt;</span>
+<span class="doccomment">/// &lt;p&gt;</span>
+<span class="doccomment">/// &lt;b&gt;Session Duration&lt;/b&gt;</span>
+<span class="doccomment">/// &lt;/p&gt;</span>
+<span class="doccomment">/// &lt;p&gt;By default, the temporary security credentials created by</span>
+<span class="doccomment">/// &lt;code&gt;AssumeRoleWithWebIdentity&lt;/code&gt; last for one hour. However, you can use the</span>
+<span class="doccomment">/// optional &lt;code&gt;DurationSeconds&lt;/code&gt; parameter to specify the duration of your session.</span>
+<span class="doccomment">/// You can provide a value from 900 seconds (15 minutes) up to the maximum session duration</span>
+<span class="doccomment">/// setting for the role. This setting can have a value from 1 hour to 12 hours. To learn how</span>
+<span class="doccomment">/// to view the maximum value for your role, see &lt;a href=&quot;https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html#id_roles_use_view-role-max-session&quot;&gt;View the</span>
+<span class="doccomment">/// Maximum Session Duration Setting for a Role&lt;/a&gt; in the</span>
+<span class="doccomment">/// &lt;i&gt;IAM User Guide&lt;/i&gt;. The maximum session duration limit applies when</span>
+<span class="doccomment">/// you use the &lt;code&gt;AssumeRole*&lt;/code&gt; API operations or the &lt;code&gt;assume-role*&lt;/code&gt; CLI</span>
+<span class="doccomment">/// commands. However the limit does not apply when you use those operations to create a</span>
+<span class="doccomment">/// console URL. For more information, see &lt;a href=&quot;https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html&quot;&gt;Using IAM Roles&lt;/a&gt; in the</span>
+<span class="doccomment">/// &lt;i&gt;IAM User Guide&lt;/i&gt;. &lt;/p&gt;</span>
+<span class="doccomment">/// &lt;p&gt;</span>
+<span class="doccomment">/// &lt;b&gt;Permissions&lt;/b&gt;</span>
+<span class="doccomment">/// &lt;/p&gt;</span>
+<span class="doccomment">/// &lt;p&gt;The temporary security credentials created by &lt;code&gt;AssumeRoleWithWebIdentity&lt;/code&gt; can</span>
+<span class="doccomment">/// be used to make API calls to any AWS service with the following exception: you cannot</span>
+<span class="doccomment">/// call the STS &lt;code&gt;GetFederationToken&lt;/code&gt; or &lt;code&gt;GetSessionToken&lt;/code&gt; API</span>
+<span class="doccomment">/// operations.&lt;/p&gt;</span>
+<span class="doccomment">/// &lt;p&gt;(Optional) You can pass inline or managed &lt;a href=&quot;https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session&quot;&gt;session policies&lt;/a&gt; to</span>
+<span class="doccomment">/// this operation. You can pass a single JSON policy document to use as an inline session</span>
+<span class="doccomment">/// policy. You can also specify up to 10 managed policies to use as managed session policies.</span>
+<span class="doccomment">/// The plaintext that you use for both inline and managed session policies can&#39;t exceed 2,048</span>
+<span class="doccomment">/// characters. Passing policies to this operation returns new</span>
+<span class="doccomment">/// temporary credentials. The resulting session&#39;s permissions are the intersection of the</span>
+<span class="doccomment">/// role&#39;s identity-based policy and the session policies. You can use the role&#39;s temporary</span>
+<span class="doccomment">/// credentials in subsequent AWS API calls to access resources in the account that owns</span>
+<span class="doccomment">/// the role. You cannot use session policies to grant more permissions than those allowed</span>
+<span class="doccomment">/// by the identity-based policy of the role that is being assumed. For more information, see</span>
+<span class="doccomment">/// &lt;a href=&quot;https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session&quot;&gt;Session</span>
+<span class="doccomment">/// Policies&lt;/a&gt; in the &lt;i&gt;IAM User Guide&lt;/i&gt;.&lt;/p&gt;</span>
+<span class="doccomment">/// &lt;p&gt;</span>
+<span class="doccomment">/// &lt;b&gt;Tags&lt;/b&gt;</span>
+<span class="doccomment">/// &lt;/p&gt;</span>
+<span class="doccomment">/// &lt;p&gt;(Optional) You can configure your IdP to pass attributes into your web identity token as</span>
+<span class="doccomment">/// session tags. Each session tag consists of a key name and an associated value. For more</span>
+<span class="doccomment">/// information about session tags, see &lt;a href=&quot;https://docs.aws.amazon.com/IAM/latest/UserGuide/id_session-tags.html&quot;&gt;Passing Session Tags in STS&lt;/a&gt; in the</span>
+<span class="doccomment">/// &lt;i&gt;IAM User Guide&lt;/i&gt;.&lt;/p&gt;</span>
+<span class="doccomment">/// &lt;p&gt;You can pass up to 50 session tags. The plaintext session tag keys can’t exceed 128</span>
+<span class="doccomment">/// characters and the values can’t exceed 256 characters. For these and additional limits, see</span>
+<span class="doccomment">/// &lt;a href=&quot;https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-limits.html#reference_iam-limits-entity-length&quot;&gt;IAM</span>
+<span class="doccomment">/// and STS Character Limits&lt;/a&gt; in the &lt;i&gt;IAM User Guide&lt;/i&gt;.&lt;/p&gt;</span>
+<span class="doccomment">/// &lt;note&gt;</span>
+<span class="doccomment">/// &lt;p&gt;An AWS conversion compresses the passed session policies and session tags into a</span>
+<span class="doccomment">/// packed binary format that has a separate limit. Your request can fail for this limit</span>
+<span class="doccomment">/// even if your plaintext meets the other requirements. The &lt;code&gt;PackedPolicySize&lt;/code&gt;</span>
+<span class="doccomment">/// response element indicates by percentage how close the policies and tags for your</span>
+<span class="doccomment">/// request are to the upper size limit.</span>
+<span class="doccomment">/// &lt;/p&gt;</span>
+<span class="doccomment">/// &lt;/note&gt;</span>
+<span class="doccomment">/// &lt;p&gt;You can pass a session tag with the same key as a tag that is</span>
+<span class="doccomment">/// attached to the role. When you do, the session tag overrides the role tag with the same</span>
+<span class="doccomment">/// key.&lt;/p&gt;</span>
+<span class="doccomment">/// &lt;p&gt;An administrator must grant you the permissions necessary to pass session tags. The</span>
+<span class="doccomment">/// administrator can also create granular permissions to allow you to pass only specific</span>
+<span class="doccomment">/// session tags. For more information, see &lt;a href=&quot;https://docs.aws.amazon.com/IAM/latest/UserGuide/tutorial_attribute-based-access-control.html&quot;&gt;Tutorial: Using Tags</span>
+<span class="doccomment">/// for Attribute-Based Access Control&lt;/a&gt; in the</span>
+<span class="doccomment">/// &lt;i&gt;IAM User Guide&lt;/i&gt;.&lt;/p&gt;</span>
+<span class="doccomment">/// &lt;p&gt;You can set the session tags as transitive. Transitive tags persist during role</span>
+<span class="doccomment">/// chaining. For more information, see &lt;a href=&quot;https://docs.aws.amazon.com/IAM/latest/UserGuide/id_session-tags.html#id_session-tags_role-chaining&quot;&gt;Chaining Roles</span>
+<span class="doccomment">/// with Session Tags&lt;/a&gt; in the &lt;i&gt;IAM User Guide&lt;/i&gt;.&lt;/p&gt;</span>
+<span class="doccomment">/// &lt;p&gt;</span>
+<span class="doccomment">/// &lt;b&gt;Identities&lt;/b&gt;</span>
+<span class="doccomment">/// &lt;/p&gt;</span>
+<span class="doccomment">/// &lt;p&gt;Before your application can call &lt;code&gt;AssumeRoleWithWebIdentity&lt;/code&gt;, you must have</span>
+<span class="doccomment">/// an identity token from a supported identity provider and create a role that the application</span>
+<span class="doccomment">/// can assume. The role that your application assumes must trust the identity provider that is</span>
+<span class="doccomment">/// associated with the identity token. In other words, the identity provider must be specified</span>
+<span class="doccomment">/// in the role&#39;s trust policy. &lt;/p&gt;</span>
+<span class="doccomment">/// &lt;important&gt;</span>
+<span class="doccomment">/// &lt;p&gt;Calling &lt;code&gt;AssumeRoleWithWebIdentity&lt;/code&gt; can result in an entry in your</span>
+<span class="doccomment">/// AWS CloudTrail logs. The entry includes the &lt;a href=&quot;http://openid.net/specs/openid-connect-core-1_0.html#Claims&quot;&gt;Subject&lt;/a&gt; of</span>
+<span class="doccomment">/// the provided web identity token. We recommend that you avoid using any personally</span>
+<span class="doccomment">/// identifiable information (PII) in this field. For example, you could instead use a GUID</span>
+<span class="doccomment">/// or a pairwise identifier, as &lt;a href=&quot;http://openid.net/specs/openid-connect-core-1_0.html#SubjectIDTypes&quot;&gt;suggested</span>
+<span class="doccomment">/// in the OIDC specification&lt;/a&gt;.&lt;/p&gt;</span>
+<span class="doccomment">/// &lt;/important&gt;</span>
+<span class="doccomment">/// &lt;p&gt;For more information about how to use web identity federation and the</span>
+<span class="doccomment">/// &lt;code&gt;AssumeRoleWithWebIdentity&lt;/code&gt; API, see the following resources: &lt;/p&gt;</span>
+<span class="doccomment">/// &lt;ul&gt;</span>
+<span class="doccomment">/// &lt;li&gt;</span>
+<span class="doccomment">/// &lt;p&gt;</span>
+<span class="doccomment">/// &lt;a href=&quot;https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_oidc_manual.html&quot;&gt;Using Web Identity Federation API Operations for Mobile Apps&lt;/a&gt; and &lt;a href=&quot;https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html#api_assumerolewithwebidentity&quot;&gt;Federation Through a Web-based Identity Provider&lt;/a&gt;. &lt;/p&gt;</span>
+<span class="doccomment">/// &lt;/li&gt;</span>
+<span class="doccomment">/// &lt;li&gt;</span>
+<span class="doccomment">/// &lt;p&gt;</span>
+<span class="doccomment">/// &lt;a href=&quot;https://aws.amazon.com/blogs/aws/the-aws-web-identity-federation-playground/&quot;&gt; Web Identity Federation Playground&lt;/a&gt;. Walk through the process of</span>
+<span class="doccomment">/// authenticating through Login with Amazon, Facebook, or Google, getting temporary</span>
+<span class="doccomment">/// security credentials, and then using those credentials to make a request to AWS.</span>
+<span class="doccomment">/// &lt;/p&gt;</span>
+<span class="doccomment">/// &lt;/li&gt;</span>
+<span class="doccomment">/// &lt;li&gt;</span>
+<span class="doccomment">/// &lt;p&gt;</span>
+<span class="doccomment">/// &lt;a href=&quot;http://aws.amazon.com/sdkforios/&quot;&gt;AWS SDK for iOS Developer Guide&lt;/a&gt; and &lt;a href=&quot;http://aws.amazon.com/sdkforandroid/&quot;&gt;AWS SDK for Android Developer Guide&lt;/a&gt;. These toolkits</span>
+<span class="doccomment">/// contain sample apps that show how to invoke the identity providers. The toolkits then</span>
+<span class="doccomment">/// show how to use the information from these providers to get and use temporary</span>
+<span class="doccomment">/// security credentials. &lt;/p&gt;</span>
+<span class="doccomment">/// &lt;/li&gt;</span>
+<span class="doccomment">/// &lt;li&gt;</span>
+<span class="doccomment">/// &lt;p&gt;</span>
+<span class="doccomment">/// &lt;a href=&quot;http://aws.amazon.com/articles/web-identity-federation-with-mobile-applications&quot;&gt;Web Identity</span>
+<span class="doccomment">/// Federation with Mobile Applications&lt;/a&gt;. This article discusses web identity</span>
+<span class="doccomment">/// federation and shows an example of how to use web identity federation to get access</span>
+<span class="doccomment">/// to content in Amazon S3. &lt;/p&gt;</span>
+<span class="doccomment">/// &lt;/li&gt;</span>
+<span class="doccomment">/// &lt;/ul&gt;</span>
+<span class="attribute">#[<span class="ident">derive</span>(<span class="ident">std::default::Default</span>, <span class="ident">std::clone::Clone</span>, <span class="ident">std::fmt::Debug</span>)]</span>
+<span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">AssumeRoleWithWebIdentity</span> {
+    <span class="ident">_private</span>: (),
+}
+<span class="kw">impl</span> <span class="ident">AssumeRoleWithWebIdentity</span> {
+    <span class="doccomment">/// Creates a new builder-style object to manufacture [`AssumeRoleWithWebIdentityInput`](crate::input::AssumeRoleWithWebIdentityInput)</span>
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">builder</span>() <span class="op">-</span><span class="op">&gt;</span> <span class="kw">crate</span><span class="ident">::input::assume_role_with_web_identity_input::Builder</span> {
+        <span class="kw">crate</span><span class="ident">::input::assume_role_with_web_identity_input::Builder::default</span>()
+    }
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">new</span>() <span class="op">-</span><span class="op">&gt;</span> <span class="self">Self</span> {
+        <span class="self">Self</span> { <span class="ident">_private</span>: () }
+    }
+}
+<span class="kw">impl</span> <span class="ident">smithy_http::response::ParseStrictResponse</span> <span class="kw">for</span> <span class="ident">AssumeRoleWithWebIdentity</span> {
+    <span class="kw">type</span> <span class="ident">Output</span> <span class="op">=</span> <span class="ident">std::result::Result</span><span class="op">&lt;</span>
+        <span class="kw">crate</span><span class="ident">::output::AssumeRoleWithWebIdentityOutput</span>,
+        <span class="kw">crate</span><span class="ident">::error::AssumeRoleWithWebIdentityError</span>,
+    <span class="op">&gt;</span>;
+    <span class="kw">fn</span> <span class="ident">parse</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">response</span>: <span class="kw-2">&amp;</span><span class="ident">http::Response</span><span class="op">&lt;</span><span class="ident">bytes::Bytes</span><span class="op">&gt;</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="self">Self</span><span class="ident">::Output</span> {
+        <span class="kw">if</span> <span class="op">!</span><span class="ident">response</span>.<span class="ident">status</span>().<span class="ident">is_success</span>() <span class="op">&amp;&amp;</span> <span class="ident">response</span>.<span class="ident">status</span>().<span class="ident">as_u16</span>() <span class="op">!</span><span class="op">=</span> <span class="number">200</span> {
+            <span class="kw">crate</span><span class="ident">::operation_deser::parse_assume_role_with_web_identity_error</span>(<span class="ident">response</span>)
+        } <span class="kw">else</span> {
+            <span class="kw">crate</span><span class="ident">::operation_deser::parse_assume_role_with_web_identity_response</span>(<span class="ident">response</span>)
+        }
+    }
+}
+
+<span class="doccomment">/// &lt;p&gt;Decodes additional information about the authorization status of a request from an</span>
+<span class="doccomment">/// encoded message returned in response to an AWS request.&lt;/p&gt;</span>
+<span class="doccomment">/// &lt;p&gt;For example, if a user is not authorized to perform an operation that he or she has</span>
+<span class="doccomment">/// requested, the request returns a &lt;code&gt;Client.UnauthorizedOperation&lt;/code&gt; response (an</span>
+<span class="doccomment">/// HTTP 403 response). Some AWS operations additionally return an encoded message that can</span>
+<span class="doccomment">/// provide details about this authorization failure. &lt;/p&gt;</span>
+<span class="doccomment">/// &lt;note&gt;</span>
+<span class="doccomment">/// &lt;p&gt;Only certain AWS operations return an encoded authorization message. The</span>
+<span class="doccomment">/// documentation for an individual operation indicates whether that operation returns an</span>
+<span class="doccomment">/// encoded message in addition to returning an HTTP code.&lt;/p&gt;</span>
+<span class="doccomment">/// &lt;/note&gt;</span>
+<span class="doccomment">/// &lt;p&gt;The message is encoded because the details of the authorization status can constitute</span>
+<span class="doccomment">/// privileged information that the user who requested the operation should not see. To decode</span>
+<span class="doccomment">/// an authorization status message, a user must be granted permissions via an IAM policy to</span>
+<span class="doccomment">/// request the &lt;code&gt;DecodeAuthorizationMessage&lt;/code&gt;</span>
+<span class="doccomment">/// (&lt;code&gt;sts:DecodeAuthorizationMessage&lt;/code&gt;) action. &lt;/p&gt;</span>
+<span class="doccomment">/// &lt;p&gt;The decoded message includes the following type of information:&lt;/p&gt;</span>
+<span class="doccomment">/// &lt;ul&gt;</span>
+<span class="doccomment">/// &lt;li&gt;</span>
+<span class="doccomment">/// &lt;p&gt;Whether the request was denied due to an explicit deny or due to the absence of an</span>
+<span class="doccomment">/// explicit allow. For more information, see &lt;a href=&quot;https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_evaluation-logic.html#policy-eval-denyallow&quot;&gt;Determining Whether a Request is Allowed or Denied&lt;/a&gt; in the</span>
+<span class="doccomment">/// &lt;i&gt;IAM User Guide&lt;/i&gt;. &lt;/p&gt;</span>
+<span class="doccomment">/// &lt;/li&gt;</span>
+<span class="doccomment">/// &lt;li&gt;</span>
+<span class="doccomment">/// &lt;p&gt;The principal who made the request.&lt;/p&gt;</span>
+<span class="doccomment">/// &lt;/li&gt;</span>
+<span class="doccomment">/// &lt;li&gt;</span>
+<span class="doccomment">/// &lt;p&gt;The requested action.&lt;/p&gt;</span>
+<span class="doccomment">/// &lt;/li&gt;</span>
+<span class="doccomment">/// &lt;li&gt;</span>
+<span class="doccomment">/// &lt;p&gt;The requested resource.&lt;/p&gt;</span>
+<span class="doccomment">/// &lt;/li&gt;</span>
+<span class="doccomment">/// &lt;li&gt;</span>
+<span class="doccomment">/// &lt;p&gt;The values of condition keys in the context of the user&#39;s request.&lt;/p&gt;</span>
+<span class="doccomment">/// &lt;/li&gt;</span>
+<span class="doccomment">/// &lt;/ul&gt;</span>
+<span class="attribute">#[<span class="ident">derive</span>(<span class="ident">std::default::Default</span>, <span class="ident">std::clone::Clone</span>, <span class="ident">std::fmt::Debug</span>)]</span>
+<span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">DecodeAuthorizationMessage</span> {
+    <span class="ident">_private</span>: (),
+}
+<span class="kw">impl</span> <span class="ident">DecodeAuthorizationMessage</span> {
+    <span class="doccomment">/// Creates a new builder-style object to manufacture [`DecodeAuthorizationMessageInput`](crate::input::DecodeAuthorizationMessageInput)</span>
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">builder</span>() <span class="op">-</span><span class="op">&gt;</span> <span class="kw">crate</span><span class="ident">::input::decode_authorization_message_input::Builder</span> {
+        <span class="kw">crate</span><span class="ident">::input::decode_authorization_message_input::Builder::default</span>()
+    }
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">new</span>() <span class="op">-</span><span class="op">&gt;</span> <span class="self">Self</span> {
+        <span class="self">Self</span> { <span class="ident">_private</span>: () }
+    }
+}
+<span class="kw">impl</span> <span class="ident">smithy_http::response::ParseStrictResponse</span> <span class="kw">for</span> <span class="ident">DecodeAuthorizationMessage</span> {
+    <span class="kw">type</span> <span class="ident">Output</span> <span class="op">=</span> <span class="ident">std::result::Result</span><span class="op">&lt;</span>
+        <span class="kw">crate</span><span class="ident">::output::DecodeAuthorizationMessageOutput</span>,
+        <span class="kw">crate</span><span class="ident">::error::DecodeAuthorizationMessageError</span>,
+    <span class="op">&gt;</span>;
+    <span class="kw">fn</span> <span class="ident">parse</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">response</span>: <span class="kw-2">&amp;</span><span class="ident">http::Response</span><span class="op">&lt;</span><span class="ident">bytes::Bytes</span><span class="op">&gt;</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="self">Self</span><span class="ident">::Output</span> {
+        <span class="kw">if</span> <span class="op">!</span><span class="ident">response</span>.<span class="ident">status</span>().<span class="ident">is_success</span>() <span class="op">&amp;&amp;</span> <span class="ident">response</span>.<span class="ident">status</span>().<span class="ident">as_u16</span>() <span class="op">!</span><span class="op">=</span> <span class="number">200</span> {
+            <span class="kw">crate</span><span class="ident">::operation_deser::parse_decode_authorization_message_error</span>(<span class="ident">response</span>)
+        } <span class="kw">else</span> {
+            <span class="kw">crate</span><span class="ident">::operation_deser::parse_decode_authorization_message_response</span>(<span class="ident">response</span>)
+        }
+    }
+}
+
+<span class="doccomment">/// &lt;p&gt;Returns the account identifier for the specified access key ID.&lt;/p&gt;</span>
+<span class="doccomment">/// &lt;p&gt;Access keys consist of two parts: an access key ID (for example,</span>
+<span class="doccomment">/// &lt;code&gt;AKIAIOSFODNN7EXAMPLE&lt;/code&gt;) and a secret access key (for example,</span>
+<span class="doccomment">/// &lt;code&gt;wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY&lt;/code&gt;). For more information about</span>
+<span class="doccomment">/// access keys, see &lt;a href=&quot;https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html&quot;&gt;Managing Access Keys for IAM</span>
+<span class="doccomment">/// Users&lt;/a&gt; in the &lt;i&gt;IAM User Guide&lt;/i&gt;.&lt;/p&gt;</span>
+<span class="doccomment">/// &lt;p&gt;When you pass an access key ID to this operation, it returns the ID of the AWS</span>
+<span class="doccomment">/// account to which the keys belong. Access key IDs beginning with &lt;code&gt;AKIA&lt;/code&gt; are</span>
+<span class="doccomment">/// long-term credentials for an IAM user or the AWS account root user. Access key IDs</span>
+<span class="doccomment">/// beginning with &lt;code&gt;ASIA&lt;/code&gt; are temporary credentials that are created using STS</span>
+<span class="doccomment">/// operations. If the account in the response belongs to you, you can sign in as the root</span>
+<span class="doccomment">/// user and review your root user access keys. Then, you can pull a &lt;a href=&quot;https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_getting-report.html&quot;&gt;credentials report&lt;/a&gt; to learn which IAM user owns the keys. To learn who</span>
+<span class="doccomment">/// requested the temporary credentials for an &lt;code&gt;ASIA&lt;/code&gt; access key, view the STS</span>
+<span class="doccomment">/// events in your &lt;a href=&quot;https://docs.aws.amazon.com/IAM/latest/UserGuide/cloudtrail-integration.html&quot;&gt;CloudTrail logs&lt;/a&gt; in the</span>
+<span class="doccomment">/// &lt;i&gt;IAM User Guide&lt;/i&gt;.&lt;/p&gt;</span>
+<span class="doccomment">/// &lt;p&gt;This operation does not indicate the state of the access key. The key might be active,</span>
+<span class="doccomment">/// inactive, or deleted. Active keys might not have permissions to perform an operation.</span>
+<span class="doccomment">/// Providing a deleted access key might return an error that the key doesn&#39;t exist.&lt;/p&gt;</span>
+<span class="attribute">#[<span class="ident">derive</span>(<span class="ident">std::default::Default</span>, <span class="ident">std::clone::Clone</span>, <span class="ident">std::fmt::Debug</span>)]</span>
+<span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">GetAccessKeyInfo</span> {
+    <span class="ident">_private</span>: (),
+}
+<span class="kw">impl</span> <span class="ident">GetAccessKeyInfo</span> {
+    <span class="doccomment">/// Creates a new builder-style object to manufacture [`GetAccessKeyInfoInput`](crate::input::GetAccessKeyInfoInput)</span>
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">builder</span>() <span class="op">-</span><span class="op">&gt;</span> <span class="kw">crate</span><span class="ident">::input::get_access_key_info_input::Builder</span> {
+        <span class="kw">crate</span><span class="ident">::input::get_access_key_info_input::Builder::default</span>()
+    }
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">new</span>() <span class="op">-</span><span class="op">&gt;</span> <span class="self">Self</span> {
+        <span class="self">Self</span> { <span class="ident">_private</span>: () }
+    }
+}
+<span class="kw">impl</span> <span class="ident">smithy_http::response::ParseStrictResponse</span> <span class="kw">for</span> <span class="ident">GetAccessKeyInfo</span> {
+    <span class="kw">type</span> <span class="ident">Output</span> <span class="op">=</span> <span class="ident">std::result::Result</span><span class="op">&lt;</span>
+        <span class="kw">crate</span><span class="ident">::output::GetAccessKeyInfoOutput</span>,
+        <span class="kw">crate</span><span class="ident">::error::GetAccessKeyInfoError</span>,
+    <span class="op">&gt;</span>;
+    <span class="kw">fn</span> <span class="ident">parse</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">response</span>: <span class="kw-2">&amp;</span><span class="ident">http::Response</span><span class="op">&lt;</span><span class="ident">bytes::Bytes</span><span class="op">&gt;</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="self">Self</span><span class="ident">::Output</span> {
+        <span class="kw">if</span> <span class="op">!</span><span class="ident">response</span>.<span class="ident">status</span>().<span class="ident">is_success</span>() <span class="op">&amp;&amp;</span> <span class="ident">response</span>.<span class="ident">status</span>().<span class="ident">as_u16</span>() <span class="op">!</span><span class="op">=</span> <span class="number">200</span> {
+            <span class="kw">crate</span><span class="ident">::operation_deser::parse_get_access_key_info_error</span>(<span class="ident">response</span>)
+        } <span class="kw">else</span> {
+            <span class="kw">crate</span><span class="ident">::operation_deser::parse_get_access_key_info_response</span>(<span class="ident">response</span>)
+        }
+    }
+}
+
+<span class="doccomment">/// &lt;p&gt;Returns details about the IAM user or role whose credentials are used to call the</span>
+<span class="doccomment">/// operation.&lt;/p&gt;</span>
+<span class="doccomment">/// &lt;note&gt;</span>
+<span class="doccomment">/// &lt;p&gt;No permissions are required to perform this operation. If an administrator adds a</span>
+<span class="doccomment">/// policy to your IAM user or role that explicitly denies access to the</span>
+<span class="doccomment">/// &lt;code&gt;sts:GetCallerIdentity&lt;/code&gt; action, you can still perform this operation.</span>
+<span class="doccomment">/// Permissions are not required because the same information is returned when an IAM</span>
+<span class="doccomment">/// user or role is denied access. To view an example response, see &lt;a href=&quot;https://docs.aws.amazon.com/IAM/latest/UserGuide/troubleshoot_general.html#troubleshoot_general_access-denied-delete-mfa&quot;&gt;I Am Not Authorized to Perform: iam:DeleteVirtualMFADevice&lt;/a&gt; in the</span>
+<span class="doccomment">/// &lt;i&gt;IAM User Guide&lt;/i&gt;.&lt;/p&gt;</span>
+<span class="doccomment">/// &lt;/note&gt;</span>
+<span class="attribute">#[<span class="ident">derive</span>(<span class="ident">std::default::Default</span>, <span class="ident">std::clone::Clone</span>, <span class="ident">std::fmt::Debug</span>)]</span>
+<span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">GetCallerIdentity</span> {
+    <span class="ident">_private</span>: (),
+}
+<span class="kw">impl</span> <span class="ident">GetCallerIdentity</span> {
+    <span class="doccomment">/// Creates a new builder-style object to manufacture [`GetCallerIdentityInput`](crate::input::GetCallerIdentityInput)</span>
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">builder</span>() <span class="op">-</span><span class="op">&gt;</span> <span class="kw">crate</span><span class="ident">::input::get_caller_identity_input::Builder</span> {
+        <span class="kw">crate</span><span class="ident">::input::get_caller_identity_input::Builder::default</span>()
+    }
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">new</span>() <span class="op">-</span><span class="op">&gt;</span> <span class="self">Self</span> {
+        <span class="self">Self</span> { <span class="ident">_private</span>: () }
+    }
+}
+<span class="kw">impl</span> <span class="ident">smithy_http::response::ParseStrictResponse</span> <span class="kw">for</span> <span class="ident">GetCallerIdentity</span> {
+    <span class="kw">type</span> <span class="ident">Output</span> <span class="op">=</span> <span class="ident">std::result::Result</span><span class="op">&lt;</span>
+        <span class="kw">crate</span><span class="ident">::output::GetCallerIdentityOutput</span>,
+        <span class="kw">crate</span><span class="ident">::error::GetCallerIdentityError</span>,
+    <span class="op">&gt;</span>;
+    <span class="kw">fn</span> <span class="ident">parse</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">response</span>: <span class="kw-2">&amp;</span><span class="ident">http::Response</span><span class="op">&lt;</span><span class="ident">bytes::Bytes</span><span class="op">&gt;</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="self">Self</span><span class="ident">::Output</span> {
+        <span class="kw">if</span> <span class="op">!</span><span class="ident">response</span>.<span class="ident">status</span>().<span class="ident">is_success</span>() <span class="op">&amp;&amp;</span> <span class="ident">response</span>.<span class="ident">status</span>().<span class="ident">as_u16</span>() <span class="op">!</span><span class="op">=</span> <span class="number">200</span> {
+            <span class="kw">crate</span><span class="ident">::operation_deser::parse_get_caller_identity_error</span>(<span class="ident">response</span>)
+        } <span class="kw">else</span> {
+            <span class="kw">crate</span><span class="ident">::operation_deser::parse_get_caller_identity_response</span>(<span class="ident">response</span>)
+        }
+    }
+}
+
+<span class="doccomment">/// &lt;p&gt;Returns a set of temporary security credentials (consisting of an access key ID, a</span>
+<span class="doccomment">/// secret access key, and a security token) for a federated user. A typical use is in a proxy</span>
+<span class="doccomment">/// application that gets temporary security credentials on behalf of distributed applications</span>
+<span class="doccomment">/// inside a corporate network. You must call the &lt;code&gt;GetFederationToken&lt;/code&gt; operation</span>
+<span class="doccomment">/// using the long-term security credentials of an IAM user. As a result, this call is</span>
+<span class="doccomment">/// appropriate in contexts where those credentials can be safely stored, usually in a</span>
+<span class="doccomment">/// server-based application. For a comparison of &lt;code&gt;GetFederationToken&lt;/code&gt; with the</span>
+<span class="doccomment">/// other API operations that produce temporary credentials, see &lt;a href=&quot;https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html&quot;&gt;Requesting Temporary Security</span>
+<span class="doccomment">/// Credentials&lt;/a&gt; and &lt;a href=&quot;https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html#stsapi_comparison&quot;&gt;Comparing the</span>
+<span class="doccomment">/// AWS STS API operations&lt;/a&gt; in the &lt;i&gt;IAM User Guide&lt;/i&gt;.&lt;/p&gt;</span>
+<span class="doccomment">/// &lt;note&gt;</span>
+<span class="doccomment">/// &lt;p&gt;You can create a mobile-based or browser-based app that can authenticate users using</span>
+<span class="doccomment">/// a web identity provider like Login with Amazon, Facebook, Google, or an OpenID</span>
+<span class="doccomment">/// Connect-compatible identity provider. In this case, we recommend that you use &lt;a href=&quot;http://aws.amazon.com/cognito/&quot;&gt;Amazon Cognito&lt;/a&gt; or</span>
+<span class="doccomment">/// &lt;code&gt;AssumeRoleWithWebIdentity&lt;/code&gt;. For more information, see &lt;a href=&quot;https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html#api_assumerolewithwebidentity&quot;&gt;Federation Through a Web-based Identity Provider&lt;/a&gt; in the</span>
+<span class="doccomment">/// &lt;i&gt;IAM User Guide&lt;/i&gt;.&lt;/p&gt;</span>
+<span class="doccomment">/// &lt;/note&gt;</span>
+<span class="doccomment">/// &lt;p&gt;You can also call &lt;code&gt;GetFederationToken&lt;/code&gt; using the security credentials of an</span>
+<span class="doccomment">/// AWS account root user, but we do not recommend it. Instead, we recommend that you create</span>
+<span class="doccomment">/// an IAM user for the purpose of the proxy application. Then attach a policy to the IAM</span>
+<span class="doccomment">/// user that limits federated users to only the actions and resources that they need to</span>
+<span class="doccomment">/// access. For more information, see &lt;a href=&quot;https://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html&quot;&gt;IAM Best Practices&lt;/a&gt; in the</span>
+<span class="doccomment">/// &lt;i&gt;IAM User Guide&lt;/i&gt;. &lt;/p&gt;</span>
+<span class="doccomment">/// &lt;p&gt;</span>
+<span class="doccomment">/// &lt;b&gt;Session duration&lt;/b&gt;</span>
+<span class="doccomment">/// &lt;/p&gt;</span>
+<span class="doccomment">/// &lt;p&gt;The temporary credentials are valid for the specified duration, from 900 seconds (15</span>
+<span class="doccomment">/// minutes) up to a maximum of 129,600 seconds (36 hours). The default session duration is</span>
+<span class="doccomment">/// 43,200 seconds (12 hours). Temporary credentials that are obtained by using AWS account</span>
+<span class="doccomment">/// root user credentials have a maximum duration of 3,600 seconds (1 hour).&lt;/p&gt;</span>
+<span class="doccomment">/// &lt;p&gt;</span>
+<span class="doccomment">/// &lt;b&gt;Permissions&lt;/b&gt;</span>
+<span class="doccomment">/// &lt;/p&gt;</span>
+<span class="doccomment">/// &lt;p&gt;You can use the temporary credentials created by &lt;code&gt;GetFederationToken&lt;/code&gt; in any</span>
+<span class="doccomment">/// AWS service except the following:&lt;/p&gt;</span>
+<span class="doccomment">/// &lt;ul&gt;</span>
+<span class="doccomment">/// &lt;li&gt;</span>
+<span class="doccomment">/// &lt;p&gt;You cannot call any IAM operations using the AWS CLI or the AWS API. &lt;/p&gt;</span>
+<span class="doccomment">/// &lt;/li&gt;</span>
+<span class="doccomment">/// &lt;li&gt;</span>
+<span class="doccomment">/// &lt;p&gt;You cannot call any STS operations except &lt;code&gt;GetCallerIdentity&lt;/code&gt;.&lt;/p&gt;</span>
+<span class="doccomment">/// &lt;/li&gt;</span>
+<span class="doccomment">/// &lt;/ul&gt;</span>
+<span class="doccomment">/// &lt;p&gt;You must pass an inline or managed &lt;a href=&quot;https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session&quot;&gt;session policy&lt;/a&gt; to</span>
+<span class="doccomment">/// this operation. You can pass a single JSON policy document to use as an inline session</span>
+<span class="doccomment">/// policy. You can also specify up to 10 managed policies to use as managed session policies.</span>
+<span class="doccomment">/// The plaintext that you use for both inline and managed session policies can&#39;t exceed 2,048</span>
+<span class="doccomment">/// characters.&lt;/p&gt;</span>
+<span class="doccomment">/// &lt;p&gt;Though the session policy parameters are optional, if you do not pass a policy, then the</span>
+<span class="doccomment">/// resulting federated user session has no permissions. When you pass session policies, the</span>
+<span class="doccomment">/// session permissions are the intersection of the IAM user policies and the session</span>
+<span class="doccomment">/// policies that you pass. This gives you a way to further restrict the permissions for a</span>
+<span class="doccomment">/// federated user. You cannot use session policies to grant more permissions than those that</span>
+<span class="doccomment">/// are defined in the permissions policy of the IAM user. For more information, see &lt;a href=&quot;https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session&quot;&gt;Session</span>
+<span class="doccomment">/// Policies&lt;/a&gt; in the &lt;i&gt;IAM User Guide&lt;/i&gt;. For information about</span>
+<span class="doccomment">/// using &lt;code&gt;GetFederationToken&lt;/code&gt; to create temporary security credentials, see &lt;a href=&quot;https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html#api_getfederationtoken&quot;&gt;GetFederationToken—Federation Through a Custom Identity Broker&lt;/a&gt;. &lt;/p&gt;</span>
+<span class="doccomment">/// &lt;p&gt;You can use the credentials to access a resource that has a resource-based policy. If</span>
+<span class="doccomment">/// that policy specifically references the federated user session in the</span>
+<span class="doccomment">/// &lt;code&gt;Principal&lt;/code&gt; element of the policy, the session has the permissions allowed by</span>
+<span class="doccomment">/// the policy. These permissions are granted in addition to the permissions granted by the</span>
+<span class="doccomment">/// session policies.&lt;/p&gt;</span>
+<span class="doccomment">/// &lt;p&gt;</span>
+<span class="doccomment">/// &lt;b&gt;Tags&lt;/b&gt;</span>
+<span class="doccomment">/// &lt;/p&gt;</span>
+<span class="doccomment">/// &lt;p&gt;(Optional) You can pass tag key-value pairs to your session. These are called session</span>
+<span class="doccomment">/// tags. For more information about session tags, see &lt;a href=&quot;https://docs.aws.amazon.com/IAM/latest/UserGuide/id_session-tags.html&quot;&gt;Passing Session Tags in STS&lt;/a&gt; in the</span>
+<span class="doccomment">/// &lt;i&gt;IAM User Guide&lt;/i&gt;.&lt;/p&gt;</span>
+<span class="doccomment">/// &lt;note&gt;</span>
+<span class="doccomment">/// &lt;p&gt;You can create a mobile-based or browser-based app that can authenticate users</span>
+<span class="doccomment">/// using a web identity provider like Login with Amazon, Facebook, Google, or an OpenID</span>
+<span class="doccomment">/// Connect-compatible identity provider. In this case, we recommend that you use &lt;a href=&quot;http://aws.amazon.com/cognito/&quot;&gt;Amazon Cognito&lt;/a&gt; or</span>
+<span class="doccomment">/// &lt;code&gt;AssumeRoleWithWebIdentity&lt;/code&gt;. For more information, see &lt;a href=&quot;https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html#api_assumerolewithwebidentity&quot;&gt;Federation Through a Web-based Identity Provider&lt;/a&gt; in the</span>
+<span class="doccomment">/// &lt;i&gt;IAM User Guide&lt;/i&gt;.&lt;/p&gt;</span>
+<span class="doccomment">/// &lt;/note&gt;</span>
+<span class="doccomment">/// &lt;p&gt;You can also call &lt;code&gt;GetFederationToken&lt;/code&gt; using the security credentials of an</span>
+<span class="doccomment">/// AWS account root user, but we do not recommend it. Instead, we recommend that you</span>
+<span class="doccomment">/// create an IAM user for the purpose of the proxy application. Then attach a policy to</span>
+<span class="doccomment">/// the IAM user that limits federated users to only the actions and resources that they</span>
+<span class="doccomment">/// need to access. For more information, see &lt;a href=&quot;https://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html&quot;&gt;IAM Best Practices&lt;/a&gt; in the</span>
+<span class="doccomment">/// &lt;i&gt;IAM User Guide&lt;/i&gt;. &lt;/p&gt;</span>
+<span class="doccomment">/// &lt;p&gt;</span>
+<span class="doccomment">/// &lt;b&gt;Session duration&lt;/b&gt;</span>
+<span class="doccomment">/// &lt;/p&gt;</span>
+<span class="doccomment">/// &lt;p&gt;The temporary credentials are valid for the specified duration, from 900 seconds (15</span>
+<span class="doccomment">/// minutes) up to a maximum of 129,600 seconds (36 hours). The default session duration is</span>
+<span class="doccomment">/// 43,200 seconds (12 hours). Temporary credentials that are obtained by using AWS</span>
+<span class="doccomment">/// account root user credentials have a maximum duration of 3,600 seconds (1 hour).&lt;/p&gt;</span>
+<span class="doccomment">/// &lt;p&gt;</span>
+<span class="doccomment">/// &lt;b&gt;Permissions&lt;/b&gt;</span>
+<span class="doccomment">/// &lt;/p&gt;</span>
+<span class="doccomment">/// &lt;p&gt;You can use the temporary credentials created by &lt;code&gt;GetFederationToken&lt;/code&gt; in</span>
+<span class="doccomment">/// any AWS service except the following:&lt;/p&gt;</span>
+<span class="doccomment">/// &lt;ul&gt;</span>
+<span class="doccomment">/// &lt;li&gt;</span>
+<span class="doccomment">/// &lt;p&gt;You cannot call any IAM operations using the AWS CLI or the AWS API.</span>
+<span class="doccomment">/// &lt;/p&gt;</span>
+<span class="doccomment">/// &lt;/li&gt;</span>
+<span class="doccomment">/// &lt;li&gt;</span>
+<span class="doccomment">/// &lt;p&gt;You cannot call any STS operations except</span>
+<span class="doccomment">/// &lt;code&gt;GetCallerIdentity&lt;/code&gt;.&lt;/p&gt;</span>
+<span class="doccomment">/// &lt;/li&gt;</span>
+<span class="doccomment">/// &lt;/ul&gt;</span>
+<span class="doccomment">/// &lt;p&gt;You must pass an inline or managed &lt;a href=&quot;https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session&quot;&gt;session policy&lt;/a&gt; to</span>
+<span class="doccomment">/// this operation. You can pass a single JSON policy document to use as an inline session</span>
+<span class="doccomment">/// policy. You can also specify up to 10 managed policies to use as managed session</span>
+<span class="doccomment">/// policies. The plain text that you use for both inline and managed session policies can&#39;t</span>
+<span class="doccomment">/// exceed 2,048 characters.&lt;/p&gt;</span>
+<span class="doccomment">/// &lt;p&gt;Though the session policy parameters are optional, if you do not pass a policy, then</span>
+<span class="doccomment">/// the resulting federated user session has no permissions. When you pass session policies,</span>
+<span class="doccomment">/// the session permissions are the intersection of the IAM user policies and the session</span>
+<span class="doccomment">/// policies that you pass. This gives you a way to further restrict the permissions for a</span>
+<span class="doccomment">/// federated user. You cannot use session policies to grant more permissions than those</span>
+<span class="doccomment">/// that are defined in the permissions policy of the IAM user. For more information, see</span>
+<span class="doccomment">/// &lt;a href=&quot;https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session&quot;&gt;Session Policies&lt;/a&gt;</span>
+<span class="doccomment">/// in the &lt;i&gt;IAM User Guide&lt;/i&gt;. For information about using</span>
+<span class="doccomment">/// &lt;code&gt;GetFederationToken&lt;/code&gt; to create temporary security credentials, see &lt;a href=&quot;https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html#api_getfederationtoken&quot;&gt;GetFederationToken—Federation Through a Custom Identity Broker&lt;/a&gt;. &lt;/p&gt;</span>
+<span class="doccomment">/// &lt;p&gt;You can use the credentials to access a resource that has a resource-based policy. If</span>
+<span class="doccomment">/// that policy specifically references the federated user session in the</span>
+<span class="doccomment">/// &lt;code&gt;Principal&lt;/code&gt; element of the policy, the session has the permissions</span>
+<span class="doccomment">/// allowed by the policy. These permissions are granted in addition to the permissions</span>
+<span class="doccomment">/// granted by the session policies.&lt;/p&gt;</span>
+<span class="doccomment">/// &lt;p&gt;</span>
+<span class="doccomment">/// &lt;b&gt;Tags&lt;/b&gt;</span>
+<span class="doccomment">/// &lt;/p&gt;</span>
+<span class="doccomment">/// &lt;p&gt;(Optional) You can pass tag key-value pairs to your session. These are called session</span>
+<span class="doccomment">/// tags. For more information about session tags, see &lt;a href=&quot;https://docs.aws.amazon.com/IAM/latest/UserGuide/id_session-tags.html&quot;&gt;Passing Session Tags in STS&lt;/a&gt; in</span>
+<span class="doccomment">/// the &lt;i&gt;IAM User Guide&lt;/i&gt;.&lt;/p&gt;</span>
+<span class="doccomment">/// &lt;p&gt;An administrator must grant you the permissions necessary to pass session tags. The</span>
+<span class="doccomment">/// administrator can also create granular permissions to allow you to pass only specific</span>
+<span class="doccomment">/// session tags. For more information, see &lt;a href=&quot;https://docs.aws.amazon.com/IAM/latest/UserGuide/tutorial_attribute-based-access-control.html&quot;&gt;Tutorial: Using</span>
+<span class="doccomment">/// Tags for Attribute-Based Access Control&lt;/a&gt; in the</span>
+<span class="doccomment">/// &lt;i&gt;IAM User Guide&lt;/i&gt;.&lt;/p&gt;</span>
+<span class="doccomment">/// &lt;p&gt;Tag key–value pairs are not case sensitive, but case is preserved. This means that you</span>
+<span class="doccomment">/// cannot have separate &lt;code&gt;Department&lt;/code&gt; and &lt;code&gt;department&lt;/code&gt; tag keys.</span>
+<span class="doccomment">/// Assume that the user that you are federating has the</span>
+<span class="doccomment">/// &lt;code&gt;Department&lt;/code&gt;=&lt;code&gt;Marketing&lt;/code&gt; tag and you pass the</span>
+<span class="doccomment">/// &lt;code&gt;department&lt;/code&gt;=&lt;code&gt;engineering&lt;/code&gt; session tag.</span>
+<span class="doccomment">/// &lt;code&gt;Department&lt;/code&gt; and &lt;code&gt;department&lt;/code&gt; are not saved as separate tags,</span>
+<span class="doccomment">/// and the session tag passed in the request takes precedence over the user tag.&lt;/p&gt;</span>
+<span class="attribute">#[<span class="ident">derive</span>(<span class="ident">std::default::Default</span>, <span class="ident">std::clone::Clone</span>, <span class="ident">std::fmt::Debug</span>)]</span>
+<span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">GetFederationToken</span> {
+    <span class="ident">_private</span>: (),
+}
+<span class="kw">impl</span> <span class="ident">GetFederationToken</span> {
+    <span class="doccomment">/// Creates a new builder-style object to manufacture [`GetFederationTokenInput`](crate::input::GetFederationTokenInput)</span>
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">builder</span>() <span class="op">-</span><span class="op">&gt;</span> <span class="kw">crate</span><span class="ident">::input::get_federation_token_input::Builder</span> {
+        <span class="kw">crate</span><span class="ident">::input::get_federation_token_input::Builder::default</span>()
+    }
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">new</span>() <span class="op">-</span><span class="op">&gt;</span> <span class="self">Self</span> {
+        <span class="self">Self</span> { <span class="ident">_private</span>: () }
+    }
+}
+<span class="kw">impl</span> <span class="ident">smithy_http::response::ParseStrictResponse</span> <span class="kw">for</span> <span class="ident">GetFederationToken</span> {
+    <span class="kw">type</span> <span class="ident">Output</span> <span class="op">=</span> <span class="ident">std::result::Result</span><span class="op">&lt;</span>
+        <span class="kw">crate</span><span class="ident">::output::GetFederationTokenOutput</span>,
+        <span class="kw">crate</span><span class="ident">::error::GetFederationTokenError</span>,
+    <span class="op">&gt;</span>;
+    <span class="kw">fn</span> <span class="ident">parse</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">response</span>: <span class="kw-2">&amp;</span><span class="ident">http::Response</span><span class="op">&lt;</span><span class="ident">bytes::Bytes</span><span class="op">&gt;</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="self">Self</span><span class="ident">::Output</span> {
+        <span class="kw">if</span> <span class="op">!</span><span class="ident">response</span>.<span class="ident">status</span>().<span class="ident">is_success</span>() <span class="op">&amp;&amp;</span> <span class="ident">response</span>.<span class="ident">status</span>().<span class="ident">as_u16</span>() <span class="op">!</span><span class="op">=</span> <span class="number">200</span> {
+            <span class="kw">crate</span><span class="ident">::operation_deser::parse_get_federation_token_error</span>(<span class="ident">response</span>)
+        } <span class="kw">else</span> {
+            <span class="kw">crate</span><span class="ident">::operation_deser::parse_get_federation_token_response</span>(<span class="ident">response</span>)
+        }
+    }
+}
+
+<span class="doccomment">/// &lt;p&gt;Returns a set of temporary credentials for an AWS account or IAM user. The</span>
+<span class="doccomment">/// credentials consist of an access key ID, a secret access key, and a security token.</span>
+<span class="doccomment">/// Typically, you use &lt;code&gt;GetSessionToken&lt;/code&gt; if you want to use MFA to protect</span>
+<span class="doccomment">/// programmatic calls to specific AWS API operations like Amazon EC2 &lt;code&gt;StopInstances&lt;/code&gt;.</span>
+<span class="doccomment">/// MFA-enabled IAM users would need to call &lt;code&gt;GetSessionToken&lt;/code&gt; and submit an MFA</span>
+<span class="doccomment">/// code that is associated with their MFA device. Using the temporary security credentials</span>
+<span class="doccomment">/// that are returned from the call, IAM users can then make programmatic calls to API</span>
+<span class="doccomment">/// operations that require MFA authentication. If you do not supply a correct MFA code, then</span>
+<span class="doccomment">/// the API returns an access denied error. For a comparison of &lt;code&gt;GetSessionToken&lt;/code&gt;</span>
+<span class="doccomment">/// with the other API operations that produce temporary credentials, see &lt;a href=&quot;https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html&quot;&gt;Requesting</span>
+<span class="doccomment">/// Temporary Security Credentials&lt;/a&gt; and &lt;a href=&quot;https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html#stsapi_comparison&quot;&gt;Comparing the</span>
+<span class="doccomment">/// AWS STS API operations&lt;/a&gt; in the &lt;i&gt;IAM User Guide&lt;/i&gt;.&lt;/p&gt;</span>
+<span class="doccomment">/// &lt;p&gt;</span>
+<span class="doccomment">/// &lt;b&gt;Session Duration&lt;/b&gt;</span>
+<span class="doccomment">/// &lt;/p&gt;</span>
+<span class="doccomment">/// &lt;p&gt;The &lt;code&gt;GetSessionToken&lt;/code&gt; operation must be called by using the long-term AWS</span>
+<span class="doccomment">/// security credentials of the AWS account root user or an IAM user. Credentials that are</span>
+<span class="doccomment">/// created by IAM users are valid for the duration that you specify. This duration can range</span>
+<span class="doccomment">/// from 900 seconds (15 minutes) up to a maximum of 129,600 seconds (36 hours), with a default</span>
+<span class="doccomment">/// of 43,200 seconds (12 hours). Credentials based on account credentials can range from 900</span>
+<span class="doccomment">/// seconds (15 minutes) up to 3,600 seconds (1 hour), with a default of 1 hour. &lt;/p&gt;</span>
+<span class="doccomment">/// &lt;p&gt;</span>
+<span class="doccomment">/// &lt;b&gt;Permissions&lt;/b&gt;</span>
+<span class="doccomment">/// &lt;/p&gt;</span>
+<span class="doccomment">/// &lt;p&gt;The temporary security credentials created by &lt;code&gt;GetSessionToken&lt;/code&gt; can be used</span>
+<span class="doccomment">/// to make API calls to any AWS service with the following exceptions:&lt;/p&gt;</span>
+<span class="doccomment">/// &lt;ul&gt;</span>
+<span class="doccomment">/// &lt;li&gt;</span>
+<span class="doccomment">/// &lt;p&gt;You cannot call any IAM API operations unless MFA authentication information is</span>
+<span class="doccomment">/// included in the request.&lt;/p&gt;</span>
+<span class="doccomment">/// &lt;/li&gt;</span>
+<span class="doccomment">/// &lt;li&gt;</span>
+<span class="doccomment">/// &lt;p&gt;You cannot call any STS API &lt;i&gt;except&lt;/i&gt;</span>
+<span class="doccomment">/// &lt;code&gt;AssumeRole&lt;/code&gt; or &lt;code&gt;GetCallerIdentity&lt;/code&gt;.&lt;/p&gt;</span>
+<span class="doccomment">/// &lt;/li&gt;</span>
+<span class="doccomment">/// &lt;/ul&gt;</span>
+<span class="doccomment">/// &lt;note&gt;</span>
+<span class="doccomment">/// &lt;p&gt;We recommend that you do not call &lt;code&gt;GetSessionToken&lt;/code&gt; with AWS account</span>
+<span class="doccomment">/// root user credentials. Instead, follow our &lt;a href=&quot;https://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html#create-iam-users&quot;&gt;best practices&lt;/a&gt; by</span>
+<span class="doccomment">/// creating one or more IAM users, giving them the necessary permissions, and using IAM</span>
+<span class="doccomment">/// users for everyday interaction with AWS. &lt;/p&gt;</span>
+<span class="doccomment">/// &lt;/note&gt;</span>
+<span class="doccomment">/// &lt;p&gt;The credentials that are returned by &lt;code&gt;GetSessionToken&lt;/code&gt; are based on</span>
+<span class="doccomment">/// permissions associated with the user whose credentials were used to call the operation. If</span>
+<span class="doccomment">/// &lt;code&gt;GetSessionToken&lt;/code&gt; is called using AWS account root user credentials, the</span>
+<span class="doccomment">/// temporary credentials have root user permissions. Similarly, if</span>
+<span class="doccomment">/// &lt;code&gt;GetSessionToken&lt;/code&gt; is called using the credentials of an IAM user, the</span>
+<span class="doccomment">/// temporary credentials have the same permissions as the IAM user. &lt;/p&gt;</span>
+<span class="doccomment">/// &lt;p&gt;For more information about using &lt;code&gt;GetSessionToken&lt;/code&gt; to create temporary</span>
+<span class="doccomment">/// credentials, go to &lt;a href=&quot;https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html#api_getsessiontoken&quot;&gt;Temporary</span>
+<span class="doccomment">/// Credentials for Users in Untrusted Environments&lt;/a&gt; in the</span>
+<span class="doccomment">/// &lt;i&gt;IAM User Guide&lt;/i&gt;. &lt;/p&gt;</span>
+<span class="attribute">#[<span class="ident">derive</span>(<span class="ident">std::default::Default</span>, <span class="ident">std::clone::Clone</span>, <span class="ident">std::fmt::Debug</span>)]</span>
+<span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">GetSessionToken</span> {
+    <span class="ident">_private</span>: (),
+}
+<span class="kw">impl</span> <span class="ident">GetSessionToken</span> {
+    <span class="doccomment">/// Creates a new builder-style object to manufacture [`GetSessionTokenInput`](crate::input::GetSessionTokenInput)</span>
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">builder</span>() <span class="op">-</span><span class="op">&gt;</span> <span class="kw">crate</span><span class="ident">::input::get_session_token_input::Builder</span> {
+        <span class="kw">crate</span><span class="ident">::input::get_session_token_input::Builder::default</span>()
+    }
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">new</span>() <span class="op">-</span><span class="op">&gt;</span> <span class="self">Self</span> {
+        <span class="self">Self</span> { <span class="ident">_private</span>: () }
+    }
+}
+<span class="kw">impl</span> <span class="ident">smithy_http::response::ParseStrictResponse</span> <span class="kw">for</span> <span class="ident">GetSessionToken</span> {
+    <span class="kw">type</span> <span class="ident">Output</span> <span class="op">=</span> <span class="ident">std::result::Result</span><span class="op">&lt;</span>
+        <span class="kw">crate</span><span class="ident">::output::GetSessionTokenOutput</span>,
+        <span class="kw">crate</span><span class="ident">::error::GetSessionTokenError</span>,
+    <span class="op">&gt;</span>;
+    <span class="kw">fn</span> <span class="ident">parse</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">response</span>: <span class="kw-2">&amp;</span><span class="ident">http::Response</span><span class="op">&lt;</span><span class="ident">bytes::Bytes</span><span class="op">&gt;</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="self">Self</span><span class="ident">::Output</span> {
+        <span class="kw">if</span> <span class="op">!</span><span class="ident">response</span>.<span class="ident">status</span>().<span class="ident">is_success</span>() <span class="op">&amp;&amp;</span> <span class="ident">response</span>.<span class="ident">status</span>().<span class="ident">as_u16</span>() <span class="op">!</span><span class="op">=</span> <span class="number">200</span> {
+            <span class="kw">crate</span><span class="ident">::operation_deser::parse_get_session_token_error</span>(<span class="ident">response</span>)
+        } <span class="kw">else</span> {
+            <span class="kw">crate</span><span class="ident">::operation_deser::parse_get_session_token_response</span>(<span class="ident">response</span>)
+        }
+    }
+}
+</pre></div>
+</section><section id="search" class="content hidden"></section><div id="rustdoc-vars" data-root-path="../../" data-current-crate="aws_sdk_sts" data-search-index-js="../../search-index.js" data-search-js="../../search.js"></div>
+    <script src="../../main.js"></script><script src="../../source-script.js"></script><script src="../../source-files.js"></script>
+</body></html>

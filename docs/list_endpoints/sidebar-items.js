@@ -1,0 +1,1 @@
+initSidebarItems({"fn":[["main","Lists your AWS Elemental MediaPackage endpoint descriptions and URLs."]],"struct":[["Opt",""]]});

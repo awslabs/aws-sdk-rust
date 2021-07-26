@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["BatchGetRecord",""],["DeleteRecord",""],["GetRecord",""],["PutRecord",""]]});

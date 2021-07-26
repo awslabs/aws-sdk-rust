@@ -1,0 +1,1 @@
+initSidebarItems({"trait":[["ParseHttpResponse","`ParseHttpResponse` is a generic trait for parsing structured data from HTTP responses."],["ParseStrictResponse","Convenience Trait for non-streaming APIs"]]});

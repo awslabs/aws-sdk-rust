@@ -1,0 +1,3 @@
+(function() {var implementors = {};
+implementors["smithy_http"] = [{"text":"impl <a class=\"trait\" href=\"https://docs.rs/http-body/0.4.2/http_body/trait.Body.html\" title=\"trait http_body::Body\">Body</a> for <a class=\"struct\" href=\"smithy_http/body/struct.SdkBody.html\" title=\"struct smithy_http::body::SdkBody\">SdkBody</a>","synthetic":false,"types":["smithy_http::body::SdkBody"]}];
+if (window.register_implementors) {window.register_implementors(implementors);} else {window.pending_implementors = implementors;}})()

@@ -1,0 +1,1 @@
+initSidebarItems({"mod":[["get_device_registration_output","See `GetDeviceRegistrationOutput`"],["send_heartbeat_output","See `SendHeartbeatOutput`"]],"struct":[["GetDeviceRegistrationOutput",""],["SendHeartbeatOutput",""]]});

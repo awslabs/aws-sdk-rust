@@ -1,0 +1,1 @@
+initSidebarItems({"mod":[["decode",""],["encode","XML Encoding module that uses Rust lifetimes to make generating malformed XML a compile error"]]});

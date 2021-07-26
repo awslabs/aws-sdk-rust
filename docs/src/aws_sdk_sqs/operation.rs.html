@@ -1,0 +1,1821 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Source of the Rust file `sqs&#x2F;src&#x2F;operation.rs`."><meta name="keywords" content="rust, rustlang, rust-lang"><title>operation.rs - source</title><link rel="stylesheet" type="text/css" href="../../normalize.css"><link rel="stylesheet" type="text/css" href="../../rustdoc.css" id="mainThemeStyle"><link rel="stylesheet" type="text/css" href="../../light.css"  id="themeStyle"><link rel="stylesheet" type="text/css" href="../../dark.css" disabled ><link rel="stylesheet" type="text/css" href="../../ayu.css" disabled ><script id="default-settings" ></script><script src="../../storage.js"></script><script src="../../crates.js"></script><noscript><link rel="stylesheet" href="../../noscript.css"></noscript><link rel="icon" type="image/svg+xml" href="../../favicon.svg"><link rel="alternate icon" type="image/png" href="../../favicon-16x16.png"><link rel="alternate icon" type="image/png" href="../../favicon-32x32.png"><style type="text/css">#crate-search{background-image:url("../../down-arrow.svg");}</style></head><body class="rustdoc source"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]--><nav class="sidebar"><div class="sidebar-menu" role="button">&#9776;</div><a href='../../aws_sdk_sqs/index.html'><div class='logo-container rust-logo'><img src='../../rust-logo.png' alt='logo'></div></a></nav><div class="theme-picker"><button id="theme-picker" aria-label="Pick another theme!" aria-haspopup="menu" title="themes"><img width="18" height="18" alt="Pick another theme!" src="../../brush.svg"></button><div id="theme-choices" role="menu"></div></div><nav class="sub"><form class="search-form"><div class="search-container"><div><select id="crate-search"><option value="All crates">All crates</option></select><input class="search-input"name="search" disabled autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"></div><button type="button" id="help-button" title="help">?</button><a id="settings-menu" href="../../settings.html" title="settings"><img width="18" height="18" alt="Change settings" src="../../wheel.svg"></a></div></form></nav><section id="main" class="content"><div class="example-wrap"><pre class="line-numbers"><span id="1">  1</span>
+<span id="2">  2</span>
+<span id="3">  3</span>
+<span id="4">  4</span>
+<span id="5">  5</span>
+<span id="6">  6</span>
+<span id="7">  7</span>
+<span id="8">  8</span>
+<span id="9">  9</span>
+<span id="10"> 10</span>
+<span id="11"> 11</span>
+<span id="12"> 12</span>
+<span id="13"> 13</span>
+<span id="14"> 14</span>
+<span id="15"> 15</span>
+<span id="16"> 16</span>
+<span id="17"> 17</span>
+<span id="18"> 18</span>
+<span id="19"> 19</span>
+<span id="20"> 20</span>
+<span id="21"> 21</span>
+<span id="22"> 22</span>
+<span id="23"> 23</span>
+<span id="24"> 24</span>
+<span id="25"> 25</span>
+<span id="26"> 26</span>
+<span id="27"> 27</span>
+<span id="28"> 28</span>
+<span id="29"> 29</span>
+<span id="30"> 30</span>
+<span id="31"> 31</span>
+<span id="32"> 32</span>
+<span id="33"> 33</span>
+<span id="34"> 34</span>
+<span id="35"> 35</span>
+<span id="36"> 36</span>
+<span id="37"> 37</span>
+<span id="38"> 38</span>
+<span id="39"> 39</span>
+<span id="40"> 40</span>
+<span id="41"> 41</span>
+<span id="42"> 42</span>
+<span id="43"> 43</span>
+<span id="44"> 44</span>
+<span id="45"> 45</span>
+<span id="46"> 46</span>
+<span id="47"> 47</span>
+<span id="48"> 48</span>
+<span id="49"> 49</span>
+<span id="50"> 50</span>
+<span id="51"> 51</span>
+<span id="52"> 52</span>
+<span id="53"> 53</span>
+<span id="54"> 54</span>
+<span id="55"> 55</span>
+<span id="56"> 56</span>
+<span id="57"> 57</span>
+<span id="58"> 58</span>
+<span id="59"> 59</span>
+<span id="60"> 60</span>
+<span id="61"> 61</span>
+<span id="62"> 62</span>
+<span id="63"> 63</span>
+<span id="64"> 64</span>
+<span id="65"> 65</span>
+<span id="66"> 66</span>
+<span id="67"> 67</span>
+<span id="68"> 68</span>
+<span id="69"> 69</span>
+<span id="70"> 70</span>
+<span id="71"> 71</span>
+<span id="72"> 72</span>
+<span id="73"> 73</span>
+<span id="74"> 74</span>
+<span id="75"> 75</span>
+<span id="76"> 76</span>
+<span id="77"> 77</span>
+<span id="78"> 78</span>
+<span id="79"> 79</span>
+<span id="80"> 80</span>
+<span id="81"> 81</span>
+<span id="82"> 82</span>
+<span id="83"> 83</span>
+<span id="84"> 84</span>
+<span id="85"> 85</span>
+<span id="86"> 86</span>
+<span id="87"> 87</span>
+<span id="88"> 88</span>
+<span id="89"> 89</span>
+<span id="90"> 90</span>
+<span id="91"> 91</span>
+<span id="92"> 92</span>
+<span id="93"> 93</span>
+<span id="94"> 94</span>
+<span id="95"> 95</span>
+<span id="96"> 96</span>
+<span id="97"> 97</span>
+<span id="98"> 98</span>
+<span id="99"> 99</span>
+<span id="100">100</span>
+<span id="101">101</span>
+<span id="102">102</span>
+<span id="103">103</span>
+<span id="104">104</span>
+<span id="105">105</span>
+<span id="106">106</span>
+<span id="107">107</span>
+<span id="108">108</span>
+<span id="109">109</span>
+<span id="110">110</span>
+<span id="111">111</span>
+<span id="112">112</span>
+<span id="113">113</span>
+<span id="114">114</span>
+<span id="115">115</span>
+<span id="116">116</span>
+<span id="117">117</span>
+<span id="118">118</span>
+<span id="119">119</span>
+<span id="120">120</span>
+<span id="121">121</span>
+<span id="122">122</span>
+<span id="123">123</span>
+<span id="124">124</span>
+<span id="125">125</span>
+<span id="126">126</span>
+<span id="127">127</span>
+<span id="128">128</span>
+<span id="129">129</span>
+<span id="130">130</span>
+<span id="131">131</span>
+<span id="132">132</span>
+<span id="133">133</span>
+<span id="134">134</span>
+<span id="135">135</span>
+<span id="136">136</span>
+<span id="137">137</span>
+<span id="138">138</span>
+<span id="139">139</span>
+<span id="140">140</span>
+<span id="141">141</span>
+<span id="142">142</span>
+<span id="143">143</span>
+<span id="144">144</span>
+<span id="145">145</span>
+<span id="146">146</span>
+<span id="147">147</span>
+<span id="148">148</span>
+<span id="149">149</span>
+<span id="150">150</span>
+<span id="151">151</span>
+<span id="152">152</span>
+<span id="153">153</span>
+<span id="154">154</span>
+<span id="155">155</span>
+<span id="156">156</span>
+<span id="157">157</span>
+<span id="158">158</span>
+<span id="159">159</span>
+<span id="160">160</span>
+<span id="161">161</span>
+<span id="162">162</span>
+<span id="163">163</span>
+<span id="164">164</span>
+<span id="165">165</span>
+<span id="166">166</span>
+<span id="167">167</span>
+<span id="168">168</span>
+<span id="169">169</span>
+<span id="170">170</span>
+<span id="171">171</span>
+<span id="172">172</span>
+<span id="173">173</span>
+<span id="174">174</span>
+<span id="175">175</span>
+<span id="176">176</span>
+<span id="177">177</span>
+<span id="178">178</span>
+<span id="179">179</span>
+<span id="180">180</span>
+<span id="181">181</span>
+<span id="182">182</span>
+<span id="183">183</span>
+<span id="184">184</span>
+<span id="185">185</span>
+<span id="186">186</span>
+<span id="187">187</span>
+<span id="188">188</span>
+<span id="189">189</span>
+<span id="190">190</span>
+<span id="191">191</span>
+<span id="192">192</span>
+<span id="193">193</span>
+<span id="194">194</span>
+<span id="195">195</span>
+<span id="196">196</span>
+<span id="197">197</span>
+<span id="198">198</span>
+<span id="199">199</span>
+<span id="200">200</span>
+<span id="201">201</span>
+<span id="202">202</span>
+<span id="203">203</span>
+<span id="204">204</span>
+<span id="205">205</span>
+<span id="206">206</span>
+<span id="207">207</span>
+<span id="208">208</span>
+<span id="209">209</span>
+<span id="210">210</span>
+<span id="211">211</span>
+<span id="212">212</span>
+<span id="213">213</span>
+<span id="214">214</span>
+<span id="215">215</span>
+<span id="216">216</span>
+<span id="217">217</span>
+<span id="218">218</span>
+<span id="219">219</span>
+<span id="220">220</span>
+<span id="221">221</span>
+<span id="222">222</span>
+<span id="223">223</span>
+<span id="224">224</span>
+<span id="225">225</span>
+<span id="226">226</span>
+<span id="227">227</span>
+<span id="228">228</span>
+<span id="229">229</span>
+<span id="230">230</span>
+<span id="231">231</span>
+<span id="232">232</span>
+<span id="233">233</span>
+<span id="234">234</span>
+<span id="235">235</span>
+<span id="236">236</span>
+<span id="237">237</span>
+<span id="238">238</span>
+<span id="239">239</span>
+<span id="240">240</span>
+<span id="241">241</span>
+<span id="242">242</span>
+<span id="243">243</span>
+<span id="244">244</span>
+<span id="245">245</span>
+<span id="246">246</span>
+<span id="247">247</span>
+<span id="248">248</span>
+<span id="249">249</span>
+<span id="250">250</span>
+<span id="251">251</span>
+<span id="252">252</span>
+<span id="253">253</span>
+<span id="254">254</span>
+<span id="255">255</span>
+<span id="256">256</span>
+<span id="257">257</span>
+<span id="258">258</span>
+<span id="259">259</span>
+<span id="260">260</span>
+<span id="261">261</span>
+<span id="262">262</span>
+<span id="263">263</span>
+<span id="264">264</span>
+<span id="265">265</span>
+<span id="266">266</span>
+<span id="267">267</span>
+<span id="268">268</span>
+<span id="269">269</span>
+<span id="270">270</span>
+<span id="271">271</span>
+<span id="272">272</span>
+<span id="273">273</span>
+<span id="274">274</span>
+<span id="275">275</span>
+<span id="276">276</span>
+<span id="277">277</span>
+<span id="278">278</span>
+<span id="279">279</span>
+<span id="280">280</span>
+<span id="281">281</span>
+<span id="282">282</span>
+<span id="283">283</span>
+<span id="284">284</span>
+<span id="285">285</span>
+<span id="286">286</span>
+<span id="287">287</span>
+<span id="288">288</span>
+<span id="289">289</span>
+<span id="290">290</span>
+<span id="291">291</span>
+<span id="292">292</span>
+<span id="293">293</span>
+<span id="294">294</span>
+<span id="295">295</span>
+<span id="296">296</span>
+<span id="297">297</span>
+<span id="298">298</span>
+<span id="299">299</span>
+<span id="300">300</span>
+<span id="301">301</span>
+<span id="302">302</span>
+<span id="303">303</span>
+<span id="304">304</span>
+<span id="305">305</span>
+<span id="306">306</span>
+<span id="307">307</span>
+<span id="308">308</span>
+<span id="309">309</span>
+<span id="310">310</span>
+<span id="311">311</span>
+<span id="312">312</span>
+<span id="313">313</span>
+<span id="314">314</span>
+<span id="315">315</span>
+<span id="316">316</span>
+<span id="317">317</span>
+<span id="318">318</span>
+<span id="319">319</span>
+<span id="320">320</span>
+<span id="321">321</span>
+<span id="322">322</span>
+<span id="323">323</span>
+<span id="324">324</span>
+<span id="325">325</span>
+<span id="326">326</span>
+<span id="327">327</span>
+<span id="328">328</span>
+<span id="329">329</span>
+<span id="330">330</span>
+<span id="331">331</span>
+<span id="332">332</span>
+<span id="333">333</span>
+<span id="334">334</span>
+<span id="335">335</span>
+<span id="336">336</span>
+<span id="337">337</span>
+<span id="338">338</span>
+<span id="339">339</span>
+<span id="340">340</span>
+<span id="341">341</span>
+<span id="342">342</span>
+<span id="343">343</span>
+<span id="344">344</span>
+<span id="345">345</span>
+<span id="346">346</span>
+<span id="347">347</span>
+<span id="348">348</span>
+<span id="349">349</span>
+<span id="350">350</span>
+<span id="351">351</span>
+<span id="352">352</span>
+<span id="353">353</span>
+<span id="354">354</span>
+<span id="355">355</span>
+<span id="356">356</span>
+<span id="357">357</span>
+<span id="358">358</span>
+<span id="359">359</span>
+<span id="360">360</span>
+<span id="361">361</span>
+<span id="362">362</span>
+<span id="363">363</span>
+<span id="364">364</span>
+<span id="365">365</span>
+<span id="366">366</span>
+<span id="367">367</span>
+<span id="368">368</span>
+<span id="369">369</span>
+<span id="370">370</span>
+<span id="371">371</span>
+<span id="372">372</span>
+<span id="373">373</span>
+<span id="374">374</span>
+<span id="375">375</span>
+<span id="376">376</span>
+<span id="377">377</span>
+<span id="378">378</span>
+<span id="379">379</span>
+<span id="380">380</span>
+<span id="381">381</span>
+<span id="382">382</span>
+<span id="383">383</span>
+<span id="384">384</span>
+<span id="385">385</span>
+<span id="386">386</span>
+<span id="387">387</span>
+<span id="388">388</span>
+<span id="389">389</span>
+<span id="390">390</span>
+<span id="391">391</span>
+<span id="392">392</span>
+<span id="393">393</span>
+<span id="394">394</span>
+<span id="395">395</span>
+<span id="396">396</span>
+<span id="397">397</span>
+<span id="398">398</span>
+<span id="399">399</span>
+<span id="400">400</span>
+<span id="401">401</span>
+<span id="402">402</span>
+<span id="403">403</span>
+<span id="404">404</span>
+<span id="405">405</span>
+<span id="406">406</span>
+<span id="407">407</span>
+<span id="408">408</span>
+<span id="409">409</span>
+<span id="410">410</span>
+<span id="411">411</span>
+<span id="412">412</span>
+<span id="413">413</span>
+<span id="414">414</span>
+<span id="415">415</span>
+<span id="416">416</span>
+<span id="417">417</span>
+<span id="418">418</span>
+<span id="419">419</span>
+<span id="420">420</span>
+<span id="421">421</span>
+<span id="422">422</span>
+<span id="423">423</span>
+<span id="424">424</span>
+<span id="425">425</span>
+<span id="426">426</span>
+<span id="427">427</span>
+<span id="428">428</span>
+<span id="429">429</span>
+<span id="430">430</span>
+<span id="431">431</span>
+<span id="432">432</span>
+<span id="433">433</span>
+<span id="434">434</span>
+<span id="435">435</span>
+<span id="436">436</span>
+<span id="437">437</span>
+<span id="438">438</span>
+<span id="439">439</span>
+<span id="440">440</span>
+<span id="441">441</span>
+<span id="442">442</span>
+<span id="443">443</span>
+<span id="444">444</span>
+<span id="445">445</span>
+<span id="446">446</span>
+<span id="447">447</span>
+<span id="448">448</span>
+<span id="449">449</span>
+<span id="450">450</span>
+<span id="451">451</span>
+<span id="452">452</span>
+<span id="453">453</span>
+<span id="454">454</span>
+<span id="455">455</span>
+<span id="456">456</span>
+<span id="457">457</span>
+<span id="458">458</span>
+<span id="459">459</span>
+<span id="460">460</span>
+<span id="461">461</span>
+<span id="462">462</span>
+<span id="463">463</span>
+<span id="464">464</span>
+<span id="465">465</span>
+<span id="466">466</span>
+<span id="467">467</span>
+<span id="468">468</span>
+<span id="469">469</span>
+<span id="470">470</span>
+<span id="471">471</span>
+<span id="472">472</span>
+<span id="473">473</span>
+<span id="474">474</span>
+<span id="475">475</span>
+<span id="476">476</span>
+<span id="477">477</span>
+<span id="478">478</span>
+<span id="479">479</span>
+<span id="480">480</span>
+<span id="481">481</span>
+<span id="482">482</span>
+<span id="483">483</span>
+<span id="484">484</span>
+<span id="485">485</span>
+<span id="486">486</span>
+<span id="487">487</span>
+<span id="488">488</span>
+<span id="489">489</span>
+<span id="490">490</span>
+<span id="491">491</span>
+<span id="492">492</span>
+<span id="493">493</span>
+<span id="494">494</span>
+<span id="495">495</span>
+<span id="496">496</span>
+<span id="497">497</span>
+<span id="498">498</span>
+<span id="499">499</span>
+<span id="500">500</span>
+<span id="501">501</span>
+<span id="502">502</span>
+<span id="503">503</span>
+<span id="504">504</span>
+<span id="505">505</span>
+<span id="506">506</span>
+<span id="507">507</span>
+<span id="508">508</span>
+<span id="509">509</span>
+<span id="510">510</span>
+<span id="511">511</span>
+<span id="512">512</span>
+<span id="513">513</span>
+<span id="514">514</span>
+<span id="515">515</span>
+<span id="516">516</span>
+<span id="517">517</span>
+<span id="518">518</span>
+<span id="519">519</span>
+<span id="520">520</span>
+<span id="521">521</span>
+<span id="522">522</span>
+<span id="523">523</span>
+<span id="524">524</span>
+<span id="525">525</span>
+<span id="526">526</span>
+<span id="527">527</span>
+<span id="528">528</span>
+<span id="529">529</span>
+<span id="530">530</span>
+<span id="531">531</span>
+<span id="532">532</span>
+<span id="533">533</span>
+<span id="534">534</span>
+<span id="535">535</span>
+<span id="536">536</span>
+<span id="537">537</span>
+<span id="538">538</span>
+<span id="539">539</span>
+<span id="540">540</span>
+<span id="541">541</span>
+<span id="542">542</span>
+<span id="543">543</span>
+<span id="544">544</span>
+<span id="545">545</span>
+<span id="546">546</span>
+<span id="547">547</span>
+<span id="548">548</span>
+<span id="549">549</span>
+<span id="550">550</span>
+<span id="551">551</span>
+<span id="552">552</span>
+<span id="553">553</span>
+<span id="554">554</span>
+<span id="555">555</span>
+<span id="556">556</span>
+<span id="557">557</span>
+<span id="558">558</span>
+<span id="559">559</span>
+<span id="560">560</span>
+<span id="561">561</span>
+<span id="562">562</span>
+<span id="563">563</span>
+<span id="564">564</span>
+<span id="565">565</span>
+<span id="566">566</span>
+<span id="567">567</span>
+<span id="568">568</span>
+<span id="569">569</span>
+<span id="570">570</span>
+<span id="571">571</span>
+<span id="572">572</span>
+<span id="573">573</span>
+<span id="574">574</span>
+<span id="575">575</span>
+<span id="576">576</span>
+<span id="577">577</span>
+<span id="578">578</span>
+<span id="579">579</span>
+<span id="580">580</span>
+<span id="581">581</span>
+<span id="582">582</span>
+<span id="583">583</span>
+<span id="584">584</span>
+<span id="585">585</span>
+<span id="586">586</span>
+<span id="587">587</span>
+<span id="588">588</span>
+<span id="589">589</span>
+<span id="590">590</span>
+<span id="591">591</span>
+<span id="592">592</span>
+<span id="593">593</span>
+<span id="594">594</span>
+<span id="595">595</span>
+<span id="596">596</span>
+<span id="597">597</span>
+<span id="598">598</span>
+<span id="599">599</span>
+<span id="600">600</span>
+<span id="601">601</span>
+<span id="602">602</span>
+<span id="603">603</span>
+<span id="604">604</span>
+<span id="605">605</span>
+<span id="606">606</span>
+<span id="607">607</span>
+<span id="608">608</span>
+<span id="609">609</span>
+<span id="610">610</span>
+<span id="611">611</span>
+<span id="612">612</span>
+<span id="613">613</span>
+<span id="614">614</span>
+<span id="615">615</span>
+<span id="616">616</span>
+<span id="617">617</span>
+<span id="618">618</span>
+<span id="619">619</span>
+<span id="620">620</span>
+<span id="621">621</span>
+<span id="622">622</span>
+<span id="623">623</span>
+<span id="624">624</span>
+<span id="625">625</span>
+<span id="626">626</span>
+<span id="627">627</span>
+<span id="628">628</span>
+<span id="629">629</span>
+<span id="630">630</span>
+<span id="631">631</span>
+<span id="632">632</span>
+<span id="633">633</span>
+<span id="634">634</span>
+<span id="635">635</span>
+<span id="636">636</span>
+<span id="637">637</span>
+<span id="638">638</span>
+<span id="639">639</span>
+<span id="640">640</span>
+<span id="641">641</span>
+<span id="642">642</span>
+<span id="643">643</span>
+<span id="644">644</span>
+<span id="645">645</span>
+<span id="646">646</span>
+<span id="647">647</span>
+<span id="648">648</span>
+<span id="649">649</span>
+<span id="650">650</span>
+<span id="651">651</span>
+<span id="652">652</span>
+<span id="653">653</span>
+<span id="654">654</span>
+<span id="655">655</span>
+<span id="656">656</span>
+<span id="657">657</span>
+<span id="658">658</span>
+<span id="659">659</span>
+<span id="660">660</span>
+<span id="661">661</span>
+<span id="662">662</span>
+<span id="663">663</span>
+<span id="664">664</span>
+<span id="665">665</span>
+<span id="666">666</span>
+<span id="667">667</span>
+<span id="668">668</span>
+<span id="669">669</span>
+<span id="670">670</span>
+<span id="671">671</span>
+<span id="672">672</span>
+<span id="673">673</span>
+<span id="674">674</span>
+<span id="675">675</span>
+<span id="676">676</span>
+<span id="677">677</span>
+<span id="678">678</span>
+<span id="679">679</span>
+<span id="680">680</span>
+<span id="681">681</span>
+<span id="682">682</span>
+<span id="683">683</span>
+<span id="684">684</span>
+<span id="685">685</span>
+<span id="686">686</span>
+<span id="687">687</span>
+<span id="688">688</span>
+<span id="689">689</span>
+<span id="690">690</span>
+<span id="691">691</span>
+<span id="692">692</span>
+<span id="693">693</span>
+<span id="694">694</span>
+<span id="695">695</span>
+<span id="696">696</span>
+<span id="697">697</span>
+<span id="698">698</span>
+<span id="699">699</span>
+<span id="700">700</span>
+<span id="701">701</span>
+<span id="702">702</span>
+<span id="703">703</span>
+<span id="704">704</span>
+<span id="705">705</span>
+<span id="706">706</span>
+<span id="707">707</span>
+<span id="708">708</span>
+<span id="709">709</span>
+<span id="710">710</span>
+<span id="711">711</span>
+<span id="712">712</span>
+<span id="713">713</span>
+<span id="714">714</span>
+<span id="715">715</span>
+<span id="716">716</span>
+<span id="717">717</span>
+<span id="718">718</span>
+<span id="719">719</span>
+<span id="720">720</span>
+<span id="721">721</span>
+<span id="722">722</span>
+<span id="723">723</span>
+<span id="724">724</span>
+<span id="725">725</span>
+<span id="726">726</span>
+<span id="727">727</span>
+<span id="728">728</span>
+<span id="729">729</span>
+<span id="730">730</span>
+<span id="731">731</span>
+<span id="732">732</span>
+<span id="733">733</span>
+<span id="734">734</span>
+<span id="735">735</span>
+<span id="736">736</span>
+<span id="737">737</span>
+<span id="738">738</span>
+<span id="739">739</span>
+<span id="740">740</span>
+<span id="741">741</span>
+<span id="742">742</span>
+<span id="743">743</span>
+<span id="744">744</span>
+<span id="745">745</span>
+<span id="746">746</span>
+<span id="747">747</span>
+<span id="748">748</span>
+<span id="749">749</span>
+<span id="750">750</span>
+<span id="751">751</span>
+<span id="752">752</span>
+<span id="753">753</span>
+<span id="754">754</span>
+<span id="755">755</span>
+<span id="756">756</span>
+<span id="757">757</span>
+<span id="758">758</span>
+<span id="759">759</span>
+<span id="760">760</span>
+<span id="761">761</span>
+<span id="762">762</span>
+<span id="763">763</span>
+<span id="764">764</span>
+<span id="765">765</span>
+<span id="766">766</span>
+<span id="767">767</span>
+<span id="768">768</span>
+<span id="769">769</span>
+<span id="770">770</span>
+<span id="771">771</span>
+<span id="772">772</span>
+<span id="773">773</span>
+<span id="774">774</span>
+<span id="775">775</span>
+<span id="776">776</span>
+<span id="777">777</span>
+<span id="778">778</span>
+<span id="779">779</span>
+<span id="780">780</span>
+<span id="781">781</span>
+<span id="782">782</span>
+<span id="783">783</span>
+<span id="784">784</span>
+<span id="785">785</span>
+<span id="786">786</span>
+<span id="787">787</span>
+<span id="788">788</span>
+<span id="789">789</span>
+<span id="790">790</span>
+<span id="791">791</span>
+<span id="792">792</span>
+<span id="793">793</span>
+<span id="794">794</span>
+<span id="795">795</span>
+<span id="796">796</span>
+<span id="797">797</span>
+<span id="798">798</span>
+<span id="799">799</span>
+<span id="800">800</span>
+<span id="801">801</span>
+<span id="802">802</span>
+<span id="803">803</span>
+<span id="804">804</span>
+<span id="805">805</span>
+<span id="806">806</span>
+<span id="807">807</span>
+<span id="808">808</span>
+<span id="809">809</span>
+<span id="810">810</span>
+<span id="811">811</span>
+<span id="812">812</span>
+<span id="813">813</span>
+<span id="814">814</span>
+<span id="815">815</span>
+<span id="816">816</span>
+<span id="817">817</span>
+<span id="818">818</span>
+<span id="819">819</span>
+<span id="820">820</span>
+<span id="821">821</span>
+<span id="822">822</span>
+<span id="823">823</span>
+<span id="824">824</span>
+<span id="825">825</span>
+<span id="826">826</span>
+<span id="827">827</span>
+<span id="828">828</span>
+<span id="829">829</span>
+<span id="830">830</span>
+<span id="831">831</span>
+<span id="832">832</span>
+<span id="833">833</span>
+<span id="834">834</span>
+<span id="835">835</span>
+<span id="836">836</span>
+<span id="837">837</span>
+<span id="838">838</span>
+<span id="839">839</span>
+<span id="840">840</span>
+<span id="841">841</span>
+<span id="842">842</span>
+<span id="843">843</span>
+<span id="844">844</span>
+<span id="845">845</span>
+<span id="846">846</span>
+<span id="847">847</span>
+<span id="848">848</span>
+<span id="849">849</span>
+<span id="850">850</span>
+<span id="851">851</span>
+<span id="852">852</span>
+<span id="853">853</span>
+<span id="854">854</span>
+<span id="855">855</span>
+<span id="856">856</span>
+<span id="857">857</span>
+<span id="858">858</span>
+<span id="859">859</span>
+<span id="860">860</span>
+<span id="861">861</span>
+<span id="862">862</span>
+<span id="863">863</span>
+<span id="864">864</span>
+<span id="865">865</span>
+<span id="866">866</span>
+<span id="867">867</span>
+<span id="868">868</span>
+<span id="869">869</span>
+<span id="870">870</span>
+<span id="871">871</span>
+<span id="872">872</span>
+<span id="873">873</span>
+<span id="874">874</span>
+<span id="875">875</span>
+<span id="876">876</span>
+<span id="877">877</span>
+<span id="878">878</span>
+<span id="879">879</span>
+<span id="880">880</span>
+<span id="881">881</span>
+<span id="882">882</span>
+<span id="883">883</span>
+<span id="884">884</span>
+<span id="885">885</span>
+<span id="886">886</span>
+<span id="887">887</span>
+<span id="888">888</span>
+<span id="889">889</span>
+<span id="890">890</span>
+<span id="891">891</span>
+<span id="892">892</span>
+<span id="893">893</span>
+<span id="894">894</span>
+<span id="895">895</span>
+<span id="896">896</span>
+<span id="897">897</span>
+<span id="898">898</span>
+<span id="899">899</span>
+<span id="900">900</span>
+<span id="901">901</span>
+<span id="902">902</span>
+<span id="903">903</span>
+<span id="904">904</span>
+<span id="905">905</span>
+<span id="906">906</span>
+<span id="907">907</span>
+<span id="908">908</span>
+</pre><pre class="rust">
+<span class="comment">// Code generated by software.amazon.smithy.rust.codegen.smithy-rs. DO NOT EDIT.</span>
+<span class="doccomment">/// &lt;p&gt;Adds a permission to a queue for a specific</span>
+<span class="doccomment">/// &lt;a href=&quot;https://docs.aws.amazon.com/general/latest/gr/glos-chap.html#P&quot;&gt;principal&lt;/a&gt;.</span>
+<span class="doccomment">/// This allows sharing access to the queue.&lt;/p&gt;</span>
+<span class="doccomment">/// &lt;p&gt;When you create a queue, you have full control access rights for the queue.</span>
+<span class="doccomment">/// Only you, the owner of the queue, can grant or deny permissions to the queue.</span>
+<span class="doccomment">/// For more information about these permissions, see</span>
+<span class="doccomment">/// &lt;a href=&quot;https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-writing-an-sqs-policy.html#write-messages-to-shared-queue&quot;&gt;Allow</span>
+<span class="doccomment">/// Developers to Write Messages to a Shared Queue&lt;/a&gt; in the &lt;i&gt;Amazon SQS Developer Guide&lt;/i&gt;.&lt;/p&gt;</span>
+<span class="doccomment">/// &lt;note&gt;</span>
+<span class="doccomment">/// &lt;ul&gt;</span>
+<span class="doccomment">/// &lt;li&gt;</span>
+<span class="doccomment">/// &lt;p&gt;</span>
+<span class="doccomment">/// &lt;code&gt;AddPermission&lt;/code&gt; generates a policy for you. You can use</span>
+<span class="doccomment">/// &lt;code&gt;</span>
+<span class="doccomment">/// &lt;a&gt;SetQueueAttributes&lt;/a&gt;</span>
+<span class="doccomment">/// &lt;/code&gt; to</span>
+<span class="doccomment">/// upload your policy. For more information, see</span>
+<span class="doccomment">/// &lt;a href=&quot;https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-creating-custom-policies.html&quot;&gt;Using Custom Policies with the Amazon SQS Access Policy Language&lt;/a&gt; in</span>
+<span class="doccomment">/// the &lt;i&gt;Amazon SQS Developer Guide&lt;/i&gt;.&lt;/p&gt;</span>
+<span class="doccomment">/// &lt;/li&gt;</span>
+<span class="doccomment">/// &lt;li&gt;</span>
+<span class="doccomment">/// &lt;p&gt;An Amazon SQS policy can have a maximum of 7 actions.&lt;/p&gt;</span>
+<span class="doccomment">/// &lt;/li&gt;</span>
+<span class="doccomment">/// &lt;li&gt;</span>
+<span class="doccomment">/// &lt;p&gt;To remove the ability to change queue permissions, you must deny permission to the &lt;code&gt;AddPermission&lt;/code&gt;, &lt;code&gt;RemovePermission&lt;/code&gt;, and &lt;code&gt;SetQueueAttributes&lt;/code&gt; actions in your IAM policy.&lt;/p&gt;</span>
+<span class="doccomment">/// &lt;/li&gt;</span>
+<span class="doccomment">/// &lt;/ul&gt;</span>
+<span class="doccomment">/// &lt;/note&gt;</span>
+<span class="doccomment">/// &lt;p&gt;Some actions take lists of parameters. These lists are specified using the &lt;code&gt;param.n&lt;/code&gt; notation. Values of &lt;code&gt;n&lt;/code&gt; are integers starting from 1. For example, a parameter list with two elements looks like this:&lt;/p&gt;</span>
+<span class="doccomment">/// &lt;p&gt;</span>
+<span class="doccomment">/// &lt;code&gt;&amp;AttributeName.1=first&lt;/code&gt;</span>
+<span class="doccomment">/// &lt;/p&gt;</span>
+<span class="doccomment">/// &lt;p&gt;</span>
+<span class="doccomment">/// &lt;code&gt;&amp;AttributeName.2=second&lt;/code&gt;</span>
+<span class="doccomment">/// &lt;/p&gt;</span>
+<span class="doccomment">/// &lt;note&gt;</span>
+<span class="doccomment">/// &lt;p&gt;Cross-account permissions don&#39;t apply to this action. For more information,</span>
+<span class="doccomment">/// see &lt;a href=&quot;https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name&quot;&gt;Grant</span>
+<span class="doccomment">/// cross-account permissions to a role and a user name&lt;/a&gt; in the &lt;i&gt;Amazon SQS Developer Guide&lt;/i&gt;.&lt;/p&gt;</span>
+<span class="doccomment">/// &lt;/note&gt;</span>
+<span class="attribute">#[<span class="ident">derive</span>(<span class="ident">std::default::Default</span>, <span class="ident">std::clone::Clone</span>, <span class="ident">std::fmt::Debug</span>)]</span>
+<span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">AddPermission</span> {
+    <span class="ident">_private</span>: (),
+}
+<span class="kw">impl</span> <span class="ident">AddPermission</span> {
+    <span class="doccomment">/// Creates a new builder-style object to manufacture [`AddPermissionInput`](crate::input::AddPermissionInput)</span>
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">builder</span>() <span class="op">-</span><span class="op">&gt;</span> <span class="kw">crate</span><span class="ident">::input::add_permission_input::Builder</span> {
+        <span class="kw">crate</span><span class="ident">::input::add_permission_input::Builder::default</span>()
+    }
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">new</span>() <span class="op">-</span><span class="op">&gt;</span> <span class="self">Self</span> {
+        <span class="self">Self</span> { <span class="ident">_private</span>: () }
+    }
+}
+<span class="kw">impl</span> <span class="ident">smithy_http::response::ParseStrictResponse</span> <span class="kw">for</span> <span class="ident">AddPermission</span> {
+    <span class="kw">type</span> <span class="ident">Output</span> <span class="op">=</span>
+        <span class="ident">std::result::Result</span><span class="op">&lt;</span><span class="kw">crate</span><span class="ident">::output::AddPermissionOutput</span>, <span class="kw">crate</span><span class="ident">::error::AddPermissionError</span><span class="op">&gt;</span>;
+    <span class="kw">fn</span> <span class="ident">parse</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">response</span>: <span class="kw-2">&amp;</span><span class="ident">http::Response</span><span class="op">&lt;</span><span class="ident">bytes::Bytes</span><span class="op">&gt;</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="self">Self</span><span class="ident">::Output</span> {
+        <span class="kw">if</span> <span class="op">!</span><span class="ident">response</span>.<span class="ident">status</span>().<span class="ident">is_success</span>() <span class="op">&amp;&amp;</span> <span class="ident">response</span>.<span class="ident">status</span>().<span class="ident">as_u16</span>() <span class="op">!</span><span class="op">=</span> <span class="number">200</span> {
+            <span class="kw">crate</span><span class="ident">::operation_deser::parse_add_permission_error</span>(<span class="ident">response</span>)
+        } <span class="kw">else</span> {
+            <span class="kw">crate</span><span class="ident">::operation_deser::parse_add_permission_response</span>(<span class="ident">response</span>)
+        }
+    }
+}
+
+<span class="doccomment">/// &lt;p&gt;Changes the visibility timeout of a specified message in a queue to a new value. The</span>
+<span class="doccomment">/// default visibility timeout for a message is 30 seconds. The minimum is 0 seconds. The</span>
+<span class="doccomment">/// maximum is 12 hours. For more information, see &lt;a href=&quot;https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html&quot;&gt;Visibility Timeout&lt;/a&gt; in the &lt;i&gt;Amazon SQS Developer Guide&lt;/i&gt;.&lt;/p&gt;</span>
+<span class="doccomment">/// &lt;p&gt;For example, you have a message with a visibility timeout of 5 minutes. After 3</span>
+<span class="doccomment">/// minutes, you call &lt;code&gt;ChangeMessageVisibility&lt;/code&gt; with a timeout of 10 minutes. You</span>
+<span class="doccomment">/// can continue to call &lt;code&gt;ChangeMessageVisibility&lt;/code&gt; to extend the visibility</span>
+<span class="doccomment">/// timeout to the maximum allowed time. If you try to extend the visibility timeout beyond</span>
+<span class="doccomment">/// the maximum, your request is rejected.&lt;/p&gt;</span>
+<span class="doccomment">/// &lt;p&gt;An Amazon SQS message has three basic states:&lt;/p&gt;</span>
+<span class="doccomment">/// &lt;ol&gt;</span>
+<span class="doccomment">/// &lt;li&gt;</span>
+<span class="doccomment">/// &lt;p&gt;Sent to a queue by a producer.&lt;/p&gt;</span>
+<span class="doccomment">/// &lt;/li&gt;</span>
+<span class="doccomment">/// &lt;li&gt;</span>
+<span class="doccomment">/// &lt;p&gt;Received from the queue by a consumer.&lt;/p&gt;</span>
+<span class="doccomment">/// &lt;/li&gt;</span>
+<span class="doccomment">/// &lt;li&gt;</span>
+<span class="doccomment">/// &lt;p&gt;Deleted from the queue.&lt;/p&gt;</span>
+<span class="doccomment">/// &lt;/li&gt;</span>
+<span class="doccomment">/// &lt;/ol&gt;</span>
+<span class="doccomment">/// &lt;p&gt;A message is considered to be &lt;i&gt;stored&lt;/i&gt; after it is sent to a queue by a producer, but not yet received from the queue by a consumer (that is, between states 1 and 2). There is no limit to the number of stored messages.</span>
+<span class="doccomment">/// A message is considered to be &lt;i&gt;in flight&lt;/i&gt; after it is received from a queue by a consumer, but not yet deleted from the queue (that is, between states 2 and 3). There is a limit to the number of inflight messages.&lt;/p&gt;</span>
+<span class="doccomment">/// &lt;p&gt;Limits that apply to inflight messages are unrelated to the &lt;i&gt;unlimited&lt;/i&gt; number of stored messages.&lt;/p&gt;</span>
+<span class="doccomment">/// &lt;p&gt;For most standard queues (depending on queue traffic and message backlog), there can be a maximum of approximately 120,000 inflight messages (received from a queue by a consumer, but not yet deleted from the queue).</span>
+<span class="doccomment">/// If you reach this limit, Amazon SQS returns the &lt;code&gt;OverLimit&lt;/code&gt; error message.</span>
+<span class="doccomment">/// To avoid reaching the limit, you should delete messages from the queue after they&#39;re processed. You can also increase the number of queues you use to process your messages.</span>
+<span class="doccomment">/// To request a limit increase, &lt;a href=&quot;https://console.aws.amazon.com/support/home#/case/create?issueType=service-limit-increase&amp;limitType=service-code-sqs&quot;&gt;file a support request&lt;/a&gt;.&lt;/p&gt;</span>
+<span class="doccomment">/// &lt;p&gt;For FIFO queues, there can be a maximum of 20,000 inflight messages (received from a queue by a consumer, but not yet deleted from the queue). If you reach this limit, Amazon SQS returns no error messages.&lt;/p&gt;</span>
+<span class="doccomment">/// &lt;important&gt;</span>
+<span class="doccomment">/// &lt;p&gt;If you attempt to set the &lt;code&gt;VisibilityTimeout&lt;/code&gt; to a value greater than the maximum time left, Amazon SQS returns an error. Amazon SQS doesn&#39;t automatically recalculate and increase the timeout to the maximum remaining time.&lt;/p&gt;</span>
+<span class="doccomment">/// &lt;p&gt;Unlike with a queue, when you change the visibility timeout for a specific message the timeout value is applied immediately but isn&#39;t saved in memory for that message. If you don&#39;t delete a message after it is received, the visibility timeout</span>
+<span class="doccomment">/// for the message reverts to the original timeout value (not to the value you set using the &lt;code&gt;ChangeMessageVisibility&lt;/code&gt; action) the next time the message is received.&lt;/p&gt;</span>
+<span class="doccomment">/// &lt;/important&gt;</span>
+<span class="attribute">#[<span class="ident">derive</span>(<span class="ident">std::default::Default</span>, <span class="ident">std::clone::Clone</span>, <span class="ident">std::fmt::Debug</span>)]</span>
+<span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">ChangeMessageVisibility</span> {
+    <span class="ident">_private</span>: (),
+}
+<span class="kw">impl</span> <span class="ident">ChangeMessageVisibility</span> {
+    <span class="doccomment">/// Creates a new builder-style object to manufacture [`ChangeMessageVisibilityInput`](crate::input::ChangeMessageVisibilityInput)</span>
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">builder</span>() <span class="op">-</span><span class="op">&gt;</span> <span class="kw">crate</span><span class="ident">::input::change_message_visibility_input::Builder</span> {
+        <span class="kw">crate</span><span class="ident">::input::change_message_visibility_input::Builder::default</span>()
+    }
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">new</span>() <span class="op">-</span><span class="op">&gt;</span> <span class="self">Self</span> {
+        <span class="self">Self</span> { <span class="ident">_private</span>: () }
+    }
+}
+<span class="kw">impl</span> <span class="ident">smithy_http::response::ParseStrictResponse</span> <span class="kw">for</span> <span class="ident">ChangeMessageVisibility</span> {
+    <span class="kw">type</span> <span class="ident">Output</span> <span class="op">=</span> <span class="ident">std::result::Result</span><span class="op">&lt;</span>
+        <span class="kw">crate</span><span class="ident">::output::ChangeMessageVisibilityOutput</span>,
+        <span class="kw">crate</span><span class="ident">::error::ChangeMessageVisibilityError</span>,
+    <span class="op">&gt;</span>;
+    <span class="kw">fn</span> <span class="ident">parse</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">response</span>: <span class="kw-2">&amp;</span><span class="ident">http::Response</span><span class="op">&lt;</span><span class="ident">bytes::Bytes</span><span class="op">&gt;</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="self">Self</span><span class="ident">::Output</span> {
+        <span class="kw">if</span> <span class="op">!</span><span class="ident">response</span>.<span class="ident">status</span>().<span class="ident">is_success</span>() <span class="op">&amp;&amp;</span> <span class="ident">response</span>.<span class="ident">status</span>().<span class="ident">as_u16</span>() <span class="op">!</span><span class="op">=</span> <span class="number">200</span> {
+            <span class="kw">crate</span><span class="ident">::operation_deser::parse_change_message_visibility_error</span>(<span class="ident">response</span>)
+        } <span class="kw">else</span> {
+            <span class="kw">crate</span><span class="ident">::operation_deser::parse_change_message_visibility_response</span>(<span class="ident">response</span>)
+        }
+    }
+}
+<span class="attribute">#[<span class="ident">cfg</span>(<span class="ident">test</span>)]</span>
+<span class="attribute">#[<span class="ident">allow</span>(<span class="ident">unreachable_code</span>, <span class="ident">unused_variables</span>)]</span>
+<span class="kw">mod</span> <span class="ident">change_message_visibility_request_test</span> {
+    <span class="doccomment">/// This test case validates a bug found here: https://github.com/aws/aws-sdk-go-v2/issues/1087</span>
+    <span class="doccomment">/// Test ID: SqsSetVisibilityZero</span>
+    <span class="attribute">#[<span class="ident">tokio::test</span>]</span>
+    <span class="kw">async</span> <span class="kw">fn</span> <span class="ident">sqs_set_visibility_zero_request</span>() {
+        <span class="kw">let</span> <span class="ident">config</span> <span class="op">=</span> <span class="kw">crate</span><span class="ident">::config::Config::builder</span>().<span class="ident">build</span>();
+        <span class="kw">let</span> <span class="ident">input</span> <span class="op">=</span> <span class="kw">crate</span><span class="ident">::input::ChangeMessageVisibilityInput::builder</span>()
+            .<span class="ident">set_queue_url</span>(<span class="prelude-val">Some</span>(<span class="string">&quot;http://somequeue.amazon.com&quot;</span>.<span class="ident">to_string</span>()))
+            .<span class="ident">set_receipt_handle</span>(<span class="prelude-val">Some</span>(<span class="string">&quot;handlehandle&quot;</span>.<span class="ident">to_string</span>()))
+            .<span class="ident">set_visibility_timeout</span>(<span class="prelude-val">Some</span>(<span class="number">0</span>))
+            .<span class="ident">build</span>()
+            .<span class="ident">unwrap</span>()
+            .<span class="ident">make_operation</span>(<span class="kw-2">&amp;</span><span class="ident">config</span>)
+            .<span class="ident">expect</span>(<span class="string">&quot;operation failed to build&quot;</span>);
+        <span class="kw">let</span> (<span class="ident">http_request</span>, <span class="ident">parts</span>) <span class="op">=</span> <span class="ident">input</span>.<span class="ident">into_request_response</span>().<span class="number">0</span>.<span class="ident">into_parts</span>();
+        <span class="macro">assert_eq!</span>(<span class="ident">http_request</span>.<span class="ident">method</span>(), <span class="string">&quot;POST&quot;</span>);
+        <span class="macro">assert_eq!</span>(<span class="ident">http_request</span>.<span class="ident">uri</span>().<span class="ident">path</span>(), <span class="string">&quot;/&quot;</span>);
+        <span class="kw">let</span> <span class="ident">body</span> <span class="op">=</span> <span class="ident">http_request</span>.<span class="ident">body</span>().<span class="ident">bytes</span>().<span class="ident">expect</span>(<span class="string">&quot;body should be strict&quot;</span>);
+        <span class="ident">protocol_test_helpers::assert_ok</span>(
+        <span class="ident">protocol_test_helpers::validate_body</span>(<span class="kw-2">&amp;</span><span class="ident">body</span>, <span class="string">&quot;Action=ChangeMessageVisibility&amp;Version=2012-11-05&amp;QueueUrl=http%3A%2F%2Fsomequeue.amazon.com&amp;ReceiptHandle=handlehandle&amp;VisibilityTimeout=0&quot;</span>, <span class="ident">protocol_test_helpers::MediaType::from</span>(<span class="string">&quot;application/x-www-formurl-encoded&quot;</span>))
+        );
+    }
+}
+
+<span class="doccomment">/// &lt;p&gt;Changes the visibility timeout of multiple messages. This is a batch version of &lt;code&gt;</span>
+<span class="doccomment">/// &lt;a&gt;ChangeMessageVisibility&lt;/a&gt;.&lt;/code&gt; The result of the action on each message is reported individually in the response.</span>
+<span class="doccomment">/// You can send up to 10 &lt;code&gt;</span>
+<span class="doccomment">/// &lt;a&gt;ChangeMessageVisibility&lt;/a&gt;</span>
+<span class="doccomment">/// &lt;/code&gt; requests with each &lt;code&gt;ChangeMessageVisibilityBatch&lt;/code&gt; action.&lt;/p&gt;   </span>
+<span class="doccomment">/// &lt;important&gt;</span>
+<span class="doccomment">/// &lt;p&gt;Because the batch request can result in a combination of successful and unsuccessful actions, you should check for batch errors even when the call returns an HTTP status code of &lt;code&gt;200&lt;/code&gt;.&lt;/p&gt;</span>
+<span class="doccomment">/// &lt;/important&gt;</span>
+<span class="doccomment">/// &lt;p&gt;Some actions take lists of parameters. These lists are specified using the &lt;code&gt;param.n&lt;/code&gt; notation. Values of &lt;code&gt;n&lt;/code&gt; are integers starting from 1. For example, a parameter list with two elements looks like this:&lt;/p&gt;</span>
+<span class="doccomment">/// &lt;p&gt;</span>
+<span class="doccomment">/// &lt;code&gt;&amp;AttributeName.1=first&lt;/code&gt;</span>
+<span class="doccomment">/// &lt;/p&gt;</span>
+<span class="doccomment">/// &lt;p&gt;</span>
+<span class="doccomment">/// &lt;code&gt;&amp;AttributeName.2=second&lt;/code&gt;</span>
+<span class="doccomment">/// &lt;/p&gt;</span>
+<span class="attribute">#[<span class="ident">derive</span>(<span class="ident">std::default::Default</span>, <span class="ident">std::clone::Clone</span>, <span class="ident">std::fmt::Debug</span>)]</span>
+<span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">ChangeMessageVisibilityBatch</span> {
+    <span class="ident">_private</span>: (),
+}
+<span class="kw">impl</span> <span class="ident">ChangeMessageVisibilityBatch</span> {
+    <span class="doccomment">/// Creates a new builder-style object to manufacture [`ChangeMessageVisibilityBatchInput`](crate::input::ChangeMessageVisibilityBatchInput)</span>
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">builder</span>() <span class="op">-</span><span class="op">&gt;</span> <span class="kw">crate</span><span class="ident">::input::change_message_visibility_batch_input::Builder</span> {
+        <span class="kw">crate</span><span class="ident">::input::change_message_visibility_batch_input::Builder::default</span>()
+    }
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">new</span>() <span class="op">-</span><span class="op">&gt;</span> <span class="self">Self</span> {
+        <span class="self">Self</span> { <span class="ident">_private</span>: () }
+    }
+}
+<span class="kw">impl</span> <span class="ident">smithy_http::response::ParseStrictResponse</span> <span class="kw">for</span> <span class="ident">ChangeMessageVisibilityBatch</span> {
+    <span class="kw">type</span> <span class="ident">Output</span> <span class="op">=</span> <span class="ident">std::result::Result</span><span class="op">&lt;</span>
+        <span class="kw">crate</span><span class="ident">::output::ChangeMessageVisibilityBatchOutput</span>,
+        <span class="kw">crate</span><span class="ident">::error::ChangeMessageVisibilityBatchError</span>,
+    <span class="op">&gt;</span>;
+    <span class="kw">fn</span> <span class="ident">parse</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">response</span>: <span class="kw-2">&amp;</span><span class="ident">http::Response</span><span class="op">&lt;</span><span class="ident">bytes::Bytes</span><span class="op">&gt;</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="self">Self</span><span class="ident">::Output</span> {
+        <span class="kw">if</span> <span class="op">!</span><span class="ident">response</span>.<span class="ident">status</span>().<span class="ident">is_success</span>() <span class="op">&amp;&amp;</span> <span class="ident">response</span>.<span class="ident">status</span>().<span class="ident">as_u16</span>() <span class="op">!</span><span class="op">=</span> <span class="number">200</span> {
+            <span class="kw">crate</span><span class="ident">::operation_deser::parse_change_message_visibility_batch_error</span>(<span class="ident">response</span>)
+        } <span class="kw">else</span> {
+            <span class="kw">crate</span><span class="ident">::operation_deser::parse_change_message_visibility_batch_response</span>(<span class="ident">response</span>)
+        }
+    }
+}
+
+<span class="doccomment">/// &lt;p&gt;Creates a new standard or FIFO queue. You can pass one or more attributes in</span>
+<span class="doccomment">/// the request. Keep the following in mind:&lt;/p&gt;</span>
+<span class="doccomment">/// &lt;ul&gt;</span>
+<span class="doccomment">/// &lt;li&gt;</span>
+<span class="doccomment">/// &lt;p&gt;If you don&#39;t specify the &lt;code&gt;FifoQueue&lt;/code&gt; attribute, Amazon SQS creates a standard queue.&lt;/p&gt;</span>
+<span class="doccomment">/// &lt;note&gt;</span>
+<span class="doccomment">/// &lt;p&gt;You can&#39;t change the queue type after you create it and you can&#39;t convert</span>
+<span class="doccomment">/// an existing standard queue into a FIFO queue. You must either create a new</span>
+<span class="doccomment">/// FIFO queue for your application or delete your existing standard queue and</span>
+<span class="doccomment">/// recreate it as a FIFO queue. For more information, see &lt;a href=&quot;https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-moving&quot;&gt;Moving From a Standard Queue to a FIFO Queue&lt;/a&gt; in the</span>
+<span class="doccomment">/// &lt;i&gt;Amazon SQS Developer Guide&lt;/i&gt;. &lt;/p&gt;</span>
+<span class="doccomment">/// &lt;/note&gt;</span>
+<span class="doccomment">/// &lt;/li&gt;</span>
+<span class="doccomment">/// &lt;li&gt;</span>
+<span class="doccomment">/// &lt;p&gt;If you don&#39;t provide a value for an attribute, the queue is created with the default value for the attribute.&lt;/p&gt;</span>
+<span class="doccomment">/// &lt;/li&gt;</span>
+<span class="doccomment">/// &lt;li&gt;</span>
+<span class="doccomment">/// &lt;p&gt;If you delete a queue, you must wait at least 60 seconds before creating a queue with the same name.&lt;/p&gt;</span>
+<span class="doccomment">/// &lt;/li&gt;</span>
+<span class="doccomment">/// &lt;/ul&gt;</span>
+<span class="doccomment">/// &lt;p&gt;To successfully create a new queue, you must provide a queue name that adheres to the &lt;a href=&quot;https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/limits-queues.html&quot;&gt;limits related to queues&lt;/a&gt; and is unique within the scope of your queues.&lt;/p&gt;</span>
+<span class="doccomment">/// &lt;note&gt;</span>
+<span class="doccomment">/// &lt;p&gt;After you create a queue, you must wait at least one second after the queue is</span>
+<span class="doccomment">/// created to be able to use the queue.&lt;/p&gt;</span>
+<span class="doccomment">/// &lt;/note&gt;</span>
+<span class="doccomment">/// &lt;p&gt;To get the queue URL, use the &lt;code&gt;</span>
+<span class="doccomment">/// &lt;a&gt;GetQueueUrl&lt;/a&gt;</span>
+<span class="doccomment">/// &lt;/code&gt; action. &lt;code&gt;</span>
+<span class="doccomment">/// &lt;a&gt;GetQueueUrl&lt;/a&gt;</span>
+<span class="doccomment">/// &lt;/code&gt; requires only the &lt;code&gt;QueueName&lt;/code&gt; parameter.</span>
+<span class="doccomment">/// be aware of existing queue names:&lt;/p&gt;</span>
+<span class="doccomment">/// &lt;ul&gt;</span>
+<span class="doccomment">/// &lt;li&gt;</span>
+<span class="doccomment">/// &lt;p&gt;If you provide the name of an existing queue along with the exact names and values of all the queue&#39;s attributes, &lt;code&gt;CreateQueue&lt;/code&gt; returns the queue URL for the existing queue.&lt;/p&gt;</span>
+<span class="doccomment">/// &lt;/li&gt;</span>
+<span class="doccomment">/// &lt;li&gt;</span>
+<span class="doccomment">/// &lt;p&gt;If the queue name, attribute names, or attribute values don&#39;t match an existing queue, &lt;code&gt;CreateQueue&lt;/code&gt; returns an error.&lt;/p&gt;</span>
+<span class="doccomment">/// &lt;/li&gt;</span>
+<span class="doccomment">/// &lt;/ul&gt;</span>
+<span class="doccomment">/// &lt;p&gt;Some actions take lists of parameters. These lists are specified using the &lt;code&gt;param.n&lt;/code&gt; notation. Values of &lt;code&gt;n&lt;/code&gt; are integers starting from 1. For example, a parameter list with two elements looks like this:&lt;/p&gt;</span>
+<span class="doccomment">/// &lt;p&gt;</span>
+<span class="doccomment">/// &lt;code&gt;&amp;AttributeName.1=first&lt;/code&gt;</span>
+<span class="doccomment">/// &lt;/p&gt;</span>
+<span class="doccomment">/// &lt;p&gt;</span>
+<span class="doccomment">/// &lt;code&gt;&amp;AttributeName.2=second&lt;/code&gt;</span>
+<span class="doccomment">/// &lt;/p&gt;</span>
+<span class="doccomment">/// &lt;note&gt;</span>
+<span class="doccomment">/// &lt;p&gt;Cross-account permissions don&#39;t apply to this action. For more information,</span>
+<span class="doccomment">/// see &lt;a href=&quot;https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name&quot;&gt;Grant</span>
+<span class="doccomment">/// cross-account permissions to a role and a user name&lt;/a&gt; in the &lt;i&gt;Amazon SQS Developer Guide&lt;/i&gt;.&lt;/p&gt;</span>
+<span class="doccomment">/// &lt;/note&gt;</span>
+<span class="attribute">#[<span class="ident">derive</span>(<span class="ident">std::default::Default</span>, <span class="ident">std::clone::Clone</span>, <span class="ident">std::fmt::Debug</span>)]</span>
+<span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">CreateQueue</span> {
+    <span class="ident">_private</span>: (),
+}
+<span class="kw">impl</span> <span class="ident">CreateQueue</span> {
+    <span class="doccomment">/// Creates a new builder-style object to manufacture [`CreateQueueInput`](crate::input::CreateQueueInput)</span>
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">builder</span>() <span class="op">-</span><span class="op">&gt;</span> <span class="kw">crate</span><span class="ident">::input::create_queue_input::Builder</span> {
+        <span class="kw">crate</span><span class="ident">::input::create_queue_input::Builder::default</span>()
+    }
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">new</span>() <span class="op">-</span><span class="op">&gt;</span> <span class="self">Self</span> {
+        <span class="self">Self</span> { <span class="ident">_private</span>: () }
+    }
+}
+<span class="kw">impl</span> <span class="ident">smithy_http::response::ParseStrictResponse</span> <span class="kw">for</span> <span class="ident">CreateQueue</span> {
+    <span class="kw">type</span> <span class="ident">Output</span> <span class="op">=</span>
+        <span class="ident">std::result::Result</span><span class="op">&lt;</span><span class="kw">crate</span><span class="ident">::output::CreateQueueOutput</span>, <span class="kw">crate</span><span class="ident">::error::CreateQueueError</span><span class="op">&gt;</span>;
+    <span class="kw">fn</span> <span class="ident">parse</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">response</span>: <span class="kw-2">&amp;</span><span class="ident">http::Response</span><span class="op">&lt;</span><span class="ident">bytes::Bytes</span><span class="op">&gt;</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="self">Self</span><span class="ident">::Output</span> {
+        <span class="kw">if</span> <span class="op">!</span><span class="ident">response</span>.<span class="ident">status</span>().<span class="ident">is_success</span>() <span class="op">&amp;&amp;</span> <span class="ident">response</span>.<span class="ident">status</span>().<span class="ident">as_u16</span>() <span class="op">!</span><span class="op">=</span> <span class="number">200</span> {
+            <span class="kw">crate</span><span class="ident">::operation_deser::parse_create_queue_error</span>(<span class="ident">response</span>)
+        } <span class="kw">else</span> {
+            <span class="kw">crate</span><span class="ident">::operation_deser::parse_create_queue_response</span>(<span class="ident">response</span>)
+        }
+    }
+}
+
+<span class="doccomment">/// &lt;p&gt;Deletes the specified message from the specified queue. To select the message to</span>
+<span class="doccomment">/// delete, use the &lt;code&gt;ReceiptHandle&lt;/code&gt; of the message (&lt;i&gt;not&lt;/i&gt; the</span>
+<span class="doccomment">/// &lt;code&gt;MessageId&lt;/code&gt; which you receive when you send the message). Amazon SQS can</span>
+<span class="doccomment">/// delete a message from a queue even if a visibility timeout setting causes the message to</span>
+<span class="doccomment">/// be locked by another consumer. Amazon SQS automatically deletes messages left in a queue</span>
+<span class="doccomment">/// longer than the retention period configured for the queue. &lt;/p&gt;</span>
+<span class="doccomment">/// &lt;note&gt;</span>
+<span class="doccomment">/// &lt;p&gt;The &lt;code&gt;ReceiptHandle&lt;/code&gt; is associated with a &lt;i&gt;specific</span>
+<span class="doccomment">/// instance&lt;/i&gt; of receiving a message. If you receive a message more than</span>
+<span class="doccomment">/// once, the &lt;code&gt;ReceiptHandle&lt;/code&gt; is different each time you receive a message.</span>
+<span class="doccomment">/// When you use the &lt;code&gt;DeleteMessage&lt;/code&gt; action, you must provide the most</span>
+<span class="doccomment">/// recently received &lt;code&gt;ReceiptHandle&lt;/code&gt; for the message (otherwise, the request</span>
+<span class="doccomment">/// succeeds, but the message might not be deleted).&lt;/p&gt;</span>
+<span class="doccomment">/// &lt;p&gt;For standard queues, it is possible to receive a message even after you</span>
+<span class="doccomment">/// delete it. This might happen on rare occasions if one of the servers which stores a</span>
+<span class="doccomment">/// copy of the message is unavailable when you send the request to delete the message.</span>
+<span class="doccomment">/// The copy remains on the server and might be returned to you during a subsequent</span>
+<span class="doccomment">/// receive request. You should ensure that your application is idempotent, so that</span>
+<span class="doccomment">/// receiving a message more than once does not cause issues.&lt;/p&gt;</span>
+<span class="doccomment">/// &lt;/note&gt;</span>
+<span class="attribute">#[<span class="ident">derive</span>(<span class="ident">std::default::Default</span>, <span class="ident">std::clone::Clone</span>, <span class="ident">std::fmt::Debug</span>)]</span>
+<span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">DeleteMessage</span> {
+    <span class="ident">_private</span>: (),
+}
+<span class="kw">impl</span> <span class="ident">DeleteMessage</span> {
+    <span class="doccomment">/// Creates a new builder-style object to manufacture [`DeleteMessageInput`](crate::input::DeleteMessageInput)</span>
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">builder</span>() <span class="op">-</span><span class="op">&gt;</span> <span class="kw">crate</span><span class="ident">::input::delete_message_input::Builder</span> {
+        <span class="kw">crate</span><span class="ident">::input::delete_message_input::Builder::default</span>()
+    }
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">new</span>() <span class="op">-</span><span class="op">&gt;</span> <span class="self">Self</span> {
+        <span class="self">Self</span> { <span class="ident">_private</span>: () }
+    }
+}
+<span class="kw">impl</span> <span class="ident">smithy_http::response::ParseStrictResponse</span> <span class="kw">for</span> <span class="ident">DeleteMessage</span> {
+    <span class="kw">type</span> <span class="ident">Output</span> <span class="op">=</span>
+        <span class="ident">std::result::Result</span><span class="op">&lt;</span><span class="kw">crate</span><span class="ident">::output::DeleteMessageOutput</span>, <span class="kw">crate</span><span class="ident">::error::DeleteMessageError</span><span class="op">&gt;</span>;
+    <span class="kw">fn</span> <span class="ident">parse</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">response</span>: <span class="kw-2">&amp;</span><span class="ident">http::Response</span><span class="op">&lt;</span><span class="ident">bytes::Bytes</span><span class="op">&gt;</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="self">Self</span><span class="ident">::Output</span> {
+        <span class="kw">if</span> <span class="op">!</span><span class="ident">response</span>.<span class="ident">status</span>().<span class="ident">is_success</span>() <span class="op">&amp;&amp;</span> <span class="ident">response</span>.<span class="ident">status</span>().<span class="ident">as_u16</span>() <span class="op">!</span><span class="op">=</span> <span class="number">200</span> {
+            <span class="kw">crate</span><span class="ident">::operation_deser::parse_delete_message_error</span>(<span class="ident">response</span>)
+        } <span class="kw">else</span> {
+            <span class="kw">crate</span><span class="ident">::operation_deser::parse_delete_message_response</span>(<span class="ident">response</span>)
+        }
+    }
+}
+
+<span class="doccomment">/// &lt;p&gt;Deletes up to ten messages from the specified queue. This is a batch version of &lt;code&gt;</span>
+<span class="doccomment">/// &lt;a&gt;DeleteMessage&lt;/a&gt;.&lt;/code&gt; The result of the action on each message is reported individually in the response.&lt;/p&gt;</span>
+<span class="doccomment">/// &lt;important&gt;</span>
+<span class="doccomment">/// &lt;p&gt;Because the batch request can result in a combination of successful and unsuccessful actions, you should check for batch errors even when the call returns an HTTP status code of &lt;code&gt;200&lt;/code&gt;.&lt;/p&gt;</span>
+<span class="doccomment">/// &lt;/important&gt;</span>
+<span class="doccomment">/// &lt;p&gt;Some actions take lists of parameters. These lists are specified using the &lt;code&gt;param.n&lt;/code&gt; notation. Values of &lt;code&gt;n&lt;/code&gt; are integers starting from 1. For example, a parameter list with two elements looks like this:&lt;/p&gt;</span>
+<span class="doccomment">/// &lt;p&gt;</span>
+<span class="doccomment">/// &lt;code&gt;&amp;AttributeName.1=first&lt;/code&gt;</span>
+<span class="doccomment">/// &lt;/p&gt;</span>
+<span class="doccomment">/// &lt;p&gt;</span>
+<span class="doccomment">/// &lt;code&gt;&amp;AttributeName.2=second&lt;/code&gt;</span>
+<span class="doccomment">/// &lt;/p&gt;</span>
+<span class="attribute">#[<span class="ident">derive</span>(<span class="ident">std::default::Default</span>, <span class="ident">std::clone::Clone</span>, <span class="ident">std::fmt::Debug</span>)]</span>
+<span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">DeleteMessageBatch</span> {
+    <span class="ident">_private</span>: (),
+}
+<span class="kw">impl</span> <span class="ident">DeleteMessageBatch</span> {
+    <span class="doccomment">/// Creates a new builder-style object to manufacture [`DeleteMessageBatchInput`](crate::input::DeleteMessageBatchInput)</span>
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">builder</span>() <span class="op">-</span><span class="op">&gt;</span> <span class="kw">crate</span><span class="ident">::input::delete_message_batch_input::Builder</span> {
+        <span class="kw">crate</span><span class="ident">::input::delete_message_batch_input::Builder::default</span>()
+    }
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">new</span>() <span class="op">-</span><span class="op">&gt;</span> <span class="self">Self</span> {
+        <span class="self">Self</span> { <span class="ident">_private</span>: () }
+    }
+}
+<span class="kw">impl</span> <span class="ident">smithy_http::response::ParseStrictResponse</span> <span class="kw">for</span> <span class="ident">DeleteMessageBatch</span> {
+    <span class="kw">type</span> <span class="ident">Output</span> <span class="op">=</span> <span class="ident">std::result::Result</span><span class="op">&lt;</span>
+        <span class="kw">crate</span><span class="ident">::output::DeleteMessageBatchOutput</span>,
+        <span class="kw">crate</span><span class="ident">::error::DeleteMessageBatchError</span>,
+    <span class="op">&gt;</span>;
+    <span class="kw">fn</span> <span class="ident">parse</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">response</span>: <span class="kw-2">&amp;</span><span class="ident">http::Response</span><span class="op">&lt;</span><span class="ident">bytes::Bytes</span><span class="op">&gt;</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="self">Self</span><span class="ident">::Output</span> {
+        <span class="kw">if</span> <span class="op">!</span><span class="ident">response</span>.<span class="ident">status</span>().<span class="ident">is_success</span>() <span class="op">&amp;&amp;</span> <span class="ident">response</span>.<span class="ident">status</span>().<span class="ident">as_u16</span>() <span class="op">!</span><span class="op">=</span> <span class="number">200</span> {
+            <span class="kw">crate</span><span class="ident">::operation_deser::parse_delete_message_batch_error</span>(<span class="ident">response</span>)
+        } <span class="kw">else</span> {
+            <span class="kw">crate</span><span class="ident">::operation_deser::parse_delete_message_batch_response</span>(<span class="ident">response</span>)
+        }
+    }
+}
+
+<span class="doccomment">/// &lt;p&gt;Deletes the queue specified by the &lt;code&gt;QueueUrl&lt;/code&gt;, regardless of the queue&#39;s contents.&lt;/p&gt;</span>
+<span class="doccomment">/// &lt;important&gt;</span>
+<span class="doccomment">/// &lt;p&gt;Be careful with the &lt;code&gt;DeleteQueue&lt;/code&gt; action: When you delete a queue, any messages in the queue are no longer available.</span>
+<span class="doccomment">/// &lt;/p&gt;</span>
+<span class="doccomment">/// &lt;/important&gt;</span>
+<span class="doccomment">/// &lt;p&gt;When you delete a queue, the deletion process takes up to 60 seconds. Requests you send involving that queue during the 60 seconds might succeed. For example, a</span>
+<span class="doccomment">/// &lt;code&gt;</span>
+<span class="doccomment">/// &lt;a&gt;SendMessage&lt;/a&gt;</span>
+<span class="doccomment">/// &lt;/code&gt; request might succeed, but after 60 seconds the queue and the message you sent no longer exist.&lt;/p&gt;</span>
+<span class="doccomment">/// &lt;p&gt;When you delete a queue, you must wait at least 60 seconds before creating a queue with the same name.&lt;/p&gt;</span>
+<span class="doccomment">/// &lt;note&gt;</span>
+<span class="doccomment">/// &lt;p&gt;Cross-account permissions don&#39;t apply to this action. For more information,</span>
+<span class="doccomment">/// see &lt;a href=&quot;https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name&quot;&gt;Grant</span>
+<span class="doccomment">/// cross-account permissions to a role and a user name&lt;/a&gt; in the &lt;i&gt;Amazon SQS Developer Guide&lt;/i&gt;.&lt;/p&gt;</span>
+<span class="doccomment">/// &lt;/note&gt;</span>
+<span class="attribute">#[<span class="ident">derive</span>(<span class="ident">std::default::Default</span>, <span class="ident">std::clone::Clone</span>, <span class="ident">std::fmt::Debug</span>)]</span>
+<span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">DeleteQueue</span> {
+    <span class="ident">_private</span>: (),
+}
+<span class="kw">impl</span> <span class="ident">DeleteQueue</span> {
+    <span class="doccomment">/// Creates a new builder-style object to manufacture [`DeleteQueueInput`](crate::input::DeleteQueueInput)</span>
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">builder</span>() <span class="op">-</span><span class="op">&gt;</span> <span class="kw">crate</span><span class="ident">::input::delete_queue_input::Builder</span> {
+        <span class="kw">crate</span><span class="ident">::input::delete_queue_input::Builder::default</span>()
+    }
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">new</span>() <span class="op">-</span><span class="op">&gt;</span> <span class="self">Self</span> {
+        <span class="self">Self</span> { <span class="ident">_private</span>: () }
+    }
+}
+<span class="kw">impl</span> <span class="ident">smithy_http::response::ParseStrictResponse</span> <span class="kw">for</span> <span class="ident">DeleteQueue</span> {
+    <span class="kw">type</span> <span class="ident">Output</span> <span class="op">=</span>
+        <span class="ident">std::result::Result</span><span class="op">&lt;</span><span class="kw">crate</span><span class="ident">::output::DeleteQueueOutput</span>, <span class="kw">crate</span><span class="ident">::error::DeleteQueueError</span><span class="op">&gt;</span>;
+    <span class="kw">fn</span> <span class="ident">parse</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">response</span>: <span class="kw-2">&amp;</span><span class="ident">http::Response</span><span class="op">&lt;</span><span class="ident">bytes::Bytes</span><span class="op">&gt;</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="self">Self</span><span class="ident">::Output</span> {
+        <span class="kw">if</span> <span class="op">!</span><span class="ident">response</span>.<span class="ident">status</span>().<span class="ident">is_success</span>() <span class="op">&amp;&amp;</span> <span class="ident">response</span>.<span class="ident">status</span>().<span class="ident">as_u16</span>() <span class="op">!</span><span class="op">=</span> <span class="number">200</span> {
+            <span class="kw">crate</span><span class="ident">::operation_deser::parse_delete_queue_error</span>(<span class="ident">response</span>)
+        } <span class="kw">else</span> {
+            <span class="kw">crate</span><span class="ident">::operation_deser::parse_delete_queue_response</span>(<span class="ident">response</span>)
+        }
+    }
+}
+
+<span class="doccomment">/// &lt;p&gt;Gets attributes for the specified queue.&lt;/p&gt;</span>
+<span class="doccomment">/// &lt;note&gt;</span>
+<span class="doccomment">/// &lt;p&gt;To determine whether a queue is &lt;a href=&quot;https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html&quot;&gt;FIFO&lt;/a&gt;, you can check whether &lt;code&gt;QueueName&lt;/code&gt; ends with the &lt;code&gt;.fifo&lt;/code&gt; suffix.&lt;/p&gt;</span>
+<span class="doccomment">/// &lt;/note&gt;</span>
+<span class="attribute">#[<span class="ident">derive</span>(<span class="ident">std::default::Default</span>, <span class="ident">std::clone::Clone</span>, <span class="ident">std::fmt::Debug</span>)]</span>
+<span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">GetQueueAttributes</span> {
+    <span class="ident">_private</span>: (),
+}
+<span class="kw">impl</span> <span class="ident">GetQueueAttributes</span> {
+    <span class="doccomment">/// Creates a new builder-style object to manufacture [`GetQueueAttributesInput`](crate::input::GetQueueAttributesInput)</span>
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">builder</span>() <span class="op">-</span><span class="op">&gt;</span> <span class="kw">crate</span><span class="ident">::input::get_queue_attributes_input::Builder</span> {
+        <span class="kw">crate</span><span class="ident">::input::get_queue_attributes_input::Builder::default</span>()
+    }
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">new</span>() <span class="op">-</span><span class="op">&gt;</span> <span class="self">Self</span> {
+        <span class="self">Self</span> { <span class="ident">_private</span>: () }
+    }
+}
+<span class="kw">impl</span> <span class="ident">smithy_http::response::ParseStrictResponse</span> <span class="kw">for</span> <span class="ident">GetQueueAttributes</span> {
+    <span class="kw">type</span> <span class="ident">Output</span> <span class="op">=</span> <span class="ident">std::result::Result</span><span class="op">&lt;</span>
+        <span class="kw">crate</span><span class="ident">::output::GetQueueAttributesOutput</span>,
+        <span class="kw">crate</span><span class="ident">::error::GetQueueAttributesError</span>,
+    <span class="op">&gt;</span>;
+    <span class="kw">fn</span> <span class="ident">parse</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">response</span>: <span class="kw-2">&amp;</span><span class="ident">http::Response</span><span class="op">&lt;</span><span class="ident">bytes::Bytes</span><span class="op">&gt;</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="self">Self</span><span class="ident">::Output</span> {
+        <span class="kw">if</span> <span class="op">!</span><span class="ident">response</span>.<span class="ident">status</span>().<span class="ident">is_success</span>() <span class="op">&amp;&amp;</span> <span class="ident">response</span>.<span class="ident">status</span>().<span class="ident">as_u16</span>() <span class="op">!</span><span class="op">=</span> <span class="number">200</span> {
+            <span class="kw">crate</span><span class="ident">::operation_deser::parse_get_queue_attributes_error</span>(<span class="ident">response</span>)
+        } <span class="kw">else</span> {
+            <span class="kw">crate</span><span class="ident">::operation_deser::parse_get_queue_attributes_response</span>(<span class="ident">response</span>)
+        }
+    }
+}
+
+<span class="doccomment">/// &lt;p&gt;Returns the URL of an existing Amazon SQS queue.&lt;/p&gt;</span>
+<span class="doccomment">/// &lt;p&gt;To access a queue that belongs to another AWS account, use the &lt;code&gt;QueueOwnerAWSAccountId&lt;/code&gt; parameter to specify the account ID of the queue&#39;s owner. The queue&#39;s owner must grant you permission to access the queue.</span>
+<span class="doccomment">/// For more information about shared queue access, see &lt;code&gt;</span>
+<span class="doccomment">/// &lt;a&gt;AddPermission&lt;/a&gt;</span>
+<span class="doccomment">/// &lt;/code&gt; or see &lt;a href=&quot;https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-writing-an-sqs-policy.html#write-messages-to-shared-queue&quot;&gt;Allow Developers to Write Messages to a Shared Queue&lt;/a&gt; in the &lt;i&gt;Amazon SQS Developer Guide&lt;/i&gt;.</span>
+<span class="doccomment">/// &lt;/p&gt;</span>
+<span class="attribute">#[<span class="ident">derive</span>(<span class="ident">std::default::Default</span>, <span class="ident">std::clone::Clone</span>, <span class="ident">std::fmt::Debug</span>)]</span>
+<span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">GetQueueUrl</span> {
+    <span class="ident">_private</span>: (),
+}
+<span class="kw">impl</span> <span class="ident">GetQueueUrl</span> {
+    <span class="doccomment">/// Creates a new builder-style object to manufacture [`GetQueueUrlInput`](crate::input::GetQueueUrlInput)</span>
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">builder</span>() <span class="op">-</span><span class="op">&gt;</span> <span class="kw">crate</span><span class="ident">::input::get_queue_url_input::Builder</span> {
+        <span class="kw">crate</span><span class="ident">::input::get_queue_url_input::Builder::default</span>()
+    }
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">new</span>() <span class="op">-</span><span class="op">&gt;</span> <span class="self">Self</span> {
+        <span class="self">Self</span> { <span class="ident">_private</span>: () }
+    }
+}
+<span class="kw">impl</span> <span class="ident">smithy_http::response::ParseStrictResponse</span> <span class="kw">for</span> <span class="ident">GetQueueUrl</span> {
+    <span class="kw">type</span> <span class="ident">Output</span> <span class="op">=</span>
+        <span class="ident">std::result::Result</span><span class="op">&lt;</span><span class="kw">crate</span><span class="ident">::output::GetQueueUrlOutput</span>, <span class="kw">crate</span><span class="ident">::error::GetQueueUrlError</span><span class="op">&gt;</span>;
+    <span class="kw">fn</span> <span class="ident">parse</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">response</span>: <span class="kw-2">&amp;</span><span class="ident">http::Response</span><span class="op">&lt;</span><span class="ident">bytes::Bytes</span><span class="op">&gt;</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="self">Self</span><span class="ident">::Output</span> {
+        <span class="kw">if</span> <span class="op">!</span><span class="ident">response</span>.<span class="ident">status</span>().<span class="ident">is_success</span>() <span class="op">&amp;&amp;</span> <span class="ident">response</span>.<span class="ident">status</span>().<span class="ident">as_u16</span>() <span class="op">!</span><span class="op">=</span> <span class="number">200</span> {
+            <span class="kw">crate</span><span class="ident">::operation_deser::parse_get_queue_url_error</span>(<span class="ident">response</span>)
+        } <span class="kw">else</span> {
+            <span class="kw">crate</span><span class="ident">::operation_deser::parse_get_queue_url_response</span>(<span class="ident">response</span>)
+        }
+    }
+}
+
+<span class="doccomment">/// &lt;p&gt;Returns a list of your queues that have the &lt;code&gt;RedrivePolicy&lt;/code&gt; queue attribute configured with a dead-letter queue.&lt;/p&gt;   </span>
+<span class="doccomment">/// &lt;p&gt; The &lt;code&gt;ListDeadLetterSourceQueues&lt;/code&gt; methods supports</span>
+<span class="doccomment">/// pagination. Set parameter &lt;code&gt;MaxResults&lt;/code&gt; in the request to specify the maximum number of</span>
+<span class="doccomment">/// results to be returned in the response. If you do not set &lt;code&gt;MaxResults&lt;/code&gt;,</span>
+<span class="doccomment">/// the response includes a maximum of 1,000 results. If you set &lt;code&gt;MaxResults&lt;/code&gt; and there are additional results to</span>
+<span class="doccomment">/// display, the response includes a value for &lt;code&gt;NextToken&lt;/code&gt;. Use</span>
+<span class="doccomment">/// &lt;code&gt;NextToken&lt;/code&gt; as a parameter in your next request to</span>
+<span class="doccomment">/// &lt;code&gt;ListDeadLetterSourceQueues&lt;/code&gt; to receive the next page of results.   &lt;/p&gt;</span>
+<span class="doccomment">/// &lt;p&gt;For more information about using dead-letter queues, see &lt;a href=&quot;https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html&quot;&gt;Using Amazon SQS Dead-Letter Queues&lt;/a&gt;</span>
+<span class="doccomment">/// in the &lt;i&gt;Amazon SQS Developer Guide&lt;/i&gt;.&lt;/p&gt;</span>
+<span class="attribute">#[<span class="ident">derive</span>(<span class="ident">std::default::Default</span>, <span class="ident">std::clone::Clone</span>, <span class="ident">std::fmt::Debug</span>)]</span>
+<span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">ListDeadLetterSourceQueues</span> {
+    <span class="ident">_private</span>: (),
+}
+<span class="kw">impl</span> <span class="ident">ListDeadLetterSourceQueues</span> {
+    <span class="doccomment">/// Creates a new builder-style object to manufacture [`ListDeadLetterSourceQueuesInput`](crate::input::ListDeadLetterSourceQueuesInput)</span>
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">builder</span>() <span class="op">-</span><span class="op">&gt;</span> <span class="kw">crate</span><span class="ident">::input::list_dead_letter_source_queues_input::Builder</span> {
+        <span class="kw">crate</span><span class="ident">::input::list_dead_letter_source_queues_input::Builder::default</span>()
+    }
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">new</span>() <span class="op">-</span><span class="op">&gt;</span> <span class="self">Self</span> {
+        <span class="self">Self</span> { <span class="ident">_private</span>: () }
+    }
+}
+<span class="kw">impl</span> <span class="ident">smithy_http::response::ParseStrictResponse</span> <span class="kw">for</span> <span class="ident">ListDeadLetterSourceQueues</span> {
+    <span class="kw">type</span> <span class="ident">Output</span> <span class="op">=</span> <span class="ident">std::result::Result</span><span class="op">&lt;</span>
+        <span class="kw">crate</span><span class="ident">::output::ListDeadLetterSourceQueuesOutput</span>,
+        <span class="kw">crate</span><span class="ident">::error::ListDeadLetterSourceQueuesError</span>,
+    <span class="op">&gt;</span>;
+    <span class="kw">fn</span> <span class="ident">parse</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">response</span>: <span class="kw-2">&amp;</span><span class="ident">http::Response</span><span class="op">&lt;</span><span class="ident">bytes::Bytes</span><span class="op">&gt;</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="self">Self</span><span class="ident">::Output</span> {
+        <span class="kw">if</span> <span class="op">!</span><span class="ident">response</span>.<span class="ident">status</span>().<span class="ident">is_success</span>() <span class="op">&amp;&amp;</span> <span class="ident">response</span>.<span class="ident">status</span>().<span class="ident">as_u16</span>() <span class="op">!</span><span class="op">=</span> <span class="number">200</span> {
+            <span class="kw">crate</span><span class="ident">::operation_deser::parse_list_dead_letter_source_queues_error</span>(<span class="ident">response</span>)
+        } <span class="kw">else</span> {
+            <span class="kw">crate</span><span class="ident">::operation_deser::parse_list_dead_letter_source_queues_response</span>(<span class="ident">response</span>)
+        }
+    }
+}
+
+<span class="doccomment">/// &lt;p&gt;Returns a list of your queues in the current region. The response includes a maximum of 1,000 results. If you specify a value for the optional</span>
+<span class="doccomment">/// &lt;code&gt;QueueNamePrefix&lt;/code&gt; parameter, only queues with a name that begins with the specified value are returned.&lt;/p&gt;</span>
+<span class="doccomment">/// &lt;p&gt; The &lt;code&gt;listQueues&lt;/code&gt; methods supports</span>
+<span class="doccomment">/// pagination. Set parameter &lt;code&gt;MaxResults&lt;/code&gt; in the request to specify the maximum number of</span>
+<span class="doccomment">/// results to be returned in the response. If you do not set &lt;code&gt;MaxResults&lt;/code&gt;,</span>
+<span class="doccomment">/// the response includes a maximum of 1,000 results. If you set &lt;code&gt;MaxResults&lt;/code&gt; and there are additional results to</span>
+<span class="doccomment">/// display, the response includes a value for &lt;code&gt;NextToken&lt;/code&gt;. Use</span>
+<span class="doccomment">/// &lt;code&gt;NextToken&lt;/code&gt; as a parameter in your next request to</span>
+<span class="doccomment">/// &lt;code&gt;listQueues&lt;/code&gt; to receive the next page of results.  &lt;/p&gt;</span>
+<span class="doccomment">/// &lt;note&gt;</span>
+<span class="doccomment">/// &lt;p&gt;Cross-account permissions don&#39;t apply to this action. For more information,</span>
+<span class="doccomment">/// see &lt;a href=&quot;https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name&quot;&gt;Grant</span>
+<span class="doccomment">/// cross-account permissions to a role and a user name&lt;/a&gt; in the &lt;i&gt;Amazon SQS Developer Guide&lt;/i&gt;.&lt;/p&gt;</span>
+<span class="doccomment">/// &lt;/note&gt;</span>
+<span class="attribute">#[<span class="ident">derive</span>(<span class="ident">std::default::Default</span>, <span class="ident">std::clone::Clone</span>, <span class="ident">std::fmt::Debug</span>)]</span>
+<span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">ListQueues</span> {
+    <span class="ident">_private</span>: (),
+}
+<span class="kw">impl</span> <span class="ident">ListQueues</span> {
+    <span class="doccomment">/// Creates a new builder-style object to manufacture [`ListQueuesInput`](crate::input::ListQueuesInput)</span>
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">builder</span>() <span class="op">-</span><span class="op">&gt;</span> <span class="kw">crate</span><span class="ident">::input::list_queues_input::Builder</span> {
+        <span class="kw">crate</span><span class="ident">::input::list_queues_input::Builder::default</span>()
+    }
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">new</span>() <span class="op">-</span><span class="op">&gt;</span> <span class="self">Self</span> {
+        <span class="self">Self</span> { <span class="ident">_private</span>: () }
+    }
+}
+<span class="kw">impl</span> <span class="ident">smithy_http::response::ParseStrictResponse</span> <span class="kw">for</span> <span class="ident">ListQueues</span> {
+    <span class="kw">type</span> <span class="ident">Output</span> <span class="op">=</span>
+        <span class="ident">std::result::Result</span><span class="op">&lt;</span><span class="kw">crate</span><span class="ident">::output::ListQueuesOutput</span>, <span class="kw">crate</span><span class="ident">::error::ListQueuesError</span><span class="op">&gt;</span>;
+    <span class="kw">fn</span> <span class="ident">parse</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">response</span>: <span class="kw-2">&amp;</span><span class="ident">http::Response</span><span class="op">&lt;</span><span class="ident">bytes::Bytes</span><span class="op">&gt;</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="self">Self</span><span class="ident">::Output</span> {
+        <span class="kw">if</span> <span class="op">!</span><span class="ident">response</span>.<span class="ident">status</span>().<span class="ident">is_success</span>() <span class="op">&amp;&amp;</span> <span class="ident">response</span>.<span class="ident">status</span>().<span class="ident">as_u16</span>() <span class="op">!</span><span class="op">=</span> <span class="number">200</span> {
+            <span class="kw">crate</span><span class="ident">::operation_deser::parse_list_queues_error</span>(<span class="ident">response</span>)
+        } <span class="kw">else</span> {
+            <span class="kw">crate</span><span class="ident">::operation_deser::parse_list_queues_response</span>(<span class="ident">response</span>)
+        }
+    }
+}
+
+<span class="doccomment">/// &lt;p&gt;List all cost allocation tags added to the specified Amazon SQS queue. For an overview, see &lt;a href=&quot;https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-queue-tags.html&quot;&gt;Tagging</span>
+<span class="doccomment">/// Your Amazon SQS Queues&lt;/a&gt; in the &lt;i&gt;Amazon SQS Developer Guide&lt;/i&gt;.&lt;/p&gt;</span>
+<span class="doccomment">/// &lt;note&gt;</span>
+<span class="doccomment">/// &lt;p&gt;Cross-account permissions don&#39;t apply to this action. For more information,</span>
+<span class="doccomment">/// see &lt;a href=&quot;https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name&quot;&gt;Grant</span>
+<span class="doccomment">/// cross-account permissions to a role and a user name&lt;/a&gt; in the &lt;i&gt;Amazon SQS Developer Guide&lt;/i&gt;.&lt;/p&gt;</span>
+<span class="doccomment">/// &lt;/note&gt;</span>
+<span class="attribute">#[<span class="ident">derive</span>(<span class="ident">std::default::Default</span>, <span class="ident">std::clone::Clone</span>, <span class="ident">std::fmt::Debug</span>)]</span>
+<span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">ListQueueTags</span> {
+    <span class="ident">_private</span>: (),
+}
+<span class="kw">impl</span> <span class="ident">ListQueueTags</span> {
+    <span class="doccomment">/// Creates a new builder-style object to manufacture [`ListQueueTagsInput`](crate::input::ListQueueTagsInput)</span>
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">builder</span>() <span class="op">-</span><span class="op">&gt;</span> <span class="kw">crate</span><span class="ident">::input::list_queue_tags_input::Builder</span> {
+        <span class="kw">crate</span><span class="ident">::input::list_queue_tags_input::Builder::default</span>()
+    }
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">new</span>() <span class="op">-</span><span class="op">&gt;</span> <span class="self">Self</span> {
+        <span class="self">Self</span> { <span class="ident">_private</span>: () }
+    }
+}
+<span class="kw">impl</span> <span class="ident">smithy_http::response::ParseStrictResponse</span> <span class="kw">for</span> <span class="ident">ListQueueTags</span> {
+    <span class="kw">type</span> <span class="ident">Output</span> <span class="op">=</span>
+        <span class="ident">std::result::Result</span><span class="op">&lt;</span><span class="kw">crate</span><span class="ident">::output::ListQueueTagsOutput</span>, <span class="kw">crate</span><span class="ident">::error::ListQueueTagsError</span><span class="op">&gt;</span>;
+    <span class="kw">fn</span> <span class="ident">parse</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">response</span>: <span class="kw-2">&amp;</span><span class="ident">http::Response</span><span class="op">&lt;</span><span class="ident">bytes::Bytes</span><span class="op">&gt;</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="self">Self</span><span class="ident">::Output</span> {
+        <span class="kw">if</span> <span class="op">!</span><span class="ident">response</span>.<span class="ident">status</span>().<span class="ident">is_success</span>() <span class="op">&amp;&amp;</span> <span class="ident">response</span>.<span class="ident">status</span>().<span class="ident">as_u16</span>() <span class="op">!</span><span class="op">=</span> <span class="number">200</span> {
+            <span class="kw">crate</span><span class="ident">::operation_deser::parse_list_queue_tags_error</span>(<span class="ident">response</span>)
+        } <span class="kw">else</span> {
+            <span class="kw">crate</span><span class="ident">::operation_deser::parse_list_queue_tags_response</span>(<span class="ident">response</span>)
+        }
+    }
+}
+
+<span class="doccomment">/// &lt;p&gt;Deletes the messages in a queue specified by the &lt;code&gt;QueueURL&lt;/code&gt;</span>
+<span class="doccomment">/// parameter.&lt;/p&gt;</span>
+<span class="doccomment">/// &lt;important&gt;</span>
+<span class="doccomment">/// &lt;p&gt;When you use the &lt;code&gt;PurgeQueue&lt;/code&gt; action, you can&#39;t retrieve any messages</span>
+<span class="doccomment">/// deleted from a queue.&lt;/p&gt;</span>
+<span class="doccomment">/// &lt;p&gt;The message deletion process takes up to 60 seconds. We recommend waiting for</span>
+<span class="doccomment">/// 60 seconds regardless of your queue&#39;s size. &lt;/p&gt;</span>
+<span class="doccomment">/// &lt;/important&gt;</span>
+<span class="doccomment">/// &lt;p&gt;Messages sent to the queue &lt;i&gt;before&lt;/i&gt; you call</span>
+<span class="doccomment">/// &lt;code&gt;PurgeQueue&lt;/code&gt; might be received but are deleted within the next</span>
+<span class="doccomment">/// minute.&lt;/p&gt;</span>
+<span class="doccomment">/// &lt;p&gt;Messages sent to the queue &lt;i&gt;after&lt;/i&gt; you call</span>
+<span class="doccomment">/// &lt;code&gt;PurgeQueue&lt;/code&gt; might be deleted while the queue is being purged.&lt;/p&gt;</span>
+<span class="attribute">#[<span class="ident">derive</span>(<span class="ident">std::default::Default</span>, <span class="ident">std::clone::Clone</span>, <span class="ident">std::fmt::Debug</span>)]</span>
+<span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">PurgeQueue</span> {
+    <span class="ident">_private</span>: (),
+}
+<span class="kw">impl</span> <span class="ident">PurgeQueue</span> {
+    <span class="doccomment">/// Creates a new builder-style object to manufacture [`PurgeQueueInput`](crate::input::PurgeQueueInput)</span>
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">builder</span>() <span class="op">-</span><span class="op">&gt;</span> <span class="kw">crate</span><span class="ident">::input::purge_queue_input::Builder</span> {
+        <span class="kw">crate</span><span class="ident">::input::purge_queue_input::Builder::default</span>()
+    }
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">new</span>() <span class="op">-</span><span class="op">&gt;</span> <span class="self">Self</span> {
+        <span class="self">Self</span> { <span class="ident">_private</span>: () }
+    }
+}
+<span class="kw">impl</span> <span class="ident">smithy_http::response::ParseStrictResponse</span> <span class="kw">for</span> <span class="ident">PurgeQueue</span> {
+    <span class="kw">type</span> <span class="ident">Output</span> <span class="op">=</span>
+        <span class="ident">std::result::Result</span><span class="op">&lt;</span><span class="kw">crate</span><span class="ident">::output::PurgeQueueOutput</span>, <span class="kw">crate</span><span class="ident">::error::PurgeQueueError</span><span class="op">&gt;</span>;
+    <span class="kw">fn</span> <span class="ident">parse</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">response</span>: <span class="kw-2">&amp;</span><span class="ident">http::Response</span><span class="op">&lt;</span><span class="ident">bytes::Bytes</span><span class="op">&gt;</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="self">Self</span><span class="ident">::Output</span> {
+        <span class="kw">if</span> <span class="op">!</span><span class="ident">response</span>.<span class="ident">status</span>().<span class="ident">is_success</span>() <span class="op">&amp;&amp;</span> <span class="ident">response</span>.<span class="ident">status</span>().<span class="ident">as_u16</span>() <span class="op">!</span><span class="op">=</span> <span class="number">200</span> {
+            <span class="kw">crate</span><span class="ident">::operation_deser::parse_purge_queue_error</span>(<span class="ident">response</span>)
+        } <span class="kw">else</span> {
+            <span class="kw">crate</span><span class="ident">::operation_deser::parse_purge_queue_response</span>(<span class="ident">response</span>)
+        }
+    }
+}
+
+<span class="doccomment">/// &lt;p&gt;Retrieves one or more messages (up to 10), from the specified queue. Using the &lt;code&gt;WaitTimeSeconds&lt;/code&gt; parameter enables long-poll support.</span>
+<span class="doccomment">/// For more information, see &lt;a href=&quot;https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-long-polling.html&quot;&gt;Amazon SQS Long Polling&lt;/a&gt; in the &lt;i&gt;Amazon SQS Developer Guide&lt;/i&gt;.</span>
+<span class="doccomment">/// &lt;/p&gt;</span>
+<span class="doccomment">/// &lt;p&gt;Short poll is the default behavior where a weighted random set of machines is sampled on a &lt;code&gt;ReceiveMessage&lt;/code&gt; call. Thus, only the messages on the sampled machines are returned.</span>
+<span class="doccomment">/// If the number of messages in the queue is small (fewer than 1,000), you most likely get fewer messages than you requested per &lt;code&gt;ReceiveMessage&lt;/code&gt; call. If the number of messages in the queue is extremely small,</span>
+<span class="doccomment">/// you might not receive any messages in a particular &lt;code&gt;ReceiveMessage&lt;/code&gt; response. If this happens, repeat the request.</span>
+<span class="doccomment">/// &lt;/p&gt;</span>
+<span class="doccomment">/// &lt;p&gt;For each message returned, the response includes the following:&lt;/p&gt;</span>
+<span class="doccomment">/// &lt;ul&gt;</span>
+<span class="doccomment">/// &lt;li&gt;</span>
+<span class="doccomment">/// &lt;p&gt;The message body.&lt;/p&gt;</span>
+<span class="doccomment">/// &lt;/li&gt;</span>
+<span class="doccomment">/// &lt;li&gt;</span>
+<span class="doccomment">/// &lt;p&gt;An MD5 digest of the message body. For information about MD5, see &lt;a href=&quot;https://www.ietf.org/rfc/rfc1321.txt&quot;&gt;RFC1321&lt;/a&gt;.&lt;/p&gt;</span>
+<span class="doccomment">/// &lt;/li&gt;</span>
+<span class="doccomment">/// &lt;li&gt;</span>
+<span class="doccomment">/// &lt;p&gt;The &lt;code&gt;MessageId&lt;/code&gt; you received when you sent the message to the queue.&lt;/p&gt;</span>
+<span class="doccomment">/// &lt;/li&gt;</span>
+<span class="doccomment">/// &lt;li&gt;</span>
+<span class="doccomment">/// &lt;p&gt;The receipt handle.&lt;/p&gt;</span>
+<span class="doccomment">/// &lt;/li&gt;</span>
+<span class="doccomment">/// &lt;li&gt;</span>
+<span class="doccomment">/// &lt;p&gt;The message attributes.&lt;/p&gt;</span>
+<span class="doccomment">/// &lt;/li&gt;</span>
+<span class="doccomment">/// &lt;li&gt;</span>
+<span class="doccomment">/// &lt;p&gt;An MD5 digest of the message attributes.&lt;/p&gt;</span>
+<span class="doccomment">/// &lt;/li&gt;</span>
+<span class="doccomment">/// &lt;/ul&gt;</span>
+<span class="doccomment">/// &lt;p&gt;The receipt handle is the identifier you must provide when deleting the message. For more information, see &lt;a href=&quot;https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-queue-message-identifiers.html&quot;&gt;Queue</span>
+<span class="doccomment">/// and Message Identifiers&lt;/a&gt; in the &lt;i&gt;Amazon SQS Developer Guide&lt;/i&gt;.&lt;/p&gt;</span>
+<span class="doccomment">/// &lt;p&gt;You can provide the &lt;code&gt;VisibilityTimeout&lt;/code&gt; parameter in your request. The parameter is applied to the messages that Amazon SQS returns in the response. If you don&#39;t include the parameter, the overall visibility timeout for the queue</span>
+<span class="doccomment">/// is used for the returned messages. For more information, see &lt;a href=&quot;https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html&quot;&gt;Visibility Timeout&lt;/a&gt; in the &lt;i&gt;Amazon SQS Developer Guide&lt;/i&gt;.&lt;/p&gt;</span>
+<span class="doccomment">/// &lt;p&gt;A message that isn&#39;t deleted or a message whose visibility isn&#39;t extended before the visibility timeout expires counts as a failed receive. Depending on the configuration of the queue, the message might be sent to the dead-letter queue.&lt;/p&gt;</span>
+<span class="doccomment">/// &lt;note&gt;</span>
+<span class="doccomment">/// &lt;p&gt;In the future, new attributes might be added. If you write code that calls this action, we recommend that you structure your code so that it can handle new attributes gracefully.&lt;/p&gt;</span>
+<span class="doccomment">/// &lt;/note&gt;</span>
+<span class="attribute">#[<span class="ident">derive</span>(<span class="ident">std::default::Default</span>, <span class="ident">std::clone::Clone</span>, <span class="ident">std::fmt::Debug</span>)]</span>
+<span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">ReceiveMessage</span> {
+    <span class="ident">_private</span>: (),
+}
+<span class="kw">impl</span> <span class="ident">ReceiveMessage</span> {
+    <span class="doccomment">/// Creates a new builder-style object to manufacture [`ReceiveMessageInput`](crate::input::ReceiveMessageInput)</span>
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">builder</span>() <span class="op">-</span><span class="op">&gt;</span> <span class="kw">crate</span><span class="ident">::input::receive_message_input::Builder</span> {
+        <span class="kw">crate</span><span class="ident">::input::receive_message_input::Builder::default</span>()
+    }
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">new</span>() <span class="op">-</span><span class="op">&gt;</span> <span class="self">Self</span> {
+        <span class="self">Self</span> { <span class="ident">_private</span>: () }
+    }
+}
+<span class="kw">impl</span> <span class="ident">smithy_http::response::ParseStrictResponse</span> <span class="kw">for</span> <span class="ident">ReceiveMessage</span> {
+    <span class="kw">type</span> <span class="ident">Output</span> <span class="op">=</span>
+        <span class="ident">std::result::Result</span><span class="op">&lt;</span><span class="kw">crate</span><span class="ident">::output::ReceiveMessageOutput</span>, <span class="kw">crate</span><span class="ident">::error::ReceiveMessageError</span><span class="op">&gt;</span>;
+    <span class="kw">fn</span> <span class="ident">parse</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">response</span>: <span class="kw-2">&amp;</span><span class="ident">http::Response</span><span class="op">&lt;</span><span class="ident">bytes::Bytes</span><span class="op">&gt;</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="self">Self</span><span class="ident">::Output</span> {
+        <span class="kw">if</span> <span class="op">!</span><span class="ident">response</span>.<span class="ident">status</span>().<span class="ident">is_success</span>() <span class="op">&amp;&amp;</span> <span class="ident">response</span>.<span class="ident">status</span>().<span class="ident">as_u16</span>() <span class="op">!</span><span class="op">=</span> <span class="number">200</span> {
+            <span class="kw">crate</span><span class="ident">::operation_deser::parse_receive_message_error</span>(<span class="ident">response</span>)
+        } <span class="kw">else</span> {
+            <span class="kw">crate</span><span class="ident">::operation_deser::parse_receive_message_response</span>(<span class="ident">response</span>)
+        }
+    }
+}
+
+<span class="doccomment">/// &lt;p&gt;Revokes any permissions in the queue policy that matches the specified &lt;code&gt;Label&lt;/code&gt; parameter.&lt;/p&gt;</span>
+<span class="doccomment">/// &lt;note&gt;</span>
+<span class="doccomment">/// &lt;ul&gt;</span>
+<span class="doccomment">/// &lt;li&gt;</span>
+<span class="doccomment">/// &lt;p&gt;Only the owner of a queue can remove permissions from it.&lt;/p&gt;</span>
+<span class="doccomment">/// &lt;/li&gt;</span>
+<span class="doccomment">/// &lt;li&gt;</span>
+<span class="doccomment">/// &lt;p&gt;Cross-account permissions don&#39;t apply to this action. For more information,</span>
+<span class="doccomment">/// see &lt;a href=&quot;https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name&quot;&gt;Grant</span>
+<span class="doccomment">/// cross-account permissions to a role and a user name&lt;/a&gt; in the &lt;i&gt;Amazon SQS Developer Guide&lt;/i&gt;.&lt;/p&gt;</span>
+<span class="doccomment">/// &lt;/li&gt;</span>
+<span class="doccomment">/// &lt;li&gt;</span>
+<span class="doccomment">/// &lt;p&gt;To remove the ability to change queue permissions, you must deny permission to the &lt;code&gt;AddPermission&lt;/code&gt;, &lt;code&gt;RemovePermission&lt;/code&gt;, and &lt;code&gt;SetQueueAttributes&lt;/code&gt; actions in your IAM policy.&lt;/p&gt;</span>
+<span class="doccomment">/// &lt;/li&gt;</span>
+<span class="doccomment">/// &lt;/ul&gt;</span>
+<span class="doccomment">/// &lt;/note&gt;</span>
+<span class="attribute">#[<span class="ident">derive</span>(<span class="ident">std::default::Default</span>, <span class="ident">std::clone::Clone</span>, <span class="ident">std::fmt::Debug</span>)]</span>
+<span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">RemovePermission</span> {
+    <span class="ident">_private</span>: (),
+}
+<span class="kw">impl</span> <span class="ident">RemovePermission</span> {
+    <span class="doccomment">/// Creates a new builder-style object to manufacture [`RemovePermissionInput`](crate::input::RemovePermissionInput)</span>
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">builder</span>() <span class="op">-</span><span class="op">&gt;</span> <span class="kw">crate</span><span class="ident">::input::remove_permission_input::Builder</span> {
+        <span class="kw">crate</span><span class="ident">::input::remove_permission_input::Builder::default</span>()
+    }
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">new</span>() <span class="op">-</span><span class="op">&gt;</span> <span class="self">Self</span> {
+        <span class="self">Self</span> { <span class="ident">_private</span>: () }
+    }
+}
+<span class="kw">impl</span> <span class="ident">smithy_http::response::ParseStrictResponse</span> <span class="kw">for</span> <span class="ident">RemovePermission</span> {
+    <span class="kw">type</span> <span class="ident">Output</span> <span class="op">=</span> <span class="ident">std::result::Result</span><span class="op">&lt;</span>
+        <span class="kw">crate</span><span class="ident">::output::RemovePermissionOutput</span>,
+        <span class="kw">crate</span><span class="ident">::error::RemovePermissionError</span>,
+    <span class="op">&gt;</span>;
+    <span class="kw">fn</span> <span class="ident">parse</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">response</span>: <span class="kw-2">&amp;</span><span class="ident">http::Response</span><span class="op">&lt;</span><span class="ident">bytes::Bytes</span><span class="op">&gt;</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="self">Self</span><span class="ident">::Output</span> {
+        <span class="kw">if</span> <span class="op">!</span><span class="ident">response</span>.<span class="ident">status</span>().<span class="ident">is_success</span>() <span class="op">&amp;&amp;</span> <span class="ident">response</span>.<span class="ident">status</span>().<span class="ident">as_u16</span>() <span class="op">!</span><span class="op">=</span> <span class="number">200</span> {
+            <span class="kw">crate</span><span class="ident">::operation_deser::parse_remove_permission_error</span>(<span class="ident">response</span>)
+        } <span class="kw">else</span> {
+            <span class="kw">crate</span><span class="ident">::operation_deser::parse_remove_permission_response</span>(<span class="ident">response</span>)
+        }
+    }
+}
+
+<span class="doccomment">/// &lt;p&gt;Delivers a message to the specified queue.&lt;/p&gt;</span>
+<span class="doccomment">/// &lt;important&gt;</span>
+<span class="doccomment">/// &lt;p&gt;A message can include only XML, JSON, and unformatted text. The following Unicode characters are allowed:&lt;/p&gt;</span>
+<span class="doccomment">/// &lt;p&gt;</span>
+<span class="doccomment">/// &lt;code&gt;#x9&lt;/code&gt; | &lt;code&gt;#xA&lt;/code&gt; | &lt;code&gt;#xD&lt;/code&gt; | &lt;code&gt;#x20&lt;/code&gt; to &lt;code&gt;#xD7FF&lt;/code&gt; | &lt;code&gt;#xE000&lt;/code&gt; to &lt;code&gt;#xFFFD&lt;/code&gt; | &lt;code&gt;#x10000&lt;/code&gt; to &lt;code&gt;#x10FFFF&lt;/code&gt;</span>
+<span class="doccomment">/// &lt;/p&gt;</span>
+<span class="doccomment">/// &lt;p&gt;Any characters not included in this list will be rejected. For more information, see the &lt;a href=&quot;http://www.w3.org/TR/REC-xml/#charsets&quot;&gt;W3C specification for characters&lt;/a&gt;.&lt;/p&gt;</span>
+<span class="doccomment">/// &lt;/important&gt;</span>
+<span class="attribute">#[<span class="ident">derive</span>(<span class="ident">std::default::Default</span>, <span class="ident">std::clone::Clone</span>, <span class="ident">std::fmt::Debug</span>)]</span>
+<span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">SendMessage</span> {
+    <span class="ident">_private</span>: (),
+}
+<span class="kw">impl</span> <span class="ident">SendMessage</span> {
+    <span class="doccomment">/// Creates a new builder-style object to manufacture [`SendMessageInput`](crate::input::SendMessageInput)</span>
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">builder</span>() <span class="op">-</span><span class="op">&gt;</span> <span class="kw">crate</span><span class="ident">::input::send_message_input::Builder</span> {
+        <span class="kw">crate</span><span class="ident">::input::send_message_input::Builder::default</span>()
+    }
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">new</span>() <span class="op">-</span><span class="op">&gt;</span> <span class="self">Self</span> {
+        <span class="self">Self</span> { <span class="ident">_private</span>: () }
+    }
+}
+<span class="kw">impl</span> <span class="ident">smithy_http::response::ParseStrictResponse</span> <span class="kw">for</span> <span class="ident">SendMessage</span> {
+    <span class="kw">type</span> <span class="ident">Output</span> <span class="op">=</span>
+        <span class="ident">std::result::Result</span><span class="op">&lt;</span><span class="kw">crate</span><span class="ident">::output::SendMessageOutput</span>, <span class="kw">crate</span><span class="ident">::error::SendMessageError</span><span class="op">&gt;</span>;
+    <span class="kw">fn</span> <span class="ident">parse</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">response</span>: <span class="kw-2">&amp;</span><span class="ident">http::Response</span><span class="op">&lt;</span><span class="ident">bytes::Bytes</span><span class="op">&gt;</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="self">Self</span><span class="ident">::Output</span> {
+        <span class="kw">if</span> <span class="op">!</span><span class="ident">response</span>.<span class="ident">status</span>().<span class="ident">is_success</span>() <span class="op">&amp;&amp;</span> <span class="ident">response</span>.<span class="ident">status</span>().<span class="ident">as_u16</span>() <span class="op">!</span><span class="op">=</span> <span class="number">200</span> {
+            <span class="kw">crate</span><span class="ident">::operation_deser::parse_send_message_error</span>(<span class="ident">response</span>)
+        } <span class="kw">else</span> {
+            <span class="kw">crate</span><span class="ident">::operation_deser::parse_send_message_response</span>(<span class="ident">response</span>)
+        }
+    }
+}
+
+<span class="doccomment">/// &lt;p&gt;Delivers up to ten messages to the specified queue. This is a batch version of &lt;code&gt;</span>
+<span class="doccomment">/// &lt;a&gt;SendMessage&lt;/a&gt;.&lt;/code&gt; For a FIFO queue, multiple messages within a single batch are enqueued in the order they are sent.&lt;/p&gt;</span>
+<span class="doccomment">/// &lt;p&gt;The result of sending each message is reported individually in the response. Because the batch request can result in a combination of successful and unsuccessful actions, you should check for batch errors even when the call returns an HTTP status code of &lt;code&gt;200&lt;/code&gt;.&lt;/p&gt;</span>
+<span class="doccomment">/// &lt;p&gt;The maximum allowed individual message size and the maximum total payload size (the sum of the individual lengths of all of the batched messages) are both 256 KB (262,144 bytes).&lt;/p&gt;</span>
+<span class="doccomment">/// &lt;important&gt;</span>
+<span class="doccomment">/// &lt;p&gt;A message can include only XML, JSON, and unformatted text. The following Unicode characters are allowed:&lt;/p&gt;</span>
+<span class="doccomment">/// &lt;p&gt;</span>
+<span class="doccomment">/// &lt;code&gt;#x9&lt;/code&gt; | &lt;code&gt;#xA&lt;/code&gt; | &lt;code&gt;#xD&lt;/code&gt; | &lt;code&gt;#x20&lt;/code&gt; to &lt;code&gt;#xD7FF&lt;/code&gt; | &lt;code&gt;#xE000&lt;/code&gt; to &lt;code&gt;#xFFFD&lt;/code&gt; | &lt;code&gt;#x10000&lt;/code&gt; to &lt;code&gt;#x10FFFF&lt;/code&gt;</span>
+<span class="doccomment">/// &lt;/p&gt;</span>
+<span class="doccomment">/// &lt;p&gt;Any characters not included in this list will be rejected. For more information, see the &lt;a href=&quot;http://www.w3.org/TR/REC-xml/#charsets&quot;&gt;W3C specification for characters&lt;/a&gt;.&lt;/p&gt;</span>
+<span class="doccomment">/// &lt;/important&gt;</span>
+<span class="doccomment">/// &lt;p&gt;If you don&#39;t specify the &lt;code&gt;DelaySeconds&lt;/code&gt; parameter for an entry, Amazon SQS uses the default value for the queue.&lt;/p&gt;</span>
+<span class="doccomment">/// &lt;p&gt;Some actions take lists of parameters. These lists are specified using the &lt;code&gt;param.n&lt;/code&gt; notation. Values of &lt;code&gt;n&lt;/code&gt; are integers starting from 1. For example, a parameter list with two elements looks like this:&lt;/p&gt;</span>
+<span class="doccomment">/// &lt;p&gt;</span>
+<span class="doccomment">/// &lt;code&gt;&amp;AttributeName.1=first&lt;/code&gt;</span>
+<span class="doccomment">/// &lt;/p&gt;</span>
+<span class="doccomment">/// &lt;p&gt;</span>
+<span class="doccomment">/// &lt;code&gt;&amp;AttributeName.2=second&lt;/code&gt;</span>
+<span class="doccomment">/// &lt;/p&gt;</span>
+<span class="attribute">#[<span class="ident">derive</span>(<span class="ident">std::default::Default</span>, <span class="ident">std::clone::Clone</span>, <span class="ident">std::fmt::Debug</span>)]</span>
+<span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">SendMessageBatch</span> {
+    <span class="ident">_private</span>: (),
+}
+<span class="kw">impl</span> <span class="ident">SendMessageBatch</span> {
+    <span class="doccomment">/// Creates a new builder-style object to manufacture [`SendMessageBatchInput`](crate::input::SendMessageBatchInput)</span>
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">builder</span>() <span class="op">-</span><span class="op">&gt;</span> <span class="kw">crate</span><span class="ident">::input::send_message_batch_input::Builder</span> {
+        <span class="kw">crate</span><span class="ident">::input::send_message_batch_input::Builder::default</span>()
+    }
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">new</span>() <span class="op">-</span><span class="op">&gt;</span> <span class="self">Self</span> {
+        <span class="self">Self</span> { <span class="ident">_private</span>: () }
+    }
+}
+<span class="kw">impl</span> <span class="ident">smithy_http::response::ParseStrictResponse</span> <span class="kw">for</span> <span class="ident">SendMessageBatch</span> {
+    <span class="kw">type</span> <span class="ident">Output</span> <span class="op">=</span> <span class="ident">std::result::Result</span><span class="op">&lt;</span>
+        <span class="kw">crate</span><span class="ident">::output::SendMessageBatchOutput</span>,
+        <span class="kw">crate</span><span class="ident">::error::SendMessageBatchError</span>,
+    <span class="op">&gt;</span>;
+    <span class="kw">fn</span> <span class="ident">parse</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">response</span>: <span class="kw-2">&amp;</span><span class="ident">http::Response</span><span class="op">&lt;</span><span class="ident">bytes::Bytes</span><span class="op">&gt;</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="self">Self</span><span class="ident">::Output</span> {
+        <span class="kw">if</span> <span class="op">!</span><span class="ident">response</span>.<span class="ident">status</span>().<span class="ident">is_success</span>() <span class="op">&amp;&amp;</span> <span class="ident">response</span>.<span class="ident">status</span>().<span class="ident">as_u16</span>() <span class="op">!</span><span class="op">=</span> <span class="number">200</span> {
+            <span class="kw">crate</span><span class="ident">::operation_deser::parse_send_message_batch_error</span>(<span class="ident">response</span>)
+        } <span class="kw">else</span> {
+            <span class="kw">crate</span><span class="ident">::operation_deser::parse_send_message_batch_response</span>(<span class="ident">response</span>)
+        }
+    }
+}
+
+<span class="doccomment">/// &lt;p&gt;Sets the value of one or more queue attributes. When you change a queue&#39;s attributes, the change can take up to 60 seconds for most of the attributes to propagate throughout the Amazon SQS system.</span>
+<span class="doccomment">/// Changes made to the &lt;code&gt;MessageRetentionPeriod&lt;/code&gt; attribute can take up to 15 minutes.&lt;/p&gt;</span>
+<span class="doccomment">/// &lt;note&gt;</span>
+<span class="doccomment">/// &lt;ul&gt;</span>
+<span class="doccomment">/// &lt;li&gt;</span>
+<span class="doccomment">/// &lt;p&gt;In the future, new attributes might be added. If you write code that calls this action, we recommend that you structure your code so that it can handle new attributes gracefully.&lt;/p&gt;</span>
+<span class="doccomment">/// &lt;/li&gt;</span>
+<span class="doccomment">/// &lt;li&gt;</span>
+<span class="doccomment">/// &lt;p&gt;Cross-account permissions don&#39;t apply to this action. For more information,</span>
+<span class="doccomment">/// see &lt;a href=&quot;https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name&quot;&gt;Grant</span>
+<span class="doccomment">/// cross-account permissions to a role and a user name&lt;/a&gt; in the &lt;i&gt;Amazon SQS Developer Guide&lt;/i&gt;.&lt;/p&gt;</span>
+<span class="doccomment">/// &lt;/li&gt;</span>
+<span class="doccomment">/// &lt;li&gt;</span>
+<span class="doccomment">/// &lt;p&gt;To remove the ability to change queue permissions, you must deny permission to the &lt;code&gt;AddPermission&lt;/code&gt;, &lt;code&gt;RemovePermission&lt;/code&gt;, and &lt;code&gt;SetQueueAttributes&lt;/code&gt; actions in your IAM policy.&lt;/p&gt;</span>
+<span class="doccomment">/// &lt;/li&gt;</span>
+<span class="doccomment">/// &lt;/ul&gt;          </span>
+<span class="doccomment">/// &lt;/note&gt;</span>
+<span class="attribute">#[<span class="ident">derive</span>(<span class="ident">std::default::Default</span>, <span class="ident">std::clone::Clone</span>, <span class="ident">std::fmt::Debug</span>)]</span>
+<span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">SetQueueAttributes</span> {
+    <span class="ident">_private</span>: (),
+}
+<span class="kw">impl</span> <span class="ident">SetQueueAttributes</span> {
+    <span class="doccomment">/// Creates a new builder-style object to manufacture [`SetQueueAttributesInput`](crate::input::SetQueueAttributesInput)</span>
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">builder</span>() <span class="op">-</span><span class="op">&gt;</span> <span class="kw">crate</span><span class="ident">::input::set_queue_attributes_input::Builder</span> {
+        <span class="kw">crate</span><span class="ident">::input::set_queue_attributes_input::Builder::default</span>()
+    }
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">new</span>() <span class="op">-</span><span class="op">&gt;</span> <span class="self">Self</span> {
+        <span class="self">Self</span> { <span class="ident">_private</span>: () }
+    }
+}
+<span class="kw">impl</span> <span class="ident">smithy_http::response::ParseStrictResponse</span> <span class="kw">for</span> <span class="ident">SetQueueAttributes</span> {
+    <span class="kw">type</span> <span class="ident">Output</span> <span class="op">=</span> <span class="ident">std::result::Result</span><span class="op">&lt;</span>
+        <span class="kw">crate</span><span class="ident">::output::SetQueueAttributesOutput</span>,
+        <span class="kw">crate</span><span class="ident">::error::SetQueueAttributesError</span>,
+    <span class="op">&gt;</span>;
+    <span class="kw">fn</span> <span class="ident">parse</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">response</span>: <span class="kw-2">&amp;</span><span class="ident">http::Response</span><span class="op">&lt;</span><span class="ident">bytes::Bytes</span><span class="op">&gt;</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="self">Self</span><span class="ident">::Output</span> {
+        <span class="kw">if</span> <span class="op">!</span><span class="ident">response</span>.<span class="ident">status</span>().<span class="ident">is_success</span>() <span class="op">&amp;&amp;</span> <span class="ident">response</span>.<span class="ident">status</span>().<span class="ident">as_u16</span>() <span class="op">!</span><span class="op">=</span> <span class="number">200</span> {
+            <span class="kw">crate</span><span class="ident">::operation_deser::parse_set_queue_attributes_error</span>(<span class="ident">response</span>)
+        } <span class="kw">else</span> {
+            <span class="kw">crate</span><span class="ident">::operation_deser::parse_set_queue_attributes_response</span>(<span class="ident">response</span>)
+        }
+    }
+}
+
+<span class="doccomment">/// &lt;p&gt;Add cost allocation tags to the specified Amazon SQS queue. For an overview, see &lt;a href=&quot;https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-queue-tags.html&quot;&gt;Tagging</span>
+<span class="doccomment">/// Your Amazon SQS Queues&lt;/a&gt; in the &lt;i&gt;Amazon SQS Developer Guide&lt;/i&gt;.&lt;/p&gt;</span>
+<span class="doccomment">/// &lt;p&gt;When you use queue tags, keep the following guidelines in mind:&lt;/p&gt;</span>
+<span class="doccomment">/// &lt;ul&gt;</span>
+<span class="doccomment">/// &lt;li&gt;</span>
+<span class="doccomment">/// &lt;p&gt;Adding more than 50 tags to a queue isn&#39;t recommended.&lt;/p&gt;</span>
+<span class="doccomment">/// &lt;/li&gt;</span>
+<span class="doccomment">/// &lt;li&gt;</span>
+<span class="doccomment">/// &lt;p&gt;Tags don&#39;t have any semantic meaning. Amazon SQS interprets tags as character strings.&lt;/p&gt;</span>
+<span class="doccomment">/// &lt;/li&gt;</span>
+<span class="doccomment">/// &lt;li&gt;</span>
+<span class="doccomment">/// &lt;p&gt;Tags are case-sensitive.&lt;/p&gt;</span>
+<span class="doccomment">/// &lt;/li&gt;</span>
+<span class="doccomment">/// &lt;li&gt;</span>
+<span class="doccomment">/// &lt;p&gt;A new tag with a key identical to that of an existing tag overwrites the existing tag.&lt;/p&gt;</span>
+<span class="doccomment">/// &lt;/li&gt;</span>
+<span class="doccomment">/// &lt;/ul&gt;</span>
+<span class="doccomment">/// &lt;p&gt;For a full list of tag restrictions, see</span>
+<span class="doccomment">/// &lt;a href=&quot;https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-limits.html#limits-queues&quot;&gt;Quotas related to queues&lt;/a&gt;</span>
+<span class="doccomment">/// in the &lt;i&gt;Amazon SQS Developer Guide&lt;/i&gt;.&lt;/p&gt;</span>
+<span class="doccomment">/// &lt;note&gt;</span>
+<span class="doccomment">/// &lt;p&gt;Cross-account permissions don&#39;t apply to this action. For more information,</span>
+<span class="doccomment">/// see &lt;a href=&quot;https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name&quot;&gt;Grant</span>
+<span class="doccomment">/// cross-account permissions to a role and a user name&lt;/a&gt; in the &lt;i&gt;Amazon SQS Developer Guide&lt;/i&gt;.&lt;/p&gt;</span>
+<span class="doccomment">/// &lt;/note&gt;</span>
+<span class="attribute">#[<span class="ident">derive</span>(<span class="ident">std::default::Default</span>, <span class="ident">std::clone::Clone</span>, <span class="ident">std::fmt::Debug</span>)]</span>
+<span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">TagQueue</span> {
+    <span class="ident">_private</span>: (),
+}
+<span class="kw">impl</span> <span class="ident">TagQueue</span> {
+    <span class="doccomment">/// Creates a new builder-style object to manufacture [`TagQueueInput`](crate::input::TagQueueInput)</span>
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">builder</span>() <span class="op">-</span><span class="op">&gt;</span> <span class="kw">crate</span><span class="ident">::input::tag_queue_input::Builder</span> {
+        <span class="kw">crate</span><span class="ident">::input::tag_queue_input::Builder::default</span>()
+    }
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">new</span>() <span class="op">-</span><span class="op">&gt;</span> <span class="self">Self</span> {
+        <span class="self">Self</span> { <span class="ident">_private</span>: () }
+    }
+}
+<span class="kw">impl</span> <span class="ident">smithy_http::response::ParseStrictResponse</span> <span class="kw">for</span> <span class="ident">TagQueue</span> {
+    <span class="kw">type</span> <span class="ident">Output</span> <span class="op">=</span> <span class="ident">std::result::Result</span><span class="op">&lt;</span><span class="kw">crate</span><span class="ident">::output::TagQueueOutput</span>, <span class="kw">crate</span><span class="ident">::error::TagQueueError</span><span class="op">&gt;</span>;
+    <span class="kw">fn</span> <span class="ident">parse</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">response</span>: <span class="kw-2">&amp;</span><span class="ident">http::Response</span><span class="op">&lt;</span><span class="ident">bytes::Bytes</span><span class="op">&gt;</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="self">Self</span><span class="ident">::Output</span> {
+        <span class="kw">if</span> <span class="op">!</span><span class="ident">response</span>.<span class="ident">status</span>().<span class="ident">is_success</span>() <span class="op">&amp;&amp;</span> <span class="ident">response</span>.<span class="ident">status</span>().<span class="ident">as_u16</span>() <span class="op">!</span><span class="op">=</span> <span class="number">200</span> {
+            <span class="kw">crate</span><span class="ident">::operation_deser::parse_tag_queue_error</span>(<span class="ident">response</span>)
+        } <span class="kw">else</span> {
+            <span class="kw">crate</span><span class="ident">::operation_deser::parse_tag_queue_response</span>(<span class="ident">response</span>)
+        }
+    }
+}
+
+<span class="doccomment">/// &lt;p&gt;Remove cost allocation tags from the specified Amazon SQS queue. For an overview, see &lt;a href=&quot;https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-queue-tags.html&quot;&gt;Tagging</span>
+<span class="doccomment">/// Your Amazon SQS Queues&lt;/a&gt; in the &lt;i&gt;Amazon SQS Developer Guide&lt;/i&gt;.&lt;/p&gt;</span>
+<span class="doccomment">/// &lt;note&gt;</span>
+<span class="doccomment">/// &lt;p&gt;Cross-account permissions don&#39;t apply to this action. For more information,</span>
+<span class="doccomment">/// see &lt;a href=&quot;https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name&quot;&gt;Grant</span>
+<span class="doccomment">/// cross-account permissions to a role and a user name&lt;/a&gt; in the &lt;i&gt;Amazon SQS Developer Guide&lt;/i&gt;.&lt;/p&gt;</span>
+<span class="doccomment">/// &lt;/note&gt;</span>
+<span class="attribute">#[<span class="ident">derive</span>(<span class="ident">std::default::Default</span>, <span class="ident">std::clone::Clone</span>, <span class="ident">std::fmt::Debug</span>)]</span>
+<span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">UntagQueue</span> {
+    <span class="ident">_private</span>: (),
+}
+<span class="kw">impl</span> <span class="ident">UntagQueue</span> {
+    <span class="doccomment">/// Creates a new builder-style object to manufacture [`UntagQueueInput`](crate::input::UntagQueueInput)</span>
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">builder</span>() <span class="op">-</span><span class="op">&gt;</span> <span class="kw">crate</span><span class="ident">::input::untag_queue_input::Builder</span> {
+        <span class="kw">crate</span><span class="ident">::input::untag_queue_input::Builder::default</span>()
+    }
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">new</span>() <span class="op">-</span><span class="op">&gt;</span> <span class="self">Self</span> {
+        <span class="self">Self</span> { <span class="ident">_private</span>: () }
+    }
+}
+<span class="kw">impl</span> <span class="ident">smithy_http::response::ParseStrictResponse</span> <span class="kw">for</span> <span class="ident">UntagQueue</span> {
+    <span class="kw">type</span> <span class="ident">Output</span> <span class="op">=</span>
+        <span class="ident">std::result::Result</span><span class="op">&lt;</span><span class="kw">crate</span><span class="ident">::output::UntagQueueOutput</span>, <span class="kw">crate</span><span class="ident">::error::UntagQueueError</span><span class="op">&gt;</span>;
+    <span class="kw">fn</span> <span class="ident">parse</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">response</span>: <span class="kw-2">&amp;</span><span class="ident">http::Response</span><span class="op">&lt;</span><span class="ident">bytes::Bytes</span><span class="op">&gt;</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="self">Self</span><span class="ident">::Output</span> {
+        <span class="kw">if</span> <span class="op">!</span><span class="ident">response</span>.<span class="ident">status</span>().<span class="ident">is_success</span>() <span class="op">&amp;&amp;</span> <span class="ident">response</span>.<span class="ident">status</span>().<span class="ident">as_u16</span>() <span class="op">!</span><span class="op">=</span> <span class="number">200</span> {
+            <span class="kw">crate</span><span class="ident">::operation_deser::parse_untag_queue_error</span>(<span class="ident">response</span>)
+        } <span class="kw">else</span> {
+            <span class="kw">crate</span><span class="ident">::operation_deser::parse_untag_queue_response</span>(<span class="ident">response</span>)
+        }
+    }
+}
+</pre></div>
+</section><section id="search" class="content hidden"></section><div id="rustdoc-vars" data-root-path="../../" data-current-crate="aws_sdk_sqs" data-search-index-js="../../search-index.js" data-search-js="../../search.js"></div>
+    <script src="../../main.js"></script><script src="../../source-script.js"></script><script src="../../source-files.js"></script>
+</body></html>

@@ -1,0 +1,1 @@
+initSidebarItems({"fn":[["main","Lists your Amazon Cognito identities"]],"struct":[["Opt",""]]});

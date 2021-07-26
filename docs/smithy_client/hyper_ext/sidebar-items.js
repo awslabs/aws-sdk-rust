@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["Adapter","Adapter from a [`hyper::Client`] to a connector useable by a `Client`."]]});

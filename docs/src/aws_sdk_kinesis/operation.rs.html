@@ -1,0 +1,2423 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Source of the Rust file `kinesis&#x2F;src&#x2F;operation.rs`."><meta name="keywords" content="rust, rustlang, rust-lang"><title>operation.rs - source</title><link rel="stylesheet" type="text/css" href="../../normalize.css"><link rel="stylesheet" type="text/css" href="../../rustdoc.css" id="mainThemeStyle"><link rel="stylesheet" type="text/css" href="../../light.css"  id="themeStyle"><link rel="stylesheet" type="text/css" href="../../dark.css" disabled ><link rel="stylesheet" type="text/css" href="../../ayu.css" disabled ><script id="default-settings" ></script><script src="../../storage.js"></script><script src="../../crates.js"></script><noscript><link rel="stylesheet" href="../../noscript.css"></noscript><link rel="icon" type="image/svg+xml" href="../../favicon.svg"><link rel="alternate icon" type="image/png" href="../../favicon-16x16.png"><link rel="alternate icon" type="image/png" href="../../favicon-32x32.png"><style type="text/css">#crate-search{background-image:url("../../down-arrow.svg");}</style></head><body class="rustdoc source"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]--><nav class="sidebar"><div class="sidebar-menu" role="button">&#9776;</div><a href='../../aws_sdk_kinesis/index.html'><div class='logo-container rust-logo'><img src='../../rust-logo.png' alt='logo'></div></a></nav><div class="theme-picker"><button id="theme-picker" aria-label="Pick another theme!" aria-haspopup="menu" title="themes"><img width="18" height="18" alt="Pick another theme!" src="../../brush.svg"></button><div id="theme-choices" role="menu"></div></div><nav class="sub"><form class="search-form"><div class="search-container"><div><select id="crate-search"><option value="All crates">All crates</option></select><input class="search-input"name="search" disabled autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"></div><button type="button" id="help-button" title="help">?</button><a id="settings-menu" href="../../settings.html" title="settings"><img width="18" height="18" alt="Change settings" src="../../wheel.svg"></a></div></form></nav><section id="main" class="content"><div class="example-wrap"><pre class="line-numbers"><span id="1">   1</span>
+<span id="2">   2</span>
+<span id="3">   3</span>
+<span id="4">   4</span>
+<span id="5">   5</span>
+<span id="6">   6</span>
+<span id="7">   7</span>
+<span id="8">   8</span>
+<span id="9">   9</span>
+<span id="10">  10</span>
+<span id="11">  11</span>
+<span id="12">  12</span>
+<span id="13">  13</span>
+<span id="14">  14</span>
+<span id="15">  15</span>
+<span id="16">  16</span>
+<span id="17">  17</span>
+<span id="18">  18</span>
+<span id="19">  19</span>
+<span id="20">  20</span>
+<span id="21">  21</span>
+<span id="22">  22</span>
+<span id="23">  23</span>
+<span id="24">  24</span>
+<span id="25">  25</span>
+<span id="26">  26</span>
+<span id="27">  27</span>
+<span id="28">  28</span>
+<span id="29">  29</span>
+<span id="30">  30</span>
+<span id="31">  31</span>
+<span id="32">  32</span>
+<span id="33">  33</span>
+<span id="34">  34</span>
+<span id="35">  35</span>
+<span id="36">  36</span>
+<span id="37">  37</span>
+<span id="38">  38</span>
+<span id="39">  39</span>
+<span id="40">  40</span>
+<span id="41">  41</span>
+<span id="42">  42</span>
+<span id="43">  43</span>
+<span id="44">  44</span>
+<span id="45">  45</span>
+<span id="46">  46</span>
+<span id="47">  47</span>
+<span id="48">  48</span>
+<span id="49">  49</span>
+<span id="50">  50</span>
+<span id="51">  51</span>
+<span id="52">  52</span>
+<span id="53">  53</span>
+<span id="54">  54</span>
+<span id="55">  55</span>
+<span id="56">  56</span>
+<span id="57">  57</span>
+<span id="58">  58</span>
+<span id="59">  59</span>
+<span id="60">  60</span>
+<span id="61">  61</span>
+<span id="62">  62</span>
+<span id="63">  63</span>
+<span id="64">  64</span>
+<span id="65">  65</span>
+<span id="66">  66</span>
+<span id="67">  67</span>
+<span id="68">  68</span>
+<span id="69">  69</span>
+<span id="70">  70</span>
+<span id="71">  71</span>
+<span id="72">  72</span>
+<span id="73">  73</span>
+<span id="74">  74</span>
+<span id="75">  75</span>
+<span id="76">  76</span>
+<span id="77">  77</span>
+<span id="78">  78</span>
+<span id="79">  79</span>
+<span id="80">  80</span>
+<span id="81">  81</span>
+<span id="82">  82</span>
+<span id="83">  83</span>
+<span id="84">  84</span>
+<span id="85">  85</span>
+<span id="86">  86</span>
+<span id="87">  87</span>
+<span id="88">  88</span>
+<span id="89">  89</span>
+<span id="90">  90</span>
+<span id="91">  91</span>
+<span id="92">  92</span>
+<span id="93">  93</span>
+<span id="94">  94</span>
+<span id="95">  95</span>
+<span id="96">  96</span>
+<span id="97">  97</span>
+<span id="98">  98</span>
+<span id="99">  99</span>
+<span id="100"> 100</span>
+<span id="101"> 101</span>
+<span id="102"> 102</span>
+<span id="103"> 103</span>
+<span id="104"> 104</span>
+<span id="105"> 105</span>
+<span id="106"> 106</span>
+<span id="107"> 107</span>
+<span id="108"> 108</span>
+<span id="109"> 109</span>
+<span id="110"> 110</span>
+<span id="111"> 111</span>
+<span id="112"> 112</span>
+<span id="113"> 113</span>
+<span id="114"> 114</span>
+<span id="115"> 115</span>
+<span id="116"> 116</span>
+<span id="117"> 117</span>
+<span id="118"> 118</span>
+<span id="119"> 119</span>
+<span id="120"> 120</span>
+<span id="121"> 121</span>
+<span id="122"> 122</span>
+<span id="123"> 123</span>
+<span id="124"> 124</span>
+<span id="125"> 125</span>
+<span id="126"> 126</span>
+<span id="127"> 127</span>
+<span id="128"> 128</span>
+<span id="129"> 129</span>
+<span id="130"> 130</span>
+<span id="131"> 131</span>
+<span id="132"> 132</span>
+<span id="133"> 133</span>
+<span id="134"> 134</span>
+<span id="135"> 135</span>
+<span id="136"> 136</span>
+<span id="137"> 137</span>
+<span id="138"> 138</span>
+<span id="139"> 139</span>
+<span id="140"> 140</span>
+<span id="141"> 141</span>
+<span id="142"> 142</span>
+<span id="143"> 143</span>
+<span id="144"> 144</span>
+<span id="145"> 145</span>
+<span id="146"> 146</span>
+<span id="147"> 147</span>
+<span id="148"> 148</span>
+<span id="149"> 149</span>
+<span id="150"> 150</span>
+<span id="151"> 151</span>
+<span id="152"> 152</span>
+<span id="153"> 153</span>
+<span id="154"> 154</span>
+<span id="155"> 155</span>
+<span id="156"> 156</span>
+<span id="157"> 157</span>
+<span id="158"> 158</span>
+<span id="159"> 159</span>
+<span id="160"> 160</span>
+<span id="161"> 161</span>
+<span id="162"> 162</span>
+<span id="163"> 163</span>
+<span id="164"> 164</span>
+<span id="165"> 165</span>
+<span id="166"> 166</span>
+<span id="167"> 167</span>
+<span id="168"> 168</span>
+<span id="169"> 169</span>
+<span id="170"> 170</span>
+<span id="171"> 171</span>
+<span id="172"> 172</span>
+<span id="173"> 173</span>
+<span id="174"> 174</span>
+<span id="175"> 175</span>
+<span id="176"> 176</span>
+<span id="177"> 177</span>
+<span id="178"> 178</span>
+<span id="179"> 179</span>
+<span id="180"> 180</span>
+<span id="181"> 181</span>
+<span id="182"> 182</span>
+<span id="183"> 183</span>
+<span id="184"> 184</span>
+<span id="185"> 185</span>
+<span id="186"> 186</span>
+<span id="187"> 187</span>
+<span id="188"> 188</span>
+<span id="189"> 189</span>
+<span id="190"> 190</span>
+<span id="191"> 191</span>
+<span id="192"> 192</span>
+<span id="193"> 193</span>
+<span id="194"> 194</span>
+<span id="195"> 195</span>
+<span id="196"> 196</span>
+<span id="197"> 197</span>
+<span id="198"> 198</span>
+<span id="199"> 199</span>
+<span id="200"> 200</span>
+<span id="201"> 201</span>
+<span id="202"> 202</span>
+<span id="203"> 203</span>
+<span id="204"> 204</span>
+<span id="205"> 205</span>
+<span id="206"> 206</span>
+<span id="207"> 207</span>
+<span id="208"> 208</span>
+<span id="209"> 209</span>
+<span id="210"> 210</span>
+<span id="211"> 211</span>
+<span id="212"> 212</span>
+<span id="213"> 213</span>
+<span id="214"> 214</span>
+<span id="215"> 215</span>
+<span id="216"> 216</span>
+<span id="217"> 217</span>
+<span id="218"> 218</span>
+<span id="219"> 219</span>
+<span id="220"> 220</span>
+<span id="221"> 221</span>
+<span id="222"> 222</span>
+<span id="223"> 223</span>
+<span id="224"> 224</span>
+<span id="225"> 225</span>
+<span id="226"> 226</span>
+<span id="227"> 227</span>
+<span id="228"> 228</span>
+<span id="229"> 229</span>
+<span id="230"> 230</span>
+<span id="231"> 231</span>
+<span id="232"> 232</span>
+<span id="233"> 233</span>
+<span id="234"> 234</span>
+<span id="235"> 235</span>
+<span id="236"> 236</span>
+<span id="237"> 237</span>
+<span id="238"> 238</span>
+<span id="239"> 239</span>
+<span id="240"> 240</span>
+<span id="241"> 241</span>
+<span id="242"> 242</span>
+<span id="243"> 243</span>
+<span id="244"> 244</span>
+<span id="245"> 245</span>
+<span id="246"> 246</span>
+<span id="247"> 247</span>
+<span id="248"> 248</span>
+<span id="249"> 249</span>
+<span id="250"> 250</span>
+<span id="251"> 251</span>
+<span id="252"> 252</span>
+<span id="253"> 253</span>
+<span id="254"> 254</span>
+<span id="255"> 255</span>
+<span id="256"> 256</span>
+<span id="257"> 257</span>
+<span id="258"> 258</span>
+<span id="259"> 259</span>
+<span id="260"> 260</span>
+<span id="261"> 261</span>
+<span id="262"> 262</span>
+<span id="263"> 263</span>
+<span id="264"> 264</span>
+<span id="265"> 265</span>
+<span id="266"> 266</span>
+<span id="267"> 267</span>
+<span id="268"> 268</span>
+<span id="269"> 269</span>
+<span id="270"> 270</span>
+<span id="271"> 271</span>
+<span id="272"> 272</span>
+<span id="273"> 273</span>
+<span id="274"> 274</span>
+<span id="275"> 275</span>
+<span id="276"> 276</span>
+<span id="277"> 277</span>
+<span id="278"> 278</span>
+<span id="279"> 279</span>
+<span id="280"> 280</span>
+<span id="281"> 281</span>
+<span id="282"> 282</span>
+<span id="283"> 283</span>
+<span id="284"> 284</span>
+<span id="285"> 285</span>
+<span id="286"> 286</span>
+<span id="287"> 287</span>
+<span id="288"> 288</span>
+<span id="289"> 289</span>
+<span id="290"> 290</span>
+<span id="291"> 291</span>
+<span id="292"> 292</span>
+<span id="293"> 293</span>
+<span id="294"> 294</span>
+<span id="295"> 295</span>
+<span id="296"> 296</span>
+<span id="297"> 297</span>
+<span id="298"> 298</span>
+<span id="299"> 299</span>
+<span id="300"> 300</span>
+<span id="301"> 301</span>
+<span id="302"> 302</span>
+<span id="303"> 303</span>
+<span id="304"> 304</span>
+<span id="305"> 305</span>
+<span id="306"> 306</span>
+<span id="307"> 307</span>
+<span id="308"> 308</span>
+<span id="309"> 309</span>
+<span id="310"> 310</span>
+<span id="311"> 311</span>
+<span id="312"> 312</span>
+<span id="313"> 313</span>
+<span id="314"> 314</span>
+<span id="315"> 315</span>
+<span id="316"> 316</span>
+<span id="317"> 317</span>
+<span id="318"> 318</span>
+<span id="319"> 319</span>
+<span id="320"> 320</span>
+<span id="321"> 321</span>
+<span id="322"> 322</span>
+<span id="323"> 323</span>
+<span id="324"> 324</span>
+<span id="325"> 325</span>
+<span id="326"> 326</span>
+<span id="327"> 327</span>
+<span id="328"> 328</span>
+<span id="329"> 329</span>
+<span id="330"> 330</span>
+<span id="331"> 331</span>
+<span id="332"> 332</span>
+<span id="333"> 333</span>
+<span id="334"> 334</span>
+<span id="335"> 335</span>
+<span id="336"> 336</span>
+<span id="337"> 337</span>
+<span id="338"> 338</span>
+<span id="339"> 339</span>
+<span id="340"> 340</span>
+<span id="341"> 341</span>
+<span id="342"> 342</span>
+<span id="343"> 343</span>
+<span id="344"> 344</span>
+<span id="345"> 345</span>
+<span id="346"> 346</span>
+<span id="347"> 347</span>
+<span id="348"> 348</span>
+<span id="349"> 349</span>
+<span id="350"> 350</span>
+<span id="351"> 351</span>
+<span id="352"> 352</span>
+<span id="353"> 353</span>
+<span id="354"> 354</span>
+<span id="355"> 355</span>
+<span id="356"> 356</span>
+<span id="357"> 357</span>
+<span id="358"> 358</span>
+<span id="359"> 359</span>
+<span id="360"> 360</span>
+<span id="361"> 361</span>
+<span id="362"> 362</span>
+<span id="363"> 363</span>
+<span id="364"> 364</span>
+<span id="365"> 365</span>
+<span id="366"> 366</span>
+<span id="367"> 367</span>
+<span id="368"> 368</span>
+<span id="369"> 369</span>
+<span id="370"> 370</span>
+<span id="371"> 371</span>
+<span id="372"> 372</span>
+<span id="373"> 373</span>
+<span id="374"> 374</span>
+<span id="375"> 375</span>
+<span id="376"> 376</span>
+<span id="377"> 377</span>
+<span id="378"> 378</span>
+<span id="379"> 379</span>
+<span id="380"> 380</span>
+<span id="381"> 381</span>
+<span id="382"> 382</span>
+<span id="383"> 383</span>
+<span id="384"> 384</span>
+<span id="385"> 385</span>
+<span id="386"> 386</span>
+<span id="387"> 387</span>
+<span id="388"> 388</span>
+<span id="389"> 389</span>
+<span id="390"> 390</span>
+<span id="391"> 391</span>
+<span id="392"> 392</span>
+<span id="393"> 393</span>
+<span id="394"> 394</span>
+<span id="395"> 395</span>
+<span id="396"> 396</span>
+<span id="397"> 397</span>
+<span id="398"> 398</span>
+<span id="399"> 399</span>
+<span id="400"> 400</span>
+<span id="401"> 401</span>
+<span id="402"> 402</span>
+<span id="403"> 403</span>
+<span id="404"> 404</span>
+<span id="405"> 405</span>
+<span id="406"> 406</span>
+<span id="407"> 407</span>
+<span id="408"> 408</span>
+<span id="409"> 409</span>
+<span id="410"> 410</span>
+<span id="411"> 411</span>
+<span id="412"> 412</span>
+<span id="413"> 413</span>
+<span id="414"> 414</span>
+<span id="415"> 415</span>
+<span id="416"> 416</span>
+<span id="417"> 417</span>
+<span id="418"> 418</span>
+<span id="419"> 419</span>
+<span id="420"> 420</span>
+<span id="421"> 421</span>
+<span id="422"> 422</span>
+<span id="423"> 423</span>
+<span id="424"> 424</span>
+<span id="425"> 425</span>
+<span id="426"> 426</span>
+<span id="427"> 427</span>
+<span id="428"> 428</span>
+<span id="429"> 429</span>
+<span id="430"> 430</span>
+<span id="431"> 431</span>
+<span id="432"> 432</span>
+<span id="433"> 433</span>
+<span id="434"> 434</span>
+<span id="435"> 435</span>
+<span id="436"> 436</span>
+<span id="437"> 437</span>
+<span id="438"> 438</span>
+<span id="439"> 439</span>
+<span id="440"> 440</span>
+<span id="441"> 441</span>
+<span id="442"> 442</span>
+<span id="443"> 443</span>
+<span id="444"> 444</span>
+<span id="445"> 445</span>
+<span id="446"> 446</span>
+<span id="447"> 447</span>
+<span id="448"> 448</span>
+<span id="449"> 449</span>
+<span id="450"> 450</span>
+<span id="451"> 451</span>
+<span id="452"> 452</span>
+<span id="453"> 453</span>
+<span id="454"> 454</span>
+<span id="455"> 455</span>
+<span id="456"> 456</span>
+<span id="457"> 457</span>
+<span id="458"> 458</span>
+<span id="459"> 459</span>
+<span id="460"> 460</span>
+<span id="461"> 461</span>
+<span id="462"> 462</span>
+<span id="463"> 463</span>
+<span id="464"> 464</span>
+<span id="465"> 465</span>
+<span id="466"> 466</span>
+<span id="467"> 467</span>
+<span id="468"> 468</span>
+<span id="469"> 469</span>
+<span id="470"> 470</span>
+<span id="471"> 471</span>
+<span id="472"> 472</span>
+<span id="473"> 473</span>
+<span id="474"> 474</span>
+<span id="475"> 475</span>
+<span id="476"> 476</span>
+<span id="477"> 477</span>
+<span id="478"> 478</span>
+<span id="479"> 479</span>
+<span id="480"> 480</span>
+<span id="481"> 481</span>
+<span id="482"> 482</span>
+<span id="483"> 483</span>
+<span id="484"> 484</span>
+<span id="485"> 485</span>
+<span id="486"> 486</span>
+<span id="487"> 487</span>
+<span id="488"> 488</span>
+<span id="489"> 489</span>
+<span id="490"> 490</span>
+<span id="491"> 491</span>
+<span id="492"> 492</span>
+<span id="493"> 493</span>
+<span id="494"> 494</span>
+<span id="495"> 495</span>
+<span id="496"> 496</span>
+<span id="497"> 497</span>
+<span id="498"> 498</span>
+<span id="499"> 499</span>
+<span id="500"> 500</span>
+<span id="501"> 501</span>
+<span id="502"> 502</span>
+<span id="503"> 503</span>
+<span id="504"> 504</span>
+<span id="505"> 505</span>
+<span id="506"> 506</span>
+<span id="507"> 507</span>
+<span id="508"> 508</span>
+<span id="509"> 509</span>
+<span id="510"> 510</span>
+<span id="511"> 511</span>
+<span id="512"> 512</span>
+<span id="513"> 513</span>
+<span id="514"> 514</span>
+<span id="515"> 515</span>
+<span id="516"> 516</span>
+<span id="517"> 517</span>
+<span id="518"> 518</span>
+<span id="519"> 519</span>
+<span id="520"> 520</span>
+<span id="521"> 521</span>
+<span id="522"> 522</span>
+<span id="523"> 523</span>
+<span id="524"> 524</span>
+<span id="525"> 525</span>
+<span id="526"> 526</span>
+<span id="527"> 527</span>
+<span id="528"> 528</span>
+<span id="529"> 529</span>
+<span id="530"> 530</span>
+<span id="531"> 531</span>
+<span id="532"> 532</span>
+<span id="533"> 533</span>
+<span id="534"> 534</span>
+<span id="535"> 535</span>
+<span id="536"> 536</span>
+<span id="537"> 537</span>
+<span id="538"> 538</span>
+<span id="539"> 539</span>
+<span id="540"> 540</span>
+<span id="541"> 541</span>
+<span id="542"> 542</span>
+<span id="543"> 543</span>
+<span id="544"> 544</span>
+<span id="545"> 545</span>
+<span id="546"> 546</span>
+<span id="547"> 547</span>
+<span id="548"> 548</span>
+<span id="549"> 549</span>
+<span id="550"> 550</span>
+<span id="551"> 551</span>
+<span id="552"> 552</span>
+<span id="553"> 553</span>
+<span id="554"> 554</span>
+<span id="555"> 555</span>
+<span id="556"> 556</span>
+<span id="557"> 557</span>
+<span id="558"> 558</span>
+<span id="559"> 559</span>
+<span id="560"> 560</span>
+<span id="561"> 561</span>
+<span id="562"> 562</span>
+<span id="563"> 563</span>
+<span id="564"> 564</span>
+<span id="565"> 565</span>
+<span id="566"> 566</span>
+<span id="567"> 567</span>
+<span id="568"> 568</span>
+<span id="569"> 569</span>
+<span id="570"> 570</span>
+<span id="571"> 571</span>
+<span id="572"> 572</span>
+<span id="573"> 573</span>
+<span id="574"> 574</span>
+<span id="575"> 575</span>
+<span id="576"> 576</span>
+<span id="577"> 577</span>
+<span id="578"> 578</span>
+<span id="579"> 579</span>
+<span id="580"> 580</span>
+<span id="581"> 581</span>
+<span id="582"> 582</span>
+<span id="583"> 583</span>
+<span id="584"> 584</span>
+<span id="585"> 585</span>
+<span id="586"> 586</span>
+<span id="587"> 587</span>
+<span id="588"> 588</span>
+<span id="589"> 589</span>
+<span id="590"> 590</span>
+<span id="591"> 591</span>
+<span id="592"> 592</span>
+<span id="593"> 593</span>
+<span id="594"> 594</span>
+<span id="595"> 595</span>
+<span id="596"> 596</span>
+<span id="597"> 597</span>
+<span id="598"> 598</span>
+<span id="599"> 599</span>
+<span id="600"> 600</span>
+<span id="601"> 601</span>
+<span id="602"> 602</span>
+<span id="603"> 603</span>
+<span id="604"> 604</span>
+<span id="605"> 605</span>
+<span id="606"> 606</span>
+<span id="607"> 607</span>
+<span id="608"> 608</span>
+<span id="609"> 609</span>
+<span id="610"> 610</span>
+<span id="611"> 611</span>
+<span id="612"> 612</span>
+<span id="613"> 613</span>
+<span id="614"> 614</span>
+<span id="615"> 615</span>
+<span id="616"> 616</span>
+<span id="617"> 617</span>
+<span id="618"> 618</span>
+<span id="619"> 619</span>
+<span id="620"> 620</span>
+<span id="621"> 621</span>
+<span id="622"> 622</span>
+<span id="623"> 623</span>
+<span id="624"> 624</span>
+<span id="625"> 625</span>
+<span id="626"> 626</span>
+<span id="627"> 627</span>
+<span id="628"> 628</span>
+<span id="629"> 629</span>
+<span id="630"> 630</span>
+<span id="631"> 631</span>
+<span id="632"> 632</span>
+<span id="633"> 633</span>
+<span id="634"> 634</span>
+<span id="635"> 635</span>
+<span id="636"> 636</span>
+<span id="637"> 637</span>
+<span id="638"> 638</span>
+<span id="639"> 639</span>
+<span id="640"> 640</span>
+<span id="641"> 641</span>
+<span id="642"> 642</span>
+<span id="643"> 643</span>
+<span id="644"> 644</span>
+<span id="645"> 645</span>
+<span id="646"> 646</span>
+<span id="647"> 647</span>
+<span id="648"> 648</span>
+<span id="649"> 649</span>
+<span id="650"> 650</span>
+<span id="651"> 651</span>
+<span id="652"> 652</span>
+<span id="653"> 653</span>
+<span id="654"> 654</span>
+<span id="655"> 655</span>
+<span id="656"> 656</span>
+<span id="657"> 657</span>
+<span id="658"> 658</span>
+<span id="659"> 659</span>
+<span id="660"> 660</span>
+<span id="661"> 661</span>
+<span id="662"> 662</span>
+<span id="663"> 663</span>
+<span id="664"> 664</span>
+<span id="665"> 665</span>
+<span id="666"> 666</span>
+<span id="667"> 667</span>
+<span id="668"> 668</span>
+<span id="669"> 669</span>
+<span id="670"> 670</span>
+<span id="671"> 671</span>
+<span id="672"> 672</span>
+<span id="673"> 673</span>
+<span id="674"> 674</span>
+<span id="675"> 675</span>
+<span id="676"> 676</span>
+<span id="677"> 677</span>
+<span id="678"> 678</span>
+<span id="679"> 679</span>
+<span id="680"> 680</span>
+<span id="681"> 681</span>
+<span id="682"> 682</span>
+<span id="683"> 683</span>
+<span id="684"> 684</span>
+<span id="685"> 685</span>
+<span id="686"> 686</span>
+<span id="687"> 687</span>
+<span id="688"> 688</span>
+<span id="689"> 689</span>
+<span id="690"> 690</span>
+<span id="691"> 691</span>
+<span id="692"> 692</span>
+<span id="693"> 693</span>
+<span id="694"> 694</span>
+<span id="695"> 695</span>
+<span id="696"> 696</span>
+<span id="697"> 697</span>
+<span id="698"> 698</span>
+<span id="699"> 699</span>
+<span id="700"> 700</span>
+<span id="701"> 701</span>
+<span id="702"> 702</span>
+<span id="703"> 703</span>
+<span id="704"> 704</span>
+<span id="705"> 705</span>
+<span id="706"> 706</span>
+<span id="707"> 707</span>
+<span id="708"> 708</span>
+<span id="709"> 709</span>
+<span id="710"> 710</span>
+<span id="711"> 711</span>
+<span id="712"> 712</span>
+<span id="713"> 713</span>
+<span id="714"> 714</span>
+<span id="715"> 715</span>
+<span id="716"> 716</span>
+<span id="717"> 717</span>
+<span id="718"> 718</span>
+<span id="719"> 719</span>
+<span id="720"> 720</span>
+<span id="721"> 721</span>
+<span id="722"> 722</span>
+<span id="723"> 723</span>
+<span id="724"> 724</span>
+<span id="725"> 725</span>
+<span id="726"> 726</span>
+<span id="727"> 727</span>
+<span id="728"> 728</span>
+<span id="729"> 729</span>
+<span id="730"> 730</span>
+<span id="731"> 731</span>
+<span id="732"> 732</span>
+<span id="733"> 733</span>
+<span id="734"> 734</span>
+<span id="735"> 735</span>
+<span id="736"> 736</span>
+<span id="737"> 737</span>
+<span id="738"> 738</span>
+<span id="739"> 739</span>
+<span id="740"> 740</span>
+<span id="741"> 741</span>
+<span id="742"> 742</span>
+<span id="743"> 743</span>
+<span id="744"> 744</span>
+<span id="745"> 745</span>
+<span id="746"> 746</span>
+<span id="747"> 747</span>
+<span id="748"> 748</span>
+<span id="749"> 749</span>
+<span id="750"> 750</span>
+<span id="751"> 751</span>
+<span id="752"> 752</span>
+<span id="753"> 753</span>
+<span id="754"> 754</span>
+<span id="755"> 755</span>
+<span id="756"> 756</span>
+<span id="757"> 757</span>
+<span id="758"> 758</span>
+<span id="759"> 759</span>
+<span id="760"> 760</span>
+<span id="761"> 761</span>
+<span id="762"> 762</span>
+<span id="763"> 763</span>
+<span id="764"> 764</span>
+<span id="765"> 765</span>
+<span id="766"> 766</span>
+<span id="767"> 767</span>
+<span id="768"> 768</span>
+<span id="769"> 769</span>
+<span id="770"> 770</span>
+<span id="771"> 771</span>
+<span id="772"> 772</span>
+<span id="773"> 773</span>
+<span id="774"> 774</span>
+<span id="775"> 775</span>
+<span id="776"> 776</span>
+<span id="777"> 777</span>
+<span id="778"> 778</span>
+<span id="779"> 779</span>
+<span id="780"> 780</span>
+<span id="781"> 781</span>
+<span id="782"> 782</span>
+<span id="783"> 783</span>
+<span id="784"> 784</span>
+<span id="785"> 785</span>
+<span id="786"> 786</span>
+<span id="787"> 787</span>
+<span id="788"> 788</span>
+<span id="789"> 789</span>
+<span id="790"> 790</span>
+<span id="791"> 791</span>
+<span id="792"> 792</span>
+<span id="793"> 793</span>
+<span id="794"> 794</span>
+<span id="795"> 795</span>
+<span id="796"> 796</span>
+<span id="797"> 797</span>
+<span id="798"> 798</span>
+<span id="799"> 799</span>
+<span id="800"> 800</span>
+<span id="801"> 801</span>
+<span id="802"> 802</span>
+<span id="803"> 803</span>
+<span id="804"> 804</span>
+<span id="805"> 805</span>
+<span id="806"> 806</span>
+<span id="807"> 807</span>
+<span id="808"> 808</span>
+<span id="809"> 809</span>
+<span id="810"> 810</span>
+<span id="811"> 811</span>
+<span id="812"> 812</span>
+<span id="813"> 813</span>
+<span id="814"> 814</span>
+<span id="815"> 815</span>
+<span id="816"> 816</span>
+<span id="817"> 817</span>
+<span id="818"> 818</span>
+<span id="819"> 819</span>
+<span id="820"> 820</span>
+<span id="821"> 821</span>
+<span id="822"> 822</span>
+<span id="823"> 823</span>
+<span id="824"> 824</span>
+<span id="825"> 825</span>
+<span id="826"> 826</span>
+<span id="827"> 827</span>
+<span id="828"> 828</span>
+<span id="829"> 829</span>
+<span id="830"> 830</span>
+<span id="831"> 831</span>
+<span id="832"> 832</span>
+<span id="833"> 833</span>
+<span id="834"> 834</span>
+<span id="835"> 835</span>
+<span id="836"> 836</span>
+<span id="837"> 837</span>
+<span id="838"> 838</span>
+<span id="839"> 839</span>
+<span id="840"> 840</span>
+<span id="841"> 841</span>
+<span id="842"> 842</span>
+<span id="843"> 843</span>
+<span id="844"> 844</span>
+<span id="845"> 845</span>
+<span id="846"> 846</span>
+<span id="847"> 847</span>
+<span id="848"> 848</span>
+<span id="849"> 849</span>
+<span id="850"> 850</span>
+<span id="851"> 851</span>
+<span id="852"> 852</span>
+<span id="853"> 853</span>
+<span id="854"> 854</span>
+<span id="855"> 855</span>
+<span id="856"> 856</span>
+<span id="857"> 857</span>
+<span id="858"> 858</span>
+<span id="859"> 859</span>
+<span id="860"> 860</span>
+<span id="861"> 861</span>
+<span id="862"> 862</span>
+<span id="863"> 863</span>
+<span id="864"> 864</span>
+<span id="865"> 865</span>
+<span id="866"> 866</span>
+<span id="867"> 867</span>
+<span id="868"> 868</span>
+<span id="869"> 869</span>
+<span id="870"> 870</span>
+<span id="871"> 871</span>
+<span id="872"> 872</span>
+<span id="873"> 873</span>
+<span id="874"> 874</span>
+<span id="875"> 875</span>
+<span id="876"> 876</span>
+<span id="877"> 877</span>
+<span id="878"> 878</span>
+<span id="879"> 879</span>
+<span id="880"> 880</span>
+<span id="881"> 881</span>
+<span id="882"> 882</span>
+<span id="883"> 883</span>
+<span id="884"> 884</span>
+<span id="885"> 885</span>
+<span id="886"> 886</span>
+<span id="887"> 887</span>
+<span id="888"> 888</span>
+<span id="889"> 889</span>
+<span id="890"> 890</span>
+<span id="891"> 891</span>
+<span id="892"> 892</span>
+<span id="893"> 893</span>
+<span id="894"> 894</span>
+<span id="895"> 895</span>
+<span id="896"> 896</span>
+<span id="897"> 897</span>
+<span id="898"> 898</span>
+<span id="899"> 899</span>
+<span id="900"> 900</span>
+<span id="901"> 901</span>
+<span id="902"> 902</span>
+<span id="903"> 903</span>
+<span id="904"> 904</span>
+<span id="905"> 905</span>
+<span id="906"> 906</span>
+<span id="907"> 907</span>
+<span id="908"> 908</span>
+<span id="909"> 909</span>
+<span id="910"> 910</span>
+<span id="911"> 911</span>
+<span id="912"> 912</span>
+<span id="913"> 913</span>
+<span id="914"> 914</span>
+<span id="915"> 915</span>
+<span id="916"> 916</span>
+<span id="917"> 917</span>
+<span id="918"> 918</span>
+<span id="919"> 919</span>
+<span id="920"> 920</span>
+<span id="921"> 921</span>
+<span id="922"> 922</span>
+<span id="923"> 923</span>
+<span id="924"> 924</span>
+<span id="925"> 925</span>
+<span id="926"> 926</span>
+<span id="927"> 927</span>
+<span id="928"> 928</span>
+<span id="929"> 929</span>
+<span id="930"> 930</span>
+<span id="931"> 931</span>
+<span id="932"> 932</span>
+<span id="933"> 933</span>
+<span id="934"> 934</span>
+<span id="935"> 935</span>
+<span id="936"> 936</span>
+<span id="937"> 937</span>
+<span id="938"> 938</span>
+<span id="939"> 939</span>
+<span id="940"> 940</span>
+<span id="941"> 941</span>
+<span id="942"> 942</span>
+<span id="943"> 943</span>
+<span id="944"> 944</span>
+<span id="945"> 945</span>
+<span id="946"> 946</span>
+<span id="947"> 947</span>
+<span id="948"> 948</span>
+<span id="949"> 949</span>
+<span id="950"> 950</span>
+<span id="951"> 951</span>
+<span id="952"> 952</span>
+<span id="953"> 953</span>
+<span id="954"> 954</span>
+<span id="955"> 955</span>
+<span id="956"> 956</span>
+<span id="957"> 957</span>
+<span id="958"> 958</span>
+<span id="959"> 959</span>
+<span id="960"> 960</span>
+<span id="961"> 961</span>
+<span id="962"> 962</span>
+<span id="963"> 963</span>
+<span id="964"> 964</span>
+<span id="965"> 965</span>
+<span id="966"> 966</span>
+<span id="967"> 967</span>
+<span id="968"> 968</span>
+<span id="969"> 969</span>
+<span id="970"> 970</span>
+<span id="971"> 971</span>
+<span id="972"> 972</span>
+<span id="973"> 973</span>
+<span id="974"> 974</span>
+<span id="975"> 975</span>
+<span id="976"> 976</span>
+<span id="977"> 977</span>
+<span id="978"> 978</span>
+<span id="979"> 979</span>
+<span id="980"> 980</span>
+<span id="981"> 981</span>
+<span id="982"> 982</span>
+<span id="983"> 983</span>
+<span id="984"> 984</span>
+<span id="985"> 985</span>
+<span id="986"> 986</span>
+<span id="987"> 987</span>
+<span id="988"> 988</span>
+<span id="989"> 989</span>
+<span id="990"> 990</span>
+<span id="991"> 991</span>
+<span id="992"> 992</span>
+<span id="993"> 993</span>
+<span id="994"> 994</span>
+<span id="995"> 995</span>
+<span id="996"> 996</span>
+<span id="997"> 997</span>
+<span id="998"> 998</span>
+<span id="999"> 999</span>
+<span id="1000">1000</span>
+<span id="1001">1001</span>
+<span id="1002">1002</span>
+<span id="1003">1003</span>
+<span id="1004">1004</span>
+<span id="1005">1005</span>
+<span id="1006">1006</span>
+<span id="1007">1007</span>
+<span id="1008">1008</span>
+<span id="1009">1009</span>
+<span id="1010">1010</span>
+<span id="1011">1011</span>
+<span id="1012">1012</span>
+<span id="1013">1013</span>
+<span id="1014">1014</span>
+<span id="1015">1015</span>
+<span id="1016">1016</span>
+<span id="1017">1017</span>
+<span id="1018">1018</span>
+<span id="1019">1019</span>
+<span id="1020">1020</span>
+<span id="1021">1021</span>
+<span id="1022">1022</span>
+<span id="1023">1023</span>
+<span id="1024">1024</span>
+<span id="1025">1025</span>
+<span id="1026">1026</span>
+<span id="1027">1027</span>
+<span id="1028">1028</span>
+<span id="1029">1029</span>
+<span id="1030">1030</span>
+<span id="1031">1031</span>
+<span id="1032">1032</span>
+<span id="1033">1033</span>
+<span id="1034">1034</span>
+<span id="1035">1035</span>
+<span id="1036">1036</span>
+<span id="1037">1037</span>
+<span id="1038">1038</span>
+<span id="1039">1039</span>
+<span id="1040">1040</span>
+<span id="1041">1041</span>
+<span id="1042">1042</span>
+<span id="1043">1043</span>
+<span id="1044">1044</span>
+<span id="1045">1045</span>
+<span id="1046">1046</span>
+<span id="1047">1047</span>
+<span id="1048">1048</span>
+<span id="1049">1049</span>
+<span id="1050">1050</span>
+<span id="1051">1051</span>
+<span id="1052">1052</span>
+<span id="1053">1053</span>
+<span id="1054">1054</span>
+<span id="1055">1055</span>
+<span id="1056">1056</span>
+<span id="1057">1057</span>
+<span id="1058">1058</span>
+<span id="1059">1059</span>
+<span id="1060">1060</span>
+<span id="1061">1061</span>
+<span id="1062">1062</span>
+<span id="1063">1063</span>
+<span id="1064">1064</span>
+<span id="1065">1065</span>
+<span id="1066">1066</span>
+<span id="1067">1067</span>
+<span id="1068">1068</span>
+<span id="1069">1069</span>
+<span id="1070">1070</span>
+<span id="1071">1071</span>
+<span id="1072">1072</span>
+<span id="1073">1073</span>
+<span id="1074">1074</span>
+<span id="1075">1075</span>
+<span id="1076">1076</span>
+<span id="1077">1077</span>
+<span id="1078">1078</span>
+<span id="1079">1079</span>
+<span id="1080">1080</span>
+<span id="1081">1081</span>
+<span id="1082">1082</span>
+<span id="1083">1083</span>
+<span id="1084">1084</span>
+<span id="1085">1085</span>
+<span id="1086">1086</span>
+<span id="1087">1087</span>
+<span id="1088">1088</span>
+<span id="1089">1089</span>
+<span id="1090">1090</span>
+<span id="1091">1091</span>
+<span id="1092">1092</span>
+<span id="1093">1093</span>
+<span id="1094">1094</span>
+<span id="1095">1095</span>
+<span id="1096">1096</span>
+<span id="1097">1097</span>
+<span id="1098">1098</span>
+<span id="1099">1099</span>
+<span id="1100">1100</span>
+<span id="1101">1101</span>
+<span id="1102">1102</span>
+<span id="1103">1103</span>
+<span id="1104">1104</span>
+<span id="1105">1105</span>
+<span id="1106">1106</span>
+<span id="1107">1107</span>
+<span id="1108">1108</span>
+<span id="1109">1109</span>
+<span id="1110">1110</span>
+<span id="1111">1111</span>
+<span id="1112">1112</span>
+<span id="1113">1113</span>
+<span id="1114">1114</span>
+<span id="1115">1115</span>
+<span id="1116">1116</span>
+<span id="1117">1117</span>
+<span id="1118">1118</span>
+<span id="1119">1119</span>
+<span id="1120">1120</span>
+<span id="1121">1121</span>
+<span id="1122">1122</span>
+<span id="1123">1123</span>
+<span id="1124">1124</span>
+<span id="1125">1125</span>
+<span id="1126">1126</span>
+<span id="1127">1127</span>
+<span id="1128">1128</span>
+<span id="1129">1129</span>
+<span id="1130">1130</span>
+<span id="1131">1131</span>
+<span id="1132">1132</span>
+<span id="1133">1133</span>
+<span id="1134">1134</span>
+<span id="1135">1135</span>
+<span id="1136">1136</span>
+<span id="1137">1137</span>
+<span id="1138">1138</span>
+<span id="1139">1139</span>
+<span id="1140">1140</span>
+<span id="1141">1141</span>
+<span id="1142">1142</span>
+<span id="1143">1143</span>
+<span id="1144">1144</span>
+<span id="1145">1145</span>
+<span id="1146">1146</span>
+<span id="1147">1147</span>
+<span id="1148">1148</span>
+<span id="1149">1149</span>
+<span id="1150">1150</span>
+<span id="1151">1151</span>
+<span id="1152">1152</span>
+<span id="1153">1153</span>
+<span id="1154">1154</span>
+<span id="1155">1155</span>
+<span id="1156">1156</span>
+<span id="1157">1157</span>
+<span id="1158">1158</span>
+<span id="1159">1159</span>
+<span id="1160">1160</span>
+<span id="1161">1161</span>
+<span id="1162">1162</span>
+<span id="1163">1163</span>
+<span id="1164">1164</span>
+<span id="1165">1165</span>
+<span id="1166">1166</span>
+<span id="1167">1167</span>
+<span id="1168">1168</span>
+<span id="1169">1169</span>
+<span id="1170">1170</span>
+<span id="1171">1171</span>
+<span id="1172">1172</span>
+<span id="1173">1173</span>
+<span id="1174">1174</span>
+<span id="1175">1175</span>
+<span id="1176">1176</span>
+<span id="1177">1177</span>
+<span id="1178">1178</span>
+<span id="1179">1179</span>
+<span id="1180">1180</span>
+<span id="1181">1181</span>
+<span id="1182">1182</span>
+<span id="1183">1183</span>
+<span id="1184">1184</span>
+<span id="1185">1185</span>
+<span id="1186">1186</span>
+<span id="1187">1187</span>
+<span id="1188">1188</span>
+<span id="1189">1189</span>
+<span id="1190">1190</span>
+<span id="1191">1191</span>
+<span id="1192">1192</span>
+<span id="1193">1193</span>
+<span id="1194">1194</span>
+<span id="1195">1195</span>
+<span id="1196">1196</span>
+<span id="1197">1197</span>
+<span id="1198">1198</span>
+<span id="1199">1199</span>
+<span id="1200">1200</span>
+<span id="1201">1201</span>
+<span id="1202">1202</span>
+<span id="1203">1203</span>
+<span id="1204">1204</span>
+<span id="1205">1205</span>
+<span id="1206">1206</span>
+<span id="1207">1207</span>
+<span id="1208">1208</span>
+<span id="1209">1209</span>
+</pre><pre class="rust">
+<span class="comment">// Code generated by software.amazon.smithy.rust.codegen.smithy-rs. DO NOT EDIT.</span>
+<span class="doccomment">/// &lt;p&gt;Adds or updates tags for the specified Kinesis data stream. Each time you invoke</span>
+<span class="doccomment">/// this operation, you can specify up to 10 tags. If you want to add more than 10 tags to</span>
+<span class="doccomment">/// your stream, you can invoke this operation multiple times. In total, each stream can</span>
+<span class="doccomment">/// have up to 50 tags.&lt;/p&gt;</span>
+<span class="doccomment">/// &lt;p&gt;If tags have already been assigned to the stream, &lt;code&gt;AddTagsToStream&lt;/code&gt;</span>
+<span class="doccomment">/// overwrites any existing tags that correspond to the specified tag keys.&lt;/p&gt;</span>
+<span class="doccomment">/// &lt;p&gt;</span>
+<span class="doccomment">/// &lt;a&gt;AddTagsToStream&lt;/a&gt; has a limit of five transactions per second per</span>
+<span class="doccomment">/// account.&lt;/p&gt;</span>
+<span class="attribute">#[<span class="ident">derive</span>(<span class="ident">std::default::Default</span>, <span class="ident">std::clone::Clone</span>, <span class="ident">std::fmt::Debug</span>)]</span>
+<span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">AddTagsToStream</span> {
+    <span class="ident">_private</span>: (),
+}
+<span class="kw">impl</span> <span class="ident">AddTagsToStream</span> {
+    <span class="doccomment">/// Creates a new builder-style object to manufacture [`AddTagsToStreamInput`](crate::input::AddTagsToStreamInput)</span>
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">builder</span>() <span class="op">-</span><span class="op">&gt;</span> <span class="kw">crate</span><span class="ident">::input::add_tags_to_stream_input::Builder</span> {
+        <span class="kw">crate</span><span class="ident">::input::add_tags_to_stream_input::Builder::default</span>()
+    }
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">new</span>() <span class="op">-</span><span class="op">&gt;</span> <span class="self">Self</span> {
+        <span class="self">Self</span> { <span class="ident">_private</span>: () }
+    }
+}
+<span class="kw">impl</span> <span class="ident">smithy_http::response::ParseStrictResponse</span> <span class="kw">for</span> <span class="ident">AddTagsToStream</span> {
+    <span class="kw">type</span> <span class="ident">Output</span> <span class="op">=</span> <span class="ident">std::result::Result</span><span class="op">&lt;</span>
+        <span class="kw">crate</span><span class="ident">::output::AddTagsToStreamOutput</span>,
+        <span class="kw">crate</span><span class="ident">::error::AddTagsToStreamError</span>,
+    <span class="op">&gt;</span>;
+    <span class="kw">fn</span> <span class="ident">parse</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">response</span>: <span class="kw-2">&amp;</span><span class="ident">http::Response</span><span class="op">&lt;</span><span class="ident">bytes::Bytes</span><span class="op">&gt;</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="self">Self</span><span class="ident">::Output</span> {
+        <span class="kw">if</span> <span class="op">!</span><span class="ident">response</span>.<span class="ident">status</span>().<span class="ident">is_success</span>() <span class="op">&amp;&amp;</span> <span class="ident">response</span>.<span class="ident">status</span>().<span class="ident">as_u16</span>() <span class="op">!</span><span class="op">=</span> <span class="number">200</span> {
+            <span class="kw">crate</span><span class="ident">::operation_deser::parse_add_tags_to_stream_error</span>(<span class="ident">response</span>)
+        } <span class="kw">else</span> {
+            <span class="kw">crate</span><span class="ident">::operation_deser::parse_add_tags_to_stream_response</span>(<span class="ident">response</span>)
+        }
+    }
+}
+
+<span class="doccomment">/// &lt;p&gt;Creates a Kinesis data stream. A stream captures and transports data records that</span>
+<span class="doccomment">/// are continuously emitted from different data sources or &lt;i&gt;producers&lt;/i&gt;.</span>
+<span class="doccomment">/// Scale-out within a stream is explicitly supported by means of shards, which are uniquely</span>
+<span class="doccomment">/// identified groups of data records in a stream.&lt;/p&gt;</span>
+<span class="doccomment">/// &lt;p&gt;You specify and control the number of shards that a stream is composed of. Each</span>
+<span class="doccomment">/// shard can support reads up to five transactions per second, up to a maximum data read</span>
+<span class="doccomment">/// total of 2 MiB per second. Each shard can support writes up to 1,000 records per second,</span>
+<span class="doccomment">/// up to a maximum data write total of 1 MiB per second. If the amount of data input</span>
+<span class="doccomment">/// increases or decreases, you can add or remove shards.&lt;/p&gt;</span>
+<span class="doccomment">/// &lt;p&gt;The stream name identifies the stream. The name is scoped to the AWS account used</span>
+<span class="doccomment">/// by the application. It is also scoped by AWS Region. That is, two streams in two</span>
+<span class="doccomment">/// different accounts can have the same name, and two streams in the same account, but in</span>
+<span class="doccomment">/// two different Regions, can have the same name.&lt;/p&gt;</span>
+<span class="doccomment">/// &lt;p&gt;</span>
+<span class="doccomment">/// &lt;code&gt;CreateStream&lt;/code&gt; is an asynchronous operation. Upon receiving a</span>
+<span class="doccomment">/// &lt;code&gt;CreateStream&lt;/code&gt; request, Kinesis Data Streams immediately returns and sets</span>
+<span class="doccomment">/// the stream status to &lt;code&gt;CREATING&lt;/code&gt;. After the stream is created, Kinesis Data</span>
+<span class="doccomment">/// Streams sets the stream status to &lt;code&gt;ACTIVE&lt;/code&gt;. You should perform read and write</span>
+<span class="doccomment">/// operations only on an &lt;code&gt;ACTIVE&lt;/code&gt; stream. &lt;/p&gt;</span>
+<span class="doccomment">/// &lt;p&gt;You receive a &lt;code&gt;LimitExceededException&lt;/code&gt; when making a</span>
+<span class="doccomment">/// &lt;code&gt;CreateStream&lt;/code&gt; request when you try to do one of the following:&lt;/p&gt;</span>
+<span class="doccomment">/// &lt;ul&gt;</span>
+<span class="doccomment">/// &lt;li&gt;</span>
+<span class="doccomment">/// &lt;p&gt;Have more than five streams in the &lt;code&gt;CREATING&lt;/code&gt; state at any point</span>
+<span class="doccomment">/// in time.&lt;/p&gt;</span>
+<span class="doccomment">/// &lt;/li&gt;</span>
+<span class="doccomment">/// &lt;li&gt;</span>
+<span class="doccomment">/// &lt;p&gt;Create more shards than are authorized for your account.&lt;/p&gt;</span>
+<span class="doccomment">/// &lt;/li&gt;</span>
+<span class="doccomment">/// &lt;/ul&gt;</span>
+<span class="doccomment">/// &lt;p&gt;For the default shard limit for an AWS account, see &lt;a href=&quot;https://docs.aws.amazon.com/kinesis/latest/dev/service-sizes-and-limits.html&quot;&gt;Amazon Kinesis Data Streams</span>
+<span class="doccomment">/// Limits&lt;/a&gt; in the &lt;i&gt;Amazon Kinesis Data Streams Developer</span>
+<span class="doccomment">/// Guide&lt;/i&gt;. To increase this limit, &lt;a href=&quot;https://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html&quot;&gt;contact AWS</span>
+<span class="doccomment">/// Support&lt;/a&gt;.&lt;/p&gt;</span>
+<span class="doccomment">/// &lt;p&gt;You can use &lt;code&gt;DescribeStream&lt;/code&gt; to check the stream status, which is</span>
+<span class="doccomment">/// returned in &lt;code&gt;StreamStatus&lt;/code&gt;.&lt;/p&gt;</span>
+<span class="doccomment">/// &lt;p&gt;</span>
+<span class="doccomment">/// &lt;a&gt;CreateStream&lt;/a&gt; has a limit of five transactions per second per</span>
+<span class="doccomment">/// account.&lt;/p&gt;</span>
+<span class="attribute">#[<span class="ident">derive</span>(<span class="ident">std::default::Default</span>, <span class="ident">std::clone::Clone</span>, <span class="ident">std::fmt::Debug</span>)]</span>
+<span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">CreateStream</span> {
+    <span class="ident">_private</span>: (),
+}
+<span class="kw">impl</span> <span class="ident">CreateStream</span> {
+    <span class="doccomment">/// Creates a new builder-style object to manufacture [`CreateStreamInput`](crate::input::CreateStreamInput)</span>
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">builder</span>() <span class="op">-</span><span class="op">&gt;</span> <span class="kw">crate</span><span class="ident">::input::create_stream_input::Builder</span> {
+        <span class="kw">crate</span><span class="ident">::input::create_stream_input::Builder::default</span>()
+    }
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">new</span>() <span class="op">-</span><span class="op">&gt;</span> <span class="self">Self</span> {
+        <span class="self">Self</span> { <span class="ident">_private</span>: () }
+    }
+}
+<span class="kw">impl</span> <span class="ident">smithy_http::response::ParseStrictResponse</span> <span class="kw">for</span> <span class="ident">CreateStream</span> {
+    <span class="kw">type</span> <span class="ident">Output</span> <span class="op">=</span>
+        <span class="ident">std::result::Result</span><span class="op">&lt;</span><span class="kw">crate</span><span class="ident">::output::CreateStreamOutput</span>, <span class="kw">crate</span><span class="ident">::error::CreateStreamError</span><span class="op">&gt;</span>;
+    <span class="kw">fn</span> <span class="ident">parse</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">response</span>: <span class="kw-2">&amp;</span><span class="ident">http::Response</span><span class="op">&lt;</span><span class="ident">bytes::Bytes</span><span class="op">&gt;</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="self">Self</span><span class="ident">::Output</span> {
+        <span class="kw">if</span> <span class="op">!</span><span class="ident">response</span>.<span class="ident">status</span>().<span class="ident">is_success</span>() <span class="op">&amp;&amp;</span> <span class="ident">response</span>.<span class="ident">status</span>().<span class="ident">as_u16</span>() <span class="op">!</span><span class="op">=</span> <span class="number">200</span> {
+            <span class="kw">crate</span><span class="ident">::operation_deser::parse_create_stream_error</span>(<span class="ident">response</span>)
+        } <span class="kw">else</span> {
+            <span class="kw">crate</span><span class="ident">::operation_deser::parse_create_stream_response</span>(<span class="ident">response</span>)
+        }
+    }
+}
+
+<span class="doccomment">/// &lt;p&gt;Decreases the Kinesis data stream&#39;s retention period, which is the length of time</span>
+<span class="doccomment">/// data records are accessible after they are added to the stream. The minimum value of a</span>
+<span class="doccomment">/// stream&#39;s retention period is 24 hours.&lt;/p&gt;</span>
+<span class="doccomment">/// &lt;p&gt;This operation may result in lost data. For example, if the stream&#39;s retention</span>
+<span class="doccomment">/// period is 48 hours and is decreased to 24 hours, any data already in the stream that is</span>
+<span class="doccomment">/// older than 24 hours is inaccessible.&lt;/p&gt;</span>
+<span class="attribute">#[<span class="ident">derive</span>(<span class="ident">std::default::Default</span>, <span class="ident">std::clone::Clone</span>, <span class="ident">std::fmt::Debug</span>)]</span>
+<span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">DecreaseStreamRetentionPeriod</span> {
+    <span class="ident">_private</span>: (),
+}
+<span class="kw">impl</span> <span class="ident">DecreaseStreamRetentionPeriod</span> {
+    <span class="doccomment">/// Creates a new builder-style object to manufacture [`DecreaseStreamRetentionPeriodInput`](crate::input::DecreaseStreamRetentionPeriodInput)</span>
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">builder</span>() <span class="op">-</span><span class="op">&gt;</span> <span class="kw">crate</span><span class="ident">::input::decrease_stream_retention_period_input::Builder</span> {
+        <span class="kw">crate</span><span class="ident">::input::decrease_stream_retention_period_input::Builder::default</span>()
+    }
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">new</span>() <span class="op">-</span><span class="op">&gt;</span> <span class="self">Self</span> {
+        <span class="self">Self</span> { <span class="ident">_private</span>: () }
+    }
+}
+<span class="kw">impl</span> <span class="ident">smithy_http::response::ParseStrictResponse</span> <span class="kw">for</span> <span class="ident">DecreaseStreamRetentionPeriod</span> {
+    <span class="kw">type</span> <span class="ident">Output</span> <span class="op">=</span> <span class="ident">std::result::Result</span><span class="op">&lt;</span>
+        <span class="kw">crate</span><span class="ident">::output::DecreaseStreamRetentionPeriodOutput</span>,
+        <span class="kw">crate</span><span class="ident">::error::DecreaseStreamRetentionPeriodError</span>,
+    <span class="op">&gt;</span>;
+    <span class="kw">fn</span> <span class="ident">parse</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">response</span>: <span class="kw-2">&amp;</span><span class="ident">http::Response</span><span class="op">&lt;</span><span class="ident">bytes::Bytes</span><span class="op">&gt;</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="self">Self</span><span class="ident">::Output</span> {
+        <span class="kw">if</span> <span class="op">!</span><span class="ident">response</span>.<span class="ident">status</span>().<span class="ident">is_success</span>() <span class="op">&amp;&amp;</span> <span class="ident">response</span>.<span class="ident">status</span>().<span class="ident">as_u16</span>() <span class="op">!</span><span class="op">=</span> <span class="number">200</span> {
+            <span class="kw">crate</span><span class="ident">::operation_deser::parse_decrease_stream_retention_period_error</span>(<span class="ident">response</span>)
+        } <span class="kw">else</span> {
+            <span class="kw">crate</span><span class="ident">::operation_deser::parse_decrease_stream_retention_period_response</span>(<span class="ident">response</span>)
+        }
+    }
+}
+
+<span class="doccomment">/// &lt;p&gt;Deletes a Kinesis data stream and all its shards and data. You must shut down any</span>
+<span class="doccomment">/// applications that are operating on the stream before you delete the stream. If an</span>
+<span class="doccomment">/// application attempts to operate on a deleted stream, it receives the exception</span>
+<span class="doccomment">/// &lt;code&gt;ResourceNotFoundException&lt;/code&gt;.&lt;/p&gt;</span>
+<span class="doccomment">/// &lt;p&gt;If the stream is in the &lt;code&gt;ACTIVE&lt;/code&gt; state, you can delete it. After a</span>
+<span class="doccomment">/// &lt;code&gt;DeleteStream&lt;/code&gt; request, the specified stream is in the</span>
+<span class="doccomment">/// &lt;code&gt;DELETING&lt;/code&gt; state until Kinesis Data Streams completes the</span>
+<span class="doccomment">/// deletion.&lt;/p&gt;</span>
+<span class="doccomment">/// &lt;p&gt;</span>
+<span class="doccomment">/// &lt;b&gt;Note:&lt;/b&gt; Kinesis Data Streams might continue to accept</span>
+<span class="doccomment">/// data read and write operations, such as &lt;a&gt;PutRecord&lt;/a&gt;, &lt;a&gt;PutRecords&lt;/a&gt;, and &lt;a&gt;GetRecords&lt;/a&gt;, on a stream in the</span>
+<span class="doccomment">/// &lt;code&gt;DELETING&lt;/code&gt; state until the stream deletion is complete.&lt;/p&gt;</span>
+<span class="doccomment">/// &lt;p&gt;When you delete a stream, any shards in that stream are also deleted, and any tags</span>
+<span class="doccomment">/// are dissociated from the stream.&lt;/p&gt;</span>
+<span class="doccomment">/// &lt;p&gt;You can use the &lt;a&gt;DescribeStream&lt;/a&gt; operation to check the state of</span>
+<span class="doccomment">/// the stream, which is returned in &lt;code&gt;StreamStatus&lt;/code&gt;.&lt;/p&gt;</span>
+<span class="doccomment">/// &lt;p&gt;</span>
+<span class="doccomment">/// &lt;a&gt;DeleteStream&lt;/a&gt; has a limit of five transactions per second per</span>
+<span class="doccomment">/// account.&lt;/p&gt;</span>
+<span class="attribute">#[<span class="ident">derive</span>(<span class="ident">std::default::Default</span>, <span class="ident">std::clone::Clone</span>, <span class="ident">std::fmt::Debug</span>)]</span>
+<span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">DeleteStream</span> {
+    <span class="ident">_private</span>: (),
+}
+<span class="kw">impl</span> <span class="ident">DeleteStream</span> {
+    <span class="doccomment">/// Creates a new builder-style object to manufacture [`DeleteStreamInput`](crate::input::DeleteStreamInput)</span>
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">builder</span>() <span class="op">-</span><span class="op">&gt;</span> <span class="kw">crate</span><span class="ident">::input::delete_stream_input::Builder</span> {
+        <span class="kw">crate</span><span class="ident">::input::delete_stream_input::Builder::default</span>()
+    }
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">new</span>() <span class="op">-</span><span class="op">&gt;</span> <span class="self">Self</span> {
+        <span class="self">Self</span> { <span class="ident">_private</span>: () }
+    }
+}
+<span class="kw">impl</span> <span class="ident">smithy_http::response::ParseStrictResponse</span> <span class="kw">for</span> <span class="ident">DeleteStream</span> {
+    <span class="kw">type</span> <span class="ident">Output</span> <span class="op">=</span>
+        <span class="ident">std::result::Result</span><span class="op">&lt;</span><span class="kw">crate</span><span class="ident">::output::DeleteStreamOutput</span>, <span class="kw">crate</span><span class="ident">::error::DeleteStreamError</span><span class="op">&gt;</span>;
+    <span class="kw">fn</span> <span class="ident">parse</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">response</span>: <span class="kw-2">&amp;</span><span class="ident">http::Response</span><span class="op">&lt;</span><span class="ident">bytes::Bytes</span><span class="op">&gt;</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="self">Self</span><span class="ident">::Output</span> {
+        <span class="kw">if</span> <span class="op">!</span><span class="ident">response</span>.<span class="ident">status</span>().<span class="ident">is_success</span>() <span class="op">&amp;&amp;</span> <span class="ident">response</span>.<span class="ident">status</span>().<span class="ident">as_u16</span>() <span class="op">!</span><span class="op">=</span> <span class="number">200</span> {
+            <span class="kw">crate</span><span class="ident">::operation_deser::parse_delete_stream_error</span>(<span class="ident">response</span>)
+        } <span class="kw">else</span> {
+            <span class="kw">crate</span><span class="ident">::operation_deser::parse_delete_stream_response</span>(<span class="ident">response</span>)
+        }
+    }
+}
+
+<span class="doccomment">/// &lt;p&gt;To deregister a consumer, provide its ARN. Alternatively, you can provide the ARN of</span>
+<span class="doccomment">/// the data stream and the name you gave the consumer when you registered it. You may also</span>
+<span class="doccomment">/// provide all three parameters, as long as they don&#39;t conflict with each other. If you</span>
+<span class="doccomment">/// don&#39;t know the name or ARN of the consumer that you want to deregister, you can use the</span>
+<span class="doccomment">/// &lt;a&gt;ListStreamConsumers&lt;/a&gt; operation to get a list of the descriptions of</span>
+<span class="doccomment">/// all the consumers that are currently registered with a given data stream. The</span>
+<span class="doccomment">/// description of a consumer contains its name and ARN.&lt;/p&gt;</span>
+<span class="doccomment">/// &lt;p&gt;This operation has a limit of five transactions per second per stream.&lt;/p&gt;</span>
+<span class="attribute">#[<span class="ident">derive</span>(<span class="ident">std::default::Default</span>, <span class="ident">std::clone::Clone</span>, <span class="ident">std::fmt::Debug</span>)]</span>
+<span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">DeregisterStreamConsumer</span> {
+    <span class="ident">_private</span>: (),
+}
+<span class="kw">impl</span> <span class="ident">DeregisterStreamConsumer</span> {
+    <span class="doccomment">/// Creates a new builder-style object to manufacture [`DeregisterStreamConsumerInput`](crate::input::DeregisterStreamConsumerInput)</span>
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">builder</span>() <span class="op">-</span><span class="op">&gt;</span> <span class="kw">crate</span><span class="ident">::input::deregister_stream_consumer_input::Builder</span> {
+        <span class="kw">crate</span><span class="ident">::input::deregister_stream_consumer_input::Builder::default</span>()
+    }
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">new</span>() <span class="op">-</span><span class="op">&gt;</span> <span class="self">Self</span> {
+        <span class="self">Self</span> { <span class="ident">_private</span>: () }
+    }
+}
+<span class="kw">impl</span> <span class="ident">smithy_http::response::ParseStrictResponse</span> <span class="kw">for</span> <span class="ident">DeregisterStreamConsumer</span> {
+    <span class="kw">type</span> <span class="ident">Output</span> <span class="op">=</span> <span class="ident">std::result::Result</span><span class="op">&lt;</span>
+        <span class="kw">crate</span><span class="ident">::output::DeregisterStreamConsumerOutput</span>,
+        <span class="kw">crate</span><span class="ident">::error::DeregisterStreamConsumerError</span>,
+    <span class="op">&gt;</span>;
+    <span class="kw">fn</span> <span class="ident">parse</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">response</span>: <span class="kw-2">&amp;</span><span class="ident">http::Response</span><span class="op">&lt;</span><span class="ident">bytes::Bytes</span><span class="op">&gt;</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="self">Self</span><span class="ident">::Output</span> {
+        <span class="kw">if</span> <span class="op">!</span><span class="ident">response</span>.<span class="ident">status</span>().<span class="ident">is_success</span>() <span class="op">&amp;&amp;</span> <span class="ident">response</span>.<span class="ident">status</span>().<span class="ident">as_u16</span>() <span class="op">!</span><span class="op">=</span> <span class="number">200</span> {
+            <span class="kw">crate</span><span class="ident">::operation_deser::parse_deregister_stream_consumer_error</span>(<span class="ident">response</span>)
+        } <span class="kw">else</span> {
+            <span class="kw">crate</span><span class="ident">::operation_deser::parse_deregister_stream_consumer_response</span>(<span class="ident">response</span>)
+        }
+    }
+}
+
+<span class="doccomment">/// &lt;p&gt;Describes the shard limits and usage for the account.&lt;/p&gt;</span>
+<span class="doccomment">/// &lt;p&gt;If you update your account limits, the old limits might be returned for a few</span>
+<span class="doccomment">/// minutes.&lt;/p&gt;</span>
+<span class="doccomment">/// &lt;p&gt;This operation has a limit of one transaction per second per account.&lt;/p&gt;</span>
+<span class="attribute">#[<span class="ident">derive</span>(<span class="ident">std::default::Default</span>, <span class="ident">std::clone::Clone</span>, <span class="ident">std::fmt::Debug</span>)]</span>
+<span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">DescribeLimits</span> {
+    <span class="ident">_private</span>: (),
+}
+<span class="kw">impl</span> <span class="ident">DescribeLimits</span> {
+    <span class="doccomment">/// Creates a new builder-style object to manufacture [`DescribeLimitsInput`](crate::input::DescribeLimitsInput)</span>
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">builder</span>() <span class="op">-</span><span class="op">&gt;</span> <span class="kw">crate</span><span class="ident">::input::describe_limits_input::Builder</span> {
+        <span class="kw">crate</span><span class="ident">::input::describe_limits_input::Builder::default</span>()
+    }
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">new</span>() <span class="op">-</span><span class="op">&gt;</span> <span class="self">Self</span> {
+        <span class="self">Self</span> { <span class="ident">_private</span>: () }
+    }
+}
+<span class="kw">impl</span> <span class="ident">smithy_http::response::ParseStrictResponse</span> <span class="kw">for</span> <span class="ident">DescribeLimits</span> {
+    <span class="kw">type</span> <span class="ident">Output</span> <span class="op">=</span>
+        <span class="ident">std::result::Result</span><span class="op">&lt;</span><span class="kw">crate</span><span class="ident">::output::DescribeLimitsOutput</span>, <span class="kw">crate</span><span class="ident">::error::DescribeLimitsError</span><span class="op">&gt;</span>;
+    <span class="kw">fn</span> <span class="ident">parse</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">response</span>: <span class="kw-2">&amp;</span><span class="ident">http::Response</span><span class="op">&lt;</span><span class="ident">bytes::Bytes</span><span class="op">&gt;</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="self">Self</span><span class="ident">::Output</span> {
+        <span class="kw">if</span> <span class="op">!</span><span class="ident">response</span>.<span class="ident">status</span>().<span class="ident">is_success</span>() <span class="op">&amp;&amp;</span> <span class="ident">response</span>.<span class="ident">status</span>().<span class="ident">as_u16</span>() <span class="op">!</span><span class="op">=</span> <span class="number">200</span> {
+            <span class="kw">crate</span><span class="ident">::operation_deser::parse_describe_limits_error</span>(<span class="ident">response</span>)
+        } <span class="kw">else</span> {
+            <span class="kw">crate</span><span class="ident">::operation_deser::parse_describe_limits_response</span>(<span class="ident">response</span>)
+        }
+    }
+}
+
+<span class="doccomment">/// &lt;p&gt;Describes the specified Kinesis data stream.&lt;/p&gt;</span>
+<span class="doccomment">/// &lt;p&gt;The information returned includes the stream name, Amazon Resource Name (ARN),</span>
+<span class="doccomment">/// creation time, enhanced metric configuration, and shard map. The shard map is an array</span>
+<span class="doccomment">/// of shard objects. For each shard object, there is the hash key and sequence number</span>
+<span class="doccomment">/// ranges that the shard spans, and the IDs of any earlier shards that played in a role in</span>
+<span class="doccomment">/// creating the shard. Every record ingested in the stream is identified by a sequence</span>
+<span class="doccomment">/// number, which is assigned when the record is put into the stream.&lt;/p&gt;</span>
+<span class="doccomment">/// &lt;p&gt;You can limit the number of shards returned by each call. For more information, see</span>
+<span class="doccomment">/// &lt;a href=&quot;https://docs.aws.amazon.com/kinesis/latest/dev/kinesis-using-sdk-java-retrieve-shards.html&quot;&gt;Retrieving</span>
+<span class="doccomment">/// Shards from a Stream&lt;/a&gt; in the &lt;i&gt;Amazon Kinesis Data Streams Developer</span>
+<span class="doccomment">/// Guide&lt;/i&gt;.&lt;/p&gt;</span>
+<span class="doccomment">/// &lt;p&gt;There are no guarantees about the chronological order shards returned. To process</span>
+<span class="doccomment">/// shards in chronological order, use the ID of the parent shard to track the lineage to</span>
+<span class="doccomment">/// the oldest shard.&lt;/p&gt;</span>
+<span class="doccomment">/// &lt;p&gt;This operation has a limit of 10 transactions per second per account.&lt;/p&gt;</span>
+<span class="attribute">#[<span class="ident">derive</span>(<span class="ident">std::default::Default</span>, <span class="ident">std::clone::Clone</span>, <span class="ident">std::fmt::Debug</span>)]</span>
+<span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">DescribeStream</span> {
+    <span class="ident">_private</span>: (),
+}
+<span class="kw">impl</span> <span class="ident">DescribeStream</span> {
+    <span class="doccomment">/// Creates a new builder-style object to manufacture [`DescribeStreamInput`](crate::input::DescribeStreamInput)</span>
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">builder</span>() <span class="op">-</span><span class="op">&gt;</span> <span class="kw">crate</span><span class="ident">::input::describe_stream_input::Builder</span> {
+        <span class="kw">crate</span><span class="ident">::input::describe_stream_input::Builder::default</span>()
+    }
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">new</span>() <span class="op">-</span><span class="op">&gt;</span> <span class="self">Self</span> {
+        <span class="self">Self</span> { <span class="ident">_private</span>: () }
+    }
+}
+<span class="kw">impl</span> <span class="ident">smithy_http::response::ParseStrictResponse</span> <span class="kw">for</span> <span class="ident">DescribeStream</span> {
+    <span class="kw">type</span> <span class="ident">Output</span> <span class="op">=</span>
+        <span class="ident">std::result::Result</span><span class="op">&lt;</span><span class="kw">crate</span><span class="ident">::output::DescribeStreamOutput</span>, <span class="kw">crate</span><span class="ident">::error::DescribeStreamError</span><span class="op">&gt;</span>;
+    <span class="kw">fn</span> <span class="ident">parse</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">response</span>: <span class="kw-2">&amp;</span><span class="ident">http::Response</span><span class="op">&lt;</span><span class="ident">bytes::Bytes</span><span class="op">&gt;</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="self">Self</span><span class="ident">::Output</span> {
+        <span class="kw">if</span> <span class="op">!</span><span class="ident">response</span>.<span class="ident">status</span>().<span class="ident">is_success</span>() <span class="op">&amp;&amp;</span> <span class="ident">response</span>.<span class="ident">status</span>().<span class="ident">as_u16</span>() <span class="op">!</span><span class="op">=</span> <span class="number">200</span> {
+            <span class="kw">crate</span><span class="ident">::operation_deser::parse_describe_stream_error</span>(<span class="ident">response</span>)
+        } <span class="kw">else</span> {
+            <span class="kw">crate</span><span class="ident">::operation_deser::parse_describe_stream_response</span>(<span class="ident">response</span>)
+        }
+    }
+}
+
+<span class="doccomment">/// &lt;p&gt;To get the description of a registered consumer, provide the ARN of the consumer.</span>
+<span class="doccomment">/// Alternatively, you can provide the ARN of the data stream and the name you gave the</span>
+<span class="doccomment">/// consumer when you registered it. You may also provide all three parameters, as long as</span>
+<span class="doccomment">/// they don&#39;t conflict with each other. If you don&#39;t know the name or ARN of the consumer</span>
+<span class="doccomment">/// that you want to describe, you can use the &lt;a&gt;ListStreamConsumers&lt;/a&gt;</span>
+<span class="doccomment">/// operation to get a list of the descriptions of all the consumers that are currently</span>
+<span class="doccomment">/// registered with a given data stream.&lt;/p&gt;</span>
+<span class="doccomment">/// &lt;p&gt;This operation has a limit of 20 transactions per second per stream.&lt;/p&gt;</span>
+<span class="attribute">#[<span class="ident">derive</span>(<span class="ident">std::default::Default</span>, <span class="ident">std::clone::Clone</span>, <span class="ident">std::fmt::Debug</span>)]</span>
+<span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">DescribeStreamConsumer</span> {
+    <span class="ident">_private</span>: (),
+}
+<span class="kw">impl</span> <span class="ident">DescribeStreamConsumer</span> {
+    <span class="doccomment">/// Creates a new builder-style object to manufacture [`DescribeStreamConsumerInput`](crate::input::DescribeStreamConsumerInput)</span>
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">builder</span>() <span class="op">-</span><span class="op">&gt;</span> <span class="kw">crate</span><span class="ident">::input::describe_stream_consumer_input::Builder</span> {
+        <span class="kw">crate</span><span class="ident">::input::describe_stream_consumer_input::Builder::default</span>()
+    }
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">new</span>() <span class="op">-</span><span class="op">&gt;</span> <span class="self">Self</span> {
+        <span class="self">Self</span> { <span class="ident">_private</span>: () }
+    }
+}
+<span class="kw">impl</span> <span class="ident">smithy_http::response::ParseStrictResponse</span> <span class="kw">for</span> <span class="ident">DescribeStreamConsumer</span> {
+    <span class="kw">type</span> <span class="ident">Output</span> <span class="op">=</span> <span class="ident">std::result::Result</span><span class="op">&lt;</span>
+        <span class="kw">crate</span><span class="ident">::output::DescribeStreamConsumerOutput</span>,
+        <span class="kw">crate</span><span class="ident">::error::DescribeStreamConsumerError</span>,
+    <span class="op">&gt;</span>;
+    <span class="kw">fn</span> <span class="ident">parse</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">response</span>: <span class="kw-2">&amp;</span><span class="ident">http::Response</span><span class="op">&lt;</span><span class="ident">bytes::Bytes</span><span class="op">&gt;</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="self">Self</span><span class="ident">::Output</span> {
+        <span class="kw">if</span> <span class="op">!</span><span class="ident">response</span>.<span class="ident">status</span>().<span class="ident">is_success</span>() <span class="op">&amp;&amp;</span> <span class="ident">response</span>.<span class="ident">status</span>().<span class="ident">as_u16</span>() <span class="op">!</span><span class="op">=</span> <span class="number">200</span> {
+            <span class="kw">crate</span><span class="ident">::operation_deser::parse_describe_stream_consumer_error</span>(<span class="ident">response</span>)
+        } <span class="kw">else</span> {
+            <span class="kw">crate</span><span class="ident">::operation_deser::parse_describe_stream_consumer_response</span>(<span class="ident">response</span>)
+        }
+    }
+}
+
+<span class="doccomment">/// &lt;p&gt;Provides a summarized description of the specified Kinesis data stream without the</span>
+<span class="doccomment">/// shard list.&lt;/p&gt;</span>
+<span class="doccomment">/// &lt;p&gt;The information returned includes the stream name, Amazon Resource Name (ARN),</span>
+<span class="doccomment">/// status, record retention period, approximate creation time, monitoring, encryption</span>
+<span class="doccomment">/// details, and open shard count. &lt;/p&gt;</span>
+<span class="doccomment">/// &lt;p&gt;</span>
+<span class="doccomment">/// &lt;a&gt;DescribeStreamSummary&lt;/a&gt; has a limit of 20 transactions per second</span>
+<span class="doccomment">/// per account.&lt;/p&gt;</span>
+<span class="attribute">#[<span class="ident">derive</span>(<span class="ident">std::default::Default</span>, <span class="ident">std::clone::Clone</span>, <span class="ident">std::fmt::Debug</span>)]</span>
+<span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">DescribeStreamSummary</span> {
+    <span class="ident">_private</span>: (),
+}
+<span class="kw">impl</span> <span class="ident">DescribeStreamSummary</span> {
+    <span class="doccomment">/// Creates a new builder-style object to manufacture [`DescribeStreamSummaryInput`](crate::input::DescribeStreamSummaryInput)</span>
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">builder</span>() <span class="op">-</span><span class="op">&gt;</span> <span class="kw">crate</span><span class="ident">::input::describe_stream_summary_input::Builder</span> {
+        <span class="kw">crate</span><span class="ident">::input::describe_stream_summary_input::Builder::default</span>()
+    }
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">new</span>() <span class="op">-</span><span class="op">&gt;</span> <span class="self">Self</span> {
+        <span class="self">Self</span> { <span class="ident">_private</span>: () }
+    }
+}
+<span class="kw">impl</span> <span class="ident">smithy_http::response::ParseStrictResponse</span> <span class="kw">for</span> <span class="ident">DescribeStreamSummary</span> {
+    <span class="kw">type</span> <span class="ident">Output</span> <span class="op">=</span> <span class="ident">std::result::Result</span><span class="op">&lt;</span>
+        <span class="kw">crate</span><span class="ident">::output::DescribeStreamSummaryOutput</span>,
+        <span class="kw">crate</span><span class="ident">::error::DescribeStreamSummaryError</span>,
+    <span class="op">&gt;</span>;
+    <span class="kw">fn</span> <span class="ident">parse</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">response</span>: <span class="kw-2">&amp;</span><span class="ident">http::Response</span><span class="op">&lt;</span><span class="ident">bytes::Bytes</span><span class="op">&gt;</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="self">Self</span><span class="ident">::Output</span> {
+        <span class="kw">if</span> <span class="op">!</span><span class="ident">response</span>.<span class="ident">status</span>().<span class="ident">is_success</span>() <span class="op">&amp;&amp;</span> <span class="ident">response</span>.<span class="ident">status</span>().<span class="ident">as_u16</span>() <span class="op">!</span><span class="op">=</span> <span class="number">200</span> {
+            <span class="kw">crate</span><span class="ident">::operation_deser::parse_describe_stream_summary_error</span>(<span class="ident">response</span>)
+        } <span class="kw">else</span> {
+            <span class="kw">crate</span><span class="ident">::operation_deser::parse_describe_stream_summary_response</span>(<span class="ident">response</span>)
+        }
+    }
+}
+
+<span class="doccomment">/// &lt;p&gt;Disables enhanced monitoring.&lt;/p&gt;</span>
+<span class="attribute">#[<span class="ident">derive</span>(<span class="ident">std::default::Default</span>, <span class="ident">std::clone::Clone</span>, <span class="ident">std::fmt::Debug</span>)]</span>
+<span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">DisableEnhancedMonitoring</span> {
+    <span class="ident">_private</span>: (),
+}
+<span class="kw">impl</span> <span class="ident">DisableEnhancedMonitoring</span> {
+    <span class="doccomment">/// Creates a new builder-style object to manufacture [`DisableEnhancedMonitoringInput`](crate::input::DisableEnhancedMonitoringInput)</span>
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">builder</span>() <span class="op">-</span><span class="op">&gt;</span> <span class="kw">crate</span><span class="ident">::input::disable_enhanced_monitoring_input::Builder</span> {
+        <span class="kw">crate</span><span class="ident">::input::disable_enhanced_monitoring_input::Builder::default</span>()
+    }
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">new</span>() <span class="op">-</span><span class="op">&gt;</span> <span class="self">Self</span> {
+        <span class="self">Self</span> { <span class="ident">_private</span>: () }
+    }
+}
+<span class="kw">impl</span> <span class="ident">smithy_http::response::ParseStrictResponse</span> <span class="kw">for</span> <span class="ident">DisableEnhancedMonitoring</span> {
+    <span class="kw">type</span> <span class="ident">Output</span> <span class="op">=</span> <span class="ident">std::result::Result</span><span class="op">&lt;</span>
+        <span class="kw">crate</span><span class="ident">::output::DisableEnhancedMonitoringOutput</span>,
+        <span class="kw">crate</span><span class="ident">::error::DisableEnhancedMonitoringError</span>,
+    <span class="op">&gt;</span>;
+    <span class="kw">fn</span> <span class="ident">parse</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">response</span>: <span class="kw-2">&amp;</span><span class="ident">http::Response</span><span class="op">&lt;</span><span class="ident">bytes::Bytes</span><span class="op">&gt;</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="self">Self</span><span class="ident">::Output</span> {
+        <span class="kw">if</span> <span class="op">!</span><span class="ident">response</span>.<span class="ident">status</span>().<span class="ident">is_success</span>() <span class="op">&amp;&amp;</span> <span class="ident">response</span>.<span class="ident">status</span>().<span class="ident">as_u16</span>() <span class="op">!</span><span class="op">=</span> <span class="number">200</span> {
+            <span class="kw">crate</span><span class="ident">::operation_deser::parse_disable_enhanced_monitoring_error</span>(<span class="ident">response</span>)
+        } <span class="kw">else</span> {
+            <span class="kw">crate</span><span class="ident">::operation_deser::parse_disable_enhanced_monitoring_response</span>(<span class="ident">response</span>)
+        }
+    }
+}
+
+<span class="doccomment">/// &lt;p&gt;Enables enhanced Kinesis data stream monitoring for shard-level metrics.&lt;/p&gt;</span>
+<span class="attribute">#[<span class="ident">derive</span>(<span class="ident">std::default::Default</span>, <span class="ident">std::clone::Clone</span>, <span class="ident">std::fmt::Debug</span>)]</span>
+<span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">EnableEnhancedMonitoring</span> {
+    <span class="ident">_private</span>: (),
+}
+<span class="kw">impl</span> <span class="ident">EnableEnhancedMonitoring</span> {
+    <span class="doccomment">/// Creates a new builder-style object to manufacture [`EnableEnhancedMonitoringInput`](crate::input::EnableEnhancedMonitoringInput)</span>
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">builder</span>() <span class="op">-</span><span class="op">&gt;</span> <span class="kw">crate</span><span class="ident">::input::enable_enhanced_monitoring_input::Builder</span> {
+        <span class="kw">crate</span><span class="ident">::input::enable_enhanced_monitoring_input::Builder::default</span>()
+    }
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">new</span>() <span class="op">-</span><span class="op">&gt;</span> <span class="self">Self</span> {
+        <span class="self">Self</span> { <span class="ident">_private</span>: () }
+    }
+}
+<span class="kw">impl</span> <span class="ident">smithy_http::response::ParseStrictResponse</span> <span class="kw">for</span> <span class="ident">EnableEnhancedMonitoring</span> {
+    <span class="kw">type</span> <span class="ident">Output</span> <span class="op">=</span> <span class="ident">std::result::Result</span><span class="op">&lt;</span>
+        <span class="kw">crate</span><span class="ident">::output::EnableEnhancedMonitoringOutput</span>,
+        <span class="kw">crate</span><span class="ident">::error::EnableEnhancedMonitoringError</span>,
+    <span class="op">&gt;</span>;
+    <span class="kw">fn</span> <span class="ident">parse</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">response</span>: <span class="kw-2">&amp;</span><span class="ident">http::Response</span><span class="op">&lt;</span><span class="ident">bytes::Bytes</span><span class="op">&gt;</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="self">Self</span><span class="ident">::Output</span> {
+        <span class="kw">if</span> <span class="op">!</span><span class="ident">response</span>.<span class="ident">status</span>().<span class="ident">is_success</span>() <span class="op">&amp;&amp;</span> <span class="ident">response</span>.<span class="ident">status</span>().<span class="ident">as_u16</span>() <span class="op">!</span><span class="op">=</span> <span class="number">200</span> {
+            <span class="kw">crate</span><span class="ident">::operation_deser::parse_enable_enhanced_monitoring_error</span>(<span class="ident">response</span>)
+        } <span class="kw">else</span> {
+            <span class="kw">crate</span><span class="ident">::operation_deser::parse_enable_enhanced_monitoring_response</span>(<span class="ident">response</span>)
+        }
+    }
+}
+
+<span class="doccomment">/// &lt;p&gt;Gets data records from a Kinesis data stream&#39;s shard.&lt;/p&gt;</span>
+<span class="doccomment">/// &lt;p&gt;Specify a shard iterator using the &lt;code&gt;ShardIterator&lt;/code&gt; parameter. The shard</span>
+<span class="doccomment">/// iterator specifies the position in the shard from which you want to start reading data</span>
+<span class="doccomment">/// records sequentially. If there are no records available in the portion of the shard that</span>
+<span class="doccomment">/// the iterator points to, &lt;a&gt;GetRecords&lt;/a&gt; returns an empty list. It might</span>
+<span class="doccomment">/// take multiple calls to get to a portion of the shard that contains records.&lt;/p&gt;</span>
+<span class="doccomment">/// &lt;p&gt;You can scale by provisioning multiple shards per stream while considering service</span>
+<span class="doccomment">/// limits (for more information, see &lt;a href=&quot;https://docs.aws.amazon.com/kinesis/latest/dev/service-sizes-and-limits.html&quot;&gt;Amazon Kinesis Data Streams</span>
+<span class="doccomment">/// Limits&lt;/a&gt; in the &lt;i&gt;Amazon Kinesis Data Streams Developer</span>
+<span class="doccomment">/// Guide&lt;/i&gt;). Your application should have one thread per shard, each reading</span>
+<span class="doccomment">/// continuously from its stream. To read from a stream continually, call &lt;a&gt;GetRecords&lt;/a&gt; in a loop. Use &lt;a&gt;GetShardIterator&lt;/a&gt; to get the</span>
+<span class="doccomment">/// shard iterator to specify in the first &lt;a&gt;GetRecords&lt;/a&gt; call. &lt;a&gt;GetRecords&lt;/a&gt; returns a new shard iterator in</span>
+<span class="doccomment">/// &lt;code&gt;NextShardIterator&lt;/code&gt;. Specify the shard iterator returned in</span>
+<span class="doccomment">/// &lt;code&gt;NextShardIterator&lt;/code&gt; in subsequent calls to &lt;a&gt;GetRecords&lt;/a&gt;.</span>
+<span class="doccomment">/// If the shard has been closed, the shard iterator can&#39;t return more data and &lt;a&gt;GetRecords&lt;/a&gt; returns &lt;code&gt;null&lt;/code&gt; in &lt;code&gt;NextShardIterator&lt;/code&gt;.</span>
+<span class="doccomment">/// You can terminate the loop when the shard is closed, or when the shard iterator reaches</span>
+<span class="doccomment">/// the record with the sequence number or other attribute that marks it as the last record</span>
+<span class="doccomment">/// to process.&lt;/p&gt;</span>
+<span class="doccomment">/// &lt;p&gt;Each data record can be up to 1 MiB in size, and each shard can read up to 2 MiB</span>
+<span class="doccomment">/// per second. You can ensure that your calls don&#39;t exceed the maximum supported size or</span>
+<span class="doccomment">/// throughput by using the &lt;code&gt;Limit&lt;/code&gt; parameter to specify the maximum number of</span>
+<span class="doccomment">/// records that &lt;a&gt;GetRecords&lt;/a&gt; can return. Consider your average record size</span>
+<span class="doccomment">/// when determining this limit. The maximum number of records that can be returned per call</span>
+<span class="doccomment">/// is 10,000.&lt;/p&gt;</span>
+<span class="doccomment">/// &lt;p&gt;The size of the data returned by &lt;a&gt;GetRecords&lt;/a&gt; varies depending on</span>
+<span class="doccomment">/// the utilization of the shard. The maximum size of data that &lt;a&gt;GetRecords&lt;/a&gt;</span>
+<span class="doccomment">/// can return is 10 MiB. If a call returns this amount of data, subsequent calls made</span>
+<span class="doccomment">/// within the next 5 seconds throw &lt;code&gt;ProvisionedThroughputExceededException&lt;/code&gt;. If</span>
+<span class="doccomment">/// there is insufficient provisioned throughput on the stream, subsequent calls made within</span>
+<span class="doccomment">/// the next 1 second throw &lt;code&gt;ProvisionedThroughputExceededException&lt;/code&gt;. &lt;a&gt;GetRecords&lt;/a&gt; doesn&#39;t return any data when it throws an exception. For this</span>
+<span class="doccomment">/// reason, we recommend that you wait 1 second between calls to &lt;a&gt;GetRecords&lt;/a&gt;. However, it&#39;s possible that the application will get exceptions for longer than 1</span>
+<span class="doccomment">/// second.&lt;/p&gt;</span>
+<span class="doccomment">/// &lt;p&gt;To detect whether the application is falling behind in processing, you can use the</span>
+<span class="doccomment">/// &lt;code&gt;MillisBehindLatest&lt;/code&gt; response attribute. You can also monitor the stream</span>
+<span class="doccomment">/// using CloudWatch metrics and other mechanisms (see &lt;a href=&quot;https://docs.aws.amazon.com/kinesis/latest/dev/monitoring.html&quot;&gt;Monitoring&lt;/a&gt; in the &lt;i&gt;Amazon</span>
+<span class="doccomment">/// Kinesis Data Streams Developer Guide&lt;/i&gt;).&lt;/p&gt;</span>
+<span class="doccomment">/// &lt;p&gt;Each Amazon Kinesis record includes a value,</span>
+<span class="doccomment">/// &lt;code&gt;ApproximateArrivalTimestamp&lt;/code&gt;, that is set when a stream successfully</span>
+<span class="doccomment">/// receives and stores a record. This is commonly referred to as a server-side time stamp,</span>
+<span class="doccomment">/// whereas a client-side time stamp is set when a data producer creates or sends the record</span>
+<span class="doccomment">/// to a stream (a data producer is any data source putting data records into a stream, for</span>
+<span class="doccomment">/// example with &lt;a&gt;PutRecords&lt;/a&gt;). The time stamp has millisecond precision.</span>
+<span class="doccomment">/// There are no guarantees about the time stamp accuracy, or that the time stamp is always</span>
+<span class="doccomment">/// increasing. For example, records in a shard or across a stream might have time stamps</span>
+<span class="doccomment">/// that are out of order.&lt;/p&gt;</span>
+<span class="doccomment">/// &lt;p&gt;This operation has a limit of five transactions per second per shard.&lt;/p&gt;</span>
+<span class="attribute">#[<span class="ident">derive</span>(<span class="ident">std::default::Default</span>, <span class="ident">std::clone::Clone</span>, <span class="ident">std::fmt::Debug</span>)]</span>
+<span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">GetRecords</span> {
+    <span class="ident">_private</span>: (),
+}
+<span class="kw">impl</span> <span class="ident">GetRecords</span> {
+    <span class="doccomment">/// Creates a new builder-style object to manufacture [`GetRecordsInput`](crate::input::GetRecordsInput)</span>
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">builder</span>() <span class="op">-</span><span class="op">&gt;</span> <span class="kw">crate</span><span class="ident">::input::get_records_input::Builder</span> {
+        <span class="kw">crate</span><span class="ident">::input::get_records_input::Builder::default</span>()
+    }
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">new</span>() <span class="op">-</span><span class="op">&gt;</span> <span class="self">Self</span> {
+        <span class="self">Self</span> { <span class="ident">_private</span>: () }
+    }
+}
+<span class="kw">impl</span> <span class="ident">smithy_http::response::ParseStrictResponse</span> <span class="kw">for</span> <span class="ident">GetRecords</span> {
+    <span class="kw">type</span> <span class="ident">Output</span> <span class="op">=</span>
+        <span class="ident">std::result::Result</span><span class="op">&lt;</span><span class="kw">crate</span><span class="ident">::output::GetRecordsOutput</span>, <span class="kw">crate</span><span class="ident">::error::GetRecordsError</span><span class="op">&gt;</span>;
+    <span class="kw">fn</span> <span class="ident">parse</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">response</span>: <span class="kw-2">&amp;</span><span class="ident">http::Response</span><span class="op">&lt;</span><span class="ident">bytes::Bytes</span><span class="op">&gt;</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="self">Self</span><span class="ident">::Output</span> {
+        <span class="kw">if</span> <span class="op">!</span><span class="ident">response</span>.<span class="ident">status</span>().<span class="ident">is_success</span>() <span class="op">&amp;&amp;</span> <span class="ident">response</span>.<span class="ident">status</span>().<span class="ident">as_u16</span>() <span class="op">!</span><span class="op">=</span> <span class="number">200</span> {
+            <span class="kw">crate</span><span class="ident">::operation_deser::parse_get_records_error</span>(<span class="ident">response</span>)
+        } <span class="kw">else</span> {
+            <span class="kw">crate</span><span class="ident">::operation_deser::parse_get_records_response</span>(<span class="ident">response</span>)
+        }
+    }
+}
+
+<span class="doccomment">/// &lt;p&gt;Gets an Amazon Kinesis shard iterator. A shard iterator expires 5 minutes after it</span>
+<span class="doccomment">/// is returned to the requester.&lt;/p&gt;</span>
+<span class="doccomment">/// &lt;p&gt;A shard iterator specifies the shard position from which to start reading data</span>
+<span class="doccomment">/// records sequentially. The position is specified using the sequence number of a data</span>
+<span class="doccomment">/// record in a shard. A sequence number is the identifier associated with every record</span>
+<span class="doccomment">/// ingested in the stream, and is assigned when a record is put into the stream. Each</span>
+<span class="doccomment">/// stream has one or more shards.&lt;/p&gt;</span>
+<span class="doccomment">/// &lt;p&gt;You must specify the shard iterator type. For example, you can set the</span>
+<span class="doccomment">/// &lt;code&gt;ShardIteratorType&lt;/code&gt; parameter to read exactly from the position denoted</span>
+<span class="doccomment">/// by a specific sequence number by using the &lt;code&gt;AT_SEQUENCE_NUMBER&lt;/code&gt; shard</span>
+<span class="doccomment">/// iterator type. Alternatively, the parameter can read right after the sequence number by</span>
+<span class="doccomment">/// using the &lt;code&gt;AFTER_SEQUENCE_NUMBER&lt;/code&gt; shard iterator type, using sequence numbers</span>
+<span class="doccomment">/// returned by earlier calls to &lt;a&gt;PutRecord&lt;/a&gt;, &lt;a&gt;PutRecords&lt;/a&gt;,</span>
+<span class="doccomment">/// &lt;a&gt;GetRecords&lt;/a&gt;, or &lt;a&gt;DescribeStream&lt;/a&gt;. In the request,</span>
+<span class="doccomment">/// you can specify the shard iterator type &lt;code&gt;AT_TIMESTAMP&lt;/code&gt; to read records from</span>
+<span class="doccomment">/// an arbitrary point in time, &lt;code&gt;TRIM_HORIZON&lt;/code&gt; to cause</span>
+<span class="doccomment">/// &lt;code&gt;ShardIterator&lt;/code&gt; to point to the last untrimmed record in the shard in the</span>
+<span class="doccomment">/// system (the oldest data record in the shard), or &lt;code&gt;LATEST&lt;/code&gt; so that you always</span>
+<span class="doccomment">/// read the most recent data in the shard. &lt;/p&gt;</span>
+<span class="doccomment">/// &lt;p&gt;When you read repeatedly from a stream, use a &lt;a&gt;GetShardIterator&lt;/a&gt;</span>
+<span class="doccomment">/// request to get the first shard iterator for use in your first &lt;a&gt;GetRecords&lt;/a&gt; request and for subsequent reads use the shard iterator returned by the &lt;a&gt;GetRecords&lt;/a&gt; request in &lt;code&gt;NextShardIterator&lt;/code&gt;. A new shard</span>
+<span class="doccomment">/// iterator is returned by every &lt;a&gt;GetRecords&lt;/a&gt; request in</span>
+<span class="doccomment">/// &lt;code&gt;NextShardIterator&lt;/code&gt;, which you use in the &lt;code&gt;ShardIterator&lt;/code&gt;</span>
+<span class="doccomment">/// parameter of the next &lt;a&gt;GetRecords&lt;/a&gt; request. &lt;/p&gt;</span>
+<span class="doccomment">/// &lt;p&gt;If a &lt;a&gt;GetShardIterator&lt;/a&gt; request is made too often, you receive a</span>
+<span class="doccomment">/// &lt;code&gt;ProvisionedThroughputExceededException&lt;/code&gt;. For more information about</span>
+<span class="doccomment">/// throughput limits, see &lt;a&gt;GetRecords&lt;/a&gt;, and &lt;a href=&quot;https://docs.aws.amazon.com/kinesis/latest/dev/service-sizes-and-limits.html&quot;&gt;Streams Limits&lt;/a&gt; in the</span>
+<span class="doccomment">/// &lt;i&gt;Amazon Kinesis Data Streams Developer Guide&lt;/i&gt;.&lt;/p&gt;</span>
+<span class="doccomment">/// &lt;p&gt;If the shard is closed, &lt;a&gt;GetShardIterator&lt;/a&gt; returns a valid iterator</span>
+<span class="doccomment">/// for the last sequence number of the shard. A shard can be closed as a result of using</span>
+<span class="doccomment">/// &lt;a&gt;SplitShard&lt;/a&gt; or &lt;a&gt;MergeShards&lt;/a&gt;.&lt;/p&gt;</span>
+<span class="doccomment">/// &lt;p&gt;</span>
+<span class="doccomment">/// &lt;a&gt;GetShardIterator&lt;/a&gt; has a limit of five transactions per second per</span>
+<span class="doccomment">/// account per open shard.&lt;/p&gt;</span>
+<span class="attribute">#[<span class="ident">derive</span>(<span class="ident">std::default::Default</span>, <span class="ident">std::clone::Clone</span>, <span class="ident">std::fmt::Debug</span>)]</span>
+<span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">GetShardIterator</span> {
+    <span class="ident">_private</span>: (),
+}
+<span class="kw">impl</span> <span class="ident">GetShardIterator</span> {
+    <span class="doccomment">/// Creates a new builder-style object to manufacture [`GetShardIteratorInput`](crate::input::GetShardIteratorInput)</span>
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">builder</span>() <span class="op">-</span><span class="op">&gt;</span> <span class="kw">crate</span><span class="ident">::input::get_shard_iterator_input::Builder</span> {
+        <span class="kw">crate</span><span class="ident">::input::get_shard_iterator_input::Builder::default</span>()
+    }
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">new</span>() <span class="op">-</span><span class="op">&gt;</span> <span class="self">Self</span> {
+        <span class="self">Self</span> { <span class="ident">_private</span>: () }
+    }
+}
+<span class="kw">impl</span> <span class="ident">smithy_http::response::ParseStrictResponse</span> <span class="kw">for</span> <span class="ident">GetShardIterator</span> {
+    <span class="kw">type</span> <span class="ident">Output</span> <span class="op">=</span> <span class="ident">std::result::Result</span><span class="op">&lt;</span>
+        <span class="kw">crate</span><span class="ident">::output::GetShardIteratorOutput</span>,
+        <span class="kw">crate</span><span class="ident">::error::GetShardIteratorError</span>,
+    <span class="op">&gt;</span>;
+    <span class="kw">fn</span> <span class="ident">parse</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">response</span>: <span class="kw-2">&amp;</span><span class="ident">http::Response</span><span class="op">&lt;</span><span class="ident">bytes::Bytes</span><span class="op">&gt;</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="self">Self</span><span class="ident">::Output</span> {
+        <span class="kw">if</span> <span class="op">!</span><span class="ident">response</span>.<span class="ident">status</span>().<span class="ident">is_success</span>() <span class="op">&amp;&amp;</span> <span class="ident">response</span>.<span class="ident">status</span>().<span class="ident">as_u16</span>() <span class="op">!</span><span class="op">=</span> <span class="number">200</span> {
+            <span class="kw">crate</span><span class="ident">::operation_deser::parse_get_shard_iterator_error</span>(<span class="ident">response</span>)
+        } <span class="kw">else</span> {
+            <span class="kw">crate</span><span class="ident">::operation_deser::parse_get_shard_iterator_response</span>(<span class="ident">response</span>)
+        }
+    }
+}
+
+<span class="doccomment">/// &lt;p&gt;Increases the Kinesis data stream&#39;s retention period, which is the length of time</span>
+<span class="doccomment">/// data records are accessible after they are added to the stream. The maximum value of a</span>
+<span class="doccomment">/// stream&#39;s retention period is 168 hours (7 days).&lt;/p&gt;</span>
+<span class="doccomment">/// &lt;p&gt;If you choose a longer stream retention period, this operation increases the time</span>
+<span class="doccomment">/// period during which records that have not yet expired are accessible. However, it does</span>
+<span class="doccomment">/// not make previous, expired data (older than the stream&#39;s previous retention period)</span>
+<span class="doccomment">/// accessible after the operation has been called. For example, if a stream&#39;s retention</span>
+<span class="doccomment">/// period is set to 24 hours and is increased to 168 hours, any data that is older than 24</span>
+<span class="doccomment">/// hours remains inaccessible to consumer applications.&lt;/p&gt;</span>
+<span class="attribute">#[<span class="ident">derive</span>(<span class="ident">std::default::Default</span>, <span class="ident">std::clone::Clone</span>, <span class="ident">std::fmt::Debug</span>)]</span>
+<span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">IncreaseStreamRetentionPeriod</span> {
+    <span class="ident">_private</span>: (),
+}
+<span class="kw">impl</span> <span class="ident">IncreaseStreamRetentionPeriod</span> {
+    <span class="doccomment">/// Creates a new builder-style object to manufacture [`IncreaseStreamRetentionPeriodInput`](crate::input::IncreaseStreamRetentionPeriodInput)</span>
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">builder</span>() <span class="op">-</span><span class="op">&gt;</span> <span class="kw">crate</span><span class="ident">::input::increase_stream_retention_period_input::Builder</span> {
+        <span class="kw">crate</span><span class="ident">::input::increase_stream_retention_period_input::Builder::default</span>()
+    }
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">new</span>() <span class="op">-</span><span class="op">&gt;</span> <span class="self">Self</span> {
+        <span class="self">Self</span> { <span class="ident">_private</span>: () }
+    }
+}
+<span class="kw">impl</span> <span class="ident">smithy_http::response::ParseStrictResponse</span> <span class="kw">for</span> <span class="ident">IncreaseStreamRetentionPeriod</span> {
+    <span class="kw">type</span> <span class="ident">Output</span> <span class="op">=</span> <span class="ident">std::result::Result</span><span class="op">&lt;</span>
+        <span class="kw">crate</span><span class="ident">::output::IncreaseStreamRetentionPeriodOutput</span>,
+        <span class="kw">crate</span><span class="ident">::error::IncreaseStreamRetentionPeriodError</span>,
+    <span class="op">&gt;</span>;
+    <span class="kw">fn</span> <span class="ident">parse</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">response</span>: <span class="kw-2">&amp;</span><span class="ident">http::Response</span><span class="op">&lt;</span><span class="ident">bytes::Bytes</span><span class="op">&gt;</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="self">Self</span><span class="ident">::Output</span> {
+        <span class="kw">if</span> <span class="op">!</span><span class="ident">response</span>.<span class="ident">status</span>().<span class="ident">is_success</span>() <span class="op">&amp;&amp;</span> <span class="ident">response</span>.<span class="ident">status</span>().<span class="ident">as_u16</span>() <span class="op">!</span><span class="op">=</span> <span class="number">200</span> {
+            <span class="kw">crate</span><span class="ident">::operation_deser::parse_increase_stream_retention_period_error</span>(<span class="ident">response</span>)
+        } <span class="kw">else</span> {
+            <span class="kw">crate</span><span class="ident">::operation_deser::parse_increase_stream_retention_period_response</span>(<span class="ident">response</span>)
+        }
+    }
+}
+
+<span class="doccomment">/// &lt;p&gt;Lists the shards in a stream and provides information about each shard. This</span>
+<span class="doccomment">/// operation has a limit of 100 transactions per second per data stream.&lt;/p&gt;</span>
+<span class="doccomment">/// &lt;important&gt;</span>
+<span class="doccomment">/// &lt;p&gt;This API is a new operation that is used by the Amazon Kinesis Client Library</span>
+<span class="doccomment">/// (KCL). If you have a fine-grained IAM policy that only allows specific operations,</span>
+<span class="doccomment">/// you must update your policy to allow calls to this API. For more information, see</span>
+<span class="doccomment">/// &lt;a href=&quot;https://docs.aws.amazon.com/streams/latest/dev/controlling-access.html&quot;&gt;Controlling Access to Amazon Kinesis Data Streams Resources Using</span>
+<span class="doccomment">/// IAM&lt;/a&gt;.&lt;/p&gt;</span>
+<span class="doccomment">/// &lt;/important&gt;</span>
+<span class="attribute">#[<span class="ident">derive</span>(<span class="ident">std::default::Default</span>, <span class="ident">std::clone::Clone</span>, <span class="ident">std::fmt::Debug</span>)]</span>
+<span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">ListShards</span> {
+    <span class="ident">_private</span>: (),
+}
+<span class="kw">impl</span> <span class="ident">ListShards</span> {
+    <span class="doccomment">/// Creates a new builder-style object to manufacture [`ListShardsInput`](crate::input::ListShardsInput)</span>
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">builder</span>() <span class="op">-</span><span class="op">&gt;</span> <span class="kw">crate</span><span class="ident">::input::list_shards_input::Builder</span> {
+        <span class="kw">crate</span><span class="ident">::input::list_shards_input::Builder::default</span>()
+    }
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">new</span>() <span class="op">-</span><span class="op">&gt;</span> <span class="self">Self</span> {
+        <span class="self">Self</span> { <span class="ident">_private</span>: () }
+    }
+}
+<span class="kw">impl</span> <span class="ident">smithy_http::response::ParseStrictResponse</span> <span class="kw">for</span> <span class="ident">ListShards</span> {
+    <span class="kw">type</span> <span class="ident">Output</span> <span class="op">=</span>
+        <span class="ident">std::result::Result</span><span class="op">&lt;</span><span class="kw">crate</span><span class="ident">::output::ListShardsOutput</span>, <span class="kw">crate</span><span class="ident">::error::ListShardsError</span><span class="op">&gt;</span>;
+    <span class="kw">fn</span> <span class="ident">parse</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">response</span>: <span class="kw-2">&amp;</span><span class="ident">http::Response</span><span class="op">&lt;</span><span class="ident">bytes::Bytes</span><span class="op">&gt;</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="self">Self</span><span class="ident">::Output</span> {
+        <span class="kw">if</span> <span class="op">!</span><span class="ident">response</span>.<span class="ident">status</span>().<span class="ident">is_success</span>() <span class="op">&amp;&amp;</span> <span class="ident">response</span>.<span class="ident">status</span>().<span class="ident">as_u16</span>() <span class="op">!</span><span class="op">=</span> <span class="number">200</span> {
+            <span class="kw">crate</span><span class="ident">::operation_deser::parse_list_shards_error</span>(<span class="ident">response</span>)
+        } <span class="kw">else</span> {
+            <span class="kw">crate</span><span class="ident">::operation_deser::parse_list_shards_response</span>(<span class="ident">response</span>)
+        }
+    }
+}
+
+<span class="doccomment">/// &lt;p&gt;Lists the consumers registered to receive data from a stream using enhanced fan-out,</span>
+<span class="doccomment">/// and provides information about each consumer.&lt;/p&gt;</span>
+<span class="doccomment">/// &lt;p&gt;This operation has a limit of 5 transactions per second per stream.&lt;/p&gt;</span>
+<span class="attribute">#[<span class="ident">derive</span>(<span class="ident">std::default::Default</span>, <span class="ident">std::clone::Clone</span>, <span class="ident">std::fmt::Debug</span>)]</span>
+<span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">ListStreamConsumers</span> {
+    <span class="ident">_private</span>: (),
+}
+<span class="kw">impl</span> <span class="ident">ListStreamConsumers</span> {
+    <span class="doccomment">/// Creates a new builder-style object to manufacture [`ListStreamConsumersInput`](crate::input::ListStreamConsumersInput)</span>
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">builder</span>() <span class="op">-</span><span class="op">&gt;</span> <span class="kw">crate</span><span class="ident">::input::list_stream_consumers_input::Builder</span> {
+        <span class="kw">crate</span><span class="ident">::input::list_stream_consumers_input::Builder::default</span>()
+    }
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">new</span>() <span class="op">-</span><span class="op">&gt;</span> <span class="self">Self</span> {
+        <span class="self">Self</span> { <span class="ident">_private</span>: () }
+    }
+}
+<span class="kw">impl</span> <span class="ident">smithy_http::response::ParseStrictResponse</span> <span class="kw">for</span> <span class="ident">ListStreamConsumers</span> {
+    <span class="kw">type</span> <span class="ident">Output</span> <span class="op">=</span> <span class="ident">std::result::Result</span><span class="op">&lt;</span>
+        <span class="kw">crate</span><span class="ident">::output::ListStreamConsumersOutput</span>,
+        <span class="kw">crate</span><span class="ident">::error::ListStreamConsumersError</span>,
+    <span class="op">&gt;</span>;
+    <span class="kw">fn</span> <span class="ident">parse</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">response</span>: <span class="kw-2">&amp;</span><span class="ident">http::Response</span><span class="op">&lt;</span><span class="ident">bytes::Bytes</span><span class="op">&gt;</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="self">Self</span><span class="ident">::Output</span> {
+        <span class="kw">if</span> <span class="op">!</span><span class="ident">response</span>.<span class="ident">status</span>().<span class="ident">is_success</span>() <span class="op">&amp;&amp;</span> <span class="ident">response</span>.<span class="ident">status</span>().<span class="ident">as_u16</span>() <span class="op">!</span><span class="op">=</span> <span class="number">200</span> {
+            <span class="kw">crate</span><span class="ident">::operation_deser::parse_list_stream_consumers_error</span>(<span class="ident">response</span>)
+        } <span class="kw">else</span> {
+            <span class="kw">crate</span><span class="ident">::operation_deser::parse_list_stream_consumers_response</span>(<span class="ident">response</span>)
+        }
+    }
+}
+
+<span class="doccomment">/// &lt;p&gt;Lists your Kinesis data streams.&lt;/p&gt;</span>
+<span class="doccomment">/// &lt;p&gt;The number of streams may be too large to return from a single call to</span>
+<span class="doccomment">/// &lt;code&gt;ListStreams&lt;/code&gt;. You can limit the number of returned streams using the</span>
+<span class="doccomment">/// &lt;code&gt;Limit&lt;/code&gt; parameter. If you do not specify a value for the</span>
+<span class="doccomment">/// &lt;code&gt;Limit&lt;/code&gt; parameter, Kinesis Data Streams uses the default limit, which is</span>
+<span class="doccomment">/// currently 10.&lt;/p&gt;</span>
+<span class="doccomment">/// &lt;p&gt;You can detect if there are more streams available to list by using the</span>
+<span class="doccomment">/// &lt;code&gt;HasMoreStreams&lt;/code&gt; flag from the returned output. If there are more streams</span>
+<span class="doccomment">/// available, you can request more streams by using the name of the last stream returned by</span>
+<span class="doccomment">/// the &lt;code&gt;ListStreams&lt;/code&gt; request in the &lt;code&gt;ExclusiveStartStreamName&lt;/code&gt;</span>
+<span class="doccomment">/// parameter in a subsequent request to &lt;code&gt;ListStreams&lt;/code&gt;. The group of stream names</span>
+<span class="doccomment">/// returned by the subsequent request is then added to the list. You can continue this</span>
+<span class="doccomment">/// process until all the stream names have been collected in the list. &lt;/p&gt;</span>
+<span class="doccomment">/// &lt;p&gt;</span>
+<span class="doccomment">/// &lt;a&gt;ListStreams&lt;/a&gt; has a limit of five transactions per second per</span>
+<span class="doccomment">/// account.&lt;/p&gt;</span>
+<span class="attribute">#[<span class="ident">derive</span>(<span class="ident">std::default::Default</span>, <span class="ident">std::clone::Clone</span>, <span class="ident">std::fmt::Debug</span>)]</span>
+<span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">ListStreams</span> {
+    <span class="ident">_private</span>: (),
+}
+<span class="kw">impl</span> <span class="ident">ListStreams</span> {
+    <span class="doccomment">/// Creates a new builder-style object to manufacture [`ListStreamsInput`](crate::input::ListStreamsInput)</span>
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">builder</span>() <span class="op">-</span><span class="op">&gt;</span> <span class="kw">crate</span><span class="ident">::input::list_streams_input::Builder</span> {
+        <span class="kw">crate</span><span class="ident">::input::list_streams_input::Builder::default</span>()
+    }
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">new</span>() <span class="op">-</span><span class="op">&gt;</span> <span class="self">Self</span> {
+        <span class="self">Self</span> { <span class="ident">_private</span>: () }
+    }
+}
+<span class="kw">impl</span> <span class="ident">smithy_http::response::ParseStrictResponse</span> <span class="kw">for</span> <span class="ident">ListStreams</span> {
+    <span class="kw">type</span> <span class="ident">Output</span> <span class="op">=</span>
+        <span class="ident">std::result::Result</span><span class="op">&lt;</span><span class="kw">crate</span><span class="ident">::output::ListStreamsOutput</span>, <span class="kw">crate</span><span class="ident">::error::ListStreamsError</span><span class="op">&gt;</span>;
+    <span class="kw">fn</span> <span class="ident">parse</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">response</span>: <span class="kw-2">&amp;</span><span class="ident">http::Response</span><span class="op">&lt;</span><span class="ident">bytes::Bytes</span><span class="op">&gt;</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="self">Self</span><span class="ident">::Output</span> {
+        <span class="kw">if</span> <span class="op">!</span><span class="ident">response</span>.<span class="ident">status</span>().<span class="ident">is_success</span>() <span class="op">&amp;&amp;</span> <span class="ident">response</span>.<span class="ident">status</span>().<span class="ident">as_u16</span>() <span class="op">!</span><span class="op">=</span> <span class="number">200</span> {
+            <span class="kw">crate</span><span class="ident">::operation_deser::parse_list_streams_error</span>(<span class="ident">response</span>)
+        } <span class="kw">else</span> {
+            <span class="kw">crate</span><span class="ident">::operation_deser::parse_list_streams_response</span>(<span class="ident">response</span>)
+        }
+    }
+}
+
+<span class="doccomment">/// &lt;p&gt;Lists the tags for the specified Kinesis data stream. This operation has a limit of</span>
+<span class="doccomment">/// five transactions per second per account.&lt;/p&gt;</span>
+<span class="attribute">#[<span class="ident">derive</span>(<span class="ident">std::default::Default</span>, <span class="ident">std::clone::Clone</span>, <span class="ident">std::fmt::Debug</span>)]</span>
+<span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">ListTagsForStream</span> {
+    <span class="ident">_private</span>: (),
+}
+<span class="kw">impl</span> <span class="ident">ListTagsForStream</span> {
+    <span class="doccomment">/// Creates a new builder-style object to manufacture [`ListTagsForStreamInput`](crate::input::ListTagsForStreamInput)</span>
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">builder</span>() <span class="op">-</span><span class="op">&gt;</span> <span class="kw">crate</span><span class="ident">::input::list_tags_for_stream_input::Builder</span> {
+        <span class="kw">crate</span><span class="ident">::input::list_tags_for_stream_input::Builder::default</span>()
+    }
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">new</span>() <span class="op">-</span><span class="op">&gt;</span> <span class="self">Self</span> {
+        <span class="self">Self</span> { <span class="ident">_private</span>: () }
+    }
+}
+<span class="kw">impl</span> <span class="ident">smithy_http::response::ParseStrictResponse</span> <span class="kw">for</span> <span class="ident">ListTagsForStream</span> {
+    <span class="kw">type</span> <span class="ident">Output</span> <span class="op">=</span> <span class="ident">std::result::Result</span><span class="op">&lt;</span>
+        <span class="kw">crate</span><span class="ident">::output::ListTagsForStreamOutput</span>,
+        <span class="kw">crate</span><span class="ident">::error::ListTagsForStreamError</span>,
+    <span class="op">&gt;</span>;
+    <span class="kw">fn</span> <span class="ident">parse</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">response</span>: <span class="kw-2">&amp;</span><span class="ident">http::Response</span><span class="op">&lt;</span><span class="ident">bytes::Bytes</span><span class="op">&gt;</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="self">Self</span><span class="ident">::Output</span> {
+        <span class="kw">if</span> <span class="op">!</span><span class="ident">response</span>.<span class="ident">status</span>().<span class="ident">is_success</span>() <span class="op">&amp;&amp;</span> <span class="ident">response</span>.<span class="ident">status</span>().<span class="ident">as_u16</span>() <span class="op">!</span><span class="op">=</span> <span class="number">200</span> {
+            <span class="kw">crate</span><span class="ident">::operation_deser::parse_list_tags_for_stream_error</span>(<span class="ident">response</span>)
+        } <span class="kw">else</span> {
+            <span class="kw">crate</span><span class="ident">::operation_deser::parse_list_tags_for_stream_response</span>(<span class="ident">response</span>)
+        }
+    }
+}
+
+<span class="doccomment">/// &lt;p&gt;Merges two adjacent shards in a Kinesis data stream and combines them into a single</span>
+<span class="doccomment">/// shard to reduce the stream&#39;s capacity to ingest and transport data. Two shards are</span>
+<span class="doccomment">/// considered adjacent if the union of the hash key ranges for the two shards form a</span>
+<span class="doccomment">/// contiguous set with no gaps. For example, if you have two shards, one with a hash key</span>
+<span class="doccomment">/// range of 276...381 and the other with a hash key range of 382...454, then you could</span>
+<span class="doccomment">/// merge these two shards into a single shard that would have a hash key range of</span>
+<span class="doccomment">/// 276...454. After the merge, the single child shard receives data for all hash key values</span>
+<span class="doccomment">/// covered by the two parent shards.&lt;/p&gt;</span>
+<span class="doccomment">/// &lt;p&gt;</span>
+<span class="doccomment">/// &lt;code&gt;MergeShards&lt;/code&gt; is called when there is a need to reduce the overall capacity</span>
+<span class="doccomment">/// of a stream because of excess capacity that is not being used. You must specify the</span>
+<span class="doccomment">/// shard to be merged and the adjacent shard for a stream. For more information about</span>
+<span class="doccomment">/// merging shards, see &lt;a href=&quot;https://docs.aws.amazon.com/kinesis/latest/dev/kinesis-using-sdk-java-resharding-merge.html&quot;&gt;Merge Two</span>
+<span class="doccomment">/// Shards&lt;/a&gt; in the &lt;i&gt;Amazon Kinesis Data Streams Developer</span>
+<span class="doccomment">/// Guide&lt;/i&gt;.&lt;/p&gt;</span>
+<span class="doccomment">/// &lt;p&gt;If the stream is in the &lt;code&gt;ACTIVE&lt;/code&gt; state, you can call</span>
+<span class="doccomment">/// &lt;code&gt;MergeShards&lt;/code&gt;. If a stream is in the &lt;code&gt;CREATING&lt;/code&gt;,</span>
+<span class="doccomment">/// &lt;code&gt;UPDATING&lt;/code&gt;, or &lt;code&gt;DELETING&lt;/code&gt; state, &lt;code&gt;MergeShards&lt;/code&gt;</span>
+<span class="doccomment">/// returns a &lt;code&gt;ResourceInUseException&lt;/code&gt;. If the specified stream does not exist,</span>
+<span class="doccomment">/// &lt;code&gt;MergeShards&lt;/code&gt; returns a &lt;code&gt;ResourceNotFoundException&lt;/code&gt;. &lt;/p&gt;</span>
+<span class="doccomment">/// &lt;p&gt;You can use &lt;a&gt;DescribeStream&lt;/a&gt; to check the state of the stream,</span>
+<span class="doccomment">/// which is returned in &lt;code&gt;StreamStatus&lt;/code&gt;.&lt;/p&gt;</span>
+<span class="doccomment">/// &lt;p&gt;</span>
+<span class="doccomment">/// &lt;code&gt;MergeShards&lt;/code&gt; is an asynchronous operation. Upon receiving a</span>
+<span class="doccomment">/// &lt;code&gt;MergeShards&lt;/code&gt; request, Amazon Kinesis Data Streams immediately returns a</span>
+<span class="doccomment">/// response and sets the &lt;code&gt;StreamStatus&lt;/code&gt; to &lt;code&gt;UPDATING&lt;/code&gt;. After the</span>
+<span class="doccomment">/// operation is completed, Kinesis Data Streams sets the &lt;code&gt;StreamStatus&lt;/code&gt; to</span>
+<span class="doccomment">/// &lt;code&gt;ACTIVE&lt;/code&gt;. Read and write operations continue to work while the stream is</span>
+<span class="doccomment">/// in the &lt;code&gt;UPDATING&lt;/code&gt; state. &lt;/p&gt;</span>
+<span class="doccomment">/// &lt;p&gt;You use &lt;a&gt;DescribeStream&lt;/a&gt; to determine the shard IDs that are</span>
+<span class="doccomment">/// specified in the &lt;code&gt;MergeShards&lt;/code&gt; request. &lt;/p&gt;</span>
+<span class="doccomment">/// &lt;p&gt;If you try to operate on too many streams in parallel using &lt;a&gt;CreateStream&lt;/a&gt;, &lt;a&gt;DeleteStream&lt;/a&gt;, &lt;code&gt;MergeShards&lt;/code&gt;,</span>
+<span class="doccomment">/// or &lt;a&gt;SplitShard&lt;/a&gt;, you receive a &lt;code&gt;LimitExceededException&lt;/code&gt;. &lt;/p&gt;</span>
+<span class="doccomment">/// &lt;p&gt;</span>
+<span class="doccomment">/// &lt;code&gt;MergeShards&lt;/code&gt; has a limit of five transactions per second per</span>
+<span class="doccomment">/// account.&lt;/p&gt;</span>
+<span class="attribute">#[<span class="ident">derive</span>(<span class="ident">std::default::Default</span>, <span class="ident">std::clone::Clone</span>, <span class="ident">std::fmt::Debug</span>)]</span>
+<span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">MergeShards</span> {
+    <span class="ident">_private</span>: (),
+}
+<span class="kw">impl</span> <span class="ident">MergeShards</span> {
+    <span class="doccomment">/// Creates a new builder-style object to manufacture [`MergeShardsInput`](crate::input::MergeShardsInput)</span>
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">builder</span>() <span class="op">-</span><span class="op">&gt;</span> <span class="kw">crate</span><span class="ident">::input::merge_shards_input::Builder</span> {
+        <span class="kw">crate</span><span class="ident">::input::merge_shards_input::Builder::default</span>()
+    }
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">new</span>() <span class="op">-</span><span class="op">&gt;</span> <span class="self">Self</span> {
+        <span class="self">Self</span> { <span class="ident">_private</span>: () }
+    }
+}
+<span class="kw">impl</span> <span class="ident">smithy_http::response::ParseStrictResponse</span> <span class="kw">for</span> <span class="ident">MergeShards</span> {
+    <span class="kw">type</span> <span class="ident">Output</span> <span class="op">=</span>
+        <span class="ident">std::result::Result</span><span class="op">&lt;</span><span class="kw">crate</span><span class="ident">::output::MergeShardsOutput</span>, <span class="kw">crate</span><span class="ident">::error::MergeShardsError</span><span class="op">&gt;</span>;
+    <span class="kw">fn</span> <span class="ident">parse</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">response</span>: <span class="kw-2">&amp;</span><span class="ident">http::Response</span><span class="op">&lt;</span><span class="ident">bytes::Bytes</span><span class="op">&gt;</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="self">Self</span><span class="ident">::Output</span> {
+        <span class="kw">if</span> <span class="op">!</span><span class="ident">response</span>.<span class="ident">status</span>().<span class="ident">is_success</span>() <span class="op">&amp;&amp;</span> <span class="ident">response</span>.<span class="ident">status</span>().<span class="ident">as_u16</span>() <span class="op">!</span><span class="op">=</span> <span class="number">200</span> {
+            <span class="kw">crate</span><span class="ident">::operation_deser::parse_merge_shards_error</span>(<span class="ident">response</span>)
+        } <span class="kw">else</span> {
+            <span class="kw">crate</span><span class="ident">::operation_deser::parse_merge_shards_response</span>(<span class="ident">response</span>)
+        }
+    }
+}
+
+<span class="doccomment">/// &lt;p&gt;Writes a single data record into an Amazon Kinesis data stream. Call</span>
+<span class="doccomment">/// &lt;code&gt;PutRecord&lt;/code&gt; to send data into the stream for real-time ingestion and</span>
+<span class="doccomment">/// subsequent processing, one record at a time. Each shard can support writes up to 1,000</span>
+<span class="doccomment">/// records per second, up to a maximum data write total of 1 MiB per second.&lt;/p&gt;</span>
+<span class="doccomment">/// &lt;p&gt;You must specify the name of the stream that captures, stores, and transports the</span>
+<span class="doccomment">/// data; a partition key; and the data blob itself.&lt;/p&gt;</span>
+<span class="doccomment">/// &lt;p&gt;The data blob can be any type of data; for example, a segment from a log file,</span>
+<span class="doccomment">/// geographic/location data, website clickstream data, and so on.&lt;/p&gt;</span>
+<span class="doccomment">/// &lt;p&gt;The partition key is used by Kinesis Data Streams to distribute data across shards.</span>
+<span class="doccomment">/// Kinesis Data Streams segregates the data records that belong to a stream into multiple</span>
+<span class="doccomment">/// shards, using the partition key associated with each data record to determine the shard</span>
+<span class="doccomment">/// to which a given data record belongs.&lt;/p&gt;</span>
+<span class="doccomment">/// &lt;p&gt;Partition keys are Unicode strings, with a maximum length limit of 256 characters</span>
+<span class="doccomment">/// for each key. An MD5 hash function is used to map partition keys to 128-bit integer</span>
+<span class="doccomment">/// values and to map associated data records to shards using the hash key ranges of the</span>
+<span class="doccomment">/// shards. You can override hashing the partition key to determine the shard by explicitly</span>
+<span class="doccomment">/// specifying a hash value using the &lt;code&gt;ExplicitHashKey&lt;/code&gt; parameter. For more</span>
+<span class="doccomment">/// information, see &lt;a href=&quot;https://docs.aws.amazon.com/kinesis/latest/dev/developing-producers-with-sdk.html#kinesis-using-sdk-java-add-data-to-stream&quot;&gt;Adding Data to a Stream&lt;/a&gt; in the &lt;i&gt;Amazon Kinesis Data Streams</span>
+<span class="doccomment">/// Developer Guide&lt;/i&gt;.&lt;/p&gt;</span>
+<span class="doccomment">/// &lt;p&gt;</span>
+<span class="doccomment">/// &lt;code&gt;PutRecord&lt;/code&gt; returns the shard ID of where the data record was placed and the</span>
+<span class="doccomment">/// sequence number that was assigned to the data record.&lt;/p&gt;</span>
+<span class="doccomment">/// &lt;p&gt;Sequence numbers increase over time and are specific to a shard within a stream,</span>
+<span class="doccomment">/// not across all shards within a stream. To guarantee strictly increasing ordering, write</span>
+<span class="doccomment">/// serially to a shard and use the &lt;code&gt;SequenceNumberForOrdering&lt;/code&gt; parameter. For</span>
+<span class="doccomment">/// more information, see &lt;a href=&quot;https://docs.aws.amazon.com/kinesis/latest/dev/developing-producers-with-sdk.html#kinesis-using-sdk-java-add-data-to-stream&quot;&gt;Adding Data to a Stream&lt;/a&gt; in the &lt;i&gt;Amazon Kinesis Data Streams</span>
+<span class="doccomment">/// Developer Guide&lt;/i&gt;.&lt;/p&gt;</span>
+<span class="doccomment">/// &lt;important&gt;</span>
+<span class="doccomment">/// &lt;p&gt;After you write a record to a stream, you cannot modify that record or its order</span>
+<span class="doccomment">/// within the stream.&lt;/p&gt;</span>
+<span class="doccomment">/// &lt;/important&gt;</span>
+<span class="doccomment">/// &lt;p&gt;If a &lt;code&gt;PutRecord&lt;/code&gt; request cannot be processed because of insufficient</span>
+<span class="doccomment">/// provisioned throughput on the shard involved in the request, &lt;code&gt;PutRecord&lt;/code&gt;</span>
+<span class="doccomment">/// throws &lt;code&gt;ProvisionedThroughputExceededException&lt;/code&gt;. &lt;/p&gt;</span>
+<span class="doccomment">/// &lt;p&gt;By default, data records are accessible for 24 hours from the time that they are</span>
+<span class="doccomment">/// added to a stream. You can use &lt;a&gt;IncreaseStreamRetentionPeriod&lt;/a&gt; or &lt;a&gt;DecreaseStreamRetentionPeriod&lt;/a&gt; to modify this retention period.&lt;/p&gt;</span>
+<span class="attribute">#[<span class="ident">derive</span>(<span class="ident">std::default::Default</span>, <span class="ident">std::clone::Clone</span>, <span class="ident">std::fmt::Debug</span>)]</span>
+<span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">PutRecord</span> {
+    <span class="ident">_private</span>: (),
+}
+<span class="kw">impl</span> <span class="ident">PutRecord</span> {
+    <span class="doccomment">/// Creates a new builder-style object to manufacture [`PutRecordInput`](crate::input::PutRecordInput)</span>
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">builder</span>() <span class="op">-</span><span class="op">&gt;</span> <span class="kw">crate</span><span class="ident">::input::put_record_input::Builder</span> {
+        <span class="kw">crate</span><span class="ident">::input::put_record_input::Builder::default</span>()
+    }
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">new</span>() <span class="op">-</span><span class="op">&gt;</span> <span class="self">Self</span> {
+        <span class="self">Self</span> { <span class="ident">_private</span>: () }
+    }
+}
+<span class="kw">impl</span> <span class="ident">smithy_http::response::ParseStrictResponse</span> <span class="kw">for</span> <span class="ident">PutRecord</span> {
+    <span class="kw">type</span> <span class="ident">Output</span> <span class="op">=</span> <span class="ident">std::result::Result</span><span class="op">&lt;</span><span class="kw">crate</span><span class="ident">::output::PutRecordOutput</span>, <span class="kw">crate</span><span class="ident">::error::PutRecordError</span><span class="op">&gt;</span>;
+    <span class="kw">fn</span> <span class="ident">parse</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">response</span>: <span class="kw-2">&amp;</span><span class="ident">http::Response</span><span class="op">&lt;</span><span class="ident">bytes::Bytes</span><span class="op">&gt;</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="self">Self</span><span class="ident">::Output</span> {
+        <span class="kw">if</span> <span class="op">!</span><span class="ident">response</span>.<span class="ident">status</span>().<span class="ident">is_success</span>() <span class="op">&amp;&amp;</span> <span class="ident">response</span>.<span class="ident">status</span>().<span class="ident">as_u16</span>() <span class="op">!</span><span class="op">=</span> <span class="number">200</span> {
+            <span class="kw">crate</span><span class="ident">::operation_deser::parse_put_record_error</span>(<span class="ident">response</span>)
+        } <span class="kw">else</span> {
+            <span class="kw">crate</span><span class="ident">::operation_deser::parse_put_record_response</span>(<span class="ident">response</span>)
+        }
+    }
+}
+
+<span class="doccomment">/// &lt;p&gt;Writes multiple data records into a Kinesis data stream in a single call (also</span>
+<span class="doccomment">/// referred to as a &lt;code&gt;PutRecords&lt;/code&gt; request). Use this operation to send data into</span>
+<span class="doccomment">/// the stream for data ingestion and processing. &lt;/p&gt;</span>
+<span class="doccomment">/// &lt;p&gt;Each &lt;code&gt;PutRecords&lt;/code&gt; request can support up to 500 records. Each record in</span>
+<span class="doccomment">/// the request can be as large as 1 MiB, up to a limit of 5 MiB for the entire request,</span>
+<span class="doccomment">/// including partition keys. Each shard can support writes up to 1,000 records per second,</span>
+<span class="doccomment">/// up to a maximum data write total of 1 MiB per second.&lt;/p&gt;</span>
+<span class="doccomment">/// &lt;p&gt;You must specify the name of the stream that captures, stores, and transports the</span>
+<span class="doccomment">/// data; and an array of request &lt;code&gt;Records&lt;/code&gt;, with each record in the array</span>
+<span class="doccomment">/// requiring a partition key and data blob. The record size limit applies to the total size</span>
+<span class="doccomment">/// of the partition key and data blob.&lt;/p&gt;</span>
+<span class="doccomment">/// &lt;p&gt;The data blob can be any type of data; for example, a segment from a log file,</span>
+<span class="doccomment">/// geographic/location data, website clickstream data, and so on.&lt;/p&gt;</span>
+<span class="doccomment">/// &lt;p&gt;The partition key is used by Kinesis Data Streams as input to a hash function that</span>
+<span class="doccomment">/// maps the partition key and associated data to a specific shard. An MD5 hash function is</span>
+<span class="doccomment">/// used to map partition keys to 128-bit integer values and to map associated data records</span>
+<span class="doccomment">/// to shards. As a result of this hashing mechanism, all data records with the same</span>
+<span class="doccomment">/// partition key map to the same shard within the stream. For more information, see &lt;a href=&quot;https://docs.aws.amazon.com/kinesis/latest/dev/developing-producers-with-sdk.html#kinesis-using-sdk-java-add-data-to-stream&quot;&gt;Adding Data to a Stream&lt;/a&gt; in the &lt;i&gt;Amazon Kinesis Data Streams</span>
+<span class="doccomment">/// Developer Guide&lt;/i&gt;.&lt;/p&gt;</span>
+<span class="doccomment">/// &lt;p&gt;Each record in the &lt;code&gt;Records&lt;/code&gt; array may include an optional parameter,</span>
+<span class="doccomment">/// &lt;code&gt;ExplicitHashKey&lt;/code&gt;, which overrides the partition key to shard mapping.</span>
+<span class="doccomment">/// This parameter allows a data producer to determine explicitly the shard where the record</span>
+<span class="doccomment">/// is stored. For more information, see &lt;a href=&quot;https://docs.aws.amazon.com/kinesis/latest/dev/developing-producers-with-sdk.html#kinesis-using-sdk-java-putrecords&quot;&gt;Adding Multiple Records with PutRecords&lt;/a&gt; in the &lt;i&gt;Amazon Kinesis</span>
+<span class="doccomment">/// Data Streams Developer Guide&lt;/i&gt;.&lt;/p&gt;</span>
+<span class="doccomment">/// &lt;p&gt;The &lt;code&gt;PutRecords&lt;/code&gt; response includes an array of response</span>
+<span class="doccomment">/// &lt;code&gt;Records&lt;/code&gt;. Each record in the response array directly correlates with a</span>
+<span class="doccomment">/// record in the request array using natural ordering, from the top to the bottom of the</span>
+<span class="doccomment">/// request and response. The response &lt;code&gt;Records&lt;/code&gt; array always includes the same</span>
+<span class="doccomment">/// number of records as the request array.&lt;/p&gt;</span>
+<span class="doccomment">/// &lt;p&gt;The response &lt;code&gt;Records&lt;/code&gt; array includes both successfully and</span>
+<span class="doccomment">/// unsuccessfully processed records. Kinesis Data Streams attempts to process all records</span>
+<span class="doccomment">/// in each &lt;code&gt;PutRecords&lt;/code&gt; request. A single record failure does not stop the</span>
+<span class="doccomment">/// processing of subsequent records. As a result, PutRecords doesn&#39;t guarantee the ordering</span>
+<span class="doccomment">/// of records. If you need to read records in the same order they are written to the</span>
+<span class="doccomment">/// stream, use &lt;a&gt;PutRecord&lt;/a&gt; instead of &lt;code&gt;PutRecords&lt;/code&gt;, and write to</span>
+<span class="doccomment">/// the same shard.&lt;/p&gt;</span>
+<span class="doccomment">/// &lt;p&gt;A successfully processed record includes &lt;code&gt;ShardId&lt;/code&gt; and</span>
+<span class="doccomment">/// &lt;code&gt;SequenceNumber&lt;/code&gt; values. The &lt;code&gt;ShardId&lt;/code&gt; parameter identifies</span>
+<span class="doccomment">/// the shard in the stream where the record is stored. The &lt;code&gt;SequenceNumber&lt;/code&gt;</span>
+<span class="doccomment">/// parameter is an identifier assigned to the put record, unique to all records in the</span>
+<span class="doccomment">/// stream.&lt;/p&gt;</span>
+<span class="doccomment">/// &lt;p&gt;An unsuccessfully processed record includes &lt;code&gt;ErrorCode&lt;/code&gt; and</span>
+<span class="doccomment">/// &lt;code&gt;ErrorMessage&lt;/code&gt; values. &lt;code&gt;ErrorCode&lt;/code&gt; reflects the type of error</span>
+<span class="doccomment">/// and can be one of the following values:</span>
+<span class="doccomment">/// &lt;code&gt;ProvisionedThroughputExceededException&lt;/code&gt; or &lt;code&gt;InternalFailure&lt;/code&gt;.</span>
+<span class="doccomment">/// &lt;code&gt;ErrorMessage&lt;/code&gt; provides more detailed information about the</span>
+<span class="doccomment">/// &lt;code&gt;ProvisionedThroughputExceededException&lt;/code&gt; exception including the account</span>
+<span class="doccomment">/// ID, stream name, and shard ID of the record that was throttled. For more information</span>
+<span class="doccomment">/// about partially successful responses, see &lt;a href=&quot;https://docs.aws.amazon.com/kinesis/latest/dev/kinesis-using-sdk-java-add-data-to-stream.html#kinesis-using-sdk-java-putrecords&quot;&gt;Adding Multiple Records with PutRecords&lt;/a&gt; in the &lt;i&gt;Amazon Kinesis</span>
+<span class="doccomment">/// Data Streams Developer Guide&lt;/i&gt;.&lt;/p&gt;</span>
+<span class="doccomment">/// &lt;important&gt;</span>
+<span class="doccomment">/// &lt;p&gt;After you write a record to a stream, you cannot modify that record or its order</span>
+<span class="doccomment">/// within the stream.&lt;/p&gt;</span>
+<span class="doccomment">/// &lt;/important&gt;</span>
+<span class="doccomment">/// &lt;p&gt;By default, data records are accessible for 24 hours from the time that they are</span>
+<span class="doccomment">/// added to a stream. You can use &lt;a&gt;IncreaseStreamRetentionPeriod&lt;/a&gt; or &lt;a&gt;DecreaseStreamRetentionPeriod&lt;/a&gt; to modify this retention period.&lt;/p&gt;</span>
+<span class="attribute">#[<span class="ident">derive</span>(<span class="ident">std::default::Default</span>, <span class="ident">std::clone::Clone</span>, <span class="ident">std::fmt::Debug</span>)]</span>
+<span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">PutRecords</span> {
+    <span class="ident">_private</span>: (),
+}
+<span class="kw">impl</span> <span class="ident">PutRecords</span> {
+    <span class="doccomment">/// Creates a new builder-style object to manufacture [`PutRecordsInput`](crate::input::PutRecordsInput)</span>
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">builder</span>() <span class="op">-</span><span class="op">&gt;</span> <span class="kw">crate</span><span class="ident">::input::put_records_input::Builder</span> {
+        <span class="kw">crate</span><span class="ident">::input::put_records_input::Builder::default</span>()
+    }
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">new</span>() <span class="op">-</span><span class="op">&gt;</span> <span class="self">Self</span> {
+        <span class="self">Self</span> { <span class="ident">_private</span>: () }
+    }
+}
+<span class="kw">impl</span> <span class="ident">smithy_http::response::ParseStrictResponse</span> <span class="kw">for</span> <span class="ident">PutRecords</span> {
+    <span class="kw">type</span> <span class="ident">Output</span> <span class="op">=</span>
+        <span class="ident">std::result::Result</span><span class="op">&lt;</span><span class="kw">crate</span><span class="ident">::output::PutRecordsOutput</span>, <span class="kw">crate</span><span class="ident">::error::PutRecordsError</span><span class="op">&gt;</span>;
+    <span class="kw">fn</span> <span class="ident">parse</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">response</span>: <span class="kw-2">&amp;</span><span class="ident">http::Response</span><span class="op">&lt;</span><span class="ident">bytes::Bytes</span><span class="op">&gt;</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="self">Self</span><span class="ident">::Output</span> {
+        <span class="kw">if</span> <span class="op">!</span><span class="ident">response</span>.<span class="ident">status</span>().<span class="ident">is_success</span>() <span class="op">&amp;&amp;</span> <span class="ident">response</span>.<span class="ident">status</span>().<span class="ident">as_u16</span>() <span class="op">!</span><span class="op">=</span> <span class="number">200</span> {
+            <span class="kw">crate</span><span class="ident">::operation_deser::parse_put_records_error</span>(<span class="ident">response</span>)
+        } <span class="kw">else</span> {
+            <span class="kw">crate</span><span class="ident">::operation_deser::parse_put_records_response</span>(<span class="ident">response</span>)
+        }
+    }
+}
+
+<span class="doccomment">/// &lt;p&gt;Registers a consumer with a Kinesis data stream. When you use this operation, the</span>
+<span class="doccomment">/// consumer you register can then call &lt;a&gt;SubscribeToShard&lt;/a&gt; to receive data</span>
+<span class="doccomment">/// from the stream using enhanced fan-out, at a rate of up to 2 MiB per second for every</span>
+<span class="doccomment">/// shard you subscribe to. This rate is unaffected by the total number of consumers that</span>
+<span class="doccomment">/// read from the same stream.&lt;/p&gt;</span>
+<span class="doccomment">/// &lt;p&gt;You can register up to 20 consumers per stream. A given consumer can only be</span>
+<span class="doccomment">/// registered with one stream at a time.&lt;/p&gt;</span>
+<span class="doccomment">/// &lt;p&gt;For an example of how to use this operations, see &lt;a href=&quot;/streams/latest/dev/building-enhanced-consumers-api.html&quot;&gt;Enhanced Fan-Out</span>
+<span class="doccomment">/// Using the Kinesis Data Streams API&lt;/a&gt;.&lt;/p&gt;</span>
+<span class="doccomment">/// &lt;p&gt;The use of this operation has a limit of five transactions per second per account.</span>
+<span class="doccomment">/// Also, only 5 consumers can be created simultaneously. In other words, you cannot have</span>
+<span class="doccomment">/// more than 5 consumers in a &lt;code&gt;CREATING&lt;/code&gt; status at the same time. Registering a</span>
+<span class="doccomment">/// 6th consumer while there are 5 in a &lt;code&gt;CREATING&lt;/code&gt; status results in a</span>
+<span class="doccomment">/// &lt;code&gt;LimitExceededException&lt;/code&gt;.&lt;/p&gt;</span>
+<span class="attribute">#[<span class="ident">derive</span>(<span class="ident">std::default::Default</span>, <span class="ident">std::clone::Clone</span>, <span class="ident">std::fmt::Debug</span>)]</span>
+<span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">RegisterStreamConsumer</span> {
+    <span class="ident">_private</span>: (),
+}
+<span class="kw">impl</span> <span class="ident">RegisterStreamConsumer</span> {
+    <span class="doccomment">/// Creates a new builder-style object to manufacture [`RegisterStreamConsumerInput`](crate::input::RegisterStreamConsumerInput)</span>
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">builder</span>() <span class="op">-</span><span class="op">&gt;</span> <span class="kw">crate</span><span class="ident">::input::register_stream_consumer_input::Builder</span> {
+        <span class="kw">crate</span><span class="ident">::input::register_stream_consumer_input::Builder::default</span>()
+    }
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">new</span>() <span class="op">-</span><span class="op">&gt;</span> <span class="self">Self</span> {
+        <span class="self">Self</span> { <span class="ident">_private</span>: () }
+    }
+}
+<span class="kw">impl</span> <span class="ident">smithy_http::response::ParseStrictResponse</span> <span class="kw">for</span> <span class="ident">RegisterStreamConsumer</span> {
+    <span class="kw">type</span> <span class="ident">Output</span> <span class="op">=</span> <span class="ident">std::result::Result</span><span class="op">&lt;</span>
+        <span class="kw">crate</span><span class="ident">::output::RegisterStreamConsumerOutput</span>,
+        <span class="kw">crate</span><span class="ident">::error::RegisterStreamConsumerError</span>,
+    <span class="op">&gt;</span>;
+    <span class="kw">fn</span> <span class="ident">parse</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">response</span>: <span class="kw-2">&amp;</span><span class="ident">http::Response</span><span class="op">&lt;</span><span class="ident">bytes::Bytes</span><span class="op">&gt;</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="self">Self</span><span class="ident">::Output</span> {
+        <span class="kw">if</span> <span class="op">!</span><span class="ident">response</span>.<span class="ident">status</span>().<span class="ident">is_success</span>() <span class="op">&amp;&amp;</span> <span class="ident">response</span>.<span class="ident">status</span>().<span class="ident">as_u16</span>() <span class="op">!</span><span class="op">=</span> <span class="number">200</span> {
+            <span class="kw">crate</span><span class="ident">::operation_deser::parse_register_stream_consumer_error</span>(<span class="ident">response</span>)
+        } <span class="kw">else</span> {
+            <span class="kw">crate</span><span class="ident">::operation_deser::parse_register_stream_consumer_response</span>(<span class="ident">response</span>)
+        }
+    }
+}
+
+<span class="doccomment">/// &lt;p&gt;Removes tags from the specified Kinesis data stream. Removed tags are deleted and</span>
+<span class="doccomment">/// cannot be recovered after this operation successfully completes.&lt;/p&gt;</span>
+<span class="doccomment">/// &lt;p&gt;If you specify a tag that does not exist, it is ignored.&lt;/p&gt;</span>
+<span class="doccomment">/// &lt;p&gt;</span>
+<span class="doccomment">/// &lt;a&gt;RemoveTagsFromStream&lt;/a&gt; has a limit of five transactions per second per</span>
+<span class="doccomment">/// account.&lt;/p&gt;</span>
+<span class="attribute">#[<span class="ident">derive</span>(<span class="ident">std::default::Default</span>, <span class="ident">std::clone::Clone</span>, <span class="ident">std::fmt::Debug</span>)]</span>
+<span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">RemoveTagsFromStream</span> {
+    <span class="ident">_private</span>: (),
+}
+<span class="kw">impl</span> <span class="ident">RemoveTagsFromStream</span> {
+    <span class="doccomment">/// Creates a new builder-style object to manufacture [`RemoveTagsFromStreamInput`](crate::input::RemoveTagsFromStreamInput)</span>
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">builder</span>() <span class="op">-</span><span class="op">&gt;</span> <span class="kw">crate</span><span class="ident">::input::remove_tags_from_stream_input::Builder</span> {
+        <span class="kw">crate</span><span class="ident">::input::remove_tags_from_stream_input::Builder::default</span>()
+    }
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">new</span>() <span class="op">-</span><span class="op">&gt;</span> <span class="self">Self</span> {
+        <span class="self">Self</span> { <span class="ident">_private</span>: () }
+    }
+}
+<span class="kw">impl</span> <span class="ident">smithy_http::response::ParseStrictResponse</span> <span class="kw">for</span> <span class="ident">RemoveTagsFromStream</span> {
+    <span class="kw">type</span> <span class="ident">Output</span> <span class="op">=</span> <span class="ident">std::result::Result</span><span class="op">&lt;</span>
+        <span class="kw">crate</span><span class="ident">::output::RemoveTagsFromStreamOutput</span>,
+        <span class="kw">crate</span><span class="ident">::error::RemoveTagsFromStreamError</span>,
+    <span class="op">&gt;</span>;
+    <span class="kw">fn</span> <span class="ident">parse</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">response</span>: <span class="kw-2">&amp;</span><span class="ident">http::Response</span><span class="op">&lt;</span><span class="ident">bytes::Bytes</span><span class="op">&gt;</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="self">Self</span><span class="ident">::Output</span> {
+        <span class="kw">if</span> <span class="op">!</span><span class="ident">response</span>.<span class="ident">status</span>().<span class="ident">is_success</span>() <span class="op">&amp;&amp;</span> <span class="ident">response</span>.<span class="ident">status</span>().<span class="ident">as_u16</span>() <span class="op">!</span><span class="op">=</span> <span class="number">200</span> {
+            <span class="kw">crate</span><span class="ident">::operation_deser::parse_remove_tags_from_stream_error</span>(<span class="ident">response</span>)
+        } <span class="kw">else</span> {
+            <span class="kw">crate</span><span class="ident">::operation_deser::parse_remove_tags_from_stream_response</span>(<span class="ident">response</span>)
+        }
+    }
+}
+
+<span class="doccomment">/// &lt;p&gt;Splits a shard into two new shards in the Kinesis data stream, to increase the</span>
+<span class="doccomment">/// stream&#39;s capacity to ingest and transport data. &lt;code&gt;SplitShard&lt;/code&gt; is called when</span>
+<span class="doccomment">/// there is a need to increase the overall capacity of a stream because of an expected</span>
+<span class="doccomment">/// increase in the volume of data records being ingested. &lt;/p&gt;</span>
+<span class="doccomment">/// &lt;p&gt;You can also use &lt;code&gt;SplitShard&lt;/code&gt; when a shard appears to be approaching its</span>
+<span class="doccomment">/// maximum utilization; for example, the producers sending data into the specific shard are</span>
+<span class="doccomment">/// suddenly sending more than previously anticipated. You can also call</span>
+<span class="doccomment">/// &lt;code&gt;SplitShard&lt;/code&gt; to increase stream capacity, so that more Kinesis Data</span>
+<span class="doccomment">/// Streams applications can simultaneously read data from the stream for real-time</span>
+<span class="doccomment">/// processing. &lt;/p&gt;</span>
+<span class="doccomment">/// &lt;p&gt;You must specify the shard to be split and the new hash key, which is the position</span>
+<span class="doccomment">/// in the shard where the shard gets split in two. In many cases, the new hash key might be</span>
+<span class="doccomment">/// the average of the beginning and ending hash key, but it can be any hash key value in</span>
+<span class="doccomment">/// the range being mapped into the shard. For more information, see &lt;a href=&quot;https://docs.aws.amazon.com/kinesis/latest/dev/kinesis-using-sdk-java-resharding-split.html&quot;&gt;Split a</span>
+<span class="doccomment">/// Shard&lt;/a&gt; in the &lt;i&gt;Amazon Kinesis Data Streams Developer</span>
+<span class="doccomment">/// Guide&lt;/i&gt;.&lt;/p&gt;</span>
+<span class="doccomment">/// &lt;p&gt;You can use &lt;a&gt;DescribeStream&lt;/a&gt; to determine the shard ID and hash key</span>
+<span class="doccomment">/// values for the &lt;code&gt;ShardToSplit&lt;/code&gt; and &lt;code&gt;NewStartingHashKey&lt;/code&gt; parameters</span>
+<span class="doccomment">/// that are specified in the &lt;code&gt;SplitShard&lt;/code&gt; request.&lt;/p&gt;</span>
+<span class="doccomment">/// &lt;p&gt;</span>
+<span class="doccomment">/// &lt;code&gt;SplitShard&lt;/code&gt; is an asynchronous operation. Upon receiving a</span>
+<span class="doccomment">/// &lt;code&gt;SplitShard&lt;/code&gt; request, Kinesis Data Streams immediately returns a response</span>
+<span class="doccomment">/// and sets the stream status to &lt;code&gt;UPDATING&lt;/code&gt;. After the operation is completed,</span>
+<span class="doccomment">/// Kinesis Data Streams sets the stream status to &lt;code&gt;ACTIVE&lt;/code&gt;. Read and write</span>
+<span class="doccomment">/// operations continue to work while the stream is in the &lt;code&gt;UPDATING&lt;/code&gt; state. &lt;/p&gt;</span>
+<span class="doccomment">/// &lt;p&gt;You can use &lt;code&gt;DescribeStream&lt;/code&gt; to check the status of the stream, which is</span>
+<span class="doccomment">/// returned in &lt;code&gt;StreamStatus&lt;/code&gt;. If the stream is in the &lt;code&gt;ACTIVE&lt;/code&gt;</span>
+<span class="doccomment">/// state, you can call &lt;code&gt;SplitShard&lt;/code&gt;. If a stream is in &lt;code&gt;CREATING&lt;/code&gt; or</span>
+<span class="doccomment">/// &lt;code&gt;UPDATING&lt;/code&gt; or &lt;code&gt;DELETING&lt;/code&gt; states, &lt;code&gt;DescribeStream&lt;/code&gt;</span>
+<span class="doccomment">/// returns a &lt;code&gt;ResourceInUseException&lt;/code&gt;.&lt;/p&gt;</span>
+<span class="doccomment">/// &lt;p&gt;If the specified stream does not exist, &lt;code&gt;DescribeStream&lt;/code&gt; returns a</span>
+<span class="doccomment">/// &lt;code&gt;ResourceNotFoundException&lt;/code&gt;. If you try to create more shards than are</span>
+<span class="doccomment">/// authorized for your account, you receive a &lt;code&gt;LimitExceededException&lt;/code&gt;. &lt;/p&gt;</span>
+<span class="doccomment">/// &lt;p&gt;For the default shard limit for an AWS account, see &lt;a href=&quot;https://docs.aws.amazon.com/kinesis/latest/dev/service-sizes-and-limits.html&quot;&gt;Kinesis Data Streams</span>
+<span class="doccomment">/// Limits&lt;/a&gt; in the &lt;i&gt;Amazon Kinesis Data Streams Developer</span>
+<span class="doccomment">/// Guide&lt;/i&gt;. To increase this limit, &lt;a href=&quot;https://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html&quot;&gt;contact AWS</span>
+<span class="doccomment">/// Support&lt;/a&gt;.&lt;/p&gt;</span>
+<span class="doccomment">/// &lt;p&gt;If you try to operate on too many streams simultaneously using &lt;a&gt;CreateStream&lt;/a&gt;, &lt;a&gt;DeleteStream&lt;/a&gt;, &lt;a&gt;MergeShards&lt;/a&gt;, and/or &lt;a&gt;SplitShard&lt;/a&gt;, you receive a</span>
+<span class="doccomment">/// &lt;code&gt;LimitExceededException&lt;/code&gt;. &lt;/p&gt;</span>
+<span class="doccomment">/// &lt;p&gt;</span>
+<span class="doccomment">/// &lt;code&gt;SplitShard&lt;/code&gt; has a limit of five transactions per second per</span>
+<span class="doccomment">/// account.&lt;/p&gt;</span>
+<span class="attribute">#[<span class="ident">derive</span>(<span class="ident">std::default::Default</span>, <span class="ident">std::clone::Clone</span>, <span class="ident">std::fmt::Debug</span>)]</span>
+<span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">SplitShard</span> {
+    <span class="ident">_private</span>: (),
+}
+<span class="kw">impl</span> <span class="ident">SplitShard</span> {
+    <span class="doccomment">/// Creates a new builder-style object to manufacture [`SplitShardInput`](crate::input::SplitShardInput)</span>
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">builder</span>() <span class="op">-</span><span class="op">&gt;</span> <span class="kw">crate</span><span class="ident">::input::split_shard_input::Builder</span> {
+        <span class="kw">crate</span><span class="ident">::input::split_shard_input::Builder::default</span>()
+    }
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">new</span>() <span class="op">-</span><span class="op">&gt;</span> <span class="self">Self</span> {
+        <span class="self">Self</span> { <span class="ident">_private</span>: () }
+    }
+}
+<span class="kw">impl</span> <span class="ident">smithy_http::response::ParseStrictResponse</span> <span class="kw">for</span> <span class="ident">SplitShard</span> {
+    <span class="kw">type</span> <span class="ident">Output</span> <span class="op">=</span>
+        <span class="ident">std::result::Result</span><span class="op">&lt;</span><span class="kw">crate</span><span class="ident">::output::SplitShardOutput</span>, <span class="kw">crate</span><span class="ident">::error::SplitShardError</span><span class="op">&gt;</span>;
+    <span class="kw">fn</span> <span class="ident">parse</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">response</span>: <span class="kw-2">&amp;</span><span class="ident">http::Response</span><span class="op">&lt;</span><span class="ident">bytes::Bytes</span><span class="op">&gt;</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="self">Self</span><span class="ident">::Output</span> {
+        <span class="kw">if</span> <span class="op">!</span><span class="ident">response</span>.<span class="ident">status</span>().<span class="ident">is_success</span>() <span class="op">&amp;&amp;</span> <span class="ident">response</span>.<span class="ident">status</span>().<span class="ident">as_u16</span>() <span class="op">!</span><span class="op">=</span> <span class="number">200</span> {
+            <span class="kw">crate</span><span class="ident">::operation_deser::parse_split_shard_error</span>(<span class="ident">response</span>)
+        } <span class="kw">else</span> {
+            <span class="kw">crate</span><span class="ident">::operation_deser::parse_split_shard_response</span>(<span class="ident">response</span>)
+        }
+    }
+}
+
+<span class="doccomment">/// &lt;p&gt;Enables or updates server-side encryption using an AWS KMS key for a specified</span>
+<span class="doccomment">/// stream. &lt;/p&gt;</span>
+<span class="doccomment">/// &lt;p&gt;Starting encryption is an asynchronous operation. Upon receiving the request,</span>
+<span class="doccomment">/// Kinesis Data Streams returns immediately and sets the status of the stream to</span>
+<span class="doccomment">/// &lt;code&gt;UPDATING&lt;/code&gt;. After the update is complete, Kinesis Data Streams sets the</span>
+<span class="doccomment">/// status of the stream back to &lt;code&gt;ACTIVE&lt;/code&gt;. Updating or applying encryption</span>
+<span class="doccomment">/// normally takes a few seconds to complete, but it can take minutes. You can continue to</span>
+<span class="doccomment">/// read and write data to your stream while its status is &lt;code&gt;UPDATING&lt;/code&gt;. Once the</span>
+<span class="doccomment">/// status of the stream is &lt;code&gt;ACTIVE&lt;/code&gt;, encryption begins for records written to</span>
+<span class="doccomment">/// the stream. &lt;/p&gt;</span>
+<span class="doccomment">/// &lt;p&gt;API Limits: You can successfully apply a new AWS KMS key for server-side encryption</span>
+<span class="doccomment">/// 25 times in a rolling 24-hour period.&lt;/p&gt;</span>
+<span class="doccomment">/// &lt;p&gt;Note: It can take up to 5 seconds after the stream is in an &lt;code&gt;ACTIVE&lt;/code&gt;</span>
+<span class="doccomment">/// status before all records written to the stream are encrypted. After you enable</span>
+<span class="doccomment">/// encryption, you can verify that encryption is applied by inspecting the API response</span>
+<span class="doccomment">/// from &lt;code&gt;PutRecord&lt;/code&gt; or &lt;code&gt;PutRecords&lt;/code&gt;.&lt;/p&gt;</span>
+<span class="attribute">#[<span class="ident">derive</span>(<span class="ident">std::default::Default</span>, <span class="ident">std::clone::Clone</span>, <span class="ident">std::fmt::Debug</span>)]</span>
+<span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">StartStreamEncryption</span> {
+    <span class="ident">_private</span>: (),
+}
+<span class="kw">impl</span> <span class="ident">StartStreamEncryption</span> {
+    <span class="doccomment">/// Creates a new builder-style object to manufacture [`StartStreamEncryptionInput`](crate::input::StartStreamEncryptionInput)</span>
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">builder</span>() <span class="op">-</span><span class="op">&gt;</span> <span class="kw">crate</span><span class="ident">::input::start_stream_encryption_input::Builder</span> {
+        <span class="kw">crate</span><span class="ident">::input::start_stream_encryption_input::Builder::default</span>()
+    }
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">new</span>() <span class="op">-</span><span class="op">&gt;</span> <span class="self">Self</span> {
+        <span class="self">Self</span> { <span class="ident">_private</span>: () }
+    }
+}
+<span class="kw">impl</span> <span class="ident">smithy_http::response::ParseStrictResponse</span> <span class="kw">for</span> <span class="ident">StartStreamEncryption</span> {
+    <span class="kw">type</span> <span class="ident">Output</span> <span class="op">=</span> <span class="ident">std::result::Result</span><span class="op">&lt;</span>
+        <span class="kw">crate</span><span class="ident">::output::StartStreamEncryptionOutput</span>,
+        <span class="kw">crate</span><span class="ident">::error::StartStreamEncryptionError</span>,
+    <span class="op">&gt;</span>;
+    <span class="kw">fn</span> <span class="ident">parse</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">response</span>: <span class="kw-2">&amp;</span><span class="ident">http::Response</span><span class="op">&lt;</span><span class="ident">bytes::Bytes</span><span class="op">&gt;</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="self">Self</span><span class="ident">::Output</span> {
+        <span class="kw">if</span> <span class="op">!</span><span class="ident">response</span>.<span class="ident">status</span>().<span class="ident">is_success</span>() <span class="op">&amp;&amp;</span> <span class="ident">response</span>.<span class="ident">status</span>().<span class="ident">as_u16</span>() <span class="op">!</span><span class="op">=</span> <span class="number">200</span> {
+            <span class="kw">crate</span><span class="ident">::operation_deser::parse_start_stream_encryption_error</span>(<span class="ident">response</span>)
+        } <span class="kw">else</span> {
+            <span class="kw">crate</span><span class="ident">::operation_deser::parse_start_stream_encryption_response</span>(<span class="ident">response</span>)
+        }
+    }
+}
+
+<span class="doccomment">/// &lt;p&gt;Disables server-side encryption for a specified stream. &lt;/p&gt;</span>
+<span class="doccomment">/// &lt;p&gt;Stopping encryption is an asynchronous operation. Upon receiving the request,</span>
+<span class="doccomment">/// Kinesis Data Streams returns immediately and sets the status of the stream to</span>
+<span class="doccomment">/// &lt;code&gt;UPDATING&lt;/code&gt;. After the update is complete, Kinesis Data Streams sets the</span>
+<span class="doccomment">/// status of the stream back to &lt;code&gt;ACTIVE&lt;/code&gt;. Stopping encryption normally takes a</span>
+<span class="doccomment">/// few seconds to complete, but it can take minutes. You can continue to read and write</span>
+<span class="doccomment">/// data to your stream while its status is &lt;code&gt;UPDATING&lt;/code&gt;. Once the status of the</span>
+<span class="doccomment">/// stream is &lt;code&gt;ACTIVE&lt;/code&gt;, records written to the stream are no longer encrypted by</span>
+<span class="doccomment">/// Kinesis Data Streams. &lt;/p&gt;</span>
+<span class="doccomment">/// &lt;p&gt;API Limits: You can successfully disable server-side encryption 25 times in a</span>
+<span class="doccomment">/// rolling 24-hour period. &lt;/p&gt;</span>
+<span class="doccomment">/// &lt;p&gt;Note: It can take up to 5 seconds after the stream is in an &lt;code&gt;ACTIVE&lt;/code&gt;</span>
+<span class="doccomment">/// status before all records written to the stream are no longer subject to encryption.</span>
+<span class="doccomment">/// After you disabled encryption, you can verify that encryption is not applied by</span>
+<span class="doccomment">/// inspecting the API response from &lt;code&gt;PutRecord&lt;/code&gt; or</span>
+<span class="doccomment">/// &lt;code&gt;PutRecords&lt;/code&gt;.&lt;/p&gt;</span>
+<span class="attribute">#[<span class="ident">derive</span>(<span class="ident">std::default::Default</span>, <span class="ident">std::clone::Clone</span>, <span class="ident">std::fmt::Debug</span>)]</span>
+<span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">StopStreamEncryption</span> {
+    <span class="ident">_private</span>: (),
+}
+<span class="kw">impl</span> <span class="ident">StopStreamEncryption</span> {
+    <span class="doccomment">/// Creates a new builder-style object to manufacture [`StopStreamEncryptionInput`](crate::input::StopStreamEncryptionInput)</span>
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">builder</span>() <span class="op">-</span><span class="op">&gt;</span> <span class="kw">crate</span><span class="ident">::input::stop_stream_encryption_input::Builder</span> {
+        <span class="kw">crate</span><span class="ident">::input::stop_stream_encryption_input::Builder::default</span>()
+    }
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">new</span>() <span class="op">-</span><span class="op">&gt;</span> <span class="self">Self</span> {
+        <span class="self">Self</span> { <span class="ident">_private</span>: () }
+    }
+}
+<span class="kw">impl</span> <span class="ident">smithy_http::response::ParseStrictResponse</span> <span class="kw">for</span> <span class="ident">StopStreamEncryption</span> {
+    <span class="kw">type</span> <span class="ident">Output</span> <span class="op">=</span> <span class="ident">std::result::Result</span><span class="op">&lt;</span>
+        <span class="kw">crate</span><span class="ident">::output::StopStreamEncryptionOutput</span>,
+        <span class="kw">crate</span><span class="ident">::error::StopStreamEncryptionError</span>,
+    <span class="op">&gt;</span>;
+    <span class="kw">fn</span> <span class="ident">parse</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">response</span>: <span class="kw-2">&amp;</span><span class="ident">http::Response</span><span class="op">&lt;</span><span class="ident">bytes::Bytes</span><span class="op">&gt;</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="self">Self</span><span class="ident">::Output</span> {
+        <span class="kw">if</span> <span class="op">!</span><span class="ident">response</span>.<span class="ident">status</span>().<span class="ident">is_success</span>() <span class="op">&amp;&amp;</span> <span class="ident">response</span>.<span class="ident">status</span>().<span class="ident">as_u16</span>() <span class="op">!</span><span class="op">=</span> <span class="number">200</span> {
+            <span class="kw">crate</span><span class="ident">::operation_deser::parse_stop_stream_encryption_error</span>(<span class="ident">response</span>)
+        } <span class="kw">else</span> {
+            <span class="kw">crate</span><span class="ident">::operation_deser::parse_stop_stream_encryption_response</span>(<span class="ident">response</span>)
+        }
+    }
+}
+
+<span class="doccomment">/// &lt;p&gt;Updates the shard count of the specified stream to the specified number of</span>
+<span class="doccomment">/// shards.&lt;/p&gt;</span>
+<span class="doccomment">/// &lt;p&gt;Updating the shard count is an asynchronous operation. Upon receiving the request,</span>
+<span class="doccomment">/// Kinesis Data Streams returns immediately and sets the status of the stream to</span>
+<span class="doccomment">/// &lt;code&gt;UPDATING&lt;/code&gt;. After the update is complete, Kinesis Data Streams sets the</span>
+<span class="doccomment">/// status of the stream back to &lt;code&gt;ACTIVE&lt;/code&gt;. Depending on the size of the stream,</span>
+<span class="doccomment">/// the scaling action could take a few minutes to complete. You can continue to read and</span>
+<span class="doccomment">/// write data to your stream while its status is &lt;code&gt;UPDATING&lt;/code&gt;.&lt;/p&gt;</span>
+<span class="doccomment">/// &lt;p&gt;To update the shard count, Kinesis Data Streams performs splits or merges on</span>
+<span class="doccomment">/// individual shards. This can cause short-lived shards to be created, in addition to the</span>
+<span class="doccomment">/// final shards. These short-lived shards count towards your total shard limit for your</span>
+<span class="doccomment">/// account in the Region.&lt;/p&gt;</span>
+<span class="doccomment">/// &lt;p&gt;When using this operation, we recommend that you specify a target shard count that</span>
+<span class="doccomment">/// is a multiple of 25% (25%, 50%, 75%, 100%). You can specify any target value within your</span>
+<span class="doccomment">/// shard limit. However, if you specify a target that isn&#39;t a multiple of 25%, the scaling</span>
+<span class="doccomment">/// action might take longer to complete. &lt;/p&gt;</span>
+<span class="doccomment">/// &lt;p&gt;This operation has the following default limits. By default, you cannot do the</span>
+<span class="doccomment">/// following:&lt;/p&gt;</span>
+<span class="doccomment">/// &lt;ul&gt;</span>
+<span class="doccomment">/// &lt;li&gt;</span>
+<span class="doccomment">/// &lt;p&gt;Scale more than ten times per rolling 24-hour period per stream&lt;/p&gt;</span>
+<span class="doccomment">/// &lt;/li&gt;</span>
+<span class="doccomment">/// &lt;li&gt;</span>
+<span class="doccomment">/// &lt;p&gt;Scale up to more than double your current shard count for a</span>
+<span class="doccomment">/// stream&lt;/p&gt;</span>
+<span class="doccomment">/// &lt;/li&gt;</span>
+<span class="doccomment">/// &lt;li&gt;</span>
+<span class="doccomment">/// &lt;p&gt;Scale down below half your current shard count for a stream&lt;/p&gt;</span>
+<span class="doccomment">/// &lt;/li&gt;</span>
+<span class="doccomment">/// &lt;li&gt;</span>
+<span class="doccomment">/// &lt;p&gt;Scale up to more than 500 shards in a stream&lt;/p&gt;</span>
+<span class="doccomment">/// &lt;/li&gt;</span>
+<span class="doccomment">/// &lt;li&gt;</span>
+<span class="doccomment">/// &lt;p&gt;Scale a stream with more than 500 shards down unless the result is less</span>
+<span class="doccomment">/// than 500 shards&lt;/p&gt;</span>
+<span class="doccomment">/// &lt;/li&gt;</span>
+<span class="doccomment">/// &lt;li&gt;</span>
+<span class="doccomment">/// &lt;p&gt;Scale up to more than the shard limit for your account&lt;/p&gt;</span>
+<span class="doccomment">/// &lt;/li&gt;</span>
+<span class="doccomment">/// &lt;/ul&gt;</span>
+<span class="doccomment">/// &lt;p&gt;For the default limits for an AWS account, see &lt;a href=&quot;https://docs.aws.amazon.com/kinesis/latest/dev/service-sizes-and-limits.html&quot;&gt;Streams Limits&lt;/a&gt; in the</span>
+<span class="doccomment">/// &lt;i&gt;Amazon Kinesis Data Streams Developer Guide&lt;/i&gt;. To request an</span>
+<span class="doccomment">/// increase in the call rate limit, the shard limit for this API, or your overall shard</span>
+<span class="doccomment">/// limit, use the &lt;a href=&quot;https://console.aws.amazon.com/support/v1#/case/create?issueType=service-limit-increase&amp;limitType=service-code-kinesis&quot;&gt;limits form&lt;/a&gt;.&lt;/p&gt;</span>
+<span class="attribute">#[<span class="ident">derive</span>(<span class="ident">std::default::Default</span>, <span class="ident">std::clone::Clone</span>, <span class="ident">std::fmt::Debug</span>)]</span>
+<span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">UpdateShardCount</span> {
+    <span class="ident">_private</span>: (),
+}
+<span class="kw">impl</span> <span class="ident">UpdateShardCount</span> {
+    <span class="doccomment">/// Creates a new builder-style object to manufacture [`UpdateShardCountInput`](crate::input::UpdateShardCountInput)</span>
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">builder</span>() <span class="op">-</span><span class="op">&gt;</span> <span class="kw">crate</span><span class="ident">::input::update_shard_count_input::Builder</span> {
+        <span class="kw">crate</span><span class="ident">::input::update_shard_count_input::Builder::default</span>()
+    }
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">new</span>() <span class="op">-</span><span class="op">&gt;</span> <span class="self">Self</span> {
+        <span class="self">Self</span> { <span class="ident">_private</span>: () }
+    }
+}
+<span class="kw">impl</span> <span class="ident">smithy_http::response::ParseStrictResponse</span> <span class="kw">for</span> <span class="ident">UpdateShardCount</span> {
+    <span class="kw">type</span> <span class="ident">Output</span> <span class="op">=</span> <span class="ident">std::result::Result</span><span class="op">&lt;</span>
+        <span class="kw">crate</span><span class="ident">::output::UpdateShardCountOutput</span>,
+        <span class="kw">crate</span><span class="ident">::error::UpdateShardCountError</span>,
+    <span class="op">&gt;</span>;
+    <span class="kw">fn</span> <span class="ident">parse</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">response</span>: <span class="kw-2">&amp;</span><span class="ident">http::Response</span><span class="op">&lt;</span><span class="ident">bytes::Bytes</span><span class="op">&gt;</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="self">Self</span><span class="ident">::Output</span> {
+        <span class="kw">if</span> <span class="op">!</span><span class="ident">response</span>.<span class="ident">status</span>().<span class="ident">is_success</span>() <span class="op">&amp;&amp;</span> <span class="ident">response</span>.<span class="ident">status</span>().<span class="ident">as_u16</span>() <span class="op">!</span><span class="op">=</span> <span class="number">200</span> {
+            <span class="kw">crate</span><span class="ident">::operation_deser::parse_update_shard_count_error</span>(<span class="ident">response</span>)
+        } <span class="kw">else</span> {
+            <span class="kw">crate</span><span class="ident">::operation_deser::parse_update_shard_count_response</span>(<span class="ident">response</span>)
+        }
+    }
+}
+</pre></div>
+</section><section id="search" class="content hidden"></section><div id="rustdoc-vars" data-root-path="../../" data-current-crate="aws_sdk_kinesis" data-search-index-js="../../search-index.js" data-search-js="../../search.js"></div>
+    <script src="../../main.js"></script><script src="../../source-script.js"></script><script src="../../source-files.js"></script>
+</body></html>

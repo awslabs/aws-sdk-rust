@@ -1,0 +1,1 @@
+initSidebarItems({"mod":[["middleware",""],["provider",""]],"struct":[["Credentials","AWS SDK Credentials"]]});

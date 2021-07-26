@@ -1,0 +1,1 @@
+initSidebarItems({"enum":[["XmlError",""]],"fn":[["try_data","Returns the data element at the current position"]],"struct":[["Attr",""],["Document","Xml Document abstraction"],["Name",""],["ScopedDecoder","XmlTag Abstraction"],["StartEl",""]],"type":[["Depth",""]]});

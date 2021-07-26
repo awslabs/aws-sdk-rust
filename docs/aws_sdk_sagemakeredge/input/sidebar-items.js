@@ -1,0 +1,1 @@
+initSidebarItems({"mod":[["get_device_registration_input","See `GetDeviceRegistrationInput`"],["send_heartbeat_input","See `SendHeartbeatInput`"]],"struct":[["GetDeviceRegistrationInput",""],["SendHeartbeatInput",""]]});

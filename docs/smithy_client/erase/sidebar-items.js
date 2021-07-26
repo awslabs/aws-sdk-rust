@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["DynConnector","A Smithy connector that uses dynamic dispatch."],["DynMiddleware","A Smithy middleware that uses dynamic dispatch."]],"type":[["DynClient","A [`Client`] whose connector and middleware types have been erased."]]});

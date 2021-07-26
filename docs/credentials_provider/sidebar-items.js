@@ -1,0 +1,1 @@
+initSidebarItems({"fn":[["main","Implements a basic version of ProvideCredentials with AWS STS and lists the tables in the region based on those credentials."]]});

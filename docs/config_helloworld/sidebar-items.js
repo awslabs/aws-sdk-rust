@@ -1,0 +1,1 @@
+initSidebarItems({"fn":[["main","Lists the configuration history for a resource"]],"struct":[["Opt",""]]});

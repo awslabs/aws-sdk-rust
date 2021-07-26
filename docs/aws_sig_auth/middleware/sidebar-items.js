@@ -1,0 +1,1 @@
+initSidebarItems({"enum":[["SigningStageError",""]],"struct":[["SigV4SigningStage","Middleware stage to sign requests with SigV4"]]});

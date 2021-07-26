@@ -1,0 +1,1 @@
+initSidebarItems({"enum":[["DecodeError",""]],"fn":[["decode","Decode `input` from base64 using the standard base64 alphabet"],["encode","Encode `input` into base64 using the standard base64 alphabet"]]});
