@@ -2,6 +2,9 @@
 
 The alpha SDK for Rust currently supports the checked services below. If you want to see a particular service added, please add your "+1" to the GitHub issue corresponding to the service. If the Issue doesn't exist yet, feel free to create one! This will help us prioritize adding new services to the SDK. 
 
+## Tier 1 Supported
+These services have been tested and include usage examples
+
 - [x] Amazon API Gateway
 - [x] Amazon Dynamodb
 - [x] Amazon Kinesis
@@ -44,201 +47,206 @@ The alpha SDK for Rust currently supports the checked services below. If you wan
 - [x] Amazon Autoscaling
 - [x] Amazon Autoscaling-Plans
 
-------
-- [ ] Amazon Access Analyzer
-- [ ] Amazon ACM
-- [ ] Amazon Acm-Pca
-- [ ] Amazon Alexa For Business
-- [ ] Amazon Amplify
-- [ ] Amazon API Gateway Management API
-- [ ] Amazon API Gateway v2
-- [ ] Amazon App Config
-- [ ] Amazon App Flow
-- [ ] Amazon Application-Insights
-- [ ] Amazon Appmesh
-- [ ] Amazon Appstream
-- [ ] Amazon App Sync
-- [ ] Amazon Athena
-- [ ] Amazon Awsmigrationhub
-- [ ] Amazon Backup
-- [ ] Amazon Braket
-- [ ] Amazon Budgets
-- [ ] Amazon Ce
-- [ ] Amazon Chime
-- [ ] Amazon Cloud9
-- [ ] Amazon Cloud Directory
-- [ ] Amazon Cloud Front
-- [ ] Amazon Cloudhsm
-- [ ] Amazon Cloudhsmv2
-- [ ] Amazon Cloudsearch
-- [ ] Amazon Cloudsearchdomain
-- [ ] Amazon Cloud Trail
-- [ ] Amazon Code Artifact
-- [ ] Amazon Code Build
-- [ ] Amazon Code Commit
-- [ ] Amazon Code Deploy
-- [ ] Amazon Code Guru Profiler
-- [ ] Amazon Code Guru Reviewer
-- [ ] Amazon Code Pipeline
-- [ ] Amazon Codestar
-- [ ] Amazon Codestar-Connections
-- [ ] Amazon Codestar-Notifications
-- [ ] Amazon Comprehend
-- [ ] Amazon Comprehendmedical
-- [ ] Amazon Compute-Optimizer
-- [ ] Amazon Connect
-- [ ] Amazon Connectparticipant
-- [ ] Amazon Cur
-- [ ] Amazon Databrew
-- [ ] Amazon Dataexchange
-- [ ] Amazon Datapipeline
-- [ ] Amazon Datasync
-- [ ] Amazon Dax
-- [ ] Amazon Detective
-- [ ] Amazon Device Farm
-- [ ] Amazon Direct Connect
-- [ ] Amazon Discovery
-- [ ] Amazon Dlm
-- [ ] Amazon DMS
-- [ ] Amazon Docdb
-- [ ] Amazon DS
-- [ ] Amazon Ec2-Instance-Connect
-- [ ] Amazon Elasticache
-- [ ] Amazon Elastic Beanstalk
-- [ ] Amazon Elastic Filesystem
-- [ ] Amazon Elastic Inference
-- [ ] Amazon Elastic Load Balancing
-- [ ] Amazon Elastic Load Balancing v2
-- [ ] Amazon Elastic Map Reduce
-- [ ] Amazon Elastic Transcoder
-- [ ] Amazon Email
-- [ ] Amazon Entitlement.Marketplace
-- [ ] Amazon ES
-- [ ] Amazon Eventbridge
-- [ ] Amazon Events
-- [ ] Amazon Firehose
-- [ ] Amazon FMS
-- [ ] Amazon Forecast
-- [ ] Amazon Forecast Query
-- [ ] Amazon Fraud Detector
-- [ ] Amazon FSX
-- [ ] Amazon Gamelift
-- [ ] Amazon Glacier
-- [ ] Amazon Global Accelerator
-- [ ] Amazon Glue
-- [ ] Amazon Greengrass
-- [ ] Amazon Groundstation
-- [ ] Amazon Guardduty
-- [ ] Amazon Health
-- [ ] Amazon Honeycode
-- [ ] Amazon Identitystore
-- [ ] Amazon Imagebuilder
-- [ ] Amazon Inspector
-- [ ] Amazon IOT
-- [ ] Amazon Iot1Click-Devices
-- [ ] Amazon Iot1Click-Projects
-- [ ] Amazon IoT Analytics
-- [ ] Amazon IoT Data
-- [ ] Amazon IoT Events
-- [ ] Amazon Iotevents-Data
-- [ ] Amazon Iot-Jobs-Data
-- [ ] Amazon Iotsecuretunneling
-- [ ] Amazon Iotsitewise
-- [ ] Amazon Iotthingsgraph
-- [ ] Amazon Ivs
-- [ ] Amazon Kafka
-- [ ] Amazon Kendra
-- [ ] Amazon Kinesis Analytics
-- [ ] Amazon Kinesis Analytics v2
-- [ ] Amazon Kinesis Video
-- [ ] Amazon Kinesis-Video-Archived-Media
-- [ ] Amazon Kinesis-Video-Media
-- [ ] Amazon Kinesis-Video-Signaling
-- [ ] Amazon Lake Formation
-- [ ] Amazon Lambda
-- [ ] Amazon Lex-Models
-- [ ] Amazon License-Manager
-- [ ] Amazon Lightsail
-- [ ] Amazon Logs
-- [ ] Amazon Machine Learning
-- [ ] Amazon Macie
-- [ ] Amazon Macie2
-- [ ] Amazon Managedblockchain
-- [ ] Amazon Marketplace-Catalog
-- [ ] Amazon Marketplacecommerceanalytics
-- [ ] Amazon Mediaconnect
-- [ ] Amazon Mediaconvert
-- [ ] Amazon Mediapackage-Vod
-- [ ] Amazon Mediastore
-- [ ] Amazon Mediastore-Data
-- [ ] Amazon Mediatailor
-- [ ] Amazon Meteringmarketplace
-- [ ] Amazon Migrationhub-Config
-- [ ] Amazon Mobile
-- [ ] Amazon Monitoring
-- [ ] Amazon Mq
-- [ ] Amazon Mturk-Requester
-- [ ] Amazon Neptune
-- [ ] Amazon Network-Firewall
-- [ ] Amazon Networkmanager
-- [ ] Amazon Ops Works
-- [ ] Amazon Opsworkscm
-- [ ] Amazon Organizations
-- [ ] Amazon Outposts
-- [ ] Amazon Personalize
-- [ ] Amazon Personalize-Events
-- [ ] Amazon Personalize-Runtime
-- [ ] Amazon Pi
-- [ ] Amazon Pinpoint
-- [ ] Amazon Pinpoint-Email
-- [ ] Amazon Pricing
-- [ ] Amazon Quicksight
-- [ ] Amazon RAM
-- [ ] Amazon Redshift
-- [ ] Amazon Redshift-Data
-- [ ] Amazon Rekognition
-- [ ] Amazon Resource-Groups
-- [ ] Amazon Resourcegroupstaggingapi
-- [ ] Amazon Robomaker
-- [ ] Amazon Route53Domains
-- [ ] Amazon Route53Resolver
-- [ ] Amazon Runtime.Lex
-- [ ] Amazon S3Control
-- [ ] Amazon S3Outposts
-- [ ] Amazon Savingsplans
-- [ ] Amazon Schemas
-- [ ] Amazon Securityhub
-- [ ] Amazon Serverlessrepo
-- [ ] Amazon Servicecatalog
-- [ ] Amazon Servicecatalog-Appregistry
-- [ ] Amazon Service Discovery
-- [ ] Amazon Service-Quotas
-- [ ] Amazon Shield
-- [ ] Amazon Signer
-- [ ] Amazon SMS
-- [ ] Amazon Sms-Voice
-- [ ] Amazon SSO
-- [ ] Amazon Sso-Admin
-- [ ] Amazon Sso-Oidc
-- [ ] Amazon States
-- [ ] Amazon Storagegateway
-- [ ] Amazon Streams.Dynamodb
-- [ ] Amazon Support
-- [ ] Amazon Swf
-- [ ] Amazon Synthetics
-- [ ] Amazon Textract
+## Tier 2 Support
+These services have not yet been manually tested by the SDK team and may not have usage examples yet. Please report any issues you find!
+
+- [x] Amazon Access Analyzer
+- [x] Amazon ACM
+- [x] Amazon Acm-Pca
+- [x] Amazon Alexa For Business
+- [x] Amazon Amplify
+- [x] Amazon API Gateway Management API
+- [x] Amazon API Gateway v2
+- [x] Amazon App Config
+- [x] Amazon App Flow
+- [x] Amazon Application-Insights
+- [x] Amazon Appmesh
+- [x] Amazon Appstream
+- [x] Amazon App Sync
+- [x] Amazon Athena
+- [x] Amazon Awsmigrationhub
+- [x] Amazon Backup
+- [x] Amazon Braket
+- [x] Amazon Budgets
+- [x] Amazon Ce
+- [x] Amazon Chime
+- [x] Amazon Cloud9
+- [x] Amazon Cloud Directory
+- [x] Amazon Cloud Front
+- [x] Amazon Cloudhsm
+- [x] Amazon Cloudhsmv2
+- [x] Amazon Cloudsearch
+- [x] Amazon Cloudsearchdomain
+- [x] Amazon Cloud Trail
+- [x] Amazon Code Artifact
+- [x] Amazon Code Build
+- [x] Amazon Code Commit
+- [x] Amazon Code Deploy
+- [x] Amazon Code Guru Profiler
+- [x] Amazon Code Guru Reviewer
+- [x] Amazon Code Pipeline
+- [x] Amazon Codestar
+- [x] Amazon Codestar-Connections
+- [x] Amazon Codestar-Notifications
+- [x] Amazon Comprehend
+- [x] Amazon Comprehendmedical
+- [x] Amazon Compute-Optimizer
+- [x] Amazon Connect
+- [x] Amazon Connectparticipant
+- [x] Amazon Cur
+- [x] Amazon Databrew
+- [x] Amazon Dataexchange
+- [x] Amazon Datapipeline
+- [x] Amazon Datasync
+- [x] Amazon Dax
+- [x] Amazon Detective
+- [x] Amazon Device Farm
+- [x] Amazon Direct Connect
+- [x] Amazon Discovery
+- [x] Amazon Dlm
+- [x] Amazon DMS
+- [x] Amazon Docdb
+- [x] Amazon DS
+- [x] Amazon Ec2-Instance-Connect
+- [x] Amazon Elasticache
+- [x] Amazon Elastic Beanstalk
+- [x] Amazon Elastic Filesystem
+- [x] Amazon Elastic Inference
+- [x] Amazon Elastic Load Balancing
+- [x] Amazon Elastic Load Balancing v2
+- [x] Amazon Elastic Map Reduce
+- [x] Amazon Elastic Transcoder
+- [x] Amazon Email
+- [x] Amazon Entitlement.Marketplace
+- [x] Amazon ES
+- [x] Amazon Eventbridge
+- [x] Amazon Events
+- [x] Amazon Firehose
+- [x] Amazon FMS
+- [x] Amazon Forecast
+- [x] Amazon Forecast Query
+- [x] Amazon Fraud Detector
+- [x] Amazon FSX
+- [x] Amazon Gamelift
+- [x] Amazon Global Accelerator
+- [x] Amazon Glue
+- [x] Amazon Greengrass
+- [x] Amazon Groundstation
+- [x] Amazon Guardduty
+- [x] Amazon Health
+- [x] Amazon Honeycode
+- [x] Amazon Identitystore
+- [x] Amazon Imagebuilder
+- [x] Amazon Inspector
+- [x] Amazon IOT
+- [x] Amazon Iot1Click-Devices
+- [x] Amazon Iot1Click-Projects
+- [x] Amazon IoT Analytics
+- [x] Amazon IoT Events
+- [x] Amazon Iotevents-Data
+- [x] Amazon Iot-Jobs-Data
+- [x] Amazon Iotsecuretunneling
+- [x] Amazon Iotsitewise
+- [x] Amazon Iotthingsgraph
+- [x] Amazon Ivs
+- [x] Amazon Kafka
+- [x] Amazon Kendra
+- [x] Amazon Kinesis Analytics
+- [x] Amazon Kinesis Analytics v2
+- [x] Amazon Kinesis Video
+- [x] Amazon Kinesis-Video-Archived-Media
+- [x] Amazon Kinesis-Video-Media
+- [x] Amazon Kinesis-Video-Signaling
+- [x] Amazon Lake Formation
+- [x] Amazon Lambda
+- [x] Amazon Lex-Models
+- [x] Amazon License-Manager
+- [x] Amazon Lightsail
+- [x] Amazon Logs
+- [x] Amazon Machine Learning
+- [x] Amazon Macie
+- [x] Amazon Macie2
+- [x] Amazon Managedblockchain
+- [x] Amazon Marketplace-Catalog
+- [x] Amazon Marketplacecommerceanalytics
+- [x] Amazon Mediaconnect
+- [x] Amazon Mediaconvert
+- [x] Amazon Mediapackage-Vod
+- [x] Amazon Mediastore
+- [x] Amazon Mediastore-Data
+- [x] Amazon Mediatailor
+- [x] Amazon Meteringmarketplace
+- [x] Amazon Migrationhub-Config
+- [x] Amazon Mobile
+- [x] Amazon Monitoring
+- [x] Amazon Mq
+- [x] Amazon Mturk-Requester
+- [x] Amazon Neptune
+- [x] Amazon Network-Firewall
+- [x] Amazon Networkmanager
+- [x] Amazon Ops Works
+- [x] Amazon Opsworkscm
+- [x] Amazon Organizations
+- [x] Amazon Outposts
+- [x] Amazon Personalize
+- [x] Amazon Personalize-Events
+- [x] Amazon Personalize-Runtime
+- [x] Amazon Pi
+- [x] Amazon Pinpoint
+- [x] Amazon Pinpoint-Email
+- [x] Amazon Pricing
+- [x] Amazon Quicksight
+- [x] Amazon RAM
+- [x] Amazon Redshift
+- [x] Amazon Redshift-Data
+- [x] Amazon Rekognition
+- [x] Amazon Resource-Groups
+- [x] Amazon Resourcegroupstaggingapi
+- [x] Amazon Robomaker
+- [x] Amazon Route53Domains
+- [x] Amazon Route53Resolver
+- [x] Amazon Runtime.Lex
+- [x] Amazon S3Control
+- [x] Amazon S3Outposts
+- [x] Amazon Savingsplans
+- [x] Amazon Schemas
+- [x] Amazon Securityhub
+- [x] Amazon Serverlessrepo
+- [x] Amazon Servicecatalog
+- [x] Amazon Servicecatalog-Appregistry
+- [x] Amazon Service Discovery
+- [x] Amazon Service-Quotas
+- [x] Amazon Shield
+- [x] Amazon Signer
+- [x] Amazon SMS
+- [x] Amazon Sms-Voice
+- [x] Amazon SSO
+- [x] Amazon Sso-Admin
+- [x] Amazon Sso-Oidc
+- [x] Amazon States
+- [x] Amazon Storagegateway
+- [x] Amazon Streams.Dynamodb
+- [x] Amazon Support
+- [x] Amazon Swf
+- [x] Amazon Synthetics
+- [x] Amazon Textract
+- [x] Amazon Transcribe
+- [x] Amazon Transcribe-Streaming
+- [x] Amazon Transfer
+- [x] Amazon Translate
+- [x] Amazon Waf
+- [x] Amazon Waf-Regional
+- [x] [Amazon Wafv2](https://github.com/awslabs/aws-sdk-rust/issues/118)
+- [x] Amazon Workdocs
+- [x] Amazon Worklink
+- [x] Amazon Workmail
+- [x] Amazon Workmailmessageflow
+- [x] Amazon Workspaces
+- [x] Amazon Xray
+
+## No support (yet)
+We're working on it! Please file or upvote on the relevant issue to help us prioritize.
 - [ ] Amazon Timestream-Query
 - [ ] Amazon Timestream-Write
-- [ ] Amazon Transcribe
-- [ ] Amazon Transcribe-Streaming
-- [ ] Amazon Transfer
-- [ ] Amazon Translate
-- [ ] Amazon Waf
-- [ ] Amazon Waf-Regional
-- [ ] [Amazon Wafv2](https://github.com/awslabs/aws-sdk-rust/issues/118)
-- [ ] Amazon Workdocs
-- [ ] Amazon Worklink
-- [ ] Amazon Workmail
-- [ ] Amazon Workmailmessageflow
-- [ ] Amazon Workspaces
-- [ ] Amazon Xray
+- [ ] Amazon IoT Data
+- [ ] Amazon Glacier
