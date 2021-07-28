@@ -4,33 +4,81 @@
  */
 
 use aws_sdk_ebs::model::ChecksumAlgorithm;
-use aws_sdk_ebs::ByteStream;
-use aws_sdk_ec2::model::Filter;
+use aws_sdk_ebs::{ByteStream, Client, Config, Error, Region, PKG_VERSION};
+use aws_types::region;
+use aws_types::region::ProvideRegion;
 use sha2::Digest;
+use structopt::StructOpt;
 
-/// EBS only supports one fixed size of block
+/// Amazon EBS only supports one fixed size of block
 const EBS_BLOCK_SIZE: usize = 524288;
 
+#[derive(Debug, StructOpt)]
+struct Opt {
+    /// The AWS Region.
+    #[structopt(short, long)]
+    region: Option<String>,
+
+    /// The snapshot's description.
+    #[structopt(short, long)]
+    description: String,
+
+    /// Whether to display additional information.
+    #[structopt(short, long)]
+    verbose: bool,
+}
+
+/// Creates an Amazon Elastic Block Store snapshot with the specified description.
+/// # Arguments
+///
+/// * `-d DESCRIPTION` - The description of the snapshot.
+/// * `[-r REGION]` - The Region in which the client is created.
+///    If not supplied, uses the value of the **AWS_REGION** environment variable.
+///    If the environment variable is not set, defaults to **us-west-2**.
+/// * `[-v]` - Whether to display additional information.
 #[tokio::main]
-async fn main() -> Result<(), aws_sdk_ebs::Error> {
+async fn main() -> Result<(), Error> {
     tracing_subscriber::fmt::init();
-    let client = aws_sdk_ebs::Client::from_env();
+
+    let Opt {
+        description,
+        region,
+        verbose,
+    } = Opt::from_args();
+
+    let region = region::ChainProvider::first_try(region.map(Region::new))
+        .or_default_provider()
+        .or_else(Region::new("us-west-2"));
+
+    println!();
+
+    if verbose {
+        println!("EBS version: {}", PKG_VERSION);
+        println!("Description: {}", description);
+        println!("Region:      {}", region.region().unwrap().as_ref());
+        println!();
+    }
+
+    let config = Config::builder().region(region).build();
+    let client = Client::from_conf(config);
+
     let snapshot = client
         .start_snapshot()
-        .description("new_snapshot")
+        .description(description)
         .encrypted(false)
         .volume_size(1)
         .send()
         .await?;
-    println!("snapshot started: {:?}", snapshot);
+
     let snapshot_id = snapshot.snapshot_id.unwrap();
     let mut blocks = vec![];
-    // append a block of all 1s
+
+    // Append a block of all 1s.
     let mut block: Vec<u8> = Vec::new();
     block.resize(EBS_BLOCK_SIZE, 1);
     blocks.push(block);
 
-    // append a block of all 0s
+    // Append a block of all 0s.
     let mut block: Vec<u8> = Vec::new();
     block.resize(EBS_BLOCK_SIZE, 0);
     blocks.push(block);
@@ -52,27 +100,16 @@ async fn main() -> Result<(), aws_sdk_ebs::Error> {
             .send()
             .await?;
     }
-    let rsp = client
+    client
         .complete_snapshot()
         .changed_blocks_count(2)
         .snapshot_id(&snapshot_id)
         .send()
         .await?;
-    println!("snapshot complete: {:#?}", rsp);
 
-    // NOTE: you need to wait for `status != pending`
-    let ec2_client = aws_sdk_ec2::Client::from_env();
-    let snapshots = ec2_client
-        .describe_snapshots()
-        .filters(
-            Filter::builder()
-                .name("snapshot-id")
-                .values(&snapshot_id)
-                .build(),
-        )
-        .send()
-        .await;
-    println!("snapshot status: {:#?}", snapshots);
+    println!("Snapshot ID {}", snapshot_id);
+    println!("The state is 'completed' when all of the modified blocks have been transferred to Amazon S3.");
+    println!("Use the get-snapshot-state code example to get the state of the snapshot.");
 
     Ok(())
 }

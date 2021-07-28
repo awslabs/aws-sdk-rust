@@ -3919,6 +3919,103 @@ impl smithy_http::response::ParseStrictResponse for ListObjects {
         }
     }
 }
+#[cfg(test)]
+#[allow(unreachable_code, unused_variables)]
+mod list_objects_request_test {
+    /// This test validates that parsing respects whitespace
+    /// Test ID: KeysWithWhitespace
+    #[tokio::test]
+    async fn keys_with_whitespace_response() {
+        let expected_output = crate::output::ListObjectsOutput::builder()
+            .set_max_keys(Some(1000))
+            .set_is_truncated(Some(false))
+            .set_marker(Some("".to_string()))
+            .set_name(Some("bucketname".to_string()))
+            .set_prefix(Some("".to_string()))
+            .set_contents(Some(vec![
+                crate::model::Object::builder()
+                    .set_key(Some("    ".to_string()))
+                    .set_last_modified(Some(smithy_types::Instant::from_epoch_seconds(1626452453)))
+                    .set_e_tag(Some("\"etag123\"".to_string()))
+                    .set_size(Some(0))
+                    .set_owner(Some(
+                        crate::model::Owner::builder()
+                            .set_id(Some("owner".to_string()))
+                            .build(),
+                    ))
+                    .set_storage_class(Some(crate::model::ObjectStorageClass::from("STANDARD")))
+                    .build(),
+                crate::model::Object::builder()
+                    .set_key(Some(" a ".to_string()))
+                    .set_last_modified(Some(smithy_types::Instant::from_epoch_seconds(1626451330)))
+                    .set_e_tag(Some("\"etag123\"".to_string()))
+                    .set_size(Some(0))
+                    .set_owner(Some(
+                        crate::model::Owner::builder()
+                            .set_id(Some("owner".to_string()))
+                            .build(),
+                    ))
+                    .set_storage_class(Some(crate::model::ObjectStorageClass::from("STANDARD")))
+                    .build(),
+            ]))
+            .build();
+        let mut http_response = http::response::Builder::new()
+        .status(200)
+                        .body(smithy_http::body::SdkBody::from("<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n\n<ListBucketResult\n\txmlns=\"http://s3.amazonaws.com/doc/2006-03-01/\">\n\t<Name>bucketname</Name>\n\t<Prefix></Prefix>\n\t<Marker></Marker>\n\t<MaxKeys>1000</MaxKeys>\n\t<IsTruncated>false</IsTruncated>\n\t<Contents>\n\t\t<Key>    </Key>\n\t\t<LastModified>2021-07-16T16:20:53.000Z</LastModified>\n\t\t<ETag>&quot;etag123&quot;</ETag>\n\t\t<Size>0</Size>\n\t\t<Owner>\n\t\t\t<ID>owner</ID>\n\t\t</Owner>\n\t\t<StorageClass>STANDARD</StorageClass>\n\t</Contents>\n\t<Contents>\n\t\t<Key> a </Key>\n\t\t<LastModified>2021-07-16T16:02:10.000Z</LastModified>\n\t\t<ETag>&quot;etag123&quot;</ETag>\n\t\t<Size>0</Size>\n\t\t<Owner>\n\t\t\t<ID>owner</ID>\n\t\t</Owner>\n\t\t<StorageClass>STANDARD</StorageClass>\n\t</Contents>\n</ListBucketResult>\n"))
+                        .unwrap();
+        use smithy_http::response::ParseHttpResponse;
+        let parser = crate::operation::ListObjects::new();
+        let parsed = parser.parse_unloaded(&mut http_response);
+        let parsed = parsed.unwrap_or_else(|| {
+            let http_response =
+                http_response.map(|body| bytes::Bytes::copy_from_slice(body.bytes().unwrap()));
+            <crate::operation::ListObjects as smithy_http::response::ParseHttpResponse<
+                smithy_http::body::SdkBody,
+            >>::parse_loaded(&parser, &http_response)
+        });
+        let parsed = parsed.unwrap();
+        assert_eq!(
+            parsed.is_truncated, expected_output.is_truncated,
+            "Unexpected value for `is_truncated`"
+        );
+        assert_eq!(
+            parsed.marker, expected_output.marker,
+            "Unexpected value for `marker`"
+        );
+        assert_eq!(
+            parsed.next_marker, expected_output.next_marker,
+            "Unexpected value for `next_marker`"
+        );
+        assert_eq!(
+            parsed.contents, expected_output.contents,
+            "Unexpected value for `contents`"
+        );
+        assert_eq!(
+            parsed.name, expected_output.name,
+            "Unexpected value for `name`"
+        );
+        assert_eq!(
+            parsed.prefix, expected_output.prefix,
+            "Unexpected value for `prefix`"
+        );
+        assert_eq!(
+            parsed.delimiter, expected_output.delimiter,
+            "Unexpected value for `delimiter`"
+        );
+        assert_eq!(
+            parsed.max_keys, expected_output.max_keys,
+            "Unexpected value for `max_keys`"
+        );
+        assert_eq!(
+            parsed.common_prefixes, expected_output.common_prefixes,
+            "Unexpected value for `common_prefixes`"
+        );
+        assert_eq!(
+            parsed.encoding_type, expected_output.encoding_type,
+            "Unexpected value for `encoding_type`"
+        );
+    }
+}
 
 /// <p>Returns some or all (up to 1,000) of the objects in a bucket with each request. You can use
 /// the request parameters as selection criteria to return a subset of the objects in a bucket. A

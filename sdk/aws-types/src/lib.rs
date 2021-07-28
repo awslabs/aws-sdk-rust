@@ -4,6 +4,10 @@
  */
 
 pub mod build_metadata;
+// internal APIs, may be unstable
+#[doc(hidden)]
+pub mod os_shim_internal;
+pub mod profile;
 pub mod region;
 
 use std::borrow::Cow;

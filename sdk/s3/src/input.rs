@@ -252,13 +252,8 @@ impl AbortMultipartUploadInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/xml");
-        }
+        builder =
+            smithy_http::header::set_header_if_absent(builder, "content-type", "application/xml");
         Ok(builder)
     }
     fn assemble(
@@ -543,13 +538,8 @@ impl CompleteMultipartUploadInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/xml");
-        }
+        builder =
+            smithy_http::header::set_header_if_absent(builder, "content-type", "application/xml");
         Ok(builder)
     }
     fn assemble(
@@ -2043,13 +2033,8 @@ impl CopyObjectInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/xml");
-        }
+        builder =
+            smithy_http::header::set_header_if_absent(builder, "content-type", "application/xml");
         Ok(builder)
     }
     fn assemble(
@@ -2440,13 +2425,8 @@ impl CreateBucketInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/xml");
-        }
+        builder =
+            smithy_http::header::set_header_if_absent(builder, "content-type", "application/xml");
         Ok(builder)
     }
     fn assemble(
@@ -3544,13 +3524,8 @@ impl CreateMultipartUploadInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/xml");
-        }
+        builder =
+            smithy_http::header::set_header_if_absent(builder, "content-type", "application/xml");
         Ok(builder)
     }
     fn assemble(
@@ -3730,13 +3705,8 @@ impl DeleteBucketInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/xml");
-        }
+        builder =
+            smithy_http::header::set_header_if_absent(builder, "content-type", "application/xml");
         Ok(builder)
     }
     fn assemble(
@@ -3941,13 +3911,8 @@ impl DeleteBucketAnalyticsConfigurationInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/xml");
-        }
+        builder =
+            smithy_http::header::set_header_if_absent(builder, "content-type", "application/xml");
         Ok(builder)
     }
     fn assemble(
@@ -4137,13 +4102,8 @@ impl DeleteBucketCorsInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/xml");
-        }
+        builder =
+            smithy_http::header::set_header_if_absent(builder, "content-type", "application/xml");
         Ok(builder)
     }
     fn assemble(
@@ -4334,13 +4294,8 @@ impl DeleteBucketEncryptionInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/xml");
-        }
+        builder =
+            smithy_http::header::set_header_if_absent(builder, "content-type", "application/xml");
         Ok(builder)
     }
     fn assemble(
@@ -4509,13 +4464,8 @@ impl DeleteBucketIntelligentTieringConfigurationInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/xml");
-        }
+        builder =
+            smithy_http::header::set_header_if_absent(builder, "content-type", "application/xml");
         Ok(builder)
     }
     fn assemble(
@@ -4721,13 +4671,8 @@ impl DeleteBucketInventoryConfigurationInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/xml");
-        }
+        builder =
+            smithy_http::header::set_header_if_absent(builder, "content-type", "application/xml");
         Ok(builder)
     }
     fn assemble(
@@ -4917,13 +4862,8 @@ impl DeleteBucketLifecycleInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/xml");
-        }
+        builder =
+            smithy_http::header::set_header_if_absent(builder, "content-type", "application/xml");
         Ok(builder)
     }
     fn assemble(
@@ -5128,13 +5068,8 @@ impl DeleteBucketMetricsConfigurationInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/xml");
-        }
+        builder =
+            smithy_http::header::set_header_if_absent(builder, "content-type", "application/xml");
         Ok(builder)
     }
     fn assemble(
@@ -5325,13 +5260,8 @@ impl DeleteBucketOwnershipControlsInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/xml");
-        }
+        builder =
+            smithy_http::header::set_header_if_absent(builder, "content-type", "application/xml");
         Ok(builder)
     }
     fn assemble(
@@ -5521,13 +5451,8 @@ impl DeleteBucketPolicyInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/xml");
-        }
+        builder =
+            smithy_http::header::set_header_if_absent(builder, "content-type", "application/xml");
         Ok(builder)
     }
     fn assemble(
@@ -5718,13 +5643,8 @@ impl DeleteBucketReplicationInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/xml");
-        }
+        builder =
+            smithy_http::header::set_header_if_absent(builder, "content-type", "application/xml");
         Ok(builder)
     }
     fn assemble(
@@ -5914,13 +5834,8 @@ impl DeleteBucketTaggingInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/xml");
-        }
+        builder =
+            smithy_http::header::set_header_if_absent(builder, "content-type", "application/xml");
         Ok(builder)
     }
     fn assemble(
@@ -6110,13 +6025,8 @@ impl DeleteBucketWebsiteInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/xml");
-        }
+        builder =
+            smithy_http::header::set_header_if_absent(builder, "content-type", "application/xml");
         Ok(builder)
     }
     fn assemble(
@@ -6442,13 +6352,8 @@ impl DeleteObjectInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/xml");
-        }
+        builder =
+            smithy_http::header::set_header_if_absent(builder, "content-type", "application/xml");
         Ok(builder)
     }
     fn assemble(
@@ -6758,13 +6663,8 @@ impl DeleteObjectsInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/xml");
-        }
+        builder =
+            smithy_http::header::set_header_if_absent(builder, "content-type", "application/xml");
         Ok(builder)
     }
     fn assemble(
@@ -6999,13 +6899,8 @@ impl DeleteObjectTaggingInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/xml");
-        }
+        builder =
+            smithy_http::header::set_header_if_absent(builder, "content-type", "application/xml");
         Ok(builder)
     }
     fn assemble(
@@ -7197,13 +7092,8 @@ impl DeletePublicAccessBlockInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/xml");
-        }
+        builder =
+            smithy_http::header::set_header_if_absent(builder, "content-type", "application/xml");
         Ok(builder)
     }
     fn assemble(
@@ -7394,13 +7284,8 @@ impl GetBucketAccelerateConfigurationInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/xml");
-        }
+        builder =
+            smithy_http::header::set_header_if_absent(builder, "content-type", "application/xml");
         Ok(builder)
     }
     fn assemble(
@@ -7585,13 +7470,8 @@ impl GetBucketAclInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/xml");
-        }
+        builder =
+            smithy_http::header::set_header_if_absent(builder, "content-type", "application/xml");
         Ok(builder)
     }
     fn assemble(
@@ -7797,13 +7677,8 @@ impl GetBucketAnalyticsConfigurationInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/xml");
-        }
+        builder =
+            smithy_http::header::set_header_if_absent(builder, "content-type", "application/xml");
         Ok(builder)
     }
     fn assemble(
@@ -7988,13 +7863,8 @@ impl GetBucketCorsInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/xml");
-        }
+        builder =
+            smithy_http::header::set_header_if_absent(builder, "content-type", "application/xml");
         Ok(builder)
     }
     fn assemble(
@@ -8185,13 +8055,8 @@ impl GetBucketEncryptionInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/xml");
-        }
+        builder =
+            smithy_http::header::set_header_if_absent(builder, "content-type", "application/xml");
         Ok(builder)
     }
     fn assemble(
@@ -8361,13 +8226,8 @@ impl GetBucketIntelligentTieringConfigurationInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/xml");
-        }
+        builder =
+            smithy_http::header::set_header_if_absent(builder, "content-type", "application/xml");
         Ok(builder)
     }
     fn assemble(
@@ -8573,13 +8433,8 @@ impl GetBucketInventoryConfigurationInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/xml");
-        }
+        builder =
+            smithy_http::header::set_header_if_absent(builder, "content-type", "application/xml");
         Ok(builder)
     }
     fn assemble(
@@ -8770,13 +8625,8 @@ impl GetBucketLifecycleConfigurationInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/xml");
-        }
+        builder =
+            smithy_http::header::set_header_if_absent(builder, "content-type", "application/xml");
         Ok(builder)
     }
     fn assemble(
@@ -8966,13 +8816,8 @@ impl GetBucketLocationInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/xml");
-        }
+        builder =
+            smithy_http::header::set_header_if_absent(builder, "content-type", "application/xml");
         Ok(builder)
     }
     fn assemble(
@@ -9162,13 +9007,8 @@ impl GetBucketLoggingInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/xml");
-        }
+        builder =
+            smithy_http::header::set_header_if_absent(builder, "content-type", "application/xml");
         Ok(builder)
     }
     fn assemble(
@@ -9374,13 +9214,8 @@ impl GetBucketMetricsConfigurationInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/xml");
-        }
+        builder =
+            smithy_http::header::set_header_if_absent(builder, "content-type", "application/xml");
         Ok(builder)
     }
     fn assemble(
@@ -9571,13 +9406,8 @@ impl GetBucketNotificationConfigurationInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/xml");
-        }
+        builder =
+            smithy_http::header::set_header_if_absent(builder, "content-type", "application/xml");
         Ok(builder)
     }
     fn assemble(
@@ -9769,13 +9599,8 @@ impl GetBucketOwnershipControlsInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/xml");
-        }
+        builder =
+            smithy_http::header::set_header_if_absent(builder, "content-type", "application/xml");
         Ok(builder)
     }
     fn assemble(
@@ -9965,13 +9790,8 @@ impl GetBucketPolicyInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/xml");
-        }
+        builder =
+            smithy_http::header::set_header_if_absent(builder, "content-type", "application/xml");
         Ok(builder)
     }
     fn assemble(
@@ -10161,13 +9981,8 @@ impl GetBucketPolicyStatusInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/xml");
-        }
+        builder =
+            smithy_http::header::set_header_if_absent(builder, "content-type", "application/xml");
         Ok(builder)
     }
     fn assemble(
@@ -10357,13 +10172,8 @@ impl GetBucketReplicationInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/xml");
-        }
+        builder =
+            smithy_http::header::set_header_if_absent(builder, "content-type", "application/xml");
         Ok(builder)
     }
     fn assemble(
@@ -10554,13 +10364,8 @@ impl GetBucketRequestPaymentInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/xml");
-        }
+        builder =
+            smithy_http::header::set_header_if_absent(builder, "content-type", "application/xml");
         Ok(builder)
     }
     fn assemble(
@@ -10750,13 +10555,8 @@ impl GetBucketTaggingInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/xml");
-        }
+        builder =
+            smithy_http::header::set_header_if_absent(builder, "content-type", "application/xml");
         Ok(builder)
     }
     fn assemble(
@@ -10946,13 +10746,8 @@ impl GetBucketVersioningInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/xml");
-        }
+        builder =
+            smithy_http::header::set_header_if_absent(builder, "content-type", "application/xml");
         Ok(builder)
     }
     fn assemble(
@@ -11142,13 +10937,8 @@ impl GetBucketWebsiteInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/xml");
-        }
+        builder =
+            smithy_http::header::set_header_if_absent(builder, "content-type", "application/xml");
         Ok(builder)
     }
     fn assemble(
@@ -11827,13 +11617,8 @@ impl GetObjectInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/xml");
-        }
+        builder =
+            smithy_http::header::set_header_if_absent(builder, "content-type", "application/xml");
         Ok(builder)
     }
     fn assemble(
@@ -12097,13 +11882,8 @@ impl GetObjectAclInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/xml");
-        }
+        builder =
+            smithy_http::header::set_header_if_absent(builder, "content-type", "application/xml");
         Ok(builder)
     }
     fn assemble(
@@ -12372,13 +12152,8 @@ impl GetObjectLegalHoldInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/xml");
-        }
+        builder =
+            smithy_http::header::set_header_if_absent(builder, "content-type", "application/xml");
         Ok(builder)
     }
     fn assemble(
@@ -12570,13 +12345,8 @@ impl GetObjectLockConfigurationInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/xml");
-        }
+        builder =
+            smithy_http::header::set_header_if_absent(builder, "content-type", "application/xml");
         Ok(builder)
     }
     fn assemble(
@@ -12845,13 +12615,8 @@ impl GetObjectRetentionInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/xml");
-        }
+        builder =
+            smithy_http::header::set_header_if_absent(builder, "content-type", "application/xml");
         Ok(builder)
     }
     fn assemble(
@@ -13121,13 +12886,8 @@ impl GetObjectTaggingInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/xml");
-        }
+        builder =
+            smithy_http::header::set_header_if_absent(builder, "content-type", "application/xml");
         Ok(builder)
     }
     fn assemble(
@@ -13381,13 +13141,8 @@ impl GetObjectTorrentInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/xml");
-        }
+        builder =
+            smithy_http::header::set_header_if_absent(builder, "content-type", "application/xml");
         Ok(builder)
     }
     fn assemble(
@@ -13578,13 +13333,8 @@ impl GetPublicAccessBlockInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/xml");
-        }
+        builder =
+            smithy_http::header::set_header_if_absent(builder, "content-type", "application/xml");
         Ok(builder)
     }
     fn assemble(
@@ -13766,13 +13516,8 @@ impl HeadBucketInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/xml");
-        }
+        builder =
+            smithy_http::header::set_header_if_absent(builder, "content-type", "application/xml");
         Ok(builder)
     }
     fn assemble(
@@ -14326,13 +14071,8 @@ impl HeadObjectInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/xml");
-        }
+        builder =
+            smithy_http::header::set_header_if_absent(builder, "content-type", "application/xml");
         Ok(builder)
     }
     fn assemble(
@@ -14545,13 +14285,8 @@ impl ListBucketAnalyticsConfigurationsInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/xml");
-        }
+        builder =
+            smithy_http::header::set_header_if_absent(builder, "content-type", "application/xml");
         Ok(builder)
     }
     fn assemble(
@@ -14728,13 +14463,8 @@ impl ListBucketIntelligentTieringConfigurationsInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/xml");
-        }
+        builder =
+            smithy_http::header::set_header_if_absent(builder, "content-type", "application/xml");
         Ok(builder)
     }
     fn assemble(
@@ -14949,13 +14679,8 @@ impl ListBucketInventoryConfigurationsInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/xml");
-        }
+        builder =
+            smithy_http::header::set_header_if_absent(builder, "content-type", "application/xml");
         Ok(builder)
     }
     fn assemble(
@@ -15170,13 +14895,8 @@ impl ListBucketMetricsConfigurationsInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/xml");
-        }
+        builder =
+            smithy_http::header::set_header_if_absent(builder, "content-type", "application/xml");
         Ok(builder)
     }
     fn assemble(
@@ -15287,13 +15007,8 @@ impl ListBucketsInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/xml");
-        }
+        builder =
+            smithy_http::header::set_header_if_absent(builder, "content-type", "application/xml");
         Ok(builder)
     }
     fn assemble(
@@ -15605,13 +15320,8 @@ impl ListMultipartUploadsInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/xml");
-        }
+        builder =
+            smithy_http::header::set_header_if_absent(builder, "content-type", "application/xml");
         Ok(builder)
     }
     fn assemble(
@@ -15912,13 +15622,8 @@ impl ListObjectsInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/xml");
-        }
+        builder =
+            smithy_http::header::set_header_if_absent(builder, "content-type", "application/xml");
         Ok(builder)
     }
     fn assemble(
@@ -16257,13 +15962,8 @@ impl ListObjectsV2Input {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/xml");
-        }
+        builder =
+            smithy_http::header::set_header_if_absent(builder, "content-type", "application/xml");
         Ok(builder)
     }
     fn assemble(
@@ -16565,13 +16265,8 @@ impl ListObjectVersionsInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/xml");
-        }
+        builder =
+            smithy_http::header::set_header_if_absent(builder, "content-type", "application/xml");
         Ok(builder)
     }
     fn assemble(
@@ -16872,13 +16567,8 @@ impl ListPartsInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/xml");
-        }
+        builder =
+            smithy_http::header::set_header_if_absent(builder, "content-type", "application/xml");
         Ok(builder)
     }
     fn assemble(
@@ -17089,13 +16779,8 @@ impl PutBucketAccelerateConfigurationInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/xml");
-        }
+        builder =
+            smithy_http::header::set_header_if_absent(builder, "content-type", "application/xml");
         Ok(builder)
     }
     fn assemble(
@@ -17533,13 +17218,8 @@ impl PutBucketAclInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/xml");
-        }
+        builder =
+            smithy_http::header::set_header_if_absent(builder, "content-type", "application/xml");
         Ok(builder)
     }
     fn assemble(
@@ -17764,13 +17444,8 @@ impl PutBucketAnalyticsConfigurationInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/xml");
-        }
+        builder =
+            smithy_http::header::set_header_if_absent(builder, "content-type", "application/xml");
         Ok(builder)
     }
     fn assemble(
@@ -18021,13 +17696,8 @@ impl PutBucketCorsInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/xml");
-        }
+        builder =
+            smithy_http::header::set_header_if_absent(builder, "content-type", "application/xml");
         Ok(builder)
     }
     fn assemble(
@@ -18285,13 +17955,8 @@ impl PutBucketEncryptionInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/xml");
-        }
+        builder =
+            smithy_http::header::set_header_if_absent(builder, "content-type", "application/xml");
         Ok(builder)
     }
     fn assemble(
@@ -18480,13 +18145,8 @@ impl PutBucketIntelligentTieringConfigurationInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/xml");
-        }
+        builder =
+            smithy_http::header::set_header_if_absent(builder, "content-type", "application/xml");
         Ok(builder)
     }
     fn assemble(
@@ -18711,13 +18371,8 @@ impl PutBucketInventoryConfigurationInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/xml");
-        }
+        builder =
+            smithy_http::header::set_header_if_absent(builder, "content-type", "application/xml");
         Ok(builder)
     }
     fn assemble(
@@ -18943,13 +18598,8 @@ impl PutBucketLifecycleConfigurationInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/xml");
-        }
+        builder =
+            smithy_http::header::set_header_if_absent(builder, "content-type", "application/xml");
         Ok(builder)
     }
     fn assemble(
@@ -19200,13 +18850,8 @@ impl PutBucketLoggingInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/xml");
-        }
+        builder =
+            smithy_http::header::set_header_if_absent(builder, "content-type", "application/xml");
         Ok(builder)
     }
     fn assemble(
@@ -19427,13 +19072,8 @@ impl PutBucketMetricsConfigurationInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/xml");
-        }
+        builder =
+            smithy_http::header::set_header_if_absent(builder, "content-type", "application/xml");
         Ok(builder)
     }
     fn assemble(
@@ -19646,13 +19286,8 @@ impl PutBucketNotificationConfigurationInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/xml");
-        }
+        builder =
+            smithy_http::header::set_header_if_absent(builder, "content-type", "application/xml");
         Ok(builder)
     }
     fn assemble(
@@ -19905,13 +19540,8 @@ impl PutBucketOwnershipControlsInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/xml");
-        }
+        builder =
+            smithy_http::header::set_header_if_absent(builder, "content-type", "application/xml");
         Ok(builder)
     }
     fn assemble(
@@ -20193,13 +19823,7 @@ impl PutBucketPolicyInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "text/plain");
-        }
+        builder = smithy_http::header::set_header_if_absent(builder, "content-type", "text/plain");
         Ok(builder)
     }
     fn assemble(
@@ -20486,13 +20110,8 @@ impl PutBucketReplicationInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/xml");
-        }
+        builder =
+            smithy_http::header::set_header_if_absent(builder, "content-type", "application/xml");
         Ok(builder)
     }
     fn assemble(
@@ -20751,13 +20370,8 @@ impl PutBucketRequestPaymentInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/xml");
-        }
+        builder =
+            smithy_http::header::set_header_if_absent(builder, "content-type", "application/xml");
         Ok(builder)
     }
     fn assemble(
@@ -21005,13 +20619,8 @@ impl PutBucketTaggingInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/xml");
-        }
+        builder =
+            smithy_http::header::set_header_if_absent(builder, "content-type", "application/xml");
         Ok(builder)
     }
     fn assemble(
@@ -21299,13 +20908,8 @@ impl PutBucketVersioningInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/xml");
-        }
+        builder =
+            smithy_http::header::set_header_if_absent(builder, "content-type", "application/xml");
         Ok(builder)
     }
     fn assemble(
@@ -21558,13 +21162,8 @@ impl PutBucketWebsiteInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/xml");
-        }
+        builder =
+            smithy_http::header::set_header_if_absent(builder, "content-type", "application/xml");
         Ok(builder)
     }
     fn assemble(
@@ -22755,13 +22354,11 @@ impl PutObjectInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/octet-stream");
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/octet-stream",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -23286,13 +22883,8 @@ impl PutObjectAclInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/xml");
-        }
+        builder =
+            smithy_http::header::set_header_if_absent(builder, "content-type", "application/xml");
         Ok(builder)
     }
     fn assemble(
@@ -23622,13 +23214,8 @@ impl PutObjectLegalHoldInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/xml");
-        }
+        builder =
+            smithy_http::header::set_header_if_absent(builder, "content-type", "application/xml");
         Ok(builder)
     }
     fn assemble(
@@ -23948,13 +23535,8 @@ impl PutObjectLockConfigurationInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/xml");
-        }
+        builder =
+            smithy_http::header::set_header_if_absent(builder, "content-type", "application/xml");
         Ok(builder)
     }
     fn assemble(
@@ -24315,13 +23897,8 @@ impl PutObjectRetentionInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/xml");
-        }
+        builder =
+            smithy_http::header::set_header_if_absent(builder, "content-type", "application/xml");
         Ok(builder)
     }
     fn assemble(
@@ -24647,13 +24224,8 @@ impl PutObjectTaggingInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/xml");
-        }
+        builder =
+            smithy_http::header::set_header_if_absent(builder, "content-type", "application/xml");
         Ok(builder)
     }
     fn assemble(
@@ -24911,13 +24483,8 @@ impl PutPublicAccessBlockInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/xml");
-        }
+        builder =
+            smithy_http::header::set_header_if_absent(builder, "content-type", "application/xml");
         Ok(builder)
     }
     fn assemble(
@@ -25198,13 +24765,8 @@ impl RestoreObjectInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/xml");
-        }
+        builder =
+            smithy_http::header::set_header_if_absent(builder, "content-type", "application/xml");
         Ok(builder)
     }
     fn assemble(
@@ -25671,13 +25233,11 @@ impl UploadPartInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/octet-stream");
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/octet-stream",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -26443,13 +26003,8 @@ impl UploadPartCopyInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/xml");
-        }
+        builder =
+            smithy_http::header::set_header_if_absent(builder, "content-type", "application/xml");
         Ok(builder)
     }
     fn assemble(
@@ -27831,13 +27386,11 @@ impl WriteGetObjectResponseInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/octet-stream");
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/octet-stream",
+        );
         Ok(builder)
     }
     fn assemble(

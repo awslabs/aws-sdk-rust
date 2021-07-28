@@ -5,13 +5,13 @@
 
 use aws_auth::Credentials;
 use aws_http::user_agent::AwsUserAgent;
-use aws_hyper::test_connection::TestConnection;
 use aws_hyper::{Client, SdkError};
 use aws_sdk_kms as kms;
 use http::header::AUTHORIZATION;
 use http::Uri;
 use kms::operation::GenerateRandom;
 use kms::{Config, Region};
+use smithy_client::test_connection::TestConnection;
 use smithy_http::body::SdkBody;
 use std::time::{Duration, UNIX_EPOCH};
 

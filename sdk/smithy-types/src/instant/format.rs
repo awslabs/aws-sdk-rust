@@ -465,18 +465,20 @@ pub mod rfc3339 {
             year, month, day, hour, minute, second
         )
         .unwrap();
-        format_nanos(&mut out, nanos);
+        format_subsecond_fraction(&mut out, nanos);
         out.push('Z');
         out
     }
 
-    /// Formats sub-second nanos for RFC-3339 (including the '.').
+    /// Formats sub-second fraction for RFC-3339 (including the '.').
     /// Expects to be called with a number of `nanos` between 0 and 999_999_999 inclusive.
-    fn format_nanos(into: &mut String, nanos: u32) {
+    /// The formatted fraction will be truncated to microseconds.
+    fn format_subsecond_fraction(into: &mut String, nanos: u32) {
         debug_assert!(nanos < 1_000_000_000);
-        if nanos > 0 {
+        let micros = nanos / 1000;
+        if micros > 0 {
             into.push('.');
-            let (mut remaining, mut place) = (nanos, 100_000_000);
+            let (mut remaining, mut place) = (micros, 100_000);
             while remaining > 0 {
                 let digit = (remaining / place) % 10;
                 into.push(char::from(b'0' + (digit as u8)));
@@ -494,7 +496,7 @@ mod test {
     use proptest::proptest;
 
     #[test]
-    fn no_nanos() {
+    fn no_fraction() {
         assert_eq!(
             "1970-01-01T00:00:00Z",
             format(&Instant::from_epoch_seconds(0))
@@ -510,7 +512,7 @@ mod test {
     }
 
     #[test]
-    fn with_nanos() {
+    fn with_fraction() {
         assert_eq!(
             "1970-01-01T00:00:00.987Z",
             format(&Instant::from_secs_and_nanos(0, 987_000_000))
@@ -532,11 +534,15 @@ mod test {
             format(&Instant::from_secs_and_nanos(0, 987_654_000))
         );
         assert_eq!(
-            "1970-01-01T00:00:00.987654321Z",
+            "1970-01-01T00:00:00.987654Z",
             format(&Instant::from_secs_and_nanos(0, 987_654_321))
         );
         assert_eq!(
-            "1970-01-01T00:00:00.000000001Z",
+            "1970-01-01T00:00:00.000001Z",
+            format(&Instant::from_secs_and_nanos(0, 000_001_000))
+        );
+        assert_eq!(
+            "1970-01-01T00:00:00Z",
             format(&Instant::from_secs_and_nanos(0, 000_000_001))
         );
         assert_eq!(
@@ -551,10 +557,11 @@ mod test {
         #[cfg(feature = "chrono-conversions")]
         fn proptest_rfc3339(
             seconds in 0..253_402_300_799i64, // 0 to 9999-12-31T23:59:59
-            nanos in 0..1_000_000_000u32
+            micros in 0..1_000_000u32
         ) {
             use chrono::DateTime;
 
+            let nanos = micros * 1000;
             let instant = Instant::from_secs_and_nanos(seconds, nanos);
             let formatted = format(&instant);
             let parsed: Instant = DateTime::parse_from_rfc3339(&formatted).unwrap().into();

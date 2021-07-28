@@ -4,9 +4,9 @@
  */
 
 use aws_http::user_agent::AwsUserAgent;
-use aws_hyper::test_connection::TestConnection;
 use aws_sdk_s3::operation::ListObjectsV2;
 use aws_sdk_s3::{Credentials, Region};
+use smithy_client::test_connection::TestConnection;
 use smithy_http::body::SdkBody;
 use std::time::{Duration, UNIX_EPOCH};
 

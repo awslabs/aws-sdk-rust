@@ -157,8 +157,9 @@ fn is_list(node: Node) -> bool {
 fn non_empty_children<'a, 'input: 'a>(
     node: Node<'a, 'input>,
 ) -> impl Iterator<Item = Node<'a, 'input>> {
+    let single_child = node.children().count() == 1;
     node.children()
-        .filter(|c| !c.is_text() || !c.text().unwrap().trim().is_empty())
+        .filter(move |c| single_child || !c.is_text() || !c.text().unwrap().trim().is_empty())
 }
 
 #[cfg(test)]

@@ -7,11 +7,10 @@ use std::process;
 
 use s3::{Client, Config, Region};
 
-use aws_types::region::ProvideRegion;
+use aws_types::region;
 
+use aws_types::region::ProvideRegion;
 use structopt::StructOpt;
-use tracing_subscriber::fmt::format::FmtSpan;
-use tracing_subscriber::fmt::SubscriberBuilder;
 
 #[derive(Debug, StructOpt)]
 struct Opt {
@@ -44,23 +43,21 @@ async fn main() {
         verbose,
     } = Opt::from_args();
 
-    let region = default_region
-        .as_ref()
-        .map(|region| Region::new(region.clone()))
-        .or_else(|| aws_types::region::default_provider().region())
-        .unwrap_or_else(|| Region::new("us-west-2"));
+    let region = region::ChainProvider::first_try(default_region.map(Region::new))
+        .or_default_provider()
+        .or_else(Region::new("us-west-2"));
+
+    tracing_subscriber::fmt::init();
 
     if verbose {
         println!("S3 client version: {}", s3::PKG_VERSION);
-        println!("Region:            {:?}", &region);
-
-        SubscriberBuilder::default()
-            .with_env_filter("info")
-            .with_span_events(FmtSpan::CLOSE)
-            .init();
+        println!(
+            "Region:            {:?}",
+            region.region().expect("region must be set")
+        );
     }
 
-    let config = Config::builder().region(&region).build();
+    let config = Config::builder().region(region).build();
 
     let client = Client::from_conf(config);
 
@@ -68,7 +65,7 @@ async fn main() {
         Ok(resp) => {
             println!("Objects:");
             for object in resp.contents.unwrap_or_default() {
-                println!(" {}", object.key.expect("objects have keys"));
+                println!(" `{}`", object.key.expect("objects have keys"));
             }
         }
         Err(e) => {

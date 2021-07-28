@@ -6,7 +6,6 @@
 use aws_sdk_dynamodb as dynamodb;
 
 use aws_http::AwsErrorRetryPolicy;
-use aws_hyper::test_connection::TestConnection;
 use aws_hyper::{SdkError, SdkSuccess};
 use aws_sdk_dynamodb::input::CreateTableInput;
 use dynamodb::error::DescribeTableError;
@@ -21,6 +20,7 @@ use dynamodb::{Config, Credentials, Region};
 use http::header::{HeaderName, AUTHORIZATION};
 use http::Uri;
 use serde_json::Value;
+use smithy_client::test_connection::TestConnection;
 use smithy_http::body::SdkBody;
 use smithy_http::operation::Operation;
 use smithy_http::retry::ClassifyResponse;

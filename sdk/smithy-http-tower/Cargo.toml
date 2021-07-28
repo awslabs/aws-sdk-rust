@@ -15,7 +15,7 @@ pin-project = "1"
 http = "0.2.3"
 bytes = "1"
 http-body = "0.4.0"
-tracing = "0.1.24"
+tracing = "0.1"
 
 [dev-dependencies]
 tower = { version = "0.4.4", features = ["util"] }
