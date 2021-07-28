@@ -152,13 +152,11 @@ impl AddPermissionInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-www-form-urlencoded");
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-www-form-urlencoded",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -317,13 +315,11 @@ impl ChangeMessageVisibilityInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-www-form-urlencoded");
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-www-form-urlencoded",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -478,13 +474,11 @@ impl ChangeMessageVisibilityBatchInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-www-form-urlencoded");
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-www-form-urlencoded",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -667,13 +661,11 @@ impl CreateQueueInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-www-form-urlencoded");
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-www-form-urlencoded",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -816,13 +808,11 @@ impl DeleteMessageInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-www-form-urlencoded");
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-www-form-urlencoded",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -972,13 +962,11 @@ impl DeleteMessageBatchInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-www-form-urlencoded");
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-www-form-urlencoded",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -1104,13 +1092,11 @@ impl DeleteQueueInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-www-form-urlencoded");
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-www-form-urlencoded",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -1260,13 +1246,11 @@ impl GetQueueAttributesInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-www-form-urlencoded");
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-www-form-urlencoded",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -1406,13 +1390,11 @@ impl GetQueueUrlInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-www-form-urlencoded");
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-www-form-urlencoded",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -1568,13 +1550,11 @@ impl ListDeadLetterSourceQueuesInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-www-form-urlencoded");
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-www-form-urlencoded",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -1726,13 +1706,11 @@ impl ListQueuesInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-www-form-urlencoded");
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-www-form-urlencoded",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -1859,13 +1837,11 @@ impl ListQueueTagsInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-www-form-urlencoded");
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-www-form-urlencoded",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -1991,13 +1967,11 @@ impl PurgeQueueInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-www-form-urlencoded");
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-www-form-urlencoded",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -2258,13 +2232,11 @@ impl ReceiveMessageInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-www-form-urlencoded");
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-www-form-urlencoded",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -2407,13 +2379,11 @@ impl RemovePermissionInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-www-form-urlencoded");
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-www-form-urlencoded",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -2725,13 +2695,11 @@ impl SendMessageInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-www-form-urlencoded");
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-www-form-urlencoded",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -2881,13 +2849,11 @@ impl SendMessageBatchInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-www-form-urlencoded");
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-www-form-urlencoded",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -3041,13 +3007,11 @@ impl SetQueueAttributesInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-www-form-urlencoded");
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-www-form-urlencoded",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -3193,13 +3157,11 @@ impl TagQueueInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-www-form-urlencoded");
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-www-form-urlencoded",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -3339,13 +3301,11 @@ impl UntagQueueInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-www-form-urlencoded");
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-www-form-urlencoded",
+        );
         Ok(builder)
     }
     fn assemble(

@@ -393,9 +393,7 @@ pub fn try_data<'a, 'inp>(
     loop {
         match tokens.next().map(|opt| opt.map(|opt| opt.0)) {
             None => return Ok(Cow::Borrowed("")),
-            Some(Ok(Token::Text { text })) if !text.as_str().trim().is_empty() => {
-                return unescape(text.as_str().trim())
-            }
+            Some(Ok(Token::Text { text })) => return unescape(text.as_str()),
             Some(Ok(e @ Token::ElementStart { .. })) => {
                 return Err(XmlError::custom(format!(
                     "Looking for a data element, found: {:?}",
@@ -485,6 +483,25 @@ mod test {
         let mut doc = Document::new(xml);
         let mut scoped = doc.root_element().unwrap();
         assert_eq!(try_data(&mut scoped).unwrap(), "hello");
+    }
+
+    /// Whitespace within an element is preserved
+    #[test]
+    fn read_data_whitespace() {
+        let xml = r#"<Response> hello </Response>"#;
+        let mut doc = Document::new(xml);
+        let mut scoped = doc.root_element().unwrap();
+        assert_eq!(try_data(&mut scoped).unwrap(), " hello ");
+    }
+
+    #[test]
+    fn ignore_insignificant_whitespace() {
+        let xml = r#"<Response>   <A>  </A>    </Response>"#;
+        let mut doc = Document::new(xml);
+        let mut resp = doc.root_element().unwrap();
+        let mut a = resp.next_tag().expect("should be a");
+        let data = try_data(&mut a).expect("valid");
+        assert_eq!(data, "  ");
     }
 
     #[test]

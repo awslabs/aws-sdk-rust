@@ -151,23 +151,16 @@ impl CreateScalingPlanInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header(
-                "x-amz-target",
-                "AnyScaleScalingPlannerFrontendService.CreateScalingPlan",
-            );
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "AnyScaleScalingPlannerFrontendService.CreateScalingPlan",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -312,23 +305,16 @@ impl DeleteScalingPlanInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header(
-                "x-amz-target",
-                "AnyScaleScalingPlannerFrontendService.DeleteScalingPlan",
-            );
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "AnyScaleScalingPlannerFrontendService.DeleteScalingPlan",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -498,23 +484,16 @@ impl DescribeScalingPlanResourcesInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header(
-                "x-amz-target",
-                "AnyScaleScalingPlannerFrontendService.DescribeScalingPlanResources",
-            );
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "AnyScaleScalingPlannerFrontendService.DescribeScalingPlanResources",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -706,23 +685,16 @@ impl DescribeScalingPlansInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header(
-                "x-amz-target",
-                "AnyScaleScalingPlannerFrontendService.DescribeScalingPlans",
-            );
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "AnyScaleScalingPlannerFrontendService.DescribeScalingPlans",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -977,23 +949,16 @@ impl GetScalingPlanResourceForecastDataInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header(
-                "x-amz-target",
-                "AnyScaleScalingPlannerFrontendService.GetScalingPlanResourceForecastData",
-            );
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "AnyScaleScalingPlannerFrontendService.GetScalingPlanResourceForecastData",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -1172,23 +1137,16 @@ impl UpdateScalingPlanInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header(
-                "x-amz-target",
-                "AnyScaleScalingPlannerFrontendService.UpdateScalingPlan",
-            );
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "AnyScaleScalingPlannerFrontendService.UpdateScalingPlan",
+        );
         Ok(builder)
     }
     fn assemble(

@@ -90,6 +90,22 @@ pub fn one_or_none<T: FromStr>(
     }
 }
 
+pub fn set_header_if_absent(
+    request: http::request::Builder,
+    key: &'static str,
+    value: &'static str,
+) -> http::request::Builder {
+    if !request
+        .headers_ref()
+        .map(|map| map.contains_key(key))
+        .unwrap_or(false)
+    {
+        request.header(key, value)
+    } else {
+        request
+    }
+}
+
 /// Read one comma delimited value for `FromStr` types
 fn read_one<T>(s: &[u8]) -> Result<(T, &[u8]), ParseError>
 where
@@ -118,8 +134,24 @@ fn then_delim(s: &[u8]) -> Result<&[u8], ParseError> {
 
 #[cfg(test)]
 mod test {
-    use crate::header::{headers_for_prefix, read_many, ParseError};
+    use crate::header::{headers_for_prefix, read_many, set_header_if_absent, ParseError};
     use std::collections::HashMap;
+
+    #[test]
+    fn put_if_absent() {
+        let builder = http::Request::builder().header("foo", "bar");
+        let builder = set_header_if_absent(builder, "foo", "baz");
+        let builder = set_header_if_absent(builder, "other", "value");
+        let req = builder.body(()).expect("valid request");
+        assert_eq!(
+            req.headers().get_all("foo").iter().collect::<Vec<_>>(),
+            vec!["bar"]
+        );
+        assert_eq!(
+            req.headers().get_all("other").iter().collect::<Vec<_>>(),
+            vec!["value"]
+        );
+    }
 
     #[test]
     fn read_many_bools() {

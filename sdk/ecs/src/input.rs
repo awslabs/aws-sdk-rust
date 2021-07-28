@@ -147,23 +147,16 @@ impl CreateCapacityProviderInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header(
-                "x-amz-target",
-                "AmazonEC2ContainerServiceV20141113.CreateCapacityProvider",
-            );
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "AmazonEC2ContainerServiceV20141113.CreateCapacityProvider",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -370,23 +363,16 @@ impl CreateClusterInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header(
-                "x-amz-target",
-                "AmazonEC2ContainerServiceV20141113.CreateCluster",
-            );
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "AmazonEC2ContainerServiceV20141113.CreateCluster",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -917,23 +903,16 @@ impl CreateServiceInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header(
-                "x-amz-target",
-                "AmazonEC2ContainerServiceV20141113.CreateService",
-            );
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "AmazonEC2ContainerServiceV20141113.CreateService",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -1239,23 +1218,16 @@ impl CreateTaskSetInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header(
-                "x-amz-target",
-                "AmazonEC2ContainerServiceV20141113.CreateTaskSet",
-            );
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "AmazonEC2ContainerServiceV20141113.CreateTaskSet",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -1409,23 +1381,16 @@ impl DeleteAccountSettingInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header(
-                "x-amz-target",
-                "AmazonEC2ContainerServiceV20141113.DeleteAccountSetting",
-            );
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "AmazonEC2ContainerServiceV20141113.DeleteAccountSetting",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -1570,23 +1535,16 @@ impl DeleteAttributesInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header(
-                "x-amz-target",
-                "AmazonEC2ContainerServiceV20141113.DeleteAttributes",
-            );
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "AmazonEC2ContainerServiceV20141113.DeleteAttributes",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -1719,23 +1677,16 @@ impl DeleteCapacityProviderInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header(
-                "x-amz-target",
-                "AmazonEC2ContainerServiceV20141113.DeleteCapacityProvider",
-            );
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "AmazonEC2ContainerServiceV20141113.DeleteCapacityProvider",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -1863,23 +1814,16 @@ impl DeleteClusterInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header(
-                "x-amz-target",
-                "AmazonEC2ContainerServiceV20141113.DeleteCluster",
-            );
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "AmazonEC2ContainerServiceV20141113.DeleteCluster",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -2032,23 +1976,16 @@ impl DeleteServiceInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header(
-                "x-amz-target",
-                "AmazonEC2ContainerServiceV20141113.DeleteService",
-            );
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "AmazonEC2ContainerServiceV20141113.DeleteService",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -2211,23 +2148,16 @@ impl DeleteTaskSetInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header(
-                "x-amz-target",
-                "AmazonEC2ContainerServiceV20141113.DeleteTaskSet",
-            );
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "AmazonEC2ContainerServiceV20141113.DeleteTaskSet",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -2395,23 +2325,16 @@ impl DeregisterContainerInstanceInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header(
-                "x-amz-target",
-                "AmazonEC2ContainerServiceV20141113.DeregisterContainerInstance",
-            );
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "AmazonEC2ContainerServiceV20141113.DeregisterContainerInstance",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -2547,23 +2470,16 @@ impl DeregisterTaskDefinitionInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header(
-                "x-amz-target",
-                "AmazonEC2ContainerServiceV20141113.DeregisterTaskDefinition",
-            );
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "AmazonEC2ContainerServiceV20141113.DeregisterTaskDefinition",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -2752,23 +2668,16 @@ impl DescribeCapacityProvidersInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header(
-                "x-amz-target",
-                "AmazonEC2ContainerServiceV20141113.DescribeCapacityProviders",
-            );
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "AmazonEC2ContainerServiceV20141113.DescribeCapacityProviders",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -2916,23 +2825,16 @@ impl DescribeClustersInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header(
-                "x-amz-target",
-                "AmazonEC2ContainerServiceV20141113.DescribeClusters",
-            );
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "AmazonEC2ContainerServiceV20141113.DescribeClusters",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -3098,23 +3000,16 @@ impl DescribeContainerInstancesInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header(
-                "x-amz-target",
-                "AmazonEC2ContainerServiceV20141113.DescribeContainerInstances",
-            );
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "AmazonEC2ContainerServiceV20141113.DescribeContainerInstances",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -3275,23 +3170,16 @@ impl DescribeServicesInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header(
-                "x-amz-target",
-                "AmazonEC2ContainerServiceV20141113.DescribeServices",
-            );
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "AmazonEC2ContainerServiceV20141113.DescribeServices",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -3442,23 +3330,16 @@ impl DescribeTaskDefinitionInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header(
-                "x-amz-target",
-                "AmazonEC2ContainerServiceV20141113.DescribeTaskDefinition",
-            );
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "AmazonEC2ContainerServiceV20141113.DescribeTaskDefinition",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -3618,23 +3499,16 @@ impl DescribeTasksInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header(
-                "x-amz-target",
-                "AmazonEC2ContainerServiceV20141113.DescribeTasks",
-            );
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "AmazonEC2ContainerServiceV20141113.DescribeTasks",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -3806,23 +3680,16 @@ impl DescribeTaskSetsInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header(
-                "x-amz-target",
-                "AmazonEC2ContainerServiceV20141113.DescribeTaskSets",
-            );
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "AmazonEC2ContainerServiceV20141113.DescribeTaskSets",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -3968,23 +3835,16 @@ impl DiscoverPollEndpointInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header(
-                "x-amz-target",
-                "AmazonEC2ContainerServiceV20141113.DiscoverPollEndpoint",
-            );
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "AmazonEC2ContainerServiceV20141113.DiscoverPollEndpoint",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -4159,23 +4019,16 @@ impl ExecuteCommandInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header(
-                "x-amz-target",
-                "AmazonEC2ContainerServiceV20141113.ExecuteCommand",
-            );
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "AmazonEC2ContainerServiceV20141113.ExecuteCommand",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -4389,23 +4242,16 @@ impl ListAccountSettingsInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header(
-                "x-amz-target",
-                "AmazonEC2ContainerServiceV20141113.ListAccountSettings",
-            );
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "AmazonEC2ContainerServiceV20141113.ListAccountSettings",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -4614,23 +4460,16 @@ impl ListAttributesInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header(
-                "x-amz-target",
-                "AmazonEC2ContainerServiceV20141113.ListAttributes",
-            );
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "AmazonEC2ContainerServiceV20141113.ListAttributes",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -4780,23 +4619,16 @@ impl ListClustersInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header(
-                "x-amz-target",
-                "AmazonEC2ContainerServiceV20141113.ListClusters",
-            );
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "AmazonEC2ContainerServiceV20141113.ListClusters",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -4995,23 +4827,16 @@ impl ListContainerInstancesInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header(
-                "x-amz-target",
-                "AmazonEC2ContainerServiceV20141113.ListContainerInstances",
-            );
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "AmazonEC2ContainerServiceV20141113.ListContainerInstances",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -5203,23 +5028,16 @@ impl ListServicesInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header(
-                "x-amz-target",
-                "AmazonEC2ContainerServiceV20141113.ListServices",
-            );
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "AmazonEC2ContainerServiceV20141113.ListServices",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -5351,23 +5169,16 @@ impl ListTagsForResourceInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header(
-                "x-amz-target",
-                "AmazonEC2ContainerServiceV20141113.ListTagsForResource",
-            );
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "AmazonEC2ContainerServiceV20141113.ListTagsForResource",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -5566,23 +5377,16 @@ impl ListTaskDefinitionFamiliesInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header(
-                "x-amz-target",
-                "AmazonEC2ContainerServiceV20141113.ListTaskDefinitionFamilies",
-            );
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "AmazonEC2ContainerServiceV20141113.ListTaskDefinitionFamilies",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -5789,23 +5593,16 @@ impl ListTaskDefinitionsInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header(
-                "x-amz-target",
-                "AmazonEC2ContainerServiceV20141113.ListTaskDefinitions",
-            );
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "AmazonEC2ContainerServiceV20141113.ListTaskDefinitions",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -6060,23 +5857,16 @@ impl ListTasksInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header(
-                "x-amz-target",
-                "AmazonEC2ContainerServiceV20141113.ListTasks",
-            );
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "AmazonEC2ContainerServiceV20141113.ListTasks",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -6248,23 +6038,16 @@ impl PutAccountSettingInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header(
-                "x-amz-target",
-                "AmazonEC2ContainerServiceV20141113.PutAccountSetting",
-            );
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "AmazonEC2ContainerServiceV20141113.PutAccountSetting",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -6414,23 +6197,16 @@ impl PutAccountSettingDefaultInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header(
-                "x-amz-target",
-                "AmazonEC2ContainerServiceV20141113.PutAccountSettingDefault",
-            );
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "AmazonEC2ContainerServiceV20141113.PutAccountSettingDefault",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -6574,23 +6350,16 @@ impl PutAttributesInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header(
-                "x-amz-target",
-                "AmazonEC2ContainerServiceV20141113.PutAttributes",
-            );
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "AmazonEC2ContainerServiceV20141113.PutAttributes",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -6757,23 +6526,16 @@ impl PutClusterCapacityProvidersInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header(
-                "x-amz-target",
-                "AmazonEC2ContainerServiceV20141113.PutClusterCapacityProviders",
-            );
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "AmazonEC2ContainerServiceV20141113.PutClusterCapacityProviders",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -7032,23 +6794,16 @@ impl RegisterContainerInstanceInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header(
-                "x-amz-target",
-                "AmazonEC2ContainerServiceV20141113.RegisterContainerInstance",
-            );
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "AmazonEC2ContainerServiceV20141113.RegisterContainerInstance",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -7564,23 +7319,16 @@ impl RegisterTaskDefinitionInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header(
-                "x-amz-target",
-                "AmazonEC2ContainerServiceV20141113.RegisterTaskDefinition",
-            );
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "AmazonEC2ContainerServiceV20141113.RegisterTaskDefinition",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -7976,20 +7724,16 @@ impl RunTaskInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("x-amz-target", "AmazonEC2ContainerServiceV20141113.RunTask");
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "AmazonEC2ContainerServiceV20141113.RunTask",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -8279,23 +8023,16 @@ impl StartTaskInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header(
-                "x-amz-target",
-                "AmazonEC2ContainerServiceV20141113.StartTask",
-            );
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "AmazonEC2ContainerServiceV20141113.StartTask",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -8444,23 +8181,16 @@ impl StopTaskInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header(
-                "x-amz-target",
-                "AmazonEC2ContainerServiceV20141113.StopTask",
-            );
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "AmazonEC2ContainerServiceV20141113.StopTask",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -8612,23 +8342,16 @@ impl SubmitAttachmentStateChangesInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header(
-                "x-amz-target",
-                "AmazonEC2ContainerServiceV20141113.SubmitAttachmentStateChanges",
-            );
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "AmazonEC2ContainerServiceV20141113.SubmitAttachmentStateChanges",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -8845,23 +8568,16 @@ impl SubmitContainerStateChangeInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header(
-                "x-amz-target",
-                "AmazonEC2ContainerServiceV20141113.SubmitContainerStateChange",
-            );
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "AmazonEC2ContainerServiceV20141113.SubmitContainerStateChange",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -9120,23 +8836,16 @@ impl SubmitTaskStateChangeInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header(
-                "x-amz-target",
-                "AmazonEC2ContainerServiceV20141113.SubmitTaskStateChange",
-            );
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "AmazonEC2ContainerServiceV20141113.SubmitTaskStateChange",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -9278,23 +8987,16 @@ impl TagResourceInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header(
-                "x-amz-target",
-                "AmazonEC2ContainerServiceV20141113.TagResource",
-            );
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "AmazonEC2ContainerServiceV20141113.TagResource",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -9439,23 +9141,16 @@ impl UntagResourceInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header(
-                "x-amz-target",
-                "AmazonEC2ContainerServiceV20141113.UntagResource",
-            );
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "AmazonEC2ContainerServiceV20141113.UntagResource",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -9604,23 +9299,16 @@ impl UpdateCapacityProviderInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header(
-                "x-amz-target",
-                "AmazonEC2ContainerServiceV20141113.UpdateCapacityProvider",
-            );
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "AmazonEC2ContainerServiceV20141113.UpdateCapacityProvider",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -9777,23 +9465,16 @@ impl UpdateClusterInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header(
-                "x-amz-target",
-                "AmazonEC2ContainerServiceV20141113.UpdateCluster",
-            );
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "AmazonEC2ContainerServiceV20141113.UpdateCluster",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -9938,23 +9619,16 @@ impl UpdateClusterSettingsInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header(
-                "x-amz-target",
-                "AmazonEC2ContainerServiceV20141113.UpdateClusterSettings",
-            );
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "AmazonEC2ContainerServiceV20141113.UpdateClusterSettings",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -10100,23 +9774,16 @@ impl UpdateContainerAgentInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header(
-                "x-amz-target",
-                "AmazonEC2ContainerServiceV20141113.UpdateContainerAgent",
-            );
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "AmazonEC2ContainerServiceV20141113.UpdateContainerAgent",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -10284,23 +9951,16 @@ impl UpdateContainerInstancesStateInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header(
-                "x-amz-target",
-                "AmazonEC2ContainerServiceV20141113.UpdateContainerInstancesState",
-            );
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "AmazonEC2ContainerServiceV20141113.UpdateContainerInstancesState",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -10628,23 +10288,16 @@ impl UpdateServiceInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header(
-                "x-amz-target",
-                "AmazonEC2ContainerServiceV20141113.UpdateService",
-            );
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "AmazonEC2ContainerServiceV20141113.UpdateService",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -10803,23 +10456,16 @@ impl UpdateServicePrimaryTaskSetInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header(
-                "x-amz-target",
-                "AmazonEC2ContainerServiceV20141113.UpdateServicePrimaryTaskSet",
-            );
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "AmazonEC2ContainerServiceV20141113.UpdateServicePrimaryTaskSet",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -10981,23 +10627,16 @@ impl UpdateTaskSetInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header(
-                "x-amz-target",
-                "AmazonEC2ContainerServiceV20141113.UpdateTaskSet",
-            );
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "AmazonEC2ContainerServiceV20141113.UpdateTaskSet",
+        );
         Ok(builder)
     }
     fn assemble(

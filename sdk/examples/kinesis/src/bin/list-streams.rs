@@ -3,19 +3,13 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-use std::process;
-
-use kinesis::{Client, Config, Region};
-
-use aws_types::region::{EnvironmentProvider, ProvideRegion};
-
+use aws_types::region::ProvideRegion;
+use kinesis::{Client, Config, Error, Region, PKG_VERSION};
 use structopt::StructOpt;
-use tracing_subscriber::fmt::format::FmtSpan;
-use tracing_subscriber::fmt::SubscriberBuilder;
 
 #[derive(Debug, StructOpt)]
 struct Opt {
-    /// The region
+    /// The AWS Region.
     #[structopt(short, long)]
     region: Option<String>,
 
@@ -25,43 +19,37 @@ struct Opt {
 }
 
 #[tokio::main]
-async fn main() {
+async fn main() -> Result<(), Error> {
+    tracing_subscriber::fmt::init();
     let Opt { region, verbose } = Opt::from_args();
 
-    let region = EnvironmentProvider::new()
-        .region()
-        .or_else(|| region.as_ref().map(|region| Region::new(region.clone())))
+    let region = region
+        .as_ref()
+        .map(|region| Region::new(region.clone()))
+        .or_else(|| aws_types::region::default_provider().region())
         .unwrap_or_else(|| Region::new("us-west-2"));
 
-    if verbose {
-        println!("Kinesis client version: {}\n", kinesis::PKG_VERSION);
-        println!("Region:      {:?}", &region);
+    println!();
 
-        SubscriberBuilder::default()
-            .with_env_filter("info")
-            .with_span_events(FmtSpan::CLOSE)
-            .init();
+    if verbose {
+        println!("Kinesis version: {}", PKG_VERSION);
+        println!("Region:          {:?}", &region);
+        println!();
     }
 
     let config = Config::builder().region(region).build();
-
     let client = Client::from_conf(config);
 
-    match client.list_streams().send().await {
-        Ok(resp) => {
-            println!("Stream names:");
+    let resp = client.list_streams().send().await?;
 
-            let streams = resp.stream_names.unwrap_or_default();
-            for stream in &streams {
-                println!("  {}", stream);
-            }
+    println!("Stream names:");
 
-            println!("Found {} stream(s)", streams.len());
-        }
-        Err(e) => {
-            println!("Got an error listing stream names:");
-            println!("{}", e);
-            process::exit(1);
-        }
-    };
+    let streams = resp.stream_names.unwrap_or_default();
+    for stream in &streams {
+        println!("  {}", stream);
+    }
+
+    println!("Found {} stream(s)", streams.len());
+
+    Ok(())
 }

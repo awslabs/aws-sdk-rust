@@ -19,6 +19,7 @@ use zeroize::Zeroizing;
 #[derive(Clone)]
 pub struct Credentials(Arc<Inner>);
 
+#[derive(Clone)]
 struct Inner {
     access_key_id: Zeroizing<String>,
     secret_access_key: Zeroizing<String>,
@@ -87,6 +88,10 @@ impl Credentials {
 
     pub fn expiry(&self) -> Option<SystemTime> {
         self.0.expires_after
+    }
+
+    pub fn expiry_mut(&mut self) -> &mut Option<SystemTime> {
+        &mut Arc::make_mut(&mut self.0).expires_after
     }
 
     pub fn session_token(&self) -> Option<&str> {

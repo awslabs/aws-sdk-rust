@@ -280,23 +280,16 @@ impl DeleteScalingPolicyInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header(
-                "x-amz-target",
-                "AnyScaleFrontendService.DeleteScalingPolicy",
-            );
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "AnyScaleFrontendService.DeleteScalingPolicy",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -597,23 +590,16 @@ impl DeleteScheduledActionInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header(
-                "x-amz-target",
-                "AnyScaleFrontendService.DeleteScheduledAction",
-            );
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "AnyScaleFrontendService.DeleteScheduledAction",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -902,23 +888,16 @@ impl DeregisterScalableTargetInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header(
-                "x-amz-target",
-                "AnyScaleFrontendService.DeregisterScalableTarget",
-            );
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "AnyScaleFrontendService.DeregisterScalableTarget",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -1181,23 +1160,16 @@ impl DescribeScalableTargetsInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header(
-                "x-amz-target",
-                "AnyScaleFrontendService.DescribeScalableTargets",
-            );
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "AnyScaleFrontendService.DescribeScalableTargets",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -1514,23 +1486,16 @@ impl DescribeScalingActivitiesInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header(
-                "x-amz-target",
-                "AnyScaleFrontendService.DescribeScalingActivities",
-            );
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "AnyScaleFrontendService.DescribeScalingActivities",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -1862,23 +1827,16 @@ impl DescribeScalingPoliciesInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header(
-                "x-amz-target",
-                "AnyScaleFrontendService.DescribeScalingPolicies",
-            );
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "AnyScaleFrontendService.DescribeScalingPolicies",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -2210,23 +2168,16 @@ impl DescribeScheduledActionsInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header(
-                "x-amz-target",
-                "AnyScaleFrontendService.DescribeScheduledActions",
-            );
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "AnyScaleFrontendService.DescribeScheduledActions",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -2588,20 +2539,16 @@ impl PutScalingPolicyInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("x-amz-target", "AnyScaleFrontendService.PutScalingPolicy");
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "AnyScaleFrontendService.PutScalingPolicy",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -2988,20 +2935,16 @@ impl PutScheduledActionInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("x-amz-target", "AnyScaleFrontendService.PutScheduledAction");
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "AnyScaleFrontendService.PutScheduledAction",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -3375,23 +3318,16 @@ impl RegisterScalableTargetInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header(
-                "x-amz-target",
-                "AnyScaleFrontendService.RegisterScalableTarget",
-            );
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "AnyScaleFrontendService.RegisterScalableTarget",
+        );
         Ok(builder)
     }
     fn assemble(

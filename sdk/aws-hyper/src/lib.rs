@@ -3,9 +3,6 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#[doc(inline)]
-pub use smithy_client::test_connection;
-
 pub use smithy_client::retry::Config as RetryConfig;
 
 use aws_auth::middleware::CredentialsStage;

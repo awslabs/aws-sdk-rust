@@ -118,13 +118,8 @@ impl CancelJobInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/json");
-        }
+        builder =
+            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
         Ok(builder)
     }
     fn assemble(
@@ -358,13 +353,8 @@ impl CreateComputeEnvironmentInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/json");
-        }
+        builder =
+            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
         Ok(builder)
     }
     fn assemble(
@@ -568,13 +558,8 @@ impl CreateJobQueueInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/json");
-        }
+        builder =
+            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
         Ok(builder)
     }
     fn assemble(
@@ -708,13 +693,8 @@ impl DeleteComputeEnvironmentInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/json");
-        }
+        builder =
+            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
         Ok(builder)
     }
     fn assemble(
@@ -843,13 +823,8 @@ impl DeleteJobQueueInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/json");
-        }
+        builder =
+            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
         Ok(builder)
     }
     fn assemble(
@@ -983,13 +958,8 @@ impl DeregisterJobDefinitionInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/json");
-        }
+        builder =
+            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
         Ok(builder)
     }
     fn assemble(
@@ -1160,13 +1130,8 @@ impl DescribeComputeEnvironmentsInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/json");
-        }
+        builder =
+            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
         Ok(builder)
     }
     fn assemble(
@@ -1360,13 +1325,8 @@ impl DescribeJobDefinitionsInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/json");
-        }
+        builder =
+            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
         Ok(builder)
     }
     fn assemble(
@@ -1534,13 +1494,8 @@ impl DescribeJobQueuesInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/json");
-        }
+        builder =
+            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
         Ok(builder)
     }
     fn assemble(
@@ -1670,13 +1625,8 @@ impl DescribeJobsInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/json");
-        }
+        builder =
+            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
         Ok(builder)
     }
     fn assemble(
@@ -1875,13 +1825,8 @@ impl ListJobsInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/json");
-        }
+        builder =
+            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
         Ok(builder)
     }
     fn assemble(
@@ -2027,13 +1972,8 @@ impl ListTagsForResourceInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/json");
-        }
+        builder =
+            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
         Ok(builder)
     }
     fn assemble(
@@ -2336,13 +2276,8 @@ impl RegisterJobDefinitionInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/json");
-        }
+        builder =
+            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
         Ok(builder)
     }
     fn assemble(
@@ -2653,13 +2588,8 @@ impl SubmitJobInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/json");
-        }
+        builder =
+            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
         Ok(builder)
     }
     fn assemble(
@@ -2829,13 +2759,8 @@ impl TagResourceInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/json");
-        }
+        builder =
+            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
         Ok(builder)
     }
     fn assemble(
@@ -2976,13 +2901,8 @@ impl TerminateJobInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/json");
-        }
+        builder =
+            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
         Ok(builder)
     }
     fn assemble(
@@ -3150,13 +3070,8 @@ impl UntagResourceInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/json");
-        }
+        builder =
+            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
         Ok(builder)
     }
     fn assemble(
@@ -3350,13 +3265,8 @@ impl UpdateComputeEnvironmentInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/json");
-        }
+        builder =
+            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
         Ok(builder)
     }
     fn assemble(
@@ -3533,13 +3443,8 @@ impl UpdateJobQueueInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/json");
-        }
+        builder =
+            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
         Ok(builder)
     }
     fn assemble(

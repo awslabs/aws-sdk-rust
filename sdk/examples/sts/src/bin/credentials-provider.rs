@@ -3,6 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
+use aws_auth::provider::lazy_caching::LazyCachingCredentialsProvider;
 use aws_auth::provider::{async_provide_credentials_fn, CredentialsError};
 use sts::Credentials;
 
@@ -13,10 +14,10 @@ async fn main() -> Result<(), dynamodb::Error> {
     tracing_subscriber::fmt::init();
     let client = sts::Client::from_env();
 
-    // NOTE: Do not use this in production! This will grab new credentials for every request.
-    // A high quality caching credential provider implementation is in the roadmap.
-    let dynamodb_conf = dynamodb::Config::builder()
-        .credentials_provider(async_provide_credentials_fn(move || {
+    // NOTE: Do not use LazyCachingCredentialsProvider in production yet!
+    // It hasn't implemented timeout or panic safety yet.
+    let sts_provider = LazyCachingCredentialsProvider::builder()
+        .refresh(async_provide_credentials_fn(move || {
             let client = client.clone();
             async move {
                 let session_token = client
@@ -38,6 +39,10 @@ async fn main() -> Result<(), dynamodb::Error> {
                 ))
             }
         }))
+        .build();
+
+    let dynamodb_conf = dynamodb::Config::builder()
+        .credentials_provider(sts_provider)
         .build();
 
     let client = dynamodb::Client::from_conf(dynamodb_conf);

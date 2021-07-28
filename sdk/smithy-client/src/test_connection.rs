@@ -2,7 +2,7 @@
  * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * SPDX-License-Identifier: Apache-2.0.
  */
-//! Module with client connectors usefule for testing.
+//! Module with client connectors useful for testing.
 
 // TODO
 #![allow(missing_docs)]

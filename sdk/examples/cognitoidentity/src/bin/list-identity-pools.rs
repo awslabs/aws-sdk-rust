@@ -4,27 +4,26 @@
  */
 
 use aws_types::region::{self, ProvideRegion};
-use cognitoidentity::{Client, Config, Error, Region};
+use cognitoidentity::{Client, Config, Error, Region, PKG_VERSION};
 use structopt::StructOpt;
 
 #[derive(Debug, StructOpt)]
 struct Opt {
-    /// The region
+    /// The AWS Region.
     #[structopt(short, long)]
     region: Option<String>,
 
-    /// Whether to display additional information
+    /// Whether to display additional information.
     #[structopt(short, long)]
     verbose: bool,
 }
 
-/// Lists your Amazon Cognito identities
+/// Lists your Amazon Cognito identity pools in the Region.
 /// # Arguments
 ///
-/// * `[-r REGION]` - The region containing the buckets.
-///   If not supplied, uses the value of the **AWS_DEFAULT_REGION** environment variable.
+/// * `[-r REGION]` - The Region in which the client is created.
+///   If not supplied, uses the value of the **AWS_REGION** environment variable.
 ///   If the environment variable is not set, defaults to **us-west-2**.
-/// * `[-g]` - Whether to display buckets in all regions.
 /// * `[-v]` - Whether to display additional information.
 #[tokio::main]
 async fn main() -> Result<(), Error> {
@@ -36,9 +35,14 @@ async fn main() -> Result<(), Error> {
         .or_default_provider()
         .or_else(Region::new("us-west-2"));
 
+    println!();
+
     if verbose {
-        println!("Cognito client version: {}", cognitoidentity::PKG_VERSION);
-        println!("Region:                 {:?}", region_provider.region());
+        println!("Cognito client version: {}", PKG_VERSION);
+        println!(
+            "Region:                 {}",
+            region_provider.region().unwrap().as_ref()
+        );
         println!();
     }
 
@@ -46,6 +50,8 @@ async fn main() -> Result<(), Error> {
     let client = Client::from_conf(config);
 
     let response = client.list_identity_pools().max_results(10).send().await?;
+
+    // Print IDs and names of pools.
     if let Some(pools) = response.identity_pools {
         println!("Identity pools:");
         for pool in pools {
@@ -56,6 +62,7 @@ async fn main() -> Result<(), Error> {
             println!();
         }
     }
+
     println!("Next token: {:?}", response.next_token);
 
     Ok(())

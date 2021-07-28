@@ -159,20 +159,16 @@ impl AddAssociationInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("x-amz-target", "SageMaker.AddAssociation");
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "SageMaker.AddAssociation",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -310,20 +306,13 @@ impl AddTagsInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("x-amz-target", "SageMaker.AddTags");
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder =
+            smithy_http::header::set_header_if_absent(builder, "x-amz-target", "SageMaker.AddTags");
         Ok(builder)
     }
     fn assemble(
@@ -468,20 +457,16 @@ impl AssociateTrialComponentInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("x-amz-target", "SageMaker.AssociateTrialComponent");
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "SageMaker.AssociateTrialComponent",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -711,20 +696,16 @@ impl CreateActionInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("x-amz-target", "SageMaker.CreateAction");
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "SageMaker.CreateAction",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -994,20 +975,16 @@ impl CreateAlgorithmInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("x-amz-target", "SageMaker.CreateAlgorithm");
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "SageMaker.CreateAlgorithm",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -1199,20 +1176,16 @@ impl CreateAppInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("x-amz-target", "SageMaker.CreateApp");
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "SageMaker.CreateApp",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -1378,20 +1351,16 @@ impl CreateAppImageConfigInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("x-amz-target", "SageMaker.CreateAppImageConfig");
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "SageMaker.CreateAppImageConfig",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -1603,20 +1572,16 @@ impl CreateArtifactInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("x-amz-target", "SageMaker.CreateArtifact");
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "SageMaker.CreateArtifact",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -1887,20 +1852,16 @@ impl CreateAutoMlJobInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("x-amz-target", "SageMaker.CreateAutoMLJob");
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "SageMaker.CreateAutoMLJob",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -2064,20 +2025,16 @@ impl CreateCodeRepositoryInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("x-amz-target", "SageMaker.CreateCodeRepository");
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "SageMaker.CreateCodeRepository",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -2321,20 +2278,16 @@ impl CreateCompilationJobInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("x-amz-target", "SageMaker.CreateCompilationJob");
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "SageMaker.CreateCompilationJob",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -2536,20 +2489,16 @@ impl CreateContextInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("x-amz-target", "SageMaker.CreateContext");
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "SageMaker.CreateContext",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -2826,20 +2775,16 @@ impl CreateDataQualityJobDefinitionInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("x-amz-target", "SageMaker.CreateDataQualityJobDefinition");
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "SageMaker.CreateDataQualityJobDefinition",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -3038,20 +2983,16 @@ impl CreateDeviceFleetInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("x-amz-target", "SageMaker.CreateDeviceFleet");
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "SageMaker.CreateDeviceFleet",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -3308,20 +3249,16 @@ impl CreateDomainInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("x-amz-target", "SageMaker.CreateDomain");
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "SageMaker.CreateDomain",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -3544,20 +3481,16 @@ impl CreateEdgePackagingJobInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("x-amz-target", "SageMaker.CreateEdgePackagingJob");
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "SageMaker.CreateEdgePackagingJob",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -3720,20 +3653,16 @@ impl CreateEndpointInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("x-amz-target", "SageMaker.CreateEndpoint");
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "SageMaker.CreateEndpoint",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -3965,20 +3894,16 @@ impl CreateEndpointConfigInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("x-amz-target", "SageMaker.CreateEndpointConfig");
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "SageMaker.CreateEndpointConfig",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -4150,20 +4075,16 @@ impl CreateExperimentInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("x-amz-target", "SageMaker.CreateExperiment");
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "SageMaker.CreateExperiment",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -4480,20 +4401,16 @@ impl CreateFeatureGroupInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("x-amz-target", "SageMaker.CreateFeatureGroup");
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "SageMaker.CreateFeatureGroup",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -4717,20 +4634,16 @@ impl CreateFlowDefinitionInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("x-amz-target", "SageMaker.CreateFlowDefinition");
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "SageMaker.CreateFlowDefinition",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -4892,20 +4805,16 @@ impl CreateHumanTaskUiInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("x-amz-target", "SageMaker.CreateHumanTaskUi");
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "SageMaker.CreateHumanTaskUi",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -5158,20 +5067,16 @@ impl CreateHyperParameterTuningJobInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("x-amz-target", "SageMaker.CreateHyperParameterTuningJob");
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "SageMaker.CreateHyperParameterTuningJob",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -5347,20 +5252,16 @@ impl CreateImageInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("x-amz-target", "SageMaker.CreateImage");
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "SageMaker.CreateImage",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -5520,20 +5421,16 @@ impl CreateImageVersionInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("x-amz-target", "SageMaker.CreateImageVersion");
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "SageMaker.CreateImageVersion",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -5926,20 +5823,16 @@ impl CreateLabelingJobInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("x-amz-target", "SageMaker.CreateLabelingJob");
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "SageMaker.CreateLabelingJob",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -6184,20 +6077,16 @@ impl CreateModelInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("x-amz-target", "SageMaker.CreateModel");
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "SageMaker.CreateModel",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -6474,20 +6363,16 @@ impl CreateModelBiasJobDefinitionInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("x-amz-target", "SageMaker.CreateModelBiasJobDefinition");
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "SageMaker.CreateModelBiasJobDefinition",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -6768,23 +6653,16 @@ impl CreateModelExplainabilityJobDefinitionInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header(
-                "x-amz-target",
-                "SageMaker.CreateModelExplainabilityJobDefinition",
-            );
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "SageMaker.CreateModelExplainabilityJobDefinition",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -7108,20 +6986,16 @@ impl CreateModelPackageInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("x-amz-target", "SageMaker.CreateModelPackage");
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "SageMaker.CreateModelPackage",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -7287,20 +7161,16 @@ impl CreateModelPackageGroupInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("x-amz-target", "SageMaker.CreateModelPackageGroup");
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "SageMaker.CreateModelPackageGroup",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -7581,20 +7451,16 @@ impl CreateModelQualityJobDefinitionInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("x-amz-target", "SageMaker.CreateModelQualityJobDefinition");
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "SageMaker.CreateModelQualityJobDefinition",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -7763,20 +7629,16 @@ impl CreateMonitoringScheduleInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("x-amz-target", "SageMaker.CreateMonitoringSchedule");
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "SageMaker.CreateMonitoringSchedule",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -8126,20 +7988,16 @@ impl CreateNotebookInstanceInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("x-amz-target", "SageMaker.CreateNotebookInstance");
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "SageMaker.CreateNotebookInstance",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -8316,23 +8174,16 @@ impl CreateNotebookInstanceLifecycleConfigInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header(
-                "x-amz-target",
-                "SageMaker.CreateNotebookInstanceLifecycleConfig",
-            );
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "SageMaker.CreateNotebookInstanceLifecycleConfig",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -8550,20 +8401,16 @@ impl CreatePipelineInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("x-amz-target", "SageMaker.CreatePipeline");
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "SageMaker.CreatePipeline",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -8734,20 +8581,16 @@ impl CreatePresignedDomainUrlInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("x-amz-target", "SageMaker.CreatePresignedDomainUrl");
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "SageMaker.CreatePresignedDomainUrl",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -8898,23 +8741,16 @@ impl CreatePresignedNotebookInstanceUrlInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header(
-                "x-amz-target",
-                "SageMaker.CreatePresignedNotebookInstanceUrl",
-            );
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "SageMaker.CreatePresignedNotebookInstanceUrl",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -9230,20 +9066,16 @@ impl CreateProcessingJobInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("x-amz-target", "SageMaker.CreateProcessingJob");
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "SageMaker.CreateProcessingJob",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -9420,20 +9252,16 @@ impl CreateProjectInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("x-amz-target", "SageMaker.CreateProject");
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "SageMaker.CreateProject",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -9964,20 +9792,16 @@ impl CreateTrainingJobInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("x-amz-target", "SageMaker.CreateTrainingJob");
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "SageMaker.CreateTrainingJob",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -10339,20 +10163,16 @@ impl CreateTransformJobInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("x-amz-target", "SageMaker.CreateTransformJob");
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "SageMaker.CreateTransformJob",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -10536,20 +10356,16 @@ impl CreateTrialInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("x-amz-target", "SageMaker.CreateTrial");
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "SageMaker.CreateTrial",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -10853,20 +10669,16 @@ impl CreateTrialComponentInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("x-amz-target", "SageMaker.CreateTrialComponent");
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "SageMaker.CreateTrialComponent",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -11074,20 +10886,16 @@ impl CreateUserProfileInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("x-amz-target", "SageMaker.CreateUserProfile");
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "SageMaker.CreateUserProfile",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -11285,20 +11093,16 @@ impl CreateWorkforceInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("x-amz-target", "SageMaker.CreateWorkforce");
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "SageMaker.CreateWorkforce",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -11507,20 +11311,16 @@ impl CreateWorkteamInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("x-amz-target", "SageMaker.CreateWorkteam");
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "SageMaker.CreateWorkteam",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -11648,20 +11448,16 @@ impl DeleteActionInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("x-amz-target", "SageMaker.DeleteAction");
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "SageMaker.DeleteAction",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -11793,20 +11589,16 @@ impl DeleteAlgorithmInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("x-amz-target", "SageMaker.DeleteAlgorithm");
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "SageMaker.DeleteAlgorithm",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -11968,20 +11760,16 @@ impl DeleteAppInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("x-amz-target", "SageMaker.DeleteApp");
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "SageMaker.DeleteApp",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -12114,20 +11902,16 @@ impl DeleteAppImageConfigInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("x-amz-target", "SageMaker.DeleteAppImageConfig");
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "SageMaker.DeleteAppImageConfig",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -12270,20 +12054,16 @@ impl DeleteArtifactInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("x-amz-target", "SageMaker.DeleteArtifact");
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "SageMaker.DeleteArtifact",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -12427,20 +12207,16 @@ impl DeleteAssociationInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("x-amz-target", "SageMaker.DeleteAssociation");
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "SageMaker.DeleteAssociation",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -12573,20 +12349,16 @@ impl DeleteCodeRepositoryInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("x-amz-target", "SageMaker.DeleteCodeRepository");
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "SageMaker.DeleteCodeRepository",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -12714,20 +12486,16 @@ impl DeleteContextInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("x-amz-target", "SageMaker.DeleteContext");
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "SageMaker.DeleteContext",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -12862,20 +12630,16 @@ impl DeleteDataQualityJobDefinitionInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("x-amz-target", "SageMaker.DeleteDataQualityJobDefinition");
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "SageMaker.DeleteDataQualityJobDefinition",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -13008,20 +12772,16 @@ impl DeleteDeviceFleetInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("x-amz-target", "SageMaker.DeleteDeviceFleet");
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "SageMaker.DeleteDeviceFleet",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -13165,20 +12925,16 @@ impl DeleteDomainInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("x-amz-target", "SageMaker.DeleteDomain");
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "SageMaker.DeleteDomain",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -13310,20 +13066,16 @@ impl DeleteEndpointInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("x-amz-target", "SageMaker.DeleteEndpoint");
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "SageMaker.DeleteEndpoint",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -13456,20 +13208,16 @@ impl DeleteEndpointConfigInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("x-amz-target", "SageMaker.DeleteEndpointConfig");
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "SageMaker.DeleteEndpointConfig",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -13601,20 +13349,16 @@ impl DeleteExperimentInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("x-amz-target", "SageMaker.DeleteExperiment");
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "SageMaker.DeleteExperiment",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -13748,20 +13492,16 @@ impl DeleteFeatureGroupInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("x-amz-target", "SageMaker.DeleteFeatureGroup");
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "SageMaker.DeleteFeatureGroup",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -13894,20 +13634,16 @@ impl DeleteFlowDefinitionInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("x-amz-target", "SageMaker.DeleteFlowDefinition");
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "SageMaker.DeleteFlowDefinition",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -14040,20 +13776,16 @@ impl DeleteHumanTaskUiInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("x-amz-target", "SageMaker.DeleteHumanTaskUi");
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "SageMaker.DeleteHumanTaskUi",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -14181,20 +13913,16 @@ impl DeleteImageInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("x-amz-target", "SageMaker.DeleteImage");
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "SageMaker.DeleteImage",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -14335,20 +14063,16 @@ impl DeleteImageVersionInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("x-amz-target", "SageMaker.DeleteImageVersion");
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "SageMaker.DeleteImageVersion",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -14476,20 +14200,16 @@ impl DeleteModelInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("x-amz-target", "SageMaker.DeleteModel");
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "SageMaker.DeleteModel",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -14624,20 +14344,16 @@ impl DeleteModelBiasJobDefinitionInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("x-amz-target", "SageMaker.DeleteModelBiasJobDefinition");
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "SageMaker.DeleteModelBiasJobDefinition",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -14771,23 +14487,16 @@ impl DeleteModelExplainabilityJobDefinitionInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header(
-                "x-amz-target",
-                "SageMaker.DeleteModelExplainabilityJobDefinition",
-            );
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "SageMaker.DeleteModelExplainabilityJobDefinition",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -14922,20 +14631,16 @@ impl DeleteModelPackageInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("x-amz-target", "SageMaker.DeleteModelPackage");
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "SageMaker.DeleteModelPackage",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -15069,20 +14774,16 @@ impl DeleteModelPackageGroupInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("x-amz-target", "SageMaker.DeleteModelPackageGroup");
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "SageMaker.DeleteModelPackageGroup",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -15217,20 +14918,16 @@ impl DeleteModelPackageGroupPolicyInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("x-amz-target", "SageMaker.DeleteModelPackageGroupPolicy");
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "SageMaker.DeleteModelPackageGroupPolicy",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -15367,20 +15064,16 @@ impl DeleteModelQualityJobDefinitionInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("x-amz-target", "SageMaker.DeleteModelQualityJobDefinition");
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "SageMaker.DeleteModelQualityJobDefinition",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -15514,20 +15207,16 @@ impl DeleteMonitoringScheduleInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("x-amz-target", "SageMaker.DeleteMonitoringSchedule");
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "SageMaker.DeleteMonitoringSchedule",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -15660,20 +15349,16 @@ impl DeleteNotebookInstanceInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("x-amz-target", "SageMaker.DeleteNotebookInstance");
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "SageMaker.DeleteNotebookInstance",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -15812,23 +15497,16 @@ impl DeleteNotebookInstanceLifecycleConfigInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header(
-                "x-amz-target",
-                "SageMaker.DeleteNotebookInstanceLifecycleConfig",
-            );
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "SageMaker.DeleteNotebookInstanceLifecycleConfig",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -15978,20 +15656,16 @@ impl DeletePipelineInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("x-amz-target", "SageMaker.DeletePipeline");
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "SageMaker.DeletePipeline",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -16119,20 +15793,16 @@ impl DeleteProjectInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("x-amz-target", "SageMaker.DeleteProject");
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "SageMaker.DeleteProject",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -16276,20 +15946,16 @@ impl DeleteTagsInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("x-amz-target", "SageMaker.DeleteTags");
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "SageMaker.DeleteTags",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -16417,20 +16083,16 @@ impl DeleteTrialInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("x-amz-target", "SageMaker.DeleteTrial");
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "SageMaker.DeleteTrial",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -16563,20 +16225,16 @@ impl DeleteTrialComponentInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("x-amz-target", "SageMaker.DeleteTrialComponent");
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "SageMaker.DeleteTrialComponent",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -16720,20 +16378,16 @@ impl DeleteUserProfileInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("x-amz-target", "SageMaker.DeleteUserProfile");
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "SageMaker.DeleteUserProfile",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -16865,20 +16519,16 @@ impl DeleteWorkforceInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("x-amz-target", "SageMaker.DeleteWorkforce");
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "SageMaker.DeleteWorkforce",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -17010,20 +16660,16 @@ impl DeleteWorkteamInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("x-amz-target", "SageMaker.DeleteWorkteam");
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "SageMaker.DeleteWorkteam",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -17171,20 +16817,16 @@ impl DeregisterDevicesInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("x-amz-target", "SageMaker.DeregisterDevices");
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "SageMaker.DeregisterDevices",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -17313,20 +16955,16 @@ impl DescribeActionInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("x-amz-target", "SageMaker.DescribeAction");
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "SageMaker.DescribeAction",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -17459,20 +17097,16 @@ impl DescribeAlgorithmInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("x-amz-target", "SageMaker.DescribeAlgorithm");
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "SageMaker.DescribeAlgorithm",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -17636,20 +17270,16 @@ impl DescribeAppInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("x-amz-target", "SageMaker.DescribeApp");
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "SageMaker.DescribeApp",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -17782,20 +17412,16 @@ impl DescribeAppImageConfigInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("x-amz-target", "SageMaker.DescribeAppImageConfig");
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "SageMaker.DescribeAppImageConfig",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -17924,20 +17550,16 @@ impl DescribeArtifactInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("x-amz-target", "SageMaker.DescribeArtifact");
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "SageMaker.DescribeArtifact",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -18070,20 +17692,16 @@ impl DescribeAutoMlJobInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("x-amz-target", "SageMaker.DescribeAutoMLJob");
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "SageMaker.DescribeAutoMLJob",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -18216,20 +17834,16 @@ impl DescribeCodeRepositoryInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("x-amz-target", "SageMaker.DescribeCodeRepository");
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "SageMaker.DescribeCodeRepository",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -18362,20 +17976,16 @@ impl DescribeCompilationJobInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("x-amz-target", "SageMaker.DescribeCompilationJob");
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "SageMaker.DescribeCompilationJob",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -18504,20 +18114,16 @@ impl DescribeContextInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("x-amz-target", "SageMaker.DescribeContext");
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "SageMaker.DescribeContext",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -18654,20 +18260,16 @@ impl DescribeDataQualityJobDefinitionInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("x-amz-target", "SageMaker.DescribeDataQualityJobDefinition");
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "SageMaker.DescribeDataQualityJobDefinition",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -18821,20 +18423,16 @@ impl DescribeDeviceInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("x-amz-target", "SageMaker.DescribeDevice");
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "SageMaker.DescribeDevice",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -18967,20 +18565,16 @@ impl DescribeDeviceFleetInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("x-amz-target", "SageMaker.DescribeDeviceFleet");
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "SageMaker.DescribeDeviceFleet",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -19109,20 +18703,16 @@ impl DescribeDomainInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("x-amz-target", "SageMaker.DescribeDomain");
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "SageMaker.DescribeDomain",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -19256,20 +18846,16 @@ impl DescribeEdgePackagingJobInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("x-amz-target", "SageMaker.DescribeEdgePackagingJob");
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "SageMaker.DescribeEdgePackagingJob",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -19401,20 +18987,16 @@ impl DescribeEndpointInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("x-amz-target", "SageMaker.DescribeEndpoint");
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "SageMaker.DescribeEndpoint",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -19547,20 +19129,16 @@ impl DescribeEndpointConfigInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("x-amz-target", "SageMaker.DescribeEndpointConfig");
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "SageMaker.DescribeEndpointConfig",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -19693,20 +19271,16 @@ impl DescribeExperimentInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("x-amz-target", "SageMaker.DescribeExperiment");
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "SageMaker.DescribeExperiment",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -19852,20 +19426,16 @@ impl DescribeFeatureGroupInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("x-amz-target", "SageMaker.DescribeFeatureGroup");
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "SageMaker.DescribeFeatureGroup",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -19998,20 +19568,16 @@ impl DescribeFlowDefinitionInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("x-amz-target", "SageMaker.DescribeFlowDefinition");
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "SageMaker.DescribeFlowDefinition",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -20145,20 +19711,16 @@ impl DescribeHumanTaskUiInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("x-amz-target", "SageMaker.DescribeHumanTaskUi");
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "SageMaker.DescribeHumanTaskUi",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -20298,20 +19860,16 @@ impl DescribeHyperParameterTuningJobInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("x-amz-target", "SageMaker.DescribeHyperParameterTuningJob");
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "SageMaker.DescribeHyperParameterTuningJob",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -20439,20 +19997,16 @@ impl DescribeImageInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("x-amz-target", "SageMaker.DescribeImage");
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "SageMaker.DescribeImage",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -20593,20 +20147,16 @@ impl DescribeImageVersionInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("x-amz-target", "SageMaker.DescribeImageVersion");
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "SageMaker.DescribeImageVersion",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -20739,20 +20289,16 @@ impl DescribeLabelingJobInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("x-amz-target", "SageMaker.DescribeLabelingJob");
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "SageMaker.DescribeLabelingJob",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -20880,20 +20426,16 @@ impl DescribeModelInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("x-amz-target", "SageMaker.DescribeModel");
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "SageMaker.DescribeModel",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -21029,20 +20571,16 @@ impl DescribeModelBiasJobDefinitionInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("x-amz-target", "SageMaker.DescribeModelBiasJobDefinition");
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "SageMaker.DescribeModelBiasJobDefinition",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -21179,23 +20717,16 @@ impl DescribeModelExplainabilityJobDefinitionInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header(
-                "x-amz-target",
-                "SageMaker.DescribeModelExplainabilityJobDefinition",
-            );
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "SageMaker.DescribeModelExplainabilityJobDefinition",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -21330,20 +20861,16 @@ impl DescribeModelPackageInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("x-amz-target", "SageMaker.DescribeModelPackage");
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "SageMaker.DescribeModelPackage",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -21478,20 +21005,16 @@ impl DescribeModelPackageGroupInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("x-amz-target", "SageMaker.DescribeModelPackageGroup");
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "SageMaker.DescribeModelPackageGroup",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -21629,23 +21152,16 @@ impl DescribeModelQualityJobDefinitionInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header(
-                "x-amz-target",
-                "SageMaker.DescribeModelQualityJobDefinition",
-            );
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "SageMaker.DescribeModelQualityJobDefinition",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -21780,20 +21296,16 @@ impl DescribeMonitoringScheduleInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("x-amz-target", "SageMaker.DescribeMonitoringSchedule");
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "SageMaker.DescribeMonitoringSchedule",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -21927,20 +21439,16 @@ impl DescribeNotebookInstanceInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("x-amz-target", "SageMaker.DescribeNotebookInstance");
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "SageMaker.DescribeNotebookInstance",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -22079,23 +21587,16 @@ impl DescribeNotebookInstanceLifecycleConfigInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header(
-                "x-amz-target",
-                "SageMaker.DescribeNotebookInstanceLifecycleConfig",
-            );
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "SageMaker.DescribeNotebookInstanceLifecycleConfig",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -22227,20 +21728,16 @@ impl DescribePipelineInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("x-amz-target", "SageMaker.DescribePipeline");
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "SageMaker.DescribePipeline",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -22374,23 +21871,16 @@ impl DescribePipelineDefinitionForExecutionInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header(
-                "x-amz-target",
-                "SageMaker.DescribePipelineDefinitionForExecution",
-            );
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "SageMaker.DescribePipelineDefinitionForExecution",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -22524,20 +22014,16 @@ impl DescribePipelineExecutionInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("x-amz-target", "SageMaker.DescribePipelineExecution");
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "SageMaker.DescribePipelineExecution",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -22671,20 +22157,16 @@ impl DescribeProcessingJobInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("x-amz-target", "SageMaker.DescribeProcessingJob");
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "SageMaker.DescribeProcessingJob",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -22813,20 +22295,16 @@ impl DescribeProjectInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("x-amz-target", "SageMaker.DescribeProject");
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "SageMaker.DescribeProject",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -22958,20 +22436,16 @@ impl DescribeSubscribedWorkteamInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("x-amz-target", "SageMaker.DescribeSubscribedWorkteam");
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "SageMaker.DescribeSubscribedWorkteam",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -23104,20 +22578,16 @@ impl DescribeTrainingJobInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("x-amz-target", "SageMaker.DescribeTrainingJob");
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "SageMaker.DescribeTrainingJob",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -23250,20 +22720,16 @@ impl DescribeTransformJobInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("x-amz-target", "SageMaker.DescribeTransformJob");
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "SageMaker.DescribeTransformJob",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -23391,20 +22857,16 @@ impl DescribeTrialInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("x-amz-target", "SageMaker.DescribeTrial");
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "SageMaker.DescribeTrial",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -23537,20 +22999,16 @@ impl DescribeTrialComponentInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("x-amz-target", "SageMaker.DescribeTrialComponent");
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "SageMaker.DescribeTrialComponent",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -23694,20 +23152,16 @@ impl DescribeUserProfileInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("x-amz-target", "SageMaker.DescribeUserProfile");
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "SageMaker.DescribeUserProfile",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -23842,20 +23296,16 @@ impl DescribeWorkforceInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("x-amz-target", "SageMaker.DescribeWorkforce");
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "SageMaker.DescribeWorkforce",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -23987,20 +23437,16 @@ impl DescribeWorkteamInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("x-amz-target", "SageMaker.DescribeWorkteam");
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "SageMaker.DescribeWorkteam",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -24118,23 +23564,16 @@ impl DisableSagemakerServicecatalogPortfolioInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header(
-                "x-amz-target",
-                "SageMaker.DisableSagemakerServicecatalogPortfolio",
-            );
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "SageMaker.DisableSagemakerServicecatalogPortfolio",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -24280,20 +23719,16 @@ impl DisassociateTrialComponentInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("x-amz-target", "SageMaker.DisassociateTrialComponent");
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "SageMaker.DisassociateTrialComponent",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -24411,23 +23846,16 @@ impl EnableSagemakerServicecatalogPortfolioInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header(
-                "x-amz-target",
-                "SageMaker.EnableSagemakerServicecatalogPortfolio",
-            );
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "SageMaker.EnableSagemakerServicecatalogPortfolio",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -24560,20 +23988,16 @@ impl GetDeviceFleetReportInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("x-amz-target", "SageMaker.GetDeviceFleetReport");
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "SageMaker.GetDeviceFleetReport",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -24708,20 +24132,16 @@ impl GetModelPackageGroupPolicyInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("x-amz-target", "SageMaker.GetModelPackageGroupPolicy");
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "SageMaker.GetModelPackageGroupPolicy",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -24839,23 +24259,16 @@ impl GetSagemakerServicecatalogPortfolioStatusInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header(
-                "x-amz-target",
-                "SageMaker.GetSagemakerServicecatalogPortfolioStatus",
-            );
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "SageMaker.GetSagemakerServicecatalogPortfolioStatus",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -25002,20 +24415,16 @@ impl GetSearchSuggestionsInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("x-amz-target", "SageMaker.GetSearchSuggestions");
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "SageMaker.GetSearchSuggestions",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -25233,20 +24642,16 @@ impl ListActionsInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("x-amz-target", "SageMaker.ListActions");
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "SageMaker.ListActions",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -25462,20 +24867,16 @@ impl ListAlgorithmsInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("x-amz-target", "SageMaker.ListAlgorithms");
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "SageMaker.ListAlgorithms",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -25716,20 +25117,16 @@ impl ListAppImageConfigsInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("x-amz-target", "SageMaker.ListAppImageConfigs");
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "SageMaker.ListAppImageConfigs",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -25920,20 +25317,16 @@ impl ListAppsInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("x-amz-target", "SageMaker.ListApps");
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "SageMaker.ListApps",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -26154,20 +25547,16 @@ impl ListArtifactsInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("x-amz-target", "SageMaker.ListArtifacts");
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "SageMaker.ListArtifacts",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -26428,20 +25817,16 @@ impl ListAssociationsInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("x-amz-target", "SageMaker.ListAssociations");
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "SageMaker.ListAssociations",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -26694,20 +26079,16 @@ impl ListAutoMlJobsInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("x-amz-target", "SageMaker.ListAutoMLJobs");
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "SageMaker.ListAutoMLJobs",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -26922,20 +26303,16 @@ impl ListCandidatesForAutoMlJobInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("x-amz-target", "SageMaker.ListCandidatesForAutoMLJob");
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "SageMaker.ListCandidatesForAutoMLJob",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -27181,20 +26558,16 @@ impl ListCodeRepositoriesInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("x-amz-target", "SageMaker.ListCodeRepositories");
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "SageMaker.ListCodeRepositories",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -27454,20 +26827,16 @@ impl ListCompilationJobsInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("x-amz-target", "SageMaker.ListCompilationJobs");
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "SageMaker.ListCompilationJobs",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -27685,20 +27054,16 @@ impl ListContextsInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("x-amz-target", "SageMaker.ListContexts");
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "SageMaker.ListContexts",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -27932,20 +27297,16 @@ impl ListDataQualityJobDefinitionsInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("x-amz-target", "SageMaker.ListDataQualityJobDefinitions");
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "SageMaker.ListDataQualityJobDefinitions",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -28184,20 +27545,16 @@ impl ListDeviceFleetsInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("x-amz-target", "SageMaker.ListDeviceFleets");
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "SageMaker.ListDeviceFleets",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -28375,20 +27732,16 @@ impl ListDevicesInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("x-amz-target", "SageMaker.ListDevices");
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "SageMaker.ListDevices",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -28528,20 +27881,16 @@ impl ListDomainsInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("x-amz-target", "SageMaker.ListDomains");
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "SageMaker.ListDomains",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -28808,20 +28157,16 @@ impl ListEdgePackagingJobsInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("x-amz-target", "SageMaker.ListEdgePackagingJobs");
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "SageMaker.ListEdgePackagingJobs",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -29037,20 +28382,16 @@ impl ListEndpointConfigsInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("x-amz-target", "SageMaker.ListEndpointConfigs");
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "SageMaker.ListEndpointConfigs",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -29309,20 +28650,16 @@ impl ListEndpointsInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("x-amz-target", "SageMaker.ListEndpoints");
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "SageMaker.ListEndpoints",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -29520,20 +28857,16 @@ impl ListExperimentsInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("x-amz-target", "SageMaker.ListExperiments");
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "SageMaker.ListExperiments",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -29783,20 +29116,16 @@ impl ListFeatureGroupsInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("x-amz-target", "SageMaker.ListFeatureGroups");
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "SageMaker.ListFeatureGroups",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -29979,20 +29308,16 @@ impl ListFlowDefinitionsInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("x-amz-target", "SageMaker.ListFlowDefinitions");
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "SageMaker.ListFlowDefinitions",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -30175,20 +29500,16 @@ impl ListHumanTaskUisInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("x-amz-target", "SageMaker.ListHumanTaskUis");
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "SageMaker.ListHumanTaskUis",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -30463,20 +29784,16 @@ impl ListHyperParameterTuningJobsInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("x-amz-target", "SageMaker.ListHyperParameterTuningJobs");
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "SageMaker.ListHyperParameterTuningJobs",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -30714,20 +30031,16 @@ impl ListImagesInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("x-amz-target", "SageMaker.ListImages");
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "SageMaker.ListImages",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -30964,20 +30277,16 @@ impl ListImageVersionsInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("x-amz-target", "SageMaker.ListImageVersions");
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "SageMaker.ListImageVersions",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -31234,20 +30543,16 @@ impl ListLabelingJobsInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("x-amz-target", "SageMaker.ListLabelingJobs");
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "SageMaker.ListLabelingJobs",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -31484,20 +30789,16 @@ impl ListLabelingJobsForWorkteamInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("x-amz-target", "SageMaker.ListLabelingJobsForWorkteam");
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "SageMaker.ListLabelingJobsForWorkteam",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -31728,20 +31029,16 @@ impl ListModelBiasJobDefinitionsInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("x-amz-target", "SageMaker.ListModelBiasJobDefinitions");
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "SageMaker.ListModelBiasJobDefinitions",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -31972,23 +31269,16 @@ impl ListModelExplainabilityJobDefinitionsInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header(
-                "x-amz-target",
-                "SageMaker.ListModelExplainabilityJobDefinitions",
-            );
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "SageMaker.ListModelExplainabilityJobDefinitions",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -32202,20 +31492,16 @@ impl ListModelPackageGroupsInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("x-amz-target", "SageMaker.ListModelPackageGroups");
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "SageMaker.ListModelPackageGroups",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -32490,20 +31776,16 @@ impl ListModelPackagesInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("x-amz-target", "SageMaker.ListModelPackages");
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "SageMaker.ListModelPackages",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -32737,20 +32019,16 @@ impl ListModelQualityJobDefinitionsInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("x-amz-target", "SageMaker.ListModelQualityJobDefinitions");
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "SageMaker.ListModelQualityJobDefinitions",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -32964,20 +32242,16 @@ impl ListModelsInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("x-amz-target", "SageMaker.ListModels");
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "SageMaker.ListModels",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -33309,20 +32583,16 @@ impl ListMonitoringExecutionsInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("x-amz-target", "SageMaker.ListMonitoringExecutions");
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "SageMaker.ListMonitoringExecutions",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -33626,20 +32896,16 @@ impl ListMonitoringSchedulesInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("x-amz-target", "SageMaker.ListMonitoringSchedules");
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "SageMaker.ListMonitoringSchedules",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -33898,23 +33164,16 @@ impl ListNotebookInstanceLifecycleConfigsInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header(
-                "x-amz-target",
-                "SageMaker.ListNotebookInstanceLifecycleConfigs",
-            );
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "SageMaker.ListNotebookInstanceLifecycleConfigs",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -34238,20 +33497,16 @@ impl ListNotebookInstancesInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("x-amz-target", "SageMaker.ListNotebookInstances");
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "SageMaker.ListNotebookInstances",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -34465,20 +33720,16 @@ impl ListPipelineExecutionsInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("x-amz-target", "SageMaker.ListPipelineExecutions");
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "SageMaker.ListPipelineExecutions",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -34650,20 +33901,16 @@ impl ListPipelineExecutionStepsInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("x-amz-target", "SageMaker.ListPipelineExecutionSteps");
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "SageMaker.ListPipelineExecutionSteps",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -34823,23 +34070,16 @@ impl ListPipelineParametersForExecutionInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header(
-                "x-amz-target",
-                "SageMaker.ListPipelineParametersForExecution",
-            );
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "SageMaker.ListPipelineParametersForExecution",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -35051,20 +34291,16 @@ impl ListPipelinesInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("x-amz-target", "SageMaker.ListPipelines");
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "SageMaker.ListPipelines",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -35317,20 +34553,16 @@ impl ListProcessingJobsInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("x-amz-target", "SageMaker.ListProcessingJobs");
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "SageMaker.ListProcessingJobs",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -35543,20 +34775,16 @@ impl ListProjectsInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("x-amz-target", "SageMaker.ListProjects");
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "SageMaker.ListProjects",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -35715,20 +34943,16 @@ impl ListSubscribedWorkteamsInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("x-amz-target", "SageMaker.ListSubscribedWorkteams");
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "SageMaker.ListSubscribedWorkteams",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -35879,20 +35103,16 @@ impl ListTagsInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("x-amz-target", "SageMaker.ListTags");
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "SageMaker.ListTags",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -36149,20 +35369,16 @@ impl ListTrainingJobsInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("x-amz-target", "SageMaker.ListTrainingJobs");
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "SageMaker.ListTrainingJobs",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -36375,23 +35591,16 @@ impl ListTrainingJobsForHyperParameterTuningJobInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header(
-                "x-amz-target",
-                "SageMaker.ListTrainingJobsForHyperParameterTuningJob",
-            );
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "SageMaker.ListTrainingJobsForHyperParameterTuningJob",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -36645,20 +35854,16 @@ impl ListTransformJobsInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("x-amz-target", "SageMaker.ListTransformJobs");
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "SageMaker.ListTransformJobs",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -36899,20 +36104,16 @@ impl ListTrialComponentsInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("x-amz-target", "SageMaker.ListTrialComponents");
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "SageMaker.ListTrialComponents",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -37137,20 +36338,16 @@ impl ListTrialsInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("x-amz-target", "SageMaker.ListTrials");
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "SageMaker.ListTrials",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -37348,20 +36545,16 @@ impl ListUserProfilesInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("x-amz-target", "SageMaker.ListUserProfiles");
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "SageMaker.ListUserProfiles",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -37543,20 +36736,16 @@ impl ListWorkforcesInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("x-amz-target", "SageMaker.ListWorkforces");
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "SageMaker.ListWorkforces",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -37740,20 +36929,16 @@ impl ListWorkteamsInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("x-amz-target", "SageMaker.ListWorkteams");
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "SageMaker.ListWorkteams",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -37902,20 +37087,16 @@ impl PutModelPackageGroupPolicyInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("x-amz-target", "SageMaker.PutModelPackageGroupPolicy");
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "SageMaker.PutModelPackageGroupPolicy",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -38077,20 +37258,16 @@ impl RegisterDevicesInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("x-amz-target", "SageMaker.RegisterDevices");
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "SageMaker.RegisterDevices",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -38267,20 +37444,16 @@ impl RenderUiTemplateInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("x-amz-target", "SageMaker.RenderUiTemplate");
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "SageMaker.RenderUiTemplate",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -38472,20 +37645,13 @@ impl SearchInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("x-amz-target", "SageMaker.Search");
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder =
+            smithy_http::header::set_header_if_absent(builder, "x-amz-target", "SageMaker.Search");
         Ok(builder)
     }
     fn assemble(
@@ -38654,20 +37820,16 @@ impl SendPipelineExecutionStepFailureInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("x-amz-target", "SageMaker.SendPipelineExecutionStepFailure");
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "SageMaker.SendPipelineExecutionStepFailure",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -38841,20 +38003,16 @@ impl SendPipelineExecutionStepSuccessInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("x-amz-target", "SageMaker.SendPipelineExecutionStepSuccess");
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "SageMaker.SendPipelineExecutionStepSuccess",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -38988,20 +38146,16 @@ impl StartMonitoringScheduleInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("x-amz-target", "SageMaker.StartMonitoringSchedule");
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "SageMaker.StartMonitoringSchedule",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -39134,20 +38288,16 @@ impl StartNotebookInstanceInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("x-amz-target", "SageMaker.StartNotebookInstance");
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "SageMaker.StartNotebookInstance",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -39347,20 +38497,16 @@ impl StartPipelineExecutionInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("x-amz-target", "SageMaker.StartPipelineExecution");
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "SageMaker.StartPipelineExecution",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -39490,20 +38636,16 @@ impl StopAutoMlJobInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("x-amz-target", "SageMaker.StopAutoMLJob");
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "SageMaker.StopAutoMLJob",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -39636,20 +38778,16 @@ impl StopCompilationJobInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("x-amz-target", "SageMaker.StopCompilationJob");
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "SageMaker.StopCompilationJob",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -39782,20 +38920,16 @@ impl StopEdgePackagingJobInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("x-amz-target", "SageMaker.StopEdgePackagingJob");
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "SageMaker.StopEdgePackagingJob",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -39933,20 +39067,16 @@ impl StopHyperParameterTuningJobInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("x-amz-target", "SageMaker.StopHyperParameterTuningJob");
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "SageMaker.StopHyperParameterTuningJob",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -40078,20 +39208,16 @@ impl StopLabelingJobInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("x-amz-target", "SageMaker.StopLabelingJob");
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "SageMaker.StopLabelingJob",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -40224,20 +39350,16 @@ impl StopMonitoringScheduleInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("x-amz-target", "SageMaker.StopMonitoringSchedule");
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "SageMaker.StopMonitoringSchedule",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -40370,20 +39492,16 @@ impl StopNotebookInstanceInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("x-amz-target", "SageMaker.StopNotebookInstance");
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "SageMaker.StopNotebookInstance",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -40534,20 +39652,16 @@ impl StopPipelineExecutionInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("x-amz-target", "SageMaker.StopPipelineExecution");
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "SageMaker.StopPipelineExecution",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -40680,20 +39794,16 @@ impl StopProcessingJobInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("x-amz-target", "SageMaker.StopProcessingJob");
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "SageMaker.StopProcessingJob",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -40825,20 +39935,16 @@ impl StopTrainingJobInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("x-amz-target", "SageMaker.StopTrainingJob");
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "SageMaker.StopTrainingJob",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -40971,20 +40077,16 @@ impl StopTransformJobInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("x-amz-target", "SageMaker.StopTransformJob");
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "SageMaker.StopTransformJob",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -41175,20 +40277,16 @@ impl UpdateActionInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("x-amz-target", "SageMaker.UpdateAction");
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "SageMaker.UpdateAction",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -41339,20 +40437,16 @@ impl UpdateAppImageConfigInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("x-amz-target", "SageMaker.UpdateAppImageConfig");
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "SageMaker.UpdateAppImageConfig",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -41533,20 +40627,16 @@ impl UpdateArtifactInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("x-amz-target", "SageMaker.UpdateArtifact");
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "SageMaker.UpdateArtifact",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -41700,20 +40790,16 @@ impl UpdateCodeRepositoryInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("x-amz-target", "SageMaker.UpdateCodeRepository");
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "SageMaker.UpdateCodeRepository",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -41890,20 +40976,16 @@ impl UpdateContextInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("x-amz-target", "SageMaker.UpdateContext");
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "SageMaker.UpdateContext",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -42087,20 +41169,16 @@ impl UpdateDeviceFleetInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("x-amz-target", "SageMaker.UpdateDeviceFleet");
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "SageMaker.UpdateDeviceFleet",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -42246,20 +41324,16 @@ impl UpdateDevicesInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("x-amz-target", "SageMaker.UpdateDevices");
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "SageMaker.UpdateDevices",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -42401,20 +41475,16 @@ impl UpdateDomainInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("x-amz-target", "SageMaker.UpdateDomain");
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "SageMaker.UpdateDomain",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -42614,20 +41684,16 @@ impl UpdateEndpointInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("x-amz-target", "SageMaker.UpdateEndpoint");
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "SageMaker.UpdateEndpoint",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -42783,23 +41849,16 @@ impl UpdateEndpointWeightsAndCapacitiesInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header(
-                "x-amz-target",
-                "SageMaker.UpdateEndpointWeightsAndCapacities",
-            );
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "SageMaker.UpdateEndpointWeightsAndCapacities",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -42954,20 +42013,16 @@ impl UpdateExperimentInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("x-amz-target", "SageMaker.UpdateExperiment");
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "SageMaker.UpdateExperiment",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -43143,20 +42198,16 @@ impl UpdateImageInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("x-amz-target", "SageMaker.UpdateImage");
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "SageMaker.UpdateImage",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -43317,20 +42368,16 @@ impl UpdateModelPackageInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("x-amz-target", "SageMaker.UpdateModelPackage");
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "SageMaker.UpdateModelPackage",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -43484,20 +42531,16 @@ impl UpdateMonitoringScheduleInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("x-amz-target", "SageMaker.UpdateMonitoringSchedule");
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "SageMaker.UpdateMonitoringSchedule",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -43846,20 +42889,16 @@ impl UpdateNotebookInstanceInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("x-amz-target", "SageMaker.UpdateNotebookInstance");
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "SageMaker.UpdateNotebookInstance",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -44036,23 +43075,16 @@ impl UpdateNotebookInstanceLifecycleConfigInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header(
-                "x-amz-target",
-                "SageMaker.UpdateNotebookInstanceLifecycleConfig",
-            );
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "SageMaker.UpdateNotebookInstanceLifecycleConfig",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -44237,20 +43269,16 @@ impl UpdatePipelineInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("x-amz-target", "SageMaker.UpdatePipeline");
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "SageMaker.UpdatePipeline",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -44418,20 +43446,16 @@ impl UpdatePipelineExecutionInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("x-amz-target", "SageMaker.UpdatePipelineExecution");
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "SageMaker.UpdatePipelineExecution",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -44598,20 +43622,16 @@ impl UpdateTrainingJobInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("x-amz-target", "SageMaker.UpdateTrainingJob");
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "SageMaker.UpdateTrainingJob",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -44751,20 +43771,16 @@ impl UpdateTrialInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("x-amz-target", "SageMaker.UpdateTrial");
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "SageMaker.UpdateTrial",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -45074,20 +44090,16 @@ impl UpdateTrialComponentInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("x-amz-target", "SageMaker.UpdateTrialComponent");
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "SageMaker.UpdateTrialComponent",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -45245,20 +44257,16 @@ impl UpdateUserProfileInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("x-amz-target", "SageMaker.UpdateUserProfile");
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "SageMaker.UpdateUserProfile",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -45422,20 +44430,16 @@ impl UpdateWorkforceInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("x-amz-target", "SageMaker.UpdateWorkforce");
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "SageMaker.UpdateWorkforce",
+        );
         Ok(builder)
     }
     fn assemble(
@@ -45615,20 +44619,16 @@ impl UpdateWorkteamInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/x-amz-json-1.1");
-        }
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("x-amz-target"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("x-amz-target", "SageMaker.UpdateWorkteam");
-        }
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "SageMaker.UpdateWorkteam",
+        );
         Ok(builder)
     }
     fn assemble(

@@ -9,7 +9,7 @@ license = "Apache-2.0"
 
 [features]
 test-util = ["protocol-test-helpers"]
-default = ["test-util", "hyper", "rustls"]
+default = ["hyper", "rustls"]
 native-tls = ["hyper", "hyper-tls"]
 rustls = ["hyper", "hyper-rustls"]
 
@@ -28,7 +28,7 @@ fastrand = "1.4.0"
 tokio = { version = "1", features = ["time"] }
 
 pin-project = "1"
-tracing = "0.1.25"
+tracing = "0.1"
 
 protocol-test-helpers = { path = "../protocol-test-helpers", optional = true }
 

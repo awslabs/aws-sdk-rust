@@ -5,13 +5,13 @@
 
 use aws_auth::Credentials;
 use aws_http::user_agent::AwsUserAgent;
-use aws_hyper::test_connection::TestConnection;
 use aws_hyper::Client;
 use aws_sdk_qldbsession as qldbsession;
 use http::Uri;
 use qldbsession::model::StartSessionRequest;
 use qldbsession::operation::SendCommand;
 use qldbsession::{Config, Region};
+use smithy_client::test_connection::TestConnection;
 use smithy_http::body::SdkBody;
 use std::time::{Duration, UNIX_EPOCH};
 

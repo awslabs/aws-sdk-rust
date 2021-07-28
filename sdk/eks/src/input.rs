@@ -171,13 +171,8 @@ impl AssociateEncryptionConfigInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/json");
-        }
+        builder =
+            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
         Ok(builder)
     }
     fn assemble(
@@ -387,13 +382,8 @@ impl AssociateIdentityProviderConfigInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/json");
-        }
+        builder =
+            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
         Ok(builder)
     }
     fn assemble(
@@ -646,13 +636,8 @@ impl CreateAddonInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/json");
-        }
+        builder =
+            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
         Ok(builder)
     }
     fn assemble(
@@ -925,13 +910,8 @@ impl CreateClusterInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/json");
-        }
+        builder =
+            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
         Ok(builder)
     }
     fn assemble(
@@ -1187,13 +1167,8 @@ impl CreateFargateProfileInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/json");
-        }
+        builder =
+            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
         Ok(builder)
     }
     fn assemble(
@@ -1626,13 +1601,8 @@ impl CreateNodegroupInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/json");
-        }
+        builder =
+            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
         Ok(builder)
     }
     fn assemble(
@@ -1807,13 +1777,8 @@ impl DeleteAddonInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/json");
-        }
+        builder =
+            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
         Ok(builder)
     }
     fn assemble(
@@ -1953,13 +1918,8 @@ impl DeleteClusterInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/json");
-        }
+        builder =
+            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
         Ok(builder)
     }
     fn assemble(
@@ -2140,13 +2100,8 @@ impl DeleteFargateProfileInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/json");
-        }
+        builder =
+            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
         Ok(builder)
     }
     fn assemble(
@@ -2327,13 +2282,8 @@ impl DeleteNodegroupInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/json");
-        }
+        builder =
+            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
         Ok(builder)
     }
     fn assemble(
@@ -2511,13 +2461,8 @@ impl DescribeAddonInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/json");
-        }
+        builder =
+            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
         Ok(builder)
     }
     fn assemble(
@@ -2708,13 +2653,8 @@ impl DescribeAddonVersionsInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/json");
-        }
+        builder =
+            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
         Ok(builder)
     }
     fn assemble(
@@ -2856,13 +2796,8 @@ impl DescribeClusterInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/json");
-        }
+        builder =
+            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
         Ok(builder)
     }
     fn assemble(
@@ -3043,13 +2978,8 @@ impl DescribeFargateProfileInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/json");
-        }
+        builder =
+            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
         Ok(builder)
     }
     fn assemble(
@@ -3221,13 +3151,8 @@ impl DescribeIdentityProviderConfigInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/json");
-        }
+        builder =
+            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
         Ok(builder)
     }
     fn assemble(
@@ -3408,13 +3333,8 @@ impl DescribeNodegroupInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/json");
-        }
+        builder =
+            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
         Ok(builder)
     }
     fn assemble(
@@ -3629,13 +3549,8 @@ impl DescribeUpdateInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/json");
-        }
+        builder =
+            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
         Ok(builder)
     }
     fn assemble(
@@ -3827,13 +3742,8 @@ impl DisassociateIdentityProviderConfigInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/json");
-        }
+        builder =
+            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
         Ok(builder)
     }
     fn assemble(
@@ -4024,13 +3934,8 @@ impl ListAddonsInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/json");
-        }
+        builder =
+            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
         Ok(builder)
     }
     fn assemble(
@@ -4187,13 +4092,8 @@ impl ListClustersInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/json");
-        }
+        builder =
+            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
         Ok(builder)
     }
     fn assemble(
@@ -4385,13 +4285,8 @@ impl ListFargateProfilesInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/json");
-        }
+        builder =
+            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
         Ok(builder)
     }
     fn assemble(
@@ -4585,13 +4480,8 @@ impl ListIdentityProviderConfigsInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/json");
-        }
+        builder =
+            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
         Ok(builder)
     }
     fn assemble(
@@ -4782,13 +4672,8 @@ impl ListNodegroupsInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/json");
-        }
+        builder =
+            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
         Ok(builder)
     }
     fn assemble(
@@ -4934,13 +4819,8 @@ impl ListTagsForResourceInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/json");
-        }
+        builder =
+            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
         Ok(builder)
     }
     fn assemble(
@@ -5152,13 +5032,8 @@ impl ListUpdatesInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/json");
-        }
+        builder =
+            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
         Ok(builder)
     }
     fn assemble(
@@ -5325,13 +5200,8 @@ impl TagResourceInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/json");
-        }
+        builder =
+            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
         Ok(builder)
     }
     fn assemble(
@@ -5499,13 +5369,8 @@ impl UntagResourceInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/json");
-        }
+        builder =
+            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
         Ok(builder)
     }
     fn assemble(
@@ -5753,13 +5618,8 @@ impl UpdateAddonInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/json");
-        }
+        builder =
+            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
         Ok(builder)
     }
     fn assemble(
@@ -5959,13 +5819,8 @@ impl UpdateClusterConfigInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/json");
-        }
+        builder =
+            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
         Ok(builder)
     }
     fn assemble(
@@ -6141,13 +5996,8 @@ impl UpdateClusterVersionInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/json");
-        }
+        builder =
+            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
         Ok(builder)
     }
     fn assemble(
@@ -6406,13 +6256,8 @@ impl UpdateNodegroupConfigInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/json");
-        }
+        builder =
+            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
         Ok(builder)
     }
     fn assemble(
@@ -6680,13 +6525,8 @@ impl UpdateNodegroupVersionInput {
         &self,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut builder = self.update_http_builder(http::request::Builder::new())?;
-        if !builder
-            .headers_ref()
-            .map(|h| h.contains_key("content-type"))
-            .unwrap_or(false)
-        {
-            builder = builder.header("content-type", "application/json");
-        }
+        builder =
+            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
         Ok(builder)
     }
     fn assemble(
