@@ -876,8 +876,7 @@ pub fn deser_operation_get_insight_rule_report(
                 let var_29 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            f64::from_str(
+                            <f64 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (double: `com.amazonaws.cloudwatch#InsightRuleUnboundDouble`)"))
@@ -892,8 +891,7 @@ pub fn deser_operation_get_insight_rule_report(
                 let var_30 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i64::from_str(
+                            <i64 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (long: `com.amazonaws.cloudwatch#InsightRuleUnboundLong`)"))
@@ -2307,8 +2305,7 @@ pub fn deser_structure_composite_alarm(
                 let var_74 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.cloudwatch#ActionsEnabled`)"))
@@ -2539,8 +2536,7 @@ pub fn deser_structure_metric_alarm(
                 let var_91 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.cloudwatch#ActionsEnabled`)"))
@@ -2702,8 +2698,7 @@ pub fn deser_structure_metric_alarm(
                 let var_104 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.cloudwatch#Period`)"))
@@ -2732,8 +2727,7 @@ pub fn deser_structure_metric_alarm(
                 let var_106 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.cloudwatch#EvaluationPeriods`)"))
@@ -2748,8 +2742,7 @@ pub fn deser_structure_metric_alarm(
                 let var_107 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.cloudwatch#DatapointsToAlarm`)"))
@@ -2764,8 +2757,7 @@ pub fn deser_structure_metric_alarm(
                 let var_108 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            f64::from_str(
+                            <f64 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (double: `com.amazonaws.cloudwatch#Threshold`)"))
@@ -3017,8 +3009,7 @@ pub fn deser_structure_insight_rule_contributor(
                 let var_125 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            f64::from_str(
+                            <f64 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (double: `com.amazonaws.cloudwatch#InsightRuleUnboundDouble`)"))
@@ -3070,8 +3061,7 @@ pub fn deser_structure_insight_rule_metric_datapoint(
                 let var_128 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            f64::from_str(
+                            <f64 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (double: `com.amazonaws.cloudwatch#InsightRuleUnboundDouble`)"))
@@ -3086,8 +3076,7 @@ pub fn deser_structure_insight_rule_metric_datapoint(
                 let var_129 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            f64::from_str(
+                            <f64 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (double: `com.amazonaws.cloudwatch#InsightRuleUnboundDouble`)"))
@@ -3102,8 +3091,7 @@ pub fn deser_structure_insight_rule_metric_datapoint(
                 let var_130 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            f64::from_str(
+                            <f64 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (double: `com.amazonaws.cloudwatch#InsightRuleUnboundDouble`)"))
@@ -3118,8 +3106,7 @@ pub fn deser_structure_insight_rule_metric_datapoint(
                 let var_131 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            f64::from_str(
+                            <f64 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (double: `com.amazonaws.cloudwatch#InsightRuleUnboundDouble`)"))
@@ -3134,8 +3121,7 @@ pub fn deser_structure_insight_rule_metric_datapoint(
                 let var_132 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            f64::from_str(
+                            <f64 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (double: `com.amazonaws.cloudwatch#InsightRuleUnboundDouble`)"))
@@ -3150,8 +3136,7 @@ pub fn deser_structure_insight_rule_metric_datapoint(
                 let var_133 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            f64::from_str(
+                            <f64 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (double: `com.amazonaws.cloudwatch#InsightRuleUnboundDouble`)"))
@@ -3166,8 +3151,7 @@ pub fn deser_structure_insight_rule_metric_datapoint(
                 let var_134 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            f64::from_str(
+                            <f64 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (double: `com.amazonaws.cloudwatch#InsightRuleUnboundDouble`)"))
@@ -3331,8 +3315,7 @@ pub fn deser_structure_datapoint(
                 let var_144 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            f64::from_str(
+                            <f64 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (double: `com.amazonaws.cloudwatch#DatapointValue`)"))
@@ -3347,8 +3330,7 @@ pub fn deser_structure_datapoint(
                 let var_145 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            f64::from_str(
+                            <f64 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (double: `com.amazonaws.cloudwatch#DatapointValue`)"))
@@ -3363,8 +3345,7 @@ pub fn deser_structure_datapoint(
                 let var_146 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            f64::from_str(
+                            <f64 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (double: `com.amazonaws.cloudwatch#DatapointValue`)"))
@@ -3379,8 +3360,7 @@ pub fn deser_structure_datapoint(
                 let var_147 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            f64::from_str(
+                            <f64 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (double: `com.amazonaws.cloudwatch#DatapointValue`)"))
@@ -3395,8 +3375,7 @@ pub fn deser_structure_datapoint(
                 let var_148 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            f64::from_str(
+                            <f64 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (double: `com.amazonaws.cloudwatch#DatapointValue`)"))
@@ -3514,8 +3493,7 @@ pub fn deser_structure_dashboard_entry(
                 let var_155 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i64::from_str(
+                            <i64 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (long: `com.amazonaws.cloudwatch#Size`)"))
@@ -3938,8 +3916,7 @@ pub fn deser_list_datapoint_values(
             s if s.matches("member") /* member com.amazonaws.cloudwatch#DatapointValues$member */ =>  {
                 out.push(
                      {
-                        use std::str::FromStr;
-                        f64::from_str(
+                        <f64 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
                         )
                         .map_err(|_|smithy_xml::decode::XmlError::custom("expected (double: `com.amazonaws.cloudwatch#DatapointValue`)"))
@@ -4068,8 +4045,7 @@ pub fn deser_structure_metric_data_query(
                 let var_178 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.cloudwatch#ReturnData`)"))
@@ -4084,8 +4060,7 @@ pub fn deser_structure_metric_data_query(
                 let var_179 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.cloudwatch#Period`)"))
@@ -4146,8 +4121,7 @@ pub fn deser_structure_insight_rule_contributor_datapoint(
                 let var_181 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            f64::from_str(
+                            <f64 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (double: `com.amazonaws.cloudwatch#InsightRuleUnboundDouble`)"))
@@ -4185,8 +4159,7 @@ pub fn deser_map_datapoint_value_map_entry(
             s if s.matches("value") /* value com.amazonaws.cloudwatch#DatapointValueMap$value */ =>  {
                 v = Some(
                      {
-                        use std::str::FromStr;
-                        f64::from_str(
+                        <f64 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
                         )
                         .map_err(|_|smithy_xml::decode::XmlError::custom("expected (double: `com.amazonaws.cloudwatch#DatapointValue`)"))
@@ -4225,8 +4198,7 @@ pub fn deser_structure_metric_stat(
                 let var_183 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.cloudwatch#Period`)"))

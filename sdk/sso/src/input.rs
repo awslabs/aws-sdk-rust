@@ -345,7 +345,10 @@ impl ListAccountRolesInput {
             query.push_kv("next_token", &smithy_http::query::fmt_string(&inner_7));
         }
         if let Some(inner_8) = &self.max_results {
-            query.push_kv("max_result", &smithy_http::query::fmt_default(&inner_8));
+            query.push_kv(
+                "max_result",
+                &smithy_types::primitive::Encoder::from(*inner_8).encode(),
+            );
         }
         if let Some(inner_9) = &self.account_id {
             query.push_kv("account_id", &smithy_http::query::fmt_string(&inner_9));
@@ -529,7 +532,10 @@ impl ListAccountsInput {
             query.push_kv("next_token", &smithy_http::query::fmt_string(&inner_12));
         }
         if let Some(inner_13) = &self.max_results {
-            query.push_kv("max_result", &smithy_http::query::fmt_default(&inner_13));
+            query.push_kv(
+                "max_result",
+                &smithy_types::primitive::Encoder::from(*inner_13).encode(),
+            );
         }
     }
     #[allow(clippy::unnecessary_wraps)]

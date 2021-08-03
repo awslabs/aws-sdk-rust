@@ -145,23 +145,20 @@ impl CreateChannelInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let channel_name = {
-            let input = &self.channel_name;
-            let input = input
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "channel_name",
-                    details: "cannot be empty or unset",
-                })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "channel_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let input_1 = &self.channel_name;
+        let input_1 = input_1
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "channel_name",
+                details: "cannot be empty or unset",
+            })?;
+        let channel_name = smithy_http::label::fmt_string(input_1, false);
+        if channel_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "channel_name",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/channel/{ChannelName}", ChannelName = channel_name)
             .expect("formatting should succeed");
         Ok(())
@@ -363,40 +360,34 @@ impl CreateProgramInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let channel_name = {
-            let input = &self.channel_name;
-            let input = input
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "channel_name",
-                    details: "cannot be empty or unset",
-                })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "channel_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let program_name = {
-            let input = &self.program_name;
-            let input = input
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "program_name",
-                    details: "cannot be empty or unset",
-                })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "program_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let input_2 = &self.channel_name;
+        let input_2 = input_2
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "channel_name",
+                details: "cannot be empty or unset",
+            })?;
+        let channel_name = smithy_http::label::fmt_string(input_2, false);
+        if channel_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "channel_name",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_3 = &self.program_name;
+        let input_3 = input_3
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "program_name",
+                details: "cannot be empty or unset",
+            })?;
+        let program_name = smithy_http::label::fmt_string(input_3, false);
+        if program_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "program_name",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/channel/{ChannelName}/program/{ProgramName}",
@@ -606,23 +597,20 @@ impl CreateSourceLocationInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let source_location_name = {
-            let input = &self.source_location_name;
-            let input = input
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "source_location_name",
-                    details: "cannot be empty or unset",
-                })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "source_location_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let input_4 = &self.source_location_name;
+        let input_4 = input_4
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "source_location_name",
+                details: "cannot be empty or unset",
+            })?;
+        let source_location_name = smithy_http::label::fmt_string(input_4, false);
+        if source_location_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "source_location_name",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/sourceLocation/{SourceLocationName}",
@@ -817,40 +805,34 @@ impl CreateVodSourceInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let source_location_name = {
-            let input = &self.source_location_name;
-            let input = input
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "source_location_name",
-                    details: "cannot be empty or unset",
-                })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "source_location_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let vod_source_name = {
-            let input = &self.vod_source_name;
-            let input = input
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "vod_source_name",
-                    details: "cannot be empty or unset",
-                })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "vod_source_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let input_5 = &self.source_location_name;
+        let input_5 = input_5
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "source_location_name",
+                details: "cannot be empty or unset",
+            })?;
+        let source_location_name = smithy_http::label::fmt_string(input_5, false);
+        if source_location_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "source_location_name",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_6 = &self.vod_source_name;
+        let input_6 = input_6
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "vod_source_name",
+                details: "cannot be empty or unset",
+            })?;
+        let vod_source_name = smithy_http::label::fmt_string(input_6, false);
+        if vod_source_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "vod_source_name",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/sourceLocation/{SourceLocationName}/vodSource/{VodSourceName}",
@@ -983,23 +965,20 @@ impl DeleteChannelInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let channel_name = {
-            let input = &self.channel_name;
-            let input = input
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "channel_name",
-                    details: "cannot be empty or unset",
-                })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "channel_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let input_7 = &self.channel_name;
+        let input_7 = input_7
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "channel_name",
+                details: "cannot be empty or unset",
+            })?;
+        let channel_name = smithy_http::label::fmt_string(input_7, false);
+        if channel_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "channel_name",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/channel/{ChannelName}", ChannelName = channel_name)
             .expect("formatting should succeed");
         Ok(())
@@ -1129,23 +1108,20 @@ impl DeleteChannelPolicyInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let channel_name = {
-            let input = &self.channel_name;
-            let input = input
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "channel_name",
-                    details: "cannot be empty or unset",
-                })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "channel_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let input_8 = &self.channel_name;
+        let input_8 = input_8
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "channel_name",
+                details: "cannot be empty or unset",
+            })?;
+        let channel_name = smithy_http::label::fmt_string(input_8, false);
+        if channel_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "channel_name",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/channel/{ChannelName}/policy",
@@ -1278,23 +1254,20 @@ impl DeletePlaybackConfigurationInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let name = {
-            let input = &self.name;
-            let input = input
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "name",
-                    details: "cannot be empty or unset",
-                })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let input_9 = &self.name;
+        let input_9 = input_9
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "name",
+                details: "cannot be empty or unset",
+            })?;
+        let name = smithy_http::label::fmt_string(input_9, false);
+        if name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "name",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/playbackConfiguration/{Name}", Name = name)
             .expect("formatting should succeed");
         Ok(())
@@ -1433,40 +1406,36 @@ impl DeleteProgramInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let channel_name = {
-            let input = &self.channel_name;
-            let input = input
+        let input_10 = &self.channel_name;
+        let input_10 =
+            input_10
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "channel_name",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "channel_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let program_name = {
-            let input = &self.program_name;
-            let input = input
+        let channel_name = smithy_http::label::fmt_string(input_10, false);
+        if channel_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "channel_name",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_11 = &self.program_name;
+        let input_11 =
+            input_11
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "program_name",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "program_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let program_name = smithy_http::label::fmt_string(input_11, false);
+        if program_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "program_name",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/channel/{ChannelName}/program/{ProgramName}",
@@ -1604,23 +1573,21 @@ impl DeleteSourceLocationInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let source_location_name = {
-            let input = &self.source_location_name;
-            let input = input
+        let input_12 = &self.source_location_name;
+        let input_12 =
+            input_12
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "source_location_name",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "source_location_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let source_location_name = smithy_http::label::fmt_string(input_12, false);
+        if source_location_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "source_location_name",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/sourceLocation/{SourceLocationName}",
@@ -1771,40 +1738,36 @@ impl DeleteVodSourceInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let source_location_name = {
-            let input = &self.source_location_name;
-            let input = input
+        let input_13 = &self.source_location_name;
+        let input_13 =
+            input_13
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "source_location_name",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "source_location_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let vod_source_name = {
-            let input = &self.vod_source_name;
-            let input = input
+        let source_location_name = smithy_http::label::fmt_string(input_13, false);
+        if source_location_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "source_location_name",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_14 = &self.vod_source_name;
+        let input_14 =
+            input_14
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "vod_source_name",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "vod_source_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let vod_source_name = smithy_http::label::fmt_string(input_14, false);
+        if vod_source_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "vod_source_name",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/sourceLocation/{SourceLocationName}/vodSource/{VodSourceName}",
@@ -1939,23 +1902,21 @@ impl DescribeChannelInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let channel_name = {
-            let input = &self.channel_name;
-            let input = input
+        let input_15 = &self.channel_name;
+        let input_15 =
+            input_15
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "channel_name",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "channel_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let channel_name = smithy_http::label::fmt_string(input_15, false);
+        if channel_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "channel_name",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/channel/{ChannelName}", ChannelName = channel_name)
             .expect("formatting should succeed");
         Ok(())
@@ -2096,40 +2057,36 @@ impl DescribeProgramInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let channel_name = {
-            let input = &self.channel_name;
-            let input = input
+        let input_16 = &self.channel_name;
+        let input_16 =
+            input_16
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "channel_name",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "channel_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let program_name = {
-            let input = &self.program_name;
-            let input = input
+        let channel_name = smithy_http::label::fmt_string(input_16, false);
+        if channel_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "channel_name",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_17 = &self.program_name;
+        let input_17 =
+            input_17
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "program_name",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "program_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let program_name = smithy_http::label::fmt_string(input_17, false);
+        if program_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "program_name",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/channel/{ChannelName}/program/{ProgramName}",
@@ -2267,23 +2224,21 @@ impl DescribeSourceLocationInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let source_location_name = {
-            let input = &self.source_location_name;
-            let input = input
+        let input_18 = &self.source_location_name;
+        let input_18 =
+            input_18
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "source_location_name",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "source_location_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let source_location_name = smithy_http::label::fmt_string(input_18, false);
+        if source_location_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "source_location_name",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/sourceLocation/{SourceLocationName}",
@@ -2434,40 +2389,36 @@ impl DescribeVodSourceInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let source_location_name = {
-            let input = &self.source_location_name;
-            let input = input
+        let input_19 = &self.source_location_name;
+        let input_19 =
+            input_19
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "source_location_name",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "source_location_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let vod_source_name = {
-            let input = &self.vod_source_name;
-            let input = input
+        let source_location_name = smithy_http::label::fmt_string(input_19, false);
+        if source_location_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "source_location_name",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_20 = &self.vod_source_name;
+        let input_20 =
+            input_20
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "vod_source_name",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "vod_source_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let vod_source_name = smithy_http::label::fmt_string(input_20, false);
+        if vod_source_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "vod_source_name",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/sourceLocation/{SourceLocationName}/vodSource/{VodSourceName}",
@@ -2602,23 +2553,21 @@ impl GetChannelPolicyInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let channel_name = {
-            let input = &self.channel_name;
-            let input = input
+        let input_21 = &self.channel_name;
+        let input_21 =
+            input_21
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "channel_name",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "channel_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let channel_name = smithy_http::label::fmt_string(input_21, false);
+        if channel_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "channel_name",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/channel/{ChannelName}/policy",
@@ -2788,23 +2737,21 @@ impl GetChannelScheduleInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let channel_name = {
-            let input = &self.channel_name;
-            let input = input
+        let input_22 = &self.channel_name;
+        let input_22 =
+            input_22
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "channel_name",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "channel_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let channel_name = smithy_http::label::fmt_string(input_22, false);
+        if channel_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "channel_name",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/channel/{ChannelName}/schedule",
@@ -2815,17 +2762,20 @@ impl GetChannelScheduleInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_1) = &self.duration_minutes {
-            query.push_kv("durationMinutes", &smithy_http::query::fmt_string(&inner_1));
+        if let Some(inner_23) = &self.duration_minutes {
+            query.push_kv(
+                "durationMinutes",
+                &smithy_http::query::fmt_string(&inner_23),
+            );
         }
         if self.max_results != 0 {
             query.push_kv(
                 "maxResults",
-                &smithy_http::query::fmt_default(&&self.max_results),
+                &smithy_types::primitive::Encoder::from(self.max_results).encode(),
             );
         }
-        if let Some(inner_2) = &self.next_token {
-            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_2));
+        if let Some(inner_24) = &self.next_token {
+            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_24));
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -2953,23 +2903,21 @@ impl GetPlaybackConfigurationInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let name = {
-            let input = &self.name;
-            let input = input
+        let input_25 = &self.name;
+        let input_25 =
+            input_25
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "name",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let name = smithy_http::label::fmt_string(input_25, false);
+        if name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "name",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/playbackConfiguration/{Name}", Name = name)
             .expect("formatting should succeed");
         Ok(())
@@ -3116,11 +3064,11 @@ impl ListChannelsInput {
         if self.max_results != 0 {
             query.push_kv(
                 "maxResults",
-                &smithy_http::query::fmt_default(&&self.max_results),
+                &smithy_types::primitive::Encoder::from(self.max_results).encode(),
             );
         }
-        if let Some(inner_3) = &self.next_token {
-            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_3));
+        if let Some(inner_26) = &self.next_token {
+            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_26));
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -3269,11 +3217,11 @@ impl ListPlaybackConfigurationsInput {
         if self.max_results != 0 {
             query.push_kv(
                 "MaxResults",
-                &smithy_http::query::fmt_default(&&self.max_results),
+                &smithy_types::primitive::Encoder::from(self.max_results).encode(),
             );
         }
-        if let Some(inner_4) = &self.next_token {
-            query.push_kv("NextToken", &smithy_http::query::fmt_string(&inner_4));
+        if let Some(inner_27) = &self.next_token {
+            query.push_kv("NextToken", &smithy_http::query::fmt_string(&inner_27));
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -3421,11 +3369,11 @@ impl ListSourceLocationsInput {
         if self.max_results != 0 {
             query.push_kv(
                 "maxResults",
-                &smithy_http::query::fmt_default(&&self.max_results),
+                &smithy_types::primitive::Encoder::from(self.max_results).encode(),
             );
         }
-        if let Some(inner_5) = &self.next_token {
-            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_5));
+        if let Some(inner_28) = &self.next_token {
+            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_28));
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -3554,23 +3502,21 @@ impl ListTagsForResourceInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let resource_arn = {
-            let input = &self.resource_arn;
-            let input = input
+        let input_29 = &self.resource_arn;
+        let input_29 =
+            input_29
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "resource_arn",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "resource_arn",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let resource_arn = smithy_http::label::fmt_string(input_29, false);
+        if resource_arn.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "resource_arn",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/tags/{ResourceArn}", ResourceArn = resource_arn)
             .expect("formatting should succeed");
         Ok(())
@@ -3725,23 +3671,21 @@ impl ListVodSourcesInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let source_location_name = {
-            let input = &self.source_location_name;
-            let input = input
+        let input_30 = &self.source_location_name;
+        let input_30 =
+            input_30
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "source_location_name",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "source_location_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let source_location_name = smithy_http::label::fmt_string(input_30, false);
+        if source_location_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "source_location_name",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/sourceLocation/{SourceLocationName}/vodSources",
@@ -3755,11 +3699,11 @@ impl ListVodSourcesInput {
         if self.max_results != 0 {
             query.push_kv(
                 "maxResults",
-                &smithy_http::query::fmt_default(&&self.max_results),
+                &smithy_types::primitive::Encoder::from(self.max_results).encode(),
             );
         }
-        if let Some(inner_6) = &self.next_token {
-            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_6));
+        if let Some(inner_31) = &self.next_token {
+            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_31));
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -3902,23 +3846,21 @@ impl PutChannelPolicyInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let channel_name = {
-            let input = &self.channel_name;
-            let input = input
+        let input_32 = &self.channel_name;
+        let input_32 =
+            input_32
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "channel_name",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "channel_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let channel_name = smithy_http::label::fmt_string(input_32, false);
+        if channel_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "channel_name",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/channel/{ChannelName}/policy",
@@ -4392,23 +4334,21 @@ impl StartChannelInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let channel_name = {
-            let input = &self.channel_name;
-            let input = input
+        let input_33 = &self.channel_name;
+        let input_33 =
+            input_33
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "channel_name",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "channel_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let channel_name = smithy_http::label::fmt_string(input_33, false);
+        if channel_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "channel_name",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/channel/{ChannelName}/start",
@@ -4540,23 +4480,21 @@ impl StopChannelInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let channel_name = {
-            let input = &self.channel_name;
-            let input = input
+        let input_34 = &self.channel_name;
+        let input_34 =
+            input_34
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "channel_name",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "channel_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let channel_name = smithy_http::label::fmt_string(input_34, false);
+        if channel_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "channel_name",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/channel/{ChannelName}/stop",
@@ -4714,23 +4652,21 @@ impl TagResourceInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let resource_arn = {
-            let input = &self.resource_arn;
-            let input = input
+        let input_35 = &self.resource_arn;
+        let input_35 =
+            input_35
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "resource_arn",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "resource_arn",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let resource_arn = smithy_http::label::fmt_string(input_35, false);
+        if resource_arn.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "resource_arn",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/tags/{ResourceArn}", ResourceArn = resource_arn)
             .expect("formatting should succeed");
         Ok(())
@@ -4873,32 +4809,30 @@ impl UntagResourceInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let resource_arn = {
-            let input = &self.resource_arn;
-            let input = input
+        let input_36 = &self.resource_arn;
+        let input_36 =
+            input_36
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "resource_arn",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "resource_arn",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let resource_arn = smithy_http::label::fmt_string(input_36, false);
+        if resource_arn.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "resource_arn",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/tags/{ResourceArn}", ResourceArn = resource_arn)
             .expect("formatting should succeed");
         Ok(())
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_7) = &self.tag_keys {
-            for inner_8 in inner_7 {
-                query.push_kv("tagKeys", &smithy_http::query::fmt_string(&inner_8));
+        if let Some(inner_37) = &self.tag_keys {
+            for inner_38 in inner_37 {
+                query.push_kv("tagKeys", &smithy_http::query::fmt_string(&inner_38));
             }
         }
     }
@@ -5044,23 +4978,21 @@ impl UpdateChannelInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let channel_name = {
-            let input = &self.channel_name;
-            let input = input
+        let input_39 = &self.channel_name;
+        let input_39 =
+            input_39
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "channel_name",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "channel_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let channel_name = smithy_http::label::fmt_string(input_39, false);
+        if channel_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "channel_name",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/channel/{ChannelName}", ChannelName = channel_name)
             .expect("formatting should succeed");
         Ok(())
@@ -5242,23 +5174,21 @@ impl UpdateSourceLocationInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let source_location_name = {
-            let input = &self.source_location_name;
-            let input = input
+        let input_40 = &self.source_location_name;
+        let input_40 =
+            input_40
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "source_location_name",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "source_location_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let source_location_name = smithy_http::label::fmt_string(input_40, false);
+        if source_location_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "source_location_name",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/sourceLocation/{SourceLocationName}",
@@ -5430,40 +5360,36 @@ impl UpdateVodSourceInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let source_location_name = {
-            let input = &self.source_location_name;
-            let input = input
+        let input_41 = &self.source_location_name;
+        let input_41 =
+            input_41
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "source_location_name",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "source_location_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let vod_source_name = {
-            let input = &self.vod_source_name;
-            let input = input
+        let source_location_name = smithy_http::label::fmt_string(input_41, false);
+        if source_location_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "source_location_name",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_42 = &self.vod_source_name;
+        let input_42 =
+            input_42
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "vod_source_name",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "vod_source_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let vod_source_name = smithy_http::label::fmt_string(input_42, false);
+        if vod_source_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "vod_source_name",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/sourceLocation/{SourceLocationName}/vodSource/{VodSourceName}",

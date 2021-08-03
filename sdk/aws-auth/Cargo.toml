@@ -5,8 +5,14 @@ authors = ["AWS Rust SDK Team <aws-sdk-rust@amazon.com>", "Russell Cohen <rcoh@a
 license = "Apache-2.0"
 edition = "2018"
 
+[features]
+rt-tokio = ["smithy-async/rt-tokio"]
+default = ["rt-tokio"]
+
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 [dependencies]
+pin-project = "1"
+smithy-async = { path = "../smithy-async", default-features = false }
 smithy-http = { path = "../smithy-http" }
 aws-types = { path = "../aws-types" }
 tokio = { version = "1", features = ["sync"] }
@@ -20,3 +26,4 @@ http = "0.2.3"
 test-env-log = { version = "0.2.7", features = ["trace"] }
 tokio = { version = "1", features = ["macros", "rt", "rt-multi-thread", "test-util"] }
 tracing-subscriber = { version = "0.2.16", features = ["fmt"] }
+smithy-async = { path = "../smithy-async", features = ["rt-tokio"] }

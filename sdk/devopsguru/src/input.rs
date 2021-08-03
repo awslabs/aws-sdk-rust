@@ -492,23 +492,20 @@ impl DescribeAnomalyInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let id = {
-            let input = &self.id;
-            let input = input
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "id",
-                    details: "cannot be empty or unset",
-                })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let input_1 = &self.id;
+        let input_1 = input_1
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "id",
+                details: "cannot be empty or unset",
+            })?;
+        let id = smithy_http::label::fmt_string(input_1, false);
+        if id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/anomalies/{Id}", Id = id).expect("formatting should succeed");
         Ok(())
     }
@@ -769,23 +766,20 @@ impl DescribeInsightInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let id = {
-            let input = &self.id;
-            let input = input
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "id",
-                    details: "cannot be empty or unset",
-                })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let input_2 = &self.id;
+        let input_2 = input_2
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "id",
+                details: "cannot be empty or unset",
+            })?;
+        let id = smithy_http::label::fmt_string(input_2, false);
+        if id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/insights/{Id}", Id = id).expect("formatting should succeed");
         Ok(())
     }
@@ -937,23 +931,20 @@ impl DescribeResourceCollectionHealthInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let resource_collection_type = {
-            let input = &self.resource_collection_type;
-            let input = input
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "resource_collection_type",
-                    details: "cannot be empty or unset",
-                })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "resource_collection_type",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let input_3 = &self.resource_collection_type;
+        let input_3 = input_3
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "resource_collection_type",
+                details: "cannot be empty or unset",
+            })?;
+        let resource_collection_type = smithy_http::label::fmt_string(input_3, false);
+        if resource_collection_type.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "resource_collection_type",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/accounts/health/resource-collection/{ResourceCollectionType}",
@@ -964,8 +955,8 @@ impl DescribeResourceCollectionHealthInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_1) = &self.next_token {
-            query.push_kv("NextToken", &smithy_http::query::fmt_string(&inner_1));
+        if let Some(inner_4) = &self.next_token {
+            query.push_kv("NextToken", &smithy_http::query::fmt_string(&inner_4));
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -1216,8 +1207,8 @@ impl GetCostEstimationInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_2) = &self.next_token {
-            query.push_kv("NextToken", &smithy_http::query::fmt_string(&inner_2));
+        if let Some(inner_5) = &self.next_token {
+            query.push_kv("NextToken", &smithy_http::query::fmt_string(&inner_5));
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -1368,23 +1359,20 @@ impl GetResourceCollectionInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let resource_collection_type = {
-            let input = &self.resource_collection_type;
-            let input = input
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "resource_collection_type",
-                    details: "cannot be empty or unset",
-                })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "resource_collection_type",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let input_6 = &self.resource_collection_type;
+        let input_6 = input_6
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "resource_collection_type",
+                details: "cannot be empty or unset",
+            })?;
+        let resource_collection_type = smithy_http::label::fmt_string(input_6, false);
+        if resource_collection_type.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "resource_collection_type",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/resource-collections/{ResourceCollectionType}",
@@ -1395,8 +1383,8 @@ impl GetResourceCollectionInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_3) = &self.next_token {
-            query.push_kv("NextToken", &smithy_http::query::fmt_string(&inner_3));
+        if let Some(inner_7) = &self.next_token {
+            query.push_kv("NextToken", &smithy_http::query::fmt_string(&inner_7));
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -1572,23 +1560,20 @@ impl ListAnomaliesForInsightInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let insight_id = {
-            let input = &self.insight_id;
-            let input = input
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "insight_id",
-                    details: "cannot be empty or unset",
-                })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "insight_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let input_8 = &self.insight_id;
+        let input_8 = input_8
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "insight_id",
+                details: "cannot be empty or unset",
+            })?;
+        let insight_id = smithy_http::label::fmt_string(input_8, false);
+        if insight_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "insight_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/anomalies/insight/{InsightId}",
@@ -2462,23 +2447,20 @@ impl RemoveNotificationChannelInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let id = {
-            let input = &self.id;
-            let input = input
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "id",
-                    details: "cannot be empty or unset",
-                })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let input_9 = &self.id;
+        let input_9 = input_9
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "id",
+                details: "cannot be empty or unset",
+            })?;
+        let id = smithy_http::label::fmt_string(input_9, false);
+        if id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/channels/{Id}", Id = id).expect("formatting should succeed");
         Ok(())
     }

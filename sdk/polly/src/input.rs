@@ -88,23 +88,20 @@ impl DeleteLexiconInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let name = {
-            let input = &self.name;
-            let input = input
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "name",
-                    details: "cannot be empty or unset",
-                })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let input_1 = &self.name;
+        let input_1 = input_1
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "name",
+                details: "cannot be empty or unset",
+            })?;
+        let name = smithy_http::label::fmt_string(input_1, false);
+        if name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "name",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/v1/lexicons/{Name}", Name = name).expect("formatting should succeed");
         Ok(())
     }
@@ -287,20 +284,21 @@ impl DescribeVoicesInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_1) = &self.engine {
-            query.push_kv("Engine", &smithy_http::query::fmt_string(&inner_1));
+        if let Some(inner_2) = &self.engine {
+            query.push_kv("Engine", &smithy_http::query::fmt_string(&inner_2));
         }
-        if let Some(inner_2) = &self.language_code {
-            query.push_kv("LanguageCode", &smithy_http::query::fmt_string(&inner_2));
+        if let Some(inner_3) = &self.language_code {
+            query.push_kv("LanguageCode", &smithy_http::query::fmt_string(&inner_3));
         }
         if self.include_additional_language_codes {
             query.push_kv(
                 "IncludeAdditionalLanguageCodes",
-                &smithy_http::query::fmt_default(&&self.include_additional_language_codes),
+                &smithy_types::primitive::Encoder::from(self.include_additional_language_codes)
+                    .encode(),
             );
         }
-        if let Some(inner_3) = &self.next_token {
-            query.push_kv("NextToken", &smithy_http::query::fmt_string(&inner_3));
+        if let Some(inner_4) = &self.next_token {
+            query.push_kv("NextToken", &smithy_http::query::fmt_string(&inner_4));
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -422,23 +420,20 @@ impl GetLexiconInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let name = {
-            let input = &self.name;
-            let input = input
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "name",
-                    details: "cannot be empty or unset",
-                })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let input_5 = &self.name;
+        let input_5 = input_5
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "name",
+                details: "cannot be empty or unset",
+            })?;
+        let name = smithy_http::label::fmt_string(input_5, false);
+        if name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "name",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/v1/lexicons/{Name}", Name = name).expect("formatting should succeed");
         Ok(())
     }
@@ -567,23 +562,20 @@ impl GetSpeechSynthesisTaskInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let task_id = {
-            let input = &self.task_id;
-            let input = input
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "task_id",
-                    details: "cannot be empty or unset",
-                })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "task_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let input_6 = &self.task_id;
+        let input_6 = input_6
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "task_id",
+                details: "cannot be empty or unset",
+            })?;
+        let task_id = smithy_http::label::fmt_string(input_6, false);
+        if task_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "task_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/v1/synthesisTasks/{TaskId}", TaskId = task_id)
             .expect("formatting should succeed");
         Ok(())
@@ -717,8 +709,8 @@ impl ListLexiconsInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_4) = &self.next_token {
-            query.push_kv("NextToken", &smithy_http::query::fmt_string(&inner_4));
+        if let Some(inner_7) = &self.next_token {
+            query.push_kv("NextToken", &smithy_http::query::fmt_string(&inner_7));
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -876,14 +868,17 @@ impl ListSpeechSynthesisTasksInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_5) = &self.max_results {
-            query.push_kv("MaxResults", &smithy_http::query::fmt_default(&inner_5));
+        if let Some(inner_8) = &self.max_results {
+            query.push_kv(
+                "MaxResults",
+                &smithy_types::primitive::Encoder::from(*inner_8).encode(),
+            );
         }
-        if let Some(inner_6) = &self.next_token {
-            query.push_kv("NextToken", &smithy_http::query::fmt_string(&inner_6));
+        if let Some(inner_9) = &self.next_token {
+            query.push_kv("NextToken", &smithy_http::query::fmt_string(&inner_9));
         }
-        if let Some(inner_7) = &self.status {
-            query.push_kv("Status", &smithy_http::query::fmt_string(&inner_7));
+        if let Some(inner_10) = &self.status {
+            query.push_kv("Status", &smithy_http::query::fmt_string(&inner_10));
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -1022,23 +1017,21 @@ impl PutLexiconInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let name = {
-            let input = &self.name;
-            let input = input
+        let input_11 = &self.name;
+        let input_11 =
+            input_11
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "name",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let name = smithy_http::label::fmt_string(input_11, false);
+        if name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "name",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/v1/lexicons/{Name}", Name = name).expect("formatting should succeed");
         Ok(())
     }

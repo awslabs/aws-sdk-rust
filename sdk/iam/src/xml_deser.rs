@@ -1564,8 +1564,7 @@ pub fn deser_operation_get_account_authorization_details(
                 let var_43 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.iam#booleanType`)"))
@@ -2035,8 +2034,7 @@ pub fn deser_operation_get_group(
                 let var_57 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.iam#booleanType`)"))
@@ -2416,8 +2414,7 @@ pub fn deser_operation_get_organizations_access_report(
                 let var_72 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.iam#integerType`)"))
@@ -2432,8 +2429,7 @@ pub fn deser_operation_get_organizations_access_report(
                 let var_73 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.iam#integerType`)"))
@@ -2458,8 +2454,7 @@ pub fn deser_operation_get_organizations_access_report(
                 let var_75 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.iam#booleanType`)"))
@@ -2962,8 +2957,7 @@ pub fn deser_operation_get_service_last_accessed_details(
                 let var_94 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.iam#booleanType`)"))
@@ -3094,8 +3088,7 @@ pub fn deser_operation_get_service_last_accessed_details_with_entities(
                 let var_101 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.iam#booleanType`)"))
@@ -3455,8 +3448,7 @@ pub fn deser_operation_list_access_keys(
                 let var_113 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.iam#booleanType`)"))
@@ -3532,8 +3524,7 @@ pub fn deser_operation_list_account_aliases(
                 let var_116 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.iam#booleanType`)"))
@@ -3610,8 +3601,7 @@ pub fn deser_operation_list_attached_group_policies(
                 let var_119 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.iam#booleanType`)"))
@@ -3688,8 +3678,7 @@ pub fn deser_operation_list_attached_role_policies(
                 let var_122 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.iam#booleanType`)"))
@@ -3766,8 +3755,7 @@ pub fn deser_operation_list_attached_user_policies(
                 let var_125 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.iam#booleanType`)"))
@@ -3863,8 +3851,7 @@ pub fn deser_operation_list_entities_for_policy(
                 let var_130 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.iam#booleanType`)"))
@@ -3940,8 +3927,7 @@ pub fn deser_operation_list_group_policies(
                 let var_133 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.iam#booleanType`)"))
@@ -4017,8 +4003,7 @@ pub fn deser_operation_list_groups(
                 let var_136 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.iam#booleanType`)"))
@@ -4094,8 +4079,7 @@ pub fn deser_operation_list_groups_for_user(
                 let var_139 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.iam#booleanType`)"))
@@ -4171,8 +4155,7 @@ pub fn deser_operation_list_instance_profiles(
                 let var_142 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.iam#booleanType`)"))
@@ -4251,8 +4234,7 @@ pub fn deser_operation_list_instance_profiles_for_role(
                 let var_145 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.iam#booleanType`)"))
@@ -4329,8 +4311,7 @@ pub fn deser_operation_list_instance_profile_tags(
                 let var_148 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.iam#booleanType`)"))
@@ -4406,8 +4387,7 @@ pub fn deser_operation_list_mfa_devices(
                 let var_151 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.iam#booleanType`)"))
@@ -4483,8 +4463,7 @@ pub fn deser_operation_list_mfa_device_tags(
                 let var_154 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.iam#booleanType`)"))
@@ -4614,8 +4593,7 @@ pub fn deser_operation_list_open_id_connect_provider_tags(
                 let var_158 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.iam#booleanType`)"))
@@ -4691,8 +4669,7 @@ pub fn deser_operation_list_policies(
                 let var_161 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.iam#booleanType`)"))
@@ -4771,8 +4748,7 @@ pub fn deser_operation_list_policies_granting_service_access(
                 let var_164 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.iam#booleanType`)"))
@@ -4848,8 +4824,7 @@ pub fn deser_operation_list_policy_tags(
                 let var_167 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.iam#booleanType`)"))
@@ -4925,8 +4900,7 @@ pub fn deser_operation_list_policy_versions(
                 let var_170 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.iam#booleanType`)"))
@@ -5002,8 +4976,7 @@ pub fn deser_operation_list_role_policies(
                 let var_173 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.iam#booleanType`)"))
@@ -5079,8 +5052,7 @@ pub fn deser_operation_list_roles(
                 let var_176 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.iam#booleanType`)"))
@@ -5156,8 +5128,7 @@ pub fn deser_operation_list_role_tags(
                 let var_179 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.iam#booleanType`)"))
@@ -5281,8 +5252,7 @@ pub fn deser_operation_list_saml_provider_tags(
                 let var_183 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.iam#booleanType`)"))
@@ -5358,8 +5328,7 @@ pub fn deser_operation_list_server_certificates(
                 let var_186 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.iam#booleanType`)"))
@@ -5436,8 +5405,7 @@ pub fn deser_operation_list_server_certificate_tags(
                 let var_189 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.iam#booleanType`)"))
@@ -5565,8 +5533,7 @@ pub fn deser_operation_list_signing_certificates(
                 let var_193 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.iam#booleanType`)"))
@@ -5642,8 +5609,7 @@ pub fn deser_operation_list_ssh_public_keys(
                 let var_196 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.iam#booleanType`)"))
@@ -5719,8 +5685,7 @@ pub fn deser_operation_list_user_policies(
                 let var_199 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.iam#booleanType`)"))
@@ -5796,8 +5761,7 @@ pub fn deser_operation_list_users(
                 let var_202 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.iam#booleanType`)"))
@@ -5873,8 +5837,7 @@ pub fn deser_operation_list_user_tags(
                 let var_205 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.iam#booleanType`)"))
@@ -5950,8 +5913,7 @@ pub fn deser_operation_list_virtual_mfa_devices(
                 let var_208 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.iam#booleanType`)"))
@@ -6111,8 +6073,7 @@ pub fn deser_operation_simulate_custom_policy(
                 let var_213 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.iam#booleanType`)"))
@@ -6189,8 +6150,7 @@ pub fn deser_operation_simulate_principal_policy(
                 let var_216 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.iam#booleanType`)"))
@@ -6975,8 +6935,7 @@ pub fn deser_structure_login_profile(
                 let var_249 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.iam#booleanType`)"))
@@ -7088,8 +7047,7 @@ pub fn deser_structure_policy(
                 let var_255 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.iam#attachmentCountType`)"))
@@ -7104,8 +7062,7 @@ pub fn deser_structure_policy(
                 let var_256 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.iam#attachmentCountType`)"))
@@ -7120,8 +7077,7 @@ pub fn deser_structure_policy(
                 let var_257 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.iam#booleanType`)"))
@@ -7226,8 +7182,7 @@ pub fn deser_structure_policy_version(
                 let var_264 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.iam#booleanType`)"))
@@ -7361,8 +7316,7 @@ pub fn deser_structure_role(
                 let var_273 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.iam#roleMaxSessionDurationType`)"))
@@ -7854,8 +7808,7 @@ pub fn deser_structure_password_policy(
                 let var_301 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.iam#minimumPasswordLengthType`)"))
@@ -7870,8 +7823,7 @@ pub fn deser_structure_password_policy(
                 let var_302 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.iam#booleanType`)"))
@@ -7886,8 +7838,7 @@ pub fn deser_structure_password_policy(
                 let var_303 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.iam#booleanType`)"))
@@ -7902,8 +7853,7 @@ pub fn deser_structure_password_policy(
                 let var_304 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.iam#booleanType`)"))
@@ -7918,8 +7868,7 @@ pub fn deser_structure_password_policy(
                 let var_305 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.iam#booleanType`)"))
@@ -7934,8 +7883,7 @@ pub fn deser_structure_password_policy(
                 let var_306 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.iam#booleanType`)"))
@@ -7950,8 +7898,7 @@ pub fn deser_structure_password_policy(
                 let var_307 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.iam#booleanType`)"))
@@ -7966,8 +7913,7 @@ pub fn deser_structure_password_policy(
                 let var_308 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.iam#maxPasswordAgeType`)"))
@@ -7982,8 +7928,7 @@ pub fn deser_structure_password_policy(
                 let var_309 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.iam#passwordReusePreventionType`)"))
@@ -7998,8 +7943,7 @@ pub fn deser_structure_password_policy(
                 let var_310 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.iam#booleanObjectType`)"))
@@ -9582,8 +9526,7 @@ pub fn deser_structure_managed_policy_detail(
                 let var_376 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.iam#attachmentCountType`)"))
@@ -9598,8 +9541,7 @@ pub fn deser_structure_managed_policy_detail(
                 let var_377 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.iam#attachmentCountType`)"))
@@ -9614,8 +9556,7 @@ pub fn deser_structure_managed_policy_detail(
                 let var_378 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.iam#booleanType`)"))
@@ -9705,8 +9646,7 @@ pub fn deser_map_summary_map_type_entry(
             s if s.matches("value") /* value com.amazonaws.iam#summaryMapType$value */ =>  {
                 v = Some(
                      {
-                        use std::str::FromStr;
-                        i32::from_str(
+                        <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
                         )
                         .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.iam#summaryValueType`)"))
@@ -9801,8 +9741,7 @@ pub fn deser_structure_access_detail(
                 let var_388 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.iam#integerType`)"))
@@ -9896,8 +9835,7 @@ pub fn deser_structure_service_last_accessed(
                 let var_394 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.iam#integerType`)"))
@@ -10870,8 +10808,7 @@ pub fn deser_structure_organizations_decision_detail(
                 let var_445 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.iam#booleanType`)"))
@@ -10899,8 +10836,7 @@ pub fn deser_structure_permissions_boundary_decision_detail(
                 let var_446 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.iam#booleanType`)"))
@@ -11353,8 +11289,7 @@ pub fn deser_structure_position(
                 let var_468 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.iam#LineNumber`)"))
@@ -11369,8 +11304,7 @@ pub fn deser_structure_position(
                 let var_469 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.iam#ColumnNumber`)"))

@@ -3,6 +3,16 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
+//! AWS credential providers, generic caching provider implementations, and traits to implement custom providers.
+//!
+//! Credentials providers acquire AWS credentials from environment variables, files,
+//! or calls to AWS services such as STS. Custom credential provider implementations can
+//! be provided by implementing [`ProvideCredentials`] for synchronous use-cases, or
+//! [`AsyncProvideCredentials`] for async use-cases. Generic credential caching implementations,
+//! for example,
+//! [`LazyCachingCredentialsProvider`](crate::provider::lazy_caching::LazyCachingCredentialsProvider),
+//! are also provided as part of this module.
+
 mod cache;
 pub mod env;
 pub mod lazy_caching;
@@ -16,11 +26,13 @@ use std::fmt::{Debug, Display, Formatter};
 use std::future::{self, Future};
 use std::pin::Pin;
 use std::sync::Arc;
+use std::time::Duration;
 
 #[derive(Debug)]
 #[non_exhaustive]
 pub enum CredentialsError {
     CredentialsNotLoaded,
+    ProviderTimedOut(Duration),
     Unhandled(Box<dyn Error + Send + Sync + 'static>),
 }
 
@@ -28,6 +40,11 @@ impl Display for CredentialsError {
     fn fmt(&self, f: &mut Formatter<'_>) -> fmt::Result {
         match self {
             CredentialsError::CredentialsNotLoaded => write!(f, "CredentialsNotLoaded"),
+            CredentialsError::ProviderTimedOut(d) => write!(
+                f,
+                "Credentials provider timed out after {} seconds",
+                d.as_secs()
+            ),
             CredentialsError::Unhandled(err) => write!(f, "{}", err),
         }
     }

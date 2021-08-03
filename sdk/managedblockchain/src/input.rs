@@ -138,23 +138,20 @@ impl CreateMemberInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let network_id = {
-            let input = &self.network_id;
-            let input = input
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "network_id",
-                    details: "cannot be empty or unset",
-                })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "network_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let input_1 = &self.network_id;
+        let input_1 = input_1
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "network_id",
+                details: "cannot be empty or unset",
+            })?;
+        let network_id = smithy_http::label::fmt_string(input_1, false);
+        if network_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "network_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/networks/{NetworkId}/members",
@@ -631,23 +628,20 @@ impl CreateNodeInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let network_id = {
-            let input = &self.network_id;
-            let input = input
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "network_id",
-                    details: "cannot be empty or unset",
-                })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "network_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let input_2 = &self.network_id;
+        let input_2 = input_2
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "network_id",
+                details: "cannot be empty or unset",
+            })?;
+        let network_id = smithy_http::label::fmt_string(input_2, false);
+        if network_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "network_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/networks/{NetworkId}/nodes",
@@ -860,23 +854,20 @@ impl CreateProposalInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let network_id = {
-            let input = &self.network_id;
-            let input = input
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "network_id",
-                    details: "cannot be empty or unset",
-                })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "network_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let input_3 = &self.network_id;
+        let input_3 = input_3
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "network_id",
+                details: "cannot be empty or unset",
+            })?;
+        let network_id = smithy_http::label::fmt_string(input_3, false);
+        if network_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "network_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/networks/{NetworkId}/proposals",
@@ -1019,40 +1010,34 @@ impl DeleteMemberInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let network_id = {
-            let input = &self.network_id;
-            let input = input
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "network_id",
-                    details: "cannot be empty or unset",
-                })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "network_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let member_id = {
-            let input = &self.member_id;
-            let input = input
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "member_id",
-                    details: "cannot be empty or unset",
-                })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "member_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let input_4 = &self.network_id;
+        let input_4 = input_4
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "network_id",
+                details: "cannot be empty or unset",
+            })?;
+        let network_id = smithy_http::label::fmt_string(input_4, false);
+        if network_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "network_id",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_5 = &self.member_id;
+        let input_5 = input_5
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "member_id",
+                details: "cannot be empty or unset",
+            })?;
+        let member_id = smithy_http::label::fmt_string(input_5, false);
+        if member_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "member_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/networks/{NetworkId}/members/{MemberId}",
@@ -1226,40 +1211,34 @@ impl DeleteNodeInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let network_id = {
-            let input = &self.network_id;
-            let input = input
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "network_id",
-                    details: "cannot be empty or unset",
-                })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "network_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let node_id = {
-            let input = &self.node_id;
-            let input = input
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "node_id",
-                    details: "cannot be empty or unset",
-                })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "node_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let input_6 = &self.network_id;
+        let input_6 = input_6
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "network_id",
+                details: "cannot be empty or unset",
+            })?;
+        let network_id = smithy_http::label::fmt_string(input_6, false);
+        if network_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "network_id",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_7 = &self.node_id;
+        let input_7 = input_7
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "node_id",
+                details: "cannot be empty or unset",
+            })?;
+        let node_id = smithy_http::label::fmt_string(input_7, false);
+        if node_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "node_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/networks/{NetworkId}/nodes/{NodeId}",
@@ -1271,8 +1250,8 @@ impl DeleteNodeInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_1) = &self.member_id {
-            query.push_kv("memberId", &smithy_http::query::fmt_string(&inner_1));
+        if let Some(inner_8) = &self.member_id {
+            query.push_kv("memberId", &smithy_http::query::fmt_string(&inner_8));
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -1408,40 +1387,35 @@ impl GetMemberInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let network_id = {
-            let input = &self.network_id;
-            let input = input
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "network_id",
-                    details: "cannot be empty or unset",
-                })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "network_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let member_id = {
-            let input = &self.member_id;
-            let input = input
+        let input_9 = &self.network_id;
+        let input_9 = input_9
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "network_id",
+                details: "cannot be empty or unset",
+            })?;
+        let network_id = smithy_http::label::fmt_string(input_9, false);
+        if network_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "network_id",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_10 = &self.member_id;
+        let input_10 =
+            input_10
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "member_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "member_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let member_id = smithy_http::label::fmt_string(input_10, false);
+        if member_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "member_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/networks/{NetworkId}/members/{MemberId}",
@@ -1574,23 +1548,21 @@ impl GetNetworkInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let network_id = {
-            let input = &self.network_id;
-            let input = input
+        let input_11 = &self.network_id;
+        let input_11 =
+            input_11
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "network_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "network_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let network_id = smithy_http::label::fmt_string(input_11, false);
+        if network_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "network_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/networks/{NetworkId}", NetworkId = network_id)
             .expect("formatting should succeed");
         Ok(())
@@ -1736,40 +1708,36 @@ impl GetNodeInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let network_id = {
-            let input = &self.network_id;
-            let input = input
+        let input_12 = &self.network_id;
+        let input_12 =
+            input_12
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "network_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "network_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let node_id = {
-            let input = &self.node_id;
-            let input = input
+        let network_id = smithy_http::label::fmt_string(input_12, false);
+        if network_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "network_id",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_13 = &self.node_id;
+        let input_13 =
+            input_13
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "node_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "node_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let node_id = smithy_http::label::fmt_string(input_13, false);
+        if node_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "node_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/networks/{NetworkId}/nodes/{NodeId}",
@@ -1781,8 +1749,8 @@ impl GetNodeInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_2) = &self.member_id {
-            query.push_kv("memberId", &smithy_http::query::fmt_string(&inner_2));
+        if let Some(inner_14) = &self.member_id {
+            query.push_kv("memberId", &smithy_http::query::fmt_string(&inner_14));
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -1920,40 +1888,36 @@ impl GetProposalInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let network_id = {
-            let input = &self.network_id;
-            let input = input
+        let input_15 = &self.network_id;
+        let input_15 =
+            input_15
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "network_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "network_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let proposal_id = {
-            let input = &self.proposal_id;
-            let input = input
+        let network_id = smithy_http::label::fmt_string(input_15, false);
+        if network_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "network_id",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_16 = &self.proposal_id;
+        let input_16 =
+            input_16
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "proposal_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "proposal_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let proposal_id = smithy_http::label::fmt_string(input_16, false);
+        if proposal_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "proposal_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/networks/{NetworkId}/proposals/{ProposalId}",
@@ -2104,11 +2068,14 @@ impl ListInvitationsInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_3) = &self.max_results {
-            query.push_kv("maxResults", &smithy_http::query::fmt_default(&inner_3));
+        if let Some(inner_17) = &self.max_results {
+            query.push_kv(
+                "maxResults",
+                &smithy_types::primitive::Encoder::from(*inner_17).encode(),
+            );
         }
-        if let Some(inner_4) = &self.next_token {
-            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_4));
+        if let Some(inner_18) = &self.next_token {
+            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_18));
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -2295,23 +2262,21 @@ impl ListMembersInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let network_id = {
-            let input = &self.network_id;
-            let input = input
+        let input_19 = &self.network_id;
+        let input_19 =
+            input_19
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "network_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "network_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let network_id = smithy_http::label::fmt_string(input_19, false);
+        if network_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "network_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/networks/{NetworkId}/members",
@@ -2322,20 +2287,26 @@ impl ListMembersInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_5) = &self.name {
-            query.push_kv("name", &smithy_http::query::fmt_string(&inner_5));
+        if let Some(inner_20) = &self.name {
+            query.push_kv("name", &smithy_http::query::fmt_string(&inner_20));
         }
-        if let Some(inner_6) = &self.status {
-            query.push_kv("status", &smithy_http::query::fmt_string(&inner_6));
+        if let Some(inner_21) = &self.status {
+            query.push_kv("status", &smithy_http::query::fmt_string(&inner_21));
         }
-        if let Some(inner_7) = &self.is_owned {
-            query.push_kv("isOwned", &smithy_http::query::fmt_default(&inner_7));
+        if let Some(inner_22) = &self.is_owned {
+            query.push_kv(
+                "isOwned",
+                &smithy_types::primitive::Encoder::from(*inner_22).encode(),
+            );
         }
-        if let Some(inner_8) = &self.max_results {
-            query.push_kv("maxResults", &smithy_http::query::fmt_default(&inner_8));
+        if let Some(inner_23) = &self.max_results {
+            query.push_kv(
+                "maxResults",
+                &smithy_types::primitive::Encoder::from(*inner_23).encode(),
+            );
         }
-        if let Some(inner_9) = &self.next_token {
-            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_9));
+        if let Some(inner_24) = &self.next_token {
+            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_24));
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -2518,20 +2489,23 @@ impl ListNetworksInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_10) = &self.name {
-            query.push_kv("name", &smithy_http::query::fmt_string(&inner_10));
+        if let Some(inner_25) = &self.name {
+            query.push_kv("name", &smithy_http::query::fmt_string(&inner_25));
         }
-        if let Some(inner_11) = &self.framework {
-            query.push_kv("framework", &smithy_http::query::fmt_string(&inner_11));
+        if let Some(inner_26) = &self.framework {
+            query.push_kv("framework", &smithy_http::query::fmt_string(&inner_26));
         }
-        if let Some(inner_12) = &self.status {
-            query.push_kv("status", &smithy_http::query::fmt_string(&inner_12));
+        if let Some(inner_27) = &self.status {
+            query.push_kv("status", &smithy_http::query::fmt_string(&inner_27));
         }
-        if let Some(inner_13) = &self.max_results {
-            query.push_kv("maxResults", &smithy_http::query::fmt_default(&inner_13));
+        if let Some(inner_28) = &self.max_results {
+            query.push_kv(
+                "maxResults",
+                &smithy_types::primitive::Encoder::from(*inner_28).encode(),
+            );
         }
-        if let Some(inner_14) = &self.next_token {
-            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_14));
+        if let Some(inner_29) = &self.next_token {
+            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_29));
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -2701,23 +2675,21 @@ impl ListNodesInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let network_id = {
-            let input = &self.network_id;
-            let input = input
+        let input_30 = &self.network_id;
+        let input_30 =
+            input_30
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "network_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "network_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let network_id = smithy_http::label::fmt_string(input_30, false);
+        if network_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "network_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/networks/{NetworkId}/nodes",
@@ -2728,17 +2700,20 @@ impl ListNodesInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_15) = &self.member_id {
-            query.push_kv("memberId", &smithy_http::query::fmt_string(&inner_15));
+        if let Some(inner_31) = &self.member_id {
+            query.push_kv("memberId", &smithy_http::query::fmt_string(&inner_31));
         }
-        if let Some(inner_16) = &self.status {
-            query.push_kv("status", &smithy_http::query::fmt_string(&inner_16));
+        if let Some(inner_32) = &self.status {
+            query.push_kv("status", &smithy_http::query::fmt_string(&inner_32));
         }
-        if let Some(inner_17) = &self.max_results {
-            query.push_kv("maxResults", &smithy_http::query::fmt_default(&inner_17));
+        if let Some(inner_33) = &self.max_results {
+            query.push_kv(
+                "maxResults",
+                &smithy_types::primitive::Encoder::from(*inner_33).encode(),
+            );
         }
-        if let Some(inner_18) = &self.next_token {
-            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_18));
+        if let Some(inner_34) = &self.next_token {
+            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_34));
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -2893,23 +2868,21 @@ impl ListProposalsInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let network_id = {
-            let input = &self.network_id;
-            let input = input
+        let input_35 = &self.network_id;
+        let input_35 =
+            input_35
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "network_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "network_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let network_id = smithy_http::label::fmt_string(input_35, false);
+        if network_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "network_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/networks/{NetworkId}/proposals",
@@ -2920,11 +2893,14 @@ impl ListProposalsInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_19) = &self.max_results {
-            query.push_kv("maxResults", &smithy_http::query::fmt_default(&inner_19));
+        if let Some(inner_36) = &self.max_results {
+            query.push_kv(
+                "maxResults",
+                &smithy_types::primitive::Encoder::from(*inner_36).encode(),
+            );
         }
-        if let Some(inner_20) = &self.next_token {
-            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_20));
+        if let Some(inner_37) = &self.next_token {
+            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_37));
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -3094,40 +3070,36 @@ impl ListProposalVotesInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let network_id = {
-            let input = &self.network_id;
-            let input = input
+        let input_38 = &self.network_id;
+        let input_38 =
+            input_38
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "network_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "network_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let proposal_id = {
-            let input = &self.proposal_id;
-            let input = input
+        let network_id = smithy_http::label::fmt_string(input_38, false);
+        if network_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "network_id",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_39 = &self.proposal_id;
+        let input_39 =
+            input_39
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "proposal_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "proposal_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let proposal_id = smithy_http::label::fmt_string(input_39, false);
+        if proposal_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "proposal_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/networks/{NetworkId}/proposals/{ProposalId}/votes",
@@ -3139,11 +3111,14 @@ impl ListProposalVotesInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_21) = &self.max_results {
-            query.push_kv("maxResults", &smithy_http::query::fmt_default(&inner_21));
+        if let Some(inner_40) = &self.max_results {
+            query.push_kv(
+                "maxResults",
+                &smithy_types::primitive::Encoder::from(*inner_40).encode(),
+            );
         }
-        if let Some(inner_22) = &self.next_token {
-            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_22));
+        if let Some(inner_41) = &self.next_token {
+            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_41));
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -3272,23 +3247,21 @@ impl ListTagsForResourceInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let resource_arn = {
-            let input = &self.resource_arn;
-            let input = input
+        let input_42 = &self.resource_arn;
+        let input_42 =
+            input_42
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "resource_arn",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "resource_arn",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let resource_arn = smithy_http::label::fmt_string(input_42, false);
+        if resource_arn.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "resource_arn",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/tags/{ResourceArn}", ResourceArn = resource_arn)
             .expect("formatting should succeed");
         Ok(())
@@ -3421,23 +3394,21 @@ impl RejectInvitationInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let invitation_id = {
-            let input = &self.invitation_id;
-            let input = input
+        let input_43 = &self.invitation_id;
+        let input_43 =
+            input_43
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "invitation_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "invitation_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let invitation_id = smithy_http::label::fmt_string(input_43, false);
+        if invitation_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "invitation_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/invitations/{InvitationId}",
@@ -3595,23 +3566,21 @@ impl TagResourceInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let resource_arn = {
-            let input = &self.resource_arn;
-            let input = input
+        let input_44 = &self.resource_arn;
+        let input_44 =
+            input_44
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "resource_arn",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "resource_arn",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let resource_arn = smithy_http::label::fmt_string(input_44, false);
+        if resource_arn.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "resource_arn",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/tags/{ResourceArn}", ResourceArn = resource_arn)
             .expect("formatting should succeed");
         Ok(())
@@ -3754,32 +3723,30 @@ impl UntagResourceInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let resource_arn = {
-            let input = &self.resource_arn;
-            let input = input
+        let input_45 = &self.resource_arn;
+        let input_45 =
+            input_45
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "resource_arn",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "resource_arn",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let resource_arn = smithy_http::label::fmt_string(input_45, false);
+        if resource_arn.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "resource_arn",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/tags/{ResourceArn}", ResourceArn = resource_arn)
             .expect("formatting should succeed");
         Ok(())
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_23) = &self.tag_keys {
-            for inner_24 in inner_23 {
-                query.push_kv("tagKeys", &smithy_http::query::fmt_string(&inner_24));
+        if let Some(inner_46) = &self.tag_keys {
+            for inner_47 in inner_46 {
+                query.push_kv("tagKeys", &smithy_http::query::fmt_string(&inner_47));
             }
         }
     }
@@ -3939,40 +3906,36 @@ impl UpdateMemberInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let network_id = {
-            let input = &self.network_id;
-            let input = input
+        let input_48 = &self.network_id;
+        let input_48 =
+            input_48
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "network_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "network_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let member_id = {
-            let input = &self.member_id;
-            let input = input
+        let network_id = smithy_http::label::fmt_string(input_48, false);
+        if network_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "network_id",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_49 = &self.member_id;
+        let input_49 =
+            input_49
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "member_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "member_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let member_id = smithy_http::label::fmt_string(input_49, false);
+        if member_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "member_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/networks/{NetworkId}/members/{MemberId}",
@@ -4149,40 +4112,36 @@ impl UpdateNodeInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let network_id = {
-            let input = &self.network_id;
-            let input = input
+        let input_50 = &self.network_id;
+        let input_50 =
+            input_50
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "network_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "network_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let node_id = {
-            let input = &self.node_id;
-            let input = input
+        let network_id = smithy_http::label::fmt_string(input_50, false);
+        if network_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "network_id",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_51 = &self.node_id;
+        let input_51 =
+            input_51
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "node_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "node_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let node_id = smithy_http::label::fmt_string(input_51, false);
+        if node_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "node_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/networks/{NetworkId}/nodes/{NodeId}",
@@ -4362,40 +4321,36 @@ impl VoteOnProposalInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let network_id = {
-            let input = &self.network_id;
-            let input = input
+        let input_52 = &self.network_id;
+        let input_52 =
+            input_52
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "network_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "network_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let proposal_id = {
-            let input = &self.proposal_id;
-            let input = input
+        let network_id = smithy_http::label::fmt_string(input_52, false);
+        if network_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "network_id",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_53 = &self.proposal_id;
+        let input_53 =
+            input_53
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "proposal_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "proposal_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let proposal_id = smithy_http::label::fmt_string(input_53, false);
+        if proposal_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "proposal_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/networks/{NetworkId}/proposals/{ProposalId}/votes",

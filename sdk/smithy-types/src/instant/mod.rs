@@ -5,10 +5,17 @@
 
 use crate::instant::format::DateParseError;
 use chrono::{DateTime, NaiveDateTime, Utc};
+use num_integer::div_mod_floor;
+use num_integer::Integer;
+use std::error::Error as StdError;
+use std::fmt;
 use std::str::FromStr;
 use std::time::{Duration, SystemTime, UNIX_EPOCH};
 
 mod format;
+
+const MILLIS_PER_SECOND: i64 = 1000;
+const NANOS_PER_MILLI: u32 = 1_000_000;
 
 /* ANCHOR: instant */
 
@@ -132,6 +139,36 @@ impl Instant {
         self.seconds
     }
 
+    pub fn epoch_subsecond_nanos(&self) -> u32 {
+        self.subsecond_nanos
+    }
+
+    /// Converts the `Instant` to the number of milliseconds since the Unix epoch.
+    /// This is fallible since `Instant` holds more precision than an `i64`, and will
+    /// return a `ConversionError` for `Instant` values that can't be converted.
+    pub fn to_epoch_millis(&self) -> Result<i64, ConversionError> {
+        let subsec_millis = i64::from(self.subsecond_nanos).div_floor(&(NANOS_PER_MILLI as i64));
+        if self.seconds < 0 {
+            self.seconds
+                .checked_add(1)
+                .and_then(|seconds| seconds.checked_mul(MILLIS_PER_SECOND))
+                .and_then(|millis| millis.checked_sub(1000 - subsec_millis))
+        } else {
+            self.seconds
+                .checked_mul(MILLIS_PER_SECOND)
+                .and_then(|millis| millis.checked_add(subsec_millis))
+        }
+        .ok_or(ConversionError(
+            "Instant value too large to fit into i64 epoch millis",
+        ))
+    }
+
+    /// Converts number of milliseconds since the Unix epoch into an `Instant`.
+    pub fn from_epoch_millis(epoch_millis: i64) -> Instant {
+        let (seconds, millis) = div_mod_floor(epoch_millis, MILLIS_PER_SECOND);
+        Instant::from_secs_and_nanos(seconds, millis as u32 * NANOS_PER_MILLI)
+    }
+
     pub fn fmt(&self, format: Format) -> String {
         match format {
             Format::DateTime => format::rfc3339::format(&self),
@@ -145,6 +182,18 @@ impl Instant {
             }
             Format::HttpDate => format::http_date::format(&self),
         }
+    }
+}
+
+#[derive(Debug)]
+#[non_exhaustive]
+pub struct ConversionError(&'static str);
+
+impl StdError for ConversionError {}
+
+impl fmt::Display for ConversionError {
+    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
+        write!(f, "{}", self.0)
     }
 }
 
@@ -235,9 +284,97 @@ mod test {
     #[test]
     #[cfg(feature = "chrono-conversions")]
     fn chrono_conversions_round_trip() {
-        let instant = Instant::from_secs_and_nanos(1234, 56789);
-        let chrono = instant.to_chrono();
-        let instant_again: Instant = chrono.into();
-        assert_eq!(instant, instant_again);
+        for (seconds, nanos) in &[(1234, 56789), (-1234, 4321)] {
+            let instant = Instant::from_secs_and_nanos(*seconds, *nanos);
+            let chrono = instant.to_chrono();
+            let instant_again: Instant = chrono.into();
+            assert_eq!(instant, instant_again);
+        }
+    }
+
+    #[derive(Debug)]
+    struct EpochMillisTestCase {
+        rfc3339: &'static str,
+        epoch_millis: i64,
+        epoch_seconds: i64,
+        epoch_subsec_nanos: u32,
+    }
+
+    // These test case values were generated from the following Kotlin JVM code:
+    // ```kotlin
+    // val instant = Instant.ofEpochMilli(<epoch milli value>);
+    // println(DateTimeFormatter.ISO_DATE_TIME.format(instant.atOffset(ZoneOffset.UTC)))
+    // println(instant.epochSecond)
+    // println(instant.nano)
+    // ```
+    const EPOCH_MILLIS_TEST_CASES: &[EpochMillisTestCase] = &[
+        EpochMillisTestCase {
+            rfc3339: "2021-07-30T21:20:04.123Z",
+            epoch_millis: 1627680004123,
+            epoch_seconds: 1627680004,
+            epoch_subsec_nanos: 123000000,
+        },
+        EpochMillisTestCase {
+            rfc3339: "1918-06-04T02:39:55.877Z",
+            epoch_millis: -1627680004123,
+            epoch_seconds: -1627680005,
+            epoch_subsec_nanos: 877000000,
+        },
+        EpochMillisTestCase {
+            rfc3339: "+292278994-08-17T07:12:55.807Z",
+            epoch_millis: i64::MAX,
+            epoch_seconds: 9223372036854775,
+            epoch_subsec_nanos: 807000000,
+        },
+        EpochMillisTestCase {
+            rfc3339: "-292275055-05-16T16:47:04.192Z",
+            epoch_millis: i64::MIN,
+            epoch_seconds: -9223372036854776,
+            epoch_subsec_nanos: 192000000,
+        },
+    ];
+
+    #[test]
+    fn to_epoch_millis() {
+        for test_case in EPOCH_MILLIS_TEST_CASES {
+            println!("Test case: {:?}", test_case);
+            let instant =
+                Instant::from_secs_and_nanos(test_case.epoch_seconds, test_case.epoch_subsec_nanos);
+            assert_eq!(test_case.epoch_seconds, instant.epoch_seconds());
+            assert_eq!(
+                test_case.epoch_subsec_nanos,
+                instant.epoch_subsecond_nanos()
+            );
+            assert_eq!(test_case.epoch_millis, instant.to_epoch_millis().unwrap());
+        }
+
+        assert!(Instant::from_secs_and_nanos(i64::MAX, 0)
+            .to_epoch_millis()
+            .is_err());
+    }
+
+    #[test]
+    fn from_epoch_millis() {
+        for test_case in EPOCH_MILLIS_TEST_CASES {
+            println!("Test case: {:?}", test_case);
+            let instant = Instant::from_epoch_millis(test_case.epoch_millis);
+            assert_eq!(test_case.epoch_seconds, instant.epoch_seconds());
+            assert_eq!(
+                test_case.epoch_subsec_nanos,
+                instant.epoch_subsecond_nanos()
+            );
+        }
+    }
+
+    #[test]
+    fn to_from_epoch_millis_round_trip() {
+        for millis in &[0, 1627680004123, -1627680004123, i64::MAX, i64::MIN] {
+            assert_eq!(
+                *millis,
+                Instant::from_epoch_millis(*millis)
+                    .to_epoch_millis()
+                    .unwrap()
+            );
+        }
     }
 }

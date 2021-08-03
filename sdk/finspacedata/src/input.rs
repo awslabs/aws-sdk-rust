@@ -225,23 +225,20 @@ impl CreateChangesetInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let dataset_id = {
-            let input = &self.dataset_id;
-            let input = input
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "dataset_id",
-                    details: "cannot be empty or unset",
-                })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "dataset_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let input_1 = &self.dataset_id;
+        let input_1 = input_1
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "dataset_id",
+                details: "cannot be empty or unset",
+            })?;
+        let dataset_id = smithy_http::label::fmt_string(input_1, false);
+        if dataset_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "dataset_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/datasets/{datasetId}/changesets",
@@ -398,11 +395,11 @@ impl GetProgrammaticAccessCredentialsInput {
         if self.duration_in_minutes != 0 {
             query.push_kv(
                 "durationInMinutes",
-                &smithy_http::query::fmt_default(&&self.duration_in_minutes),
+                &smithy_types::primitive::Encoder::from(self.duration_in_minutes).encode(),
             );
         }
-        if let Some(inner_1) = &self.environment_id {
-            query.push_kv("environmentId", &smithy_http::query::fmt_string(&inner_1));
+        if let Some(inner_2) = &self.environment_id {
+            query.push_kv("environmentId", &smithy_http::query::fmt_string(&inner_2));
         }
     }
     #[allow(clippy::unnecessary_wraps)]

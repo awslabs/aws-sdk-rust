@@ -497,23 +497,20 @@ impl DescribeCodeReviewInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let code_review_arn = {
-            let input = &self.code_review_arn;
-            let input = input
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "code_review_arn",
-                    details: "cannot be empty or unset",
-                })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "code_review_arn",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let input_1 = &self.code_review_arn;
+        let input_1 = input_1
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "code_review_arn",
+                details: "cannot be empty or unset",
+            })?;
+        let code_review_arn = smithy_http::label::fmt_string(input_1, false);
+        if code_review_arn.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "code_review_arn",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/codereviews/{CodeReviewArn}",
@@ -688,23 +685,20 @@ impl DescribeRecommendationFeedbackInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let code_review_arn = {
-            let input = &self.code_review_arn;
-            let input = input
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "code_review_arn",
-                    details: "cannot be empty or unset",
-                })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "code_review_arn",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let input_2 = &self.code_review_arn;
+        let input_2 = input_2
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "code_review_arn",
+                details: "cannot be empty or unset",
+            })?;
+        let code_review_arn = smithy_http::label::fmt_string(input_2, false);
+        if code_review_arn.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "code_review_arn",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/feedback/{CodeReviewArn}",
@@ -715,14 +709,14 @@ impl DescribeRecommendationFeedbackInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_1) = &self.recommendation_id {
+        if let Some(inner_3) = &self.recommendation_id {
             query.push_kv(
                 "RecommendationId",
-                &smithy_http::query::fmt_string(&inner_1),
+                &smithy_http::query::fmt_string(&inner_3),
             );
         }
-        if let Some(inner_2) = &self.user_id {
-            query.push_kv("UserId", &smithy_http::query::fmt_string(&inner_2));
+        if let Some(inner_4) = &self.user_id {
+            query.push_kv("UserId", &smithy_http::query::fmt_string(&inner_4));
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -864,23 +858,20 @@ impl DescribeRepositoryAssociationInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let association_arn = {
-            let input = &self.association_arn;
-            let input = input
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "association_arn",
-                    details: "cannot be empty or unset",
-                })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "association_arn",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let input_5 = &self.association_arn;
+        let input_5 = input_5
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "association_arn",
+                details: "cannot be empty or unset",
+            })?;
+        let association_arn = smithy_http::label::fmt_string(input_5, false);
+        if association_arn.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "association_arn",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/associations/{AssociationArn}",
@@ -1026,23 +1017,20 @@ impl DisassociateRepositoryInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let association_arn = {
-            let input = &self.association_arn;
-            let input = input
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "association_arn",
-                    details: "cannot be empty or unset",
-                })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "association_arn",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let input_6 = &self.association_arn;
+        let input_6 = input_6
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "association_arn",
+                details: "cannot be empty or unset",
+            })?;
+        let association_arn = smithy_http::label::fmt_string(input_6, false);
+        if association_arn.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "association_arn",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/associations/{AssociationArn}",
@@ -1255,29 +1243,35 @@ impl ListCodeReviewsInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_3) = &self.provider_types {
-            for inner_4 in inner_3 {
-                query.push_kv("ProviderTypes", &smithy_http::query::fmt_string(&inner_4));
-            }
-        }
-        if let Some(inner_5) = &self.states {
-            for inner_6 in inner_5 {
-                query.push_kv("States", &smithy_http::query::fmt_string(&inner_6));
-            }
-        }
-        if let Some(inner_7) = &self.repository_names {
+        if let Some(inner_7) = &self.provider_types {
             for inner_8 in inner_7 {
-                query.push_kv("RepositoryNames", &smithy_http::query::fmt_string(&inner_8));
+                query.push_kv("ProviderTypes", &smithy_http::query::fmt_string(&inner_8));
             }
         }
-        if let Some(inner_9) = &self.r#type {
-            query.push_kv("Type", &smithy_http::query::fmt_string(&inner_9));
+        if let Some(inner_9) = &self.states {
+            for inner_10 in inner_9 {
+                query.push_kv("States", &smithy_http::query::fmt_string(&inner_10));
+            }
         }
-        if let Some(inner_10) = &self.max_results {
-            query.push_kv("MaxResults", &smithy_http::query::fmt_default(&inner_10));
+        if let Some(inner_11) = &self.repository_names {
+            for inner_12 in inner_11 {
+                query.push_kv(
+                    "RepositoryNames",
+                    &smithy_http::query::fmt_string(&inner_12),
+                );
+            }
         }
-        if let Some(inner_11) = &self.next_token {
-            query.push_kv("NextToken", &smithy_http::query::fmt_string(&inner_11));
+        if let Some(inner_13) = &self.r#type {
+            query.push_kv("Type", &smithy_http::query::fmt_string(&inner_13));
+        }
+        if let Some(inner_14) = &self.max_results {
+            query.push_kv(
+                "MaxResults",
+                &smithy_types::primitive::Encoder::from(*inner_14).encode(),
+            );
+        }
+        if let Some(inner_15) = &self.next_token {
+            query.push_kv("NextToken", &smithy_http::query::fmt_string(&inner_15));
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -1470,23 +1464,21 @@ impl ListRecommendationFeedbackInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let code_review_arn = {
-            let input = &self.code_review_arn;
-            let input = input
+        let input_16 = &self.code_review_arn;
+        let input_16 =
+            input_16
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "code_review_arn",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "code_review_arn",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let code_review_arn = smithy_http::label::fmt_string(input_16, false);
+        if code_review_arn.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "code_review_arn",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/feedback/{CodeReviewArn}/RecommendationFeedback",
@@ -1497,22 +1489,25 @@ impl ListRecommendationFeedbackInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_12) = &self.next_token {
-            query.push_kv("NextToken", &smithy_http::query::fmt_string(&inner_12));
+        if let Some(inner_17) = &self.next_token {
+            query.push_kv("NextToken", &smithy_http::query::fmt_string(&inner_17));
         }
-        if let Some(inner_13) = &self.max_results {
-            query.push_kv("MaxResults", &smithy_http::query::fmt_default(&inner_13));
+        if let Some(inner_18) = &self.max_results {
+            query.push_kv(
+                "MaxResults",
+                &smithy_types::primitive::Encoder::from(*inner_18).encode(),
+            );
         }
-        if let Some(inner_14) = &self.user_ids {
-            for inner_15 in inner_14 {
-                query.push_kv("UserIds", &smithy_http::query::fmt_string(&inner_15));
+        if let Some(inner_19) = &self.user_ids {
+            for inner_20 in inner_19 {
+                query.push_kv("UserIds", &smithy_http::query::fmt_string(&inner_20));
             }
         }
-        if let Some(inner_16) = &self.recommendation_ids {
-            for inner_17 in inner_16 {
+        if let Some(inner_21) = &self.recommendation_ids {
+            for inner_22 in inner_21 {
                 query.push_kv(
                     "RecommendationIds",
-                    &smithy_http::query::fmt_string(&inner_17),
+                    &smithy_http::query::fmt_string(&inner_22),
                 );
             }
         }
@@ -1675,23 +1670,21 @@ impl ListRecommendationsInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let code_review_arn = {
-            let input = &self.code_review_arn;
-            let input = input
+        let input_23 = &self.code_review_arn;
+        let input_23 =
+            input_23
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "code_review_arn",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "code_review_arn",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let code_review_arn = smithy_http::label::fmt_string(input_23, false);
+        if code_review_arn.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "code_review_arn",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/codereviews/{CodeReviewArn}/Recommendations",
@@ -1702,11 +1695,14 @@ impl ListRecommendationsInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_18) = &self.next_token {
-            query.push_kv("NextToken", &smithy_http::query::fmt_string(&inner_18));
+        if let Some(inner_24) = &self.next_token {
+            query.push_kv("NextToken", &smithy_http::query::fmt_string(&inner_24));
         }
-        if let Some(inner_19) = &self.max_results {
-            query.push_kv("MaxResults", &smithy_http::query::fmt_default(&inner_19));
+        if let Some(inner_25) = &self.max_results {
+            query.push_kv(
+                "MaxResults",
+                &smithy_types::primitive::Encoder::from(*inner_25).encode(),
+            );
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -1931,31 +1927,34 @@ impl ListRepositoryAssociationsInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_20) = &self.provider_types {
-            for inner_21 in inner_20 {
-                query.push_kv("ProviderType", &smithy_http::query::fmt_string(&inner_21));
-            }
-        }
-        if let Some(inner_22) = &self.states {
-            for inner_23 in inner_22 {
-                query.push_kv("State", &smithy_http::query::fmt_string(&inner_23));
-            }
-        }
-        if let Some(inner_24) = &self.names {
-            for inner_25 in inner_24 {
-                query.push_kv("Name", &smithy_http::query::fmt_string(&inner_25));
-            }
-        }
-        if let Some(inner_26) = &self.owners {
+        if let Some(inner_26) = &self.provider_types {
             for inner_27 in inner_26 {
-                query.push_kv("Owner", &smithy_http::query::fmt_string(&inner_27));
+                query.push_kv("ProviderType", &smithy_http::query::fmt_string(&inner_27));
             }
         }
-        if let Some(inner_28) = &self.max_results {
-            query.push_kv("MaxResults", &smithy_http::query::fmt_default(&inner_28));
+        if let Some(inner_28) = &self.states {
+            for inner_29 in inner_28 {
+                query.push_kv("State", &smithy_http::query::fmt_string(&inner_29));
+            }
         }
-        if let Some(inner_29) = &self.next_token {
-            query.push_kv("NextToken", &smithy_http::query::fmt_string(&inner_29));
+        if let Some(inner_30) = &self.names {
+            for inner_31 in inner_30 {
+                query.push_kv("Name", &smithy_http::query::fmt_string(&inner_31));
+            }
+        }
+        if let Some(inner_32) = &self.owners {
+            for inner_33 in inner_32 {
+                query.push_kv("Owner", &smithy_http::query::fmt_string(&inner_33));
+            }
+        }
+        if let Some(inner_34) = &self.max_results {
+            query.push_kv(
+                "MaxResults",
+                &smithy_types::primitive::Encoder::from(*inner_34).encode(),
+            );
+        }
+        if let Some(inner_35) = &self.next_token {
+            query.push_kv("NextToken", &smithy_http::query::fmt_string(&inner_35));
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -2093,23 +2092,21 @@ impl ListTagsForResourceInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let resource_arn = {
-            let input = &self.resource_arn;
-            let input = input
+        let input_36 = &self.resource_arn;
+        let input_36 =
+            input_36
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "resource_arn",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "resource_arn",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let resource_arn = smithy_http::label::fmt_string(input_36, false);
+        if resource_arn.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "resource_arn",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/tags/{resourceArn}", resourceArn = resource_arn)
             .expect("formatting should succeed");
         Ok(())
@@ -2441,23 +2438,21 @@ impl TagResourceInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let resource_arn = {
-            let input = &self.resource_arn;
-            let input = input
+        let input_37 = &self.resource_arn;
+        let input_37 =
+            input_37
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "resource_arn",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "resource_arn",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let resource_arn = smithy_http::label::fmt_string(input_37, false);
+        if resource_arn.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "resource_arn",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/tags/{resourceArn}", resourceArn = resource_arn)
             .expect("formatting should succeed");
         Ok(())
@@ -2609,32 +2604,30 @@ impl UntagResourceInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let resource_arn = {
-            let input = &self.resource_arn;
-            let input = input
+        let input_38 = &self.resource_arn;
+        let input_38 =
+            input_38
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "resource_arn",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "resource_arn",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let resource_arn = smithy_http::label::fmt_string(input_38, false);
+        if resource_arn.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "resource_arn",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/tags/{resourceArn}", resourceArn = resource_arn)
             .expect("formatting should succeed");
         Ok(())
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_30) = &self.tag_keys {
-            for inner_31 in inner_30 {
-                query.push_kv("tagKeys", &smithy_http::query::fmt_string(&inner_31));
+        if let Some(inner_39) = &self.tag_keys {
+            for inner_40 in inner_39 {
+                query.push_kv("tagKeys", &smithy_http::query::fmt_string(&inner_40));
             }
         }
     }

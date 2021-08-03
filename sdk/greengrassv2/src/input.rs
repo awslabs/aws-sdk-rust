@@ -123,23 +123,20 @@ impl BatchAssociateClientDeviceWithCoreDeviceInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let core_device_thing_name = {
-            let input = &self.core_device_thing_name;
-            let input = input
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "core_device_thing_name",
-                    details: "cannot be empty or unset",
-                })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "core_device_thing_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let input_1 = &self.core_device_thing_name;
+        let input_1 = input_1
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "core_device_thing_name",
+                details: "cannot be empty or unset",
+            })?;
+        let core_device_thing_name = smithy_http::label::fmt_string(input_1, false);
+        if core_device_thing_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "core_device_thing_name",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/greengrass/v2/coreDevices/{coreDeviceThingName}/associateClientDevices",
@@ -305,23 +302,20 @@ impl BatchDisassociateClientDeviceFromCoreDeviceInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let core_device_thing_name = {
-            let input = &self.core_device_thing_name;
-            let input = input
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "core_device_thing_name",
-                    details: "cannot be empty or unset",
-                })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "core_device_thing_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let input_2 = &self.core_device_thing_name;
+        let input_2 = input_2
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "core_device_thing_name",
+                details: "cannot be empty or unset",
+            })?;
+        let core_device_thing_name = smithy_http::label::fmt_string(input_2, false);
+        if core_device_thing_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "core_device_thing_name",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/greengrass/v2/coreDevices/{coreDeviceThingName}/disassociateClientDevices",
@@ -459,23 +453,20 @@ impl CancelDeploymentInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let deployment_id = {
-            let input = &self.deployment_id;
-            let input = input
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "deployment_id",
-                    details: "cannot be empty or unset",
-                })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "deployment_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let input_3 = &self.deployment_id;
+        let input_3 = input_3
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "deployment_id",
+                details: "cannot be empty or unset",
+            })?;
+        let deployment_id = smithy_http::label::fmt_string(input_3, false);
+        if deployment_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "deployment_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/greengrass/v2/deployments/{deploymentId}/cancel",
@@ -1012,23 +1003,20 @@ impl DeleteComponentInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let arn = {
-            let input = &self.arn;
-            let input = input
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "arn",
-                    details: "cannot be empty or unset",
-                })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "arn",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let input_4 = &self.arn;
+        let input_4 = input_4
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "arn",
+                details: "cannot be empty or unset",
+            })?;
+        let arn = smithy_http::label::fmt_string(input_4, false);
+        if arn.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "arn",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/greengrass/v2/components/{arn}", arn = arn)
             .expect("formatting should succeed");
         Ok(())
@@ -1161,23 +1149,20 @@ impl DeleteCoreDeviceInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let core_device_thing_name = {
-            let input = &self.core_device_thing_name;
-            let input = input
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "core_device_thing_name",
-                    details: "cannot be empty or unset",
-                })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "core_device_thing_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let input_5 = &self.core_device_thing_name;
+        let input_5 = input_5
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "core_device_thing_name",
+                details: "cannot be empty or unset",
+            })?;
+        let core_device_thing_name = smithy_http::label::fmt_string(input_5, false);
+        if core_device_thing_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "core_device_thing_name",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/greengrass/v2/coreDevices/{coreDeviceThingName}",
@@ -1309,23 +1294,20 @@ impl DescribeComponentInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let arn = {
-            let input = &self.arn;
-            let input = input
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "arn",
-                    details: "cannot be empty or unset",
-                })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "arn",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let input_6 = &self.arn;
+        let input_6 = input_6
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "arn",
+                details: "cannot be empty or unset",
+            })?;
+        let arn = smithy_http::label::fmt_string(input_6, false);
+        if arn.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "arn",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/greengrass/v2/components/{arn}/metadata",
@@ -1471,33 +1453,30 @@ impl GetComponentInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let arn = {
-            let input = &self.arn;
-            let input = input
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "arn",
-                    details: "cannot be empty or unset",
-                })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "arn",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let input_7 = &self.arn;
+        let input_7 = input_7
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "arn",
+                details: "cannot be empty or unset",
+            })?;
+        let arn = smithy_http::label::fmt_string(input_7, false);
+        if arn.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "arn",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/greengrass/v2/components/{arn}", arn = arn)
             .expect("formatting should succeed");
         Ok(())
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_1) = &self.recipe_output_format {
+        if let Some(inner_8) = &self.recipe_output_format {
             query.push_kv(
                 "recipeOutputFormat",
-                &smithy_http::query::fmt_string(&inner_1),
+                &smithy_http::query::fmt_string(&inner_8),
             );
         }
     }
@@ -1647,40 +1626,35 @@ impl GetComponentVersionArtifactInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let arn = {
-            let input = &self.arn;
-            let input = input
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "arn",
-                    details: "cannot be empty or unset",
-                })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "arn",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let artifact_name = {
-            let input = &self.artifact_name;
-            let input = input
+        let input_9 = &self.arn;
+        let input_9 = input_9
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "arn",
+                details: "cannot be empty or unset",
+            })?;
+        let arn = smithy_http::label::fmt_string(input_9, false);
+        if arn.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "arn",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_10 = &self.artifact_name;
+        let input_10 =
+            input_10
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "artifact_name",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, true);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "artifact_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let artifact_name = smithy_http::label::fmt_string(input_10, true);
+        if artifact_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "artifact_name",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/greengrass/v2/components/{arn}/artifacts/{artifactName}",
@@ -1816,23 +1790,21 @@ impl GetCoreDeviceInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let core_device_thing_name = {
-            let input = &self.core_device_thing_name;
-            let input = input
+        let input_11 = &self.core_device_thing_name;
+        let input_11 =
+            input_11
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "core_device_thing_name",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "core_device_thing_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let core_device_thing_name = smithy_http::label::fmt_string(input_11, false);
+        if core_device_thing_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "core_device_thing_name",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/greengrass/v2/coreDevices/{coreDeviceThingName}",
@@ -1967,23 +1939,21 @@ impl GetDeploymentInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let deployment_id = {
-            let input = &self.deployment_id;
-            let input = input
+        let input_12 = &self.deployment_id;
+        let input_12 =
+            input_12
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "deployment_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "deployment_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let deployment_id = smithy_http::label::fmt_string(input_12, false);
+        if deployment_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "deployment_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/greengrass/v2/deployments/{deploymentId}",
@@ -2146,23 +2116,21 @@ impl ListClientDevicesAssociatedWithCoreDeviceInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let core_device_thing_name = {
-            let input = &self.core_device_thing_name;
-            let input = input
+        let input_13 = &self.core_device_thing_name;
+        let input_13 =
+            input_13
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "core_device_thing_name",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "core_device_thing_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let core_device_thing_name = smithy_http::label::fmt_string(input_13, false);
+        if core_device_thing_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "core_device_thing_name",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/greengrass/v2/coreDevices/{coreDeviceThingName}/associatedClientDevices",
@@ -2173,11 +2141,14 @@ impl ListClientDevicesAssociatedWithCoreDeviceInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_2) = &self.max_results {
-            query.push_kv("maxResults", &smithy_http::query::fmt_default(&inner_2));
+        if let Some(inner_14) = &self.max_results {
+            query.push_kv(
+                "maxResults",
+                &smithy_types::primitive::Encoder::from(*inner_14).encode(),
+            );
         }
-        if let Some(inner_3) = &self.next_token {
-            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_3));
+        if let Some(inner_15) = &self.next_token {
+            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_15));
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -2339,14 +2310,17 @@ impl ListComponentsInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_4) = &self.scope {
-            query.push_kv("scope", &smithy_http::query::fmt_string(&inner_4));
+        if let Some(inner_16) = &self.scope {
+            query.push_kv("scope", &smithy_http::query::fmt_string(&inner_16));
         }
-        if let Some(inner_5) = &self.max_results {
-            query.push_kv("maxResults", &smithy_http::query::fmt_default(&inner_5));
+        if let Some(inner_17) = &self.max_results {
+            query.push_kv(
+                "maxResults",
+                &smithy_types::primitive::Encoder::from(*inner_17).encode(),
+            );
         }
-        if let Some(inner_6) = &self.next_token {
-            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_6));
+        if let Some(inner_18) = &self.next_token {
+            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_18));
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -2497,23 +2471,21 @@ impl ListComponentVersionsInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let arn = {
-            let input = &self.arn;
-            let input = input
+        let input_19 = &self.arn;
+        let input_19 =
+            input_19
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "arn",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "arn",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let arn = smithy_http::label::fmt_string(input_19, false);
+        if arn.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "arn",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/greengrass/v2/components/{arn}/versions",
@@ -2524,11 +2496,14 @@ impl ListComponentVersionsInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_7) = &self.max_results {
-            query.push_kv("maxResults", &smithy_http::query::fmt_default(&inner_7));
+        if let Some(inner_20) = &self.max_results {
+            query.push_kv(
+                "maxResults",
+                &smithy_types::primitive::Encoder::from(*inner_20).encode(),
+            );
         }
-        if let Some(inner_8) = &self.next_token {
-            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_8));
+        if let Some(inner_21) = &self.next_token {
+            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_21));
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -2714,17 +2689,20 @@ impl ListCoreDevicesInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_9) = &self.thing_group_arn {
-            query.push_kv("thingGroupArn", &smithy_http::query::fmt_string(&inner_9));
+        if let Some(inner_22) = &self.thing_group_arn {
+            query.push_kv("thingGroupArn", &smithy_http::query::fmt_string(&inner_22));
         }
-        if let Some(inner_10) = &self.status {
-            query.push_kv("status", &smithy_http::query::fmt_string(&inner_10));
+        if let Some(inner_23) = &self.status {
+            query.push_kv("status", &smithy_http::query::fmt_string(&inner_23));
         }
-        if let Some(inner_11) = &self.max_results {
-            query.push_kv("maxResults", &smithy_http::query::fmt_default(&inner_11));
+        if let Some(inner_24) = &self.max_results {
+            query.push_kv(
+                "maxResults",
+                &smithy_types::primitive::Encoder::from(*inner_24).encode(),
+            );
         }
-        if let Some(inner_12) = &self.next_token {
-            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_12));
+        if let Some(inner_25) = &self.next_token {
+            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_25));
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -2907,17 +2885,20 @@ impl ListDeploymentsInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_13) = &self.target_arn {
-            query.push_kv("targetArn", &smithy_http::query::fmt_string(&inner_13));
+        if let Some(inner_26) = &self.target_arn {
+            query.push_kv("targetArn", &smithy_http::query::fmt_string(&inner_26));
         }
-        if let Some(inner_14) = &self.history_filter {
-            query.push_kv("historyFilter", &smithy_http::query::fmt_string(&inner_14));
+        if let Some(inner_27) = &self.history_filter {
+            query.push_kv("historyFilter", &smithy_http::query::fmt_string(&inner_27));
         }
-        if let Some(inner_15) = &self.max_results {
-            query.push_kv("maxResults", &smithy_http::query::fmt_default(&inner_15));
+        if let Some(inner_28) = &self.max_results {
+            query.push_kv(
+                "maxResults",
+                &smithy_types::primitive::Encoder::from(*inner_28).encode(),
+            );
         }
-        if let Some(inner_16) = &self.next_token {
-            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_16));
+        if let Some(inner_29) = &self.next_token {
+            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_29));
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -3072,23 +3053,21 @@ impl ListEffectiveDeploymentsInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let core_device_thing_name = {
-            let input = &self.core_device_thing_name;
-            let input = input
+        let input_30 = &self.core_device_thing_name;
+        let input_30 =
+            input_30
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "core_device_thing_name",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "core_device_thing_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let core_device_thing_name = smithy_http::label::fmt_string(input_30, false);
+        if core_device_thing_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "core_device_thing_name",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/greengrass/v2/coreDevices/{coreDeviceThingName}/effectiveDeployments",
@@ -3099,11 +3078,14 @@ impl ListEffectiveDeploymentsInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_17) = &self.max_results {
-            query.push_kv("maxResults", &smithy_http::query::fmt_default(&inner_17));
+        if let Some(inner_31) = &self.max_results {
+            query.push_kv(
+                "maxResults",
+                &smithy_types::primitive::Encoder::from(*inner_31).encode(),
+            );
         }
-        if let Some(inner_18) = &self.next_token {
-            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_18));
+        if let Some(inner_32) = &self.next_token {
+            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_32));
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -3258,23 +3240,21 @@ impl ListInstalledComponentsInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let core_device_thing_name = {
-            let input = &self.core_device_thing_name;
-            let input = input
+        let input_33 = &self.core_device_thing_name;
+        let input_33 =
+            input_33
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "core_device_thing_name",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "core_device_thing_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let core_device_thing_name = smithy_http::label::fmt_string(input_33, false);
+        if core_device_thing_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "core_device_thing_name",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/greengrass/v2/coreDevices/{coreDeviceThingName}/installedComponents",
@@ -3285,11 +3265,14 @@ impl ListInstalledComponentsInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_19) = &self.max_results {
-            query.push_kv("maxResults", &smithy_http::query::fmt_default(&inner_19));
+        if let Some(inner_34) = &self.max_results {
+            query.push_kv(
+                "maxResults",
+                &smithy_types::primitive::Encoder::from(*inner_34).encode(),
+            );
         }
-        if let Some(inner_20) = &self.next_token {
-            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_20));
+        if let Some(inner_35) = &self.next_token {
+            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_35));
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -3418,23 +3401,21 @@ impl ListTagsForResourceInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let resource_arn = {
-            let input = &self.resource_arn;
-            let input = input
+        let input_36 = &self.resource_arn;
+        let input_36 =
+            input_36
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "resource_arn",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "resource_arn",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let resource_arn = smithy_http::label::fmt_string(input_36, false);
+        if resource_arn.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "resource_arn",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/tags/{resourceArn}", resourceArn = resource_arn)
             .expect("formatting should succeed");
         Ok(())
@@ -3744,23 +3725,21 @@ impl TagResourceInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let resource_arn = {
-            let input = &self.resource_arn;
-            let input = input
+        let input_37 = &self.resource_arn;
+        let input_37 =
+            input_37
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "resource_arn",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "resource_arn",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let resource_arn = smithy_http::label::fmt_string(input_37, false);
+        if resource_arn.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "resource_arn",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/tags/{resourceArn}", resourceArn = resource_arn)
             .expect("formatting should succeed");
         Ok(())
@@ -3903,32 +3882,30 @@ impl UntagResourceInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let resource_arn = {
-            let input = &self.resource_arn;
-            let input = input
+        let input_38 = &self.resource_arn;
+        let input_38 =
+            input_38
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "resource_arn",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "resource_arn",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let resource_arn = smithy_http::label::fmt_string(input_38, false);
+        if resource_arn.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "resource_arn",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/tags/{resourceArn}", resourceArn = resource_arn)
             .expect("formatting should succeed");
         Ok(())
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_21) = &self.tag_keys {
-            for inner_22 in inner_21 {
-                query.push_kv("tagKeys", &smithy_http::query::fmt_string(&inner_22));
+        if let Some(inner_39) = &self.tag_keys {
+            for inner_40 in inner_39 {
+                query.push_kv("tagKeys", &smithy_http::query::fmt_string(&inner_40));
             }
         }
     }

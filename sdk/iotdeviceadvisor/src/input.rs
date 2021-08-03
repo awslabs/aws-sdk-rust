@@ -256,23 +256,20 @@ impl DeleteSuiteDefinitionInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let suite_definition_id = {
-            let input = &self.suite_definition_id;
-            let input = input
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "suite_definition_id",
-                    details: "cannot be empty or unset",
-                })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "suite_definition_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let input_1 = &self.suite_definition_id;
+        let input_1 = input_1
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "suite_definition_id",
+                details: "cannot be empty or unset",
+            })?;
+        let suite_definition_id = smithy_http::label::fmt_string(input_1, false);
+        if suite_definition_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "suite_definition_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/suiteDefinitions/{suiteDefinitionId}",
@@ -423,23 +420,20 @@ impl GetSuiteDefinitionInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let suite_definition_id = {
-            let input = &self.suite_definition_id;
-            let input = input
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "suite_definition_id",
-                    details: "cannot be empty or unset",
-                })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "suite_definition_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let input_2 = &self.suite_definition_id;
+        let input_2 = input_2
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "suite_definition_id",
+                details: "cannot be empty or unset",
+            })?;
+        let suite_definition_id = smithy_http::label::fmt_string(input_2, false);
+        if suite_definition_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "suite_definition_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/suiteDefinitions/{suiteDefinitionId}",
@@ -450,10 +444,10 @@ impl GetSuiteDefinitionInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_1) = &self.suite_definition_version {
+        if let Some(inner_3) = &self.suite_definition_version {
             query.push_kv(
                 "suiteDefinitionVersion",
-                &smithy_http::query::fmt_string(&inner_1),
+                &smithy_http::query::fmt_string(&inner_3),
             );
         }
     }
@@ -595,40 +589,34 @@ impl GetSuiteRunInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let suite_definition_id = {
-            let input = &self.suite_definition_id;
-            let input = input
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "suite_definition_id",
-                    details: "cannot be empty or unset",
-                })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "suite_definition_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let suite_run_id = {
-            let input = &self.suite_run_id;
-            let input = input
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "suite_run_id",
-                    details: "cannot be empty or unset",
-                })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "suite_run_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let input_4 = &self.suite_definition_id;
+        let input_4 = input_4
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "suite_definition_id",
+                details: "cannot be empty or unset",
+            })?;
+        let suite_definition_id = smithy_http::label::fmt_string(input_4, false);
+        if suite_definition_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "suite_definition_id",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_5 = &self.suite_run_id;
+        let input_5 = input_5
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "suite_run_id",
+                details: "cannot be empty or unset",
+            })?;
+        let suite_run_id = smithy_http::label::fmt_string(input_5, false);
+        if suite_run_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "suite_run_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/suiteDefinitions/{suiteDefinitionId}/suiteRuns/{suiteRunId}",
@@ -777,40 +765,34 @@ impl GetSuiteRunReportInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let suite_definition_id = {
-            let input = &self.suite_definition_id;
-            let input = input
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "suite_definition_id",
-                    details: "cannot be empty or unset",
-                })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "suite_definition_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let suite_run_id = {
-            let input = &self.suite_run_id;
-            let input = input
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "suite_run_id",
-                    details: "cannot be empty or unset",
-                })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "suite_run_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let input_6 = &self.suite_definition_id;
+        let input_6 = input_6
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "suite_definition_id",
+                details: "cannot be empty or unset",
+            })?;
+        let suite_definition_id = smithy_http::label::fmt_string(input_6, false);
+        if suite_definition_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "suite_definition_id",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_7 = &self.suite_run_id;
+        let input_7 = input_7
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "suite_run_id",
+                details: "cannot be empty or unset",
+            })?;
+        let suite_run_id = smithy_http::label::fmt_string(input_7, false);
+        if suite_run_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "suite_run_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/suiteDefinitions/{suiteDefinitionId}/suiteRuns/{suiteRunId}/report",
@@ -964,11 +946,11 @@ impl ListSuiteDefinitionsInput {
         if self.max_results != 0 {
             query.push_kv(
                 "maxResults",
-                &smithy_http::query::fmt_default(&&self.max_results),
+                &smithy_types::primitive::Encoder::from(self.max_results).encode(),
             );
         }
-        if let Some(inner_2) = &self.next_token {
-            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_2));
+        if let Some(inner_8) = &self.next_token {
+            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_8));
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -1139,26 +1121,26 @@ impl ListSuiteRunsInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_3) = &self.suite_definition_id {
+        if let Some(inner_9) = &self.suite_definition_id {
             query.push_kv(
                 "suiteDefinitionId",
-                &smithy_http::query::fmt_string(&inner_3),
+                &smithy_http::query::fmt_string(&inner_9),
             );
         }
-        if let Some(inner_4) = &self.suite_definition_version {
+        if let Some(inner_10) = &self.suite_definition_version {
             query.push_kv(
                 "suiteDefinitionVersion",
-                &smithy_http::query::fmt_string(&inner_4),
+                &smithy_http::query::fmt_string(&inner_10),
             );
         }
         if self.max_results != 0 {
             query.push_kv(
                 "maxResults",
-                &smithy_http::query::fmt_default(&&self.max_results),
+                &smithy_types::primitive::Encoder::from(self.max_results).encode(),
             );
         }
-        if let Some(inner_5) = &self.next_token {
-            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_5));
+        if let Some(inner_11) = &self.next_token {
+            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_11));
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -1287,23 +1269,21 @@ impl ListTagsForResourceInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let resource_arn = {
-            let input = &self.resource_arn;
-            let input = input
+        let input_12 = &self.resource_arn;
+        let input_12 =
+            input_12
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "resource_arn",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "resource_arn",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let resource_arn = smithy_http::label::fmt_string(input_12, false);
+        if resource_arn.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "resource_arn",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/tags/{resourceArn}", resourceArn = resource_arn)
             .expect("formatting should succeed");
         Ok(())
@@ -1491,23 +1471,21 @@ impl StartSuiteRunInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let suite_definition_id = {
-            let input = &self.suite_definition_id;
-            let input = input
+        let input_13 = &self.suite_definition_id;
+        let input_13 =
+            input_13
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "suite_definition_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "suite_definition_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let suite_definition_id = smithy_http::label::fmt_string(input_13, false);
+        if suite_definition_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "suite_definition_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/suiteDefinitions/{suiteDefinitionId}/suiteRuns",
@@ -1653,40 +1631,36 @@ impl StopSuiteRunInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let suite_definition_id = {
-            let input = &self.suite_definition_id;
-            let input = input
+        let input_14 = &self.suite_definition_id;
+        let input_14 =
+            input_14
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "suite_definition_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "suite_definition_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let suite_run_id = {
-            let input = &self.suite_run_id;
-            let input = input
+        let suite_definition_id = smithy_http::label::fmt_string(input_14, false);
+        if suite_definition_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "suite_definition_id",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_15 = &self.suite_run_id;
+        let input_15 =
+            input_15
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "suite_run_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "suite_run_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let suite_run_id = smithy_http::label::fmt_string(input_15, false);
+        if suite_run_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "suite_run_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/suiteDefinitions/{suiteDefinitionId}/suiteRuns/{suiteRunId}/stop",
@@ -1845,23 +1819,21 @@ impl TagResourceInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let resource_arn = {
-            let input = &self.resource_arn;
-            let input = input
+        let input_16 = &self.resource_arn;
+        let input_16 =
+            input_16
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "resource_arn",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "resource_arn",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let resource_arn = smithy_http::label::fmt_string(input_16, false);
+        if resource_arn.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "resource_arn",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/tags/{resourceArn}", resourceArn = resource_arn)
             .expect("formatting should succeed");
         Ok(())
@@ -2004,32 +1976,30 @@ impl UntagResourceInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let resource_arn = {
-            let input = &self.resource_arn;
-            let input = input
+        let input_17 = &self.resource_arn;
+        let input_17 =
+            input_17
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "resource_arn",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "resource_arn",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let resource_arn = smithy_http::label::fmt_string(input_17, false);
+        if resource_arn.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "resource_arn",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/tags/{resourceArn}", resourceArn = resource_arn)
             .expect("formatting should succeed");
         Ok(())
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_6) = &self.tag_keys {
-            for inner_7 in inner_6 {
-                query.push_kv("tagKeys", &smithy_http::query::fmt_string(&inner_7));
+        if let Some(inner_18) = &self.tag_keys {
+            for inner_19 in inner_18 {
+                query.push_kv("tagKeys", &smithy_http::query::fmt_string(&inner_19));
             }
         }
     }
@@ -2183,23 +2153,21 @@ impl UpdateSuiteDefinitionInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let suite_definition_id = {
-            let input = &self.suite_definition_id;
-            let input = input
+        let input_20 = &self.suite_definition_id;
+        let input_20 =
+            input_20
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "suite_definition_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "suite_definition_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let suite_definition_id = smithy_http::label::fmt_string(input_20, false);
+        if suite_definition_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "suite_definition_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/suiteDefinitions/{suiteDefinitionId}",

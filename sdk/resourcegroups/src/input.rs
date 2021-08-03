@@ -836,23 +836,20 @@ impl GetTagsInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let arn = {
-            let input = &self.arn;
-            let input = input
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "arn",
-                    details: "cannot be empty or unset",
-                })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "arn",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let input_1 = &self.arn;
+        let input_1 = input_1
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "arn",
+                details: "cannot be empty or unset",
+            })?;
+        let arn = smithy_http::label::fmt_string(input_1, false);
+        if arn.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "arn",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/resources/{Arn}/tags", Arn = arn).expect("formatting should succeed");
         Ok(())
     }
@@ -1364,11 +1361,14 @@ impl ListGroupsInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_1) = &self.max_results {
-            query.push_kv("maxResults", &smithy_http::query::fmt_default(&inner_1));
+        if let Some(inner_2) = &self.max_results {
+            query.push_kv(
+                "maxResults",
+                &smithy_types::primitive::Encoder::from(*inner_2).encode(),
+            );
         }
-        if let Some(inner_2) = &self.next_token {
-            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_2));
+        if let Some(inner_3) = &self.next_token {
+            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_3));
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -1831,23 +1831,20 @@ impl TagInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let arn = {
-            let input = &self.arn;
-            let input = input
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "arn",
-                    details: "cannot be empty or unset",
-                })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "arn",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let input_4 = &self.arn;
+        let input_4 = input_4
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "arn",
+                details: "cannot be empty or unset",
+            })?;
+        let arn = smithy_http::label::fmt_string(input_4, false);
+        if arn.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "arn",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/resources/{Arn}/tags", Arn = arn).expect("formatting should succeed");
         Ok(())
     }
@@ -2132,23 +2129,20 @@ impl UntagInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let arn = {
-            let input = &self.arn;
-            let input = input
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "arn",
-                    details: "cannot be empty or unset",
-                })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "arn",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let input_5 = &self.arn;
+        let input_5 = input_5
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "arn",
+                details: "cannot be empty or unset",
+            })?;
+        let arn = smithy_http::label::fmt_string(input_5, false);
+        if arn.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "arn",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/resources/{Arn}/tags", Arn = arn).expect("formatting should succeed");
         Ok(())
     }

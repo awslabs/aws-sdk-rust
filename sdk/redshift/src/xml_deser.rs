@@ -902,8 +902,7 @@ pub fn deser_operation_authorize_endpoint_access(
                 let var_29 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.redshift#Boolean`)"))
@@ -928,8 +927,7 @@ pub fn deser_operation_authorize_endpoint_access(
                 let var_31 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.redshift#Integer`)"))
@@ -1440,8 +1438,7 @@ pub fn deser_operation_cancel_resize(
                 let var_46 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.redshift#IntegerOptional`)"))
@@ -1512,8 +1509,7 @@ pub fn deser_operation_cancel_resize(
                 let var_52 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            f64::from_str(
+                            <f64 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (double: `com.amazonaws.redshift#DoubleOptional`)"))
@@ -1528,8 +1524,7 @@ pub fn deser_operation_cancel_resize(
                 let var_53 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i64::from_str(
+                            <i64 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (long: `com.amazonaws.redshift#LongOptional`)"))
@@ -1544,8 +1539,7 @@ pub fn deser_operation_cancel_resize(
                 let var_54 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i64::from_str(
+                            <i64 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (long: `com.amazonaws.redshift#LongOptional`)"))
@@ -1560,8 +1554,7 @@ pub fn deser_operation_cancel_resize(
                 let var_55 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i64::from_str(
+                            <i64 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (long: `com.amazonaws.redshift#LongOptional`)"))
@@ -1576,8 +1569,7 @@ pub fn deser_operation_cancel_resize(
                 let var_56 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i64::from_str(
+                            <i64 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (long: `com.amazonaws.redshift#LongOptional`)"))
@@ -1631,8 +1623,7 @@ pub fn deser_operation_cancel_resize(
                 let var_60 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            f64::from_str(
+                            <f64 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (double: `com.amazonaws.redshift#DoubleOptional`)"))
@@ -3130,8 +3121,7 @@ pub fn deser_operation_create_endpoint_access(
                 let var_104 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.redshift#Integer`)"))
@@ -4429,8 +4419,7 @@ pub fn deser_operation_create_snapshot_schedule(
                 let var_149 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.redshift#IntegerOptional`)"))
@@ -4646,8 +4635,7 @@ pub fn deser_operation_create_usage_limit(
                 let var_158 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i64::from_str(
+                            <i64 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (long: `com.amazonaws.redshift#Long`)"))
@@ -5049,8 +5037,7 @@ pub fn deser_operation_delete_endpoint_access(
                 let var_174 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.redshift#Integer`)"))
@@ -6597,8 +6584,7 @@ pub fn deser_operation_describe_logging_status(
                 let var_222 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.redshift#Boolean`)"))
@@ -7065,8 +7051,7 @@ pub fn deser_operation_describe_resize(
                 let var_239 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.redshift#IntegerOptional`)"))
@@ -7137,8 +7122,7 @@ pub fn deser_operation_describe_resize(
                 let var_245 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            f64::from_str(
+                            <f64 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (double: `com.amazonaws.redshift#DoubleOptional`)"))
@@ -7153,8 +7137,7 @@ pub fn deser_operation_describe_resize(
                 let var_246 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i64::from_str(
+                            <i64 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (long: `com.amazonaws.redshift#LongOptional`)"))
@@ -7169,8 +7152,7 @@ pub fn deser_operation_describe_resize(
                 let var_247 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i64::from_str(
+                            <i64 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (long: `com.amazonaws.redshift#LongOptional`)"))
@@ -7185,8 +7167,7 @@ pub fn deser_operation_describe_resize(
                 let var_248 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i64::from_str(
+                            <i64 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (long: `com.amazonaws.redshift#LongOptional`)"))
@@ -7201,8 +7182,7 @@ pub fn deser_operation_describe_resize(
                 let var_249 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i64::from_str(
+                            <i64 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (long: `com.amazonaws.redshift#LongOptional`)"))
@@ -7256,8 +7236,7 @@ pub fn deser_operation_describe_resize(
                 let var_253 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            f64::from_str(
+                            <f64 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (double: `com.amazonaws.redshift#DoubleOptional`)"))
@@ -7498,8 +7477,7 @@ pub fn deser_operation_describe_storage(
                 let var_260 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            f64::from_str(
+                            <f64 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (double: `com.amazonaws.redshift#Double`)"))
@@ -7514,8 +7492,7 @@ pub fn deser_operation_describe_storage(
                 let var_261 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            f64::from_str(
+                            <f64 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (double: `com.amazonaws.redshift#Double`)"))
@@ -7787,8 +7764,7 @@ pub fn deser_operation_disable_logging(
                 let var_269 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.redshift#Boolean`)"))
@@ -8123,8 +8099,7 @@ pub fn deser_operation_enable_logging(
                 let var_281 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.redshift#Boolean`)"))
@@ -9186,8 +9161,7 @@ pub fn deser_operation_modify_endpoint_access(
                 let var_316 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.redshift#Integer`)"))
@@ -9650,8 +9624,7 @@ pub fn deser_operation_modify_snapshot_schedule(
                 let var_338 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.redshift#IntegerOptional`)"))
@@ -9768,8 +9741,7 @@ pub fn deser_operation_modify_usage_limit(
                 let var_344 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i64::from_str(
+                            <i64 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (long: `com.amazonaws.redshift#Long`)"))
@@ -10609,8 +10581,7 @@ pub fn deser_operation_revoke_endpoint_access(
                 let var_370 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.redshift#Boolean`)"))
@@ -10635,8 +10606,7 @@ pub fn deser_operation_revoke_endpoint_access(
                 let var_372 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.redshift#Integer`)"))
@@ -10882,8 +10852,7 @@ pub fn deser_structure_reserved_node(
                 let var_381 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.redshift#Integer`)"))
@@ -10898,8 +10867,7 @@ pub fn deser_structure_reserved_node(
                 let var_382 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            f64::from_str(
+                            <f64 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (double: `com.amazonaws.redshift#Double`)"))
@@ -10914,8 +10882,7 @@ pub fn deser_structure_reserved_node(
                 let var_383 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            f64::from_str(
+                            <f64 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (double: `com.amazonaws.redshift#Double`)"))
@@ -10943,8 +10910,7 @@ pub fn deser_structure_reserved_node(
                 let var_385 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.redshift#Integer`)"))
@@ -11166,8 +11132,7 @@ pub fn deser_structure_snapshot(
                 let var_399 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.redshift#Integer`)"))
@@ -11274,8 +11239,7 @@ pub fn deser_structure_snapshot(
                 let var_407 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.redshift#Integer`)"))
@@ -11316,8 +11280,7 @@ pub fn deser_structure_snapshot(
                 let var_410 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.redshift#Boolean`)"))
@@ -11345,8 +11308,7 @@ pub fn deser_structure_snapshot(
                 let var_412 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.redshift#Boolean`)"))
@@ -11384,8 +11346,7 @@ pub fn deser_structure_snapshot(
                 let var_415 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            f64::from_str(
+                            <f64 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (double: `com.amazonaws.redshift#Double`)"))
@@ -11400,8 +11361,7 @@ pub fn deser_structure_snapshot(
                 let var_416 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            f64::from_str(
+                            <f64 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (double: `com.amazonaws.redshift#Double`)"))
@@ -11416,8 +11376,7 @@ pub fn deser_structure_snapshot(
                 let var_417 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            f64::from_str(
+                            <f64 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (double: `com.amazonaws.redshift#Double`)"))
@@ -11432,8 +11391,7 @@ pub fn deser_structure_snapshot(
                 let var_418 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            f64::from_str(
+                            <f64 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (double: `com.amazonaws.redshift#Double`)"))
@@ -11448,8 +11406,7 @@ pub fn deser_structure_snapshot(
                 let var_419 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i64::from_str(
+                            <i64 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (long: `com.amazonaws.redshift#Long`)"))
@@ -11464,8 +11421,7 @@ pub fn deser_structure_snapshot(
                 let var_420 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i64::from_str(
+                            <i64 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (long: `com.amazonaws.redshift#Long`)"))
@@ -11513,8 +11469,7 @@ pub fn deser_structure_snapshot(
                 let var_424 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.redshift#Boolean`)"))
@@ -11542,8 +11497,7 @@ pub fn deser_structure_snapshot(
                 let var_426 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.redshift#IntegerOptional`)"))
@@ -11558,8 +11512,7 @@ pub fn deser_structure_snapshot(
                 let var_427 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.redshift#IntegerOptional`)"))
@@ -11842,8 +11795,7 @@ pub fn deser_structure_cluster(
                 let var_438 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.redshift#Integer`)"))
@@ -11858,8 +11810,7 @@ pub fn deser_structure_cluster(
                 let var_439 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.redshift#Integer`)"))
@@ -11979,8 +11930,7 @@ pub fn deser_structure_cluster(
                 let var_449 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.redshift#Boolean`)"))
@@ -11995,8 +11945,7 @@ pub fn deser_structure_cluster(
                 let var_450 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.redshift#Integer`)"))
@@ -12011,8 +11960,7 @@ pub fn deser_structure_cluster(
                 let var_451 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.redshift#Boolean`)"))
@@ -12027,8 +11975,7 @@ pub fn deser_structure_cluster(
                 let var_452 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.redshift#Boolean`)"))
@@ -12152,8 +12099,7 @@ pub fn deser_structure_cluster(
                 let var_463 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.redshift#Boolean`)"))
@@ -12328,8 +12274,7 @@ pub fn deser_structure_cluster(
                 let var_477 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i64::from_str(
+                            <i64 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (long: `com.amazonaws.redshift#LongOptional`)"))
@@ -12694,8 +12639,7 @@ pub fn deser_structure_event_subscription(
                 let var_501 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.redshift#Boolean`)"))
@@ -13732,8 +13676,7 @@ pub fn deser_structure_table_restore_status(
                 let var_526 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i64::from_str(
+                            <i64 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (long: `com.amazonaws.redshift#LongOptional`)"))
@@ -13748,8 +13691,7 @@ pub fn deser_structure_table_restore_status(
                 let var_527 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i64::from_str(
+                            <i64 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (long: `com.amazonaws.redshift#LongOptional`)"))
@@ -14057,8 +13999,7 @@ pub fn deser_structure_endpoint(
                 let var_541 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.redshift#Integer`)"))
@@ -14162,8 +14103,7 @@ pub fn deser_structure_pending_modified_values(
                 let var_545 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.redshift#IntegerOptional`)"))
@@ -14204,8 +14144,7 @@ pub fn deser_structure_pending_modified_values(
                 let var_548 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.redshift#IntegerOptional`)"))
@@ -14233,8 +14172,7 @@ pub fn deser_structure_pending_modified_values(
                 let var_550 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.redshift#BooleanOptional`)"))
@@ -14249,8 +14187,7 @@ pub fn deser_structure_pending_modified_values(
                 let var_551 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.redshift#BooleanOptional`)"))
@@ -14317,8 +14254,7 @@ pub fn deser_structure_restore_status(
                 let var_555 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            f64::from_str(
+                            <f64 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (double: `com.amazonaws.redshift#Double`)"))
@@ -14333,8 +14269,7 @@ pub fn deser_structure_restore_status(
                 let var_556 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i64::from_str(
+                            <i64 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (long: `com.amazonaws.redshift#Long`)"))
@@ -14349,8 +14284,7 @@ pub fn deser_structure_restore_status(
                 let var_557 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i64::from_str(
+                            <i64 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (long: `com.amazonaws.redshift#Long`)"))
@@ -14365,8 +14299,7 @@ pub fn deser_structure_restore_status(
                 let var_558 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i64::from_str(
+                            <i64 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (long: `com.amazonaws.redshift#Long`)"))
@@ -14381,8 +14314,7 @@ pub fn deser_structure_restore_status(
                 let var_559 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i64::from_str(
+                            <i64 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (long: `com.amazonaws.redshift#Long`)"))
@@ -14423,8 +14355,7 @@ pub fn deser_structure_data_transfer_progress(
                 let var_561 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            f64::from_str(
+                            <f64 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (double: `com.amazonaws.redshift#DoubleOptional`)"))
@@ -14439,8 +14370,7 @@ pub fn deser_structure_data_transfer_progress(
                 let var_562 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i64::from_str(
+                            <i64 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (long: `com.amazonaws.redshift#Long`)"))
@@ -14455,8 +14385,7 @@ pub fn deser_structure_data_transfer_progress(
                 let var_563 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i64::from_str(
+                            <i64 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (long: `com.amazonaws.redshift#Long`)"))
@@ -14471,8 +14400,7 @@ pub fn deser_structure_data_transfer_progress(
                 let var_564 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i64::from_str(
+                            <i64 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (long: `com.amazonaws.redshift#LongOptional`)"))
@@ -14487,8 +14415,7 @@ pub fn deser_structure_data_transfer_progress(
                 let var_565 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i64::from_str(
+                            <i64 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (long: `com.amazonaws.redshift#LongOptional`)"))
@@ -14581,8 +14508,7 @@ pub fn deser_structure_cluster_snapshot_copy_status(
                 let var_570 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i64::from_str(
+                            <i64 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (long: `com.amazonaws.redshift#Long`)"))
@@ -14597,8 +14523,7 @@ pub fn deser_structure_cluster_snapshot_copy_status(
                 let var_571 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.redshift#Integer`)"))
@@ -14770,8 +14695,7 @@ pub fn deser_structure_resize_info(
                 let var_576 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.redshift#Boolean`)"))
@@ -14959,8 +14883,7 @@ pub fn deser_structure_resize_cluster_message(
                 let var_582 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.redshift#IntegerOptional`)"))
@@ -14975,8 +14898,7 @@ pub fn deser_structure_resize_cluster_message(
                 let var_583 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.redshift#BooleanOptional`)"))
@@ -15326,8 +15248,7 @@ pub fn deser_structure_parameter(
                 let var_603 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.redshift#Boolean`)"))
@@ -15548,8 +15469,7 @@ pub fn deser_structure_endpoint_access(
                 let var_617 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.redshift#Integer`)"))
@@ -15690,8 +15610,7 @@ pub fn deser_structure_endpoint_authorization(
                 let var_627 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.redshift#Boolean`)"))
@@ -15716,8 +15635,7 @@ pub fn deser_structure_endpoint_authorization(
                 let var_629 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.redshift#Integer`)"))
@@ -15897,8 +15815,7 @@ pub fn deser_structure_node_configuration_option(
                 let var_640 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.redshift#Integer`)"))
@@ -15913,8 +15830,7 @@ pub fn deser_structure_node_configuration_option(
                 let var_641 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            f64::from_str(
+                            <f64 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (double: `com.amazonaws.redshift#DoubleOptional`)"))
@@ -16138,8 +16054,7 @@ pub fn deser_structure_reserved_node_offering(
                 let var_655 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.redshift#Integer`)"))
@@ -16154,8 +16069,7 @@ pub fn deser_structure_reserved_node_offering(
                 let var_656 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            f64::from_str(
+                            <f64 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (double: `com.amazonaws.redshift#Double`)"))
@@ -16170,8 +16084,7 @@ pub fn deser_structure_reserved_node_offering(
                 let var_657 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            f64::from_str(
+                            <f64 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (double: `com.amazonaws.redshift#Double`)"))
@@ -16432,8 +16345,7 @@ pub fn deser_structure_snapshot_schedule(
                 let var_676 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.redshift#IntegerOptional`)"))
@@ -16574,8 +16486,7 @@ pub fn deser_structure_usage_limit(
                 let var_685 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i64::from_str(
+                            <i64 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (long: `com.amazonaws.redshift#Long`)"))
@@ -16641,8 +16552,7 @@ pub fn deser_structure_recurring_charge(
                 let var_689 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            f64::from_str(
+                            <f64 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (double: `com.amazonaws.redshift#Double`)"))

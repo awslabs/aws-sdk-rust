@@ -149,40 +149,34 @@ impl AbortMultipartUploadInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let bucket = {
-            let input = &self.bucket;
-            let input = input
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "bucket",
-                    details: "cannot be empty or unset",
-                })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "bucket",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let key = {
-            let input = &self.key;
-            let input = input
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "key",
-                    details: "cannot be empty or unset",
-                })?;
-            let formatted = smithy_http::label::fmt_string(input, true);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "key",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let input_1 = &self.bucket;
+        let input_1 = input_1
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "bucket",
+                details: "cannot be empty or unset",
+            })?;
+        let bucket = smithy_http::label::fmt_string(input_1, false);
+        if bucket.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "bucket",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_2 = &self.key;
+        let input_2 = input_2
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "key",
+                details: "cannot be empty or unset",
+            })?;
+        let key = smithy_http::label::fmt_string(input_2, true);
+        if key.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "key",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/{Bucket}/{Key}", Bucket = bucket, Key = key)
             .expect("formatting should succeed");
         Ok(())
@@ -191,11 +185,11 @@ impl AbortMultipartUploadInput {
         &self,
         mut builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        if let Some(inner_1) = &self.request_payer {
-            let formatted_2 = AsRef::<str>::as_ref(inner_1);
-            if !formatted_2.is_empty() {
+        if let Some(inner_3) = &self.request_payer {
+            let formatted_4 = AsRef::<str>::as_ref(inner_3);
+            if !formatted_4.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_2;
+                let header_value = formatted_4;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -209,11 +203,11 @@ impl AbortMultipartUploadInput {
                 builder = builder.header("x-amz-request-payer", header_value);
             }
         }
-        if let Some(inner_3) = &self.expected_bucket_owner {
-            let formatted_4 = AsRef::<str>::as_ref(inner_3);
-            if !formatted_4.is_empty() {
+        if let Some(inner_5) = &self.expected_bucket_owner {
+            let formatted_6 = AsRef::<str>::as_ref(inner_5);
+            if !formatted_6.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_4;
+                let header_value = formatted_6;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -232,8 +226,8 @@ impl AbortMultipartUploadInput {
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
         query.push_kv("x-id", "AbortMultipartUpload");
-        if let Some(inner_5) = &self.upload_id {
-            query.push_kv("uploadId", &smithy_http::query::fmt_string(&inner_5));
+        if let Some(inner_7) = &self.upload_id {
+            query.push_kv("uploadId", &smithy_http::query::fmt_string(&inner_7));
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -435,40 +429,34 @@ impl CompleteMultipartUploadInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let bucket = {
-            let input = &self.bucket;
-            let input = input
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "bucket",
-                    details: "cannot be empty or unset",
-                })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "bucket",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let key = {
-            let input = &self.key;
-            let input = input
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "key",
-                    details: "cannot be empty or unset",
-                })?;
-            let formatted = smithy_http::label::fmt_string(input, true);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "key",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let input_8 = &self.bucket;
+        let input_8 = input_8
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "bucket",
+                details: "cannot be empty or unset",
+            })?;
+        let bucket = smithy_http::label::fmt_string(input_8, false);
+        if bucket.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "bucket",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_9 = &self.key;
+        let input_9 = input_9
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "key",
+                details: "cannot be empty or unset",
+            })?;
+        let key = smithy_http::label::fmt_string(input_9, true);
+        if key.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "key",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/{Bucket}/{Key}", Bucket = bucket, Key = key)
             .expect("formatting should succeed");
         Ok(())
@@ -477,11 +465,11 @@ impl CompleteMultipartUploadInput {
         &self,
         mut builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        if let Some(inner_6) = &self.request_payer {
-            let formatted_7 = AsRef::<str>::as_ref(inner_6);
-            if !formatted_7.is_empty() {
+        if let Some(inner_10) = &self.request_payer {
+            let formatted_11 = AsRef::<str>::as_ref(inner_10);
+            if !formatted_11.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_7;
+                let header_value = formatted_11;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -495,11 +483,11 @@ impl CompleteMultipartUploadInput {
                 builder = builder.header("x-amz-request-payer", header_value);
             }
         }
-        if let Some(inner_8) = &self.expected_bucket_owner {
-            let formatted_9 = AsRef::<str>::as_ref(inner_8);
-            if !formatted_9.is_empty() {
+        if let Some(inner_12) = &self.expected_bucket_owner {
+            let formatted_13 = AsRef::<str>::as_ref(inner_12);
+            if !formatted_13.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_9;
+                let header_value = formatted_13;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -518,8 +506,8 @@ impl CompleteMultipartUploadInput {
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
         query.push_kv("x-id", "CompleteMultipartUpload");
-        if let Some(inner_10) = &self.upload_id {
-            query.push_kv("uploadId", &smithy_http::query::fmt_string(&inner_10));
+        if let Some(inner_14) = &self.upload_id {
+            query.push_kv("uploadId", &smithy_http::query::fmt_string(&inner_14));
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -1263,40 +1251,36 @@ impl CopyObjectInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let bucket = {
-            let input = &self.bucket;
-            let input = input
+        let input_15 = &self.bucket;
+        let input_15 =
+            input_15
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "bucket",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "bucket",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let key = {
-            let input = &self.key;
-            let input = input
+        let bucket = smithy_http::label::fmt_string(input_15, false);
+        if bucket.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "bucket",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_16 = &self.key;
+        let input_16 =
+            input_16
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "key",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, true);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "key",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let key = smithy_http::label::fmt_string(input_16, true);
+        if key.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "key",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/{Bucket}/{Key}", Bucket = bucket, Key = key)
             .expect("formatting should succeed");
         Ok(())
@@ -1305,11 +1289,11 @@ impl CopyObjectInput {
         &self,
         mut builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        if let Some(inner_11) = &self.acl {
-            let formatted_12 = AsRef::<str>::as_ref(inner_11);
-            if !formatted_12.is_empty() {
+        if let Some(inner_17) = &self.acl {
+            let formatted_18 = AsRef::<str>::as_ref(inner_17);
+            if !formatted_18.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_12;
+                let header_value = formatted_18;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -1323,11 +1307,11 @@ impl CopyObjectInput {
                 builder = builder.header("x-amz-acl", header_value);
             }
         }
-        if let Some(inner_13) = &self.cache_control {
-            let formatted_14 = AsRef::<str>::as_ref(inner_13);
-            if !formatted_14.is_empty() {
+        if let Some(inner_19) = &self.cache_control {
+            let formatted_20 = AsRef::<str>::as_ref(inner_19);
+            if !formatted_20.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_14;
+                let header_value = formatted_20;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -1341,11 +1325,11 @@ impl CopyObjectInput {
                 builder = builder.header("Cache-Control", header_value);
             }
         }
-        if let Some(inner_15) = &self.content_disposition {
-            let formatted_16 = AsRef::<str>::as_ref(inner_15);
-            if !formatted_16.is_empty() {
+        if let Some(inner_21) = &self.content_disposition {
+            let formatted_22 = AsRef::<str>::as_ref(inner_21);
+            if !formatted_22.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_16;
+                let header_value = formatted_22;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -1359,11 +1343,11 @@ impl CopyObjectInput {
                 builder = builder.header("Content-Disposition", header_value);
             }
         }
-        if let Some(inner_17) = &self.content_encoding {
-            let formatted_18 = AsRef::<str>::as_ref(inner_17);
-            if !formatted_18.is_empty() {
+        if let Some(inner_23) = &self.content_encoding {
+            let formatted_24 = AsRef::<str>::as_ref(inner_23);
+            if !formatted_24.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_18;
+                let header_value = formatted_24;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -1377,11 +1361,11 @@ impl CopyObjectInput {
                 builder = builder.header("Content-Encoding", header_value);
             }
         }
-        if let Some(inner_19) = &self.content_language {
-            let formatted_20 = AsRef::<str>::as_ref(inner_19);
-            if !formatted_20.is_empty() {
+        if let Some(inner_25) = &self.content_language {
+            let formatted_26 = AsRef::<str>::as_ref(inner_25);
+            if !formatted_26.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_20;
+                let header_value = formatted_26;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -1395,11 +1379,11 @@ impl CopyObjectInput {
                 builder = builder.header("Content-Language", header_value);
             }
         }
-        if let Some(inner_21) = &self.content_type {
-            let formatted_22 = AsRef::<str>::as_ref(inner_21);
-            if !formatted_22.is_empty() {
+        if let Some(inner_27) = &self.content_type {
+            let formatted_28 = AsRef::<str>::as_ref(inner_27);
+            if !formatted_28.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_22;
+                let header_value = formatted_28;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -1413,11 +1397,11 @@ impl CopyObjectInput {
                 builder = builder.header("Content-Type", header_value);
             }
         }
-        if let Some(inner_23) = &self.copy_source {
-            let formatted_24 = AsRef::<str>::as_ref(inner_23);
-            if !formatted_24.is_empty() {
+        if let Some(inner_29) = &self.copy_source {
+            let formatted_30 = AsRef::<str>::as_ref(inner_29);
+            if !formatted_30.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_24;
+                let header_value = formatted_30;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -1431,11 +1415,11 @@ impl CopyObjectInput {
                 builder = builder.header("x-amz-copy-source", header_value);
             }
         }
-        if let Some(inner_25) = &self.copy_source_if_match {
-            let formatted_26 = AsRef::<str>::as_ref(inner_25);
-            if !formatted_26.is_empty() {
+        if let Some(inner_31) = &self.copy_source_if_match {
+            let formatted_32 = AsRef::<str>::as_ref(inner_31);
+            if !formatted_32.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_26;
+                let header_value = formatted_32;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -1449,11 +1433,11 @@ impl CopyObjectInput {
                 builder = builder.header("x-amz-copy-source-if-match", header_value);
             }
         }
-        if let Some(inner_27) = &self.copy_source_if_modified_since {
-            let formatted_28 = inner_27.fmt(smithy_types::instant::Format::HttpDate);
-            if !formatted_28.is_empty() {
+        if let Some(inner_33) = &self.copy_source_if_modified_since {
+            let formatted_34 = inner_33.fmt(smithy_types::instant::Format::HttpDate);
+            if !formatted_34.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_28;
+                let header_value = formatted_34;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -1467,11 +1451,11 @@ impl CopyObjectInput {
                 builder = builder.header("x-amz-copy-source-if-modified-since", header_value);
             }
         }
-        if let Some(inner_29) = &self.copy_source_if_none_match {
-            let formatted_30 = AsRef::<str>::as_ref(inner_29);
-            if !formatted_30.is_empty() {
+        if let Some(inner_35) = &self.copy_source_if_none_match {
+            let formatted_36 = AsRef::<str>::as_ref(inner_35);
+            if !formatted_36.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_30;
+                let header_value = formatted_36;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -1485,11 +1469,11 @@ impl CopyObjectInput {
                 builder = builder.header("x-amz-copy-source-if-none-match", header_value);
             }
         }
-        if let Some(inner_31) = &self.copy_source_if_unmodified_since {
-            let formatted_32 = inner_31.fmt(smithy_types::instant::Format::HttpDate);
-            if !formatted_32.is_empty() {
+        if let Some(inner_37) = &self.copy_source_if_unmodified_since {
+            let formatted_38 = inner_37.fmt(smithy_types::instant::Format::HttpDate);
+            if !formatted_38.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_32;
+                let header_value = formatted_38;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -1503,11 +1487,11 @@ impl CopyObjectInput {
                 builder = builder.header("x-amz-copy-source-if-unmodified-since", header_value);
             }
         }
-        if let Some(inner_33) = &self.expires {
-            let formatted_34 = inner_33.fmt(smithy_types::instant::Format::HttpDate);
-            if !formatted_34.is_empty() {
+        if let Some(inner_39) = &self.expires {
+            let formatted_40 = inner_39.fmt(smithy_types::instant::Format::HttpDate);
+            if !formatted_40.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_34;
+                let header_value = formatted_40;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -1521,11 +1505,11 @@ impl CopyObjectInput {
                 builder = builder.header("Expires", header_value);
             }
         }
-        if let Some(inner_35) = &self.grant_full_control {
-            let formatted_36 = AsRef::<str>::as_ref(inner_35);
-            if !formatted_36.is_empty() {
+        if let Some(inner_41) = &self.grant_full_control {
+            let formatted_42 = AsRef::<str>::as_ref(inner_41);
+            if !formatted_42.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_36;
+                let header_value = formatted_42;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -1539,11 +1523,11 @@ impl CopyObjectInput {
                 builder = builder.header("x-amz-grant-full-control", header_value);
             }
         }
-        if let Some(inner_37) = &self.grant_read {
-            let formatted_38 = AsRef::<str>::as_ref(inner_37);
-            if !formatted_38.is_empty() {
+        if let Some(inner_43) = &self.grant_read {
+            let formatted_44 = AsRef::<str>::as_ref(inner_43);
+            if !formatted_44.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_38;
+                let header_value = formatted_44;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -1557,11 +1541,11 @@ impl CopyObjectInput {
                 builder = builder.header("x-amz-grant-read", header_value);
             }
         }
-        if let Some(inner_39) = &self.grant_read_acp {
-            let formatted_40 = AsRef::<str>::as_ref(inner_39);
-            if !formatted_40.is_empty() {
+        if let Some(inner_45) = &self.grant_read_acp {
+            let formatted_46 = AsRef::<str>::as_ref(inner_45);
+            if !formatted_46.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_40;
+                let header_value = formatted_46;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -1575,11 +1559,11 @@ impl CopyObjectInput {
                 builder = builder.header("x-amz-grant-read-acp", header_value);
             }
         }
-        if let Some(inner_41) = &self.grant_write_acp {
-            let formatted_42 = AsRef::<str>::as_ref(inner_41);
-            if !formatted_42.is_empty() {
+        if let Some(inner_47) = &self.grant_write_acp {
+            let formatted_48 = AsRef::<str>::as_ref(inner_47);
+            if !formatted_48.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_42;
+                let header_value = formatted_48;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -1593,11 +1577,11 @@ impl CopyObjectInput {
                 builder = builder.header("x-amz-grant-write-acp", header_value);
             }
         }
-        if let Some(inner_43) = &self.metadata_directive {
-            let formatted_44 = AsRef::<str>::as_ref(inner_43);
-            if !formatted_44.is_empty() {
+        if let Some(inner_49) = &self.metadata_directive {
+            let formatted_50 = AsRef::<str>::as_ref(inner_49);
+            if !formatted_50.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_44;
+                let header_value = formatted_50;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -1611,11 +1595,11 @@ impl CopyObjectInput {
                 builder = builder.header("x-amz-metadata-directive", header_value);
             }
         }
-        if let Some(inner_45) = &self.tagging_directive {
-            let formatted_46 = AsRef::<str>::as_ref(inner_45);
-            if !formatted_46.is_empty() {
+        if let Some(inner_51) = &self.tagging_directive {
+            let formatted_52 = AsRef::<str>::as_ref(inner_51);
+            if !formatted_52.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_46;
+                let header_value = formatted_52;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -1629,11 +1613,11 @@ impl CopyObjectInput {
                 builder = builder.header("x-amz-tagging-directive", header_value);
             }
         }
-        if let Some(inner_47) = &self.server_side_encryption {
-            let formatted_48 = AsRef::<str>::as_ref(inner_47);
-            if !formatted_48.is_empty() {
+        if let Some(inner_53) = &self.server_side_encryption {
+            let formatted_54 = AsRef::<str>::as_ref(inner_53);
+            if !formatted_54.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_48;
+                let header_value = formatted_54;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -1647,11 +1631,11 @@ impl CopyObjectInput {
                 builder = builder.header("x-amz-server-side-encryption", header_value);
             }
         }
-        if let Some(inner_49) = &self.storage_class {
-            let formatted_50 = AsRef::<str>::as_ref(inner_49);
-            if !formatted_50.is_empty() {
+        if let Some(inner_55) = &self.storage_class {
+            let formatted_56 = AsRef::<str>::as_ref(inner_55);
+            if !formatted_56.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_50;
+                let header_value = formatted_56;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -1665,11 +1649,11 @@ impl CopyObjectInput {
                 builder = builder.header("x-amz-storage-class", header_value);
             }
         }
-        if let Some(inner_51) = &self.website_redirect_location {
-            let formatted_52 = AsRef::<str>::as_ref(inner_51);
-            if !formatted_52.is_empty() {
+        if let Some(inner_57) = &self.website_redirect_location {
+            let formatted_58 = AsRef::<str>::as_ref(inner_57);
+            if !formatted_58.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_52;
+                let header_value = formatted_58;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -1683,11 +1667,11 @@ impl CopyObjectInput {
                 builder = builder.header("x-amz-website-redirect-location", header_value);
             }
         }
-        if let Some(inner_53) = &self.sse_customer_algorithm {
-            let formatted_54 = AsRef::<str>::as_ref(inner_53);
-            if !formatted_54.is_empty() {
+        if let Some(inner_59) = &self.sse_customer_algorithm {
+            let formatted_60 = AsRef::<str>::as_ref(inner_59);
+            if !formatted_60.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_54;
+                let header_value = formatted_60;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -1704,11 +1688,11 @@ impl CopyObjectInput {
                 );
             }
         }
-        if let Some(inner_55) = &self.sse_customer_key {
-            let formatted_56 = AsRef::<str>::as_ref(inner_55);
-            if !formatted_56.is_empty() {
+        if let Some(inner_61) = &self.sse_customer_key {
+            let formatted_62 = AsRef::<str>::as_ref(inner_61);
+            if !formatted_62.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_56;
+                let header_value = formatted_62;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -1722,11 +1706,11 @@ impl CopyObjectInput {
                 builder = builder.header("x-amz-server-side-encryption-customer-key", header_value);
             }
         }
-        if let Some(inner_57) = &self.sse_customer_key_md5 {
-            let formatted_58 = AsRef::<str>::as_ref(inner_57);
-            if !formatted_58.is_empty() {
+        if let Some(inner_63) = &self.sse_customer_key_md5 {
+            let formatted_64 = AsRef::<str>::as_ref(inner_63);
+            if !formatted_64.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_58;
+                let header_value = formatted_64;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -1743,11 +1727,11 @@ impl CopyObjectInput {
                 );
             }
         }
-        if let Some(inner_59) = &self.ssekms_key_id {
-            let formatted_60 = AsRef::<str>::as_ref(inner_59);
-            if !formatted_60.is_empty() {
+        if let Some(inner_65) = &self.ssekms_key_id {
+            let formatted_66 = AsRef::<str>::as_ref(inner_65);
+            if !formatted_66.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_60;
+                let header_value = formatted_66;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -1762,11 +1746,11 @@ impl CopyObjectInput {
                     builder.header("x-amz-server-side-encryption-aws-kms-key-id", header_value);
             }
         }
-        if let Some(inner_61) = &self.ssekms_encryption_context {
-            let formatted_62 = AsRef::<str>::as_ref(inner_61);
-            if !formatted_62.is_empty() {
+        if let Some(inner_67) = &self.ssekms_encryption_context {
+            let formatted_68 = AsRef::<str>::as_ref(inner_67);
+            if !formatted_68.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_62;
+                let header_value = formatted_68;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -1781,10 +1765,11 @@ impl CopyObjectInput {
             }
         }
         if self.bucket_key_enabled {
-            let formatted_63 = smithy_http::query::fmt_default(&&self.bucket_key_enabled);
-            if !formatted_63.is_empty() {
+            let mut encoder = smithy_types::primitive::Encoder::from(self.bucket_key_enabled);
+            let formatted_69 = encoder.encode();
+            if !formatted_69.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_63;
+                let header_value = formatted_69;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -1801,11 +1786,11 @@ impl CopyObjectInput {
                 );
             }
         }
-        if let Some(inner_64) = &self.copy_source_sse_customer_algorithm {
-            let formatted_65 = AsRef::<str>::as_ref(inner_64);
-            if !formatted_65.is_empty() {
+        if let Some(inner_70) = &self.copy_source_sse_customer_algorithm {
+            let formatted_71 = AsRef::<str>::as_ref(inner_70);
+            if !formatted_71.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_65;
+                let header_value = formatted_71;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -1822,11 +1807,11 @@ impl CopyObjectInput {
                 );
             }
         }
-        if let Some(inner_66) = &self.copy_source_sse_customer_key {
-            let formatted_67 = AsRef::<str>::as_ref(inner_66);
-            if !formatted_67.is_empty() {
+        if let Some(inner_72) = &self.copy_source_sse_customer_key {
+            let formatted_73 = AsRef::<str>::as_ref(inner_72);
+            if !formatted_73.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_67;
+                let header_value = formatted_73;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -1843,11 +1828,11 @@ impl CopyObjectInput {
                 );
             }
         }
-        if let Some(inner_68) = &self.copy_source_sse_customer_key_md5 {
-            let formatted_69 = AsRef::<str>::as_ref(inner_68);
-            if !formatted_69.is_empty() {
+        if let Some(inner_74) = &self.copy_source_sse_customer_key_md5 {
+            let formatted_75 = AsRef::<str>::as_ref(inner_74);
+            if !formatted_75.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_69;
+                let header_value = formatted_75;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -1864,11 +1849,11 @@ impl CopyObjectInput {
                 );
             }
         }
-        if let Some(inner_70) = &self.request_payer {
-            let formatted_71 = AsRef::<str>::as_ref(inner_70);
-            if !formatted_71.is_empty() {
+        if let Some(inner_76) = &self.request_payer {
+            let formatted_77 = AsRef::<str>::as_ref(inner_76);
+            if !formatted_77.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_71;
+                let header_value = formatted_77;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -1882,11 +1867,11 @@ impl CopyObjectInput {
                 builder = builder.header("x-amz-request-payer", header_value);
             }
         }
-        if let Some(inner_72) = &self.tagging {
-            let formatted_73 = AsRef::<str>::as_ref(inner_72);
-            if !formatted_73.is_empty() {
+        if let Some(inner_78) = &self.tagging {
+            let formatted_79 = AsRef::<str>::as_ref(inner_78);
+            if !formatted_79.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_73;
+                let header_value = formatted_79;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -1900,11 +1885,11 @@ impl CopyObjectInput {
                 builder = builder.header("x-amz-tagging", header_value);
             }
         }
-        if let Some(inner_74) = &self.object_lock_mode {
-            let formatted_75 = AsRef::<str>::as_ref(inner_74);
-            if !formatted_75.is_empty() {
+        if let Some(inner_80) = &self.object_lock_mode {
+            let formatted_81 = AsRef::<str>::as_ref(inner_80);
+            if !formatted_81.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_75;
+                let header_value = formatted_81;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -1918,11 +1903,11 @@ impl CopyObjectInput {
                 builder = builder.header("x-amz-object-lock-mode", header_value);
             }
         }
-        if let Some(inner_76) = &self.object_lock_retain_until_date {
-            let formatted_77 = inner_76.fmt(smithy_types::instant::Format::DateTime);
-            if !formatted_77.is_empty() {
+        if let Some(inner_82) = &self.object_lock_retain_until_date {
+            let formatted_83 = inner_82.fmt(smithy_types::instant::Format::DateTime);
+            if !formatted_83.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_77;
+                let header_value = formatted_83;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -1936,11 +1921,11 @@ impl CopyObjectInput {
                 builder = builder.header("x-amz-object-lock-retain-until-date", header_value);
             }
         }
-        if let Some(inner_78) = &self.object_lock_legal_hold_status {
-            let formatted_79 = AsRef::<str>::as_ref(inner_78);
-            if !formatted_79.is_empty() {
+        if let Some(inner_84) = &self.object_lock_legal_hold_status {
+            let formatted_85 = AsRef::<str>::as_ref(inner_84);
+            if !formatted_85.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_79;
+                let header_value = formatted_85;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -1954,11 +1939,11 @@ impl CopyObjectInput {
                 builder = builder.header("x-amz-object-lock-legal-hold", header_value);
             }
         }
-        if let Some(inner_80) = &self.expected_bucket_owner {
-            let formatted_81 = AsRef::<str>::as_ref(inner_80);
-            if !formatted_81.is_empty() {
+        if let Some(inner_86) = &self.expected_bucket_owner {
+            let formatted_87 = AsRef::<str>::as_ref(inner_86);
+            if !formatted_87.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_81;
+                let header_value = formatted_87;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -1972,11 +1957,11 @@ impl CopyObjectInput {
                 builder = builder.header("x-amz-expected-bucket-owner", header_value);
             }
         }
-        if let Some(inner_82) = &self.expected_source_bucket_owner {
-            let formatted_83 = AsRef::<str>::as_ref(inner_82);
-            if !formatted_83.is_empty() {
+        if let Some(inner_88) = &self.expected_source_bucket_owner {
+            let formatted_89 = AsRef::<str>::as_ref(inner_88);
+            if !formatted_89.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_83;
+                let header_value = formatted_89;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -1990,8 +1975,8 @@ impl CopyObjectInput {
                 builder = builder.header("x-amz-source-expected-bucket-owner", header_value);
             }
         }
-        if let Some(inner_84) = &self.metadata {
-            for (k, v) in inner_84 {
+        if let Some(inner_90) = &self.metadata {
+            for (k, v) in inner_90 {
                 use std::str::FromStr;
                 let header_name =
                     http::header::HeaderName::from_str(&format!("{}{}", "x-amz-meta-", &k))
@@ -2257,23 +2242,21 @@ impl CreateBucketInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let bucket = {
-            let input = &self.bucket;
-            let input = input
+        let input_91 = &self.bucket;
+        let input_91 =
+            input_91
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "bucket",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "bucket",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let bucket = smithy_http::label::fmt_string(input_91, false);
+        if bucket.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "bucket",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
         Ok(())
     }
@@ -2281,11 +2264,11 @@ impl CreateBucketInput {
         &self,
         mut builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        if let Some(inner_85) = &self.acl {
-            let formatted_86 = AsRef::<str>::as_ref(inner_85);
-            if !formatted_86.is_empty() {
+        if let Some(inner_92) = &self.acl {
+            let formatted_93 = AsRef::<str>::as_ref(inner_92);
+            if !formatted_93.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_86;
+                let header_value = formatted_93;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -2299,11 +2282,11 @@ impl CreateBucketInput {
                 builder = builder.header("x-amz-acl", header_value);
             }
         }
-        if let Some(inner_87) = &self.grant_full_control {
-            let formatted_88 = AsRef::<str>::as_ref(inner_87);
-            if !formatted_88.is_empty() {
+        if let Some(inner_94) = &self.grant_full_control {
+            let formatted_95 = AsRef::<str>::as_ref(inner_94);
+            if !formatted_95.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_88;
+                let header_value = formatted_95;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -2317,11 +2300,11 @@ impl CreateBucketInput {
                 builder = builder.header("x-amz-grant-full-control", header_value);
             }
         }
-        if let Some(inner_89) = &self.grant_read {
-            let formatted_90 = AsRef::<str>::as_ref(inner_89);
-            if !formatted_90.is_empty() {
+        if let Some(inner_96) = &self.grant_read {
+            let formatted_97 = AsRef::<str>::as_ref(inner_96);
+            if !formatted_97.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_90;
+                let header_value = formatted_97;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -2335,11 +2318,11 @@ impl CreateBucketInput {
                 builder = builder.header("x-amz-grant-read", header_value);
             }
         }
-        if let Some(inner_91) = &self.grant_read_acp {
-            let formatted_92 = AsRef::<str>::as_ref(inner_91);
-            if !formatted_92.is_empty() {
+        if let Some(inner_98) = &self.grant_read_acp {
+            let formatted_99 = AsRef::<str>::as_ref(inner_98);
+            if !formatted_99.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_92;
+                let header_value = formatted_99;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -2353,11 +2336,11 @@ impl CreateBucketInput {
                 builder = builder.header("x-amz-grant-read-acp", header_value);
             }
         }
-        if let Some(inner_93) = &self.grant_write {
-            let formatted_94 = AsRef::<str>::as_ref(inner_93);
-            if !formatted_94.is_empty() {
+        if let Some(inner_100) = &self.grant_write {
+            let formatted_101 = AsRef::<str>::as_ref(inner_100);
+            if !formatted_101.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_94;
+                let header_value = formatted_101;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -2371,11 +2354,11 @@ impl CreateBucketInput {
                 builder = builder.header("x-amz-grant-write", header_value);
             }
         }
-        if let Some(inner_95) = &self.grant_write_acp {
-            let formatted_96 = AsRef::<str>::as_ref(inner_95);
-            if !formatted_96.is_empty() {
+        if let Some(inner_102) = &self.grant_write_acp {
+            let formatted_103 = AsRef::<str>::as_ref(inner_102);
+            if !formatted_103.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_96;
+                let header_value = formatted_103;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -2390,11 +2373,12 @@ impl CreateBucketInput {
             }
         }
         if self.object_lock_enabled_for_bucket {
-            let formatted_97 =
-                smithy_http::query::fmt_default(&&self.object_lock_enabled_for_bucket);
-            if !formatted_97.is_empty() {
+            let mut encoder =
+                smithy_types::primitive::Encoder::from(self.object_lock_enabled_for_bucket);
+            let formatted_104 = encoder.encode();
+            if !formatted_104.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_97;
+                let header_value = formatted_104;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -2960,40 +2944,36 @@ impl CreateMultipartUploadInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let bucket = {
-            let input = &self.bucket;
-            let input = input
+        let input_105 = &self.bucket;
+        let input_105 =
+            input_105
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "bucket",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "bucket",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let key = {
-            let input = &self.key;
-            let input = input
+        let bucket = smithy_http::label::fmt_string(input_105, false);
+        if bucket.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "bucket",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_106 = &self.key;
+        let input_106 =
+            input_106
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "key",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, true);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "key",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let key = smithy_http::label::fmt_string(input_106, true);
+        if key.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "key",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/{Bucket}/{Key}", Bucket = bucket, Key = key)
             .expect("formatting should succeed");
         Ok(())
@@ -3002,11 +2982,11 @@ impl CreateMultipartUploadInput {
         &self,
         mut builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        if let Some(inner_98) = &self.acl {
-            let formatted_99 = AsRef::<str>::as_ref(inner_98);
-            if !formatted_99.is_empty() {
+        if let Some(inner_107) = &self.acl {
+            let formatted_108 = AsRef::<str>::as_ref(inner_107);
+            if !formatted_108.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_99;
+                let header_value = formatted_108;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -3020,11 +3000,11 @@ impl CreateMultipartUploadInput {
                 builder = builder.header("x-amz-acl", header_value);
             }
         }
-        if let Some(inner_100) = &self.cache_control {
-            let formatted_101 = AsRef::<str>::as_ref(inner_100);
-            if !formatted_101.is_empty() {
+        if let Some(inner_109) = &self.cache_control {
+            let formatted_110 = AsRef::<str>::as_ref(inner_109);
+            if !formatted_110.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_101;
+                let header_value = formatted_110;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -3038,11 +3018,11 @@ impl CreateMultipartUploadInput {
                 builder = builder.header("Cache-Control", header_value);
             }
         }
-        if let Some(inner_102) = &self.content_disposition {
-            let formatted_103 = AsRef::<str>::as_ref(inner_102);
-            if !formatted_103.is_empty() {
+        if let Some(inner_111) = &self.content_disposition {
+            let formatted_112 = AsRef::<str>::as_ref(inner_111);
+            if !formatted_112.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_103;
+                let header_value = formatted_112;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -3056,11 +3036,11 @@ impl CreateMultipartUploadInput {
                 builder = builder.header("Content-Disposition", header_value);
             }
         }
-        if let Some(inner_104) = &self.content_encoding {
-            let formatted_105 = AsRef::<str>::as_ref(inner_104);
-            if !formatted_105.is_empty() {
+        if let Some(inner_113) = &self.content_encoding {
+            let formatted_114 = AsRef::<str>::as_ref(inner_113);
+            if !formatted_114.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_105;
+                let header_value = formatted_114;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -3074,11 +3054,11 @@ impl CreateMultipartUploadInput {
                 builder = builder.header("Content-Encoding", header_value);
             }
         }
-        if let Some(inner_106) = &self.content_language {
-            let formatted_107 = AsRef::<str>::as_ref(inner_106);
-            if !formatted_107.is_empty() {
+        if let Some(inner_115) = &self.content_language {
+            let formatted_116 = AsRef::<str>::as_ref(inner_115);
+            if !formatted_116.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_107;
+                let header_value = formatted_116;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -3092,11 +3072,11 @@ impl CreateMultipartUploadInput {
                 builder = builder.header("Content-Language", header_value);
             }
         }
-        if let Some(inner_108) = &self.content_type {
-            let formatted_109 = AsRef::<str>::as_ref(inner_108);
-            if !formatted_109.is_empty() {
+        if let Some(inner_117) = &self.content_type {
+            let formatted_118 = AsRef::<str>::as_ref(inner_117);
+            if !formatted_118.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_109;
+                let header_value = formatted_118;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -3110,11 +3090,11 @@ impl CreateMultipartUploadInput {
                 builder = builder.header("Content-Type", header_value);
             }
         }
-        if let Some(inner_110) = &self.expires {
-            let formatted_111 = inner_110.fmt(smithy_types::instant::Format::HttpDate);
-            if !formatted_111.is_empty() {
+        if let Some(inner_119) = &self.expires {
+            let formatted_120 = inner_119.fmt(smithy_types::instant::Format::HttpDate);
+            if !formatted_120.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_111;
+                let header_value = formatted_120;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -3128,11 +3108,11 @@ impl CreateMultipartUploadInput {
                 builder = builder.header("Expires", header_value);
             }
         }
-        if let Some(inner_112) = &self.grant_full_control {
-            let formatted_113 = AsRef::<str>::as_ref(inner_112);
-            if !formatted_113.is_empty() {
+        if let Some(inner_121) = &self.grant_full_control {
+            let formatted_122 = AsRef::<str>::as_ref(inner_121);
+            if !formatted_122.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_113;
+                let header_value = formatted_122;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -3146,11 +3126,11 @@ impl CreateMultipartUploadInput {
                 builder = builder.header("x-amz-grant-full-control", header_value);
             }
         }
-        if let Some(inner_114) = &self.grant_read {
-            let formatted_115 = AsRef::<str>::as_ref(inner_114);
-            if !formatted_115.is_empty() {
+        if let Some(inner_123) = &self.grant_read {
+            let formatted_124 = AsRef::<str>::as_ref(inner_123);
+            if !formatted_124.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_115;
+                let header_value = formatted_124;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -3164,11 +3144,11 @@ impl CreateMultipartUploadInput {
                 builder = builder.header("x-amz-grant-read", header_value);
             }
         }
-        if let Some(inner_116) = &self.grant_read_acp {
-            let formatted_117 = AsRef::<str>::as_ref(inner_116);
-            if !formatted_117.is_empty() {
+        if let Some(inner_125) = &self.grant_read_acp {
+            let formatted_126 = AsRef::<str>::as_ref(inner_125);
+            if !formatted_126.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_117;
+                let header_value = formatted_126;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -3182,11 +3162,11 @@ impl CreateMultipartUploadInput {
                 builder = builder.header("x-amz-grant-read-acp", header_value);
             }
         }
-        if let Some(inner_118) = &self.grant_write_acp {
-            let formatted_119 = AsRef::<str>::as_ref(inner_118);
-            if !formatted_119.is_empty() {
+        if let Some(inner_127) = &self.grant_write_acp {
+            let formatted_128 = AsRef::<str>::as_ref(inner_127);
+            if !formatted_128.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_119;
+                let header_value = formatted_128;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -3200,11 +3180,11 @@ impl CreateMultipartUploadInput {
                 builder = builder.header("x-amz-grant-write-acp", header_value);
             }
         }
-        if let Some(inner_120) = &self.server_side_encryption {
-            let formatted_121 = AsRef::<str>::as_ref(inner_120);
-            if !formatted_121.is_empty() {
+        if let Some(inner_129) = &self.server_side_encryption {
+            let formatted_130 = AsRef::<str>::as_ref(inner_129);
+            if !formatted_130.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_121;
+                let header_value = formatted_130;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -3218,11 +3198,11 @@ impl CreateMultipartUploadInput {
                 builder = builder.header("x-amz-server-side-encryption", header_value);
             }
         }
-        if let Some(inner_122) = &self.storage_class {
-            let formatted_123 = AsRef::<str>::as_ref(inner_122);
-            if !formatted_123.is_empty() {
+        if let Some(inner_131) = &self.storage_class {
+            let formatted_132 = AsRef::<str>::as_ref(inner_131);
+            if !formatted_132.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_123;
+                let header_value = formatted_132;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -3236,11 +3216,11 @@ impl CreateMultipartUploadInput {
                 builder = builder.header("x-amz-storage-class", header_value);
             }
         }
-        if let Some(inner_124) = &self.website_redirect_location {
-            let formatted_125 = AsRef::<str>::as_ref(inner_124);
-            if !formatted_125.is_empty() {
+        if let Some(inner_133) = &self.website_redirect_location {
+            let formatted_134 = AsRef::<str>::as_ref(inner_133);
+            if !formatted_134.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_125;
+                let header_value = formatted_134;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -3254,11 +3234,11 @@ impl CreateMultipartUploadInput {
                 builder = builder.header("x-amz-website-redirect-location", header_value);
             }
         }
-        if let Some(inner_126) = &self.sse_customer_algorithm {
-            let formatted_127 = AsRef::<str>::as_ref(inner_126);
-            if !formatted_127.is_empty() {
+        if let Some(inner_135) = &self.sse_customer_algorithm {
+            let formatted_136 = AsRef::<str>::as_ref(inner_135);
+            if !formatted_136.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_127;
+                let header_value = formatted_136;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -3275,11 +3255,11 @@ impl CreateMultipartUploadInput {
                 );
             }
         }
-        if let Some(inner_128) = &self.sse_customer_key {
-            let formatted_129 = AsRef::<str>::as_ref(inner_128);
-            if !formatted_129.is_empty() {
+        if let Some(inner_137) = &self.sse_customer_key {
+            let formatted_138 = AsRef::<str>::as_ref(inner_137);
+            if !formatted_138.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_129;
+                let header_value = formatted_138;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -3293,11 +3273,11 @@ impl CreateMultipartUploadInput {
                 builder = builder.header("x-amz-server-side-encryption-customer-key", header_value);
             }
         }
-        if let Some(inner_130) = &self.sse_customer_key_md5 {
-            let formatted_131 = AsRef::<str>::as_ref(inner_130);
-            if !formatted_131.is_empty() {
+        if let Some(inner_139) = &self.sse_customer_key_md5 {
+            let formatted_140 = AsRef::<str>::as_ref(inner_139);
+            if !formatted_140.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_131;
+                let header_value = formatted_140;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -3314,11 +3294,11 @@ impl CreateMultipartUploadInput {
                 );
             }
         }
-        if let Some(inner_132) = &self.ssekms_key_id {
-            let formatted_133 = AsRef::<str>::as_ref(inner_132);
-            if !formatted_133.is_empty() {
+        if let Some(inner_141) = &self.ssekms_key_id {
+            let formatted_142 = AsRef::<str>::as_ref(inner_141);
+            if !formatted_142.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_133;
+                let header_value = formatted_142;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -3333,11 +3313,11 @@ impl CreateMultipartUploadInput {
                     builder.header("x-amz-server-side-encryption-aws-kms-key-id", header_value);
             }
         }
-        if let Some(inner_134) = &self.ssekms_encryption_context {
-            let formatted_135 = AsRef::<str>::as_ref(inner_134);
-            if !formatted_135.is_empty() {
+        if let Some(inner_143) = &self.ssekms_encryption_context {
+            let formatted_144 = AsRef::<str>::as_ref(inner_143);
+            if !formatted_144.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_135;
+                let header_value = formatted_144;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -3352,10 +3332,11 @@ impl CreateMultipartUploadInput {
             }
         }
         if self.bucket_key_enabled {
-            let formatted_136 = smithy_http::query::fmt_default(&&self.bucket_key_enabled);
-            if !formatted_136.is_empty() {
+            let mut encoder = smithy_types::primitive::Encoder::from(self.bucket_key_enabled);
+            let formatted_145 = encoder.encode();
+            if !formatted_145.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_136;
+                let header_value = formatted_145;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -3372,11 +3353,11 @@ impl CreateMultipartUploadInput {
                 );
             }
         }
-        if let Some(inner_137) = &self.request_payer {
-            let formatted_138 = AsRef::<str>::as_ref(inner_137);
-            if !formatted_138.is_empty() {
+        if let Some(inner_146) = &self.request_payer {
+            let formatted_147 = AsRef::<str>::as_ref(inner_146);
+            if !formatted_147.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_138;
+                let header_value = formatted_147;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -3390,11 +3371,11 @@ impl CreateMultipartUploadInput {
                 builder = builder.header("x-amz-request-payer", header_value);
             }
         }
-        if let Some(inner_139) = &self.tagging {
-            let formatted_140 = AsRef::<str>::as_ref(inner_139);
-            if !formatted_140.is_empty() {
+        if let Some(inner_148) = &self.tagging {
+            let formatted_149 = AsRef::<str>::as_ref(inner_148);
+            if !formatted_149.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_140;
+                let header_value = formatted_149;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -3408,11 +3389,11 @@ impl CreateMultipartUploadInput {
                 builder = builder.header("x-amz-tagging", header_value);
             }
         }
-        if let Some(inner_141) = &self.object_lock_mode {
-            let formatted_142 = AsRef::<str>::as_ref(inner_141);
-            if !formatted_142.is_empty() {
+        if let Some(inner_150) = &self.object_lock_mode {
+            let formatted_151 = AsRef::<str>::as_ref(inner_150);
+            if !formatted_151.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_142;
+                let header_value = formatted_151;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -3426,11 +3407,11 @@ impl CreateMultipartUploadInput {
                 builder = builder.header("x-amz-object-lock-mode", header_value);
             }
         }
-        if let Some(inner_143) = &self.object_lock_retain_until_date {
-            let formatted_144 = inner_143.fmt(smithy_types::instant::Format::DateTime);
-            if !formatted_144.is_empty() {
+        if let Some(inner_152) = &self.object_lock_retain_until_date {
+            let formatted_153 = inner_152.fmt(smithy_types::instant::Format::DateTime);
+            if !formatted_153.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_144;
+                let header_value = formatted_153;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -3444,11 +3425,11 @@ impl CreateMultipartUploadInput {
                 builder = builder.header("x-amz-object-lock-retain-until-date", header_value);
             }
         }
-        if let Some(inner_145) = &self.object_lock_legal_hold_status {
-            let formatted_146 = AsRef::<str>::as_ref(inner_145);
-            if !formatted_146.is_empty() {
+        if let Some(inner_154) = &self.object_lock_legal_hold_status {
+            let formatted_155 = AsRef::<str>::as_ref(inner_154);
+            if !formatted_155.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_146;
+                let header_value = formatted_155;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -3462,11 +3443,11 @@ impl CreateMultipartUploadInput {
                 builder = builder.header("x-amz-object-lock-legal-hold", header_value);
             }
         }
-        if let Some(inner_147) = &self.expected_bucket_owner {
-            let formatted_148 = AsRef::<str>::as_ref(inner_147);
-            if !formatted_148.is_empty() {
+        if let Some(inner_156) = &self.expected_bucket_owner {
+            let formatted_157 = AsRef::<str>::as_ref(inner_156);
+            if !formatted_157.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_148;
+                let header_value = formatted_157;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -3480,8 +3461,8 @@ impl CreateMultipartUploadInput {
                 builder = builder.header("x-amz-expected-bucket-owner", header_value);
             }
         }
-        if let Some(inner_149) = &self.metadata {
-            for (k, v) in inner_149 {
+        if let Some(inner_158) = &self.metadata {
+            for (k, v) in inner_158 {
                 use std::str::FromStr;
                 let header_name =
                     http::header::HeaderName::from_str(&format!("{}{}", "x-amz-meta-", &k))
@@ -3646,23 +3627,21 @@ impl DeleteBucketInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let bucket = {
-            let input = &self.bucket;
-            let input = input
+        let input_159 = &self.bucket;
+        let input_159 =
+            input_159
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "bucket",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "bucket",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let bucket = smithy_http::label::fmt_string(input_159, false);
+        if bucket.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "bucket",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
         Ok(())
     }
@@ -3670,11 +3649,11 @@ impl DeleteBucketInput {
         &self,
         mut builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        if let Some(inner_150) = &self.expected_bucket_owner {
-            let formatted_151 = AsRef::<str>::as_ref(inner_150);
-            if !formatted_151.is_empty() {
+        if let Some(inner_160) = &self.expected_bucket_owner {
+            let formatted_161 = AsRef::<str>::as_ref(inner_160);
+            if !formatted_161.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_151;
+                let header_value = formatted_161;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -3844,23 +3823,21 @@ impl DeleteBucketAnalyticsConfigurationInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let bucket = {
-            let input = &self.bucket;
-            let input = input
+        let input_162 = &self.bucket;
+        let input_162 =
+            input_162
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "bucket",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "bucket",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let bucket = smithy_http::label::fmt_string(input_162, false);
+        if bucket.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "bucket",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
         Ok(())
     }
@@ -3868,11 +3845,11 @@ impl DeleteBucketAnalyticsConfigurationInput {
         &self,
         mut builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        if let Some(inner_152) = &self.expected_bucket_owner {
-            let formatted_153 = AsRef::<str>::as_ref(inner_152);
-            if !formatted_153.is_empty() {
+        if let Some(inner_163) = &self.expected_bucket_owner {
+            let formatted_164 = AsRef::<str>::as_ref(inner_163);
+            if !formatted_164.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_153;
+                let header_value = formatted_164;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -3891,8 +3868,8 @@ impl DeleteBucketAnalyticsConfigurationInput {
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
         query.push_v("analytics");
-        if let Some(inner_154) = &self.id {
-            query.push_kv("id", &smithy_http::query::fmt_string(&inner_154));
+        if let Some(inner_165) = &self.id {
+            query.push_kv("id", &smithy_http::query::fmt_string(&inner_165));
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -4038,23 +4015,21 @@ impl DeleteBucketCorsInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let bucket = {
-            let input = &self.bucket;
-            let input = input
+        let input_166 = &self.bucket;
+        let input_166 =
+            input_166
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "bucket",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "bucket",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let bucket = smithy_http::label::fmt_string(input_166, false);
+        if bucket.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "bucket",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
         Ok(())
     }
@@ -4062,11 +4037,11 @@ impl DeleteBucketCorsInput {
         &self,
         mut builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        if let Some(inner_155) = &self.expected_bucket_owner {
-            let formatted_156 = AsRef::<str>::as_ref(inner_155);
-            if !formatted_156.is_empty() {
+        if let Some(inner_167) = &self.expected_bucket_owner {
+            let formatted_168 = AsRef::<str>::as_ref(inner_167);
+            if !formatted_168.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_156;
+                let header_value = formatted_168;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -4230,23 +4205,21 @@ impl DeleteBucketEncryptionInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let bucket = {
-            let input = &self.bucket;
-            let input = input
+        let input_169 = &self.bucket;
+        let input_169 =
+            input_169
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "bucket",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "bucket",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let bucket = smithy_http::label::fmt_string(input_169, false);
+        if bucket.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "bucket",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
         Ok(())
     }
@@ -4254,11 +4227,11 @@ impl DeleteBucketEncryptionInput {
         &self,
         mut builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        if let Some(inner_157) = &self.expected_bucket_owner {
-            let formatted_158 = AsRef::<str>::as_ref(inner_157);
-            if !formatted_158.is_empty() {
+        if let Some(inner_170) = &self.expected_bucket_owner {
+            let formatted_171 = AsRef::<str>::as_ref(inner_170);
+            if !formatted_171.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_158;
+                let header_value = formatted_171;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -4422,31 +4395,29 @@ impl DeleteBucketIntelligentTieringConfigurationInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let bucket = {
-            let input = &self.bucket;
-            let input = input
+        let input_172 = &self.bucket;
+        let input_172 =
+            input_172
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "bucket",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "bucket",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let bucket = smithy_http::label::fmt_string(input_172, false);
+        if bucket.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "bucket",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
         Ok(())
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
         query.push_v("intelligent-tiering");
-        if let Some(inner_159) = &self.id {
-            query.push_kv("id", &smithy_http::query::fmt_string(&inner_159));
+        if let Some(inner_173) = &self.id {
+            query.push_kv("id", &smithy_http::query::fmt_string(&inner_173));
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -4604,23 +4575,21 @@ impl DeleteBucketInventoryConfigurationInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let bucket = {
-            let input = &self.bucket;
-            let input = input
+        let input_174 = &self.bucket;
+        let input_174 =
+            input_174
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "bucket",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "bucket",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let bucket = smithy_http::label::fmt_string(input_174, false);
+        if bucket.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "bucket",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
         Ok(())
     }
@@ -4628,11 +4597,11 @@ impl DeleteBucketInventoryConfigurationInput {
         &self,
         mut builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        if let Some(inner_160) = &self.expected_bucket_owner {
-            let formatted_161 = AsRef::<str>::as_ref(inner_160);
-            if !formatted_161.is_empty() {
+        if let Some(inner_175) = &self.expected_bucket_owner {
+            let formatted_176 = AsRef::<str>::as_ref(inner_175);
+            if !formatted_176.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_161;
+                let header_value = formatted_176;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -4651,8 +4620,8 @@ impl DeleteBucketInventoryConfigurationInput {
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
         query.push_v("inventory");
-        if let Some(inner_162) = &self.id {
-            query.push_kv("id", &smithy_http::query::fmt_string(&inner_162));
+        if let Some(inner_177) = &self.id {
+            query.push_kv("id", &smithy_http::query::fmt_string(&inner_177));
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -4798,23 +4767,21 @@ impl DeleteBucketLifecycleInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let bucket = {
-            let input = &self.bucket;
-            let input = input
+        let input_178 = &self.bucket;
+        let input_178 =
+            input_178
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "bucket",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "bucket",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let bucket = smithy_http::label::fmt_string(input_178, false);
+        if bucket.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "bucket",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
         Ok(())
     }
@@ -4822,11 +4789,11 @@ impl DeleteBucketLifecycleInput {
         &self,
         mut builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        if let Some(inner_163) = &self.expected_bucket_owner {
-            let formatted_164 = AsRef::<str>::as_ref(inner_163);
-            if !formatted_164.is_empty() {
+        if let Some(inner_179) = &self.expected_bucket_owner {
+            let formatted_180 = AsRef::<str>::as_ref(inner_179);
+            if !formatted_180.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_164;
+                let header_value = formatted_180;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -5001,23 +4968,21 @@ impl DeleteBucketMetricsConfigurationInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let bucket = {
-            let input = &self.bucket;
-            let input = input
+        let input_181 = &self.bucket;
+        let input_181 =
+            input_181
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "bucket",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "bucket",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let bucket = smithy_http::label::fmt_string(input_181, false);
+        if bucket.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "bucket",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
         Ok(())
     }
@@ -5025,11 +4990,11 @@ impl DeleteBucketMetricsConfigurationInput {
         &self,
         mut builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        if let Some(inner_165) = &self.expected_bucket_owner {
-            let formatted_166 = AsRef::<str>::as_ref(inner_165);
-            if !formatted_166.is_empty() {
+        if let Some(inner_182) = &self.expected_bucket_owner {
+            let formatted_183 = AsRef::<str>::as_ref(inner_182);
+            if !formatted_183.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_166;
+                let header_value = formatted_183;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -5048,8 +5013,8 @@ impl DeleteBucketMetricsConfigurationInput {
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
         query.push_v("metrics");
-        if let Some(inner_167) = &self.id {
-            query.push_kv("id", &smithy_http::query::fmt_string(&inner_167));
+        if let Some(inner_184) = &self.id {
+            query.push_kv("id", &smithy_http::query::fmt_string(&inner_184));
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -5196,23 +5161,21 @@ impl DeleteBucketOwnershipControlsInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let bucket = {
-            let input = &self.bucket;
-            let input = input
+        let input_185 = &self.bucket;
+        let input_185 =
+            input_185
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "bucket",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "bucket",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let bucket = smithy_http::label::fmt_string(input_185, false);
+        if bucket.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "bucket",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
         Ok(())
     }
@@ -5220,11 +5183,11 @@ impl DeleteBucketOwnershipControlsInput {
         &self,
         mut builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        if let Some(inner_168) = &self.expected_bucket_owner {
-            let formatted_169 = AsRef::<str>::as_ref(inner_168);
-            if !formatted_169.is_empty() {
+        if let Some(inner_186) = &self.expected_bucket_owner {
+            let formatted_187 = AsRef::<str>::as_ref(inner_186);
+            if !formatted_187.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_169;
+                let header_value = formatted_187;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -5387,23 +5350,21 @@ impl DeleteBucketPolicyInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let bucket = {
-            let input = &self.bucket;
-            let input = input
+        let input_188 = &self.bucket;
+        let input_188 =
+            input_188
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "bucket",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "bucket",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let bucket = smithy_http::label::fmt_string(input_188, false);
+        if bucket.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "bucket",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
         Ok(())
     }
@@ -5411,11 +5372,11 @@ impl DeleteBucketPolicyInput {
         &self,
         mut builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        if let Some(inner_170) = &self.expected_bucket_owner {
-            let formatted_171 = AsRef::<str>::as_ref(inner_170);
-            if !formatted_171.is_empty() {
+        if let Some(inner_189) = &self.expected_bucket_owner {
+            let formatted_190 = AsRef::<str>::as_ref(inner_189);
+            if !formatted_190.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_171;
+                let header_value = formatted_190;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -5579,23 +5540,21 @@ impl DeleteBucketReplicationInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let bucket = {
-            let input = &self.bucket;
-            let input = input
+        let input_191 = &self.bucket;
+        let input_191 =
+            input_191
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "bucket",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "bucket",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let bucket = smithy_http::label::fmt_string(input_191, false);
+        if bucket.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "bucket",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
         Ok(())
     }
@@ -5603,11 +5562,11 @@ impl DeleteBucketReplicationInput {
         &self,
         mut builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        if let Some(inner_172) = &self.expected_bucket_owner {
-            let formatted_173 = AsRef::<str>::as_ref(inner_172);
-            if !formatted_173.is_empty() {
+        if let Some(inner_192) = &self.expected_bucket_owner {
+            let formatted_193 = AsRef::<str>::as_ref(inner_192);
+            if !formatted_193.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_173;
+                let header_value = formatted_193;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -5770,23 +5729,21 @@ impl DeleteBucketTaggingInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let bucket = {
-            let input = &self.bucket;
-            let input = input
+        let input_194 = &self.bucket;
+        let input_194 =
+            input_194
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "bucket",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "bucket",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let bucket = smithy_http::label::fmt_string(input_194, false);
+        if bucket.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "bucket",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
         Ok(())
     }
@@ -5794,11 +5751,11 @@ impl DeleteBucketTaggingInput {
         &self,
         mut builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        if let Some(inner_174) = &self.expected_bucket_owner {
-            let formatted_175 = AsRef::<str>::as_ref(inner_174);
-            if !formatted_175.is_empty() {
+        if let Some(inner_195) = &self.expected_bucket_owner {
+            let formatted_196 = AsRef::<str>::as_ref(inner_195);
+            if !formatted_196.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_175;
+                let header_value = formatted_196;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -5961,23 +5918,21 @@ impl DeleteBucketWebsiteInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let bucket = {
-            let input = &self.bucket;
-            let input = input
+        let input_197 = &self.bucket;
+        let input_197 =
+            input_197
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "bucket",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "bucket",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let bucket = smithy_http::label::fmt_string(input_197, false);
+        if bucket.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "bucket",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
         Ok(())
     }
@@ -5985,11 +5940,11 @@ impl DeleteBucketWebsiteInput {
         &self,
         mut builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        if let Some(inner_176) = &self.expected_bucket_owner {
-            let formatted_177 = AsRef::<str>::as_ref(inner_176);
-            if !formatted_177.is_empty() {
+        if let Some(inner_198) = &self.expected_bucket_owner {
+            let formatted_199 = AsRef::<str>::as_ref(inner_198);
+            if !formatted_199.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_177;
+                let header_value = formatted_199;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -6213,40 +6168,36 @@ impl DeleteObjectInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let bucket = {
-            let input = &self.bucket;
-            let input = input
+        let input_200 = &self.bucket;
+        let input_200 =
+            input_200
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "bucket",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "bucket",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let key = {
-            let input = &self.key;
-            let input = input
+        let bucket = smithy_http::label::fmt_string(input_200, false);
+        if bucket.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "bucket",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_201 = &self.key;
+        let input_201 =
+            input_201
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "key",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, true);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "key",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let key = smithy_http::label::fmt_string(input_201, true);
+        if key.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "key",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/{Bucket}/{Key}", Bucket = bucket, Key = key)
             .expect("formatting should succeed");
         Ok(())
@@ -6255,11 +6206,11 @@ impl DeleteObjectInput {
         &self,
         mut builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        if let Some(inner_178) = &self.mfa {
-            let formatted_179 = AsRef::<str>::as_ref(inner_178);
-            if !formatted_179.is_empty() {
+        if let Some(inner_202) = &self.mfa {
+            let formatted_203 = AsRef::<str>::as_ref(inner_202);
+            if !formatted_203.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_179;
+                let header_value = formatted_203;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -6273,11 +6224,11 @@ impl DeleteObjectInput {
                 builder = builder.header("x-amz-mfa", header_value);
             }
         }
-        if let Some(inner_180) = &self.request_payer {
-            let formatted_181 = AsRef::<str>::as_ref(inner_180);
-            if !formatted_181.is_empty() {
+        if let Some(inner_204) = &self.request_payer {
+            let formatted_205 = AsRef::<str>::as_ref(inner_204);
+            if !formatted_205.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_181;
+                let header_value = formatted_205;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -6292,10 +6243,12 @@ impl DeleteObjectInput {
             }
         }
         if self.bypass_governance_retention {
-            let formatted_182 = smithy_http::query::fmt_default(&&self.bypass_governance_retention);
-            if !formatted_182.is_empty() {
+            let mut encoder =
+                smithy_types::primitive::Encoder::from(self.bypass_governance_retention);
+            let formatted_206 = encoder.encode();
+            if !formatted_206.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_182;
+                let header_value = formatted_206;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -6309,11 +6262,11 @@ impl DeleteObjectInput {
                 builder = builder.header("x-amz-bypass-governance-retention", header_value);
             }
         }
-        if let Some(inner_183) = &self.expected_bucket_owner {
-            let formatted_184 = AsRef::<str>::as_ref(inner_183);
-            if !formatted_184.is_empty() {
+        if let Some(inner_207) = &self.expected_bucket_owner {
+            let formatted_208 = AsRef::<str>::as_ref(inner_207);
+            if !formatted_208.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_184;
+                let header_value = formatted_208;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -6332,8 +6285,8 @@ impl DeleteObjectInput {
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
         query.push_kv("x-id", "DeleteObject");
-        if let Some(inner_185) = &self.version_id {
-            query.push_kv("versionId", &smithy_http::query::fmt_string(&inner_185));
+        if let Some(inner_209) = &self.version_id {
+            query.push_kv("versionId", &smithy_http::query::fmt_string(&inner_209));
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -6502,7 +6455,7 @@ impl DeleteObjectsInput {
                 let checksum = md5::compute(data);
                 req.headers_mut().insert(
                     http::header::HeaderName::from_static("content-md5"),
-                    format!("{:x}", checksum)
+                    smithy_types::base64::encode(&checksum[..])
                         .parse()
                         .expect("checksum is valid header value"),
                 );
@@ -6544,23 +6497,21 @@ impl DeleteObjectsInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let bucket = {
-            let input = &self.bucket;
-            let input = input
+        let input_210 = &self.bucket;
+        let input_210 =
+            input_210
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "bucket",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "bucket",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let bucket = smithy_http::label::fmt_string(input_210, false);
+        if bucket.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "bucket",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
         Ok(())
     }
@@ -6568,11 +6519,11 @@ impl DeleteObjectsInput {
         &self,
         mut builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        if let Some(inner_186) = &self.mfa {
-            let formatted_187 = AsRef::<str>::as_ref(inner_186);
-            if !formatted_187.is_empty() {
+        if let Some(inner_211) = &self.mfa {
+            let formatted_212 = AsRef::<str>::as_ref(inner_211);
+            if !formatted_212.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_187;
+                let header_value = formatted_212;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -6586,11 +6537,11 @@ impl DeleteObjectsInput {
                 builder = builder.header("x-amz-mfa", header_value);
             }
         }
-        if let Some(inner_188) = &self.request_payer {
-            let formatted_189 = AsRef::<str>::as_ref(inner_188);
-            if !formatted_189.is_empty() {
+        if let Some(inner_213) = &self.request_payer {
+            let formatted_214 = AsRef::<str>::as_ref(inner_213);
+            if !formatted_214.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_189;
+                let header_value = formatted_214;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -6605,10 +6556,12 @@ impl DeleteObjectsInput {
             }
         }
         if self.bypass_governance_retention {
-            let formatted_190 = smithy_http::query::fmt_default(&&self.bypass_governance_retention);
-            if !formatted_190.is_empty() {
+            let mut encoder =
+                smithy_types::primitive::Encoder::from(self.bypass_governance_retention);
+            let formatted_215 = encoder.encode();
+            if !formatted_215.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_190;
+                let header_value = formatted_215;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -6622,11 +6575,11 @@ impl DeleteObjectsInput {
                 builder = builder.header("x-amz-bypass-governance-retention", header_value);
             }
         }
-        if let Some(inner_191) = &self.expected_bucket_owner {
-            let formatted_192 = AsRef::<str>::as_ref(inner_191);
-            if !formatted_192.is_empty() {
+        if let Some(inner_216) = &self.expected_bucket_owner {
+            let formatted_217 = AsRef::<str>::as_ref(inner_216);
+            if !formatted_217.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_192;
+                let header_value = formatted_217;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -6814,40 +6767,36 @@ impl DeleteObjectTaggingInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let bucket = {
-            let input = &self.bucket;
-            let input = input
+        let input_218 = &self.bucket;
+        let input_218 =
+            input_218
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "bucket",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "bucket",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let key = {
-            let input = &self.key;
-            let input = input
+        let bucket = smithy_http::label::fmt_string(input_218, false);
+        if bucket.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "bucket",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_219 = &self.key;
+        let input_219 =
+            input_219
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "key",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, true);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "key",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let key = smithy_http::label::fmt_string(input_219, true);
+        if key.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "key",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/{Bucket}/{Key}", Bucket = bucket, Key = key)
             .expect("formatting should succeed");
         Ok(())
@@ -6856,11 +6805,11 @@ impl DeleteObjectTaggingInput {
         &self,
         mut builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        if let Some(inner_193) = &self.expected_bucket_owner {
-            let formatted_194 = AsRef::<str>::as_ref(inner_193);
-            if !formatted_194.is_empty() {
+        if let Some(inner_220) = &self.expected_bucket_owner {
+            let formatted_221 = AsRef::<str>::as_ref(inner_220);
+            if !formatted_221.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_194;
+                let header_value = formatted_221;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -6879,8 +6828,8 @@ impl DeleteObjectTaggingInput {
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
         query.push_v("tagging");
-        if let Some(inner_195) = &self.version_id {
-            query.push_kv("versionId", &smithy_http::query::fmt_string(&inner_195));
+        if let Some(inner_222) = &self.version_id {
+            query.push_kv("versionId", &smithy_http::query::fmt_string(&inner_222));
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -7028,23 +6977,21 @@ impl DeletePublicAccessBlockInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let bucket = {
-            let input = &self.bucket;
-            let input = input
+        let input_223 = &self.bucket;
+        let input_223 =
+            input_223
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "bucket",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "bucket",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let bucket = smithy_http::label::fmt_string(input_223, false);
+        if bucket.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "bucket",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
         Ok(())
     }
@@ -7052,11 +6999,11 @@ impl DeletePublicAccessBlockInput {
         &self,
         mut builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        if let Some(inner_196) = &self.expected_bucket_owner {
-            let formatted_197 = AsRef::<str>::as_ref(inner_196);
-            if !formatted_197.is_empty() {
+        if let Some(inner_224) = &self.expected_bucket_owner {
+            let formatted_225 = AsRef::<str>::as_ref(inner_224);
+            if !formatted_225.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_197;
+                let header_value = formatted_225;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -7220,23 +7167,21 @@ impl GetBucketAccelerateConfigurationInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let bucket = {
-            let input = &self.bucket;
-            let input = input
+        let input_226 = &self.bucket;
+        let input_226 =
+            input_226
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "bucket",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "bucket",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let bucket = smithy_http::label::fmt_string(input_226, false);
+        if bucket.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "bucket",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
         Ok(())
     }
@@ -7244,11 +7189,11 @@ impl GetBucketAccelerateConfigurationInput {
         &self,
         mut builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        if let Some(inner_198) = &self.expected_bucket_owner {
-            let formatted_199 = AsRef::<str>::as_ref(inner_198);
-            if !formatted_199.is_empty() {
+        if let Some(inner_227) = &self.expected_bucket_owner {
+            let formatted_228 = AsRef::<str>::as_ref(inner_227);
+            if !formatted_228.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_199;
+                let header_value = formatted_228;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -7406,23 +7351,21 @@ impl GetBucketAclInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let bucket = {
-            let input = &self.bucket;
-            let input = input
+        let input_229 = &self.bucket;
+        let input_229 =
+            input_229
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "bucket",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "bucket",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let bucket = smithy_http::label::fmt_string(input_229, false);
+        if bucket.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "bucket",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
         Ok(())
     }
@@ -7430,11 +7373,11 @@ impl GetBucketAclInput {
         &self,
         mut builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        if let Some(inner_200) = &self.expected_bucket_owner {
-            let formatted_201 = AsRef::<str>::as_ref(inner_200);
-            if !formatted_201.is_empty() {
+        if let Some(inner_230) = &self.expected_bucket_owner {
+            let formatted_231 = AsRef::<str>::as_ref(inner_230);
+            if !formatted_231.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_201;
+                let header_value = formatted_231;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -7609,23 +7552,21 @@ impl GetBucketAnalyticsConfigurationInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let bucket = {
-            let input = &self.bucket;
-            let input = input
+        let input_232 = &self.bucket;
+        let input_232 =
+            input_232
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "bucket",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "bucket",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let bucket = smithy_http::label::fmt_string(input_232, false);
+        if bucket.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "bucket",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
         Ok(())
     }
@@ -7633,11 +7574,11 @@ impl GetBucketAnalyticsConfigurationInput {
         &self,
         mut builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        if let Some(inner_202) = &self.expected_bucket_owner {
-            let formatted_203 = AsRef::<str>::as_ref(inner_202);
-            if !formatted_203.is_empty() {
+        if let Some(inner_233) = &self.expected_bucket_owner {
+            let formatted_234 = AsRef::<str>::as_ref(inner_233);
+            if !formatted_234.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_203;
+                let header_value = formatted_234;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -7657,8 +7598,8 @@ impl GetBucketAnalyticsConfigurationInput {
         let mut query = smithy_http::query::Writer::new(&mut output);
         query.push_v("analytics");
         query.push_kv("x-id", "GetBucketAnalyticsConfiguration");
-        if let Some(inner_204) = &self.id {
-            query.push_kv("id", &smithy_http::query::fmt_string(&inner_204));
+        if let Some(inner_235) = &self.id {
+            query.push_kv("id", &smithy_http::query::fmt_string(&inner_235));
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -7799,23 +7740,21 @@ impl GetBucketCorsInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let bucket = {
-            let input = &self.bucket;
-            let input = input
+        let input_236 = &self.bucket;
+        let input_236 =
+            input_236
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "bucket",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "bucket",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let bucket = smithy_http::label::fmt_string(input_236, false);
+        if bucket.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "bucket",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
         Ok(())
     }
@@ -7823,11 +7762,11 @@ impl GetBucketCorsInput {
         &self,
         mut builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        if let Some(inner_205) = &self.expected_bucket_owner {
-            let formatted_206 = AsRef::<str>::as_ref(inner_205);
-            if !formatted_206.is_empty() {
+        if let Some(inner_237) = &self.expected_bucket_owner {
+            let formatted_238 = AsRef::<str>::as_ref(inner_237);
+            if !formatted_238.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_206;
+                let header_value = formatted_238;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -7991,23 +7930,21 @@ impl GetBucketEncryptionInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let bucket = {
-            let input = &self.bucket;
-            let input = input
+        let input_239 = &self.bucket;
+        let input_239 =
+            input_239
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "bucket",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "bucket",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let bucket = smithy_http::label::fmt_string(input_239, false);
+        if bucket.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "bucket",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
         Ok(())
     }
@@ -8015,11 +7952,11 @@ impl GetBucketEncryptionInput {
         &self,
         mut builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        if let Some(inner_207) = &self.expected_bucket_owner {
-            let formatted_208 = AsRef::<str>::as_ref(inner_207);
-            if !formatted_208.is_empty() {
+        if let Some(inner_240) = &self.expected_bucket_owner {
+            let formatted_241 = AsRef::<str>::as_ref(inner_240);
+            if !formatted_241.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_208;
+                let header_value = formatted_241;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -8183,23 +8120,21 @@ impl GetBucketIntelligentTieringConfigurationInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let bucket = {
-            let input = &self.bucket;
-            let input = input
+        let input_242 = &self.bucket;
+        let input_242 =
+            input_242
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "bucket",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "bucket",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let bucket = smithy_http::label::fmt_string(input_242, false);
+        if bucket.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "bucket",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
         Ok(())
     }
@@ -8207,8 +8142,8 @@ impl GetBucketIntelligentTieringConfigurationInput {
         let mut query = smithy_http::query::Writer::new(&mut output);
         query.push_v("intelligent-tiering");
         query.push_kv("x-id", "GetBucketIntelligentTieringConfiguration");
-        if let Some(inner_209) = &self.id {
-            query.push_kv("id", &smithy_http::query::fmt_string(&inner_209));
+        if let Some(inner_243) = &self.id {
+            query.push_kv("id", &smithy_http::query::fmt_string(&inner_243));
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -8365,23 +8300,21 @@ impl GetBucketInventoryConfigurationInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let bucket = {
-            let input = &self.bucket;
-            let input = input
+        let input_244 = &self.bucket;
+        let input_244 =
+            input_244
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "bucket",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "bucket",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let bucket = smithy_http::label::fmt_string(input_244, false);
+        if bucket.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "bucket",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
         Ok(())
     }
@@ -8389,11 +8322,11 @@ impl GetBucketInventoryConfigurationInput {
         &self,
         mut builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        if let Some(inner_210) = &self.expected_bucket_owner {
-            let formatted_211 = AsRef::<str>::as_ref(inner_210);
-            if !formatted_211.is_empty() {
+        if let Some(inner_245) = &self.expected_bucket_owner {
+            let formatted_246 = AsRef::<str>::as_ref(inner_245);
+            if !formatted_246.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_211;
+                let header_value = formatted_246;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -8413,8 +8346,8 @@ impl GetBucketInventoryConfigurationInput {
         let mut query = smithy_http::query::Writer::new(&mut output);
         query.push_v("inventory");
         query.push_kv("x-id", "GetBucketInventoryConfiguration");
-        if let Some(inner_212) = &self.id {
-            query.push_kv("id", &smithy_http::query::fmt_string(&inner_212));
+        if let Some(inner_247) = &self.id {
+            query.push_kv("id", &smithy_http::query::fmt_string(&inner_247));
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -8561,23 +8494,21 @@ impl GetBucketLifecycleConfigurationInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let bucket = {
-            let input = &self.bucket;
-            let input = input
+        let input_248 = &self.bucket;
+        let input_248 =
+            input_248
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "bucket",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "bucket",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let bucket = smithy_http::label::fmt_string(input_248, false);
+        if bucket.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "bucket",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
         Ok(())
     }
@@ -8585,11 +8516,11 @@ impl GetBucketLifecycleConfigurationInput {
         &self,
         mut builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        if let Some(inner_213) = &self.expected_bucket_owner {
-            let formatted_214 = AsRef::<str>::as_ref(inner_213);
-            if !formatted_214.is_empty() {
+        if let Some(inner_249) = &self.expected_bucket_owner {
+            let formatted_250 = AsRef::<str>::as_ref(inner_249);
+            if !formatted_250.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_214;
+                let header_value = formatted_250;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -8752,23 +8683,21 @@ impl GetBucketLocationInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let bucket = {
-            let input = &self.bucket;
-            let input = input
+        let input_251 = &self.bucket;
+        let input_251 =
+            input_251
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "bucket",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "bucket",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let bucket = smithy_http::label::fmt_string(input_251, false);
+        if bucket.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "bucket",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
         Ok(())
     }
@@ -8776,11 +8705,11 @@ impl GetBucketLocationInput {
         &self,
         mut builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        if let Some(inner_215) = &self.expected_bucket_owner {
-            let formatted_216 = AsRef::<str>::as_ref(inner_215);
-            if !formatted_216.is_empty() {
+        if let Some(inner_252) = &self.expected_bucket_owner {
+            let formatted_253 = AsRef::<str>::as_ref(inner_252);
+            if !formatted_253.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_216;
+                let header_value = formatted_253;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -8943,23 +8872,21 @@ impl GetBucketLoggingInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let bucket = {
-            let input = &self.bucket;
-            let input = input
+        let input_254 = &self.bucket;
+        let input_254 =
+            input_254
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "bucket",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "bucket",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let bucket = smithy_http::label::fmt_string(input_254, false);
+        if bucket.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "bucket",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
         Ok(())
     }
@@ -8967,11 +8894,11 @@ impl GetBucketLoggingInput {
         &self,
         mut builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        if let Some(inner_217) = &self.expected_bucket_owner {
-            let formatted_218 = AsRef::<str>::as_ref(inner_217);
-            if !formatted_218.is_empty() {
+        if let Some(inner_255) = &self.expected_bucket_owner {
+            let formatted_256 = AsRef::<str>::as_ref(inner_255);
+            if !formatted_256.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_218;
+                let header_value = formatted_256;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -9146,23 +9073,21 @@ impl GetBucketMetricsConfigurationInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let bucket = {
-            let input = &self.bucket;
-            let input = input
+        let input_257 = &self.bucket;
+        let input_257 =
+            input_257
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "bucket",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "bucket",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let bucket = smithy_http::label::fmt_string(input_257, false);
+        if bucket.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "bucket",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
         Ok(())
     }
@@ -9170,11 +9095,11 @@ impl GetBucketMetricsConfigurationInput {
         &self,
         mut builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        if let Some(inner_219) = &self.expected_bucket_owner {
-            let formatted_220 = AsRef::<str>::as_ref(inner_219);
-            if !formatted_220.is_empty() {
+        if let Some(inner_258) = &self.expected_bucket_owner {
+            let formatted_259 = AsRef::<str>::as_ref(inner_258);
+            if !formatted_259.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_220;
+                let header_value = formatted_259;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -9194,8 +9119,8 @@ impl GetBucketMetricsConfigurationInput {
         let mut query = smithy_http::query::Writer::new(&mut output);
         query.push_v("metrics");
         query.push_kv("x-id", "GetBucketMetricsConfiguration");
-        if let Some(inner_221) = &self.id {
-            query.push_kv("id", &smithy_http::query::fmt_string(&inner_221));
+        if let Some(inner_260) = &self.id {
+            query.push_kv("id", &smithy_http::query::fmt_string(&inner_260));
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -9342,23 +9267,21 @@ impl GetBucketNotificationConfigurationInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let bucket = {
-            let input = &self.bucket;
-            let input = input
+        let input_261 = &self.bucket;
+        let input_261 =
+            input_261
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "bucket",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "bucket",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let bucket = smithy_http::label::fmt_string(input_261, false);
+        if bucket.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "bucket",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
         Ok(())
     }
@@ -9366,11 +9289,11 @@ impl GetBucketNotificationConfigurationInput {
         &self,
         mut builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        if let Some(inner_222) = &self.expected_bucket_owner {
-            let formatted_223 = AsRef::<str>::as_ref(inner_222);
-            if !formatted_223.is_empty() {
+        if let Some(inner_262) = &self.expected_bucket_owner {
+            let formatted_263 = AsRef::<str>::as_ref(inner_262);
+            if !formatted_263.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_223;
+                let header_value = formatted_263;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -9535,23 +9458,21 @@ impl GetBucketOwnershipControlsInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let bucket = {
-            let input = &self.bucket;
-            let input = input
+        let input_264 = &self.bucket;
+        let input_264 =
+            input_264
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "bucket",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "bucket",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let bucket = smithy_http::label::fmt_string(input_264, false);
+        if bucket.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "bucket",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
         Ok(())
     }
@@ -9559,11 +9480,11 @@ impl GetBucketOwnershipControlsInput {
         &self,
         mut builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        if let Some(inner_224) = &self.expected_bucket_owner {
-            let formatted_225 = AsRef::<str>::as_ref(inner_224);
-            if !formatted_225.is_empty() {
+        if let Some(inner_265) = &self.expected_bucket_owner {
+            let formatted_266 = AsRef::<str>::as_ref(inner_265);
+            if !formatted_266.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_225;
+                let header_value = formatted_266;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -9726,23 +9647,21 @@ impl GetBucketPolicyInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let bucket = {
-            let input = &self.bucket;
-            let input = input
+        let input_267 = &self.bucket;
+        let input_267 =
+            input_267
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "bucket",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "bucket",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let bucket = smithy_http::label::fmt_string(input_267, false);
+        if bucket.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "bucket",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
         Ok(())
     }
@@ -9750,11 +9669,11 @@ impl GetBucketPolicyInput {
         &self,
         mut builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        if let Some(inner_226) = &self.expected_bucket_owner {
-            let formatted_227 = AsRef::<str>::as_ref(inner_226);
-            if !formatted_227.is_empty() {
+        if let Some(inner_268) = &self.expected_bucket_owner {
+            let formatted_269 = AsRef::<str>::as_ref(inner_268);
+            if !formatted_269.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_227;
+                let header_value = formatted_269;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -9917,23 +9836,21 @@ impl GetBucketPolicyStatusInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let bucket = {
-            let input = &self.bucket;
-            let input = input
+        let input_270 = &self.bucket;
+        let input_270 =
+            input_270
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "bucket",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "bucket",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let bucket = smithy_http::label::fmt_string(input_270, false);
+        if bucket.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "bucket",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
         Ok(())
     }
@@ -9941,11 +9858,11 @@ impl GetBucketPolicyStatusInput {
         &self,
         mut builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        if let Some(inner_228) = &self.expected_bucket_owner {
-            let formatted_229 = AsRef::<str>::as_ref(inner_228);
-            if !formatted_229.is_empty() {
+        if let Some(inner_271) = &self.expected_bucket_owner {
+            let formatted_272 = AsRef::<str>::as_ref(inner_271);
+            if !formatted_272.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_229;
+                let header_value = formatted_272;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -10108,23 +10025,21 @@ impl GetBucketReplicationInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let bucket = {
-            let input = &self.bucket;
-            let input = input
+        let input_273 = &self.bucket;
+        let input_273 =
+            input_273
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "bucket",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "bucket",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let bucket = smithy_http::label::fmt_string(input_273, false);
+        if bucket.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "bucket",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
         Ok(())
     }
@@ -10132,11 +10047,11 @@ impl GetBucketReplicationInput {
         &self,
         mut builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        if let Some(inner_230) = &self.expected_bucket_owner {
-            let formatted_231 = AsRef::<str>::as_ref(inner_230);
-            if !formatted_231.is_empty() {
+        if let Some(inner_274) = &self.expected_bucket_owner {
+            let formatted_275 = AsRef::<str>::as_ref(inner_274);
+            if !formatted_275.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_231;
+                let header_value = formatted_275;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -10300,23 +10215,21 @@ impl GetBucketRequestPaymentInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let bucket = {
-            let input = &self.bucket;
-            let input = input
+        let input_276 = &self.bucket;
+        let input_276 =
+            input_276
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "bucket",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "bucket",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let bucket = smithy_http::label::fmt_string(input_276, false);
+        if bucket.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "bucket",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
         Ok(())
     }
@@ -10324,11 +10237,11 @@ impl GetBucketRequestPaymentInput {
         &self,
         mut builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        if let Some(inner_232) = &self.expected_bucket_owner {
-            let formatted_233 = AsRef::<str>::as_ref(inner_232);
-            if !formatted_233.is_empty() {
+        if let Some(inner_277) = &self.expected_bucket_owner {
+            let formatted_278 = AsRef::<str>::as_ref(inner_277);
+            if !formatted_278.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_233;
+                let header_value = formatted_278;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -10491,23 +10404,21 @@ impl GetBucketTaggingInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let bucket = {
-            let input = &self.bucket;
-            let input = input
+        let input_279 = &self.bucket;
+        let input_279 =
+            input_279
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "bucket",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "bucket",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let bucket = smithy_http::label::fmt_string(input_279, false);
+        if bucket.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "bucket",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
         Ok(())
     }
@@ -10515,11 +10426,11 @@ impl GetBucketTaggingInput {
         &self,
         mut builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        if let Some(inner_234) = &self.expected_bucket_owner {
-            let formatted_235 = AsRef::<str>::as_ref(inner_234);
-            if !formatted_235.is_empty() {
+        if let Some(inner_280) = &self.expected_bucket_owner {
+            let formatted_281 = AsRef::<str>::as_ref(inner_280);
+            if !formatted_281.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_235;
+                let header_value = formatted_281;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -10682,23 +10593,21 @@ impl GetBucketVersioningInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let bucket = {
-            let input = &self.bucket;
-            let input = input
+        let input_282 = &self.bucket;
+        let input_282 =
+            input_282
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "bucket",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "bucket",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let bucket = smithy_http::label::fmt_string(input_282, false);
+        if bucket.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "bucket",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
         Ok(())
     }
@@ -10706,11 +10615,11 @@ impl GetBucketVersioningInput {
         &self,
         mut builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        if let Some(inner_236) = &self.expected_bucket_owner {
-            let formatted_237 = AsRef::<str>::as_ref(inner_236);
-            if !formatted_237.is_empty() {
+        if let Some(inner_283) = &self.expected_bucket_owner {
+            let formatted_284 = AsRef::<str>::as_ref(inner_283);
+            if !formatted_284.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_237;
+                let header_value = formatted_284;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -10873,23 +10782,21 @@ impl GetBucketWebsiteInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let bucket = {
-            let input = &self.bucket;
-            let input = input
+        let input_285 = &self.bucket;
+        let input_285 =
+            input_285
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "bucket",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "bucket",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let bucket = smithy_http::label::fmt_string(input_285, false);
+        if bucket.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "bucket",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
         Ok(())
     }
@@ -10897,11 +10804,11 @@ impl GetBucketWebsiteInput {
         &self,
         mut builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        if let Some(inner_238) = &self.expected_bucket_owner {
-            let formatted_239 = AsRef::<str>::as_ref(inner_238);
-            if !formatted_239.is_empty() {
+        if let Some(inner_286) = &self.expected_bucket_owner {
+            let formatted_287 = AsRef::<str>::as_ref(inner_286);
+            if !formatted_287.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_239;
+                let header_value = formatted_287;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -11319,40 +11226,36 @@ impl GetObjectInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let bucket = {
-            let input = &self.bucket;
-            let input = input
+        let input_288 = &self.bucket;
+        let input_288 =
+            input_288
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "bucket",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "bucket",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let key = {
-            let input = &self.key;
-            let input = input
+        let bucket = smithy_http::label::fmt_string(input_288, false);
+        if bucket.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "bucket",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_289 = &self.key;
+        let input_289 =
+            input_289
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "key",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, true);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "key",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let key = smithy_http::label::fmt_string(input_289, true);
+        if key.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "key",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/{Bucket}/{Key}", Bucket = bucket, Key = key)
             .expect("formatting should succeed");
         Ok(())
@@ -11361,11 +11264,11 @@ impl GetObjectInput {
         &self,
         mut builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        if let Some(inner_240) = &self.if_match {
-            let formatted_241 = AsRef::<str>::as_ref(inner_240);
-            if !formatted_241.is_empty() {
+        if let Some(inner_290) = &self.if_match {
+            let formatted_291 = AsRef::<str>::as_ref(inner_290);
+            if !formatted_291.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_241;
+                let header_value = formatted_291;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -11379,11 +11282,11 @@ impl GetObjectInput {
                 builder = builder.header("If-Match", header_value);
             }
         }
-        if let Some(inner_242) = &self.if_modified_since {
-            let formatted_243 = inner_242.fmt(smithy_types::instant::Format::HttpDate);
-            if !formatted_243.is_empty() {
+        if let Some(inner_292) = &self.if_modified_since {
+            let formatted_293 = inner_292.fmt(smithy_types::instant::Format::HttpDate);
+            if !formatted_293.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_243;
+                let header_value = formatted_293;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -11397,11 +11300,11 @@ impl GetObjectInput {
                 builder = builder.header("If-Modified-Since", header_value);
             }
         }
-        if let Some(inner_244) = &self.if_none_match {
-            let formatted_245 = AsRef::<str>::as_ref(inner_244);
-            if !formatted_245.is_empty() {
+        if let Some(inner_294) = &self.if_none_match {
+            let formatted_295 = AsRef::<str>::as_ref(inner_294);
+            if !formatted_295.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_245;
+                let header_value = formatted_295;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -11415,11 +11318,11 @@ impl GetObjectInput {
                 builder = builder.header("If-None-Match", header_value);
             }
         }
-        if let Some(inner_246) = &self.if_unmodified_since {
-            let formatted_247 = inner_246.fmt(smithy_types::instant::Format::HttpDate);
-            if !formatted_247.is_empty() {
+        if let Some(inner_296) = &self.if_unmodified_since {
+            let formatted_297 = inner_296.fmt(smithy_types::instant::Format::HttpDate);
+            if !formatted_297.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_247;
+                let header_value = formatted_297;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -11433,11 +11336,11 @@ impl GetObjectInput {
                 builder = builder.header("If-Unmodified-Since", header_value);
             }
         }
-        if let Some(inner_248) = &self.range {
-            let formatted_249 = AsRef::<str>::as_ref(inner_248);
-            if !formatted_249.is_empty() {
+        if let Some(inner_298) = &self.range {
+            let formatted_299 = AsRef::<str>::as_ref(inner_298);
+            if !formatted_299.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_249;
+                let header_value = formatted_299;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -11451,11 +11354,11 @@ impl GetObjectInput {
                 builder = builder.header("Range", header_value);
             }
         }
-        if let Some(inner_250) = &self.sse_customer_algorithm {
-            let formatted_251 = AsRef::<str>::as_ref(inner_250);
-            if !formatted_251.is_empty() {
+        if let Some(inner_300) = &self.sse_customer_algorithm {
+            let formatted_301 = AsRef::<str>::as_ref(inner_300);
+            if !formatted_301.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_251;
+                let header_value = formatted_301;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -11472,11 +11375,11 @@ impl GetObjectInput {
                 );
             }
         }
-        if let Some(inner_252) = &self.sse_customer_key {
-            let formatted_253 = AsRef::<str>::as_ref(inner_252);
-            if !formatted_253.is_empty() {
+        if let Some(inner_302) = &self.sse_customer_key {
+            let formatted_303 = AsRef::<str>::as_ref(inner_302);
+            if !formatted_303.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_253;
+                let header_value = formatted_303;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -11490,11 +11393,11 @@ impl GetObjectInput {
                 builder = builder.header("x-amz-server-side-encryption-customer-key", header_value);
             }
         }
-        if let Some(inner_254) = &self.sse_customer_key_md5 {
-            let formatted_255 = AsRef::<str>::as_ref(inner_254);
-            if !formatted_255.is_empty() {
+        if let Some(inner_304) = &self.sse_customer_key_md5 {
+            let formatted_305 = AsRef::<str>::as_ref(inner_304);
+            if !formatted_305.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_255;
+                let header_value = formatted_305;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -11511,11 +11414,11 @@ impl GetObjectInput {
                 );
             }
         }
-        if let Some(inner_256) = &self.request_payer {
-            let formatted_257 = AsRef::<str>::as_ref(inner_256);
-            if !formatted_257.is_empty() {
+        if let Some(inner_306) = &self.request_payer {
+            let formatted_307 = AsRef::<str>::as_ref(inner_306);
+            if !formatted_307.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_257;
+                let header_value = formatted_307;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -11529,11 +11432,11 @@ impl GetObjectInput {
                 builder = builder.header("x-amz-request-payer", header_value);
             }
         }
-        if let Some(inner_258) = &self.expected_bucket_owner {
-            let formatted_259 = AsRef::<str>::as_ref(inner_258);
-            if !formatted_259.is_empty() {
+        if let Some(inner_308) = &self.expected_bucket_owner {
+            let formatted_309 = AsRef::<str>::as_ref(inner_308);
+            if !formatted_309.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_259;
+                let header_value = formatted_309;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -11552,52 +11455,52 @@ impl GetObjectInput {
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
         query.push_kv("x-id", "GetObject");
-        if let Some(inner_260) = &self.response_cache_control {
+        if let Some(inner_310) = &self.response_cache_control {
             query.push_kv(
                 "response-cache-control",
-                &smithy_http::query::fmt_string(&inner_260),
+                &smithy_http::query::fmt_string(&inner_310),
             );
         }
-        if let Some(inner_261) = &self.response_content_disposition {
+        if let Some(inner_311) = &self.response_content_disposition {
             query.push_kv(
                 "response-content-disposition",
-                &smithy_http::query::fmt_string(&inner_261),
+                &smithy_http::query::fmt_string(&inner_311),
             );
         }
-        if let Some(inner_262) = &self.response_content_encoding {
+        if let Some(inner_312) = &self.response_content_encoding {
             query.push_kv(
                 "response-content-encoding",
-                &smithy_http::query::fmt_string(&inner_262),
+                &smithy_http::query::fmt_string(&inner_312),
             );
         }
-        if let Some(inner_263) = &self.response_content_language {
+        if let Some(inner_313) = &self.response_content_language {
             query.push_kv(
                 "response-content-language",
-                &smithy_http::query::fmt_string(&inner_263),
+                &smithy_http::query::fmt_string(&inner_313),
             );
         }
-        if let Some(inner_264) = &self.response_content_type {
+        if let Some(inner_314) = &self.response_content_type {
             query.push_kv(
                 "response-content-type",
-                &smithy_http::query::fmt_string(&inner_264),
+                &smithy_http::query::fmt_string(&inner_314),
             );
         }
-        if let Some(inner_265) = &self.response_expires {
+        if let Some(inner_315) = &self.response_expires {
             query.push_kv(
                 "response-expires",
                 &smithy_http::query::fmt_timestamp(
-                    inner_265,
+                    inner_315,
                     smithy_types::instant::Format::HttpDate,
                 ),
             );
         }
-        if let Some(inner_266) = &self.version_id {
-            query.push_kv("versionId", &smithy_http::query::fmt_string(&inner_266));
+        if let Some(inner_316) = &self.version_id {
+            query.push_kv("versionId", &smithy_http::query::fmt_string(&inner_316));
         }
         if self.part_number != 0 {
             query.push_kv(
                 "partNumber",
-                &smithy_http::query::fmt_default(&&self.part_number),
+                &smithy_types::primitive::Encoder::from(self.part_number).encode(),
             );
         }
     }
@@ -11779,40 +11682,36 @@ impl GetObjectAclInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let bucket = {
-            let input = &self.bucket;
-            let input = input
+        let input_317 = &self.bucket;
+        let input_317 =
+            input_317
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "bucket",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "bucket",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let key = {
-            let input = &self.key;
-            let input = input
+        let bucket = smithy_http::label::fmt_string(input_317, false);
+        if bucket.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "bucket",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_318 = &self.key;
+        let input_318 =
+            input_318
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "key",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, true);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "key",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let key = smithy_http::label::fmt_string(input_318, true);
+        if key.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "key",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/{Bucket}/{Key}", Bucket = bucket, Key = key)
             .expect("formatting should succeed");
         Ok(())
@@ -11821,11 +11720,11 @@ impl GetObjectAclInput {
         &self,
         mut builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        if let Some(inner_267) = &self.request_payer {
-            let formatted_268 = AsRef::<str>::as_ref(inner_267);
-            if !formatted_268.is_empty() {
+        if let Some(inner_319) = &self.request_payer {
+            let formatted_320 = AsRef::<str>::as_ref(inner_319);
+            if !formatted_320.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_268;
+                let header_value = formatted_320;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -11839,11 +11738,11 @@ impl GetObjectAclInput {
                 builder = builder.header("x-amz-request-payer", header_value);
             }
         }
-        if let Some(inner_269) = &self.expected_bucket_owner {
-            let formatted_270 = AsRef::<str>::as_ref(inner_269);
-            if !formatted_270.is_empty() {
+        if let Some(inner_321) = &self.expected_bucket_owner {
+            let formatted_322 = AsRef::<str>::as_ref(inner_321);
+            if !formatted_322.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_270;
+                let header_value = formatted_322;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -11862,8 +11761,8 @@ impl GetObjectAclInput {
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
         query.push_v("acl");
-        if let Some(inner_271) = &self.version_id {
-            query.push_kv("versionId", &smithy_http::query::fmt_string(&inner_271));
+        if let Some(inner_323) = &self.version_id {
+            query.push_kv("versionId", &smithy_http::query::fmt_string(&inner_323));
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -12049,40 +11948,36 @@ impl GetObjectLegalHoldInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let bucket = {
-            let input = &self.bucket;
-            let input = input
+        let input_324 = &self.bucket;
+        let input_324 =
+            input_324
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "bucket",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "bucket",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let key = {
-            let input = &self.key;
-            let input = input
+        let bucket = smithy_http::label::fmt_string(input_324, false);
+        if bucket.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "bucket",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_325 = &self.key;
+        let input_325 =
+            input_325
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "key",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, true);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "key",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let key = smithy_http::label::fmt_string(input_325, true);
+        if key.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "key",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/{Bucket}/{Key}", Bucket = bucket, Key = key)
             .expect("formatting should succeed");
         Ok(())
@@ -12091,11 +11986,11 @@ impl GetObjectLegalHoldInput {
         &self,
         mut builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        if let Some(inner_272) = &self.request_payer {
-            let formatted_273 = AsRef::<str>::as_ref(inner_272);
-            if !formatted_273.is_empty() {
+        if let Some(inner_326) = &self.request_payer {
+            let formatted_327 = AsRef::<str>::as_ref(inner_326);
+            if !formatted_327.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_273;
+                let header_value = formatted_327;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -12109,11 +12004,11 @@ impl GetObjectLegalHoldInput {
                 builder = builder.header("x-amz-request-payer", header_value);
             }
         }
-        if let Some(inner_274) = &self.expected_bucket_owner {
-            let formatted_275 = AsRef::<str>::as_ref(inner_274);
-            if !formatted_275.is_empty() {
+        if let Some(inner_328) = &self.expected_bucket_owner {
+            let formatted_329 = AsRef::<str>::as_ref(inner_328);
+            if !formatted_329.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_275;
+                let header_value = formatted_329;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -12132,8 +12027,8 @@ impl GetObjectLegalHoldInput {
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
         query.push_v("legal-hold");
-        if let Some(inner_276) = &self.version_id {
-            query.push_kv("versionId", &smithy_http::query::fmt_string(&inner_276));
+        if let Some(inner_330) = &self.version_id {
+            query.push_kv("versionId", &smithy_http::query::fmt_string(&inner_330));
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -12281,23 +12176,21 @@ impl GetObjectLockConfigurationInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let bucket = {
-            let input = &self.bucket;
-            let input = input
+        let input_331 = &self.bucket;
+        let input_331 =
+            input_331
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "bucket",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "bucket",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let bucket = smithy_http::label::fmt_string(input_331, false);
+        if bucket.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "bucket",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
         Ok(())
     }
@@ -12305,11 +12198,11 @@ impl GetObjectLockConfigurationInput {
         &self,
         mut builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        if let Some(inner_277) = &self.expected_bucket_owner {
-            let formatted_278 = AsRef::<str>::as_ref(inner_277);
-            if !formatted_278.is_empty() {
+        if let Some(inner_332) = &self.expected_bucket_owner {
+            let formatted_333 = AsRef::<str>::as_ref(inner_332);
+            if !formatted_333.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_278;
+                let header_value = formatted_333;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -12512,40 +12405,36 @@ impl GetObjectRetentionInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let bucket = {
-            let input = &self.bucket;
-            let input = input
+        let input_334 = &self.bucket;
+        let input_334 =
+            input_334
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "bucket",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "bucket",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let key = {
-            let input = &self.key;
-            let input = input
+        let bucket = smithy_http::label::fmt_string(input_334, false);
+        if bucket.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "bucket",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_335 = &self.key;
+        let input_335 =
+            input_335
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "key",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, true);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "key",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let key = smithy_http::label::fmt_string(input_335, true);
+        if key.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "key",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/{Bucket}/{Key}", Bucket = bucket, Key = key)
             .expect("formatting should succeed");
         Ok(())
@@ -12554,11 +12443,11 @@ impl GetObjectRetentionInput {
         &self,
         mut builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        if let Some(inner_279) = &self.request_payer {
-            let formatted_280 = AsRef::<str>::as_ref(inner_279);
-            if !formatted_280.is_empty() {
+        if let Some(inner_336) = &self.request_payer {
+            let formatted_337 = AsRef::<str>::as_ref(inner_336);
+            if !formatted_337.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_280;
+                let header_value = formatted_337;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -12572,11 +12461,11 @@ impl GetObjectRetentionInput {
                 builder = builder.header("x-amz-request-payer", header_value);
             }
         }
-        if let Some(inner_281) = &self.expected_bucket_owner {
-            let formatted_282 = AsRef::<str>::as_ref(inner_281);
-            if !formatted_282.is_empty() {
+        if let Some(inner_338) = &self.expected_bucket_owner {
+            let formatted_339 = AsRef::<str>::as_ref(inner_338);
+            if !formatted_339.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_282;
+                let header_value = formatted_339;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -12595,8 +12484,8 @@ impl GetObjectRetentionInput {
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
         query.push_v("retention");
-        if let Some(inner_283) = &self.version_id {
-            query.push_kv("versionId", &smithy_http::query::fmt_string(&inner_283));
+        if let Some(inner_340) = &self.version_id {
+            query.push_kv("versionId", &smithy_http::query::fmt_string(&inner_340));
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -12783,40 +12672,36 @@ impl GetObjectTaggingInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let bucket = {
-            let input = &self.bucket;
-            let input = input
+        let input_341 = &self.bucket;
+        let input_341 =
+            input_341
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "bucket",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "bucket",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let key = {
-            let input = &self.key;
-            let input = input
+        let bucket = smithy_http::label::fmt_string(input_341, false);
+        if bucket.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "bucket",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_342 = &self.key;
+        let input_342 =
+            input_342
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "key",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, true);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "key",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let key = smithy_http::label::fmt_string(input_342, true);
+        if key.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "key",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/{Bucket}/{Key}", Bucket = bucket, Key = key)
             .expect("formatting should succeed");
         Ok(())
@@ -12825,11 +12710,11 @@ impl GetObjectTaggingInput {
         &self,
         mut builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        if let Some(inner_284) = &self.expected_bucket_owner {
-            let formatted_285 = AsRef::<str>::as_ref(inner_284);
-            if !formatted_285.is_empty() {
+        if let Some(inner_343) = &self.expected_bucket_owner {
+            let formatted_344 = AsRef::<str>::as_ref(inner_343);
+            if !formatted_344.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_285;
+                let header_value = formatted_344;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -12843,11 +12728,11 @@ impl GetObjectTaggingInput {
                 builder = builder.header("x-amz-expected-bucket-owner", header_value);
             }
         }
-        if let Some(inner_286) = &self.request_payer {
-            let formatted_287 = AsRef::<str>::as_ref(inner_286);
-            if !formatted_287.is_empty() {
+        if let Some(inner_345) = &self.request_payer {
+            let formatted_346 = AsRef::<str>::as_ref(inner_345);
+            if !formatted_346.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_287;
+                let header_value = formatted_346;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -12866,8 +12751,8 @@ impl GetObjectTaggingInput {
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
         query.push_v("tagging");
-        if let Some(inner_288) = &self.version_id {
-            query.push_kv("versionId", &smithy_http::query::fmt_string(&inner_288));
+        if let Some(inner_347) = &self.version_id {
+            query.push_kv("versionId", &smithy_http::query::fmt_string(&inner_347));
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -13041,40 +12926,36 @@ impl GetObjectTorrentInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let bucket = {
-            let input = &self.bucket;
-            let input = input
+        let input_348 = &self.bucket;
+        let input_348 =
+            input_348
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "bucket",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "bucket",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let key = {
-            let input = &self.key;
-            let input = input
+        let bucket = smithy_http::label::fmt_string(input_348, false);
+        if bucket.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "bucket",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_349 = &self.key;
+        let input_349 =
+            input_349
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "key",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, true);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "key",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let key = smithy_http::label::fmt_string(input_349, true);
+        if key.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "key",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/{Bucket}/{Key}", Bucket = bucket, Key = key)
             .expect("formatting should succeed");
         Ok(())
@@ -13083,11 +12964,11 @@ impl GetObjectTorrentInput {
         &self,
         mut builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        if let Some(inner_289) = &self.request_payer {
-            let formatted_290 = AsRef::<str>::as_ref(inner_289);
-            if !formatted_290.is_empty() {
+        if let Some(inner_350) = &self.request_payer {
+            let formatted_351 = AsRef::<str>::as_ref(inner_350);
+            if !formatted_351.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_290;
+                let header_value = formatted_351;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -13101,11 +12982,11 @@ impl GetObjectTorrentInput {
                 builder = builder.header("x-amz-request-payer", header_value);
             }
         }
-        if let Some(inner_291) = &self.expected_bucket_owner {
-            let formatted_292 = AsRef::<str>::as_ref(inner_291);
-            if !formatted_292.is_empty() {
+        if let Some(inner_352) = &self.expected_bucket_owner {
+            let formatted_353 = AsRef::<str>::as_ref(inner_352);
+            if !formatted_353.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_292;
+                let header_value = formatted_353;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -13269,23 +13150,21 @@ impl GetPublicAccessBlockInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let bucket = {
-            let input = &self.bucket;
-            let input = input
+        let input_354 = &self.bucket;
+        let input_354 =
+            input_354
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "bucket",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "bucket",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let bucket = smithy_http::label::fmt_string(input_354, false);
+        if bucket.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "bucket",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
         Ok(())
     }
@@ -13293,11 +13172,11 @@ impl GetPublicAccessBlockInput {
         &self,
         mut builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        if let Some(inner_293) = &self.expected_bucket_owner {
-            let formatted_294 = AsRef::<str>::as_ref(inner_293);
-            if !formatted_294.is_empty() {
+        if let Some(inner_355) = &self.expected_bucket_owner {
+            let formatted_356 = AsRef::<str>::as_ref(inner_355);
+            if !formatted_356.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_294;
+                let header_value = formatted_356;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -13457,23 +13336,21 @@ impl HeadBucketInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let bucket = {
-            let input = &self.bucket;
-            let input = input
+        let input_357 = &self.bucket;
+        let input_357 =
+            input_357
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "bucket",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "bucket",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let bucket = smithy_http::label::fmt_string(input_357, false);
+        if bucket.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "bucket",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
         Ok(())
     }
@@ -13481,11 +13358,11 @@ impl HeadBucketInput {
         &self,
         mut builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        if let Some(inner_295) = &self.expected_bucket_owner {
-            let formatted_296 = AsRef::<str>::as_ref(inner_295);
-            if !formatted_296.is_empty() {
+        if let Some(inner_358) = &self.expected_bucket_owner {
+            let formatted_359 = AsRef::<str>::as_ref(inner_358);
+            if !formatted_359.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_296;
+                let header_value = formatted_359;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -13813,40 +13690,36 @@ impl HeadObjectInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let bucket = {
-            let input = &self.bucket;
-            let input = input
+        let input_360 = &self.bucket;
+        let input_360 =
+            input_360
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "bucket",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "bucket",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let key = {
-            let input = &self.key;
-            let input = input
+        let bucket = smithy_http::label::fmt_string(input_360, false);
+        if bucket.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "bucket",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_361 = &self.key;
+        let input_361 =
+            input_361
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "key",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, true);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "key",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let key = smithy_http::label::fmt_string(input_361, true);
+        if key.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "key",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/{Bucket}/{Key}", Bucket = bucket, Key = key)
             .expect("formatting should succeed");
         Ok(())
@@ -13855,11 +13728,11 @@ impl HeadObjectInput {
         &self,
         mut builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        if let Some(inner_297) = &self.if_match {
-            let formatted_298 = AsRef::<str>::as_ref(inner_297);
-            if !formatted_298.is_empty() {
+        if let Some(inner_362) = &self.if_match {
+            let formatted_363 = AsRef::<str>::as_ref(inner_362);
+            if !formatted_363.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_298;
+                let header_value = formatted_363;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -13873,11 +13746,11 @@ impl HeadObjectInput {
                 builder = builder.header("If-Match", header_value);
             }
         }
-        if let Some(inner_299) = &self.if_modified_since {
-            let formatted_300 = inner_299.fmt(smithy_types::instant::Format::HttpDate);
-            if !formatted_300.is_empty() {
+        if let Some(inner_364) = &self.if_modified_since {
+            let formatted_365 = inner_364.fmt(smithy_types::instant::Format::HttpDate);
+            if !formatted_365.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_300;
+                let header_value = formatted_365;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -13891,11 +13764,11 @@ impl HeadObjectInput {
                 builder = builder.header("If-Modified-Since", header_value);
             }
         }
-        if let Some(inner_301) = &self.if_none_match {
-            let formatted_302 = AsRef::<str>::as_ref(inner_301);
-            if !formatted_302.is_empty() {
+        if let Some(inner_366) = &self.if_none_match {
+            let formatted_367 = AsRef::<str>::as_ref(inner_366);
+            if !formatted_367.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_302;
+                let header_value = formatted_367;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -13909,11 +13782,11 @@ impl HeadObjectInput {
                 builder = builder.header("If-None-Match", header_value);
             }
         }
-        if let Some(inner_303) = &self.if_unmodified_since {
-            let formatted_304 = inner_303.fmt(smithy_types::instant::Format::HttpDate);
-            if !formatted_304.is_empty() {
+        if let Some(inner_368) = &self.if_unmodified_since {
+            let formatted_369 = inner_368.fmt(smithy_types::instant::Format::HttpDate);
+            if !formatted_369.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_304;
+                let header_value = formatted_369;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -13927,11 +13800,11 @@ impl HeadObjectInput {
                 builder = builder.header("If-Unmodified-Since", header_value);
             }
         }
-        if let Some(inner_305) = &self.range {
-            let formatted_306 = AsRef::<str>::as_ref(inner_305);
-            if !formatted_306.is_empty() {
+        if let Some(inner_370) = &self.range {
+            let formatted_371 = AsRef::<str>::as_ref(inner_370);
+            if !formatted_371.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_306;
+                let header_value = formatted_371;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -13945,11 +13818,11 @@ impl HeadObjectInput {
                 builder = builder.header("Range", header_value);
             }
         }
-        if let Some(inner_307) = &self.sse_customer_algorithm {
-            let formatted_308 = AsRef::<str>::as_ref(inner_307);
-            if !formatted_308.is_empty() {
+        if let Some(inner_372) = &self.sse_customer_algorithm {
+            let formatted_373 = AsRef::<str>::as_ref(inner_372);
+            if !formatted_373.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_308;
+                let header_value = formatted_373;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -13966,11 +13839,11 @@ impl HeadObjectInput {
                 );
             }
         }
-        if let Some(inner_309) = &self.sse_customer_key {
-            let formatted_310 = AsRef::<str>::as_ref(inner_309);
-            if !formatted_310.is_empty() {
+        if let Some(inner_374) = &self.sse_customer_key {
+            let formatted_375 = AsRef::<str>::as_ref(inner_374);
+            if !formatted_375.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_310;
+                let header_value = formatted_375;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -13984,11 +13857,11 @@ impl HeadObjectInput {
                 builder = builder.header("x-amz-server-side-encryption-customer-key", header_value);
             }
         }
-        if let Some(inner_311) = &self.sse_customer_key_md5 {
-            let formatted_312 = AsRef::<str>::as_ref(inner_311);
-            if !formatted_312.is_empty() {
+        if let Some(inner_376) = &self.sse_customer_key_md5 {
+            let formatted_377 = AsRef::<str>::as_ref(inner_376);
+            if !formatted_377.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_312;
+                let header_value = formatted_377;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -14005,11 +13878,11 @@ impl HeadObjectInput {
                 );
             }
         }
-        if let Some(inner_313) = &self.request_payer {
-            let formatted_314 = AsRef::<str>::as_ref(inner_313);
-            if !formatted_314.is_empty() {
+        if let Some(inner_378) = &self.request_payer {
+            let formatted_379 = AsRef::<str>::as_ref(inner_378);
+            if !formatted_379.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_314;
+                let header_value = formatted_379;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -14023,11 +13896,11 @@ impl HeadObjectInput {
                 builder = builder.header("x-amz-request-payer", header_value);
             }
         }
-        if let Some(inner_315) = &self.expected_bucket_owner {
-            let formatted_316 = AsRef::<str>::as_ref(inner_315);
-            if !formatted_316.is_empty() {
+        if let Some(inner_380) = &self.expected_bucket_owner {
+            let formatted_381 = AsRef::<str>::as_ref(inner_380);
+            if !formatted_381.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_316;
+                let header_value = formatted_381;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -14045,13 +13918,13 @@ impl HeadObjectInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_317) = &self.version_id {
-            query.push_kv("versionId", &smithy_http::query::fmt_string(&inner_317));
+        if let Some(inner_382) = &self.version_id {
+            query.push_kv("versionId", &smithy_http::query::fmt_string(&inner_382));
         }
         if self.part_number != 0 {
             query.push_kv(
                 "partNumber",
-                &smithy_http::query::fmt_default(&&self.part_number),
+                &smithy_types::primitive::Encoder::from(self.part_number).encode(),
             );
         }
     }
@@ -14214,23 +14087,21 @@ impl ListBucketAnalyticsConfigurationsInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let bucket = {
-            let input = &self.bucket;
-            let input = input
+        let input_383 = &self.bucket;
+        let input_383 =
+            input_383
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "bucket",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "bucket",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let bucket = smithy_http::label::fmt_string(input_383, false);
+        if bucket.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "bucket",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
         Ok(())
     }
@@ -14238,11 +14109,11 @@ impl ListBucketAnalyticsConfigurationsInput {
         &self,
         mut builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        if let Some(inner_318) = &self.expected_bucket_owner {
-            let formatted_319 = AsRef::<str>::as_ref(inner_318);
-            if !formatted_319.is_empty() {
+        if let Some(inner_384) = &self.expected_bucket_owner {
+            let formatted_385 = AsRef::<str>::as_ref(inner_384);
+            if !formatted_385.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_319;
+                let header_value = formatted_385;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -14262,10 +14133,10 @@ impl ListBucketAnalyticsConfigurationsInput {
         let mut query = smithy_http::query::Writer::new(&mut output);
         query.push_v("analytics");
         query.push_kv("x-id", "ListBucketAnalyticsConfigurations");
-        if let Some(inner_320) = &self.continuation_token {
+        if let Some(inner_386) = &self.continuation_token {
             query.push_kv(
                 "continuation-token",
-                &smithy_http::query::fmt_string(&inner_320),
+                &smithy_http::query::fmt_string(&inner_386),
             );
         }
     }
@@ -14417,23 +14288,21 @@ impl ListBucketIntelligentTieringConfigurationsInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let bucket = {
-            let input = &self.bucket;
-            let input = input
+        let input_387 = &self.bucket;
+        let input_387 =
+            input_387
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "bucket",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "bucket",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let bucket = smithy_http::label::fmt_string(input_387, false);
+        if bucket.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "bucket",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
         Ok(())
     }
@@ -14441,10 +14310,10 @@ impl ListBucketIntelligentTieringConfigurationsInput {
         let mut query = smithy_http::query::Writer::new(&mut output);
         query.push_v("intelligent-tiering");
         query.push_kv("x-id", "ListBucketIntelligentTieringConfigurations");
-        if let Some(inner_321) = &self.continuation_token {
+        if let Some(inner_388) = &self.continuation_token {
             query.push_kv(
                 "continuation-token",
-                &smithy_http::query::fmt_string(&inner_321),
+                &smithy_http::query::fmt_string(&inner_388),
             );
         }
     }
@@ -14608,23 +14477,21 @@ impl ListBucketInventoryConfigurationsInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let bucket = {
-            let input = &self.bucket;
-            let input = input
+        let input_389 = &self.bucket;
+        let input_389 =
+            input_389
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "bucket",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "bucket",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let bucket = smithy_http::label::fmt_string(input_389, false);
+        if bucket.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "bucket",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
         Ok(())
     }
@@ -14632,11 +14499,11 @@ impl ListBucketInventoryConfigurationsInput {
         &self,
         mut builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        if let Some(inner_322) = &self.expected_bucket_owner {
-            let formatted_323 = AsRef::<str>::as_ref(inner_322);
-            if !formatted_323.is_empty() {
+        if let Some(inner_390) = &self.expected_bucket_owner {
+            let formatted_391 = AsRef::<str>::as_ref(inner_390);
+            if !formatted_391.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_323;
+                let header_value = formatted_391;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -14656,10 +14523,10 @@ impl ListBucketInventoryConfigurationsInput {
         let mut query = smithy_http::query::Writer::new(&mut output);
         query.push_v("inventory");
         query.push_kv("x-id", "ListBucketInventoryConfigurations");
-        if let Some(inner_324) = &self.continuation_token {
+        if let Some(inner_392) = &self.continuation_token {
             query.push_kv(
                 "continuation-token",
-                &smithy_http::query::fmt_string(&inner_324),
+                &smithy_http::query::fmt_string(&inner_392),
             );
         }
     }
@@ -14824,23 +14691,21 @@ impl ListBucketMetricsConfigurationsInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let bucket = {
-            let input = &self.bucket;
-            let input = input
+        let input_393 = &self.bucket;
+        let input_393 =
+            input_393
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "bucket",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "bucket",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let bucket = smithy_http::label::fmt_string(input_393, false);
+        if bucket.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "bucket",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
         Ok(())
     }
@@ -14848,11 +14713,11 @@ impl ListBucketMetricsConfigurationsInput {
         &self,
         mut builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        if let Some(inner_325) = &self.expected_bucket_owner {
-            let formatted_326 = AsRef::<str>::as_ref(inner_325);
-            if !formatted_326.is_empty() {
+        if let Some(inner_394) = &self.expected_bucket_owner {
+            let formatted_395 = AsRef::<str>::as_ref(inner_394);
+            if !formatted_395.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_326;
+                let header_value = formatted_395;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -14872,10 +14737,10 @@ impl ListBucketMetricsConfigurationsInput {
         let mut query = smithy_http::query::Writer::new(&mut output);
         query.push_v("metrics");
         query.push_kv("x-id", "ListBucketMetricsConfigurations");
-        if let Some(inner_327) = &self.continuation_token {
+        if let Some(inner_396) = &self.continuation_token {
             query.push_kv(
                 "continuation-token",
-                &smithy_http::query::fmt_string(&inner_327),
+                &smithy_http::query::fmt_string(&inner_396),
             );
         }
     }
@@ -15232,23 +15097,21 @@ impl ListMultipartUploadsInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let bucket = {
-            let input = &self.bucket;
-            let input = input
+        let input_397 = &self.bucket;
+        let input_397 =
+            input_397
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "bucket",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "bucket",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let bucket = smithy_http::label::fmt_string(input_397, false);
+        if bucket.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "bucket",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
         Ok(())
     }
@@ -15256,11 +15119,11 @@ impl ListMultipartUploadsInput {
         &self,
         mut builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        if let Some(inner_328) = &self.expected_bucket_owner {
-            let formatted_329 = AsRef::<str>::as_ref(inner_328);
-            if !formatted_329.is_empty() {
+        if let Some(inner_398) = &self.expected_bucket_owner {
+            let formatted_399 = AsRef::<str>::as_ref(inner_398);
+            if !formatted_399.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_329;
+                let header_value = formatted_399;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -15279,28 +15142,28 @@ impl ListMultipartUploadsInput {
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
         query.push_v("uploads");
-        if let Some(inner_330) = &self.delimiter {
-            query.push_kv("delimiter", &smithy_http::query::fmt_string(&inner_330));
+        if let Some(inner_400) = &self.delimiter {
+            query.push_kv("delimiter", &smithy_http::query::fmt_string(&inner_400));
         }
-        if let Some(inner_331) = &self.encoding_type {
-            query.push_kv("encoding-type", &smithy_http::query::fmt_string(&inner_331));
+        if let Some(inner_401) = &self.encoding_type {
+            query.push_kv("encoding-type", &smithy_http::query::fmt_string(&inner_401));
         }
-        if let Some(inner_332) = &self.key_marker {
-            query.push_kv("key-marker", &smithy_http::query::fmt_string(&inner_332));
+        if let Some(inner_402) = &self.key_marker {
+            query.push_kv("key-marker", &smithy_http::query::fmt_string(&inner_402));
         }
         if self.max_uploads != 0 {
             query.push_kv(
                 "max-uploads",
-                &smithy_http::query::fmt_default(&&self.max_uploads),
+                &smithy_types::primitive::Encoder::from(self.max_uploads).encode(),
             );
         }
-        if let Some(inner_333) = &self.prefix {
-            query.push_kv("prefix", &smithy_http::query::fmt_string(&inner_333));
+        if let Some(inner_403) = &self.prefix {
+            query.push_kv("prefix", &smithy_http::query::fmt_string(&inner_403));
         }
-        if let Some(inner_334) = &self.upload_id_marker {
+        if let Some(inner_404) = &self.upload_id_marker {
             query.push_kv(
                 "upload-id-marker",
-                &smithy_http::query::fmt_string(&inner_334),
+                &smithy_http::query::fmt_string(&inner_404),
             );
         }
     }
@@ -15523,23 +15386,21 @@ impl ListObjectsInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let bucket = {
-            let input = &self.bucket;
-            let input = input
+        let input_405 = &self.bucket;
+        let input_405 =
+            input_405
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "bucket",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "bucket",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let bucket = smithy_http::label::fmt_string(input_405, false);
+        if bucket.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "bucket",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
         Ok(())
     }
@@ -15547,11 +15408,11 @@ impl ListObjectsInput {
         &self,
         mut builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        if let Some(inner_335) = &self.request_payer {
-            let formatted_336 = AsRef::<str>::as_ref(inner_335);
-            if !formatted_336.is_empty() {
+        if let Some(inner_406) = &self.request_payer {
+            let formatted_407 = AsRef::<str>::as_ref(inner_406);
+            if !formatted_407.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_336;
+                let header_value = formatted_407;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -15565,11 +15426,11 @@ impl ListObjectsInput {
                 builder = builder.header("x-amz-request-payer", header_value);
             }
         }
-        if let Some(inner_337) = &self.expected_bucket_owner {
-            let formatted_338 = AsRef::<str>::as_ref(inner_337);
-            if !formatted_338.is_empty() {
+        if let Some(inner_408) = &self.expected_bucket_owner {
+            let formatted_409 = AsRef::<str>::as_ref(inner_408);
+            if !formatted_409.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_338;
+                let header_value = formatted_409;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -15587,23 +15448,23 @@ impl ListObjectsInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_339) = &self.delimiter {
-            query.push_kv("delimiter", &smithy_http::query::fmt_string(&inner_339));
+        if let Some(inner_410) = &self.delimiter {
+            query.push_kv("delimiter", &smithy_http::query::fmt_string(&inner_410));
         }
-        if let Some(inner_340) = &self.encoding_type {
-            query.push_kv("encoding-type", &smithy_http::query::fmt_string(&inner_340));
+        if let Some(inner_411) = &self.encoding_type {
+            query.push_kv("encoding-type", &smithy_http::query::fmt_string(&inner_411));
         }
-        if let Some(inner_341) = &self.marker {
-            query.push_kv("marker", &smithy_http::query::fmt_string(&inner_341));
+        if let Some(inner_412) = &self.marker {
+            query.push_kv("marker", &smithy_http::query::fmt_string(&inner_412));
         }
         if self.max_keys != 0 {
             query.push_kv(
                 "max-keys",
-                &smithy_http::query::fmt_default(&&self.max_keys),
+                &smithy_types::primitive::Encoder::from(self.max_keys).encode(),
             );
         }
-        if let Some(inner_342) = &self.prefix {
-            query.push_kv("prefix", &smithy_http::query::fmt_string(&inner_342));
+        if let Some(inner_413) = &self.prefix {
+            query.push_kv("prefix", &smithy_http::query::fmt_string(&inner_413));
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -15850,23 +15711,21 @@ impl ListObjectsV2Input {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let bucket = {
-            let input = &self.bucket;
-            let input = input
+        let input_414 = &self.bucket;
+        let input_414 =
+            input_414
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "bucket",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "bucket",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let bucket = smithy_http::label::fmt_string(input_414, false);
+        if bucket.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "bucket",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
         Ok(())
     }
@@ -15874,11 +15733,11 @@ impl ListObjectsV2Input {
         &self,
         mut builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        if let Some(inner_343) = &self.request_payer {
-            let formatted_344 = AsRef::<str>::as_ref(inner_343);
-            if !formatted_344.is_empty() {
+        if let Some(inner_415) = &self.request_payer {
+            let formatted_416 = AsRef::<str>::as_ref(inner_415);
+            if !formatted_416.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_344;
+                let header_value = formatted_416;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -15892,11 +15751,11 @@ impl ListObjectsV2Input {
                 builder = builder.header("x-amz-request-payer", header_value);
             }
         }
-        if let Some(inner_345) = &self.expected_bucket_owner {
-            let formatted_346 = AsRef::<str>::as_ref(inner_345);
-            if !formatted_346.is_empty() {
+        if let Some(inner_417) = &self.expected_bucket_owner {
+            let formatted_418 = AsRef::<str>::as_ref(inner_417);
+            if !formatted_418.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_346;
+                let header_value = formatted_418;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -15915,35 +15774,35 @@ impl ListObjectsV2Input {
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
         query.push_kv("list-type", "2");
-        if let Some(inner_347) = &self.delimiter {
-            query.push_kv("delimiter", &smithy_http::query::fmt_string(&inner_347));
+        if let Some(inner_419) = &self.delimiter {
+            query.push_kv("delimiter", &smithy_http::query::fmt_string(&inner_419));
         }
-        if let Some(inner_348) = &self.encoding_type {
-            query.push_kv("encoding-type", &smithy_http::query::fmt_string(&inner_348));
+        if let Some(inner_420) = &self.encoding_type {
+            query.push_kv("encoding-type", &smithy_http::query::fmt_string(&inner_420));
         }
         if self.max_keys != 0 {
             query.push_kv(
                 "max-keys",
-                &smithy_http::query::fmt_default(&&self.max_keys),
+                &smithy_types::primitive::Encoder::from(self.max_keys).encode(),
             );
         }
-        if let Some(inner_349) = &self.prefix {
-            query.push_kv("prefix", &smithy_http::query::fmt_string(&inner_349));
+        if let Some(inner_421) = &self.prefix {
+            query.push_kv("prefix", &smithy_http::query::fmt_string(&inner_421));
         }
-        if let Some(inner_350) = &self.continuation_token {
+        if let Some(inner_422) = &self.continuation_token {
             query.push_kv(
                 "continuation-token",
-                &smithy_http::query::fmt_string(&inner_350),
+                &smithy_http::query::fmt_string(&inner_422),
             );
         }
         if self.fetch_owner {
             query.push_kv(
                 "fetch-owner",
-                &smithy_http::query::fmt_default(&&self.fetch_owner),
+                &smithy_types::primitive::Encoder::from(self.fetch_owner).encode(),
             );
         }
-        if let Some(inner_351) = &self.start_after {
-            query.push_kv("start-after", &smithy_http::query::fmt_string(&inner_351));
+        if let Some(inner_423) = &self.start_after {
+            query.push_kv("start-after", &smithy_http::query::fmt_string(&inner_423));
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -16177,23 +16036,21 @@ impl ListObjectVersionsInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let bucket = {
-            let input = &self.bucket;
-            let input = input
+        let input_424 = &self.bucket;
+        let input_424 =
+            input_424
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "bucket",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "bucket",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let bucket = smithy_http::label::fmt_string(input_424, false);
+        if bucket.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "bucket",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
         Ok(())
     }
@@ -16201,11 +16058,11 @@ impl ListObjectVersionsInput {
         &self,
         mut builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        if let Some(inner_352) = &self.expected_bucket_owner {
-            let formatted_353 = AsRef::<str>::as_ref(inner_352);
-            if !formatted_353.is_empty() {
+        if let Some(inner_425) = &self.expected_bucket_owner {
+            let formatted_426 = AsRef::<str>::as_ref(inner_425);
+            if !formatted_426.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_353;
+                let header_value = formatted_426;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -16224,28 +16081,28 @@ impl ListObjectVersionsInput {
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
         query.push_v("versions");
-        if let Some(inner_354) = &self.delimiter {
-            query.push_kv("delimiter", &smithy_http::query::fmt_string(&inner_354));
+        if let Some(inner_427) = &self.delimiter {
+            query.push_kv("delimiter", &smithy_http::query::fmt_string(&inner_427));
         }
-        if let Some(inner_355) = &self.encoding_type {
-            query.push_kv("encoding-type", &smithy_http::query::fmt_string(&inner_355));
+        if let Some(inner_428) = &self.encoding_type {
+            query.push_kv("encoding-type", &smithy_http::query::fmt_string(&inner_428));
         }
-        if let Some(inner_356) = &self.key_marker {
-            query.push_kv("key-marker", &smithy_http::query::fmt_string(&inner_356));
+        if let Some(inner_429) = &self.key_marker {
+            query.push_kv("key-marker", &smithy_http::query::fmt_string(&inner_429));
         }
         if self.max_keys != 0 {
             query.push_kv(
                 "max-keys",
-                &smithy_http::query::fmt_default(&&self.max_keys),
+                &smithy_types::primitive::Encoder::from(self.max_keys).encode(),
             );
         }
-        if let Some(inner_357) = &self.prefix {
-            query.push_kv("prefix", &smithy_http::query::fmt_string(&inner_357));
+        if let Some(inner_430) = &self.prefix {
+            query.push_kv("prefix", &smithy_http::query::fmt_string(&inner_430));
         }
-        if let Some(inner_358) = &self.version_id_marker {
+        if let Some(inner_431) = &self.version_id_marker {
             query.push_kv(
                 "version-id-marker",
-                &smithy_http::query::fmt_string(&inner_358),
+                &smithy_http::query::fmt_string(&inner_431),
             );
         }
     }
@@ -16452,40 +16309,36 @@ impl ListPartsInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let bucket = {
-            let input = &self.bucket;
-            let input = input
+        let input_432 = &self.bucket;
+        let input_432 =
+            input_432
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "bucket",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "bucket",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let key = {
-            let input = &self.key;
-            let input = input
+        let bucket = smithy_http::label::fmt_string(input_432, false);
+        if bucket.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "bucket",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_433 = &self.key;
+        let input_433 =
+            input_433
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "key",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, true);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "key",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let key = smithy_http::label::fmt_string(input_433, true);
+        if key.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "key",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/{Bucket}/{Key}", Bucket = bucket, Key = key)
             .expect("formatting should succeed");
         Ok(())
@@ -16494,11 +16347,11 @@ impl ListPartsInput {
         &self,
         mut builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        if let Some(inner_359) = &self.request_payer {
-            let formatted_360 = AsRef::<str>::as_ref(inner_359);
-            if !formatted_360.is_empty() {
+        if let Some(inner_434) = &self.request_payer {
+            let formatted_435 = AsRef::<str>::as_ref(inner_434);
+            if !formatted_435.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_360;
+                let header_value = formatted_435;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -16512,11 +16365,11 @@ impl ListPartsInput {
                 builder = builder.header("x-amz-request-payer", header_value);
             }
         }
-        if let Some(inner_361) = &self.expected_bucket_owner {
-            let formatted_362 = AsRef::<str>::as_ref(inner_361);
-            if !formatted_362.is_empty() {
+        if let Some(inner_436) = &self.expected_bucket_owner {
+            let formatted_437 = AsRef::<str>::as_ref(inner_436);
+            if !formatted_437.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_362;
+                let header_value = formatted_437;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -16538,17 +16391,17 @@ impl ListPartsInput {
         if self.max_parts != 0 {
             query.push_kv(
                 "max-parts",
-                &smithy_http::query::fmt_default(&&self.max_parts),
+                &smithy_types::primitive::Encoder::from(self.max_parts).encode(),
             );
         }
-        if let Some(inner_363) = &self.part_number_marker {
+        if let Some(inner_438) = &self.part_number_marker {
             query.push_kv(
                 "part-number-marker",
-                &smithy_http::query::fmt_string(&inner_363),
+                &smithy_http::query::fmt_string(&inner_438),
             );
         }
-        if let Some(inner_364) = &self.upload_id {
-            query.push_kv("uploadId", &smithy_http::query::fmt_string(&inner_364));
+        if let Some(inner_439) = &self.upload_id {
+            query.push_kv("uploadId", &smithy_http::query::fmt_string(&inner_439));
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -16715,23 +16568,21 @@ impl PutBucketAccelerateConfigurationInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let bucket = {
-            let input = &self.bucket;
-            let input = input
+        let input_440 = &self.bucket;
+        let input_440 =
+            input_440
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "bucket",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "bucket",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let bucket = smithy_http::label::fmt_string(input_440, false);
+        if bucket.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "bucket",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
         Ok(())
     }
@@ -16739,11 +16590,11 @@ impl PutBucketAccelerateConfigurationInput {
         &self,
         mut builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        if let Some(inner_365) = &self.expected_bucket_owner {
-            let formatted_366 = AsRef::<str>::as_ref(inner_365);
-            if !formatted_366.is_empty() {
+        if let Some(inner_441) = &self.expected_bucket_owner {
+            let formatted_442 = AsRef::<str>::as_ref(inner_441);
+            if !formatted_442.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_366;
+                let header_value = formatted_442;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -16986,7 +16837,7 @@ impl PutBucketAclInput {
                 let checksum = md5::compute(data);
                 req.headers_mut().insert(
                     http::header::HeaderName::from_static("content-md5"),
-                    format!("{:x}", checksum)
+                    smithy_types::base64::encode(&checksum[..])
                         .parse()
                         .expect("checksum is valid header value"),
                 );
@@ -17028,23 +16879,21 @@ impl PutBucketAclInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let bucket = {
-            let input = &self.bucket;
-            let input = input
+        let input_443 = &self.bucket;
+        let input_443 =
+            input_443
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "bucket",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "bucket",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let bucket = smithy_http::label::fmt_string(input_443, false);
+        if bucket.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "bucket",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
         Ok(())
     }
@@ -17052,11 +16901,11 @@ impl PutBucketAclInput {
         &self,
         mut builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        if let Some(inner_367) = &self.acl {
-            let formatted_368 = AsRef::<str>::as_ref(inner_367);
-            if !formatted_368.is_empty() {
+        if let Some(inner_444) = &self.acl {
+            let formatted_445 = AsRef::<str>::as_ref(inner_444);
+            if !formatted_445.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_368;
+                let header_value = formatted_445;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -17070,11 +16919,11 @@ impl PutBucketAclInput {
                 builder = builder.header("x-amz-acl", header_value);
             }
         }
-        if let Some(inner_369) = &self.content_md5 {
-            let formatted_370 = AsRef::<str>::as_ref(inner_369);
-            if !formatted_370.is_empty() {
+        if let Some(inner_446) = &self.content_md5 {
+            let formatted_447 = AsRef::<str>::as_ref(inner_446);
+            if !formatted_447.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_370;
+                let header_value = formatted_447;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -17088,11 +16937,11 @@ impl PutBucketAclInput {
                 builder = builder.header("Content-MD5", header_value);
             }
         }
-        if let Some(inner_371) = &self.grant_full_control {
-            let formatted_372 = AsRef::<str>::as_ref(inner_371);
-            if !formatted_372.is_empty() {
+        if let Some(inner_448) = &self.grant_full_control {
+            let formatted_449 = AsRef::<str>::as_ref(inner_448);
+            if !formatted_449.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_372;
+                let header_value = formatted_449;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -17106,11 +16955,11 @@ impl PutBucketAclInput {
                 builder = builder.header("x-amz-grant-full-control", header_value);
             }
         }
-        if let Some(inner_373) = &self.grant_read {
-            let formatted_374 = AsRef::<str>::as_ref(inner_373);
-            if !formatted_374.is_empty() {
+        if let Some(inner_450) = &self.grant_read {
+            let formatted_451 = AsRef::<str>::as_ref(inner_450);
+            if !formatted_451.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_374;
+                let header_value = formatted_451;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -17124,11 +16973,11 @@ impl PutBucketAclInput {
                 builder = builder.header("x-amz-grant-read", header_value);
             }
         }
-        if let Some(inner_375) = &self.grant_read_acp {
-            let formatted_376 = AsRef::<str>::as_ref(inner_375);
-            if !formatted_376.is_empty() {
+        if let Some(inner_452) = &self.grant_read_acp {
+            let formatted_453 = AsRef::<str>::as_ref(inner_452);
+            if !formatted_453.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_376;
+                let header_value = formatted_453;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -17142,11 +16991,11 @@ impl PutBucketAclInput {
                 builder = builder.header("x-amz-grant-read-acp", header_value);
             }
         }
-        if let Some(inner_377) = &self.grant_write {
-            let formatted_378 = AsRef::<str>::as_ref(inner_377);
-            if !formatted_378.is_empty() {
+        if let Some(inner_454) = &self.grant_write {
+            let formatted_455 = AsRef::<str>::as_ref(inner_454);
+            if !formatted_455.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_378;
+                let header_value = formatted_455;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -17160,11 +17009,11 @@ impl PutBucketAclInput {
                 builder = builder.header("x-amz-grant-write", header_value);
             }
         }
-        if let Some(inner_379) = &self.grant_write_acp {
-            let formatted_380 = AsRef::<str>::as_ref(inner_379);
-            if !formatted_380.is_empty() {
+        if let Some(inner_456) = &self.grant_write_acp {
+            let formatted_457 = AsRef::<str>::as_ref(inner_456);
+            if !formatted_457.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_380;
+                let header_value = formatted_457;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -17178,11 +17027,11 @@ impl PutBucketAclInput {
                 builder = builder.header("x-amz-grant-write-acp", header_value);
             }
         }
-        if let Some(inner_381) = &self.expected_bucket_owner {
-            let formatted_382 = AsRef::<str>::as_ref(inner_381);
-            if !formatted_382.is_empty() {
+        if let Some(inner_458) = &self.expected_bucket_owner {
+            let formatted_459 = AsRef::<str>::as_ref(inner_458);
+            if !formatted_459.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_382;
+                let header_value = formatted_459;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -17377,23 +17226,21 @@ impl PutBucketAnalyticsConfigurationInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let bucket = {
-            let input = &self.bucket;
-            let input = input
+        let input_460 = &self.bucket;
+        let input_460 =
+            input_460
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "bucket",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "bucket",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let bucket = smithy_http::label::fmt_string(input_460, false);
+        if bucket.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "bucket",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
         Ok(())
     }
@@ -17401,11 +17248,11 @@ impl PutBucketAnalyticsConfigurationInput {
         &self,
         mut builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        if let Some(inner_383) = &self.expected_bucket_owner {
-            let formatted_384 = AsRef::<str>::as_ref(inner_383);
-            if !formatted_384.is_empty() {
+        if let Some(inner_461) = &self.expected_bucket_owner {
+            let formatted_462 = AsRef::<str>::as_ref(inner_461);
+            if !formatted_462.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_384;
+                let header_value = formatted_462;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -17424,8 +17271,8 @@ impl PutBucketAnalyticsConfigurationInput {
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
         query.push_v("analytics");
-        if let Some(inner_385) = &self.id {
-            query.push_kv("id", &smithy_http::query::fmt_string(&inner_385));
+        if let Some(inner_463) = &self.id {
+            query.push_kv("id", &smithy_http::query::fmt_string(&inner_463));
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -17572,7 +17419,7 @@ impl PutBucketCorsInput {
                 let checksum = md5::compute(data);
                 req.headers_mut().insert(
                     http::header::HeaderName::from_static("content-md5"),
-                    format!("{:x}", checksum)
+                    smithy_types::base64::encode(&checksum[..])
                         .parse()
                         .expect("checksum is valid header value"),
                 );
@@ -17614,23 +17461,21 @@ impl PutBucketCorsInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let bucket = {
-            let input = &self.bucket;
-            let input = input
+        let input_464 = &self.bucket;
+        let input_464 =
+            input_464
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "bucket",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "bucket",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let bucket = smithy_http::label::fmt_string(input_464, false);
+        if bucket.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "bucket",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
         Ok(())
     }
@@ -17638,11 +17483,11 @@ impl PutBucketCorsInput {
         &self,
         mut builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        if let Some(inner_386) = &self.content_md5 {
-            let formatted_387 = AsRef::<str>::as_ref(inner_386);
-            if !formatted_387.is_empty() {
+        if let Some(inner_465) = &self.content_md5 {
+            let formatted_466 = AsRef::<str>::as_ref(inner_465);
+            if !formatted_466.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_387;
+                let header_value = formatted_466;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -17656,11 +17501,11 @@ impl PutBucketCorsInput {
                 builder = builder.header("Content-MD5", header_value);
             }
         }
-        if let Some(inner_388) = &self.expected_bucket_owner {
-            let formatted_389 = AsRef::<str>::as_ref(inner_388);
-            if !formatted_389.is_empty() {
+        if let Some(inner_467) = &self.expected_bucket_owner {
+            let formatted_468 = AsRef::<str>::as_ref(inner_467);
+            if !formatted_468.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_389;
+                let header_value = formatted_468;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -17828,7 +17673,7 @@ impl PutBucketEncryptionInput {
                 let checksum = md5::compute(data);
                 req.headers_mut().insert(
                     http::header::HeaderName::from_static("content-md5"),
-                    format!("{:x}", checksum)
+                    smithy_types::base64::encode(&checksum[..])
                         .parse()
                         .expect("checksum is valid header value"),
                 );
@@ -17873,23 +17718,21 @@ impl PutBucketEncryptionInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let bucket = {
-            let input = &self.bucket;
-            let input = input
+        let input_469 = &self.bucket;
+        let input_469 =
+            input_469
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "bucket",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "bucket",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let bucket = smithy_http::label::fmt_string(input_469, false);
+        if bucket.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "bucket",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
         Ok(())
     }
@@ -17897,11 +17740,11 @@ impl PutBucketEncryptionInput {
         &self,
         mut builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        if let Some(inner_390) = &self.content_md5 {
-            let formatted_391 = AsRef::<str>::as_ref(inner_390);
-            if !formatted_391.is_empty() {
+        if let Some(inner_470) = &self.content_md5 {
+            let formatted_471 = AsRef::<str>::as_ref(inner_470);
+            if !formatted_471.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_391;
+                let header_value = formatted_471;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -17915,11 +17758,11 @@ impl PutBucketEncryptionInput {
                 builder = builder.header("Content-MD5", header_value);
             }
         }
-        if let Some(inner_392) = &self.expected_bucket_owner {
-            let formatted_393 = AsRef::<str>::as_ref(inner_392);
-            if !formatted_393.is_empty() {
+        if let Some(inner_472) = &self.expected_bucket_owner {
+            let formatted_473 = AsRef::<str>::as_ref(inner_472);
+            if !formatted_473.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_393;
+                let header_value = formatted_473;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -18103,31 +17946,29 @@ impl PutBucketIntelligentTieringConfigurationInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let bucket = {
-            let input = &self.bucket;
-            let input = input
+        let input_474 = &self.bucket;
+        let input_474 =
+            input_474
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "bucket",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "bucket",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let bucket = smithy_http::label::fmt_string(input_474, false);
+        if bucket.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "bucket",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
         Ok(())
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
         query.push_v("intelligent-tiering");
-        if let Some(inner_394) = &self.id {
-            query.push_kv("id", &smithy_http::query::fmt_string(&inner_394));
+        if let Some(inner_475) = &self.id {
+            query.push_kv("id", &smithy_http::query::fmt_string(&inner_475));
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -18304,23 +18145,21 @@ impl PutBucketInventoryConfigurationInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let bucket = {
-            let input = &self.bucket;
-            let input = input
+        let input_476 = &self.bucket;
+        let input_476 =
+            input_476
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "bucket",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "bucket",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let bucket = smithy_http::label::fmt_string(input_476, false);
+        if bucket.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "bucket",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
         Ok(())
     }
@@ -18328,11 +18167,11 @@ impl PutBucketInventoryConfigurationInput {
         &self,
         mut builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        if let Some(inner_395) = &self.expected_bucket_owner {
-            let formatted_396 = AsRef::<str>::as_ref(inner_395);
-            if !formatted_396.is_empty() {
+        if let Some(inner_477) = &self.expected_bucket_owner {
+            let formatted_478 = AsRef::<str>::as_ref(inner_477);
+            if !formatted_478.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_396;
+                let header_value = formatted_478;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -18351,8 +18190,8 @@ impl PutBucketInventoryConfigurationInput {
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
         query.push_v("inventory");
-        if let Some(inner_397) = &self.id {
-            query.push_kv("id", &smithy_http::query::fmt_string(&inner_397));
+        if let Some(inner_479) = &self.id {
+            query.push_kv("id", &smithy_http::query::fmt_string(&inner_479));
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -18489,7 +18328,7 @@ impl PutBucketLifecycleConfigurationInput {
                 let checksum = md5::compute(data);
                 req.headers_mut().insert(
                     http::header::HeaderName::from_static("content-md5"),
-                    format!("{:x}", checksum)
+                    smithy_types::base64::encode(&checksum[..])
                         .parse()
                         .expect("checksum is valid header value"),
                 );
@@ -18534,23 +18373,21 @@ impl PutBucketLifecycleConfigurationInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let bucket = {
-            let input = &self.bucket;
-            let input = input
+        let input_480 = &self.bucket;
+        let input_480 =
+            input_480
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "bucket",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "bucket",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let bucket = smithy_http::label::fmt_string(input_480, false);
+        if bucket.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "bucket",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
         Ok(())
     }
@@ -18558,11 +18395,11 @@ impl PutBucketLifecycleConfigurationInput {
         &self,
         mut builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        if let Some(inner_398) = &self.expected_bucket_owner {
-            let formatted_399 = AsRef::<str>::as_ref(inner_398);
-            if !formatted_399.is_empty() {
+        if let Some(inner_481) = &self.expected_bucket_owner {
+            let formatted_482 = AsRef::<str>::as_ref(inner_481);
+            if !formatted_482.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_399;
+                let header_value = formatted_482;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -18723,7 +18560,7 @@ impl PutBucketLoggingInput {
                 let checksum = md5::compute(data);
                 req.headers_mut().insert(
                     http::header::HeaderName::from_static("content-md5"),
-                    format!("{:x}", checksum)
+                    smithy_types::base64::encode(&checksum[..])
                         .parse()
                         .expect("checksum is valid header value"),
                 );
@@ -18768,23 +18605,21 @@ impl PutBucketLoggingInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let bucket = {
-            let input = &self.bucket;
-            let input = input
+        let input_483 = &self.bucket;
+        let input_483 =
+            input_483
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "bucket",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "bucket",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let bucket = smithy_http::label::fmt_string(input_483, false);
+        if bucket.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "bucket",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
         Ok(())
     }
@@ -18792,11 +18627,11 @@ impl PutBucketLoggingInput {
         &self,
         mut builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        if let Some(inner_400) = &self.content_md5 {
-            let formatted_401 = AsRef::<str>::as_ref(inner_400);
-            if !formatted_401.is_empty() {
+        if let Some(inner_484) = &self.content_md5 {
+            let formatted_485 = AsRef::<str>::as_ref(inner_484);
+            if !formatted_485.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_401;
+                let header_value = formatted_485;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -18810,11 +18645,11 @@ impl PutBucketLoggingInput {
                 builder = builder.header("Content-MD5", header_value);
             }
         }
-        if let Some(inner_402) = &self.expected_bucket_owner {
-            let formatted_403 = AsRef::<str>::as_ref(inner_402);
-            if !formatted_403.is_empty() {
+        if let Some(inner_486) = &self.expected_bucket_owner {
+            let formatted_487 = AsRef::<str>::as_ref(inner_486);
+            if !formatted_487.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_403;
+                let header_value = formatted_487;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -19005,23 +18840,21 @@ impl PutBucketMetricsConfigurationInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let bucket = {
-            let input = &self.bucket;
-            let input = input
+        let input_488 = &self.bucket;
+        let input_488 =
+            input_488
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "bucket",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "bucket",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let bucket = smithy_http::label::fmt_string(input_488, false);
+        if bucket.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "bucket",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
         Ok(())
     }
@@ -19029,11 +18862,11 @@ impl PutBucketMetricsConfigurationInput {
         &self,
         mut builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        if let Some(inner_404) = &self.expected_bucket_owner {
-            let formatted_405 = AsRef::<str>::as_ref(inner_404);
-            if !formatted_405.is_empty() {
+        if let Some(inner_489) = &self.expected_bucket_owner {
+            let formatted_490 = AsRef::<str>::as_ref(inner_489);
+            if !formatted_490.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_405;
+                let header_value = formatted_490;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -19052,8 +18885,8 @@ impl PutBucketMetricsConfigurationInput {
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
         query.push_v("metrics");
-        if let Some(inner_406) = &self.id {
-            query.push_kv("id", &smithy_http::query::fmt_string(&inner_406));
+        if let Some(inner_491) = &self.id {
+            query.push_kv("id", &smithy_http::query::fmt_string(&inner_491));
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -19222,23 +19055,21 @@ impl PutBucketNotificationConfigurationInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let bucket = {
-            let input = &self.bucket;
-            let input = input
+        let input_492 = &self.bucket;
+        let input_492 =
+            input_492
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "bucket",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "bucket",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let bucket = smithy_http::label::fmt_string(input_492, false);
+        if bucket.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "bucket",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
         Ok(())
     }
@@ -19246,11 +19077,11 @@ impl PutBucketNotificationConfigurationInput {
         &self,
         mut builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        if let Some(inner_407) = &self.expected_bucket_owner {
-            let formatted_408 = AsRef::<str>::as_ref(inner_407);
-            if !formatted_408.is_empty() {
+        if let Some(inner_493) = &self.expected_bucket_owner {
+            let formatted_494 = AsRef::<str>::as_ref(inner_493);
+            if !formatted_494.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_408;
+                let header_value = formatted_494;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -19413,7 +19244,7 @@ impl PutBucketOwnershipControlsInput {
                 let checksum = md5::compute(data);
                 req.headers_mut().insert(
                     http::header::HeaderName::from_static("content-md5"),
-                    format!("{:x}", checksum)
+                    smithy_types::base64::encode(&checksum[..])
                         .parse()
                         .expect("checksum is valid header value"),
                 );
@@ -19458,23 +19289,21 @@ impl PutBucketOwnershipControlsInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let bucket = {
-            let input = &self.bucket;
-            let input = input
+        let input_495 = &self.bucket;
+        let input_495 =
+            input_495
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "bucket",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "bucket",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let bucket = smithy_http::label::fmt_string(input_495, false);
+        if bucket.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "bucket",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
         Ok(())
     }
@@ -19482,11 +19311,11 @@ impl PutBucketOwnershipControlsInput {
         &self,
         mut builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        if let Some(inner_409) = &self.content_md5 {
-            let formatted_410 = AsRef::<str>::as_ref(inner_409);
-            if !formatted_410.is_empty() {
+        if let Some(inner_496) = &self.content_md5 {
+            let formatted_497 = AsRef::<str>::as_ref(inner_496);
+            if !formatted_497.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_410;
+                let header_value = formatted_497;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -19500,11 +19329,11 @@ impl PutBucketOwnershipControlsInput {
                 builder = builder.header("Content-MD5", header_value);
             }
         }
-        if let Some(inner_411) = &self.expected_bucket_owner {
-            let formatted_412 = AsRef::<str>::as_ref(inner_411);
-            if !formatted_412.is_empty() {
+        if let Some(inner_498) = &self.expected_bucket_owner {
+            let formatted_499 = AsRef::<str>::as_ref(inner_498);
+            if !formatted_499.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_412;
+                let header_value = formatted_499;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -19677,7 +19506,7 @@ impl PutBucketPolicyInput {
                 let checksum = md5::compute(data);
                 req.headers_mut().insert(
                     http::header::HeaderName::from_static("content-md5"),
-                    format!("{:x}", checksum)
+                    smithy_types::base64::encode(&checksum[..])
                         .parse()
                         .expect("checksum is valid header value"),
                 );
@@ -19722,23 +19551,21 @@ impl PutBucketPolicyInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let bucket = {
-            let input = &self.bucket;
-            let input = input
+        let input_500 = &self.bucket;
+        let input_500 =
+            input_500
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "bucket",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "bucket",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let bucket = smithy_http::label::fmt_string(input_500, false);
+        if bucket.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "bucket",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
         Ok(())
     }
@@ -19746,11 +19573,11 @@ impl PutBucketPolicyInput {
         &self,
         mut builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        if let Some(inner_413) = &self.content_md5 {
-            let formatted_414 = AsRef::<str>::as_ref(inner_413);
-            if !formatted_414.is_empty() {
+        if let Some(inner_501) = &self.content_md5 {
+            let formatted_502 = AsRef::<str>::as_ref(inner_501);
+            if !formatted_502.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_414;
+                let header_value = formatted_502;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -19765,11 +19592,12 @@ impl PutBucketPolicyInput {
             }
         }
         if self.confirm_remove_self_bucket_access {
-            let formatted_415 =
-                smithy_http::query::fmt_default(&&self.confirm_remove_self_bucket_access);
-            if !formatted_415.is_empty() {
+            let mut encoder =
+                smithy_types::primitive::Encoder::from(self.confirm_remove_self_bucket_access);
+            let formatted_503 = encoder.encode();
+            if !formatted_503.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_415;
+                let header_value = formatted_503;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -19783,11 +19611,11 @@ impl PutBucketPolicyInput {
                 builder = builder.header("x-amz-confirm-remove-self-bucket-access", header_value);
             }
         }
-        if let Some(inner_416) = &self.expected_bucket_owner {
-            let formatted_417 = AsRef::<str>::as_ref(inner_416);
-            if !formatted_417.is_empty() {
+        if let Some(inner_504) = &self.expected_bucket_owner {
+            let formatted_505 = AsRef::<str>::as_ref(inner_504);
+            if !formatted_505.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_417;
+                let header_value = formatted_505;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -19965,7 +19793,7 @@ impl PutBucketReplicationInput {
                 let checksum = md5::compute(data);
                 req.headers_mut().insert(
                     http::header::HeaderName::from_static("content-md5"),
-                    format!("{:x}", checksum)
+                    smithy_types::base64::encode(&checksum[..])
                         .parse()
                         .expect("checksum is valid header value"),
                 );
@@ -20010,23 +19838,21 @@ impl PutBucketReplicationInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let bucket = {
-            let input = &self.bucket;
-            let input = input
+        let input_506 = &self.bucket;
+        let input_506 =
+            input_506
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "bucket",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "bucket",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let bucket = smithy_http::label::fmt_string(input_506, false);
+        if bucket.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "bucket",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
         Ok(())
     }
@@ -20034,11 +19860,11 @@ impl PutBucketReplicationInput {
         &self,
         mut builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        if let Some(inner_418) = &self.content_md5 {
-            let formatted_419 = AsRef::<str>::as_ref(inner_418);
-            if !formatted_419.is_empty() {
+        if let Some(inner_507) = &self.content_md5 {
+            let formatted_508 = AsRef::<str>::as_ref(inner_507);
+            if !formatted_508.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_419;
+                let header_value = formatted_508;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -20052,11 +19878,11 @@ impl PutBucketReplicationInput {
                 builder = builder.header("Content-MD5", header_value);
             }
         }
-        if let Some(inner_420) = &self.token {
-            let formatted_421 = AsRef::<str>::as_ref(inner_420);
-            if !formatted_421.is_empty() {
+        if let Some(inner_509) = &self.token {
+            let formatted_510 = AsRef::<str>::as_ref(inner_509);
+            if !formatted_510.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_421;
+                let header_value = formatted_510;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -20070,11 +19896,11 @@ impl PutBucketReplicationInput {
                 builder = builder.header("x-amz-bucket-object-lock-token", header_value);
             }
         }
-        if let Some(inner_422) = &self.expected_bucket_owner {
-            let formatted_423 = AsRef::<str>::as_ref(inner_422);
-            if !formatted_423.is_empty() {
+        if let Some(inner_511) = &self.expected_bucket_owner {
+            let formatted_512 = AsRef::<str>::as_ref(inner_511);
+            if !formatted_512.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_423;
+                let header_value = formatted_512;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -20243,7 +20069,7 @@ impl PutBucketRequestPaymentInput {
                 let checksum = md5::compute(data);
                 req.headers_mut().insert(
                     http::header::HeaderName::from_static("content-md5"),
-                    format!("{:x}", checksum)
+                    smithy_types::base64::encode(&checksum[..])
                         .parse()
                         .expect("checksum is valid header value"),
                 );
@@ -20288,23 +20114,21 @@ impl PutBucketRequestPaymentInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let bucket = {
-            let input = &self.bucket;
-            let input = input
+        let input_513 = &self.bucket;
+        let input_513 =
+            input_513
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "bucket",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "bucket",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let bucket = smithy_http::label::fmt_string(input_513, false);
+        if bucket.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "bucket",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
         Ok(())
     }
@@ -20312,11 +20136,11 @@ impl PutBucketRequestPaymentInput {
         &self,
         mut builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        if let Some(inner_424) = &self.content_md5 {
-            let formatted_425 = AsRef::<str>::as_ref(inner_424);
-            if !formatted_425.is_empty() {
+        if let Some(inner_514) = &self.content_md5 {
+            let formatted_515 = AsRef::<str>::as_ref(inner_514);
+            if !formatted_515.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_425;
+                let header_value = formatted_515;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -20330,11 +20154,11 @@ impl PutBucketRequestPaymentInput {
                 builder = builder.header("Content-MD5", header_value);
             }
         }
-        if let Some(inner_426) = &self.expected_bucket_owner {
-            let formatted_427 = AsRef::<str>::as_ref(inner_426);
-            if !formatted_427.is_empty() {
+        if let Some(inner_516) = &self.expected_bucket_owner {
+            let formatted_517 = AsRef::<str>::as_ref(inner_516);
+            if !formatted_517.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_427;
+                let header_value = formatted_517;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -20492,7 +20316,7 @@ impl PutBucketTaggingInput {
                 let checksum = md5::compute(data);
                 req.headers_mut().insert(
                     http::header::HeaderName::from_static("content-md5"),
-                    format!("{:x}", checksum)
+                    smithy_types::base64::encode(&checksum[..])
                         .parse()
                         .expect("checksum is valid header value"),
                 );
@@ -20537,23 +20361,21 @@ impl PutBucketTaggingInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let bucket = {
-            let input = &self.bucket;
-            let input = input
+        let input_518 = &self.bucket;
+        let input_518 =
+            input_518
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "bucket",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "bucket",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let bucket = smithy_http::label::fmt_string(input_518, false);
+        if bucket.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "bucket",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
         Ok(())
     }
@@ -20561,11 +20383,11 @@ impl PutBucketTaggingInput {
         &self,
         mut builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        if let Some(inner_428) = &self.content_md5 {
-            let formatted_429 = AsRef::<str>::as_ref(inner_428);
-            if !formatted_429.is_empty() {
+        if let Some(inner_519) = &self.content_md5 {
+            let formatted_520 = AsRef::<str>::as_ref(inner_519);
+            if !formatted_520.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_429;
+                let header_value = formatted_520;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -20579,11 +20401,11 @@ impl PutBucketTaggingInput {
                 builder = builder.header("Content-MD5", header_value);
             }
         }
-        if let Some(inner_430) = &self.expected_bucket_owner {
-            let formatted_431 = AsRef::<str>::as_ref(inner_430);
-            if !formatted_431.is_empty() {
+        if let Some(inner_521) = &self.expected_bucket_owner {
+            let formatted_522 = AsRef::<str>::as_ref(inner_521);
+            if !formatted_522.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_431;
+                let header_value = formatted_522;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -20763,7 +20585,7 @@ impl PutBucketVersioningInput {
                 let checksum = md5::compute(data);
                 req.headers_mut().insert(
                     http::header::HeaderName::from_static("content-md5"),
-                    format!("{:x}", checksum)
+                    smithy_types::base64::encode(&checksum[..])
                         .parse()
                         .expect("checksum is valid header value"),
                 );
@@ -20808,23 +20630,21 @@ impl PutBucketVersioningInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let bucket = {
-            let input = &self.bucket;
-            let input = input
+        let input_523 = &self.bucket;
+        let input_523 =
+            input_523
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "bucket",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "bucket",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let bucket = smithy_http::label::fmt_string(input_523, false);
+        if bucket.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "bucket",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
         Ok(())
     }
@@ -20832,11 +20652,11 @@ impl PutBucketVersioningInput {
         &self,
         mut builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        if let Some(inner_432) = &self.content_md5 {
-            let formatted_433 = AsRef::<str>::as_ref(inner_432);
-            if !formatted_433.is_empty() {
+        if let Some(inner_524) = &self.content_md5 {
+            let formatted_525 = AsRef::<str>::as_ref(inner_524);
+            if !formatted_525.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_433;
+                let header_value = formatted_525;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -20850,11 +20670,11 @@ impl PutBucketVersioningInput {
                 builder = builder.header("Content-MD5", header_value);
             }
         }
-        if let Some(inner_434) = &self.mfa {
-            let formatted_435 = AsRef::<str>::as_ref(inner_434);
-            if !formatted_435.is_empty() {
+        if let Some(inner_526) = &self.mfa {
+            let formatted_527 = AsRef::<str>::as_ref(inner_526);
+            if !formatted_527.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_435;
+                let header_value = formatted_527;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -20868,11 +20688,11 @@ impl PutBucketVersioningInput {
                 builder = builder.header("x-amz-mfa", header_value);
             }
         }
-        if let Some(inner_436) = &self.expected_bucket_owner {
-            let formatted_437 = AsRef::<str>::as_ref(inner_436);
-            if !formatted_437.is_empty() {
+        if let Some(inner_528) = &self.expected_bucket_owner {
+            let formatted_529 = AsRef::<str>::as_ref(inner_528);
+            if !formatted_529.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_437;
+                let header_value = formatted_529;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -21035,7 +20855,7 @@ impl PutBucketWebsiteInput {
                 let checksum = md5::compute(data);
                 req.headers_mut().insert(
                     http::header::HeaderName::from_static("content-md5"),
-                    format!("{:x}", checksum)
+                    smithy_types::base64::encode(&checksum[..])
                         .parse()
                         .expect("checksum is valid header value"),
                 );
@@ -21080,23 +20900,21 @@ impl PutBucketWebsiteInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let bucket = {
-            let input = &self.bucket;
-            let input = input
+        let input_530 = &self.bucket;
+        let input_530 =
+            input_530
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "bucket",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "bucket",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let bucket = smithy_http::label::fmt_string(input_530, false);
+        if bucket.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "bucket",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
         Ok(())
     }
@@ -21104,11 +20922,11 @@ impl PutBucketWebsiteInput {
         &self,
         mut builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        if let Some(inner_438) = &self.content_md5 {
-            let formatted_439 = AsRef::<str>::as_ref(inner_438);
-            if !formatted_439.is_empty() {
+        if let Some(inner_531) = &self.content_md5 {
+            let formatted_532 = AsRef::<str>::as_ref(inner_531);
+            if !formatted_532.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_439;
+                let header_value = formatted_532;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -21122,11 +20940,11 @@ impl PutBucketWebsiteInput {
                 builder = builder.header("Content-MD5", header_value);
             }
         }
-        if let Some(inner_440) = &self.expected_bucket_owner {
-            let formatted_441 = AsRef::<str>::as_ref(inner_440);
-            if !formatted_441.is_empty() {
+        if let Some(inner_533) = &self.expected_bucket_owner {
+            let formatted_534 = AsRef::<str>::as_ref(inner_533);
+            if !formatted_534.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_441;
+                let header_value = formatted_534;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -21755,40 +21573,36 @@ impl PutObjectInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let bucket = {
-            let input = &self.bucket;
-            let input = input
+        let input_535 = &self.bucket;
+        let input_535 =
+            input_535
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "bucket",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "bucket",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let key = {
-            let input = &self.key;
-            let input = input
+        let bucket = smithy_http::label::fmt_string(input_535, false);
+        if bucket.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "bucket",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_536 = &self.key;
+        let input_536 =
+            input_536
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "key",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, true);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "key",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let key = smithy_http::label::fmt_string(input_536, true);
+        if key.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "key",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/{Bucket}/{Key}", Bucket = bucket, Key = key)
             .expect("formatting should succeed");
         Ok(())
@@ -21797,11 +21611,11 @@ impl PutObjectInput {
         &self,
         mut builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        if let Some(inner_442) = &self.acl {
-            let formatted_443 = AsRef::<str>::as_ref(inner_442);
-            if !formatted_443.is_empty() {
+        if let Some(inner_537) = &self.acl {
+            let formatted_538 = AsRef::<str>::as_ref(inner_537);
+            if !formatted_538.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_443;
+                let header_value = formatted_538;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -21815,11 +21629,11 @@ impl PutObjectInput {
                 builder = builder.header("x-amz-acl", header_value);
             }
         }
-        if let Some(inner_444) = &self.cache_control {
-            let formatted_445 = AsRef::<str>::as_ref(inner_444);
-            if !formatted_445.is_empty() {
+        if let Some(inner_539) = &self.cache_control {
+            let formatted_540 = AsRef::<str>::as_ref(inner_539);
+            if !formatted_540.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_445;
+                let header_value = formatted_540;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -21833,11 +21647,11 @@ impl PutObjectInput {
                 builder = builder.header("Cache-Control", header_value);
             }
         }
-        if let Some(inner_446) = &self.content_disposition {
-            let formatted_447 = AsRef::<str>::as_ref(inner_446);
-            if !formatted_447.is_empty() {
+        if let Some(inner_541) = &self.content_disposition {
+            let formatted_542 = AsRef::<str>::as_ref(inner_541);
+            if !formatted_542.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_447;
+                let header_value = formatted_542;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -21851,11 +21665,11 @@ impl PutObjectInput {
                 builder = builder.header("Content-Disposition", header_value);
             }
         }
-        if let Some(inner_448) = &self.content_encoding {
-            let formatted_449 = AsRef::<str>::as_ref(inner_448);
-            if !formatted_449.is_empty() {
+        if let Some(inner_543) = &self.content_encoding {
+            let formatted_544 = AsRef::<str>::as_ref(inner_543);
+            if !formatted_544.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_449;
+                let header_value = formatted_544;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -21869,11 +21683,11 @@ impl PutObjectInput {
                 builder = builder.header("Content-Encoding", header_value);
             }
         }
-        if let Some(inner_450) = &self.content_language {
-            let formatted_451 = AsRef::<str>::as_ref(inner_450);
-            if !formatted_451.is_empty() {
+        if let Some(inner_545) = &self.content_language {
+            let formatted_546 = AsRef::<str>::as_ref(inner_545);
+            if !formatted_546.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_451;
+                let header_value = formatted_546;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -21888,10 +21702,11 @@ impl PutObjectInput {
             }
         }
         if self.content_length != 0 {
-            let formatted_452 = smithy_http::query::fmt_default(&&self.content_length);
-            if !formatted_452.is_empty() {
+            let mut encoder = smithy_types::primitive::Encoder::from(self.content_length);
+            let formatted_547 = encoder.encode();
+            if !formatted_547.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_452;
+                let header_value = formatted_547;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -21905,11 +21720,11 @@ impl PutObjectInput {
                 builder = builder.header("Content-Length", header_value);
             }
         }
-        if let Some(inner_453) = &self.content_md5 {
-            let formatted_454 = AsRef::<str>::as_ref(inner_453);
-            if !formatted_454.is_empty() {
+        if let Some(inner_548) = &self.content_md5 {
+            let formatted_549 = AsRef::<str>::as_ref(inner_548);
+            if !formatted_549.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_454;
+                let header_value = formatted_549;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -21923,11 +21738,11 @@ impl PutObjectInput {
                 builder = builder.header("Content-MD5", header_value);
             }
         }
-        if let Some(inner_455) = &self.content_type {
-            let formatted_456 = AsRef::<str>::as_ref(inner_455);
-            if !formatted_456.is_empty() {
+        if let Some(inner_550) = &self.content_type {
+            let formatted_551 = AsRef::<str>::as_ref(inner_550);
+            if !formatted_551.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_456;
+                let header_value = formatted_551;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -21941,11 +21756,11 @@ impl PutObjectInput {
                 builder = builder.header("Content-Type", header_value);
             }
         }
-        if let Some(inner_457) = &self.expires {
-            let formatted_458 = inner_457.fmt(smithy_types::instant::Format::HttpDate);
-            if !formatted_458.is_empty() {
+        if let Some(inner_552) = &self.expires {
+            let formatted_553 = inner_552.fmt(smithy_types::instant::Format::HttpDate);
+            if !formatted_553.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_458;
+                let header_value = formatted_553;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -21959,11 +21774,11 @@ impl PutObjectInput {
                 builder = builder.header("Expires", header_value);
             }
         }
-        if let Some(inner_459) = &self.grant_full_control {
-            let formatted_460 = AsRef::<str>::as_ref(inner_459);
-            if !formatted_460.is_empty() {
+        if let Some(inner_554) = &self.grant_full_control {
+            let formatted_555 = AsRef::<str>::as_ref(inner_554);
+            if !formatted_555.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_460;
+                let header_value = formatted_555;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -21977,11 +21792,11 @@ impl PutObjectInput {
                 builder = builder.header("x-amz-grant-full-control", header_value);
             }
         }
-        if let Some(inner_461) = &self.grant_read {
-            let formatted_462 = AsRef::<str>::as_ref(inner_461);
-            if !formatted_462.is_empty() {
+        if let Some(inner_556) = &self.grant_read {
+            let formatted_557 = AsRef::<str>::as_ref(inner_556);
+            if !formatted_557.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_462;
+                let header_value = formatted_557;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -21995,11 +21810,11 @@ impl PutObjectInput {
                 builder = builder.header("x-amz-grant-read", header_value);
             }
         }
-        if let Some(inner_463) = &self.grant_read_acp {
-            let formatted_464 = AsRef::<str>::as_ref(inner_463);
-            if !formatted_464.is_empty() {
+        if let Some(inner_558) = &self.grant_read_acp {
+            let formatted_559 = AsRef::<str>::as_ref(inner_558);
+            if !formatted_559.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_464;
+                let header_value = formatted_559;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -22013,11 +21828,11 @@ impl PutObjectInput {
                 builder = builder.header("x-amz-grant-read-acp", header_value);
             }
         }
-        if let Some(inner_465) = &self.grant_write_acp {
-            let formatted_466 = AsRef::<str>::as_ref(inner_465);
-            if !formatted_466.is_empty() {
+        if let Some(inner_560) = &self.grant_write_acp {
+            let formatted_561 = AsRef::<str>::as_ref(inner_560);
+            if !formatted_561.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_466;
+                let header_value = formatted_561;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -22031,11 +21846,11 @@ impl PutObjectInput {
                 builder = builder.header("x-amz-grant-write-acp", header_value);
             }
         }
-        if let Some(inner_467) = &self.server_side_encryption {
-            let formatted_468 = AsRef::<str>::as_ref(inner_467);
-            if !formatted_468.is_empty() {
+        if let Some(inner_562) = &self.server_side_encryption {
+            let formatted_563 = AsRef::<str>::as_ref(inner_562);
+            if !formatted_563.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_468;
+                let header_value = formatted_563;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -22049,11 +21864,11 @@ impl PutObjectInput {
                 builder = builder.header("x-amz-server-side-encryption", header_value);
             }
         }
-        if let Some(inner_469) = &self.storage_class {
-            let formatted_470 = AsRef::<str>::as_ref(inner_469);
-            if !formatted_470.is_empty() {
+        if let Some(inner_564) = &self.storage_class {
+            let formatted_565 = AsRef::<str>::as_ref(inner_564);
+            if !formatted_565.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_470;
+                let header_value = formatted_565;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -22067,11 +21882,11 @@ impl PutObjectInput {
                 builder = builder.header("x-amz-storage-class", header_value);
             }
         }
-        if let Some(inner_471) = &self.website_redirect_location {
-            let formatted_472 = AsRef::<str>::as_ref(inner_471);
-            if !formatted_472.is_empty() {
+        if let Some(inner_566) = &self.website_redirect_location {
+            let formatted_567 = AsRef::<str>::as_ref(inner_566);
+            if !formatted_567.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_472;
+                let header_value = formatted_567;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -22085,11 +21900,11 @@ impl PutObjectInput {
                 builder = builder.header("x-amz-website-redirect-location", header_value);
             }
         }
-        if let Some(inner_473) = &self.sse_customer_algorithm {
-            let formatted_474 = AsRef::<str>::as_ref(inner_473);
-            if !formatted_474.is_empty() {
+        if let Some(inner_568) = &self.sse_customer_algorithm {
+            let formatted_569 = AsRef::<str>::as_ref(inner_568);
+            if !formatted_569.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_474;
+                let header_value = formatted_569;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -22106,11 +21921,11 @@ impl PutObjectInput {
                 );
             }
         }
-        if let Some(inner_475) = &self.sse_customer_key {
-            let formatted_476 = AsRef::<str>::as_ref(inner_475);
-            if !formatted_476.is_empty() {
+        if let Some(inner_570) = &self.sse_customer_key {
+            let formatted_571 = AsRef::<str>::as_ref(inner_570);
+            if !formatted_571.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_476;
+                let header_value = formatted_571;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -22124,11 +21939,11 @@ impl PutObjectInput {
                 builder = builder.header("x-amz-server-side-encryption-customer-key", header_value);
             }
         }
-        if let Some(inner_477) = &self.sse_customer_key_md5 {
-            let formatted_478 = AsRef::<str>::as_ref(inner_477);
-            if !formatted_478.is_empty() {
+        if let Some(inner_572) = &self.sse_customer_key_md5 {
+            let formatted_573 = AsRef::<str>::as_ref(inner_572);
+            if !formatted_573.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_478;
+                let header_value = formatted_573;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -22145,11 +21960,11 @@ impl PutObjectInput {
                 );
             }
         }
-        if let Some(inner_479) = &self.ssekms_key_id {
-            let formatted_480 = AsRef::<str>::as_ref(inner_479);
-            if !formatted_480.is_empty() {
+        if let Some(inner_574) = &self.ssekms_key_id {
+            let formatted_575 = AsRef::<str>::as_ref(inner_574);
+            if !formatted_575.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_480;
+                let header_value = formatted_575;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -22164,11 +21979,11 @@ impl PutObjectInput {
                     builder.header("x-amz-server-side-encryption-aws-kms-key-id", header_value);
             }
         }
-        if let Some(inner_481) = &self.ssekms_encryption_context {
-            let formatted_482 = AsRef::<str>::as_ref(inner_481);
-            if !formatted_482.is_empty() {
+        if let Some(inner_576) = &self.ssekms_encryption_context {
+            let formatted_577 = AsRef::<str>::as_ref(inner_576);
+            if !formatted_577.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_482;
+                let header_value = formatted_577;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -22183,10 +21998,11 @@ impl PutObjectInput {
             }
         }
         if self.bucket_key_enabled {
-            let formatted_483 = smithy_http::query::fmt_default(&&self.bucket_key_enabled);
-            if !formatted_483.is_empty() {
+            let mut encoder = smithy_types::primitive::Encoder::from(self.bucket_key_enabled);
+            let formatted_578 = encoder.encode();
+            if !formatted_578.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_483;
+                let header_value = formatted_578;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -22203,11 +22019,11 @@ impl PutObjectInput {
                 );
             }
         }
-        if let Some(inner_484) = &self.request_payer {
-            let formatted_485 = AsRef::<str>::as_ref(inner_484);
-            if !formatted_485.is_empty() {
+        if let Some(inner_579) = &self.request_payer {
+            let formatted_580 = AsRef::<str>::as_ref(inner_579);
+            if !formatted_580.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_485;
+                let header_value = formatted_580;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -22221,11 +22037,11 @@ impl PutObjectInput {
                 builder = builder.header("x-amz-request-payer", header_value);
             }
         }
-        if let Some(inner_486) = &self.tagging {
-            let formatted_487 = AsRef::<str>::as_ref(inner_486);
-            if !formatted_487.is_empty() {
+        if let Some(inner_581) = &self.tagging {
+            let formatted_582 = AsRef::<str>::as_ref(inner_581);
+            if !formatted_582.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_487;
+                let header_value = formatted_582;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -22239,11 +22055,11 @@ impl PutObjectInput {
                 builder = builder.header("x-amz-tagging", header_value);
             }
         }
-        if let Some(inner_488) = &self.object_lock_mode {
-            let formatted_489 = AsRef::<str>::as_ref(inner_488);
-            if !formatted_489.is_empty() {
+        if let Some(inner_583) = &self.object_lock_mode {
+            let formatted_584 = AsRef::<str>::as_ref(inner_583);
+            if !formatted_584.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_489;
+                let header_value = formatted_584;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -22257,11 +22073,11 @@ impl PutObjectInput {
                 builder = builder.header("x-amz-object-lock-mode", header_value);
             }
         }
-        if let Some(inner_490) = &self.object_lock_retain_until_date {
-            let formatted_491 = inner_490.fmt(smithy_types::instant::Format::DateTime);
-            if !formatted_491.is_empty() {
+        if let Some(inner_585) = &self.object_lock_retain_until_date {
+            let formatted_586 = inner_585.fmt(smithy_types::instant::Format::DateTime);
+            if !formatted_586.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_491;
+                let header_value = formatted_586;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -22275,11 +22091,11 @@ impl PutObjectInput {
                 builder = builder.header("x-amz-object-lock-retain-until-date", header_value);
             }
         }
-        if let Some(inner_492) = &self.object_lock_legal_hold_status {
-            let formatted_493 = AsRef::<str>::as_ref(inner_492);
-            if !formatted_493.is_empty() {
+        if let Some(inner_587) = &self.object_lock_legal_hold_status {
+            let formatted_588 = AsRef::<str>::as_ref(inner_587);
+            if !formatted_588.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_493;
+                let header_value = formatted_588;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -22293,11 +22109,11 @@ impl PutObjectInput {
                 builder = builder.header("x-amz-object-lock-legal-hold", header_value);
             }
         }
-        if let Some(inner_494) = &self.expected_bucket_owner {
-            let formatted_495 = AsRef::<str>::as_ref(inner_494);
-            if !formatted_495.is_empty() {
+        if let Some(inner_589) = &self.expected_bucket_owner {
+            let formatted_590 = AsRef::<str>::as_ref(inner_589);
+            if !formatted_590.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_495;
+                let header_value = formatted_590;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -22311,8 +22127,8 @@ impl PutObjectInput {
                 builder = builder.header("x-amz-expected-bucket-owner", header_value);
             }
         }
-        if let Some(inner_496) = &self.metadata {
-            for (k, v) in inner_496 {
+        if let Some(inner_591) = &self.metadata {
+            for (k, v) in inner_591 {
                 use std::str::FromStr;
                 let header_name =
                     http::header::HeaderName::from_str(&format!("{}{}", "x-amz-meta-", &k))
@@ -22612,7 +22428,7 @@ impl PutObjectAclInput {
                 let checksum = md5::compute(data);
                 req.headers_mut().insert(
                     http::header::HeaderName::from_static("content-md5"),
-                    format!("{:x}", checksum)
+                    smithy_types::base64::encode(&checksum[..])
                         .parse()
                         .expect("checksum is valid header value"),
                 );
@@ -22654,40 +22470,36 @@ impl PutObjectAclInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let bucket = {
-            let input = &self.bucket;
-            let input = input
+        let input_592 = &self.bucket;
+        let input_592 =
+            input_592
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "bucket",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "bucket",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let key = {
-            let input = &self.key;
-            let input = input
+        let bucket = smithy_http::label::fmt_string(input_592, false);
+        if bucket.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "bucket",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_593 = &self.key;
+        let input_593 =
+            input_593
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "key",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, true);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "key",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let key = smithy_http::label::fmt_string(input_593, true);
+        if key.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "key",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/{Bucket}/{Key}", Bucket = bucket, Key = key)
             .expect("formatting should succeed");
         Ok(())
@@ -22696,11 +22508,11 @@ impl PutObjectAclInput {
         &self,
         mut builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        if let Some(inner_497) = &self.acl {
-            let formatted_498 = AsRef::<str>::as_ref(inner_497);
-            if !formatted_498.is_empty() {
+        if let Some(inner_594) = &self.acl {
+            let formatted_595 = AsRef::<str>::as_ref(inner_594);
+            if !formatted_595.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_498;
+                let header_value = formatted_595;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -22714,11 +22526,11 @@ impl PutObjectAclInput {
                 builder = builder.header("x-amz-acl", header_value);
             }
         }
-        if let Some(inner_499) = &self.content_md5 {
-            let formatted_500 = AsRef::<str>::as_ref(inner_499);
-            if !formatted_500.is_empty() {
+        if let Some(inner_596) = &self.content_md5 {
+            let formatted_597 = AsRef::<str>::as_ref(inner_596);
+            if !formatted_597.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_500;
+                let header_value = formatted_597;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -22732,11 +22544,11 @@ impl PutObjectAclInput {
                 builder = builder.header("Content-MD5", header_value);
             }
         }
-        if let Some(inner_501) = &self.grant_full_control {
-            let formatted_502 = AsRef::<str>::as_ref(inner_501);
-            if !formatted_502.is_empty() {
+        if let Some(inner_598) = &self.grant_full_control {
+            let formatted_599 = AsRef::<str>::as_ref(inner_598);
+            if !formatted_599.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_502;
+                let header_value = formatted_599;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -22750,11 +22562,11 @@ impl PutObjectAclInput {
                 builder = builder.header("x-amz-grant-full-control", header_value);
             }
         }
-        if let Some(inner_503) = &self.grant_read {
-            let formatted_504 = AsRef::<str>::as_ref(inner_503);
-            if !formatted_504.is_empty() {
+        if let Some(inner_600) = &self.grant_read {
+            let formatted_601 = AsRef::<str>::as_ref(inner_600);
+            if !formatted_601.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_504;
+                let header_value = formatted_601;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -22768,11 +22580,11 @@ impl PutObjectAclInput {
                 builder = builder.header("x-amz-grant-read", header_value);
             }
         }
-        if let Some(inner_505) = &self.grant_read_acp {
-            let formatted_506 = AsRef::<str>::as_ref(inner_505);
-            if !formatted_506.is_empty() {
+        if let Some(inner_602) = &self.grant_read_acp {
+            let formatted_603 = AsRef::<str>::as_ref(inner_602);
+            if !formatted_603.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_506;
+                let header_value = formatted_603;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -22786,11 +22598,11 @@ impl PutObjectAclInput {
                 builder = builder.header("x-amz-grant-read-acp", header_value);
             }
         }
-        if let Some(inner_507) = &self.grant_write {
-            let formatted_508 = AsRef::<str>::as_ref(inner_507);
-            if !formatted_508.is_empty() {
+        if let Some(inner_604) = &self.grant_write {
+            let formatted_605 = AsRef::<str>::as_ref(inner_604);
+            if !formatted_605.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_508;
+                let header_value = formatted_605;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -22804,11 +22616,11 @@ impl PutObjectAclInput {
                 builder = builder.header("x-amz-grant-write", header_value);
             }
         }
-        if let Some(inner_509) = &self.grant_write_acp {
-            let formatted_510 = AsRef::<str>::as_ref(inner_509);
-            if !formatted_510.is_empty() {
+        if let Some(inner_606) = &self.grant_write_acp {
+            let formatted_607 = AsRef::<str>::as_ref(inner_606);
+            if !formatted_607.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_510;
+                let header_value = formatted_607;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -22822,11 +22634,11 @@ impl PutObjectAclInput {
                 builder = builder.header("x-amz-grant-write-acp", header_value);
             }
         }
-        if let Some(inner_511) = &self.request_payer {
-            let formatted_512 = AsRef::<str>::as_ref(inner_511);
-            if !formatted_512.is_empty() {
+        if let Some(inner_608) = &self.request_payer {
+            let formatted_609 = AsRef::<str>::as_ref(inner_608);
+            if !formatted_609.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_512;
+                let header_value = formatted_609;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -22840,11 +22652,11 @@ impl PutObjectAclInput {
                 builder = builder.header("x-amz-request-payer", header_value);
             }
         }
-        if let Some(inner_513) = &self.expected_bucket_owner {
-            let formatted_514 = AsRef::<str>::as_ref(inner_513);
-            if !formatted_514.is_empty() {
+        if let Some(inner_610) = &self.expected_bucket_owner {
+            let formatted_611 = AsRef::<str>::as_ref(inner_610);
+            if !formatted_611.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_514;
+                let header_value = formatted_611;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -22863,8 +22675,8 @@ impl PutObjectAclInput {
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
         query.push_v("acl");
-        if let Some(inner_515) = &self.version_id {
-            query.push_kv("versionId", &smithy_http::query::fmt_string(&inner_515));
+        if let Some(inner_612) = &self.version_id {
+            query.push_kv("versionId", &smithy_http::query::fmt_string(&inner_612));
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -23048,7 +22860,7 @@ impl PutObjectLegalHoldInput {
                 let checksum = md5::compute(data);
                 req.headers_mut().insert(
                     http::header::HeaderName::from_static("content-md5"),
-                    format!("{:x}", checksum)
+                    smithy_types::base64::encode(&checksum[..])
                         .parse()
                         .expect("checksum is valid header value"),
                 );
@@ -23093,40 +22905,36 @@ impl PutObjectLegalHoldInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let bucket = {
-            let input = &self.bucket;
-            let input = input
+        let input_613 = &self.bucket;
+        let input_613 =
+            input_613
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "bucket",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "bucket",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let key = {
-            let input = &self.key;
-            let input = input
+        let bucket = smithy_http::label::fmt_string(input_613, false);
+        if bucket.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "bucket",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_614 = &self.key;
+        let input_614 =
+            input_614
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "key",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, true);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "key",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let key = smithy_http::label::fmt_string(input_614, true);
+        if key.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "key",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/{Bucket}/{Key}", Bucket = bucket, Key = key)
             .expect("formatting should succeed");
         Ok(())
@@ -23135,11 +22943,11 @@ impl PutObjectLegalHoldInput {
         &self,
         mut builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        if let Some(inner_516) = &self.request_payer {
-            let formatted_517 = AsRef::<str>::as_ref(inner_516);
-            if !formatted_517.is_empty() {
+        if let Some(inner_615) = &self.request_payer {
+            let formatted_616 = AsRef::<str>::as_ref(inner_615);
+            if !formatted_616.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_517;
+                let header_value = formatted_616;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -23153,11 +22961,11 @@ impl PutObjectLegalHoldInput {
                 builder = builder.header("x-amz-request-payer", header_value);
             }
         }
-        if let Some(inner_518) = &self.content_md5 {
-            let formatted_519 = AsRef::<str>::as_ref(inner_518);
-            if !formatted_519.is_empty() {
+        if let Some(inner_617) = &self.content_md5 {
+            let formatted_618 = AsRef::<str>::as_ref(inner_617);
+            if !formatted_618.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_519;
+                let header_value = formatted_618;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -23171,11 +22979,11 @@ impl PutObjectLegalHoldInput {
                 builder = builder.header("Content-MD5", header_value);
             }
         }
-        if let Some(inner_520) = &self.expected_bucket_owner {
-            let formatted_521 = AsRef::<str>::as_ref(inner_520);
-            if !formatted_521.is_empty() {
+        if let Some(inner_619) = &self.expected_bucket_owner {
+            let formatted_620 = AsRef::<str>::as_ref(inner_619);
+            if !formatted_620.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_521;
+                let header_value = formatted_620;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -23194,8 +23002,8 @@ impl PutObjectLegalHoldInput {
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
         query.push_v("legal-hold");
-        if let Some(inner_522) = &self.version_id {
-            query.push_kv("versionId", &smithy_http::query::fmt_string(&inner_522));
+        if let Some(inner_621) = &self.version_id {
+            query.push_kv("versionId", &smithy_http::query::fmt_string(&inner_621));
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -23372,7 +23180,7 @@ impl PutObjectLockConfigurationInput {
                 let checksum = md5::compute(data);
                 req.headers_mut().insert(
                     http::header::HeaderName::from_static("content-md5"),
-                    format!("{:x}", checksum)
+                    smithy_types::base64::encode(&checksum[..])
                         .parse()
                         .expect("checksum is valid header value"),
                 );
@@ -23417,23 +23225,21 @@ impl PutObjectLockConfigurationInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let bucket = {
-            let input = &self.bucket;
-            let input = input
+        let input_622 = &self.bucket;
+        let input_622 =
+            input_622
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "bucket",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "bucket",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let bucket = smithy_http::label::fmt_string(input_622, false);
+        if bucket.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "bucket",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
         Ok(())
     }
@@ -23441,11 +23247,11 @@ impl PutObjectLockConfigurationInput {
         &self,
         mut builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        if let Some(inner_523) = &self.request_payer {
-            let formatted_524 = AsRef::<str>::as_ref(inner_523);
-            if !formatted_524.is_empty() {
+        if let Some(inner_623) = &self.request_payer {
+            let formatted_624 = AsRef::<str>::as_ref(inner_623);
+            if !formatted_624.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_524;
+                let header_value = formatted_624;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -23459,11 +23265,11 @@ impl PutObjectLockConfigurationInput {
                 builder = builder.header("x-amz-request-payer", header_value);
             }
         }
-        if let Some(inner_525) = &self.token {
-            let formatted_526 = AsRef::<str>::as_ref(inner_525);
-            if !formatted_526.is_empty() {
+        if let Some(inner_625) = &self.token {
+            let formatted_626 = AsRef::<str>::as_ref(inner_625);
+            if !formatted_626.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_526;
+                let header_value = formatted_626;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -23477,11 +23283,11 @@ impl PutObjectLockConfigurationInput {
                 builder = builder.header("x-amz-bucket-object-lock-token", header_value);
             }
         }
-        if let Some(inner_527) = &self.content_md5 {
-            let formatted_528 = AsRef::<str>::as_ref(inner_527);
-            if !formatted_528.is_empty() {
+        if let Some(inner_627) = &self.content_md5 {
+            let formatted_628 = AsRef::<str>::as_ref(inner_627);
+            if !formatted_628.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_528;
+                let header_value = formatted_628;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -23495,11 +23301,11 @@ impl PutObjectLockConfigurationInput {
                 builder = builder.header("Content-MD5", header_value);
             }
         }
-        if let Some(inner_529) = &self.expected_bucket_owner {
-            let formatted_530 = AsRef::<str>::as_ref(inner_529);
-            if !formatted_530.is_empty() {
+        if let Some(inner_629) = &self.expected_bucket_owner {
+            let formatted_630 = AsRef::<str>::as_ref(inner_629);
+            if !formatted_630.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_530;
+                let header_value = formatted_630;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -23713,7 +23519,7 @@ impl PutObjectRetentionInput {
                 let checksum = md5::compute(data);
                 req.headers_mut().insert(
                     http::header::HeaderName::from_static("content-md5"),
-                    format!("{:x}", checksum)
+                    smithy_types::base64::encode(&checksum[..])
                         .parse()
                         .expect("checksum is valid header value"),
                 );
@@ -23758,40 +23564,36 @@ impl PutObjectRetentionInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let bucket = {
-            let input = &self.bucket;
-            let input = input
+        let input_631 = &self.bucket;
+        let input_631 =
+            input_631
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "bucket",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "bucket",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let key = {
-            let input = &self.key;
-            let input = input
+        let bucket = smithy_http::label::fmt_string(input_631, false);
+        if bucket.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "bucket",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_632 = &self.key;
+        let input_632 =
+            input_632
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "key",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, true);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "key",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let key = smithy_http::label::fmt_string(input_632, true);
+        if key.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "key",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/{Bucket}/{Key}", Bucket = bucket, Key = key)
             .expect("formatting should succeed");
         Ok(())
@@ -23800,11 +23602,11 @@ impl PutObjectRetentionInput {
         &self,
         mut builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        if let Some(inner_531) = &self.request_payer {
-            let formatted_532 = AsRef::<str>::as_ref(inner_531);
-            if !formatted_532.is_empty() {
+        if let Some(inner_633) = &self.request_payer {
+            let formatted_634 = AsRef::<str>::as_ref(inner_633);
+            if !formatted_634.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_532;
+                let header_value = formatted_634;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -23819,10 +23621,12 @@ impl PutObjectRetentionInput {
             }
         }
         if self.bypass_governance_retention {
-            let formatted_533 = smithy_http::query::fmt_default(&&self.bypass_governance_retention);
-            if !formatted_533.is_empty() {
+            let mut encoder =
+                smithy_types::primitive::Encoder::from(self.bypass_governance_retention);
+            let formatted_635 = encoder.encode();
+            if !formatted_635.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_533;
+                let header_value = formatted_635;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -23836,11 +23640,11 @@ impl PutObjectRetentionInput {
                 builder = builder.header("x-amz-bypass-governance-retention", header_value);
             }
         }
-        if let Some(inner_534) = &self.content_md5 {
-            let formatted_535 = AsRef::<str>::as_ref(inner_534);
-            if !formatted_535.is_empty() {
+        if let Some(inner_636) = &self.content_md5 {
+            let formatted_637 = AsRef::<str>::as_ref(inner_636);
+            if !formatted_637.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_535;
+                let header_value = formatted_637;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -23854,11 +23658,11 @@ impl PutObjectRetentionInput {
                 builder = builder.header("Content-MD5", header_value);
             }
         }
-        if let Some(inner_536) = &self.expected_bucket_owner {
-            let formatted_537 = AsRef::<str>::as_ref(inner_536);
-            if !formatted_537.is_empty() {
+        if let Some(inner_638) = &self.expected_bucket_owner {
+            let formatted_639 = AsRef::<str>::as_ref(inner_638);
+            if !formatted_639.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_537;
+                let header_value = formatted_639;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -23877,8 +23681,8 @@ impl PutObjectRetentionInput {
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
         query.push_v("retention");
-        if let Some(inner_538) = &self.version_id {
-            query.push_kv("versionId", &smithy_http::query::fmt_string(&inner_538));
+        if let Some(inner_640) = &self.version_id {
+            query.push_kv("versionId", &smithy_http::query::fmt_string(&inner_640));
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -24058,7 +23862,7 @@ impl PutObjectTaggingInput {
                 let checksum = md5::compute(data);
                 req.headers_mut().insert(
                     http::header::HeaderName::from_static("content-md5"),
-                    format!("{:x}", checksum)
+                    smithy_types::base64::encode(&checksum[..])
                         .parse()
                         .expect("checksum is valid header value"),
                 );
@@ -24103,40 +23907,36 @@ impl PutObjectTaggingInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let bucket = {
-            let input = &self.bucket;
-            let input = input
+        let input_641 = &self.bucket;
+        let input_641 =
+            input_641
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "bucket",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "bucket",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let key = {
-            let input = &self.key;
-            let input = input
+        let bucket = smithy_http::label::fmt_string(input_641, false);
+        if bucket.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "bucket",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_642 = &self.key;
+        let input_642 =
+            input_642
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "key",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, true);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "key",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let key = smithy_http::label::fmt_string(input_642, true);
+        if key.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "key",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/{Bucket}/{Key}", Bucket = bucket, Key = key)
             .expect("formatting should succeed");
         Ok(())
@@ -24145,11 +23945,11 @@ impl PutObjectTaggingInput {
         &self,
         mut builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        if let Some(inner_539) = &self.content_md5 {
-            let formatted_540 = AsRef::<str>::as_ref(inner_539);
-            if !formatted_540.is_empty() {
+        if let Some(inner_643) = &self.content_md5 {
+            let formatted_644 = AsRef::<str>::as_ref(inner_643);
+            if !formatted_644.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_540;
+                let header_value = formatted_644;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -24163,11 +23963,11 @@ impl PutObjectTaggingInput {
                 builder = builder.header("Content-MD5", header_value);
             }
         }
-        if let Some(inner_541) = &self.expected_bucket_owner {
-            let formatted_542 = AsRef::<str>::as_ref(inner_541);
-            if !formatted_542.is_empty() {
+        if let Some(inner_645) = &self.expected_bucket_owner {
+            let formatted_646 = AsRef::<str>::as_ref(inner_645);
+            if !formatted_646.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_542;
+                let header_value = formatted_646;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -24181,11 +23981,11 @@ impl PutObjectTaggingInput {
                 builder = builder.header("x-amz-expected-bucket-owner", header_value);
             }
         }
-        if let Some(inner_543) = &self.request_payer {
-            let formatted_544 = AsRef::<str>::as_ref(inner_543);
-            if !formatted_544.is_empty() {
+        if let Some(inner_647) = &self.request_payer {
+            let formatted_648 = AsRef::<str>::as_ref(inner_647);
+            if !formatted_648.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_544;
+                let header_value = formatted_648;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -24204,8 +24004,8 @@ impl PutObjectTaggingInput {
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
         query.push_v("tagging");
-        if let Some(inner_545) = &self.version_id {
-            query.push_kv("versionId", &smithy_http::query::fmt_string(&inner_545));
+        if let Some(inner_649) = &self.version_id {
+            query.push_kv("versionId", &smithy_http::query::fmt_string(&inner_649));
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -24356,7 +24156,7 @@ impl PutPublicAccessBlockInput {
                 let checksum = md5::compute(data);
                 req.headers_mut().insert(
                     http::header::HeaderName::from_static("content-md5"),
-                    format!("{:x}", checksum)
+                    smithy_types::base64::encode(&checksum[..])
                         .parse()
                         .expect("checksum is valid header value"),
                 );
@@ -24401,23 +24201,21 @@ impl PutPublicAccessBlockInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let bucket = {
-            let input = &self.bucket;
-            let input = input
+        let input_650 = &self.bucket;
+        let input_650 =
+            input_650
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "bucket",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "bucket",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let bucket = smithy_http::label::fmt_string(input_650, false);
+        if bucket.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "bucket",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
         Ok(())
     }
@@ -24425,11 +24223,11 @@ impl PutPublicAccessBlockInput {
         &self,
         mut builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        if let Some(inner_546) = &self.content_md5 {
-            let formatted_547 = AsRef::<str>::as_ref(inner_546);
-            if !formatted_547.is_empty() {
+        if let Some(inner_651) = &self.content_md5 {
+            let formatted_652 = AsRef::<str>::as_ref(inner_651);
+            if !formatted_652.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_547;
+                let header_value = formatted_652;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -24443,11 +24241,11 @@ impl PutPublicAccessBlockInput {
                 builder = builder.header("Content-MD5", header_value);
             }
         }
-        if let Some(inner_548) = &self.expected_bucket_owner {
-            let formatted_549 = AsRef::<str>::as_ref(inner_548);
-            if !formatted_549.is_empty() {
+        if let Some(inner_653) = &self.expected_bucket_owner {
+            let formatted_654 = AsRef::<str>::as_ref(inner_653);
+            if !formatted_654.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_549;
+                let header_value = formatted_654;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -24661,40 +24459,36 @@ impl RestoreObjectInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let bucket = {
-            let input = &self.bucket;
-            let input = input
+        let input_655 = &self.bucket;
+        let input_655 =
+            input_655
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "bucket",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "bucket",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let key = {
-            let input = &self.key;
-            let input = input
+        let bucket = smithy_http::label::fmt_string(input_655, false);
+        if bucket.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "bucket",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_656 = &self.key;
+        let input_656 =
+            input_656
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "key",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, true);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "key",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let key = smithy_http::label::fmt_string(input_656, true);
+        if key.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "key",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/{Bucket}/{Key}", Bucket = bucket, Key = key)
             .expect("formatting should succeed");
         Ok(())
@@ -24703,11 +24497,11 @@ impl RestoreObjectInput {
         &self,
         mut builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        if let Some(inner_550) = &self.request_payer {
-            let formatted_551 = AsRef::<str>::as_ref(inner_550);
-            if !formatted_551.is_empty() {
+        if let Some(inner_657) = &self.request_payer {
+            let formatted_658 = AsRef::<str>::as_ref(inner_657);
+            if !formatted_658.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_551;
+                let header_value = formatted_658;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -24721,11 +24515,11 @@ impl RestoreObjectInput {
                 builder = builder.header("x-amz-request-payer", header_value);
             }
         }
-        if let Some(inner_552) = &self.expected_bucket_owner {
-            let formatted_553 = AsRef::<str>::as_ref(inner_552);
-            if !formatted_553.is_empty() {
+        if let Some(inner_659) = &self.expected_bucket_owner {
+            let formatted_660 = AsRef::<str>::as_ref(inner_659);
+            if !formatted_660.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_553;
+                let header_value = formatted_660;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -24745,8 +24539,8 @@ impl RestoreObjectInput {
         let mut query = smithy_http::query::Writer::new(&mut output);
         query.push_v("restore");
         query.push_kv("x-id", "RestoreObject");
-        if let Some(inner_554) = &self.version_id {
-            query.push_kv("versionId", &smithy_http::query::fmt_string(&inner_554));
+        if let Some(inner_661) = &self.version_id {
+            query.push_kv("versionId", &smithy_http::query::fmt_string(&inner_661));
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -25028,40 +24822,36 @@ impl UploadPartInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let bucket = {
-            let input = &self.bucket;
-            let input = input
+        let input_662 = &self.bucket;
+        let input_662 =
+            input_662
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "bucket",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "bucket",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let key = {
-            let input = &self.key;
-            let input = input
+        let bucket = smithy_http::label::fmt_string(input_662, false);
+        if bucket.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "bucket",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_663 = &self.key;
+        let input_663 =
+            input_663
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "key",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, true);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "key",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let key = smithy_http::label::fmt_string(input_663, true);
+        if key.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "key",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/{Bucket}/{Key}", Bucket = bucket, Key = key)
             .expect("formatting should succeed");
         Ok(())
@@ -25071,10 +24861,11 @@ impl UploadPartInput {
         mut builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         if self.content_length != 0 {
-            let formatted_555 = smithy_http::query::fmt_default(&&self.content_length);
-            if !formatted_555.is_empty() {
+            let mut encoder = smithy_types::primitive::Encoder::from(self.content_length);
+            let formatted_664 = encoder.encode();
+            if !formatted_664.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_555;
+                let header_value = formatted_664;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -25088,11 +24879,11 @@ impl UploadPartInput {
                 builder = builder.header("Content-Length", header_value);
             }
         }
-        if let Some(inner_556) = &self.content_md5 {
-            let formatted_557 = AsRef::<str>::as_ref(inner_556);
-            if !formatted_557.is_empty() {
+        if let Some(inner_665) = &self.content_md5 {
+            let formatted_666 = AsRef::<str>::as_ref(inner_665);
+            if !formatted_666.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_557;
+                let header_value = formatted_666;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -25106,11 +24897,11 @@ impl UploadPartInput {
                 builder = builder.header("Content-MD5", header_value);
             }
         }
-        if let Some(inner_558) = &self.sse_customer_algorithm {
-            let formatted_559 = AsRef::<str>::as_ref(inner_558);
-            if !formatted_559.is_empty() {
+        if let Some(inner_667) = &self.sse_customer_algorithm {
+            let formatted_668 = AsRef::<str>::as_ref(inner_667);
+            if !formatted_668.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_559;
+                let header_value = formatted_668;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -25127,11 +24918,11 @@ impl UploadPartInput {
                 );
             }
         }
-        if let Some(inner_560) = &self.sse_customer_key {
-            let formatted_561 = AsRef::<str>::as_ref(inner_560);
-            if !formatted_561.is_empty() {
+        if let Some(inner_669) = &self.sse_customer_key {
+            let formatted_670 = AsRef::<str>::as_ref(inner_669);
+            if !formatted_670.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_561;
+                let header_value = formatted_670;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -25145,11 +24936,11 @@ impl UploadPartInput {
                 builder = builder.header("x-amz-server-side-encryption-customer-key", header_value);
             }
         }
-        if let Some(inner_562) = &self.sse_customer_key_md5 {
-            let formatted_563 = AsRef::<str>::as_ref(inner_562);
-            if !formatted_563.is_empty() {
+        if let Some(inner_671) = &self.sse_customer_key_md5 {
+            let formatted_672 = AsRef::<str>::as_ref(inner_671);
+            if !formatted_672.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_563;
+                let header_value = formatted_672;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -25166,11 +24957,11 @@ impl UploadPartInput {
                 );
             }
         }
-        if let Some(inner_564) = &self.request_payer {
-            let formatted_565 = AsRef::<str>::as_ref(inner_564);
-            if !formatted_565.is_empty() {
+        if let Some(inner_673) = &self.request_payer {
+            let formatted_674 = AsRef::<str>::as_ref(inner_673);
+            if !formatted_674.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_565;
+                let header_value = formatted_674;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -25184,11 +24975,11 @@ impl UploadPartInput {
                 builder = builder.header("x-amz-request-payer", header_value);
             }
         }
-        if let Some(inner_566) = &self.expected_bucket_owner {
-            let formatted_567 = AsRef::<str>::as_ref(inner_566);
-            if !formatted_567.is_empty() {
+        if let Some(inner_675) = &self.expected_bucket_owner {
+            let formatted_676 = AsRef::<str>::as_ref(inner_675);
+            if !formatted_676.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_567;
+                let header_value = formatted_676;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -25210,11 +25001,11 @@ impl UploadPartInput {
         if self.part_number != 0 {
             query.push_kv(
                 "partNumber",
-                &smithy_http::query::fmt_default(&&self.part_number),
+                &smithy_types::primitive::Encoder::from(self.part_number).encode(),
             );
         }
-        if let Some(inner_568) = &self.upload_id {
-            query.push_kv("uploadId", &smithy_http::query::fmt_string(&inner_568));
+        if let Some(inner_677) = &self.upload_id {
+            query.push_kv("uploadId", &smithy_http::query::fmt_string(&inner_677));
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -25645,40 +25436,36 @@ impl UploadPartCopyInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let bucket = {
-            let input = &self.bucket;
-            let input = input
+        let input_678 = &self.bucket;
+        let input_678 =
+            input_678
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "bucket",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "bucket",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let key = {
-            let input = &self.key;
-            let input = input
+        let bucket = smithy_http::label::fmt_string(input_678, false);
+        if bucket.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "bucket",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_679 = &self.key;
+        let input_679 =
+            input_679
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "key",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, true);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "key",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let key = smithy_http::label::fmt_string(input_679, true);
+        if key.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "key",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/{Bucket}/{Key}", Bucket = bucket, Key = key)
             .expect("formatting should succeed");
         Ok(())
@@ -25687,11 +25474,11 @@ impl UploadPartCopyInput {
         &self,
         mut builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        if let Some(inner_569) = &self.copy_source {
-            let formatted_570 = AsRef::<str>::as_ref(inner_569);
-            if !formatted_570.is_empty() {
+        if let Some(inner_680) = &self.copy_source {
+            let formatted_681 = AsRef::<str>::as_ref(inner_680);
+            if !formatted_681.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_570;
+                let header_value = formatted_681;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -25705,11 +25492,11 @@ impl UploadPartCopyInput {
                 builder = builder.header("x-amz-copy-source", header_value);
             }
         }
-        if let Some(inner_571) = &self.copy_source_if_match {
-            let formatted_572 = AsRef::<str>::as_ref(inner_571);
-            if !formatted_572.is_empty() {
+        if let Some(inner_682) = &self.copy_source_if_match {
+            let formatted_683 = AsRef::<str>::as_ref(inner_682);
+            if !formatted_683.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_572;
+                let header_value = formatted_683;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -25723,11 +25510,11 @@ impl UploadPartCopyInput {
                 builder = builder.header("x-amz-copy-source-if-match", header_value);
             }
         }
-        if let Some(inner_573) = &self.copy_source_if_modified_since {
-            let formatted_574 = inner_573.fmt(smithy_types::instant::Format::HttpDate);
-            if !formatted_574.is_empty() {
+        if let Some(inner_684) = &self.copy_source_if_modified_since {
+            let formatted_685 = inner_684.fmt(smithy_types::instant::Format::HttpDate);
+            if !formatted_685.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_574;
+                let header_value = formatted_685;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -25741,11 +25528,11 @@ impl UploadPartCopyInput {
                 builder = builder.header("x-amz-copy-source-if-modified-since", header_value);
             }
         }
-        if let Some(inner_575) = &self.copy_source_if_none_match {
-            let formatted_576 = AsRef::<str>::as_ref(inner_575);
-            if !formatted_576.is_empty() {
+        if let Some(inner_686) = &self.copy_source_if_none_match {
+            let formatted_687 = AsRef::<str>::as_ref(inner_686);
+            if !formatted_687.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_576;
+                let header_value = formatted_687;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -25759,11 +25546,11 @@ impl UploadPartCopyInput {
                 builder = builder.header("x-amz-copy-source-if-none-match", header_value);
             }
         }
-        if let Some(inner_577) = &self.copy_source_if_unmodified_since {
-            let formatted_578 = inner_577.fmt(smithy_types::instant::Format::HttpDate);
-            if !formatted_578.is_empty() {
+        if let Some(inner_688) = &self.copy_source_if_unmodified_since {
+            let formatted_689 = inner_688.fmt(smithy_types::instant::Format::HttpDate);
+            if !formatted_689.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_578;
+                let header_value = formatted_689;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -25777,11 +25564,11 @@ impl UploadPartCopyInput {
                 builder = builder.header("x-amz-copy-source-if-unmodified-since", header_value);
             }
         }
-        if let Some(inner_579) = &self.copy_source_range {
-            let formatted_580 = AsRef::<str>::as_ref(inner_579);
-            if !formatted_580.is_empty() {
+        if let Some(inner_690) = &self.copy_source_range {
+            let formatted_691 = AsRef::<str>::as_ref(inner_690);
+            if !formatted_691.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_580;
+                let header_value = formatted_691;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -25795,11 +25582,11 @@ impl UploadPartCopyInput {
                 builder = builder.header("x-amz-copy-source-range", header_value);
             }
         }
-        if let Some(inner_581) = &self.sse_customer_algorithm {
-            let formatted_582 = AsRef::<str>::as_ref(inner_581);
-            if !formatted_582.is_empty() {
+        if let Some(inner_692) = &self.sse_customer_algorithm {
+            let formatted_693 = AsRef::<str>::as_ref(inner_692);
+            if !formatted_693.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_582;
+                let header_value = formatted_693;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -25816,11 +25603,11 @@ impl UploadPartCopyInput {
                 );
             }
         }
-        if let Some(inner_583) = &self.sse_customer_key {
-            let formatted_584 = AsRef::<str>::as_ref(inner_583);
-            if !formatted_584.is_empty() {
+        if let Some(inner_694) = &self.sse_customer_key {
+            let formatted_695 = AsRef::<str>::as_ref(inner_694);
+            if !formatted_695.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_584;
+                let header_value = formatted_695;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -25834,11 +25621,11 @@ impl UploadPartCopyInput {
                 builder = builder.header("x-amz-server-side-encryption-customer-key", header_value);
             }
         }
-        if let Some(inner_585) = &self.sse_customer_key_md5 {
-            let formatted_586 = AsRef::<str>::as_ref(inner_585);
-            if !formatted_586.is_empty() {
+        if let Some(inner_696) = &self.sse_customer_key_md5 {
+            let formatted_697 = AsRef::<str>::as_ref(inner_696);
+            if !formatted_697.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_586;
+                let header_value = formatted_697;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -25855,11 +25642,11 @@ impl UploadPartCopyInput {
                 );
             }
         }
-        if let Some(inner_587) = &self.copy_source_sse_customer_algorithm {
-            let formatted_588 = AsRef::<str>::as_ref(inner_587);
-            if !formatted_588.is_empty() {
+        if let Some(inner_698) = &self.copy_source_sse_customer_algorithm {
+            let formatted_699 = AsRef::<str>::as_ref(inner_698);
+            if !formatted_699.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_588;
+                let header_value = formatted_699;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -25876,11 +25663,11 @@ impl UploadPartCopyInput {
                 );
             }
         }
-        if let Some(inner_589) = &self.copy_source_sse_customer_key {
-            let formatted_590 = AsRef::<str>::as_ref(inner_589);
-            if !formatted_590.is_empty() {
+        if let Some(inner_700) = &self.copy_source_sse_customer_key {
+            let formatted_701 = AsRef::<str>::as_ref(inner_700);
+            if !formatted_701.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_590;
+                let header_value = formatted_701;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -25897,11 +25684,11 @@ impl UploadPartCopyInput {
                 );
             }
         }
-        if let Some(inner_591) = &self.copy_source_sse_customer_key_md5 {
-            let formatted_592 = AsRef::<str>::as_ref(inner_591);
-            if !formatted_592.is_empty() {
+        if let Some(inner_702) = &self.copy_source_sse_customer_key_md5 {
+            let formatted_703 = AsRef::<str>::as_ref(inner_702);
+            if !formatted_703.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_592;
+                let header_value = formatted_703;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -25918,11 +25705,11 @@ impl UploadPartCopyInput {
                 );
             }
         }
-        if let Some(inner_593) = &self.request_payer {
-            let formatted_594 = AsRef::<str>::as_ref(inner_593);
-            if !formatted_594.is_empty() {
+        if let Some(inner_704) = &self.request_payer {
+            let formatted_705 = AsRef::<str>::as_ref(inner_704);
+            if !formatted_705.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_594;
+                let header_value = formatted_705;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -25936,11 +25723,11 @@ impl UploadPartCopyInput {
                 builder = builder.header("x-amz-request-payer", header_value);
             }
         }
-        if let Some(inner_595) = &self.expected_bucket_owner {
-            let formatted_596 = AsRef::<str>::as_ref(inner_595);
-            if !formatted_596.is_empty() {
+        if let Some(inner_706) = &self.expected_bucket_owner {
+            let formatted_707 = AsRef::<str>::as_ref(inner_706);
+            if !formatted_707.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_596;
+                let header_value = formatted_707;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -25954,11 +25741,11 @@ impl UploadPartCopyInput {
                 builder = builder.header("x-amz-expected-bucket-owner", header_value);
             }
         }
-        if let Some(inner_597) = &self.expected_source_bucket_owner {
-            let formatted_598 = AsRef::<str>::as_ref(inner_597);
-            if !formatted_598.is_empty() {
+        if let Some(inner_708) = &self.expected_source_bucket_owner {
+            let formatted_709 = AsRef::<str>::as_ref(inner_708);
+            if !formatted_709.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_598;
+                let header_value = formatted_709;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -25980,11 +25767,11 @@ impl UploadPartCopyInput {
         if self.part_number != 0 {
             query.push_kv(
                 "partNumber",
-                &smithy_http::query::fmt_default(&&self.part_number),
+                &smithy_types::primitive::Encoder::from(self.part_number).encode(),
             );
         }
-        if let Some(inner_599) = &self.upload_id {
-            query.push_kv("uploadId", &smithy_http::query::fmt_string(&inner_599));
+        if let Some(inner_710) = &self.upload_id {
+            query.push_kv("uploadId", &smithy_http::query::fmt_string(&inner_710));
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -26710,11 +26497,11 @@ impl WriteGetObjectResponseInput {
         &self,
         mut builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        if let Some(inner_600) = &self.request_route {
-            let formatted_601 = AsRef::<str>::as_ref(inner_600);
-            if !formatted_601.is_empty() {
+        if let Some(inner_711) = &self.request_route {
+            let formatted_712 = AsRef::<str>::as_ref(inner_711);
+            if !formatted_712.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_601;
+                let header_value = formatted_712;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -26728,11 +26515,11 @@ impl WriteGetObjectResponseInput {
                 builder = builder.header("x-amz-request-route", header_value);
             }
         }
-        if let Some(inner_602) = &self.request_token {
-            let formatted_603 = AsRef::<str>::as_ref(inner_602);
-            if !formatted_603.is_empty() {
+        if let Some(inner_713) = &self.request_token {
+            let formatted_714 = AsRef::<str>::as_ref(inner_713);
+            if !formatted_714.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_603;
+                let header_value = formatted_714;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -26747,10 +26534,11 @@ impl WriteGetObjectResponseInput {
             }
         }
         if self.status_code != 0 {
-            let formatted_604 = smithy_http::query::fmt_default(&&self.status_code);
-            if !formatted_604.is_empty() {
+            let mut encoder = smithy_types::primitive::Encoder::from(self.status_code);
+            let formatted_715 = encoder.encode();
+            if !formatted_715.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_604;
+                let header_value = formatted_715;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -26764,11 +26552,11 @@ impl WriteGetObjectResponseInput {
                 builder = builder.header("x-amz-fwd-status", header_value);
             }
         }
-        if let Some(inner_605) = &self.error_code {
-            let formatted_606 = AsRef::<str>::as_ref(inner_605);
-            if !formatted_606.is_empty() {
+        if let Some(inner_716) = &self.error_code {
+            let formatted_717 = AsRef::<str>::as_ref(inner_716);
+            if !formatted_717.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_606;
+                let header_value = formatted_717;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -26782,11 +26570,11 @@ impl WriteGetObjectResponseInput {
                 builder = builder.header("x-amz-fwd-error-code", header_value);
             }
         }
-        if let Some(inner_607) = &self.error_message {
-            let formatted_608 = AsRef::<str>::as_ref(inner_607);
-            if !formatted_608.is_empty() {
+        if let Some(inner_718) = &self.error_message {
+            let formatted_719 = AsRef::<str>::as_ref(inner_718);
+            if !formatted_719.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_608;
+                let header_value = formatted_719;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -26800,11 +26588,11 @@ impl WriteGetObjectResponseInput {
                 builder = builder.header("x-amz-fwd-error-message", header_value);
             }
         }
-        if let Some(inner_609) = &self.accept_ranges {
-            let formatted_610 = AsRef::<str>::as_ref(inner_609);
-            if !formatted_610.is_empty() {
+        if let Some(inner_720) = &self.accept_ranges {
+            let formatted_721 = AsRef::<str>::as_ref(inner_720);
+            if !formatted_721.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_610;
+                let header_value = formatted_721;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -26818,11 +26606,11 @@ impl WriteGetObjectResponseInput {
                 builder = builder.header("x-amz-fwd-header-accept-ranges", header_value);
             }
         }
-        if let Some(inner_611) = &self.cache_control {
-            let formatted_612 = AsRef::<str>::as_ref(inner_611);
-            if !formatted_612.is_empty() {
+        if let Some(inner_722) = &self.cache_control {
+            let formatted_723 = AsRef::<str>::as_ref(inner_722);
+            if !formatted_723.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_612;
+                let header_value = formatted_723;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -26836,11 +26624,11 @@ impl WriteGetObjectResponseInput {
                 builder = builder.header("x-amz-fwd-header-Cache-Control", header_value);
             }
         }
-        if let Some(inner_613) = &self.content_disposition {
-            let formatted_614 = AsRef::<str>::as_ref(inner_613);
-            if !formatted_614.is_empty() {
+        if let Some(inner_724) = &self.content_disposition {
+            let formatted_725 = AsRef::<str>::as_ref(inner_724);
+            if !formatted_725.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_614;
+                let header_value = formatted_725;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -26854,11 +26642,11 @@ impl WriteGetObjectResponseInput {
                 builder = builder.header("x-amz-fwd-header-Content-Disposition", header_value);
             }
         }
-        if let Some(inner_615) = &self.content_encoding {
-            let formatted_616 = AsRef::<str>::as_ref(inner_615);
-            if !formatted_616.is_empty() {
+        if let Some(inner_726) = &self.content_encoding {
+            let formatted_727 = AsRef::<str>::as_ref(inner_726);
+            if !formatted_727.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_616;
+                let header_value = formatted_727;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -26872,11 +26660,11 @@ impl WriteGetObjectResponseInput {
                 builder = builder.header("x-amz-fwd-header-Content-Encoding", header_value);
             }
         }
-        if let Some(inner_617) = &self.content_language {
-            let formatted_618 = AsRef::<str>::as_ref(inner_617);
-            if !formatted_618.is_empty() {
+        if let Some(inner_728) = &self.content_language {
+            let formatted_729 = AsRef::<str>::as_ref(inner_728);
+            if !formatted_729.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_618;
+                let header_value = formatted_729;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -26891,10 +26679,11 @@ impl WriteGetObjectResponseInput {
             }
         }
         if self.content_length != 0 {
-            let formatted_619 = smithy_http::query::fmt_default(&&self.content_length);
-            if !formatted_619.is_empty() {
+            let mut encoder = smithy_types::primitive::Encoder::from(self.content_length);
+            let formatted_730 = encoder.encode();
+            if !formatted_730.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_619;
+                let header_value = formatted_730;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -26908,11 +26697,11 @@ impl WriteGetObjectResponseInput {
                 builder = builder.header("Content-Length", header_value);
             }
         }
-        if let Some(inner_620) = &self.content_range {
-            let formatted_621 = AsRef::<str>::as_ref(inner_620);
-            if !formatted_621.is_empty() {
+        if let Some(inner_731) = &self.content_range {
+            let formatted_732 = AsRef::<str>::as_ref(inner_731);
+            if !formatted_732.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_621;
+                let header_value = formatted_732;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -26926,11 +26715,11 @@ impl WriteGetObjectResponseInput {
                 builder = builder.header("x-amz-fwd-header-Content-Range", header_value);
             }
         }
-        if let Some(inner_622) = &self.content_type {
-            let formatted_623 = AsRef::<str>::as_ref(inner_622);
-            if !formatted_623.is_empty() {
+        if let Some(inner_733) = &self.content_type {
+            let formatted_734 = AsRef::<str>::as_ref(inner_733);
+            if !formatted_734.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_623;
+                let header_value = formatted_734;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -26945,10 +26734,11 @@ impl WriteGetObjectResponseInput {
             }
         }
         if self.delete_marker {
-            let formatted_624 = smithy_http::query::fmt_default(&&self.delete_marker);
-            if !formatted_624.is_empty() {
+            let mut encoder = smithy_types::primitive::Encoder::from(self.delete_marker);
+            let formatted_735 = encoder.encode();
+            if !formatted_735.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_624;
+                let header_value = formatted_735;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -26962,11 +26752,11 @@ impl WriteGetObjectResponseInput {
                 builder = builder.header("x-amz-fwd-header-x-amz-delete-marker", header_value);
             }
         }
-        if let Some(inner_625) = &self.e_tag {
-            let formatted_626 = AsRef::<str>::as_ref(inner_625);
-            if !formatted_626.is_empty() {
+        if let Some(inner_736) = &self.e_tag {
+            let formatted_737 = AsRef::<str>::as_ref(inner_736);
+            if !formatted_737.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_626;
+                let header_value = formatted_737;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -26980,11 +26770,11 @@ impl WriteGetObjectResponseInput {
                 builder = builder.header("x-amz-fwd-header-ETag", header_value);
             }
         }
-        if let Some(inner_627) = &self.expires {
-            let formatted_628 = inner_627.fmt(smithy_types::instant::Format::HttpDate);
-            if !formatted_628.is_empty() {
+        if let Some(inner_738) = &self.expires {
+            let formatted_739 = inner_738.fmt(smithy_types::instant::Format::HttpDate);
+            if !formatted_739.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_628;
+                let header_value = formatted_739;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -26998,11 +26788,11 @@ impl WriteGetObjectResponseInput {
                 builder = builder.header("x-amz-fwd-header-Expires", header_value);
             }
         }
-        if let Some(inner_629) = &self.expiration {
-            let formatted_630 = AsRef::<str>::as_ref(inner_629);
-            if !formatted_630.is_empty() {
+        if let Some(inner_740) = &self.expiration {
+            let formatted_741 = AsRef::<str>::as_ref(inner_740);
+            if !formatted_741.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_630;
+                let header_value = formatted_741;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -27016,11 +26806,11 @@ impl WriteGetObjectResponseInput {
                 builder = builder.header("x-amz-fwd-header-x-amz-expiration", header_value);
             }
         }
-        if let Some(inner_631) = &self.last_modified {
-            let formatted_632 = inner_631.fmt(smithy_types::instant::Format::HttpDate);
-            if !formatted_632.is_empty() {
+        if let Some(inner_742) = &self.last_modified {
+            let formatted_743 = inner_742.fmt(smithy_types::instant::Format::HttpDate);
+            if !formatted_743.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_632;
+                let header_value = formatted_743;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -27035,10 +26825,11 @@ impl WriteGetObjectResponseInput {
             }
         }
         if self.missing_meta != 0 {
-            let formatted_633 = smithy_http::query::fmt_default(&&self.missing_meta);
-            if !formatted_633.is_empty() {
+            let mut encoder = smithy_types::primitive::Encoder::from(self.missing_meta);
+            let formatted_744 = encoder.encode();
+            if !formatted_744.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_633;
+                let header_value = formatted_744;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -27052,11 +26843,11 @@ impl WriteGetObjectResponseInput {
                 builder = builder.header("x-amz-fwd-header-x-amz-missing-meta", header_value);
             }
         }
-        if let Some(inner_634) = &self.object_lock_mode {
-            let formatted_635 = AsRef::<str>::as_ref(inner_634);
-            if !formatted_635.is_empty() {
+        if let Some(inner_745) = &self.object_lock_mode {
+            let formatted_746 = AsRef::<str>::as_ref(inner_745);
+            if !formatted_746.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_635;
+                let header_value = formatted_746;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -27070,11 +26861,11 @@ impl WriteGetObjectResponseInput {
                 builder = builder.header("x-amz-fwd-header-x-amz-object-lock-mode", header_value);
             }
         }
-        if let Some(inner_636) = &self.object_lock_legal_hold_status {
-            let formatted_637 = AsRef::<str>::as_ref(inner_636);
-            if !formatted_637.is_empty() {
+        if let Some(inner_747) = &self.object_lock_legal_hold_status {
+            let formatted_748 = AsRef::<str>::as_ref(inner_747);
+            if !formatted_748.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_637;
+                let header_value = formatted_748;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -27091,11 +26882,11 @@ impl WriteGetObjectResponseInput {
                 );
             }
         }
-        if let Some(inner_638) = &self.object_lock_retain_until_date {
-            let formatted_639 = inner_638.fmt(smithy_types::instant::Format::DateTime);
-            if !formatted_639.is_empty() {
+        if let Some(inner_749) = &self.object_lock_retain_until_date {
+            let formatted_750 = inner_749.fmt(smithy_types::instant::Format::DateTime);
+            if !formatted_750.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_639;
+                let header_value = formatted_750;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -27113,10 +26904,11 @@ impl WriteGetObjectResponseInput {
             }
         }
         if self.parts_count != 0 {
-            let formatted_640 = smithy_http::query::fmt_default(&&self.parts_count);
-            if !formatted_640.is_empty() {
+            let mut encoder = smithy_types::primitive::Encoder::from(self.parts_count);
+            let formatted_751 = encoder.encode();
+            if !formatted_751.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_640;
+                let header_value = formatted_751;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -27130,11 +26922,11 @@ impl WriteGetObjectResponseInput {
                 builder = builder.header("x-amz-fwd-header-x-amz-mp-parts-count", header_value);
             }
         }
-        if let Some(inner_641) = &self.replication_status {
-            let formatted_642 = AsRef::<str>::as_ref(inner_641);
-            if !formatted_642.is_empty() {
+        if let Some(inner_752) = &self.replication_status {
+            let formatted_753 = AsRef::<str>::as_ref(inner_752);
+            if !formatted_753.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_642;
+                let header_value = formatted_753;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -27148,11 +26940,11 @@ impl WriteGetObjectResponseInput {
                 builder = builder.header("x-amz-fwd-header-x-amz-replication-status", header_value);
             }
         }
-        if let Some(inner_643) = &self.request_charged {
-            let formatted_644 = AsRef::<str>::as_ref(inner_643);
-            if !formatted_644.is_empty() {
+        if let Some(inner_754) = &self.request_charged {
+            let formatted_755 = AsRef::<str>::as_ref(inner_754);
+            if !formatted_755.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_644;
+                let header_value = formatted_755;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -27166,11 +26958,11 @@ impl WriteGetObjectResponseInput {
                 builder = builder.header("x-amz-fwd-header-x-amz-request-charged", header_value);
             }
         }
-        if let Some(inner_645) = &self.restore {
-            let formatted_646 = AsRef::<str>::as_ref(inner_645);
-            if !formatted_646.is_empty() {
+        if let Some(inner_756) = &self.restore {
+            let formatted_757 = AsRef::<str>::as_ref(inner_756);
+            if !formatted_757.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_646;
+                let header_value = formatted_757;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -27184,11 +26976,11 @@ impl WriteGetObjectResponseInput {
                 builder = builder.header("x-amz-fwd-header-x-amz-restore", header_value);
             }
         }
-        if let Some(inner_647) = &self.server_side_encryption {
-            let formatted_648 = AsRef::<str>::as_ref(inner_647);
-            if !formatted_648.is_empty() {
+        if let Some(inner_758) = &self.server_side_encryption {
+            let formatted_759 = AsRef::<str>::as_ref(inner_758);
+            if !formatted_759.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_648;
+                let header_value = formatted_759;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -27205,11 +26997,11 @@ impl WriteGetObjectResponseInput {
                 );
             }
         }
-        if let Some(inner_649) = &self.sse_customer_algorithm {
-            let formatted_650 = AsRef::<str>::as_ref(inner_649);
-            if !formatted_650.is_empty() {
+        if let Some(inner_760) = &self.sse_customer_algorithm {
+            let formatted_761 = AsRef::<str>::as_ref(inner_760);
+            if !formatted_761.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_650;
+                let header_value = formatted_761;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -27226,11 +27018,11 @@ impl WriteGetObjectResponseInput {
                 );
             }
         }
-        if let Some(inner_651) = &self.ssekms_key_id {
-            let formatted_652 = AsRef::<str>::as_ref(inner_651);
-            if !formatted_652.is_empty() {
+        if let Some(inner_762) = &self.ssekms_key_id {
+            let formatted_763 = AsRef::<str>::as_ref(inner_762);
+            if !formatted_763.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_652;
+                let header_value = formatted_763;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -27247,11 +27039,11 @@ impl WriteGetObjectResponseInput {
                 );
             }
         }
-        if let Some(inner_653) = &self.sse_customer_key_md5 {
-            let formatted_654 = AsRef::<str>::as_ref(inner_653);
-            if !formatted_654.is_empty() {
+        if let Some(inner_764) = &self.sse_customer_key_md5 {
+            let formatted_765 = AsRef::<str>::as_ref(inner_764);
+            if !formatted_765.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_654;
+                let header_value = formatted_765;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -27268,11 +27060,11 @@ impl WriteGetObjectResponseInput {
                 );
             }
         }
-        if let Some(inner_655) = &self.storage_class {
-            let formatted_656 = AsRef::<str>::as_ref(inner_655);
-            if !formatted_656.is_empty() {
+        if let Some(inner_766) = &self.storage_class {
+            let formatted_767 = AsRef::<str>::as_ref(inner_766);
+            if !formatted_767.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_656;
+                let header_value = formatted_767;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -27287,10 +27079,11 @@ impl WriteGetObjectResponseInput {
             }
         }
         if self.tag_count != 0 {
-            let formatted_657 = smithy_http::query::fmt_default(&&self.tag_count);
-            if !formatted_657.is_empty() {
+            let mut encoder = smithy_types::primitive::Encoder::from(self.tag_count);
+            let formatted_768 = encoder.encode();
+            if !formatted_768.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_657;
+                let header_value = formatted_768;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -27304,11 +27097,11 @@ impl WriteGetObjectResponseInput {
                 builder = builder.header("x-amz-fwd-header-x-amz-tagging-count", header_value);
             }
         }
-        if let Some(inner_658) = &self.version_id {
-            let formatted_659 = AsRef::<str>::as_ref(inner_658);
-            if !formatted_659.is_empty() {
+        if let Some(inner_769) = &self.version_id {
+            let formatted_770 = AsRef::<str>::as_ref(inner_769);
+            if !formatted_770.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_659;
+                let header_value = formatted_770;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -27323,10 +27116,11 @@ impl WriteGetObjectResponseInput {
             }
         }
         if self.bucket_key_enabled {
-            let formatted_660 = smithy_http::query::fmt_default(&&self.bucket_key_enabled);
-            if !formatted_660.is_empty() {
+            let mut encoder = smithy_types::primitive::Encoder::from(self.bucket_key_enabled);
+            let formatted_771 = encoder.encode();
+            if !formatted_771.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_660;
+                let header_value = formatted_771;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -27343,8 +27137,8 @@ impl WriteGetObjectResponseInput {
                 );
             }
         }
-        if let Some(inner_661) = &self.metadata {
-            for (k, v) in inner_661 {
+        if let Some(inner_772) = &self.metadata {
+            for (k, v) in inner_772 {
                 use std::str::FromStr;
                 let header_name =
                     http::header::HeaderName::from_str(&format!("{}{}", "x-amz-meta-", &k))

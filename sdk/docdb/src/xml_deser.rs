@@ -4636,8 +4636,7 @@ pub fn deser_structure_event_subscription(
                 let var_128 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.docdb#Boolean`)"))
@@ -4855,8 +4854,7 @@ pub fn deser_structure_db_cluster_snapshot(
                 let var_142 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.docdb#Integer`)"))
@@ -4937,8 +4935,7 @@ pub fn deser_structure_db_cluster_snapshot(
                 let var_148 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.docdb#Integer`)"))
@@ -4953,8 +4950,7 @@ pub fn deser_structure_db_cluster_snapshot(
                 let var_149 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.docdb#Boolean`)"))
@@ -5031,8 +5027,7 @@ pub fn deser_structure_db_cluster(
                 let var_154 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.docdb#IntegerOptional`)"))
@@ -5152,8 +5147,7 @@ pub fn deser_structure_db_cluster(
                 let var_163 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.docdb#Boolean`)"))
@@ -5208,8 +5202,7 @@ pub fn deser_structure_db_cluster(
                 let var_167 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.docdb#IntegerOptional`)"))
@@ -5319,8 +5312,7 @@ pub fn deser_structure_db_cluster(
                 let var_176 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.docdb#Boolean`)"))
@@ -5408,8 +5400,7 @@ pub fn deser_structure_db_cluster(
                 let var_183 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.docdb#Boolean`)"))
@@ -5526,8 +5517,7 @@ pub fn deser_structure_db_instance(
                 let var_191 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.docdb#Integer`)"))
@@ -5625,8 +5615,7 @@ pub fn deser_structure_db_instance(
                 let var_199 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.docdb#Boolean`)"))
@@ -5641,8 +5630,7 @@ pub fn deser_structure_db_instance(
                 let var_200 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.docdb#Boolean`)"))
@@ -5680,8 +5668,7 @@ pub fn deser_structure_db_instance(
                 let var_203 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.docdb#Boolean`)"))
@@ -5735,8 +5722,7 @@ pub fn deser_structure_db_instance(
                 let var_207 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.docdb#IntegerOptional`)"))
@@ -5966,8 +5952,7 @@ pub fn deser_structure_global_cluster(
                 let var_223 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.docdb#BooleanOptional`)"))
@@ -5982,8 +5967,7 @@ pub fn deser_structure_global_cluster(
                 let var_224 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.docdb#BooleanOptional`)"))
@@ -6593,8 +6577,7 @@ pub fn deser_structure_endpoint(
                 let var_232 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.docdb#Integer`)"))
@@ -6648,8 +6631,7 @@ pub fn deser_structure_pending_modified_values(
                 let var_235 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.docdb#IntegerOptional`)"))
@@ -6677,8 +6659,7 @@ pub fn deser_structure_pending_modified_values(
                 let var_237 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.docdb#IntegerOptional`)"))
@@ -6693,8 +6674,7 @@ pub fn deser_structure_pending_modified_values(
                 let var_238 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.docdb#IntegerOptional`)"))
@@ -6709,8 +6689,7 @@ pub fn deser_structure_pending_modified_values(
                 let var_239 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.docdb#BooleanOptional`)"))
@@ -6751,8 +6730,7 @@ pub fn deser_structure_pending_modified_values(
                 let var_242 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.docdb#IntegerOptional`)"))
@@ -7083,8 +7061,7 @@ pub fn deser_structure_parameter(
                 let var_261 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.docdb#Boolean`)"))
@@ -7243,8 +7220,7 @@ pub fn deser_structure_db_engine_version(
                 let var_271 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.docdb#Boolean`)"))
@@ -7460,8 +7436,7 @@ pub fn deser_structure_orderable_db_instance_option(
                 let var_285 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.docdb#Boolean`)"))
@@ -7635,8 +7610,7 @@ pub fn deser_structure_db_cluster_member(
                 let var_295 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.docdb#Boolean`)"))
@@ -7664,8 +7638,7 @@ pub fn deser_structure_db_cluster_member(
                 let var_297 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.docdb#IntegerOptional`)"))
@@ -7817,8 +7790,7 @@ pub fn deser_structure_db_instance_status_info(
                 let var_305 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.docdb#Boolean`)"))
@@ -7944,8 +7916,7 @@ pub fn deser_structure_global_cluster_member(
                 let var_313 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.docdb#Boolean`)"))
@@ -8156,8 +8127,7 @@ pub fn deser_structure_upgrade_target(
                 let var_320 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.docdb#Boolean`)"))
@@ -8172,8 +8142,7 @@ pub fn deser_structure_upgrade_target(
                 let var_321 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.docdb#Boolean`)"))

@@ -424,8 +424,7 @@ pub fn deser_operation_describe_account_limits(
                 let var_11 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.autoscaling#MaxNumberOfAutoScalingGroups`)"))
@@ -440,8 +439,7 @@ pub fn deser_operation_describe_account_limits(
                 let var_12 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.autoscaling#MaxNumberOfLaunchConfigurations`)"))
@@ -456,8 +454,7 @@ pub fn deser_operation_describe_account_limits(
                 let var_13 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.autoscaling#NumberOfAutoScalingGroups`)"))
@@ -472,8 +469,7 @@ pub fn deser_operation_describe_account_limits(
                 let var_14 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.autoscaling#NumberOfLaunchConfigurations`)"))
@@ -2446,8 +2442,7 @@ pub fn deser_structure_warm_pool_configuration(
                 let var_60 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.autoscaling#MaxGroupPreparedCapacity`)"))
@@ -2462,8 +2457,7 @@ pub fn deser_structure_warm_pool_configuration(
                 let var_61 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.autoscaling#WarmPoolMinSize`)"))
@@ -2716,8 +2710,7 @@ pub fn deser_structure_activity(
                 let var_74 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.autoscaling#Progress`)"))
@@ -2921,8 +2914,7 @@ pub fn deser_structure_auto_scaling_group(
                 let var_87 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.autoscaling#AutoScalingGroupMinSize`)"))
@@ -2937,8 +2929,7 @@ pub fn deser_structure_auto_scaling_group(
                 let var_88 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.autoscaling#AutoScalingGroupMaxSize`)"))
@@ -2953,8 +2944,7 @@ pub fn deser_structure_auto_scaling_group(
                 let var_89 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.autoscaling#AutoScalingGroupDesiredCapacity`)"))
@@ -2969,8 +2959,7 @@ pub fn deser_structure_auto_scaling_group(
                 let var_90 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.autoscaling#AutoScalingGroupPredictedCapacity`)"))
@@ -2985,8 +2974,7 @@ pub fn deser_structure_auto_scaling_group(
                 let var_91 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.autoscaling#Cooldown`)"))
@@ -3044,8 +3032,7 @@ pub fn deser_structure_auto_scaling_group(
                 let var_96 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.autoscaling#HealthCheckGracePeriod`)"))
@@ -3163,8 +3150,7 @@ pub fn deser_structure_auto_scaling_group(
                 let var_106 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.autoscaling#InstanceProtected`)"))
@@ -3192,8 +3178,7 @@ pub fn deser_structure_auto_scaling_group(
                 let var_108 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.autoscaling#MaxInstanceLifetime`)"))
@@ -3208,8 +3193,7 @@ pub fn deser_structure_auto_scaling_group(
                 let var_109 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.autoscaling#CapacityRebalanceEnabled`)"))
@@ -3234,8 +3218,7 @@ pub fn deser_structure_auto_scaling_group(
                 let var_111 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.autoscaling#WarmPoolSize`)"))
@@ -3377,8 +3360,7 @@ pub fn deser_structure_auto_scaling_instance_details(
                 let var_121 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.autoscaling#InstanceProtected`)"))
@@ -3500,8 +3482,7 @@ pub fn deser_structure_instance_refresh(
                 let var_129 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.autoscaling#IntPercent`)"))
@@ -3516,8 +3497,7 @@ pub fn deser_structure_instance_refresh(
                 let var_130 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.autoscaling#InstancesToUpdate`)"))
@@ -3752,8 +3732,7 @@ pub fn deser_structure_launch_configuration(
                 let var_148 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.autoscaling#EbsOptimized`)"))
@@ -3768,8 +3747,7 @@ pub fn deser_structure_launch_configuration(
                 let var_149 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.autoscaling#AssociatePublicIpAddress`)"))
@@ -3898,8 +3876,7 @@ pub fn deser_structure_lifecycle_hook(
                 let var_158 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.autoscaling#HeartbeatTimeout`)"))
@@ -3914,8 +3891,7 @@ pub fn deser_structure_lifecycle_hook(
                 let var_159 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.autoscaling#GlobalTimeout`)"))
@@ -4203,8 +4179,7 @@ pub fn deser_structure_scaling_policy(
                 let var_175 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.autoscaling#MinAdjustmentStep`)"))
@@ -4219,8 +4194,7 @@ pub fn deser_structure_scaling_policy(
                 let var_176 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.autoscaling#MinAdjustmentMagnitude`)"))
@@ -4235,8 +4209,7 @@ pub fn deser_structure_scaling_policy(
                 let var_177 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.autoscaling#PolicyIncrement`)"))
@@ -4251,8 +4224,7 @@ pub fn deser_structure_scaling_policy(
                 let var_178 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.autoscaling#Cooldown`)"))
@@ -4290,8 +4262,7 @@ pub fn deser_structure_scaling_policy(
                 let var_181 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.autoscaling#EstimatedInstanceWarmup`)"))
@@ -4326,8 +4297,7 @@ pub fn deser_structure_scaling_policy(
                 let var_184 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.autoscaling#ScalingPolicyEnabled`)"))
@@ -4485,8 +4455,7 @@ pub fn deser_structure_scheduled_update_group_action(
                 let var_194 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.autoscaling#AutoScalingGroupMinSize`)"))
@@ -4501,8 +4470,7 @@ pub fn deser_structure_scheduled_update_group_action(
                 let var_195 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.autoscaling#AutoScalingGroupMaxSize`)"))
@@ -4517,8 +4485,7 @@ pub fn deser_structure_scheduled_update_group_action(
                 let var_196 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.autoscaling#AutoScalingGroupDesiredCapacity`)"))
@@ -4611,8 +4578,7 @@ pub fn deser_structure_tag_description(
                 let var_202 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.autoscaling#PropagateAtLaunch`)"))
@@ -4729,8 +4695,7 @@ pub fn deser_structure_instance(
                 let var_210 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.autoscaling#InstanceProtected`)"))
@@ -4835,8 +4800,7 @@ pub fn deser_list_predictive_scaling_forecast_values(
             s if s.matches("member") /* member com.amazonaws.autoscaling#PredictiveScalingForecastValues$member */ =>  {
                 out.push(
                      {
-                        use std::str::FromStr;
-                        f64::from_str(
+                        <f64 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
                         )
                         .map_err(|_|smithy_xml::decode::XmlError::custom("expected (double: `com.amazonaws.autoscaling#MetricScale`)"))
@@ -5186,8 +5150,7 @@ pub fn deser_structure_instance_monitoring(
                 let var_224 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.autoscaling#MonitoringEnabled`)"))
@@ -5229,8 +5192,7 @@ pub fn deser_structure_instance_metadata_options(
                 let var_226 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.autoscaling#InstanceMetadataHttpPutResponseHopLimit`)"))
@@ -5311,8 +5273,7 @@ pub fn deser_structure_target_tracking_configuration(
                 let var_230 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            f64::from_str(
+                            <f64 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (double: `com.amazonaws.autoscaling#MetricScale`)"))
@@ -5327,8 +5288,7 @@ pub fn deser_structure_target_tracking_configuration(
                 let var_231 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.autoscaling#DisableScaleIn`)"))
@@ -5380,8 +5340,7 @@ pub fn deser_structure_predictive_scaling_configuration(
                 let var_234 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.autoscaling#PredictiveScalingSchedulingBufferTime`)"))
@@ -5410,8 +5369,7 @@ pub fn deser_structure_predictive_scaling_configuration(
                 let var_236 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.autoscaling#PredictiveScalingMaxCapacityBuffer`)"))
@@ -5439,8 +5397,7 @@ pub fn deser_structure_predictive_scaling_metric_specification(
                 let var_237 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            f64::from_str(
+                            <f64 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (double: `com.amazonaws.autoscaling#MetricScale`)"))
@@ -5544,8 +5501,7 @@ pub fn deser_structure_instances_distribution(
                 let var_244 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.autoscaling#OnDemandBaseCapacity`)"))
@@ -5560,8 +5516,7 @@ pub fn deser_structure_instances_distribution(
                 let var_245 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.autoscaling#OnDemandPercentageAboveBaseCapacity`)"))
@@ -5589,8 +5544,7 @@ pub fn deser_structure_instances_distribution(
                 let var_247 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.autoscaling#SpotInstancePools`)"))
@@ -5709,8 +5663,7 @@ pub fn deser_structure_instance_refresh_live_pool_progress(
                 let var_253 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.autoscaling#IntPercent`)"))
@@ -5725,8 +5678,7 @@ pub fn deser_structure_instance_refresh_live_pool_progress(
                 let var_254 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.autoscaling#InstancesToUpdate`)"))
@@ -5754,8 +5706,7 @@ pub fn deser_structure_instance_refresh_warm_pool_progress(
                 let var_255 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.autoscaling#IntPercent`)"))
@@ -5770,8 +5721,7 @@ pub fn deser_structure_instance_refresh_warm_pool_progress(
                 let var_256 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.autoscaling#InstancesToUpdate`)"))
@@ -5835,8 +5785,7 @@ pub fn deser_structure_block_device_mapping(
                 let var_260 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.autoscaling#NoDevice`)"))
@@ -5864,8 +5813,7 @@ pub fn deser_structure_step_adjustment(
                 let var_261 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            f64::from_str(
+                            <f64 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (double: `com.amazonaws.autoscaling#MetricScale`)"))
@@ -5880,8 +5828,7 @@ pub fn deser_structure_step_adjustment(
                 let var_262 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            f64::from_str(
+                            <f64 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (double: `com.amazonaws.autoscaling#MetricScale`)"))
@@ -5896,8 +5843,7 @@ pub fn deser_structure_step_adjustment(
                 let var_263 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.autoscaling#PolicyIncrement`)"))
@@ -6215,8 +6161,7 @@ pub fn deser_structure_ebs(
                 let var_278 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.autoscaling#BlockDeviceEbsVolumeSize`)"))
@@ -6244,8 +6189,7 @@ pub fn deser_structure_ebs(
                 let var_280 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.autoscaling#BlockDeviceEbsDeleteOnTermination`)"))
@@ -6260,8 +6204,7 @@ pub fn deser_structure_ebs(
                 let var_281 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.autoscaling#BlockDeviceEbsIops`)"))
@@ -6276,8 +6219,7 @@ pub fn deser_structure_ebs(
                 let var_282 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.autoscaling#BlockDeviceEbsEncrypted`)"))
@@ -6292,8 +6234,7 @@ pub fn deser_structure_ebs(
                 let var_283 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.autoscaling#BlockDeviceEbsThroughput`)"))

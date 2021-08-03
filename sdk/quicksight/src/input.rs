@@ -117,57 +117,48 @@ impl CancelIngestionInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let aws_account_id = {
-            let input = &self.aws_account_id;
-            let input = input
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "aws_account_id",
-                    details: "cannot be empty or unset",
-                })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "aws_account_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let data_set_id = {
-            let input = &self.data_set_id;
-            let input = input
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "data_set_id",
-                    details: "cannot be empty or unset",
-                })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "data_set_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let ingestion_id = {
-            let input = &self.ingestion_id;
-            let input = input
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "ingestion_id",
-                    details: "cannot be empty or unset",
-                })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "ingestion_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let input_1 = &self.aws_account_id;
+        let input_1 = input_1
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "aws_account_id",
+                details: "cannot be empty or unset",
+            })?;
+        let aws_account_id = smithy_http::label::fmt_string(input_1, false);
+        if aws_account_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "aws_account_id",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_2 = &self.data_set_id;
+        let input_2 = input_2
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "data_set_id",
+                details: "cannot be empty or unset",
+            })?;
+        let data_set_id = smithy_http::label::fmt_string(input_2, false);
+        if data_set_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "data_set_id",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_3 = &self.ingestion_id;
+        let input_3 = input_3
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "ingestion_id",
+                details: "cannot be empty or unset",
+            })?;
+        let ingestion_id = smithy_http::label::fmt_string(input_3, false);
+        if ingestion_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "ingestion_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/accounts/{AwsAccountId}/data-sets/{DataSetId}/ingestions/{IngestionId}",
@@ -358,23 +349,20 @@ impl CreateAccountCustomizationInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let aws_account_id = {
-            let input = &self.aws_account_id;
-            let input = input
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "aws_account_id",
-                    details: "cannot be empty or unset",
-                })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "aws_account_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let input_4 = &self.aws_account_id;
+        let input_4 = input_4
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "aws_account_id",
+                details: "cannot be empty or unset",
+            })?;
+        let aws_account_id = smithy_http::label::fmt_string(input_4, false);
+        if aws_account_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "aws_account_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/accounts/{AwsAccountId}/customizations",
@@ -385,8 +373,8 @@ impl CreateAccountCustomizationInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_1) = &self.namespace {
-            query.push_kv("namespace", &smithy_http::query::fmt_string(&inner_1));
+        if let Some(inner_5) = &self.namespace {
+            query.push_kv("namespace", &smithy_http::query::fmt_string(&inner_5));
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -617,40 +605,34 @@ impl CreateAnalysisInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let aws_account_id = {
-            let input = &self.aws_account_id;
-            let input = input
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "aws_account_id",
-                    details: "cannot be empty or unset",
-                })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "aws_account_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let analysis_id = {
-            let input = &self.analysis_id;
-            let input = input
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "analysis_id",
-                    details: "cannot be empty or unset",
-                })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "analysis_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let input_6 = &self.aws_account_id;
+        let input_6 = input_6
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "aws_account_id",
+                details: "cannot be empty or unset",
+            })?;
+        let aws_account_id = smithy_http::label::fmt_string(input_6, false);
+        if aws_account_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "aws_account_id",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_7 = &self.analysis_id;
+        let input_7 = input_7
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "analysis_id",
+                details: "cannot be empty or unset",
+            })?;
+        let analysis_id = smithy_http::label::fmt_string(input_7, false);
+        if analysis_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "analysis_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/accounts/{AwsAccountId}/analyses/{AnalysisId}",
@@ -952,40 +934,34 @@ impl CreateDashboardInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let aws_account_id = {
-            let input = &self.aws_account_id;
-            let input = input
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "aws_account_id",
-                    details: "cannot be empty or unset",
-                })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "aws_account_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let dashboard_id = {
-            let input = &self.dashboard_id;
-            let input = input
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "dashboard_id",
-                    details: "cannot be empty or unset",
-                })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "dashboard_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let input_8 = &self.aws_account_id;
+        let input_8 = input_8
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "aws_account_id",
+                details: "cannot be empty or unset",
+            })?;
+        let aws_account_id = smithy_http::label::fmt_string(input_8, false);
+        if aws_account_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "aws_account_id",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_9 = &self.dashboard_id;
+        let input_9 = input_9
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "dashboard_id",
+                details: "cannot be empty or unset",
+            })?;
+        let dashboard_id = smithy_http::label::fmt_string(input_9, false);
+        if dashboard_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "dashboard_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/accounts/{AwsAccountId}/dashboards/{DashboardId}",
@@ -1311,23 +1287,21 @@ impl CreateDataSetInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let aws_account_id = {
-            let input = &self.aws_account_id;
-            let input = input
+        let input_10 = &self.aws_account_id;
+        let input_10 =
+            input_10
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "aws_account_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "aws_account_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let aws_account_id = smithy_http::label::fmt_string(input_10, false);
+        if aws_account_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "aws_account_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/accounts/{AwsAccountId}/data-sets",
@@ -1605,23 +1579,21 @@ impl CreateDataSourceInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let aws_account_id = {
-            let input = &self.aws_account_id;
-            let input = input
+        let input_11 = &self.aws_account_id;
+        let input_11 =
+            input_11
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "aws_account_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "aws_account_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let aws_account_id = smithy_http::label::fmt_string(input_11, false);
+        if aws_account_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "aws_account_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/accounts/{AwsAccountId}/data-sources",
@@ -1842,40 +1814,36 @@ impl CreateFolderInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let aws_account_id = {
-            let input = &self.aws_account_id;
-            let input = input
+        let input_12 = &self.aws_account_id;
+        let input_12 =
+            input_12
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "aws_account_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "aws_account_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let folder_id = {
-            let input = &self.folder_id;
-            let input = input
+        let aws_account_id = smithy_http::label::fmt_string(input_12, false);
+        if aws_account_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "aws_account_id",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_13 = &self.folder_id;
+        let input_13 =
+            input_13
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "folder_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "folder_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let folder_id = smithy_http::label::fmt_string(input_13, false);
+        if folder_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "folder_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/accounts/{AwsAccountId}/folders/{FolderId}",
@@ -2049,74 +2017,66 @@ impl CreateFolderMembershipInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let aws_account_id = {
-            let input = &self.aws_account_id;
-            let input = input
+        let input_14 = &self.aws_account_id;
+        let input_14 =
+            input_14
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "aws_account_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "aws_account_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let folder_id = {
-            let input = &self.folder_id;
-            let input = input
+        let aws_account_id = smithy_http::label::fmt_string(input_14, false);
+        if aws_account_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "aws_account_id",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_15 = &self.folder_id;
+        let input_15 =
+            input_15
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "folder_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "folder_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let member_type = {
-            let input = &self.member_type;
-            let input = input
+        let folder_id = smithy_http::label::fmt_string(input_15, false);
+        if folder_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "folder_id",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_16 = &self.member_type;
+        let input_16 =
+            input_16
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "member_type",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "member_type",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let member_id = {
-            let input = &self.member_id;
-            let input = input
+        let member_type = smithy_http::label::fmt_string(input_16, false);
+        if member_type.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "member_type",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_17 = &self.member_id;
+        let input_17 =
+            input_17
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "member_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "member_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let member_id = smithy_http::label::fmt_string(input_17, false);
+        if member_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "member_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/accounts/{AwsAccountId}/folders/{FolderId}/members/{MemberType}/{MemberId}",
@@ -2291,40 +2251,36 @@ impl CreateGroupInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let aws_account_id = {
-            let input = &self.aws_account_id;
-            let input = input
+        let input_18 = &self.aws_account_id;
+        let input_18 =
+            input_18
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "aws_account_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "aws_account_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let namespace = {
-            let input = &self.namespace;
-            let input = input
+        let aws_account_id = smithy_http::label::fmt_string(input_18, false);
+        if aws_account_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "aws_account_id",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_19 = &self.namespace;
+        let input_19 =
+            input_19
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "namespace",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "namespace",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let namespace = smithy_http::label::fmt_string(input_19, false);
+        if namespace.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "namespace",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/accounts/{AwsAccountId}/namespaces/{Namespace}/groups",
@@ -2496,74 +2452,66 @@ impl CreateGroupMembershipInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let aws_account_id = {
-            let input = &self.aws_account_id;
-            let input = input
+        let input_20 = &self.aws_account_id;
+        let input_20 =
+            input_20
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "aws_account_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "aws_account_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let namespace = {
-            let input = &self.namespace;
-            let input = input
+        let aws_account_id = smithy_http::label::fmt_string(input_20, false);
+        if aws_account_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "aws_account_id",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_21 = &self.namespace;
+        let input_21 =
+            input_21
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "namespace",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "namespace",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let group_name = {
-            let input = &self.group_name;
-            let input = input
+        let namespace = smithy_http::label::fmt_string(input_21, false);
+        if namespace.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "namespace",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_22 = &self.group_name;
+        let input_22 =
+            input_22
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "group_name",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "group_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let member_name = {
-            let input = &self.member_name;
-            let input = input
+        let group_name = smithy_http::label::fmt_string(input_22, false);
+        if group_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "group_name",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_23 = &self.member_name;
+        let input_23 =
+            input_23
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "member_name",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "member_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let member_name = smithy_http::label::fmt_string(input_23, false);
+        if member_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "member_name",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/accounts/{AwsAccountId}/namespaces/{Namespace}/groups/{GroupName}/members/{MemberName}", AwsAccountId = aws_account_id, Namespace = namespace, GroupName = group_name, MemberName = member_name).expect("formatting should succeed");
         Ok(())
     }
@@ -2791,40 +2739,36 @@ impl CreateIamPolicyAssignmentInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let aws_account_id = {
-            let input = &self.aws_account_id;
-            let input = input
+        let input_24 = &self.aws_account_id;
+        let input_24 =
+            input_24
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "aws_account_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "aws_account_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let namespace = {
-            let input = &self.namespace;
-            let input = input
+        let aws_account_id = smithy_http::label::fmt_string(input_24, false);
+        if aws_account_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "aws_account_id",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_25 = &self.namespace;
+        let input_25 =
+            input_25
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "namespace",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "namespace",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let namespace = smithy_http::label::fmt_string(input_25, false);
+        if namespace.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "namespace",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/accounts/{AwsAccountId}/namespaces/{Namespace}/iam-policy-assignments",
@@ -2984,57 +2928,51 @@ impl CreateIngestionInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let aws_account_id = {
-            let input = &self.aws_account_id;
-            let input = input
+        let input_26 = &self.aws_account_id;
+        let input_26 =
+            input_26
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "aws_account_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "aws_account_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let data_set_id = {
-            let input = &self.data_set_id;
-            let input = input
+        let aws_account_id = smithy_http::label::fmt_string(input_26, false);
+        if aws_account_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "aws_account_id",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_27 = &self.data_set_id;
+        let input_27 =
+            input_27
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "data_set_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "data_set_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let ingestion_id = {
-            let input = &self.ingestion_id;
-            let input = input
+        let data_set_id = smithy_http::label::fmt_string(input_27, false);
+        if data_set_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "data_set_id",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_28 = &self.ingestion_id;
+        let input_28 =
+            input_28
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "ingestion_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "ingestion_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let ingestion_id = smithy_http::label::fmt_string(input_28, false);
+        if ingestion_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "ingestion_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/accounts/{AwsAccountId}/data-sets/{DataSetId}/ingestions/{IngestionId}",
@@ -3216,23 +3154,21 @@ impl CreateNamespaceInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let aws_account_id = {
-            let input = &self.aws_account_id;
-            let input = input
+        let input_29 = &self.aws_account_id;
+        let input_29 =
+            input_29
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "aws_account_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "aws_account_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let aws_account_id = smithy_http::label::fmt_string(input_29, false);
+        if aws_account_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "aws_account_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/accounts/{AwsAccountId}",
@@ -3466,40 +3402,36 @@ impl CreateTemplateInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let aws_account_id = {
-            let input = &self.aws_account_id;
-            let input = input
+        let input_30 = &self.aws_account_id;
+        let input_30 =
+            input_30
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "aws_account_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "aws_account_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let template_id = {
-            let input = &self.template_id;
-            let input = input
+        let aws_account_id = smithy_http::label::fmt_string(input_30, false);
+        if aws_account_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "aws_account_id",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_31 = &self.template_id;
+        let input_31 =
+            input_31
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "template_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "template_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let template_id = smithy_http::label::fmt_string(input_31, false);
+        if template_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "template_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/accounts/{AwsAccountId}/templates/{TemplateId}",
@@ -3675,57 +3607,51 @@ impl CreateTemplateAliasInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let aws_account_id = {
-            let input = &self.aws_account_id;
-            let input = input
+        let input_32 = &self.aws_account_id;
+        let input_32 =
+            input_32
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "aws_account_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "aws_account_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let template_id = {
-            let input = &self.template_id;
-            let input = input
+        let aws_account_id = smithy_http::label::fmt_string(input_32, false);
+        if aws_account_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "aws_account_id",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_33 = &self.template_id;
+        let input_33 =
+            input_33
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "template_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "template_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let alias_name = {
-            let input = &self.alias_name;
-            let input = input
+        let template_id = smithy_http::label::fmt_string(input_33, false);
+        if template_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "template_id",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_34 = &self.alias_name;
+        let input_34 =
+            input_34
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "alias_name",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "alias_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let alias_name = smithy_http::label::fmt_string(input_34, false);
+        if alias_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "alias_name",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/accounts/{AwsAccountId}/templates/{TemplateId}/aliases/{AliasName}",
@@ -3967,40 +3893,36 @@ impl CreateThemeInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let aws_account_id = {
-            let input = &self.aws_account_id;
-            let input = input
+        let input_35 = &self.aws_account_id;
+        let input_35 =
+            input_35
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "aws_account_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "aws_account_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let theme_id = {
-            let input = &self.theme_id;
-            let input = input
+        let aws_account_id = smithy_http::label::fmt_string(input_35, false);
+        if aws_account_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "aws_account_id",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_36 = &self.theme_id;
+        let input_36 =
+            input_36
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "theme_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "theme_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let theme_id = smithy_http::label::fmt_string(input_36, false);
+        if theme_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "theme_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/accounts/{AwsAccountId}/themes/{ThemeId}",
@@ -4176,57 +4098,51 @@ impl CreateThemeAliasInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let aws_account_id = {
-            let input = &self.aws_account_id;
-            let input = input
+        let input_37 = &self.aws_account_id;
+        let input_37 =
+            input_37
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "aws_account_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "aws_account_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let theme_id = {
-            let input = &self.theme_id;
-            let input = input
+        let aws_account_id = smithy_http::label::fmt_string(input_37, false);
+        if aws_account_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "aws_account_id",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_38 = &self.theme_id;
+        let input_38 =
+            input_38
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "theme_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "theme_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let alias_name = {
-            let input = &self.alias_name;
-            let input = input
+        let theme_id = smithy_http::label::fmt_string(input_38, false);
+        if theme_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "theme_id",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_39 = &self.alias_name;
+        let input_39 =
+            input_39
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "alias_name",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "alias_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let alias_name = smithy_http::label::fmt_string(input_39, false);
+        if alias_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "alias_name",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/accounts/{AwsAccountId}/themes/{ThemeId}/aliases/{AliasName}",
@@ -4378,23 +4294,21 @@ impl DeleteAccountCustomizationInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let aws_account_id = {
-            let input = &self.aws_account_id;
-            let input = input
+        let input_40 = &self.aws_account_id;
+        let input_40 =
+            input_40
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "aws_account_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "aws_account_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let aws_account_id = smithy_http::label::fmt_string(input_40, false);
+        if aws_account_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "aws_account_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/accounts/{AwsAccountId}/customizations",
@@ -4405,8 +4319,8 @@ impl DeleteAccountCustomizationInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_2) = &self.namespace {
-            query.push_kv("namespace", &smithy_http::query::fmt_string(&inner_2));
+        if let Some(inner_41) = &self.namespace {
+            query.push_kv("namespace", &smithy_http::query::fmt_string(&inner_41));
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -4580,40 +4494,36 @@ impl DeleteAnalysisInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let aws_account_id = {
-            let input = &self.aws_account_id;
-            let input = input
+        let input_42 = &self.aws_account_id;
+        let input_42 =
+            input_42
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "aws_account_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "aws_account_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let analysis_id = {
-            let input = &self.analysis_id;
-            let input = input
+        let aws_account_id = smithy_http::label::fmt_string(input_42, false);
+        if aws_account_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "aws_account_id",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_43 = &self.analysis_id;
+        let input_43 =
+            input_43
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "analysis_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "analysis_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let analysis_id = smithy_http::label::fmt_string(input_43, false);
+        if analysis_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "analysis_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/accounts/{AwsAccountId}/analyses/{AnalysisId}",
@@ -4625,16 +4535,17 @@ impl DeleteAnalysisInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_3) = &self.recovery_window_in_days {
+        if let Some(inner_44) = &self.recovery_window_in_days {
             query.push_kv(
                 "recovery-window-in-days",
-                &smithy_http::query::fmt_default(&inner_3),
+                &smithy_types::primitive::Encoder::from(*inner_44).encode(),
             );
         }
         if self.force_delete_without_recovery {
             query.push_kv(
                 "force-delete-without-recovery",
-                &smithy_http::query::fmt_default(&&self.force_delete_without_recovery),
+                &smithy_types::primitive::Encoder::from(self.force_delete_without_recovery)
+                    .encode(),
             );
         }
     }
@@ -4791,40 +4702,36 @@ impl DeleteDashboardInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let aws_account_id = {
-            let input = &self.aws_account_id;
-            let input = input
+        let input_45 = &self.aws_account_id;
+        let input_45 =
+            input_45
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "aws_account_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "aws_account_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let dashboard_id = {
-            let input = &self.dashboard_id;
-            let input = input
+        let aws_account_id = smithy_http::label::fmt_string(input_45, false);
+        if aws_account_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "aws_account_id",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_46 = &self.dashboard_id;
+        let input_46 =
+            input_46
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "dashboard_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "dashboard_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let dashboard_id = smithy_http::label::fmt_string(input_46, false);
+        if dashboard_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "dashboard_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/accounts/{AwsAccountId}/dashboards/{DashboardId}",
@@ -4836,8 +4743,11 @@ impl DeleteDashboardInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_4) = &self.version_number {
-            query.push_kv("version-number", &smithy_http::query::fmt_default(&inner_4));
+        if let Some(inner_47) = &self.version_number {
+            query.push_kv(
+                "version-number",
+                &smithy_types::primitive::Encoder::from(*inner_47).encode(),
+            );
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -4978,40 +4888,36 @@ impl DeleteDataSetInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let aws_account_id = {
-            let input = &self.aws_account_id;
-            let input = input
+        let input_48 = &self.aws_account_id;
+        let input_48 =
+            input_48
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "aws_account_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "aws_account_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let data_set_id = {
-            let input = &self.data_set_id;
-            let input = input
+        let aws_account_id = smithy_http::label::fmt_string(input_48, false);
+        if aws_account_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "aws_account_id",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_49 = &self.data_set_id;
+        let input_49 =
+            input_49
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "data_set_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "data_set_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let data_set_id = smithy_http::label::fmt_string(input_49, false);
+        if data_set_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "data_set_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/accounts/{AwsAccountId}/data-sets/{DataSetId}",
@@ -5163,40 +5069,36 @@ impl DeleteDataSourceInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let aws_account_id = {
-            let input = &self.aws_account_id;
-            let input = input
+        let input_50 = &self.aws_account_id;
+        let input_50 =
+            input_50
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "aws_account_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "aws_account_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let data_source_id = {
-            let input = &self.data_source_id;
-            let input = input
+        let aws_account_id = smithy_http::label::fmt_string(input_50, false);
+        if aws_account_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "aws_account_id",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_51 = &self.data_source_id;
+        let input_51 =
+            input_51
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "data_source_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "data_source_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let data_source_id = smithy_http::label::fmt_string(input_51, false);
+        if data_source_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "data_source_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/accounts/{AwsAccountId}/data-sources/{DataSourceId}",
@@ -5343,40 +5245,36 @@ impl DeleteFolderInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let aws_account_id = {
-            let input = &self.aws_account_id;
-            let input = input
+        let input_52 = &self.aws_account_id;
+        let input_52 =
+            input_52
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "aws_account_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "aws_account_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let folder_id = {
-            let input = &self.folder_id;
-            let input = input
+        let aws_account_id = smithy_http::label::fmt_string(input_52, false);
+        if aws_account_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "aws_account_id",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_53 = &self.folder_id;
+        let input_53 =
+            input_53
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "folder_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "folder_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let folder_id = smithy_http::label::fmt_string(input_53, false);
+        if folder_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "folder_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/accounts/{AwsAccountId}/folders/{FolderId}",
@@ -5551,74 +5449,66 @@ impl DeleteFolderMembershipInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let aws_account_id = {
-            let input = &self.aws_account_id;
-            let input = input
+        let input_54 = &self.aws_account_id;
+        let input_54 =
+            input_54
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "aws_account_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "aws_account_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let folder_id = {
-            let input = &self.folder_id;
-            let input = input
+        let aws_account_id = smithy_http::label::fmt_string(input_54, false);
+        if aws_account_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "aws_account_id",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_55 = &self.folder_id;
+        let input_55 =
+            input_55
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "folder_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "folder_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let member_type = {
-            let input = &self.member_type;
-            let input = input
+        let folder_id = smithy_http::label::fmt_string(input_55, false);
+        if folder_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "folder_id",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_56 = &self.member_type;
+        let input_56 =
+            input_56
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "member_type",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "member_type",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let member_id = {
-            let input = &self.member_id;
-            let input = input
+        let member_type = smithy_http::label::fmt_string(input_56, false);
+        if member_type.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "member_type",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_57 = &self.member_id;
+        let input_57 =
+            input_57
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "member_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "member_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let member_id = smithy_http::label::fmt_string(input_57, false);
+        if member_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "member_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/accounts/{AwsAccountId}/folders/{FolderId}/members/{MemberType}/{MemberId}",
@@ -5779,57 +5669,51 @@ impl DeleteGroupInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let aws_account_id = {
-            let input = &self.aws_account_id;
-            let input = input
+        let input_58 = &self.aws_account_id;
+        let input_58 =
+            input_58
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "aws_account_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "aws_account_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let namespace = {
-            let input = &self.namespace;
-            let input = input
+        let aws_account_id = smithy_http::label::fmt_string(input_58, false);
+        if aws_account_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "aws_account_id",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_59 = &self.namespace;
+        let input_59 =
+            input_59
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "namespace",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "namespace",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let group_name = {
-            let input = &self.group_name;
-            let input = input
+        let namespace = smithy_http::label::fmt_string(input_59, false);
+        if namespace.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "namespace",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_60 = &self.group_name;
+        let input_60 =
+            input_60
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "group_name",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "group_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let group_name = smithy_http::label::fmt_string(input_60, false);
+        if group_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "group_name",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/accounts/{AwsAccountId}/namespaces/{Namespace}/groups/{GroupName}",
@@ -6002,74 +5886,66 @@ impl DeleteGroupMembershipInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let aws_account_id = {
-            let input = &self.aws_account_id;
-            let input = input
+        let input_61 = &self.aws_account_id;
+        let input_61 =
+            input_61
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "aws_account_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "aws_account_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let namespace = {
-            let input = &self.namespace;
-            let input = input
+        let aws_account_id = smithy_http::label::fmt_string(input_61, false);
+        if aws_account_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "aws_account_id",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_62 = &self.namespace;
+        let input_62 =
+            input_62
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "namespace",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "namespace",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let group_name = {
-            let input = &self.group_name;
-            let input = input
+        let namespace = smithy_http::label::fmt_string(input_62, false);
+        if namespace.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "namespace",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_63 = &self.group_name;
+        let input_63 =
+            input_63
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "group_name",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "group_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let member_name = {
-            let input = &self.member_name;
-            let input = input
+        let group_name = smithy_http::label::fmt_string(input_63, false);
+        if group_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "group_name",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_64 = &self.member_name;
+        let input_64 =
+            input_64
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "member_name",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "member_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let member_name = smithy_http::label::fmt_string(input_64, false);
+        if member_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "member_name",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/accounts/{AwsAccountId}/namespaces/{Namespace}/groups/{GroupName}/members/{MemberName}", AwsAccountId = aws_account_id, Namespace = namespace, GroupName = group_name, MemberName = member_name).expect("formatting should succeed");
         Ok(())
     }
@@ -6227,57 +6103,51 @@ impl DeleteIamPolicyAssignmentInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let aws_account_id = {
-            let input = &self.aws_account_id;
-            let input = input
+        let input_65 = &self.aws_account_id;
+        let input_65 =
+            input_65
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "aws_account_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "aws_account_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let namespace = {
-            let input = &self.namespace;
-            let input = input
+        let aws_account_id = smithy_http::label::fmt_string(input_65, false);
+        if aws_account_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "aws_account_id",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_66 = &self.namespace;
+        let input_66 =
+            input_66
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "namespace",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "namespace",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let assignment_name = {
-            let input = &self.assignment_name;
-            let input = input
+        let namespace = smithy_http::label::fmt_string(input_66, false);
+        if namespace.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "namespace",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_67 = &self.assignment_name;
+        let input_67 =
+            input_67
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "assignment_name",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "assignment_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let assignment_name = smithy_http::label::fmt_string(input_67, false);
+        if assignment_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "assignment_name",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/accounts/{AwsAccountId}/namespace/{Namespace}/iam-policy-assignments/{AssignmentName}", AwsAccountId = aws_account_id, Namespace = namespace, AssignmentName = assignment_name).expect("formatting should succeed");
         Ok(())
     }
@@ -6420,40 +6290,36 @@ impl DeleteNamespaceInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let aws_account_id = {
-            let input = &self.aws_account_id;
-            let input = input
+        let input_68 = &self.aws_account_id;
+        let input_68 =
+            input_68
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "aws_account_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "aws_account_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let namespace = {
-            let input = &self.namespace;
-            let input = input
+        let aws_account_id = smithy_http::label::fmt_string(input_68, false);
+        if aws_account_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "aws_account_id",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_69 = &self.namespace;
+        let input_69 =
+            input_69
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "namespace",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "namespace",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let namespace = smithy_http::label::fmt_string(input_69, false);
+        if namespace.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "namespace",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/accounts/{AwsAccountId}/namespaces/{Namespace}",
@@ -6615,40 +6481,36 @@ impl DeleteTemplateInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let aws_account_id = {
-            let input = &self.aws_account_id;
-            let input = input
+        let input_70 = &self.aws_account_id;
+        let input_70 =
+            input_70
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "aws_account_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "aws_account_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let template_id = {
-            let input = &self.template_id;
-            let input = input
+        let aws_account_id = smithy_http::label::fmt_string(input_70, false);
+        if aws_account_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "aws_account_id",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_71 = &self.template_id;
+        let input_71 =
+            input_71
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "template_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "template_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let template_id = smithy_http::label::fmt_string(input_71, false);
+        if template_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "template_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/accounts/{AwsAccountId}/templates/{TemplateId}",
@@ -6660,8 +6522,11 @@ impl DeleteTemplateInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_5) = &self.version_number {
-            query.push_kv("version-number", &smithy_http::query::fmt_default(&inner_5));
+        if let Some(inner_72) = &self.version_number {
+            query.push_kv(
+                "version-number",
+                &smithy_types::primitive::Encoder::from(*inner_72).encode(),
+            );
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -6818,57 +6683,51 @@ impl DeleteTemplateAliasInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let aws_account_id = {
-            let input = &self.aws_account_id;
-            let input = input
+        let input_73 = &self.aws_account_id;
+        let input_73 =
+            input_73
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "aws_account_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "aws_account_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let template_id = {
-            let input = &self.template_id;
-            let input = input
+        let aws_account_id = smithy_http::label::fmt_string(input_73, false);
+        if aws_account_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "aws_account_id",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_74 = &self.template_id;
+        let input_74 =
+            input_74
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "template_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "template_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let alias_name = {
-            let input = &self.alias_name;
-            let input = input
+        let template_id = smithy_http::label::fmt_string(input_74, false);
+        if template_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "template_id",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_75 = &self.alias_name;
+        let input_75 =
+            input_75
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "alias_name",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "alias_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let alias_name = smithy_http::label::fmt_string(input_75, false);
+        if alias_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "alias_name",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/accounts/{AwsAccountId}/templates/{TemplateId}/aliases/{AliasName}",
@@ -7030,40 +6889,36 @@ impl DeleteThemeInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let aws_account_id = {
-            let input = &self.aws_account_id;
-            let input = input
+        let input_76 = &self.aws_account_id;
+        let input_76 =
+            input_76
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "aws_account_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "aws_account_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let theme_id = {
-            let input = &self.theme_id;
-            let input = input
+        let aws_account_id = smithy_http::label::fmt_string(input_76, false);
+        if aws_account_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "aws_account_id",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_77 = &self.theme_id;
+        let input_77 =
+            input_77
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "theme_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "theme_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let theme_id = smithy_http::label::fmt_string(input_77, false);
+        if theme_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "theme_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/accounts/{AwsAccountId}/themes/{ThemeId}",
@@ -7075,8 +6930,11 @@ impl DeleteThemeInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_6) = &self.version_number {
-            query.push_kv("version-number", &smithy_http::query::fmt_default(&inner_6));
+        if let Some(inner_78) = &self.version_number {
+            query.push_kv(
+                "version-number",
+                &smithy_types::primitive::Encoder::from(*inner_78).encode(),
+            );
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -7230,57 +7088,51 @@ impl DeleteThemeAliasInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let aws_account_id = {
-            let input = &self.aws_account_id;
-            let input = input
+        let input_79 = &self.aws_account_id;
+        let input_79 =
+            input_79
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "aws_account_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "aws_account_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let theme_id = {
-            let input = &self.theme_id;
-            let input = input
+        let aws_account_id = smithy_http::label::fmt_string(input_79, false);
+        if aws_account_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "aws_account_id",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_80 = &self.theme_id;
+        let input_80 =
+            input_80
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "theme_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "theme_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let alias_name = {
-            let input = &self.alias_name;
-            let input = input
+        let theme_id = smithy_http::label::fmt_string(input_80, false);
+        if theme_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "theme_id",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_81 = &self.alias_name;
+        let input_81 =
+            input_81
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "alias_name",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "alias_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let alias_name = smithy_http::label::fmt_string(input_81, false);
+        if alias_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "alias_name",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/accounts/{AwsAccountId}/themes/{ThemeId}/aliases/{AliasName}",
@@ -7440,57 +7292,51 @@ impl DeleteUserInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let aws_account_id = {
-            let input = &self.aws_account_id;
-            let input = input
+        let input_82 = &self.aws_account_id;
+        let input_82 =
+            input_82
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "aws_account_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "aws_account_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let namespace = {
-            let input = &self.namespace;
-            let input = input
+        let aws_account_id = smithy_http::label::fmt_string(input_82, false);
+        if aws_account_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "aws_account_id",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_83 = &self.namespace;
+        let input_83 =
+            input_83
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "namespace",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "namespace",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let user_name = {
-            let input = &self.user_name;
-            let input = input
+        let namespace = smithy_http::label::fmt_string(input_83, false);
+        if namespace.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "namespace",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_84 = &self.user_name;
+        let input_84 =
+            input_84
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "user_name",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "user_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let user_name = smithy_http::label::fmt_string(input_84, false);
+        if user_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "user_name",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/accounts/{AwsAccountId}/namespaces/{Namespace}/users/{UserName}",
@@ -7653,57 +7499,51 @@ impl DeleteUserByPrincipalIdInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let aws_account_id = {
-            let input = &self.aws_account_id;
-            let input = input
+        let input_85 = &self.aws_account_id;
+        let input_85 =
+            input_85
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "aws_account_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "aws_account_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let namespace = {
-            let input = &self.namespace;
-            let input = input
+        let aws_account_id = smithy_http::label::fmt_string(input_85, false);
+        if aws_account_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "aws_account_id",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_86 = &self.namespace;
+        let input_86 =
+            input_86
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "namespace",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "namespace",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let principal_id = {
-            let input = &self.principal_id;
-            let input = input
+        let namespace = smithy_http::label::fmt_string(input_86, false);
+        if namespace.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "namespace",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_87 = &self.principal_id;
+        let input_87 =
+            input_87
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "principal_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "principal_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let principal_id = smithy_http::label::fmt_string(input_87, false);
+        if principal_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "principal_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/accounts/{AwsAccountId}/namespaces/{Namespace}/user-principals/{PrincipalId}",
@@ -7871,23 +7711,21 @@ impl DescribeAccountCustomizationInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let aws_account_id = {
-            let input = &self.aws_account_id;
-            let input = input
+        let input_88 = &self.aws_account_id;
+        let input_88 =
+            input_88
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "aws_account_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "aws_account_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let aws_account_id = smithy_http::label::fmt_string(input_88, false);
+        if aws_account_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "aws_account_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/accounts/{AwsAccountId}/customizations",
@@ -7898,13 +7736,13 @@ impl DescribeAccountCustomizationInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_7) = &self.namespace {
-            query.push_kv("namespace", &smithy_http::query::fmt_string(&inner_7));
+        if let Some(inner_89) = &self.namespace {
+            query.push_kv("namespace", &smithy_http::query::fmt_string(&inner_89));
         }
         if self.resolved {
             query.push_kv(
                 "resolved",
-                &smithy_http::query::fmt_default(&&self.resolved),
+                &smithy_types::primitive::Encoder::from(self.resolved).encode(),
             );
         }
     }
@@ -8038,23 +7876,21 @@ impl DescribeAccountSettingsInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let aws_account_id = {
-            let input = &self.aws_account_id;
-            let input = input
+        let input_90 = &self.aws_account_id;
+        let input_90 =
+            input_90
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "aws_account_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "aws_account_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let aws_account_id = smithy_http::label::fmt_string(input_90, false);
+        if aws_account_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "aws_account_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/accounts/{AwsAccountId}/settings",
@@ -8204,40 +8040,36 @@ impl DescribeAnalysisInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let aws_account_id = {
-            let input = &self.aws_account_id;
-            let input = input
+        let input_91 = &self.aws_account_id;
+        let input_91 =
+            input_91
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "aws_account_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "aws_account_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let analysis_id = {
-            let input = &self.analysis_id;
-            let input = input
+        let aws_account_id = smithy_http::label::fmt_string(input_91, false);
+        if aws_account_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "aws_account_id",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_92 = &self.analysis_id;
+        let input_92 =
+            input_92
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "analysis_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "analysis_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let analysis_id = smithy_http::label::fmt_string(input_92, false);
+        if analysis_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "analysis_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/accounts/{AwsAccountId}/analyses/{AnalysisId}",
@@ -8389,40 +8221,36 @@ impl DescribeAnalysisPermissionsInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let aws_account_id = {
-            let input = &self.aws_account_id;
-            let input = input
+        let input_93 = &self.aws_account_id;
+        let input_93 =
+            input_93
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "aws_account_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "aws_account_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let analysis_id = {
-            let input = &self.analysis_id;
-            let input = input
+        let aws_account_id = smithy_http::label::fmt_string(input_93, false);
+        if aws_account_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "aws_account_id",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_94 = &self.analysis_id;
+        let input_94 =
+            input_94
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "analysis_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "analysis_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let analysis_id = smithy_http::label::fmt_string(input_94, false);
+        if analysis_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "analysis_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/accounts/{AwsAccountId}/analyses/{AnalysisId}/permissions",
@@ -8595,40 +8423,36 @@ impl DescribeDashboardInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let aws_account_id = {
-            let input = &self.aws_account_id;
-            let input = input
+        let input_95 = &self.aws_account_id;
+        let input_95 =
+            input_95
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "aws_account_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "aws_account_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let dashboard_id = {
-            let input = &self.dashboard_id;
-            let input = input
+        let aws_account_id = smithy_http::label::fmt_string(input_95, false);
+        if aws_account_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "aws_account_id",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_96 = &self.dashboard_id;
+        let input_96 =
+            input_96
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "dashboard_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "dashboard_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let dashboard_id = smithy_http::label::fmt_string(input_96, false);
+        if dashboard_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "dashboard_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/accounts/{AwsAccountId}/dashboards/{DashboardId}",
@@ -8640,11 +8464,14 @@ impl DescribeDashboardInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_8) = &self.version_number {
-            query.push_kv("version-number", &smithy_http::query::fmt_default(&inner_8));
+        if let Some(inner_97) = &self.version_number {
+            query.push_kv(
+                "version-number",
+                &smithy_types::primitive::Encoder::from(*inner_97).encode(),
+            );
         }
-        if let Some(inner_9) = &self.alias_name {
-            query.push_kv("alias-name", &smithy_http::query::fmt_string(&inner_9));
+        if let Some(inner_98) = &self.alias_name {
+            query.push_kv("alias-name", &smithy_http::query::fmt_string(&inner_98));
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -8789,40 +8616,36 @@ impl DescribeDashboardPermissionsInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let aws_account_id = {
-            let input = &self.aws_account_id;
-            let input = input
+        let input_99 = &self.aws_account_id;
+        let input_99 =
+            input_99
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "aws_account_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "aws_account_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let dashboard_id = {
-            let input = &self.dashboard_id;
-            let input = input
+        let aws_account_id = smithy_http::label::fmt_string(input_99, false);
+        if aws_account_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "aws_account_id",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_100 = &self.dashboard_id;
+        let input_100 =
+            input_100
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "dashboard_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "dashboard_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let dashboard_id = smithy_http::label::fmt_string(input_100, false);
+        if dashboard_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "dashboard_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/accounts/{AwsAccountId}/dashboards/{DashboardId}/permissions",
@@ -8971,40 +8794,36 @@ impl DescribeDataSetInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let aws_account_id = {
-            let input = &self.aws_account_id;
-            let input = input
+        let input_101 = &self.aws_account_id;
+        let input_101 =
+            input_101
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "aws_account_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "aws_account_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let data_set_id = {
-            let input = &self.data_set_id;
-            let input = input
+        let aws_account_id = smithy_http::label::fmt_string(input_101, false);
+        if aws_account_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "aws_account_id",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_102 = &self.data_set_id;
+        let input_102 =
+            input_102
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "data_set_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "data_set_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let data_set_id = smithy_http::label::fmt_string(input_102, false);
+        if data_set_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "data_set_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/accounts/{AwsAccountId}/data-sets/{DataSetId}",
@@ -9154,40 +8973,36 @@ impl DescribeDataSetPermissionsInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let aws_account_id = {
-            let input = &self.aws_account_id;
-            let input = input
+        let input_103 = &self.aws_account_id;
+        let input_103 =
+            input_103
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "aws_account_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "aws_account_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let data_set_id = {
-            let input = &self.data_set_id;
-            let input = input
+        let aws_account_id = smithy_http::label::fmt_string(input_103, false);
+        if aws_account_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "aws_account_id",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_104 = &self.data_set_id;
+        let input_104 =
+            input_104
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "data_set_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "data_set_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let data_set_id = smithy_http::label::fmt_string(input_104, false);
+        if data_set_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "data_set_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/accounts/{AwsAccountId}/data-sets/{DataSetId}/permissions",
@@ -9339,40 +9154,36 @@ impl DescribeDataSourceInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let aws_account_id = {
-            let input = &self.aws_account_id;
-            let input = input
+        let input_105 = &self.aws_account_id;
+        let input_105 =
+            input_105
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "aws_account_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "aws_account_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let data_source_id = {
-            let input = &self.data_source_id;
-            let input = input
+        let aws_account_id = smithy_http::label::fmt_string(input_105, false);
+        if aws_account_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "aws_account_id",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_106 = &self.data_source_id;
+        let input_106 =
+            input_106
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "data_source_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "data_source_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let data_source_id = smithy_http::label::fmt_string(input_106, false);
+        if data_source_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "data_source_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/accounts/{AwsAccountId}/data-sources/{DataSourceId}",
@@ -9525,40 +9336,36 @@ impl DescribeDataSourcePermissionsInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let aws_account_id = {
-            let input = &self.aws_account_id;
-            let input = input
+        let input_107 = &self.aws_account_id;
+        let input_107 =
+            input_107
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "aws_account_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "aws_account_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let data_source_id = {
-            let input = &self.data_source_id;
-            let input = input
+        let aws_account_id = smithy_http::label::fmt_string(input_107, false);
+        if aws_account_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "aws_account_id",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_108 = &self.data_source_id;
+        let input_108 =
+            input_108
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "data_source_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "data_source_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let data_source_id = smithy_http::label::fmt_string(input_108, false);
+        if data_source_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "data_source_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/accounts/{AwsAccountId}/data-sources/{DataSourceId}/permissions",
@@ -9707,40 +9514,36 @@ impl DescribeFolderInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let aws_account_id = {
-            let input = &self.aws_account_id;
-            let input = input
+        let input_109 = &self.aws_account_id;
+        let input_109 =
+            input_109
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "aws_account_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "aws_account_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let folder_id = {
-            let input = &self.folder_id;
-            let input = input
+        let aws_account_id = smithy_http::label::fmt_string(input_109, false);
+        if aws_account_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "aws_account_id",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_110 = &self.folder_id;
+        let input_110 =
+            input_110
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "folder_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "folder_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let folder_id = smithy_http::label::fmt_string(input_110, false);
+        if folder_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "folder_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/accounts/{AwsAccountId}/folders/{FolderId}",
@@ -9890,40 +9693,36 @@ impl DescribeFolderPermissionsInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let aws_account_id = {
-            let input = &self.aws_account_id;
-            let input = input
+        let input_111 = &self.aws_account_id;
+        let input_111 =
+            input_111
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "aws_account_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "aws_account_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let folder_id = {
-            let input = &self.folder_id;
-            let input = input
+        let aws_account_id = smithy_http::label::fmt_string(input_111, false);
+        if aws_account_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "aws_account_id",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_112 = &self.folder_id;
+        let input_112 =
+            input_112
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "folder_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "folder_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let folder_id = smithy_http::label::fmt_string(input_112, false);
+        if folder_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "folder_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/accounts/{AwsAccountId}/folders/{FolderId}/permissions",
@@ -10073,40 +9872,36 @@ impl DescribeFolderResolvedPermissionsInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let aws_account_id = {
-            let input = &self.aws_account_id;
-            let input = input
+        let input_113 = &self.aws_account_id;
+        let input_113 =
+            input_113
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "aws_account_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "aws_account_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let folder_id = {
-            let input = &self.folder_id;
-            let input = input
+        let aws_account_id = smithy_http::label::fmt_string(input_113, false);
+        if aws_account_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "aws_account_id",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_114 = &self.folder_id;
+        let input_114 =
+            input_114
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "folder_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "folder_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let folder_id = smithy_http::label::fmt_string(input_114, false);
+        if folder_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "folder_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/accounts/{AwsAccountId}/folders/{FolderId}/resolved-permissions",
@@ -10265,57 +10060,51 @@ impl DescribeGroupInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let aws_account_id = {
-            let input = &self.aws_account_id;
-            let input = input
+        let input_115 = &self.aws_account_id;
+        let input_115 =
+            input_115
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "aws_account_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "aws_account_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let namespace = {
-            let input = &self.namespace;
-            let input = input
+        let aws_account_id = smithy_http::label::fmt_string(input_115, false);
+        if aws_account_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "aws_account_id",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_116 = &self.namespace;
+        let input_116 =
+            input_116
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "namespace",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "namespace",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let group_name = {
-            let input = &self.group_name;
-            let input = input
+        let namespace = smithy_http::label::fmt_string(input_116, false);
+        if namespace.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "namespace",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_117 = &self.group_name;
+        let input_117 =
+            input_117
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "group_name",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "group_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let group_name = smithy_http::label::fmt_string(input_117, false);
+        if group_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "group_name",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/accounts/{AwsAccountId}/namespaces/{Namespace}/groups/{GroupName}",
@@ -10480,57 +10269,51 @@ impl DescribeIamPolicyAssignmentInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let aws_account_id = {
-            let input = &self.aws_account_id;
-            let input = input
+        let input_118 = &self.aws_account_id;
+        let input_118 =
+            input_118
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "aws_account_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "aws_account_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let namespace = {
-            let input = &self.namespace;
-            let input = input
+        let aws_account_id = smithy_http::label::fmt_string(input_118, false);
+        if aws_account_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "aws_account_id",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_119 = &self.namespace;
+        let input_119 =
+            input_119
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "namespace",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "namespace",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let assignment_name = {
-            let input = &self.assignment_name;
-            let input = input
+        let namespace = smithy_http::label::fmt_string(input_119, false);
+        if namespace.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "namespace",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_120 = &self.assignment_name;
+        let input_120 =
+            input_120
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "assignment_name",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "assignment_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let assignment_name = smithy_http::label::fmt_string(input_120, false);
+        if assignment_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "assignment_name",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/accounts/{AwsAccountId}/namespaces/{Namespace}/iam-policy-assignments/{AssignmentName}", AwsAccountId = aws_account_id, Namespace = namespace, AssignmentName = assignment_name).expect("formatting should succeed");
         Ok(())
     }
@@ -10684,57 +10467,51 @@ impl DescribeIngestionInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let aws_account_id = {
-            let input = &self.aws_account_id;
-            let input = input
+        let input_121 = &self.aws_account_id;
+        let input_121 =
+            input_121
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "aws_account_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "aws_account_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let data_set_id = {
-            let input = &self.data_set_id;
-            let input = input
+        let aws_account_id = smithy_http::label::fmt_string(input_121, false);
+        if aws_account_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "aws_account_id",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_122 = &self.data_set_id;
+        let input_122 =
+            input_122
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "data_set_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "data_set_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let ingestion_id = {
-            let input = &self.ingestion_id;
-            let input = input
+        let data_set_id = smithy_http::label::fmt_string(input_122, false);
+        if data_set_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "data_set_id",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_123 = &self.ingestion_id;
+        let input_123 =
+            input_123
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "ingestion_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "ingestion_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let ingestion_id = smithy_http::label::fmt_string(input_123, false);
+        if ingestion_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "ingestion_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/accounts/{AwsAccountId}/data-sets/{DataSetId}/ingestions/{IngestionId}",
@@ -10884,40 +10661,36 @@ impl DescribeNamespaceInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let aws_account_id = {
-            let input = &self.aws_account_id;
-            let input = input
+        let input_124 = &self.aws_account_id;
+        let input_124 =
+            input_124
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "aws_account_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "aws_account_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let namespace = {
-            let input = &self.namespace;
-            let input = input
+        let aws_account_id = smithy_http::label::fmt_string(input_124, false);
+        if aws_account_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "aws_account_id",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_125 = &self.namespace;
+        let input_125 =
+            input_125
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "namespace",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "namespace",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let namespace = smithy_http::label::fmt_string(input_125, false);
+        if namespace.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "namespace",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/accounts/{AwsAccountId}/namespaces/{Namespace}",
@@ -11092,40 +10865,36 @@ impl DescribeTemplateInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let aws_account_id = {
-            let input = &self.aws_account_id;
-            let input = input
+        let input_126 = &self.aws_account_id;
+        let input_126 =
+            input_126
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "aws_account_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "aws_account_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let template_id = {
-            let input = &self.template_id;
-            let input = input
+        let aws_account_id = smithy_http::label::fmt_string(input_126, false);
+        if aws_account_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "aws_account_id",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_127 = &self.template_id;
+        let input_127 =
+            input_127
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "template_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "template_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let template_id = smithy_http::label::fmt_string(input_127, false);
+        if template_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "template_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/accounts/{AwsAccountId}/templates/{TemplateId}",
@@ -11137,14 +10906,14 @@ impl DescribeTemplateInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_10) = &self.version_number {
+        if let Some(inner_128) = &self.version_number {
             query.push_kv(
                 "version-number",
-                &smithy_http::query::fmt_default(&inner_10),
+                &smithy_types::primitive::Encoder::from(*inner_128).encode(),
             );
         }
-        if let Some(inner_11) = &self.alias_name {
-            query.push_kv("alias-name", &smithy_http::query::fmt_string(&inner_11));
+        if let Some(inner_129) = &self.alias_name {
+            query.push_kv("alias-name", &smithy_http::query::fmt_string(&inner_129));
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -11302,57 +11071,51 @@ impl DescribeTemplateAliasInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let aws_account_id = {
-            let input = &self.aws_account_id;
-            let input = input
+        let input_130 = &self.aws_account_id;
+        let input_130 =
+            input_130
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "aws_account_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "aws_account_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let template_id = {
-            let input = &self.template_id;
-            let input = input
+        let aws_account_id = smithy_http::label::fmt_string(input_130, false);
+        if aws_account_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "aws_account_id",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_131 = &self.template_id;
+        let input_131 =
+            input_131
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "template_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "template_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let alias_name = {
-            let input = &self.alias_name;
-            let input = input
+        let template_id = smithy_http::label::fmt_string(input_131, false);
+        if template_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "template_id",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_132 = &self.alias_name;
+        let input_132 =
+            input_132
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "alias_name",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "alias_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let alias_name = smithy_http::label::fmt_string(input_132, false);
+        if alias_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "alias_name",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/accounts/{AwsAccountId}/templates/{TemplateId}/aliases/{AliasName}",
@@ -11503,40 +11266,36 @@ impl DescribeTemplatePermissionsInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let aws_account_id = {
-            let input = &self.aws_account_id;
-            let input = input
+        let input_133 = &self.aws_account_id;
+        let input_133 =
+            input_133
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "aws_account_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "aws_account_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let template_id = {
-            let input = &self.template_id;
-            let input = input
+        let aws_account_id = smithy_http::label::fmt_string(input_133, false);
+        if aws_account_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "aws_account_id",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_134 = &self.template_id;
+        let input_134 =
+            input_134
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "template_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "template_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let template_id = smithy_http::label::fmt_string(input_134, false);
+        if template_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "template_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/accounts/{AwsAccountId}/templates/{TemplateId}/permissions",
@@ -11709,40 +11468,36 @@ impl DescribeThemeInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let aws_account_id = {
-            let input = &self.aws_account_id;
-            let input = input
+        let input_135 = &self.aws_account_id;
+        let input_135 =
+            input_135
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "aws_account_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "aws_account_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let theme_id = {
-            let input = &self.theme_id;
-            let input = input
+        let aws_account_id = smithy_http::label::fmt_string(input_135, false);
+        if aws_account_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "aws_account_id",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_136 = &self.theme_id;
+        let input_136 =
+            input_136
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "theme_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "theme_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let theme_id = smithy_http::label::fmt_string(input_136, false);
+        if theme_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "theme_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/accounts/{AwsAccountId}/themes/{ThemeId}",
@@ -11754,14 +11509,14 @@ impl DescribeThemeInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_12) = &self.version_number {
+        if let Some(inner_137) = &self.version_number {
             query.push_kv(
                 "version-number",
-                &smithy_http::query::fmt_default(&inner_12),
+                &smithy_types::primitive::Encoder::from(*inner_137).encode(),
             );
         }
-        if let Some(inner_13) = &self.alias_name {
-            query.push_kv("alias-name", &smithy_http::query::fmt_string(&inner_13));
+        if let Some(inner_138) = &self.alias_name {
+            query.push_kv("alias-name", &smithy_http::query::fmt_string(&inner_138));
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -11916,57 +11671,51 @@ impl DescribeThemeAliasInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let aws_account_id = {
-            let input = &self.aws_account_id;
-            let input = input
+        let input_139 = &self.aws_account_id;
+        let input_139 =
+            input_139
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "aws_account_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "aws_account_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let theme_id = {
-            let input = &self.theme_id;
-            let input = input
+        let aws_account_id = smithy_http::label::fmt_string(input_139, false);
+        if aws_account_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "aws_account_id",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_140 = &self.theme_id;
+        let input_140 =
+            input_140
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "theme_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "theme_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let alias_name = {
-            let input = &self.alias_name;
-            let input = input
+        let theme_id = smithy_http::label::fmt_string(input_140, false);
+        if theme_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "theme_id",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_141 = &self.alias_name;
+        let input_141 =
+            input_141
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "alias_name",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "alias_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let alias_name = smithy_http::label::fmt_string(input_141, false);
+        if alias_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "alias_name",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/accounts/{AwsAccountId}/themes/{ThemeId}/aliases/{AliasName}",
@@ -12117,40 +11866,36 @@ impl DescribeThemePermissionsInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let aws_account_id = {
-            let input = &self.aws_account_id;
-            let input = input
+        let input_142 = &self.aws_account_id;
+        let input_142 =
+            input_142
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "aws_account_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "aws_account_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let theme_id = {
-            let input = &self.theme_id;
-            let input = input
+        let aws_account_id = smithy_http::label::fmt_string(input_142, false);
+        if aws_account_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "aws_account_id",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_143 = &self.theme_id;
+        let input_143 =
+            input_143
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "theme_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "theme_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let theme_id = smithy_http::label::fmt_string(input_143, false);
+        if theme_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "theme_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/accounts/{AwsAccountId}/themes/{ThemeId}/permissions",
@@ -12309,57 +12054,51 @@ impl DescribeUserInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let aws_account_id = {
-            let input = &self.aws_account_id;
-            let input = input
+        let input_144 = &self.aws_account_id;
+        let input_144 =
+            input_144
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "aws_account_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "aws_account_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let namespace = {
-            let input = &self.namespace;
-            let input = input
+        let aws_account_id = smithy_http::label::fmt_string(input_144, false);
+        if aws_account_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "aws_account_id",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_145 = &self.namespace;
+        let input_145 =
+            input_145
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "namespace",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "namespace",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let user_name = {
-            let input = &self.user_name;
-            let input = input
+        let namespace = smithy_http::label::fmt_string(input_145, false);
+        if namespace.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "namespace",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_146 = &self.user_name;
+        let input_146 =
+            input_146
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "user_name",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "user_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let user_name = smithy_http::label::fmt_string(input_146, false);
+        if user_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "user_name",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/accounts/{AwsAccountId}/namespaces/{Namespace}/users/{UserName}",
@@ -12632,40 +12371,36 @@ impl GetDashboardEmbedUrlInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let aws_account_id = {
-            let input = &self.aws_account_id;
-            let input = input
+        let input_147 = &self.aws_account_id;
+        let input_147 =
+            input_147
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "aws_account_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "aws_account_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let dashboard_id = {
-            let input = &self.dashboard_id;
-            let input = input
+        let aws_account_id = smithy_http::label::fmt_string(input_147, false);
+        if aws_account_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "aws_account_id",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_148 = &self.dashboard_id;
+        let input_148 =
+            input_148
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "dashboard_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "dashboard_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let dashboard_id = smithy_http::label::fmt_string(input_148, false);
+        if dashboard_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "dashboard_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/accounts/{AwsAccountId}/dashboards/{DashboardId}/embed-url",
@@ -12677,44 +12412,44 @@ impl GetDashboardEmbedUrlInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_14) = &self.identity_type {
-            query.push_kv("creds-type", &smithy_http::query::fmt_string(&inner_14));
+        if let Some(inner_149) = &self.identity_type {
+            query.push_kv("creds-type", &smithy_http::query::fmt_string(&inner_149));
         }
-        if let Some(inner_15) = &self.session_lifetime_in_minutes {
+        if let Some(inner_150) = &self.session_lifetime_in_minutes {
             query.push_kv(
                 "session-lifetime",
-                &smithy_http::query::fmt_default(&inner_15),
+                &smithy_types::primitive::Encoder::from(*inner_150).encode(),
             );
         }
         if self.undo_redo_disabled {
             query.push_kv(
                 "undo-redo-disabled",
-                &smithy_http::query::fmt_default(&&self.undo_redo_disabled),
+                &smithy_types::primitive::Encoder::from(self.undo_redo_disabled).encode(),
             );
         }
         if self.reset_disabled {
             query.push_kv(
                 "reset-disabled",
-                &smithy_http::query::fmt_default(&&self.reset_disabled),
+                &smithy_types::primitive::Encoder::from(self.reset_disabled).encode(),
             );
         }
         if self.state_persistence_enabled {
             query.push_kv(
                 "state-persistence-enabled",
-                &smithy_http::query::fmt_default(&&self.state_persistence_enabled),
+                &smithy_types::primitive::Encoder::from(self.state_persistence_enabled).encode(),
             );
         }
-        if let Some(inner_16) = &self.user_arn {
-            query.push_kv("user-arn", &smithy_http::query::fmt_string(&inner_16));
+        if let Some(inner_151) = &self.user_arn {
+            query.push_kv("user-arn", &smithy_http::query::fmt_string(&inner_151));
         }
-        if let Some(inner_17) = &self.namespace {
-            query.push_kv("namespace", &smithy_http::query::fmt_string(&inner_17));
+        if let Some(inner_152) = &self.namespace {
+            query.push_kv("namespace", &smithy_http::query::fmt_string(&inner_152));
         }
-        if let Some(inner_18) = &self.additional_dashboard_ids {
-            for inner_19 in inner_18 {
+        if let Some(inner_153) = &self.additional_dashboard_ids {
+            for inner_154 in inner_153 {
                 query.push_kv(
                     "additional-dashboard-ids",
-                    &smithy_http::query::fmt_string(&inner_19),
+                    &smithy_http::query::fmt_string(&inner_154),
                 );
             }
         }
@@ -12931,23 +12666,21 @@ impl GetSessionEmbedUrlInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let aws_account_id = {
-            let input = &self.aws_account_id;
-            let input = input
+        let input_155 = &self.aws_account_id;
+        let input_155 =
+            input_155
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "aws_account_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "aws_account_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let aws_account_id = smithy_http::label::fmt_string(input_155, false);
+        if aws_account_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "aws_account_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/accounts/{AwsAccountId}/session-embed-url",
@@ -12958,17 +12691,17 @@ impl GetSessionEmbedUrlInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_20) = &self.entry_point {
-            query.push_kv("entry-point", &smithy_http::query::fmt_string(&inner_20));
+        if let Some(inner_156) = &self.entry_point {
+            query.push_kv("entry-point", &smithy_http::query::fmt_string(&inner_156));
         }
-        if let Some(inner_21) = &self.session_lifetime_in_minutes {
+        if let Some(inner_157) = &self.session_lifetime_in_minutes {
             query.push_kv(
                 "session-lifetime",
-                &smithy_http::query::fmt_default(&inner_21),
+                &smithy_types::primitive::Encoder::from(*inner_157).encode(),
             );
         }
-        if let Some(inner_22) = &self.user_arn {
-            query.push_kv("user-arn", &smithy_http::query::fmt_string(&inner_22));
+        if let Some(inner_158) = &self.user_arn {
+            query.push_kv("user-arn", &smithy_http::query::fmt_string(&inner_158));
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -13120,23 +12853,21 @@ impl ListAnalysesInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let aws_account_id = {
-            let input = &self.aws_account_id;
-            let input = input
+        let input_159 = &self.aws_account_id;
+        let input_159 =
+            input_159
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "aws_account_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "aws_account_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let aws_account_id = smithy_http::label::fmt_string(input_159, false);
+        if aws_account_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "aws_account_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/accounts/{AwsAccountId}/analyses",
@@ -13147,11 +12878,14 @@ impl ListAnalysesInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_23) = &self.next_token {
-            query.push_kv("next-token", &smithy_http::query::fmt_string(&inner_23));
+        if let Some(inner_160) = &self.next_token {
+            query.push_kv("next-token", &smithy_http::query::fmt_string(&inner_160));
         }
-        if let Some(inner_24) = &self.max_results {
-            query.push_kv("max-results", &smithy_http::query::fmt_default(&inner_24));
+        if let Some(inner_161) = &self.max_results {
+            query.push_kv(
+                "max-results",
+                &smithy_types::primitive::Encoder::from(*inner_161).encode(),
+            );
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -13306,23 +13040,21 @@ impl ListDashboardsInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let aws_account_id = {
-            let input = &self.aws_account_id;
-            let input = input
+        let input_162 = &self.aws_account_id;
+        let input_162 =
+            input_162
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "aws_account_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "aws_account_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let aws_account_id = smithy_http::label::fmt_string(input_162, false);
+        if aws_account_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "aws_account_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/accounts/{AwsAccountId}/dashboards",
@@ -13333,11 +13065,14 @@ impl ListDashboardsInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_25) = &self.next_token {
-            query.push_kv("next-token", &smithy_http::query::fmt_string(&inner_25));
+        if let Some(inner_163) = &self.next_token {
+            query.push_kv("next-token", &smithy_http::query::fmt_string(&inner_163));
         }
-        if let Some(inner_26) = &self.max_results {
-            query.push_kv("max-results", &smithy_http::query::fmt_default(&inner_26));
+        if let Some(inner_164) = &self.max_results {
+            query.push_kv(
+                "max-results",
+                &smithy_types::primitive::Encoder::from(*inner_164).encode(),
+            );
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -13503,40 +13238,36 @@ impl ListDashboardVersionsInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let aws_account_id = {
-            let input = &self.aws_account_id;
-            let input = input
+        let input_165 = &self.aws_account_id;
+        let input_165 =
+            input_165
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "aws_account_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "aws_account_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let dashboard_id = {
-            let input = &self.dashboard_id;
-            let input = input
+        let aws_account_id = smithy_http::label::fmt_string(input_165, false);
+        if aws_account_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "aws_account_id",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_166 = &self.dashboard_id;
+        let input_166 =
+            input_166
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "dashboard_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "dashboard_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let dashboard_id = smithy_http::label::fmt_string(input_166, false);
+        if dashboard_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "dashboard_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/accounts/{AwsAccountId}/dashboards/{DashboardId}/versions",
@@ -13548,11 +13279,14 @@ impl ListDashboardVersionsInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_27) = &self.next_token {
-            query.push_kv("next-token", &smithy_http::query::fmt_string(&inner_27));
+        if let Some(inner_167) = &self.next_token {
+            query.push_kv("next-token", &smithy_http::query::fmt_string(&inner_167));
         }
-        if let Some(inner_28) = &self.max_results {
-            query.push_kv("max-results", &smithy_http::query::fmt_default(&inner_28));
+        if let Some(inner_168) = &self.max_results {
+            query.push_kv(
+                "max-results",
+                &smithy_types::primitive::Encoder::from(*inner_168).encode(),
+            );
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -13704,23 +13438,21 @@ impl ListDataSetsInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let aws_account_id = {
-            let input = &self.aws_account_id;
-            let input = input
+        let input_169 = &self.aws_account_id;
+        let input_169 =
+            input_169
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "aws_account_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "aws_account_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let aws_account_id = smithy_http::label::fmt_string(input_169, false);
+        if aws_account_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "aws_account_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/accounts/{AwsAccountId}/data-sets",
@@ -13731,11 +13463,14 @@ impl ListDataSetsInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_29) = &self.next_token {
-            query.push_kv("next-token", &smithy_http::query::fmt_string(&inner_29));
+        if let Some(inner_170) = &self.next_token {
+            query.push_kv("next-token", &smithy_http::query::fmt_string(&inner_170));
         }
-        if let Some(inner_30) = &self.max_results {
-            query.push_kv("max-results", &smithy_http::query::fmt_default(&inner_30));
+        if let Some(inner_171) = &self.max_results {
+            query.push_kv(
+                "max-results",
+                &smithy_types::primitive::Encoder::from(*inner_171).encode(),
+            );
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -13889,23 +13624,21 @@ impl ListDataSourcesInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let aws_account_id = {
-            let input = &self.aws_account_id;
-            let input = input
+        let input_172 = &self.aws_account_id;
+        let input_172 =
+            input_172
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "aws_account_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "aws_account_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let aws_account_id = smithy_http::label::fmt_string(input_172, false);
+        if aws_account_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "aws_account_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/accounts/{AwsAccountId}/data-sources",
@@ -13916,11 +13649,14 @@ impl ListDataSourcesInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_31) = &self.next_token {
-            query.push_kv("next-token", &smithy_http::query::fmt_string(&inner_31));
+        if let Some(inner_173) = &self.next_token {
+            query.push_kv("next-token", &smithy_http::query::fmt_string(&inner_173));
         }
-        if let Some(inner_32) = &self.max_results {
-            query.push_kv("max-results", &smithy_http::query::fmt_default(&inner_32));
+        if let Some(inner_174) = &self.max_results {
+            query.push_kv(
+                "max-results",
+                &smithy_types::primitive::Encoder::from(*inner_174).encode(),
+            );
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -14085,40 +13821,36 @@ impl ListFolderMembersInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let aws_account_id = {
-            let input = &self.aws_account_id;
-            let input = input
+        let input_175 = &self.aws_account_id;
+        let input_175 =
+            input_175
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "aws_account_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "aws_account_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let folder_id = {
-            let input = &self.folder_id;
-            let input = input
+        let aws_account_id = smithy_http::label::fmt_string(input_175, false);
+        if aws_account_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "aws_account_id",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_176 = &self.folder_id;
+        let input_176 =
+            input_176
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "folder_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "folder_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let folder_id = smithy_http::label::fmt_string(input_176, false);
+        if folder_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "folder_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/accounts/{AwsAccountId}/folders/{FolderId}/members",
@@ -14130,11 +13862,14 @@ impl ListFolderMembersInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_33) = &self.next_token {
-            query.push_kv("next-token", &smithy_http::query::fmt_string(&inner_33));
+        if let Some(inner_177) = &self.next_token {
+            query.push_kv("next-token", &smithy_http::query::fmt_string(&inner_177));
         }
-        if let Some(inner_34) = &self.max_results {
-            query.push_kv("max-results", &smithy_http::query::fmt_default(&inner_34));
+        if let Some(inner_178) = &self.max_results {
+            query.push_kv(
+                "max-results",
+                &smithy_types::primitive::Encoder::from(*inner_178).encode(),
+            );
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -14286,23 +14021,21 @@ impl ListFoldersInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let aws_account_id = {
-            let input = &self.aws_account_id;
-            let input = input
+        let input_179 = &self.aws_account_id;
+        let input_179 =
+            input_179
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "aws_account_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "aws_account_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let aws_account_id = smithy_http::label::fmt_string(input_179, false);
+        if aws_account_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "aws_account_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/accounts/{AwsAccountId}/folders",
@@ -14313,11 +14046,14 @@ impl ListFoldersInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_35) = &self.next_token {
-            query.push_kv("next-token", &smithy_http::query::fmt_string(&inner_35));
+        if let Some(inner_180) = &self.next_token {
+            query.push_kv("next-token", &smithy_http::query::fmt_string(&inner_180));
         }
-        if let Some(inner_36) = &self.max_results {
-            query.push_kv("max-results", &smithy_http::query::fmt_default(&inner_36));
+        if let Some(inner_181) = &self.max_results {
+            query.push_kv(
+                "max-results",
+                &smithy_types::primitive::Encoder::from(*inner_181).encode(),
+            );
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -14494,57 +14230,51 @@ impl ListGroupMembershipsInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let aws_account_id = {
-            let input = &self.aws_account_id;
-            let input = input
+        let input_182 = &self.aws_account_id;
+        let input_182 =
+            input_182
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "aws_account_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "aws_account_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let namespace = {
-            let input = &self.namespace;
-            let input = input
+        let aws_account_id = smithy_http::label::fmt_string(input_182, false);
+        if aws_account_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "aws_account_id",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_183 = &self.namespace;
+        let input_183 =
+            input_183
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "namespace",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "namespace",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let group_name = {
-            let input = &self.group_name;
-            let input = input
+        let namespace = smithy_http::label::fmt_string(input_183, false);
+        if namespace.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "namespace",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_184 = &self.group_name;
+        let input_184 =
+            input_184
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "group_name",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "group_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let group_name = smithy_http::label::fmt_string(input_184, false);
+        if group_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "group_name",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/accounts/{AwsAccountId}/namespaces/{Namespace}/groups/{GroupName}/members",
@@ -14557,11 +14287,14 @@ impl ListGroupMembershipsInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_37) = &self.next_token {
-            query.push_kv("next-token", &smithy_http::query::fmt_string(&inner_37));
+        if let Some(inner_185) = &self.next_token {
+            query.push_kv("next-token", &smithy_http::query::fmt_string(&inner_185));
         }
-        if let Some(inner_38) = &self.max_results {
-            query.push_kv("max-results", &smithy_http::query::fmt_default(&inner_38));
+        if let Some(inner_186) = &self.max_results {
+            query.push_kv(
+                "max-results",
+                &smithy_types::primitive::Encoder::from(*inner_186).encode(),
+            );
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -14725,40 +14458,36 @@ impl ListGroupsInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let aws_account_id = {
-            let input = &self.aws_account_id;
-            let input = input
+        let input_187 = &self.aws_account_id;
+        let input_187 =
+            input_187
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "aws_account_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "aws_account_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let namespace = {
-            let input = &self.namespace;
-            let input = input
+        let aws_account_id = smithy_http::label::fmt_string(input_187, false);
+        if aws_account_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "aws_account_id",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_188 = &self.namespace;
+        let input_188 =
+            input_188
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "namespace",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "namespace",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let namespace = smithy_http::label::fmt_string(input_188, false);
+        if namespace.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "namespace",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/accounts/{AwsAccountId}/namespaces/{Namespace}/groups",
@@ -14770,11 +14499,14 @@ impl ListGroupsInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_39) = &self.next_token {
-            query.push_kv("next-token", &smithy_http::query::fmt_string(&inner_39));
+        if let Some(inner_189) = &self.next_token {
+            query.push_kv("next-token", &smithy_http::query::fmt_string(&inner_189));
         }
-        if let Some(inner_40) = &self.max_results {
-            query.push_kv("max-results", &smithy_http::query::fmt_default(&inner_40));
+        if let Some(inner_190) = &self.max_results {
+            query.push_kv(
+                "max-results",
+                &smithy_types::primitive::Encoder::from(*inner_190).encode(),
+            );
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -14957,40 +14689,36 @@ impl ListIamPolicyAssignmentsInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let aws_account_id = {
-            let input = &self.aws_account_id;
-            let input = input
+        let input_191 = &self.aws_account_id;
+        let input_191 =
+            input_191
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "aws_account_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "aws_account_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let namespace = {
-            let input = &self.namespace;
-            let input = input
+        let aws_account_id = smithy_http::label::fmt_string(input_191, false);
+        if aws_account_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "aws_account_id",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_192 = &self.namespace;
+        let input_192 =
+            input_192
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "namespace",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "namespace",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let namespace = smithy_http::label::fmt_string(input_192, false);
+        if namespace.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "namespace",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/accounts/{AwsAccountId}/namespaces/{Namespace}/iam-policy-assignments",
@@ -15002,11 +14730,14 @@ impl ListIamPolicyAssignmentsInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_41) = &self.next_token {
-            query.push_kv("next-token", &smithy_http::query::fmt_string(&inner_41));
+        if let Some(inner_193) = &self.next_token {
+            query.push_kv("next-token", &smithy_http::query::fmt_string(&inner_193));
         }
-        if let Some(inner_42) = &self.max_results {
-            query.push_kv("max-results", &smithy_http::query::fmt_default(&inner_42));
+        if let Some(inner_194) = &self.max_results {
+            query.push_kv(
+                "max-results",
+                &smithy_types::primitive::Encoder::from(*inner_194).encode(),
+            );
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -15183,67 +14914,64 @@ impl ListIamPolicyAssignmentsForUserInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let aws_account_id = {
-            let input = &self.aws_account_id;
-            let input = input
+        let input_195 = &self.aws_account_id;
+        let input_195 =
+            input_195
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "aws_account_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "aws_account_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let namespace = {
-            let input = &self.namespace;
-            let input = input
+        let aws_account_id = smithy_http::label::fmt_string(input_195, false);
+        if aws_account_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "aws_account_id",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_196 = &self.namespace;
+        let input_196 =
+            input_196
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "namespace",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "namespace",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let user_name = {
-            let input = &self.user_name;
-            let input = input
+        let namespace = smithy_http::label::fmt_string(input_196, false);
+        if namespace.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "namespace",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_197 = &self.user_name;
+        let input_197 =
+            input_197
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "user_name",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "user_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let user_name = smithy_http::label::fmt_string(input_197, false);
+        if user_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "user_name",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/accounts/{AwsAccountId}/namespaces/{Namespace}/users/{UserName}/iam-policy-assignments", AwsAccountId = aws_account_id, Namespace = namespace, UserName = user_name).expect("formatting should succeed");
         Ok(())
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_43) = &self.next_token {
-            query.push_kv("next-token", &smithy_http::query::fmt_string(&inner_43));
+        if let Some(inner_198) = &self.next_token {
+            query.push_kv("next-token", &smithy_http::query::fmt_string(&inner_198));
         }
-        if let Some(inner_44) = &self.max_results {
-            query.push_kv("max-results", &smithy_http::query::fmt_default(&inner_44));
+        if let Some(inner_199) = &self.max_results {
+            query.push_kv(
+                "max-results",
+                &smithy_types::primitive::Encoder::from(*inner_199).encode(),
+            );
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -15408,40 +15136,36 @@ impl ListIngestionsInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let aws_account_id = {
-            let input = &self.aws_account_id;
-            let input = input
+        let input_200 = &self.aws_account_id;
+        let input_200 =
+            input_200
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "aws_account_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "aws_account_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let data_set_id = {
-            let input = &self.data_set_id;
-            let input = input
+        let aws_account_id = smithy_http::label::fmt_string(input_200, false);
+        if aws_account_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "aws_account_id",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_201 = &self.data_set_id;
+        let input_201 =
+            input_201
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "data_set_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "data_set_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let data_set_id = smithy_http::label::fmt_string(input_201, false);
+        if data_set_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "data_set_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/accounts/{AwsAccountId}/data-sets/{DataSetId}/ingestions",
@@ -15453,11 +15177,14 @@ impl ListIngestionsInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_45) = &self.next_token {
-            query.push_kv("next-token", &smithy_http::query::fmt_string(&inner_45));
+        if let Some(inner_202) = &self.next_token {
+            query.push_kv("next-token", &smithy_http::query::fmt_string(&inner_202));
         }
-        if let Some(inner_46) = &self.max_results {
-            query.push_kv("max-results", &smithy_http::query::fmt_default(&inner_46));
+        if let Some(inner_203) = &self.max_results {
+            query.push_kv(
+                "max-results",
+                &smithy_types::primitive::Encoder::from(*inner_203).encode(),
+            );
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -15611,23 +15338,21 @@ impl ListNamespacesInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let aws_account_id = {
-            let input = &self.aws_account_id;
-            let input = input
+        let input_204 = &self.aws_account_id;
+        let input_204 =
+            input_204
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "aws_account_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "aws_account_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let aws_account_id = smithy_http::label::fmt_string(input_204, false);
+        if aws_account_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "aws_account_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/accounts/{AwsAccountId}/namespaces",
@@ -15638,11 +15363,14 @@ impl ListNamespacesInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_47) = &self.next_token {
-            query.push_kv("next-token", &smithy_http::query::fmt_string(&inner_47));
+        if let Some(inner_205) = &self.next_token {
+            query.push_kv("next-token", &smithy_http::query::fmt_string(&inner_205));
         }
-        if let Some(inner_48) = &self.max_results {
-            query.push_kv("max-results", &smithy_http::query::fmt_default(&inner_48));
+        if let Some(inner_206) = &self.max_results {
+            query.push_kv(
+                "max-results",
+                &smithy_types::primitive::Encoder::from(*inner_206).encode(),
+            );
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -15771,23 +15499,21 @@ impl ListTagsForResourceInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let resource_arn = {
-            let input = &self.resource_arn;
-            let input = input
+        let input_207 = &self.resource_arn;
+        let input_207 =
+            input_207
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "resource_arn",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "resource_arn",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let resource_arn = smithy_http::label::fmt_string(input_207, false);
+        if resource_arn.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "resource_arn",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/resources/{ResourceArn}/tags",
@@ -15957,40 +15683,36 @@ impl ListTemplateAliasesInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let aws_account_id = {
-            let input = &self.aws_account_id;
-            let input = input
+        let input_208 = &self.aws_account_id;
+        let input_208 =
+            input_208
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "aws_account_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "aws_account_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let template_id = {
-            let input = &self.template_id;
-            let input = input
+        let aws_account_id = smithy_http::label::fmt_string(input_208, false);
+        if aws_account_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "aws_account_id",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_209 = &self.template_id;
+        let input_209 =
+            input_209
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "template_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "template_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let template_id = smithy_http::label::fmt_string(input_209, false);
+        if template_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "template_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/accounts/{AwsAccountId}/templates/{TemplateId}/aliases",
@@ -16002,11 +15724,14 @@ impl ListTemplateAliasesInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_49) = &self.next_token {
-            query.push_kv("next-token", &smithy_http::query::fmt_string(&inner_49));
+        if let Some(inner_210) = &self.next_token {
+            query.push_kv("next-token", &smithy_http::query::fmt_string(&inner_210));
         }
-        if let Some(inner_50) = &self.max_results {
-            query.push_kv("max-result", &smithy_http::query::fmt_default(&inner_50));
+        if let Some(inner_211) = &self.max_results {
+            query.push_kv(
+                "max-result",
+                &smithy_types::primitive::Encoder::from(*inner_211).encode(),
+            );
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -16158,23 +15883,21 @@ impl ListTemplatesInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let aws_account_id = {
-            let input = &self.aws_account_id;
-            let input = input
+        let input_212 = &self.aws_account_id;
+        let input_212 =
+            input_212
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "aws_account_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "aws_account_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let aws_account_id = smithy_http::label::fmt_string(input_212, false);
+        if aws_account_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "aws_account_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/accounts/{AwsAccountId}/templates",
@@ -16185,11 +15908,14 @@ impl ListTemplatesInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_51) = &self.next_token {
-            query.push_kv("next-token", &smithy_http::query::fmt_string(&inner_51));
+        if let Some(inner_213) = &self.next_token {
+            query.push_kv("next-token", &smithy_http::query::fmt_string(&inner_213));
         }
-        if let Some(inner_52) = &self.max_results {
-            query.push_kv("max-result", &smithy_http::query::fmt_default(&inner_52));
+        if let Some(inner_214) = &self.max_results {
+            query.push_kv(
+                "max-result",
+                &smithy_types::primitive::Encoder::from(*inner_214).encode(),
+            );
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -16354,40 +16080,36 @@ impl ListTemplateVersionsInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let aws_account_id = {
-            let input = &self.aws_account_id;
-            let input = input
+        let input_215 = &self.aws_account_id;
+        let input_215 =
+            input_215
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "aws_account_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "aws_account_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let template_id = {
-            let input = &self.template_id;
-            let input = input
+        let aws_account_id = smithy_http::label::fmt_string(input_215, false);
+        if aws_account_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "aws_account_id",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_216 = &self.template_id;
+        let input_216 =
+            input_216
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "template_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "template_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let template_id = smithy_http::label::fmt_string(input_216, false);
+        if template_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "template_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/accounts/{AwsAccountId}/templates/{TemplateId}/versions",
@@ -16399,11 +16121,14 @@ impl ListTemplateVersionsInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_53) = &self.next_token {
-            query.push_kv("next-token", &smithy_http::query::fmt_string(&inner_53));
+        if let Some(inner_217) = &self.next_token {
+            query.push_kv("next-token", &smithy_http::query::fmt_string(&inner_217));
         }
-        if let Some(inner_54) = &self.max_results {
-            query.push_kv("max-results", &smithy_http::query::fmt_default(&inner_54));
+        if let Some(inner_218) = &self.max_results {
+            query.push_kv(
+                "max-results",
+                &smithy_types::primitive::Encoder::from(*inner_218).encode(),
+            );
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -16568,40 +16293,36 @@ impl ListThemeAliasesInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let aws_account_id = {
-            let input = &self.aws_account_id;
-            let input = input
+        let input_219 = &self.aws_account_id;
+        let input_219 =
+            input_219
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "aws_account_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "aws_account_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let theme_id = {
-            let input = &self.theme_id;
-            let input = input
+        let aws_account_id = smithy_http::label::fmt_string(input_219, false);
+        if aws_account_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "aws_account_id",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_220 = &self.theme_id;
+        let input_220 =
+            input_220
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "theme_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "theme_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let theme_id = smithy_http::label::fmt_string(input_220, false);
+        if theme_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "theme_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/accounts/{AwsAccountId}/themes/{ThemeId}/aliases",
@@ -16613,11 +16334,14 @@ impl ListThemeAliasesInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_55) = &self.next_token {
-            query.push_kv("next-token", &smithy_http::query::fmt_string(&inner_55));
+        if let Some(inner_221) = &self.next_token {
+            query.push_kv("next-token", &smithy_http::query::fmt_string(&inner_221));
         }
-        if let Some(inner_56) = &self.max_results {
-            query.push_kv("max-result", &smithy_http::query::fmt_default(&inner_56));
+        if let Some(inner_222) = &self.max_results {
+            query.push_kv(
+                "max-result",
+                &smithy_types::primitive::Encoder::from(*inner_222).encode(),
+            );
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -16794,23 +16518,21 @@ impl ListThemesInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let aws_account_id = {
-            let input = &self.aws_account_id;
-            let input = input
+        let input_223 = &self.aws_account_id;
+        let input_223 =
+            input_223
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "aws_account_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "aws_account_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let aws_account_id = smithy_http::label::fmt_string(input_223, false);
+        if aws_account_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "aws_account_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/accounts/{AwsAccountId}/themes",
@@ -16821,14 +16543,17 @@ impl ListThemesInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_57) = &self.next_token {
-            query.push_kv("next-token", &smithy_http::query::fmt_string(&inner_57));
+        if let Some(inner_224) = &self.next_token {
+            query.push_kv("next-token", &smithy_http::query::fmt_string(&inner_224));
         }
-        if let Some(inner_58) = &self.max_results {
-            query.push_kv("max-results", &smithy_http::query::fmt_default(&inner_58));
+        if let Some(inner_225) = &self.max_results {
+            query.push_kv(
+                "max-results",
+                &smithy_types::primitive::Encoder::from(*inner_225).encode(),
+            );
         }
-        if let Some(inner_59) = &self.r#type {
-            query.push_kv("type", &smithy_http::query::fmt_string(&inner_59));
+        if let Some(inner_226) = &self.r#type {
+            query.push_kv("type", &smithy_http::query::fmt_string(&inner_226));
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -16993,40 +16718,36 @@ impl ListThemeVersionsInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let aws_account_id = {
-            let input = &self.aws_account_id;
-            let input = input
+        let input_227 = &self.aws_account_id;
+        let input_227 =
+            input_227
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "aws_account_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "aws_account_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let theme_id = {
-            let input = &self.theme_id;
-            let input = input
+        let aws_account_id = smithy_http::label::fmt_string(input_227, false);
+        if aws_account_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "aws_account_id",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_228 = &self.theme_id;
+        let input_228 =
+            input_228
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "theme_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "theme_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let theme_id = smithy_http::label::fmt_string(input_228, false);
+        if theme_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "theme_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/accounts/{AwsAccountId}/themes/{ThemeId}/versions",
@@ -17038,11 +16759,14 @@ impl ListThemeVersionsInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_60) = &self.next_token {
-            query.push_kv("next-token", &smithy_http::query::fmt_string(&inner_60));
+        if let Some(inner_229) = &self.next_token {
+            query.push_kv("next-token", &smithy_http::query::fmt_string(&inner_229));
         }
-        if let Some(inner_61) = &self.max_results {
-            query.push_kv("max-results", &smithy_http::query::fmt_default(&inner_61));
+        if let Some(inner_230) = &self.max_results {
+            query.push_kv(
+                "max-results",
+                &smithy_types::primitive::Encoder::from(*inner_230).encode(),
+            );
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -17219,57 +16943,51 @@ impl ListUserGroupsInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let aws_account_id = {
-            let input = &self.aws_account_id;
-            let input = input
+        let input_231 = &self.aws_account_id;
+        let input_231 =
+            input_231
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "aws_account_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "aws_account_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let namespace = {
-            let input = &self.namespace;
-            let input = input
+        let aws_account_id = smithy_http::label::fmt_string(input_231, false);
+        if aws_account_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "aws_account_id",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_232 = &self.namespace;
+        let input_232 =
+            input_232
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "namespace",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "namespace",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let user_name = {
-            let input = &self.user_name;
-            let input = input
+        let namespace = smithy_http::label::fmt_string(input_232, false);
+        if namespace.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "namespace",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_233 = &self.user_name;
+        let input_233 =
+            input_233
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "user_name",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "user_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let user_name = smithy_http::label::fmt_string(input_233, false);
+        if user_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "user_name",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/accounts/{AwsAccountId}/namespaces/{Namespace}/users/{UserName}/groups",
@@ -17282,11 +17000,14 @@ impl ListUserGroupsInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_62) = &self.next_token {
-            query.push_kv("next-token", &smithy_http::query::fmt_string(&inner_62));
+        if let Some(inner_234) = &self.next_token {
+            query.push_kv("next-token", &smithy_http::query::fmt_string(&inner_234));
         }
-        if let Some(inner_63) = &self.max_results {
-            query.push_kv("max-results", &smithy_http::query::fmt_default(&inner_63));
+        if let Some(inner_235) = &self.max_results {
+            query.push_kv(
+                "max-results",
+                &smithy_types::primitive::Encoder::from(*inner_235).encode(),
+            );
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -17448,40 +17169,36 @@ impl ListUsersInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let aws_account_id = {
-            let input = &self.aws_account_id;
-            let input = input
+        let input_236 = &self.aws_account_id;
+        let input_236 =
+            input_236
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "aws_account_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "aws_account_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let namespace = {
-            let input = &self.namespace;
-            let input = input
+        let aws_account_id = smithy_http::label::fmt_string(input_236, false);
+        if aws_account_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "aws_account_id",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_237 = &self.namespace;
+        let input_237 =
+            input_237
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "namespace",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "namespace",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let namespace = smithy_http::label::fmt_string(input_237, false);
+        if namespace.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "namespace",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/accounts/{AwsAccountId}/namespaces/{Namespace}/users",
@@ -17493,11 +17210,14 @@ impl ListUsersInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_64) = &self.next_token {
-            query.push_kv("next-token", &smithy_http::query::fmt_string(&inner_64));
+        if let Some(inner_238) = &self.next_token {
+            query.push_kv("next-token", &smithy_http::query::fmt_string(&inner_238));
         }
-        if let Some(inner_65) = &self.max_results {
-            query.push_kv("max-results", &smithy_http::query::fmt_default(&inner_65));
+        if let Some(inner_239) = &self.max_results {
+            query.push_kv(
+                "max-results",
+                &smithy_types::primitive::Encoder::from(*inner_239).encode(),
+            );
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -17863,40 +17583,36 @@ impl RegisterUserInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let aws_account_id = {
-            let input = &self.aws_account_id;
-            let input = input
+        let input_240 = &self.aws_account_id;
+        let input_240 =
+            input_240
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "aws_account_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "aws_account_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let namespace = {
-            let input = &self.namespace;
-            let input = input
+        let aws_account_id = smithy_http::label::fmt_string(input_240, false);
+        if aws_account_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "aws_account_id",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_241 = &self.namespace;
+        let input_241 =
+            input_241
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "namespace",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "namespace",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let namespace = smithy_http::label::fmt_string(input_241, false);
+        if namespace.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "namespace",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/accounts/{AwsAccountId}/namespaces/{Namespace}/users",
@@ -18045,40 +17761,36 @@ impl RestoreAnalysisInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let aws_account_id = {
-            let input = &self.aws_account_id;
-            let input = input
+        let input_242 = &self.aws_account_id;
+        let input_242 =
+            input_242
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "aws_account_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "aws_account_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let analysis_id = {
-            let input = &self.analysis_id;
-            let input = input
+        let aws_account_id = smithy_http::label::fmt_string(input_242, false);
+        if aws_account_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "aws_account_id",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_243 = &self.analysis_id;
+        let input_243 =
+            input_243
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "analysis_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "analysis_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let analysis_id = smithy_http::label::fmt_string(input_243, false);
+        if analysis_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "analysis_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/accounts/{AwsAccountId}/restore/analyses/{AnalysisId}",
@@ -18256,23 +17968,21 @@ impl SearchAnalysesInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let aws_account_id = {
-            let input = &self.aws_account_id;
-            let input = input
+        let input_244 = &self.aws_account_id;
+        let input_244 =
+            input_244
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "aws_account_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "aws_account_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let aws_account_id = smithy_http::label::fmt_string(input_244, false);
+        if aws_account_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "aws_account_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/accounts/{AwsAccountId}/search/analyses",
@@ -18449,23 +18159,21 @@ impl SearchDashboardsInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let aws_account_id = {
-            let input = &self.aws_account_id;
-            let input = input
+        let input_245 = &self.aws_account_id;
+        let input_245 =
+            input_245
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "aws_account_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "aws_account_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let aws_account_id = smithy_http::label::fmt_string(input_245, false);
+        if aws_account_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "aws_account_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/accounts/{AwsAccountId}/search/dashboards",
@@ -18640,23 +18348,21 @@ impl SearchFoldersInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let aws_account_id = {
-            let input = &self.aws_account_id;
-            let input = input
+        let input_246 = &self.aws_account_id;
+        let input_246 =
+            input_246
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "aws_account_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "aws_account_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let aws_account_id = smithy_http::label::fmt_string(input_246, false);
+        if aws_account_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "aws_account_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/accounts/{AwsAccountId}/search/folders",
@@ -18806,23 +18512,21 @@ impl TagResourceInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let resource_arn = {
-            let input = &self.resource_arn;
-            let input = input
+        let input_247 = &self.resource_arn;
+        let input_247 =
+            input_247
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "resource_arn",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "resource_arn",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let resource_arn = smithy_http::label::fmt_string(input_247, false);
+        if resource_arn.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "resource_arn",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/resources/{ResourceArn}/tags",
@@ -18969,23 +18673,21 @@ impl UntagResourceInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let resource_arn = {
-            let input = &self.resource_arn;
-            let input = input
+        let input_248 = &self.resource_arn;
+        let input_248 =
+            input_248
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "resource_arn",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "resource_arn",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let resource_arn = smithy_http::label::fmt_string(input_248, false);
+        if resource_arn.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "resource_arn",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/resources/{ResourceArn}/tags",
@@ -18996,9 +18698,9 @@ impl UntagResourceInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_66) = &self.tag_keys {
-            for inner_67 in inner_66 {
-                query.push_kv("keys", &smithy_http::query::fmt_string(&inner_67));
+        if let Some(inner_249) = &self.tag_keys {
+            for inner_250 in inner_249 {
+                query.push_kv("keys", &smithy_http::query::fmt_string(&inner_250));
             }
         }
     }
@@ -19162,23 +18864,21 @@ impl UpdateAccountCustomizationInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let aws_account_id = {
-            let input = &self.aws_account_id;
-            let input = input
+        let input_251 = &self.aws_account_id;
+        let input_251 =
+            input_251
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "aws_account_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "aws_account_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let aws_account_id = smithy_http::label::fmt_string(input_251, false);
+        if aws_account_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "aws_account_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/accounts/{AwsAccountId}/customizations",
@@ -19189,8 +18889,8 @@ impl UpdateAccountCustomizationInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_68) = &self.namespace {
-            query.push_kv("namespace", &smithy_http::query::fmt_string(&inner_68));
+        if let Some(inner_252) = &self.namespace {
+            query.push_kv("namespace", &smithy_http::query::fmt_string(&inner_252));
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -19358,23 +19058,21 @@ impl UpdateAccountSettingsInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let aws_account_id = {
-            let input = &self.aws_account_id;
-            let input = input
+        let input_253 = &self.aws_account_id;
+        let input_253 =
+            input_253
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "aws_account_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "aws_account_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let aws_account_id = smithy_http::label::fmt_string(input_253, false);
+        if aws_account_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "aws_account_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/accounts/{AwsAccountId}/settings",
@@ -19580,40 +19278,36 @@ impl UpdateAnalysisInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let aws_account_id = {
-            let input = &self.aws_account_id;
-            let input = input
+        let input_254 = &self.aws_account_id;
+        let input_254 =
+            input_254
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "aws_account_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "aws_account_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let analysis_id = {
-            let input = &self.analysis_id;
-            let input = input
+        let aws_account_id = smithy_http::label::fmt_string(input_254, false);
+        if aws_account_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "aws_account_id",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_255 = &self.analysis_id;
+        let input_255 =
+            input_255
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "analysis_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "analysis_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let analysis_id = smithy_http::label::fmt_string(input_255, false);
+        if analysis_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "analysis_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/accounts/{AwsAccountId}/analyses/{AnalysisId}",
@@ -19806,40 +19500,36 @@ impl UpdateAnalysisPermissionsInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let aws_account_id = {
-            let input = &self.aws_account_id;
-            let input = input
+        let input_256 = &self.aws_account_id;
+        let input_256 =
+            input_256
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "aws_account_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "aws_account_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let analysis_id = {
-            let input = &self.analysis_id;
-            let input = input
+        let aws_account_id = smithy_http::label::fmt_string(input_256, false);
+        if aws_account_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "aws_account_id",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_257 = &self.analysis_id;
+        let input_257 =
+            input_257
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "analysis_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "analysis_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let analysis_id = smithy_http::label::fmt_string(input_257, false);
+        if analysis_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "analysis_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/accounts/{AwsAccountId}/analyses/{AnalysisId}/permissions",
@@ -20111,40 +19801,36 @@ impl UpdateDashboardInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let aws_account_id = {
-            let input = &self.aws_account_id;
-            let input = input
+        let input_258 = &self.aws_account_id;
+        let input_258 =
+            input_258
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "aws_account_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "aws_account_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let dashboard_id = {
-            let input = &self.dashboard_id;
-            let input = input
+        let aws_account_id = smithy_http::label::fmt_string(input_258, false);
+        if aws_account_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "aws_account_id",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_259 = &self.dashboard_id;
+        let input_259 =
+            input_259
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "dashboard_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "dashboard_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let dashboard_id = smithy_http::label::fmt_string(input_259, false);
+        if dashboard_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "dashboard_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/accounts/{AwsAccountId}/dashboards/{DashboardId}",
@@ -20337,40 +20023,36 @@ impl UpdateDashboardPermissionsInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let aws_account_id = {
-            let input = &self.aws_account_id;
-            let input = input
+        let input_260 = &self.aws_account_id;
+        let input_260 =
+            input_260
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "aws_account_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "aws_account_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let dashboard_id = {
-            let input = &self.dashboard_id;
-            let input = input
+        let aws_account_id = smithy_http::label::fmt_string(input_260, false);
+        if aws_account_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "aws_account_id",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_261 = &self.dashboard_id;
+        let input_261 =
+            input_261
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "dashboard_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "dashboard_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let dashboard_id = smithy_http::label::fmt_string(input_261, false);
+        if dashboard_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "dashboard_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/accounts/{AwsAccountId}/dashboards/{DashboardId}/permissions",
@@ -20532,57 +20214,52 @@ impl UpdateDashboardPublishedVersionInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let aws_account_id = {
-            let input = &self.aws_account_id;
-            let input = input
+        let input_262 = &self.aws_account_id;
+        let input_262 =
+            input_262
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "aws_account_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "aws_account_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let dashboard_id = {
-            let input = &self.dashboard_id;
-            let input = input
+        let aws_account_id = smithy_http::label::fmt_string(input_262, false);
+        if aws_account_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "aws_account_id",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_263 = &self.dashboard_id;
+        let input_263 =
+            input_263
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "dashboard_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "dashboard_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let version_number = {
-            let input = &self.version_number;
-            let input = input
+        let dashboard_id = smithy_http::label::fmt_string(input_263, false);
+        if dashboard_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "dashboard_id",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_264 = &self.version_number;
+        let input_264 =
+            input_264
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "version_number",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_default(input);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "version_number",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let mut version_number_encoder = smithy_types::primitive::Encoder::from(*input_264);
+        let version_number = version_number_encoder.encode();
+        if version_number.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "version_number",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/accounts/{AwsAccountId}/dashboards/{DashboardId}/versions/{VersionNumber}",
@@ -20879,40 +20556,36 @@ impl UpdateDataSetInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let aws_account_id = {
-            let input = &self.aws_account_id;
-            let input = input
+        let input_265 = &self.aws_account_id;
+        let input_265 =
+            input_265
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "aws_account_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "aws_account_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let data_set_id = {
-            let input = &self.data_set_id;
-            let input = input
+        let aws_account_id = smithy_http::label::fmt_string(input_265, false);
+        if aws_account_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "aws_account_id",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_266 = &self.data_set_id;
+        let input_266 =
+            input_266
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "data_set_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "data_set_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let data_set_id = smithy_http::label::fmt_string(input_266, false);
+        if data_set_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "data_set_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/accounts/{AwsAccountId}/data-sets/{DataSetId}",
@@ -21104,40 +20777,36 @@ impl UpdateDataSetPermissionsInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let aws_account_id = {
-            let input = &self.aws_account_id;
-            let input = input
+        let input_267 = &self.aws_account_id;
+        let input_267 =
+            input_267
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "aws_account_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "aws_account_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let data_set_id = {
-            let input = &self.data_set_id;
-            let input = input
+        let aws_account_id = smithy_http::label::fmt_string(input_267, false);
+        if aws_account_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "aws_account_id",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_268 = &self.data_set_id;
+        let input_268 =
+            input_268
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "data_set_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "data_set_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let data_set_id = smithy_http::label::fmt_string(input_268, false);
+        if data_set_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "data_set_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/accounts/{AwsAccountId}/data-sets/{DataSetId}/permissions",
@@ -21366,40 +21035,36 @@ impl UpdateDataSourceInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let aws_account_id = {
-            let input = &self.aws_account_id;
-            let input = input
+        let input_269 = &self.aws_account_id;
+        let input_269 =
+            input_269
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "aws_account_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "aws_account_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let data_source_id = {
-            let input = &self.data_source_id;
-            let input = input
+        let aws_account_id = smithy_http::label::fmt_string(input_269, false);
+        if aws_account_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "aws_account_id",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_270 = &self.data_source_id;
+        let input_270 =
+            input_270
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "data_source_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "data_source_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let data_source_id = smithy_http::label::fmt_string(input_270, false);
+        if data_source_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "data_source_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/accounts/{AwsAccountId}/data-sources/{DataSourceId}",
@@ -21594,40 +21259,36 @@ impl UpdateDataSourcePermissionsInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let aws_account_id = {
-            let input = &self.aws_account_id;
-            let input = input
+        let input_271 = &self.aws_account_id;
+        let input_271 =
+            input_271
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "aws_account_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "aws_account_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let data_source_id = {
-            let input = &self.data_source_id;
-            let input = input
+        let aws_account_id = smithy_http::label::fmt_string(input_271, false);
+        if aws_account_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "aws_account_id",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_272 = &self.data_source_id;
+        let input_272 =
+            input_272
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "data_source_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "data_source_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let data_source_id = smithy_http::label::fmt_string(input_272, false);
+        if data_source_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "data_source_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/accounts/{AwsAccountId}/data-sources/{DataSourceId}/permissions",
@@ -21788,40 +21449,36 @@ impl UpdateFolderInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let aws_account_id = {
-            let input = &self.aws_account_id;
-            let input = input
+        let input_273 = &self.aws_account_id;
+        let input_273 =
+            input_273
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "aws_account_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "aws_account_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let folder_id = {
-            let input = &self.folder_id;
-            let input = input
+        let aws_account_id = smithy_http::label::fmt_string(input_273, false);
+        if aws_account_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "aws_account_id",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_274 = &self.folder_id;
+        let input_274 =
+            input_274
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "folder_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "folder_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let folder_id = smithy_http::label::fmt_string(input_274, false);
+        if folder_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "folder_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/accounts/{AwsAccountId}/folders/{FolderId}",
@@ -22012,40 +21669,36 @@ impl UpdateFolderPermissionsInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let aws_account_id = {
-            let input = &self.aws_account_id;
-            let input = input
+        let input_275 = &self.aws_account_id;
+        let input_275 =
+            input_275
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "aws_account_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "aws_account_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let folder_id = {
-            let input = &self.folder_id;
-            let input = input
+        let aws_account_id = smithy_http::label::fmt_string(input_275, false);
+        if aws_account_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "aws_account_id",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_276 = &self.folder_id;
+        let input_276 =
+            input_276
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "folder_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "folder_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let folder_id = smithy_http::label::fmt_string(input_276, false);
+        if folder_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "folder_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/accounts/{AwsAccountId}/folders/{FolderId}/permissions",
@@ -22218,57 +21871,51 @@ impl UpdateGroupInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let aws_account_id = {
-            let input = &self.aws_account_id;
-            let input = input
+        let input_277 = &self.aws_account_id;
+        let input_277 =
+            input_277
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "aws_account_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "aws_account_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let namespace = {
-            let input = &self.namespace;
-            let input = input
+        let aws_account_id = smithy_http::label::fmt_string(input_277, false);
+        if aws_account_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "aws_account_id",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_278 = &self.namespace;
+        let input_278 =
+            input_278
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "namespace",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "namespace",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let group_name = {
-            let input = &self.group_name;
-            let input = input
+        let namespace = smithy_http::label::fmt_string(input_278, false);
+        if namespace.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "namespace",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_279 = &self.group_name;
+        let input_279 =
+            input_279
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "group_name",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "group_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let group_name = smithy_http::label::fmt_string(input_279, false);
+        if group_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "group_name",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/accounts/{AwsAccountId}/namespaces/{Namespace}/groups/{GroupName}",
@@ -22502,57 +22149,51 @@ impl UpdateIamPolicyAssignmentInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let aws_account_id = {
-            let input = &self.aws_account_id;
-            let input = input
+        let input_280 = &self.aws_account_id;
+        let input_280 =
+            input_280
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "aws_account_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "aws_account_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let namespace = {
-            let input = &self.namespace;
-            let input = input
+        let aws_account_id = smithy_http::label::fmt_string(input_280, false);
+        if aws_account_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "aws_account_id",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_281 = &self.namespace;
+        let input_281 =
+            input_281
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "namespace",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "namespace",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let assignment_name = {
-            let input = &self.assignment_name;
-            let input = input
+        let namespace = smithy_http::label::fmt_string(input_281, false);
+        if namespace.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "namespace",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_282 = &self.assignment_name;
+        let input_282 =
+            input_282
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "assignment_name",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "assignment_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let assignment_name = smithy_http::label::fmt_string(input_282, false);
+        if assignment_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "assignment_name",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/accounts/{AwsAccountId}/namespaces/{Namespace}/iam-policy-assignments/{AssignmentName}", AwsAccountId = aws_account_id, Namespace = namespace, AssignmentName = assignment_name).expect("formatting should succeed");
         Ok(())
     }
@@ -22748,40 +22389,36 @@ impl UpdateTemplateInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let aws_account_id = {
-            let input = &self.aws_account_id;
-            let input = input
+        let input_283 = &self.aws_account_id;
+        let input_283 =
+            input_283
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "aws_account_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "aws_account_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let template_id = {
-            let input = &self.template_id;
-            let input = input
+        let aws_account_id = smithy_http::label::fmt_string(input_283, false);
+        if aws_account_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "aws_account_id",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_284 = &self.template_id;
+        let input_284 =
+            input_284
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "template_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "template_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let template_id = smithy_http::label::fmt_string(input_284, false);
+        if template_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "template_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/accounts/{AwsAccountId}/templates/{TemplateId}",
@@ -22958,57 +22595,51 @@ impl UpdateTemplateAliasInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let aws_account_id = {
-            let input = &self.aws_account_id;
-            let input = input
+        let input_285 = &self.aws_account_id;
+        let input_285 =
+            input_285
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "aws_account_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "aws_account_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let template_id = {
-            let input = &self.template_id;
-            let input = input
+        let aws_account_id = smithy_http::label::fmt_string(input_285, false);
+        if aws_account_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "aws_account_id",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_286 = &self.template_id;
+        let input_286 =
+            input_286
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "template_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "template_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let alias_name = {
-            let input = &self.alias_name;
-            let input = input
+        let template_id = smithy_http::label::fmt_string(input_286, false);
+        if template_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "template_id",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_287 = &self.alias_name;
+        let input_287 =
+            input_287
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "alias_name",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "alias_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let alias_name = smithy_http::label::fmt_string(input_287, false);
+        if alias_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "alias_name",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/accounts/{AwsAccountId}/templates/{TemplateId}/aliases/{AliasName}",
@@ -23200,40 +22831,36 @@ impl UpdateTemplatePermissionsInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let aws_account_id = {
-            let input = &self.aws_account_id;
-            let input = input
+        let input_288 = &self.aws_account_id;
+        let input_288 =
+            input_288
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "aws_account_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "aws_account_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let template_id = {
-            let input = &self.template_id;
-            let input = input
+        let aws_account_id = smithy_http::label::fmt_string(input_288, false);
+        if aws_account_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "aws_account_id",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_289 = &self.template_id;
+        let input_289 =
+            input_289
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "template_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "template_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let template_id = smithy_http::label::fmt_string(input_289, false);
+        if template_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "template_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/accounts/{AwsAccountId}/templates/{TemplateId}/permissions",
@@ -23439,40 +23066,36 @@ impl UpdateThemeInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let aws_account_id = {
-            let input = &self.aws_account_id;
-            let input = input
+        let input_290 = &self.aws_account_id;
+        let input_290 =
+            input_290
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "aws_account_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "aws_account_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let theme_id = {
-            let input = &self.theme_id;
-            let input = input
+        let aws_account_id = smithy_http::label::fmt_string(input_290, false);
+        if aws_account_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "aws_account_id",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_291 = &self.theme_id;
+        let input_291 =
+            input_291
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "theme_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "theme_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let theme_id = smithy_http::label::fmt_string(input_291, false);
+        if theme_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "theme_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/accounts/{AwsAccountId}/themes/{ThemeId}",
@@ -23646,57 +23269,51 @@ impl UpdateThemeAliasInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let aws_account_id = {
-            let input = &self.aws_account_id;
-            let input = input
+        let input_292 = &self.aws_account_id;
+        let input_292 =
+            input_292
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "aws_account_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "aws_account_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let theme_id = {
-            let input = &self.theme_id;
-            let input = input
+        let aws_account_id = smithy_http::label::fmt_string(input_292, false);
+        if aws_account_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "aws_account_id",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_293 = &self.theme_id;
+        let input_293 =
+            input_293
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "theme_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "theme_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let alias_name = {
-            let input = &self.alias_name;
-            let input = input
+        let theme_id = smithy_http::label::fmt_string(input_293, false);
+        if theme_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "theme_id",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_294 = &self.alias_name;
+        let input_294 =
+            input_294
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "alias_name",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "alias_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let alias_name = smithy_http::label::fmt_string(input_294, false);
+        if alias_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "alias_name",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/accounts/{AwsAccountId}/themes/{ThemeId}/aliases/{AliasName}",
@@ -23887,40 +23504,36 @@ impl UpdateThemePermissionsInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let aws_account_id = {
-            let input = &self.aws_account_id;
-            let input = input
+        let input_295 = &self.aws_account_id;
+        let input_295 =
+            input_295
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "aws_account_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "aws_account_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let theme_id = {
-            let input = &self.theme_id;
-            let input = input
+        let aws_account_id = smithy_http::label::fmt_string(input_295, false);
+        if aws_account_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "aws_account_id",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_296 = &self.theme_id;
+        let input_296 =
+            input_296
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "theme_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "theme_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let theme_id = smithy_http::label::fmt_string(input_296, false);
+        if theme_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "theme_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/accounts/{AwsAccountId}/themes/{ThemeId}/permissions",
@@ -24244,57 +23857,51 @@ impl UpdateUserInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let aws_account_id = {
-            let input = &self.aws_account_id;
-            let input = input
+        let input_297 = &self.aws_account_id;
+        let input_297 =
+            input_297
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "aws_account_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "aws_account_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let namespace = {
-            let input = &self.namespace;
-            let input = input
+        let aws_account_id = smithy_http::label::fmt_string(input_297, false);
+        if aws_account_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "aws_account_id",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_298 = &self.namespace;
+        let input_298 =
+            input_298
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "namespace",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "namespace",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let user_name = {
-            let input = &self.user_name;
-            let input = input
+        let namespace = smithy_http::label::fmt_string(input_298, false);
+        if namespace.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "namespace",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_299 = &self.user_name;
+        let input_299 =
+            input_299
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "user_name",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "user_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let user_name = smithy_http::label::fmt_string(input_299, false);
+        if user_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "user_name",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/accounts/{AwsAccountId}/namespaces/{Namespace}/users/{UserName}",

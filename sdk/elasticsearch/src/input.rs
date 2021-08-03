@@ -102,23 +102,20 @@ impl AcceptInboundCrossClusterSearchConnectionInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let cross_cluster_search_connection_id = {
-            let input = &self.cross_cluster_search_connection_id;
-            let input = input
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "cross_cluster_search_connection_id",
-                    details: "cannot be empty or unset",
-                })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "cross_cluster_search_connection_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let input_1 = &self.cross_cluster_search_connection_id;
+        let input_1 = input_1
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "cross_cluster_search_connection_id",
+                details: "cannot be empty or unset",
+            })?;
+        let cross_cluster_search_connection_id = smithy_http::label::fmt_string(input_1, false);
+        if cross_cluster_search_connection_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "cross_cluster_search_connection_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/2015-01-01/es/ccs/inboundConnection/{CrossClusterSearchConnectionId}/accept",
@@ -403,40 +400,34 @@ impl AssociatePackageInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let package_id = {
-            let input = &self.package_id;
-            let input = input
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "package_id",
-                    details: "cannot be empty or unset",
-                })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "package_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let domain_name = {
-            let input = &self.domain_name;
-            let input = input
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "domain_name",
-                    details: "cannot be empty or unset",
-                })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "domain_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let input_2 = &self.package_id;
+        let input_2 = input_2
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "package_id",
+                details: "cannot be empty or unset",
+            })?;
+        let package_id = smithy_http::label::fmt_string(input_2, false);
+        if package_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "package_id",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_3 = &self.domain_name;
+        let input_3 = input_3
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "domain_name",
+                details: "cannot be empty or unset",
+            })?;
+        let domain_name = smithy_http::label::fmt_string(input_3, false);
+        if domain_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "domain_name",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/2015-01-01/packages/associate/{PackageID}/{DomainName}",
@@ -1426,23 +1417,20 @@ impl DeleteElasticsearchDomainInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let domain_name = {
-            let input = &self.domain_name;
-            let input = input
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "domain_name",
-                    details: "cannot be empty or unset",
-                })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "domain_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let input_4 = &self.domain_name;
+        let input_4 = input_4
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "domain_name",
+                details: "cannot be empty or unset",
+            })?;
+        let domain_name = smithy_http::label::fmt_string(input_4, false);
+        if domain_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "domain_name",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/2015-01-01/es/domain/{DomainName}",
@@ -1702,23 +1690,20 @@ impl DeleteInboundCrossClusterSearchConnectionInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let cross_cluster_search_connection_id = {
-            let input = &self.cross_cluster_search_connection_id;
-            let input = input
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "cross_cluster_search_connection_id",
-                    details: "cannot be empty or unset",
-                })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "cross_cluster_search_connection_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let input_5 = &self.cross_cluster_search_connection_id;
+        let input_5 = input_5
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "cross_cluster_search_connection_id",
+                details: "cannot be empty or unset",
+            })?;
+        let cross_cluster_search_connection_id = smithy_http::label::fmt_string(input_5, false);
+        if cross_cluster_search_connection_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "cross_cluster_search_connection_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/2015-01-01/es/ccs/inboundConnection/{CrossClusterSearchConnectionId}",
@@ -1863,23 +1848,20 @@ impl DeleteOutboundCrossClusterSearchConnectionInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let cross_cluster_search_connection_id = {
-            let input = &self.cross_cluster_search_connection_id;
-            let input = input
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "cross_cluster_search_connection_id",
-                    details: "cannot be empty or unset",
-                })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "cross_cluster_search_connection_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let input_6 = &self.cross_cluster_search_connection_id;
+        let input_6 = input_6
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "cross_cluster_search_connection_id",
+                details: "cannot be empty or unset",
+            })?;
+        let cross_cluster_search_connection_id = smithy_http::label::fmt_string(input_6, false);
+        if cross_cluster_search_connection_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "cross_cluster_search_connection_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/2015-01-01/es/ccs/outboundConnection/{CrossClusterSearchConnectionId}",
@@ -2012,23 +1994,20 @@ impl DeletePackageInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let package_id = {
-            let input = &self.package_id;
-            let input = input
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "package_id",
-                    details: "cannot be empty or unset",
-                })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "package_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let input_7 = &self.package_id;
+        let input_7 = input_7
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "package_id",
+                details: "cannot be empty or unset",
+            })?;
+        let package_id = smithy_http::label::fmt_string(input_7, false);
+        if package_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "package_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/2015-01-01/packages/{PackageID}",
@@ -2188,23 +2167,20 @@ impl DescribeDomainAutoTunesInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let domain_name = {
-            let input = &self.domain_name;
-            let input = input
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "domain_name",
-                    details: "cannot be empty or unset",
-                })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "domain_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let input_8 = &self.domain_name;
+        let input_8 = input_8
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "domain_name",
+                details: "cannot be empty or unset",
+            })?;
+        let domain_name = smithy_http::label::fmt_string(input_8, false);
+        if domain_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "domain_name",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/2015-01-01/es/domain/{DomainName}/autoTunes",
@@ -2339,23 +2315,20 @@ impl DescribeElasticsearchDomainInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let domain_name = {
-            let input = &self.domain_name;
-            let input = input
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "domain_name",
-                    details: "cannot be empty or unset",
-                })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "domain_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let input_9 = &self.domain_name;
+        let input_9 = input_9
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "domain_name",
+                details: "cannot be empty or unset",
+            })?;
+        let domain_name = smithy_http::label::fmt_string(input_9, false);
+        if domain_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "domain_name",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/2015-01-01/es/domain/{DomainName}",
@@ -2490,23 +2463,21 @@ impl DescribeElasticsearchDomainConfigInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let domain_name = {
-            let input = &self.domain_name;
-            let input = input
+        let input_10 = &self.domain_name;
+        let input_10 =
+            input_10
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "domain_name",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "domain_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let domain_name = smithy_http::label::fmt_string(input_10, false);
+        if domain_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "domain_name",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/2015-01-01/es/domain/{DomainName}/config",
@@ -2827,40 +2798,36 @@ impl DescribeElasticsearchInstanceTypeLimitsInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let elasticsearch_version = {
-            let input = &self.elasticsearch_version;
-            let input = input
+        let input_11 = &self.elasticsearch_version;
+        let input_11 =
+            input_11
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "elasticsearch_version",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "elasticsearch_version",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let instance_type = {
-            let input = &self.instance_type;
-            let input = input
+        let elasticsearch_version = smithy_http::label::fmt_string(input_11, false);
+        if elasticsearch_version.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "elasticsearch_version",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_12 = &self.instance_type;
+        let input_12 =
+            input_12
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "instance_type",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "instance_type",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let instance_type = smithy_http::label::fmt_string(input_12, false);
+        if instance_type.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "instance_type",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/2015-01-01/es/instanceTypeLimits/{ElasticsearchVersion}/{InstanceType}",
@@ -2872,8 +2839,8 @@ impl DescribeElasticsearchInstanceTypeLimitsInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_1) = &self.domain_name {
-            query.push_kv("domainName", &smithy_http::query::fmt_string(&inner_1));
+        if let Some(inner_13) = &self.domain_name {
+            query.push_kv("domainName", &smithy_http::query::fmt_string(&inner_13));
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -3524,17 +3491,17 @@ impl DescribeReservedElasticsearchInstanceOfferingsInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_2) = &self.reserved_elasticsearch_instance_offering_id {
-            query.push_kv("offeringId", &smithy_http::query::fmt_string(&inner_2));
+        if let Some(inner_14) = &self.reserved_elasticsearch_instance_offering_id {
+            query.push_kv("offeringId", &smithy_http::query::fmt_string(&inner_14));
         }
         if self.max_results != 0 {
             query.push_kv(
                 "maxResults",
-                &smithy_http::query::fmt_default(&&self.max_results),
+                &smithy_types::primitive::Encoder::from(self.max_results).encode(),
             );
         }
-        if let Some(inner_3) = &self.next_token {
-            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_3));
+        if let Some(inner_15) = &self.next_token {
+            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_15));
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -3700,17 +3667,17 @@ impl DescribeReservedElasticsearchInstancesInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_4) = &self.reserved_elasticsearch_instance_id {
-            query.push_kv("reservationId", &smithy_http::query::fmt_string(&inner_4));
+        if let Some(inner_16) = &self.reserved_elasticsearch_instance_id {
+            query.push_kv("reservationId", &smithy_http::query::fmt_string(&inner_16));
         }
         if self.max_results != 0 {
             query.push_kv(
                 "maxResults",
-                &smithy_http::query::fmt_default(&&self.max_results),
+                &smithy_types::primitive::Encoder::from(self.max_results).encode(),
             );
         }
-        if let Some(inner_5) = &self.next_token {
-            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_5));
+        if let Some(inner_17) = &self.next_token {
+            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_17));
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -3850,40 +3817,36 @@ impl DissociatePackageInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let package_id = {
-            let input = &self.package_id;
-            let input = input
+        let input_18 = &self.package_id;
+        let input_18 =
+            input_18
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "package_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "package_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let domain_name = {
-            let input = &self.domain_name;
-            let input = input
+        let package_id = smithy_http::label::fmt_string(input_18, false);
+        if package_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "package_id",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_19 = &self.domain_name;
+        let input_19 =
+            input_19
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "domain_name",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "domain_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let domain_name = smithy_http::label::fmt_string(input_19, false);
+        if domain_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "domain_name",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/2015-01-01/packages/dissociate/{PackageID}/{DomainName}",
@@ -4024,8 +3987,8 @@ impl GetCompatibleElasticsearchVersionsInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_6) = &self.domain_name {
-            query.push_kv("domainName", &smithy_http::query::fmt_string(&inner_6));
+        if let Some(inner_20) = &self.domain_name {
+            query.push_kv("domainName", &smithy_http::query::fmt_string(&inner_20));
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -4177,23 +4140,21 @@ impl GetPackageVersionHistoryInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let package_id = {
-            let input = &self.package_id;
-            let input = input
+        let input_21 = &self.package_id;
+        let input_21 =
+            input_21
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "package_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "package_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let package_id = smithy_http::label::fmt_string(input_21, false);
+        if package_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "package_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/2015-01-01/packages/{PackageID}/history",
@@ -4207,11 +4168,11 @@ impl GetPackageVersionHistoryInput {
         if self.max_results != 0 {
             query.push_kv(
                 "maxResults",
-                &smithy_http::query::fmt_default(&&self.max_results),
+                &smithy_types::primitive::Encoder::from(self.max_results).encode(),
             );
         }
-        if let Some(inner_7) = &self.next_token {
-            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_7));
+        if let Some(inner_22) = &self.next_token {
+            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_22));
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -4367,23 +4328,21 @@ impl GetUpgradeHistoryInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let domain_name = {
-            let input = &self.domain_name;
-            let input = input
+        let input_23 = &self.domain_name;
+        let input_23 =
+            input_23
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "domain_name",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "domain_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let domain_name = smithy_http::label::fmt_string(input_23, false);
+        if domain_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "domain_name",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/2015-01-01/es/upgradeDomain/{DomainName}/history",
@@ -4397,11 +4356,11 @@ impl GetUpgradeHistoryInput {
         if self.max_results != 0 {
             query.push_kv(
                 "maxResults",
-                &smithy_http::query::fmt_default(&&self.max_results),
+                &smithy_types::primitive::Encoder::from(self.max_results).encode(),
             );
         }
-        if let Some(inner_8) = &self.next_token {
-            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_8));
+        if let Some(inner_24) = &self.next_token {
+            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_24));
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -4530,23 +4489,21 @@ impl GetUpgradeStatusInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let domain_name = {
-            let input = &self.domain_name;
-            let input = input
+        let input_25 = &self.domain_name;
+        let input_25 =
+            input_25
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "domain_name",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "domain_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let domain_name = smithy_http::label::fmt_string(input_25, false);
+        if domain_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "domain_name",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/2015-01-01/es/upgradeDomain/{DomainName}/status",
@@ -4817,23 +4774,21 @@ impl ListDomainsForPackageInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let package_id = {
-            let input = &self.package_id;
-            let input = input
+        let input_26 = &self.package_id;
+        let input_26 =
+            input_26
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "package_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "package_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let package_id = smithy_http::label::fmt_string(input_26, false);
+        if package_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "package_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/2015-01-01/packages/{PackageID}/domains",
@@ -4847,11 +4802,11 @@ impl ListDomainsForPackageInput {
         if self.max_results != 0 {
             query.push_kv(
                 "maxResults",
-                &smithy_http::query::fmt_default(&&self.max_results),
+                &smithy_types::primitive::Encoder::from(self.max_results).encode(),
             );
         }
-        if let Some(inner_9) = &self.next_token {
-            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_9));
+        if let Some(inner_27) = &self.next_token {
+            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_27));
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -5026,23 +4981,21 @@ impl ListElasticsearchInstanceTypesInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let elasticsearch_version = {
-            let input = &self.elasticsearch_version;
-            let input = input
+        let input_28 = &self.elasticsearch_version;
+        let input_28 =
+            input_28
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "elasticsearch_version",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "elasticsearch_version",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let elasticsearch_version = smithy_http::label::fmt_string(input_28, false);
+        if elasticsearch_version.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "elasticsearch_version",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/2015-01-01/es/instanceTypes/{ElasticsearchVersion}",
@@ -5053,17 +5006,17 @@ impl ListElasticsearchInstanceTypesInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_10) = &self.domain_name {
-            query.push_kv("domainName", &smithy_http::query::fmt_string(&inner_10));
+        if let Some(inner_29) = &self.domain_name {
+            query.push_kv("domainName", &smithy_http::query::fmt_string(&inner_29));
         }
         if self.max_results != 0 {
             query.push_kv(
                 "maxResults",
-                &smithy_http::query::fmt_default(&&self.max_results),
+                &smithy_types::primitive::Encoder::from(self.max_results).encode(),
             );
         }
-        if let Some(inner_11) = &self.next_token {
-            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_11));
+        if let Some(inner_30) = &self.next_token {
+            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_30));
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -5218,11 +5171,11 @@ impl ListElasticsearchVersionsInput {
         if self.max_results != 0 {
             query.push_kv(
                 "maxResults",
-                &smithy_http::query::fmt_default(&&self.max_results),
+                &smithy_types::primitive::Encoder::from(self.max_results).encode(),
             );
         }
-        if let Some(inner_12) = &self.next_token {
-            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_12));
+        if let Some(inner_31) = &self.next_token {
+            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_31));
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -5373,23 +5326,21 @@ impl ListPackagesForDomainInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let domain_name = {
-            let input = &self.domain_name;
-            let input = input
+        let input_32 = &self.domain_name;
+        let input_32 =
+            input_32
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "domain_name",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "domain_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let domain_name = smithy_http::label::fmt_string(input_32, false);
+        if domain_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "domain_name",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/2015-01-01/domain/{DomainName}/packages",
@@ -5403,11 +5354,11 @@ impl ListPackagesForDomainInput {
         if self.max_results != 0 {
             query.push_kv(
                 "maxResults",
-                &smithy_http::query::fmt_default(&&self.max_results),
+                &smithy_types::primitive::Encoder::from(self.max_results).encode(),
             );
         }
-        if let Some(inner_13) = &self.next_token {
-            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_13));
+        if let Some(inner_33) = &self.next_token {
+            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_33));
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -5535,8 +5486,8 @@ impl ListTagsInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_14) = &self.arn {
-            query.push_kv("arn", &smithy_http::query::fmt_string(&inner_14));
+        if let Some(inner_34) = &self.arn {
+            query.push_kv("arn", &smithy_http::query::fmt_string(&inner_34));
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -5844,23 +5795,21 @@ impl RejectInboundCrossClusterSearchConnectionInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let cross_cluster_search_connection_id = {
-            let input = &self.cross_cluster_search_connection_id;
-            let input = input
+        let input_35 = &self.cross_cluster_search_connection_id;
+        let input_35 =
+            input_35
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "cross_cluster_search_connection_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "cross_cluster_search_connection_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let cross_cluster_search_connection_id = smithy_http::label::fmt_string(input_35, false);
+        if cross_cluster_search_connection_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "cross_cluster_search_connection_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/2015-01-01/es/ccs/inboundConnection/{CrossClusterSearchConnectionId}/reject",
@@ -6497,23 +6446,21 @@ impl UpdateElasticsearchDomainConfigInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let domain_name = {
-            let input = &self.domain_name;
-            let input = input
+        let input_36 = &self.domain_name;
+        let input_36 =
+            input_36
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "domain_name",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "domain_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let domain_name = smithy_http::label::fmt_string(input_36, false);
+        if domain_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "domain_name",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/2015-01-01/es/domain/{DomainName}/config",

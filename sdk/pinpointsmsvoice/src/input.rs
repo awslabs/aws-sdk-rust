@@ -264,23 +264,20 @@ impl CreateConfigurationSetEventDestinationInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let configuration_set_name = {
-            let input = &self.configuration_set_name;
-            let input = input
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "configuration_set_name",
-                    details: "cannot be empty or unset",
-                })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "configuration_set_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let input_1 = &self.configuration_set_name;
+        let input_1 = input_1
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "configuration_set_name",
+                details: "cannot be empty or unset",
+            })?;
+        let configuration_set_name = smithy_http::label::fmt_string(input_1, false);
+        if configuration_set_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "configuration_set_name",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/v1/sms-voice/configuration-sets/{ConfigurationSetName}/event-destinations",
@@ -417,23 +414,20 @@ impl DeleteConfigurationSetInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let configuration_set_name = {
-            let input = &self.configuration_set_name;
-            let input = input
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "configuration_set_name",
-                    details: "cannot be empty or unset",
-                })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "configuration_set_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let input_2 = &self.configuration_set_name;
+        let input_2 = input_2
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "configuration_set_name",
+                details: "cannot be empty or unset",
+            })?;
+        let configuration_set_name = smithy_http::label::fmt_string(input_2, false);
+        if configuration_set_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "configuration_set_name",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/v1/sms-voice/configuration-sets/{ConfigurationSetName}",
@@ -586,40 +580,34 @@ impl DeleteConfigurationSetEventDestinationInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let configuration_set_name = {
-            let input = &self.configuration_set_name;
-            let input = input
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "configuration_set_name",
-                    details: "cannot be empty or unset",
-                })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "configuration_set_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let event_destination_name = {
-            let input = &self.event_destination_name;
-            let input = input
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "event_destination_name",
-                    details: "cannot be empty or unset",
-                })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "event_destination_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let input_3 = &self.configuration_set_name;
+        let input_3 = input_3
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "configuration_set_name",
+                details: "cannot be empty or unset",
+            })?;
+        let configuration_set_name = smithy_http::label::fmt_string(input_3, false);
+        if configuration_set_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "configuration_set_name",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_4 = &self.event_destination_name;
+        let input_4 = input_4
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "event_destination_name",
+                details: "cannot be empty or unset",
+            })?;
+        let event_destination_name = smithy_http::label::fmt_string(input_4, false);
+        if event_destination_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "event_destination_name",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/v1/sms-voice/configuration-sets/{ConfigurationSetName}/event-destinations/{EventDestinationName}", ConfigurationSetName = configuration_set_name, EventDestinationName = event_destination_name).expect("formatting should succeed");
         Ok(())
     }
@@ -753,23 +741,20 @@ impl GetConfigurationSetEventDestinationsInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let configuration_set_name = {
-            let input = &self.configuration_set_name;
-            let input = input
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "configuration_set_name",
-                    details: "cannot be empty or unset",
-                })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "configuration_set_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let input_5 = &self.configuration_set_name;
+        let input_5 = input_5
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "configuration_set_name",
+                details: "cannot be empty or unset",
+            })?;
+        let configuration_set_name = smithy_http::label::fmt_string(input_5, false);
+        if configuration_set_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "configuration_set_name",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/v1/sms-voice/configuration-sets/{ConfigurationSetName}/event-destinations",
@@ -919,11 +904,11 @@ impl ListConfigurationSetsInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_1) = &self.next_token {
-            query.push_kv("NextToken", &smithy_http::query::fmt_string(&inner_1));
+        if let Some(inner_6) = &self.next_token {
+            query.push_kv("NextToken", &smithy_http::query::fmt_string(&inner_6));
         }
-        if let Some(inner_2) = &self.page_size {
-            query.push_kv("PageSize", &smithy_http::query::fmt_string(&inner_2));
+        if let Some(inner_7) = &self.page_size {
+            query.push_kv("PageSize", &smithy_http::query::fmt_string(&inner_7));
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -1277,40 +1262,34 @@ impl UpdateConfigurationSetEventDestinationInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let configuration_set_name = {
-            let input = &self.configuration_set_name;
-            let input = input
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "configuration_set_name",
-                    details: "cannot be empty or unset",
-                })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "configuration_set_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let event_destination_name = {
-            let input = &self.event_destination_name;
-            let input = input
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "event_destination_name",
-                    details: "cannot be empty or unset",
-                })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "event_destination_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let input_8 = &self.configuration_set_name;
+        let input_8 = input_8
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "configuration_set_name",
+                details: "cannot be empty or unset",
+            })?;
+        let configuration_set_name = smithy_http::label::fmt_string(input_8, false);
+        if configuration_set_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "configuration_set_name",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_9 = &self.event_destination_name;
+        let input_9 = input_9
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "event_destination_name",
+                details: "cannot be empty or unset",
+            })?;
+        let event_destination_name = smithy_http::label::fmt_string(input_9, false);
+        if event_destination_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "event_destination_name",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/v1/sms-voice/configuration-sets/{ConfigurationSetName}/event-destinations/{EventDestinationName}", ConfigurationSetName = configuration_set_name, EventDestinationName = event_destination_name).expect("formatting should succeed");
         Ok(())
     }

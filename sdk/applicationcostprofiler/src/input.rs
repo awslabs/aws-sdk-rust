@@ -92,23 +92,20 @@ impl DeleteReportDefinitionInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let report_id = {
-            let input = &self.report_id;
-            let input = input
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "report_id",
-                    details: "cannot be empty or unset",
-                })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "report_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let input_1 = &self.report_id;
+        let input_1 = input_1
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "report_id",
+                details: "cannot be empty or unset",
+            })?;
+        let report_id = smithy_http::label::fmt_string(input_1, false);
+        if report_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "report_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/reportDefinition/{reportId}", reportId = report_id)
             .expect("formatting should succeed");
         Ok(())
@@ -238,23 +235,20 @@ impl GetReportDefinitionInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let report_id = {
-            let input = &self.report_id;
-            let input = input
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "report_id",
-                    details: "cannot be empty or unset",
-                })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "report_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let input_2 = &self.report_id;
+        let input_2 = input_2
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "report_id",
+                details: "cannot be empty or unset",
+            })?;
+        let report_id = smithy_http::label::fmt_string(input_2, false);
+        if report_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "report_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/reportDefinition/{reportId}", reportId = report_id)
             .expect("formatting should succeed");
         Ok(())
@@ -534,11 +528,14 @@ impl ListReportDefinitionsInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_1) = &self.next_token {
-            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_1));
+        if let Some(inner_3) = &self.next_token {
+            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_3));
         }
-        if let Some(inner_2) = &self.max_results {
-            query.push_kv("maxResults", &smithy_http::query::fmt_default(&inner_2));
+        if let Some(inner_4) = &self.max_results {
+            query.push_kv(
+                "maxResults",
+                &smithy_types::primitive::Encoder::from(*inner_4).encode(),
+            );
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -910,23 +907,20 @@ impl UpdateReportDefinitionInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let report_id = {
-            let input = &self.report_id;
-            let input = input
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "report_id",
-                    details: "cannot be empty or unset",
-                })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "report_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let input_5 = &self.report_id;
+        let input_5 = input_5
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "report_id",
+                details: "cannot be empty or unset",
+            })?;
+        let report_id = smithy_http::label::fmt_string(input_5, false);
+        if report_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "report_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/reportDefinition/{reportId}", reportId = report_id)
             .expect("formatting should succeed");
         Ok(())

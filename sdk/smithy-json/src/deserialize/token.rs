@@ -9,7 +9,9 @@ use smithy_types::instant::Format;
 use smithy_types::{base64, Blob, Document, Instant, Number};
 use std::borrow::Cow;
 
+use crate::deserialize::must_not_be_finite;
 pub use crate::escape::Error as EscapeError;
+use smithy_types::primitive::Parse;
 use std::collections::HashMap;
 use std::iter::Peekable;
 
@@ -151,8 +153,44 @@ macro_rules! expect_value_or_null_fn {
 }
 
 expect_value_or_null_fn!(expect_bool_or_null, ValueBool, bool, "Expects a [Token::ValueBool] or [Token::ValueNull], and returns the bool value if it's not null.");
-expect_value_or_null_fn!(expect_number_or_null, ValueNumber, Number, "Expects a [Token::ValueNumber] or [Token::ValueNull], and returns the [Number] value if it's not null.");
 expect_value_or_null_fn!(expect_string_or_null, ValueString, EscapedStr, "Expects a [Token::ValueString] or [Token::ValueNull], and returns the [EscapedStr] value if it's not null.");
+
+/// Expects a [Token::ValueString], [Token::ValueNumber] or [Token::ValueNull].
+///
+/// If the value is a string, it MUST be `Infinity`, `-Infinity` or `Nan`.
+/// If the value is a number, it is returned directly
+pub fn expect_number_or_null(
+    token: Option<Result<Token<'_>, Error>>,
+) -> Result<Option<Number>, Error> {
+    match token.transpose()? {
+        Some(Token::ValueNull { .. }) => Ok(None),
+        Some(Token::ValueNumber { value, .. }) => Ok(Some(value)),
+        Some(Token::ValueString { value, offset }) => match value.to_unescaped() {
+            Err(err) => Err(Error::new(
+                ErrorReason::Custom(format!("expected a valid string, escape was invalid: {}", err).into()), Some(offset.0))
+            ),
+            Ok(v) => f64::parse_smithy_primitive(v.as_ref())
+                // disregard the exact error
+                .map_err(|_|())
+                // only infinite / NaN can be used as strings
+                .and_then(must_not_be_finite)
+                .map(|float| Some(smithy_types::Number::Float(float)))
+                // convert to a helpful error
+                .map_err(|_| {
+                    Error::new(
+                        ErrorReason::Custom(Cow::Owned(format!(
+                        "only `Infinity`, `-Infinity`, `NaN` can represent a float as a string but found `{}`",
+                        v
+                    ))),
+                        Some(offset.0),
+                    )
+                }),
+        },
+        _ => Err(Error::custom(
+            "expected ValueString, ValueNumber, or ValueNull",
+        )),
+    }
+}
 
 /// Expects a [Token::ValueString] or [Token::ValueNull]. If the value is a string, it interprets it as a base64 encoded [Blob] value.
 pub fn expect_blob_or_null(token: Option<Result<Token<'_>, Error>>) -> Result<Option<Blob>, Error> {
@@ -387,6 +425,15 @@ pub mod test {
     }
 
     #[test]
+    fn test_non_finite_floats() {
+        let mut tokens = json_token_iter(b"inf");
+        tokens
+            .next()
+            .expect("there is a token")
+            .expect_err("but it is invalid, ensure that Rust float boundary cases don't parse");
+    }
+
+    #[test]
     fn mismatched_braces() {
         // The skip_value function doesn't need to explicitly handle these cases since
         // token iterator's parser handles them. This test confirms that assumption.
@@ -466,9 +513,27 @@ pub mod test {
             expect_number_or_null(value_number(0, Number::PosInt(5)))
         );
         assert_eq!(
-            Err(Error::custom("expected ValueNumber or ValueNull")),
+            Err(Error::custom(
+                "expected ValueString, ValueNumber, or ValueNull"
+            )),
             expect_number_or_null(value_bool(0, true))
         );
+        assert_eq!(
+            Ok(Some(Number::Float(f64::INFINITY))),
+            expect_number_or_null(value_string(0, "Infinity"))
+        );
+        assert_eq!(
+            Err(Error::new(ErrorReason::Custom("only `Infinity`, `-Infinity`, `NaN` can represent a float as a string but found `123`".into()), Some(0))),
+            expect_number_or_null(value_string(0, "123"))
+        );
+        match expect_number_or_null(value_string(0, "NaN")) {
+            Ok(Some(Number::Float(v))) if v.is_nan() => {
+                // ok
+            }
+            not_ok => {
+                panic!("expected nan, found: {:?}", not_ok)
+            }
+        }
     }
 
     #[test]
@@ -505,8 +570,14 @@ pub mod test {
             Ok(Some(Instant::from_f64(1445412480.0))),
             expect_timestamp_or_null(value_string(0, "2015-10-21T07:28:00Z"), Format::DateTime)
         );
+        let err = Error::new(
+            ErrorReason::Custom(
+                "only `Infinity`, `-Infinity`, `NaN` can represent a float as a string but found `wrong`".into(),
+            ),
+            Some(0),
+        );
         assert_eq!(
-            Err(Error::custom("expected ValueNumber or ValueNull")),
+            Err(err),
             expect_timestamp_or_null(value_string(0, "wrong"), Format::EpochSeconds)
         );
         assert_eq!(

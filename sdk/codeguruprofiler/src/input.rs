@@ -114,23 +114,20 @@ impl AddNotificationChannelsInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let profiling_group_name = {
-            let input = &self.profiling_group_name;
-            let input = input
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "profiling_group_name",
-                    details: "cannot be empty or unset",
-                })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "profiling_group_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let input_1 = &self.profiling_group_name;
+        let input_1 = input_1
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "profiling_group_name",
+                details: "cannot be empty or unset",
+            })?;
+        let profiling_group_name = smithy_http::label::fmt_string(input_1, false);
+        if profiling_group_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "profiling_group_name",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/profilingGroups/{profilingGroupName}/notificationConfiguration",
@@ -371,23 +368,20 @@ impl BatchGetFrameMetricDataInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let profiling_group_name = {
-            let input = &self.profiling_group_name;
-            let input = input
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "profiling_group_name",
-                    details: "cannot be empty or unset",
-                })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "profiling_group_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let input_2 = &self.profiling_group_name;
+        let input_2 = input_2
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "profiling_group_name",
+                details: "cannot be empty or unset",
+            })?;
+        let profiling_group_name = smithy_http::label::fmt_string(input_2, false);
+        if profiling_group_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "profiling_group_name",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/profilingGroups/{profilingGroupName}/frames/-/metrics",
@@ -398,31 +392,31 @@ impl BatchGetFrameMetricDataInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_1) = &self.start_time {
+        if let Some(inner_3) = &self.start_time {
             query.push_kv(
                 "startTime",
                 &smithy_http::query::fmt_timestamp(
-                    inner_1,
+                    inner_3,
                     smithy_types::instant::Format::DateTime,
                 ),
             );
         }
-        if let Some(inner_2) = &self.end_time {
+        if let Some(inner_4) = &self.end_time {
             query.push_kv(
                 "endTime",
                 &smithy_http::query::fmt_timestamp(
-                    inner_2,
+                    inner_4,
                     smithy_types::instant::Format::DateTime,
                 ),
             );
         }
-        if let Some(inner_3) = &self.period {
-            query.push_kv("period", &smithy_http::query::fmt_string(&inner_3));
+        if let Some(inner_5) = &self.period {
+            query.push_kv("period", &smithy_http::query::fmt_string(&inner_5));
         }
-        if let Some(inner_4) = &self.target_resolution {
+        if let Some(inner_6) = &self.target_resolution {
             query.push_kv(
                 "targetResolution",
-                &smithy_http::query::fmt_string(&inner_4),
+                &smithy_http::query::fmt_string(&inner_6),
             );
         }
     }
@@ -598,23 +592,20 @@ impl ConfigureAgentInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let profiling_group_name = {
-            let input = &self.profiling_group_name;
-            let input = input
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "profiling_group_name",
-                    details: "cannot be empty or unset",
-                })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "profiling_group_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let input_7 = &self.profiling_group_name;
+        let input_7 = input_7
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "profiling_group_name",
+                details: "cannot be empty or unset",
+            })?;
+        let profiling_group_name = smithy_http::label::fmt_string(input_7, false);
+        if profiling_group_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "profiling_group_name",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/profilingGroups/{profilingGroupName}/configureAgent",
@@ -836,8 +827,8 @@ impl CreateProfilingGroupInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_5) = &self.client_token {
-            query.push_kv("clientToken", &smithy_http::query::fmt_string(&inner_5));
+        if let Some(inner_8) = &self.client_token {
+            query.push_kv("clientToken", &smithy_http::query::fmt_string(&inner_8));
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -969,23 +960,20 @@ impl DeleteProfilingGroupInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let profiling_group_name = {
-            let input = &self.profiling_group_name;
-            let input = input
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "profiling_group_name",
-                    details: "cannot be empty or unset",
-                })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "profiling_group_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let input_9 = &self.profiling_group_name;
+        let input_9 = input_9
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "profiling_group_name",
+                details: "cannot be empty or unset",
+            })?;
+        let profiling_group_name = smithy_http::label::fmt_string(input_9, false);
+        if profiling_group_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "profiling_group_name",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/profilingGroups/{profilingGroupName}",
@@ -1124,23 +1112,21 @@ impl DescribeProfilingGroupInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let profiling_group_name = {
-            let input = &self.profiling_group_name;
-            let input = input
+        let input_10 = &self.profiling_group_name;
+        let input_10 =
+            input_10
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "profiling_group_name",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "profiling_group_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let profiling_group_name = smithy_http::label::fmt_string(input_10, false);
+        if profiling_group_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "profiling_group_name",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/profilingGroups/{profilingGroupName}",
@@ -1315,16 +1301,19 @@ impl GetFindingsReportAccountSummaryInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_6) = &self.next_token {
-            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_6));
+        if let Some(inner_11) = &self.next_token {
+            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_11));
         }
-        if let Some(inner_7) = &self.max_results {
-            query.push_kv("maxResults", &smithy_http::query::fmt_default(&inner_7));
+        if let Some(inner_12) = &self.max_results {
+            query.push_kv(
+                "maxResults",
+                &smithy_types::primitive::Encoder::from(*inner_12).encode(),
+            );
         }
-        if let Some(inner_8) = &self.daily_reports_only {
+        if let Some(inner_13) = &self.daily_reports_only {
             query.push_kv(
                 "dailyReportsOnly",
-                &smithy_http::query::fmt_default(&inner_8),
+                &smithy_types::primitive::Encoder::from(*inner_13).encode(),
             );
         }
     }
@@ -1458,23 +1447,21 @@ impl GetNotificationConfigurationInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let profiling_group_name = {
-            let input = &self.profiling_group_name;
-            let input = input
+        let input_14 = &self.profiling_group_name;
+        let input_14 =
+            input_14
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "profiling_group_name",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "profiling_group_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let profiling_group_name = smithy_http::label::fmt_string(input_14, false);
+        if profiling_group_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "profiling_group_name",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/profilingGroups/{profilingGroupName}/notificationConfiguration",
@@ -1607,23 +1594,21 @@ impl GetPolicyInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let profiling_group_name = {
-            let input = &self.profiling_group_name;
-            let input = input
+        let input_15 = &self.profiling_group_name;
+        let input_15 =
+            input_15
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "profiling_group_name",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "profiling_group_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let profiling_group_name = smithy_http::label::fmt_string(input_15, false);
+        if profiling_group_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "profiling_group_name",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/profilingGroups/{profilingGroupName}/policy",
@@ -1859,23 +1844,21 @@ impl GetProfileInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let profiling_group_name = {
-            let input = &self.profiling_group_name;
-            let input = input
+        let input_16 = &self.profiling_group_name;
+        let input_16 =
+            input_16
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "profiling_group_name",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "profiling_group_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let profiling_group_name = smithy_http::label::fmt_string(input_16, false);
+        if profiling_group_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "profiling_group_name",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/profilingGroups/{profilingGroupName}/profile",
@@ -1888,11 +1871,11 @@ impl GetProfileInput {
         &self,
         mut builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        if let Some(inner_9) = &self.accept {
-            let formatted_10 = AsRef::<str>::as_ref(inner_9);
-            if !formatted_10.is_empty() {
+        if let Some(inner_17) = &self.accept {
+            let formatted_18 = AsRef::<str>::as_ref(inner_17);
+            if !formatted_18.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_10;
+                let header_value = formatted_18;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -1910,29 +1893,32 @@ impl GetProfileInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_11) = &self.start_time {
+        if let Some(inner_19) = &self.start_time {
             query.push_kv(
                 "startTime",
                 &smithy_http::query::fmt_timestamp(
-                    inner_11,
+                    inner_19,
                     smithy_types::instant::Format::DateTime,
                 ),
             );
         }
-        if let Some(inner_12) = &self.period {
-            query.push_kv("period", &smithy_http::query::fmt_string(&inner_12));
+        if let Some(inner_20) = &self.period {
+            query.push_kv("period", &smithy_http::query::fmt_string(&inner_20));
         }
-        if let Some(inner_13) = &self.end_time {
+        if let Some(inner_21) = &self.end_time {
             query.push_kv(
                 "endTime",
                 &smithy_http::query::fmt_timestamp(
-                    inner_13,
+                    inner_21,
                     smithy_types::instant::Format::DateTime,
                 ),
             );
         }
-        if let Some(inner_14) = &self.max_depth {
-            query.push_kv("maxDepth", &smithy_http::query::fmt_default(&inner_14));
+        if let Some(inner_22) = &self.max_depth {
+            query.push_kv(
+                "maxDepth",
+                &smithy_types::primitive::Encoder::from(*inner_22).encode(),
+            );
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -2170,23 +2156,21 @@ impl GetRecommendationsInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let profiling_group_name = {
-            let input = &self.profiling_group_name;
-            let input = input
+        let input_23 = &self.profiling_group_name;
+        let input_23 =
+            input_23
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "profiling_group_name",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "profiling_group_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let profiling_group_name = smithy_http::label::fmt_string(input_23, false);
+        if profiling_group_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "profiling_group_name",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/internal/profilingGroups/{profilingGroupName}/recommendations",
@@ -2197,26 +2181,26 @@ impl GetRecommendationsInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_15) = &self.start_time {
+        if let Some(inner_24) = &self.start_time {
             query.push_kv(
                 "startTime",
                 &smithy_http::query::fmt_timestamp(
-                    inner_15,
+                    inner_24,
                     smithy_types::instant::Format::DateTime,
                 ),
             );
         }
-        if let Some(inner_16) = &self.end_time {
+        if let Some(inner_25) = &self.end_time {
             query.push_kv(
                 "endTime",
                 &smithy_http::query::fmt_timestamp(
-                    inner_16,
+                    inner_25,
                     smithy_types::instant::Format::DateTime,
                 ),
             );
         }
-        if let Some(inner_17) = &self.locale {
-            query.push_kv("locale", &smithy_http::query::fmt_string(&inner_17));
+        if let Some(inner_26) = &self.locale {
+            query.push_kv("locale", &smithy_http::query::fmt_string(&inner_26));
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -2427,23 +2411,21 @@ impl ListFindingsReportsInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let profiling_group_name = {
-            let input = &self.profiling_group_name;
-            let input = input
+        let input_27 = &self.profiling_group_name;
+        let input_27 =
+            input_27
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "profiling_group_name",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "profiling_group_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let profiling_group_name = smithy_http::label::fmt_string(input_27, false);
+        if profiling_group_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "profiling_group_name",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/internal/profilingGroups/{profilingGroupName}/findingsReports",
@@ -2454,34 +2436,37 @@ impl ListFindingsReportsInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_18) = &self.start_time {
+        if let Some(inner_28) = &self.start_time {
             query.push_kv(
                 "startTime",
                 &smithy_http::query::fmt_timestamp(
-                    inner_18,
+                    inner_28,
                     smithy_types::instant::Format::DateTime,
                 ),
             );
         }
-        if let Some(inner_19) = &self.end_time {
+        if let Some(inner_29) = &self.end_time {
             query.push_kv(
                 "endTime",
                 &smithy_http::query::fmt_timestamp(
-                    inner_19,
+                    inner_29,
                     smithy_types::instant::Format::DateTime,
                 ),
             );
         }
-        if let Some(inner_20) = &self.next_token {
-            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_20));
+        if let Some(inner_30) = &self.next_token {
+            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_30));
         }
-        if let Some(inner_21) = &self.max_results {
-            query.push_kv("maxResults", &smithy_http::query::fmt_default(&inner_21));
+        if let Some(inner_31) = &self.max_results {
+            query.push_kv(
+                "maxResults",
+                &smithy_types::primitive::Encoder::from(*inner_31).encode(),
+            );
         }
-        if let Some(inner_22) = &self.daily_reports_only {
+        if let Some(inner_32) = &self.daily_reports_only {
             query.push_kv(
                 "dailyReportsOnly",
-                &smithy_http::query::fmt_default(&inner_22),
+                &smithy_types::primitive::Encoder::from(*inner_32).encode(),
             );
         }
     }
@@ -2719,23 +2704,21 @@ impl ListProfileTimesInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let profiling_group_name = {
-            let input = &self.profiling_group_name;
-            let input = input
+        let input_33 = &self.profiling_group_name;
+        let input_33 =
+            input_33
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "profiling_group_name",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "profiling_group_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let profiling_group_name = smithy_http::label::fmt_string(input_33, false);
+        if profiling_group_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "profiling_group_name",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/profilingGroups/{profilingGroupName}/profileTimes",
@@ -2746,35 +2729,38 @@ impl ListProfileTimesInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_23) = &self.start_time {
+        if let Some(inner_34) = &self.start_time {
             query.push_kv(
                 "startTime",
                 &smithy_http::query::fmt_timestamp(
-                    inner_23,
+                    inner_34,
                     smithy_types::instant::Format::DateTime,
                 ),
             );
         }
-        if let Some(inner_24) = &self.end_time {
+        if let Some(inner_35) = &self.end_time {
             query.push_kv(
                 "endTime",
                 &smithy_http::query::fmt_timestamp(
-                    inner_24,
+                    inner_35,
                     smithy_types::instant::Format::DateTime,
                 ),
             );
         }
-        if let Some(inner_25) = &self.period {
-            query.push_kv("period", &smithy_http::query::fmt_string(&inner_25));
+        if let Some(inner_36) = &self.period {
+            query.push_kv("period", &smithy_http::query::fmt_string(&inner_36));
         }
-        if let Some(inner_26) = &self.order_by {
-            query.push_kv("orderBy", &smithy_http::query::fmt_string(&inner_26));
+        if let Some(inner_37) = &self.order_by {
+            query.push_kv("orderBy", &smithy_http::query::fmt_string(&inner_37));
         }
-        if let Some(inner_27) = &self.max_results {
-            query.push_kv("maxResults", &smithy_http::query::fmt_default(&inner_27));
+        if let Some(inner_38) = &self.max_results {
+            query.push_kv(
+                "maxResults",
+                &smithy_types::primitive::Encoder::from(*inner_38).encode(),
+            );
         }
-        if let Some(inner_28) = &self.next_token {
-            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_28));
+        if let Some(inner_39) = &self.next_token {
+            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_39));
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -2950,16 +2936,19 @@ impl ListProfilingGroupsInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_29) = &self.next_token {
-            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_29));
+        if let Some(inner_40) = &self.next_token {
+            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_40));
         }
-        if let Some(inner_30) = &self.max_results {
-            query.push_kv("maxResults", &smithy_http::query::fmt_default(&inner_30));
+        if let Some(inner_41) = &self.max_results {
+            query.push_kv(
+                "maxResults",
+                &smithy_types::primitive::Encoder::from(*inner_41).encode(),
+            );
         }
-        if let Some(inner_31) = &self.include_description {
+        if let Some(inner_42) = &self.include_description {
             query.push_kv(
                 "includeDescription",
-                &smithy_http::query::fmt_default(&inner_31),
+                &smithy_types::primitive::Encoder::from(*inner_42).encode(),
             );
         }
     }
@@ -3091,23 +3080,21 @@ impl ListTagsForResourceInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let resource_arn = {
-            let input = &self.resource_arn;
-            let input = input
+        let input_43 = &self.resource_arn;
+        let input_43 =
+            input_43
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "resource_arn",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "resource_arn",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let resource_arn = smithy_http::label::fmt_string(input_43, false);
+        if resource_arn.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "resource_arn",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/tags/{resourceArn}", resourceArn = resource_arn)
             .expect("formatting should succeed");
         Ok(())
@@ -3304,23 +3291,21 @@ impl PostAgentProfileInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let profiling_group_name = {
-            let input = &self.profiling_group_name;
-            let input = input
+        let input_44 = &self.profiling_group_name;
+        let input_44 =
+            input_44
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "profiling_group_name",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "profiling_group_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let profiling_group_name = smithy_http::label::fmt_string(input_44, false);
+        if profiling_group_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "profiling_group_name",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/profilingGroups/{profilingGroupName}/agentProfile",
@@ -3333,11 +3318,11 @@ impl PostAgentProfileInput {
         &self,
         mut builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        if let Some(inner_32) = &self.content_type {
-            let formatted_33 = AsRef::<str>::as_ref(inner_32);
-            if !formatted_33.is_empty() {
+        if let Some(inner_45) = &self.content_type {
+            let formatted_46 = AsRef::<str>::as_ref(inner_45);
+            if !formatted_46.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_33;
+                let header_value = formatted_46;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -3355,8 +3340,8 @@ impl PostAgentProfileInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_34) = &self.profile_token {
-            query.push_kv("profileToken", &smithy_http::query::fmt_string(&inner_34));
+        if let Some(inner_47) = &self.profile_token {
+            query.push_kv("profileToken", &smithy_http::query::fmt_string(&inner_47));
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -3543,40 +3528,36 @@ impl PutPermissionInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let profiling_group_name = {
-            let input = &self.profiling_group_name;
-            let input = input
+        let input_48 = &self.profiling_group_name;
+        let input_48 =
+            input_48
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "profiling_group_name",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "profiling_group_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let action_group = {
-            let input = &self.action_group;
-            let input = input
+        let profiling_group_name = smithy_http::label::fmt_string(input_48, false);
+        if profiling_group_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "profiling_group_name",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_49 = &self.action_group;
+        let input_49 =
+            input_49
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "action_group",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "action_group",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let action_group = smithy_http::label::fmt_string(input_49, false);
+        if action_group.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "action_group",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/profilingGroups/{profilingGroupName}/policy/{actionGroup}",
@@ -3726,40 +3707,36 @@ impl RemoveNotificationChannelInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let profiling_group_name = {
-            let input = &self.profiling_group_name;
-            let input = input
+        let input_50 = &self.profiling_group_name;
+        let input_50 =
+            input_50
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "profiling_group_name",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "profiling_group_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let channel_id = {
-            let input = &self.channel_id;
-            let input = input
+        let profiling_group_name = smithy_http::label::fmt_string(input_50, false);
+        if profiling_group_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "profiling_group_name",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_51 = &self.channel_id;
+        let input_51 =
+            input_51
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "channel_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "channel_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let channel_id = smithy_http::label::fmt_string(input_51, false);
+        if channel_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "channel_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/profilingGroups/{profilingGroupName}/notificationConfiguration/{channelId}",
@@ -3929,40 +3906,36 @@ impl RemovePermissionInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let profiling_group_name = {
-            let input = &self.profiling_group_name;
-            let input = input
+        let input_52 = &self.profiling_group_name;
+        let input_52 =
+            input_52
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "profiling_group_name",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "profiling_group_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let action_group = {
-            let input = &self.action_group;
-            let input = input
+        let profiling_group_name = smithy_http::label::fmt_string(input_52, false);
+        if profiling_group_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "profiling_group_name",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_53 = &self.action_group;
+        let input_53 =
+            input_53
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "action_group",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "action_group",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let action_group = smithy_http::label::fmt_string(input_53, false);
+        if action_group.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "action_group",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/profilingGroups/{profilingGroupName}/policy/{actionGroup}",
@@ -3974,8 +3947,8 @@ impl RemovePermissionInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_35) = &self.revision_id {
-            query.push_kv("revisionId", &smithy_http::query::fmt_string(&inner_35));
+        if let Some(inner_54) = &self.revision_id {
+            query.push_kv("revisionId", &smithy_http::query::fmt_string(&inner_54));
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -4151,40 +4124,36 @@ impl SubmitFeedbackInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let profiling_group_name = {
-            let input = &self.profiling_group_name;
-            let input = input
+        let input_55 = &self.profiling_group_name;
+        let input_55 =
+            input_55
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "profiling_group_name",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "profiling_group_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let anomaly_instance_id = {
-            let input = &self.anomaly_instance_id;
-            let input = input
+        let profiling_group_name = smithy_http::label::fmt_string(input_55, false);
+        if profiling_group_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "profiling_group_name",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_56 = &self.anomaly_instance_id;
+        let input_56 =
+            input_56
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "anomaly_instance_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "anomaly_instance_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let anomaly_instance_id = smithy_http::label::fmt_string(input_56, false);
+        if anomaly_instance_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "anomaly_instance_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/internal/profilingGroups/{profilingGroupName}/anomalies/{anomalyInstanceId}/feedback",
@@ -4345,23 +4314,21 @@ impl TagResourceInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let resource_arn = {
-            let input = &self.resource_arn;
-            let input = input
+        let input_57 = &self.resource_arn;
+        let input_57 =
+            input_57
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "resource_arn",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "resource_arn",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let resource_arn = smithy_http::label::fmt_string(input_57, false);
+        if resource_arn.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "resource_arn",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/tags/{resourceArn}", resourceArn = resource_arn)
             .expect("formatting should succeed");
         Ok(())
@@ -4506,32 +4473,30 @@ impl UntagResourceInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let resource_arn = {
-            let input = &self.resource_arn;
-            let input = input
+        let input_58 = &self.resource_arn;
+        let input_58 =
+            input_58
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "resource_arn",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "resource_arn",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let resource_arn = smithy_http::label::fmt_string(input_58, false);
+        if resource_arn.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "resource_arn",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/tags/{resourceArn}", resourceArn = resource_arn)
             .expect("formatting should succeed");
         Ok(())
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_36) = &self.tag_keys {
-            for inner_37 in inner_36 {
-                query.push_kv("tagKeys", &smithy_http::query::fmt_string(&inner_37));
+        if let Some(inner_59) = &self.tag_keys {
+            for inner_60 in inner_59 {
+                query.push_kv("tagKeys", &smithy_http::query::fmt_string(&inner_60));
             }
         }
     }
@@ -4687,23 +4652,21 @@ impl UpdateProfilingGroupInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let profiling_group_name = {
-            let input = &self.profiling_group_name;
-            let input = input
+        let input_61 = &self.profiling_group_name;
+        let input_61 =
+            input_61
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "profiling_group_name",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "profiling_group_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let profiling_group_name = smithy_http::label::fmt_string(input_61, false);
+        if profiling_group_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "profiling_group_name",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/profilingGroups/{profilingGroupName}",

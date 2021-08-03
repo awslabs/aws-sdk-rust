@@ -75,7 +75,7 @@ pub fn serialize_structure_create_job_input(
             .start_el("ConfirmationRequired")
             .write_ns("http://awss3control.amazonaws.com/doc/2018-08-20/", None)
             .finish();
-        inner_writer.data(if *var_6 { "true" } else { "false" });
+        inner_writer.data(smithy_types::primitive::Encoder::from(*var_6).encode());
     }
     if let Some(var_7) = &input.description {
         let mut inner_writer = scope
@@ -101,7 +101,7 @@ pub fn serialize_structure_create_job_input(
             .start_el("Priority")
             .write_ns("http://awss3control.amazonaws.com/doc/2018-08-20/", None)
             .finish();
-        inner_writer.data(var_10.to_string().as_ref());
+        inner_writer.data(smithy_types::primitive::Encoder::from(*var_10).encode());
     }
     if let Some(var_11) = &input.report {
         let inner_writer = scope
@@ -327,44 +327,31 @@ pub fn serialize_structure_public_access_block_configuration(
             .start_el("BlockPublicAcls")
             .write_ns("http://awss3control.amazonaws.com/doc/2018-08-20/", None)
             .finish();
-        inner_writer.data(if input.block_public_acls {
-            "true"
-        } else {
-            "false"
-        });
+        inner_writer.data(smithy_types::primitive::Encoder::from(input.block_public_acls).encode());
     }
     if input.ignore_public_acls {
         let mut inner_writer = scope
             .start_el("IgnorePublicAcls")
             .write_ns("http://awss3control.amazonaws.com/doc/2018-08-20/", None)
             .finish();
-        inner_writer.data(if input.ignore_public_acls {
-            "true"
-        } else {
-            "false"
-        });
+        inner_writer
+            .data(smithy_types::primitive::Encoder::from(input.ignore_public_acls).encode());
     }
     if input.block_public_policy {
         let mut inner_writer = scope
             .start_el("BlockPublicPolicy")
             .write_ns("http://awss3control.amazonaws.com/doc/2018-08-20/", None)
             .finish();
-        inner_writer.data(if input.block_public_policy {
-            "true"
-        } else {
-            "false"
-        });
+        inner_writer
+            .data(smithy_types::primitive::Encoder::from(input.block_public_policy).encode());
     }
     if input.restrict_public_buckets {
         let mut inner_writer = scope
             .start_el("RestrictPublicBuckets")
             .write_ns("http://awss3control.amazonaws.com/doc/2018-08-20/", None)
             .finish();
-        inner_writer.data(if input.restrict_public_buckets {
-            "true"
-        } else {
-            "false"
-        });
+        inner_writer
+            .data(smithy_types::primitive::Encoder::from(input.restrict_public_buckets).encode());
     }
     scope.finish();
 }
@@ -403,11 +390,9 @@ pub fn serialize_structure_object_lambda_configuration(
             .start_el("CloudWatchMetricsEnabled")
             .write_ns("http://awss3control.amazonaws.com/doc/2018-08-20/", None)
             .finish();
-        inner_writer.data(if input.cloud_watch_metrics_enabled {
-            "true"
-        } else {
-            "false"
-        });
+        inner_writer.data(
+            smithy_types::primitive::Encoder::from(input.cloud_watch_metrics_enabled).encode(),
+        );
     }
     if let Some(var_28) = &input.allowed_features {
         let mut inner_writer = scope
@@ -572,7 +557,7 @@ pub fn serialize_structure_job_report(
             .start_el("Enabled")
             .write_ns("http://awss3control.amazonaws.com/doc/2018-08-20/", None)
             .finish();
-        inner_writer.data(if input.enabled { "true" } else { "false" });
+        inner_writer.data(smithy_types::primitive::Encoder::from(input.enabled).encode());
     }
     if let Some(var_45) = &input.prefix {
         let mut inner_writer = scope
@@ -702,7 +687,7 @@ pub fn serialize_structure_storage_lens_configuration(
             .start_el("IsEnabled")
             .write_ns("http://awss3control.amazonaws.com/doc/2018-08-20/", None)
             .finish();
-        inner_writer.data(if input.is_enabled { "true" } else { "false" });
+        inner_writer.data(smithy_types::primitive::Encoder::from(input.is_enabled).encode());
     }
     if let Some(var_58) = &input.aws_org {
         let inner_writer = scope
@@ -930,11 +915,7 @@ pub fn serialize_structure_s3_copy_object_operation(
             .start_el("RequesterPays")
             .write_ns("http://awss3control.amazonaws.com/doc/2018-08-20/", None)
             .finish();
-        inner_writer.data(if input.requester_pays {
-            "true"
-        } else {
-            "false"
-        });
+        inner_writer.data(smithy_types::primitive::Encoder::from(input.requester_pays).encode());
     }
     if let Some(var_82) = &input.storage_class {
         let mut inner_writer = scope
@@ -990,11 +971,8 @@ pub fn serialize_structure_s3_copy_object_operation(
             .start_el("BucketKeyEnabled")
             .write_ns("http://awss3control.amazonaws.com/doc/2018-08-20/", None)
             .finish();
-        inner_writer.data(if input.bucket_key_enabled {
-            "true"
-        } else {
-            "false"
-        });
+        inner_writer
+            .data(smithy_types::primitive::Encoder::from(input.bucket_key_enabled).encode());
     }
     scope.finish();
 }
@@ -1058,7 +1036,7 @@ pub fn serialize_structure_s3_initiate_restore_object_operation(
             .start_el("ExpirationInDays")
             .write_ns("http://awss3control.amazonaws.com/doc/2018-08-20/", None)
             .finish();
-        inner_writer.data(var_92.to_string().as_ref());
+        inner_writer.data(smithy_types::primitive::Encoder::from(*var_92).encode());
     }
     if let Some(var_93) = &input.glacier_job_tier {
         let mut inner_writer = scope
@@ -1096,7 +1074,7 @@ pub fn serialize_structure_s3_set_object_retention_operation(
             .start_el("BypassGovernanceRetention")
             .write_ns("http://awss3control.amazonaws.com/doc/2018-08-20/", None)
             .finish();
-        inner_writer.data(if *var_95 { "true" } else { "false" });
+        inner_writer.data(smithy_types::primitive::Encoder::from(*var_95).encode());
     }
     if let Some(var_96) = &input.retention {
         let inner_writer = scope
@@ -1417,7 +1395,7 @@ pub fn serialize_structure_s3_object_metadata(
             .start_el("ContentLength")
             .write_ns("http://awss3control.amazonaws.com/doc/2018-08-20/", None)
             .finish();
-        inner_writer.data(var_128.to_string().as_ref());
+        inner_writer.data(smithy_types::primitive::Encoder::from(*var_128).encode());
     }
     if let Some(var_129) = &input.content_md5 {
         let mut inner_writer = scope
@@ -1449,11 +1427,7 @@ pub fn serialize_structure_s3_object_metadata(
             .start_el("RequesterCharged")
             .write_ns("http://awss3control.amazonaws.com/doc/2018-08-20/", None)
             .finish();
-        inner_writer.data(if input.requester_charged {
-            "true"
-        } else {
-            "false"
-        });
+        inner_writer.data(smithy_types::primitive::Encoder::from(input.requester_charged).encode());
     }
     if let Some(var_132) = &input.sse_algorithm {
         let mut inner_writer = scope
@@ -1552,18 +1526,16 @@ pub fn serialize_structure_lifecycle_expiration(
             .start_el("Days")
             .write_ns("http://awss3control.amazonaws.com/doc/2018-08-20/", None)
             .finish();
-        inner_writer.data(&input.days.to_string().as_ref());
+        inner_writer.data(smithy_types::primitive::Encoder::from(input.days).encode());
     }
     if input.expired_object_delete_marker {
         let mut inner_writer = scope
             .start_el("ExpiredObjectDeleteMarker")
             .write_ns("http://awss3control.amazonaws.com/doc/2018-08-20/", None)
             .finish();
-        inner_writer.data(if input.expired_object_delete_marker {
-            "true"
-        } else {
-            "false"
-        });
+        inner_writer.data(
+            smithy_types::primitive::Encoder::from(input.expired_object_delete_marker).encode(),
+        );
     }
     scope.finish();
 }
@@ -1618,7 +1590,7 @@ pub fn serialize_structure_transition(
             .start_el("Days")
             .write_ns("http://awss3control.amazonaws.com/doc/2018-08-20/", None)
             .finish();
-        inner_writer.data(&input.days.to_string().as_ref());
+        inner_writer.data(smithy_types::primitive::Encoder::from(input.days).encode());
     }
     if let Some(var_143) = &input.storage_class {
         let mut inner_writer = scope
@@ -1641,7 +1613,7 @@ pub fn serialize_structure_noncurrent_version_transition(
             .start_el("NoncurrentDays")
             .write_ns("http://awss3control.amazonaws.com/doc/2018-08-20/", None)
             .finish();
-        inner_writer.data(&input.noncurrent_days.to_string().as_ref());
+        inner_writer.data(smithy_types::primitive::Encoder::from(input.noncurrent_days).encode());
     }
     if let Some(var_144) = &input.storage_class {
         let mut inner_writer = scope
@@ -1664,7 +1636,7 @@ pub fn serialize_structure_noncurrent_version_expiration(
             .start_el("NoncurrentDays")
             .write_ns("http://awss3control.amazonaws.com/doc/2018-08-20/", None)
             .finish();
-        inner_writer.data(&input.noncurrent_days.to_string().as_ref());
+        inner_writer.data(smithy_types::primitive::Encoder::from(input.noncurrent_days).encode());
     }
     scope.finish();
 }
@@ -1680,7 +1652,8 @@ pub fn serialize_structure_abort_incomplete_multipart_upload(
             .start_el("DaysAfterInitiation")
             .write_ns("http://awss3control.amazonaws.com/doc/2018-08-20/", None)
             .finish();
-        inner_writer.data(&input.days_after_initiation.to_string().as_ref());
+        inner_writer
+            .data(smithy_types::primitive::Encoder::from(input.days_after_initiation).encode());
     }
     scope.finish();
 }
@@ -1696,7 +1669,7 @@ pub fn serialize_structure_activity_metrics(
             .start_el("IsEnabled")
             .write_ns("http://awss3control.amazonaws.com/doc/2018-08-20/", None)
             .finish();
-        inner_writer.data(if input.is_enabled { "true" } else { "false" });
+        inner_writer.data(smithy_types::primitive::Encoder::from(input.is_enabled).encode());
     }
     scope.finish();
 }
@@ -1957,7 +1930,7 @@ pub fn serialize_structure_prefix_level_storage_metrics(
             .start_el("IsEnabled")
             .write_ns("http://awss3control.amazonaws.com/doc/2018-08-20/", None)
             .finish();
-        inner_writer.data(if input.is_enabled { "true" } else { "false" });
+        inner_writer.data(smithy_types::primitive::Encoder::from(input.is_enabled).encode());
     }
     if let Some(var_169) = &input.selection_criteria {
         let inner_writer = scope
@@ -2012,14 +1985,16 @@ pub fn serialize_structure_selection_criteria(
             .start_el("MaxDepth")
             .write_ns("http://awss3control.amazonaws.com/doc/2018-08-20/", None)
             .finish();
-        inner_writer.data(&input.max_depth.to_string().as_ref());
+        inner_writer.data(smithy_types::primitive::Encoder::from(input.max_depth).encode());
     }
     if input.min_storage_bytes_percentage != 0.0 {
         let mut inner_writer = scope
             .start_el("MinStorageBytesPercentage")
             .write_ns("http://awss3control.amazonaws.com/doc/2018-08-20/", None)
             .finish();
-        inner_writer.data(&input.min_storage_bytes_percentage.to_string().as_ref());
+        inner_writer.data(
+            smithy_types::primitive::Encoder::from(input.min_storage_bytes_percentage).encode(),
+        );
     }
     scope.finish();
 }

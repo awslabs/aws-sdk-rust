@@ -744,23 +744,20 @@ impl DeleteAlarmModelInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let alarm_model_name = {
-            let input = &self.alarm_model_name;
-            let input = input
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "alarm_model_name",
-                    details: "cannot be empty or unset",
-                })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "alarm_model_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let input_1 = &self.alarm_model_name;
+        let input_1 = input_1
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "alarm_model_name",
+                details: "cannot be empty or unset",
+            })?;
+        let alarm_model_name = smithy_http::label::fmt_string(input_1, false);
+        if alarm_model_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "alarm_model_name",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/alarm-models/{alarmModelName}",
@@ -897,23 +894,20 @@ impl DeleteDetectorModelInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let detector_model_name = {
-            let input = &self.detector_model_name;
-            let input = input
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "detector_model_name",
-                    details: "cannot be empty or unset",
-                })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "detector_model_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let input_2 = &self.detector_model_name;
+        let input_2 = input_2
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "detector_model_name",
+                details: "cannot be empty or unset",
+            })?;
+        let detector_model_name = smithy_http::label::fmt_string(input_2, false);
+        if detector_model_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "detector_model_name",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/detector-models/{detectorModelName}",
@@ -1045,23 +1039,20 @@ impl DeleteInputInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_name = {
-            let input = &self.input_name;
-            let input = input
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "input_name",
-                    details: "cannot be empty or unset",
-                })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "input_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let input_3 = &self.input_name;
+        let input_3 = input_3
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "input_name",
+                details: "cannot be empty or unset",
+            })?;
+        let input_name = smithy_http::label::fmt_string(input_3, false);
+        if input_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "input_name",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/inputs/{inputName}", inputName = input_name)
             .expect("formatting should succeed");
         Ok(())
@@ -1208,23 +1199,20 @@ impl DescribeAlarmModelInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let alarm_model_name = {
-            let input = &self.alarm_model_name;
-            let input = input
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "alarm_model_name",
-                    details: "cannot be empty or unset",
-                })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "alarm_model_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let input_4 = &self.alarm_model_name;
+        let input_4 = input_4
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "alarm_model_name",
+                details: "cannot be empty or unset",
+            })?;
+        let alarm_model_name = smithy_http::label::fmt_string(input_4, false);
+        if alarm_model_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "alarm_model_name",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/alarm-models/{alarmModelName}",
@@ -1235,8 +1223,8 @@ impl DescribeAlarmModelInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_1) = &self.alarm_model_version {
-            query.push_kv("version", &smithy_http::query::fmt_string(&inner_1));
+        if let Some(inner_5) = &self.alarm_model_version {
+            query.push_kv("version", &smithy_http::query::fmt_string(&inner_5));
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -1382,23 +1370,20 @@ impl DescribeDetectorModelInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let detector_model_name = {
-            let input = &self.detector_model_name;
-            let input = input
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "detector_model_name",
-                    details: "cannot be empty or unset",
-                })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "detector_model_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let input_6 = &self.detector_model_name;
+        let input_6 = input_6
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "detector_model_name",
+                details: "cannot be empty or unset",
+            })?;
+        let detector_model_name = smithy_http::label::fmt_string(input_6, false);
+        if detector_model_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "detector_model_name",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/detector-models/{detectorModelName}",
@@ -1409,8 +1394,8 @@ impl DescribeDetectorModelInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_2) = &self.detector_model_version {
-            query.push_kv("version", &smithy_http::query::fmt_string(&inner_2));
+        if let Some(inner_7) = &self.detector_model_version {
+            query.push_kv("version", &smithy_http::query::fmt_string(&inner_7));
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -1540,23 +1525,20 @@ impl DescribeDetectorModelAnalysisInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let analysis_id = {
-            let input = &self.analysis_id;
-            let input = input
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "analysis_id",
-                    details: "cannot be empty or unset",
-                })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "analysis_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let input_8 = &self.analysis_id;
+        let input_8 = input_8
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "analysis_id",
+                details: "cannot be empty or unset",
+            })?;
+        let analysis_id = smithy_http::label::fmt_string(input_8, false);
+        if analysis_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "analysis_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/analysis/detector-models/{analysisId}",
@@ -1688,23 +1670,20 @@ impl DescribeInputInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_name = {
-            let input = &self.input_name;
-            let input = input
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "input_name",
-                    details: "cannot be empty or unset",
-                })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "input_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let input_9 = &self.input_name;
+        let input_9 = input_9
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "input_name",
+                details: "cannot be empty or unset",
+            })?;
+        let input_name = smithy_http::label::fmt_string(input_9, false);
+        if input_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "input_name",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/inputs/{inputName}", inputName = input_name)
             .expect("formatting should succeed");
         Ok(())
@@ -1972,23 +1951,21 @@ impl GetDetectorModelAnalysisResultsInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let analysis_id = {
-            let input = &self.analysis_id;
-            let input = input
+        let input_10 = &self.analysis_id;
+        let input_10 =
+            input_10
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "analysis_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "analysis_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let analysis_id = smithy_http::label::fmt_string(input_10, false);
+        if analysis_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "analysis_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/analysis/detector-models/{analysisId}/results",
@@ -1999,11 +1976,14 @@ impl GetDetectorModelAnalysisResultsInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_3) = &self.next_token {
-            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_3));
+        if let Some(inner_11) = &self.next_token {
+            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_11));
         }
-        if let Some(inner_4) = &self.max_results {
-            query.push_kv("maxResults", &smithy_http::query::fmt_default(&inner_4));
+        if let Some(inner_12) = &self.max_results {
+            query.push_kv(
+                "maxResults",
+                &smithy_types::primitive::Encoder::from(*inner_12).encode(),
+            );
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -2148,11 +2128,14 @@ impl ListAlarmModelsInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_5) = &self.next_token {
-            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_5));
+        if let Some(inner_13) = &self.next_token {
+            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_13));
         }
-        if let Some(inner_6) = &self.max_results {
-            query.push_kv("maxResults", &smithy_http::query::fmt_default(&inner_6));
+        if let Some(inner_14) = &self.max_results {
+            query.push_kv(
+                "maxResults",
+                &smithy_types::primitive::Encoder::from(*inner_14).encode(),
+            );
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -2306,23 +2289,21 @@ impl ListAlarmModelVersionsInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let alarm_model_name = {
-            let input = &self.alarm_model_name;
-            let input = input
+        let input_15 = &self.alarm_model_name;
+        let input_15 =
+            input_15
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "alarm_model_name",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "alarm_model_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let alarm_model_name = smithy_http::label::fmt_string(input_15, false);
+        if alarm_model_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "alarm_model_name",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/alarm-models/{alarmModelName}/versions",
@@ -2333,11 +2314,14 @@ impl ListAlarmModelVersionsInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_7) = &self.next_token {
-            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_7));
+        if let Some(inner_16) = &self.next_token {
+            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_16));
         }
-        if let Some(inner_8) = &self.max_results {
-            query.push_kv("maxResults", &smithy_http::query::fmt_default(&inner_8));
+        if let Some(inner_17) = &self.max_results {
+            query.push_kv(
+                "maxResults",
+                &smithy_types::primitive::Encoder::from(*inner_17).encode(),
+            );
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -2482,11 +2466,14 @@ impl ListDetectorModelsInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_9) = &self.next_token {
-            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_9));
+        if let Some(inner_18) = &self.next_token {
+            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_18));
         }
-        if let Some(inner_10) = &self.max_results {
-            query.push_kv("maxResults", &smithy_http::query::fmt_default(&inner_10));
+        if let Some(inner_19) = &self.max_results {
+            query.push_kv(
+                "maxResults",
+                &smithy_types::primitive::Encoder::from(*inner_19).encode(),
+            );
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -2641,23 +2628,21 @@ impl ListDetectorModelVersionsInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let detector_model_name = {
-            let input = &self.detector_model_name;
-            let input = input
+        let input_20 = &self.detector_model_name;
+        let input_20 =
+            input_20
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "detector_model_name",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "detector_model_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let detector_model_name = smithy_http::label::fmt_string(input_20, false);
+        if detector_model_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "detector_model_name",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/detector-models/{detectorModelName}/versions",
@@ -2668,11 +2653,14 @@ impl ListDetectorModelVersionsInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_11) = &self.next_token {
-            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_11));
+        if let Some(inner_21) = &self.next_token {
+            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_21));
         }
-        if let Some(inner_12) = &self.max_results {
-            query.push_kv("maxResults", &smithy_http::query::fmt_default(&inner_12));
+        if let Some(inner_22) = &self.max_results {
+            query.push_kv(
+                "maxResults",
+                &smithy_types::primitive::Encoder::from(*inner_22).encode(),
+            );
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -2977,11 +2965,14 @@ impl ListInputsInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_13) = &self.next_token {
-            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_13));
+        if let Some(inner_23) = &self.next_token {
+            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_23));
         }
-        if let Some(inner_14) = &self.max_results {
-            query.push_kv("maxResults", &smithy_http::query::fmt_default(&inner_14));
+        if let Some(inner_24) = &self.max_results {
+            query.push_kv(
+                "maxResults",
+                &smithy_types::primitive::Encoder::from(*inner_24).encode(),
+            );
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -3115,8 +3106,8 @@ impl ListTagsForResourceInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_15) = &self.resource_arn {
-            query.push_kv("resourceArn", &smithy_http::query::fmt_string(&inner_15));
+        if let Some(inner_25) = &self.resource_arn {
+            query.push_kv("resourceArn", &smithy_http::query::fmt_string(&inner_25));
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -3540,8 +3531,8 @@ impl TagResourceInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_16) = &self.resource_arn {
-            query.push_kv("resourceArn", &smithy_http::query::fmt_string(&inner_16));
+        if let Some(inner_26) = &self.resource_arn {
+            query.push_kv("resourceArn", &smithy_http::query::fmt_string(&inner_26));
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -3688,12 +3679,12 @@ impl UntagResourceInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_17) = &self.resource_arn {
-            query.push_kv("resourceArn", &smithy_http::query::fmt_string(&inner_17));
+        if let Some(inner_27) = &self.resource_arn {
+            query.push_kv("resourceArn", &smithy_http::query::fmt_string(&inner_27));
         }
-        if let Some(inner_18) = &self.tag_keys {
-            for inner_19 in inner_18 {
-                query.push_kv("tagKeys", &smithy_http::query::fmt_string(&inner_19));
+        if let Some(inner_28) = &self.tag_keys {
+            for inner_29 in inner_28 {
+                query.push_kv("tagKeys", &smithy_http::query::fmt_string(&inner_29));
             }
         }
     }
@@ -3921,23 +3912,21 @@ impl UpdateAlarmModelInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let alarm_model_name = {
-            let input = &self.alarm_model_name;
-            let input = input
+        let input_30 = &self.alarm_model_name;
+        let input_30 =
+            input_30
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "alarm_model_name",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "alarm_model_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let alarm_model_name = smithy_http::label::fmt_string(input_30, false);
+        if alarm_model_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "alarm_model_name",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/alarm-models/{alarmModelName}",
@@ -4135,23 +4124,21 @@ impl UpdateDetectorModelInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let detector_model_name = {
-            let input = &self.detector_model_name;
-            let input = input
+        let input_31 = &self.detector_model_name;
+        let input_31 =
+            input_31
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "detector_model_name",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "detector_model_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let detector_model_name = smithy_http::label::fmt_string(input_31, false);
+        if detector_model_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "detector_model_name",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/detector-models/{detectorModelName}",
@@ -4314,23 +4301,21 @@ impl UpdateInputInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_name = {
-            let input = &self.input_name;
-            let input = input
+        let input_32 = &self.input_name;
+        let input_32 =
+            input_32
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "input_name",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "input_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let input_name = smithy_http::label::fmt_string(input_32, false);
+        if input_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "input_name",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/inputs/{inputName}", inputName = input_name)
             .expect("formatting should succeed");
         Ok(())

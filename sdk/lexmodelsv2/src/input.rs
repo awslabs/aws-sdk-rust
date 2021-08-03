@@ -119,57 +119,48 @@ impl BuildBotLocaleInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let bot_id = {
-            let input = &self.bot_id;
-            let input = input
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "bot_id",
-                    details: "cannot be empty or unset",
-                })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "bot_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let bot_version = {
-            let input = &self.bot_version;
-            let input = input
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "bot_version",
-                    details: "cannot be empty or unset",
-                })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "bot_version",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let locale_id = {
-            let input = &self.locale_id;
-            let input = input
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "locale_id",
-                    details: "cannot be empty or unset",
-                })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "locale_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let input_1 = &self.bot_id;
+        let input_1 = input_1
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "bot_id",
+                details: "cannot be empty or unset",
+            })?;
+        let bot_id = smithy_http::label::fmt_string(input_1, false);
+        if bot_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "bot_id",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_2 = &self.bot_version;
+        let input_2 = input_2
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "bot_version",
+                details: "cannot be empty or unset",
+            })?;
+        let bot_version = smithy_http::label::fmt_string(input_2, false);
+        if bot_version.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "bot_version",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_3 = &self.locale_id;
+        let input_3 = input_3
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "locale_id",
+                details: "cannot be empty or unset",
+            })?;
+        let locale_id = smithy_http::label::fmt_string(input_3, false);
+        if locale_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "locale_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/bots/{botId}/botversions/{botVersion}/botlocales/{localeId}",
@@ -665,23 +656,20 @@ impl CreateBotAliasInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let bot_id = {
-            let input = &self.bot_id;
-            let input = input
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "bot_id",
-                    details: "cannot be empty or unset",
-                })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "bot_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let input_4 = &self.bot_id;
+        let input_4 = input_4
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "bot_id",
+                details: "cannot be empty or unset",
+            })?;
+        let bot_id = smithy_http::label::fmt_string(input_4, false);
+        if bot_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "bot_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/bots/{botId}/botaliases", botId = bot_id)
             .expect("formatting should succeed");
         Ok(())
@@ -904,40 +892,34 @@ impl CreateBotLocaleInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let bot_id = {
-            let input = &self.bot_id;
-            let input = input
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "bot_id",
-                    details: "cannot be empty or unset",
-                })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "bot_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let bot_version = {
-            let input = &self.bot_version;
-            let input = input
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "bot_version",
-                    details: "cannot be empty or unset",
-                })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "bot_version",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let input_5 = &self.bot_id;
+        let input_5 = input_5
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "bot_id",
+                details: "cannot be empty or unset",
+            })?;
+        let bot_id = smithy_http::label::fmt_string(input_5, false);
+        if bot_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "bot_id",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_6 = &self.bot_version;
+        let input_6 = input_6
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "bot_version",
+                details: "cannot be empty or unset",
+            })?;
+        let bot_version = smithy_http::label::fmt_string(input_6, false);
+        if bot_version.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "bot_version",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/bots/{botId}/botversions/{botVersion}/botlocales",
@@ -1113,23 +1095,20 @@ impl CreateBotVersionInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let bot_id = {
-            let input = &self.bot_id;
-            let input = input
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "bot_id",
-                    details: "cannot be empty or unset",
-                })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "bot_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let input_7 = &self.bot_id;
+        let input_7 = input_7
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "bot_id",
+                details: "cannot be empty or unset",
+            })?;
+        let bot_id = smithy_http::label::fmt_string(input_7, false);
+        if bot_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "bot_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/bots/{botId}/botversions", botId = bot_id)
             .expect("formatting should succeed");
         Ok(())
@@ -1639,57 +1618,49 @@ impl CreateIntentInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let bot_id = {
-            let input = &self.bot_id;
-            let input = input
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "bot_id",
-                    details: "cannot be empty or unset",
-                })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "bot_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let bot_version = {
-            let input = &self.bot_version;
-            let input = input
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "bot_version",
-                    details: "cannot be empty or unset",
-                })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "bot_version",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let locale_id = {
-            let input = &self.locale_id;
-            let input = input
+        let input_8 = &self.bot_id;
+        let input_8 = input_8
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "bot_id",
+                details: "cannot be empty or unset",
+            })?;
+        let bot_id = smithy_http::label::fmt_string(input_8, false);
+        if bot_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "bot_id",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_9 = &self.bot_version;
+        let input_9 = input_9
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "bot_version",
+                details: "cannot be empty or unset",
+            })?;
+        let bot_version = smithy_http::label::fmt_string(input_9, false);
+        if bot_version.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "bot_version",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_10 = &self.locale_id;
+        let input_10 =
+            input_10
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "locale_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "locale_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let locale_id = smithy_http::label::fmt_string(input_10, false);
+        if locale_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "locale_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/bots/{botId}/botversions/{botVersion}/botlocales/{localeId}/intents",
@@ -1846,23 +1817,21 @@ impl CreateResourcePolicyInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let resource_arn = {
-            let input = &self.resource_arn;
-            let input = input
+        let input_11 = &self.resource_arn;
+        let input_11 =
+            input_11
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "resource_arn",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "resource_arn",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let resource_arn = smithy_http::label::fmt_string(input_11, false);
+        if resource_arn.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "resource_arn",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/policy/{resourceArn}", resourceArn = resource_arn)
             .expect("formatting should succeed");
         Ok(())
@@ -2101,23 +2070,21 @@ impl CreateResourcePolicyStatementInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let resource_arn = {
-            let input = &self.resource_arn;
-            let input = input
+        let input_12 = &self.resource_arn;
+        let input_12 =
+            input_12
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "resource_arn",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "resource_arn",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let resource_arn = smithy_http::label::fmt_string(input_12, false);
+        if resource_arn.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "resource_arn",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/policy/{resourceArn}/statements",
@@ -2128,10 +2095,10 @@ impl CreateResourcePolicyStatementInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_1) = &self.expected_revision_id {
+        if let Some(inner_13) = &self.expected_revision_id {
             query.push_kv(
                 "expectedRevisionId",
-                &smithy_http::query::fmt_string(&inner_1),
+                &smithy_http::query::fmt_string(&inner_13),
             );
         }
     }
@@ -2396,74 +2363,66 @@ impl CreateSlotInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let bot_id = {
-            let input = &self.bot_id;
-            let input = input
+        let input_14 = &self.bot_id;
+        let input_14 =
+            input_14
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "bot_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "bot_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let bot_version = {
-            let input = &self.bot_version;
-            let input = input
+        let bot_id = smithy_http::label::fmt_string(input_14, false);
+        if bot_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "bot_id",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_15 = &self.bot_version;
+        let input_15 =
+            input_15
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "bot_version",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "bot_version",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let locale_id = {
-            let input = &self.locale_id;
-            let input = input
+        let bot_version = smithy_http::label::fmt_string(input_15, false);
+        if bot_version.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "bot_version",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_16 = &self.locale_id;
+        let input_16 =
+            input_16
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "locale_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "locale_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let intent_id = {
-            let input = &self.intent_id;
-            let input = input
+        let locale_id = smithy_http::label::fmt_string(input_16, false);
+        if locale_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "locale_id",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_17 = &self.intent_id;
+        let input_17 =
+            input_17
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "intent_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "intent_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let intent_id = smithy_http::label::fmt_string(input_17, false);
+        if intent_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "intent_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/bots/{botId}/botversions/{botVersion}/botlocales/{localeId}/intents/{intentId}/slots",
@@ -2723,57 +2682,51 @@ impl CreateSlotTypeInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let bot_id = {
-            let input = &self.bot_id;
-            let input = input
+        let input_18 = &self.bot_id;
+        let input_18 =
+            input_18
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "bot_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "bot_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let bot_version = {
-            let input = &self.bot_version;
-            let input = input
+        let bot_id = smithy_http::label::fmt_string(input_18, false);
+        if bot_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "bot_id",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_19 = &self.bot_version;
+        let input_19 =
+            input_19
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "bot_version",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "bot_version",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let locale_id = {
-            let input = &self.locale_id;
-            let input = input
+        let bot_version = smithy_http::label::fmt_string(input_19, false);
+        if bot_version.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "bot_version",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_20 = &self.locale_id;
+        let input_20 =
+            input_20
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "locale_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "locale_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let locale_id = smithy_http::label::fmt_string(input_20, false);
+        if locale_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "locale_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/bots/{botId}/botversions/{botVersion}/botlocales/{localeId}/slottypes",
@@ -3033,23 +2986,21 @@ impl DeleteBotInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let bot_id = {
-            let input = &self.bot_id;
-            let input = input
+        let input_21 = &self.bot_id;
+        let input_21 =
+            input_21
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "bot_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "bot_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let bot_id = smithy_http::label::fmt_string(input_21, false);
+        if bot_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "bot_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/bots/{botId}", botId = bot_id).expect("formatting should succeed");
         Ok(())
     }
@@ -3058,7 +3009,7 @@ impl DeleteBotInput {
         if self.skip_resource_in_use_check {
             query.push_kv(
                 "skipResourceInUseCheck",
-                &smithy_http::query::fmt_default(&&self.skip_resource_in_use_check),
+                &smithy_types::primitive::Encoder::from(self.skip_resource_in_use_check).encode(),
             );
         }
     }
@@ -3212,40 +3163,36 @@ impl DeleteBotAliasInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let bot_id = {
-            let input = &self.bot_id;
-            let input = input
+        let input_22 = &self.bot_id;
+        let input_22 =
+            input_22
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "bot_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "bot_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let bot_alias_id = {
-            let input = &self.bot_alias_id;
-            let input = input
+        let bot_id = smithy_http::label::fmt_string(input_22, false);
+        if bot_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "bot_id",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_23 = &self.bot_alias_id;
+        let input_23 =
+            input_23
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "bot_alias_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "bot_alias_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let bot_alias_id = smithy_http::label::fmt_string(input_23, false);
+        if bot_alias_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "bot_alias_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/bots/{botId}/botaliases/{botAliasId}",
@@ -3260,7 +3207,7 @@ impl DeleteBotAliasInput {
         if self.skip_resource_in_use_check {
             query.push_kv(
                 "skipResourceInUseCheck",
-                &smithy_http::query::fmt_default(&&self.skip_resource_in_use_check),
+                &smithy_types::primitive::Encoder::from(self.skip_resource_in_use_check).encode(),
             );
         }
     }
@@ -3414,57 +3361,51 @@ impl DeleteBotLocaleInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let bot_id = {
-            let input = &self.bot_id;
-            let input = input
+        let input_24 = &self.bot_id;
+        let input_24 =
+            input_24
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "bot_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "bot_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let bot_version = {
-            let input = &self.bot_version;
-            let input = input
+        let bot_id = smithy_http::label::fmt_string(input_24, false);
+        if bot_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "bot_id",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_25 = &self.bot_version;
+        let input_25 =
+            input_25
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "bot_version",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "bot_version",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let locale_id = {
-            let input = &self.locale_id;
-            let input = input
+        let bot_version = smithy_http::label::fmt_string(input_25, false);
+        if bot_version.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "bot_version",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_26 = &self.locale_id;
+        let input_26 =
+            input_26
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "locale_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "locale_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let locale_id = smithy_http::label::fmt_string(input_26, false);
+        if locale_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "locale_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/bots/{botId}/botversions/{botVersion}/botlocales/{localeId}",
@@ -3627,40 +3568,36 @@ impl DeleteBotVersionInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let bot_id = {
-            let input = &self.bot_id;
-            let input = input
+        let input_27 = &self.bot_id;
+        let input_27 =
+            input_27
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "bot_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "bot_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let bot_version = {
-            let input = &self.bot_version;
-            let input = input
+        let bot_id = smithy_http::label::fmt_string(input_27, false);
+        if bot_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "bot_id",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_28 = &self.bot_version;
+        let input_28 =
+            input_28
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "bot_version",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "bot_version",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let bot_version = smithy_http::label::fmt_string(input_28, false);
+        if bot_version.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "bot_version",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/bots/{botId}/botversions/{botVersion}",
@@ -3675,7 +3612,7 @@ impl DeleteBotVersionInput {
         if self.skip_resource_in_use_check {
             query.push_kv(
                 "skipResourceInUseCheck",
-                &smithy_http::query::fmt_default(&&self.skip_resource_in_use_check),
+                &smithy_types::primitive::Encoder::from(self.skip_resource_in_use_check).encode(),
             );
         }
     }
@@ -3803,23 +3740,21 @@ impl DeleteExportInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let export_id = {
-            let input = &self.export_id;
-            let input = input
+        let input_29 = &self.export_id;
+        let input_29 =
+            input_29
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "export_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "export_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let export_id = smithy_http::label::fmt_string(input_29, false);
+        if export_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "export_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/exports/{exportId}", exportId = export_id)
             .expect("formatting should succeed");
         Ok(())
@@ -3947,23 +3882,21 @@ impl DeleteImportInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let import_id = {
-            let input = &self.import_id;
-            let input = input
+        let input_30 = &self.import_id;
+        let input_30 =
+            input_30
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "import_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "import_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let import_id = smithy_http::label::fmt_string(input_30, false);
+        if import_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "import_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/imports/{importId}", importId = import_id)
             .expect("formatting should succeed");
         Ok(())
@@ -4126,74 +4059,66 @@ impl DeleteIntentInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let bot_id = {
-            let input = &self.bot_id;
-            let input = input
+        let input_31 = &self.bot_id;
+        let input_31 =
+            input_31
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "bot_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "bot_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let bot_version = {
-            let input = &self.bot_version;
-            let input = input
+        let bot_id = smithy_http::label::fmt_string(input_31, false);
+        if bot_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "bot_id",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_32 = &self.bot_version;
+        let input_32 =
+            input_32
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "bot_version",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "bot_version",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let locale_id = {
-            let input = &self.locale_id;
-            let input = input
+        let bot_version = smithy_http::label::fmt_string(input_32, false);
+        if bot_version.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "bot_version",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_33 = &self.locale_id;
+        let input_33 =
+            input_33
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "locale_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "locale_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let intent_id = {
-            let input = &self.intent_id;
-            let input = input
+        let locale_id = smithy_http::label::fmt_string(input_33, false);
+        if locale_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "locale_id",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_34 = &self.intent_id;
+        let input_34 =
+            input_34
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "intent_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "intent_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let intent_id = smithy_http::label::fmt_string(input_34, false);
+        if intent_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "intent_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/bots/{botId}/botversions/{botVersion}/botlocales/{localeId}/intents/{intentId}",
@@ -4348,33 +4273,31 @@ impl DeleteResourcePolicyInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let resource_arn = {
-            let input = &self.resource_arn;
-            let input = input
+        let input_35 = &self.resource_arn;
+        let input_35 =
+            input_35
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "resource_arn",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "resource_arn",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let resource_arn = smithy_http::label::fmt_string(input_35, false);
+        if resource_arn.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "resource_arn",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/policy/{resourceArn}", resourceArn = resource_arn)
             .expect("formatting should succeed");
         Ok(())
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_2) = &self.expected_revision_id {
+        if let Some(inner_36) = &self.expected_revision_id {
             query.push_kv(
                 "expectedRevisionId",
-                &smithy_http::query::fmt_string(&inner_2),
+                &smithy_http::query::fmt_string(&inner_36),
             );
         }
     }
@@ -4535,40 +4458,36 @@ impl DeleteResourcePolicyStatementInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let resource_arn = {
-            let input = &self.resource_arn;
-            let input = input
+        let input_37 = &self.resource_arn;
+        let input_37 =
+            input_37
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "resource_arn",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "resource_arn",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let statement_id = {
-            let input = &self.statement_id;
-            let input = input
+        let resource_arn = smithy_http::label::fmt_string(input_37, false);
+        if resource_arn.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "resource_arn",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_38 = &self.statement_id;
+        let input_38 =
+            input_38
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "statement_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "statement_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let statement_id = smithy_http::label::fmt_string(input_38, false);
+        if statement_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "statement_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/policy/{resourceArn}/statements/{statementId}",
@@ -4580,10 +4499,10 @@ impl DeleteResourcePolicyStatementInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_3) = &self.expected_revision_id {
+        if let Some(inner_39) = &self.expected_revision_id {
             query.push_kv(
                 "expectedRevisionId",
-                &smithy_http::query::fmt_string(&inner_3),
+                &smithy_http::query::fmt_string(&inner_39),
             );
         }
     }
@@ -4757,91 +4676,81 @@ impl DeleteSlotInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let bot_id = {
-            let input = &self.bot_id;
-            let input = input
+        let input_40 = &self.bot_id;
+        let input_40 =
+            input_40
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "bot_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "bot_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let bot_version = {
-            let input = &self.bot_version;
-            let input = input
+        let bot_id = smithy_http::label::fmt_string(input_40, false);
+        if bot_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "bot_id",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_41 = &self.bot_version;
+        let input_41 =
+            input_41
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "bot_version",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "bot_version",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let locale_id = {
-            let input = &self.locale_id;
-            let input = input
+        let bot_version = smithy_http::label::fmt_string(input_41, false);
+        if bot_version.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "bot_version",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_42 = &self.locale_id;
+        let input_42 =
+            input_42
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "locale_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "locale_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let intent_id = {
-            let input = &self.intent_id;
-            let input = input
+        let locale_id = smithy_http::label::fmt_string(input_42, false);
+        if locale_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "locale_id",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_43 = &self.intent_id;
+        let input_43 =
+            input_43
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "intent_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "intent_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let slot_id = {
-            let input = &self.slot_id;
-            let input = input
+        let intent_id = smithy_http::label::fmt_string(input_43, false);
+        if intent_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "intent_id",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_44 = &self.slot_id;
+        let input_44 =
+            input_44
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "slot_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "slot_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let slot_id = smithy_http::label::fmt_string(input_44, false);
+        if slot_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "slot_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/bots/{botId}/botversions/{botVersion}/botlocales/{localeId}/intents/{intentId}/slots/{slotId}", botId = bot_id, botVersion = bot_version, localeId = locale_id, intentId = intent_id, slotId = slot_id).expect("formatting should succeed");
         Ok(())
     }
@@ -5020,74 +4929,66 @@ impl DeleteSlotTypeInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let bot_id = {
-            let input = &self.bot_id;
-            let input = input
+        let input_45 = &self.bot_id;
+        let input_45 =
+            input_45
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "bot_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "bot_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let bot_version = {
-            let input = &self.bot_version;
-            let input = input
+        let bot_id = smithy_http::label::fmt_string(input_45, false);
+        if bot_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "bot_id",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_46 = &self.bot_version;
+        let input_46 =
+            input_46
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "bot_version",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "bot_version",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let locale_id = {
-            let input = &self.locale_id;
-            let input = input
+        let bot_version = smithy_http::label::fmt_string(input_46, false);
+        if bot_version.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "bot_version",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_47 = &self.locale_id;
+        let input_47 =
+            input_47
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "locale_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "locale_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let slot_type_id = {
-            let input = &self.slot_type_id;
-            let input = input
+        let locale_id = smithy_http::label::fmt_string(input_47, false);
+        if locale_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "locale_id",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_48 = &self.slot_type_id;
+        let input_48 =
+            input_48
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "slot_type_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "slot_type_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let slot_type_id = smithy_http::label::fmt_string(input_48, false);
+        if slot_type_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "slot_type_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/bots/{botId}/botversions/{botVersion}/botlocales/{localeId}/slottypes/{slotTypeId}",
@@ -5104,7 +5005,7 @@ impl DeleteSlotTypeInput {
         if self.skip_resource_in_use_check {
             query.push_kv(
                 "skipResourceInUseCheck",
-                &smithy_http::query::fmt_default(&&self.skip_resource_in_use_check),
+                &smithy_types::primitive::Encoder::from(self.skip_resource_in_use_check).encode(),
             );
         }
     }
@@ -5232,23 +5133,21 @@ impl DescribeBotInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let bot_id = {
-            let input = &self.bot_id;
-            let input = input
+        let input_49 = &self.bot_id;
+        let input_49 =
+            input_49
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "bot_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "bot_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let bot_id = smithy_http::label::fmt_string(input_49, false);
+        if bot_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "bot_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/bots/{botId}", botId = bot_id).expect("formatting should succeed");
         Ok(())
     }
@@ -5389,40 +5288,36 @@ impl DescribeBotAliasInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let bot_id = {
-            let input = &self.bot_id;
-            let input = input
+        let input_50 = &self.bot_id;
+        let input_50 =
+            input_50
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "bot_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "bot_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let bot_alias_id = {
-            let input = &self.bot_alias_id;
-            let input = input
+        let bot_id = smithy_http::label::fmt_string(input_50, false);
+        if bot_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "bot_id",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_51 = &self.bot_alias_id;
+        let input_51 =
+            input_51
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "bot_alias_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "bot_alias_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let bot_alias_id = smithy_http::label::fmt_string(input_51, false);
+        if bot_alias_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "bot_alias_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/bots/{botId}/botaliases/{botAliasId}",
@@ -5581,57 +5476,51 @@ impl DescribeBotLocaleInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let bot_id = {
-            let input = &self.bot_id;
-            let input = input
+        let input_52 = &self.bot_id;
+        let input_52 =
+            input_52
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "bot_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "bot_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let bot_version = {
-            let input = &self.bot_version;
-            let input = input
+        let bot_id = smithy_http::label::fmt_string(input_52, false);
+        if bot_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "bot_id",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_53 = &self.bot_version;
+        let input_53 =
+            input_53
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "bot_version",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "bot_version",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let locale_id = {
-            let input = &self.locale_id;
-            let input = input
+        let bot_version = smithy_http::label::fmt_string(input_53, false);
+        if bot_version.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "bot_version",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_54 = &self.locale_id;
+        let input_54 =
+            input_54
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "locale_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "locale_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let locale_id = smithy_http::label::fmt_string(input_54, false);
+        if locale_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "locale_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/bots/{botId}/botversions/{botVersion}/botlocales/{localeId}",
@@ -5779,40 +5668,36 @@ impl DescribeBotVersionInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let bot_id = {
-            let input = &self.bot_id;
-            let input = input
+        let input_55 = &self.bot_id;
+        let input_55 =
+            input_55
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "bot_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "bot_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let bot_version = {
-            let input = &self.bot_version;
-            let input = input
+        let bot_id = smithy_http::label::fmt_string(input_55, false);
+        if bot_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "bot_id",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_56 = &self.bot_version;
+        let input_56 =
+            input_56
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "bot_version",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "bot_version",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let bot_version = smithy_http::label::fmt_string(input_56, false);
+        if bot_version.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "bot_version",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/bots/{botId}/botversions/{botVersion}",
@@ -5947,23 +5832,21 @@ impl DescribeExportInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let export_id = {
-            let input = &self.export_id;
-            let input = input
+        let input_57 = &self.export_id;
+        let input_57 =
+            input_57
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "export_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "export_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let export_id = smithy_http::label::fmt_string(input_57, false);
+        if export_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "export_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/exports/{exportId}", exportId = export_id)
             .expect("formatting should succeed");
         Ok(())
@@ -6093,23 +5976,21 @@ impl DescribeImportInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let import_id = {
-            let input = &self.import_id;
-            let input = input
+        let input_58 = &self.import_id;
+        let input_58 =
+            input_58
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "import_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "import_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let import_id = smithy_http::label::fmt_string(input_58, false);
+        if import_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "import_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/imports/{importId}", importId = import_id)
             .expect("formatting should succeed");
         Ok(())
@@ -6274,74 +6155,66 @@ impl DescribeIntentInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let bot_id = {
-            let input = &self.bot_id;
-            let input = input
+        let input_59 = &self.bot_id;
+        let input_59 =
+            input_59
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "bot_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "bot_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let bot_version = {
-            let input = &self.bot_version;
-            let input = input
+        let bot_id = smithy_http::label::fmt_string(input_59, false);
+        if bot_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "bot_id",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_60 = &self.bot_version;
+        let input_60 =
+            input_60
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "bot_version",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "bot_version",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let locale_id = {
-            let input = &self.locale_id;
-            let input = input
+        let bot_version = smithy_http::label::fmt_string(input_60, false);
+        if bot_version.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "bot_version",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_61 = &self.locale_id;
+        let input_61 =
+            input_61
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "locale_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "locale_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let intent_id = {
-            let input = &self.intent_id;
-            let input = input
+        let locale_id = smithy_http::label::fmt_string(input_61, false);
+        if locale_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "locale_id",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_62 = &self.intent_id;
+        let input_62 =
+            input_62
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "intent_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "intent_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let intent_id = smithy_http::label::fmt_string(input_62, false);
+        if intent_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "intent_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/bots/{botId}/botversions/{botVersion}/botlocales/{localeId}/intents/{intentId}",
@@ -6479,23 +6352,21 @@ impl DescribeResourcePolicyInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let resource_arn = {
-            let input = &self.resource_arn;
-            let input = input
+        let input_63 = &self.resource_arn;
+        let input_63 =
+            input_63
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "resource_arn",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "resource_arn",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let resource_arn = smithy_http::label::fmt_string(input_63, false);
+        if resource_arn.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "resource_arn",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/policy/{resourceArn}", resourceArn = resource_arn)
             .expect("formatting should succeed");
         Ok(())
@@ -6669,91 +6540,81 @@ impl DescribeSlotInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let bot_id = {
-            let input = &self.bot_id;
-            let input = input
+        let input_64 = &self.bot_id;
+        let input_64 =
+            input_64
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "bot_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "bot_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let bot_version = {
-            let input = &self.bot_version;
-            let input = input
+        let bot_id = smithy_http::label::fmt_string(input_64, false);
+        if bot_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "bot_id",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_65 = &self.bot_version;
+        let input_65 =
+            input_65
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "bot_version",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "bot_version",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let locale_id = {
-            let input = &self.locale_id;
-            let input = input
+        let bot_version = smithy_http::label::fmt_string(input_65, false);
+        if bot_version.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "bot_version",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_66 = &self.locale_id;
+        let input_66 =
+            input_66
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "locale_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "locale_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let intent_id = {
-            let input = &self.intent_id;
-            let input = input
+        let locale_id = smithy_http::label::fmt_string(input_66, false);
+        if locale_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "locale_id",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_67 = &self.intent_id;
+        let input_67 =
+            input_67
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "intent_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "intent_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let slot_id = {
-            let input = &self.slot_id;
-            let input = input
+        let intent_id = smithy_http::label::fmt_string(input_67, false);
+        if intent_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "intent_id",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_68 = &self.slot_id;
+        let input_68 =
+            input_68
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "slot_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "slot_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let slot_id = smithy_http::label::fmt_string(input_68, false);
+        if slot_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "slot_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/bots/{botId}/botversions/{botVersion}/botlocales/{localeId}/intents/{intentId}/slots/{slotId}", botId = bot_id, botVersion = bot_version, localeId = locale_id, intentId = intent_id, slotId = slot_id).expect("formatting should succeed");
         Ok(())
     }
@@ -6917,74 +6778,66 @@ impl DescribeSlotTypeInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let bot_id = {
-            let input = &self.bot_id;
-            let input = input
+        let input_69 = &self.bot_id;
+        let input_69 =
+            input_69
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "bot_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "bot_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let bot_version = {
-            let input = &self.bot_version;
-            let input = input
+        let bot_id = smithy_http::label::fmt_string(input_69, false);
+        if bot_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "bot_id",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_70 = &self.bot_version;
+        let input_70 =
+            input_70
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "bot_version",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "bot_version",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let locale_id = {
-            let input = &self.locale_id;
-            let input = input
+        let bot_version = smithy_http::label::fmt_string(input_70, false);
+        if bot_version.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "bot_version",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_71 = &self.locale_id;
+        let input_71 =
+            input_71
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "locale_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "locale_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let slot_type_id = {
-            let input = &self.slot_type_id;
-            let input = input
+        let locale_id = smithy_http::label::fmt_string(input_71, false);
+        if locale_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "locale_id",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_72 = &self.slot_type_id;
+        let input_72 =
+            input_72
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "slot_type_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "slot_type_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let slot_type_id = smithy_http::label::fmt_string(input_72, false);
+        if slot_type_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "slot_type_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/bots/{botId}/botversions/{botVersion}/botlocales/{localeId}/slottypes/{slotTypeId}",
@@ -7151,23 +7004,21 @@ impl ListBotAliasesInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let bot_id = {
-            let input = &self.bot_id;
-            let input = input
+        let input_73 = &self.bot_id;
+        let input_73 =
+            input_73
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "bot_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "bot_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let bot_id = smithy_http::label::fmt_string(input_73, false);
+        if bot_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "bot_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/bots/{botId}/botaliases", botId = bot_id)
             .expect("formatting should succeed");
         Ok(())
@@ -7368,40 +7219,36 @@ impl ListBotLocalesInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let bot_id = {
-            let input = &self.bot_id;
-            let input = input
+        let input_74 = &self.bot_id;
+        let input_74 =
+            input_74
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "bot_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "bot_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let bot_version = {
-            let input = &self.bot_version;
-            let input = input
+        let bot_id = smithy_http::label::fmt_string(input_74, false);
+        if bot_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "bot_id",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_75 = &self.bot_version;
+        let input_75 =
+            input_75
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "bot_version",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "bot_version",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let bot_version = smithy_http::label::fmt_string(input_75, false);
+        if bot_version.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "bot_version",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/bots/{botId}/botversions/{botVersion}/botlocales",
@@ -7754,23 +7601,21 @@ impl ListBotVersionsInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let bot_id = {
-            let input = &self.bot_id;
-            let input = input
+        let input_76 = &self.bot_id;
+        let input_76 =
+            input_76
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "bot_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "bot_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let bot_id = smithy_http::label::fmt_string(input_76, false);
+        if bot_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "bot_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/bots/{botId}/botversions", botId = bot_id)
             .expect("formatting should succeed");
         Ok(())
@@ -7949,23 +7794,21 @@ impl ListBuiltInIntentsInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let locale_id = {
-            let input = &self.locale_id;
-            let input = input
+        let input_77 = &self.locale_id;
+        let input_77 =
+            input_77
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "locale_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "locale_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let locale_id = smithy_http::label::fmt_string(input_77, false);
+        if locale_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "locale_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/builtins/locales/{localeId}/intents",
@@ -8149,23 +7992,21 @@ impl ListBuiltInSlotTypesInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let locale_id = {
-            let input = &self.locale_id;
-            let input = input
+        let input_78 = &self.locale_id;
+        let input_78 =
+            input_78
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "locale_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "locale_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let locale_id = smithy_http::label::fmt_string(input_78, false);
+        if locale_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "locale_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/builtins/locales/{localeId}/slottypes",
@@ -8782,57 +8623,51 @@ impl ListIntentsInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let bot_id = {
-            let input = &self.bot_id;
-            let input = input
+        let input_79 = &self.bot_id;
+        let input_79 =
+            input_79
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "bot_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "bot_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let bot_version = {
-            let input = &self.bot_version;
-            let input = input
+        let bot_id = smithy_http::label::fmt_string(input_79, false);
+        if bot_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "bot_id",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_80 = &self.bot_version;
+        let input_80 =
+            input_80
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "bot_version",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "bot_version",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let locale_id = {
-            let input = &self.locale_id;
-            let input = input
+        let bot_version = smithy_http::label::fmt_string(input_80, false);
+        if bot_version.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "bot_version",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_81 = &self.locale_id;
+        let input_81 =
+            input_81
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "locale_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "locale_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let locale_id = smithy_http::label::fmt_string(input_81, false);
+        if locale_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "locale_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/bots/{botId}/botversions/{botVersion}/botlocales/{localeId}/intents",
@@ -9059,74 +8894,66 @@ impl ListSlotsInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let bot_id = {
-            let input = &self.bot_id;
-            let input = input
+        let input_82 = &self.bot_id;
+        let input_82 =
+            input_82
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "bot_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "bot_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let bot_version = {
-            let input = &self.bot_version;
-            let input = input
+        let bot_id = smithy_http::label::fmt_string(input_82, false);
+        if bot_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "bot_id",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_83 = &self.bot_version;
+        let input_83 =
+            input_83
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "bot_version",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "bot_version",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let locale_id = {
-            let input = &self.locale_id;
-            let input = input
+        let bot_version = smithy_http::label::fmt_string(input_83, false);
+        if bot_version.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "bot_version",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_84 = &self.locale_id;
+        let input_84 =
+            input_84
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "locale_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "locale_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let intent_id = {
-            let input = &self.intent_id;
-            let input = input
+        let locale_id = smithy_http::label::fmt_string(input_84, false);
+        if locale_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "locale_id",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_85 = &self.intent_id;
+        let input_85 =
+            input_85
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "intent_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "intent_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let intent_id = smithy_http::label::fmt_string(input_85, false);
+        if intent_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "intent_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/bots/{botId}/botversions/{botVersion}/botlocales/{localeId}/intents/{intentId}/slots",
@@ -9348,57 +9175,51 @@ impl ListSlotTypesInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let bot_id = {
-            let input = &self.bot_id;
-            let input = input
+        let input_86 = &self.bot_id;
+        let input_86 =
+            input_86
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "bot_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "bot_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let bot_version = {
-            let input = &self.bot_version;
-            let input = input
+        let bot_id = smithy_http::label::fmt_string(input_86, false);
+        if bot_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "bot_id",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_87 = &self.bot_version;
+        let input_87 =
+            input_87
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "bot_version",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "bot_version",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let locale_id = {
-            let input = &self.locale_id;
-            let input = input
+        let bot_version = smithy_http::label::fmt_string(input_87, false);
+        if bot_version.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "bot_version",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_88 = &self.locale_id;
+        let input_88 =
+            input_88
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "locale_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "locale_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let locale_id = smithy_http::label::fmt_string(input_88, false);
+        if locale_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "locale_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/bots/{botId}/botversions/{botVersion}/botlocales/{localeId}/slottypes",
@@ -9535,23 +9356,21 @@ impl ListTagsForResourceInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let resource_arn = {
-            let input = &self.resource_arn;
-            let input = input
+        let input_89 = &self.resource_arn;
+        let input_89 =
+            input_89
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "resource_arn",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "resource_arn",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let resource_arn = smithy_http::label::fmt_string(input_89, false);
+        if resource_arn.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "resource_arn",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/tags/{resourceARN}", resourceARN = resource_arn)
             .expect("formatting should succeed");
         Ok(())
@@ -9887,23 +9706,21 @@ impl TagResourceInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let resource_arn = {
-            let input = &self.resource_arn;
-            let input = input
+        let input_90 = &self.resource_arn;
+        let input_90 =
+            input_90
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "resource_arn",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "resource_arn",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let resource_arn = smithy_http::label::fmt_string(input_90, false);
+        if resource_arn.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "resource_arn",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/tags/{resourceARN}", resourceARN = resource_arn)
             .expect("formatting should succeed");
         Ok(())
@@ -10047,32 +9864,30 @@ impl UntagResourceInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let resource_arn = {
-            let input = &self.resource_arn;
-            let input = input
+        let input_91 = &self.resource_arn;
+        let input_91 =
+            input_91
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "resource_arn",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "resource_arn",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let resource_arn = smithy_http::label::fmt_string(input_91, false);
+        if resource_arn.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "resource_arn",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/tags/{resourceARN}", resourceARN = resource_arn)
             .expect("formatting should succeed");
         Ok(())
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_4) = &self.tag_keys {
-            for inner_5 in inner_4 {
-                query.push_kv("tagKeys", &smithy_http::query::fmt_string(&inner_5));
+        if let Some(inner_92) = &self.tag_keys {
+            for inner_93 in inner_92 {
+                query.push_kv("tagKeys", &smithy_http::query::fmt_string(&inner_93));
             }
         }
     }
@@ -10269,23 +10084,21 @@ impl UpdateBotInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let bot_id = {
-            let input = &self.bot_id;
-            let input = input
+        let input_94 = &self.bot_id;
+        let input_94 =
+            input_94
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "bot_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "bot_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let bot_id = smithy_http::label::fmt_string(input_94, false);
+        if bot_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "bot_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/bots/{botId}", botId = bot_id).expect("formatting should succeed");
         Ok(())
     }
@@ -10527,40 +10340,36 @@ impl UpdateBotAliasInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let bot_id = {
-            let input = &self.bot_id;
-            let input = input
+        let input_95 = &self.bot_id;
+        let input_95 =
+            input_95
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "bot_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "bot_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let bot_alias_id = {
-            let input = &self.bot_alias_id;
-            let input = input
+        let bot_id = smithy_http::label::fmt_string(input_95, false);
+        if bot_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "bot_id",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_96 = &self.bot_alias_id;
+        let input_96 =
+            input_96
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "bot_alias_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "bot_alias_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let bot_alias_id = smithy_http::label::fmt_string(input_96, false);
+        if bot_alias_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "bot_alias_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/bots/{botId}/botaliases/{botAliasId}",
@@ -10764,57 +10573,51 @@ impl UpdateBotLocaleInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let bot_id = {
-            let input = &self.bot_id;
-            let input = input
+        let input_97 = &self.bot_id;
+        let input_97 =
+            input_97
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "bot_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "bot_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let bot_version = {
-            let input = &self.bot_version;
-            let input = input
+        let bot_id = smithy_http::label::fmt_string(input_97, false);
+        if bot_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "bot_id",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_98 = &self.bot_version;
+        let input_98 =
+            input_98
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "bot_version",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "bot_version",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let locale_id = {
-            let input = &self.locale_id;
-            let input = input
+        let bot_version = smithy_http::label::fmt_string(input_98, false);
+        if bot_version.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "bot_version",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_99 = &self.locale_id;
+        let input_99 =
+            input_99
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "locale_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "locale_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let locale_id = smithy_http::label::fmt_string(input_99, false);
+        if locale_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "locale_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/bots/{botId}/botversions/{botVersion}/botlocales/{localeId}",
@@ -10965,23 +10768,21 @@ impl UpdateExportInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let export_id = {
-            let input = &self.export_id;
-            let input = input
+        let input_100 = &self.export_id;
+        let input_100 =
+            input_100
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "export_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "export_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let export_id = smithy_http::label::fmt_string(input_100, false);
+        if export_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "export_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/exports/{exportId}", exportId = export_id)
             .expect("formatting should succeed");
         Ok(())
@@ -11331,74 +11132,66 @@ impl UpdateIntentInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let bot_id = {
-            let input = &self.bot_id;
-            let input = input
+        let input_101 = &self.bot_id;
+        let input_101 =
+            input_101
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "bot_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "bot_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let bot_version = {
-            let input = &self.bot_version;
-            let input = input
+        let bot_id = smithy_http::label::fmt_string(input_101, false);
+        if bot_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "bot_id",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_102 = &self.bot_version;
+        let input_102 =
+            input_102
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "bot_version",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "bot_version",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let locale_id = {
-            let input = &self.locale_id;
-            let input = input
+        let bot_version = smithy_http::label::fmt_string(input_102, false);
+        if bot_version.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "bot_version",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_103 = &self.locale_id;
+        let input_103 =
+            input_103
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "locale_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "locale_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let intent_id = {
-            let input = &self.intent_id;
-            let input = input
+        let locale_id = smithy_http::label::fmt_string(input_103, false);
+        if locale_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "locale_id",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_104 = &self.intent_id;
+        let input_104 =
+            input_104
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "intent_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "intent_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let intent_id = smithy_http::label::fmt_string(input_104, false);
+        if intent_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "intent_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/bots/{botId}/botversions/{botVersion}/botlocales/{localeId}/intents/{intentId}",
@@ -11574,33 +11367,31 @@ impl UpdateResourcePolicyInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let resource_arn = {
-            let input = &self.resource_arn;
-            let input = input
+        let input_105 = &self.resource_arn;
+        let input_105 =
+            input_105
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "resource_arn",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "resource_arn",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let resource_arn = smithy_http::label::fmt_string(input_105, false);
+        if resource_arn.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "resource_arn",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/policy/{resourceArn}", resourceArn = resource_arn)
             .expect("formatting should succeed");
         Ok(())
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_6) = &self.expected_revision_id {
+        if let Some(inner_106) = &self.expected_revision_id {
             query.push_kv(
                 "expectedRevisionId",
-                &smithy_http::query::fmt_string(&inner_6),
+                &smithy_http::query::fmt_string(&inner_106),
             );
         }
     }
@@ -11869,91 +11660,81 @@ impl UpdateSlotInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let bot_id = {
-            let input = &self.bot_id;
-            let input = input
+        let input_107 = &self.bot_id;
+        let input_107 =
+            input_107
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "bot_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "bot_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let bot_version = {
-            let input = &self.bot_version;
-            let input = input
+        let bot_id = smithy_http::label::fmt_string(input_107, false);
+        if bot_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "bot_id",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_108 = &self.bot_version;
+        let input_108 =
+            input_108
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "bot_version",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "bot_version",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let locale_id = {
-            let input = &self.locale_id;
-            let input = input
+        let bot_version = smithy_http::label::fmt_string(input_108, false);
+        if bot_version.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "bot_version",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_109 = &self.locale_id;
+        let input_109 =
+            input_109
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "locale_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "locale_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let intent_id = {
-            let input = &self.intent_id;
-            let input = input
+        let locale_id = smithy_http::label::fmt_string(input_109, false);
+        if locale_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "locale_id",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_110 = &self.intent_id;
+        let input_110 =
+            input_110
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "intent_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "intent_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let slot_id = {
-            let input = &self.slot_id;
-            let input = input
+        let intent_id = smithy_http::label::fmt_string(input_110, false);
+        if intent_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "intent_id",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_111 = &self.slot_id;
+        let input_111 =
+            input_111
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "slot_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "slot_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let slot_id = smithy_http::label::fmt_string(input_111, false);
+        if slot_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "slot_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/bots/{botId}/botversions/{botVersion}/botlocales/{localeId}/intents/{intentId}/slots/{slotId}", botId = bot_id, botVersion = bot_version, localeId = locale_id, intentId = intent_id, slotId = slot_id).expect("formatting should succeed");
         Ok(())
     }
@@ -12195,74 +11976,66 @@ impl UpdateSlotTypeInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let bot_id = {
-            let input = &self.bot_id;
-            let input = input
+        let input_112 = &self.bot_id;
+        let input_112 =
+            input_112
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "bot_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "bot_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let bot_version = {
-            let input = &self.bot_version;
-            let input = input
+        let bot_id = smithy_http::label::fmt_string(input_112, false);
+        if bot_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "bot_id",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_113 = &self.bot_version;
+        let input_113 =
+            input_113
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "bot_version",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "bot_version",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let locale_id = {
-            let input = &self.locale_id;
-            let input = input
+        let bot_version = smithy_http::label::fmt_string(input_113, false);
+        if bot_version.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "bot_version",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_114 = &self.locale_id;
+        let input_114 =
+            input_114
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "locale_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "locale_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let slot_type_id = {
-            let input = &self.slot_type_id;
-            let input = input
+        let locale_id = smithy_http::label::fmt_string(input_114, false);
+        if locale_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "locale_id",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_115 = &self.slot_type_id;
+        let input_115 =
+            input_115
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "slot_type_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "slot_type_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let slot_type_id = smithy_http::label::fmt_string(input_115, false);
+        if slot_type_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "slot_type_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/bots/{botId}/botversions/{botVersion}/botlocales/{localeId}/slottypes/{slotTypeId}",

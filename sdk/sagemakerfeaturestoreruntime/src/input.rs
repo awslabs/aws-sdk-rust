@@ -261,23 +261,20 @@ impl DeleteRecordInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let feature_group_name = {
-            let input = &self.feature_group_name;
-            let input = input
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "feature_group_name",
-                    details: "cannot be empty or unset",
-                })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "feature_group_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let input_1 = &self.feature_group_name;
+        let input_1 = input_1
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "feature_group_name",
+                details: "cannot be empty or unset",
+            })?;
+        let feature_group_name = smithy_http::label::fmt_string(input_1, false);
+        if feature_group_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "feature_group_name",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/FeatureGroup/{FeatureGroupName}",
@@ -288,14 +285,14 @@ impl DeleteRecordInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_1) = &self.record_identifier_value_as_string {
+        if let Some(inner_2) = &self.record_identifier_value_as_string {
             query.push_kv(
                 "RecordIdentifierValueAsString",
-                &smithy_http::query::fmt_string(&inner_1),
+                &smithy_http::query::fmt_string(&inner_2),
             );
         }
-        if let Some(inner_2) = &self.event_time {
-            query.push_kv("EventTime", &smithy_http::query::fmt_string(&inner_2));
+        if let Some(inner_3) = &self.event_time {
+            query.push_kv("EventTime", &smithy_http::query::fmt_string(&inner_3));
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -456,23 +453,20 @@ impl GetRecordInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let feature_group_name = {
-            let input = &self.feature_group_name;
-            let input = input
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "feature_group_name",
-                    details: "cannot be empty or unset",
-                })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "feature_group_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let input_4 = &self.feature_group_name;
+        let input_4 = input_4
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "feature_group_name",
+                details: "cannot be empty or unset",
+            })?;
+        let feature_group_name = smithy_http::label::fmt_string(input_4, false);
+        if feature_group_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "feature_group_name",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/FeatureGroup/{FeatureGroupName}",
@@ -483,15 +477,15 @@ impl GetRecordInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_3) = &self.record_identifier_value_as_string {
+        if let Some(inner_5) = &self.record_identifier_value_as_string {
             query.push_kv(
                 "RecordIdentifierValueAsString",
-                &smithy_http::query::fmt_string(&inner_3),
+                &smithy_http::query::fmt_string(&inner_5),
             );
         }
-        if let Some(inner_4) = &self.feature_names {
-            for inner_5 in inner_4 {
-                query.push_kv("FeatureName", &smithy_http::query::fmt_string(&inner_5));
+        if let Some(inner_6) = &self.feature_names {
+            for inner_7 in inner_6 {
+                query.push_kv("FeatureName", &smithy_http::query::fmt_string(&inner_7));
             }
         }
     }
@@ -638,23 +632,20 @@ impl PutRecordInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let feature_group_name = {
-            let input = &self.feature_group_name;
-            let input = input
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "feature_group_name",
-                    details: "cannot be empty or unset",
-                })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "feature_group_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let input_8 = &self.feature_group_name;
+        let input_8 = input_8
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "feature_group_name",
+                details: "cannot be empty or unset",
+            })?;
+        let feature_group_name = smithy_http::label::fmt_string(input_8, false);
+        if feature_group_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "feature_group_name",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/FeatureGroup/{FeatureGroupName}",

@@ -1,7 +1,13 @@
 /*
- * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Modifications Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Original implementation Copyright 2017 http-rs authors
  * SPDX-License-Identifier: Apache-2.0.
  */
+
+// This code is functionally equivalent to `Extensions` in the `http` crate. Examples
+// have been updated to be more relevant for smithy use, the interface has been made public,
+// and the doc comments have been updated to reflect how the property bag is used in the SDK.
+// Additionally, optimizations around the HTTP use case have been removed in favor or simpler code.
 
 use std::any::{Any, TypeId};
 use std::collections::HashMap;
@@ -32,10 +38,10 @@ impl Hasher for IdHasher {
     }
 }
 
-/// A type map of protocol extensions.
+/// A type-map of configuration data.
 ///
 /// `PropertyBag` can be used by `Request` and `Response` to store
-/// extra data derived from the underlying protocol.
+/// data used to configure the SDK request pipeline.
 ///
 /// TODO: We should consider if we want to require members of the property to be "resettable" in some
 /// way to reset any state prior to a retry. I think this is worth delaying until we need it, but
@@ -44,16 +50,16 @@ impl Hasher for IdHasher {
 pub struct PropertyBag {
     // In http where this property bag is usually empty, this makes sense. We will almost always put
     // something in the bag, so we could consider removing the layer of indirection.
-    // If extensions are never used, no need to carry around an empty HashMap.
-    // That's 3 words. Instead, this is only 1 word.
-    map: Option<Box<AnyMap>>,
+    map: AnyMap,
 }
 
 impl PropertyBag {
     /// Create an empty `PropertyBag`.
     #[inline]
     pub fn new() -> PropertyBag {
-        PropertyBag { map: None }
+        PropertyBag {
+            map: AnyMap::default(),
+        }
     }
 
     /// Insert a type into this `PropertyBag`.
@@ -79,7 +85,6 @@ impl PropertyBag {
     /// ```
     pub fn insert<T: Send + Sync + 'static>(&mut self, val: T) -> Option<T> {
         self.map
-            .get_or_insert_with(|| Box::new(HashMap::default()))
             .insert(TypeId::of::<T>(), Box::new(val))
             .and_then(|boxed| {
                 (boxed as Box<dyn Any + 'static>)
@@ -103,8 +108,7 @@ impl PropertyBag {
     /// ```
     pub fn get<T: Send + Sync + 'static>(&self) -> Option<&T> {
         self.map
-            .as_ref()
-            .and_then(|map| map.get(&TypeId::of::<T>()))
+            .get(&TypeId::of::<T>())
             .and_then(|boxed| (&**boxed as &(dyn Any + 'static)).downcast_ref())
     }
 
@@ -122,8 +126,7 @@ impl PropertyBag {
     /// ```
     pub fn get_mut<T: Send + Sync + 'static>(&mut self) -> Option<&mut T> {
         self.map
-            .as_mut()
-            .and_then(|map| map.get_mut(&TypeId::of::<T>()))
+            .get_mut(&TypeId::of::<T>())
             .and_then(|boxed| (&mut **boxed as &mut (dyn Any + 'static)).downcast_mut())
     }
 
@@ -141,15 +144,12 @@ impl PropertyBag {
     /// assert!(ext.get::<i32>().is_none());
     /// ```
     pub fn remove<T: Send + Sync + 'static>(&mut self) -> Option<T> {
-        self.map
-            .as_mut()
-            .and_then(|map| map.remove(&TypeId::of::<T>()))
-            .and_then(|boxed| {
-                (boxed as Box<dyn Any + 'static>)
-                    .downcast()
-                    .ok()
-                    .map(|boxed| *boxed)
-            })
+        self.map.remove(&TypeId::of::<T>()).and_then(|boxed| {
+            (boxed as Box<dyn Any + 'static>)
+                .downcast()
+                .ok()
+                .map(|boxed| *boxed)
+        })
     }
 
     /// Clear the `PropertyBag` of all inserted extensions.
@@ -166,9 +166,7 @@ impl PropertyBag {
     /// ```
     #[inline]
     pub fn clear(&mut self) {
-        if let Some(ref mut map) = self.map {
-            map.clear();
-        }
+        self.map.clear();
     }
 }
 

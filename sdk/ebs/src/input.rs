@@ -153,23 +153,20 @@ impl CompleteSnapshotInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let snapshot_id = {
-            let input = &self.snapshot_id;
-            let input = input
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "snapshot_id",
-                    details: "cannot be empty or unset",
-                })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "snapshot_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let input_1 = &self.snapshot_id;
+        let input_1 = input_1
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "snapshot_id",
+                details: "cannot be empty or unset",
+            })?;
+        let snapshot_id = smithy_http::label::fmt_string(input_1, false);
+        if snapshot_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "snapshot_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/snapshots/completion/{SnapshotId}",
@@ -182,11 +179,12 @@ impl CompleteSnapshotInput {
         &self,
         mut builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        if let Some(inner_1) = &self.changed_blocks_count {
-            let formatted_2 = smithy_http::query::fmt_default(&inner_1);
-            if !formatted_2.is_empty() {
+        if let Some(inner_2) = &self.changed_blocks_count {
+            let mut encoder = smithy_types::primitive::Encoder::from(*inner_2);
+            let formatted_3 = encoder.encode();
+            if !formatted_3.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_2;
+                let header_value = formatted_3;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -200,11 +198,11 @@ impl CompleteSnapshotInput {
                 builder = builder.header("x-amz-ChangedBlocksCount", header_value);
             }
         }
-        if let Some(inner_3) = &self.checksum {
-            let formatted_4 = AsRef::<str>::as_ref(inner_3);
-            if !formatted_4.is_empty() {
+        if let Some(inner_4) = &self.checksum {
+            let formatted_5 = AsRef::<str>::as_ref(inner_4);
+            if !formatted_5.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_4;
+                let header_value = formatted_5;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -218,11 +216,11 @@ impl CompleteSnapshotInput {
                 builder = builder.header("x-amz-Checksum", header_value);
             }
         }
-        if let Some(inner_5) = &self.checksum_algorithm {
-            let formatted_6 = AsRef::<str>::as_ref(inner_5);
-            if !formatted_6.is_empty() {
+        if let Some(inner_6) = &self.checksum_algorithm {
+            let formatted_7 = AsRef::<str>::as_ref(inner_6);
+            if !formatted_7.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_6;
+                let header_value = formatted_7;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -236,11 +234,11 @@ impl CompleteSnapshotInput {
                 builder = builder.header("x-amz-Checksum-Algorithm", header_value);
             }
         }
-        if let Some(inner_7) = &self.checksum_aggregation_method {
-            let formatted_8 = AsRef::<str>::as_ref(inner_7);
-            if !formatted_8.is_empty() {
+        if let Some(inner_8) = &self.checksum_aggregation_method {
+            let formatted_9 = AsRef::<str>::as_ref(inner_8);
+            if !formatted_9.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_8;
+                let header_value = formatted_9;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -408,40 +406,37 @@ impl GetSnapshotBlockInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let snapshot_id = {
-            let input = &self.snapshot_id;
-            let input = input
+        let input_10 = &self.snapshot_id;
+        let input_10 =
+            input_10
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "snapshot_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "snapshot_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let block_index = {
-            let input = &self.block_index;
-            let input = input
+        let snapshot_id = smithy_http::label::fmt_string(input_10, false);
+        if snapshot_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "snapshot_id",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_11 = &self.block_index;
+        let input_11 =
+            input_11
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "block_index",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_default(input);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "block_index",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let mut block_index_encoder = smithy_types::primitive::Encoder::from(*input_11);
+        let block_index = block_index_encoder.encode();
+        if block_index.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "block_index",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/snapshots/{SnapshotId}/blocks/{BlockIndex}",
@@ -453,8 +448,8 @@ impl GetSnapshotBlockInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_9) = &self.block_token {
-            query.push_kv("blockToken", &smithy_http::query::fmt_string(&inner_9));
+        if let Some(inner_12) = &self.block_token {
+            query.push_kv("blockToken", &smithy_http::query::fmt_string(&inner_12));
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -643,23 +638,21 @@ impl ListChangedBlocksInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let second_snapshot_id = {
-            let input = &self.second_snapshot_id;
-            let input = input
+        let input_13 = &self.second_snapshot_id;
+        let input_13 =
+            input_13
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "second_snapshot_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "second_snapshot_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let second_snapshot_id = smithy_http::label::fmt_string(input_13, false);
+        if second_snapshot_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "second_snapshot_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/snapshots/{SecondSnapshotId}/changedblocks",
@@ -670,22 +663,25 @@ impl ListChangedBlocksInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_10) = &self.first_snapshot_id {
+        if let Some(inner_14) = &self.first_snapshot_id {
             query.push_kv(
                 "firstSnapshotId",
-                &smithy_http::query::fmt_string(&inner_10),
+                &smithy_http::query::fmt_string(&inner_14),
             );
         }
-        if let Some(inner_11) = &self.next_token {
-            query.push_kv("pageToken", &smithy_http::query::fmt_string(&inner_11));
+        if let Some(inner_15) = &self.next_token {
+            query.push_kv("pageToken", &smithy_http::query::fmt_string(&inner_15));
         }
-        if let Some(inner_12) = &self.max_results {
-            query.push_kv("maxResults", &smithy_http::query::fmt_default(&inner_12));
+        if let Some(inner_16) = &self.max_results {
+            query.push_kv(
+                "maxResults",
+                &smithy_types::primitive::Encoder::from(*inner_16).encode(),
+            );
         }
-        if let Some(inner_13) = &self.starting_block_index {
+        if let Some(inner_17) = &self.starting_block_index {
             query.push_kv(
                 "startingBlockIndex",
-                &smithy_http::query::fmt_default(&inner_13),
+                &smithy_types::primitive::Encoder::from(*inner_17).encode(),
             );
         }
     }
@@ -849,23 +845,21 @@ impl ListSnapshotBlocksInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let snapshot_id = {
-            let input = &self.snapshot_id;
-            let input = input
+        let input_18 = &self.snapshot_id;
+        let input_18 =
+            input_18
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "snapshot_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "snapshot_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let snapshot_id = smithy_http::label::fmt_string(input_18, false);
+        if snapshot_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "snapshot_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/snapshots/{SnapshotId}/blocks",
@@ -876,16 +870,19 @@ impl ListSnapshotBlocksInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_14) = &self.next_token {
-            query.push_kv("pageToken", &smithy_http::query::fmt_string(&inner_14));
+        if let Some(inner_19) = &self.next_token {
+            query.push_kv("pageToken", &smithy_http::query::fmt_string(&inner_19));
         }
-        if let Some(inner_15) = &self.max_results {
-            query.push_kv("maxResults", &smithy_http::query::fmt_default(&inner_15));
+        if let Some(inner_20) = &self.max_results {
+            query.push_kv(
+                "maxResults",
+                &smithy_types::primitive::Encoder::from(*inner_20).encode(),
+            );
         }
-        if let Some(inner_16) = &self.starting_block_index {
+        if let Some(inner_21) = &self.starting_block_index {
             query.push_kv(
                 "startingBlockIndex",
-                &smithy_http::query::fmt_default(&inner_16),
+                &smithy_types::primitive::Encoder::from(*inner_21).encode(),
             );
         }
     }
@@ -1110,40 +1107,37 @@ impl PutSnapshotBlockInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let snapshot_id = {
-            let input = &self.snapshot_id;
-            let input = input
+        let input_22 = &self.snapshot_id;
+        let input_22 =
+            input_22
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "snapshot_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "snapshot_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let block_index = {
-            let input = &self.block_index;
-            let input = input
+        let snapshot_id = smithy_http::label::fmt_string(input_22, false);
+        if snapshot_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "snapshot_id",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_23 = &self.block_index;
+        let input_23 =
+            input_23
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "block_index",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_default(input);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "block_index",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let mut block_index_encoder = smithy_types::primitive::Encoder::from(*input_23);
+        let block_index = block_index_encoder.encode();
+        if block_index.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "block_index",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/snapshots/{SnapshotId}/blocks/{BlockIndex}",
@@ -1157,11 +1151,12 @@ impl PutSnapshotBlockInput {
         &self,
         mut builder: http::request::Builder,
     ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
-        if let Some(inner_17) = &self.data_length {
-            let formatted_18 = smithy_http::query::fmt_default(&inner_17);
-            if !formatted_18.is_empty() {
+        if let Some(inner_24) = &self.data_length {
+            let mut encoder = smithy_types::primitive::Encoder::from(*inner_24);
+            let formatted_25 = encoder.encode();
+            if !formatted_25.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_18;
+                let header_value = formatted_25;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -1175,11 +1170,12 @@ impl PutSnapshotBlockInput {
                 builder = builder.header("x-amz-Data-Length", header_value);
             }
         }
-        if let Some(inner_19) = &self.progress {
-            let formatted_20 = smithy_http::query::fmt_default(&inner_19);
-            if !formatted_20.is_empty() {
+        if let Some(inner_26) = &self.progress {
+            let mut encoder = smithy_types::primitive::Encoder::from(*inner_26);
+            let formatted_27 = encoder.encode();
+            if !formatted_27.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_20;
+                let header_value = formatted_27;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -1193,11 +1189,11 @@ impl PutSnapshotBlockInput {
                 builder = builder.header("x-amz-Progress", header_value);
             }
         }
-        if let Some(inner_21) = &self.checksum {
-            let formatted_22 = AsRef::<str>::as_ref(inner_21);
-            if !formatted_22.is_empty() {
+        if let Some(inner_28) = &self.checksum {
+            let formatted_29 = AsRef::<str>::as_ref(inner_28);
+            if !formatted_29.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_22;
+                let header_value = formatted_29;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {
@@ -1211,11 +1207,11 @@ impl PutSnapshotBlockInput {
                 builder = builder.header("x-amz-Checksum", header_value);
             }
         }
-        if let Some(inner_23) = &self.checksum_algorithm {
-            let formatted_24 = AsRef::<str>::as_ref(inner_23);
-            if !formatted_24.is_empty() {
+        if let Some(inner_30) = &self.checksum_algorithm {
+            let formatted_31 = AsRef::<str>::as_ref(inner_30);
+            if !formatted_31.is_empty() {
                 use std::convert::TryFrom;
-                let header_value = formatted_24;
+                let header_value = formatted_31;
                 let header_value =
                     http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                         smithy_http::operation::BuildError::InvalidField {

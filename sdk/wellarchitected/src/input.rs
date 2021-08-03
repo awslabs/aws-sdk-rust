@@ -109,23 +109,20 @@ impl AssociateLensesInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let workload_id = {
-            let input = &self.workload_id;
-            let input = input
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "workload_id",
-                    details: "cannot be empty or unset",
-                })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "workload_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let input_1 = &self.workload_id;
+        let input_1 = input_1
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "workload_id",
+                details: "cannot be empty or unset",
+            })?;
+        let workload_id = smithy_http::label::fmt_string(input_1, false);
+        if workload_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "workload_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/workloads/{WorkloadId}/associateLenses",
@@ -302,23 +299,20 @@ impl CreateMilestoneInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let workload_id = {
-            let input = &self.workload_id;
-            let input = input
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "workload_id",
-                    details: "cannot be empty or unset",
-                })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "workload_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let input_2 = &self.workload_id;
+        let input_2 = input_2
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "workload_id",
+                details: "cannot be empty or unset",
+            })?;
+        let workload_id = smithy_http::label::fmt_string(input_2, false);
+        if workload_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "workload_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/workloads/{WorkloadId}/milestones",
@@ -990,23 +984,20 @@ impl CreateWorkloadShareInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let workload_id = {
-            let input = &self.workload_id;
-            let input = input
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "workload_id",
-                    details: "cannot be empty or unset",
-                })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "workload_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let input_3 = &self.workload_id;
+        let input_3 = input_3
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "workload_id",
+                details: "cannot be empty or unset",
+            })?;
+        let workload_id = smithy_http::label::fmt_string(input_3, false);
+        if workload_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "workload_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/workloads/{WorkloadId}/shares",
@@ -1166,33 +1157,30 @@ impl DeleteWorkloadInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let workload_id = {
-            let input = &self.workload_id;
-            let input = input
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "workload_id",
-                    details: "cannot be empty or unset",
-                })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "workload_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let input_4 = &self.workload_id;
+        let input_4 = input_4
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "workload_id",
+                details: "cannot be empty or unset",
+            })?;
+        let workload_id = smithy_http::label::fmt_string(input_4, false);
+        if workload_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "workload_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/workloads/{WorkloadId}", WorkloadId = workload_id)
             .expect("formatting should succeed");
         Ok(())
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_1) = &self.client_request_token {
+        if let Some(inner_5) = &self.client_request_token {
             query.push_kv(
                 "ClientRequestToken",
-                &smithy_http::query::fmt_string(&inner_1),
+                &smithy_http::query::fmt_string(&inner_5),
             );
         }
     }
@@ -1359,40 +1347,34 @@ impl DeleteWorkloadShareInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let workload_id = {
-            let input = &self.workload_id;
-            let input = input
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "workload_id",
-                    details: "cannot be empty or unset",
-                })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "workload_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let share_id = {
-            let input = &self.share_id;
-            let input = input
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "share_id",
-                    details: "cannot be empty or unset",
-                })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "share_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let input_6 = &self.workload_id;
+        let input_6 = input_6
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "workload_id",
+                details: "cannot be empty or unset",
+            })?;
+        let workload_id = smithy_http::label::fmt_string(input_6, false);
+        if workload_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "workload_id",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_7 = &self.share_id;
+        let input_7 = input_7
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "share_id",
+                details: "cannot be empty or unset",
+            })?;
+        let share_id = smithy_http::label::fmt_string(input_7, false);
+        if share_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "share_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/workloads/{WorkloadId}/shares/{ShareId}",
@@ -1404,10 +1386,10 @@ impl DeleteWorkloadShareInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_2) = &self.client_request_token {
+        if let Some(inner_8) = &self.client_request_token {
             query.push_kv(
                 "ClientRequestToken",
-                &smithy_http::query::fmt_string(&inner_2),
+                &smithy_http::query::fmt_string(&inner_8),
             );
         }
     }
@@ -1555,23 +1537,20 @@ impl DisassociateLensesInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let workload_id = {
-            let input = &self.workload_id;
-            let input = input
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "workload_id",
-                    details: "cannot be empty or unset",
-                })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "workload_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let input_9 = &self.workload_id;
+        let input_9 = input_9
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "workload_id",
+                details: "cannot be empty or unset",
+            })?;
+        let workload_id = smithy_http::label::fmt_string(input_9, false);
+        if workload_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "workload_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/workloads/{WorkloadId}/disassociateLenses",
@@ -1736,57 +1715,51 @@ impl GetAnswerInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let workload_id = {
-            let input = &self.workload_id;
-            let input = input
+        let input_10 = &self.workload_id;
+        let input_10 =
+            input_10
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "workload_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "workload_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let lens_alias = {
-            let input = &self.lens_alias;
-            let input = input
+        let workload_id = smithy_http::label::fmt_string(input_10, false);
+        if workload_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "workload_id",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_11 = &self.lens_alias;
+        let input_11 =
+            input_11
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "lens_alias",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "lens_alias",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let question_id = {
-            let input = &self.question_id;
-            let input = input
+        let lens_alias = smithy_http::label::fmt_string(input_11, false);
+        if lens_alias.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "lens_alias",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_12 = &self.question_id;
+        let input_12 =
+            input_12
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "question_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "question_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let question_id = smithy_http::label::fmt_string(input_12, false);
+        if question_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "question_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/workloads/{WorkloadId}/lensReviews/{LensAlias}/answers/{QuestionId}",
@@ -1802,7 +1775,7 @@ impl GetAnswerInput {
         if self.milestone_number != 0 {
             query.push_kv(
                 "MilestoneNumber",
-                &smithy_http::query::fmt_default(&&self.milestone_number),
+                &smithy_types::primitive::Encoder::from(self.milestone_number).encode(),
             );
         }
     }
@@ -1954,40 +1927,36 @@ impl GetLensReviewInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let workload_id = {
-            let input = &self.workload_id;
-            let input = input
+        let input_13 = &self.workload_id;
+        let input_13 =
+            input_13
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "workload_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "workload_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let lens_alias = {
-            let input = &self.lens_alias;
-            let input = input
+        let workload_id = smithy_http::label::fmt_string(input_13, false);
+        if workload_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "workload_id",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_14 = &self.lens_alias;
+        let input_14 =
+            input_14
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "lens_alias",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "lens_alias",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let lens_alias = smithy_http::label::fmt_string(input_14, false);
+        if lens_alias.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "lens_alias",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/workloads/{WorkloadId}/lensReviews/{LensAlias}",
@@ -2002,7 +1971,7 @@ impl GetLensReviewInput {
         if self.milestone_number != 0 {
             query.push_kv(
                 "MilestoneNumber",
-                &smithy_http::query::fmt_default(&&self.milestone_number),
+                &smithy_types::primitive::Encoder::from(self.milestone_number).encode(),
             );
         }
     }
@@ -2156,40 +2125,36 @@ impl GetLensReviewReportInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let workload_id = {
-            let input = &self.workload_id;
-            let input = input
+        let input_15 = &self.workload_id;
+        let input_15 =
+            input_15
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "workload_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "workload_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let lens_alias = {
-            let input = &self.lens_alias;
-            let input = input
+        let workload_id = smithy_http::label::fmt_string(input_15, false);
+        if workload_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "workload_id",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_16 = &self.lens_alias;
+        let input_16 =
+            input_16
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "lens_alias",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "lens_alias",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let lens_alias = smithy_http::label::fmt_string(input_16, false);
+        if lens_alias.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "lens_alias",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/workloads/{WorkloadId}/lensReviews/{LensAlias}/report",
@@ -2204,7 +2169,7 @@ impl GetLensReviewReportInput {
         if self.milestone_number != 0 {
             query.push_kv(
                 "MilestoneNumber",
-                &smithy_http::query::fmt_default(&&self.milestone_number),
+                &smithy_types::primitive::Encoder::from(self.milestone_number).encode(),
             );
         }
     }
@@ -2350,23 +2315,21 @@ impl GetLensVersionDifferenceInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let lens_alias = {
-            let input = &self.lens_alias;
-            let input = input
+        let input_17 = &self.lens_alias;
+        let input_17 =
+            input_17
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "lens_alias",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "lens_alias",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let lens_alias = smithy_http::label::fmt_string(input_17, false);
+        if lens_alias.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "lens_alias",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/lenses/{LensAlias}/versionDifference",
@@ -2377,8 +2340,11 @@ impl GetLensVersionDifferenceInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_3) = &self.base_lens_version {
-            query.push_kv("BaseLensVersion", &smithy_http::query::fmt_string(&inner_3));
+        if let Some(inner_18) = &self.base_lens_version {
+            query.push_kv(
+                "BaseLensVersion",
+                &smithy_http::query::fmt_string(&inner_18),
+            );
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -2517,34 +2483,30 @@ impl GetMilestoneInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let workload_id = {
-            let input = &self.workload_id;
-            let input = input
+        let input_19 = &self.workload_id;
+        let input_19 =
+            input_19
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "workload_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "workload_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let milestone_number = {
-            let input = &self.milestone_number;
-            let formatted = smithy_http::label::fmt_default(input);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "milestone_number",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let workload_id = smithy_http::label::fmt_string(input_19, false);
+        if workload_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "workload_id",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_20 = &self.milestone_number;
+        let mut milestone_number_encoder = smithy_types::primitive::Encoder::from(*input_20);
+        let milestone_number = milestone_number_encoder.encode();
+        if milestone_number.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "milestone_number",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/workloads/{WorkloadId}/milestones/{MilestoneNumber}",
@@ -2677,23 +2639,21 @@ impl GetWorkloadInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let workload_id = {
-            let input = &self.workload_id;
-            let input = input
+        let input_21 = &self.workload_id;
+        let input_21 =
+            input_21
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "workload_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "workload_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let workload_id = smithy_http::label::fmt_string(input_21, false);
+        if workload_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "workload_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/workloads/{WorkloadId}", WorkloadId = workload_id)
             .expect("formatting should succeed");
         Ok(())
@@ -2879,40 +2839,36 @@ impl ListAnswersInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let workload_id = {
-            let input = &self.workload_id;
-            let input = input
+        let input_22 = &self.workload_id;
+        let input_22 =
+            input_22
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "workload_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "workload_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let lens_alias = {
-            let input = &self.lens_alias;
-            let input = input
+        let workload_id = smithy_http::label::fmt_string(input_22, false);
+        if workload_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "workload_id",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_23 = &self.lens_alias;
+        let input_23 =
+            input_23
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "lens_alias",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "lens_alias",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let lens_alias = smithy_http::label::fmt_string(input_23, false);
+        if lens_alias.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "lens_alias",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/workloads/{WorkloadId}/lensReviews/{LensAlias}/answers",
@@ -2924,22 +2880,22 @@ impl ListAnswersInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_4) = &self.pillar_id {
-            query.push_kv("PillarId", &smithy_http::query::fmt_string(&inner_4));
+        if let Some(inner_24) = &self.pillar_id {
+            query.push_kv("PillarId", &smithy_http::query::fmt_string(&inner_24));
         }
         if self.milestone_number != 0 {
             query.push_kv(
                 "MilestoneNumber",
-                &smithy_http::query::fmt_default(&&self.milestone_number),
+                &smithy_types::primitive::Encoder::from(self.milestone_number).encode(),
             );
         }
-        if let Some(inner_5) = &self.next_token {
-            query.push_kv("NextToken", &smithy_http::query::fmt_string(&inner_5));
+        if let Some(inner_25) = &self.next_token {
+            query.push_kv("NextToken", &smithy_http::query::fmt_string(&inner_25));
         }
         if self.max_results != 0 {
             query.push_kv(
                 "MaxResults",
-                &smithy_http::query::fmt_default(&&self.max_results),
+                &smithy_types::primitive::Encoder::from(self.max_results).encode(),
             );
         }
     }
@@ -3083,13 +3039,13 @@ impl ListLensesInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_6) = &self.next_token {
-            query.push_kv("NextToken", &smithy_http::query::fmt_string(&inner_6));
+        if let Some(inner_26) = &self.next_token {
+            query.push_kv("NextToken", &smithy_http::query::fmt_string(&inner_26));
         }
         if self.max_results != 0 {
             query.push_kv(
                 "MaxResults",
-                &smithy_http::query::fmt_default(&&self.max_results),
+                &smithy_types::primitive::Encoder::from(self.max_results).encode(),
             );
         }
     }
@@ -3278,40 +3234,36 @@ impl ListLensReviewImprovementsInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let workload_id = {
-            let input = &self.workload_id;
-            let input = input
+        let input_27 = &self.workload_id;
+        let input_27 =
+            input_27
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "workload_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "workload_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let lens_alias = {
-            let input = &self.lens_alias;
-            let input = input
+        let workload_id = smithy_http::label::fmt_string(input_27, false);
+        if workload_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "workload_id",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_28 = &self.lens_alias;
+        let input_28 =
+            input_28
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "lens_alias",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "lens_alias",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let lens_alias = smithy_http::label::fmt_string(input_28, false);
+        if lens_alias.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "lens_alias",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/workloads/{WorkloadId}/lensReviews/{LensAlias}/improvements",
@@ -3323,22 +3275,22 @@ impl ListLensReviewImprovementsInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_7) = &self.pillar_id {
-            query.push_kv("PillarId", &smithy_http::query::fmt_string(&inner_7));
+        if let Some(inner_29) = &self.pillar_id {
+            query.push_kv("PillarId", &smithy_http::query::fmt_string(&inner_29));
         }
         if self.milestone_number != 0 {
             query.push_kv(
                 "MilestoneNumber",
-                &smithy_http::query::fmt_default(&&self.milestone_number),
+                &smithy_types::primitive::Encoder::from(self.milestone_number).encode(),
             );
         }
-        if let Some(inner_8) = &self.next_token {
-            query.push_kv("NextToken", &smithy_http::query::fmt_string(&inner_8));
+        if let Some(inner_30) = &self.next_token {
+            query.push_kv("NextToken", &smithy_http::query::fmt_string(&inner_30));
         }
         if self.max_results != 0 {
             query.push_kv(
                 "MaxResults",
-                &smithy_http::query::fmt_default(&&self.max_results),
+                &smithy_types::primitive::Encoder::from(self.max_results).encode(),
             );
         }
     }
@@ -3502,23 +3454,21 @@ impl ListLensReviewsInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let workload_id = {
-            let input = &self.workload_id;
-            let input = input
+        let input_31 = &self.workload_id;
+        let input_31 =
+            input_31
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "workload_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "workload_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let workload_id = smithy_http::label::fmt_string(input_31, false);
+        if workload_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "workload_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/workloads/{WorkloadId}/lensReviews",
@@ -3532,16 +3482,16 @@ impl ListLensReviewsInput {
         if self.milestone_number != 0 {
             query.push_kv(
                 "MilestoneNumber",
-                &smithy_http::query::fmt_default(&&self.milestone_number),
+                &smithy_types::primitive::Encoder::from(self.milestone_number).encode(),
             );
         }
-        if let Some(inner_9) = &self.next_token {
-            query.push_kv("NextToken", &smithy_http::query::fmt_string(&inner_9));
+        if let Some(inner_32) = &self.next_token {
+            query.push_kv("NextToken", &smithy_http::query::fmt_string(&inner_32));
         }
         if self.max_results != 0 {
             query.push_kv(
                 "MaxResults",
-                &smithy_http::query::fmt_default(&&self.max_results),
+                &smithy_types::primitive::Encoder::from(self.max_results).encode(),
             );
         }
     }
@@ -3695,23 +3645,21 @@ impl ListMilestonesInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let workload_id = {
-            let input = &self.workload_id;
-            let input = input
+        let input_33 = &self.workload_id;
+        let input_33 =
+            input_33
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "workload_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "workload_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let workload_id = smithy_http::label::fmt_string(input_33, false);
+        if workload_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "workload_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/workloads/{WorkloadId}/milestonesSummaries",
@@ -4029,19 +3977,19 @@ impl ListShareInvitationsInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_10) = &self.workload_name_prefix {
+        if let Some(inner_34) = &self.workload_name_prefix {
             query.push_kv(
                 "WorkloadNamePrefix",
-                &smithy_http::query::fmt_string(&inner_10),
+                &smithy_http::query::fmt_string(&inner_34),
             );
         }
-        if let Some(inner_11) = &self.next_token {
-            query.push_kv("NextToken", &smithy_http::query::fmt_string(&inner_11));
+        if let Some(inner_35) = &self.next_token {
+            query.push_kv("NextToken", &smithy_http::query::fmt_string(&inner_35));
         }
         if self.max_results != 0 {
             query.push_kv(
                 "MaxResults",
-                &smithy_http::query::fmt_default(&&self.max_results),
+                &smithy_types::primitive::Encoder::from(self.max_results).encode(),
             );
         }
     }
@@ -4171,23 +4119,21 @@ impl ListTagsForResourceInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let workload_arn = {
-            let input = &self.workload_arn;
-            let input = input
+        let input_36 = &self.workload_arn;
+        let input_36 =
+            input_36
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "workload_arn",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "workload_arn",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let workload_arn = smithy_http::label::fmt_string(input_36, false);
+        if workload_arn.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "workload_arn",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/tags/{WorkloadArn}", WorkloadArn = workload_arn)
             .expect("formatting should succeed");
         Ok(())
@@ -4508,23 +4454,21 @@ impl ListWorkloadSharesInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let workload_id = {
-            let input = &self.workload_id;
-            let input = input
+        let input_37 = &self.workload_id;
+        let input_37 =
+            input_37
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "workload_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "workload_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let workload_id = smithy_http::label::fmt_string(input_37, false);
+        if workload_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "workload_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/workloads/{WorkloadId}/shares",
@@ -4535,19 +4479,19 @@ impl ListWorkloadSharesInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_12) = &self.shared_with_prefix {
+        if let Some(inner_38) = &self.shared_with_prefix {
             query.push_kv(
                 "SharedWithPrefix",
-                &smithy_http::query::fmt_string(&inner_12),
+                &smithy_http::query::fmt_string(&inner_38),
             );
         }
-        if let Some(inner_13) = &self.next_token {
-            query.push_kv("NextToken", &smithy_http::query::fmt_string(&inner_13));
+        if let Some(inner_39) = &self.next_token {
+            query.push_kv("NextToken", &smithy_http::query::fmt_string(&inner_39));
         }
         if self.max_results != 0 {
             query.push_kv(
                 "MaxResults",
-                &smithy_http::query::fmt_default(&&self.max_results),
+                &smithy_types::primitive::Encoder::from(self.max_results).encode(),
             );
         }
     }
@@ -4701,23 +4645,21 @@ impl TagResourceInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let workload_arn = {
-            let input = &self.workload_arn;
-            let input = input
+        let input_40 = &self.workload_arn;
+        let input_40 =
+            input_40
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "workload_arn",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "workload_arn",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let workload_arn = smithy_http::label::fmt_string(input_40, false);
+        if workload_arn.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "workload_arn",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/tags/{WorkloadArn}", WorkloadArn = workload_arn)
             .expect("formatting should succeed");
         Ok(())
@@ -4860,32 +4802,30 @@ impl UntagResourceInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let workload_arn = {
-            let input = &self.workload_arn;
-            let input = input
+        let input_41 = &self.workload_arn;
+        let input_41 =
+            input_41
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "workload_arn",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "workload_arn",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let workload_arn = smithy_http::label::fmt_string(input_41, false);
+        if workload_arn.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "workload_arn",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/tags/{WorkloadArn}", WorkloadArn = workload_arn)
             .expect("formatting should succeed");
         Ok(())
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_14) = &self.tag_keys {
-            for inner_15 in inner_14 {
-                query.push_kv("tagKeys", &smithy_http::query::fmt_string(&inner_15));
+        if let Some(inner_42) = &self.tag_keys {
+            for inner_43 in inner_42 {
+                query.push_kv("tagKeys", &smithy_http::query::fmt_string(&inner_43));
             }
         }
     }
@@ -5076,57 +5016,51 @@ impl UpdateAnswerInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let workload_id = {
-            let input = &self.workload_id;
-            let input = input
+        let input_44 = &self.workload_id;
+        let input_44 =
+            input_44
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "workload_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "workload_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let lens_alias = {
-            let input = &self.lens_alias;
-            let input = input
+        let workload_id = smithy_http::label::fmt_string(input_44, false);
+        if workload_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "workload_id",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_45 = &self.lens_alias;
+        let input_45 =
+            input_45
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "lens_alias",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "lens_alias",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let question_id = {
-            let input = &self.question_id;
-            let input = input
+        let lens_alias = smithy_http::label::fmt_string(input_45, false);
+        if lens_alias.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "lens_alias",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_46 = &self.question_id;
+        let input_46 =
+            input_46
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "question_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "question_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let question_id = smithy_http::label::fmt_string(input_46, false);
+        if question_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "question_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/workloads/{WorkloadId}/lensReviews/{LensAlias}/answers/{QuestionId}",
@@ -5311,40 +5245,36 @@ impl UpdateLensReviewInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let workload_id = {
-            let input = &self.workload_id;
-            let input = input
+        let input_47 = &self.workload_id;
+        let input_47 =
+            input_47
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "workload_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "workload_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let lens_alias = {
-            let input = &self.lens_alias;
-            let input = input
+        let workload_id = smithy_http::label::fmt_string(input_47, false);
+        if workload_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "workload_id",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_48 = &self.lens_alias;
+        let input_48 =
+            input_48
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "lens_alias",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "lens_alias",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let lens_alias = smithy_http::label::fmt_string(input_48, false);
+        if lens_alias.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "lens_alias",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/workloads/{WorkloadId}/lensReviews/{LensAlias}",
@@ -5503,23 +5433,21 @@ impl UpdateShareInvitationInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let share_invitation_id = {
-            let input = &self.share_invitation_id;
-            let input = input
+        let input_49 = &self.share_invitation_id;
+        let input_49 =
+            input_49
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "share_invitation_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "share_invitation_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let share_invitation_id = smithy_http::label::fmt_string(input_49, false);
+        if share_invitation_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "share_invitation_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/shareInvitations/{ShareInvitationId}",
@@ -5993,23 +5921,21 @@ impl UpdateWorkloadInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let workload_id = {
-            let input = &self.workload_id;
-            let input = input
+        let input_50 = &self.workload_id;
+        let input_50 =
+            input_50
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "workload_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "workload_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let workload_id = smithy_http::label::fmt_string(input_50, false);
+        if workload_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "workload_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/workloads/{WorkloadId}", WorkloadId = workload_id)
             .expect("formatting should succeed");
         Ok(())
@@ -6167,40 +6093,36 @@ impl UpdateWorkloadShareInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let workload_id = {
-            let input = &self.workload_id;
-            let input = input
+        let input_51 = &self.workload_id;
+        let input_51 =
+            input_51
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "workload_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "workload_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let share_id = {
-            let input = &self.share_id;
-            let input = input
+        let workload_id = smithy_http::label::fmt_string(input_51, false);
+        if workload_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "workload_id",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_52 = &self.share_id;
+        let input_52 =
+            input_52
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "share_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "share_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let share_id = smithy_http::label::fmt_string(input_52, false);
+        if share_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "share_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/workloads/{WorkloadId}/shares/{ShareId}",
@@ -6388,40 +6310,36 @@ impl UpgradeLensReviewInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let workload_id = {
-            let input = &self.workload_id;
-            let input = input
+        let input_53 = &self.workload_id;
+        let input_53 =
+            input_53
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "workload_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "workload_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let lens_alias = {
-            let input = &self.lens_alias;
-            let input = input
+        let workload_id = smithy_http::label::fmt_string(input_53, false);
+        if workload_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "workload_id",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_54 = &self.lens_alias;
+        let input_54 =
+            input_54
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "lens_alias",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "lens_alias",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let lens_alias = smithy_http::label::fmt_string(input_54, false);
+        if lens_alias.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "lens_alias",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/workloads/{WorkloadId}/lensReviews/{LensAlias}/upgrade",

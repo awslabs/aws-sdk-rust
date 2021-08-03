@@ -182,40 +182,34 @@ impl CreateGatewayRouteInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let mesh_name = {
-            let input = &self.mesh_name;
-            let input = input
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "mesh_name",
-                    details: "cannot be empty or unset",
-                })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "mesh_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let virtual_gateway_name = {
-            let input = &self.virtual_gateway_name;
-            let input = input
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "virtual_gateway_name",
-                    details: "cannot be empty or unset",
-                })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "virtual_gateway_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let input_1 = &self.mesh_name;
+        let input_1 = input_1
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "mesh_name",
+                details: "cannot be empty or unset",
+            })?;
+        let mesh_name = smithy_http::label::fmt_string(input_1, false);
+        if mesh_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "mesh_name",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_2 = &self.virtual_gateway_name;
+        let input_2 = input_2
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "virtual_gateway_name",
+                details: "cannot be empty or unset",
+            })?;
+        let virtual_gateway_name = smithy_http::label::fmt_string(input_2, false);
+        if virtual_gateway_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "virtual_gateway_name",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/v20190125/meshes/{meshName}/virtualGateway/{virtualGatewayName}/gatewayRoutes",
@@ -227,8 +221,8 @@ impl CreateGatewayRouteInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_1) = &self.mesh_owner {
-            query.push_kv("meshOwner", &smithy_http::query::fmt_string(&inner_1));
+        if let Some(inner_3) = &self.mesh_owner {
+            query.push_kv("meshOwner", &smithy_http::query::fmt_string(&inner_3));
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -608,40 +602,34 @@ impl CreateRouteInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let mesh_name = {
-            let input = &self.mesh_name;
-            let input = input
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "mesh_name",
-                    details: "cannot be empty or unset",
-                })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "mesh_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let virtual_router_name = {
-            let input = &self.virtual_router_name;
-            let input = input
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "virtual_router_name",
-                    details: "cannot be empty or unset",
-                })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "virtual_router_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let input_4 = &self.mesh_name;
+        let input_4 = input_4
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "mesh_name",
+                details: "cannot be empty or unset",
+            })?;
+        let mesh_name = smithy_http::label::fmt_string(input_4, false);
+        if mesh_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "mesh_name",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_5 = &self.virtual_router_name;
+        let input_5 = input_5
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "virtual_router_name",
+                details: "cannot be empty or unset",
+            })?;
+        let virtual_router_name = smithy_http::label::fmt_string(input_5, false);
+        if virtual_router_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "virtual_router_name",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/v20190125/meshes/{meshName}/virtualRouter/{virtualRouterName}/routes",
@@ -653,8 +641,8 @@ impl CreateRouteInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_2) = &self.mesh_owner {
-            query.push_kv("meshOwner", &smithy_http::query::fmt_string(&inner_2));
+        if let Some(inner_6) = &self.mesh_owner {
+            query.push_kv("meshOwner", &smithy_http::query::fmt_string(&inner_6));
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -857,23 +845,20 @@ impl CreateVirtualGatewayInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let mesh_name = {
-            let input = &self.mesh_name;
-            let input = input
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "mesh_name",
-                    details: "cannot be empty or unset",
-                })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "mesh_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let input_7 = &self.mesh_name;
+        let input_7 = input_7
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "mesh_name",
+                details: "cannot be empty or unset",
+            })?;
+        let mesh_name = smithy_http::label::fmt_string(input_7, false);
+        if mesh_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "mesh_name",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/v20190125/meshes/{meshName}/virtualGateways",
@@ -884,8 +869,8 @@ impl CreateVirtualGatewayInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_3) = &self.mesh_owner {
-            query.push_kv("meshOwner", &smithy_http::query::fmt_string(&inner_3));
+        if let Some(inner_8) = &self.mesh_owner {
+            query.push_kv("meshOwner", &smithy_http::query::fmt_string(&inner_8));
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -1088,23 +1073,20 @@ impl CreateVirtualNodeInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let mesh_name = {
-            let input = &self.mesh_name;
-            let input = input
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "mesh_name",
-                    details: "cannot be empty or unset",
-                })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "mesh_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let input_9 = &self.mesh_name;
+        let input_9 = input_9
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "mesh_name",
+                details: "cannot be empty or unset",
+            })?;
+        let mesh_name = smithy_http::label::fmt_string(input_9, false);
+        if mesh_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "mesh_name",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/v20190125/meshes/{meshName}/virtualNodes",
@@ -1115,8 +1097,8 @@ impl CreateVirtualNodeInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_4) = &self.mesh_owner {
-            query.push_kv("meshOwner", &smithy_http::query::fmt_string(&inner_4));
+        if let Some(inner_10) = &self.mesh_owner {
+            query.push_kv("meshOwner", &smithy_http::query::fmt_string(&inner_10));
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -1319,23 +1301,21 @@ impl CreateVirtualRouterInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let mesh_name = {
-            let input = &self.mesh_name;
-            let input = input
+        let input_11 = &self.mesh_name;
+        let input_11 =
+            input_11
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "mesh_name",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "mesh_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let mesh_name = smithy_http::label::fmt_string(input_11, false);
+        if mesh_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "mesh_name",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/v20190125/meshes/{meshName}/virtualRouters",
@@ -1346,8 +1326,8 @@ impl CreateVirtualRouterInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_5) = &self.mesh_owner {
-            query.push_kv("meshOwner", &smithy_http::query::fmt_string(&inner_5));
+        if let Some(inner_12) = &self.mesh_owner {
+            query.push_kv("meshOwner", &smithy_http::query::fmt_string(&inner_12));
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -1550,23 +1530,21 @@ impl CreateVirtualServiceInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let mesh_name = {
-            let input = &self.mesh_name;
-            let input = input
+        let input_13 = &self.mesh_name;
+        let input_13 =
+            input_13
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "mesh_name",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "mesh_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let mesh_name = smithy_http::label::fmt_string(input_13, false);
+        if mesh_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "mesh_name",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/v20190125/meshes/{meshName}/virtualServices",
@@ -1577,8 +1555,8 @@ impl CreateVirtualServiceInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_6) = &self.mesh_owner {
-            query.push_kv("meshOwner", &smithy_http::query::fmt_string(&inner_6));
+        if let Some(inner_14) = &self.mesh_owner {
+            query.push_kv("meshOwner", &smithy_http::query::fmt_string(&inner_14));
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -1747,64 +1725,58 @@ impl DeleteGatewayRouteInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let mesh_name = {
-            let input = &self.mesh_name;
-            let input = input
+        let input_15 = &self.mesh_name;
+        let input_15 =
+            input_15
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "mesh_name",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "mesh_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let virtual_gateway_name = {
-            let input = &self.virtual_gateway_name;
-            let input = input
+        let mesh_name = smithy_http::label::fmt_string(input_15, false);
+        if mesh_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "mesh_name",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_16 = &self.virtual_gateway_name;
+        let input_16 =
+            input_16
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "virtual_gateway_name",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "virtual_gateway_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let gateway_route_name = {
-            let input = &self.gateway_route_name;
-            let input = input
+        let virtual_gateway_name = smithy_http::label::fmt_string(input_16, false);
+        if virtual_gateway_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "virtual_gateway_name",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_17 = &self.gateway_route_name;
+        let input_17 =
+            input_17
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "gateway_route_name",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "gateway_route_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let gateway_route_name = smithy_http::label::fmt_string(input_17, false);
+        if gateway_route_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "gateway_route_name",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/v20190125/meshes/{meshName}/virtualGateway/{virtualGatewayName}/gatewayRoutes/{gatewayRouteName}", meshName = mesh_name, virtualGatewayName = virtual_gateway_name, gatewayRouteName = gateway_route_name).expect("formatting should succeed");
         Ok(())
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_7) = &self.mesh_owner {
-            query.push_kv("meshOwner", &smithy_http::query::fmt_string(&inner_7));
+        if let Some(inner_18) = &self.mesh_owner {
+            query.push_kv("meshOwner", &smithy_http::query::fmt_string(&inner_18));
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -1931,23 +1903,21 @@ impl DeleteMeshInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let mesh_name = {
-            let input = &self.mesh_name;
-            let input = input
+        let input_19 = &self.mesh_name;
+        let input_19 =
+            input_19
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "mesh_name",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "mesh_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let mesh_name = smithy_http::label::fmt_string(input_19, false);
+        if mesh_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "mesh_name",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/v20190125/meshes/{meshName}", meshName = mesh_name)
             .expect("formatting should succeed");
         Ok(())
@@ -2112,57 +2082,51 @@ impl DeleteRouteInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let mesh_name = {
-            let input = &self.mesh_name;
-            let input = input
+        let input_20 = &self.mesh_name;
+        let input_20 =
+            input_20
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "mesh_name",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "mesh_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let virtual_router_name = {
-            let input = &self.virtual_router_name;
-            let input = input
+        let mesh_name = smithy_http::label::fmt_string(input_20, false);
+        if mesh_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "mesh_name",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_21 = &self.virtual_router_name;
+        let input_21 =
+            input_21
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "virtual_router_name",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "virtual_router_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let route_name = {
-            let input = &self.route_name;
-            let input = input
+        let virtual_router_name = smithy_http::label::fmt_string(input_21, false);
+        if virtual_router_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "virtual_router_name",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_22 = &self.route_name;
+        let input_22 =
+            input_22
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "route_name",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "route_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let route_name = smithy_http::label::fmt_string(input_22, false);
+        if route_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "route_name",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/v20190125/meshes/{meshName}/virtualRouter/{virtualRouterName}/routes/{routeName}",
@@ -2175,8 +2139,8 @@ impl DeleteRouteInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_8) = &self.mesh_owner {
-            query.push_kv("meshOwner", &smithy_http::query::fmt_string(&inner_8));
+        if let Some(inner_23) = &self.mesh_owner {
+            query.push_kv("meshOwner", &smithy_http::query::fmt_string(&inner_23));
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -2331,40 +2295,36 @@ impl DeleteVirtualGatewayInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let mesh_name = {
-            let input = &self.mesh_name;
-            let input = input
+        let input_24 = &self.mesh_name;
+        let input_24 =
+            input_24
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "mesh_name",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "mesh_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let virtual_gateway_name = {
-            let input = &self.virtual_gateway_name;
-            let input = input
+        let mesh_name = smithy_http::label::fmt_string(input_24, false);
+        if mesh_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "mesh_name",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_25 = &self.virtual_gateway_name;
+        let input_25 =
+            input_25
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "virtual_gateway_name",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "virtual_gateway_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let virtual_gateway_name = smithy_http::label::fmt_string(input_25, false);
+        if virtual_gateway_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "virtual_gateway_name",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/v20190125/meshes/{meshName}/virtualGateways/{virtualGatewayName}",
@@ -2376,8 +2336,8 @@ impl DeleteVirtualGatewayInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_9) = &self.mesh_owner {
-            query.push_kv("meshOwner", &smithy_http::query::fmt_string(&inner_9));
+        if let Some(inner_26) = &self.mesh_owner {
+            query.push_kv("meshOwner", &smithy_http::query::fmt_string(&inner_26));
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -2532,40 +2492,36 @@ impl DeleteVirtualNodeInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let mesh_name = {
-            let input = &self.mesh_name;
-            let input = input
+        let input_27 = &self.mesh_name;
+        let input_27 =
+            input_27
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "mesh_name",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "mesh_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let virtual_node_name = {
-            let input = &self.virtual_node_name;
-            let input = input
+        let mesh_name = smithy_http::label::fmt_string(input_27, false);
+        if mesh_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "mesh_name",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_28 = &self.virtual_node_name;
+        let input_28 =
+            input_28
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "virtual_node_name",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "virtual_node_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let virtual_node_name = smithy_http::label::fmt_string(input_28, false);
+        if virtual_node_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "virtual_node_name",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/v20190125/meshes/{meshName}/virtualNodes/{virtualNodeName}",
@@ -2577,8 +2533,8 @@ impl DeleteVirtualNodeInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_10) = &self.mesh_owner {
-            query.push_kv("meshOwner", &smithy_http::query::fmt_string(&inner_10));
+        if let Some(inner_29) = &self.mesh_owner {
+            query.push_kv("meshOwner", &smithy_http::query::fmt_string(&inner_29));
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -2733,40 +2689,36 @@ impl DeleteVirtualRouterInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let mesh_name = {
-            let input = &self.mesh_name;
-            let input = input
+        let input_30 = &self.mesh_name;
+        let input_30 =
+            input_30
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "mesh_name",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "mesh_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let virtual_router_name = {
-            let input = &self.virtual_router_name;
-            let input = input
+        let mesh_name = smithy_http::label::fmt_string(input_30, false);
+        if mesh_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "mesh_name",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_31 = &self.virtual_router_name;
+        let input_31 =
+            input_31
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "virtual_router_name",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "virtual_router_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let virtual_router_name = smithy_http::label::fmt_string(input_31, false);
+        if virtual_router_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "virtual_router_name",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/v20190125/meshes/{meshName}/virtualRouters/{virtualRouterName}",
@@ -2778,8 +2730,8 @@ impl DeleteVirtualRouterInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_11) = &self.mesh_owner {
-            query.push_kv("meshOwner", &smithy_http::query::fmt_string(&inner_11));
+        if let Some(inner_32) = &self.mesh_owner {
+            query.push_kv("meshOwner", &smithy_http::query::fmt_string(&inner_32));
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -2934,40 +2886,36 @@ impl DeleteVirtualServiceInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let mesh_name = {
-            let input = &self.mesh_name;
-            let input = input
+        let input_33 = &self.mesh_name;
+        let input_33 =
+            input_33
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "mesh_name",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "mesh_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let virtual_service_name = {
-            let input = &self.virtual_service_name;
-            let input = input
+        let mesh_name = smithy_http::label::fmt_string(input_33, false);
+        if mesh_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "mesh_name",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_34 = &self.virtual_service_name;
+        let input_34 =
+            input_34
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "virtual_service_name",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "virtual_service_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let virtual_service_name = smithy_http::label::fmt_string(input_34, false);
+        if virtual_service_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "virtual_service_name",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/v20190125/meshes/{meshName}/virtualServices/{virtualServiceName}",
@@ -2979,8 +2927,8 @@ impl DeleteVirtualServiceInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_12) = &self.mesh_owner {
-            query.push_kv("meshOwner", &smithy_http::query::fmt_string(&inner_12));
+        if let Some(inner_35) = &self.mesh_owner {
+            query.push_kv("meshOwner", &smithy_http::query::fmt_string(&inner_35));
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -3149,64 +3097,58 @@ impl DescribeGatewayRouteInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let mesh_name = {
-            let input = &self.mesh_name;
-            let input = input
+        let input_36 = &self.mesh_name;
+        let input_36 =
+            input_36
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "mesh_name",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "mesh_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let virtual_gateway_name = {
-            let input = &self.virtual_gateway_name;
-            let input = input
+        let mesh_name = smithy_http::label::fmt_string(input_36, false);
+        if mesh_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "mesh_name",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_37 = &self.virtual_gateway_name;
+        let input_37 =
+            input_37
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "virtual_gateway_name",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "virtual_gateway_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let gateway_route_name = {
-            let input = &self.gateway_route_name;
-            let input = input
+        let virtual_gateway_name = smithy_http::label::fmt_string(input_37, false);
+        if virtual_gateway_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "virtual_gateway_name",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_38 = &self.gateway_route_name;
+        let input_38 =
+            input_38
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "gateway_route_name",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "gateway_route_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let gateway_route_name = smithy_http::label::fmt_string(input_38, false);
+        if gateway_route_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "gateway_route_name",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/v20190125/meshes/{meshName}/virtualGateway/{virtualGatewayName}/gatewayRoutes/{gatewayRouteName}", meshName = mesh_name, virtualGatewayName = virtual_gateway_name, gatewayRouteName = gateway_route_name).expect("formatting should succeed");
         Ok(())
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_13) = &self.mesh_owner {
-            query.push_kv("meshOwner", &smithy_http::query::fmt_string(&inner_13));
+        if let Some(inner_39) = &self.mesh_owner {
+            query.push_kv("meshOwner", &smithy_http::query::fmt_string(&inner_39));
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -3345,31 +3287,29 @@ impl DescribeMeshInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let mesh_name = {
-            let input = &self.mesh_name;
-            let input = input
+        let input_40 = &self.mesh_name;
+        let input_40 =
+            input_40
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "mesh_name",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "mesh_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let mesh_name = smithy_http::label::fmt_string(input_40, false);
+        if mesh_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "mesh_name",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/v20190125/meshes/{meshName}", meshName = mesh_name)
             .expect("formatting should succeed");
         Ok(())
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_14) = &self.mesh_owner {
-            query.push_kv("meshOwner", &smithy_http::query::fmt_string(&inner_14));
+        if let Some(inner_41) = &self.mesh_owner {
+            query.push_kv("meshOwner", &smithy_http::query::fmt_string(&inner_41));
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -3533,57 +3473,51 @@ impl DescribeRouteInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let mesh_name = {
-            let input = &self.mesh_name;
-            let input = input
+        let input_42 = &self.mesh_name;
+        let input_42 =
+            input_42
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "mesh_name",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "mesh_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let virtual_router_name = {
-            let input = &self.virtual_router_name;
-            let input = input
+        let mesh_name = smithy_http::label::fmt_string(input_42, false);
+        if mesh_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "mesh_name",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_43 = &self.virtual_router_name;
+        let input_43 =
+            input_43
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "virtual_router_name",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "virtual_router_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let route_name = {
-            let input = &self.route_name;
-            let input = input
+        let virtual_router_name = smithy_http::label::fmt_string(input_43, false);
+        if virtual_router_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "virtual_router_name",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_44 = &self.route_name;
+        let input_44 =
+            input_44
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "route_name",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "route_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let route_name = smithy_http::label::fmt_string(input_44, false);
+        if route_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "route_name",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/v20190125/meshes/{meshName}/virtualRouter/{virtualRouterName}/routes/{routeName}",
@@ -3596,8 +3530,8 @@ impl DescribeRouteInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_15) = &self.mesh_owner {
-            query.push_kv("meshOwner", &smithy_http::query::fmt_string(&inner_15));
+        if let Some(inner_45) = &self.mesh_owner {
+            query.push_kv("meshOwner", &smithy_http::query::fmt_string(&inner_45));
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -3752,40 +3686,36 @@ impl DescribeVirtualGatewayInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let mesh_name = {
-            let input = &self.mesh_name;
-            let input = input
+        let input_46 = &self.mesh_name;
+        let input_46 =
+            input_46
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "mesh_name",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "mesh_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let virtual_gateway_name = {
-            let input = &self.virtual_gateway_name;
-            let input = input
+        let mesh_name = smithy_http::label::fmt_string(input_46, false);
+        if mesh_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "mesh_name",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_47 = &self.virtual_gateway_name;
+        let input_47 =
+            input_47
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "virtual_gateway_name",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "virtual_gateway_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let virtual_gateway_name = smithy_http::label::fmt_string(input_47, false);
+        if virtual_gateway_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "virtual_gateway_name",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/v20190125/meshes/{meshName}/virtualGateways/{virtualGatewayName}",
@@ -3797,8 +3727,8 @@ impl DescribeVirtualGatewayInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_16) = &self.mesh_owner {
-            query.push_kv("meshOwner", &smithy_http::query::fmt_string(&inner_16));
+        if let Some(inner_48) = &self.mesh_owner {
+            query.push_kv("meshOwner", &smithy_http::query::fmt_string(&inner_48));
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -3953,40 +3883,36 @@ impl DescribeVirtualNodeInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let mesh_name = {
-            let input = &self.mesh_name;
-            let input = input
+        let input_49 = &self.mesh_name;
+        let input_49 =
+            input_49
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "mesh_name",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "mesh_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let virtual_node_name = {
-            let input = &self.virtual_node_name;
-            let input = input
+        let mesh_name = smithy_http::label::fmt_string(input_49, false);
+        if mesh_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "mesh_name",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_50 = &self.virtual_node_name;
+        let input_50 =
+            input_50
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "virtual_node_name",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "virtual_node_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let virtual_node_name = smithy_http::label::fmt_string(input_50, false);
+        if virtual_node_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "virtual_node_name",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/v20190125/meshes/{meshName}/virtualNodes/{virtualNodeName}",
@@ -3998,8 +3924,8 @@ impl DescribeVirtualNodeInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_17) = &self.mesh_owner {
-            query.push_kv("meshOwner", &smithy_http::query::fmt_string(&inner_17));
+        if let Some(inner_51) = &self.mesh_owner {
+            query.push_kv("meshOwner", &smithy_http::query::fmt_string(&inner_51));
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -4154,40 +4080,36 @@ impl DescribeVirtualRouterInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let mesh_name = {
-            let input = &self.mesh_name;
-            let input = input
+        let input_52 = &self.mesh_name;
+        let input_52 =
+            input_52
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "mesh_name",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "mesh_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let virtual_router_name = {
-            let input = &self.virtual_router_name;
-            let input = input
+        let mesh_name = smithy_http::label::fmt_string(input_52, false);
+        if mesh_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "mesh_name",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_53 = &self.virtual_router_name;
+        let input_53 =
+            input_53
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "virtual_router_name",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "virtual_router_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let virtual_router_name = smithy_http::label::fmt_string(input_53, false);
+        if virtual_router_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "virtual_router_name",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/v20190125/meshes/{meshName}/virtualRouters/{virtualRouterName}",
@@ -4199,8 +4121,8 @@ impl DescribeVirtualRouterInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_18) = &self.mesh_owner {
-            query.push_kv("meshOwner", &smithy_http::query::fmt_string(&inner_18));
+        if let Some(inner_54) = &self.mesh_owner {
+            query.push_kv("meshOwner", &smithy_http::query::fmt_string(&inner_54));
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -4355,40 +4277,36 @@ impl DescribeVirtualServiceInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let mesh_name = {
-            let input = &self.mesh_name;
-            let input = input
+        let input_55 = &self.mesh_name;
+        let input_55 =
+            input_55
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "mesh_name",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "mesh_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let virtual_service_name = {
-            let input = &self.virtual_service_name;
-            let input = input
+        let mesh_name = smithy_http::label::fmt_string(input_55, false);
+        if mesh_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "mesh_name",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_56 = &self.virtual_service_name;
+        let input_56 =
+            input_56
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "virtual_service_name",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "virtual_service_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let virtual_service_name = smithy_http::label::fmt_string(input_56, false);
+        if virtual_service_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "virtual_service_name",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/v20190125/meshes/{meshName}/virtualServices/{virtualServiceName}",
@@ -4400,8 +4318,8 @@ impl DescribeVirtualServiceInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_19) = &self.mesh_owner {
-            query.push_kv("meshOwner", &smithy_http::query::fmt_string(&inner_19));
+        if let Some(inner_57) = &self.mesh_owner {
+            query.push_kv("meshOwner", &smithy_http::query::fmt_string(&inner_57));
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -4588,40 +4506,36 @@ impl ListGatewayRoutesInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let mesh_name = {
-            let input = &self.mesh_name;
-            let input = input
+        let input_58 = &self.mesh_name;
+        let input_58 =
+            input_58
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "mesh_name",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "mesh_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let virtual_gateway_name = {
-            let input = &self.virtual_gateway_name;
-            let input = input
+        let mesh_name = smithy_http::label::fmt_string(input_58, false);
+        if mesh_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "mesh_name",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_59 = &self.virtual_gateway_name;
+        let input_59 =
+            input_59
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "virtual_gateway_name",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "virtual_gateway_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let virtual_gateway_name = smithy_http::label::fmt_string(input_59, false);
+        if virtual_gateway_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "virtual_gateway_name",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/v20190125/meshes/{meshName}/virtualGateway/{virtualGatewayName}/gatewayRoutes",
@@ -4633,14 +4547,17 @@ impl ListGatewayRoutesInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_20) = &self.next_token {
-            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_20));
+        if let Some(inner_60) = &self.next_token {
+            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_60));
         }
-        if let Some(inner_21) = &self.limit {
-            query.push_kv("limit", &smithy_http::query::fmt_default(&inner_21));
+        if let Some(inner_61) = &self.limit {
+            query.push_kv(
+                "limit",
+                &smithy_types::primitive::Encoder::from(*inner_61).encode(),
+            );
         }
-        if let Some(inner_22) = &self.mesh_owner {
-            query.push_kv("meshOwner", &smithy_http::query::fmt_string(&inner_22));
+        if let Some(inner_62) = &self.mesh_owner {
+            query.push_kv("meshOwner", &smithy_http::query::fmt_string(&inner_62));
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -4797,11 +4714,14 @@ impl ListMeshesInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_23) = &self.next_token {
-            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_23));
+        if let Some(inner_63) = &self.next_token {
+            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_63));
         }
-        if let Some(inner_24) = &self.limit {
-            query.push_kv("limit", &smithy_http::query::fmt_default(&inner_24));
+        if let Some(inner_64) = &self.limit {
+            query.push_kv(
+                "limit",
+                &smithy_types::primitive::Encoder::from(*inner_64).encode(),
+            );
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -4986,40 +4906,36 @@ impl ListRoutesInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let mesh_name = {
-            let input = &self.mesh_name;
-            let input = input
+        let input_65 = &self.mesh_name;
+        let input_65 =
+            input_65
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "mesh_name",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "mesh_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let virtual_router_name = {
-            let input = &self.virtual_router_name;
-            let input = input
+        let mesh_name = smithy_http::label::fmt_string(input_65, false);
+        if mesh_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "mesh_name",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_66 = &self.virtual_router_name;
+        let input_66 =
+            input_66
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "virtual_router_name",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "virtual_router_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let virtual_router_name = smithy_http::label::fmt_string(input_66, false);
+        if virtual_router_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "virtual_router_name",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/v20190125/meshes/{meshName}/virtualRouter/{virtualRouterName}/routes",
@@ -5031,14 +4947,17 @@ impl ListRoutesInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_25) = &self.next_token {
-            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_25));
+        if let Some(inner_67) = &self.next_token {
+            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_67));
         }
-        if let Some(inner_26) = &self.limit {
-            query.push_kv("limit", &smithy_http::query::fmt_default(&inner_26));
+        if let Some(inner_68) = &self.limit {
+            query.push_kv(
+                "limit",
+                &smithy_types::primitive::Encoder::from(*inner_68).encode(),
+            );
         }
-        if let Some(inner_27) = &self.mesh_owner {
-            query.push_kv("meshOwner", &smithy_http::query::fmt_string(&inner_27));
+        if let Some(inner_69) = &self.mesh_owner {
+            query.push_kv("meshOwner", &smithy_http::query::fmt_string(&inner_69));
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -5204,14 +5123,17 @@ impl ListTagsForResourceInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_28) = &self.resource_arn {
-            query.push_kv("resourceArn", &smithy_http::query::fmt_string(&inner_28));
+        if let Some(inner_70) = &self.resource_arn {
+            query.push_kv("resourceArn", &smithy_http::query::fmt_string(&inner_70));
         }
-        if let Some(inner_29) = &self.next_token {
-            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_29));
+        if let Some(inner_71) = &self.next_token {
+            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_71));
         }
-        if let Some(inner_30) = &self.limit {
-            query.push_kv("limit", &smithy_http::query::fmt_default(&inner_30));
+        if let Some(inner_72) = &self.limit {
+            query.push_kv(
+                "limit",
+                &smithy_types::primitive::Encoder::from(*inner_72).encode(),
+            );
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -5384,23 +5306,21 @@ impl ListVirtualGatewaysInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let mesh_name = {
-            let input = &self.mesh_name;
-            let input = input
+        let input_73 = &self.mesh_name;
+        let input_73 =
+            input_73
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "mesh_name",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "mesh_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let mesh_name = smithy_http::label::fmt_string(input_73, false);
+        if mesh_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "mesh_name",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/v20190125/meshes/{meshName}/virtualGateways",
@@ -5411,14 +5331,17 @@ impl ListVirtualGatewaysInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_31) = &self.next_token {
-            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_31));
+        if let Some(inner_74) = &self.next_token {
+            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_74));
         }
-        if let Some(inner_32) = &self.limit {
-            query.push_kv("limit", &smithy_http::query::fmt_default(&inner_32));
+        if let Some(inner_75) = &self.limit {
+            query.push_kv(
+                "limit",
+                &smithy_types::primitive::Encoder::from(*inner_75).encode(),
+            );
         }
-        if let Some(inner_33) = &self.mesh_owner {
-            query.push_kv("meshOwner", &smithy_http::query::fmt_string(&inner_33));
+        if let Some(inner_76) = &self.mesh_owner {
+            query.push_kv("meshOwner", &smithy_http::query::fmt_string(&inner_76));
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -5591,23 +5514,21 @@ impl ListVirtualNodesInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let mesh_name = {
-            let input = &self.mesh_name;
-            let input = input
+        let input_77 = &self.mesh_name;
+        let input_77 =
+            input_77
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "mesh_name",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "mesh_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let mesh_name = smithy_http::label::fmt_string(input_77, false);
+        if mesh_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "mesh_name",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/v20190125/meshes/{meshName}/virtualNodes",
@@ -5618,14 +5539,17 @@ impl ListVirtualNodesInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_34) = &self.next_token {
-            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_34));
+        if let Some(inner_78) = &self.next_token {
+            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_78));
         }
-        if let Some(inner_35) = &self.limit {
-            query.push_kv("limit", &smithy_http::query::fmt_default(&inner_35));
+        if let Some(inner_79) = &self.limit {
+            query.push_kv(
+                "limit",
+                &smithy_types::primitive::Encoder::from(*inner_79).encode(),
+            );
         }
-        if let Some(inner_36) = &self.mesh_owner {
-            query.push_kv("meshOwner", &smithy_http::query::fmt_string(&inner_36));
+        if let Some(inner_80) = &self.mesh_owner {
+            query.push_kv("meshOwner", &smithy_http::query::fmt_string(&inner_80));
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -5798,23 +5722,21 @@ impl ListVirtualRoutersInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let mesh_name = {
-            let input = &self.mesh_name;
-            let input = input
+        let input_81 = &self.mesh_name;
+        let input_81 =
+            input_81
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "mesh_name",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "mesh_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let mesh_name = smithy_http::label::fmt_string(input_81, false);
+        if mesh_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "mesh_name",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/v20190125/meshes/{meshName}/virtualRouters",
@@ -5825,14 +5747,17 @@ impl ListVirtualRoutersInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_37) = &self.next_token {
-            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_37));
+        if let Some(inner_82) = &self.next_token {
+            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_82));
         }
-        if let Some(inner_38) = &self.limit {
-            query.push_kv("limit", &smithy_http::query::fmt_default(&inner_38));
+        if let Some(inner_83) = &self.limit {
+            query.push_kv(
+                "limit",
+                &smithy_types::primitive::Encoder::from(*inner_83).encode(),
+            );
         }
-        if let Some(inner_39) = &self.mesh_owner {
-            query.push_kv("meshOwner", &smithy_http::query::fmt_string(&inner_39));
+        if let Some(inner_84) = &self.mesh_owner {
+            query.push_kv("meshOwner", &smithy_http::query::fmt_string(&inner_84));
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -6005,23 +5930,21 @@ impl ListVirtualServicesInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let mesh_name = {
-            let input = &self.mesh_name;
-            let input = input
+        let input_85 = &self.mesh_name;
+        let input_85 =
+            input_85
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "mesh_name",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "mesh_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let mesh_name = smithy_http::label::fmt_string(input_85, false);
+        if mesh_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "mesh_name",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/v20190125/meshes/{meshName}/virtualServices",
@@ -6032,14 +5955,17 @@ impl ListVirtualServicesInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_40) = &self.next_token {
-            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_40));
+        if let Some(inner_86) = &self.next_token {
+            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_86));
         }
-        if let Some(inner_41) = &self.limit {
-            query.push_kv("limit", &smithy_http::query::fmt_default(&inner_41));
+        if let Some(inner_87) = &self.limit {
+            query.push_kv(
+                "limit",
+                &smithy_types::primitive::Encoder::from(*inner_87).encode(),
+            );
         }
-        if let Some(inner_42) = &self.mesh_owner {
-            query.push_kv("meshOwner", &smithy_http::query::fmt_string(&inner_42));
+        if let Some(inner_88) = &self.mesh_owner {
+            query.push_kv("meshOwner", &smithy_http::query::fmt_string(&inner_88));
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -6189,8 +6115,8 @@ impl TagResourceInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_43) = &self.resource_arn {
-            query.push_kv("resourceArn", &smithy_http::query::fmt_string(&inner_43));
+        if let Some(inner_89) = &self.resource_arn {
+            query.push_kv("resourceArn", &smithy_http::query::fmt_string(&inner_89));
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -6340,8 +6266,8 @@ impl UntagResourceInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_44) = &self.resource_arn {
-            query.push_kv("resourceArn", &smithy_http::query::fmt_string(&inner_44));
+        if let Some(inner_90) = &self.resource_arn {
+            query.push_kv("resourceArn", &smithy_http::query::fmt_string(&inner_90));
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -6542,64 +6468,58 @@ impl UpdateGatewayRouteInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let mesh_name = {
-            let input = &self.mesh_name;
-            let input = input
+        let input_91 = &self.mesh_name;
+        let input_91 =
+            input_91
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "mesh_name",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "mesh_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let virtual_gateway_name = {
-            let input = &self.virtual_gateway_name;
-            let input = input
+        let mesh_name = smithy_http::label::fmt_string(input_91, false);
+        if mesh_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "mesh_name",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_92 = &self.virtual_gateway_name;
+        let input_92 =
+            input_92
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "virtual_gateway_name",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "virtual_gateway_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let gateway_route_name = {
-            let input = &self.gateway_route_name;
-            let input = input
+        let virtual_gateway_name = smithy_http::label::fmt_string(input_92, false);
+        if virtual_gateway_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "virtual_gateway_name",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_93 = &self.gateway_route_name;
+        let input_93 =
+            input_93
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "gateway_route_name",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "gateway_route_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let gateway_route_name = smithy_http::label::fmt_string(input_93, false);
+        if gateway_route_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "gateway_route_name",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/v20190125/meshes/{meshName}/virtualGateway/{virtualGatewayName}/gatewayRoutes/{gatewayRouteName}", meshName = mesh_name, virtualGatewayName = virtual_gateway_name, gatewayRouteName = gateway_route_name).expect("formatting should succeed");
         Ok(())
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_45) = &self.mesh_owner {
-            query.push_kv("meshOwner", &smithy_http::query::fmt_string(&inner_45));
+        if let Some(inner_94) = &self.mesh_owner {
+            query.push_kv("meshOwner", &smithy_http::query::fmt_string(&inner_94));
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -6755,23 +6675,21 @@ impl UpdateMeshInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let mesh_name = {
-            let input = &self.mesh_name;
-            let input = input
+        let input_95 = &self.mesh_name;
+        let input_95 =
+            input_95
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "mesh_name",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "mesh_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let mesh_name = smithy_http::label::fmt_string(input_95, false);
+        if mesh_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "mesh_name",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/v20190125/meshes/{meshName}", meshName = mesh_name)
             .expect("formatting should succeed");
         Ok(())
@@ -6965,57 +6883,51 @@ impl UpdateRouteInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let mesh_name = {
-            let input = &self.mesh_name;
-            let input = input
+        let input_96 = &self.mesh_name;
+        let input_96 =
+            input_96
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "mesh_name",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "mesh_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let virtual_router_name = {
-            let input = &self.virtual_router_name;
-            let input = input
+        let mesh_name = smithy_http::label::fmt_string(input_96, false);
+        if mesh_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "mesh_name",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_97 = &self.virtual_router_name;
+        let input_97 =
+            input_97
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "virtual_router_name",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "virtual_router_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let route_name = {
-            let input = &self.route_name;
-            let input = input
+        let virtual_router_name = smithy_http::label::fmt_string(input_97, false);
+        if virtual_router_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "virtual_router_name",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_98 = &self.route_name;
+        let input_98 =
+            input_98
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "route_name",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "route_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let route_name = smithy_http::label::fmt_string(input_98, false);
+        if route_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "route_name",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/v20190125/meshes/{meshName}/virtualRouter/{virtualRouterName}/routes/{routeName}",
@@ -7028,8 +6940,8 @@ impl UpdateRouteInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_46) = &self.mesh_owner {
-            query.push_kv("meshOwner", &smithy_http::query::fmt_string(&inner_46));
+        if let Some(inner_99) = &self.mesh_owner {
+            query.push_kv("meshOwner", &smithy_http::query::fmt_string(&inner_99));
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -7217,40 +7129,36 @@ impl UpdateVirtualGatewayInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let mesh_name = {
-            let input = &self.mesh_name;
-            let input = input
+        let input_100 = &self.mesh_name;
+        let input_100 =
+            input_100
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "mesh_name",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "mesh_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let virtual_gateway_name = {
-            let input = &self.virtual_gateway_name;
-            let input = input
+        let mesh_name = smithy_http::label::fmt_string(input_100, false);
+        if mesh_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "mesh_name",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_101 = &self.virtual_gateway_name;
+        let input_101 =
+            input_101
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "virtual_gateway_name",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "virtual_gateway_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let virtual_gateway_name = smithy_http::label::fmt_string(input_101, false);
+        if virtual_gateway_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "virtual_gateway_name",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/v20190125/meshes/{meshName}/virtualGateways/{virtualGatewayName}",
@@ -7262,8 +7170,8 @@ impl UpdateVirtualGatewayInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_47) = &self.mesh_owner {
-            query.push_kv("meshOwner", &smithy_http::query::fmt_string(&inner_47));
+        if let Some(inner_102) = &self.mesh_owner {
+            query.push_kv("meshOwner", &smithy_http::query::fmt_string(&inner_102));
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -7450,40 +7358,36 @@ impl UpdateVirtualNodeInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let mesh_name = {
-            let input = &self.mesh_name;
-            let input = input
+        let input_103 = &self.mesh_name;
+        let input_103 =
+            input_103
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "mesh_name",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "mesh_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let virtual_node_name = {
-            let input = &self.virtual_node_name;
-            let input = input
+        let mesh_name = smithy_http::label::fmt_string(input_103, false);
+        if mesh_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "mesh_name",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_104 = &self.virtual_node_name;
+        let input_104 =
+            input_104
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "virtual_node_name",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "virtual_node_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let virtual_node_name = smithy_http::label::fmt_string(input_104, false);
+        if virtual_node_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "virtual_node_name",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/v20190125/meshes/{meshName}/virtualNodes/{virtualNodeName}",
@@ -7495,8 +7399,8 @@ impl UpdateVirtualNodeInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_48) = &self.mesh_owner {
-            query.push_kv("meshOwner", &smithy_http::query::fmt_string(&inner_48));
+        if let Some(inner_105) = &self.mesh_owner {
+            query.push_kv("meshOwner", &smithy_http::query::fmt_string(&inner_105));
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -7683,40 +7587,36 @@ impl UpdateVirtualRouterInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let mesh_name = {
-            let input = &self.mesh_name;
-            let input = input
+        let input_106 = &self.mesh_name;
+        let input_106 =
+            input_106
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "mesh_name",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "mesh_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let virtual_router_name = {
-            let input = &self.virtual_router_name;
-            let input = input
+        let mesh_name = smithy_http::label::fmt_string(input_106, false);
+        if mesh_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "mesh_name",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_107 = &self.virtual_router_name;
+        let input_107 =
+            input_107
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "virtual_router_name",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "virtual_router_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let virtual_router_name = smithy_http::label::fmt_string(input_107, false);
+        if virtual_router_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "virtual_router_name",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/v20190125/meshes/{meshName}/virtualRouters/{virtualRouterName}",
@@ -7728,8 +7628,8 @@ impl UpdateVirtualRouterInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_49) = &self.mesh_owner {
-            query.push_kv("meshOwner", &smithy_http::query::fmt_string(&inner_49));
+        if let Some(inner_108) = &self.mesh_owner {
+            query.push_kv("meshOwner", &smithy_http::query::fmt_string(&inner_108));
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -7917,40 +7817,36 @@ impl UpdateVirtualServiceInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let mesh_name = {
-            let input = &self.mesh_name;
-            let input = input
+        let input_109 = &self.mesh_name;
+        let input_109 =
+            input_109
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "mesh_name",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "mesh_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let virtual_service_name = {
-            let input = &self.virtual_service_name;
-            let input = input
+        let mesh_name = smithy_http::label::fmt_string(input_109, false);
+        if mesh_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "mesh_name",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_110 = &self.virtual_service_name;
+        let input_110 =
+            input_110
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "virtual_service_name",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "virtual_service_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let virtual_service_name = smithy_http::label::fmt_string(input_110, false);
+        if virtual_service_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "virtual_service_name",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/v20190125/meshes/{meshName}/virtualServices/{virtualServiceName}",
@@ -7962,8 +7858,8 @@ impl UpdateVirtualServiceInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_50) = &self.mesh_owner {
-            query.push_kv("meshOwner", &smithy_http::query::fmt_string(&inner_50));
+        if let Some(inner_111) = &self.mesh_owner {
+            query.push_kv("meshOwner", &smithy_http::query::fmt_string(&inner_111));
         }
     }
     #[allow(clippy::unnecessary_wraps)]

@@ -2624,8 +2624,7 @@ pub fn deser_operation_get_account_limit(
                 let var_82 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i64::from_str(
+                            <i64 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (long: `com.amazonaws.route53#UsageCount`)"))
@@ -2949,8 +2948,7 @@ pub fn deser_operation_get_health_check_count(
                 let var_92 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i64::from_str(
+                            <i64 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (long: `com.amazonaws.route53#HealthCheckCount`)"))
@@ -3118,8 +3116,7 @@ pub fn deser_operation_get_hosted_zone_count(
                 let var_98 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i64::from_str(
+                            <i64 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (long: `com.amazonaws.route53#HostedZoneCount`)"))
@@ -3202,8 +3199,7 @@ pub fn deser_operation_get_hosted_zone_limit(
                 let var_101 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i64::from_str(
+                            <i64 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (long: `com.amazonaws.route53#UsageCount`)"))
@@ -3327,8 +3323,7 @@ pub fn deser_operation_get_reusable_delegation_set_limit(
                 let var_105 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i64::from_str(
+                            <i64 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (long: `com.amazonaws.route53#UsageCount`)"))
@@ -3442,8 +3437,7 @@ pub fn deser_operation_get_traffic_policy_instance_count(
                 let var_108 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.route53#TrafficPolicyInstanceCount`)"))
@@ -3519,8 +3513,7 @@ pub fn deser_operation_list_geo_locations(
                 let var_112 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.route53#PageTruncated`)"))
@@ -3548,8 +3541,7 @@ pub fn deser_operation_list_geo_locations(
                 let var_114 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `smithy.api#Integer`)"))
@@ -3599,8 +3591,7 @@ pub fn deser_operation_list_health_checks(
                 let var_116 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.route53#PageTruncated`)"))
@@ -3628,8 +3619,7 @@ pub fn deser_operation_list_health_checks(
                 let var_118 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `smithy.api#Integer`)"))
@@ -3692,8 +3682,7 @@ pub fn deser_operation_list_hosted_zones(
                 let var_121 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.route53#PageTruncated`)"))
@@ -3721,8 +3710,7 @@ pub fn deser_operation_list_hosted_zones(
                 let var_123 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `smithy.api#Integer`)"))
@@ -3812,8 +3800,7 @@ pub fn deser_operation_list_hosted_zones_by_name(
                 let var_128 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.route53#PageTruncated`)"))
@@ -3828,8 +3815,7 @@ pub fn deser_operation_list_hosted_zones_by_name(
                 let var_129 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `smithy.api#Integer`)"))
@@ -3951,8 +3937,7 @@ pub fn deser_operation_list_hosted_zones_by_vpc(
                 let var_135 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `smithy.api#Integer`)"))
@@ -4082,8 +4067,7 @@ pub fn deser_operation_list_resource_record_sets(
                 let var_141 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.route53#PageTruncated`)"))
@@ -4108,8 +4092,7 @@ pub fn deser_operation_list_resource_record_sets(
                 let var_143 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `smithy.api#Integer`)"))
@@ -4152,8 +4135,7 @@ pub fn deser_operation_list_reusable_delegation_sets(
                 let var_144 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.route53#PageTruncated`)"))
@@ -4181,8 +4163,7 @@ pub fn deser_operation_list_reusable_delegation_sets(
                 let var_146 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `smithy.api#Integer`)"))
@@ -4338,8 +4319,7 @@ pub fn deser_operation_list_traffic_policies(
                 let var_153 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.route53#PageTruncated`)"))
@@ -4354,8 +4334,7 @@ pub fn deser_operation_list_traffic_policies(
                 let var_154 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `smithy.api#Integer`)"))
@@ -4435,8 +4414,7 @@ pub fn deser_operation_list_traffic_policy_instances(
                 let var_158 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.route53#PageTruncated`)"))
@@ -4464,8 +4442,7 @@ pub fn deser_operation_list_traffic_policy_instances(
                 let var_160 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `smithy.api#Integer`)"))
@@ -4545,8 +4522,7 @@ pub fn deser_operation_list_traffic_policy_instances_by_hosted_zone(
                 let var_164 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.route53#PageTruncated`)"))
@@ -4561,8 +4537,7 @@ pub fn deser_operation_list_traffic_policy_instances_by_hosted_zone(
                 let var_165 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `smithy.api#Integer`)"))
@@ -4642,8 +4617,7 @@ pub fn deser_operation_list_traffic_policy_instances_by_policy(
                 let var_169 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.route53#PageTruncated`)"))
@@ -4671,8 +4645,7 @@ pub fn deser_operation_list_traffic_policy_instances_by_policy(
                 let var_171 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `smithy.api#Integer`)"))
@@ -4736,8 +4709,7 @@ pub fn deser_operation_list_traffic_policy_versions(
                 let var_174 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.route53#PageTruncated`)"))
@@ -4752,8 +4724,7 @@ pub fn deser_operation_list_traffic_policy_versions(
                 let var_175 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `smithy.api#Integer`)"))
@@ -5294,8 +5265,7 @@ pub fn deser_structure_health_check(
                 let var_199 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i64::from_str(
+                            <i64 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (long: `com.amazonaws.route53#HealthCheckVersion`)"))
@@ -5382,8 +5352,7 @@ pub fn deser_structure_hosted_zone(
                 let var_205 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i64::from_str(
+                            <i64 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (long: `com.amazonaws.route53#HostedZoneRRSetCount`)"))
@@ -5536,8 +5505,7 @@ pub fn deser_structure_key_signing_key(
                 let var_214 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.route53#SigningKeyInteger`)"))
@@ -5565,8 +5533,7 @@ pub fn deser_structure_key_signing_key(
                 let var_216 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.route53#SigningKeyInteger`)"))
@@ -5594,8 +5561,7 @@ pub fn deser_structure_key_signing_key(
                 let var_218 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.route53#SigningKeyInteger`)"))
@@ -5610,8 +5576,7 @@ pub fn deser_structure_key_signing_key(
                 let var_219 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.route53#SigningKeyTag`)"))
@@ -5810,8 +5775,7 @@ pub fn deser_structure_traffic_policy(
                 let var_232 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.route53#TrafficPolicyVersion`)"))
@@ -5931,8 +5895,7 @@ pub fn deser_structure_traffic_policy_instance(
                 let var_240 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i64::from_str(
+                            <i64 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (long: `com.amazonaws.route53#TTL`)"))
@@ -5986,8 +5949,7 @@ pub fn deser_structure_traffic_policy_instance(
                 let var_244 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.route53#TrafficPolicyVersion`)"))
@@ -6043,8 +6005,7 @@ pub fn deser_structure_account_limit(
                 let var_247 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i64::from_str(
+                            <i64 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (long: `com.amazonaws.route53#LimitValue`)"))
@@ -6295,8 +6256,7 @@ pub fn deser_structure_hosted_zone_limit(
                 let var_257 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i64::from_str(
+                            <i64 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (long: `com.amazonaws.route53#LimitValue`)"))
@@ -6338,8 +6298,7 @@ pub fn deser_structure_reusable_delegation_set_limit(
                 let var_259 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i64::from_str(
+                            <i64 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (long: `com.amazonaws.route53#LimitValue`)"))
@@ -6700,8 +6659,7 @@ pub fn deser_structure_health_check_config(
                 let var_266 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.route53#Port`)"))
@@ -6769,8 +6727,7 @@ pub fn deser_structure_health_check_config(
                 let var_271 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.route53#RequestInterval`)"))
@@ -6785,8 +6742,7 @@ pub fn deser_structure_health_check_config(
                 let var_272 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.route53#FailureThreshold`)"))
@@ -6801,8 +6757,7 @@ pub fn deser_structure_health_check_config(
                 let var_273 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.route53#MeasureLatency`)"))
@@ -6817,8 +6772,7 @@ pub fn deser_structure_health_check_config(
                 let var_274 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.route53#Inverted`)"))
@@ -6833,8 +6787,7 @@ pub fn deser_structure_health_check_config(
                 let var_275 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.route53#Disabled`)"))
@@ -6849,8 +6802,7 @@ pub fn deser_structure_health_check_config(
                 let var_276 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.route53#HealthThreshold`)"))
@@ -6875,8 +6827,7 @@ pub fn deser_structure_health_check_config(
                 let var_278 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.route53#EnableSNI`)"))
@@ -6938,8 +6889,7 @@ pub fn deser_structure_cloud_watch_alarm_configuration(
                 let var_282 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.route53#EvaluationPeriods`)"))
@@ -6954,8 +6904,7 @@ pub fn deser_structure_cloud_watch_alarm_configuration(
                 let var_283 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            f64::from_str(
+                            <f64 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (double: `com.amazonaws.route53#Threshold`)"))
@@ -6984,8 +6933,7 @@ pub fn deser_structure_cloud_watch_alarm_configuration(
                 let var_285 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.route53#Period`)"))
@@ -7076,8 +7024,7 @@ pub fn deser_structure_hosted_zone_config(
                 let var_291 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.route53#IsPrivateZone`)"))
@@ -7266,8 +7213,7 @@ pub fn deser_structure_resource_record_set(
                 let var_301 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i64::from_str(
+                            <i64 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (long: `com.amazonaws.route53#ResourceRecordSetWeight`)"))
@@ -7320,8 +7266,7 @@ pub fn deser_structure_resource_record_set(
                 let var_305 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.route53#ResourceRecordSetMultiValueAnswer`)"))
@@ -7336,8 +7281,7 @@ pub fn deser_structure_resource_record_set(
                 let var_306 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i64::from_str(
+                            <i64 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (long: `com.amazonaws.route53#TTL`)"))
@@ -7470,8 +7414,7 @@ pub fn deser_structure_traffic_policy_summary(
                 let var_314 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.route53#TrafficPolicyVersion`)"))
@@ -7486,8 +7429,7 @@ pub fn deser_structure_traffic_policy_summary(
                 let var_315 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.route53#TrafficPolicyVersion`)"))
@@ -7795,8 +7737,7 @@ pub fn deser_structure_alias_target(
                 let var_327 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.route53#AliasHealthEnabled`)"))

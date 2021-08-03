@@ -2854,8 +2854,7 @@ pub fn deser_structure_certificate(
                 let var_72 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.elasticloadbalancingv2#Default`)"))
@@ -2909,8 +2908,7 @@ pub fn deser_structure_listener(
                 let var_75 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.elasticloadbalancingv2#Port`)"))
@@ -3218,8 +3216,7 @@ pub fn deser_structure_rule(
                 let var_98 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.elasticloadbalancingv2#IsDefault`)"))
@@ -3287,8 +3284,7 @@ pub fn deser_structure_target_group(
                 let var_102 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.elasticloadbalancingv2#Port`)"))
@@ -3343,8 +3339,7 @@ pub fn deser_structure_target_group(
                 let var_106 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.elasticloadbalancingv2#HealthCheckEnabled`)"))
@@ -3359,8 +3354,7 @@ pub fn deser_structure_target_group(
                 let var_107 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.elasticloadbalancingv2#HealthCheckIntervalSeconds`)"))
@@ -3375,8 +3369,7 @@ pub fn deser_structure_target_group(
                 let var_108 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.elasticloadbalancingv2#HealthCheckTimeoutSeconds`)"))
@@ -3391,8 +3384,7 @@ pub fn deser_structure_target_group(
                 let var_109 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.elasticloadbalancingv2#HealthCheckThresholdCount`)"))
@@ -3407,8 +3399,7 @@ pub fn deser_structure_target_group(
                 let var_110 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.elasticloadbalancingv2#HealthCheckThresholdCount`)"))
@@ -4037,8 +4028,7 @@ pub fn deser_structure_target_description(
                 let var_139 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.elasticloadbalancingv2#Port`)"))
@@ -4199,8 +4189,7 @@ pub fn deser_structure_action(
                 let var_148 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.elasticloadbalancingv2#ActionOrder`)"))
@@ -4367,8 +4356,7 @@ pub fn deser_structure_cipher(
                 let var_161 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.elasticloadbalancingv2#CipherPriority`)"))
@@ -4604,8 +4592,7 @@ pub fn deser_structure_authenticate_oidc_action_config(
                 let var_176 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i64::from_str(
+                            <i64 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (long: `com.amazonaws.elasticloadbalancingv2#AuthenticateOidcActionSessionTimeout`)"))
@@ -4644,8 +4631,7 @@ pub fn deser_structure_authenticate_oidc_action_config(
                 let var_179 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.elasticloadbalancingv2#AuthenticateOidcActionUseExistingClientSecret`)"))
@@ -4738,8 +4724,7 @@ pub fn deser_structure_authenticate_cognito_action_config(
                 let var_185 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i64::from_str(
+                            <i64 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (long: `com.amazonaws.elasticloadbalancingv2#AuthenticateCognitoActionSessionTimeout`)"))
@@ -5196,8 +5181,7 @@ pub fn deser_structure_target_group_stickiness_config(
                 let var_206 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.elasticloadbalancingv2#TargetGroupStickinessEnabled`)"))
@@ -5212,8 +5196,7 @@ pub fn deser_structure_target_group_stickiness_config(
                 let var_207 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.elasticloadbalancingv2#TargetGroupStickinessDurationSeconds`)"))
@@ -5347,8 +5330,7 @@ pub fn deser_structure_target_group_tuple(
                 let var_209 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.elasticloadbalancingv2#TargetGroupWeight`)"))

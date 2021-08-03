@@ -278,23 +278,20 @@ impl DeleteProjectInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let project_id = {
-            let input = &self.project_id;
-            let input = input
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "project_id",
-                    details: "cannot be empty or unset",
-                })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "project_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let input_4 = &self.project_id;
+        let input_4 = input_4
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "project_id",
+                details: "cannot be empty or unset",
+            })?;
+        let project_id = smithy_http::label::fmt_string(input_4, false);
+        if project_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "project_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/projects/{projectId}", projectId = project_id)
             .expect("formatting should succeed");
         Ok(())
@@ -426,23 +423,20 @@ impl DescribeBundleInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let bundle_id = {
-            let input = &self.bundle_id;
-            let input = input
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "bundle_id",
-                    details: "cannot be empty or unset",
-                })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "bundle_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let input_5 = &self.bundle_id;
+        let input_5 = input_5
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "bundle_id",
+                details: "cannot be empty or unset",
+            })?;
+        let bundle_id = smithy_http::label::fmt_string(input_5, false);
+        if bundle_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "bundle_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/bundles/{bundleId}", bundleId = bundle_id)
             .expect("formatting should succeed");
         Ok(())
@@ -592,13 +586,13 @@ impl DescribeProjectInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_4) = &self.project_id {
-            query.push_kv("projectId", &smithy_http::query::fmt_string(&inner_4));
+        if let Some(inner_6) = &self.project_id {
+            query.push_kv("projectId", &smithy_http::query::fmt_string(&inner_6));
         }
         if self.sync_from_resources {
             query.push_kv(
                 "syncFromResources",
-                &smithy_http::query::fmt_default(&&self.sync_from_resources),
+                &smithy_types::primitive::Encoder::from(self.sync_from_resources).encode(),
             );
         }
     }
@@ -754,34 +748,31 @@ impl ExportBundleInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let bundle_id = {
-            let input = &self.bundle_id;
-            let input = input
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "bundle_id",
-                    details: "cannot be empty or unset",
-                })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "bundle_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let input_7 = &self.bundle_id;
+        let input_7 = input_7
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "bundle_id",
+                details: "cannot be empty or unset",
+            })?;
+        let bundle_id = smithy_http::label::fmt_string(input_7, false);
+        if bundle_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "bundle_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/bundles/{bundleId}", bundleId = bundle_id)
             .expect("formatting should succeed");
         Ok(())
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_5) = &self.project_id {
-            query.push_kv("projectId", &smithy_http::query::fmt_string(&inner_5));
+        if let Some(inner_8) = &self.project_id {
+            query.push_kv("projectId", &smithy_http::query::fmt_string(&inner_8));
         }
-        if let Some(inner_6) = &self.platform {
-            query.push_kv("platform", &smithy_http::query::fmt_string(&inner_6));
+        if let Some(inner_9) = &self.platform {
+            query.push_kv("platform", &smithy_http::query::fmt_string(&inner_9));
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -910,23 +901,21 @@ impl ExportProjectInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let project_id = {
-            let input = &self.project_id;
-            let input = input
+        let input_10 = &self.project_id;
+        let input_10 =
+            input_10
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "project_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "project_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let project_id = smithy_http::label::fmt_string(input_10, false);
+        if project_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "project_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/exports/{projectId}", projectId = project_id)
             .expect("formatting should succeed");
         Ok(())
@@ -1079,11 +1068,11 @@ impl ListBundlesInput {
         if self.max_results != 0 {
             query.push_kv(
                 "maxResults",
-                &smithy_http::query::fmt_default(&&self.max_results),
+                &smithy_types::primitive::Encoder::from(self.max_results).encode(),
             );
         }
-        if let Some(inner_7) = &self.next_token {
-            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_7));
+        if let Some(inner_11) = &self.next_token {
+            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_11));
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -1235,11 +1224,11 @@ impl ListProjectsInput {
         if self.max_results != 0 {
             query.push_kv(
                 "maxResults",
-                &smithy_http::query::fmt_default(&&self.max_results),
+                &smithy_types::primitive::Encoder::from(self.max_results).encode(),
             );
         }
-        if let Some(inner_8) = &self.next_token {
-            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_8));
+        if let Some(inner_12) = &self.next_token {
+            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_12));
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -1388,8 +1377,8 @@ impl UpdateProjectInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_9) = &self.project_id {
-            query.push_kv("projectId", &smithy_http::query::fmt_string(&inner_9));
+        if let Some(inner_13) = &self.project_id {
+            query.push_kv("projectId", &smithy_http::query::fmt_string(&inner_13));
         }
     }
     #[allow(clippy::unnecessary_wraps)]

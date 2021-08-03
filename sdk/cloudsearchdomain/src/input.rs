@@ -462,7 +462,10 @@ impl SearchInput {
             query.push_kv("highlight", &smithy_http::query::fmt_string(&inner_5));
         }
         if self.partial {
-            query.push_kv("partial", &smithy_http::query::fmt_default(&&self.partial));
+            query.push_kv(
+                "partial",
+                &smithy_types::primitive::Encoder::from(self.partial).encode(),
+            );
         }
         if let Some(inner_6) = &self.query {
             query.push_kv("q", &smithy_http::query::fmt_string(&inner_6));
@@ -477,13 +480,19 @@ impl SearchInput {
             query.push_kv("return", &smithy_http::query::fmt_string(&inner_9));
         }
         if self.size != 0 {
-            query.push_kv("size", &smithy_http::query::fmt_default(&&self.size));
+            query.push_kv(
+                "size",
+                &smithy_types::primitive::Encoder::from(self.size).encode(),
+            );
         }
         if let Some(inner_10) = &self.sort {
             query.push_kv("sort", &smithy_http::query::fmt_string(&inner_10));
         }
         if self.start != 0 {
-            query.push_kv("start", &smithy_http::query::fmt_default(&&self.start));
+            query.push_kv(
+                "start",
+                &smithy_types::primitive::Encoder::from(self.start).encode(),
+            );
         }
         if let Some(inner_11) = &self.stats {
             query.push_kv("stats", &smithy_http::query::fmt_string(&inner_11));
@@ -644,7 +653,10 @@ impl SuggestInput {
             query.push_kv("suggester", &smithy_http::query::fmt_string(&inner_13));
         }
         if self.size != 0 {
-            query.push_kv("size", &smithy_http::query::fmt_default(&&self.size));
+            query.push_kv(
+                "size",
+                &smithy_types::primitive::Encoder::from(self.size).encode(),
+            );
         }
     }
     #[allow(clippy::unnecessary_wraps)]

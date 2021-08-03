@@ -142,6 +142,7 @@ These services have not yet been manually tested by the SDK team and may not hav
 - [x] Amazon Iot1Click-Devices
 - [x] Amazon Iot1Click-Projects
 - [x] Amazon IoT Analytics
+- [x] Amazon IoT Data
 - [x] Amazon IoT Events
 - [x] Amazon Iotevents-Data
 - [x] Amazon Iot-Jobs-Data
@@ -231,7 +232,6 @@ These services have not yet been manually tested by the SDK team and may not hav
 - [x] Amazon Synthetics
 - [x] Amazon Textract
 - [x] Amazon Transcribe
-- [x] Amazon Transcribe-Streaming
 - [x] Amazon Transfer
 - [x] Amazon Translate
 - [x] Amazon Waf
@@ -246,7 +246,7 @@ These services have not yet been manually tested by the SDK team and may not hav
 
 ## No support (yet)
 We're working on it! Please file or upvote on the relevant issue to help us prioritize.
+- [ ] Amazon Glacier
 - [ ] Amazon Timestream-Query
 - [ ] Amazon Timestream-Write
-- [ ] Amazon IoT Data
-- [ ] Amazon Glacier
+- [ ] Amazon Transcribe-Streaming

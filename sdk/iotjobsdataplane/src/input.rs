@@ -126,40 +126,34 @@ impl DescribeJobExecutionInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let thing_name = {
-            let input = &self.thing_name;
-            let input = input
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "thing_name",
-                    details: "cannot be empty or unset",
-                })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "thing_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let job_id = {
-            let input = &self.job_id;
-            let input = input
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "job_id",
-                    details: "cannot be empty or unset",
-                })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "job_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let input_1 = &self.thing_name;
+        let input_1 = input_1
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "thing_name",
+                details: "cannot be empty or unset",
+            })?;
+        let thing_name = smithy_http::label::fmt_string(input_1, false);
+        if thing_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "thing_name",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_2 = &self.job_id;
+        let input_2 = input_2
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "job_id",
+                details: "cannot be empty or unset",
+            })?;
+        let job_id = smithy_http::label::fmt_string(input_2, false);
+        if job_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "job_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/things/{thingName}/jobs/{jobId}",
@@ -171,16 +165,16 @@ impl DescribeJobExecutionInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_1) = &self.include_job_document {
+        if let Some(inner_3) = &self.include_job_document {
             query.push_kv(
                 "includeJobDocument",
-                &smithy_http::query::fmt_default(&inner_1),
+                &smithy_types::primitive::Encoder::from(*inner_3).encode(),
             );
         }
-        if let Some(inner_2) = &self.execution_number {
+        if let Some(inner_4) = &self.execution_number {
             query.push_kv(
                 "executionNumber",
-                &smithy_http::query::fmt_default(&inner_2),
+                &smithy_types::primitive::Encoder::from(*inner_4).encode(),
             );
         }
     }
@@ -311,23 +305,20 @@ impl GetPendingJobExecutionsInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let thing_name = {
-            let input = &self.thing_name;
-            let input = input
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "thing_name",
-                    details: "cannot be empty or unset",
-                })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "thing_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let input_5 = &self.thing_name;
+        let input_5 = input_5
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "thing_name",
+                details: "cannot be empty or unset",
+            })?;
+        let thing_name = smithy_http::label::fmt_string(input_5, false);
+        if thing_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "thing_name",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/things/{thingName}/jobs", thingName = thing_name)
             .expect("formatting should succeed");
         Ok(())
@@ -502,23 +493,20 @@ impl StartNextPendingJobExecutionInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let thing_name = {
-            let input = &self.thing_name;
-            let input = input
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "thing_name",
-                    details: "cannot be empty or unset",
-                })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "thing_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let input_6 = &self.thing_name;
+        let input_6 = input_6
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "thing_name",
+                details: "cannot be empty or unset",
+            })?;
+        let thing_name = smithy_http::label::fmt_string(input_6, false);
+        if thing_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "thing_name",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/things/{thingName}/jobs/$next",
@@ -770,40 +758,34 @@ impl UpdateJobExecutionInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let thing_name = {
-            let input = &self.thing_name;
-            let input = input
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "thing_name",
-                    details: "cannot be empty or unset",
-                })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "thing_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let job_id = {
-            let input = &self.job_id;
-            let input = input
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "job_id",
-                    details: "cannot be empty or unset",
-                })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "job_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let input_7 = &self.thing_name;
+        let input_7 = input_7
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "thing_name",
+                details: "cannot be empty or unset",
+            })?;
+        let thing_name = smithy_http::label::fmt_string(input_7, false);
+        if thing_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "thing_name",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_8 = &self.job_id;
+        let input_8 = input_8
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "job_id",
+                details: "cannot be empty or unset",
+            })?;
+        let job_id = smithy_http::label::fmt_string(input_8, false);
+        if job_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "job_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/things/{thingName}/jobs/{jobId}",

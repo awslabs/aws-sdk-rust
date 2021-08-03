@@ -3,6 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
+//! Credential provider implementation that pulls from environment variables
+
 use crate::provider::{CredentialsError, ProvideCredentials};
 use crate::Credentials;
 use aws_types::os_shim_internal::Env;

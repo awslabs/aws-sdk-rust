@@ -295,23 +295,20 @@ impl CreateRegistryInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let registry_name = {
-            let input = &self.registry_name;
-            let input = input
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "registry_name",
-                    details: "cannot be empty or unset",
-                })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "registry_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let input_1 = &self.registry_name;
+        let input_1 = input_1
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "registry_name",
+                details: "cannot be empty or unset",
+            })?;
+        let registry_name = smithy_http::label::fmt_string(input_1, false);
+        if registry_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "registry_name",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/v1/registries/name/{RegistryName}",
@@ -516,40 +513,34 @@ impl CreateSchemaInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let registry_name = {
-            let input = &self.registry_name;
-            let input = input
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "registry_name",
-                    details: "cannot be empty or unset",
-                })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "registry_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let schema_name = {
-            let input = &self.schema_name;
-            let input = input
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "schema_name",
-                    details: "cannot be empty or unset",
-                })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "schema_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let input_2 = &self.registry_name;
+        let input_2 = input_2
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "registry_name",
+                details: "cannot be empty or unset",
+            })?;
+        let registry_name = smithy_http::label::fmt_string(input_2, false);
+        if registry_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "registry_name",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_3 = &self.schema_name;
+        let input_3 = input_3
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "schema_name",
+                details: "cannot be empty or unset",
+            })?;
+        let schema_name = smithy_http::label::fmt_string(input_3, false);
+        if schema_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "schema_name",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/v1/registries/name/{RegistryName}/schemas/name/{SchemaName}",
@@ -687,23 +678,20 @@ impl DeleteDiscovererInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let discoverer_id = {
-            let input = &self.discoverer_id;
-            let input = input
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "discoverer_id",
-                    details: "cannot be empty or unset",
-                })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "discoverer_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let input_4 = &self.discoverer_id;
+        let input_4 = input_4
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "discoverer_id",
+                details: "cannot be empty or unset",
+            })?;
+        let discoverer_id = smithy_http::label::fmt_string(input_4, false);
+        if discoverer_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "discoverer_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/v1/discoverers/id/{DiscovererId}",
@@ -840,23 +828,20 @@ impl DeleteRegistryInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let registry_name = {
-            let input = &self.registry_name;
-            let input = input
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "registry_name",
-                    details: "cannot be empty or unset",
-                })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "registry_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let input_5 = &self.registry_name;
+        let input_5 = input_5
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "registry_name",
+                details: "cannot be empty or unset",
+            })?;
+        let registry_name = smithy_http::label::fmt_string(input_5, false);
+        if registry_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "registry_name",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/v1/registries/name/{RegistryName}",
@@ -998,8 +983,8 @@ impl DeleteResourcePolicyInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_1) = &self.registry_name {
-            query.push_kv("registryName", &smithy_http::query::fmt_string(&inner_1));
+        if let Some(inner_6) = &self.registry_name {
+            query.push_kv("registryName", &smithy_http::query::fmt_string(&inner_6));
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -1140,40 +1125,34 @@ impl DeleteSchemaInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let registry_name = {
-            let input = &self.registry_name;
-            let input = input
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "registry_name",
-                    details: "cannot be empty or unset",
-                })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "registry_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let schema_name = {
-            let input = &self.schema_name;
-            let input = input
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "schema_name",
-                    details: "cannot be empty or unset",
-                })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "schema_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let input_7 = &self.registry_name;
+        let input_7 = input_7
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "registry_name",
+                details: "cannot be empty or unset",
+            })?;
+        let registry_name = smithy_http::label::fmt_string(input_7, false);
+        if registry_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "registry_name",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_8 = &self.schema_name;
+        let input_8 = input_8
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "schema_name",
+                details: "cannot be empty or unset",
+            })?;
+        let schema_name = smithy_http::label::fmt_string(input_8, false);
+        if schema_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "schema_name",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/v1/registries/name/{RegistryName}/schemas/name/{SchemaName}",
@@ -1336,57 +1315,50 @@ impl DeleteSchemaVersionInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let registry_name = {
-            let input = &self.registry_name;
-            let input = input
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "registry_name",
-                    details: "cannot be empty or unset",
-                })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "registry_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let schema_name = {
-            let input = &self.schema_name;
-            let input = input
+        let input_9 = &self.registry_name;
+        let input_9 = input_9
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "registry_name",
+                details: "cannot be empty or unset",
+            })?;
+        let registry_name = smithy_http::label::fmt_string(input_9, false);
+        if registry_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "registry_name",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_10 = &self.schema_name;
+        let input_10 =
+            input_10
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "schema_name",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "schema_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let schema_version = {
-            let input = &self.schema_version;
-            let input = input
+        let schema_name = smithy_http::label::fmt_string(input_10, false);
+        if schema_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "schema_name",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_11 = &self.schema_version;
+        let input_11 =
+            input_11
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "schema_version",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "schema_version",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let schema_version = smithy_http::label::fmt_string(input_11, false);
+        if schema_version.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "schema_version",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/v1/registries/name/{RegistryName}/schemas/name/{SchemaName}/version/{SchemaVersion}",
@@ -1561,57 +1533,51 @@ impl DescribeCodeBindingInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let registry_name = {
-            let input = &self.registry_name;
-            let input = input
+        let input_12 = &self.registry_name;
+        let input_12 =
+            input_12
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "registry_name",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "registry_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let schema_name = {
-            let input = &self.schema_name;
-            let input = input
+        let registry_name = smithy_http::label::fmt_string(input_12, false);
+        if registry_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "registry_name",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_13 = &self.schema_name;
+        let input_13 =
+            input_13
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "schema_name",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "schema_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let language = {
-            let input = &self.language;
-            let input = input
+        let schema_name = smithy_http::label::fmt_string(input_13, false);
+        if schema_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "schema_name",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_14 = &self.language;
+        let input_14 =
+            input_14
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "language",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "language",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let language = smithy_http::label::fmt_string(input_14, false);
+        if language.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "language",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/v1/registries/name/{RegistryName}/schemas/name/{SchemaName}/language/{Language}",
@@ -1624,8 +1590,8 @@ impl DescribeCodeBindingInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_2) = &self.schema_version {
-            query.push_kv("schemaVersion", &smithy_http::query::fmt_string(&inner_2));
+        if let Some(inner_15) = &self.schema_version {
+            query.push_kv("schemaVersion", &smithy_http::query::fmt_string(&inner_15));
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -1757,23 +1723,21 @@ impl DescribeDiscovererInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let discoverer_id = {
-            let input = &self.discoverer_id;
-            let input = input
+        let input_16 = &self.discoverer_id;
+        let input_16 =
+            input_16
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "discoverer_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "discoverer_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let discoverer_id = smithy_http::label::fmt_string(input_16, false);
+        if discoverer_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "discoverer_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/v1/discoverers/id/{DiscovererId}",
@@ -1910,23 +1874,21 @@ impl DescribeRegistryInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let registry_name = {
-            let input = &self.registry_name;
-            let input = input
+        let input_17 = &self.registry_name;
+        let input_17 =
+            input_17
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "registry_name",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "registry_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let registry_name = smithy_http::label::fmt_string(input_17, false);
+        if registry_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "registry_name",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/v1/registries/name/{RegistryName}",
@@ -2088,40 +2050,36 @@ impl DescribeSchemaInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let registry_name = {
-            let input = &self.registry_name;
-            let input = input
+        let input_18 = &self.registry_name;
+        let input_18 =
+            input_18
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "registry_name",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "registry_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let schema_name = {
-            let input = &self.schema_name;
-            let input = input
+        let registry_name = smithy_http::label::fmt_string(input_18, false);
+        if registry_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "registry_name",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_19 = &self.schema_name;
+        let input_19 =
+            input_19
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "schema_name",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "schema_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let schema_name = smithy_http::label::fmt_string(input_19, false);
+        if schema_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "schema_name",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/v1/registries/name/{RegistryName}/schemas/name/{SchemaName}",
@@ -2133,8 +2091,8 @@ impl DescribeSchemaInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_3) = &self.schema_version {
-            query.push_kv("schemaVersion", &smithy_http::query::fmt_string(&inner_3));
+        if let Some(inner_20) = &self.schema_version {
+            query.push_kv("schemaVersion", &smithy_http::query::fmt_string(&inner_20));
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -2299,40 +2257,36 @@ impl ExportSchemaInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let registry_name = {
-            let input = &self.registry_name;
-            let input = input
+        let input_21 = &self.registry_name;
+        let input_21 =
+            input_21
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "registry_name",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "registry_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let schema_name = {
-            let input = &self.schema_name;
-            let input = input
+        let registry_name = smithy_http::label::fmt_string(input_21, false);
+        if registry_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "registry_name",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_22 = &self.schema_name;
+        let input_22 =
+            input_22
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "schema_name",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "schema_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let schema_name = smithy_http::label::fmt_string(input_22, false);
+        if schema_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "schema_name",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/v1/registries/name/{RegistryName}/schemas/name/{SchemaName}/export",
@@ -2344,11 +2298,11 @@ impl ExportSchemaInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_4) = &self.schema_version {
-            query.push_kv("schemaVersion", &smithy_http::query::fmt_string(&inner_4));
+        if let Some(inner_23) = &self.schema_version {
+            query.push_kv("schemaVersion", &smithy_http::query::fmt_string(&inner_23));
         }
-        if let Some(inner_5) = &self.r#type {
-            query.push_kv("type", &smithy_http::query::fmt_string(&inner_5));
+        if let Some(inner_24) = &self.r#type {
+            query.push_kv("type", &smithy_http::query::fmt_string(&inner_24));
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -2516,64 +2470,58 @@ impl GetCodeBindingSourceInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let registry_name = {
-            let input = &self.registry_name;
-            let input = input
+        let input_25 = &self.registry_name;
+        let input_25 =
+            input_25
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "registry_name",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "registry_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let schema_name = {
-            let input = &self.schema_name;
-            let input = input
+        let registry_name = smithy_http::label::fmt_string(input_25, false);
+        if registry_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "registry_name",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_26 = &self.schema_name;
+        let input_26 =
+            input_26
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "schema_name",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "schema_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let language = {
-            let input = &self.language;
-            let input = input
+        let schema_name = smithy_http::label::fmt_string(input_26, false);
+        if schema_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "schema_name",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_27 = &self.language;
+        let input_27 =
+            input_27
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "language",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "language",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let language = smithy_http::label::fmt_string(input_27, false);
+        if language.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "language",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/v1/registries/name/{RegistryName}/schemas/name/{SchemaName}/language/{Language}/source", RegistryName = registry_name, SchemaName = schema_name, Language = language).expect("formatting should succeed");
         Ok(())
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_6) = &self.schema_version {
-            query.push_kv("schemaVersion", &smithy_http::query::fmt_string(&inner_6));
+        if let Some(inner_28) = &self.schema_version {
+            query.push_kv("schemaVersion", &smithy_http::query::fmt_string(&inner_28));
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -2856,8 +2804,8 @@ impl GetResourcePolicyInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_7) = &self.registry_name {
-            query.push_kv("registryName", &smithy_http::query::fmt_string(&inner_7));
+        if let Some(inner_29) = &self.registry_name {
+            query.push_kv("registryName", &smithy_http::query::fmt_string(&inner_29));
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -3029,22 +2977,25 @@ impl ListDiscoverersInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_8) = &self.discoverer_id_prefix {
+        if let Some(inner_30) = &self.discoverer_id_prefix {
             query.push_kv(
                 "discovererIdPrefix",
-                &smithy_http::query::fmt_string(&inner_8),
+                &smithy_http::query::fmt_string(&inner_30),
             );
         }
         if self.limit != 0 {
-            query.push_kv("limit", &smithy_http::query::fmt_default(&&self.limit));
+            query.push_kv(
+                "limit",
+                &smithy_types::primitive::Encoder::from(self.limit).encode(),
+            );
         }
-        if let Some(inner_9) = &self.next_token {
-            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_9));
+        if let Some(inner_31) = &self.next_token {
+            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_31));
         }
-        if let Some(inner_10) = &self.source_arn_prefix {
+        if let Some(inner_32) = &self.source_arn_prefix {
             query.push_kv(
                 "sourceArnPrefix",
-                &smithy_http::query::fmt_string(&inner_10),
+                &smithy_http::query::fmt_string(&inner_32),
             );
         }
     }
@@ -3215,19 +3166,22 @@ impl ListRegistriesInput {
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
         if self.limit != 0 {
-            query.push_kv("limit", &smithy_http::query::fmt_default(&&self.limit));
-        }
-        if let Some(inner_11) = &self.next_token {
-            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_11));
-        }
-        if let Some(inner_12) = &self.registry_name_prefix {
             query.push_kv(
-                "registryNamePrefix",
-                &smithy_http::query::fmt_string(&inner_12),
+                "limit",
+                &smithy_types::primitive::Encoder::from(self.limit).encode(),
             );
         }
-        if let Some(inner_13) = &self.scope {
-            query.push_kv("scope", &smithy_http::query::fmt_string(&inner_13));
+        if let Some(inner_33) = &self.next_token {
+            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_33));
+        }
+        if let Some(inner_34) = &self.registry_name_prefix {
+            query.push_kv(
+                "registryNamePrefix",
+                &smithy_http::query::fmt_string(&inner_34),
+            );
+        }
+        if let Some(inner_35) = &self.scope {
+            query.push_kv("scope", &smithy_http::query::fmt_string(&inner_35));
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -3392,23 +3346,21 @@ impl ListSchemasInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let registry_name = {
-            let input = &self.registry_name;
-            let input = input
+        let input_36 = &self.registry_name;
+        let input_36 =
+            input_36
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "registry_name",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "registry_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let registry_name = smithy_http::label::fmt_string(input_36, false);
+        if registry_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "registry_name",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/v1/registries/name/{RegistryName}/schemas",
@@ -3420,15 +3372,18 @@ impl ListSchemasInput {
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
         if self.limit != 0 {
-            query.push_kv("limit", &smithy_http::query::fmt_default(&&self.limit));
+            query.push_kv(
+                "limit",
+                &smithy_types::primitive::Encoder::from(self.limit).encode(),
+            );
         }
-        if let Some(inner_14) = &self.next_token {
-            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_14));
+        if let Some(inner_37) = &self.next_token {
+            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_37));
         }
-        if let Some(inner_15) = &self.schema_name_prefix {
+        if let Some(inner_38) = &self.schema_name_prefix {
             query.push_kv(
                 "schemaNamePrefix",
-                &smithy_http::query::fmt_string(&inner_15),
+                &smithy_http::query::fmt_string(&inner_38),
             );
         }
     }
@@ -3593,40 +3548,36 @@ impl ListSchemaVersionsInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let registry_name = {
-            let input = &self.registry_name;
-            let input = input
+        let input_39 = &self.registry_name;
+        let input_39 =
+            input_39
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "registry_name",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "registry_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let schema_name = {
-            let input = &self.schema_name;
-            let input = input
+        let registry_name = smithy_http::label::fmt_string(input_39, false);
+        if registry_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "registry_name",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_40 = &self.schema_name;
+        let input_40 =
+            input_40
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "schema_name",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "schema_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let schema_name = smithy_http::label::fmt_string(input_40, false);
+        if schema_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "schema_name",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/v1/registries/name/{RegistryName}/schemas/name/{SchemaName}/versions",
@@ -3639,10 +3590,13 @@ impl ListSchemaVersionsInput {
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
         if self.limit != 0 {
-            query.push_kv("limit", &smithy_http::query::fmt_default(&&self.limit));
+            query.push_kv(
+                "limit",
+                &smithy_types::primitive::Encoder::from(self.limit).encode(),
+            );
         }
-        if let Some(inner_16) = &self.next_token {
-            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_16));
+        if let Some(inner_41) = &self.next_token {
+            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_41));
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -3771,23 +3725,21 @@ impl ListTagsForResourceInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let resource_arn = {
-            let input = &self.resource_arn;
-            let input = input
+        let input_42 = &self.resource_arn;
+        let input_42 =
+            input_42
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "resource_arn",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "resource_arn",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let resource_arn = smithy_http::label::fmt_string(input_42, false);
+        if resource_arn.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "resource_arn",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/tags/{ResourceArn}", ResourceArn = resource_arn)
             .expect("formatting should succeed");
         Ok(())
@@ -3956,57 +3908,51 @@ impl PutCodeBindingInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let registry_name = {
-            let input = &self.registry_name;
-            let input = input
+        let input_43 = &self.registry_name;
+        let input_43 =
+            input_43
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "registry_name",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "registry_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let schema_name = {
-            let input = &self.schema_name;
-            let input = input
+        let registry_name = smithy_http::label::fmt_string(input_43, false);
+        if registry_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "registry_name",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_44 = &self.schema_name;
+        let input_44 =
+            input_44
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "schema_name",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "schema_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let language = {
-            let input = &self.language;
-            let input = input
+        let schema_name = smithy_http::label::fmt_string(input_44, false);
+        if schema_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "schema_name",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_45 = &self.language;
+        let input_45 =
+            input_45
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "language",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "language",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let language = smithy_http::label::fmt_string(input_45, false);
+        if language.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "language",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/v1/registries/name/{RegistryName}/schemas/name/{SchemaName}/language/{Language}",
@@ -4019,8 +3965,8 @@ impl PutCodeBindingInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_17) = &self.schema_version {
-            query.push_kv("schemaVersion", &smithy_http::query::fmt_string(&inner_17));
+        if let Some(inner_46) = &self.schema_version {
+            query.push_kv("schemaVersion", &smithy_http::query::fmt_string(&inner_46));
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -4182,8 +4128,8 @@ impl PutResourcePolicyInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_18) = &self.registry_name {
-            query.push_kv("registryName", &smithy_http::query::fmt_string(&inner_18));
+        if let Some(inner_47) = &self.registry_name {
+            query.push_kv("registryName", &smithy_http::query::fmt_string(&inner_47));
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -4345,23 +4291,21 @@ impl SearchSchemasInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let registry_name = {
-            let input = &self.registry_name;
-            let input = input
+        let input_48 = &self.registry_name;
+        let input_48 =
+            input_48
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "registry_name",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "registry_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let registry_name = smithy_http::label::fmt_string(input_48, false);
+        if registry_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "registry_name",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/v1/registries/name/{RegistryName}/schemas/search",
@@ -4372,14 +4316,17 @@ impl SearchSchemasInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_19) = &self.keywords {
-            query.push_kv("keywords", &smithy_http::query::fmt_string(&inner_19));
+        if let Some(inner_49) = &self.keywords {
+            query.push_kv("keywords", &smithy_http::query::fmt_string(&inner_49));
         }
         if self.limit != 0 {
-            query.push_kv("limit", &smithy_http::query::fmt_default(&&self.limit));
+            query.push_kv(
+                "limit",
+                &smithy_types::primitive::Encoder::from(self.limit).encode(),
+            );
         }
-        if let Some(inner_20) = &self.next_token {
-            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_20));
+        if let Some(inner_50) = &self.next_token {
+            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_50));
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -4511,23 +4458,21 @@ impl StartDiscovererInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let discoverer_id = {
-            let input = &self.discoverer_id;
-            let input = input
+        let input_51 = &self.discoverer_id;
+        let input_51 =
+            input_51
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "discoverer_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "discoverer_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let discoverer_id = smithy_http::label::fmt_string(input_51, false);
+        if discoverer_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "discoverer_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/v1/discoverers/id/{DiscovererId}/start",
@@ -4664,23 +4609,21 @@ impl StopDiscovererInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let discoverer_id = {
-            let input = &self.discoverer_id;
-            let input = input
+        let input_52 = &self.discoverer_id;
+        let input_52 =
+            input_52
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "discoverer_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "discoverer_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let discoverer_id = smithy_http::label::fmt_string(input_52, false);
+        if discoverer_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "discoverer_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/v1/discoverers/id/{DiscovererId}/stop",
@@ -4838,23 +4781,21 @@ impl TagResourceInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let resource_arn = {
-            let input = &self.resource_arn;
-            let input = input
+        let input_53 = &self.resource_arn;
+        let input_53 =
+            input_53
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "resource_arn",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "resource_arn",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let resource_arn = smithy_http::label::fmt_string(input_53, false);
+        if resource_arn.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "resource_arn",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/tags/{ResourceArn}", ResourceArn = resource_arn)
             .expect("formatting should succeed");
         Ok(())
@@ -4997,32 +4938,30 @@ impl UntagResourceInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let resource_arn = {
-            let input = &self.resource_arn;
-            let input = input
+        let input_54 = &self.resource_arn;
+        let input_54 =
+            input_54
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "resource_arn",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "resource_arn",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let resource_arn = smithy_http::label::fmt_string(input_54, false);
+        if resource_arn.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "resource_arn",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/tags/{ResourceArn}", ResourceArn = resource_arn)
             .expect("formatting should succeed");
         Ok(())
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_21) = &self.tag_keys {
-            for inner_22 in inner_21 {
-                query.push_kv("tagKeys", &smithy_http::query::fmt_string(&inner_22));
+        if let Some(inner_55) = &self.tag_keys {
+            for inner_56 in inner_55 {
+                query.push_kv("tagKeys", &smithy_http::query::fmt_string(&inner_56));
             }
         }
     }
@@ -5168,23 +5107,21 @@ impl UpdateDiscovererInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let discoverer_id = {
-            let input = &self.discoverer_id;
-            let input = input
+        let input_57 = &self.discoverer_id;
+        let input_57 =
+            input_57
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "discoverer_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "discoverer_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let discoverer_id = smithy_http::label::fmt_string(input_57, false);
+        if discoverer_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "discoverer_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/v1/discoverers/id/{DiscovererId}",
@@ -5334,23 +5271,21 @@ impl UpdateRegistryInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let registry_name = {
-            let input = &self.registry_name;
-            let input = input
+        let input_58 = &self.registry_name;
+        let input_58 =
+            input_58
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "registry_name",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "registry_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let registry_name = smithy_http::label::fmt_string(input_58, false);
+        if registry_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "registry_name",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/v1/registries/name/{RegistryName}",
@@ -5549,40 +5484,36 @@ impl UpdateSchemaInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let registry_name = {
-            let input = &self.registry_name;
-            let input = input
+        let input_59 = &self.registry_name;
+        let input_59 =
+            input_59
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "registry_name",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "registry_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let schema_name = {
-            let input = &self.schema_name;
-            let input = input
+        let registry_name = smithy_http::label::fmt_string(input_59, false);
+        if registry_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "registry_name",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_60 = &self.schema_name;
+        let input_60 =
+            input_60
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "schema_name",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "schema_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let schema_name = smithy_http::label::fmt_string(input_60, false);
+        if schema_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "schema_name",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/v1/registries/name/{RegistryName}/schemas/name/{SchemaName}",

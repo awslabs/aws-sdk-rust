@@ -20,9 +20,12 @@ pub fn deser_header_synthesize_speech_synthesize_speech_output_request_character
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<i32>, smithy_http::header::ParseError> {
     let headers = header_map.get_all("x-amzn-RequestCharacters").iter();
-    let var_1: Vec<i32> = smithy_http::header::read_many(headers)?;
+    let var_1 = smithy_http::header::read_many_primitive::<i32>(headers)?;
     if var_1.len() > 1 {
-        Err(smithy_http::header::ParseError)
+        Err(smithy_http::header::ParseError::new_with_message(format!(
+            "expected one item but found {}",
+            var_1.len()
+        )))
     } else {
         let mut var_1 = var_1;
         Ok(var_1.pop())

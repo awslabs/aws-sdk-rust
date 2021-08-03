@@ -12221,7 +12221,10 @@ impl GetContainerServiceMetricDataInput {
             );
         }
         if self.period != 0 {
-            query.push_kv("period", &smithy_http::query::fmt_default(&&self.period));
+            query.push_kv(
+                "period",
+                &smithy_types::primitive::Encoder::from(self.period).encode(),
+            );
         }
         if let Some(inner_8) = &self.statistics {
             for inner_9 in inner_8 {

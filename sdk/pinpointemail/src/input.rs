@@ -339,23 +339,20 @@ impl CreateConfigurationSetEventDestinationInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let configuration_set_name = {
-            let input = &self.configuration_set_name;
-            let input = input
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "configuration_set_name",
-                    details: "cannot be empty or unset",
-                })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "configuration_set_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let input_1 = &self.configuration_set_name;
+        let input_1 = input_1
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "configuration_set_name",
+                details: "cannot be empty or unset",
+            })?;
+        let configuration_set_name = smithy_http::label::fmt_string(input_1, false);
+        if configuration_set_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "configuration_set_name",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/v1/email/configuration-sets/{ConfigurationSetName}/event-destinations",
@@ -965,23 +962,20 @@ impl DeleteConfigurationSetInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let configuration_set_name = {
-            let input = &self.configuration_set_name;
-            let input = input
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "configuration_set_name",
-                    details: "cannot be empty or unset",
-                })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "configuration_set_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let input_2 = &self.configuration_set_name;
+        let input_2 = input_2
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "configuration_set_name",
+                details: "cannot be empty or unset",
+            })?;
+        let configuration_set_name = smithy_http::label::fmt_string(input_2, false);
+        if configuration_set_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "configuration_set_name",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/v1/email/configuration-sets/{ConfigurationSetName}",
@@ -1135,40 +1129,34 @@ impl DeleteConfigurationSetEventDestinationInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let configuration_set_name = {
-            let input = &self.configuration_set_name;
-            let input = input
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "configuration_set_name",
-                    details: "cannot be empty or unset",
-                })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "configuration_set_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let event_destination_name = {
-            let input = &self.event_destination_name;
-            let input = input
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "event_destination_name",
-                    details: "cannot be empty or unset",
-                })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "event_destination_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let input_3 = &self.configuration_set_name;
+        let input_3 = input_3
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "configuration_set_name",
+                details: "cannot be empty or unset",
+            })?;
+        let configuration_set_name = smithy_http::label::fmt_string(input_3, false);
+        if configuration_set_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "configuration_set_name",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_4 = &self.event_destination_name;
+        let input_4 = input_4
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "event_destination_name",
+                details: "cannot be empty or unset",
+            })?;
+        let event_destination_name = smithy_http::label::fmt_string(input_4, false);
+        if event_destination_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "event_destination_name",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/v1/email/configuration-sets/{ConfigurationSetName}/event-destinations/{EventDestinationName}", ConfigurationSetName = configuration_set_name, EventDestinationName = event_destination_name).expect("formatting should succeed");
         Ok(())
     }
@@ -1297,23 +1285,20 @@ impl DeleteDedicatedIpPoolInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let pool_name = {
-            let input = &self.pool_name;
-            let input = input
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "pool_name",
-                    details: "cannot be empty or unset",
-                })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "pool_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let input_5 = &self.pool_name;
+        let input_5 = input_5
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "pool_name",
+                details: "cannot be empty or unset",
+            })?;
+        let pool_name = smithy_http::label::fmt_string(input_5, false);
+        if pool_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "pool_name",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/v1/email/dedicated-ip-pools/{PoolName}",
@@ -1451,23 +1436,20 @@ impl DeleteEmailIdentityInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let email_identity = {
-            let input = &self.email_identity;
-            let input = input
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "email_identity",
-                    details: "cannot be empty or unset",
-                })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "email_identity",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let input_6 = &self.email_identity;
+        let input_6 = input_6
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "email_identity",
+                details: "cannot be empty or unset",
+            })?;
+        let email_identity = smithy_http::label::fmt_string(input_6, false);
+        if email_identity.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "email_identity",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/v1/email/identities/{EmailIdentity}",
@@ -1727,11 +1709,11 @@ impl GetBlacklistReportsInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_1) = &self.blacklist_item_names {
-            for inner_2 in inner_1 {
+        if let Some(inner_7) = &self.blacklist_item_names {
+            for inner_8 in inner_7 {
                 query.push_kv(
                     "BlacklistItemNames",
-                    &smithy_http::query::fmt_string(&inner_2),
+                    &smithy_http::query::fmt_string(&inner_8),
                 );
             }
         }
@@ -1866,23 +1848,20 @@ impl GetConfigurationSetInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let configuration_set_name = {
-            let input = &self.configuration_set_name;
-            let input = input
-                .as_ref()
-                .ok_or(smithy_http::operation::BuildError::MissingField {
-                    field: "configuration_set_name",
-                    details: "cannot be empty or unset",
-                })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "configuration_set_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let input_9 = &self.configuration_set_name;
+        let input_9 = input_9
+            .as_ref()
+            .ok_or(smithy_http::operation::BuildError::MissingField {
+                field: "configuration_set_name",
+                details: "cannot be empty or unset",
+            })?;
+        let configuration_set_name = smithy_http::label::fmt_string(input_9, false);
+        if configuration_set_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "configuration_set_name",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/v1/email/configuration-sets/{ConfigurationSetName}",
@@ -2021,23 +2000,21 @@ impl GetConfigurationSetEventDestinationsInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let configuration_set_name = {
-            let input = &self.configuration_set_name;
-            let input = input
+        let input_10 = &self.configuration_set_name;
+        let input_10 =
+            input_10
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "configuration_set_name",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "configuration_set_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let configuration_set_name = smithy_http::label::fmt_string(input_10, false);
+        if configuration_set_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "configuration_set_name",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/v1/email/configuration-sets/{ConfigurationSetName}/event-destinations",
@@ -2170,23 +2147,21 @@ impl GetDedicatedIpInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let ip = {
-            let input = &self.ip;
-            let input = input
+        let input_11 = &self.ip;
+        let input_11 =
+            input_11
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "ip",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "ip",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let ip = smithy_http::label::fmt_string(input_11, false);
+        if ip.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "ip",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/v1/email/dedicated-ips/{Ip}", Ip = ip).expect("formatting should succeed");
         Ok(())
     }
@@ -2346,14 +2321,17 @@ impl GetDedicatedIpsInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_3) = &self.pool_name {
-            query.push_kv("PoolName", &smithy_http::query::fmt_string(&inner_3));
+        if let Some(inner_12) = &self.pool_name {
+            query.push_kv("PoolName", &smithy_http::query::fmt_string(&inner_12));
         }
-        if let Some(inner_4) = &self.next_token {
-            query.push_kv("NextToken", &smithy_http::query::fmt_string(&inner_4));
+        if let Some(inner_13) = &self.next_token {
+            query.push_kv("NextToken", &smithy_http::query::fmt_string(&inner_13));
         }
-        if let Some(inner_5) = &self.page_size {
-            query.push_kv("PageSize", &smithy_http::query::fmt_default(&inner_5));
+        if let Some(inner_14) = &self.page_size {
+            query.push_kv(
+                "PageSize",
+                &smithy_types::primitive::Encoder::from(*inner_14).encode(),
+            );
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -2599,23 +2577,21 @@ impl GetDeliverabilityTestReportInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let report_id = {
-            let input = &self.report_id;
-            let input = input
+        let input_15 = &self.report_id;
+        let input_15 =
+            input_15
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "report_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "report_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let report_id = smithy_http::label::fmt_string(input_15, false);
+        if report_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "report_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/v1/email/deliverability-dashboard/test-reports/{ReportId}",
@@ -2753,23 +2729,21 @@ impl GetDomainDeliverabilityCampaignInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let campaign_id = {
-            let input = &self.campaign_id;
-            let input = input
+        let input_16 = &self.campaign_id;
+        let input_16 =
+            input_16
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "campaign_id",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "campaign_id",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let campaign_id = smithy_http::label::fmt_string(input_16, false);
+        if campaign_id.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "campaign_id",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/v1/email/deliverability-dashboard/campaigns/{CampaignId}",
@@ -2929,23 +2903,21 @@ impl GetDomainStatisticsReportInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let domain = {
-            let input = &self.domain;
-            let input = input
+        let input_17 = &self.domain;
+        let input_17 =
+            input_17
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "domain",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "domain",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let domain = smithy_http::label::fmt_string(input_17, false);
+        if domain.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "domain",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/v1/email/deliverability-dashboard/statistics-report/{Domain}",
@@ -2956,20 +2928,20 @@ impl GetDomainStatisticsReportInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_6) = &self.start_date {
+        if let Some(inner_18) = &self.start_date {
             query.push_kv(
                 "StartDate",
                 &smithy_http::query::fmt_timestamp(
-                    inner_6,
+                    inner_18,
                     smithy_types::instant::Format::DateTime,
                 ),
             );
         }
-        if let Some(inner_7) = &self.end_date {
+        if let Some(inner_19) = &self.end_date {
             query.push_kv(
                 "EndDate",
                 &smithy_http::query::fmt_timestamp(
-                    inner_7,
+                    inner_19,
                     smithy_types::instant::Format::DateTime,
                 ),
             );
@@ -3104,23 +3076,21 @@ impl GetEmailIdentityInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let email_identity = {
-            let input = &self.email_identity;
-            let input = input
+        let input_20 = &self.email_identity;
+        let input_20 =
+            input_20
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "email_identity",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "email_identity",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let email_identity = smithy_http::label::fmt_string(input_20, false);
+        if email_identity.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "email_identity",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/v1/email/identities/{EmailIdentity}",
@@ -3274,11 +3244,14 @@ impl ListConfigurationSetsInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_8) = &self.next_token {
-            query.push_kv("NextToken", &smithy_http::query::fmt_string(&inner_8));
+        if let Some(inner_21) = &self.next_token {
+            query.push_kv("NextToken", &smithy_http::query::fmt_string(&inner_21));
         }
-        if let Some(inner_9) = &self.page_size {
-            query.push_kv("PageSize", &smithy_http::query::fmt_default(&inner_9));
+        if let Some(inner_22) = &self.page_size {
+            query.push_kv(
+                "PageSize",
+                &smithy_types::primitive::Encoder::from(*inner_22).encode(),
+            );
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -3427,11 +3400,14 @@ impl ListDedicatedIpPoolsInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_10) = &self.next_token {
-            query.push_kv("NextToken", &smithy_http::query::fmt_string(&inner_10));
+        if let Some(inner_23) = &self.next_token {
+            query.push_kv("NextToken", &smithy_http::query::fmt_string(&inner_23));
         }
-        if let Some(inner_11) = &self.page_size {
-            query.push_kv("PageSize", &smithy_http::query::fmt_default(&inner_11));
+        if let Some(inner_24) = &self.page_size {
+            query.push_kv(
+                "PageSize",
+                &smithy_types::primitive::Encoder::from(*inner_24).encode(),
+            );
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -3584,11 +3560,14 @@ impl ListDeliverabilityTestReportsInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_12) = &self.next_token {
-            query.push_kv("NextToken", &smithy_http::query::fmt_string(&inner_12));
+        if let Some(inner_25) = &self.next_token {
+            query.push_kv("NextToken", &smithy_http::query::fmt_string(&inner_25));
         }
-        if let Some(inner_13) = &self.page_size {
-            query.push_kv("PageSize", &smithy_http::query::fmt_default(&inner_13));
+        if let Some(inner_26) = &self.page_size {
+            query.push_kv(
+                "PageSize",
+                &smithy_types::primitive::Encoder::from(*inner_26).encode(),
+            );
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -3774,23 +3753,21 @@ impl ListDomainDeliverabilityCampaignsInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let subscribed_domain = {
-            let input = &self.subscribed_domain;
-            let input = input
+        let input_27 = &self.subscribed_domain;
+        let input_27 =
+            input_27
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "subscribed_domain",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "subscribed_domain",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let subscribed_domain = smithy_http::label::fmt_string(input_27, false);
+        if subscribed_domain.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "subscribed_domain",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/v1/email/deliverability-dashboard/domains/{SubscribedDomain}/campaigns",
@@ -3801,29 +3778,32 @@ impl ListDomainDeliverabilityCampaignsInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_14) = &self.start_date {
+        if let Some(inner_28) = &self.start_date {
             query.push_kv(
                 "StartDate",
                 &smithy_http::query::fmt_timestamp(
-                    inner_14,
+                    inner_28,
                     smithy_types::instant::Format::DateTime,
                 ),
             );
         }
-        if let Some(inner_15) = &self.end_date {
+        if let Some(inner_29) = &self.end_date {
             query.push_kv(
                 "EndDate",
                 &smithy_http::query::fmt_timestamp(
-                    inner_15,
+                    inner_29,
                     smithy_types::instant::Format::DateTime,
                 ),
             );
         }
-        if let Some(inner_16) = &self.next_token {
-            query.push_kv("NextToken", &smithy_http::query::fmt_string(&inner_16));
+        if let Some(inner_30) = &self.next_token {
+            query.push_kv("NextToken", &smithy_http::query::fmt_string(&inner_30));
         }
-        if let Some(inner_17) = &self.page_size {
-            query.push_kv("PageSize", &smithy_http::query::fmt_default(&inner_17));
+        if let Some(inner_31) = &self.page_size {
+            query.push_kv(
+                "PageSize",
+                &smithy_types::primitive::Encoder::from(*inner_31).encode(),
+            );
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -3973,11 +3953,14 @@ impl ListEmailIdentitiesInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_18) = &self.next_token {
-            query.push_kv("NextToken", &smithy_http::query::fmt_string(&inner_18));
+        if let Some(inner_32) = &self.next_token {
+            query.push_kv("NextToken", &smithy_http::query::fmt_string(&inner_32));
         }
-        if let Some(inner_19) = &self.page_size {
-            query.push_kv("PageSize", &smithy_http::query::fmt_default(&inner_19));
+        if let Some(inner_33) = &self.page_size {
+            query.push_kv(
+                "PageSize",
+                &smithy_types::primitive::Encoder::from(*inner_33).encode(),
+            );
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -4112,8 +4095,8 @@ impl ListTagsForResourceInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_20) = &self.resource_arn {
-            query.push_kv("ResourceArn", &smithy_http::query::fmt_string(&inner_20));
+        if let Some(inner_34) = &self.resource_arn {
+            query.push_kv("ResourceArn", &smithy_http::query::fmt_string(&inner_34));
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -4559,23 +4542,21 @@ impl PutConfigurationSetDeliveryOptionsInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let configuration_set_name = {
-            let input = &self.configuration_set_name;
-            let input = input
+        let input_35 = &self.configuration_set_name;
+        let input_35 =
+            input_35
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "configuration_set_name",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "configuration_set_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let configuration_set_name = smithy_http::label::fmt_string(input_35, false);
+        if configuration_set_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "configuration_set_name",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/v1/email/configuration-sets/{ConfigurationSetName}/delivery-options",
@@ -4734,23 +4715,21 @@ impl PutConfigurationSetReputationOptionsInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let configuration_set_name = {
-            let input = &self.configuration_set_name;
-            let input = input
+        let input_36 = &self.configuration_set_name;
+        let input_36 =
+            input_36
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "configuration_set_name",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "configuration_set_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let configuration_set_name = smithy_http::label::fmt_string(input_36, false);
+        if configuration_set_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "configuration_set_name",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/v1/email/configuration-sets/{ConfigurationSetName}/reputation-options",
@@ -4907,23 +4886,21 @@ impl PutConfigurationSetSendingOptionsInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let configuration_set_name = {
-            let input = &self.configuration_set_name;
-            let input = input
+        let input_37 = &self.configuration_set_name;
+        let input_37 =
+            input_37
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "configuration_set_name",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "configuration_set_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let configuration_set_name = smithy_http::label::fmt_string(input_37, false);
+        if configuration_set_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "configuration_set_name",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/v1/email/configuration-sets/{ConfigurationSetName}/sending",
@@ -5082,23 +5059,21 @@ impl PutConfigurationSetTrackingOptionsInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let configuration_set_name = {
-            let input = &self.configuration_set_name;
-            let input = input
+        let input_38 = &self.configuration_set_name;
+        let input_38 =
+            input_38
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "configuration_set_name",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "configuration_set_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let configuration_set_name = smithy_http::label::fmt_string(input_38, false);
+        if configuration_set_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "configuration_set_name",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/v1/email/configuration-sets/{ConfigurationSetName}/tracking-options",
@@ -5251,23 +5226,21 @@ impl PutDedicatedIpInPoolInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let ip = {
-            let input = &self.ip;
-            let input = input
+        let input_39 = &self.ip;
+        let input_39 =
+            input_39
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "ip",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "ip",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let ip = smithy_http::label::fmt_string(input_39, false);
+        if ip.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "ip",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/v1/email/dedicated-ips/{Ip}/pool", Ip = ip)
             .expect("formatting should succeed");
         Ok(())
@@ -5414,23 +5387,21 @@ impl PutDedicatedIpWarmupAttributesInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let ip = {
-            let input = &self.ip;
-            let input = input
+        let input_40 = &self.ip;
+        let input_40 =
+            input_40
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "ip",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "ip",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let ip = smithy_http::label::fmt_string(input_40, false);
+        if ip.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "ip",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/v1/email/dedicated-ips/{Ip}/warmup", Ip = ip)
             .expect("formatting should succeed");
         Ok(())
@@ -5739,23 +5710,21 @@ impl PutEmailIdentityDkimAttributesInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let email_identity = {
-            let input = &self.email_identity;
-            let input = input
+        let input_41 = &self.email_identity;
+        let input_41 =
+            input_41
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "email_identity",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "email_identity",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let email_identity = smithy_http::label::fmt_string(input_41, false);
+        if email_identity.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "email_identity",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/v1/email/identities/{EmailIdentity}/dkim",
@@ -5919,23 +5888,21 @@ impl PutEmailIdentityFeedbackAttributesInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let email_identity = {
-            let input = &self.email_identity;
-            let input = input
+        let input_42 = &self.email_identity;
+        let input_42 =
+            input_42
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "email_identity",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "email_identity",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let email_identity = smithy_http::label::fmt_string(input_42, false);
+        if email_identity.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "email_identity",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/v1/email/identities/{EmailIdentity}/feedback",
@@ -6128,23 +6095,21 @@ impl PutEmailIdentityMailFromAttributesInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let email_identity = {
-            let input = &self.email_identity;
-            let input = input
+        let input_43 = &self.email_identity;
+        let input_43 =
+            input_43
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "email_identity",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "email_identity",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let email_identity = smithy_http::label::fmt_string(input_43, false);
+        if email_identity.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "email_identity",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(
             output,
             "/v1/email/identities/{EmailIdentity}/mail-from",
@@ -6664,12 +6629,12 @@ impl UntagResourceInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_21) = &self.resource_arn {
-            query.push_kv("ResourceArn", &smithy_http::query::fmt_string(&inner_21));
+        if let Some(inner_44) = &self.resource_arn {
+            query.push_kv("ResourceArn", &smithy_http::query::fmt_string(&inner_44));
         }
-        if let Some(inner_22) = &self.tag_keys {
-            for inner_23 in inner_22 {
-                query.push_kv("TagKeys", &smithy_http::query::fmt_string(&inner_23));
+        if let Some(inner_45) = &self.tag_keys {
+            for inner_46 in inner_45 {
+                query.push_kv("TagKeys", &smithy_http::query::fmt_string(&inner_46));
             }
         }
     }
@@ -6838,40 +6803,36 @@ impl UpdateConfigurationSetEventDestinationInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let configuration_set_name = {
-            let input = &self.configuration_set_name;
-            let input = input
+        let input_47 = &self.configuration_set_name;
+        let input_47 =
+            input_47
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "configuration_set_name",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "configuration_set_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
-        let event_destination_name = {
-            let input = &self.event_destination_name;
-            let input = input
+        let configuration_set_name = smithy_http::label::fmt_string(input_47, false);
+        if configuration_set_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "configuration_set_name",
+                details: "cannot be empty or unset",
+            });
+        }
+        let input_48 = &self.event_destination_name;
+        let input_48 =
+            input_48
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "event_destination_name",
                     details: "cannot be empty or unset",
                 })?;
-            let formatted = smithy_http::label::fmt_string(input, false);
-            if formatted.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
-                    field: "event_destination_name",
-                    details: "cannot be empty or unset",
-                });
-            }
-            formatted
-        };
+        let event_destination_name = smithy_http::label::fmt_string(input_48, false);
+        if event_destination_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "event_destination_name",
+                details: "cannot be empty or unset",
+            });
+        }
         write!(output, "/v1/email/configuration-sets/{ConfigurationSetName}/event-destinations/{EventDestinationName}", ConfigurationSetName = configuration_set_name, EventDestinationName = event_destination_name).expect("formatting should succeed");
         Ok(())
     }

@@ -1065,8 +1065,7 @@ pub fn deser_operation_attach_classic_link_vpc(
                 let var_40 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.ec2#Boolean`)"))
@@ -1119,8 +1118,7 @@ pub fn deser_operation_attach_network_interface(
                 let var_42 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.ec2#Integer`)"))
@@ -1227,8 +1225,7 @@ pub fn deser_operation_attach_volume(
                 let var_48 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.ec2#Boolean`)"))
@@ -1410,8 +1407,7 @@ pub fn deser_operation_cancel_capacity_reservation(
                 let var_53 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.ec2#Boolean`)"))
@@ -1650,8 +1646,7 @@ pub fn deser_operation_confirm_product_instance(
                 let var_62 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.ec2#Boolean`)"))
@@ -3095,8 +3090,7 @@ pub fn deser_operation_create_route(
                 let var_113 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.ec2#Boolean`)"))
@@ -3245,8 +3239,7 @@ pub fn deser_operation_create_snapshot(
                 let var_119 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.ec2#Boolean`)"))
@@ -3367,8 +3360,7 @@ pub fn deser_operation_create_snapshot(
                 let var_128 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.ec2#Integer`)"))
@@ -4164,8 +4156,7 @@ pub fn deser_operation_create_volume(
                 let var_156 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.ec2#Boolean`)"))
@@ -4206,8 +4197,7 @@ pub fn deser_operation_create_volume(
                 let var_159 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.ec2#Integer`)"))
@@ -4262,8 +4252,7 @@ pub fn deser_operation_create_volume(
                 let var_163 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.ec2#Integer`)"))
@@ -4302,8 +4291,7 @@ pub fn deser_operation_create_volume(
                 let var_166 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.ec2#Boolean`)"))
@@ -4318,8 +4306,7 @@ pub fn deser_operation_create_volume(
                 let var_167 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.ec2#Boolean`)"))
@@ -4334,8 +4321,7 @@ pub fn deser_operation_create_volume(
                 let var_168 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.ec2#Integer`)"))
@@ -4777,8 +4763,7 @@ pub fn deser_operation_delete_egress_only_internet_gateway(
                 let var_182 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.ec2#Boolean`)"))
@@ -4898,8 +4883,7 @@ pub fn deser_operation_delete_fpga_image(
                 let var_186 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.ec2#Boolean`)"))
@@ -5253,8 +5237,7 @@ pub fn deser_operation_delete_network_interface_permission(
                 let var_196 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.ec2#Boolean`)"))
@@ -5953,8 +5936,7 @@ pub fn deser_operation_delete_vpc_peering_connection(
                 let var_215 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.ec2#Boolean`)"))
@@ -6264,8 +6246,7 @@ pub fn deser_operation_describe_aggregate_id_format(
                 let var_224 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.ec2#Boolean`)"))
@@ -7067,8 +7048,7 @@ pub fn deser_operation_describe_elastic_gpus(
                 let var_255 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.ec2#Integer`)"))
@@ -12357,8 +12337,7 @@ pub fn deser_operation_detach_classic_link_vpc(
                 let var_481 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.ec2#Boolean`)"))
@@ -12465,8 +12444,7 @@ pub fn deser_operation_detach_volume(
                 let var_487 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.ec2#Boolean`)"))
@@ -12509,8 +12487,7 @@ pub fn deser_operation_disable_ebs_encryption_by_default(
                 let var_488 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.ec2#Boolean`)"))
@@ -12599,8 +12576,7 @@ pub fn deser_operation_disable_image_deprecation(
                 let var_491 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.ec2#Boolean`)"))
@@ -12643,8 +12619,7 @@ pub fn deser_operation_disable_serial_console_access(
                 let var_492 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.ec2#Boolean`)"))
@@ -12722,8 +12697,7 @@ pub fn deser_operation_disable_vpc_classic_link(
                 let var_494 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.ec2#Boolean`)"))
@@ -12766,8 +12740,7 @@ pub fn deser_operation_disable_vpc_classic_link_dns_support(
                 let var_495 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.ec2#Boolean`)"))
@@ -12861,8 +12834,7 @@ pub fn deser_operation_disassociate_enclave_certificate_iam_role(
                 let var_498 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.ec2#Boolean`)"))
@@ -13068,8 +13040,7 @@ pub fn deser_operation_disassociate_trunk_interface(
                 let var_504 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.ec2#Boolean`)"))
@@ -13184,8 +13155,7 @@ pub fn deser_operation_enable_ebs_encryption_by_default(
                 let var_509 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.ec2#Boolean`)"))
@@ -13273,8 +13243,7 @@ pub fn deser_operation_enable_image_deprecation(
                 let var_512 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.ec2#Boolean`)"))
@@ -13315,8 +13284,7 @@ pub fn deser_operation_enable_serial_console_access(
                 let var_513 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.ec2#Boolean`)"))
@@ -13394,8 +13362,7 @@ pub fn deser_operation_enable_vpc_classic_link(
                 let var_515 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.ec2#Boolean`)"))
@@ -13438,8 +13405,7 @@ pub fn deser_operation_enable_vpc_classic_link_dns_support(
                 let var_516 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.ec2#Boolean`)"))
@@ -13890,8 +13856,7 @@ pub fn deser_operation_get_capacity_reservation_usage(
                 let var_537 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.ec2#Integer`)"))
@@ -13906,8 +13871,7 @@ pub fn deser_operation_get_capacity_reservation_usage(
                 let var_538 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.ec2#Integer`)"))
@@ -14228,8 +14192,7 @@ pub fn deser_operation_get_ebs_encryption_by_default(
                 let var_551 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.ec2#Boolean`)"))
@@ -14657,8 +14620,7 @@ pub fn deser_operation_get_reserved_instances_exchange_quote(
                 let var_568 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.ec2#Boolean`)"))
@@ -14781,8 +14743,7 @@ pub fn deser_operation_get_serial_console_access_status(
                 let var_576 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.ec2#Boolean`)"))
@@ -15077,8 +15038,7 @@ pub fn deser_operation_import_client_vpn_client_certificate_revocation_list(
                 let var_587 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.ec2#Boolean`)"))
@@ -15144,8 +15104,7 @@ pub fn deser_operation_import_image(
                 let var_590 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.ec2#Boolean`)"))
@@ -15585,8 +15544,7 @@ pub fn deser_operation_modify_availability_zone_group(
                 let var_614 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.ec2#Boolean`)"))
@@ -15627,8 +15585,7 @@ pub fn deser_operation_modify_capacity_reservation(
                 let var_615 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.ec2#Boolean`)"))
@@ -15669,8 +15626,7 @@ pub fn deser_operation_modify_client_vpn_endpoint(
                 let var_616 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.ec2#Boolean`)"))
@@ -15789,8 +15745,7 @@ pub fn deser_operation_modify_fleet(
                 let var_619 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.ec2#Boolean`)"))
@@ -15914,8 +15869,7 @@ pub fn deser_operation_modify_instance_capacity_reservation_attributes(
                 let var_623 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.ec2#Boolean`)"))
@@ -16093,8 +16047,7 @@ pub fn deser_operation_modify_instance_placement(
                 let var_629 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.ec2#Boolean`)"))
@@ -16245,8 +16198,7 @@ pub fn deser_operation_modify_spot_fleet_request(
                 let var_633 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.ec2#Boolean`)"))
@@ -16546,8 +16498,7 @@ pub fn deser_operation_modify_vpc_endpoint(
                 let var_641 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.ec2#Boolean`)"))
@@ -16590,8 +16541,7 @@ pub fn deser_operation_modify_vpc_endpoint_connection_notification(
                 let var_642 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.ec2#Boolean`)"))
@@ -16634,8 +16584,7 @@ pub fn deser_operation_modify_vpc_endpoint_service_configuration(
                 let var_643 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.ec2#Boolean`)"))
@@ -16678,8 +16627,7 @@ pub fn deser_operation_modify_vpc_endpoint_service_permissions(
                 let var_644 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.ec2#Boolean`)"))
@@ -16767,8 +16715,7 @@ pub fn deser_operation_modify_vpc_tenancy(
                 let var_647 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.ec2#Boolean`)"))
@@ -17547,8 +17494,7 @@ pub fn deser_operation_reject_vpc_peering_connection(
                 let var_671 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.ec2#Boolean`)"))
@@ -17949,8 +17895,7 @@ pub fn deser_operation_reset_fpga_image_attribute(
                 let var_683 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.ec2#Boolean`)"))
@@ -18118,8 +18063,7 @@ pub fn deser_operation_revoke_security_group_egress(
                 let var_688 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.ec2#Boolean`)"))
@@ -18172,8 +18116,7 @@ pub fn deser_operation_revoke_security_group_ingress(
                 let var_690 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.ec2#Boolean`)"))
@@ -18455,8 +18398,7 @@ pub fn deser_operation_search_transit_gateway_routes(
                 let var_703 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.ec2#Boolean`)"))
@@ -18572,8 +18514,7 @@ pub fn deser_operation_start_vpc_endpoint_service_private_dns_verification(
                 let var_706 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.ec2#Boolean`)"))
@@ -18833,8 +18774,7 @@ pub fn deser_operation_update_security_group_rule_descriptions_egress(
                 let var_715 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.ec2#Boolean`)"))
@@ -18877,8 +18817,7 @@ pub fn deser_operation_update_security_group_rule_descriptions_ingress(
                 let var_716 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.ec2#Boolean`)"))
@@ -19836,8 +19775,7 @@ pub fn deser_structure_trunk_interface_association(
                 let var_771 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.ec2#Integer`)"))
@@ -19852,8 +19790,7 @@ pub fn deser_structure_trunk_interface_association(
                 let var_772 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.ec2#Integer`)"))
@@ -20417,8 +20354,7 @@ pub fn deser_structure_capacity_reservation(
                 let var_802 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.ec2#Integer`)"))
@@ -20433,8 +20369,7 @@ pub fn deser_structure_capacity_reservation(
                 let var_803 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.ec2#Integer`)"))
@@ -20449,8 +20384,7 @@ pub fn deser_structure_capacity_reservation(
                 let var_804 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.ec2#Boolean`)"))
@@ -20465,8 +20399,7 @@ pub fn deser_structure_capacity_reservation(
                 let var_805 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.ec2#Boolean`)"))
@@ -20897,8 +20830,7 @@ pub fn deser_structure_subnet(
                 let var_833 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.ec2#Integer`)"))
@@ -20926,8 +20858,7 @@ pub fn deser_structure_subnet(
                 let var_835 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.ec2#Boolean`)"))
@@ -20942,8 +20873,7 @@ pub fn deser_structure_subnet(
                 let var_836 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.ec2#Boolean`)"))
@@ -20958,8 +20888,7 @@ pub fn deser_structure_subnet(
                 let var_837 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.ec2#Boolean`)"))
@@ -21040,8 +20969,7 @@ pub fn deser_structure_subnet(
                 let var_843 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.ec2#Boolean`)"))
@@ -21215,8 +21143,7 @@ pub fn deser_structure_vpc(
                 let var_856 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.ec2#Boolean`)"))
@@ -21627,8 +21554,7 @@ pub fn deser_structure_launch_template(
                 let var_880 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i64::from_str(
+                            <i64 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (long: `com.amazonaws.ec2#Long`)"))
@@ -21643,8 +21569,7 @@ pub fn deser_structure_launch_template(
                 let var_881 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i64::from_str(
+                            <i64 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (long: `com.amazonaws.ec2#Long`)"))
@@ -21731,8 +21656,7 @@ pub fn deser_structure_launch_template_version(
                 let var_886 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i64::from_str(
+                            <i64 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (long: `com.amazonaws.ec2#Long`)"))
@@ -21787,8 +21711,7 @@ pub fn deser_structure_launch_template_version(
                 let var_890 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.ec2#Boolean`)"))
@@ -22125,8 +22048,7 @@ pub fn deser_structure_managed_prefix_list(
                 let var_913 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.ec2#Integer`)"))
@@ -22141,8 +22063,7 @@ pub fn deser_structure_managed_prefix_list(
                 let var_914 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i64::from_str(
+                            <i64 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (long: `com.amazonaws.ec2#Long`)"))
@@ -22377,8 +22298,7 @@ pub fn deser_structure_network_acl(
                 let var_931 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.ec2#Boolean`)"))
@@ -22561,8 +22481,7 @@ pub fn deser_structure_network_insights_path(
                 let var_944 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.ec2#Integer`)"))
@@ -22781,8 +22700,7 @@ pub fn deser_structure_network_interface(
                 let var_961 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.ec2#Boolean`)"))
@@ -22797,8 +22715,7 @@ pub fn deser_structure_network_interface(
                 let var_962 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.ec2#Boolean`)"))
@@ -23006,8 +22923,7 @@ pub fn deser_structure_placement_group(
                 let var_976 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.ec2#Integer`)"))
@@ -23453,8 +23369,7 @@ pub fn deser_structure_traffic_mirror_filter_rule(
                 let var_1006 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.ec2#Integer`)"))
@@ -23483,8 +23398,7 @@ pub fn deser_structure_traffic_mirror_filter_rule(
                 let var_1008 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.ec2#Integer`)"))
@@ -23636,8 +23550,7 @@ pub fn deser_structure_traffic_mirror_session(
                 let var_1019 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.ec2#Integer`)"))
@@ -23652,8 +23565,7 @@ pub fn deser_structure_traffic_mirror_session(
                 let var_1020 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.ec2#Integer`)"))
@@ -23668,8 +23580,7 @@ pub fn deser_structure_traffic_mirror_session(
                 let var_1021 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.ec2#Integer`)"))
@@ -24288,8 +24199,7 @@ pub fn deser_structure_transit_gateway_prefix_list_reference(
                 let var_1064 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.ec2#Boolean`)"))
@@ -24444,8 +24354,7 @@ pub fn deser_structure_transit_gateway_route_table(
                 let var_1074 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.ec2#Boolean`)"))
@@ -24460,8 +24369,7 @@ pub fn deser_structure_transit_gateway_route_table(
                 let var_1075 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.ec2#Boolean`)"))
@@ -24642,8 +24550,7 @@ pub fn deser_structure_vpc_endpoint(
                 let var_1087 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.ec2#Boolean`)"))
@@ -24658,8 +24565,7 @@ pub fn deser_structure_vpc_endpoint(
                 let var_1088 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.ec2#Boolean`)"))
@@ -24917,8 +24823,7 @@ pub fn deser_structure_service_configuration(
                 let var_1107 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.ec2#Boolean`)"))
@@ -24933,8 +24838,7 @@ pub fn deser_structure_service_configuration(
                 let var_1108 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.ec2#Boolean`)"))
@@ -25248,8 +25152,7 @@ pub fn deser_structure_vpn_gateway(
                 let var_1132 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i64::from_str(
+                            <i64 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (long: `com.amazonaws.ec2#Long`)"))
@@ -25421,8 +25324,7 @@ pub fn deser_structure_instance_tag_notification_attribute(
                 let var_1135 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.ec2#Boolean`)"))
@@ -26435,8 +26337,7 @@ pub fn deser_structure_attribute_boolean_value(
                 let var_1148 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.ec2#Boolean`)"))
@@ -26464,8 +26365,7 @@ pub fn deser_structure_enclave_options(
                 let var_1149 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.ec2#Boolean`)"))
@@ -26949,8 +26849,7 @@ pub fn deser_structure_network_interface_attachment(
                 let var_1152 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.ec2#Boolean`)"))
@@ -26965,8 +26864,7 @@ pub fn deser_structure_network_interface_attachment(
                 let var_1153 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.ec2#Integer`)"))
@@ -26981,8 +26879,7 @@ pub fn deser_structure_network_interface_attachment(
                 let var_1154 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.ec2#Integer`)"))
@@ -28478,8 +28375,7 @@ pub fn deser_structure_response_launch_template_data(
                 let var_1170 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.ec2#Boolean`)"))
@@ -28597,8 +28493,7 @@ pub fn deser_structure_response_launch_template_data(
                 let var_1180 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.ec2#Boolean`)"))
@@ -29174,8 +29069,7 @@ pub fn deser_structure_snapshot_task_detail(
                 let var_1207 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            f64::from_str(
+                            <f64 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (double: `com.amazonaws.ec2#Double`)"))
@@ -29190,8 +29084,7 @@ pub fn deser_structure_snapshot_task_detail(
                 let var_1208 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.ec2#Boolean`)"))
@@ -29568,8 +29461,7 @@ pub fn deser_structure_instance_metadata_options_response(
                 let var_1229 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.ec2#Integer`)"))
@@ -29651,8 +29543,7 @@ pub fn deser_structure_volume_modification(
                 let var_1234 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.ec2#Integer`)"))
@@ -29667,8 +29558,7 @@ pub fn deser_structure_volume_modification(
                 let var_1235 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.ec2#Integer`)"))
@@ -29697,8 +29587,7 @@ pub fn deser_structure_volume_modification(
                 let var_1237 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.ec2#Integer`)"))
@@ -29713,8 +29602,7 @@ pub fn deser_structure_volume_modification(
                 let var_1238 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.ec2#Boolean`)"))
@@ -29729,8 +29617,7 @@ pub fn deser_structure_volume_modification(
                 let var_1239 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.ec2#Integer`)"))
@@ -29745,8 +29632,7 @@ pub fn deser_structure_volume_modification(
                 let var_1240 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.ec2#Integer`)"))
@@ -29775,8 +29661,7 @@ pub fn deser_structure_volume_modification(
                 let var_1242 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.ec2#Integer`)"))
@@ -29791,8 +29676,7 @@ pub fn deser_structure_volume_modification(
                 let var_1243 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.ec2#Boolean`)"))
@@ -29807,8 +29691,7 @@ pub fn deser_structure_volume_modification(
                 let var_1244 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i64::from_str(
+                            <i64 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (long: `com.amazonaws.ec2#Long`)"))
@@ -29864,8 +29747,7 @@ pub fn deser_structure_peering_connection_options(
                 let var_1247 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.ec2#Boolean`)"))
@@ -29880,8 +29762,7 @@ pub fn deser_structure_peering_connection_options(
                 let var_1248 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.ec2#Boolean`)"))
@@ -29896,8 +29777,7 @@ pub fn deser_structure_peering_connection_options(
                 let var_1249 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.ec2#Boolean`)"))
@@ -30290,8 +30170,7 @@ pub fn deser_structure_network_insights_analysis(
                 let var_1263 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.ec2#Boolean`)"))
@@ -32001,8 +31880,7 @@ pub fn deser_structure_snapshot_info(
                 let var_1348 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.ec2#Boolean`)"))
@@ -32044,8 +31922,7 @@ pub fn deser_structure_snapshot_info(
                 let var_1351 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.ec2#Integer`)"))
@@ -32221,8 +32098,7 @@ pub fn deser_structure_traffic_mirror_port_range(
                 let var_1359 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.ec2#Integer`)"))
@@ -32237,8 +32113,7 @@ pub fn deser_structure_traffic_mirror_port_range(
                 let var_1360 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.ec2#Integer`)"))
@@ -32266,8 +32141,7 @@ pub fn deser_structure_transit_gateway_options(
                 let var_1361 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i64::from_str(
+                            <i64 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (long: `com.amazonaws.ec2#Long`)"))
@@ -32710,8 +32584,7 @@ pub fn deser_structure_volume_attachment(
                 let var_1388 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.ec2#Boolean`)"))
@@ -32901,8 +32774,7 @@ pub fn deser_structure_vpn_connection_options(
                 let var_1395 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.ec2#Boolean`)"))
@@ -32917,8 +32789,7 @@ pub fn deser_structure_vpn_connection_options(
                 let var_1396 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.ec2#Boolean`)"))
@@ -33198,8 +33069,7 @@ pub fn deser_structure_delete_launch_template_versions_response_success_item(
                 let var_1410 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i64::from_str(
+                            <i64 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (long: `com.amazonaws.ec2#Long`)"))
@@ -33254,8 +33124,7 @@ pub fn deser_structure_delete_launch_template_versions_response_error_item(
                 let var_1413 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i64::from_str(
+                            <i64 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (long: `com.amazonaws.ec2#Long`)"))
@@ -33633,8 +33502,7 @@ pub fn deser_structure_id_format(
                 let var_1436 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.ec2#Boolean`)"))
@@ -33915,8 +33783,7 @@ pub fn deser_structure_authorization_rule(
                 let var_1455 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.ec2#Boolean`)"))
@@ -34254,8 +34121,7 @@ pub fn deser_structure_client_vpn_endpoint(
                 let var_1480 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.ec2#Boolean`)"))
@@ -34298,8 +34164,7 @@ pub fn deser_structure_client_vpn_endpoint(
                 let var_1483 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.ec2#Integer`)"))
@@ -35255,8 +35120,7 @@ pub fn deser_structure_fleet_data(
                 let var_1550 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            f64::from_str(
+                            <f64 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (double: `com.amazonaws.ec2#Double`)"))
@@ -35271,8 +35135,7 @@ pub fn deser_structure_fleet_data(
                 let var_1551 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            f64::from_str(
+                            <f64 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (double: `com.amazonaws.ec2#Double`)"))
@@ -35307,8 +35170,7 @@ pub fn deser_structure_fleet_data(
                 let var_1554 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.ec2#Boolean`)"))
@@ -35365,8 +35227,7 @@ pub fn deser_structure_fleet_data(
                 let var_1558 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.ec2#Boolean`)"))
@@ -35626,8 +35487,7 @@ pub fn deser_structure_flow_log(
                 let var_1578 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.ec2#Integer`)"))
@@ -35833,8 +35693,7 @@ pub fn deser_structure_fpga_image(
                 let var_1592 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.ec2#Boolean`)"))
@@ -35849,8 +35708,7 @@ pub fn deser_structure_fpga_image(
                 let var_1593 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.ec2#Boolean`)"))
@@ -35892,8 +35750,7 @@ pub fn deser_structure_host_offering(
                 let var_1595 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.ec2#Integer`)"))
@@ -35987,8 +35844,7 @@ pub fn deser_structure_host_reservation(
                 let var_1601 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.ec2#Integer`)"))
@@ -36017,8 +35873,7 @@ pub fn deser_structure_host_reservation(
                 let var_1603 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.ec2#Integer`)"))
@@ -36389,8 +36244,7 @@ pub fn deser_structure_host(
                 let var_1631 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.ec2#Boolean`)"))
@@ -36627,8 +36481,7 @@ pub fn deser_structure_image(
                 let var_1645 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.ec2#Boolean`)"))
@@ -36769,8 +36622,7 @@ pub fn deser_structure_image(
                 let var_1656 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.ec2#Boolean`)"))
@@ -36965,8 +36817,7 @@ pub fn deser_structure_import_image_task(
                 let var_1670 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.ec2#Boolean`)"))
@@ -37546,8 +37397,7 @@ pub fn deser_structure_instance_type_info(
                 let var_1709 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.ec2#CurrentGenerationFlag`)"))
@@ -37562,8 +37412,7 @@ pub fn deser_structure_instance_type_info(
                 let var_1710 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.ec2#FreeTierEligibleFlag`)"))
@@ -37608,8 +37457,7 @@ pub fn deser_structure_instance_type_info(
                 let var_1714 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.ec2#BareMetalFlag`)"))
@@ -37668,8 +37516,7 @@ pub fn deser_structure_instance_type_info(
                 let var_1719 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.ec2#InstanceStorageFlag`)"))
@@ -37754,8 +37601,7 @@ pub fn deser_structure_instance_type_info(
                 let var_1727 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.ec2#HibernationFlag`)"))
@@ -37770,8 +37616,7 @@ pub fn deser_structure_instance_type_info(
                 let var_1728 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.ec2#BurstablePerformanceFlag`)"))
@@ -37786,8 +37631,7 @@ pub fn deser_structure_instance_type_info(
                 let var_1729 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.ec2#DedicatedHostFlag`)"))
@@ -37802,8 +37646,7 @@ pub fn deser_structure_instance_type_info(
                 let var_1730 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.ec2#AutoRecoveryFlag`)"))
@@ -38354,8 +38197,7 @@ pub fn deser_structure_local_gateway_virtual_interface(
                 let var_1767 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.ec2#Integer`)"))
@@ -38396,8 +38238,7 @@ pub fn deser_structure_local_gateway_virtual_interface(
                 let var_1770 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.ec2#Integer`)"))
@@ -38412,8 +38253,7 @@ pub fn deser_structure_local_gateway_virtual_interface(
                 let var_1771 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.ec2#Integer`)"))
@@ -38625,8 +38465,7 @@ pub fn deser_structure_public_ipv4_pool(
                 let var_1784 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.ec2#Integer`)"))
@@ -38641,8 +38480,7 @@ pub fn deser_structure_public_ipv4_pool(
                 let var_1785 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.ec2#Integer`)"))
@@ -38758,8 +38596,7 @@ pub fn deser_structure_reserved_instances(
                 let var_1792 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i64::from_str(
+                            <i64 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (long: `com.amazonaws.ec2#Long`)"))
@@ -38788,8 +38625,7 @@ pub fn deser_structure_reserved_instances(
                 let var_1794 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            f32::from_str(
+                            <f32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (float: `com.amazonaws.ec2#Float`)"))
@@ -38804,8 +38640,7 @@ pub fn deser_structure_reserved_instances(
                 let var_1795 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.ec2#Integer`)"))
@@ -38889,8 +38724,7 @@ pub fn deser_structure_reserved_instances(
                 let var_1801 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            f32::from_str(
+                            <f32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (float: `com.amazonaws.ec2#Float`)"))
@@ -39148,8 +38982,7 @@ pub fn deser_structure_reserved_instances_offering(
                 let var_1819 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i64::from_str(
+                            <i64 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (long: `com.amazonaws.ec2#Long`)"))
@@ -39164,8 +38997,7 @@ pub fn deser_structure_reserved_instances_offering(
                 let var_1820 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            f32::from_str(
+                            <f32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (float: `com.amazonaws.ec2#Float`)"))
@@ -39221,8 +39053,7 @@ pub fn deser_structure_reserved_instances_offering(
                 let var_1824 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            f32::from_str(
+                            <f32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (float: `com.amazonaws.ec2#Float`)"))
@@ -39265,8 +39096,7 @@ pub fn deser_structure_reserved_instances_offering(
                 let var_1827 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.ec2#Boolean`)"))
@@ -39369,8 +39199,7 @@ pub fn deser_structure_scheduled_instance_availability(
                 let var_1834 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.ec2#Integer`)"))
@@ -39425,8 +39254,7 @@ pub fn deser_structure_scheduled_instance_availability(
                 let var_1838 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.ec2#Integer`)"))
@@ -39441,8 +39269,7 @@ pub fn deser_structure_scheduled_instance_availability(
                 let var_1839 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.ec2#Integer`)"))
@@ -39506,8 +39333,7 @@ pub fn deser_structure_scheduled_instance_availability(
                 let var_1844 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.ec2#Integer`)"))
@@ -39522,8 +39348,7 @@ pub fn deser_structure_scheduled_instance_availability(
                 let var_1845 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.ec2#Integer`)"))
@@ -39591,8 +39416,7 @@ pub fn deser_structure_scheduled_instance(
                 let var_1849 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.ec2#Integer`)"))
@@ -39697,8 +39521,7 @@ pub fn deser_structure_scheduled_instance(
                 let var_1857 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.ec2#Integer`)"))
@@ -39741,8 +39564,7 @@ pub fn deser_structure_scheduled_instance(
                 let var_1860 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.ec2#Integer`)"))
@@ -39996,8 +39818,7 @@ pub fn deser_structure_snapshot(
                 let var_1876 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.ec2#Boolean`)"))
@@ -40118,8 +39939,7 @@ pub fn deser_structure_snapshot(
                 let var_1885 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.ec2#Integer`)"))
@@ -40348,8 +40168,7 @@ pub fn deser_structure_spot_instance_request(
                 let var_1900 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.ec2#Integer`)"))
@@ -40799,8 +40618,7 @@ pub fn deser_structure_store_image_task_result(
                 let var_1932 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.ec2#Integer`)"))
@@ -41097,8 +40915,7 @@ pub fn deser_structure_volume(
                 let var_1952 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.ec2#Boolean`)"))
@@ -41139,8 +40956,7 @@ pub fn deser_structure_volume(
                 let var_1955 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.ec2#Integer`)"))
@@ -41195,8 +41011,7 @@ pub fn deser_structure_volume(
                 let var_1959 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.ec2#Integer`)"))
@@ -41235,8 +41050,7 @@ pub fn deser_structure_volume(
                 let var_1962 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.ec2#Boolean`)"))
@@ -41251,8 +41065,7 @@ pub fn deser_structure_volume(
                 let var_1963 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.ec2#Boolean`)"))
@@ -41267,8 +41080,7 @@ pub fn deser_structure_volume(
                 let var_1964 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.ec2#Integer`)"))
@@ -41388,8 +41200,7 @@ pub fn deser_structure_vpc_classic_link(
                 let var_1972 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.ec2#Boolean`)"))
@@ -41440,8 +41251,7 @@ pub fn deser_structure_classic_link_dns_support(
                 let var_1975 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.ec2#Boolean`)"))
@@ -41724,8 +41534,7 @@ pub fn deser_structure_service_detail(
                 let var_1995 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.ec2#Boolean`)"))
@@ -41740,8 +41549,7 @@ pub fn deser_structure_service_detail(
                 let var_1996 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.ec2#Boolean`)"))
@@ -41756,8 +41564,7 @@ pub fn deser_structure_service_detail(
                 let var_1997 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.ec2#Boolean`)"))
@@ -42322,8 +42129,7 @@ pub fn deser_structure_instance_usage(
                 let var_2033 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.ec2#Integer`)"))
@@ -42469,8 +42275,7 @@ pub fn deser_structure_purchase(
                 let var_2041 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.ec2#Integer`)"))
@@ -42658,8 +42463,7 @@ pub fn deser_structure_launch_templates_monitoring(
                 let var_2050 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.ec2#Boolean`)"))
@@ -42779,8 +42583,7 @@ pub fn deser_structure_launch_template_placement(
                 let var_2058 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.ec2#Integer`)"))
@@ -42935,8 +42738,7 @@ pub fn deser_structure_launch_template_cpu_options(
                 let var_2062 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.ec2#Integer`)"))
@@ -42951,8 +42753,7 @@ pub fn deser_structure_launch_template_cpu_options(
                 let var_2063 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.ec2#Integer`)"))
@@ -43043,8 +42844,7 @@ pub fn deser_structure_launch_template_hibernation_options(
                 let var_2066 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.ec2#Boolean`)"))
@@ -43100,8 +42900,7 @@ pub fn deser_structure_launch_template_instance_metadata_options(
                 let var_2069 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.ec2#Integer`)"))
@@ -43143,8 +42942,7 @@ pub fn deser_structure_launch_template_enclave_options(
                 let var_2071 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.ec2#Boolean`)"))
@@ -43595,8 +43393,7 @@ pub fn deser_structure_snapshot_detail(
                 let var_2097 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            f64::from_str(
+                            <f64 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (double: `com.amazonaws.ec2#Double`)"))
@@ -43814,8 +43611,7 @@ pub fn deser_structure_import_volume_task_details(
                 let var_2111 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i64::from_str(
+                            <i64 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (long: `com.amazonaws.ec2#Long`)"))
@@ -44066,8 +43862,7 @@ pub fn deser_structure_ip_permission(
                 let var_2125 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.ec2#Integer`)"))
@@ -44125,8 +43920,7 @@ pub fn deser_structure_ip_permission(
                 let var_2130 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.ec2#Integer`)"))
@@ -44164,8 +43958,7 @@ pub fn deser_structure_instance(
                 let var_2132 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.ec2#Integer`)"))
@@ -44455,8 +44248,7 @@ pub fn deser_structure_instance(
                 let var_2155 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.ec2#Boolean`)"))
@@ -44471,8 +44263,7 @@ pub fn deser_structure_instance(
                 let var_2156 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.ec2#Boolean`)"))
@@ -44605,8 +44396,7 @@ pub fn deser_structure_instance(
                 let var_2167 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.ec2#Boolean`)"))
@@ -44873,8 +44663,7 @@ pub fn deser_structure_transit_gateway_multicast_group(
                 let var_2188 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.ec2#Boolean`)"))
@@ -44889,8 +44678,7 @@ pub fn deser_structure_transit_gateway_multicast_group(
                 let var_2189 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.ec2#Boolean`)"))
@@ -45234,8 +45022,7 @@ pub fn deser_structure_vpc_peering_connection_options_description(
                 let var_2202 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.ec2#Boolean`)"))
@@ -45250,8 +45037,7 @@ pub fn deser_structure_vpc_peering_connection_options_description(
                 let var_2203 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.ec2#Boolean`)"))
@@ -45266,8 +45052,7 @@ pub fn deser_structure_vpc_peering_connection_options_description(
                 let var_2204 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.ec2#Boolean`)"))
@@ -45751,8 +45536,7 @@ pub fn deser_structure_network_acl_entry(
                 let var_2228 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.ec2#Boolean`)"))
@@ -45827,8 +45611,7 @@ pub fn deser_structure_network_acl_entry(
                 let var_2234 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.ec2#Integer`)"))
@@ -45892,8 +45675,7 @@ pub fn deser_structure_network_interface_private_ip_address(
                 let var_2237 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.ec2#Boolean`)"))
@@ -45947,8 +45729,7 @@ pub fn deser_structure_route_table_association(
                 let var_2240 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.ec2#Boolean`)"))
@@ -46549,8 +46330,7 @@ pub fn deser_structure_vgw_telemetry(
                 let var_2273 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.ec2#Integer`)"))
@@ -46881,8 +46661,7 @@ pub fn deser_structure_connection_log_response_options(
                 let var_2287 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.ec2#Boolean`)"))
@@ -46936,8 +46715,7 @@ pub fn deser_structure_client_connect_response_options(
                 let var_2290 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.ec2#Boolean`)"))
@@ -47086,8 +46864,7 @@ pub fn deser_structure_target_capacity_specification(
                 let var_2297 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.ec2#Integer`)"))
@@ -47102,8 +46879,7 @@ pub fn deser_structure_target_capacity_specification(
                 let var_2298 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.ec2#Integer`)"))
@@ -47118,8 +46894,7 @@ pub fn deser_structure_target_capacity_specification(
                 let var_2299 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.ec2#Integer`)"))
@@ -47199,8 +46974,7 @@ pub fn deser_structure_spot_options(
                 let var_2304 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.ec2#Integer`)"))
@@ -47215,8 +46989,7 @@ pub fn deser_structure_spot_options(
                 let var_2305 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.ec2#Boolean`)"))
@@ -47231,8 +47004,7 @@ pub fn deser_structure_spot_options(
                 let var_2306 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.ec2#Boolean`)"))
@@ -47247,8 +47019,7 @@ pub fn deser_structure_spot_options(
                 let var_2307 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.ec2#Integer`)"))
@@ -47313,8 +47084,7 @@ pub fn deser_structure_on_demand_options(
                 let var_2311 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.ec2#Boolean`)"))
@@ -47329,8 +47099,7 @@ pub fn deser_structure_on_demand_options(
                 let var_2312 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.ec2#Boolean`)"))
@@ -47345,8 +47114,7 @@ pub fn deser_structure_on_demand_options(
                 let var_2313 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.ec2#Integer`)"))
@@ -47602,8 +47370,7 @@ pub fn deser_structure_available_capacity(
                 let var_2324 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.ec2#Integer`)"))
@@ -47631,8 +47398,7 @@ pub fn deser_structure_host_properties(
                 let var_2325 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.ec2#Integer`)"))
@@ -47673,8 +47439,7 @@ pub fn deser_structure_host_properties(
                 let var_2328 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.ec2#Integer`)"))
@@ -47689,8 +47454,7 @@ pub fn deser_structure_host_properties(
                 let var_2329 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.ec2#Integer`)"))
@@ -47737,8 +47501,7 @@ pub fn deser_structure_ebs_block_device(
                 let var_2330 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.ec2#Boolean`)"))
@@ -47753,8 +47516,7 @@ pub fn deser_structure_ebs_block_device(
                 let var_2331 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.ec2#Integer`)"))
@@ -47782,8 +47544,7 @@ pub fn deser_structure_ebs_block_device(
                 let var_2333 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.ec2#Integer`)"))
@@ -47825,8 +47586,7 @@ pub fn deser_structure_ebs_block_device(
                 let var_2336 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.ec2#Integer`)"))
@@ -47854,8 +47614,7 @@ pub fn deser_structure_ebs_block_device(
                 let var_2338 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.ec2#Boolean`)"))
@@ -47936,8 +47695,7 @@ pub fn deser_structure_ebs_instance_block_device(
                 let var_2342 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.ec2#Boolean`)"))
@@ -48011,8 +47769,7 @@ pub fn deser_structure_instance_state(
                 let var_2345 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.ec2#Integer`)"))
@@ -48170,8 +47927,7 @@ pub fn deser_structure_processor_info(
                 let var_2350 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            f64::from_str(
+                            <f64 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (double: `com.amazonaws.ec2#ProcessorSustainedClockSpeed`)"))
@@ -48199,8 +47955,7 @@ pub fn deser_structure_v_cpu_info(
                 let var_2351 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.ec2#VCpuCount`)"))
@@ -48215,8 +47970,7 @@ pub fn deser_structure_v_cpu_info(
                 let var_2352 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.ec2#CoreCount`)"))
@@ -48231,8 +47985,7 @@ pub fn deser_structure_v_cpu_info(
                 let var_2353 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.ec2#ThreadsPerCore`)"))
@@ -48280,8 +48033,7 @@ pub fn deser_structure_memory_info(
                 let var_2356 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i64::from_str(
+                            <i64 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (long: `com.amazonaws.ec2#MemorySize`)"))
@@ -48309,8 +48061,7 @@ pub fn deser_structure_instance_storage_info(
                 let var_2357 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i64::from_str(
+                            <i64 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (long: `com.amazonaws.ec2#DiskSize`)"))
@@ -48440,8 +48191,7 @@ pub fn deser_structure_network_info(
                 let var_2365 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.ec2#MaxNetworkInterfaces`)"))
@@ -48456,8 +48206,7 @@ pub fn deser_structure_network_info(
                 let var_2366 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.ec2#MaximumNetworkCards`)"))
@@ -48472,8 +48221,7 @@ pub fn deser_structure_network_info(
                 let var_2367 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.ec2#DefaultNetworkCardIndex`)"))
@@ -48498,8 +48246,7 @@ pub fn deser_structure_network_info(
                 let var_2369 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.ec2#MaxIpv4AddrPerInterface`)"))
@@ -48514,8 +48261,7 @@ pub fn deser_structure_network_info(
                 let var_2370 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.ec2#MaxIpv6AddrPerInterface`)"))
@@ -48530,8 +48276,7 @@ pub fn deser_structure_network_info(
                 let var_2371 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.ec2#Ipv6Flag`)"))
@@ -48560,8 +48305,7 @@ pub fn deser_structure_network_info(
                 let var_2373 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.ec2#EfaSupportedFlag`)"))
@@ -48609,8 +48353,7 @@ pub fn deser_structure_gpu_info(
                 let var_2376 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.ec2#totalGpuMemory`)"))
@@ -48648,8 +48391,7 @@ pub fn deser_structure_fpga_info(
                 let var_2378 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.ec2#totalFpgaMemory`)"))
@@ -48898,8 +48640,7 @@ pub fn deser_structure_scheduled_instance_recurrence(
                 let var_2382 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.ec2#Integer`)"))
@@ -48924,8 +48665,7 @@ pub fn deser_structure_scheduled_instance_recurrence(
                 let var_2384 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.ec2#Boolean`)"))
@@ -49031,8 +48771,7 @@ pub fn deser_structure_spot_fleet_request_config_data(
                 let var_2391 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            f64::from_str(
+                            <f64 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (double: `com.amazonaws.ec2#Double`)"))
@@ -49047,8 +48786,7 @@ pub fn deser_structure_spot_fleet_request_config_data(
                 let var_2392 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            f64::from_str(
+                            <f64 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (double: `com.amazonaws.ec2#Double`)"))
@@ -49109,8 +48847,7 @@ pub fn deser_structure_spot_fleet_request_config_data(
                 let var_2397 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.ec2#Integer`)"))
@@ -49125,8 +48862,7 @@ pub fn deser_structure_spot_fleet_request_config_data(
                 let var_2398 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.ec2#Integer`)"))
@@ -49167,8 +48903,7 @@ pub fn deser_structure_spot_fleet_request_config_data(
                 let var_2401 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.ec2#Boolean`)"))
@@ -49225,8 +48960,7 @@ pub fn deser_structure_spot_fleet_request_config_data(
                 let var_2405 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.ec2#Boolean`)"))
@@ -49265,8 +48999,7 @@ pub fn deser_structure_spot_fleet_request_config_data(
                 let var_2408 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.ec2#Integer`)"))
@@ -49363,8 +49096,7 @@ pub fn deser_structure_launch_specification(
                 let var_2415 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.ec2#Boolean`)"))
@@ -49846,8 +49578,7 @@ pub fn deser_structure_launch_template_instance_network_interface_specification(
                 let var_2437 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.ec2#Boolean`)"))
@@ -49862,8 +49593,7 @@ pub fn deser_structure_launch_template_instance_network_interface_specification(
                 let var_2438 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.ec2#Boolean`)"))
@@ -49878,8 +49608,7 @@ pub fn deser_structure_launch_template_instance_network_interface_specification(
                 let var_2439 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.ec2#Boolean`)"))
@@ -49907,8 +49636,7 @@ pub fn deser_structure_launch_template_instance_network_interface_specification(
                 let var_2441 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.ec2#Integer`)"))
@@ -49946,8 +49674,7 @@ pub fn deser_structure_launch_template_instance_network_interface_specification(
                 let var_2444 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.ec2#Integer`)"))
@@ -50008,8 +49735,7 @@ pub fn deser_structure_launch_template_instance_network_interface_specification(
                 let var_2449 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.ec2#Integer`)"))
@@ -50037,8 +49763,7 @@ pub fn deser_structure_launch_template_instance_network_interface_specification(
                 let var_2451 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.ec2#Integer`)"))
@@ -50145,8 +49870,7 @@ pub fn deser_structure_launch_template_elastic_inference_accelerator_response(
                 let var_2456 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.ec2#Integer`)"))
@@ -50201,8 +49925,7 @@ pub fn deser_structure_launch_template_spot_market_options(
                 let var_2459 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.ec2#Integer`)"))
@@ -50323,8 +50046,7 @@ pub fn deser_structure_target_configuration(
                 let var_2465 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.ec2#Integer`)"))
@@ -50425,8 +50147,7 @@ pub fn deser_structure_disk_image_description(
                 let var_2470 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i64::from_str(
+                            <i64 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (long: `com.amazonaws.ec2#Long`)"))
@@ -50467,8 +50188,7 @@ pub fn deser_structure_disk_image_volume_description(
                 let var_2472 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i64::from_str(
+                            <i64 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (long: `com.amazonaws.ec2#Long`)"))
@@ -50681,8 +50401,7 @@ pub fn deser_structure_placement(
                 let var_2479 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.ec2#Integer`)"))
@@ -50823,8 +50542,7 @@ pub fn deser_structure_cpu_options(
                 let var_2484 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.ec2#Integer`)"))
@@ -50839,8 +50557,7 @@ pub fn deser_structure_cpu_options(
                 let var_2485 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.ec2#Integer`)"))
@@ -50905,8 +50622,7 @@ pub fn deser_structure_hibernation_options(
                 let var_2488 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.ec2#Boolean`)"))
@@ -50953,8 +50669,7 @@ pub fn deser_structure_path_component(
                 let var_2489 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.ec2#Integer`)"))
@@ -51264,8 +50979,7 @@ pub fn deser_structure_explanation(
                 let var_2517 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.ec2#Port`)"))
@@ -51310,8 +51024,7 @@ pub fn deser_structure_explanation(
                 let var_2521 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.ec2#Port`)"))
@@ -51392,8 +51105,7 @@ pub fn deser_structure_explanation(
                 let var_2528 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.ec2#Port`)"))
@@ -51675,8 +51387,7 @@ pub fn deser_structure_instance_count(
                 let var_2549 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.ec2#Integer`)"))
@@ -51718,8 +51429,7 @@ pub fn deser_structure_price_schedule(
                 let var_2551 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.ec2#Boolean`)"))
@@ -51748,8 +51458,7 @@ pub fn deser_structure_price_schedule(
                 let var_2553 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            f64::from_str(
+                            <f64 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (double: `com.amazonaws.ec2#Double`)"))
@@ -51764,8 +51473,7 @@ pub fn deser_structure_price_schedule(
                 let var_2554 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i64::from_str(
+                            <i64 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (long: `com.amazonaws.ec2#Long`)"))
@@ -51917,8 +51625,7 @@ pub fn deser_structure_fleet_launch_template_overrides(
                 let var_2562 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            f64::from_str(
+                            <f64 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (double: `com.amazonaws.ec2#Double`)"))
@@ -51933,8 +51640,7 @@ pub fn deser_structure_fleet_launch_template_overrides(
                 let var_2563 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            f64::from_str(
+                            <f64 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (double: `com.amazonaws.ec2#Double`)"))
@@ -51972,8 +51678,7 @@ pub fn deser_structure_icmp_type_code(
                 let var_2565 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.ec2#Integer`)"))
@@ -51988,8 +51693,7 @@ pub fn deser_structure_icmp_type_code(
                 let var_2566 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.ec2#Integer`)"))
@@ -52017,8 +51721,7 @@ pub fn deser_structure_port_range(
                 let var_2567 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.ec2#Integer`)"))
@@ -52033,8 +51736,7 @@ pub fn deser_structure_port_range(
                 let var_2568 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.ec2#Integer`)"))
@@ -52062,8 +51764,7 @@ pub fn deser_structure_transit_gateway_attachment_bgp_configuration(
                 let var_2569 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i64::from_str(
+                            <i64 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (long: `com.amazonaws.ec2#Long`)"))
@@ -52078,8 +51779,7 @@ pub fn deser_structure_transit_gateway_attachment_bgp_configuration(
                 let var_2570 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i64::from_str(
+                            <i64 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (long: `com.amazonaws.ec2#Long`)"))
@@ -52199,8 +51899,7 @@ pub fn deser_structure_tunnel_option(
                 let var_2578 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.ec2#Integer`)"))
@@ -52215,8 +51914,7 @@ pub fn deser_structure_tunnel_option(
                 let var_2579 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.ec2#Integer`)"))
@@ -52231,8 +51929,7 @@ pub fn deser_structure_tunnel_option(
                 let var_2580 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.ec2#Integer`)"))
@@ -52247,8 +51944,7 @@ pub fn deser_structure_tunnel_option(
                 let var_2581 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.ec2#Integer`)"))
@@ -52263,8 +51959,7 @@ pub fn deser_structure_tunnel_option(
                 let var_2582 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.ec2#Integer`)"))
@@ -52279,8 +51974,7 @@ pub fn deser_structure_tunnel_option(
                 let var_2583 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.ec2#Integer`)"))
@@ -52925,8 +52619,7 @@ pub fn deser_list_core_count_list(
             s if s.matches("item") /* member com.amazonaws.ec2#CoreCountList$member */ =>  {
                 out.push(
                      {
-                        use std::str::FromStr;
-                        i32::from_str(
+                        <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
                         )
                         .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.ec2#CoreCount`)"))
@@ -52950,8 +52643,7 @@ pub fn deser_list_threads_per_core_list(
             s if s.matches("item") /* member com.amazonaws.ec2#ThreadsPerCoreList$member */ =>  {
                 out.push(
                      {
-                        use std::str::FromStr;
-                        i32::from_str(
+                        <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
                         )
                         .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.ec2#ThreadsPerCore`)"))
@@ -52996,8 +52688,7 @@ pub fn deser_structure_ebs_optimized_info(
                 let var_2619 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.ec2#BaselineBandwidthInMbps`)"))
@@ -53012,8 +52703,7 @@ pub fn deser_structure_ebs_optimized_info(
                 let var_2620 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            f64::from_str(
+                            <f64 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (double: `com.amazonaws.ec2#BaselineThroughputInMBps`)"))
@@ -53028,8 +52718,7 @@ pub fn deser_structure_ebs_optimized_info(
                 let var_2621 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.ec2#BaselineIops`)"))
@@ -53044,8 +52733,7 @@ pub fn deser_structure_ebs_optimized_info(
                 let var_2622 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.ec2#MaximumBandwidthInMbps`)"))
@@ -53060,8 +52748,7 @@ pub fn deser_structure_ebs_optimized_info(
                 let var_2623 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            f64::from_str(
+                            <f64 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (double: `com.amazonaws.ec2#MaximumThroughputInMBps`)"))
@@ -53076,8 +52763,7 @@ pub fn deser_structure_ebs_optimized_info(
                 let var_2624 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.ec2#MaximumIops`)"))
@@ -53124,8 +52810,7 @@ pub fn deser_structure_efa_info(
                 let var_2625 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.ec2#MaximumEfaInterfaces`)"))
@@ -53285,8 +52970,7 @@ pub fn deser_structure_public_ipv4_pool_range(
                 let var_2629 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.ec2#Integer`)"))
@@ -53301,8 +52985,7 @@ pub fn deser_structure_public_ipv4_pool_range(
                 let var_2630 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.ec2#Integer`)"))
@@ -53330,8 +53013,7 @@ pub fn deser_structure_recurring_charge(
                 let var_2631 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            f64::from_str(
+                            <f64 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (double: `com.amazonaws.ec2#Double`)"))
@@ -53435,8 +53117,7 @@ pub fn deser_structure_pricing_detail(
                 let var_2636 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.ec2#Integer`)"))
@@ -53451,8 +53132,7 @@ pub fn deser_structure_pricing_detail(
                 let var_2637 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            f64::from_str(
+                            <f64 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (double: `com.amazonaws.ec2#Double`)"))
@@ -53478,8 +53158,7 @@ pub fn deser_list_occurrence_day_set(
             s if s.matches("item") /* member com.amazonaws.ec2#OccurrenceDaySet$member */ =>  {
                 out.push(
                      {
-                        use std::str::FromStr;
-                        i32::from_str(
+                        <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
                         )
                         .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.ec2#Integer`)"))
@@ -53733,8 +53412,7 @@ pub fn deser_structure_run_instances_monitoring_enabled(
                 let var_2646 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.ec2#Boolean`)"))
@@ -53762,8 +53440,7 @@ pub fn deser_structure_stale_ip_permission(
                 let var_2647 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.ec2#Integer`)"))
@@ -53811,8 +53488,7 @@ pub fn deser_structure_stale_ip_permission(
                 let var_2651 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.ec2#Integer`)"))
@@ -54164,8 +53840,7 @@ pub fn deser_structure_launch_template_ebs_block_device(
                 let var_2670 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.ec2#Boolean`)"))
@@ -54180,8 +53855,7 @@ pub fn deser_structure_launch_template_ebs_block_device(
                 let var_2671 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.ec2#Boolean`)"))
@@ -54196,8 +53870,7 @@ pub fn deser_structure_launch_template_ebs_block_device(
                 let var_2672 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.ec2#Integer`)"))
@@ -54238,8 +53911,7 @@ pub fn deser_structure_launch_template_ebs_block_device(
                 let var_2675 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.ec2#Integer`)"))
@@ -54268,8 +53940,7 @@ pub fn deser_structure_launch_template_ebs_block_device(
                 let var_2677 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.ec2#Integer`)"))
@@ -54371,8 +54042,7 @@ pub fn deser_structure_import_instance_volume_detail_item(
                 let var_2679 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i64::from_str(
+                            <i64 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (long: `com.amazonaws.ec2#Long`)"))
@@ -54939,8 +54609,7 @@ pub fn deser_structure_instance_network_interface(
                 let var_2717 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.ec2#Boolean`)"))
@@ -55060,8 +54729,7 @@ pub fn deser_structure_analysis_acl_rule(
                 let var_2724 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.ec2#Boolean`)"))
@@ -55112,8 +54780,7 @@ pub fn deser_structure_analysis_acl_rule(
                 let var_2728 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.ec2#Integer`)"))
@@ -55499,8 +55166,7 @@ pub fn deser_structure_analysis_load_balancer_listener(
                 let var_2752 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.ec2#Port`)"))
@@ -55515,8 +55181,7 @@ pub fn deser_structure_analysis_load_balancer_listener(
                 let var_2753 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.ec2#Port`)"))
@@ -55580,8 +55245,7 @@ pub fn deser_structure_analysis_load_balancer_target(
                 let var_2757 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.ec2#Port`)"))
@@ -55980,8 +55644,7 @@ pub fn deser_structure_instance_capacity(
                 let var_2764 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.ec2#Integer`)"))
@@ -56009,8 +55672,7 @@ pub fn deser_structure_instance_capacity(
                 let var_2766 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.ec2#Integer`)"))
@@ -56093,8 +55755,7 @@ pub fn deser_structure_disk_info(
                 let var_2770 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i64::from_str(
+                            <i64 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (long: `com.amazonaws.ec2#DiskSize`)"))
@@ -56109,8 +55770,7 @@ pub fn deser_structure_disk_info(
                 let var_2771 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.ec2#DiskCount`)"))
@@ -56152,8 +55812,7 @@ pub fn deser_structure_network_card_info(
                 let var_2773 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.ec2#NetworkCardIndex`)"))
@@ -56181,8 +55840,7 @@ pub fn deser_structure_network_card_info(
                 let var_2775 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.ec2#MaxNetworkInterfaces`)"))
@@ -56236,8 +55894,7 @@ pub fn deser_structure_gpu_device_info(
                 let var_2778 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.ec2#GpuDeviceCount`)"))
@@ -56301,8 +55958,7 @@ pub fn deser_structure_fpga_device_info(
                 let var_2782 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.ec2#FpgaDeviceCount`)"))
@@ -56340,8 +55996,7 @@ pub fn deser_structure_inference_device_info(
                 let var_2784 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.ec2#InferenceDeviceCount`)"))
@@ -56408,8 +56063,7 @@ pub fn deser_structure_reserved_instances_configuration(
                 let var_2788 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.ec2#Integer`)"))
@@ -56538,8 +56192,7 @@ pub fn deser_structure_spot_fleet_launch_specification(
                 let var_2796 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.ec2#Boolean`)"))
@@ -56699,8 +56352,7 @@ pub fn deser_structure_spot_fleet_launch_specification(
                 let var_2809 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            f64::from_str(
+                            <f64 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (double: `com.amazonaws.ec2#Double`)"))
@@ -56854,8 +56506,7 @@ pub fn deser_structure_instance_network_interface_specification(
                 let var_2817 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.ec2#Boolean`)"))
@@ -56870,8 +56521,7 @@ pub fn deser_structure_instance_network_interface_specification(
                 let var_2818 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.ec2#Boolean`)"))
@@ -56899,8 +56549,7 @@ pub fn deser_structure_instance_network_interface_specification(
                 let var_2820 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.ec2#Integer`)"))
@@ -56925,8 +56574,7 @@ pub fn deser_structure_instance_network_interface_specification(
                 let var_2822 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.ec2#Integer`)"))
@@ -56987,8 +56635,7 @@ pub fn deser_structure_instance_network_interface_specification(
                 let var_2827 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.ec2#Integer`)"))
@@ -57016,8 +56663,7 @@ pub fn deser_structure_instance_network_interface_specification(
                 let var_2829 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.ec2#Boolean`)"))
@@ -57045,8 +56691,7 @@ pub fn deser_structure_instance_network_interface_specification(
                 let var_2831 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.ec2#Integer`)"))
@@ -57281,8 +56926,7 @@ pub fn deser_structure_private_ip_address_specification(
                 let var_2839 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.ec2#Boolean`)"))
@@ -57415,8 +57059,7 @@ pub fn deser_structure_instance_network_interface_attachment(
                 let var_2847 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.ec2#Boolean`)"))
@@ -57431,8 +57074,7 @@ pub fn deser_structure_instance_network_interface_attachment(
                 let var_2848 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.ec2#Integer`)"))
@@ -57461,8 +57103,7 @@ pub fn deser_structure_instance_network_interface_attachment(
                 let var_2850 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.ec2#Integer`)"))
@@ -57613,8 +57254,7 @@ pub fn deser_structure_phase1_dh_group_numbers_list_value(
                 let var_2855 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.ec2#Integer`)"))
@@ -57642,8 +57282,7 @@ pub fn deser_structure_phase2_dh_group_numbers_list_value(
                 let var_2856 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.ec2#Integer`)"))
@@ -57697,8 +57336,7 @@ pub fn deser_structure_gpu_device_memory_info(
                 let var_2858 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.ec2#GpuDeviceMemorySize`)"))
@@ -57726,8 +57364,7 @@ pub fn deser_structure_fpga_device_memory_info(
                 let var_2859 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            i32::from_str(
+                            <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.ec2#FpgaDeviceMemorySize`)"))
@@ -57755,8 +57392,7 @@ pub fn deser_structure_spot_fleet_monitoring(
                 let var_2860 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.ec2#Boolean`)"))
@@ -57892,8 +57528,7 @@ pub fn deser_structure_instance_private_ip_address(
                 let var_2862 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            bool::from_str(
+                            <bool as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.ec2#Boolean`)"))
@@ -58037,8 +57672,7 @@ pub fn deser_structure_launch_template_overrides(
                 let var_2871 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            f64::from_str(
+                            <f64 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (double: `com.amazonaws.ec2#Double`)"))
@@ -58053,8 +57687,7 @@ pub fn deser_structure_launch_template_overrides(
                 let var_2872 =
                     Some(
                          {
-                            use std::str::FromStr;
-                            f64::from_str(
+                            <f64 as smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                             .map_err(|_|smithy_xml::decode::XmlError::custom("expected (double: `com.amazonaws.ec2#Double`)"))

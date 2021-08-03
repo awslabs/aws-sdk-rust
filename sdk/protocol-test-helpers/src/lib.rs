@@ -15,6 +15,39 @@ use std::fmt::{self, Debug};
 use thiserror::Error;
 use urlencoded::try_url_encoded_form_equivalent;
 
+/// Helper trait for tests for float comparisons
+///
+/// This trait differs in float's default `PartialEq` implementation by considering all `NaN` values to
+/// be equal.
+pub trait FloatEquals {
+    fn float_equals(&self, other: &Self) -> bool;
+}
+
+impl FloatEquals for f64 {
+    fn float_equals(&self, other: &Self) -> bool {
+        (self.is_nan() && other.is_nan()) || self.eq(other)
+    }
+}
+
+impl FloatEquals for f32 {
+    fn float_equals(&self, other: &Self) -> bool {
+        (self.is_nan() && other.is_nan()) || self.eq(other)
+    }
+}
+
+impl<T> FloatEquals for Option<T>
+where
+    T: FloatEquals,
+{
+    fn float_equals(&self, other: &Self) -> bool {
+        match (self, other) {
+            (Some(this), Some(other)) => this.float_equals(other),
+            (None, None) => true,
+            _else => false,
+        }
+    }
+}
+
 #[derive(Debug, PartialEq, Eq, Error)]
 pub enum ProtocolTestFailure {
     #[error("missing query param: expected `{expected}`, found {found:?}")]
@@ -326,7 +359,7 @@ fn try_json_eq(actual: &str, expected: &str) -> Result<(), ProtocolTestFailure> 
 mod tests {
     use crate::{
         forbid_headers, forbid_query_params, require_headers, require_query_params, validate_body,
-        validate_headers, validate_query_string, MediaType, ProtocolTestFailure,
+        validate_headers, validate_query_string, FloatEquals, MediaType, ProtocolTestFailure,
     };
     use http::Request;
 
@@ -471,5 +504,21 @@ mod tests {
 
         validate_body(&expected, expected, MediaType::from("something/else"))
             .expect("inputs matched exactly")
+    }
+
+    #[test]
+    fn test_float_equals() {
+        let a = f64::NAN;
+        let b = f64::NAN;
+        assert_ne!(a, b);
+        assert!(a.float_equals(&b));
+        assert!(!a.float_equals(&5_f64));
+
+        assert!(5.0.float_equals(&5.0));
+        assert!(!5.0.float_equals(&5.1));
+
+        assert!(f64::INFINITY.float_equals(&f64::INFINITY));
+        assert!(!f64::INFINITY.float_equals(&f64::NEG_INFINITY));
+        assert!(f64::NEG_INFINITY.float_equals(&f64::NEG_INFINITY));
     }
 }
